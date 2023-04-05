@@ -1,0 +1,70 @@
+# Lcom/afwsamples/testdpc/common/preference/DpcPreferenceHelper;->getAdminConstraintSummary()Ljava/lang/String; [access_flags=private]
+#
+# Parameters:
+# local registers: v0...v4
+#
+# - return:java.lang.String
+
+getAdminConstraintSummary-BB@0x0 : [ getAdminConstraintSummary-BB@0x20 getAdminConstraintSummary-BB@0x38 ]
+	0       (00000000) const/16             v3, 12
+	1       (00000004) new-instance         v0, Ljava/util/ArrayList;
+	2       (00000008) sget                 v1, Lcom/afwsamples/testdpc/common/preference/DpcPreferenceHelper;->NUM_ADMIN_KINDS I
+	3       (0000000c) invoke-direct        v0, v1, Ljava/util/ArrayList;-><init>(I)V
+	4       (00000012) const/4              v1, 2
+	5       (00000014) invoke-direct        v4, v1, Lcom/afwsamples/testdpc/common/preference/DpcPreferenceHelper;->isEnabledForAdmin(I)Z
+	6       (0000001a) move-result          v1
+	7       (0000001c) if-eqz               v1, +e
+
+getAdminConstraintSummary-BB@0x20 : [ getAdminConstraintSummary-BB@0x38 ]
+	8       (00000020) iget-object          v1, v4, Lcom/afwsamples/testdpc/common/preference/DpcPreferenceHelper;->mContext Landroid/content/Context;
+	9       (00000024) const                v2, 2131689698 # [1.900841872218134e+38]
+	10      (0000002a) invoke-virtual       v1, v2, Landroid/content/Context;->getString(I)Ljava/lang/String;
+	11      (00000030) move-result-object   v1
+	12      (00000032) invoke-interface     v0, v1, Ljava/util/List;->add(Ljava/lang/Object;)Z
+
+getAdminConstraintSummary-BB@0x38 : [ getAdminConstraintSummary-BB@0x48 getAdminConstraintSummary-BB@0x90 ]
+	13      (00000038) const/16             v1, 8
+	14      (0000003c) invoke-direct        v4, v1, Lcom/afwsamples/testdpc/common/preference/DpcPreferenceHelper;->isEnabledForAdmin(I)Z
+	15      (00000042) move-result          v1
+	16      (00000044) if-eqz               v1, +26
+
+getAdminConstraintSummary-BB@0x48 : [ getAdminConstraintSummary-BB@0x54 getAdminConstraintSummary-BB@0x90 ]
+	17      (00000048) invoke-direct        v4, v3, Lcom/afwsamples/testdpc/common/preference/DpcPreferenceHelper;->isEnabledForAdmin(I)Z
+	18      (0000004e) move-result          v1
+	19      (00000050) if-nez               v1, +20
+
+getAdminConstraintSummary-BB@0x54 : [ getAdminConstraintSummary-BB@0x6c ]
+	20      (00000054) iget-object          v1, v4, Lcom/afwsamples/testdpc/common/preference/DpcPreferenceHelper;->mContext Landroid/content/Context;
+	21      (00000058) const                v2, 2131690013 # [1.9009057618083855e+38]
+	22      (0000005e) invoke-virtual       v1, v2, Landroid/content/Context;->getString(I)Ljava/lang/String;
+	23      (00000064) move-result-object   v1
+	24      (00000066) invoke-interface     v0, v1, Ljava/util/List;->add(Ljava/lang/Object;)Z
+
+getAdminConstraintSummary-BB@0x6c : [ getAdminConstraintSummary-BB@0x7c getAdminConstraintSummary-BB@0x86 ]
+	25      (0000006c) iget-object          v1, v4, Lcom/afwsamples/testdpc/common/preference/DpcPreferenceHelper;->mDelegationConstraint Ljava/lang/String;
+	26      (00000070) invoke-static        v1, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
+	27      (00000076) move-result          v1
+	28      (00000078) if-nez               v1, +7
+
+getAdminConstraintSummary-BB@0x7c : [ getAdminConstraintSummary-BB@0x86 ]
+	29      (0000007c) iget-object          v1, v4, Lcom/afwsamples/testdpc/common/preference/DpcPreferenceHelper;->mDelegationConstraint Ljava/lang/String;
+	30      (00000080) invoke-interface     v0, v1, Ljava/util/List;->add(Ljava/lang/Object;)Z
+
+getAdminConstraintSummary-BB@0x86 : 
+	31      (00000086) invoke-direct        v4, v0, Lcom/afwsamples/testdpc/common/preference/DpcPreferenceHelper;->joinRequirementList(Ljava/util/List;)Ljava/lang/String;
+	32      (0000008c) move-result-object   v1
+	33      (0000008e) return-object        v1
+
+getAdminConstraintSummary-BB@0x90 : [ getAdminConstraintSummary-BB@0x9c getAdminConstraintSummary-BB@0x6c ]
+	34      (00000090) invoke-direct        v4, v3, Lcom/afwsamples/testdpc/common/preference/DpcPreferenceHelper;->isEnabledForAdmin(I)Z
+	35      (00000096) move-result          v1
+	36      (00000098) if-eqz               v1, -16
+
+getAdminConstraintSummary-BB@0x9c : [ getAdminConstraintSummary-BB@0x6c ]
+	37      (0000009c) iget-object          v1, v4, Lcom/afwsamples/testdpc/common/preference/DpcPreferenceHelper;->mContext Landroid/content/Context;
+	38      (000000a0) const                v2, 2131690088 # [1.9009209736155882e+38]
+	39      (000000a6) invoke-virtual       v1, v2, Landroid/content/Context;->getString(I)Ljava/lang/String;
+	40      (000000ac) move-result-object   v1
+	41      (000000ae) invoke-interface     v0, v1, Ljava/util/List;->add(Ljava/lang/Object;)Z
+	42      (000000b4) goto                 -24
+

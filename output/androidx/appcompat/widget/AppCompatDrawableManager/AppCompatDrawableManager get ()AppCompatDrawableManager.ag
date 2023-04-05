@@ -1,0 +1,36 @@
+# Landroidx/appcompat/widget/AppCompatDrawableManager;->get()Landroidx/appcompat/widget/AppCompatDrawableManager; [access_flags=public static synchronized]
+#
+# Parameters:
+# local registers: v0...v1
+#
+# - return:androidx.appcompat.widget.AppCompatDrawableManager
+
+get-BB@0x0 : [ get-BB@0x6 ]
+	0       (00000000) const-class          v1, Landroidx/appcompat/widget/AppCompatDrawableManager;
+	1       (00000004) monitor-enter        v1
+
+get-BB@0x6 : [ get-BB@0xe get-BB@0x26 ]
+	2       (00000006) sget-object          v0, Landroidx/appcompat/widget/AppCompatDrawableManager;->INSTANCE Landroidx/appcompat/widget/AppCompatDrawableManager;
+	3       (0000000a) if-nez               v0, +e
+	6:29
+	(Ljava/lang/Throwable; -> 2e get-BB@0x2e)
+
+get-BB@0xe : [ get-BB@0x26 ]
+	4       (0000000e) new-instance         v0, Landroidx/appcompat/widget/AppCompatDrawableManager;
+	5       (00000012) invoke-direct        v0, Landroidx/appcompat/widget/AppCompatDrawableManager;-><init>()V
+	6       (00000018) sput-object          v0, Landroidx/appcompat/widget/AppCompatDrawableManager;->INSTANCE Landroidx/appcompat/widget/AppCompatDrawableManager;
+	7       (0000001c) sget-object          v0, Landroidx/appcompat/widget/AppCompatDrawableManager;->INSTANCE Landroidx/appcompat/widget/AppCompatDrawableManager;
+	8       (00000020) invoke-static        v0, Landroidx/appcompat/widget/AppCompatDrawableManager;->installDefaultInflateDelegates(Landroidx/appcompat/widget/AppCompatDrawableManager;)V
+	6:29
+	(Ljava/lang/Throwable; -> 2e get-BB@0x2e)
+
+get-BB@0x26 : 
+	9       (00000026) sget-object          v0, Landroidx/appcompat/widget/AppCompatDrawableManager;->INSTANCE Landroidx/appcompat/widget/AppCompatDrawableManager;
+	10      (0000002a) monitor-exit         v1
+	11      (0000002c) return-object        v0
+
+get-BB@0x2e : 
+	12      (0000002e) move-exception       v0
+	13      (00000030) monitor-exit         v1
+	14      (00000032) throw                v0
+

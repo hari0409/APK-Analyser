@@ -1,0 +1,20 @@
+# Lcom/afwsamples/testdpc/policy/networking/PrivateDnsModeFragment;->lambda$setPrivateDnsMode$194$PrivateDnsModeFragment(I [Ljava/lang/Object;)V [access_flags=final synthetic]
+#
+# Parameters:
+# - local registers: v0...v3
+# - v4:int
+# - v5:java.lang.Object[]
+#
+# - return:void
+
+lambda$setPrivateDnsMode$194$PrivateDnsModeFragment-BB@0x0 : 
+	0       (00000000) invoke-virtual       v3, Lcom/afwsamples/testdpc/policy/networking/PrivateDnsModeFragment;->getActivity()Landroid/app/Activity;
+	1       (00000006) move-result-object   v0
+	2       (00000008) invoke-virtual       v3, v4, v5, Lcom/afwsamples/testdpc/policy/networking/PrivateDnsModeFragment;->getString(I [Ljava/lang/Object;)Ljava/lang/String;
+	3       (0000000e) move-result-object   v1
+	4       (00000010) const/4              v2, 1
+	5       (00000012) invoke-static        v0, v1, v2, Landroid/widget/Toast;->makeText(Landroid/content/Context; Ljava/lang/CharSequence; I)Landroid/widget/Toast;
+	6       (00000018) move-result-object   v0
+	7       (0000001a) invoke-virtual       v0, Landroid/widget/Toast;->show()V
+	8       (00000020) return-void          
+

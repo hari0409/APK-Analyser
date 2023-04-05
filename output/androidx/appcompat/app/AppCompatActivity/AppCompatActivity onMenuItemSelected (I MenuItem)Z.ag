@@ -1,0 +1,46 @@
+# Landroidx/appcompat/app/AppCompatActivity;->onMenuItemSelected(I Landroid/view/MenuItem;)Z [access_flags=public final]
+#
+# Parameters:
+# - local registers: v0...v3
+# - v4:int
+# - v5:android.view.MenuItem
+#
+# - return:boolean
+
+onMenuItemSelected-BB@0x0 : [ onMenuItemSelected-BB@0xc onMenuItemSelected-BB@0x10 ]
+	0       (00000000) invoke-super         v3, v4, v5, Landroidx/fragment/app/FragmentActivity;->onMenuItemSelected(I Landroid/view/MenuItem;)Z
+	1       (00000006) move-result          v1
+	2       (00000008) if-eqz               v1, +4
+
+onMenuItemSelected-BB@0xc : [ onMenuItemSelected-BB@0xe ]
+	3       (0000000c) const/4              v1, 1
+
+onMenuItemSelected-BB@0xe : 
+	4       (0000000e) return               v1
+
+onMenuItemSelected-BB@0x10 : [ onMenuItemSelected-BB@0x2a onMenuItemSelected-BB@0x48 ]
+	5       (00000010) invoke-virtual       v3, Landroidx/appcompat/app/AppCompatActivity;->getSupportActionBar()Landroidx/appcompat/app/ActionBar;
+	6       (00000016) move-result-object   v0
+	7       (00000018) invoke-interface     v5, Landroid/view/MenuItem;->getItemId()I
+	8       (0000001e) move-result          v1
+	9       (00000020) const                v2, 16908332 # [2.3877352315342576e-38]
+	10      (00000026) if-ne                v1, v2, +11
+
+onMenuItemSelected-BB@0x2a : [ onMenuItemSelected-BB@0x2e onMenuItemSelected-BB@0x48 ]
+	11      (0000002a) if-eqz               v0, +f
+
+onMenuItemSelected-BB@0x2e : [ onMenuItemSelected-BB@0x3e onMenuItemSelected-BB@0x48 ]
+	12      (0000002e) invoke-virtual       v0, Landroidx/appcompat/app/ActionBar;->getDisplayOptions()I
+	13      (00000034) move-result          v1
+	14      (00000036) and-int/lit8         v1, v1, 4
+	15      (0000003a) if-eqz               v1, +7
+
+onMenuItemSelected-BB@0x3e : [ onMenuItemSelected-BB@0xe ]
+	16      (0000003e) invoke-virtual       v3, Landroidx/appcompat/app/AppCompatActivity;->onSupportNavigateUp()Z
+	17      (00000044) move-result          v1
+	18      (00000046) goto                 -1c
+
+onMenuItemSelected-BB@0x48 : [ onMenuItemSelected-BB@0xe ]
+	19      (00000048) const/4              v1, 0
+	20      (0000004a) goto                 -1e
+

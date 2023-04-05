@@ -1,0 +1,33 @@
+# Landroidx/appcompat/widget/SwitchCompat;->setSwitchTypefaceByIndex(I I)V [access_flags=private]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:int
+# - v3:int
+#
+# - return:void
+
+setSwitchTypefaceByIndex-BB@0x0 : [ D:setSwitchTypefaceByIndex-BB@0x8 1:setSwitchTypefaceByIndex-BB@0x10 2:setSwitchTypefaceByIndex-BB@0x16 3:setSwitchTypefaceByIndex-BB@0x1c ]
+	0       (00000000) const/4              v0, 0
+	1       (00000002) packed-switch        v2, +11 (0x24)
+
+setSwitchTypefaceByIndex-BB@0x8 : 
+	2       (00000008) invoke-virtual       v1, v0, v3, Landroidx/appcompat/widget/SwitchCompat;->setSwitchTypeface(Landroid/graphics/Typeface; I)V
+	3       (0000000e) return-void          
+
+setSwitchTypefaceByIndex-BB@0x10 : [ setSwitchTypefaceByIndex-BB@0x8 ]
+	4       (00000010) sget-object          v0, Landroid/graphics/Typeface;->SANS_SERIF Landroid/graphics/Typeface;
+	5       (00000014) goto                 -6
+
+setSwitchTypefaceByIndex-BB@0x16 : [ setSwitchTypefaceByIndex-BB@0x8 ]
+	6       (00000016) sget-object          v0, Landroid/graphics/Typeface;->SERIF Landroid/graphics/Typeface;
+	7       (0000001a) goto                 -9
+
+setSwitchTypefaceByIndex-BB@0x1c : [ setSwitchTypefaceByIndex-BB@0x8 ]
+	8       (0000001c) sget-object          v0, Landroid/graphics/Typeface;->MONOSPACE Landroid/graphics/Typeface;
+	9       (00000020) goto                 -c
+
+setSwitchTypefaceByIndex-BB@0x22 : 
+	10      (00000022) nop                  
+	11      (00000024) packed-switch-payload 1 2 3
+

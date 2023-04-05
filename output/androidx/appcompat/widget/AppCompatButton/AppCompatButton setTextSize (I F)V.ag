@@ -1,0 +1,28 @@
+# Landroidx/appcompat/widget/AppCompatButton;->setTextSize(I F)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:int
+# - v3:float
+#
+# - return:void
+
+setTextSize-BB@0x0 : [ setTextSize-BB@0x8 setTextSize-BB@0x10 ]
+	0       (00000000) sget-boolean         v0, Landroidx/appcompat/widget/AppCompatButton;->PLATFORM_SUPPORTS_AUTOSIZE Z
+	1       (00000004) if-eqz               v0, +6
+
+setTextSize-BB@0x8 : [ setTextSize-BB@0xe ]
+	2       (00000008) invoke-super         v1, v2, v3, Landroid/widget/Button;->setTextSize(I F)V
+
+setTextSize-BB@0xe : 
+	3       (0000000e) return-void          
+
+setTextSize-BB@0x10 : [ setTextSize-BB@0x18 setTextSize-BB@0xe ]
+	4       (00000010) iget-object          v0, v1, Landroidx/appcompat/widget/AppCompatButton;->mTextHelper Landroidx/appcompat/widget/AppCompatTextHelper;
+	5       (00000014) if-eqz               v0, -3
+
+setTextSize-BB@0x18 : [ setTextSize-BB@0xe ]
+	6       (00000018) iget-object          v0, v1, Landroidx/appcompat/widget/AppCompatButton;->mTextHelper Landroidx/appcompat/widget/AppCompatTextHelper;
+	7       (0000001c) invoke-virtual       v0, v2, v3, Landroidx/appcompat/widget/AppCompatTextHelper;->setTextSize(I F)V
+	8       (00000022) goto                 -a
+

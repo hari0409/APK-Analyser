@@ -1,0 +1,14 @@
+# Landroidx/appcompat/app/AppCompatDialog$1;->superDispatchKeyEvent(Landroid/view/KeyEvent;)Z [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:android.view.KeyEvent
+#
+# - return:boolean
+
+superDispatchKeyEvent-BB@0x0 : 
+	0       (00000000) iget-object          v0, v1, Landroidx/appcompat/app/AppCompatDialog$1;->this$0 Landroidx/appcompat/app/AppCompatDialog;
+	1       (00000004) invoke-virtual       v0, v2, Landroidx/appcompat/app/AppCompatDialog;->superDispatchKeyEvent(Landroid/view/KeyEvent;)Z
+	2       (0000000a) move-result          v0
+	3       (0000000c) return               v0
+

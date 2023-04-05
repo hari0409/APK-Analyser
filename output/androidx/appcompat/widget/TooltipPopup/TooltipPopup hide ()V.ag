@@ -1,0 +1,25 @@
+# Landroidx/appcompat/widget/TooltipPopup;->hide()V [access_flags=]
+#
+# Parameters:
+# local registers: v0...v3
+#
+# - return:void
+
+hide-BB@0x0 : [ hide-BB@0xc hide-BB@0xe ]
+	0       (00000000) invoke-virtual       v3, Landroidx/appcompat/widget/TooltipPopup;->isShowing()Z
+	1       (00000006) move-result          v1
+	2       (00000008) if-nez               v1, +3
+
+hide-BB@0xc : 
+	3       (0000000c) return-void          
+
+hide-BB@0xe : [ hide-BB@0xc ]
+	4       (0000000e) iget-object          v1, v3, Landroidx/appcompat/widget/TooltipPopup;->mContext Landroid/content/Context;
+	5       (00000012) const-string         v2, 'window'
+	6       (00000016) invoke-virtual       v1, v2, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
+	7       (0000001c) move-result-object   v0
+	8       (0000001e) check-cast           v0, Landroid/view/WindowManager;
+	9       (00000022) iget-object          v1, v3, Landroidx/appcompat/widget/TooltipPopup;->mContentView Landroid/view/View;
+	10      (00000026) invoke-interface     v0, v1, Landroid/view/WindowManager;->removeView(Landroid/view/View;)V
+	11      (0000002c) goto                 -10
+

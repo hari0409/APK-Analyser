@@ -1,0 +1,32 @@
+# Landroidx/appcompat/app/AppCompatDelegateImpl;->onKeyDownPanel(I Landroid/view/KeyEvent;)Z [access_flags=private]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:int
+# - v4:android.view.KeyEvent
+#
+# - return:boolean
+
+onKeyDownPanel-BB@0x0 : [ onKeyDownPanel-BB@0xc onKeyDownPanel-BB@0x28 ]
+	0       (00000000) invoke-virtual       v4, Landroid/view/KeyEvent;->getRepeatCount()I
+	1       (00000006) move-result          v1
+	2       (00000008) if-nez               v1, +10
+
+onKeyDownPanel-BB@0xc : [ onKeyDownPanel-BB@0x1e onKeyDownPanel-BB@0x28 ]
+	3       (0000000c) const/4              v1, 1
+	4       (0000000e) invoke-virtual       v2, v3, v1, Landroidx/appcompat/app/AppCompatDelegateImpl;->getPanelState(I Z)Landroidx/appcompat/app/AppCompatDelegateImpl$PanelFeatureState;
+	5       (00000014) move-result-object   v0
+	6       (00000016) iget-boolean         v1, v0, Landroidx/appcompat/app/AppCompatDelegateImpl$PanelFeatureState;->isOpen Z
+	7       (0000001a) if-nez               v1, +7
+
+onKeyDownPanel-BB@0x1e : [ onKeyDownPanel-BB@0x26 ]
+	8       (0000001e) invoke-direct        v2, v0, v4, Landroidx/appcompat/app/AppCompatDelegateImpl;->preparePanel(Landroidx/appcompat/app/AppCompatDelegateImpl$PanelFeatureState; Landroid/view/KeyEvent;)Z
+	9       (00000024) move-result          v1
+
+onKeyDownPanel-BB@0x26 : 
+	10      (00000026) return               v1
+
+onKeyDownPanel-BB@0x28 : [ onKeyDownPanel-BB@0x26 ]
+	11      (00000028) const/4              v1, 0
+	12      (0000002a) goto                 -2
+

@@ -1,0 +1,39 @@
+# Landroidx/appcompat/view/menu/MenuPopup;->shouldPreserveIconSpacing(Landroidx/appcompat/view/menu/MenuBuilder;)Z [access_flags=protected static]
+#
+# Parameters:
+# - local registers: v0...v4
+# - v5:androidx.appcompat.view.menu.MenuBuilder
+#
+# - return:boolean
+
+shouldPreserveIconSpacing-BB@0x0 : [ shouldPreserveIconSpacing-BB@0xc ]
+	0       (00000000) const/4              v3, 0
+	1       (00000002) invoke-virtual       v5, Landroidx/appcompat/view/menu/MenuBuilder;->size()I
+	2       (00000008) move-result          v1
+	3       (0000000a) const/4              v2, 0
+
+shouldPreserveIconSpacing-BB@0xc : [ shouldPreserveIconSpacing-BB@0x10 shouldPreserveIconSpacing-BB@0x32 ]
+	4       (0000000c) if-ge                v2, v1, +13
+
+shouldPreserveIconSpacing-BB@0x10 : [ shouldPreserveIconSpacing-BB@0x24 shouldPreserveIconSpacing-BB@0x34 ]
+	5       (00000010) invoke-virtual       v5, v2, Landroidx/appcompat/view/menu/MenuBuilder;->getItem(I)Landroid/view/MenuItem;
+	6       (00000016) move-result-object   v0
+	7       (00000018) invoke-interface     v0, Landroid/view/MenuItem;->isVisible()Z
+	8       (0000001e) move-result          v4
+	9       (00000020) if-eqz               v4, +a
+
+shouldPreserveIconSpacing-BB@0x24 : [ shouldPreserveIconSpacing-BB@0x30 shouldPreserveIconSpacing-BB@0x34 ]
+	10      (00000024) invoke-interface     v0, Landroid/view/MenuItem;->getIcon()Landroid/graphics/drawable/Drawable;
+	11      (0000002a) move-result-object   v4
+	12      (0000002c) if-eqz               v4, +4
+
+shouldPreserveIconSpacing-BB@0x30 : [ shouldPreserveIconSpacing-BB@0x32 ]
+	13      (00000030) const/4              v3, 1
+
+shouldPreserveIconSpacing-BB@0x32 : 
+	14      (00000032) return               v3
+
+shouldPreserveIconSpacing-BB@0x34 : [ shouldPreserveIconSpacing-BB@0xc ]
+	15      (00000034) add-int/lit8         v2, v2, 1
+	16      (00000038) goto                 -16
+

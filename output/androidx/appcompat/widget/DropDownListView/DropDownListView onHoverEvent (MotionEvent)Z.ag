@@ -1,0 +1,90 @@
+# Landroidx/appcompat/widget/DropDownListView;->onHoverEvent(Landroid/view/MotionEvent;)Z [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v7
+# - v8:android.view.MotionEvent
+#
+# - return:boolean
+
+onHoverEvent-BB@0x0 : [ onHoverEvent-BB@0xe onHoverEvent-BB@0x18 ]
+	0       (00000000) const/4              v6, -1
+	1       (00000002) sget                 v4, Landroid/os/Build$VERSION;->SDK_INT I
+	2       (00000006) const/16             v5, 26
+	3       (0000000a) if-ge                v4, v5, +7
+
+onHoverEvent-BB@0xe : [ onHoverEvent-BB@0x16 ]
+	4       (0000000e) invoke-super         v7, v8, Landroid/widget/ListView;->onHoverEvent(Landroid/view/MotionEvent;)Z
+	5       (00000014) move-result          v1
+
+onHoverEvent-BB@0x16 : 
+	6       (00000016) return               v1
+
+onHoverEvent-BB@0x18 : [ onHoverEvent-BB@0x28 onHoverEvent-BB@0x48 ]
+	7       (00000018) invoke-virtual       v8, Landroid/view/MotionEvent;->getActionMasked()I
+	8       (0000001e) move-result          v0
+	9       (00000020) const/16             v4, 10
+	10      (00000024) if-ne                v0, v4, +12
+
+onHoverEvent-BB@0x28 : [ onHoverEvent-BB@0x30 onHoverEvent-BB@0x48 ]
+	11      (00000028) iget-object          v4, v7, Landroidx/appcompat/widget/DropDownListView;->mResolveHoverRunnable Landroidx/appcompat/widget/DropDownListView$ResolveHoverRunnable;
+	12      (0000002c) if-nez               v4, +e
+
+onHoverEvent-BB@0x30 : [ onHoverEvent-BB@0x48 ]
+	13      (00000030) new-instance         v4, Landroidx/appcompat/widget/DropDownListView$ResolveHoverRunnable;
+	14      (00000034) invoke-direct        v4, v7, Landroidx/appcompat/widget/DropDownListView$ResolveHoverRunnable;-><init>(Landroidx/appcompat/widget/DropDownListView;)V
+	15      (0000003a) iput-object          v4, v7, Landroidx/appcompat/widget/DropDownListView;->mResolveHoverRunnable Landroidx/appcompat/widget/DropDownListView$ResolveHoverRunnable;
+	16      (0000003e) iget-object          v4, v7, Landroidx/appcompat/widget/DropDownListView;->mResolveHoverRunnable Landroidx/appcompat/widget/DropDownListView$ResolveHoverRunnable;
+	17      (00000042) invoke-virtual       v4, Landroidx/appcompat/widget/DropDownListView$ResolveHoverRunnable;->post()V
+
+onHoverEvent-BB@0x48 : [ onHoverEvent-BB@0x58 onHoverEvent-BB@0x5e ]
+	18      (00000048) invoke-super         v7, v8, Landroid/widget/ListView;->onHoverEvent(Landroid/view/MotionEvent;)Z
+	19      (0000004e) move-result          v1
+	20      (00000050) const/16             v4, 9
+	21      (00000054) if-eq                v0, v4, +5
+
+onHoverEvent-BB@0x58 : [ onHoverEvent-BB@0x5e onHoverEvent-BB@0xca ]
+	22      (00000058) const/4              v4, 7
+	23      (0000005a) if-ne                v0, v4, +38
+
+onHoverEvent-BB@0x5e : [ onHoverEvent-BB@0x7e onHoverEvent-BB@0x16 ]
+	24      (0000005e) invoke-virtual       v8, Landroid/view/MotionEvent;->getX()F
+	25      (00000064) move-result          v4
+	26      (00000066) float-to-int         v4, v4
+	27      (00000068) invoke-virtual       v8, Landroid/view/MotionEvent;->getY()F
+	28      (0000006e) move-result          v5
+	29      (00000070) float-to-int         v5, v5
+	30      (00000072) invoke-virtual       v7, v4, v5, Landroidx/appcompat/widget/DropDownListView;->pointToPosition(I I)I
+	31      (00000078) move-result          v3
+	32      (0000007a) if-eq                v3, v6, -32
+
+onHoverEvent-BB@0x7e : [ onHoverEvent-BB@0x8a onHoverEvent-BB@0x16 ]
+	33      (0000007e) invoke-virtual       v7, Landroidx/appcompat/widget/DropDownListView;->getSelectedItemPosition()I
+	34      (00000084) move-result          v4
+	35      (00000086) if-eq                v3, v4, -38
+
+onHoverEvent-BB@0x8a : [ onHoverEvent-BB@0xaa onHoverEvent-BB@0xc2 ]
+	36      (0000008a) invoke-virtual       v7, Landroidx/appcompat/widget/DropDownListView;->getFirstVisiblePosition()I
+	37      (00000090) move-result          v4
+	38      (00000092) sub-int              v4, v3, v4
+	39      (00000096) invoke-virtual       v7, v4, Landroidx/appcompat/widget/DropDownListView;->getChildAt(I)Landroid/view/View;
+	40      (0000009c) move-result-object   v2
+	41      (0000009e) invoke-virtual       v2, Landroid/view/View;->isEnabled()Z
+	42      (000000a4) move-result          v4
+	43      (000000a6) if-eqz               v4, +e
+
+onHoverEvent-BB@0xaa : [ onHoverEvent-BB@0xc2 ]
+	44      (000000aa) invoke-virtual       v2, Landroid/view/View;->getTop()I
+	45      (000000b0) move-result          v4
+	46      (000000b2) invoke-virtual       v7, Landroidx/appcompat/widget/DropDownListView;->getTop()I
+	47      (000000b8) move-result          v5
+	48      (000000ba) sub-int/2addr        v4, v5
+	49      (000000bc) invoke-virtual       v7, v3, v4, Landroidx/appcompat/widget/DropDownListView;->setSelectionFromTop(I I)V
+
+onHoverEvent-BB@0xc2 : [ onHoverEvent-BB@0x16 ]
+	50      (000000c2) invoke-direct        v7, Landroidx/appcompat/widget/DropDownListView;->updateSelectorStateCompat()V
+	51      (000000c8) goto                 -59
+
+onHoverEvent-BB@0xca : [ onHoverEvent-BB@0x16 ]
+	52      (000000ca) invoke-virtual       v7, v6, Landroidx/appcompat/widget/DropDownListView;->setSelection(I)V
+	53      (000000d0) goto                 -5d
+

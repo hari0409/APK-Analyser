@@ -1,0 +1,19 @@
+# Landroidx/appcompat/widget/ActivityChooserView$ActivityChooserViewAdapter;->setShowFooterView(Z)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:boolean
+#
+# - return:void
+
+setShowFooterView-BB@0x0 : [ setShowFooterView-BB@0x8 setShowFooterView-BB@0x12 ]
+	0       (00000000) iget-boolean         v0, v1, Landroidx/appcompat/widget/ActivityChooserView$ActivityChooserViewAdapter;->mShowFooterView Z
+	1       (00000004) if-eq                v0, v2, +7
+
+setShowFooterView-BB@0x8 : [ setShowFooterView-BB@0x12 ]
+	2       (00000008) iput-boolean         v2, v1, Landroidx/appcompat/widget/ActivityChooserView$ActivityChooserViewAdapter;->mShowFooterView Z
+	3       (0000000c) invoke-virtual       v1, Landroidx/appcompat/widget/ActivityChooserView$ActivityChooserViewAdapter;->notifyDataSetChanged()V
+
+setShowFooterView-BB@0x12 : 
+	4       (00000012) return-void          
+

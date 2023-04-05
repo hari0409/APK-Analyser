@@ -1,0 +1,25 @@
+# Lcom/afwsamples/testdpc/DeviceAdminReceiver;->onTransferAffiliatedProfileOwnershipComplete(Landroid/content/Context; Landroid/os/UserHandle;)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v4
+# - v5:android.content.Context
+# - v6:android.os.UserHandle
+#
+# - return:void
+
+onTransferAffiliatedProfileOwnershipComplete-BB@0x0 : 
+	0       (00000000) const-string         v0, 'DeviceAdminReceiver'
+	1       (00000004) const-string         v1, 'onTransferAffiliatedProfileOwnershipComplete'
+	2       (00000008) invoke-static        v0, v1, Landroid/util/Log;->i(Ljava/lang/String; Ljava/lang/String;)I
+	3       (0000000e) const                v0, 2131690314 # [1.9009668118612924e+38]
+	4       (00000014) const                v1, 2131690313 # [1.9009666090371964e+38]
+	5       (0000001a) const/4              v2, 1
+	6       (0000001c) new-array            v2, v2, [Ljava/lang/Object;
+	7       (00000020) const/4              v3, 0
+	8       (00000022) aput-object          v6, v2, v3
+	9       (00000026) invoke-virtual       v5, v1, v2, Landroid/content/Context;->getString(I [Ljava/lang/Object;)Ljava/lang/String;
+	10      (0000002c) move-result-object   v1
+	11      (0000002e) const/16             v2, 11
+	12      (00000032) invoke-static        v5, v0, v1, v2, Lcom/afwsamples/testdpc/common/NotificationUtil;->showNotification(Landroid/content/Context; I Ljava/lang/String; I)V
+	13      (00000038) return-void          
+

@@ -1,0 +1,19 @@
+# Landroidx/appcompat/view/menu/CascadingMenuPopup$3$1;-><init>(Landroidx/appcompat/view/menu/CascadingMenuPopup$3; Landroidx/appcompat/view/menu/CascadingMenuPopup$CascadingMenuInfo; Landroid/view/MenuItem; Landroidx/appcompat/view/menu/MenuBuilder;)V [access_flags=constructor]
+#
+# Parameters:
+# - local registers: v0...v0
+# - v1:androidx.appcompat.view.menu.CascadingMenuPopup$3
+# - v2:androidx.appcompat.view.menu.CascadingMenuPopup$CascadingMenuInfo
+# - v3:android.view.MenuItem
+# - v4:androidx.appcompat.view.menu.MenuBuilder
+#
+# - return:void
+
+<init>-BB@0x0 : 
+	0       (00000000) iput-object          v1, v0, Landroidx/appcompat/view/menu/CascadingMenuPopup$3$1;->this$1 Landroidx/appcompat/view/menu/CascadingMenuPopup$3;
+	1       (00000004) iput-object          v2, v0, Landroidx/appcompat/view/menu/CascadingMenuPopup$3$1;->val$nextInfo Landroidx/appcompat/view/menu/CascadingMenuPopup$CascadingMenuInfo;
+	2       (00000008) iput-object          v3, v0, Landroidx/appcompat/view/menu/CascadingMenuPopup$3$1;->val$item Landroid/view/MenuItem;
+	3       (0000000c) iput-object          v4, v0, Landroidx/appcompat/view/menu/CascadingMenuPopup$3$1;->val$menu Landroidx/appcompat/view/menu/MenuBuilder;
+	4       (00000010) invoke-direct        v0, Ljava/lang/Object;-><init>()V
+	5       (00000016) return-void          
+

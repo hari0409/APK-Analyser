@@ -1,0 +1,39 @@
+# Landroidx/multidex/MultiDex;->installSecondaryDexes(Ljava/lang/ClassLoader; Ljava/io/File; Ljava/util/List;)V [access_flags=private static]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:java.lang.ClassLoader
+# - v3:java.io.File
+# - v4:java.util.List
+#
+# - return:void
+
+installSecondaryDexes-BB@0x0 : [ installSecondaryDexes-BB@0xc installSecondaryDexes-BB@0x1e ]
+	0       (00000000) invoke-interface     v4, Ljava/util/List;->isEmpty()Z
+	1       (00000006) move-result          v0
+	2       (00000008) if-nez               v0, +b
+
+installSecondaryDexes-BB@0xc : [ installSecondaryDexes-BB@0x18 installSecondaryDexes-BB@0x20 ]
+	3       (0000000c) sget                 v0, Landroid/os/Build$VERSION;->SDK_INT I
+	4       (00000010) const/16             v1, 19
+	5       (00000014) if-lt                v0, v1, +6
+
+installSecondaryDexes-BB@0x18 : [ installSecondaryDexes-BB@0x1e ]
+	6       (00000018) invoke-static        v2, v4, v3, Landroidx/multidex/MultiDex$V19;->install(Ljava/lang/ClassLoader; Ljava/util/List; Ljava/io/File;)V
+
+installSecondaryDexes-BB@0x1e : 
+	7       (0000001e) return-void          
+
+installSecondaryDexes-BB@0x20 : [ installSecondaryDexes-BB@0x2c installSecondaryDexes-BB@0x34 ]
+	8       (00000020) sget                 v0, Landroid/os/Build$VERSION;->SDK_INT I
+	9       (00000024) const/16             v1, 14
+	10      (00000028) if-lt                v0, v1, +6
+
+installSecondaryDexes-BB@0x2c : [ installSecondaryDexes-BB@0x1e ]
+	11      (0000002c) invoke-static        v2, v4, Landroidx/multidex/MultiDex$V14;->install(Ljava/lang/ClassLoader; Ljava/util/List;)V
+	12      (00000032) goto                 -a
+
+installSecondaryDexes-BB@0x34 : [ installSecondaryDexes-BB@0x1e ]
+	13      (00000034) invoke-static        v2, v4, Landroidx/multidex/MultiDex$V4;->install(Ljava/lang/ClassLoader; Ljava/util/List;)V
+	14      (0000003a) goto                 -e
+

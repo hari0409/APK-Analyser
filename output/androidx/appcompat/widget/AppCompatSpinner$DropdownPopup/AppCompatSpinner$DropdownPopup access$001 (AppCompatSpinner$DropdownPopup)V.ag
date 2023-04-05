@@ -1,0 +1,12 @@
+# Landroidx/appcompat/widget/AppCompatSpinner$DropdownPopup;->access$001(Landroidx/appcompat/widget/AppCompatSpinner$DropdownPopup;)V [access_flags=static synthetic]
+#
+# Parameters:
+# - local registers: v0...v-1
+# - v0:androidx.appcompat.widget.AppCompatSpinner$DropdownPopup
+#
+# - return:void
+
+access$001-BB@0x0 : 
+	0       (00000000) invoke-super         v0, Landroidx/appcompat/widget/ListPopupWindow;->show()V
+	1       (00000006) return-void          
+

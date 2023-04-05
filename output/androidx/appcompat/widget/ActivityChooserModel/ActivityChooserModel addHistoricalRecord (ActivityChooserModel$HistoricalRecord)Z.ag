@@ -1,0 +1,25 @@
+# Landroidx/appcompat/widget/ActivityChooserModel;->addHistoricalRecord(Landroidx/appcompat/widget/ActivityChooserModel$HistoricalRecord;)Z [access_flags=private]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:androidx.appcompat.widget.ActivityChooserModel$HistoricalRecord
+#
+# - return:boolean
+
+addHistoricalRecord-BB@0x0 : [ addHistoricalRecord-BB@0x10 addHistoricalRecord-BB@0x2e ]
+	0       (00000000) iget-object          v1, v2, Landroidx/appcompat/widget/ActivityChooserModel;->mHistoricalRecords Ljava/util/List;
+	1       (00000004) invoke-interface     v1, v3, Ljava/util/List;->add(Ljava/lang/Object;)Z
+	2       (0000000a) move-result          v0
+	3       (0000000c) if-eqz               v0, +11
+
+addHistoricalRecord-BB@0x10 : [ addHistoricalRecord-BB@0x2e ]
+	4       (00000010) const/4              v1, 1
+	5       (00000012) iput-boolean         v1, v2, Landroidx/appcompat/widget/ActivityChooserModel;->mHistoricalRecordsChanged Z
+	6       (00000016) invoke-direct        v2, Landroidx/appcompat/widget/ActivityChooserModel;->pruneExcessiveHistoricalRecordsIfNeeded()V
+	7       (0000001c) invoke-direct        v2, Landroidx/appcompat/widget/ActivityChooserModel;->persistHistoricalDataIfNeeded()V
+	8       (00000022) invoke-direct        v2, Landroidx/appcompat/widget/ActivityChooserModel;->sortActivitiesIfNeeded()Z
+	9       (00000028) invoke-virtual       v2, Landroidx/appcompat/widget/ActivityChooserModel;->notifyChanged()V
+
+addHistoricalRecord-BB@0x2e : 
+	10      (0000002e) return               v0
+

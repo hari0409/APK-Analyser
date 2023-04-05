@@ -1,0 +1,37 @@
+# Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->isOrganizationOwnedDevice()Z [access_flags=private]
+#
+# Parameters:
+# local registers: v0...v2
+#
+# - return:boolean
+
+isOrganizationOwnedDevice-BB@0x0 : [ isOrganizationOwnedDevice-BB@0x14 isOrganizationOwnedDevice-BB@0x38 ]
+	0       (00000000) iget-object          v0, v2, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->mDevicePolicyManager Landroid/app/admin/DevicePolicyManager;
+	1       (00000004) iget-object          v1, v2, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->mPackageName Ljava/lang/String;
+	2       (00000008) invoke-virtual       v0, v1, Landroid/app/admin/DevicePolicyManager;->isDeviceOwnerApp(Ljava/lang/String;)Z
+	3       (0000000e) move-result          v0
+	4       (00000010) if-nez               v0, +14
+
+isOrganizationOwnedDevice-BB@0x14 : [ isOrganizationOwnedDevice-BB@0x28 isOrganizationOwnedDevice-BB@0x3c ]
+	5       (00000014) iget-object          v0, v2, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->mDevicePolicyManager Landroid/app/admin/DevicePolicyManager;
+	6       (00000018) iget-object          v1, v2, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->mPackageName Ljava/lang/String;
+	7       (0000001c) invoke-virtual       v0, v1, Landroid/app/admin/DevicePolicyManager;->isProfileOwnerApp(Ljava/lang/String;)Z
+	8       (00000022) move-result          v0
+	9       (00000024) if-eqz               v0, +c
+
+isOrganizationOwnedDevice-BB@0x28 : [ isOrganizationOwnedDevice-BB@0x38 isOrganizationOwnedDevice-BB@0x3c ]
+	10      (00000028) iget-object          v0, v2, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->mDevicePolicyManagerGateway Lcom/afwsamples/testdpc/DevicePolicyManagerGateway;
+	11      (0000002c) invoke-interface     v0, Lcom/afwsamples/testdpc/DevicePolicyManagerGateway;->isOrganizationOwnedDeviceWithManagedProfile()Z
+	12      (00000032) move-result          v0
+	13      (00000034) if-eqz               v0, +4
+
+isOrganizationOwnedDevice-BB@0x38 : [ isOrganizationOwnedDevice-BB@0x3a ]
+	14      (00000038) const/4              v0, 1
+
+isOrganizationOwnedDevice-BB@0x3a : 
+	15      (0000003a) return               v0
+
+isOrganizationOwnedDevice-BB@0x3c : [ isOrganizationOwnedDevice-BB@0x3a ]
+	16      (0000003c) const/4              v0, 0
+	17      (0000003e) goto                 -2
+

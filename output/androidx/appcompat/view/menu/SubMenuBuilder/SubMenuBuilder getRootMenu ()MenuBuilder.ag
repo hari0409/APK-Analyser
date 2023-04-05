@@ -1,0 +1,13 @@
+# Landroidx/appcompat/view/menu/SubMenuBuilder;->getRootMenu()Landroidx/appcompat/view/menu/MenuBuilder; [access_flags=public]
+#
+# Parameters:
+# local registers: v0...v1
+#
+# - return:androidx.appcompat.view.menu.MenuBuilder
+
+getRootMenu-BB@0x0 : 
+	0       (00000000) iget-object          v0, v1, Landroidx/appcompat/view/menu/SubMenuBuilder;->mParentMenu Landroidx/appcompat/view/menu/MenuBuilder;
+	1       (00000004) invoke-virtual       v0, Landroidx/appcompat/view/menu/MenuBuilder;->getRootMenu()Landroidx/appcompat/view/menu/MenuBuilder;
+	2       (0000000a) move-result-object   v0
+	3       (0000000c) return-object        v0
+

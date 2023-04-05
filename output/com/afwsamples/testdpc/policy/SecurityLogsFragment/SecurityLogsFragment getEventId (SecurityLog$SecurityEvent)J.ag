@@ -1,0 +1,13 @@
+# Lcom/afwsamples/testdpc/policy/SecurityLogsFragment;->getEventId(Landroid/app/admin/SecurityLog$SecurityEvent;)J [access_flags=private]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:android.app.admin.SecurityLog$SecurityEvent
+#
+# - return:long
+
+getEventId-BB@0x0 : 
+	0       (00000000) invoke-virtual       v3, Landroid/app/admin/SecurityLog$SecurityEvent;->getId()J
+	1       (00000006) move-result-wide     v0
+	2       (00000008) return-wide          v0
+

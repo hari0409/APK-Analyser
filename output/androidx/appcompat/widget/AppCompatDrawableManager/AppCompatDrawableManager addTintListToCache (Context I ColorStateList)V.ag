@@ -1,0 +1,36 @@
+# Landroidx/appcompat/widget/AppCompatDrawableManager;->addTintListToCache(Landroid/content/Context; I Landroid/content/res/ColorStateList;)V [access_flags=private]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:android.content.Context
+# - v4:int
+# - v5:android.content.res.ColorStateList
+#
+# - return:void
+
+addTintListToCache-BB@0x0 : [ addTintListToCache-BB@0x8 addTintListToCache-BB@0x16 ]
+	0       (00000000) iget-object          v1, v2, Landroidx/appcompat/widget/AppCompatDrawableManager;->mTintLists Ljava/util/WeakHashMap;
+	1       (00000004) if-nez               v1, +9
+
+addTintListToCache-BB@0x8 : [ addTintListToCache-BB@0x16 ]
+	2       (00000008) new-instance         v1, Ljava/util/WeakHashMap;
+	3       (0000000c) invoke-direct        v1, Ljava/util/WeakHashMap;-><init>()V
+	4       (00000012) iput-object          v1, v2, Landroidx/appcompat/widget/AppCompatDrawableManager;->mTintLists Ljava/util/WeakHashMap;
+
+addTintListToCache-BB@0x16 : [ addTintListToCache-BB@0x2a addTintListToCache-BB@0x3e ]
+	5       (00000016) iget-object          v1, v2, Landroidx/appcompat/widget/AppCompatDrawableManager;->mTintLists Ljava/util/WeakHashMap;
+	6       (0000001a) invoke-virtual       v1, v3, Ljava/util/WeakHashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
+	7       (00000020) move-result-object   v0
+	8       (00000022) check-cast           v0, Landroidx/collection/SparseArrayCompat;
+	9       (00000026) if-nez               v0, +c
+
+addTintListToCache-BB@0x2a : [ addTintListToCache-BB@0x3e ]
+	10      (0000002a) new-instance         v0, Landroidx/collection/SparseArrayCompat;
+	11      (0000002e) invoke-direct        v0, Landroidx/collection/SparseArrayCompat;-><init>()V
+	12      (00000034) iget-object          v1, v2, Landroidx/appcompat/widget/AppCompatDrawableManager;->mTintLists Ljava/util/WeakHashMap;
+	13      (00000038) invoke-virtual       v1, v3, v0, Ljava/util/WeakHashMap;->put(Ljava/lang/Object; Ljava/lang/Object;)Ljava/lang/Object;
+
+addTintListToCache-BB@0x3e : 
+	14      (0000003e) invoke-virtual       v0, v4, v5, Landroidx/collection/SparseArrayCompat;->append(I Ljava/lang/Object;)V
+	15      (00000044) return-void          
+

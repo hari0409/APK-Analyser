@@ -1,0 +1,42 @@
+# Lorg/checkerframework/checker/nullness/NullnessUtils;->checkIfArray(Ljava/lang/Object;)V [access_flags=private static]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:java.lang.Object
+#
+# - return:void
+
+checkIfArray-BB@0x0 : [ checkIfArray-BB@0x8 checkIfArray-BB@0x1c ]
+	0       (00000000) sget-boolean         v1, Lorg/checkerframework/checker/nullness/NullnessUtils;->$assertionsDisabled Z
+	1       (00000004) if-nez               v1, +c
+
+checkIfArray-BB@0x8 : [ checkIfArray-BB@0xc checkIfArray-BB@0x1c ]
+	2       (00000008) if-nez               v3, +a
+
+checkIfArray-BB@0xc : 
+	3       (0000000c) new-instance         v1, Ljava/lang/AssertionError;
+	4       (00000010) const-string         v2, 'Misuse of checkIfArray: called with a null argument'
+	5       (00000014) invoke-direct        v1, v2, Ljava/lang/AssertionError;-><init>(Ljava/lang/Object;)V
+	6       (0000001a) throw                v1
+
+checkIfArray-BB@0x1c : [ checkIfArray-BB@0x30 checkIfArray-BB@0x3c ]
+	7       (0000001c) invoke-virtual       v3, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+	8       (00000022) move-result-object   v1
+	9       (00000024) invoke-virtual       v1, Ljava/lang/Class;->getComponentType()Ljava/lang/Class;
+	10      (0000002a) move-result-object   v0
+	11      (0000002c) if-eqz               v0, +8
+
+checkIfArray-BB@0x30 : [ checkIfArray-BB@0x3c checkIfArray-BB@0x3e ]
+	12      (00000030) invoke-virtual       v0, Ljava/lang/Class;->isPrimitive()Z
+	13      (00000036) move-result          v1
+	14      (00000038) if-eqz               v1, +3
+
+checkIfArray-BB@0x3c : 
+	15      (0000003c) return-void          
+
+checkIfArray-BB@0x3e : [ checkIfArray-BB@0x3c ]
+	16      (0000003e) check-cast           v3, [Ljava/lang/Object;
+	17      (00000042) check-cast           v3, [Ljava/lang/Object;
+	18      (00000046) invoke-static        v3, Lorg/checkerframework/checker/nullness/NullnessUtils;->castNonNullArray([Ljava/lang/Object;)[Ljava/lang/Object;
+	19      (0000004c) goto                 -8
+

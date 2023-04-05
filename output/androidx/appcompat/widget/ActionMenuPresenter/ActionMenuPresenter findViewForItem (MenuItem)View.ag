@@ -1,0 +1,49 @@
+# Landroidx/appcompat/widget/ActionMenuPresenter;->findViewForItem(Landroid/view/MenuItem;)Landroid/view/View; [access_flags=private]
+#
+# Parameters:
+# - local registers: v0...v6
+# - v7:android.view.MenuItem
+#
+# - return:android.view.View
+
+findViewForItem-BB@0x0 : [ findViewForItem-BB@0xe findViewForItem-BB@0x12 ]
+	0       (00000000) const/4              v5, 0
+	1       (00000002) iget-object          v3, v6, Landroidx/appcompat/widget/ActionMenuPresenter;->mMenuView Landroidx/appcompat/view/menu/MenuView;
+	2       (00000006) check-cast           v3, Landroid/view/ViewGroup;
+	3       (0000000a) if-nez               v3, +4
+
+findViewForItem-BB@0xe : [ findViewForItem-BB@0x10 ]
+	4       (0000000e) move-object          v0, v5
+
+findViewForItem-BB@0x10 : 
+	5       (00000010) return-object        v0
+
+findViewForItem-BB@0x12 : [ findViewForItem-BB@0x1c ]
+	6       (00000012) invoke-virtual       v3, Landroid/view/ViewGroup;->getChildCount()I
+	7       (00000018) move-result          v1
+	8       (0000001a) const/4              v2, 0
+
+findViewForItem-BB@0x1c : [ findViewForItem-BB@0x20 findViewForItem-BB@0x48 ]
+	9       (0000001c) if-ge                v2, v1, +16
+
+findViewForItem-BB@0x20 : [ findViewForItem-BB@0x30 findViewForItem-BB@0x42 ]
+	10      (00000020) invoke-virtual       v3, v2, Landroid/view/ViewGroup;->getChildAt(I)Landroid/view/View;
+	11      (00000026) move-result-object   v0
+	12      (00000028) instance-of          v4, v0, Landroidx/appcompat/view/menu/MenuView$ItemView;
+	13      (0000002c) if-eqz               v4, +b
+
+findViewForItem-BB@0x30 : [ findViewForItem-BB@0x42 findViewForItem-BB@0x10 ]
+	14      (00000030) move-object          v4, v0
+	15      (00000032) check-cast           v4, Landroidx/appcompat/view/menu/MenuView$ItemView;
+	16      (00000036) invoke-interface     v4, Landroidx/appcompat/view/menu/MenuView$ItemView;->getItemData()Landroidx/appcompat/view/menu/MenuItemImpl;
+	17      (0000003c) move-result-object   v4
+	18      (0000003e) if-eq                v4, v7, -17
+
+findViewForItem-BB@0x42 : [ findViewForItem-BB@0x1c ]
+	19      (00000042) add-int/lit8         v2, v2, 1
+	20      (00000046) goto                 -15
+
+findViewForItem-BB@0x48 : [ findViewForItem-BB@0x10 ]
+	21      (00000048) move-object          v0, v5
+	22      (0000004a) goto                 -1d
+

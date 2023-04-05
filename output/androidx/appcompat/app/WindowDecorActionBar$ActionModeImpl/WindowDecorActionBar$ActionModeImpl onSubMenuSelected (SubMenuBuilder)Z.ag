@@ -1,0 +1,33 @@
+# Landroidx/appcompat/app/WindowDecorActionBar$ActionModeImpl;->onSubMenuSelected(Landroidx/appcompat/view/menu/SubMenuBuilder;)Z [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v3
+# - v4:androidx.appcompat.view.menu.SubMenuBuilder
+#
+# - return:boolean
+
+onSubMenuSelected-BB@0x0 : [ onSubMenuSelected-BB@0xa onSubMenuSelected-BB@0xe ]
+	0       (00000000) const/4              v0, 1
+	1       (00000002) iget-object          v1, v3, Landroidx/appcompat/app/WindowDecorActionBar$ActionModeImpl;->mCallback Landroidx/appcompat/view/ActionMode$Callback;
+	2       (00000006) if-nez               v1, +4
+
+onSubMenuSelected-BB@0xa : [ onSubMenuSelected-BB@0xc ]
+	3       (0000000a) const/4              v0, 0
+
+onSubMenuSelected-BB@0xc : 
+	4       (0000000c) return               v0
+
+onSubMenuSelected-BB@0xe : [ onSubMenuSelected-BB@0x1a onSubMenuSelected-BB@0xc ]
+	5       (0000000e) invoke-virtual       v4, Landroidx/appcompat/view/menu/SubMenuBuilder;->hasVisibleItems()Z
+	6       (00000014) move-result          v1
+	7       (00000016) if-eqz               v1, -5
+
+onSubMenuSelected-BB@0x1a : [ onSubMenuSelected-BB@0xc ]
+	8       (0000001a) new-instance         v1, Landroidx/appcompat/view/menu/MenuPopupHelper;
+	9       (0000001e) iget-object          v2, v3, Landroidx/appcompat/app/WindowDecorActionBar$ActionModeImpl;->this$0 Landroidx/appcompat/app/WindowDecorActionBar;
+	10      (00000022) invoke-virtual       v2, Landroidx/appcompat/app/WindowDecorActionBar;->getThemedContext()Landroid/content/Context;
+	11      (00000028) move-result-object   v2
+	12      (0000002a) invoke-direct        v1, v2, v4, Landroidx/appcompat/view/menu/MenuPopupHelper;-><init>(Landroid/content/Context; Landroidx/appcompat/view/menu/MenuBuilder;)V
+	13      (00000030) invoke-virtual       v1, Landroidx/appcompat/view/menu/MenuPopupHelper;->show()V
+	14      (00000036) goto                 -15
+

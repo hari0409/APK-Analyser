@@ -1,0 +1,39 @@
+# Lcom/afwsamples/testdpc/common/IntentOrIntentFilterFragment;->resetSpinners(I)V [access_flags=private]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:int
+#
+# - return:void
+
+resetSpinners-BB@0x0 : [ D:resetSpinners-BB@0x8 0:resetSpinners-BB@0xa 1:resetSpinners-BB@0x16 2:resetSpinners-BB@0x22 3:resetSpinners-BB@0x2e ]
+	0       (00000000) const/4              v1, 0
+	1       (00000002) packed-switch        v3, +1d (0x3c)
+
+resetSpinners-BB@0x8 : 
+	2       (00000008) return-void          
+
+resetSpinners-BB@0xa : [ resetSpinners-BB@0x8 ]
+	3       (0000000a) iget-object          v0, v2, Lcom/afwsamples/testdpc/common/IntentOrIntentFilterFragment;->mActionsSpinner Landroid/widget/Spinner;
+	4       (0000000e) invoke-virtual       v0, v1, Landroid/widget/Spinner;->setSelection(I)V
+	5       (00000014) goto                 -6
+
+resetSpinners-BB@0x16 : [ resetSpinners-BB@0x8 ]
+	6       (00000016) iget-object          v0, v2, Lcom/afwsamples/testdpc/common/IntentOrIntentFilterFragment;->mCategoriesSpinner Landroid/widget/Spinner;
+	7       (0000001a) invoke-virtual       v0, v1, Landroid/widget/Spinner;->setSelection(I)V
+	8       (00000020) goto                 -c
+
+resetSpinners-BB@0x22 : [ resetSpinners-BB@0x8 ]
+	9       (00000022) iget-object          v0, v2, Lcom/afwsamples/testdpc/common/IntentOrIntentFilterFragment;->mDataSchemesSpinner Landroid/widget/Spinner;
+	10      (00000026) invoke-virtual       v0, v1, Landroid/widget/Spinner;->setSelection(I)V
+	11      (0000002c) goto                 -12
+
+resetSpinners-BB@0x2e : [ resetSpinners-BB@0x8 ]
+	12      (0000002e) iget-object          v0, v2, Lcom/afwsamples/testdpc/common/IntentOrIntentFilterFragment;->mDataTypesSpinner Landroid/widget/Spinner;
+	13      (00000032) invoke-virtual       v0, v1, Landroid/widget/Spinner;->setSelection(I)V
+	14      (00000038) goto                 -18
+
+resetSpinners-BB@0x3a : 
+	15      (0000003a) nop                  
+	16      (0000003c) packed-switch-payload 0 1 2 3
+

@@ -1,0 +1,50 @@
+# Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->onErrorOrFailureShowToast(Ljava/lang/String; Ljava/lang/Exception; I I)V [access_flags=private]
+#
+# Parameters:
+# - local registers: v0...v4
+# - v5:java.lang.String
+# - v6:java.lang.Exception
+# - v7:int
+# - v8:int
+#
+# - return:void
+
+onErrorOrFailureShowToast-BB@0x0 : [ onErrorOrFailureShowToast-BB@0xa onErrorOrFailureShowToast-BB@0x46 ]
+	0       (00000000) const/4              v3, 0
+	1       (00000002) instance-of          v0, v6, Lcom/afwsamples/testdpc/DevicePolicyManagerGateway$FailedOperationException;
+	2       (00000006) if-eqz               v0, +20
+
+onErrorOrFailureShowToast-BB@0xa : [ onErrorOrFailureShowToast-BB@0x44 ]
+	3       (0000000a) const-string         v0, 'PolicyManagement'
+	4       (0000000e) new-instance         v1, Ljava/lang/StringBuilder;
+	5       (00000012) invoke-direct        v1, Ljava/lang/StringBuilder;-><init>()V
+	6       (00000018) invoke-virtual       v1, v5, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	7       (0000001e) move-result-object   v1
+	8       (00000020) const-string         v2, ' returned false'
+	9       (00000024) invoke-virtual       v1, v2, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	10      (0000002a) move-result-object   v1
+	11      (0000002c) invoke-virtual       v1, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+	12      (00000032) move-result-object   v1
+	13      (00000034) invoke-static        v0, v1, Landroid/util/Log;->e(Ljava/lang/String; Ljava/lang/String;)I
+	14      (0000003a) new-array            v0, v3, [Ljava/lang/Object;
+	15      (0000003e) invoke-direct        v4, v7, v0, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->showToast(I [Ljava/lang/Object;)V
+
+onErrorOrFailureShowToast-BB@0x44 : 
+	16      (00000044) return-void          
+
+onErrorOrFailureShowToast-BB@0x46 : [ onErrorOrFailureShowToast-BB@0x44 ]
+	17      (00000046) const-string         v0, 'PolicyManagement'
+	18      (0000004a) new-instance         v1, Ljava/lang/StringBuilder;
+	19      (0000004e) invoke-direct        v1, Ljava/lang/StringBuilder;-><init>()V
+	20      (00000054) const-string         v2, 'Exception when calling '
+	21      (00000058) invoke-virtual       v1, v2, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	22      (0000005e) move-result-object   v1
+	23      (00000060) invoke-virtual       v1, v5, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	24      (00000066) move-result-object   v1
+	25      (00000068) invoke-virtual       v1, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+	26      (0000006e) move-result-object   v1
+	27      (00000070) invoke-static        v0, v1, v6, Landroid/util/Log;->e(Ljava/lang/String; Ljava/lang/String; Ljava/lang/Throwable;)I
+	28      (00000076) new-array            v0, v3, [Ljava/lang/Object;
+	29      (0000007a) invoke-direct        v4, v8, v0, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->showToast(I [Ljava/lang/Object;)V
+	30      (00000080) goto                 -1e
+

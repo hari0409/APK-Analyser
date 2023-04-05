@@ -1,0 +1,14 @@
+# Lcom/afwsamples/testdpc/policy/networking/AlwaysOnVpnFragment$$Lambda$2;->test(Ljava/lang/Object;)Z [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:java.lang.Object
+#
+# - return:boolean
+
+test-BB@0x0 : 
+	0       (00000000) check-cast           v2, Ljava/lang/String;
+	1       (00000004) invoke-static        v2, Lcom/afwsamples/testdpc/policy/networking/AlwaysOnVpnFragment;->lambda$setAlwaysOnVpnPackageQPlus$193$AlwaysOnVpnFragment(Ljava/lang/String;)Z
+	2       (0000000a) move-result          v0
+	3       (0000000c) return               v0
+

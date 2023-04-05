@@ -1,0 +1,13 @@
+# Landroidx/appcompat/widget/SearchView;->getInputType()I [access_flags=public]
+#
+# Parameters:
+# local registers: v0...v1
+#
+# - return:int
+
+getInputType-BB@0x0 : 
+	0       (00000000) iget-object          v0, v1, Landroidx/appcompat/widget/SearchView;->mSearchSrcTextView Landroidx/appcompat/widget/SearchView$SearchAutoComplete;
+	1       (00000004) invoke-virtual       v0, Landroidx/appcompat/widget/SearchView$SearchAutoComplete;->getInputType()I
+	2       (0000000a) move-result          v0
+	3       (0000000c) return               v0
+

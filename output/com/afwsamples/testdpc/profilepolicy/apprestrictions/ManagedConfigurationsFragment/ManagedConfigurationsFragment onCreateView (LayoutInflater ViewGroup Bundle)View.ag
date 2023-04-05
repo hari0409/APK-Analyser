@@ -1,0 +1,20 @@
+# Lcom/afwsamples/testdpc/profilepolicy/apprestrictions/ManagedConfigurationsFragment;->onCreateView(Landroid/view/LayoutInflater; Landroid/view/ViewGroup; Landroid/os/Bundle;)Landroid/view/View; [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v3
+# - v4:android.view.LayoutInflater
+# - v5:android.view.ViewGroup
+# - v6:android.os.Bundle
+#
+# - return:android.view.View
+
+onCreateView-BB@0x0 : 
+	0       (00000000) invoke-super         v3, v4, v5, v6, Lcom/afwsamples/testdpc/common/ManageAppFragment;->onCreateView(Landroid/view/LayoutInflater; Landroid/view/ViewGroup; Landroid/os/Bundle;)Landroid/view/View;
+	1       (00000006) move-result-object   v1
+	2       (00000008) const                v2, 2131296491 # [1.8210900178879033e+38]
+	3       (0000000e) invoke-virtual       v1, v2, Landroid/view/View;->findViewById(I)Landroid/view/View;
+	4       (00000014) move-result-object   v0
+	5       (00000016) const/4              v2, 0
+	6       (00000018) invoke-virtual       v0, v2, Landroid/view/View;->setVisibility(I)V
+	7       (0000001e) return-object        v1
+

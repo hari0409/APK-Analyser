@@ -1,0 +1,32 @@
+# Landroidx/appcompat/graphics/drawable/DrawableContainer$DrawableContainerState;->mutate()V [access_flags=]
+#
+# Parameters:
+# local registers: v0...v4
+#
+# - return:void
+
+mutate-BB@0x0 : [ mutate-BB@0xa ]
+	0       (00000000) iget                 v0, v4, Landroidx/appcompat/graphics/drawable/DrawableContainer$DrawableContainerState;->mNumChildren I
+	1       (00000004) iget-object          v1, v4, Landroidx/appcompat/graphics/drawable/DrawableContainer$DrawableContainerState;->mDrawables [Landroid/graphics/drawable/Drawable;
+	2       (00000008) const/4              v2, 0
+
+mutate-BB@0xa : [ mutate-BB@0xe mutate-BB@0x26 ]
+	3       (0000000a) if-ge                v2, v0, +e
+
+mutate-BB@0xe : [ mutate-BB@0x16 mutate-BB@0x20 ]
+	4       (0000000e) aget-object          v3, v1, v2
+	5       (00000012) if-eqz               v3, +7
+
+mutate-BB@0x16 : [ mutate-BB@0x20 ]
+	6       (00000016) aget-object          v3, v1, v2
+	7       (0000001a) invoke-virtual       v3, Landroid/graphics/drawable/Drawable;->mutate()Landroid/graphics/drawable/Drawable;
+
+mutate-BB@0x20 : [ mutate-BB@0xa ]
+	8       (00000020) add-int/lit8         v2, v2, 1
+	9       (00000024) goto                 -d
+
+mutate-BB@0x26 : 
+	10      (00000026) const/4              v3, 1
+	11      (00000028) iput-boolean         v3, v4, Landroidx/appcompat/graphics/drawable/DrawableContainer$DrawableContainerState;->mMutated Z
+	12      (0000002c) return-void          
+

@@ -1,0 +1,64 @@
+# Landroidx/appcompat/app/ResourcesFlusher;->flushMarshmallows(Landroid/content/res/Resources;)V [access_flags=private static]
+#
+# Parameters:
+# - local registers: v0...v4
+# - v5:android.content.res.Resources
+#
+# - return:void
+
+flushMarshmallows-BB@0x0 : [ flushMarshmallows-BB@0xa flushMarshmallows-BB@0x2e ]
+	0       (00000000) const/4              v4, 1
+	1       (00000002) sget-boolean         v2, Landroidx/appcompat/app/ResourcesFlusher;->sDrawableCacheFieldFetched Z
+	2       (00000006) if-nez               v2, +14
+
+flushMarshmallows-BB@0xa : [ flushMarshmallows-BB@0x2a ]
+	3       (0000000a) const-class          v2, Landroid/content/res/Resources;
+	4       (0000000e) const-string         v3, 'mDrawableCache'
+	5       (00000012) invoke-virtual       v2, v3, Ljava/lang/Class;->getDeclaredField(Ljava/lang/String;)Ljava/lang/reflect/Field;
+	6       (00000018) move-result-object   v2
+	7       (0000001a) sput-object          v2, Landroidx/appcompat/app/ResourcesFlusher;->sDrawableCacheField Ljava/lang/reflect/Field;
+	8       (0000001e) sget-object          v2, Landroidx/appcompat/app/ResourcesFlusher;->sDrawableCacheField Ljava/lang/reflect/Field;
+	9       (00000022) const/4              v3, 1
+	10      (00000024) invoke-virtual       v2, v3, Ljava/lang/reflect/Field;->setAccessible(Z)V
+	a:29
+	(Ljava/lang/NoSuchFieldException; -> 4a flushMarshmallows-BB@0x4a)
+
+flushMarshmallows-BB@0x2a : [ flushMarshmallows-BB@0x2e ]
+	11      (0000002a) sput-boolean         v4, Landroidx/appcompat/app/ResourcesFlusher;->sDrawableCacheFieldFetched Z
+
+flushMarshmallows-BB@0x2e : [ flushMarshmallows-BB@0x38 flushMarshmallows-BB@0x44 ]
+	12      (0000002e) const/4              v0, 0
+	13      (00000030) sget-object          v2, Landroidx/appcompat/app/ResourcesFlusher;->sDrawableCacheField Ljava/lang/reflect/Field;
+	14      (00000034) if-eqz               v2, +8
+
+flushMarshmallows-BB@0x38 : [ flushMarshmallows-BB@0x44 ]
+	15      (00000038) sget-object          v2, Landroidx/appcompat/app/ResourcesFlusher;->sDrawableCacheField Ljava/lang/reflect/Field;
+	16      (0000003c) invoke-virtual       v2, v5, Ljava/lang/reflect/Field;->get(Ljava/lang/Object;)Ljava/lang/Object;
+	17      (00000042) move-result-object   v0
+	38:41
+	(Ljava/lang/IllegalAccessException; -> 5c flushMarshmallows-BB@0x5c)
+
+flushMarshmallows-BB@0x44 : [ flushMarshmallows-BB@0x48 flushMarshmallows-BB@0x6e ]
+	18      (00000044) if-nez               v0, +15
+
+flushMarshmallows-BB@0x48 : 
+	19      (00000048) return-void          
+
+flushMarshmallows-BB@0x4a : [ flushMarshmallows-BB@0x2a ]
+	20      (0000004a) move-exception       v1
+	21      (0000004c) const-string         v2, 'ResourcesFlusher'
+	22      (00000050) const-string         v3, 'Could not retrieve Resources#mDrawableCache field'
+	23      (00000054) invoke-static        v2, v3, v1, Landroid/util/Log;->e(Ljava/lang/String; Ljava/lang/String; Ljava/lang/Throwable;)I
+	24      (0000005a) goto                 -18
+
+flushMarshmallows-BB@0x5c : [ flushMarshmallows-BB@0x44 ]
+	25      (0000005c) move-exception       v1
+	26      (0000005e) const-string         v2, 'ResourcesFlusher'
+	27      (00000062) const-string         v3, 'Could not retrieve value from Resources#mDrawableCache'
+	28      (00000066) invoke-static        v2, v3, v1, Landroid/util/Log;->e(Ljava/lang/String; Ljava/lang/String; Ljava/lang/Throwable;)I
+	29      (0000006c) goto                 -14
+
+flushMarshmallows-BB@0x6e : [ flushMarshmallows-BB@0x48 ]
+	30      (0000006e) invoke-static        v0, Landroidx/appcompat/app/ResourcesFlusher;->flushThemedResourcesCache(Ljava/lang/Object;)V
+	31      (00000074) goto                 -16
+

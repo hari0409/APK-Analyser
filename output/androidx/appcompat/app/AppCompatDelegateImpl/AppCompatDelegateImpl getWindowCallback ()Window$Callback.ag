@@ -1,0 +1,13 @@
+# Landroidx/appcompat/app/AppCompatDelegateImpl;->getWindowCallback()Landroid/view/Window$Callback; [access_flags=final]
+#
+# Parameters:
+# local registers: v0...v1
+#
+# - return:android.view.Window$Callback
+
+getWindowCallback-BB@0x0 : 
+	0       (00000000) iget-object          v0, v1, Landroidx/appcompat/app/AppCompatDelegateImpl;->mWindow Landroid/view/Window;
+	1       (00000004) invoke-virtual       v0, Landroid/view/Window;->getCallback()Landroid/view/Window$Callback;
+	2       (0000000a) move-result-object   v0
+	3       (0000000c) return-object        v0
+

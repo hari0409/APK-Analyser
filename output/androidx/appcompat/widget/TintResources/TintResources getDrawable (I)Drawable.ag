@@ -1,0 +1,27 @@
+# Landroidx/appcompat/widget/TintResources;->getDrawable(I)Landroid/graphics/drawable/Drawable; [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v3
+# - v4:int
+#
+# - return:android.graphics.drawable.Drawable
+
+getDrawable-BB@0x0 : [ getDrawable-BB@0x1c getDrawable-BB@0x2c ]
+	0       (00000000) invoke-super         v3, v4, Landroidx/appcompat/widget/ResourcesWrapper;->getDrawable(I)Landroid/graphics/drawable/Drawable;
+	1       (00000006) move-result-object   v1
+	2       (00000008) iget-object          v2, v3, Landroidx/appcompat/widget/TintResources;->mContextRef Ljava/lang/ref/WeakReference;
+	3       (0000000c) invoke-virtual       v2, Ljava/lang/ref/WeakReference;->get()Ljava/lang/Object;
+	4       (00000012) move-result-object   v0
+	5       (00000014) check-cast           v0, Landroid/content/Context;
+	6       (00000018) if-eqz               v1, +a
+
+getDrawable-BB@0x1c : [ getDrawable-BB@0x20 getDrawable-BB@0x2c ]
+	7       (0000001c) if-eqz               v0, +8
+
+getDrawable-BB@0x20 : [ getDrawable-BB@0x2c ]
+	8       (00000020) invoke-static        Landroidx/appcompat/widget/AppCompatDrawableManager;->get()Landroidx/appcompat/widget/AppCompatDrawableManager;
+	9       (00000026) invoke-static        v0, v4, v1, Landroidx/appcompat/widget/AppCompatDrawableManager;->tintDrawableUsingColorFilter(Landroid/content/Context; I Landroid/graphics/drawable/Drawable;)Z
+
+getDrawable-BB@0x2c : 
+	10      (0000002c) return-object        v1
+

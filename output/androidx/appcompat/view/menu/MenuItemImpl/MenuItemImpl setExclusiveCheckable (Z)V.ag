@@ -1,0 +1,25 @@
+# Landroidx/appcompat/view/menu/MenuItemImpl;->setExclusiveCheckable(Z)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:boolean
+#
+# - return:void
+
+setExclusiveCheckable-BB@0x0 : [ setExclusiveCheckable-BB@0xc setExclusiveCheckable-BB@0x16 ]
+	0       (00000000) iget                 v0, v2, Landroidx/appcompat/view/menu/MenuItemImpl;->mFlags I
+	1       (00000004) and-int/lit8         v1, v0, -5
+	2       (00000008) if-eqz               v3, +7
+
+setExclusiveCheckable-BB@0xc : [ setExclusiveCheckable-BB@0xe ]
+	3       (0000000c) const/4              v0, 4
+
+setExclusiveCheckable-BB@0xe : 
+	4       (0000000e) or-int/2addr         v0, v1
+	5       (00000010) iput                 v0, v2, Landroidx/appcompat/view/menu/MenuItemImpl;->mFlags I
+	6       (00000014) return-void          
+
+setExclusiveCheckable-BB@0x16 : [ setExclusiveCheckable-BB@0xe ]
+	7       (00000016) const/4              v0, 0
+	8       (00000018) goto                 -5
+

@@ -1,0 +1,41 @@
+# Landroidx/appcompat/widget/ActivityChooserModel;->get(Landroid/content/Context; Ljava/lang/String;)Landroidx/appcompat/widget/ActivityChooserModel; [access_flags=public static]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:android.content.Context
+# - v4:java.lang.String
+#
+# - return:androidx.appcompat.widget.ActivityChooserModel
+
+get-BB@0x0 : [ get-BB@0x6 ]
+	0       (00000000) sget-object          v2, Landroidx/appcompat/widget/ActivityChooserModel;->sRegistryLock Ljava/lang/Object;
+	1       (00000004) monitor-enter        v2
+
+get-BB@0x6 : [ get-BB@0x1a get-BB@0x2e ]
+	2       (00000006) sget-object          v1, Landroidx/appcompat/widget/ActivityChooserModel;->sDataModelRegistry Ljava/util/Map;
+	3       (0000000a) invoke-interface     v1, v4, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
+	4       (00000010) move-result-object   v0
+	5       (00000012) check-cast           v0, Landroidx/appcompat/widget/ActivityChooserModel;
+	6       (00000016) if-nez               v0, +c
+	6:35
+	(Ljava/lang/Throwable; -> 32 get-BB@0x32)
+
+get-BB@0x1a : [ get-BB@0x2e ]
+	7       (0000001a) new-instance         v0, Landroidx/appcompat/widget/ActivityChooserModel;
+	8       (0000001e) invoke-direct        v0, v3, v4, Landroidx/appcompat/widget/ActivityChooserModel;-><init>(Landroid/content/Context; Ljava/lang/String;)V
+	9       (00000024) sget-object          v1, Landroidx/appcompat/widget/ActivityChooserModel;->sDataModelRegistry Ljava/util/Map;
+	10      (00000028) invoke-interface     v1, v4, v0, Ljava/util/Map;->put(Ljava/lang/Object; Ljava/lang/Object;)Ljava/lang/Object;
+	6:35
+	(Ljava/lang/Throwable; -> 32 get-BB@0x32)
+
+get-BB@0x2e : 
+	11      (0000002e) monitor-exit         v2
+	12      (00000030) return-object        v0
+	6:35
+	(Ljava/lang/Throwable; -> 32 get-BB@0x32)
+
+get-BB@0x32 : 
+	13      (00000032) move-exception       v1
+	14      (00000034) monitor-exit         v2
+	15      (00000036) throw                v1
+

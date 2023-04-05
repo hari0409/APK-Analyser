@@ -1,0 +1,14 @@
+# Lcom/afwsamples/testdpc/policy/networking/AlwaysOnVpnFragment$$Lambda$0;->onCheckedChanged(Landroid/widget/CompoundButton; Z)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:android.widget.CompoundButton
+# - v3:boolean
+#
+# - return:void
+
+onCheckedChanged-BB@0x0 : 
+	0       (00000000) iget-object          v0, v1, Lcom/afwsamples/testdpc/policy/networking/AlwaysOnVpnFragment$$Lambda$0;->arg$1 Lcom/afwsamples/testdpc/policy/networking/AlwaysOnVpnFragment;
+	1       (00000004) invoke-virtual       v0, v2, v3, Lcom/afwsamples/testdpc/policy/networking/AlwaysOnVpnFragment;->lambda$onCreateView$192$AlwaysOnVpnFragment(Landroid/widget/CompoundButton; Z)V
+	2       (0000000a) return-void          
+

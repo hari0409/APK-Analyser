@@ -1,0 +1,30 @@
+# Landroidx/appcompat/graphics/drawable/DrawableContainer;->resolveDensity(Landroid/content/res/Resources; I)I [access_flags=static]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:android.content.res.Resources
+# - v3:int
+#
+# - return:int
+
+resolveDensity-BB@0x0 : [ resolveDensity-BB@0x4 resolveDensity-BB@0x10 ]
+	0       (00000000) if-nez               v2, +8
+
+resolveDensity-BB@0x4 : [ resolveDensity-BB@0x6 ]
+	1       (00000004) move                 v0, v3
+
+resolveDensity-BB@0x6 : [ resolveDensity-BB@0xa resolveDensity-BB@0xe ]
+	2       (00000006) if-nez               v0, +4
+
+resolveDensity-BB@0xa : [ resolveDensity-BB@0xe ]
+	3       (0000000a) const/16             v0, 160
+
+resolveDensity-BB@0xe : 
+	4       (0000000e) return               v0
+
+resolveDensity-BB@0x10 : [ resolveDensity-BB@0x6 ]
+	5       (00000010) invoke-virtual       v2, Landroid/content/res/Resources;->getDisplayMetrics()Landroid/util/DisplayMetrics;
+	6       (00000016) move-result-object   v1
+	7       (00000018) iget                 v0, v1, Landroid/util/DisplayMetrics;->densityDpi I
+	8       (0000001c) goto                 -b
+

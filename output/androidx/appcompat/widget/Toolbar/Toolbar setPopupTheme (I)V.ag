@@ -1,0 +1,32 @@
+# Landroidx/appcompat/widget/Toolbar;->setPopupTheme(I)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:int
+#
+# - return:void
+
+setPopupTheme-BB@0x0 : [ setPopupTheme-BB@0x8 setPopupTheme-BB@0x1c ]
+	0       (00000000) iget                 v0, v2, Landroidx/appcompat/widget/Toolbar;->mPopupTheme I
+	1       (00000004) if-eq                v0, v3, +c
+
+setPopupTheme-BB@0x8 : [ setPopupTheme-BB@0x10 setPopupTheme-BB@0x1e ]
+	2       (00000008) iput                 v3, v2, Landroidx/appcompat/widget/Toolbar;->mPopupTheme I
+	3       (0000000c) if-nez               v3, +9
+
+setPopupTheme-BB@0x10 : [ setPopupTheme-BB@0x1c ]
+	4       (00000010) invoke-virtual       v2, Landroidx/appcompat/widget/Toolbar;->getContext()Landroid/content/Context;
+	5       (00000016) move-result-object   v0
+	6       (00000018) iput-object          v0, v2, Landroidx/appcompat/widget/Toolbar;->mPopupContext Landroid/content/Context;
+
+setPopupTheme-BB@0x1c : 
+	7       (0000001c) return-void          
+
+setPopupTheme-BB@0x1e : [ setPopupTheme-BB@0x1c ]
+	8       (0000001e) new-instance         v0, Landroid/view/ContextThemeWrapper;
+	9       (00000022) invoke-virtual       v2, Landroidx/appcompat/widget/Toolbar;->getContext()Landroid/content/Context;
+	10      (00000028) move-result-object   v1
+	11      (0000002a) invoke-direct        v0, v1, v3, Landroid/view/ContextThemeWrapper;-><init>(Landroid/content/Context; I)V
+	12      (00000030) iput-object          v0, v2, Landroidx/appcompat/widget/Toolbar;->mPopupContext Landroid/content/Context;
+	13      (00000034) goto                 -c
+

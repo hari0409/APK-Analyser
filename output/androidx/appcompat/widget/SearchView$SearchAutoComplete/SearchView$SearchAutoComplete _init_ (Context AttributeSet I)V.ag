@@ -1,0 +1,20 @@
+# Landroidx/appcompat/widget/SearchView$SearchAutoComplete;-><init>(Landroid/content/Context; Landroid/util/AttributeSet; I)V [access_flags=public constructor]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:android.content.Context
+# - v3:android.util.AttributeSet
+# - v4:int
+#
+# - return:void
+
+<init>-BB@0x0 : 
+	0       (00000000) invoke-direct        v1, v2, v3, v4, Landroidx/appcompat/widget/AppCompatAutoCompleteTextView;-><init>(Landroid/content/Context; Landroid/util/AttributeSet; I)V
+	1       (00000006) new-instance         v0, Landroidx/appcompat/widget/SearchView$SearchAutoComplete$1;
+	2       (0000000a) invoke-direct        v0, v1, Landroidx/appcompat/widget/SearchView$SearchAutoComplete$1;-><init>(Landroidx/appcompat/widget/SearchView$SearchAutoComplete;)V
+	3       (00000010) iput-object          v0, v1, Landroidx/appcompat/widget/SearchView$SearchAutoComplete;->mRunShowSoftInputIfNecessary Ljava/lang/Runnable;
+	4       (00000014) invoke-virtual       v1, Landroidx/appcompat/widget/SearchView$SearchAutoComplete;->getThreshold()I
+	5       (0000001a) move-result          v0
+	6       (0000001c) iput                 v0, v1, Landroidx/appcompat/widget/SearchView$SearchAutoComplete;->mThreshold I
+	7       (00000020) return-void          
+

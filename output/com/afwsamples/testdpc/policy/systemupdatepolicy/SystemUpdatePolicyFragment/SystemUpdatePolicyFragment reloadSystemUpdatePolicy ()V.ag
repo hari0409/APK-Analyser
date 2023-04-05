@@ -1,0 +1,127 @@
+# Lcom/afwsamples/testdpc/policy/systemupdatepolicy/SystemUpdatePolicyFragment;->reloadSystemUpdatePolicy()V [access_flags=private]
+#
+# Parameters:
+# local registers: v0...v10
+#
+# - return:void
+
+reloadSystemUpdatePolicy-BB@0x0 : [ reloadSystemUpdatePolicy-BB@0x18 reloadSystemUpdatePolicy-BB@0x50 ]
+	0       (00000000) const/4              v7, 4
+	1       (00000002) const/4              v9, 0
+	2       (00000004) iget-object          v5, v10, Lcom/afwsamples/testdpc/policy/systemupdatepolicy/SystemUpdatePolicyFragment;->mDpm Landroid/app/admin/DevicePolicyManager;
+	3       (00000008) invoke-virtual       v5, Landroid/app/admin/DevicePolicyManager;->getSystemUpdatePolicy()Landroid/app/admin/SystemUpdatePolicy;
+	4       (0000000e) move-result-object   v3
+	5       (00000010) const-string         v4, 'Unknown'
+	6       (00000014) if-nez               v3, +1e
+
+reloadSystemUpdatePolicy-BB@0x18 : [ reloadSystemUpdatePolicy-BB@0x44 ]
+	7       (00000018) const-string         v4, 'None'
+	8       (0000001c) iget-object          v5, v10, Lcom/afwsamples/testdpc/policy/systemupdatepolicy/SystemUpdatePolicyFragment;->mSystemUpdatePolicySelection Landroid/widget/RadioGroup;
+	9       (00000020) const                v6, 2131296684 # [1.8211291629384384e+38]
+	10      (00000026) invoke-virtual       v5, v6, Landroid/widget/RadioGroup;->check(I)V
+	11      (0000002c) iget-object          v5, v10, Lcom/afwsamples/testdpc/policy/systemupdatepolicy/SystemUpdatePolicyFragment;->mMaintenanceWindowDetails Landroid/widget/LinearLayout;
+	12      (00000030) invoke-virtual       v5, v7, Landroid/widget/LinearLayout;->setVisibility(I)V
+	13      (00000036) iget-object          v5, v10, Lcom/afwsamples/testdpc/policy/systemupdatepolicy/SystemUpdatePolicyFragment;->mFreezePeriodPanel Landroid/widget/LinearLayout;
+	14      (0000003a) const/16             v6, 8
+	15      (0000003e) invoke-virtual       v5, v6, Landroid/widget/LinearLayout;->setVisibility(I)V
+
+reloadSystemUpdatePolicy-BB@0x44 : 
+	16      (00000044) iget-object          v5, v10, Lcom/afwsamples/testdpc/policy/systemupdatepolicy/SystemUpdatePolicyFragment;->mCurrentSystemUpdatePolicy Landroid/widget/EditText;
+	17      (00000048) invoke-virtual       v5, v4, Landroid/widget/EditText;->setText(Ljava/lang/CharSequence;)V
+	18      (0000004e) return-void          
+
+reloadSystemUpdatePolicy-BB@0x50 : [ D:reloadSystemUpdatePolicy-BB@0x5e 1:reloadSystemUpdatePolicy-BB@0xc2 2:reloadSystemUpdatePolicy-BB@0xe2 3:reloadSystemUpdatePolicy-BB@0x150 ]
+	19      (00000050) invoke-virtual       v3, Landroid/app/admin/SystemUpdatePolicy;->getPolicyType()I
+	20      (00000056) move-result          v5
+	21      (00000058) packed-switch        v5, +9a (0x18c)
+
+reloadSystemUpdatePolicy-BB@0x5e : [ reloadSystemUpdatePolicy-BB@0x6a reloadSystemUpdatePolicy-BB@0x44 ]
+	22      (0000005e) sget                 v5, Lcom/afwsamples/testdpc/common/Util;->SDK_INT I
+	23      (00000062) const/16             v6, 28
+	24      (00000066) if-lt                v5, v6, -11
+
+reloadSystemUpdatePolicy-BB@0x6a : [ reloadSystemUpdatePolicy-BB@0x84 ]
+	25      (0000006a) invoke-virtual       v3, Landroid/app/admin/SystemUpdatePolicy;->getFreezePeriods()Ljava/util/List;
+	26      (00000070) move-result-object   v0
+	27      (00000072) iget-object          v5, v10, Lcom/afwsamples/testdpc/policy/systemupdatepolicy/SystemUpdatePolicyFragment;->mFreezePeriods Ljava/util/ArrayList;
+	28      (00000076) invoke-virtual       v5, Ljava/util/ArrayList;->clear()V
+	29      (0000007c) invoke-interface     v0, Ljava/util/List;->iterator()Ljava/util/Iterator;
+	30      (00000082) move-result-object   v5
+
+reloadSystemUpdatePolicy-BB@0x84 : [ reloadSystemUpdatePolicy-BB@0x90 reloadSystemUpdatePolicy-BB@0x172 ]
+	31      (00000084) invoke-interface     v5, Ljava/util/Iterator;->hasNext()Z
+	32      (0000008a) move-result          v6
+	33      (0000008c) if-eqz               v6, +73
+
+reloadSystemUpdatePolicy-BB@0x90 : [ reloadSystemUpdatePolicy-BB@0x84 ]
+	34      (00000090) invoke-interface     v5, Ljava/util/Iterator;->next()Ljava/lang/Object;
+	35      (00000096) move-result-object   v2
+	36      (00000098) check-cast           v2, Landroid/app/admin/FreezePeriod;
+	37      (0000009c) new-instance         v1, Lcom/afwsamples/testdpc/policy/systemupdatepolicy/SystemUpdatePolicyFragment$Period;
+	38      (000000a0) invoke-virtual       v2, Landroid/app/admin/FreezePeriod;->getStart()Ljava/time/MonthDay;
+	39      (000000a6) move-result-object   v6
+	40      (000000a8) invoke-virtual       v2, Landroid/app/admin/FreezePeriod;->getEnd()Ljava/time/MonthDay;
+	41      (000000ae) move-result-object   v7
+	42      (000000b0) invoke-direct        v1, v6, v7, Lcom/afwsamples/testdpc/policy/systemupdatepolicy/SystemUpdatePolicyFragment$Period;-><init>(Ljava/time/MonthDay; Ljava/time/MonthDay;)V
+	43      (000000b6) iget-object          v6, v10, Lcom/afwsamples/testdpc/policy/systemupdatepolicy/SystemUpdatePolicyFragment;->mFreezePeriods Ljava/util/ArrayList;
+	44      (000000ba) invoke-virtual       v6, v1, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+	45      (000000c0) goto                 -1e
+
+reloadSystemUpdatePolicy-BB@0xc2 : [ reloadSystemUpdatePolicy-BB@0x5e ]
+	46      (000000c2) const-string         v4, 'Automatic'
+	47      (000000c6) iget-object          v5, v10, Lcom/afwsamples/testdpc/policy/systemupdatepolicy/SystemUpdatePolicyFragment;->mSystemUpdatePolicySelection Landroid/widget/RadioGroup;
+	48      (000000ca) const                v6, 2131296679 # [1.8211281488179582e+38]
+	49      (000000d0) invoke-virtual       v5, v6, Landroid/widget/RadioGroup;->check(I)V
+	50      (000000d6) iget-object          v5, v10, Lcom/afwsamples/testdpc/policy/systemupdatepolicy/SystemUpdatePolicyFragment;->mMaintenanceWindowDetails Landroid/widget/LinearLayout;
+	51      (000000da) invoke-virtual       v5, v7, Landroid/widget/LinearLayout;->setVisibility(I)V
+	52      (000000e0) goto                 -41
+
+reloadSystemUpdatePolicy-BB@0xe2 : [ reloadSystemUpdatePolicy-BB@0x5e ]
+	53      (000000e2) invoke-virtual       v3, Landroid/app/admin/SystemUpdatePolicy;->getInstallWindowStart()I
+	54      (000000e8) move-result          v5
+	55      (000000ea) iput                 v5, v10, Lcom/afwsamples/testdpc/policy/systemupdatepolicy/SystemUpdatePolicyFragment;->mMaintenanceStart I
+	56      (000000ee) invoke-virtual       v3, Landroid/app/admin/SystemUpdatePolicy;->getInstallWindowEnd()I
+	57      (000000f4) move-result          v5
+	58      (000000f6) iput                 v5, v10, Lcom/afwsamples/testdpc/policy/systemupdatepolicy/SystemUpdatePolicyFragment;->mMaintenanceEnd I
+	59      (000000fa) const-string         v5, 'Windowed: %s-%s'
+	60      (000000fe) const/4              v6, 2
+	61      (00000100) new-array            v6, v6, [Ljava/lang/Object;
+	62      (00000104) iget                 v7, v10, Lcom/afwsamples/testdpc/policy/systemupdatepolicy/SystemUpdatePolicyFragment;->mMaintenanceStart I
+	63      (00000108) invoke-direct        v10, v7, Lcom/afwsamples/testdpc/policy/systemupdatepolicy/SystemUpdatePolicyFragment;->formatMinutes(I)Ljava/lang/String;
+	64      (0000010e) move-result-object   v7
+	65      (00000110) aput-object          v7, v6, v9
+	66      (00000114) const/4              v7, 1
+	67      (00000116) iget                 v8, v10, Lcom/afwsamples/testdpc/policy/systemupdatepolicy/SystemUpdatePolicyFragment;->mMaintenanceEnd I
+	68      (0000011a) invoke-direct        v10, v8, Lcom/afwsamples/testdpc/policy/systemupdatepolicy/SystemUpdatePolicyFragment;->formatMinutes(I)Ljava/lang/String;
+	69      (00000120) move-result-object   v8
+	70      (00000122) aput-object          v8, v6, v7
+	71      (00000126) invoke-static        v5, v6, Ljava/lang/String;->format(Ljava/lang/String; [Ljava/lang/Object;)Ljava/lang/String;
+	72      (0000012c) move-result-object   v4
+	73      (0000012e) invoke-direct        v10, Lcom/afwsamples/testdpc/policy/systemupdatepolicy/SystemUpdatePolicyFragment;->updateMaintenanceWindowDisplay()V
+	74      (00000134) iget-object          v5, v10, Lcom/afwsamples/testdpc/policy/systemupdatepolicy/SystemUpdatePolicyFragment;->mSystemUpdatePolicySelection Landroid/widget/RadioGroup;
+	75      (00000138) const                v6, 2131296678 # [1.821127945993862e+38]
+	76      (0000013e) invoke-virtual       v5, v6, Landroid/widget/RadioGroup;->check(I)V
+	77      (00000144) iget-object          v5, v10, Lcom/afwsamples/testdpc/policy/systemupdatepolicy/SystemUpdatePolicyFragment;->mMaintenanceWindowDetails Landroid/widget/LinearLayout;
+	78      (00000148) invoke-virtual       v5, v9, Landroid/widget/LinearLayout;->setVisibility(I)V
+	79      (0000014e) goto                 -78
+
+reloadSystemUpdatePolicy-BB@0x150 : [ reloadSystemUpdatePolicy-BB@0x5e ]
+	80      (00000150) const-string         v4, 'Postpone'
+	81      (00000154) iget-object          v5, v10, Lcom/afwsamples/testdpc/policy/systemupdatepolicy/SystemUpdatePolicyFragment;->mSystemUpdatePolicySelection Landroid/widget/RadioGroup;
+	82      (00000158) const                v6, 2131296685 # [1.8211293657625344e+38]
+	83      (0000015e) invoke-virtual       v5, v6, Landroid/widget/RadioGroup;->check(I)V
+	84      (00000164) iget-object          v5, v10, Lcom/afwsamples/testdpc/policy/systemupdatepolicy/SystemUpdatePolicyFragment;->mMaintenanceWindowDetails Landroid/widget/LinearLayout;
+	85      (00000168) invoke-virtual       v5, v7, Landroid/widget/LinearLayout;->setVisibility(I)V
+	86      (0000016e) goto/16              -88
+
+reloadSystemUpdatePolicy-BB@0x172 : [ reloadSystemUpdatePolicy-BB@0x44 ]
+	87      (00000172) iget-object          v5, v10, Lcom/afwsamples/testdpc/policy/systemupdatepolicy/SystemUpdatePolicyFragment;->mFreezePeriodAdapter Lcom/afwsamples/testdpc/policy/systemupdatepolicy/SystemUpdatePolicyFragment$FreezePeriodAdapter;
+	88      (00000176) invoke-virtual       v5, Lcom/afwsamples/testdpc/policy/systemupdatepolicy/SystemUpdatePolicyFragment$FreezePeriodAdapter;->notifyDataSetChanged()V
+	89      (0000017c) iget-object          v5, v10, Lcom/afwsamples/testdpc/policy/systemupdatepolicy/SystemUpdatePolicyFragment;->mFreezePeriodPanel Landroid/widget/LinearLayout;
+	90      (00000180) invoke-virtual       v5, v9, Landroid/widget/LinearLayout;->setVisibility(I)V
+	91      (00000186) goto/16              -a1
+
+reloadSystemUpdatePolicy-BB@0x18a : 
+	92      (0000018a) nop                  
+	93      (0000018c) packed-switch-payload 1 2 3
+

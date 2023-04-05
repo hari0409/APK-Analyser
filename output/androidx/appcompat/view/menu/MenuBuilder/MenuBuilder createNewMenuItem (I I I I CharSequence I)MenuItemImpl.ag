@@ -1,0 +1,25 @@
+# Landroidx/appcompat/view/menu/MenuBuilder;->createNewMenuItem(I I I I Ljava/lang/CharSequence; I)Landroidx/appcompat/view/menu/MenuItemImpl; [access_flags=private]
+#
+# Parameters:
+# - local registers: v0...v8
+# - v9:int
+# - v10:int
+# - v11:int
+# - v12:int
+# - v13:java.lang.CharSequence
+# - v14:int
+#
+# - return:androidx.appcompat.view.menu.MenuItemImpl
+
+createNewMenuItem-BB@0x0 : 
+	0       (00000000) new-instance         v0, Landroidx/appcompat/view/menu/MenuItemImpl;
+	1       (00000004) move-object          v1, v8
+	2       (00000006) move                 v2, v9
+	3       (00000008) move                 v3, v10
+	4       (0000000a) move                 v4, v11
+	5       (0000000c) move                 v5, v12
+	6       (0000000e) move-object          v6, v13
+	7       (00000010) move                 v7, v14
+	8       (00000012) invoke-direct/range  v0 ... v7, Landroidx/appcompat/view/menu/MenuItemImpl;-><init>(Landroidx/appcompat/view/menu/MenuBuilder; I I I I Ljava/lang/CharSequence; I)V
+	9       (00000018) return-object        v0
+

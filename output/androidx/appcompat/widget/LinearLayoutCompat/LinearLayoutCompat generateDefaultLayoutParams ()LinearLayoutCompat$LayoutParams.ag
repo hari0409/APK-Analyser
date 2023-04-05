@@ -1,0 +1,34 @@
+# Landroidx/appcompat/widget/LinearLayoutCompat;->generateDefaultLayoutParams()Landroidx/appcompat/widget/LinearLayoutCompat$LayoutParams; [access_flags=protected]
+#
+# Parameters:
+# local registers: v0...v3
+#
+# - return:androidx.appcompat.widget.LinearLayoutCompat$LayoutParams
+
+generateDefaultLayoutParams-BB@0x0 : [ generateDefaultLayoutParams-BB@0xa generateDefaultLayoutParams-BB@0x16 ]
+	0       (00000000) const/4              v2, -2
+	1       (00000002) iget                 v0, v3, Landroidx/appcompat/widget/LinearLayoutCompat;->mOrientation I
+	2       (00000006) if-nez               v0, +8
+
+generateDefaultLayoutParams-BB@0xa : [ generateDefaultLayoutParams-BB@0x14 ]
+	3       (0000000a) new-instance         v0, Landroidx/appcompat/widget/LinearLayoutCompat$LayoutParams;
+	4       (0000000e) invoke-direct        v0, v2, v2, Landroidx/appcompat/widget/LinearLayoutCompat$LayoutParams;-><init>(I I)V
+
+generateDefaultLayoutParams-BB@0x14 : 
+	5       (00000014) return-object        v0
+
+generateDefaultLayoutParams-BB@0x16 : [ generateDefaultLayoutParams-BB@0x20 generateDefaultLayoutParams-BB@0x2e ]
+	6       (00000016) iget                 v0, v3, Landroidx/appcompat/widget/LinearLayoutCompat;->mOrientation I
+	7       (0000001a) const/4              v1, 1
+	8       (0000001c) if-ne                v0, v1, +9
+
+generateDefaultLayoutParams-BB@0x20 : [ generateDefaultLayoutParams-BB@0x14 ]
+	9       (00000020) new-instance         v0, Landroidx/appcompat/widget/LinearLayoutCompat$LayoutParams;
+	10      (00000024) const/4              v1, -1
+	11      (00000026) invoke-direct        v0, v1, v2, Landroidx/appcompat/widget/LinearLayoutCompat$LayoutParams;-><init>(I I)V
+	12      (0000002c) goto                 -c
+
+generateDefaultLayoutParams-BB@0x2e : [ generateDefaultLayoutParams-BB@0x14 ]
+	13      (0000002e) const/4              v0, 0
+	14      (00000030) goto                 -e
+

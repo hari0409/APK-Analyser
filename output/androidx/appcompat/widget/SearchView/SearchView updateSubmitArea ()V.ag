@@ -1,0 +1,33 @@
+# Landroidx/appcompat/widget/SearchView;->updateSubmitArea()V [access_flags=private]
+#
+# Parameters:
+# local registers: v0...v2
+#
+# - return:void
+
+updateSubmitArea-BB@0x0 : [ updateSubmitArea-BB@0x10 updateSubmitArea-BB@0x32 ]
+	0       (00000000) const/16             v0, 8
+	1       (00000004) invoke-direct        v2, Landroidx/appcompat/widget/SearchView;->isSubmitAreaEnabled()Z
+	2       (0000000a) move-result          v1
+	3       (0000000c) if-eqz               v1, +13
+
+updateSubmitArea-BB@0x10 : [ updateSubmitArea-BB@0x20 updateSubmitArea-BB@0x30 ]
+	4       (00000010) iget-object          v1, v2, Landroidx/appcompat/widget/SearchView;->mGoButton Landroid/widget/ImageView;
+	5       (00000014) invoke-virtual       v1, Landroid/widget/ImageView;->getVisibility()I
+	6       (0000001a) move-result          v1
+	7       (0000001c) if-eqz               v1, +a
+
+updateSubmitArea-BB@0x20 : [ updateSubmitArea-BB@0x30 updateSubmitArea-BB@0x32 ]
+	8       (00000020) iget-object          v1, v2, Landroidx/appcompat/widget/SearchView;->mVoiceButton Landroid/widget/ImageView;
+	9       (00000024) invoke-virtual       v1, Landroid/widget/ImageView;->getVisibility()I
+	10      (0000002a) move-result          v1
+	11      (0000002c) if-nez               v1, +3
+
+updateSubmitArea-BB@0x30 : [ updateSubmitArea-BB@0x32 ]
+	12      (00000030) const/4              v0, 0
+
+updateSubmitArea-BB@0x32 : 
+	13      (00000032) iget-object          v1, v2, Landroidx/appcompat/widget/SearchView;->mSubmitArea Landroid/view/View;
+	14      (00000036) invoke-virtual       v1, v0, Landroid/view/View;->setVisibility(I)V
+	15      (0000003c) return-void          
+

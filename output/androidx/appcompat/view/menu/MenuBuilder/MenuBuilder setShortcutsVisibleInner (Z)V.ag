@@ -1,0 +1,36 @@
+# Landroidx/appcompat/view/menu/MenuBuilder;->setShortcutsVisibleInner(Z)V [access_flags=private]
+#
+# Parameters:
+# - local registers: v0...v3
+# - v4:boolean
+#
+# - return:void
+
+setShortcutsVisibleInner-BB@0x0 : [ setShortcutsVisibleInner-BB@0x6 setShortcutsVisibleInner-BB@0x3c ]
+	0       (00000000) const/4              v0, 1
+	1       (00000002) if-eqz               v4, +1d
+
+setShortcutsVisibleInner-BB@0x6 : [ setShortcutsVisibleInner-BB@0x1a setShortcutsVisibleInner-BB@0x3c ]
+	2       (00000006) iget-object          v1, v3, Landroidx/appcompat/view/menu/MenuBuilder;->mResources Landroid/content/res/Resources;
+	3       (0000000a) invoke-virtual       v1, Landroid/content/res/Resources;->getConfiguration()Landroid/content/res/Configuration;
+	4       (00000010) move-result-object   v1
+	5       (00000012) iget                 v1, v1, Landroid/content/res/Configuration;->keyboard I
+	6       (00000016) if-eq                v1, v0, +13
+
+setShortcutsVisibleInner-BB@0x1a : [ setShortcutsVisibleInner-BB@0x36 setShortcutsVisibleInner-BB@0x3c ]
+	7       (0000001a) iget-object          v1, v3, Landroidx/appcompat/view/menu/MenuBuilder;->mContext Landroid/content/Context;
+	8       (0000001e) invoke-static        v1, Landroid/view/ViewConfiguration;->get(Landroid/content/Context;)Landroid/view/ViewConfiguration;
+	9       (00000024) move-result-object   v1
+	10      (00000026) iget-object          v2, v3, Landroidx/appcompat/view/menu/MenuBuilder;->mContext Landroid/content/Context;
+	11      (0000002a) invoke-static        v1, v2, Landroidx/core/view/ViewConfigurationCompat;->shouldShowMenuShortcutsWhenKeyboardPresent(Landroid/view/ViewConfiguration; Landroid/content/Context;)Z
+	12      (00000030) move-result          v1
+	13      (00000032) if-eqz               v1, +5
+
+setShortcutsVisibleInner-BB@0x36 : 
+	14      (00000036) iput-boolean         v0, v3, Landroidx/appcompat/view/menu/MenuBuilder;->mShortcutsVisible Z
+	15      (0000003a) return-void          
+
+setShortcutsVisibleInner-BB@0x3c : [ setShortcutsVisibleInner-BB@0x36 ]
+	16      (0000003c) const/4              v0, 0
+	17      (0000003e) goto                 -4
+

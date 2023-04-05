@@ -1,0 +1,37 @@
+# Lcom/afwsamples/testdpc/policy/PolicyManagementFragment$8;->onClick(Landroid/content/DialogInterface; I)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v5
+# - v6:android.content.DialogInterface
+# - v7:int
+#
+# - return:void
+
+onClick-BB@0x0 : [ onClick-BB@0x30 onClick-BB@0x4a ]
+	0       (00000000) iget-object          v2, v5, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment$8;->val$input Landroid/widget/EditText;
+	1       (00000004) invoke-virtual       v2, Landroid/widget/EditText;->getText()Landroid/text/Editable;
+	2       (0000000a) move-result-object   v2
+	3       (0000000c) invoke-virtual       v2, Ljava/lang/Object;->toString()Ljava/lang/String;
+	4       (00000012) move-result-object   v1
+	5       (00000014) iget-object          v2, v5, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment$8;->this$0 Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;
+	6       (00000018) invoke-static        v2, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->access$300(Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;)Lcom/afwsamples/testdpc/DevicePolicyManagerGateway;
+	7       (0000001e) move-result-object   v2
+	8       (00000020) invoke-interface     v2, v1, Lcom/afwsamples/testdpc/DevicePolicyManagerGateway;->isLockTaskPermitted(Ljava/lang/String;)Z
+	9       (00000026) move-result          v0
+	10      (00000028) iget-object          v3, v5, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment$8;->this$0 Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;
+	11      (0000002c) if-eqz               v0, +f
+
+onClick-BB@0x30 : [ onClick-BB@0x36 ]
+	12      (00000030) const                v2, 2131689617 # [1.900825443466355e+38]
+
+onClick-BB@0x36 : 
+	13      (00000036) const/4              v4, 0
+	14      (00000038) new-array            v4, v4, [Ljava/lang/Object;
+	15      (0000003c) invoke-static        v3, v2, v4, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->access$200(Lcom/afwsamples/testdpc/policy/PolicyManagementFragment; I [Ljava/lang/Object;)V
+	16      (00000042) invoke-interface     v6, Landroid/content/DialogInterface;->dismiss()V
+	17      (00000048) return-void          
+
+onClick-BB@0x4a : [ onClick-BB@0x36 ]
+	18      (0000004a) const                v2, 2131689616 # [1.900825240642259e+38]
+	19      (00000050) goto                 -d
+

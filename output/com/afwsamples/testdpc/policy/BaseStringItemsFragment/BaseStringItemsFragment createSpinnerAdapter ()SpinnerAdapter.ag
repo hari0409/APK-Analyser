@@ -1,0 +1,11 @@
+# Lcom/afwsamples/testdpc/policy/BaseStringItemsFragment;->createSpinnerAdapter()Landroid/widget/SpinnerAdapter; [access_flags=protected]
+#
+# Parameters:
+# local registers: v0...v1
+#
+# - return:android.widget.SpinnerAdapter
+
+createSpinnerAdapter-BB@0x0 : 
+	0       (00000000) const/4              v0, 0
+	1       (00000002) return-object        v0
+

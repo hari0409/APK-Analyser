@@ -1,0 +1,15 @@
+# Lcom/afwsamples/testdpc/common/Util;->grantStateToString(I)Ljava/lang/String; [access_flags=public static]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:int
+#
+# - return:java.lang.String
+
+grantStateToString-BB@0x0 : 
+	0       (00000000) const-class          v0, Landroid/app/admin/DevicePolicyManager;
+	1       (00000004) const-string         v1, 'PERMISSION_GRANT_STATE_'
+	2       (00000008) invoke-static        v0, v1, v2, Lcom/afwsamples/testdpc/common/Util;->constantToString(Ljava/lang/Class; Ljava/lang/String; I)Ljava/lang/String;
+	3       (0000000e) move-result-object   v0
+	4       (00000010) return-object        v0
+

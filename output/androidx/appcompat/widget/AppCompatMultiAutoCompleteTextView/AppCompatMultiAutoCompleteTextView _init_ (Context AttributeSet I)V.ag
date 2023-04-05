@@ -1,0 +1,45 @@
+# Landroidx/appcompat/widget/AppCompatMultiAutoCompleteTextView;-><init>(Landroid/content/Context; Landroid/util/AttributeSet; I)V [access_flags=public constructor]
+#
+# Parameters:
+# - local registers: v0...v4
+# - v5:android.content.Context
+# - v6:android.util.AttributeSet
+# - v7:int
+#
+# - return:void
+
+<init>-BB@0x0 : [ <init>-BB@0x30 <init>-BB@0x3e ]
+	0       (00000000) const/4              v3, 0
+	1       (00000002) invoke-static        v5, Landroidx/appcompat/widget/TintContextWrapper;->wrap(Landroid/content/Context;)Landroid/content/Context;
+	2       (00000008) move-result-object   v1
+	3       (0000000a) invoke-direct        v4, v1, v6, v7, Landroid/widget/MultiAutoCompleteTextView;-><init>(Landroid/content/Context; Landroid/util/AttributeSet; I)V
+	4       (00000010) invoke-virtual       v4, Landroidx/appcompat/widget/AppCompatMultiAutoCompleteTextView;->getContext()Landroid/content/Context;
+	5       (00000016) move-result-object   v1
+	6       (00000018) sget-object          v2, Landroidx/appcompat/widget/AppCompatMultiAutoCompleteTextView;->TINT_ATTRS [I
+	7       (0000001c) invoke-static        v1, v6, v2, v7, v3, Landroidx/appcompat/widget/TintTypedArray;->obtainStyledAttributes(Landroid/content/Context; Landroid/util/AttributeSet; [I I I)Landroidx/appcompat/widget/TintTypedArray;
+	8       (00000022) move-result-object   v0
+	9       (00000024) invoke-virtual       v0, v3, Landroidx/appcompat/widget/TintTypedArray;->hasValue(I)Z
+	10      (0000002a) move-result          v1
+	11      (0000002c) if-eqz               v1, +9
+
+<init>-BB@0x30 : [ <init>-BB@0x3e ]
+	12      (00000030) invoke-virtual       v0, v3, Landroidx/appcompat/widget/TintTypedArray;->getDrawable(I)Landroid/graphics/drawable/Drawable;
+	13      (00000036) move-result-object   v1
+	14      (00000038) invoke-virtual       v4, v1, Landroidx/appcompat/widget/AppCompatMultiAutoCompleteTextView;->setDropDownBackgroundDrawable(Landroid/graphics/drawable/Drawable;)V
+
+<init>-BB@0x3e : 
+	15      (0000003e) invoke-virtual       v0, Landroidx/appcompat/widget/TintTypedArray;->recycle()V
+	16      (00000044) new-instance         v1, Landroidx/appcompat/widget/AppCompatBackgroundHelper;
+	17      (00000048) invoke-direct        v1, v4, Landroidx/appcompat/widget/AppCompatBackgroundHelper;-><init>(Landroid/view/View;)V
+	18      (0000004e) iput-object          v1, v4, Landroidx/appcompat/widget/AppCompatMultiAutoCompleteTextView;->mBackgroundTintHelper Landroidx/appcompat/widget/AppCompatBackgroundHelper;
+	19      (00000052) iget-object          v1, v4, Landroidx/appcompat/widget/AppCompatMultiAutoCompleteTextView;->mBackgroundTintHelper Landroidx/appcompat/widget/AppCompatBackgroundHelper;
+	20      (00000056) invoke-virtual       v1, v6, v7, Landroidx/appcompat/widget/AppCompatBackgroundHelper;->loadFromAttributes(Landroid/util/AttributeSet; I)V
+	21      (0000005c) new-instance         v1, Landroidx/appcompat/widget/AppCompatTextHelper;
+	22      (00000060) invoke-direct        v1, v4, Landroidx/appcompat/widget/AppCompatTextHelper;-><init>(Landroid/widget/TextView;)V
+	23      (00000066) iput-object          v1, v4, Landroidx/appcompat/widget/AppCompatMultiAutoCompleteTextView;->mTextHelper Landroidx/appcompat/widget/AppCompatTextHelper;
+	24      (0000006a) iget-object          v1, v4, Landroidx/appcompat/widget/AppCompatMultiAutoCompleteTextView;->mTextHelper Landroidx/appcompat/widget/AppCompatTextHelper;
+	25      (0000006e) invoke-virtual       v1, v6, v7, Landroidx/appcompat/widget/AppCompatTextHelper;->loadFromAttributes(Landroid/util/AttributeSet; I)V
+	26      (00000074) iget-object          v1, v4, Landroidx/appcompat/widget/AppCompatMultiAutoCompleteTextView;->mTextHelper Landroidx/appcompat/widget/AppCompatTextHelper;
+	27      (00000078) invoke-virtual       v1, Landroidx/appcompat/widget/AppCompatTextHelper;->applyCompoundDrawablesTints()V
+	28      (0000007e) return-void          
+

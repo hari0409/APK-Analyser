@@ -1,0 +1,28 @@
+# Landroidx/appcompat/widget/ActionMenuPresenter;->onSubUiVisibilityChanged(Z)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:boolean
+#
+# - return:void
+
+onSubUiVisibilityChanged-BB@0x0 : [ onSubUiVisibilityChanged-BB@0x4 onSubUiVisibilityChanged-BB@0xe ]
+	0       (00000000) if-eqz               v3, +7
+
+onSubUiVisibilityChanged-BB@0x4 : [ onSubUiVisibilityChanged-BB@0xc ]
+	1       (00000004) const/4              v0, 0
+	2       (00000006) invoke-super         v2, v0, Landroidx/appcompat/view/menu/BaseMenuPresenter;->onSubMenuSelected(Landroidx/appcompat/view/menu/SubMenuBuilder;)Z
+
+onSubUiVisibilityChanged-BB@0xc : 
+	3       (0000000c) return-void          
+
+onSubUiVisibilityChanged-BB@0xe : [ onSubUiVisibilityChanged-BB@0x16 onSubUiVisibilityChanged-BB@0xc ]
+	4       (0000000e) iget-object          v0, v2, Landroidx/appcompat/widget/ActionMenuPresenter;->mMenu Landroidx/appcompat/view/menu/MenuBuilder;
+	5       (00000012) if-eqz               v0, -3
+
+onSubUiVisibilityChanged-BB@0x16 : [ onSubUiVisibilityChanged-BB@0xc ]
+	6       (00000016) iget-object          v0, v2, Landroidx/appcompat/widget/ActionMenuPresenter;->mMenu Landroidx/appcompat/view/menu/MenuBuilder;
+	7       (0000001a) const/4              v1, 0
+	8       (0000001c) invoke-virtual       v0, v1, Landroidx/appcompat/view/menu/MenuBuilder;->close(Z)V
+	9       (00000022) goto                 -b
+

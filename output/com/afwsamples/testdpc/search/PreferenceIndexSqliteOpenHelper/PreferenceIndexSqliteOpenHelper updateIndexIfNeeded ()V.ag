@@ -1,0 +1,22 @@
+# Lcom/afwsamples/testdpc/search/PreferenceIndexSqliteOpenHelper;->updateIndexIfNeeded()V [access_flags=private]
+#
+# Parameters:
+# local registers: v0...v1
+#
+# - return:void
+
+updateIndexIfNeeded-BB@0x0 : [ updateIndexIfNeeded-BB@0xc updateIndexIfNeeded-BB@0x22 ]
+	0       (00000000) invoke-direct        v1, Lcom/afwsamples/testdpc/search/PreferenceIndexSqliteOpenHelper;->shouldUpdateIndex()Z
+	1       (00000006) move-result          v0
+	2       (00000008) if-eqz               v0, +d
+
+updateIndexIfNeeded-BB@0xc : [ updateIndexIfNeeded-BB@0x22 ]
+	3       (0000000c) invoke-direct        v1, Lcom/afwsamples/testdpc/search/PreferenceIndexSqliteOpenHelper;->updateIndex()V
+	4       (00000012) const/4              v0, 1
+	5       (00000014) sput-boolean         v0, Lcom/afwsamples/testdpc/search/PreferenceIndexSqliteOpenHelper;->sIndexed Z
+	6       (00000018) iget-object          v0, v1, Lcom/afwsamples/testdpc/search/PreferenceIndexSqliteOpenHelper;->mSharedPreferencesHelper Lcom/afwsamples/testdpc/search/PreferenceIndexSqliteOpenHelper$SharedPreferencesHelper;
+	7       (0000001c) invoke-virtual       v0, Lcom/afwsamples/testdpc/search/PreferenceIndexSqliteOpenHelper$SharedPreferencesHelper;->saveVersion()V
+
+updateIndexIfNeeded-BB@0x22 : 
+	8       (00000022) return-void          
+

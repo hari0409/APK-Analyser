@@ -1,0 +1,40 @@
+# Lcom/afwsamples/testdpc/policy/SecurityLogsFragment;->onCreate(Landroid/os/Bundle;)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v5
+# - v6:android.os.Bundle
+#
+# - return:void
+
+onCreate-BB@0x0 : 
+	0       (00000000) invoke-super         v5, v6, Landroid/app/ListFragment;->onCreate(Landroid/os/Bundle;)V
+	1       (00000006) invoke-virtual       v5, Lcom/afwsamples/testdpc/policy/SecurityLogsFragment;->getActivity()Landroid/app/Activity;
+	2       (0000000c) move-result-object   v0
+	3       (0000000e) invoke-static        v0, Lcom/afwsamples/testdpc/DeviceAdminReceiver;->getComponentName(Landroid/content/Context;)Landroid/content/ComponentName;
+	4       (00000014) move-result-object   v0
+	5       (00000016) iput-object          v0, v5, Lcom/afwsamples/testdpc/policy/SecurityLogsFragment;->mAdminName Landroid/content/ComponentName;
+	6       (0000001a) invoke-virtual       v5, Lcom/afwsamples/testdpc/policy/SecurityLogsFragment;->getActivity()Landroid/app/Activity;
+	7       (00000020) move-result-object   v0
+	8       (00000022) const-string         v1, 'device_policy'
+	9       (00000026) invoke-virtual       v0, v1, Landroid/app/Activity;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
+	10      (0000002c) move-result-object   v0
+	11      (0000002e) check-cast           v0, Landroid/app/admin/DevicePolicyManager;
+	12      (00000032) iput-object          v0, v5, Lcom/afwsamples/testdpc/policy/SecurityLogsFragment;->mDevicePolicyManager Landroid/app/admin/DevicePolicyManager;
+	13      (00000036) new-instance         v0, Landroid/widget/ArrayAdapter;
+	14      (0000003a) invoke-virtual       v5, Lcom/afwsamples/testdpc/policy/SecurityLogsFragment;->getActivity()Landroid/app/Activity;
+	15      (00000040) move-result-object   v1
+	16      (00000042) const                v2, 17367043 # [2.516293435508038e-38]
+	17      (00000048) const                v3, 16908308 # [2.387728505301629e-38]
+	18      (0000004e) iget-object          v4, v5, Lcom/afwsamples/testdpc/policy/SecurityLogsFragment;->mLogs Ljava/util/ArrayList;
+	19      (00000052) invoke-direct        v0, v1, v2, v3, v4, Landroid/widget/ArrayAdapter;-><init>(Landroid/content/Context; I I Ljava/util/List;)V
+	20      (00000058) iput-object          v0, v5, Lcom/afwsamples/testdpc/policy/SecurityLogsFragment;->mAdapter Landroid/widget/ArrayAdapter;
+	21      (0000005c) invoke-virtual       v5, Lcom/afwsamples/testdpc/policy/SecurityLogsFragment;->getArguments()Landroid/os/Bundle;
+	22      (00000062) move-result-object   v0
+	23      (00000064) const-string         v1, 'pre-reboot'
+	24      (00000068) invoke-virtual       v0, v1, Landroid/os/Bundle;->getBoolean(Ljava/lang/String;)Z
+	25      (0000006e) move-result          v0
+	26      (00000070) iput-boolean         v0, v5, Lcom/afwsamples/testdpc/policy/SecurityLogsFragment;->mPreReboot Z
+	27      (00000074) iget-object          v0, v5, Lcom/afwsamples/testdpc/policy/SecurityLogsFragment;->mAdapter Landroid/widget/ArrayAdapter;
+	28      (00000078) invoke-virtual       v5, v0, Lcom/afwsamples/testdpc/policy/SecurityLogsFragment;->setListAdapter(Landroid/widget/ListAdapter;)V
+	29      (0000007e) return-void          
+

@@ -1,0 +1,48 @@
+# Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->isNetworkLoggingEnabled()Z [access_flags=private]
+#
+# Parameters:
+# local registers: v0...v3
+#
+# - return:boolean
+
+isNetworkLoggingEnabled-BB@0x0 : [ isNetworkLoggingEnabled-BB@0xe isNetworkLoggingEnabled-BB@0x28 ]
+	0       (00000000) const/4              v0, 0
+	1       (00000002) sget                 v1, Lcom/afwsamples/testdpc/common/Util;->SDK_INT I
+	2       (00000006) const/16             v2, 31
+	3       (0000000a) if-ge                v1, v2, +f
+
+isNetworkLoggingEnabled-BB@0xe : [ isNetworkLoggingEnabled-BB@0x1a isNetworkLoggingEnabled-BB@0x4c ]
+	4       (0000000e) invoke-direct        v3, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->isDeviceOwner()Z
+	5       (00000014) move-result          v1
+	6       (00000016) if-nez               v1, +1b
+
+isNetworkLoggingEnabled-BB@0x1a : [ isNetworkLoggingEnabled-BB@0x26 isNetworkLoggingEnabled-BB@0x4c ]
+	7       (0000001a) invoke-direct        v3, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->hasNetworkLoggingDelegation()Z
+	8       (00000020) move-result          v1
+	9       (00000022) if-nez               v1, +15
+
+isNetworkLoggingEnabled-BB@0x26 : 
+	10      (00000026) return               v0
+
+isNetworkLoggingEnabled-BB@0x28 : [ isNetworkLoggingEnabled-BB@0x34 isNetworkLoggingEnabled-BB@0x4c ]
+	11      (00000028) invoke-direct        v3, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->isDeviceOwner()Z
+	12      (0000002e) move-result          v1
+	13      (00000030) if-nez               v1, +e
+
+isNetworkLoggingEnabled-BB@0x34 : [ isNetworkLoggingEnabled-BB@0x40 isNetworkLoggingEnabled-BB@0x4c ]
+	14      (00000034) invoke-direct        v3, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->isManagedProfileOwner()Z
+	15      (0000003a) move-result          v1
+	16      (0000003c) if-nez               v1, +8
+
+isNetworkLoggingEnabled-BB@0x40 : [ isNetworkLoggingEnabled-BB@0x4c isNetworkLoggingEnabled-BB@0x26 ]
+	17      (00000040) invoke-direct        v3, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->hasNetworkLoggingDelegation()Z
+	18      (00000046) move-result          v1
+	19      (00000048) if-eqz               v1, -11
+
+isNetworkLoggingEnabled-BB@0x4c : [ isNetworkLoggingEnabled-BB@0x26 ]
+	20      (0000004c) iget-object          v0, v3, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->mDevicePolicyManager Landroid/app/admin/DevicePolicyManager;
+	21      (00000050) iget-object          v1, v3, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->mAdminComponentName Landroid/content/ComponentName;
+	22      (00000054) invoke-virtual       v0, v1, Landroid/app/admin/DevicePolicyManager;->isNetworkLoggingEnabled(Landroid/content/ComponentName;)Z
+	23      (0000005a) move-result          v0
+	24      (0000005c) goto                 -1b
+

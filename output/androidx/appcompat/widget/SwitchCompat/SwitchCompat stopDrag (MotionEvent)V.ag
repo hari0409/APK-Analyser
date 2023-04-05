@@ -1,0 +1,96 @@
+# Landroidx/appcompat/widget/SwitchCompat;->stopDrag(Landroid/view/MotionEvent;)V [access_flags=private]
+#
+# Parameters:
+# - local registers: v0...v9
+# - v10:android.view.MotionEvent
+#
+# - return:void
+
+stopDrag-BB@0x0 : [ stopDrag-BB@0x16 stopDrag-BB@0x8e ]
+	0       (00000000) const/4              v8, 0
+	1       (00000002) const/4              v4, 1
+	2       (00000004) const/4              v5, 0
+	3       (00000006) iput                 v5, v9, Landroidx/appcompat/widget/SwitchCompat;->mTouchMode I
+	4       (0000000a) invoke-virtual       v10, Landroid/view/MotionEvent;->getAction()I
+	5       (00000010) move-result          v6
+	6       (00000012) if-ne                v6, v4, +3e
+
+stopDrag-BB@0x16 : [ stopDrag-BB@0x22 stopDrag-BB@0x8e ]
+	7       (00000016) invoke-virtual       v9, Landroidx/appcompat/widget/SwitchCompat;->isEnabled()Z
+	8       (0000001c) move-result          v6
+	9       (0000001e) if-eqz               v6, +38
+
+stopDrag-BB@0x22 : [ stopDrag-BB@0x24 ]
+	10      (00000022) move                 v0, v4
+
+stopDrag-BB@0x24 : [ stopDrag-BB@0x30 stopDrag-BB@0xb0 ]
+	11      (00000024) invoke-virtual       v9, Landroidx/appcompat/widget/SwitchCompat;->isChecked()Z
+	12      (0000002a) move-result          v2
+	13      (0000002c) if-eqz               v0, +42
+
+stopDrag-BB@0x30 : [ stopDrag-BB@0x60 stopDrag-BB@0xa6 ]
+	14      (00000030) iget-object          v6, v9, Landroidx/appcompat/widget/SwitchCompat;->mVelocityTracker Landroid/view/VelocityTracker;
+	15      (00000034) const/16             v7, 1000
+	16      (00000038) invoke-virtual       v6, v7, Landroid/view/VelocityTracker;->computeCurrentVelocity(I)V
+	17      (0000003e) iget-object          v6, v9, Landroidx/appcompat/widget/SwitchCompat;->mVelocityTracker Landroid/view/VelocityTracker;
+	18      (00000042) invoke-virtual       v6, Landroid/view/VelocityTracker;->getXVelocity()F
+	19      (00000048) move-result          v3
+	20      (0000004a) invoke-static        v3, Ljava/lang/Math;->abs(F)F
+	21      (00000050) move-result          v6
+	22      (00000052) iget                 v7, v9, Landroidx/appcompat/widget/SwitchCompat;->mMinFlingVelocity I
+	23      (00000056) int-to-float         v7, v7
+	24      (00000058) cmpl-float           v6, v6, v7
+	25      (0000005c) if-lez               v6, +25
+
+stopDrag-BB@0x60 : [ stopDrag-BB@0x6c stopDrag-BB@0x96 ]
+	26      (00000060) invoke-static        v9, Landroidx/appcompat/widget/ViewUtils;->isLayoutRtl(Landroid/view/View;)Z
+	27      (00000066) move-result          v6
+	28      (00000068) if-eqz               v6, +17
+
+stopDrag-BB@0x6c : [ stopDrag-BB@0x74 stopDrag-BB@0x92 ]
+	29      (0000006c) cmpg-float           v6, v3, v8
+	30      (00000070) if-gez               v6, +11
+
+stopDrag-BB@0x74 : [ stopDrag-BB@0x76 ]
+	31      (00000074) move                 v1, v4
+
+stopDrag-BB@0x76 : [ stopDrag-BB@0x7a stopDrag-BB@0x80 ]
+	32      (00000076) if-eq                v1, v2, +5
+
+stopDrag-BB@0x7a : [ stopDrag-BB@0x80 ]
+	33      (0000007a) invoke-virtual       v9, v5, Landroidx/appcompat/widget/SwitchCompat;->playSoundEffect(I)V
+
+stopDrag-BB@0x80 : 
+	34      (00000080) invoke-virtual       v9, v1, Landroidx/appcompat/widget/SwitchCompat;->setChecked(Z)V
+	35      (00000086) invoke-direct        v9, v10, Landroidx/appcompat/widget/SwitchCompat;->cancelSuperTouch(Landroid/view/MotionEvent;)V
+	36      (0000008c) return-void          
+
+stopDrag-BB@0x8e : [ stopDrag-BB@0x24 ]
+	37      (0000008e) move                 v0, v5
+	38      (00000090) goto                 -36
+
+stopDrag-BB@0x92 : [ stopDrag-BB@0x76 ]
+	39      (00000092) move                 v1, v5
+	40      (00000094) goto                 -f
+
+stopDrag-BB@0x96 : [ stopDrag-BB@0x9e stopDrag-BB@0xa2 ]
+	41      (00000096) cmpl-float           v6, v3, v8
+	42      (0000009a) if-lez               v6, +4
+
+stopDrag-BB@0x9e : [ stopDrag-BB@0x76 ]
+	43      (0000009e) move                 v1, v4
+	44      (000000a0) goto                 -15
+
+stopDrag-BB@0xa2 : [ stopDrag-BB@0x76 ]
+	45      (000000a2) move                 v1, v5
+	46      (000000a4) goto                 -17
+
+stopDrag-BB@0xa6 : [ stopDrag-BB@0x76 ]
+	47      (000000a6) invoke-direct        v9, Landroidx/appcompat/widget/SwitchCompat;->getTargetCheckedState()Z
+	48      (000000ac) move-result          v1
+	49      (000000ae) goto                 -1c
+
+stopDrag-BB@0xb0 : [ stopDrag-BB@0x76 ]
+	50      (000000b0) move                 v1, v2
+	51      (000000b2) goto                 -1e
+

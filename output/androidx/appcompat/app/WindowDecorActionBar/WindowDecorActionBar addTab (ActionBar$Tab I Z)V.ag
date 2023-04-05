@@ -1,0 +1,23 @@
+# Landroidx/appcompat/app/WindowDecorActionBar;->addTab(Landroidx/appcompat/app/ActionBar$Tab; I Z)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:androidx.appcompat.app.ActionBar$Tab
+# - v3:int
+# - v4:boolean
+#
+# - return:void
+
+addTab-BB@0x0 : [ addTab-BB@0x1a addTab-BB@0x20 ]
+	0       (00000000) invoke-direct        v1, Landroidx/appcompat/app/WindowDecorActionBar;->ensureTabsExist()V
+	1       (00000006) iget-object          v0, v1, Landroidx/appcompat/app/WindowDecorActionBar;->mTabScrollView Landroidx/appcompat/widget/ScrollingTabContainerView;
+	2       (0000000a) invoke-virtual       v0, v2, v3, v4, Landroidx/appcompat/widget/ScrollingTabContainerView;->addTab(Landroidx/appcompat/app/ActionBar$Tab; I Z)V
+	3       (00000010) invoke-direct        v1, v2, v3, Landroidx/appcompat/app/WindowDecorActionBar;->configureTab(Landroidx/appcompat/app/ActionBar$Tab; I)V
+	4       (00000016) if-eqz               v4, +5
+
+addTab-BB@0x1a : [ addTab-BB@0x20 ]
+	5       (0000001a) invoke-virtual       v1, v2, Landroidx/appcompat/app/WindowDecorActionBar;->selectTab(Landroidx/appcompat/app/ActionBar$Tab;)V
+
+addTab-BB@0x20 : 
+	6       (00000020) return-void          
+

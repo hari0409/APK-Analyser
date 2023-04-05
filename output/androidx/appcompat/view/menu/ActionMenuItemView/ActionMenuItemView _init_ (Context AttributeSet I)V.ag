@@ -1,0 +1,41 @@
+# Landroidx/appcompat/view/menu/ActionMenuItemView;-><init>(Landroid/content/Context; Landroid/util/AttributeSet; I)V [access_flags=public constructor]
+#
+# Parameters:
+# - local registers: v0...v6
+# - v7:android.content.Context
+# - v8:android.util.AttributeSet
+# - v9:int
+#
+# - return:void
+
+<init>-BB@0x0 : 
+	0       (00000000) const/4              v5, 0
+	1       (00000002) invoke-direct        v6, v7, v8, v9, Landroidx/appcompat/widget/AppCompatTextView;-><init>(Landroid/content/Context; Landroid/util/AttributeSet; I)V
+	2       (00000008) invoke-virtual       v7, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
+	3       (0000000e) move-result-object   v2
+	4       (00000010) invoke-direct        v6, Landroidx/appcompat/view/menu/ActionMenuItemView;->shouldAllowTextWithIcon()Z
+	5       (00000016) move-result          v3
+	6       (00000018) iput-boolean         v3, v6, Landroidx/appcompat/view/menu/ActionMenuItemView;->mAllowTextWithIcon Z
+	7       (0000001c) sget-object          v3, Landroidx/appcompat/R$styleable;->ActionMenuItemView [I
+	8       (00000020) invoke-virtual       v7, v8, v3, v9, v5, Landroid/content/Context;->obtainStyledAttributes(Landroid/util/AttributeSet; [I I I)Landroid/content/res/TypedArray;
+	9       (00000026) move-result-object   v0
+	10      (00000028) sget                 v3, Landroidx/appcompat/R$styleable;->ActionMenuItemView_android_minWidth I
+	11      (0000002c) invoke-virtual       v0, v3, v5, Landroid/content/res/TypedArray;->getDimensionPixelSize(I I)I
+	12      (00000032) move-result          v3
+	13      (00000034) iput                 v3, v6, Landroidx/appcompat/view/menu/ActionMenuItemView;->mMinWidth I
+	14      (00000038) invoke-virtual       v0, Landroid/content/res/TypedArray;->recycle()V
+	15      (0000003e) invoke-virtual       v2, Landroid/content/res/Resources;->getDisplayMetrics()Landroid/util/DisplayMetrics;
+	16      (00000044) move-result-object   v3
+	17      (00000046) iget                 v1, v3, Landroid/util/DisplayMetrics;->density F
+	18      (0000004a) const/high16         v3, 16896 # [32.0]
+	19      (0000004e) mul-float/2addr      v3, v1
+	20      (00000050) const/high16         v4, 16128 # [0.5]
+	21      (00000054) add-float/2addr      v3, v4
+	22      (00000056) float-to-int         v3, v3
+	23      (00000058) iput                 v3, v6, Landroidx/appcompat/view/menu/ActionMenuItemView;->mMaxIconSize I
+	24      (0000005c) invoke-virtual       v6, v6, Landroidx/appcompat/view/menu/ActionMenuItemView;->setOnClickListener(Landroid/view/View$OnClickListener;)V
+	25      (00000062) const/4              v3, -1
+	26      (00000064) iput                 v3, v6, Landroidx/appcompat/view/menu/ActionMenuItemView;->mSavedPaddingLeft I
+	27      (00000068) invoke-virtual       v6, v5, Landroidx/appcompat/view/menu/ActionMenuItemView;->setSaveEnabled(Z)V
+	28      (0000006e) return-void          
+

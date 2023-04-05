@@ -1,0 +1,64 @@
+# Landroidx/appcompat/graphics/drawable/DrawableContainer;->jumpToCurrentState()V [access_flags=public]
+#
+# Parameters:
+# local registers: v0...v6
+#
+# - return:void
+
+jumpToCurrentState-BB@0x0 : [ jumpToCurrentState-BB@0xe jumpToCurrentState-BB@0x26 ]
+	0       (00000000) const-wide/16        v4, 0 # [0.0]
+	1       (00000004) const/4              v0, 0
+	2       (00000006) iget-object          v1, v6, Landroidx/appcompat/graphics/drawable/DrawableContainer;->mLastDrawable Landroid/graphics/drawable/Drawable;
+	3       (0000000a) if-eqz               v1, +e
+
+jumpToCurrentState-BB@0xe : [ jumpToCurrentState-BB@0x26 ]
+	4       (0000000e) iget-object          v1, v6, Landroidx/appcompat/graphics/drawable/DrawableContainer;->mLastDrawable Landroid/graphics/drawable/Drawable;
+	5       (00000012) invoke-virtual       v1, Landroid/graphics/drawable/Drawable;->jumpToCurrentState()V
+	6       (00000018) const/4              v1, 0
+	7       (0000001a) iput-object          v1, v6, Landroidx/appcompat/graphics/drawable/DrawableContainer;->mLastDrawable Landroid/graphics/drawable/Drawable;
+	8       (0000001e) const/4              v1, -1
+	9       (00000020) iput                 v1, v6, Landroidx/appcompat/graphics/drawable/DrawableContainer;->mLastIndex I
+	10      (00000024) const/4              v0, 1
+
+jumpToCurrentState-BB@0x26 : [ jumpToCurrentState-BB@0x2e jumpToCurrentState-BB@0x4e ]
+	11      (00000026) iget-object          v1, v6, Landroidx/appcompat/graphics/drawable/DrawableContainer;->mCurrDrawable Landroid/graphics/drawable/Drawable;
+	12      (0000002a) if-eqz               v1, +12
+
+jumpToCurrentState-BB@0x2e : [ jumpToCurrentState-BB@0x40 jumpToCurrentState-BB@0x4e ]
+	13      (0000002e) iget-object          v1, v6, Landroidx/appcompat/graphics/drawable/DrawableContainer;->mCurrDrawable Landroid/graphics/drawable/Drawable;
+	14      (00000032) invoke-virtual       v1, Landroid/graphics/drawable/Drawable;->jumpToCurrentState()V
+	15      (00000038) iget-boolean         v1, v6, Landroidx/appcompat/graphics/drawable/DrawableContainer;->mHasAlpha Z
+	16      (0000003c) if-eqz               v1, +9
+
+jumpToCurrentState-BB@0x40 : [ jumpToCurrentState-BB@0x4e ]
+	17      (00000040) iget-object          v1, v6, Landroidx/appcompat/graphics/drawable/DrawableContainer;->mCurrDrawable Landroid/graphics/drawable/Drawable;
+	18      (00000044) iget                 v2, v6, Landroidx/appcompat/graphics/drawable/DrawableContainer;->mAlpha I
+	19      (00000048) invoke-virtual       v1, v2, Landroid/graphics/drawable/Drawable;->setAlpha(I)V
+
+jumpToCurrentState-BB@0x4e : [ jumpToCurrentState-BB@0x5a jumpToCurrentState-BB@0x60 ]
+	20      (0000004e) iget-wide            v2, v6, Landroidx/appcompat/graphics/drawable/DrawableContainer;->mExitAnimationEnd J
+	21      (00000052) cmp-long             v1, v2, v4
+	22      (00000056) if-eqz               v1, +5
+
+jumpToCurrentState-BB@0x5a : [ jumpToCurrentState-BB@0x60 ]
+	23      (0000005a) iput-wide            v4, v6, Landroidx/appcompat/graphics/drawable/DrawableContainer;->mExitAnimationEnd J
+	24      (0000005e) const/4              v0, 1
+
+jumpToCurrentState-BB@0x60 : [ jumpToCurrentState-BB@0x6c jumpToCurrentState-BB@0x72 ]
+	25      (00000060) iget-wide            v2, v6, Landroidx/appcompat/graphics/drawable/DrawableContainer;->mEnterAnimationEnd J
+	26      (00000064) cmp-long             v1, v2, v4
+	27      (00000068) if-eqz               v1, +5
+
+jumpToCurrentState-BB@0x6c : [ jumpToCurrentState-BB@0x72 ]
+	28      (0000006c) iput-wide            v4, v6, Landroidx/appcompat/graphics/drawable/DrawableContainer;->mEnterAnimationEnd J
+	29      (00000070) const/4              v0, 1
+
+jumpToCurrentState-BB@0x72 : [ jumpToCurrentState-BB@0x76 jumpToCurrentState-BB@0x7c ]
+	30      (00000072) if-eqz               v0, +5
+
+jumpToCurrentState-BB@0x76 : [ jumpToCurrentState-BB@0x7c ]
+	31      (00000076) invoke-virtual       v6, Landroidx/appcompat/graphics/drawable/DrawableContainer;->invalidateSelf()V
+
+jumpToCurrentState-BB@0x7c : 
+	32      (0000007c) return-void          
+

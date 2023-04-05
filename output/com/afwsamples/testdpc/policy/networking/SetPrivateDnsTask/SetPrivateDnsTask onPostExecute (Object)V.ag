@@ -1,0 +1,13 @@
+# Lcom/afwsamples/testdpc/policy/networking/SetPrivateDnsTask;->onPostExecute(Ljava/lang/Object;)V [access_flags=protected bridge synthetic]
+#
+# Parameters:
+# - local registers: v0...v0
+# - v1:java.lang.Object
+#
+# - return:void
+
+onPostExecute-BB@0x0 : 
+	0       (00000000) check-cast           v1, Ljava/lang/String;
+	1       (00000004) invoke-virtual       v0, v1, Lcom/afwsamples/testdpc/policy/networking/SetPrivateDnsTask;->onPostExecute(Ljava/lang/String;)V
+	2       (0000000a) return-void          
+

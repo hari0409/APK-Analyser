@@ -1,0 +1,34 @@
+# Lcom/afwsamples/testdpc/PolicyManagementActivity;->onBackPressed()V [access_flags=public]
+#
+# Parameters:
+# local registers: v0...v4
+#
+# - return:void
+
+onBackPressed-BB@0x0 : [ onBackPressed-BB@0x1c onBackPressed-BB@0x30 ]
+	0       (00000000) invoke-virtual       v4, Lcom/afwsamples/testdpc/PolicyManagementActivity;->getFragmentManager()Landroid/app/FragmentManager;
+	1       (00000006) move-result-object   v2
+	2       (00000008) const                v3, 2131296376 # [1.821066693116859e+38]
+	3       (0000000e) invoke-virtual       v2, v3, Landroid/app/FragmentManager;->findFragmentById(I)Landroid/app/Fragment;
+	4       (00000014) move-result-object   v0
+	5       (00000016) const/4              v1, 0
+	6       (00000018) if-eqz               v0, +c
+
+onBackPressed-BB@0x1c : [ onBackPressed-BB@0x24 onBackPressed-BB@0x30 ]
+	7       (0000001c) instance-of          v2, v0, Lcom/afwsamples/testdpc/common/OnBackPressedHandler;
+	8       (00000020) if-eqz               v2, +8
+
+onBackPressed-BB@0x24 : [ onBackPressed-BB@0x30 ]
+	9       (00000024) check-cast           v0, Lcom/afwsamples/testdpc/common/OnBackPressedHandler;
+	10      (00000028) invoke-interface     v0, Lcom/afwsamples/testdpc/common/OnBackPressedHandler;->onBackPressed()Z
+	11      (0000002e) move-result          v1
+
+onBackPressed-BB@0x30 : [ onBackPressed-BB@0x34 onBackPressed-BB@0x3a ]
+	12      (00000030) if-nez               v1, +5
+
+onBackPressed-BB@0x34 : [ onBackPressed-BB@0x3a ]
+	13      (00000034) invoke-super         v4, Lcom/afwsamples/testdpc/common/DumpableActivity;->onBackPressed()V
+
+onBackPressed-BB@0x3a : 
+	14      (0000003a) return-void          
+

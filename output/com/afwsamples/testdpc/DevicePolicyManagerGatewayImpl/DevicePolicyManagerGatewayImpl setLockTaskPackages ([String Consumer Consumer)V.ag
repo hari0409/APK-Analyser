@@ -1,0 +1,45 @@
+# Lcom/afwsamples/testdpc/DevicePolicyManagerGatewayImpl;->setLockTaskPackages([Ljava/lang/String; Ljava/util/function/Consumer; Ljava/util/function/Consumer;)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v4
+# - v5:java.lang.String[]
+# - v6:java.util.function.Consumer
+# - v7:java.util.function.Consumer
+#
+# - return:void
+
+setLockTaskPackages-BB@0x0 : [ setLockTaskPackages-BB@0x44 ]
+	0       (00000000) sget-object          v1, Lcom/afwsamples/testdpc/DevicePolicyManagerGatewayImpl;->TAG Ljava/lang/String;
+	1       (00000004) new-instance         v2, Ljava/lang/StringBuilder;
+	2       (00000008) invoke-direct        v2, Ljava/lang/StringBuilder;-><init>()V
+	3       (0000000e) const-string         v3, 'setLockTaskPackages('
+	4       (00000012) invoke-virtual       v2, v3, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	5       (00000018) move-result-object   v2
+	6       (0000001a) invoke-static        v5, Ljava/util/Arrays;->toString([Ljava/lang/Object;)Ljava/lang/String;
+	7       (00000020) move-result-object   v3
+	8       (00000022) invoke-virtual       v2, v3, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	9       (00000028) move-result-object   v2
+	10      (0000002a) const-string         v3, ')'
+	11      (0000002e) invoke-virtual       v2, v3, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	12      (00000034) move-result-object   v2
+	13      (00000036) invoke-virtual       v2, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+	14      (0000003c) move-result-object   v2
+	15      (0000003e) invoke-static        v1, v2, Landroid/util/Log;->d(Ljava/lang/String; Ljava/lang/String;)I
+
+setLockTaskPackages-BB@0x44 : [ setLockTaskPackages-BB@0x5a ]
+	16      (00000044) iget-object          v1, v4, Lcom/afwsamples/testdpc/DevicePolicyManagerGatewayImpl;->mDevicePolicyManager Landroid/app/admin/DevicePolicyManager;
+	17      (00000048) iget-object          v2, v4, Lcom/afwsamples/testdpc/DevicePolicyManagerGatewayImpl;->mAdminComponentName Landroid/content/ComponentName;
+	18      (0000004c) invoke-virtual       v1, v2, v5, Landroid/app/admin/DevicePolicyManager;->setLockTaskPackages(Landroid/content/ComponentName; [Ljava/lang/String;)V
+	19      (00000052) const/4              v1, 0
+	20      (00000054) invoke-interface     v6, v1, Ljava/util/function/Consumer;->accept(Ljava/lang/Object;)V
+	44:59
+	(Ljava/lang/Exception; -> 5c setLockTaskPackages-BB@0x5c)
+
+setLockTaskPackages-BB@0x5a : 
+	21      (0000005a) return-void          
+
+setLockTaskPackages-BB@0x5c : [ setLockTaskPackages-BB@0x5a ]
+	22      (0000005c) move-exception       v0
+	23      (0000005e) invoke-interface     v7, v0, Ljava/util/function/Consumer;->accept(Ljava/lang/Object;)V
+	24      (00000064) goto                 -5
+

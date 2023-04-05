@@ -1,0 +1,33 @@
+# Landroidx/appcompat/widget/SearchView;->onActionViewExpanded()V [access_flags=public]
+#
+# Parameters:
+# local registers: v0...v3
+#
+# - return:void
+
+onActionViewExpanded-BB@0x0 : [ onActionViewExpanded-BB@0x8 onActionViewExpanded-BB@0xa ]
+	0       (00000000) iget-boolean         v0, v3, Landroidx/appcompat/widget/SearchView;->mExpandedInActionView Z
+	1       (00000004) if-eqz               v0, +3
+
+onActionViewExpanded-BB@0x8 : 
+	2       (00000008) return-void          
+
+onActionViewExpanded-BB@0xa : [ onActionViewExpanded-BB@0x8 ]
+	3       (0000000a) const/4              v0, 1
+	4       (0000000c) iput-boolean         v0, v3, Landroidx/appcompat/widget/SearchView;->mExpandedInActionView Z
+	5       (00000010) iget-object          v0, v3, Landroidx/appcompat/widget/SearchView;->mSearchSrcTextView Landroidx/appcompat/widget/SearchView$SearchAutoComplete;
+	6       (00000014) invoke-virtual       v0, Landroidx/appcompat/widget/SearchView$SearchAutoComplete;->getImeOptions()I
+	7       (0000001a) move-result          v0
+	8       (0000001c) iput                 v0, v3, Landroidx/appcompat/widget/SearchView;->mCollapsedImeOptions I
+	9       (00000020) iget-object          v0, v3, Landroidx/appcompat/widget/SearchView;->mSearchSrcTextView Landroidx/appcompat/widget/SearchView$SearchAutoComplete;
+	10      (00000024) iget                 v1, v3, Landroidx/appcompat/widget/SearchView;->mCollapsedImeOptions I
+	11      (00000028) const/high16         v2, 512 # [9.4039548065783e-38]
+	12      (0000002c) or-int/2addr         v1, v2
+	13      (0000002e) invoke-virtual       v0, v1, Landroidx/appcompat/widget/SearchView$SearchAutoComplete;->setImeOptions(I)V
+	14      (00000034) iget-object          v0, v3, Landroidx/appcompat/widget/SearchView;->mSearchSrcTextView Landroidx/appcompat/widget/SearchView$SearchAutoComplete;
+	15      (00000038) const-string         v1, ''
+	16      (0000003c) invoke-virtual       v0, v1, Landroidx/appcompat/widget/SearchView$SearchAutoComplete;->setText(Ljava/lang/CharSequence;)V
+	17      (00000042) const/4              v0, 0
+	18      (00000044) invoke-virtual       v3, v0, Landroidx/appcompat/widget/SearchView;->setIconified(Z)V
+	19      (0000004a) goto                 -21
+

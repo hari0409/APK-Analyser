@@ -1,0 +1,77 @@
+# Lcom/afwsamples/testdpc/DevicePolicyManagerGatewayImpl;->setPermissionGrantState(Ljava/lang/String; Ljava/lang/String; I Ljava/util/function/Consumer; Ljava/util/function/Consumer;)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v7
+# - v8:java.lang.String
+# - v9:java.lang.String
+# - v10:int
+# - v11:java.util.function.Consumer
+# - v12:java.util.function.Consumer
+#
+# - return:void
+
+setPermissionGrantState-BB@0x0 : [ setPermissionGrantState-BB@0x60 ]
+	0       (00000000) invoke-static        v10, Lcom/afwsamples/testdpc/common/Util;->grantStateToString(I)Ljava/lang/String;
+	1       (00000006) move-result-object   v1
+	2       (00000008) sget-object          v3, Lcom/afwsamples/testdpc/DevicePolicyManagerGatewayImpl;->TAG Ljava/lang/String;
+	3       (0000000c) new-instance         v4, Ljava/lang/StringBuilder;
+	4       (00000010) invoke-direct        v4, Ljava/lang/StringBuilder;-><init>()V
+	5       (00000016) const-string         v5, 'setPermissionGrantState('
+	6       (0000001a) invoke-virtual       v4, v5, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	7       (00000020) move-result-object   v4
+	8       (00000022) invoke-virtual       v4, v8, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	9       (00000028) move-result-object   v4
+	10      (0000002a) const-string         v5, ', '
+	11      (0000002e) invoke-virtual       v4, v5, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	12      (00000034) move-result-object   v4
+	13      (00000036) invoke-virtual       v4, v9, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	14      (0000003c) move-result-object   v4
+	15      (0000003e) const-string         v5, '): '
+	16      (00000042) invoke-virtual       v4, v5, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	17      (00000048) move-result-object   v4
+	18      (0000004a) invoke-virtual       v4, v1, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	19      (00000050) move-result-object   v4
+	20      (00000052) invoke-virtual       v4, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+	21      (00000058) move-result-object   v4
+	22      (0000005a) invoke-static        v3, v4, Landroid/util/Log;->d(Ljava/lang/String; Ljava/lang/String;)I
+
+setPermissionGrantState-BB@0x60 : [ setPermissionGrantState-BB@0x74 setPermissionGrantState-BB@0x7e ]
+	23      (00000060) iget-object          v3, v7, Lcom/afwsamples/testdpc/DevicePolicyManagerGatewayImpl;->mDevicePolicyManager Landroid/app/admin/DevicePolicyManager;
+	24      (00000064) iget-object          v4, v7, Lcom/afwsamples/testdpc/DevicePolicyManagerGatewayImpl;->mAdminComponentName Landroid/content/ComponentName;
+	25      (00000068) invoke-virtual       v3, v4, v8, v9, v10, Landroid/app/admin/DevicePolicyManager;->setPermissionGrantState(Landroid/content/ComponentName; Ljava/lang/String; Ljava/lang/String; I)Z
+	26      (0000006e) move-result          v2
+	27      (00000070) if-eqz               v2, +7
+	60:a9
+	(Ljava/lang/Exception; -> ac setPermissionGrantState-BB@0xac)
+
+setPermissionGrantState-BB@0x74 : [ setPermissionGrantState-BB@0x7c ]
+	28      (00000074) const/4              v3, 0
+	29      (00000076) invoke-interface     v11, v3, Ljava/util/function/Consumer;->accept(Ljava/lang/Object;)V
+	60:a9
+	(Ljava/lang/Exception; -> ac setPermissionGrantState-BB@0xac)
+
+setPermissionGrantState-BB@0x7c : 
+	30      (0000007c) return-void          
+	60:a9
+	(Ljava/lang/Exception; -> ac setPermissionGrantState-BB@0xac)
+
+setPermissionGrantState-BB@0x7e : [ setPermissionGrantState-BB@0x7c ]
+	31      (0000007e) new-instance         v3, Lcom/afwsamples/testdpc/DevicePolicyManagerGateway$FailedOperationException;
+	32      (00000082) const-string         v4, 'setPermissionGrantState(%s, %s, %s)'
+	33      (00000086) const/4              v5, 3
+	34      (00000088) new-array            v5, v5, [Ljava/lang/Object;
+	35      (0000008c) const/4              v6, 0
+	36      (0000008e) aput-object          v8, v5, v6
+	37      (00000092) const/4              v6, 1
+	38      (00000094) aput-object          v9, v5, v6
+	39      (00000098) const/4              v6, 2
+	40      (0000009a) aput-object          v1, v5, v6
+	41      (0000009e) invoke-direct        v3, v4, v5, Lcom/afwsamples/testdpc/DevicePolicyManagerGateway$FailedOperationException;-><init>(Ljava/lang/String; [Ljava/lang/Object;)V
+	42      (000000a4) invoke-interface     v12, v3, Ljava/util/function/Consumer;->accept(Ljava/lang/Object;)V
+	43      (000000aa) goto                 -17
+
+setPermissionGrantState-BB@0xac : [ setPermissionGrantState-BB@0x7c ]
+	44      (000000ac) move-exception       v0
+	45      (000000ae) invoke-interface     v12, v0, Ljava/util/function/Consumer;->accept(Ljava/lang/Object;)V
+	46      (000000b4) goto                 -1c
+

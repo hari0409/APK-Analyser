@@ -1,0 +1,45 @@
+# Landroidx/appcompat/widget/AppCompatRatingBar;->onMeasure(I I)V [access_flags=protected synchronized]
+#
+# Parameters:
+# - local registers: v0...v4
+# - v5:int
+# - v6:int
+#
+# - return:void
+
+onMeasure-BB@0x0 : [ onMeasure-BB@0x2 ]
+	0       (00000000) monitor-enter        v4
+
+onMeasure-BB@0x2 : [ onMeasure-BB@0x18 onMeasure-BB@0x44 ]
+	1       (00000002) invoke-super         v4, v5, v6, Landroid/widget/RatingBar;->onMeasure(I I)V
+	2       (00000008) iget-object          v2, v4, Landroidx/appcompat/widget/AppCompatRatingBar;->mAppCompatProgressBarHelper Landroidx/appcompat/widget/AppCompatProgressBarHelper;
+	3       (0000000c) invoke-virtual       v2, Landroidx/appcompat/widget/AppCompatProgressBarHelper;->getSampleTime()Landroid/graphics/Bitmap;
+	4       (00000012) move-result-object   v0
+	5       (00000014) if-eqz               v0, +18
+	2:43
+	(Ljava/lang/Throwable; -> 48 onMeasure-BB@0x48)
+
+onMeasure-BB@0x18 : [ onMeasure-BB@0x44 ]
+	6       (00000018) invoke-virtual       v0, Landroid/graphics/Bitmap;->getWidth()I
+	7       (0000001e) move-result          v2
+	8       (00000020) invoke-virtual       v4, Landroidx/appcompat/widget/AppCompatRatingBar;->getNumStars()I
+	9       (00000026) move-result          v3
+	10      (00000028) mul-int              v1, v2, v3
+	11      (0000002c) const/4              v2, 0
+	12      (0000002e) invoke-static        v1, v5, v2, Landroid/view/View;->resolveSizeAndState(I I I)I
+	13      (00000034) move-result          v2
+	14      (00000036) invoke-virtual       v4, Landroidx/appcompat/widget/AppCompatRatingBar;->getMeasuredHeight()I
+	15      (0000003c) move-result          v3
+	16      (0000003e) invoke-virtual       v4, v2, v3, Landroidx/appcompat/widget/AppCompatRatingBar;->setMeasuredDimension(I I)V
+	2:43
+	(Ljava/lang/Throwable; -> 48 onMeasure-BB@0x48)
+
+onMeasure-BB@0x44 : 
+	17      (00000044) monitor-exit         v4
+	18      (00000046) return-void          
+
+onMeasure-BB@0x48 : 
+	19      (00000048) move-exception       v2
+	20      (0000004a) monitor-exit         v4
+	21      (0000004c) throw                v2
+

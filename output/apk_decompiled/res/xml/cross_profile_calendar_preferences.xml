@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen android:title="@string/cross_profile_calendar"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:testdpc="http://schemas.android.com/apk/res-auto">
+    <PreferenceCategory android:title="@string/cross_profile_calendar">
+        <com.afwsamples.testdpc.common.preference.DpcSwitchPreference android:title="@string/cross_profile_calendar_allow_all_packages" android:key="cross_profile_calendar_allow_all_packages" testdpc:admin="profileOwner" testdpc:minSdkVersion="Q" />
+        <com.afwsamples.testdpc.common.preference.DpcPreference android:title="@string/cross_profile_calendar_set_allowed_packages" android:key="cross_profile_calendar_set_allowed_packages" testdpc:admin="profileOwner" testdpc:minSdkVersion="Q" />
+    </PreferenceCategory>
+</PreferenceScreen>

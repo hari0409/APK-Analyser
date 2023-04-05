@@ -1,0 +1,26 @@
+# Landroidx/appcompat/widget/LinearLayoutCompat;->setHorizontalGravity(I)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v3
+# - v4:int
+#
+# - return:void
+
+setHorizontalGravity-BB@0x0 : [ setHorizontalGravity-BB@0x14 setHorizontalGravity-BB@0x2c ]
+	0       (00000000) const                v2, 8388615 # [1.1754953317312125e-38]
+	1       (00000006) and-int              v0, v4, v2
+	2       (0000000a) iget                 v1, v3, Landroidx/appcompat/widget/LinearLayoutCompat;->mGravity I
+	3       (0000000e) and-int/2addr        v1, v2
+	4       (00000010) if-eq                v1, v0, +e
+
+setHorizontalGravity-BB@0x14 : [ setHorizontalGravity-BB@0x2c ]
+	5       (00000014) iget                 v1, v3, Landroidx/appcompat/widget/LinearLayoutCompat;->mGravity I
+	6       (00000018) const                v2, -8388616 # [-3.4028220466166163e+38]
+	7       (0000001e) and-int/2addr        v1, v2
+	8       (00000020) or-int/2addr         v1, v0
+	9       (00000022) iput                 v1, v3, Landroidx/appcompat/widget/LinearLayoutCompat;->mGravity I
+	10      (00000026) invoke-virtual       v3, Landroidx/appcompat/widget/LinearLayoutCompat;->requestLayout()V
+
+setHorizontalGravity-BB@0x2c : 
+	11      (0000002c) return-void          
+

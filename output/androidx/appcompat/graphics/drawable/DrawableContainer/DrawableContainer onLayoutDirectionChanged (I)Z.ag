@@ -1,0 +1,16 @@
+# Landroidx/appcompat/graphics/drawable/DrawableContainer;->onLayoutDirectionChanged(I)Z [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:int
+#
+# - return:boolean
+
+onLayoutDirectionChanged-BB@0x0 : 
+	0       (00000000) iget-object          v0, v2, Landroidx/appcompat/graphics/drawable/DrawableContainer;->mDrawableContainerState Landroidx/appcompat/graphics/drawable/DrawableContainer$DrawableContainerState;
+	1       (00000004) invoke-virtual       v2, Landroidx/appcompat/graphics/drawable/DrawableContainer;->getCurrentIndex()I
+	2       (0000000a) move-result          v1
+	3       (0000000c) invoke-virtual       v0, v3, v1, Landroidx/appcompat/graphics/drawable/DrawableContainer$DrawableContainerState;->setLayoutDirection(I I)Z
+	4       (00000012) move-result          v0
+	5       (00000014) return               v0
+

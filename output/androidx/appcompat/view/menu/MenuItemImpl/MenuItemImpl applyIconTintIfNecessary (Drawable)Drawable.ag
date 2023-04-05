@@ -1,0 +1,50 @@
+# Landroidx/appcompat/view/menu/MenuItemImpl;->applyIconTintIfNecessary(Landroid/graphics/drawable/Drawable;)Landroid/graphics/drawable/Drawable; [access_flags=private]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:android.graphics.drawable.Drawable
+#
+# - return:android.graphics.drawable.Drawable
+
+applyIconTintIfNecessary-BB@0x0 : [ applyIconTintIfNecessary-BB@0x4 applyIconTintIfNecessary-BB@0x56 ]
+	0       (00000000) if-eqz               v2, +2b
+
+applyIconTintIfNecessary-BB@0x4 : [ applyIconTintIfNecessary-BB@0xc applyIconTintIfNecessary-BB@0x56 ]
+	1       (00000004) iget-boolean         v0, v1, Landroidx/appcompat/view/menu/MenuItemImpl;->mNeedToApplyIconTint Z
+	2       (00000008) if-eqz               v0, +27
+
+applyIconTintIfNecessary-BB@0xc : [ applyIconTintIfNecessary-BB@0x14 applyIconTintIfNecessary-BB@0x1c ]
+	3       (0000000c) iget-boolean         v0, v1, Landroidx/appcompat/view/menu/MenuItemImpl;->mHasIconTint Z
+	4       (00000010) if-nez               v0, +6
+
+applyIconTintIfNecessary-BB@0x14 : [ applyIconTintIfNecessary-BB@0x1c applyIconTintIfNecessary-BB@0x56 ]
+	5       (00000014) iget-boolean         v0, v1, Landroidx/appcompat/view/menu/MenuItemImpl;->mHasIconTintMode Z
+	6       (00000018) if-eqz               v0, +1f
+
+applyIconTintIfNecessary-BB@0x1c : [ applyIconTintIfNecessary-BB@0x34 applyIconTintIfNecessary-BB@0x3e ]
+	7       (0000001c) invoke-static        v2, Landroidx/core/graphics/drawable/DrawableCompat;->wrap(Landroid/graphics/drawable/Drawable;)Landroid/graphics/drawable/Drawable;
+	8       (00000022) move-result-object   v2
+	9       (00000024) invoke-virtual       v2, Landroid/graphics/drawable/Drawable;->mutate()Landroid/graphics/drawable/Drawable;
+	10      (0000002a) move-result-object   v2
+	11      (0000002c) iget-boolean         v0, v1, Landroidx/appcompat/view/menu/MenuItemImpl;->mHasIconTint Z
+	12      (00000030) if-eqz               v0, +7
+
+applyIconTintIfNecessary-BB@0x34 : [ applyIconTintIfNecessary-BB@0x3e ]
+	13      (00000034) iget-object          v0, v1, Landroidx/appcompat/view/menu/MenuItemImpl;->mIconTintList Landroid/content/res/ColorStateList;
+	14      (00000038) invoke-static        v2, v0, Landroidx/core/graphics/drawable/DrawableCompat;->setTintList(Landroid/graphics/drawable/Drawable; Landroid/content/res/ColorStateList;)V
+
+applyIconTintIfNecessary-BB@0x3e : [ applyIconTintIfNecessary-BB@0x46 applyIconTintIfNecessary-BB@0x50 ]
+	15      (0000003e) iget-boolean         v0, v1, Landroidx/appcompat/view/menu/MenuItemImpl;->mHasIconTintMode Z
+	16      (00000042) if-eqz               v0, +7
+
+applyIconTintIfNecessary-BB@0x46 : [ applyIconTintIfNecessary-BB@0x50 ]
+	17      (00000046) iget-object          v0, v1, Landroidx/appcompat/view/menu/MenuItemImpl;->mIconTintMode Landroid/graphics/PorterDuff$Mode;
+	18      (0000004a) invoke-static        v2, v0, Landroidx/core/graphics/drawable/DrawableCompat;->setTintMode(Landroid/graphics/drawable/Drawable; Landroid/graphics/PorterDuff$Mode;)V
+
+applyIconTintIfNecessary-BB@0x50 : [ applyIconTintIfNecessary-BB@0x56 ]
+	19      (00000050) const/4              v0, 0
+	20      (00000052) iput-boolean         v0, v1, Landroidx/appcompat/view/menu/MenuItemImpl;->mNeedToApplyIconTint Z
+
+applyIconTintIfNecessary-BB@0x56 : 
+	21      (00000056) return-object        v2
+

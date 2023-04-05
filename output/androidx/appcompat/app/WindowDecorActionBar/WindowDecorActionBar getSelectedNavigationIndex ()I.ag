@@ -1,0 +1,37 @@
+# Landroidx/appcompat/app/WindowDecorActionBar;->getSelectedNavigationIndex()I [access_flags=public]
+#
+# Parameters:
+# local registers: v0...v2
+#
+# - return:int
+
+getSelectedNavigationIndex-BB@0x0 : [ D:getSelectedNavigationIndex-BB@0x14 1:getSelectedNavigationIndex-BB@0x2c 2:getSelectedNavigationIndex-BB@0x16 ]
+	0       (00000000) const/4              v0, -1
+	1       (00000002) iget-object          v1, v2, Landroidx/appcompat/app/WindowDecorActionBar;->mDecorToolbar Landroidx/appcompat/widget/DecorToolbar;
+	2       (00000006) invoke-interface     v1, Landroidx/appcompat/widget/DecorToolbar;->getNavigationMode()I
+	3       (0000000c) move-result          v1
+	4       (0000000e) packed-switch        v1, +17 (0x3c)
+
+getSelectedNavigationIndex-BB@0x14 : 
+	5       (00000014) return               v0
+
+getSelectedNavigationIndex-BB@0x16 : [ getSelectedNavigationIndex-BB@0x1e getSelectedNavigationIndex-BB@0x14 ]
+	6       (00000016) iget-object          v1, v2, Landroidx/appcompat/app/WindowDecorActionBar;->mSelectedTab Landroidx/appcompat/app/WindowDecorActionBar$TabImpl;
+	7       (0000001a) if-eqz               v1, -3
+
+getSelectedNavigationIndex-BB@0x1e : [ getSelectedNavigationIndex-BB@0x14 ]
+	8       (0000001e) iget-object          v0, v2, Landroidx/appcompat/app/WindowDecorActionBar;->mSelectedTab Landroidx/appcompat/app/WindowDecorActionBar$TabImpl;
+	9       (00000022) invoke-virtual       v0, Landroidx/appcompat/app/WindowDecorActionBar$TabImpl;->getPosition()I
+	10      (00000028) move-result          v0
+	11      (0000002a) goto                 -b
+
+getSelectedNavigationIndex-BB@0x2c : [ getSelectedNavigationIndex-BB@0x14 ]
+	12      (0000002c) iget-object          v0, v2, Landroidx/appcompat/app/WindowDecorActionBar;->mDecorToolbar Landroidx/appcompat/widget/DecorToolbar;
+	13      (00000030) invoke-interface     v0, Landroidx/appcompat/widget/DecorToolbar;->getDropdownSelectedPosition()I
+	14      (00000036) move-result          v0
+	15      (00000038) goto                 -12
+
+getSelectedNavigationIndex-BB@0x3a : 
+	16      (0000003a) nop                  
+	17      (0000003c) packed-switch-payload 1 2
+

@@ -1,0 +1,47 @@
+# Lcom/afwsamples/testdpc/profilepolicy/apprestrictions/ManagedConfigurationsFragment;->getTypeIndexFromRestrictionType(I)I [access_flags=private]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:int
+#
+# - return:int
+
+getTypeIndexFromRestrictionType-BB@0x0 : [ D:getTypeIndexFromRestrictionType-BB@0x6 1:getTypeIndexFromRestrictionType-BB@0x16 2:getTypeIndexFromRestrictionType-BB@0x6 3:getTypeIndexFromRestrictionType-BB@0x6 4:getTypeIndexFromRestrictionType-BB@0x22 5:getTypeIndexFromRestrictionType-BB@0x1a 6:getTypeIndexFromRestrictionType-BB@0x1e 7:getTypeIndexFromRestrictionType-BB@0x26 8:getTypeIndexFromRestrictionType-BB@0x2a ]
+	0       (00000000) packed-switch        v3, +18 (0x30)
+
+getTypeIndexFromRestrictionType-BB@0x6 : 
+	1       (00000006) new-instance         v0, Ljava/lang/AssertionError;
+	2       (0000000a) const-string         v1, 'Unknown restriction type'
+	3       (0000000e) invoke-direct        v0, v1, Ljava/lang/AssertionError;-><init>(Ljava/lang/Object;)V
+	4       (00000014) throw                v0
+
+getTypeIndexFromRestrictionType-BB@0x16 : [ getTypeIndexFromRestrictionType-BB@0x18 ]
+	5       (00000016) const/4              v0, 0
+
+getTypeIndexFromRestrictionType-BB@0x18 : 
+	6       (00000018) return               v0
+
+getTypeIndexFromRestrictionType-BB@0x1a : [ getTypeIndexFromRestrictionType-BB@0x18 ]
+	7       (0000001a) const/4              v0, 1
+	8       (0000001c) goto                 -2
+
+getTypeIndexFromRestrictionType-BB@0x1e : [ getTypeIndexFromRestrictionType-BB@0x18 ]
+	9       (0000001e) const/4              v0, 2
+	10      (00000020) goto                 -4
+
+getTypeIndexFromRestrictionType-BB@0x22 : [ getTypeIndexFromRestrictionType-BB@0x18 ]
+	11      (00000022) const/4              v0, 3
+	12      (00000024) goto                 -6
+
+getTypeIndexFromRestrictionType-BB@0x26 : [ getTypeIndexFromRestrictionType-BB@0x18 ]
+	13      (00000026) const/4              v0, 4
+	14      (00000028) goto                 -8
+
+getTypeIndexFromRestrictionType-BB@0x2a : [ getTypeIndexFromRestrictionType-BB@0x18 ]
+	15      (0000002a) const/4              v0, 5
+	16      (0000002c) goto                 -a
+
+getTypeIndexFromRestrictionType-BB@0x2e : 
+	17      (0000002e) nop                  
+	18      (00000030) packed-switch-payload 1 2 3 4 5 6 7 8
+

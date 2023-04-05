@@ -1,0 +1,18 @@
+# Lcom/afwsamples/testdpc/ShellCommand;->lambda$switchUser$30$ShellCommand(Landroid/os/UserHandle; Ljava/lang/Void;)V [access_flags=final synthetic]
+#
+# Parameters:
+# - local registers: v0...v3
+# - v4:android.os.UserHandle
+# - v5:java.lang.Void
+#
+# - return:void
+
+lambda$switchUser$30$ShellCommand-BB@0x0 : 
+	0       (00000000) const-string         v0, 'User %s switched'
+	1       (00000004) const/4              v1, 1
+	2       (00000006) new-array            v1, v1, [Ljava/lang/Object;
+	3       (0000000a) const/4              v2, 0
+	4       (0000000c) aput-object          v4, v1, v2
+	5       (00000010) invoke-direct        v3, v0, v1, Lcom/afwsamples/testdpc/ShellCommand;->onSuccess(Ljava/lang/String; [Ljava/lang/Object;)V
+	6       (00000016) return-void          
+

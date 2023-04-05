@@ -1,0 +1,18 @@
+# Landroidx/print/PrintHelper$PrintBitmapAdapter;->onFinish()V [access_flags=public]
+#
+# Parameters:
+# local registers: v0...v1
+#
+# - return:void
+
+onFinish-BB@0x0 : [ onFinish-BB@0x8 onFinish-BB@0x12 ]
+	0       (00000000) iget-object          v0, v1, Landroidx/print/PrintHelper$PrintBitmapAdapter;->mCallback Landroidx/print/PrintHelper$OnPrintFinishCallback;
+	1       (00000004) if-eqz               v0, +7
+
+onFinish-BB@0x8 : [ onFinish-BB@0x12 ]
+	2       (00000008) iget-object          v0, v1, Landroidx/print/PrintHelper$PrintBitmapAdapter;->mCallback Landroidx/print/PrintHelper$OnPrintFinishCallback;
+	3       (0000000c) invoke-interface     v0, Landroidx/print/PrintHelper$OnPrintFinishCallback;->onFinish()V
+
+onFinish-BB@0x12 : 
+	4       (00000012) return-void          
+

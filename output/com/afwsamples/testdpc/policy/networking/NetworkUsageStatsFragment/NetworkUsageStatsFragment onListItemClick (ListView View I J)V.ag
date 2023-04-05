@@ -1,0 +1,42 @@
+# Lcom/afwsamples/testdpc/policy/networking/NetworkUsageStatsFragment;->onListItemClick(Landroid/widget/ListView; Landroid/view/View; I J)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v7
+# - v8:android.widget.ListView
+# - v9:android.view.View
+# - v10:int
+# - v11:long
+#
+# - return:void
+
+onListItemClick-BB@0x0 : [ onListItemClick-BB@0x1e onListItemClick-BB@0x5e ]
+	0       (00000000) iget-object          v1, v6, Lcom/afwsamples/testdpc/policy/networking/NetworkUsageStatsFragment;->mListAdapter Landroid/widget/ArrayAdapter;
+	1       (00000004) invoke-virtual       v1, v9, Landroid/widget/ArrayAdapter;->getItem(I)Ljava/lang/Object;
+	2       (0000000a) move-result-object   v5
+	3       (0000000c) check-cast           v5, Ljava/util/List;
+	4       (00000010) const/16             v1, 8
+	5       (00000014) invoke-direct        v6, v1, Lcom/afwsamples/testdpc/policy/networking/NetworkUsageStatsFragment;->transitionAppHistoryView(I)V
+	6       (0000001a) if-eqz               v5, +22
+
+onListItemClick-BB@0x1e : [ onListItemClick-BB@0x2c onListItemClick-BB@0x5e ]
+	7       (0000001e) invoke-interface     v5, Ljava/util/List;->size()I
+	8       (00000024) move-result          v1
+	9       (00000026) const/4              v2, 1
+	10      (00000028) if-le                v1, v2, +1b
+
+onListItemClick-BB@0x2c : [ onListItemClick-BB@0x5e ]
+	11      (0000002c) const/4              v1, 0
+	12      (0000002e) invoke-direct        v6, v1, Lcom/afwsamples/testdpc/policy/networking/NetworkUsageStatsFragment;->transitionAppHistoryView(I)V
+	13      (00000034) new-instance         v0, Lcom/afwsamples/testdpc/policy/networking/NetworkUsageStatsFragment$2;
+	14      (00000038) invoke-virtual       v6, Lcom/afwsamples/testdpc/policy/networking/NetworkUsageStatsFragment;->getActivity()Landroid/app/Activity;
+	15      (0000003e) move-result-object   v2
+	16      (00000040) const                v3, 17367053 # [2.5162962381049664e-38]
+	17      (00000046) const                v4, 16908310 # [2.3877290658210145e-38]
+	18      (0000004c) move-object          v1, v6
+	19      (0000004e) invoke-direct/range  v0 ... v5, Lcom/afwsamples/testdpc/policy/networking/NetworkUsageStatsFragment$2;-><init>(Lcom/afwsamples/testdpc/policy/networking/NetworkUsageStatsFragment; Landroid/content/Context; I I Ljava/util/List;)V
+	20      (00000054) iget-object          v1, v6, Lcom/afwsamples/testdpc/policy/networking/NetworkUsageStatsFragment;->mAppHistoryList Landroid/widget/ListView;
+	21      (00000058) invoke-virtual       v1, v0, Landroid/widget/ListView;->setAdapter(Landroid/widget/ListAdapter;)V
+
+onListItemClick-BB@0x5e : 
+	22      (0000005e) return-void          
+

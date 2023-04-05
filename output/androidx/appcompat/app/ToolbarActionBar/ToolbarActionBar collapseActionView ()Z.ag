@@ -1,0 +1,25 @@
+# Landroidx/appcompat/app/ToolbarActionBar;->collapseActionView()Z [access_flags=public]
+#
+# Parameters:
+# local registers: v0...v1
+#
+# - return:boolean
+
+collapseActionView-BB@0x0 : [ collapseActionView-BB@0x10 collapseActionView-BB@0x1e ]
+	0       (00000000) iget-object          v0, v1, Landroidx/appcompat/app/ToolbarActionBar;->mDecorToolbar Landroidx/appcompat/widget/DecorToolbar;
+	1       (00000004) invoke-interface     v0, Landroidx/appcompat/widget/DecorToolbar;->hasExpandedActionView()Z
+	2       (0000000a) move-result          v0
+	3       (0000000c) if-eqz               v0, +9
+
+collapseActionView-BB@0x10 : [ collapseActionView-BB@0x1c ]
+	4       (00000010) iget-object          v0, v1, Landroidx/appcompat/app/ToolbarActionBar;->mDecorToolbar Landroidx/appcompat/widget/DecorToolbar;
+	5       (00000014) invoke-interface     v0, Landroidx/appcompat/widget/DecorToolbar;->collapseActionView()V
+	6       (0000001a) const/4              v0, 1
+
+collapseActionView-BB@0x1c : 
+	7       (0000001c) return               v0
+
+collapseActionView-BB@0x1e : [ collapseActionView-BB@0x1c ]
+	8       (0000001e) const/4              v0, 0
+	9       (00000020) goto                 -2
+

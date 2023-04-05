@@ -1,0 +1,99 @@
+# Lcom/afwsamples/testdpc/policy/UserRestrictionsDisplayFragment;->onPreferenceChange(Landroidx/preference/Preference; Ljava/lang/Object;)Z [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v8
+# - v9:androidx.preference.Preference
+# - v10:java.lang.Object
+#
+# - return:boolean
+
+onPreferenceChange-BB@0x0 : [ onPreferenceChange-BB@0x1c ]
+	0       (00000000) const/4              v3, 1
+	1       (00000002) const/4              v4, 0
+	2       (00000004) invoke-virtual       v9, Landroidx/preference/Preference;->getKey()Ljava/lang/String;
+	3       (0000000a) move-result-object   v2
+	4       (0000000c) invoke-static        v3, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+	5       (00000012) move-result-object   v5
+	6       (00000014) invoke-virtual       v10, v5, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
+	7       (0000001a) move-result          v1
+
+onPreferenceChange-BB@0x1c : [ onPreferenceChange-BB@0x2a onPreferenceChange-BB@0x80 ]
+	8       (0000001c) iget-object          v5, v8, Lcom/afwsamples/testdpc/policy/UserRestrictionsDisplayFragment;->mDevicePolicyManagerGateway Lcom/afwsamples/testdpc/DevicePolicyManagerGateway;
+	9       (00000020) invoke-interface     v5, v2, v1, Lcom/afwsamples/testdpc/DevicePolicyManagerGateway;->setUserRestriction(Ljava/lang/String; Z)V
+	10      (00000026) if-nez               v1, +2d
+	1c:a3
+	(Ljava/lang/SecurityException; -> a6 onPreferenceChange-BB@0xa6)
+
+onPreferenceChange-BB@0x2a : [ onPreferenceChange-BB@0x3a onPreferenceChange-BB@0x4a ]
+	11      (0000002a) const-string         v5, 'no_install_unknown_sources'
+	12      (0000002e) invoke-virtual       v5, v2, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+	13      (00000034) move-result          v5
+	14      (00000036) if-nez               v5, +a
+	1c:a3
+	(Ljava/lang/SecurityException; -> a6 onPreferenceChange-BB@0xa6)
+
+onPreferenceChange-BB@0x3a : [ onPreferenceChange-BB@0x4a onPreferenceChange-BB@0x80 ]
+	15      (0000003a) const-string         v5, 'no_install_unknown_sources_globally'
+	16      (0000003e) invoke-virtual       v5, v2, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+	17      (00000044) move-result          v5
+	18      (00000046) if-eqz               v5, +1d
+	1c:a3
+	(Ljava/lang/SecurityException; -> a6 onPreferenceChange-BB@0xa6)
+
+onPreferenceChange-BB@0x4a : [ onPreferenceChange-BB@0x80 ]
+	19      (0000004a) new-instance         v5, Landroid/app/AlertDialog$Builder;
+	20      (0000004e) invoke-virtual       v8, Lcom/afwsamples/testdpc/policy/UserRestrictionsDisplayFragment;->getActivity()Landroid/app/Activity;
+	21      (00000054) move-result-object   v6
+	22      (00000056) invoke-direct        v5, v6, Landroid/app/AlertDialog$Builder;-><init>(Landroid/content/Context;)V
+	23      (0000005c) const                v6, 2131689618 # [1.900825646290451e+38]
+	24      (00000062) invoke-virtual       v5, v6, Landroid/app/AlertDialog$Builder;->setMessage(I)Landroid/app/AlertDialog$Builder;
+	25      (00000068) move-result-object   v5
+	26      (0000006a) const                v6, 2131689619 # [1.900825849114547e+38]
+	27      (00000070) const/4              v7, 0
+	28      (00000072) invoke-virtual       v5, v6, v7, Landroid/app/AlertDialog$Builder;->setPositiveButton(I Landroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
+	29      (00000078) move-result-object   v5
+	30      (0000007a) invoke-virtual       v5, Landroid/app/AlertDialog$Builder;->show()Landroid/app/AlertDialog;
+	1c:a3
+	(Ljava/lang/SecurityException; -> a6 onPreferenceChange-BB@0xa6)
+
+onPreferenceChange-BB@0x80 : [ onPreferenceChange-BB@0x96 onPreferenceChange-BB@0xa4 ]
+	31      (00000080) invoke-direct        v8, v2, Lcom/afwsamples/testdpc/policy/UserRestrictionsDisplayFragment;->updateUserRestriction(Ljava/lang/String;)V
+	32      (00000086) const-string         v5, 'no_unified_password'
+	33      (0000008a) invoke-virtual       v5, v2, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+	34      (00000090) move-result          v5
+	35      (00000092) if-eqz               v5, +9
+	1c:a3
+	(Ljava/lang/SecurityException; -> a6 onPreferenceChange-BB@0xa6)
+
+onPreferenceChange-BB@0x96 : [ onPreferenceChange-BB@0xa4 ]
+	36      (00000096) invoke-virtual       v8, Lcom/afwsamples/testdpc/policy/UserRestrictionsDisplayFragment;->getActivity()Landroid/app/Activity;
+	37      (0000009c) move-result-object   v5
+	38      (0000009e) invoke-static        v5, Lcom/afwsamples/testdpc/DeviceAdminReceiver;->sendPasswordRequirementsChanged(Landroid/content/Context;)V
+	1c:a3
+	(Ljava/lang/SecurityException; -> a6 onPreferenceChange-BB@0xa6)
+
+onPreferenceChange-BB@0xa4 : 
+	39      (000000a4) return               v3
+
+onPreferenceChange-BB@0xa6 : [ onPreferenceChange-BB@0xa4 ]
+	40      (000000a6) move-exception       v0
+	41      (000000a8) invoke-virtual       v8, Lcom/afwsamples/testdpc/policy/UserRestrictionsDisplayFragment;->getActivity()Landroid/app/Activity;
+	42      (000000ae) move-result-object   v3
+	43      (000000b0) const                v5, 2131690360 # [1.90097614176971e+38]
+	44      (000000b6) invoke-static        v3, v5, v4, Landroid/widget/Toast;->makeText(Landroid/content/Context; I I)Landroid/widget/Toast;
+	45      (000000bc) move-result-object   v3
+	46      (000000be) invoke-virtual       v3, Landroid/widget/Toast;->show()V
+	47      (000000c4) const-string         v3, 'UserRestrictions'
+	48      (000000c8) new-instance         v5, Ljava/lang/StringBuilder;
+	49      (000000cc) invoke-direct        v5, Ljava/lang/StringBuilder;-><init>()V
+	50      (000000d2) const-string         v6, 'Error occurred while updating user restriction: '
+	51      (000000d6) invoke-virtual       v5, v6, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	52      (000000dc) move-result-object   v5
+	53      (000000de) invoke-virtual       v5, v2, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	54      (000000e4) move-result-object   v5
+	55      (000000e6) invoke-virtual       v5, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+	56      (000000ec) move-result-object   v5
+	57      (000000ee) invoke-static        v3, v5, v0, Landroid/util/Log;->e(Ljava/lang/String; Ljava/lang/String; Ljava/lang/Throwable;)I
+	58      (000000f4) move                 v3, v4
+	59      (000000f6) goto                 -29
+

@@ -1,0 +1,35 @@
+# Landroidx/appcompat/app/AppCompatViewInflater;-><clinit>()V [access_flags=static constructor]
+#
+# Parameters:
+# local registers: v0...v4
+#
+# - return:void
+
+<clinit>-BB@0x0 : 
+	0       (00000000) const/4              v4, 2
+	1       (00000002) const/4              v3, 1
+	2       (00000004) const/4              v2, 0
+	3       (00000006) new-array            v0, v4, [Ljava/lang/Class;
+	4       (0000000a) const-class          v1, Landroid/content/Context;
+	5       (0000000e) aput-object          v1, v0, v2
+	6       (00000012) const-class          v1, Landroid/util/AttributeSet;
+	7       (00000016) aput-object          v1, v0, v3
+	8       (0000001a) sput-object          v0, Landroidx/appcompat/app/AppCompatViewInflater;->sConstructorSignature [Ljava/lang/Class;
+	9       (0000001e) new-array            v0, v3, [I
+	10      (00000022) const                v1, 16843375 # [2.369530402664828e-38]
+	11      (00000028) aput                 v1, v0, v2
+	12      (0000002c) sput-object          v0, Landroidx/appcompat/app/AppCompatViewInflater;->sOnClickAttrs [I
+	13      (00000030) const/4              v0, 3
+	14      (00000032) new-array            v0, v0, [Ljava/lang/String;
+	15      (00000036) const-string         v1, 'android.widget.'
+	16      (0000003a) aput-object          v1, v0, v2
+	17      (0000003e) const-string         v1, 'android.view.'
+	18      (00000042) aput-object          v1, v0, v3
+	19      (00000046) const-string         v1, 'android.webkit.'
+	20      (0000004a) aput-object          v1, v0, v4
+	21      (0000004e) sput-object          v0, Landroidx/appcompat/app/AppCompatViewInflater;->sClassPrefixList [Ljava/lang/String;
+	22      (00000052) new-instance         v0, Landroidx/collection/ArrayMap;
+	23      (00000056) invoke-direct        v0, Landroidx/collection/ArrayMap;-><init>()V
+	24      (0000005c) sput-object          v0, Landroidx/appcompat/app/AppCompatViewInflater;->sConstructorMap Ljava/util/Map;
+	25      (00000060) return-void          
+

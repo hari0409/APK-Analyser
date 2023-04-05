@@ -1,0 +1,29 @@
+# Landroidx/appcompat/widget/Toolbar$SavedState;-><init>(Landroid/os/Parcel; Ljava/lang/ClassLoader;)V [access_flags=public constructor]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:android.os.Parcel
+# - v3:java.lang.ClassLoader
+#
+# - return:void
+
+<init>-BB@0x0 : [ <init>-BB@0x1e <init>-BB@0x26 ]
+	0       (00000000) invoke-direct        v1, v2, v3, Landroidx/customview/view/AbsSavedState;-><init>(Landroid/os/Parcel; Ljava/lang/ClassLoader;)V
+	1       (00000006) invoke-virtual       v2, Landroid/os/Parcel;->readInt()I
+	2       (0000000c) move-result          v0
+	3       (0000000e) iput                 v0, v1, Landroidx/appcompat/widget/Toolbar$SavedState;->expandedMenuItemId I
+	4       (00000012) invoke-virtual       v2, Landroid/os/Parcel;->readInt()I
+	5       (00000018) move-result          v0
+	6       (0000001a) if-eqz               v0, +6
+
+<init>-BB@0x1e : [ <init>-BB@0x20 ]
+	7       (0000001e) const/4              v0, 1
+
+<init>-BB@0x20 : 
+	8       (00000020) iput-boolean         v0, v1, Landroidx/appcompat/widget/Toolbar$SavedState;->isOverflowOpen Z
+	9       (00000024) return-void          
+
+<init>-BB@0x26 : [ <init>-BB@0x20 ]
+	10      (00000026) const/4              v0, 0
+	11      (00000028) goto                 -4
+

@@ -1,0 +1,27 @@
+# Lcom/afwsamples/testdpc/policy/keyguard/SetTrustAgentConfigFragment;->onCreate(Landroid/os/Bundle;)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:android.os.Bundle
+#
+# - return:void
+
+onCreate-BB@0x0 : 
+	0       (00000000) invoke-super         v2, v3, Lcom/afwsamples/testdpc/common/ManageResolveInfoFragment;->onCreate(Landroid/os/Bundle;)V
+	1       (00000006) invoke-virtual       v2, Lcom/afwsamples/testdpc/policy/keyguard/SetTrustAgentConfigFragment;->getArguments()Landroid/os/Bundle;
+	2       (0000000c) move-result-object   v0
+	3       (0000000e) const-string         v1, 'type'
+	4       (00000012) invoke-virtual       v0, v1, Landroid/os/Bundle;->getInt(Ljava/lang/String;)I
+	5       (00000018) move-result          v0
+	6       (0000001a) iput                 v0, v2, Lcom/afwsamples/testdpc/policy/keyguard/SetTrustAgentConfigFragment;->mType I
+	7       (0000001e) iget                 v0, v2, Lcom/afwsamples/testdpc/policy/keyguard/SetTrustAgentConfigFragment;->mType I
+	8       (00000022) invoke-direct        v2, v0, Lcom/afwsamples/testdpc/policy/keyguard/SetTrustAgentConfigFragment;->getDevicePolicyManagerFromType(I)Landroid/app/admin/DevicePolicyManager;
+	9       (00000028) move-result-object   v0
+	10      (0000002a) iput-object          v0, v2, Lcom/afwsamples/testdpc/policy/keyguard/SetTrustAgentConfigFragment;->mDevicePolicyManager Landroid/app/admin/DevicePolicyManager;
+	11      (0000002e) invoke-virtual       v2, Lcom/afwsamples/testdpc/policy/keyguard/SetTrustAgentConfigFragment;->getActivity()Landroid/app/Activity;
+	12      (00000034) move-result-object   v0
+	13      (00000036) invoke-virtual       v0, Landroid/app/Activity;->getPackageManager()Landroid/content/pm/PackageManager;
+	14      (0000003c) move-result-object   v0
+	15      (0000003e) iput-object          v0, v2, Lcom/afwsamples/testdpc/policy/keyguard/SetTrustAgentConfigFragment;->mPackageManager Landroid/content/pm/PackageManager;
+	16      (00000042) return-void          
+

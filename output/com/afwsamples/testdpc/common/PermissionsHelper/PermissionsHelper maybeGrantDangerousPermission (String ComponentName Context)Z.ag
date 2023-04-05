@@ -1,0 +1,44 @@
+# Lcom/afwsamples/testdpc/common/PermissionsHelper;->maybeGrantDangerousPermission(Ljava/lang/String; Landroid/content/ComponentName; Landroid/content/Context;)Z [access_flags=private static]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:java.lang.String
+# - v4:android.content.ComponentName
+# - v5:android.content.Context
+#
+# - return:boolean
+
+maybeGrantDangerousPermission-BB@0x0 : [ maybeGrantDangerousPermission-BB@0xe maybeGrantDangerousPermission-BB@0x10 ]
+	0       (00000000) const/4              v1, 1
+	1       (00000002) invoke-static        v3, v5, Lcom/afwsamples/testdpc/common/PermissionsHelper;->isPermissionDangerous(Ljava/lang/String; Landroid/content/Context;)Z
+	2       (00000008) move-result          v2
+	3       (0000000a) if-nez               v2, +3
+
+maybeGrantDangerousPermission-BB@0xe : 
+	4       (0000000e) return               v1
+
+maybeGrantDangerousPermission-BB@0x10 : [ maybeGrantDangerousPermission-BB@0x1c maybeGrantDangerousPermission-BB@0x20 ]
+	5       (00000010) invoke-static        v5, Lcom/afwsamples/testdpc/common/ProvisioningStateUtil;->isManagedByTestDPC(Landroid/content/Context;)Z
+	6       (00000016) move-result          v2
+	7       (00000018) if-nez               v2, +4
+
+maybeGrantDangerousPermission-BB@0x1c : [ maybeGrantDangerousPermission-BB@0xe ]
+	8       (0000001c) const/4              v1, 0
+	9       (0000001e) goto                 -8
+
+maybeGrantDangerousPermission-BB@0x20 : [ maybeGrantDangerousPermission-BB@0x2c maybeGrantDangerousPermission-BB@0xe ]
+	10      (00000020) invoke-static        v4, v5, v3, Lcom/afwsamples/testdpc/common/PermissionsHelper;->hasPermissionGranted(Landroid/content/ComponentName; Landroid/content/Context; Ljava/lang/String;)Z
+	11      (00000026) move-result          v2
+	12      (00000028) if-nez               v2, -d
+
+maybeGrantDangerousPermission-BB@0x2c : [ maybeGrantDangerousPermission-BB@0xe ]
+	13      (0000002c) const-string         v2, 'device_policy'
+	14      (00000030) invoke-virtual       v5, v2, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
+	15      (00000036) move-result-object   v0
+	16      (00000038) check-cast           v0, Landroid/app/admin/DevicePolicyManager;
+	17      (0000003c) invoke-virtual       v5, Landroid/content/Context;->getPackageName()Ljava/lang/String;
+	18      (00000042) move-result-object   v2
+	19      (00000044) invoke-virtual       v0, v4, v2, v3, v1, Landroid/app/admin/DevicePolicyManager;->setPermissionGrantState(Landroid/content/ComponentName; Ljava/lang/String; Ljava/lang/String; I)Z
+	20      (0000004a) move-result          v1
+	21      (0000004c) goto                 -1f
+

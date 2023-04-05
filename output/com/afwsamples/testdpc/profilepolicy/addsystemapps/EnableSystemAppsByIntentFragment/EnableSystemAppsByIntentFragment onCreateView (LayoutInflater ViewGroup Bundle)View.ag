@@ -1,0 +1,40 @@
+# Lcom/afwsamples/testdpc/profilepolicy/addsystemapps/EnableSystemAppsByIntentFragment;->onCreateView(Landroid/view/LayoutInflater; Landroid/view/ViewGroup; Landroid/os/Bundle;)Landroid/view/View; [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v4
+# - v5:android.view.LayoutInflater
+# - v6:android.view.ViewGroup
+# - v7:android.os.Bundle
+#
+# - return:android.view.View
+
+onCreateView-BB@0x0 : 
+	0       (00000000) const/16             v3, 8
+	1       (00000004) invoke-super         v4, v5, v6, v7, Lcom/afwsamples/testdpc/common/IntentOrIntentFilterFragment;->onCreateView(Landroid/view/LayoutInflater; Landroid/view/ViewGroup; Landroid/os/Bundle;)Landroid/view/View;
+	2       (0000000a) move-result-object   v1
+	3       (0000000c) const                v2, 2131296347 # [1.821060811218074e+38]
+	4       (00000012) invoke-virtual       v1, v2, Landroid/view/View;->findViewById(I)Landroid/view/View;
+	5       (00000018) move-result-object   v0
+	6       (0000001a) check-cast           v0, Landroid/widget/Button;
+	7       (0000001e) const                v2, 2131296393 # [1.8210701411264917e+38]
+	8       (00000024) invoke-virtual       v1, v2, Landroid/view/View;->findViewById(I)Landroid/view/View;
+	9       (0000002a) move-result-object   v2
+	10      (0000002c) invoke-virtual       v2, v3, Landroid/view/View;->setVisibility(I)V
+	11      (00000032) const                v2, 2131296392 # [1.8210699383023957e+38]
+	12      (00000038) invoke-virtual       v1, v2, Landroid/view/View;->findViewById(I)Landroid/view/View;
+	13      (0000003e) move-result-object   v2
+	14      (00000040) invoke-virtual       v2, v3, Landroid/view/View;->setVisibility(I)V
+	15      (00000046) const                v2, 2131296395 # [1.821070546774684e+38]
+	16      (0000004c) invoke-virtual       v1, v2, Landroid/view/View;->findViewById(I)Landroid/view/View;
+	17      (00000052) move-result-object   v2
+	18      (00000054) invoke-virtual       v2, v3, Landroid/view/View;->setVisibility(I)V
+	19      (0000005a) const                v2, 2131296394 # [1.8210703439505878e+38]
+	20      (00000060) invoke-virtual       v1, v2, Landroid/view/View;->findViewById(I)Landroid/view/View;
+	21      (00000066) move-result-object   v2
+	22      (00000068) invoke-virtual       v2, v3, Landroid/view/View;->setVisibility(I)V
+	23      (0000006e) iget-object          v2, v4, Lcom/afwsamples/testdpc/profilepolicy/addsystemapps/EnableSystemAppsByIntentFragment;->mAddActionButton Landroid/widget/Button;
+	24      (00000072) invoke-virtual       v2, v3, Landroid/widget/Button;->setVisibility(I)V
+	25      (00000078) const                v2, 2131689781 # [1.900858706618105e+38]
+	26      (0000007e) invoke-virtual       v0, v2, Landroid/widget/Button;->setText(I)V
+	27      (00000084) return-object        v1
+

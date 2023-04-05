@@ -1,0 +1,20 @@
+# Lcom/afwsamples/testdpc/ShellCommand;->lambda$setUsbDataSignalingEnabled$67$ShellCommand(Z Ljava/lang/Void;)V [access_flags=final synthetic]
+#
+# Parameters:
+# - local registers: v0...v4
+# - v5:boolean
+# - v6:java.lang.Void
+#
+# - return:void
+
+lambda$setUsbDataSignalingEnabled$67$ShellCommand-BB@0x0 : 
+	0       (00000000) const-string         v0, 'USB data signaling set to %b'
+	1       (00000004) const/4              v1, 1
+	2       (00000006) new-array            v1, v1, [Ljava/lang/Object;
+	3       (0000000a) const/4              v2, 0
+	4       (0000000c) invoke-static        v5, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+	5       (00000012) move-result-object   v3
+	6       (00000014) aput-object          v3, v1, v2
+	7       (00000018) invoke-direct        v4, v0, v1, Lcom/afwsamples/testdpc/ShellCommand;->onSuccess(Ljava/lang/String; [Ljava/lang/Object;)V
+	8       (0000001e) return-void          
+

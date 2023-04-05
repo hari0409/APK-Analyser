@@ -1,0 +1,284 @@
+# Landroidx/appcompat/widget/TooltipPopup;->computePosition(Landroid/view/View; I I Z Landroid/view/WindowManager$LayoutParams;)V [access_flags=private]
+#
+# Parameters:
+# - local registers: v0...v24
+# - v25:android.view.View
+# - v26:int
+# - v27:int
+# - v28:boolean
+# - v29:android.view.WindowManager$LayoutParams
+#
+# - return:void
+
+computePosition-BB@0x0 : [ computePosition-BB@0x48 computePosition-BB@0xe0 ]
+	0       (00000000) invoke-virtual/range v25, Landroid/view/View;->getApplicationWindowToken()Landroid/os/IBinder;
+	1       (00000006) move-result-object   v19
+	2       (00000008) move-object/from16   v0, v19
+	3       (0000000c) move-object/from16   v1, v29
+	4       (00000010) iput-object          v0, v1, Landroid/view/WindowManager$LayoutParams;->token Landroid/os/IBinder;
+	5       (00000014) move-object/from16   v0, v24
+	6       (00000018) iget-object          v0, v0, Landroidx/appcompat/widget/TooltipPopup;->mContext Landroid/content/Context;
+	7       (0000001c) move-object/from16   v19, v0
+	8       (00000020) invoke-virtual/range v19, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
+	9       (00000026) move-result-object   v19
+	10      (00000028) sget                 v20, Landroidx/appcompat/R$dimen;->tooltip_precise_anchor_threshold I
+	11      (0000002c) invoke-virtual/range v19 ... v20, Landroid/content/res/Resources;->getDimensionPixelOffset(I)I
+	12      (00000032) move-result          v16
+	13      (00000034) invoke-virtual/range v25, Landroid/view/View;->getWidth()I
+	14      (0000003a) move-result          v19
+	15      (0000003c) move/from16          v0, v19
+	16      (00000040) move/from16          v1, v16
+	17      (00000044) if-lt                v0, v1, +4e
+
+computePosition-BB@0x48 : [ computePosition-BB@0x4c ]
+	18      (00000048) move/from16          v9, v26
+
+computePosition-BB@0x4c : [ computePosition-BB@0x60 computePosition-BB@0xee ]
+	19      (0000004c) invoke-virtual/range v25, Landroid/view/View;->getHeight()I
+	20      (00000052) move-result          v19
+	21      (00000054) move/from16          v0, v19
+	22      (00000058) move/from16          v1, v16
+	23      (0000005c) if-lt                v0, v1, +49
+
+computePosition-BB@0x60 : [ computePosition-BB@0x88 ]
+	24      (00000060) move-object/from16   v0, v24
+	25      (00000064) iget-object          v0, v0, Landroidx/appcompat/widget/TooltipPopup;->mContext Landroid/content/Context;
+	26      (00000068) move-object/from16   v19, v0
+	27      (0000006c) invoke-virtual/range v19, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
+	28      (00000072) move-result-object   v19
+	29      (00000074) sget                 v20, Landroidx/appcompat/R$dimen;->tooltip_precise_anchor_extra_offset I
+	30      (00000078) invoke-virtual/range v19 ... v20, Landroid/content/res/Resources;->getDimensionPixelOffset(I)I
+	31      (0000007e) move-result          v8
+	32      (00000080) add-int              v7, v27, v8
+	33      (00000084) sub-int              v6, v27, v8
+
+computePosition-BB@0x88 : [ computePosition-BB@0xb0 computePosition-BB@0xfa ]
+	34      (00000088) const/16             v19, 49
+	35      (0000008c) move/from16          v0, v19
+	36      (00000090) move-object/from16   v1, v29
+	37      (00000094) iput                 v0, v1, Landroid/view/WindowManager$LayoutParams;->gravity I
+	38      (00000098) move-object/from16   v0, v24
+	39      (0000009c) iget-object          v0, v0, Landroidx/appcompat/widget/TooltipPopup;->mContext Landroid/content/Context;
+	40      (000000a0) move-object/from16   v19, v0
+	41      (000000a4) invoke-virtual/range v19, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
+	42      (000000aa) move-result-object   v20
+	43      (000000ac) if-eqz               v28, +27
+
+computePosition-BB@0xb0 : [ computePosition-BB@0xb4 ]
+	44      (000000b0) sget                 v19, Landroidx/appcompat/R$dimen;->tooltip_y_offset_touch I
+
+computePosition-BB@0xb4 : [ computePosition-BB@0xd0 computePosition-BB@0x100 ]
+	45      (000000b4) move-object/from16   v0, v20
+	46      (000000b8) move/from16          v1, v19
+	47      (000000bc) invoke-virtual       v0, v1, Landroid/content/res/Resources;->getDimensionPixelOffset(I)I
+	48      (000000c2) move-result          v15
+	49      (000000c4) invoke-static/range  v25, Landroidx/appcompat/widget/TooltipPopup;->getAppRootView(Landroid/view/View;)Landroid/view/View;
+	50      (000000ca) move-result-object   v4
+	51      (000000cc) if-nez               v4, +1a
+
+computePosition-BB@0xd0 : [ computePosition-BB@0xde ]
+	52      (000000d0) const-string         v19, 'TooltipPopup'
+	53      (000000d4) const-string         v20, 'Cannot find app view'
+	54      (000000d8) invoke-static/range  v19 ... v20, Landroid/util/Log;->e(Ljava/lang/String; Ljava/lang/String;)I
+
+computePosition-BB@0xde : 
+	55      (000000de) return-void          
+
+computePosition-BB@0xe0 : [ computePosition-BB@0x4c ]
+	56      (000000e0) invoke-virtual/range v25, Landroid/view/View;->getWidth()I
+	57      (000000e6) move-result          v19
+	58      (000000e8) div-int/lit8         v9, v19, 2
+	59      (000000ec) goto                 -50
+
+computePosition-BB@0xee : [ computePosition-BB@0x88 ]
+	60      (000000ee) invoke-virtual/range v25, Landroid/view/View;->getHeight()I
+	61      (000000f4) move-result          v7
+	62      (000000f6) const/4              v6, 0
+	63      (000000f8) goto                 -38
+
+computePosition-BB@0xfa : [ computePosition-BB@0xb4 ]
+	64      (000000fa) sget                 v19, Landroidx/appcompat/R$dimen;->tooltip_y_offset_non_touch I
+	65      (000000fe) goto                 -25
+
+computePosition-BB@0x100 : [ computePosition-BB@0x132 computePosition-BB@0x1cc ]
+	66      (00000100) move-object/from16   v0, v24
+	67      (00000104) iget-object          v0, v0, Landroidx/appcompat/widget/TooltipPopup;->mTmpDisplayFrame Landroid/graphics/Rect;
+	68      (00000108) move-object/from16   v19, v0
+	69      (0000010c) move-object/from16   v0, v19
+	70      (00000110) invoke-virtual       v4, v0, Landroid/view/View;->getWindowVisibleDisplayFrame(Landroid/graphics/Rect;)V
+	71      (00000116) move-object/from16   v0, v24
+	72      (0000011a) iget-object          v0, v0, Landroidx/appcompat/widget/TooltipPopup;->mTmpDisplayFrame Landroid/graphics/Rect;
+	73      (0000011e) move-object/from16   v19, v0
+	74      (00000122) move-object/from16   v0, v19
+	75      (00000126) iget                 v0, v0, Landroid/graphics/Rect;->left I
+	76      (0000012a) move/from16          v19, v0
+	77      (0000012e) if-gez               v19, +4f
+
+computePosition-BB@0x132 : [ computePosition-BB@0x14e computePosition-BB@0x1cc ]
+	78      (00000132) move-object/from16   v0, v24
+	79      (00000136) iget-object          v0, v0, Landroidx/appcompat/widget/TooltipPopup;->mTmpDisplayFrame Landroid/graphics/Rect;
+	80      (0000013a) move-object/from16   v19, v0
+	81      (0000013e) move-object/from16   v0, v19
+	82      (00000142) iget                 v0, v0, Landroid/graphics/Rect;->top I
+	83      (00000146) move/from16          v19, v0
+	84      (0000014a) if-gez               v19, +41
+
+computePosition-BB@0x14e : [ computePosition-BB@0x186 computePosition-BB@0x31e ]
+	85      (0000014e) move-object/from16   v0, v24
+	86      (00000152) iget-object          v0, v0, Landroidx/appcompat/widget/TooltipPopup;->mContext Landroid/content/Context;
+	87      (00000156) move-object/from16   v19, v0
+	88      (0000015a) invoke-virtual/range v19, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
+	89      (00000160) move-result-object   v10
+	90      (00000162) const-string         v19, 'status_bar_height'
+	91      (00000166) const-string         v20, 'dimen'
+	92      (0000016a) const-string         v21, 'android'
+	93      (0000016e) move-object/from16   v0, v19
+	94      (00000172) move-object/from16   v1, v20
+	95      (00000176) move-object/from16   v2, v21
+	96      (0000017a) invoke-virtual       v10, v0, v1, v2, Landroid/content/res/Resources;->getIdentifier(Ljava/lang/String; Ljava/lang/String; Ljava/lang/String;)I
+	97      (00000180) move-result          v11
+	98      (00000182) if-eqz               v11, +ce
+
+computePosition-BB@0x186 : [ computePosition-BB@0x18e ]
+	99      (00000186) invoke-virtual       v10, v11, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
+	100     (0000018c) move-result          v13
+
+computePosition-BB@0x18e : [ computePosition-BB@0x1cc ]
+	101     (0000018e) invoke-virtual       v10, Landroid/content/res/Resources;->getDisplayMetrics()Landroid/util/DisplayMetrics;
+	102     (00000194) move-result-object   v5
+	103     (00000196) move-object/from16   v0, v24
+	104     (0000019a) iget-object          v0, v0, Landroidx/appcompat/widget/TooltipPopup;->mTmpDisplayFrame Landroid/graphics/Rect;
+	105     (0000019e) move-object/from16   v19, v0
+	106     (000001a2) const/16             v20, 0
+	107     (000001a6) iget                 v0, v5, Landroid/util/DisplayMetrics;->widthPixels I
+	108     (000001aa) move/from16          v21, v0
+	109     (000001ae) iget                 v0, v5, Landroid/util/DisplayMetrics;->heightPixels I
+	110     (000001b2) move/from16          v22, v0
+	111     (000001b6) move-object/from16   v0, v19
+	112     (000001ba) move/from16          v1, v20
+	113     (000001be) move/from16          v2, v21
+	114     (000001c2) move/from16          v3, v22
+	115     (000001c6) invoke-virtual       v0, v1, v13, v2, v3, Landroid/graphics/Rect;->set(I I I I)V
+
+computePosition-BB@0x1cc : [ computePosition-BB@0x30a computePosition-BB@0x334 ]
+	116     (000001cc) move-object/from16   v0, v24
+	117     (000001d0) iget-object          v0, v0, Landroidx/appcompat/widget/TooltipPopup;->mTmpAppPos [I
+	118     (000001d4) move-object/from16   v19, v0
+	119     (000001d8) move-object/from16   v0, v19
+	120     (000001dc) invoke-virtual       v4, v0, Landroid/view/View;->getLocationOnScreen([I)V
+	121     (000001e2) move-object/from16   v0, v24
+	122     (000001e6) iget-object          v0, v0, Landroidx/appcompat/widget/TooltipPopup;->mTmpAnchorPos [I
+	123     (000001ea) move-object/from16   v19, v0
+	124     (000001ee) move-object/from16   v0, v25
+	125     (000001f2) move-object/from16   v1, v19
+	126     (000001f6) invoke-virtual       v0, v1, Landroid/view/View;->getLocationOnScreen([I)V
+	127     (000001fc) move-object/from16   v0, v24
+	128     (00000200) iget-object          v0, v0, Landroidx/appcompat/widget/TooltipPopup;->mTmpAnchorPos [I
+	129     (00000204) move-object/from16   v19, v0
+	130     (00000208) const/16             v20, 0
+	131     (0000020c) aget                 v21, v19, v20
+	132     (00000210) move-object/from16   v0, v24
+	133     (00000214) iget-object          v0, v0, Landroidx/appcompat/widget/TooltipPopup;->mTmpAppPos [I
+	134     (00000218) move-object/from16   v22, v0
+	135     (0000021c) const/16             v23, 0
+	136     (00000220) aget                 v22, v22, v23
+	137     (00000224) sub-int              v21, v21, v22
+	138     (00000228) aput                 v21, v19, v20
+	139     (0000022c) move-object/from16   v0, v24
+	140     (00000230) iget-object          v0, v0, Landroidx/appcompat/widget/TooltipPopup;->mTmpAnchorPos [I
+	141     (00000234) move-object/from16   v19, v0
+	142     (00000238) const/16             v20, 1
+	143     (0000023c) aget                 v21, v19, v20
+	144     (00000240) move-object/from16   v0, v24
+	145     (00000244) iget-object          v0, v0, Landroidx/appcompat/widget/TooltipPopup;->mTmpAppPos [I
+	146     (00000248) move-object/from16   v22, v0
+	147     (0000024c) const/16             v23, 1
+	148     (00000250) aget                 v22, v22, v23
+	149     (00000254) sub-int              v21, v21, v22
+	150     (00000258) aput                 v21, v19, v20
+	151     (0000025c) move-object/from16   v0, v24
+	152     (00000260) iget-object          v0, v0, Landroidx/appcompat/widget/TooltipPopup;->mTmpAnchorPos [I
+	153     (00000264) move-object/from16   v19, v0
+	154     (00000268) const/16             v20, 0
+	155     (0000026c) aget                 v19, v19, v20
+	156     (00000270) add-int              v19, v19, v9
+	157     (00000274) invoke-virtual       v4, Landroid/view/View;->getWidth()I
+	158     (0000027a) move-result          v20
+	159     (0000027c) div-int/lit8         v20, v20, 2
+	160     (00000280) sub-int              v19, v19, v20
+	161     (00000284) move/from16          v0, v19
+	162     (00000288) move-object/from16   v1, v29
+	163     (0000028c) iput                 v0, v1, Landroid/view/WindowManager$LayoutParams;->x I
+	164     (00000290) const/16             v19, 0
+	165     (00000294) const/16             v20, 0
+	166     (00000298) invoke-static/range  v19 ... v20, Landroid/view/View$MeasureSpec;->makeMeasureSpec(I I)I
+	167     (0000029e) move-result          v12
+	168     (000002a0) move-object/from16   v0, v24
+	169     (000002a4) iget-object          v0, v0, Landroidx/appcompat/widget/TooltipPopup;->mContentView Landroid/view/View;
+	170     (000002a8) move-object/from16   v19, v0
+	171     (000002ac) move-object/from16   v0, v19
+	172     (000002b0) invoke-virtual       v0, v12, v12, Landroid/view/View;->measure(I I)V
+	173     (000002b6) move-object/from16   v0, v24
+	174     (000002ba) iget-object          v0, v0, Landroidx/appcompat/widget/TooltipPopup;->mContentView Landroid/view/View;
+	175     (000002be) move-object/from16   v19, v0
+	176     (000002c2) invoke-virtual/range v19, Landroid/view/View;->getMeasuredHeight()I
+	177     (000002c8) move-result          v14
+	178     (000002ca) move-object/from16   v0, v24
+	179     (000002ce) iget-object          v0, v0, Landroidx/appcompat/widget/TooltipPopup;->mTmpAnchorPos [I
+	180     (000002d2) move-object/from16   v19, v0
+	181     (000002d6) const/16             v20, 1
+	182     (000002da) aget                 v19, v19, v20
+	183     (000002de) add-int              v19, v19, v6
+	184     (000002e2) sub-int              v19, v19, v15
+	185     (000002e6) sub-int              v17, v19, v14
+	186     (000002ea) move-object/from16   v0, v24
+	187     (000002ee) iget-object          v0, v0, Landroidx/appcompat/widget/TooltipPopup;->mTmpAnchorPos [I
+	188     (000002f2) move-object/from16   v19, v0
+	189     (000002f6) const/16             v20, 1
+	190     (000002fa) aget                 v19, v19, v20
+	191     (000002fe) add-int              v19, v19, v7
+	192     (00000302) add-int              v18, v19, v15
+	193     (00000306) if-eqz               v28, +17
+
+computePosition-BB@0x30a : [ computePosition-BB@0x30e computePosition-BB@0x324 ]
+	194     (0000030a) if-ltz               v17, +d
+
+computePosition-BB@0x30e : [ computePosition-BB@0xde ]
+	195     (0000030e) move/from16          v0, v17
+	196     (00000312) move-object/from16   v1, v29
+	197     (00000316) iput                 v0, v1, Landroid/view/WindowManager$LayoutParams;->y I
+	198     (0000031a) goto/16              -11e
+
+computePosition-BB@0x31e : [ computePosition-BB@0x18e ]
+	199     (0000031e) const/4              v13, 0
+	200     (00000320) goto/16              -c9
+
+computePosition-BB@0x324 : [ computePosition-BB@0xde ]
+	201     (00000324) move/from16          v0, v18
+	202     (00000328) move-object/from16   v1, v29
+	203     (0000032c) iput                 v0, v1, Landroid/view/WindowManager$LayoutParams;->y I
+	204     (00000330) goto/16              -129
+
+computePosition-BB@0x334 : [ computePosition-BB@0x358 computePosition-BB@0x368 ]
+	205     (00000334) add-int              v19, v18, v14
+	206     (00000338) move-object/from16   v0, v24
+	207     (0000033c) iget-object          v0, v0, Landroidx/appcompat/widget/TooltipPopup;->mTmpDisplayFrame Landroid/graphics/Rect;
+	208     (00000340) move-object/from16   v20, v0
+	209     (00000344) invoke-virtual/range v20, Landroid/graphics/Rect;->height()I
+	210     (0000034a) move-result          v20
+	211     (0000034c) move/from16          v0, v19
+	212     (00000350) move/from16          v1, v20
+	213     (00000354) if-gt                v0, v1, +a
+
+computePosition-BB@0x358 : [ computePosition-BB@0xde ]
+	214     (00000358) move/from16          v0, v18
+	215     (0000035c) move-object/from16   v1, v29
+	216     (00000360) iput                 v0, v1, Landroid/view/WindowManager$LayoutParams;->y I
+	217     (00000364) goto/16              -143
+
+computePosition-BB@0x368 : [ computePosition-BB@0xde ]
+	218     (00000368) move/from16          v0, v17
+	219     (0000036c) move-object/from16   v1, v29
+	220     (00000370) iput                 v0, v1, Landroid/view/WindowManager$LayoutParams;->y I
+	221     (00000374) goto/16              -14b
+

@@ -1,0 +1,25 @@
+# Lcom/afwsamples/testdpc/DeviceAdminService;->registerPackageChangesReceiver()V [access_flags=private]
+#
+# Parameters:
+# local registers: v0...v3
+#
+# - return:void
+
+registerPackageChangesReceiver-BB@0x0 : 
+	0       (00000000) new-instance         v0, Landroid/content/IntentFilter;
+	1       (00000004) invoke-direct        v0, Landroid/content/IntentFilter;-><init>()V
+	2       (0000000a) const-string         v1, 'android.intent.action.PACKAGE_ADDED'
+	3       (0000000e) invoke-virtual       v0, v1, Landroid/content/IntentFilter;->addAction(Ljava/lang/String;)V
+	4       (00000014) const-string         v1, 'android.intent.action.PACKAGE_REMOVED'
+	5       (00000018) invoke-virtual       v0, v1, Landroid/content/IntentFilter;->addAction(Ljava/lang/String;)V
+	6       (0000001e) const-string         v1, 'package'
+	7       (00000022) invoke-virtual       v0, v1, Landroid/content/IntentFilter;->addDataScheme(Ljava/lang/String;)V
+	8       (00000028) new-instance         v1, Lcom/afwsamples/testdpc/PackageMonitorReceiver;
+	9       (0000002c) invoke-direct        v1, Lcom/afwsamples/testdpc/PackageMonitorReceiver;-><init>()V
+	10      (00000032) iput-object          v1, v3, Lcom/afwsamples/testdpc/DeviceAdminService;->mPackageChangedReceiver Landroid/content/BroadcastReceiver;
+	11      (00000036) invoke-virtual       v3, Lcom/afwsamples/testdpc/DeviceAdminService;->getApplicationContext()Landroid/content/Context;
+	12      (0000003c) move-result-object   v1
+	13      (0000003e) iget-object          v2, v3, Lcom/afwsamples/testdpc/DeviceAdminService;->mPackageChangedReceiver Landroid/content/BroadcastReceiver;
+	14      (00000042) invoke-virtual       v1, v2, v0, Landroid/content/Context;->registerReceiver(Landroid/content/BroadcastReceiver; Landroid/content/IntentFilter;)Landroid/content/Intent;
+	15      (00000048) return-void          
+

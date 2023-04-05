@@ -1,0 +1,19 @@
+# Landroidx/appcompat/app/AlertController;->centerButton(Landroid/widget/Button;)V [access_flags=private]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:android.widget.Button
+#
+# - return:void
+
+centerButton-BB@0x0 : 
+	0       (00000000) invoke-virtual       v3, Landroid/widget/Button;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
+	1       (00000006) move-result-object   v0
+	2       (00000008) check-cast           v0, Landroid/widget/LinearLayout$LayoutParams;
+	3       (0000000c) const/4              v1, 1
+	4       (0000000e) iput                 v1, v0, Landroid/widget/LinearLayout$LayoutParams;->gravity I
+	5       (00000012) const/high16         v1, 16128 # [0.5]
+	6       (00000016) iput                 v1, v0, Landroid/widget/LinearLayout$LayoutParams;->weight F
+	7       (0000001a) invoke-virtual       v3, v0, Landroid/widget/Button;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
+	8       (00000020) return-void          
+

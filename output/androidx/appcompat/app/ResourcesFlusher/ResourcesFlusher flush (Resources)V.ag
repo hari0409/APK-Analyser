@@ -1,0 +1,43 @@
+# Landroidx/appcompat/app/ResourcesFlusher;->flush(Landroid/content/res/Resources;)V [access_flags=static]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:android.content.res.Resources
+#
+# - return:void
+
+flush-BB@0x0 : [ flush-BB@0xc flush-BB@0xe ]
+	0       (00000000) sget                 v0, Landroid/os/Build$VERSION;->SDK_INT I
+	1       (00000004) const/16             v1, 28
+	2       (00000008) if-lt                v0, v1, +3
+
+flush-BB@0xc : 
+	3       (0000000c) return-void          
+
+flush-BB@0xe : [ flush-BB@0x1a flush-BB@0x22 ]
+	4       (0000000e) sget                 v0, Landroid/os/Build$VERSION;->SDK_INT I
+	5       (00000012) const/16             v1, 24
+	6       (00000016) if-lt                v0, v1, +6
+
+flush-BB@0x1a : [ flush-BB@0xc ]
+	7       (0000001a) invoke-static        v2, Landroidx/appcompat/app/ResourcesFlusher;->flushNougats(Landroid/content/res/Resources;)V
+	8       (00000020) goto                 -a
+
+flush-BB@0x22 : [ flush-BB@0x2e flush-BB@0x36 ]
+	9       (00000022) sget                 v0, Landroid/os/Build$VERSION;->SDK_INT I
+	10      (00000026) const/16             v1, 23
+	11      (0000002a) if-lt                v0, v1, +6
+
+flush-BB@0x2e : [ flush-BB@0xc ]
+	12      (0000002e) invoke-static        v2, Landroidx/appcompat/app/ResourcesFlusher;->flushMarshmallows(Landroid/content/res/Resources;)V
+	13      (00000034) goto                 -14
+
+flush-BB@0x36 : [ flush-BB@0x42 flush-BB@0xc ]
+	14      (00000036) sget                 v0, Landroid/os/Build$VERSION;->SDK_INT I
+	15      (0000003a) const/16             v1, 21
+	16      (0000003e) if-lt                v0, v1, -19
+
+flush-BB@0x42 : [ flush-BB@0xc ]
+	17      (00000042) invoke-static        v2, Landroidx/appcompat/app/ResourcesFlusher;->flushLollipops(Landroid/content/res/Resources;)V
+	18      (00000048) goto                 -1e
+

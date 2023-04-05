@@ -1,0 +1,30 @@
+# Landroidx/appcompat/widget/DropDownListView;->isInTouchMode()Z [access_flags=public]
+#
+# Parameters:
+# local registers: v0...v1
+#
+# - return:boolean
+
+isInTouchMode-BB@0x0 : [ isInTouchMode-BB@0x8 isInTouchMode-BB@0x10 ]
+	0       (00000000) iget-boolean         v0, v1, Landroidx/appcompat/widget/DropDownListView;->mHijackFocus Z
+	1       (00000004) if-eqz               v0, +6
+
+isInTouchMode-BB@0x8 : [ isInTouchMode-BB@0x10 isInTouchMode-BB@0x1c ]
+	2       (00000008) iget-boolean         v0, v1, Landroidx/appcompat/widget/DropDownListView;->mListSelectionHidden Z
+	3       (0000000c) if-nez               v0, +8
+
+isInTouchMode-BB@0x10 : [ isInTouchMode-BB@0x1c isInTouchMode-BB@0x20 ]
+	4       (00000010) invoke-super         v1, Landroid/widget/ListView;->isInTouchMode()Z
+	5       (00000016) move-result          v0
+	6       (00000018) if-eqz               v0, +4
+
+isInTouchMode-BB@0x1c : [ isInTouchMode-BB@0x1e ]
+	7       (0000001c) const/4              v0, 1
+
+isInTouchMode-BB@0x1e : 
+	8       (0000001e) return               v0
+
+isInTouchMode-BB@0x20 : [ isInTouchMode-BB@0x1e ]
+	9       (00000020) const/4              v0, 0
+	10      (00000022) goto                 -2
+

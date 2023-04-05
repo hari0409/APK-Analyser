@@ -1,0 +1,29 @@
+# Landroidx/appcompat/view/ViewPropertyAnimatorCompatSet$1;->onAnimationStart(Landroid/view/View;)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:android.view.View
+#
+# - return:void
+
+onAnimationStart-BB@0x0 : [ onAnimationStart-BB@0x8 onAnimationStart-BB@0xa ]
+	0       (00000000) iget-boolean         v0, v2, Landroidx/appcompat/view/ViewPropertyAnimatorCompatSet$1;->mProxyStarted Z
+	1       (00000004) if-eqz               v0, +3
+
+onAnimationStart-BB@0x8 : 
+	2       (00000008) return-void          
+
+onAnimationStart-BB@0xa : [ onAnimationStart-BB@0x1c onAnimationStart-BB@0x8 ]
+	3       (0000000a) const/4              v0, 1
+	4       (0000000c) iput-boolean         v0, v2, Landroidx/appcompat/view/ViewPropertyAnimatorCompatSet$1;->mProxyStarted Z
+	5       (00000010) iget-object          v0, v2, Landroidx/appcompat/view/ViewPropertyAnimatorCompatSet$1;->this$0 Landroidx/appcompat/view/ViewPropertyAnimatorCompatSet;
+	6       (00000014) iget-object          v0, v0, Landroidx/appcompat/view/ViewPropertyAnimatorCompatSet;->mListener Landroidx/core/view/ViewPropertyAnimatorListener;
+	7       (00000018) if-eqz               v0, -8
+
+onAnimationStart-BB@0x1c : [ onAnimationStart-BB@0x8 ]
+	8       (0000001c) iget-object          v0, v2, Landroidx/appcompat/view/ViewPropertyAnimatorCompatSet$1;->this$0 Landroidx/appcompat/view/ViewPropertyAnimatorCompatSet;
+	9       (00000020) iget-object          v0, v0, Landroidx/appcompat/view/ViewPropertyAnimatorCompatSet;->mListener Landroidx/core/view/ViewPropertyAnimatorListener;
+	10      (00000024) const/4              v1, 0
+	11      (00000026) invoke-interface     v0, v1, Landroidx/core/view/ViewPropertyAnimatorListener;->onAnimationStart(Landroid/view/View;)V
+	12      (0000002c) goto                 -12
+

@@ -1,0 +1,21 @@
+# Landroidx/appcompat/widget/Toolbar;->ensureLogoView()V [access_flags=private]
+#
+# Parameters:
+# local registers: v0...v2
+#
+# - return:void
+
+ensureLogoView-BB@0x0 : [ ensureLogoView-BB@0x8 ensureLogoView-BB@0x1e ]
+	0       (00000000) iget-object          v0, v2, Landroidx/appcompat/widget/Toolbar;->mLogoView Landroid/widget/ImageView;
+	1       (00000004) if-nez               v0, +d
+
+ensureLogoView-BB@0x8 : [ ensureLogoView-BB@0x1e ]
+	2       (00000008) new-instance         v0, Landroidx/appcompat/widget/AppCompatImageView;
+	3       (0000000c) invoke-virtual       v2, Landroidx/appcompat/widget/Toolbar;->getContext()Landroid/content/Context;
+	4       (00000012) move-result-object   v1
+	5       (00000014) invoke-direct        v0, v1, Landroidx/appcompat/widget/AppCompatImageView;-><init>(Landroid/content/Context;)V
+	6       (0000001a) iput-object          v0, v2, Landroidx/appcompat/widget/Toolbar;->mLogoView Landroid/widget/ImageView;
+
+ensureLogoView-BB@0x1e : 
+	7       (0000001e) return-void          
+

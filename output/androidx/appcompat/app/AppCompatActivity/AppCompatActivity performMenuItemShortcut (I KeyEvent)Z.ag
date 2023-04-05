@@ -1,0 +1,65 @@
+# Landroidx/appcompat/app/AppCompatActivity;->performMenuItemShortcut(I Landroid/view/KeyEvent;)Z [access_flags=private]
+#
+# Parameters:
+# - local registers: v0...v4
+# - v5:int
+# - v6:android.view.KeyEvent
+#
+# - return:boolean
+
+performMenuItemShortcut-BB@0x0 : [ performMenuItemShortcut-BB@0xc performMenuItemShortcut-BB@0x7c ]
+	0       (00000000) sget                 v2, Landroid/os/Build$VERSION;->SDK_INT I
+	1       (00000004) const/16             v3, 26
+	2       (00000008) if-ge                v2, v3, +3a
+
+performMenuItemShortcut-BB@0xc : [ performMenuItemShortcut-BB@0x18 performMenuItemShortcut-BB@0x7c ]
+	3       (0000000c) invoke-virtual       v6, Landroid/view/KeyEvent;->isCtrlPressed()Z
+	4       (00000012) move-result          v2
+	5       (00000014) if-nez               v2, +34
+
+performMenuItemShortcut-BB@0x18 : [ performMenuItemShortcut-BB@0x2c performMenuItemShortcut-BB@0x7c ]
+	6       (00000018) invoke-virtual       v6, Landroid/view/KeyEvent;->getMetaState()I
+	7       (0000001e) move-result          v2
+	8       (00000020) invoke-static        v2, Landroid/view/KeyEvent;->metaStateHasNoModifiers(I)Z
+	9       (00000026) move-result          v2
+	10      (00000028) if-nez               v2, +2a
+
+performMenuItemShortcut-BB@0x2c : [ performMenuItemShortcut-BB@0x38 performMenuItemShortcut-BB@0x7c ]
+	11      (0000002c) invoke-virtual       v6, Landroid/view/KeyEvent;->getRepeatCount()I
+	12      (00000032) move-result          v2
+	13      (00000034) if-nez               v2, +24
+
+performMenuItemShortcut-BB@0x38 : [ performMenuItemShortcut-BB@0x4c performMenuItemShortcut-BB@0x7c ]
+	14      (00000038) invoke-virtual       v6, Landroid/view/KeyEvent;->getKeyCode()I
+	15      (0000003e) move-result          v2
+	16      (00000040) invoke-static        v2, Landroid/view/KeyEvent;->isModifierKey(I)Z
+	17      (00000046) move-result          v2
+	18      (00000048) if-nez               v2, +1a
+
+performMenuItemShortcut-BB@0x4c : [ performMenuItemShortcut-BB@0x58 performMenuItemShortcut-BB@0x7c ]
+	19      (0000004c) invoke-virtual       v4, Landroidx/appcompat/app/AppCompatActivity;->getWindow()Landroid/view/Window;
+	20      (00000052) move-result-object   v0
+	21      (00000054) if-eqz               v0, +14
+
+performMenuItemShortcut-BB@0x58 : [ performMenuItemShortcut-BB@0x64 performMenuItemShortcut-BB@0x7c ]
+	22      (00000058) invoke-virtual       v0, Landroid/view/Window;->getDecorView()Landroid/view/View;
+	23      (0000005e) move-result-object   v2
+	24      (00000060) if-eqz               v2, +e
+
+performMenuItemShortcut-BB@0x64 : [ performMenuItemShortcut-BB@0x78 performMenuItemShortcut-BB@0x7c ]
+	25      (00000064) invoke-virtual       v0, Landroid/view/Window;->getDecorView()Landroid/view/View;
+	26      (0000006a) move-result-object   v1
+	27      (0000006c) invoke-virtual       v1, v6, Landroid/view/View;->dispatchKeyShortcutEvent(Landroid/view/KeyEvent;)Z
+	28      (00000072) move-result          v2
+	29      (00000074) if-eqz               v2, +4
+
+performMenuItemShortcut-BB@0x78 : [ performMenuItemShortcut-BB@0x7a ]
+	30      (00000078) const/4              v2, 1
+
+performMenuItemShortcut-BB@0x7a : 
+	31      (0000007a) return               v2
+
+performMenuItemShortcut-BB@0x7c : [ performMenuItemShortcut-BB@0x7a ]
+	32      (0000007c) const/4              v2, 0
+	33      (0000007e) goto                 -2
+

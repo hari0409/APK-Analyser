@@ -1,0 +1,29 @@
+# Landroidx/appcompat/widget/VectorEnabledTintResources;->getDrawable(I)Landroid/graphics/drawable/Drawable; [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:int
+#
+# - return:android.graphics.drawable.Drawable
+
+getDrawable-BB@0x0 : [ getDrawable-BB@0x14 getDrawable-BB@0x26 ]
+	0       (00000000) iget-object          v1, v2, Landroidx/appcompat/widget/VectorEnabledTintResources;->mContextRef Ljava/lang/ref/WeakReference;
+	1       (00000004) invoke-virtual       v1, Ljava/lang/ref/WeakReference;->get()Ljava/lang/Object;
+	2       (0000000a) move-result-object   v0
+	3       (0000000c) check-cast           v0, Landroid/content/Context;
+	4       (00000010) if-eqz               v0, +b
+
+getDrawable-BB@0x14 : [ getDrawable-BB@0x24 ]
+	5       (00000014) invoke-static        Landroidx/appcompat/widget/AppCompatDrawableManager;->get()Landroidx/appcompat/widget/AppCompatDrawableManager;
+	6       (0000001a) move-result-object   v1
+	7       (0000001c) invoke-virtual       v1, v0, v2, v3, Landroidx/appcompat/widget/AppCompatDrawableManager;->onDrawableLoadedFromResources(Landroid/content/Context; Landroidx/appcompat/widget/VectorEnabledTintResources; I)Landroid/graphics/drawable/Drawable;
+	8       (00000022) move-result-object   v1
+
+getDrawable-BB@0x24 : 
+	9       (00000024) return-object        v1
+
+getDrawable-BB@0x26 : [ getDrawable-BB@0x24 ]
+	10      (00000026) invoke-super         v2, v3, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;
+	11      (0000002c) move-result-object   v1
+	12      (0000002e) goto                 -5
+

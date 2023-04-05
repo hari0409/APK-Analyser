@@ -1,0 +1,40 @@
+# Landroidx/appcompat/widget/ActionBarContextView;->setCustomView(Landroid/view/View;)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:android.view.View
+#
+# - return:void
+
+setCustomView-BB@0x0 : [ setCustomView-BB@0x8 setCustomView-BB@0x12 ]
+	0       (00000000) iget-object          v0, v1, Landroidx/appcompat/widget/ActionBarContextView;->mCustomView Landroid/view/View;
+	1       (00000004) if-eqz               v0, +7
+
+setCustomView-BB@0x8 : [ setCustomView-BB@0x12 ]
+	2       (00000008) iget-object          v0, v1, Landroidx/appcompat/widget/ActionBarContextView;->mCustomView Landroid/view/View;
+	3       (0000000c) invoke-virtual       v1, v0, Landroidx/appcompat/widget/ActionBarContextView;->removeView(Landroid/view/View;)V
+
+setCustomView-BB@0x12 : [ setCustomView-BB@0x1a setCustomView-BB@0x32 ]
+	4       (00000012) iput-object          v2, v1, Landroidx/appcompat/widget/ActionBarContextView;->mCustomView Landroid/view/View;
+	5       (00000016) if-eqz               v2, +e
+
+setCustomView-BB@0x1a : [ setCustomView-BB@0x22 setCustomView-BB@0x32 ]
+	6       (0000001a) iget-object          v0, v1, Landroidx/appcompat/widget/ActionBarContextView;->mTitleLayout Landroid/widget/LinearLayout;
+	7       (0000001e) if-eqz               v0, +a
+
+setCustomView-BB@0x22 : [ setCustomView-BB@0x32 ]
+	8       (00000022) iget-object          v0, v1, Landroidx/appcompat/widget/ActionBarContextView;->mTitleLayout Landroid/widget/LinearLayout;
+	9       (00000026) invoke-virtual       v1, v0, Landroidx/appcompat/widget/ActionBarContextView;->removeView(Landroid/view/View;)V
+	10      (0000002c) const/4              v0, 0
+	11      (0000002e) iput-object          v0, v1, Landroidx/appcompat/widget/ActionBarContextView;->mTitleLayout Landroid/widget/LinearLayout;
+
+setCustomView-BB@0x32 : [ setCustomView-BB@0x36 setCustomView-BB@0x3c ]
+	12      (00000032) if-eqz               v2, +5
+
+setCustomView-BB@0x36 : [ setCustomView-BB@0x3c ]
+	13      (00000036) invoke-virtual       v1, v2, Landroidx/appcompat/widget/ActionBarContextView;->addView(Landroid/view/View;)V
+
+setCustomView-BB@0x3c : 
+	14      (0000003c) invoke-virtual       v1, Landroidx/appcompat/widget/ActionBarContextView;->requestLayout()V
+	15      (00000042) return-void          
+

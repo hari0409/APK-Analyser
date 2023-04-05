@@ -1,0 +1,20 @@
+# Lcom/afwsamples/testdpc/common/PackageInstallationUtils;->createInstallIntentSender(Landroid/content/Context; I)Landroid/content/IntentSender; [access_flags=private static]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:android.content.Context
+# - v4:int
+#
+# - return:android.content.IntentSender
+
+createInstallIntentSender-BB@0x0 : 
+	0       (00000000) new-instance         v1, Landroid/content/Intent;
+	1       (00000004) const-string         v2, 'com.afwsamples.testdpc.INSTALL_COMPLETE'
+	2       (00000008) invoke-direct        v1, v2, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
+	3       (0000000e) const/4              v2, 0
+	4       (00000010) invoke-static        v3, v4, v1, v2, Landroid/app/PendingIntent;->getBroadcast(Landroid/content/Context; I Landroid/content/Intent; I)Landroid/app/PendingIntent;
+	5       (00000016) move-result-object   v0
+	6       (00000018) invoke-virtual       v0, Landroid/app/PendingIntent;->getIntentSender()Landroid/content/IntentSender;
+	7       (0000001e) move-result-object   v1
+	8       (00000020) return-object        v1
+

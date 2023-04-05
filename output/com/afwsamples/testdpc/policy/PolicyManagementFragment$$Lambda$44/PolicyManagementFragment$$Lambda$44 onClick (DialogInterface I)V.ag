@@ -1,0 +1,16 @@
+# Lcom/afwsamples/testdpc/policy/PolicyManagementFragment$$Lambda$44;->onClick(Landroid/content/DialogInterface; I)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v3
+# - v4:android.content.DialogInterface
+# - v5:int
+#
+# - return:void
+
+onClick-BB@0x0 : 
+	0       (00000000) iget-object          v0, v3, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment$$Lambda$44;->arg$1 Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;
+	1       (00000004) iget-object          v1, v3, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment$$Lambda$44;->arg$2 Landroid/widget/EditText;
+	2       (00000008) iget-object          v2, v3, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment$$Lambda$44;->arg$3 Landroid/widget/EditText;
+	3       (0000000c) invoke-virtual       v0, v1, v2, v4, v5, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->lambda$showSetGlobalHttpProxyDialog$146$PolicyManagementFragment(Landroid/widget/EditText; Landroid/widget/EditText; Landroid/content/DialogInterface; I)V
+	4       (00000012) return-void          
+

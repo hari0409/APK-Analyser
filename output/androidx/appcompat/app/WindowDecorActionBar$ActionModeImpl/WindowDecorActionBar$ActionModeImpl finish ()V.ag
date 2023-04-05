@@ -1,0 +1,60 @@
+# Landroidx/appcompat/app/WindowDecorActionBar$ActionModeImpl;->finish()V [access_flags=public]
+#
+# Parameters:
+# local registers: v0...v4
+#
+# - return:void
+
+finish-BB@0x0 : [ finish-BB@0x10 finish-BB@0x12 ]
+	0       (00000000) const/4              v3, 0
+	1       (00000002) const/4              v2, 0
+	2       (00000004) iget-object          v0, v4, Landroidx/appcompat/app/WindowDecorActionBar$ActionModeImpl;->this$0 Landroidx/appcompat/app/WindowDecorActionBar;
+	3       (00000008) iget-object          v0, v0, Landroidx/appcompat/app/WindowDecorActionBar;->mActionMode Landroidx/appcompat/app/WindowDecorActionBar$ActionModeImpl;
+	4       (0000000c) if-eq                v0, v4, +3
+
+finish-BB@0x10 : 
+	5       (00000010) return-void          
+
+finish-BB@0x12 : [ finish-BB@0x2e finish-BB@0x98 ]
+	6       (00000012) iget-object          v0, v4, Landroidx/appcompat/app/WindowDecorActionBar$ActionModeImpl;->this$0 Landroidx/appcompat/app/WindowDecorActionBar;
+	7       (00000016) iget-boolean         v0, v0, Landroidx/appcompat/app/WindowDecorActionBar;->mHiddenByApp Z
+	8       (0000001a) iget-object          v1, v4, Landroidx/appcompat/app/WindowDecorActionBar$ActionModeImpl;->this$0 Landroidx/appcompat/app/WindowDecorActionBar;
+	9       (0000001e) iget-boolean         v1, v1, Landroidx/appcompat/app/WindowDecorActionBar;->mHiddenBySystem Z
+	10      (00000022) invoke-static        v0, v1, v2, Landroidx/appcompat/app/WindowDecorActionBar;->checkShowingFlags(Z Z Z)Z
+	11      (00000028) move-result          v0
+	12      (0000002a) if-nez               v0, +37
+
+finish-BB@0x2e : [ finish-BB@0x42 ]
+	13      (0000002e) iget-object          v0, v4, Landroidx/appcompat/app/WindowDecorActionBar$ActionModeImpl;->this$0 Landroidx/appcompat/app/WindowDecorActionBar;
+	14      (00000032) iput-object          v4, v0, Landroidx/appcompat/app/WindowDecorActionBar;->mDeferredDestroyActionMode Landroidx/appcompat/view/ActionMode;
+	15      (00000036) iget-object          v0, v4, Landroidx/appcompat/app/WindowDecorActionBar$ActionModeImpl;->this$0 Landroidx/appcompat/app/WindowDecorActionBar;
+	16      (0000003a) iget-object          v1, v4, Landroidx/appcompat/app/WindowDecorActionBar$ActionModeImpl;->mCallback Landroidx/appcompat/view/ActionMode$Callback;
+	17      (0000003e) iput-object          v1, v0, Landroidx/appcompat/app/WindowDecorActionBar;->mDeferredModeDestroyCallback Landroidx/appcompat/view/ActionMode$Callback;
+
+finish-BB@0x42 : [ finish-BB@0x10 ]
+	18      (00000042) iput-object          v3, v4, Landroidx/appcompat/app/WindowDecorActionBar$ActionModeImpl;->mCallback Landroidx/appcompat/view/ActionMode$Callback;
+	19      (00000046) iget-object          v0, v4, Landroidx/appcompat/app/WindowDecorActionBar$ActionModeImpl;->this$0 Landroidx/appcompat/app/WindowDecorActionBar;
+	20      (0000004a) invoke-virtual       v0, v2, Landroidx/appcompat/app/WindowDecorActionBar;->animateToMode(Z)V
+	21      (00000050) iget-object          v0, v4, Landroidx/appcompat/app/WindowDecorActionBar$ActionModeImpl;->this$0 Landroidx/appcompat/app/WindowDecorActionBar;
+	22      (00000054) iget-object          v0, v0, Landroidx/appcompat/app/WindowDecorActionBar;->mContextView Landroidx/appcompat/widget/ActionBarContextView;
+	23      (00000058) invoke-virtual       v0, Landroidx/appcompat/widget/ActionBarContextView;->closeMode()V
+	24      (0000005e) iget-object          v0, v4, Landroidx/appcompat/app/WindowDecorActionBar$ActionModeImpl;->this$0 Landroidx/appcompat/app/WindowDecorActionBar;
+	25      (00000062) iget-object          v0, v0, Landroidx/appcompat/app/WindowDecorActionBar;->mDecorToolbar Landroidx/appcompat/widget/DecorToolbar;
+	26      (00000066) invoke-interface     v0, Landroidx/appcompat/widget/DecorToolbar;->getViewGroup()Landroid/view/ViewGroup;
+	27      (0000006c) move-result-object   v0
+	28      (0000006e) const/16             v1, 32
+	29      (00000072) invoke-virtual       v0, v1, Landroid/view/ViewGroup;->sendAccessibilityEvent(I)V
+	30      (00000078) iget-object          v0, v4, Landroidx/appcompat/app/WindowDecorActionBar$ActionModeImpl;->this$0 Landroidx/appcompat/app/WindowDecorActionBar;
+	31      (0000007c) iget-object          v0, v0, Landroidx/appcompat/app/WindowDecorActionBar;->mOverlayLayout Landroidx/appcompat/widget/ActionBarOverlayLayout;
+	32      (00000080) iget-object          v1, v4, Landroidx/appcompat/app/WindowDecorActionBar$ActionModeImpl;->this$0 Landroidx/appcompat/app/WindowDecorActionBar;
+	33      (00000084) iget-boolean         v1, v1, Landroidx/appcompat/app/WindowDecorActionBar;->mHideOnContentScroll Z
+	34      (00000088) invoke-virtual       v0, v1, Landroidx/appcompat/widget/ActionBarOverlayLayout;->setHideOnContentScrollEnabled(Z)V
+	35      (0000008e) iget-object          v0, v4, Landroidx/appcompat/app/WindowDecorActionBar$ActionModeImpl;->this$0 Landroidx/appcompat/app/WindowDecorActionBar;
+	36      (00000092) iput-object          v3, v0, Landroidx/appcompat/app/WindowDecorActionBar;->mActionMode Landroidx/appcompat/app/WindowDecorActionBar$ActionModeImpl;
+	37      (00000096) goto                 -43
+
+finish-BB@0x98 : [ finish-BB@0x42 ]
+	38      (00000098) iget-object          v0, v4, Landroidx/appcompat/app/WindowDecorActionBar$ActionModeImpl;->mCallback Landroidx/appcompat/view/ActionMode$Callback;
+	39      (0000009c) invoke-interface     v0, v4, Landroidx/appcompat/view/ActionMode$Callback;->onDestroyActionMode(Landroidx/appcompat/view/ActionMode;)V
+	40      (000000a2) goto                 -30
+

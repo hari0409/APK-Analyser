@@ -1,0 +1,43 @@
+# Lcom/afwsamples/testdpc/PolicyManagementActivity;->onMenuItemSelected(I Landroid/view/MenuItem;)Z [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v3
+# - v4:int
+# - v5:android.view.MenuItem
+#
+# - return:boolean
+
+onMenuItemSelected-BB@0x0 : [ D:onMenuItemSelected-BB@0xe 16908332:onMenuItemSelected-BB@0x4c 2131296294:onMenuItemSelected-BB@0x12 ]
+	0       (00000000) invoke-interface     v5, Landroid/view/MenuItem;->getItemId()I
+	1       (00000006) move-result          v0
+	2       (00000008) sparse-switch        v0, +2a (0x5c)
+
+onMenuItemSelected-BB@0xe : 
+	3       (0000000e) const/4              v0, 0
+	4       (00000010) return               v0
+
+onMenuItemSelected-BB@0x12 : [ onMenuItemSelected-BB@0xe ]
+	5       (00000012) invoke-virtual       v3, Lcom/afwsamples/testdpc/PolicyManagementActivity;->getFragmentManager()Landroid/app/FragmentManager;
+	6       (00000018) move-result-object   v0
+	7       (0000001a) invoke-virtual       v0, Landroid/app/FragmentManager;->beginTransaction()Landroid/app/FragmentTransaction;
+	8       (00000020) move-result-object   v0
+	9       (00000022) const                v1, 2131296376 # [1.821066693116859e+38]
+	10      (00000028) invoke-static        Lcom/afwsamples/testdpc/search/PolicySearchFragment;->newInstance()Lcom/afwsamples/testdpc/search/PolicySearchFragment;
+	11      (0000002e) move-result-object   v2
+	12      (00000030) invoke-virtual       v0, v1, v2, Landroid/app/FragmentTransaction;->replace(I Landroid/app/Fragment;)Landroid/app/FragmentTransaction;
+	13      (00000036) move-result-object   v0
+	14      (00000038) const-string         v1, 'search'
+	15      (0000003c) invoke-virtual       v0, v1, Landroid/app/FragmentTransaction;->addToBackStack(Ljava/lang/String;)Landroid/app/FragmentTransaction;
+	16      (00000042) move-result-object   v0
+	17      (00000044) invoke-virtual       v0, Landroid/app/FragmentTransaction;->commit()I
+	18      (0000004a) goto                 -1e
+
+onMenuItemSelected-BB@0x4c : [ onMenuItemSelected-BB@0xe ]
+	19      (0000004c) invoke-virtual       v3, Lcom/afwsamples/testdpc/PolicyManagementActivity;->getFragmentManager()Landroid/app/FragmentManager;
+	20      (00000052) move-result-object   v0
+	21      (00000054) invoke-virtual       v0, Landroid/app/FragmentManager;->popBackStack()V
+	22      (0000005a) goto                 -26
+
+onMenuItemSelected-BB@0x5c : 
+	23      (0000005c) sparse-switch-payload 102002c 7f090026
+

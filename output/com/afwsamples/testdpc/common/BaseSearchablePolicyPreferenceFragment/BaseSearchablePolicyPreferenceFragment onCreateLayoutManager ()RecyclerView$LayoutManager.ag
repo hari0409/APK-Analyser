@@ -1,0 +1,16 @@
+# Lcom/afwsamples/testdpc/common/BaseSearchablePolicyPreferenceFragment;->onCreateLayoutManager()Landroidx/recyclerview/widget/RecyclerView$LayoutManager; [access_flags=public]
+#
+# Parameters:
+# local registers: v0...v2
+#
+# - return:androidx.recyclerview.widget.RecyclerView$LayoutManager
+
+onCreateLayoutManager-BB@0x0 : 
+	0       (00000000) new-instance         v0, Landroidx/recyclerview/widget/LinearLayoutManager;
+	1       (00000004) invoke-virtual       v2, Lcom/afwsamples/testdpc/common/BaseSearchablePolicyPreferenceFragment;->getActivity()Landroid/app/Activity;
+	2       (0000000a) move-result-object   v1
+	3       (0000000c) invoke-direct        v0, v1, Landroidx/recyclerview/widget/LinearLayoutManager;-><init>(Landroid/content/Context;)V
+	4       (00000012) iput-object          v0, v2, Lcom/afwsamples/testdpc/common/BaseSearchablePolicyPreferenceFragment;->mLayoutManager Landroidx/recyclerview/widget/LinearLayoutManager;
+	5       (00000016) iget-object          v0, v2, Lcom/afwsamples/testdpc/common/BaseSearchablePolicyPreferenceFragment;->mLayoutManager Landroidx/recyclerview/widget/LinearLayoutManager;
+	6       (0000001a) return-object        v0
+

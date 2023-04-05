@@ -1,0 +1,26 @@
+# Lcom/afwsamples/testdpc/policy/locktask/KioskModeActivity;->setUserRestriction(Ljava/lang/String; Z)V [access_flags=private]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:java.lang.String
+# - v4:boolean
+#
+# - return:void
+
+setUserRestriction-BB@0x0 : [ setUserRestriction-BB@0x4 setUserRestriction-BB@0x14 ]
+	0       (00000000) if-eqz               v4, +a
+
+setUserRestriction-BB@0x4 : [ setUserRestriction-BB@0x12 ]
+	1       (00000004) iget-object          v0, v2, Lcom/afwsamples/testdpc/policy/locktask/KioskModeActivity;->mDevicePolicyManager Landroid/app/admin/DevicePolicyManager;
+	2       (00000008) iget-object          v1, v2, Lcom/afwsamples/testdpc/policy/locktask/KioskModeActivity;->mAdminComponentName Landroid/content/ComponentName;
+	3       (0000000c) invoke-virtual       v0, v1, v3, Landroid/app/admin/DevicePolicyManager;->addUserRestriction(Landroid/content/ComponentName; Ljava/lang/String;)V
+
+setUserRestriction-BB@0x12 : 
+	4       (00000012) return-void          
+
+setUserRestriction-BB@0x14 : [ setUserRestriction-BB@0x12 ]
+	5       (00000014) iget-object          v0, v2, Lcom/afwsamples/testdpc/policy/locktask/KioskModeActivity;->mDevicePolicyManager Landroid/app/admin/DevicePolicyManager;
+	6       (00000018) iget-object          v1, v2, Lcom/afwsamples/testdpc/policy/locktask/KioskModeActivity;->mAdminComponentName Landroid/content/ComponentName;
+	7       (0000001c) invoke-virtual       v0, v1, v3, Landroid/app/admin/DevicePolicyManager;->clearUserRestriction(Landroid/content/ComponentName; Ljava/lang/String;)V
+	8       (00000022) goto                 -8
+

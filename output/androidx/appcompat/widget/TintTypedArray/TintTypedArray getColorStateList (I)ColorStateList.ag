@@ -1,0 +1,36 @@
+# Landroidx/appcompat/widget/TintTypedArray;->getColorStateList(I)Landroid/content/res/ColorStateList; [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v4
+# - v5:int
+#
+# - return:android.content.res.ColorStateList
+
+getColorStateList-BB@0x0 : [ getColorStateList-BB@0x10 getColorStateList-BB@0x34 ]
+	0       (00000000) iget-object          v2, v4, Landroidx/appcompat/widget/TintTypedArray;->mWrapped Landroid/content/res/TypedArray;
+	1       (00000004) invoke-virtual       v2, v5, Landroid/content/res/TypedArray;->hasValue(I)Z
+	2       (0000000a) move-result          v2
+	3       (0000000c) if-eqz               v2, +14
+
+getColorStateList-BB@0x10 : [ getColorStateList-BB@0x22 getColorStateList-BB@0x34 ]
+	4       (00000010) iget-object          v2, v4, Landroidx/appcompat/widget/TintTypedArray;->mWrapped Landroid/content/res/TypedArray;
+	5       (00000014) const/4              v3, 0
+	6       (00000016) invoke-virtual       v2, v5, v3, Landroid/content/res/TypedArray;->getResourceId(I I)I
+	7       (0000001c) move-result          v0
+	8       (0000001e) if-eqz               v0, +b
+
+getColorStateList-BB@0x22 : [ getColorStateList-BB@0x32 getColorStateList-BB@0x34 ]
+	9       (00000022) iget-object          v2, v4, Landroidx/appcompat/widget/TintTypedArray;->mContext Landroid/content/Context;
+	10      (00000026) invoke-static        v2, v0, Landroidx/appcompat/content/res/AppCompatResources;->getColorStateList(Landroid/content/Context; I)Landroid/content/res/ColorStateList;
+	11      (0000002c) move-result-object   v1
+	12      (0000002e) if-eqz               v1, +3
+
+getColorStateList-BB@0x32 : 
+	13      (00000032) return-object        v1
+
+getColorStateList-BB@0x34 : [ getColorStateList-BB@0x32 ]
+	14      (00000034) iget-object          v2, v4, Landroidx/appcompat/widget/TintTypedArray;->mWrapped Landroid/content/res/TypedArray;
+	15      (00000038) invoke-virtual       v2, v5, Landroid/content/res/TypedArray;->getColorStateList(I)Landroid/content/res/ColorStateList;
+	16      (0000003e) move-result-object   v1
+	17      (00000040) goto                 -7
+

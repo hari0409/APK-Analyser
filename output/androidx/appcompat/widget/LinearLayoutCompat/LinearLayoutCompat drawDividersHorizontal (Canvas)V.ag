@@ -1,0 +1,118 @@
+# Landroidx/appcompat/widget/LinearLayoutCompat;->drawDividersHorizontal(Landroid/graphics/Canvas;)V [access_flags=]
+#
+# Parameters:
+# - local registers: v0...v8
+# - v9:android.graphics.Canvas
+#
+# - return:void
+
+drawDividersHorizontal-BB@0x0 : [ drawDividersHorizontal-BB@0x12 ]
+	0       (00000000) invoke-virtual       v8, Landroidx/appcompat/widget/LinearLayoutCompat;->getVirtualChildCount()I
+	1       (00000006) move-result          v1
+	2       (00000008) invoke-static        v8, Landroidx/appcompat/widget/ViewUtils;->isLayoutRtl(Landroid/view/View;)Z
+	3       (0000000e) move-result          v3
+	4       (00000010) const/4              v2, 0
+
+drawDividersHorizontal-BB@0x12 : [ drawDividersHorizontal-BB@0x16 drawDividersHorizontal-BB@0x82 ]
+	5       (00000012) if-ge                v2, v1, +38
+
+drawDividersHorizontal-BB@0x16 : [ drawDividersHorizontal-BB@0x22 drawDividersHorizontal-BB@0x64 ]
+	6       (00000016) invoke-virtual       v8, v2, Landroidx/appcompat/widget/LinearLayoutCompat;->getVirtualChildAt(I)Landroid/view/View;
+	7       (0000001c) move-result-object   v0
+	8       (0000001e) if-eqz               v0, +23
+
+drawDividersHorizontal-BB@0x22 : [ drawDividersHorizontal-BB@0x32 drawDividersHorizontal-BB@0x64 ]
+	9       (00000022) invoke-virtual       v0, Landroid/view/View;->getVisibility()I
+	10      (00000028) move-result          v6
+	11      (0000002a) const/16             v7, 8
+	12      (0000002e) if-eq                v6, v7, +1b
+
+drawDividersHorizontal-BB@0x32 : [ drawDividersHorizontal-BB@0x3e drawDividersHorizontal-BB@0x64 ]
+	13      (00000032) invoke-virtual       v8, v2, Landroidx/appcompat/widget/LinearLayoutCompat;->hasDividerBeforeChildAt(I)Z
+	14      (00000038) move-result          v6
+	15      (0000003a) if-eqz               v6, +15
+
+drawDividersHorizontal-BB@0x3e : [ drawDividersHorizontal-BB@0x4e drawDividersHorizontal-BB@0x6a ]
+	16      (0000003e) invoke-virtual       v0, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
+	17      (00000044) move-result-object   v4
+	18      (00000046) check-cast           v4, Landroidx/appcompat/widget/LinearLayoutCompat$LayoutParams;
+	19      (0000004a) if-eqz               v3, +10
+
+drawDividersHorizontal-BB@0x4e : [ drawDividersHorizontal-BB@0x5e ]
+	20      (0000004e) invoke-virtual       v0, Landroid/view/View;->getRight()I
+	21      (00000054) move-result          v6
+	22      (00000056) iget                 v7, v4, Landroidx/appcompat/widget/LinearLayoutCompat$LayoutParams;->rightMargin I
+	23      (0000005a) add-int              v5, v6, v7
+
+drawDividersHorizontal-BB@0x5e : [ drawDividersHorizontal-BB@0x64 ]
+	24      (0000005e) invoke-virtual       v8, v9, v5, Landroidx/appcompat/widget/LinearLayoutCompat;->drawVerticalDivider(Landroid/graphics/Canvas; I)V
+
+drawDividersHorizontal-BB@0x64 : [ drawDividersHorizontal-BB@0x12 ]
+	25      (00000064) add-int/lit8         v2, v2, 1
+	26      (00000068) goto                 -2b
+
+drawDividersHorizontal-BB@0x6a : [ drawDividersHorizontal-BB@0x5e ]
+	27      (0000006a) invoke-virtual       v0, Landroid/view/View;->getLeft()I
+	28      (00000070) move-result          v6
+	29      (00000072) iget                 v7, v4, Landroidx/appcompat/widget/LinearLayoutCompat$LayoutParams;->leftMargin I
+	30      (00000076) sub-int/2addr        v6, v7
+	31      (00000078) iget                 v7, v8, Landroidx/appcompat/widget/LinearLayoutCompat;->mDividerWidth I
+	32      (0000007c) sub-int              v5, v6, v7
+	33      (00000080) goto                 -11
+
+drawDividersHorizontal-BB@0x82 : [ drawDividersHorizontal-BB@0x8e drawDividersHorizontal-BB@0xb0 ]
+	34      (00000082) invoke-virtual       v8, v1, Landroidx/appcompat/widget/LinearLayoutCompat;->hasDividerBeforeChildAt(I)Z
+	35      (00000088) move-result          v6
+	36      (0000008a) if-eqz               v6, +13
+
+drawDividersHorizontal-BB@0x8e : [ drawDividersHorizontal-BB@0x9e drawDividersHorizontal-BB@0xce ]
+	37      (0000008e) add-int/lit8         v6, v1, -1
+	38      (00000092) invoke-virtual       v8, v6, Landroidx/appcompat/widget/LinearLayoutCompat;->getVirtualChildAt(I)Landroid/view/View;
+	39      (00000098) move-result-object   v0
+	40      (0000009a) if-nez               v0, +1a
+
+drawDividersHorizontal-BB@0x9e : [ drawDividersHorizontal-BB@0xa2 drawDividersHorizontal-BB@0xb2 ]
+	41      (0000009e) if-eqz               v3, +a
+
+drawDividersHorizontal-BB@0xa2 : [ drawDividersHorizontal-BB@0xaa ]
+	42      (000000a2) invoke-virtual       v8, Landroidx/appcompat/widget/LinearLayoutCompat;->getPaddingLeft()I
+	43      (000000a8) move-result          v5
+
+drawDividersHorizontal-BB@0xaa : [ drawDividersHorizontal-BB@0xb0 ]
+	44      (000000aa) invoke-virtual       v8, v9, v5, Landroidx/appcompat/widget/LinearLayoutCompat;->drawVerticalDivider(Landroid/graphics/Canvas; I)V
+
+drawDividersHorizontal-BB@0xb0 : 
+	45      (000000b0) return-void          
+
+drawDividersHorizontal-BB@0xb2 : [ drawDividersHorizontal-BB@0xaa ]
+	46      (000000b2) invoke-virtual       v8, Landroidx/appcompat/widget/LinearLayoutCompat;->getWidth()I
+	47      (000000b8) move-result          v6
+	48      (000000ba) invoke-virtual       v8, Landroidx/appcompat/widget/LinearLayoutCompat;->getPaddingRight()I
+	49      (000000c0) move-result          v7
+	50      (000000c2) sub-int/2addr        v6, v7
+	51      (000000c4) iget                 v7, v8, Landroidx/appcompat/widget/LinearLayoutCompat;->mDividerWidth I
+	52      (000000c8) sub-int              v5, v6, v7
+	53      (000000cc) goto                 -11
+
+drawDividersHorizontal-BB@0xce : [ drawDividersHorizontal-BB@0xde drawDividersHorizontal-BB@0xf6 ]
+	54      (000000ce) invoke-virtual       v0, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
+	55      (000000d4) move-result-object   v4
+	56      (000000d6) check-cast           v4, Landroidx/appcompat/widget/LinearLayoutCompat$LayoutParams;
+	57      (000000da) if-eqz               v3, +e
+
+drawDividersHorizontal-BB@0xde : [ drawDividersHorizontal-BB@0xaa ]
+	58      (000000de) invoke-virtual       v0, Landroid/view/View;->getLeft()I
+	59      (000000e4) move-result          v6
+	60      (000000e6) iget                 v7, v4, Landroidx/appcompat/widget/LinearLayoutCompat$LayoutParams;->leftMargin I
+	61      (000000ea) sub-int/2addr        v6, v7
+	62      (000000ec) iget                 v7, v8, Landroidx/appcompat/widget/LinearLayoutCompat;->mDividerWidth I
+	63      (000000f0) sub-int              v5, v6, v7
+	64      (000000f4) goto                 -25
+
+drawDividersHorizontal-BB@0xf6 : [ drawDividersHorizontal-BB@0xaa ]
+	65      (000000f6) invoke-virtual       v0, Landroid/view/View;->getRight()I
+	66      (000000fc) move-result          v6
+	67      (000000fe) iget                 v7, v4, Landroidx/appcompat/widget/LinearLayoutCompat$LayoutParams;->rightMargin I
+	68      (00000102) add-int              v5, v6, v7
+	69      (00000106) goto                 -2e
+

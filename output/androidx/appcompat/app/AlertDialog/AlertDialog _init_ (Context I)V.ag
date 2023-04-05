@@ -1,0 +1,22 @@
+# Landroidx/appcompat/app/AlertDialog;-><init>(Landroid/content/Context; I)V [access_flags=protected constructor]
+#
+# Parameters:
+# - local registers: v0...v3
+# - v4:android.content.Context
+# - v5:int
+#
+# - return:void
+
+<init>-BB@0x0 : 
+	0       (00000000) invoke-static        v4, v5, Landroidx/appcompat/app/AlertDialog;->resolveDialogTheme(Landroid/content/Context; I)I
+	1       (00000006) move-result          v0
+	2       (00000008) invoke-direct        v3, v4, v0, Landroidx/appcompat/app/AppCompatDialog;-><init>(Landroid/content/Context; I)V
+	3       (0000000e) new-instance         v0, Landroidx/appcompat/app/AlertController;
+	4       (00000012) invoke-virtual       v3, Landroidx/appcompat/app/AlertDialog;->getContext()Landroid/content/Context;
+	5       (00000018) move-result-object   v1
+	6       (0000001a) invoke-virtual       v3, Landroidx/appcompat/app/AlertDialog;->getWindow()Landroid/view/Window;
+	7       (00000020) move-result-object   v2
+	8       (00000022) invoke-direct        v0, v1, v3, v2, Landroidx/appcompat/app/AlertController;-><init>(Landroid/content/Context; Landroidx/appcompat/app/AppCompatDialog; Landroid/view/Window;)V
+	9       (00000028) iput-object          v0, v3, Landroidx/appcompat/app/AlertDialog;->mAlert Landroidx/appcompat/app/AlertController;
+	10      (0000002c) return-void          
+

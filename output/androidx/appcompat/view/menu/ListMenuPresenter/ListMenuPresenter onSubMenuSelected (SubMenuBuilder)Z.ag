@@ -1,0 +1,35 @@
+# Landroidx/appcompat/view/menu/ListMenuPresenter;->onSubMenuSelected(Landroidx/appcompat/view/menu/SubMenuBuilder;)Z [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:androidx.appcompat.view.menu.SubMenuBuilder
+#
+# - return:boolean
+
+onSubMenuSelected-BB@0x0 : [ onSubMenuSelected-BB@0xc onSubMenuSelected-BB@0x10 ]
+	0       (00000000) invoke-virtual       v3, Landroidx/appcompat/view/menu/SubMenuBuilder;->hasVisibleItems()Z
+	1       (00000006) move-result          v0
+	2       (00000008) if-nez               v0, +4
+
+onSubMenuSelected-BB@0xc : [ onSubMenuSelected-BB@0xe ]
+	3       (0000000c) const/4              v0, 0
+
+onSubMenuSelected-BB@0xe : 
+	4       (0000000e) return               v0
+
+onSubMenuSelected-BB@0x10 : [ onSubMenuSelected-BB@0x2a onSubMenuSelected-BB@0x34 ]
+	5       (00000010) new-instance         v0, Landroidx/appcompat/view/menu/MenuDialogHelper;
+	6       (00000014) invoke-direct        v0, v3, Landroidx/appcompat/view/menu/MenuDialogHelper;-><init>(Landroidx/appcompat/view/menu/MenuBuilder;)V
+	7       (0000001a) const/4              v1, 0
+	8       (0000001c) invoke-virtual       v0, v1, Landroidx/appcompat/view/menu/MenuDialogHelper;->show(Landroid/os/IBinder;)V
+	9       (00000022) iget-object          v0, v2, Landroidx/appcompat/view/menu/ListMenuPresenter;->mCallback Landroidx/appcompat/view/menu/MenuPresenter$Callback;
+	10      (00000026) if-eqz               v0, +7
+
+onSubMenuSelected-BB@0x2a : [ onSubMenuSelected-BB@0x34 ]
+	11      (0000002a) iget-object          v0, v2, Landroidx/appcompat/view/menu/ListMenuPresenter;->mCallback Landroidx/appcompat/view/menu/MenuPresenter$Callback;
+	12      (0000002e) invoke-interface     v0, v3, Landroidx/appcompat/view/menu/MenuPresenter$Callback;->onOpenSubMenu(Landroidx/appcompat/view/menu/MenuBuilder;)Z
+
+onSubMenuSelected-BB@0x34 : [ onSubMenuSelected-BB@0xe ]
+	13      (00000034) const/4              v0, 1
+	14      (00000036) goto                 -14
+

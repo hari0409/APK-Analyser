@@ -1,0 +1,20 @@
+# Landroidx/appcompat/view/menu/MenuPopupHelper;->getPopup()Landroidx/appcompat/view/menu/MenuPopup; [access_flags=public]
+#
+# Parameters:
+# local registers: v0...v1
+#
+# - return:androidx.appcompat.view.menu.MenuPopup
+
+getPopup-BB@0x0 : [ getPopup-BB@0x8 getPopup-BB@0x14 ]
+	0       (00000000) iget-object          v0, v1, Landroidx/appcompat/view/menu/MenuPopupHelper;->mPopup Landroidx/appcompat/view/menu/MenuPopup;
+	1       (00000004) if-nez               v0, +8
+
+getPopup-BB@0x8 : [ getPopup-BB@0x14 ]
+	2       (00000008) invoke-direct        v1, Landroidx/appcompat/view/menu/MenuPopupHelper;->createPopup()Landroidx/appcompat/view/menu/MenuPopup;
+	3       (0000000e) move-result-object   v0
+	4       (00000010) iput-object          v0, v1, Landroidx/appcompat/view/menu/MenuPopupHelper;->mPopup Landroidx/appcompat/view/menu/MenuPopup;
+
+getPopup-BB@0x14 : 
+	5       (00000014) iget-object          v0, v1, Landroidx/appcompat/view/menu/MenuPopupHelper;->mPopup Landroidx/appcompat/view/menu/MenuPopup;
+	6       (00000018) return-object        v0
+

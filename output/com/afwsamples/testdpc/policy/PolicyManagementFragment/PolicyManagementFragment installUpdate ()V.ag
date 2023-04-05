@@ -1,0 +1,29 @@
+# Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->installUpdate()V [access_flags=private]
+#
+# Parameters:
+# local registers: v0...v6
+#
+# - return:void
+
+installUpdate-BB@0x0 : 
+	0       (00000000) new-instance         v0, Ljava/io/File;
+	1       (00000004) invoke-virtual       v6, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->getContext()Landroid/content/Context;
+	2       (0000000a) move-result-object   v2
+	3       (0000000c) invoke-virtual       v2, Landroid/content/Context;->getFilesDir()Ljava/io/File;
+	4       (00000012) move-result-object   v2
+	5       (00000014) const-string         v3, 'ota.zip'
+	6       (00000018) invoke-direct        v0, v2, v3, Ljava/io/File;-><init>(Ljava/io/File; Ljava/lang/String;)V
+	7       (0000001e) invoke-virtual       v6, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->getActivity()Landroid/app/Activity;
+	8       (00000024) move-result-object   v2
+	9       (00000026) const-string         v3, 'com.afwsamples.testdpc.fileprovider'
+	10      (0000002a) invoke-static        v2, v3, v0, Landroidx/core/content/FileProvider;->getUriForFile(Landroid/content/Context; Ljava/lang/String; Ljava/io/File;)Landroid/net/Uri;
+	11      (00000030) move-result-object   v1
+	12      (00000032) iget-object          v2, v6, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->mDevicePolicyManager Landroid/app/admin/DevicePolicyManager;
+	13      (00000036) iget-object          v3, v6, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->mAdminComponentName Landroid/content/ComponentName;
+	14      (0000003a) new-instance         v4, Lcom/afwsamples/testdpc/util/MainThreadExecutor;
+	15      (0000003e) invoke-direct        v4, Lcom/afwsamples/testdpc/util/MainThreadExecutor;-><init>()V
+	16      (00000044) new-instance         v5, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment$2;
+	17      (00000048) invoke-direct        v5, v6, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment$2;-><init>(Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;)V
+	18      (0000004e) invoke-virtual       v2, v3, v1, v4, v5, Landroid/app/admin/DevicePolicyManager;->installSystemUpdate(Landroid/content/ComponentName; Landroid/net/Uri; Ljava/util/concurrent/Executor; Landroid/app/admin/DevicePolicyManager$InstallSystemUpdateCallback;)V
+	19      (00000054) return-void          
+

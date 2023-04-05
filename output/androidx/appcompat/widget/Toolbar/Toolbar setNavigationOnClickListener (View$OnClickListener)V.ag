@@ -1,0 +1,14 @@
+# Landroidx/appcompat/widget/Toolbar;->setNavigationOnClickListener(Landroid/view/View$OnClickListener;)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:android.view.View$OnClickListener
+#
+# - return:void
+
+setNavigationOnClickListener-BB@0x0 : 
+	0       (00000000) invoke-direct        v1, Landroidx/appcompat/widget/Toolbar;->ensureNavButtonView()V
+	1       (00000006) iget-object          v0, v1, Landroidx/appcompat/widget/Toolbar;->mNavButtonView Landroid/widget/ImageButton;
+	2       (0000000a) invoke-virtual       v0, v2, Landroid/widget/ImageButton;->setOnClickListener(Landroid/view/View$OnClickListener;)V
+	3       (00000010) return-void          
+

@@ -1,0 +1,28 @@
+# Landroidx/appcompat/graphics/drawable/DrawableContainer$DrawableContainerState;->updateDensity(Landroid/content/res/Resources;)V [access_flags=final]
+#
+# Parameters:
+# - local registers: v0...v4
+# - v5:android.content.res.Resources
+#
+# - return:void
+
+updateDensity-BB@0x0 : [ updateDensity-BB@0x6 updateDensity-BB@0x2a ]
+	0       (00000000) const/4              v3, 0
+	1       (00000002) if-eqz               v5, +14
+
+updateDensity-BB@0x6 : [ updateDensity-BB@0x22 updateDensity-BB@0x2a ]
+	2       (00000006) iput-object          v5, v4, Landroidx/appcompat/graphics/drawable/DrawableContainer$DrawableContainerState;->mSourceRes Landroid/content/res/Resources;
+	3       (0000000a) iget                 v2, v4, Landroidx/appcompat/graphics/drawable/DrawableContainer$DrawableContainerState;->mDensity I
+	4       (0000000e) invoke-static        v5, v2, Landroidx/appcompat/graphics/drawable/DrawableContainer;->resolveDensity(Landroid/content/res/Resources; I)I
+	5       (00000014) move-result          v1
+	6       (00000016) iget                 v0, v4, Landroidx/appcompat/graphics/drawable/DrawableContainer$DrawableContainerState;->mDensity I
+	7       (0000001a) iput                 v1, v4, Landroidx/appcompat/graphics/drawable/DrawableContainer$DrawableContainerState;->mDensity I
+	8       (0000001e) if-eq                v0, v1, +6
+
+updateDensity-BB@0x22 : [ updateDensity-BB@0x2a ]
+	9       (00000022) iput-boolean         v3, v4, Landroidx/appcompat/graphics/drawable/DrawableContainer$DrawableContainerState;->mCheckedConstantSize Z
+	10      (00000026) iput-boolean         v3, v4, Landroidx/appcompat/graphics/drawable/DrawableContainer$DrawableContainerState;->mCheckedPadding Z
+
+updateDensity-BB@0x2a : 
+	11      (0000002a) return-void          
+

@@ -1,0 +1,30 @@
+# Landroidx/appcompat/widget/ActionMenuPresenter;->bindItemView(Landroidx/appcompat/view/menu/MenuItemImpl; Landroidx/appcompat/view/menu/MenuView$ItemView;)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v3
+# - v4:androidx.appcompat.view.menu.MenuItemImpl
+# - v5:androidx.appcompat.view.menu.MenuView$ItemView
+#
+# - return:void
+
+bindItemView-BB@0x0 : [ bindItemView-BB@0x24 bindItemView-BB@0x32 ]
+	0       (00000000) const/4              v2, 0
+	1       (00000002) invoke-interface     v5, v4, v2, Landroidx/appcompat/view/menu/MenuView$ItemView;->initialize(Landroidx/appcompat/view/menu/MenuItemImpl; I)V
+	2       (00000008) iget-object          v1, v3, Landroidx/appcompat/widget/ActionMenuPresenter;->mMenuView Landroidx/appcompat/view/menu/MenuView;
+	3       (0000000c) check-cast           v1, Landroidx/appcompat/widget/ActionMenuView;
+	4       (00000010) move-object          v0, v5
+	5       (00000012) check-cast           v0, Landroidx/appcompat/view/menu/ActionMenuItemView;
+	6       (00000016) invoke-virtual       v0, v1, Landroidx/appcompat/view/menu/ActionMenuItemView;->setItemInvoker(Landroidx/appcompat/view/menu/MenuBuilder$ItemInvoker;)V
+	7       (0000001c) iget-object          v2, v3, Landroidx/appcompat/widget/ActionMenuPresenter;->mPopupCallback Landroidx/appcompat/widget/ActionMenuPresenter$ActionMenuPopupCallback;
+	8       (00000020) if-nez               v2, +9
+
+bindItemView-BB@0x24 : [ bindItemView-BB@0x32 ]
+	9       (00000024) new-instance         v2, Landroidx/appcompat/widget/ActionMenuPresenter$ActionMenuPopupCallback;
+	10      (00000028) invoke-direct        v2, v3, Landroidx/appcompat/widget/ActionMenuPresenter$ActionMenuPopupCallback;-><init>(Landroidx/appcompat/widget/ActionMenuPresenter;)V
+	11      (0000002e) iput-object          v2, v3, Landroidx/appcompat/widget/ActionMenuPresenter;->mPopupCallback Landroidx/appcompat/widget/ActionMenuPresenter$ActionMenuPopupCallback;
+
+bindItemView-BB@0x32 : 
+	12      (00000032) iget-object          v2, v3, Landroidx/appcompat/widget/ActionMenuPresenter;->mPopupCallback Landroidx/appcompat/widget/ActionMenuPresenter$ActionMenuPopupCallback;
+	13      (00000036) invoke-virtual       v0, v2, Landroidx/appcompat/view/menu/ActionMenuItemView;->setPopupCallback(Landroidx/appcompat/view/menu/ActionMenuItemView$PopupCallback;)V
+	14      (0000003c) return-void          
+

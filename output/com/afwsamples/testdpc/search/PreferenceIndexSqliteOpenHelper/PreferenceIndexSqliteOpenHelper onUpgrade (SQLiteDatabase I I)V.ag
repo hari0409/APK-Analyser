@@ -1,0 +1,13 @@
+# Lcom/afwsamples/testdpc/search/PreferenceIndexSqliteOpenHelper;->onUpgrade(Landroid/database/sqlite/SQLiteDatabase; I I)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v0
+# - v1:android.database.sqlite.SQLiteDatabase
+# - v2:int
+# - v3:int
+#
+# - return:void
+
+onUpgrade-BB@0x0 : 
+	0       (00000000) return-void          
+

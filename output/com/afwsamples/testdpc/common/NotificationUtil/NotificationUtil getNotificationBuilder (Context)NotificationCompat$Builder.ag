@@ -1,0 +1,22 @@
+# Lcom/afwsamples/testdpc/common/NotificationUtil;->getNotificationBuilder(Landroid/content/Context;)Landroidx/core/app/NotificationCompat$Builder; [access_flags=public static]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:android.content.Context
+#
+# - return:androidx.core.app.NotificationCompat$Builder
+
+getNotificationBuilder-BB@0x0 : [ getNotificationBuilder-BB@0xc getNotificationBuilder-BB@0x12 ]
+	0       (00000000) sget                 v1, Lcom/afwsamples/testdpc/common/Util;->SDK_INT I
+	1       (00000004) const/16             v2, 26
+	2       (00000008) if-lt                v1, v2, +5
+
+getNotificationBuilder-BB@0xc : [ getNotificationBuilder-BB@0x12 ]
+	3       (0000000c) invoke-static        v3, Lcom/afwsamples/testdpc/common/NotificationUtil;->createDefaultNotificationChannel(Landroid/content/Context;)V
+
+getNotificationBuilder-BB@0x12 : 
+	4       (00000012) new-instance         v0, Landroidx/core/app/NotificationCompat$Builder;
+	5       (00000016) const-string         v1, 'default_testdpc_channel'
+	6       (0000001a) invoke-direct        v0, v3, v1, Landroidx/core/app/NotificationCompat$Builder;-><init>(Landroid/content/Context; Ljava/lang/String;)V
+	7       (00000020) return-object        v0
+

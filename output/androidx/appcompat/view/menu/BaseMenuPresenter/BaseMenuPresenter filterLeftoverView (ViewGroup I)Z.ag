@@ -1,0 +1,14 @@
+# Landroidx/appcompat/view/menu/BaseMenuPresenter;->filterLeftoverView(Landroid/view/ViewGroup; I)Z [access_flags=protected]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:android.view.ViewGroup
+# - v3:int
+#
+# - return:boolean
+
+filterLeftoverView-BB@0x0 : 
+	0       (00000000) invoke-virtual       v2, v3, Landroid/view/ViewGroup;->removeViewAt(I)V
+	1       (00000006) const/4              v0, 1
+	2       (00000008) return               v0
+

@@ -1,0 +1,109 @@
+# Landroidx/appcompat/widget/AppCompatImageHelper;->loadFromAttributes(Landroid/util/AttributeSet; I)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v7
+# - v8:android.util.AttributeSet
+# - v9:int
+#
+# - return:void
+
+loadFromAttributes-BB@0x0 : [ loadFromAttributes-BB@0x1c ]
+	0       (00000000) const/4              v6, -1
+	1       (00000002) iget-object          v3, v7, Landroidx/appcompat/widget/AppCompatImageHelper;->mView Landroid/widget/ImageView;
+	2       (00000006) invoke-virtual       v3, Landroid/widget/ImageView;->getContext()Landroid/content/Context;
+	3       (0000000c) move-result-object   v3
+	4       (0000000e) sget-object          v4, Landroidx/appcompat/R$styleable;->AppCompatImageView [I
+	5       (00000012) const/4              v5, 0
+	6       (00000014) invoke-static        v3, v8, v4, v9, v5, Landroidx/appcompat/widget/TintTypedArray;->obtainStyledAttributes(Landroid/content/Context; Landroid/util/AttributeSet; [I I I)Landroidx/appcompat/widget/TintTypedArray;
+	7       (0000001a) move-result-object   v0
+
+loadFromAttributes-BB@0x1c : [ loadFromAttributes-BB@0x2c loadFromAttributes-BB@0x60 ]
+	8       (0000001c) iget-object          v3, v7, Landroidx/appcompat/widget/AppCompatImageHelper;->mView Landroid/widget/ImageView;
+	9       (00000020) invoke-virtual       v3, Landroid/widget/ImageView;->getDrawable()Landroid/graphics/drawable/Drawable;
+	10      (00000026) move-result-object   v1
+	11      (00000028) if-nez               v1, +1c
+	1c:c1
+	(Ljava/lang/Throwable; -> ca loadFromAttributes-BB@0xca)
+
+loadFromAttributes-BB@0x2c : [ loadFromAttributes-BB@0x3e loadFromAttributes-BB@0x60 ]
+	12      (0000002c) sget                 v3, Landroidx/appcompat/R$styleable;->AppCompatImageView_srcCompat I
+	13      (00000030) const/4              v4, -1
+	14      (00000032) invoke-virtual       v0, v3, v4, Landroidx/appcompat/widget/TintTypedArray;->getResourceId(I I)I
+	15      (00000038) move-result          v2
+	16      (0000003a) if-eq                v2, v6, +13
+	1c:c1
+	(Ljava/lang/Throwable; -> ca loadFromAttributes-BB@0xca)
+
+loadFromAttributes-BB@0x3e : [ loadFromAttributes-BB@0x56 loadFromAttributes-BB@0x60 ]
+	17      (0000003e) iget-object          v3, v7, Landroidx/appcompat/widget/AppCompatImageHelper;->mView Landroid/widget/ImageView;
+	18      (00000042) invoke-virtual       v3, Landroid/widget/ImageView;->getContext()Landroid/content/Context;
+	19      (00000048) move-result-object   v3
+	20      (0000004a) invoke-static        v3, v2, Landroidx/appcompat/content/res/AppCompatResources;->getDrawable(Landroid/content/Context; I)Landroid/graphics/drawable/Drawable;
+	21      (00000050) move-result-object   v1
+	22      (00000052) if-eqz               v1, +7
+	1c:c1
+	(Ljava/lang/Throwable; -> ca loadFromAttributes-BB@0xca)
+
+loadFromAttributes-BB@0x56 : [ loadFromAttributes-BB@0x60 ]
+	23      (00000056) iget-object          v3, v7, Landroidx/appcompat/widget/AppCompatImageHelper;->mView Landroid/widget/ImageView;
+	24      (0000005a) invoke-virtual       v3, v1, Landroid/widget/ImageView;->setImageDrawable(Landroid/graphics/drawable/Drawable;)V
+	1c:c1
+	(Ljava/lang/Throwable; -> ca loadFromAttributes-BB@0xca)
+
+loadFromAttributes-BB@0x60 : [ loadFromAttributes-BB@0x64 loadFromAttributes-BB@0x6a ]
+	25      (00000060) if-eqz               v1, +5
+	1c:c1
+	(Ljava/lang/Throwable; -> ca loadFromAttributes-BB@0xca)
+
+loadFromAttributes-BB@0x64 : [ loadFromAttributes-BB@0x6a ]
+	26      (00000064) invoke-static        v1, Landroidx/appcompat/widget/DrawableUtils;->fixDrawable(Landroid/graphics/drawable/Drawable;)V
+	1c:c1
+	(Ljava/lang/Throwable; -> ca loadFromAttributes-BB@0xca)
+
+loadFromAttributes-BB@0x6a : [ loadFromAttributes-BB@0x7a loadFromAttributes-BB@0x90 ]
+	27      (0000006a) sget                 v3, Landroidx/appcompat/R$styleable;->AppCompatImageView_tint I
+	28      (0000006e) invoke-virtual       v0, v3, Landroidx/appcompat/widget/TintTypedArray;->hasValue(I)Z
+	29      (00000074) move-result          v3
+	30      (00000076) if-eqz               v3, +d
+	1c:c1
+	(Ljava/lang/Throwable; -> ca loadFromAttributes-BB@0xca)
+
+loadFromAttributes-BB@0x7a : [ loadFromAttributes-BB@0x90 ]
+	31      (0000007a) iget-object          v3, v7, Landroidx/appcompat/widget/AppCompatImageHelper;->mView Landroid/widget/ImageView;
+	32      (0000007e) sget                 v4, Landroidx/appcompat/R$styleable;->AppCompatImageView_tint I
+	33      (00000082) invoke-virtual       v0, v4, Landroidx/appcompat/widget/TintTypedArray;->getColorStateList(I)Landroid/content/res/ColorStateList;
+	34      (00000088) move-result-object   v4
+	35      (0000008a) invoke-static        v3, v4, Landroidx/core/widget/ImageViewCompat;->setImageTintList(Landroid/widget/ImageView; Landroid/content/res/ColorStateList;)V
+	1c:c1
+	(Ljava/lang/Throwable; -> ca loadFromAttributes-BB@0xca)
+
+loadFromAttributes-BB@0x90 : [ loadFromAttributes-BB@0xa0 loadFromAttributes-BB@0xc2 ]
+	36      (00000090) sget                 v3, Landroidx/appcompat/R$styleable;->AppCompatImageView_tintMode I
+	37      (00000094) invoke-virtual       v0, v3, Landroidx/appcompat/widget/TintTypedArray;->hasValue(I)Z
+	38      (0000009a) move-result          v3
+	39      (0000009c) if-eqz               v3, +13
+	1c:c1
+	(Ljava/lang/Throwable; -> ca loadFromAttributes-BB@0xca)
+
+loadFromAttributes-BB@0xa0 : [ loadFromAttributes-BB@0xc2 ]
+	40      (000000a0) iget-object          v3, v7, Landroidx/appcompat/widget/AppCompatImageHelper;->mView Landroid/widget/ImageView;
+	41      (000000a4) sget                 v4, Landroidx/appcompat/R$styleable;->AppCompatImageView_tintMode I
+	42      (000000a8) const/4              v5, -1
+	43      (000000aa) invoke-virtual       v0, v4, v5, Landroidx/appcompat/widget/TintTypedArray;->getInt(I I)I
+	44      (000000b0) move-result          v4
+	45      (000000b2) const/4              v5, 0
+	46      (000000b4) invoke-static        v4, v5, Landroidx/appcompat/widget/DrawableUtils;->parseTintMode(I Landroid/graphics/PorterDuff$Mode;)Landroid/graphics/PorterDuff$Mode;
+	47      (000000ba) move-result-object   v4
+	48      (000000bc) invoke-static        v3, v4, Landroidx/core/widget/ImageViewCompat;->setImageTintMode(Landroid/widget/ImageView; Landroid/graphics/PorterDuff$Mode;)V
+	1c:c1
+	(Ljava/lang/Throwable; -> ca loadFromAttributes-BB@0xca)
+
+loadFromAttributes-BB@0xc2 : 
+	49      (000000c2) invoke-virtual       v0, Landroidx/appcompat/widget/TintTypedArray;->recycle()V
+	50      (000000c8) return-void          
+
+loadFromAttributes-BB@0xca : 
+	51      (000000ca) move-exception       v3
+	52      (000000cc) invoke-virtual       v0, Landroidx/appcompat/widget/TintTypedArray;->recycle()V
+	53      (000000d2) throw                v3
+

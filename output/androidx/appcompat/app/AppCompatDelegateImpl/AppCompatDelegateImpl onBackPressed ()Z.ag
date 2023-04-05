@@ -1,0 +1,33 @@
+# Landroidx/appcompat/app/AppCompatDelegateImpl;->onBackPressed()Z [access_flags=]
+#
+# Parameters:
+# local registers: v0...v3
+#
+# - return:boolean
+
+onBackPressed-BB@0x0 : [ onBackPressed-BB@0xa onBackPressed-BB@0x16 ]
+	0       (00000000) const/4              v1, 1
+	1       (00000002) iget-object          v2, v3, Landroidx/appcompat/app/AppCompatDelegateImpl;->mActionMode Landroidx/appcompat/view/ActionMode;
+	2       (00000006) if-eqz               v2, +8
+
+onBackPressed-BB@0xa : [ onBackPressed-BB@0x14 ]
+	3       (0000000a) iget-object          v2, v3, Landroidx/appcompat/app/AppCompatDelegateImpl;->mActionMode Landroidx/appcompat/view/ActionMode;
+	4       (0000000e) invoke-virtual       v2, Landroidx/appcompat/view/ActionMode;->finish()V
+
+onBackPressed-BB@0x14 : 
+	5       (00000014) return               v1
+
+onBackPressed-BB@0x16 : [ onBackPressed-BB@0x22 onBackPressed-BB@0x2e ]
+	6       (00000016) invoke-virtual       v3, Landroidx/appcompat/app/AppCompatDelegateImpl;->getSupportActionBar()Landroidx/appcompat/app/ActionBar;
+	7       (0000001c) move-result-object   v0
+	8       (0000001e) if-eqz               v0, +8
+
+onBackPressed-BB@0x22 : [ onBackPressed-BB@0x2e onBackPressed-BB@0x14 ]
+	9       (00000022) invoke-virtual       v0, Landroidx/appcompat/app/ActionBar;->collapseActionView()Z
+	10      (00000028) move-result          v2
+	11      (0000002a) if-nez               v2, -b
+
+onBackPressed-BB@0x2e : [ onBackPressed-BB@0x14 ]
+	12      (0000002e) const/4              v1, 0
+	13      (00000030) goto                 -e
+

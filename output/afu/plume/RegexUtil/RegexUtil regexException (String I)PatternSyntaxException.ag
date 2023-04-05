@@ -1,0 +1,38 @@
+# Lafu/plume/RegexUtil;->regexException(Ljava/lang/String; I)Ljava/util/regex/PatternSyntaxException; [access_flags=public static]
+#
+# Parameters:
+# - local registers: v0...v4
+# - v5:java.lang.String
+# - v6:int
+#
+# - return:java.util.regex.PatternSyntaxException
+
+regexException-BB@0x0 : [ regexException-BB@0x14 regexException-BB@0x2e ]
+	0       (00000000) invoke-static        v5, Ljava/util/regex/Pattern;->compile(Ljava/lang/String;)Ljava/util/regex/Pattern;
+	1       (00000006) move-result-object   v1
+	2       (00000008) invoke-static        v1, Lafu/plume/RegexUtil;->getGroupCount(Ljava/util/regex/Pattern;)I
+	3       (0000000e) move-result          v0
+	4       (00000010) if-ge                v0, v6, +f
+	0:27
+	(Ljava/util/regex/PatternSyntaxException; -> 2a regexException-BB@0x2a)
+
+regexException-BB@0x14 : [ regexException-BB@0x28 ]
+	5       (00000014) new-instance         v2, Ljava/util/regex/PatternSyntaxException;
+	6       (00000018) invoke-static        v5, v6, v0, Lafu/plume/RegexUtil;->regexErrorMessage(Ljava/lang/String; I I)Ljava/lang/String;
+	7       (0000001e) move-result-object   v3
+	8       (00000020) const/4              v4, -1
+	9       (00000022) invoke-direct        v2, v3, v5, v4, Ljava/util/regex/PatternSyntaxException;-><init>(Ljava/lang/String; Ljava/lang/String; I)V
+	0:27
+	(Ljava/util/regex/PatternSyntaxException; -> 2a regexException-BB@0x2a)
+
+regexException-BB@0x28 : 
+	10      (00000028) return-object        v2
+
+regexException-BB@0x2a : [ regexException-BB@0x28 ]
+	11      (0000002a) move-exception       v2
+	12      (0000002c) goto                 -2
+
+regexException-BB@0x2e : [ regexException-BB@0x28 ]
+	13      (0000002e) const/4              v2, 0
+	14      (00000030) goto                 -4
+

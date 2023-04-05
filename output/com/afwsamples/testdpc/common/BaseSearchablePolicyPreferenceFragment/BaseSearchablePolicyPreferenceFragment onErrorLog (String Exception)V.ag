@@ -1,0 +1,23 @@
+# Lcom/afwsamples/testdpc/common/BaseSearchablePolicyPreferenceFragment;->onErrorLog(Ljava/lang/String; Ljava/lang/Exception;)V [access_flags=protected]
+#
+# Parameters:
+# - local registers: v0...v3
+# - v4:java.lang.String
+# - v5:java.lang.Exception
+#
+# - return:void
+
+onErrorLog-BB@0x0 : 
+	0       (00000000) iget-object          v0, v3, Lcom/afwsamples/testdpc/common/BaseSearchablePolicyPreferenceFragment;->mTag Ljava/lang/String;
+	1       (00000004) new-instance         v1, Ljava/lang/StringBuilder;
+	2       (00000008) invoke-direct        v1, Ljava/lang/StringBuilder;-><init>()V
+	3       (0000000e) invoke-virtual       v1, v4, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	4       (00000014) move-result-object   v1
+	5       (00000016) const-string         v2, '() failed: '
+	6       (0000001a) invoke-virtual       v1, v2, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	7       (00000020) move-result-object   v1
+	8       (00000022) invoke-virtual       v1, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+	9       (00000028) move-result-object   v1
+	10      (0000002a) invoke-static        v0, v1, v5, Landroid/util/Log;->e(Ljava/lang/String; Ljava/lang/String; Ljava/lang/Throwable;)I
+	11      (00000030) return-void          
+

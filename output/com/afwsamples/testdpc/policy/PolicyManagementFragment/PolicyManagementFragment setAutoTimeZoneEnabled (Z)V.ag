@@ -1,0 +1,14 @@
+# Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->setAutoTimeZoneEnabled(Z)V [access_flags=private]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:boolean
+#
+# - return:void
+
+setAutoTimeZoneEnabled-BB@0x0 : 
+	0       (00000000) iget-object          v0, v2, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->mDevicePolicyManager Landroid/app/admin/DevicePolicyManager;
+	1       (00000004) iget-object          v1, v2, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->mAdminComponentName Landroid/content/ComponentName;
+	2       (00000008) invoke-virtual       v0, v1, v3, Landroid/app/admin/DevicePolicyManager;->setAutoTimeZoneEnabled(Landroid/content/ComponentName; Z)V
+	3       (0000000e) return-void          
+

@@ -1,0 +1,28 @@
+# Lcom/afwsamples/testdpc/common/ProvisioningStateUtil;->isDeviceUnprovisionedAndNoDeviceOwner(Landroid/content/Context;)Z [access_flags=public static]
+#
+# Parameters:
+# - local registers: v0...v0
+# - v1:android.content.Context
+#
+# - return:boolean
+
+isDeviceUnprovisionedAndNoDeviceOwner-BB@0x0 : [ isDeviceUnprovisionedAndNoDeviceOwner-BB@0xc isDeviceUnprovisionedAndNoDeviceOwner-BB@0x1c ]
+	0       (00000000) invoke-static        v1, Lcom/afwsamples/testdpc/common/ProvisioningStateUtil;->isDeviceProvisioned(Landroid/content/Context;)Z
+	1       (00000006) move-result          v0
+	2       (00000008) if-nez               v0, +a
+
+isDeviceUnprovisionedAndNoDeviceOwner-BB@0xc : [ isDeviceUnprovisionedAndNoDeviceOwner-BB@0x18 isDeviceUnprovisionedAndNoDeviceOwner-BB@0x1c ]
+	3       (0000000c) invoke-static        v1, Lcom/afwsamples/testdpc/common/ProvisioningStateUtil;->isManaged(Landroid/content/Context;)Z
+	4       (00000012) move-result          v0
+	5       (00000014) if-nez               v0, +4
+
+isDeviceUnprovisionedAndNoDeviceOwner-BB@0x18 : [ isDeviceUnprovisionedAndNoDeviceOwner-BB@0x1a ]
+	6       (00000018) const/4              v0, 1
+
+isDeviceUnprovisionedAndNoDeviceOwner-BB@0x1a : 
+	7       (0000001a) return               v0
+
+isDeviceUnprovisionedAndNoDeviceOwner-BB@0x1c : [ isDeviceUnprovisionedAndNoDeviceOwner-BB@0x1a ]
+	8       (0000001c) const/4              v0, 0
+	9       (0000001e) goto                 -2
+

@@ -1,0 +1,39 @@
+# Landroidx/appcompat/widget/ActivityChooserModel$HistoricalRecord;->hashCode()I [access_flags=public]
+#
+# Parameters:
+# local registers: v0...v8
+#
+# - return:int
+
+hashCode-BB@0x0 : [ hashCode-BB@0xe hashCode-BB@0x44 ]
+	0       (00000000) const/16             v0, 31
+	1       (00000004) const/4              v1, 1
+	2       (00000006) iget-object          v2, v8, Landroidx/appcompat/widget/ActivityChooserModel$HistoricalRecord;->activity Landroid/content/ComponentName;
+	3       (0000000a) if-nez               v2, +1d
+
+hashCode-BB@0xe : [ hashCode-BB@0x10 ]
+	4       (0000000e) const/4              v2, 0
+
+hashCode-BB@0x10 : 
+	5       (00000010) add-int/lit8         v1, v2, 31
+	6       (00000014) mul-int/lit8         v2, v1, 31
+	7       (00000018) iget-wide            v4, v8, Landroidx/appcompat/widget/ActivityChooserModel$HistoricalRecord;->time J
+	8       (0000001c) iget-wide            v6, v8, Landroidx/appcompat/widget/ActivityChooserModel$HistoricalRecord;->time J
+	9       (00000020) const/16             v3, 32
+	10      (00000024) ushr-long/2addr      v6, v3
+	11      (00000026) xor-long/2addr       v4, v6
+	12      (00000028) long-to-int          v3, v4
+	13      (0000002a) add-int              v1, v2, v3
+	14      (0000002e) mul-int/lit8         v2, v1, 31
+	15      (00000032) iget                 v3, v8, Landroidx/appcompat/widget/ActivityChooserModel$HistoricalRecord;->weight F
+	16      (00000036) invoke-static        v3, Ljava/lang/Float;->floatToIntBits(F)I
+	17      (0000003c) move-result          v3
+	18      (0000003e) add-int              v1, v2, v3
+	19      (00000042) return               v1
+
+hashCode-BB@0x44 : [ hashCode-BB@0x10 ]
+	20      (00000044) iget-object          v2, v8, Landroidx/appcompat/widget/ActivityChooserModel$HistoricalRecord;->activity Landroid/content/ComponentName;
+	21      (00000048) invoke-virtual       v2, Landroid/content/ComponentName;->hashCode()I
+	22      (0000004e) move-result          v2
+	23      (00000050) goto                 -20
+

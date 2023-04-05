@@ -1,0 +1,18 @@
+# Lcom/afwsamples/testdpc/ShellCommand;->onSuccess(Ljava/lang/String; [Ljava/lang/Object;)V [access_flags=private varargs]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:java.lang.String
+# - v4:java.lang.Object[]
+#
+# - return:void
+
+onSuccess-BB@0x0 : 
+	0       (00000000) invoke-static        v3, v4, Ljava/lang/String;->format(Ljava/lang/String; [Ljava/lang/Object;)Ljava/lang/String;
+	1       (00000006) move-result-object   v0
+	2       (00000008) const-string         v1, 'TestDPCShellCommand'
+	3       (0000000c) invoke-static        v1, v0, Landroid/util/Log;->d(Ljava/lang/String; Ljava/lang/String;)I
+	4       (00000012) iget-object          v1, v2, Lcom/afwsamples/testdpc/ShellCommand;->mWriter Ljava/io/PrintWriter;
+	5       (00000016) invoke-virtual       v1, v0, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
+	6       (0000001c) return-void          
+

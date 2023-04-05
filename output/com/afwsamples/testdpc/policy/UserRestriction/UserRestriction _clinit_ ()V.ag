@@ -1,0 +1,654 @@
+# Lcom/afwsamples/testdpc/policy/UserRestriction;-><clinit>()V [access_flags=static constructor]
+#
+# Parameters:
+# local registers: v0...v9
+#
+# - return:void
+
+<clinit>-BB@0x0 : 
+	0       (00000000) const/4              v9, 4
+	1       (00000002) const/4              v8, 3
+	2       (00000004) const/4              v7, 2
+	3       (00000006) const/4              v6, 1
+	4       (00000008) const/4              v5, 0
+	5       (0000000a) const/16             v0, 54
+	6       (0000000e) new-array            v0, v0, [Lcom/afwsamples/testdpc/policy/UserRestriction;
+	7       (00000012) new-instance         v1, Lcom/afwsamples/testdpc/policy/UserRestriction;
+	8       (00000016) const-string         v2, 'allow_parent_profile_app_linking'
+	9       (0000001a) const                v3, 2131689547 # [1.9008112457796324e+38]
+	10      (00000020) invoke-direct        v1, v2, v3, Lcom/afwsamples/testdpc/policy/UserRestriction;-><init>(Ljava/lang/String; I)V
+	11      (00000026) aput-object          v1, v0, v5
+	12      (0000002a) new-instance         v1, Lcom/afwsamples/testdpc/policy/UserRestriction;
+	13      (0000002e) const-string         v2, 'no_add_managed_profile'
+	14      (00000032) const                v3, 2131689712 # [1.9008447117554785e+38]
+	15      (00000038) invoke-direct        v1, v2, v3, Lcom/afwsamples/testdpc/policy/UserRestriction;-><init>(Ljava/lang/String; I)V
+	16      (0000003e) aput-object          v1, v0, v6
+	17      (00000042) new-instance         v1, Lcom/afwsamples/testdpc/policy/UserRestriction;
+	18      (00000046) const-string         v2, 'no_add_user'
+	19      (0000004a) const                v3, 2131689713 # [1.9008449145795745e+38]
+	20      (00000050) invoke-direct        v1, v2, v3, Lcom/afwsamples/testdpc/policy/UserRestriction;-><init>(Ljava/lang/String; I)V
+	21      (00000056) aput-object          v1, v0, v7
+	22      (0000005a) new-instance         v1, Lcom/afwsamples/testdpc/policy/UserRestriction;
+	23      (0000005e) const-string         v2, 'no_adjust_volume'
+	24      (00000062) const                v3, 2131689714 # [1.9008451174036705e+38]
+	25      (00000068) invoke-direct        v1, v2, v3, Lcom/afwsamples/testdpc/policy/UserRestriction;-><init>(Ljava/lang/String; I)V
+	26      (0000006e) aput-object          v1, v0, v8
+	27      (00000072) new-instance         v1, Lcom/afwsamples/testdpc/policy/UserRestriction;
+	28      (00000076) const-string         v2, 'no_control_apps'
+	29      (0000007a) const                v3, 2131689717 # [1.9008457258759586e+38]
+	30      (00000080) invoke-direct        v1, v2, v3, Lcom/afwsamples/testdpc/policy/UserRestriction;-><init>(Ljava/lang/String; I)V
+	31      (00000086) aput-object          v1, v0, v9
+	32      (0000008a) const/4              v1, 5
+	33      (0000008c) new-instance         v2, Lcom/afwsamples/testdpc/policy/UserRestriction;
+	34      (00000090) const-string         v3, 'no_bluetooth'
+	35      (00000094) const                v4, 2131689719 # [1.9008461315241507e+38]
+	36      (0000009a) invoke-direct        v2, v3, v4, Lcom/afwsamples/testdpc/policy/UserRestriction;-><init>(Ljava/lang/String; I)V
+	37      (000000a0) aput-object          v2, v0, v1
+	38      (000000a4) const/4              v1, 6
+	39      (000000a6) new-instance         v2, Lcom/afwsamples/testdpc/policy/UserRestriction;
+	40      (000000aa) const-string         v3, 'no_config_bluetooth'
+	41      (000000ae) const                v4, 2131689722 # [1.900846739996439e+38]
+	42      (000000b4) invoke-direct        v2, v3, v4, Lcom/afwsamples/testdpc/policy/UserRestriction;-><init>(Ljava/lang/String; I)V
+	43      (000000ba) aput-object          v2, v0, v1
+	44      (000000be) const/4              v1, 7
+	45      (000000c0) new-instance         v2, Lcom/afwsamples/testdpc/policy/UserRestriction;
+	46      (000000c4) const-string         v3, 'no_config_cell_broadcasts'
+	47      (000000c8) const                v4, 2131689724 # [1.900847145644631e+38]
+	48      (000000ce) invoke-direct        v2, v3, v4, Lcom/afwsamples/testdpc/policy/UserRestriction;-><init>(Ljava/lang/String; I)V
+	49      (000000d4) aput-object          v2, v0, v1
+	50      (000000d8) const/16             v1, 8
+	51      (000000dc) new-instance         v2, Lcom/afwsamples/testdpc/policy/UserRestriction;
+	52      (000000e0) const-string         v3, 'no_config_credentials'
+	53      (000000e4) const                v4, 2131689725 # [1.900847348468727e+38]
+	54      (000000ea) invoke-direct        v2, v3, v4, Lcom/afwsamples/testdpc/policy/UserRestriction;-><init>(Ljava/lang/String; I)V
+	55      (000000f0) aput-object          v2, v0, v1
+	56      (000000f4) const/16             v1, 9
+	57      (000000f8) new-instance         v2, Lcom/afwsamples/testdpc/policy/UserRestriction;
+	58      (000000fc) const-string         v3, 'no_config_mobile_networks'
+	59      (00000100) const                v4, 2131689728 # [1.900847956941015e+38]
+	60      (00000106) invoke-direct        v2, v3, v4, Lcom/afwsamples/testdpc/policy/UserRestriction;-><init>(Ljava/lang/String; I)V
+	61      (0000010c) aput-object          v2, v0, v1
+	62      (00000110) const/16             v1, 10
+	63      (00000114) new-instance         v2, Lcom/afwsamples/testdpc/policy/UserRestriction;
+	64      (00000118) const-string         v3, 'no_config_tethering'
+	65      (0000011c) const                v4, 2131689731 # [1.900848565413303e+38]
+	66      (00000122) invoke-direct        v2, v3, v4, Lcom/afwsamples/testdpc/policy/UserRestriction;-><init>(Ljava/lang/String; I)V
+	67      (00000128) aput-object          v2, v0, v1
+	68      (0000012c) const/16             v1, 11
+	69      (00000130) new-instance         v2, Lcom/afwsamples/testdpc/policy/UserRestriction;
+	70      (00000134) const-string         v3, 'no_config_vpn'
+	71      (00000138) const                v4, 2131689732 # [1.9008487682373992e+38]
+	72      (0000013e) invoke-direct        v2, v3, v4, Lcom/afwsamples/testdpc/policy/UserRestriction;-><init>(Ljava/lang/String; I)V
+	73      (00000144) aput-object          v2, v0, v1
+	74      (00000148) const/16             v1, 12
+	75      (0000014c) new-instance         v2, Lcom/afwsamples/testdpc/policy/UserRestriction;
+	76      (00000150) const-string         v3, 'no_config_wifi'
+	77      (00000154) const                v4, 2131689733 # [1.9008489710614952e+38]
+	78      (0000015a) invoke-direct        v2, v3, v4, Lcom/afwsamples/testdpc/policy/UserRestriction;-><init>(Ljava/lang/String; I)V
+	79      (00000160) aput-object          v2, v0, v1
+	80      (00000164) const/16             v1, 13
+	81      (00000168) new-instance         v2, Lcom/afwsamples/testdpc/policy/UserRestriction;
+	82      (0000016c) const-string         v3, 'no_create_windows'
+	83      (00000170) const                v4, 2131689736 # [1.9008495795337833e+38]
+	84      (00000176) invoke-direct        v2, v3, v4, Lcom/afwsamples/testdpc/policy/UserRestriction;-><init>(Ljava/lang/String; I)V
+	85      (0000017c) aput-object          v2, v0, v1
+	86      (00000180) const/16             v1, 14
+	87      (00000184) new-instance         v2, Lcom/afwsamples/testdpc/policy/UserRestriction;
+	88      (00000188) const-string         v3, 'no_system_error_dialogs'
+	89      (0000018c) const                v4, 2131689760 # [1.9008544473120882e+38]
+	90      (00000192) invoke-direct        v2, v3, v4, Lcom/afwsamples/testdpc/policy/UserRestriction;-><init>(Ljava/lang/String; I)V
+	91      (00000198) aput-object          v2, v0, v1
+	92      (0000019c) const/16             v1, 15
+	93      (000001a0) new-instance         v2, Lcom/afwsamples/testdpc/policy/UserRestriction;
+	94      (000001a4) const-string         v3, 'no_cross_profile_copy_paste'
+	95      (000001a8) const                v4, 2131689737 # [1.9008497823578794e+38]
+	96      (000001ae) invoke-direct        v2, v3, v4, Lcom/afwsamples/testdpc/policy/UserRestriction;-><init>(Ljava/lang/String; I)V
+	97      (000001b4) aput-object          v2, v0, v1
+	98      (000001b8) const/16             v1, 16
+	99      (000001bc) new-instance         v2, Lcom/afwsamples/testdpc/policy/UserRestriction;
+	100     (000001c0) const-string         v3, 'no_data_roaming'
+	101     (000001c4) const                v4, 2131689738 # [1.9008499851819754e+38]
+	102     (000001ca) invoke-direct        v2, v3, v4, Lcom/afwsamples/testdpc/policy/UserRestriction;-><init>(Ljava/lang/String; I)V
+	103     (000001d0) aput-object          v2, v0, v1
+	104     (000001d4) const/16             v1, 17
+	105     (000001d8) new-instance         v2, Lcom/afwsamples/testdpc/policy/UserRestriction;
+	106     (000001dc) const-string         v3, 'no_debugging_features'
+	107     (000001e0) const                v4, 2131689739 # [1.9008501880060714e+38]
+	108     (000001e6) invoke-direct        v2, v3, v4, Lcom/afwsamples/testdpc/policy/UserRestriction;-><init>(Ljava/lang/String; I)V
+	109     (000001ec) aput-object          v2, v0, v1
+	110     (000001f0) const/16             v1, 18
+	111     (000001f4) new-instance         v2, Lcom/afwsamples/testdpc/policy/UserRestriction;
+	112     (000001f8) const-string         v3, 'no_factory_reset'
+	113     (000001fc) const                v4, 2131689740 # [1.9008503908301675e+38]
+	114     (00000202) invoke-direct        v2, v3, v4, Lcom/afwsamples/testdpc/policy/UserRestriction;-><init>(Ljava/lang/String; I)V
+	115     (00000208) aput-object          v2, v0, v1
+	116     (0000020c) const/16             v1, 19
+	117     (00000210) new-instance         v2, Lcom/afwsamples/testdpc/policy/UserRestriction;
+	118     (00000214) const-string         v3, 'no_fun'
+	119     (00000218) const                v4, 2131689741 # [1.9008505936542635e+38]
+	120     (0000021e) invoke-direct        v2, v3, v4, Lcom/afwsamples/testdpc/policy/UserRestriction;-><init>(Ljava/lang/String; I)V
+	121     (00000224) aput-object          v2, v0, v1
+	122     (00000228) const/16             v1, 20
+	123     (0000022c) new-instance         v2, Lcom/afwsamples/testdpc/policy/UserRestriction;
+	124     (00000230) const-string         v3, 'no_install_apps'
+	125     (00000234) const                v4, 2131689742 # [1.9008507964783596e+38]
+	126     (0000023a) invoke-direct        v2, v3, v4, Lcom/afwsamples/testdpc/policy/UserRestriction;-><init>(Ljava/lang/String; I)V
+	127     (00000240) aput-object          v2, v0, v1
+	128     (00000244) const/16             v1, 21
+	129     (00000248) new-instance         v2, Lcom/afwsamples/testdpc/policy/UserRestriction;
+	130     (0000024c) const-string         v3, 'no_install_unknown_sources'
+	131     (00000250) const                v4, 2131689743 # [1.9008509993024556e+38]
+	132     (00000256) invoke-direct        v2, v3, v4, Lcom/afwsamples/testdpc/policy/UserRestriction;-><init>(Ljava/lang/String; I)V
+	133     (0000025c) aput-object          v2, v0, v1
+	134     (00000260) const/16             v1, 22
+	135     (00000264) new-instance         v2, Lcom/afwsamples/testdpc/policy/UserRestriction;
+	136     (00000268) const-string         v3, 'no_install_unknown_sources_globally'
+	137     (0000026c) const                v4, 2131689744 # [1.9008512021265516e+38]
+	138     (00000272) invoke-direct        v2, v3, v4, Lcom/afwsamples/testdpc/policy/UserRestriction;-><init>(Ljava/lang/String; I)V
+	139     (00000278) aput-object          v2, v0, v1
+	140     (0000027c) const/16             v1, 23
+	141     (00000280) new-instance         v2, Lcom/afwsamples/testdpc/policy/UserRestriction;
+	142     (00000284) const-string         v3, 'no_modify_accounts'
+	143     (00000288) const                v4, 2131689746 # [1.9008516077747437e+38]
+	144     (0000028e) invoke-direct        v2, v3, v4, Lcom/afwsamples/testdpc/policy/UserRestriction;-><init>(Ljava/lang/String; I)V
+	145     (00000294) aput-object          v2, v0, v1
+	146     (00000298) const/16             v1, 24
+	147     (0000029c) new-instance         v2, Lcom/afwsamples/testdpc/policy/UserRestriction;
+	148     (000002a0) const-string         v3, 'no_physical_media'
+	149     (000002a4) const                v4, 2131689747 # [1.9008518105988397e+38]
+	150     (000002aa) invoke-direct        v2, v3, v4, Lcom/afwsamples/testdpc/policy/UserRestriction;-><init>(Ljava/lang/String; I)V
+	151     (000002b0) aput-object          v2, v0, v1
+	152     (000002b4) const/16             v1, 25
+	153     (000002b8) new-instance         v2, Lcom/afwsamples/testdpc/policy/UserRestriction;
+	154     (000002bc) const-string         v3, 'no_network_reset'
+	155     (000002c0) const                v4, 2131689748 # [1.9008520134229358e+38]
+	156     (000002c6) invoke-direct        v2, v3, v4, Lcom/afwsamples/testdpc/policy/UserRestriction;-><init>(Ljava/lang/String; I)V
+	157     (000002cc) aput-object          v2, v0, v1
+	158     (000002d0) const/16             v1, 26
+	159     (000002d4) new-instance         v2, Lcom/afwsamples/testdpc/policy/UserRestriction;
+	160     (000002d8) const-string         v3, 'no_outgoing_beam'
+	161     (000002dc) const                v4, 2131689749 # [1.900852216247032e+38]
+	162     (000002e2) invoke-direct        v2, v3, v4, Lcom/afwsamples/testdpc/policy/UserRestriction;-><init>(Ljava/lang/String; I)V
+	163     (000002e8) aput-object          v2, v0, v1
+	164     (000002ec) const/16             v1, 27
+	165     (000002f0) new-instance         v2, Lcom/afwsamples/testdpc/policy/UserRestriction;
+	166     (000002f4) const-string         v3, 'no_outgoing_calls'
+	167     (000002f8) const                v4, 2131689750 # [1.900852419071128e+38]
+	168     (000002fe) invoke-direct        v2, v3, v4, Lcom/afwsamples/testdpc/policy/UserRestriction;-><init>(Ljava/lang/String; I)V
+	169     (00000304) aput-object          v2, v0, v1
+	170     (00000308) const/16             v1, 28
+	171     (0000030c) new-instance         v2, Lcom/afwsamples/testdpc/policy/UserRestriction;
+	172     (00000310) const-string         v3, 'no_remove_managed_profile'
+	173     (00000314) const                v4, 2131689752 # [1.90085282471932e+38]
+	174     (0000031a) invoke-direct        v2, v3, v4, Lcom/afwsamples/testdpc/policy/UserRestriction;-><init>(Ljava/lang/String; I)V
+	175     (00000320) aput-object          v2, v0, v1
+	176     (00000324) const/16             v1, 29
+	177     (00000328) new-instance         v2, Lcom/afwsamples/testdpc/policy/UserRestriction;
+	178     (0000032c) const-string         v3, 'no_remove_user'
+	179     (00000330) const                v4, 2131689753 # [1.900853027543416e+38]
+	180     (00000336) invoke-direct        v2, v3, v4, Lcom/afwsamples/testdpc/policy/UserRestriction;-><init>(Ljava/lang/String; I)V
+	181     (0000033c) aput-object          v2, v0, v1
+	182     (00000340) const/16             v1, 30
+	183     (00000344) new-instance         v2, Lcom/afwsamples/testdpc/policy/UserRestriction;
+	184     (00000348) const-string         v3, 'no_safe_boot'
+	185     (0000034c) const                v4, 2131689754 # [1.900853230367512e+38]
+	186     (00000352) invoke-direct        v2, v3, v4, Lcom/afwsamples/testdpc/policy/UserRestriction;-><init>(Ljava/lang/String; I)V
+	187     (00000358) aput-object          v2, v0, v1
+	188     (0000035c) const/16             v1, 31
+	189     (00000360) new-instance         v2, Lcom/afwsamples/testdpc/policy/UserRestriction;
+	190     (00000364) const-string         v3, 'no_set_user_icon'
+	191     (00000368) const                v4, 2131689755 # [1.900853433191608e+38]
+	192     (0000036e) invoke-direct        v2, v3, v4, Lcom/afwsamples/testdpc/policy/UserRestriction;-><init>(Ljava/lang/String; I)V
+	193     (00000374) aput-object          v2, v0, v1
+	194     (00000378) const/16             v1, 32
+	195     (0000037c) new-instance         v2, Lcom/afwsamples/testdpc/policy/UserRestriction;
+	196     (00000380) const-string         v3, 'no_set_wallpaper'
+	197     (00000384) const                v4, 2131689756 # [1.900853636015704e+38]
+	198     (0000038a) invoke-direct        v2, v3, v4, Lcom/afwsamples/testdpc/policy/UserRestriction;-><init>(Ljava/lang/String; I)V
+	199     (00000390) aput-object          v2, v0, v1
+	200     (00000394) const/16             v1, 33
+	201     (00000398) new-instance         v2, Lcom/afwsamples/testdpc/policy/UserRestriction;
+	202     (0000039c) const-string         v3, 'no_share_location'
+	203     (000003a0) const                v4, 2131689758 # [1.900854041663896e+38]
+	204     (000003a6) invoke-direct        v2, v3, v4, Lcom/afwsamples/testdpc/policy/UserRestriction;-><init>(Ljava/lang/String; I)V
+	205     (000003ac) aput-object          v2, v0, v1
+	206     (000003b0) const/16             v1, 34
+	207     (000003b4) new-instance         v2, Lcom/afwsamples/testdpc/policy/UserRestriction;
+	208     (000003b8) const-string         v3, 'no_sms'
+	209     (000003bc) const                v4, 2131689759 # [1.900854244487992e+38]
+	210     (000003c2) invoke-direct        v2, v3, v4, Lcom/afwsamples/testdpc/policy/UserRestriction;-><init>(Ljava/lang/String; I)V
+	211     (000003c8) aput-object          v2, v0, v1
+	212     (000003cc) const/16             v1, 35
+	213     (000003d0) new-instance         v2, Lcom/afwsamples/testdpc/policy/UserRestriction;
+	214     (000003d4) const-string         v3, 'no_uninstall_apps'
+	215     (000003d8) const                v4, 2131689762 # [1.9008548529602803e+38]
+	216     (000003de) invoke-direct        v2, v3, v4, Lcom/afwsamples/testdpc/policy/UserRestriction;-><init>(Ljava/lang/String; I)V
+	217     (000003e4) aput-object          v2, v0, v1
+	218     (000003e8) const/16             v1, 36
+	219     (000003ec) new-instance         v2, Lcom/afwsamples/testdpc/policy/UserRestriction;
+	220     (000003f0) const-string         v3, 'no_unmute_microphone'
+	221     (000003f4) const                v4, 2131689763 # [1.9008550557843763e+38]
+	222     (000003fa) invoke-direct        v2, v3, v4, Lcom/afwsamples/testdpc/policy/UserRestriction;-><init>(Ljava/lang/String; I)V
+	223     (00000400) aput-object          v2, v0, v1
+	224     (00000404) const/16             v1, 37
+	225     (00000408) new-instance         v2, Lcom/afwsamples/testdpc/policy/UserRestriction;
+	226     (0000040c) const-string         v3, 'no_usb_file_transfer'
+	227     (00000410) const                v4, 2131689764 # [1.9008552586084724e+38]
+	228     (00000416) invoke-direct        v2, v3, v4, Lcom/afwsamples/testdpc/policy/UserRestriction;-><init>(Ljava/lang/String; I)V
+	229     (0000041c) aput-object          v2, v0, v1
+	230     (00000420) const/16             v1, 38
+	231     (00000424) new-instance         v2, Lcom/afwsamples/testdpc/policy/UserRestriction;
+	232     (00000428) const-string         v3, 'ensure_verify_apps'
+	233     (0000042c) const                v4, 2131689796 # [1.9008617489795455e+38]
+	234     (00000432) invoke-direct        v2, v3, v4, Lcom/afwsamples/testdpc/policy/UserRestriction;-><init>(Ljava/lang/String; I)V
+	235     (00000438) aput-object          v2, v0, v1
+	236     (0000043c) const/16             v1, 39
+	237     (00000440) new-instance         v2, Lcom/afwsamples/testdpc/policy/UserRestriction;
+	238     (00000444) const-string         v3, 'no_autofill'
+	239     (00000448) const                v4, 2131689718 # [1.9008459287000547e+38]
+	240     (0000044e) invoke-direct        v2, v3, v4, Lcom/afwsamples/testdpc/policy/UserRestriction;-><init>(Ljava/lang/String; I)V
+	241     (00000454) aput-object          v2, v0, v1
+	242     (00000458) const/16             v1, 40
+	243     (0000045c) new-instance         v2, Lcom/afwsamples/testdpc/policy/UserRestriction;
+	244     (00000460) const-string         v3, 'no_bluetooth_sharing'
+	245     (00000464) const                v4, 2131689720 # [1.9008463343482468e+38]
+	246     (0000046a) invoke-direct        v2, v3, v4, Lcom/afwsamples/testdpc/policy/UserRestriction;-><init>(Ljava/lang/String; I)V
+	247     (00000470) aput-object          v2, v0, v1
+	248     (00000474) const/16             v1, 41
+	249     (00000478) new-instance         v2, Lcom/afwsamples/testdpc/policy/UserRestriction;
+	250     (0000047c) const-string         v3, 'no_unified_password'
+	251     (00000480) const                v4, 2131689761 # [1.9008546501361843e+38]
+	252     (00000486) invoke-direct        v2, v3, v4, Lcom/afwsamples/testdpc/policy/UserRestriction;-><init>(Ljava/lang/String; I)V
+	253     (0000048c) aput-object          v2, v0, v1
+	254     (00000490) const/16             v1, 42
+	255     (00000494) new-instance         v2, Lcom/afwsamples/testdpc/policy/UserRestriction;
+	256     (00000498) const-string         v3, 'no_user_switch'
+	257     (0000049c) const                v4, 2131689765 # [1.9008554614325684e+38]
+	258     (000004a2) invoke-direct        v2, v3, v4, Lcom/afwsamples/testdpc/policy/UserRestriction;-><init>(Ljava/lang/String; I)V
+	259     (000004a8) aput-object          v2, v0, v1
+	260     (000004ac) const/16             v1, 43
+	261     (000004b0) new-instance         v2, Lcom/afwsamples/testdpc/policy/UserRestriction;
+	262     (000004b4) const-string         v3, 'no_config_location'
+	263     (000004b8) const                v4, 2131689727 # [1.900847754116919e+38]
+	264     (000004be) invoke-direct        v2, v3, v4, Lcom/afwsamples/testdpc/policy/UserRestriction;-><init>(Ljava/lang/String; I)V
+	265     (000004c4) aput-object          v2, v0, v1
+	266     (000004c8) const/16             v1, 44
+	267     (000004cc) new-instance         v2, Lcom/afwsamples/testdpc/policy/UserRestriction;
+	268     (000004d0) const-string         v3, 'no_airplane_mode'
+	269     (000004d4) const                v4, 2131689715 # [1.9008453202277666e+38]
+	270     (000004da) invoke-direct        v2, v3, v4, Lcom/afwsamples/testdpc/policy/UserRestriction;-><init>(Ljava/lang/String; I)V
+	271     (000004e0) aput-object          v2, v0, v1
+	272     (000004e4) const/16             v1, 45
+	273     (000004e8) new-instance         v2, Lcom/afwsamples/testdpc/policy/UserRestriction;
+	274     (000004ec) const-string         v3, 'no_config_brightness'
+	275     (000004f0) const                v4, 2131689723 # [1.900846942820535e+38]
+	276     (000004f6) invoke-direct        v2, v3, v4, Lcom/afwsamples/testdpc/policy/UserRestriction;-><init>(Ljava/lang/String; I)V
+	277     (000004fc) aput-object          v2, v0, v1
+	278     (00000500) const/16             v1, 46
+	279     (00000504) new-instance         v2, Lcom/afwsamples/testdpc/policy/UserRestriction;
+	280     (00000508) const-string         v3, 'no_config_date_time'
+	281     (0000050c) const                v4, 2131689726 # [1.900847551292823e+38]
+	282     (00000512) invoke-direct        v2, v3, v4, Lcom/afwsamples/testdpc/policy/UserRestriction;-><init>(Ljava/lang/String; I)V
+	283     (00000518) aput-object          v2, v0, v1
+	284     (0000051c) const/16             v1, 47
+	285     (00000520) new-instance         v2, Lcom/afwsamples/testdpc/policy/UserRestriction;
+	286     (00000524) const-string         v3, 'no_config_screen_timeout'
+	287     (00000528) const                v4, 2131689730 # [1.900848362589207e+38]
+	288     (0000052e) invoke-direct        v2, v3, v4, Lcom/afwsamples/testdpc/policy/UserRestriction;-><init>(Ljava/lang/String; I)V
+	289     (00000534) aput-object          v2, v0, v1
+	290     (00000538) const/16             v1, 48
+	291     (0000053c) new-instance         v2, Lcom/afwsamples/testdpc/policy/UserRestriction;
+	292     (00000540) const-string         v3, 'no_ambient_display'
+	293     (00000544) const                v4, 2131689716 # [1.9008455230518626e+38]
+	294     (0000054a) invoke-direct        v2, v3, v4, Lcom/afwsamples/testdpc/policy/UserRestriction;-><init>(Ljava/lang/String; I)V
+	295     (00000550) aput-object          v2, v0, v1
+	296     (00000554) const/16             v1, 49
+	297     (00000558) new-instance         v2, Lcom/afwsamples/testdpc/policy/UserRestriction;
+	298     (0000055c) const-string         v3, 'no_sharing_into_profile'
+	299     (00000560) const                v4, 2131689757 # [1.9008538388398e+38]
+	300     (00000566) invoke-direct        v2, v3, v4, Lcom/afwsamples/testdpc/policy/UserRestriction;-><init>(Ljava/lang/String; I)V
+	301     (0000056c) aput-object          v2, v0, v1
+	302     (00000570) const/16             v1, 50
+	303     (00000574) new-instance         v2, Lcom/afwsamples/testdpc/policy/UserRestriction;
+	304     (00000578) const-string         v3, 'no_printing'
+	305     (0000057c) const                v4, 2131689751 # [1.900852621895224e+38]
+	306     (00000582) invoke-direct        v2, v3, v4, Lcom/afwsamples/testdpc/policy/UserRestriction;-><init>(Ljava/lang/String; I)V
+	307     (00000588) aput-object          v2, v0, v1
+	308     (0000058c) const/16             v1, 51
+	309     (00000590) new-instance         v2, Lcom/afwsamples/testdpc/policy/UserRestriction;
+	310     (00000594) const-string         v3, 'disallow_config_private_dns'
+	311     (00000598) const                v4, 2131689729 # [1.900848159765111e+38]
+	312     (0000059e) invoke-direct        v2, v3, v4, Lcom/afwsamples/testdpc/policy/UserRestriction;-><init>(Ljava/lang/String; I)V
+	313     (000005a4) aput-object          v2, v0, v1
+	314     (000005a8) const/16             v1, 52
+	315     (000005ac) new-instance         v2, Lcom/afwsamples/testdpc/policy/UserRestriction;
+	316     (000005b0) const-string         v3, 'disallow_microphone_toggle'
+	317     (000005b4) const                v4, 2131689745 # [1.9008514049506477e+38]
+	318     (000005ba) invoke-direct        v2, v3, v4, Lcom/afwsamples/testdpc/policy/UserRestriction;-><init>(Ljava/lang/String; I)V
+	319     (000005c0) aput-object          v2, v0, v1
+	320     (000005c4) const/16             v1, 53
+	321     (000005c8) new-instance         v2, Lcom/afwsamples/testdpc/policy/UserRestriction;
+	322     (000005cc) const-string         v3, 'disallow_camera_toggle'
+	323     (000005d0) const                v4, 2131689721 # [1.9008465371723428e+38]
+	324     (000005d6) invoke-direct        v2, v3, v4, Lcom/afwsamples/testdpc/policy/UserRestriction;-><init>(Ljava/lang/String; I)V
+	325     (000005dc) aput-object          v2, v0, v1
+	326     (000005e0) sput-object          v0, Lcom/afwsamples/testdpc/policy/UserRestriction;->ALL_USER_RESTRICTIONS [Lcom/afwsamples/testdpc/policy/UserRestriction;
+	327     (000005e4) const/16             v0, 22
+	328     (000005e8) new-array            v0, v0, [Lcom/afwsamples/testdpc/policy/UserRestriction;
+	329     (000005ec) new-instance         v1, Lcom/afwsamples/testdpc/policy/UserRestriction;
+	330     (000005f0) const-string         v2, 'no_config_date_time'
+	331     (000005f4) const                v3, 2131689726 # [1.900847551292823e+38]
+	332     (000005fa) invoke-direct        v1, v2, v3, Lcom/afwsamples/testdpc/policy/UserRestriction;-><init>(Ljava/lang/String; I)V
+	333     (00000600) aput-object          v1, v0, v5
+	334     (00000604) new-instance         v1, Lcom/afwsamples/testdpc/policy/UserRestriction;
+	335     (00000608) const-string         v2, 'no_config_tethering'
+	336     (0000060c) const                v3, 2131689731 # [1.900848565413303e+38]
+	337     (00000612) invoke-direct        v1, v2, v3, Lcom/afwsamples/testdpc/policy/UserRestriction;-><init>(Ljava/lang/String; I)V
+	338     (00000618) aput-object          v1, v0, v6
+	339     (0000061c) new-instance         v1, Lcom/afwsamples/testdpc/policy/UserRestriction;
+	340     (00000620) const-string         v2, 'no_data_roaming'
+	341     (00000624) const                v3, 2131689738 # [1.9008499851819754e+38]
+	342     (0000062a) invoke-direct        v1, v2, v3, Lcom/afwsamples/testdpc/policy/UserRestriction;-><init>(Ljava/lang/String; I)V
+	343     (00000630) aput-object          v1, v0, v7
+	344     (00000634) new-instance         v1, Lcom/afwsamples/testdpc/policy/UserRestriction;
+	345     (00000638) const-string         v2, 'no_debugging_features'
+	346     (0000063c) const                v3, 2131689739 # [1.9008501880060714e+38]
+	347     (00000642) invoke-direct        v1, v2, v3, Lcom/afwsamples/testdpc/policy/UserRestriction;-><init>(Ljava/lang/String; I)V
+	348     (00000648) aput-object          v1, v0, v8
+	349     (0000064c) new-instance         v1, Lcom/afwsamples/testdpc/policy/UserRestriction;
+	350     (00000650) const-string         v2, 'no_bluetooth'
+	351     (00000654) const                v3, 2131689719 # [1.9008461315241507e+38]
+	352     (0000065a) invoke-direct        v1, v2, v3, Lcom/afwsamples/testdpc/policy/UserRestriction;-><init>(Ljava/lang/String; I)V
+	353     (00000660) aput-object          v1, v0, v9
+	354     (00000664) const/4              v1, 5
+	355     (00000666) new-instance         v2, Lcom/afwsamples/testdpc/policy/UserRestriction;
+	356     (0000066a) const-string         v3, 'no_bluetooth_sharing'
+	357     (0000066e) const                v4, 2131689720 # [1.9008463343482468e+38]
+	358     (00000674) invoke-direct        v2, v3, v4, Lcom/afwsamples/testdpc/policy/UserRestriction;-><init>(Ljava/lang/String; I)V
+	359     (0000067a) aput-object          v2, v0, v1
+	360     (0000067e) const/4              v1, 6
+	361     (00000680) new-instance         v2, Lcom/afwsamples/testdpc/policy/UserRestriction;
+	362     (00000684) const-string         v3, 'no_config_bluetooth'
+	363     (00000688) const                v4, 2131689722 # [1.900846739996439e+38]
+	364     (0000068e) invoke-direct        v2, v3, v4, Lcom/afwsamples/testdpc/policy/UserRestriction;-><init>(Ljava/lang/String; I)V
+	365     (00000694) aput-object          v2, v0, v1
+	366     (00000698) const/4              v1, 7
+	367     (0000069a) new-instance         v2, Lcom/afwsamples/testdpc/policy/UserRestriction;
+	368     (0000069e) const-string         v3, 'no_config_cell_broadcasts'
+	369     (000006a2) const                v4, 2131689724 # [1.900847145644631e+38]
+	370     (000006a8) invoke-direct        v2, v3, v4, Lcom/afwsamples/testdpc/policy/UserRestriction;-><init>(Ljava/lang/String; I)V
+	371     (000006ae) aput-object          v2, v0, v1
+	372     (000006b2) const/16             v1, 8
+	373     (000006b6) new-instance         v2, Lcom/afwsamples/testdpc/policy/UserRestriction;
+	374     (000006ba) const-string         v3, 'no_config_location'
+	375     (000006be) const                v4, 2131689727 # [1.900847754116919e+38]
+	376     (000006c4) invoke-direct        v2, v3, v4, Lcom/afwsamples/testdpc/policy/UserRestriction;-><init>(Ljava/lang/String; I)V
+	377     (000006ca) aput-object          v2, v0, v1
+	378     (000006ce) const/16             v1, 9
+	379     (000006d2) new-instance         v2, Lcom/afwsamples/testdpc/policy/UserRestriction;
+	380     (000006d6) const-string         v3, 'no_config_mobile_networks'
+	381     (000006da) const                v4, 2131689728 # [1.900847956941015e+38]
+	382     (000006e0) invoke-direct        v2, v3, v4, Lcom/afwsamples/testdpc/policy/UserRestriction;-><init>(Ljava/lang/String; I)V
+	383     (000006e6) aput-object          v2, v0, v1
+	384     (000006ea) const/16             v1, 10
+	385     (000006ee) new-instance         v2, Lcom/afwsamples/testdpc/policy/UserRestriction;
+	386     (000006f2) const-string         v3, 'disallow_config_private_dns'
+	387     (000006f6) const                v4, 2131689729 # [1.900848159765111e+38]
+	388     (000006fc) invoke-direct        v2, v3, v4, Lcom/afwsamples/testdpc/policy/UserRestriction;-><init>(Ljava/lang/String; I)V
+	389     (00000702) aput-object          v2, v0, v1
+	390     (00000706) const/16             v1, 11
+	391     (0000070a) new-instance         v2, Lcom/afwsamples/testdpc/policy/UserRestriction;
+	392     (0000070e) const-string         v3, 'no_config_wifi'
+	393     (00000712) const                v4, 2131689733 # [1.9008489710614952e+38]
+	394     (00000718) invoke-direct        v2, v3, v4, Lcom/afwsamples/testdpc/policy/UserRestriction;-><init>(Ljava/lang/String; I)V
+	395     (0000071e) aput-object          v2, v0, v1
+	396     (00000722) const/16             v1, 12
+	397     (00000726) new-instance         v2, Lcom/afwsamples/testdpc/policy/UserRestriction;
+	398     (0000072a) const-string         v3, 'no_content_capture'
+	399     (0000072e) const                v4, 2131689734 # [1.9008491738855913e+38]
+	400     (00000734) invoke-direct        v2, v3, v4, Lcom/afwsamples/testdpc/policy/UserRestriction;-><init>(Ljava/lang/String; I)V
+	401     (0000073a) aput-object          v2, v0, v1
+	402     (0000073e) const/16             v1, 13
+	403     (00000742) new-instance         v2, Lcom/afwsamples/testdpc/policy/UserRestriction;
+	404     (00000746) const-string         v3, 'no_content_suggestions'
+	405     (0000074a) const                v4, 2131689735 # [1.9008493767096873e+38]
+	406     (00000750) invoke-direct        v2, v3, v4, Lcom/afwsamples/testdpc/policy/UserRestriction;-><init>(Ljava/lang/String; I)V
+	407     (00000756) aput-object          v2, v0, v1
+	408     (0000075a) const/16             v1, 14
+	409     (0000075e) new-instance         v2, Lcom/afwsamples/testdpc/policy/UserRestriction;
+	410     (00000762) const-string         v3, 'no_safe_boot'
+	411     (00000766) const                v4, 2131689754 # [1.900853230367512e+38]
+	412     (0000076c) invoke-direct        v2, v3, v4, Lcom/afwsamples/testdpc/policy/UserRestriction;-><init>(Ljava/lang/String; I)V
+	413     (00000772) aput-object          v2, v0, v1
+	414     (00000776) const/16             v1, 15
+	415     (0000077a) new-instance         v2, Lcom/afwsamples/testdpc/policy/UserRestriction;
+	416     (0000077e) const-string         v3, 'no_share_location'
+	417     (00000782) const                v4, 2131689758 # [1.900854041663896e+38]
+	418     (00000788) invoke-direct        v2, v3, v4, Lcom/afwsamples/testdpc/policy/UserRestriction;-><init>(Ljava/lang/String; I)V
+	419     (0000078e) aput-object          v2, v0, v1
+	420     (00000792) const/16             v1, 16
+	421     (00000796) new-instance         v2, Lcom/afwsamples/testdpc/policy/UserRestriction;
+	422     (0000079a) const-string         v3, 'no_sms'
+	423     (0000079e) const                v4, 2131689759 # [1.900854244487992e+38]
+	424     (000007a4) invoke-direct        v2, v3, v4, Lcom/afwsamples/testdpc/policy/UserRestriction;-><init>(Ljava/lang/String; I)V
+	425     (000007aa) aput-object          v2, v0, v1
+	426     (000007ae) const/16             v1, 17
+	427     (000007b2) new-instance         v2, Lcom/afwsamples/testdpc/policy/UserRestriction;
+	428     (000007b6) const-string         v3, 'no_usb_file_transfer'
+	429     (000007ba) const                v4, 2131689764 # [1.9008552586084724e+38]
+	430     (000007c0) invoke-direct        v2, v3, v4, Lcom/afwsamples/testdpc/policy/UserRestriction;-><init>(Ljava/lang/String; I)V
+	431     (000007c6) aput-object          v2, v0, v1
+	432     (000007ca) const/16             v1, 18
+	433     (000007ce) new-instance         v2, Lcom/afwsamples/testdpc/policy/UserRestriction;
+	434     (000007d2) const-string         v3, 'no_airplane_mode'
+	435     (000007d6) const                v4, 2131689715 # [1.9008453202277666e+38]
+	436     (000007dc) invoke-direct        v2, v3, v4, Lcom/afwsamples/testdpc/policy/UserRestriction;-><init>(Ljava/lang/String; I)V
+	437     (000007e2) aput-object          v2, v0, v1
+	438     (000007e6) const/16             v1, 19
+	439     (000007ea) new-instance         v2, Lcom/afwsamples/testdpc/policy/UserRestriction;
+	440     (000007ee) const-string         v3, 'no_physical_media'
+	441     (000007f2) const                v4, 2131689747 # [1.9008518105988397e+38]
+	442     (000007f8) invoke-direct        v2, v3, v4, Lcom/afwsamples/testdpc/policy/UserRestriction;-><init>(Ljava/lang/String; I)V
+	443     (000007fe) aput-object          v2, v0, v1
+	444     (00000802) const/16             v1, 20
+	445     (00000806) new-instance         v2, Lcom/afwsamples/testdpc/policy/UserRestriction;
+	446     (0000080a) const-string         v3, 'no_outgoing_calls'
+	447     (0000080e) const                v4, 2131689750 # [1.900852419071128e+38]
+	448     (00000814) invoke-direct        v2, v3, v4, Lcom/afwsamples/testdpc/policy/UserRestriction;-><init>(Ljava/lang/String; I)V
+	449     (0000081a) aput-object          v2, v0, v1
+	450     (0000081e) const/16             v1, 21
+	451     (00000822) new-instance         v2, Lcom/afwsamples/testdpc/policy/UserRestriction;
+	452     (00000826) const-string         v3, 'no_unmute_microphone'
+	453     (0000082a) const                v4, 2131689763 # [1.9008550557843763e+38]
+	454     (00000830) invoke-direct        v2, v3, v4, Lcom/afwsamples/testdpc/policy/UserRestriction;-><init>(Ljava/lang/String; I)V
+	455     (00000836) aput-object          v2, v0, v1
+	456     (0000083a) sput-object          v0, Lcom/afwsamples/testdpc/policy/UserRestriction;->PROFILE_OWNER_ORG_DEVICE_RESTRICTIONS [Lcom/afwsamples/testdpc/policy/UserRestriction;
+	457     (0000083e) const/16             v0, 24
+	458     (00000842) new-array            v0, v0, [Ljava/lang/String;
+	459     (00000846) const-string         v1, 'no_add_managed_profile'
+	460     (0000084a) aput-object          v1, v0, v5
+	461     (0000084e) const-string         v1, 'no_add_user'
+	462     (00000852) aput-object          v1, v0, v6
+	463     (00000856) const-string         v1, 'no_adjust_volume'
+	464     (0000085a) aput-object          v1, v0, v7
+	465     (0000085e) const-string         v1, 'no_bluetooth'
+	466     (00000862) aput-object          v1, v0, v8
+	467     (00000866) const-string         v1, 'no_config_bluetooth'
+	468     (0000086a) aput-object          v1, v0, v9
+	469     (0000086e) const/4              v1, 5
+	470     (00000870) const-string         v2, 'no_config_cell_broadcasts'
+	471     (00000874) aput-object          v2, v0, v1
+	472     (00000878) const/4              v1, 6
+	473     (0000087a) const-string         v2, 'no_config_mobile_networks'
+	474     (0000087e) aput-object          v2, v0, v1
+	475     (00000882) const/4              v1, 7
+	476     (00000884) const-string         v2, 'no_config_tethering'
+	477     (00000888) aput-object          v2, v0, v1
+	478     (0000088c) const/16             v1, 8
+	479     (00000890) const-string         v2, 'no_config_wifi'
+	480     (00000894) aput-object          v2, v0, v1
+	481     (00000898) const/16             v1, 9
+	482     (0000089c) const-string         v2, 'no_create_windows'
+	483     (000008a0) aput-object          v2, v0, v1
+	484     (000008a4) const/16             v1, 10
+	485     (000008a8) const-string         v2, 'no_system_error_dialogs'
+	486     (000008ac) aput-object          v2, v0, v1
+	487     (000008b0) const/16             v1, 11
+	488     (000008b4) const-string         v2, 'no_data_roaming'
+	489     (000008b8) aput-object          v2, v0, v1
+	490     (000008bc) const/16             v1, 12
+	491     (000008c0) const-string         v2, 'no_factory_reset'
+	492     (000008c4) aput-object          v2, v0, v1
+	493     (000008c8) const/16             v1, 13
+	494     (000008cc) const-string         v2, 'no_fun'
+	495     (000008d0) aput-object          v2, v0, v1
+	496     (000008d4) const/16             v1, 14
+	497     (000008d8) const-string         v2, 'no_physical_media'
+	498     (000008dc) aput-object          v2, v0, v1
+	499     (000008e0) const/16             v1, 15
+	500     (000008e4) const-string         v2, 'no_network_reset'
+	501     (000008e8) aput-object          v2, v0, v1
+	502     (000008ec) const/16             v1, 16
+	503     (000008f0) const-string         v2, 'no_outgoing_calls'
+	504     (000008f4) aput-object          v2, v0, v1
+	505     (000008f8) const/16             v1, 17
+	506     (000008fc) const-string         v2, 'no_remove_managed_profile'
+	507     (00000900) aput-object          v2, v0, v1
+	508     (00000904) const/16             v1, 18
+	509     (00000908) const-string         v2, 'no_safe_boot'
+	510     (0000090c) aput-object          v2, v0, v1
+	511     (00000910) const/16             v1, 19
+	512     (00000914) const-string         v2, 'no_sms'
+	513     (00000918) aput-object          v2, v0, v1
+	514     (0000091c) const/16             v1, 20
+	515     (00000920) const-string         v2, 'no_unmute_microphone'
+	516     (00000924) aput-object          v2, v0, v1
+	517     (00000928) const/16             v1, 21
+	518     (0000092c) const-string         v2, 'no_usb_file_transfer'
+	519     (00000930) aput-object          v2, v0, v1
+	520     (00000934) const/16             v1, 22
+	521     (00000938) const-string         v2, 'no_airplane_mode'
+	522     (0000093c) aput-object          v2, v0, v1
+	523     (00000940) const/16             v1, 23
+	524     (00000944) const-string         v2, 'disallow_config_private_dns'
+	525     (00000948) aput-object          v2, v0, v1
+	526     (0000094c) sput-object          v0, Lcom/afwsamples/testdpc/policy/UserRestriction;->PRIMARY_USER_ONLY_RESTRICTIONS [Ljava/lang/String;
+	527     (00000950) new-array            v0, v8, [Ljava/lang/String;
+	528     (00000954) const-string         v1, 'no_user_switch'
+	529     (00000958) aput-object          v1, v0, v5
+	530     (0000095c) const-string         v1, 'disallow_microphone_toggle'
+	531     (00000960) aput-object          v1, v0, v6
+	532     (00000964) const-string         v1, 'disallow_camera_toggle'
+	533     (00000968) aput-object          v1, v0, v7
+	534     (0000096c) sput-object          v0, Lcom/afwsamples/testdpc/policy/UserRestriction;->DEVICE_OWNER_ONLY_RESTRICTIONS [Ljava/lang/String;
+	535     (00000970) new-array            v0, v9, [Ljava/lang/String;
+	536     (00000974) const-string         v1, 'no_config_date_time'
+	537     (00000978) aput-object          v1, v0, v5
+	538     (0000097c) const-string         v1, 'no_config_tethering'
+	539     (00000980) aput-object          v1, v0, v6
+	540     (00000984) const-string         v1, 'no_data_roaming'
+	541     (00000988) aput-object          v1, v0, v7
+	542     (0000098c) const-string         v1, 'no_debugging_features'
+	543     (00000990) aput-object          v1, v0, v8
+	544     (00000994) sput-object          v0, Lcom/afwsamples/testdpc/policy/UserRestriction;->PROFILE_OWNER_ORG_OWNED_RESTRICTIONS [Ljava/lang/String;
+	545     (00000998) new-array            v0, v9, [Ljava/lang/String;
+	546     (0000099c) const-string         v1, 'allow_parent_profile_app_linking'
+	547     (000009a0) aput-object          v1, v0, v5
+	548     (000009a4) const-string         v1, 'no_cross_profile_copy_paste'
+	549     (000009a8) aput-object          v1, v0, v6
+	550     (000009ac) const-string         v1, 'no_unified_password'
+	551     (000009b0) aput-object          v1, v0, v7
+	552     (000009b4) const-string         v1, 'no_sharing_into_profile'
+	553     (000009b8) aput-object          v1, v0, v8
+	554     (000009bc) sput-object          v0, Lcom/afwsamples/testdpc/policy/UserRestriction;->MANAGED_PROFILE_ONLY_RESTRICTIONS [Ljava/lang/String;
+	555     (000009c0) const/4              v0, 7
+	556     (000009c2) new-array            v0, v0, [Ljava/lang/String;
+	557     (000009c6) const-string         v1, 'no_remove_user'
+	558     (000009ca) aput-object          v1, v0, v5
+	559     (000009ce) const-string         v1, 'no_set_wallpaper'
+	560     (000009d2) aput-object          v1, v0, v6
+	561     (000009d6) const-string         v1, 'no_config_date_time'
+	562     (000009da) aput-object          v1, v0, v7
+	563     (000009de) const-string         v1, 'no_airplane_mode'
+	564     (000009e2) aput-object          v1, v0, v8
+	565     (000009e6) const-string         v1, 'no_config_screen_timeout'
+	566     (000009ea) aput-object          v1, v0, v9
+	567     (000009ee) const/4              v1, 5
+	568     (000009f0) const-string         v2, 'no_config_brightness'
+	569     (000009f4) aput-object          v2, v0, v1
+	570     (000009f8) const/4              v1, 6
+	571     (000009fa) const-string         v2, 'no_ambient_display'
+	572     (000009fe) aput-object          v2, v0, v1
+	573     (00000a02) sput-object          v0, Lcom/afwsamples/testdpc/policy/UserRestriction;->NON_MANAGED_PROFILE_RESTRICTIONS [Ljava/lang/String;
+	574     (00000a06) new-array            v0, v7, [Ljava/lang/String;
+	575     (00000a0a) const-string         v1, 'allow_parent_profile_app_linking'
+	576     (00000a0e) aput-object          v1, v0, v5
+	577     (00000a12) const-string         v1, 'no_safe_boot'
+	578     (00000a16) aput-object          v1, v0, v6
+	579     (00000a1a) sput-object          v0, Lcom/afwsamples/testdpc/policy/UserRestriction;->MNC_PLUS_RESTRICTIONS [Ljava/lang/String;
+	580     (00000a1e) new-array            v0, v8, [Ljava/lang/String;
+	581     (00000a22) const-string         v1, 'no_data_roaming'
+	582     (00000a26) aput-object          v1, v0, v5
+	583     (00000a2a) const-string         v1, 'no_set_user_icon'
+	584     (00000a2e) aput-object          v1, v0, v6
+	585     (00000a32) const-string         v1, 'no_set_wallpaper'
+	586     (00000a36) aput-object          v1, v0, v7
+	587     (00000a3a) sput-object          v0, Lcom/afwsamples/testdpc/policy/UserRestriction;->NYC_PLUS_RESTRICTIONS [Ljava/lang/String;
+	588     (00000a3e) const/4              v0, 5
+	589     (00000a40) new-array            v0, v0, [Ljava/lang/String;
+	590     (00000a44) const-string         v1, 'no_add_managed_profile'
+	591     (00000a48) aput-object          v1, v0, v5
+	592     (00000a4c) const-string         v1, 'no_bluetooth'
+	593     (00000a50) aput-object          v1, v0, v6
+	594     (00000a54) const-string         v1, 'no_remove_managed_profile'
+	595     (00000a58) aput-object          v1, v0, v7
+	596     (00000a5c) const-string         v1, 'no_autofill'
+	597     (00000a60) aput-object          v1, v0, v8
+	598     (00000a64) const-string         v1, 'no_bluetooth_sharing'
+	599     (00000a68) aput-object          v1, v0, v9
+	600     (00000a6c) sput-object          v0, Lcom/afwsamples/testdpc/policy/UserRestriction;->OC_PLUS_RESTRICTIONS [Ljava/lang/String;
+	601     (00000a70) const/16             v0, 11
+	602     (00000a74) new-array            v0, v0, [Ljava/lang/String;
+	603     (00000a78) const-string         v1, 'no_unified_password'
+	604     (00000a7c) aput-object          v1, v0, v5
+	605     (00000a80) const-string         v1, 'no_system_error_dialogs'
+	606     (00000a84) aput-object          v1, v0, v6
+	607     (00000a88) const-string         v1, 'no_user_switch'
+	608     (00000a8c) aput-object          v1, v0, v7
+	609     (00000a90) const-string         v1, 'no_config_location'
+	610     (00000a94) aput-object          v1, v0, v8
+	611     (00000a98) const-string         v1, 'no_airplane_mode'
+	612     (00000a9c) aput-object          v1, v0, v9
+	613     (00000aa0) const/4              v1, 5
+	614     (00000aa2) const-string         v2, 'no_config_date_time'
+	615     (00000aa6) aput-object          v2, v0, v1
+	616     (00000aaa) const/4              v1, 6
+	617     (00000aac) const-string         v2, 'no_config_brightness'
+	618     (00000ab0) aput-object          v2, v0, v1
+	619     (00000ab4) const/4              v1, 7
+	620     (00000ab6) const-string         v2, 'no_config_screen_timeout'
+	621     (00000aba) aput-object          v2, v0, v1
+	622     (00000abe) const/16             v1, 8
+	623     (00000ac2) const-string         v2, 'no_ambient_display'
+	624     (00000ac6) aput-object          v2, v0, v1
+	625     (00000aca) const/16             v1, 9
+	626     (00000ace) const-string         v2, 'no_sharing_into_profile'
+	627     (00000ad2) aput-object          v2, v0, v1
+	628     (00000ad6) const/16             v1, 10
+	629     (00000ada) const-string         v2, 'no_printing'
+	630     (00000ade) aput-object          v2, v0, v1
+	631     (00000ae2) sput-object          v0, Lcom/afwsamples/testdpc/policy/UserRestriction;->PIC_PLUS_RESTRICTIONS [Ljava/lang/String;
+	632     (00000ae6) new-array            v0, v7, [Ljava/lang/String;
+	633     (00000aea) const-string         v1, 'no_install_unknown_sources_globally'
+	634     (00000aee) aput-object          v1, v0, v5
+	635     (00000af2) const-string         v1, 'disallow_config_private_dns'
+	636     (00000af6) aput-object          v1, v0, v6
+	637     (00000afa) sput-object          v0, Lcom/afwsamples/testdpc/policy/UserRestriction;->QT_PLUS_RESTRICTIONS [Ljava/lang/String;
+	638     (00000afe) new-array            v0, v7, [Ljava/lang/String;
+	639     (00000b02) const-string         v1, 'disallow_microphone_toggle'
+	640     (00000b06) aput-object          v1, v0, v5
+	641     (00000b0a) const-string         v1, 'disallow_camera_toggle'
+	642     (00000b0e) aput-object          v1, v0, v6
+	643     (00000b12) sput-object          v0, Lcom/afwsamples/testdpc/policy/UserRestriction;->SC_PLUS_RESTRICTIONS [Ljava/lang/String;
+	644     (00000b16) return-void          
+

@@ -1,0 +1,11 @@
+# Lcom/afwsamples/testdpc/policy/utils/Attestation;->getAttestationSecurityLevel()I [access_flags=public]
+#
+# Parameters:
+# local registers: v0...v1
+#
+# - return:int
+
+getAttestationSecurityLevel-BB@0x0 : 
+	0       (00000000) iget                 v0, v1, Lcom/afwsamples/testdpc/policy/utils/Attestation;->attestationSecurityLevel I
+	1       (00000004) return               v0
+

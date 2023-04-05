@@ -1,0 +1,28 @@
+# Lcom/afwsamples/testdpc/DevicePolicyManagerGatewayImpl;->setUserRestriction(Ljava/lang/String; Z)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v5
+# - v6:java.lang.String
+# - v7:boolean
+#
+# - return:void
+
+setUserRestriction-BB@0x0 : 
+	0       (00000000) const-string         v1, 'setUserRestriction(%s, %b)'
+	1       (00000004) const/4              v2, 2
+	2       (00000006) new-array            v2, v2, [Ljava/lang/Object;
+	3       (0000000a) const/4              v3, 0
+	4       (0000000c) aput-object          v6, v2, v3
+	5       (00000010) const/4              v3, 1
+	6       (00000012) invoke-static        v7, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+	7       (00000018) move-result-object   v4
+	8       (0000001a) aput-object          v4, v2, v3
+	9       (0000001e) invoke-static        v1, v2, Ljava/lang/String;->format(Ljava/lang/String; [Ljava/lang/Object;)Ljava/lang/String;
+	10      (00000024) move-result-object   v0
+	11      (00000026) new-instance         v1, Lcom/afwsamples/testdpc/DevicePolicyManagerGatewayImpl$$Lambda$1;
+	12      (0000002a) invoke-direct        v1, v0, Lcom/afwsamples/testdpc/DevicePolicyManagerGatewayImpl$$Lambda$1;-><init>(Ljava/lang/String;)V
+	13      (00000030) new-instance         v2, Lcom/afwsamples/testdpc/DevicePolicyManagerGatewayImpl$$Lambda$2;
+	14      (00000034) invoke-direct        v2, v0, Lcom/afwsamples/testdpc/DevicePolicyManagerGatewayImpl$$Lambda$2;-><init>(Ljava/lang/String;)V
+	15      (0000003a) invoke-virtual       v5, v6, v7, v1, v2, Lcom/afwsamples/testdpc/DevicePolicyManagerGatewayImpl;->setUserRestriction(Ljava/lang/String; Z Ljava/util/function/Consumer; Ljava/util/function/Consumer;)V
+	16      (00000040) return-void          
+

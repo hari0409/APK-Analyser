@@ -1,0 +1,17 @@
+# Lcom/afwsamples/testdpc/common/Util;->getHomeIntentFilter()Landroid/content/IntentFilter; [access_flags=public static]
+#
+# Parameters:
+# local registers: v0...v1
+#
+# - return:android.content.IntentFilter
+
+getHomeIntentFilter-BB@0x0 : 
+	0       (00000000) new-instance         v0, Landroid/content/IntentFilter;
+	1       (00000004) const-string         v1, 'android.intent.action.MAIN'
+	2       (00000008) invoke-direct        v0, v1, Landroid/content/IntentFilter;-><init>(Ljava/lang/String;)V
+	3       (0000000e) const-string         v1, 'android.intent.category.HOME'
+	4       (00000012) invoke-virtual       v0, v1, Landroid/content/IntentFilter;->addCategory(Ljava/lang/String;)V
+	5       (00000018) const-string         v1, 'android.intent.category.DEFAULT'
+	6       (0000001c) invoke-virtual       v0, v1, Landroid/content/IntentFilter;->addCategory(Ljava/lang/String;)V
+	7       (00000022) return-object        v0
+

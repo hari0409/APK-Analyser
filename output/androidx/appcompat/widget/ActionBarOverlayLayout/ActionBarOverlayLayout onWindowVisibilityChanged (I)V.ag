@@ -1,0 +1,21 @@
+# Landroidx/appcompat/widget/ActionBarOverlayLayout;->onWindowVisibilityChanged(I)V [access_flags=protected]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:int
+#
+# - return:void
+
+onWindowVisibilityChanged-BB@0x0 : [ onWindowVisibilityChanged-BB@0x12 onWindowVisibilityChanged-BB@0x1c ]
+	0       (00000000) invoke-super         v1, v2, Landroid/view/ViewGroup;->onWindowVisibilityChanged(I)V
+	1       (00000006) iput                 v2, v1, Landroidx/appcompat/widget/ActionBarOverlayLayout;->mWindowVisibility I
+	2       (0000000a) iget-object          v0, v1, Landroidx/appcompat/widget/ActionBarOverlayLayout;->mActionBarVisibilityCallback Landroidx/appcompat/widget/ActionBarOverlayLayout$ActionBarVisibilityCallback;
+	3       (0000000e) if-eqz               v0, +7
+
+onWindowVisibilityChanged-BB@0x12 : [ onWindowVisibilityChanged-BB@0x1c ]
+	4       (00000012) iget-object          v0, v1, Landroidx/appcompat/widget/ActionBarOverlayLayout;->mActionBarVisibilityCallback Landroidx/appcompat/widget/ActionBarOverlayLayout$ActionBarVisibilityCallback;
+	5       (00000016) invoke-interface     v0, v2, Landroidx/appcompat/widget/ActionBarOverlayLayout$ActionBarVisibilityCallback;->onWindowVisibilityChanged(I)V
+
+onWindowVisibilityChanged-BB@0x1c : 
+	6       (0000001c) return-void          
+

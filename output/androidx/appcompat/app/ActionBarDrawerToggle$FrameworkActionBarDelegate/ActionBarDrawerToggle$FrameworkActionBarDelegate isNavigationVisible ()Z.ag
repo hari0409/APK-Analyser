@@ -1,0 +1,29 @@
+# Landroidx/appcompat/app/ActionBarDrawerToggle$FrameworkActionBarDelegate;->isNavigationVisible()Z [access_flags=public]
+#
+# Parameters:
+# local registers: v0...v2
+#
+# - return:boolean
+
+isNavigationVisible-BB@0x0 : [ isNavigationVisible-BB@0x10 isNavigationVisible-BB@0x24 ]
+	0       (00000000) iget-object          v1, v2, Landroidx/appcompat/app/ActionBarDrawerToggle$FrameworkActionBarDelegate;->mActivity Landroid/app/Activity;
+	1       (00000004) invoke-virtual       v1, Landroid/app/Activity;->getActionBar()Landroid/app/ActionBar;
+	2       (0000000a) move-result-object   v0
+	3       (0000000c) if-eqz               v0, +c
+
+isNavigationVisible-BB@0x10 : [ isNavigationVisible-BB@0x20 isNavigationVisible-BB@0x24 ]
+	4       (00000010) invoke-virtual       v0, Landroid/app/ActionBar;->getDisplayOptions()I
+	5       (00000016) move-result          v1
+	6       (00000018) and-int/lit8         v1, v1, 4
+	7       (0000001c) if-eqz               v1, +4
+
+isNavigationVisible-BB@0x20 : [ isNavigationVisible-BB@0x22 ]
+	8       (00000020) const/4              v1, 1
+
+isNavigationVisible-BB@0x22 : 
+	9       (00000022) return               v1
+
+isNavigationVisible-BB@0x24 : [ isNavigationVisible-BB@0x22 ]
+	10      (00000024) const/4              v1, 0
+	11      (00000026) goto                 -2
+

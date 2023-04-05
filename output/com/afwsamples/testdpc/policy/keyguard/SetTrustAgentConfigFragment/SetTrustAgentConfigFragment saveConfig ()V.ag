@@ -1,0 +1,18 @@
+# Lcom/afwsamples/testdpc/policy/keyguard/SetTrustAgentConfigFragment;->saveConfig()V [access_flags=protected]
+#
+# Parameters:
+# local registers: v0...v3
+#
+# - return:void
+
+saveConfig-BB@0x0 : 
+	0       (00000000) invoke-direct        v3, Lcom/afwsamples/testdpc/policy/keyguard/SetTrustAgentConfigFragment;->setTrustAgentConfiguration()V
+	1       (00000006) invoke-virtual       v3, Lcom/afwsamples/testdpc/policy/keyguard/SetTrustAgentConfigFragment;->getActivity()Landroid/app/Activity;
+	2       (0000000c) move-result-object   v0
+	3       (0000000e) const                v1, 2131690168 # [1.900937199543271e+38]
+	4       (00000014) const/4              v2, 1
+	5       (00000016) invoke-static        v0, v1, v2, Landroid/widget/Toast;->makeText(Landroid/content/Context; I I)Landroid/widget/Toast;
+	6       (0000001c) move-result-object   v0
+	7       (0000001e) invoke-virtual       v0, Landroid/widget/Toast;->show()V
+	8       (00000024) return-void          
+

@@ -1,0 +1,34 @@
+# Landroidx/appcompat/widget/ScrollingTabContainerView;->updateTab(I)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:int
+#
+# - return:void
+
+updateTab-BB@0x0 : [ updateTab-BB@0x1e updateTab-BB@0x34 ]
+	0       (00000000) iget-object          v0, v1, Landroidx/appcompat/widget/ScrollingTabContainerView;->mTabLayout Landroidx/appcompat/widget/LinearLayoutCompat;
+	1       (00000004) invoke-virtual       v0, v2, Landroidx/appcompat/widget/LinearLayoutCompat;->getChildAt(I)Landroid/view/View;
+	2       (0000000a) move-result-object   v0
+	3       (0000000c) check-cast           v0, Landroidx/appcompat/widget/ScrollingTabContainerView$TabView;
+	4       (00000010) invoke-virtual       v0, Landroidx/appcompat/widget/ScrollingTabContainerView$TabView;->update()V
+	5       (00000016) iget-object          v0, v1, Landroidx/appcompat/widget/ScrollingTabContainerView;->mTabSpinner Landroid/widget/Spinner;
+	6       (0000001a) if-eqz               v0, +d
+
+updateTab-BB@0x1e : [ updateTab-BB@0x34 ]
+	7       (0000001e) iget-object          v0, v1, Landroidx/appcompat/widget/ScrollingTabContainerView;->mTabSpinner Landroid/widget/Spinner;
+	8       (00000022) invoke-virtual       v0, Landroid/widget/Spinner;->getAdapter()Landroid/widget/SpinnerAdapter;
+	9       (00000028) move-result-object   v0
+	10      (0000002a) check-cast           v0, Landroidx/appcompat/widget/ScrollingTabContainerView$TabAdapter;
+	11      (0000002e) invoke-virtual       v0, Landroidx/appcompat/widget/ScrollingTabContainerView$TabAdapter;->notifyDataSetChanged()V
+
+updateTab-BB@0x34 : [ updateTab-BB@0x3c updateTab-BB@0x42 ]
+	12      (00000034) iget-boolean         v0, v1, Landroidx/appcompat/widget/ScrollingTabContainerView;->mAllowCollapse Z
+	13      (00000038) if-eqz               v0, +5
+
+updateTab-BB@0x3c : [ updateTab-BB@0x42 ]
+	14      (0000003c) invoke-virtual       v1, Landroidx/appcompat/widget/ScrollingTabContainerView;->requestLayout()V
+
+updateTab-BB@0x42 : 
+	15      (00000042) return-void          
+

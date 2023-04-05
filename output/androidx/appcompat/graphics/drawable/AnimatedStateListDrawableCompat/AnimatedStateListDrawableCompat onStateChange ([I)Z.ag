@@ -1,0 +1,46 @@
+# Landroidx/appcompat/graphics/drawable/AnimatedStateListDrawableCompat;->onStateChange([I)Z [access_flags=protected]
+#
+# Parameters:
+# - local registers: v0...v4
+# - v5:int[]
+#
+# - return:boolean
+
+onStateChange-BB@0x0 : [ onStateChange-BB@0x18 onStateChange-BB@0x4a ]
+	0       (00000000) iget-object          v3, v4, Landroidx/appcompat/graphics/drawable/AnimatedStateListDrawableCompat;->mState Landroidx/appcompat/graphics/drawable/AnimatedStateListDrawableCompat$AnimatedStateListState;
+	1       (00000004) invoke-virtual       v3, v5, Landroidx/appcompat/graphics/drawable/AnimatedStateListDrawableCompat$AnimatedStateListState;->indexOfKeyframe([I)I
+	2       (0000000a) move-result          v2
+	3       (0000000c) invoke-virtual       v4, Landroidx/appcompat/graphics/drawable/AnimatedStateListDrawableCompat;->getCurrentIndex()I
+	4       (00000012) move-result          v3
+	5       (00000014) if-eq                v2, v3, +1b
+
+onStateChange-BB@0x18 : [ onStateChange-BB@0x24 onStateChange-BB@0x30 ]
+	6       (00000018) invoke-direct        v4, v2, Landroidx/appcompat/graphics/drawable/AnimatedStateListDrawableCompat;->selectTransition(I)Z
+	7       (0000001e) move-result          v3
+	8       (00000020) if-nez               v3, +8
+
+onStateChange-BB@0x24 : [ onStateChange-BB@0x30 onStateChange-BB@0x4a ]
+	9       (00000024) invoke-virtual       v4, v2, Landroidx/appcompat/graphics/drawable/AnimatedStateListDrawableCompat;->selectDrawable(I)Z
+	10      (0000002a) move-result          v3
+	11      (0000002c) if-eqz               v3, +f
+
+onStateChange-BB@0x30 : [ onStateChange-BB@0x32 ]
+	12      (00000030) const/4              v0, 1
+
+onStateChange-BB@0x32 : [ onStateChange-BB@0x3e onStateChange-BB@0x48 ]
+	13      (00000032) invoke-virtual       v4, Landroidx/appcompat/graphics/drawable/AnimatedStateListDrawableCompat;->getCurrent()Landroid/graphics/drawable/Drawable;
+	14      (00000038) move-result-object   v1
+	15      (0000003a) if-eqz               v1, +7
+
+onStateChange-BB@0x3e : [ onStateChange-BB@0x48 ]
+	16      (0000003e) invoke-virtual       v1, v5, Landroid/graphics/drawable/Drawable;->setState([I)Z
+	17      (00000044) move-result          v3
+	18      (00000046) or-int/2addr         v0, v3
+
+onStateChange-BB@0x48 : 
+	19      (00000048) return               v0
+
+onStateChange-BB@0x4a : [ onStateChange-BB@0x32 ]
+	20      (0000004a) const/4              v0, 0
+	21      (0000004c) goto                 -d
+

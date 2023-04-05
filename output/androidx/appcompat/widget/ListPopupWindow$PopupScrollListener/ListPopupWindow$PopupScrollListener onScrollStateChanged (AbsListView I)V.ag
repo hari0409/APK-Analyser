@@ -1,0 +1,39 @@
+# Landroidx/appcompat/widget/ListPopupWindow$PopupScrollListener;->onScrollStateChanged(Landroid/widget/AbsListView; I)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:android.widget.AbsListView
+# - v4:int
+#
+# - return:void
+
+onScrollStateChanged-BB@0x0 : [ onScrollStateChanged-BB@0x6 onScrollStateChanged-BB@0x4e ]
+	0       (00000000) const/4              v0, 1
+	1       (00000002) if-ne                v4, v0, +26
+
+onScrollStateChanged-BB@0x6 : [ onScrollStateChanged-BB@0x16 onScrollStateChanged-BB@0x4e ]
+	2       (00000006) iget-object          v0, v2, Landroidx/appcompat/widget/ListPopupWindow$PopupScrollListener;->this$0 Landroidx/appcompat/widget/ListPopupWindow;
+	3       (0000000a) invoke-virtual       v0, Landroidx/appcompat/widget/ListPopupWindow;->isInputMethodNotNeeded()Z
+	4       (00000010) move-result          v0
+	5       (00000012) if-nez               v0, +1e
+
+onScrollStateChanged-BB@0x16 : [ onScrollStateChanged-BB@0x2a onScrollStateChanged-BB@0x4e ]
+	6       (00000016) iget-object          v0, v2, Landroidx/appcompat/widget/ListPopupWindow$PopupScrollListener;->this$0 Landroidx/appcompat/widget/ListPopupWindow;
+	7       (0000001a) iget-object          v0, v0, Landroidx/appcompat/widget/ListPopupWindow;->mPopup Landroid/widget/PopupWindow;
+	8       (0000001e) invoke-virtual       v0, Landroid/widget/PopupWindow;->getContentView()Landroid/view/View;
+	9       (00000024) move-result-object   v0
+	10      (00000026) if-eqz               v0, +14
+
+onScrollStateChanged-BB@0x2a : [ onScrollStateChanged-BB@0x4e ]
+	11      (0000002a) iget-object          v0, v2, Landroidx/appcompat/widget/ListPopupWindow$PopupScrollListener;->this$0 Landroidx/appcompat/widget/ListPopupWindow;
+	12      (0000002e) iget-object          v0, v0, Landroidx/appcompat/widget/ListPopupWindow;->mHandler Landroid/os/Handler;
+	13      (00000032) iget-object          v1, v2, Landroidx/appcompat/widget/ListPopupWindow$PopupScrollListener;->this$0 Landroidx/appcompat/widget/ListPopupWindow;
+	14      (00000036) iget-object          v1, v1, Landroidx/appcompat/widget/ListPopupWindow;->mResizePopupRunnable Landroidx/appcompat/widget/ListPopupWindow$ResizePopupRunnable;
+	15      (0000003a) invoke-virtual       v0, v1, Landroid/os/Handler;->removeCallbacks(Ljava/lang/Runnable;)V
+	16      (00000040) iget-object          v0, v2, Landroidx/appcompat/widget/ListPopupWindow$PopupScrollListener;->this$0 Landroidx/appcompat/widget/ListPopupWindow;
+	17      (00000044) iget-object          v0, v0, Landroidx/appcompat/widget/ListPopupWindow;->mResizePopupRunnable Landroidx/appcompat/widget/ListPopupWindow$ResizePopupRunnable;
+	18      (00000048) invoke-virtual       v0, Landroidx/appcompat/widget/ListPopupWindow$ResizePopupRunnable;->run()V
+
+onScrollStateChanged-BB@0x4e : 
+	19      (0000004e) return-void          
+

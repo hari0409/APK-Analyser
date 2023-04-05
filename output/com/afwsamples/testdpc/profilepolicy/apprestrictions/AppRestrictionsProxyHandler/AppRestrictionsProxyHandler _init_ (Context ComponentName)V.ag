@@ -1,0 +1,15 @@
+# Lcom/afwsamples/testdpc/profilepolicy/apprestrictions/AppRestrictionsProxyHandler;-><init>(Landroid/content/Context; Landroid/content/ComponentName;)V [access_flags=public constructor]
+#
+# Parameters:
+# - local registers: v0...v0
+# - v1:android.content.Context
+# - v2:android.content.ComponentName
+#
+# - return:void
+
+<init>-BB@0x0 : 
+	0       (00000000) invoke-direct        v0, Landroid/os/Handler;-><init>()V
+	1       (00000006) iput-object          v1, v0, Lcom/afwsamples/testdpc/profilepolicy/apprestrictions/AppRestrictionsProxyHandler;->mContext Landroid/content/Context;
+	2       (0000000a) iput-object          v2, v0, Lcom/afwsamples/testdpc/profilepolicy/apprestrictions/AppRestrictionsProxyHandler;->mAdmin Landroid/content/ComponentName;
+	3       (0000000e) return-void          
+

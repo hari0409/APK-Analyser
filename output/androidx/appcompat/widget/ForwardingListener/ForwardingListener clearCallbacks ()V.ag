@@ -1,0 +1,28 @@
+# Landroidx/appcompat/widget/ForwardingListener;->clearCallbacks()V [access_flags=private]
+#
+# Parameters:
+# local registers: v0...v2
+#
+# - return:void
+
+clearCallbacks-BB@0x0 : [ clearCallbacks-BB@0x8 clearCallbacks-BB@0x16 ]
+	0       (00000000) iget-object          v0, v2, Landroidx/appcompat/widget/ForwardingListener;->mTriggerLongPress Ljava/lang/Runnable;
+	1       (00000004) if-eqz               v0, +9
+
+clearCallbacks-BB@0x8 : [ clearCallbacks-BB@0x16 ]
+	2       (00000008) iget-object          v0, v2, Landroidx/appcompat/widget/ForwardingListener;->mSrc Landroid/view/View;
+	3       (0000000c) iget-object          v1, v2, Landroidx/appcompat/widget/ForwardingListener;->mTriggerLongPress Ljava/lang/Runnable;
+	4       (00000010) invoke-virtual       v0, v1, Landroid/view/View;->removeCallbacks(Ljava/lang/Runnable;)Z
+
+clearCallbacks-BB@0x16 : [ clearCallbacks-BB@0x1e clearCallbacks-BB@0x2c ]
+	5       (00000016) iget-object          v0, v2, Landroidx/appcompat/widget/ForwardingListener;->mDisallowIntercept Ljava/lang/Runnable;
+	6       (0000001a) if-eqz               v0, +9
+
+clearCallbacks-BB@0x1e : [ clearCallbacks-BB@0x2c ]
+	7       (0000001e) iget-object          v0, v2, Landroidx/appcompat/widget/ForwardingListener;->mSrc Landroid/view/View;
+	8       (00000022) iget-object          v1, v2, Landroidx/appcompat/widget/ForwardingListener;->mDisallowIntercept Ljava/lang/Runnable;
+	9       (00000026) invoke-virtual       v0, v1, Landroid/view/View;->removeCallbacks(Ljava/lang/Runnable;)Z
+
+clearCallbacks-BB@0x2c : 
+	10      (0000002c) return-void          
+

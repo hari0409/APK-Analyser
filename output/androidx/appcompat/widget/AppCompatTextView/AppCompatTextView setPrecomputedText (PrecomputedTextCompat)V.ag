@@ -1,0 +1,12 @@
+# Landroidx/appcompat/widget/AppCompatTextView;->setPrecomputedText(Landroidx/core/text/PrecomputedTextCompat;)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v0
+# - v1:androidx.core.text.PrecomputedTextCompat
+#
+# - return:void
+
+setPrecomputedText-BB@0x0 : 
+	0       (00000000) invoke-static        v0, v1, Landroidx/core/widget/TextViewCompat;->setPrecomputedText(Landroid/widget/TextView; Landroidx/core/text/PrecomputedTextCompat;)V
+	1       (00000006) return-void          
+

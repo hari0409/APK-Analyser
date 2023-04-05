@@ -1,0 +1,30 @@
+# Landroidx/appcompat/widget/SearchView;->isSubmitAreaEnabled()Z [access_flags=private]
+#
+# Parameters:
+# local registers: v0...v1
+#
+# - return:boolean
+
+isSubmitAreaEnabled-BB@0x0 : [ isSubmitAreaEnabled-BB@0x8 isSubmitAreaEnabled-BB@0x10 ]
+	0       (00000000) iget-boolean         v0, v1, Landroidx/appcompat/widget/SearchView;->mSubmitButtonEnabled Z
+	1       (00000004) if-nez               v0, +6
+
+isSubmitAreaEnabled-BB@0x8 : [ isSubmitAreaEnabled-BB@0x10 isSubmitAreaEnabled-BB@0x20 ]
+	2       (00000008) iget-boolean         v0, v1, Landroidx/appcompat/widget/SearchView;->mVoiceButtonEnabled Z
+	3       (0000000c) if-eqz               v0, +a
+
+isSubmitAreaEnabled-BB@0x10 : [ isSubmitAreaEnabled-BB@0x1c isSubmitAreaEnabled-BB@0x20 ]
+	4       (00000010) invoke-virtual       v1, Landroidx/appcompat/widget/SearchView;->isIconified()Z
+	5       (00000016) move-result          v0
+	6       (00000018) if-nez               v0, +4
+
+isSubmitAreaEnabled-BB@0x1c : [ isSubmitAreaEnabled-BB@0x1e ]
+	7       (0000001c) const/4              v0, 1
+
+isSubmitAreaEnabled-BB@0x1e : 
+	8       (0000001e) return               v0
+
+isSubmitAreaEnabled-BB@0x20 : [ isSubmitAreaEnabled-BB@0x1e ]
+	9       (00000020) const/4              v0, 0
+	10      (00000022) goto                 -2
+

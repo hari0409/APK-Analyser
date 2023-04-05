@@ -1,0 +1,22 @@
+# Landroidx/appcompat/widget/Toolbar;->setMenuCallbacks(Landroidx/appcompat/view/menu/MenuPresenter$Callback; Landroidx/appcompat/view/menu/MenuBuilder$Callback;)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:androidx.appcompat.view.menu.MenuPresenter$Callback
+# - v3:androidx.appcompat.view.menu.MenuBuilder$Callback
+#
+# - return:void
+
+setMenuCallbacks-BB@0x0 : [ setMenuCallbacks-BB@0x10 setMenuCallbacks-BB@0x1a ]
+	0       (00000000) iput-object          v2, v1, Landroidx/appcompat/widget/Toolbar;->mActionMenuPresenterCallback Landroidx/appcompat/view/menu/MenuPresenter$Callback;
+	1       (00000004) iput-object          v3, v1, Landroidx/appcompat/widget/Toolbar;->mMenuBuilderCallback Landroidx/appcompat/view/menu/MenuBuilder$Callback;
+	2       (00000008) iget-object          v0, v1, Landroidx/appcompat/widget/Toolbar;->mMenuView Landroidx/appcompat/widget/ActionMenuView;
+	3       (0000000c) if-eqz               v0, +7
+
+setMenuCallbacks-BB@0x10 : [ setMenuCallbacks-BB@0x1a ]
+	4       (00000010) iget-object          v0, v1, Landroidx/appcompat/widget/Toolbar;->mMenuView Landroidx/appcompat/widget/ActionMenuView;
+	5       (00000014) invoke-virtual       v0, v2, v3, Landroidx/appcompat/widget/ActionMenuView;->setMenuCallbacks(Landroidx/appcompat/view/menu/MenuPresenter$Callback; Landroidx/appcompat/view/menu/MenuBuilder$Callback;)V
+
+setMenuCallbacks-BB@0x1a : 
+	6       (0000001a) return-void          
+

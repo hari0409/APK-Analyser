@@ -1,0 +1,85 @@
+# Landroidx/appcompat/widget/AppCompatTextViewAutoSizeHelper;->setRawTextSize(F)V [access_flags=private]
+#
+# Parameters:
+# - local registers: v0...v7
+# - v8:float
+#
+# - return:void
+
+setRawTextSize-BB@0x0 : [ setRawTextSize-BB@0x1e setRawTextSize-BB@0x9a ]
+	0       (00000000) const/4              v6, 0
+	1       (00000002) iget-object          v4, v7, Landroidx/appcompat/widget/AppCompatTextViewAutoSizeHelper;->mTextView Landroid/widget/TextView;
+	2       (00000006) invoke-virtual       v4, Landroid/widget/TextView;->getPaint()Landroid/text/TextPaint;
+	3       (0000000c) move-result-object   v4
+	4       (0000000e) invoke-virtual       v4, Landroid/text/TextPaint;->getTextSize()F
+	5       (00000014) move-result          v4
+	6       (00000016) cmpl-float           v4, v8, v4
+	7       (0000001a) if-eqz               v4, +40
+
+setRawTextSize-BB@0x1e : [ setRawTextSize-BB@0x3e setRawTextSize-BB@0x4a ]
+	8       (0000001e) iget-object          v4, v7, Landroidx/appcompat/widget/AppCompatTextViewAutoSizeHelper;->mTextView Landroid/widget/TextView;
+	9       (00000022) invoke-virtual       v4, Landroid/widget/TextView;->getPaint()Landroid/text/TextPaint;
+	10      (00000028) move-result-object   v4
+	11      (0000002a) invoke-virtual       v4, v8, Landroid/text/TextPaint;->setTextSize(F)V
+	12      (00000030) const/4              v1, 0
+	13      (00000032) sget                 v4, Landroid/os/Build$VERSION;->SDK_INT I
+	14      (00000036) const/16             v5, 18
+	15      (0000003a) if-lt                v4, v5, +8
+
+setRawTextSize-BB@0x3e : [ setRawTextSize-BB@0x4a ]
+	16      (0000003e) iget-object          v4, v7, Landroidx/appcompat/widget/AppCompatTextViewAutoSizeHelper;->mTextView Landroid/widget/TextView;
+	17      (00000042) invoke-virtual       v4, Landroid/widget/TextView;->isInLayout()Z
+	18      (00000048) move-result          v1
+
+setRawTextSize-BB@0x4a : [ setRawTextSize-BB@0x5a setRawTextSize-BB@0x9a ]
+	19      (0000004a) iget-object          v4, v7, Landroidx/appcompat/widget/AppCompatTextViewAutoSizeHelper;->mTextView Landroid/widget/TextView;
+	20      (0000004e) invoke-virtual       v4, Landroid/widget/TextView;->getLayout()Landroid/text/Layout;
+	21      (00000054) move-result-object   v4
+	22      (00000056) if-eqz               v4, +22
+
+setRawTextSize-BB@0x5a : [ setRawTextSize-BB@0x62 ]
+	23      (0000005a) iput-boolean         v6, v7, Landroidx/appcompat/widget/AppCompatTextViewAutoSizeHelper;->mNeedsAutoSizeText Z
+	24      (0000005e) const-string         v3, 'nullLayouts'
+
+setRawTextSize-BB@0x62 : [ setRawTextSize-BB@0x72 setRawTextSize-BB@0x82 ]
+	25      (00000062) const-string         v4, 'nullLayouts'
+	26      (00000066) invoke-direct        v7, v4, Landroidx/appcompat/widget/AppCompatTextViewAutoSizeHelper;->getTextViewMethod(Ljava/lang/String;)Ljava/lang/reflect/Method;
+	27      (0000006c) move-result-object   v2
+	28      (0000006e) if-eqz               v2, +a
+	62:81
+	(Ljava/lang/Exception; -> 9c setRawTextSize-BB@0x9c)
+
+setRawTextSize-BB@0x72 : [ setRawTextSize-BB@0x82 ]
+	29      (00000072) iget-object          v4, v7, Landroidx/appcompat/widget/AppCompatTextViewAutoSizeHelper;->mTextView Landroid/widget/TextView;
+	30      (00000076) const/4              v5, 0
+	31      (00000078) new-array            v5, v5, [Ljava/lang/Object;
+	32      (0000007c) invoke-virtual       v2, v4, v5, Ljava/lang/reflect/Method;->invoke(Ljava/lang/Object; [Ljava/lang/Object;)Ljava/lang/Object;
+	62:81
+	(Ljava/lang/Exception; -> 9c setRawTextSize-BB@0x9c)
+
+setRawTextSize-BB@0x82 : [ setRawTextSize-BB@0x86 setRawTextSize-BB@0xae ]
+	33      (00000082) if-nez               v1, +16
+
+setRawTextSize-BB@0x86 : [ setRawTextSize-BB@0x90 ]
+	34      (00000086) iget-object          v4, v7, Landroidx/appcompat/widget/AppCompatTextViewAutoSizeHelper;->mTextView Landroid/widget/TextView;
+	35      (0000008a) invoke-virtual       v4, Landroid/widget/TextView;->requestLayout()V
+
+setRawTextSize-BB@0x90 : [ setRawTextSize-BB@0x9a ]
+	36      (00000090) iget-object          v4, v7, Landroidx/appcompat/widget/AppCompatTextViewAutoSizeHelper;->mTextView Landroid/widget/TextView;
+	37      (00000094) invoke-virtual       v4, Landroid/widget/TextView;->invalidate()V
+
+setRawTextSize-BB@0x9a : 
+	38      (0000009a) return-void          
+
+setRawTextSize-BB@0x9c : [ setRawTextSize-BB@0x82 ]
+	39      (0000009c) move-exception       v0
+	40      (0000009e) const-string         v4, 'ACTVAutoSizeHelper'
+	41      (000000a2) const-string         v5, 'Failed to invoke TextView#nullLayouts() method'
+	42      (000000a6) invoke-static        v4, v5, v0, Landroid/util/Log;->w(Ljava/lang/String; Ljava/lang/String; Ljava/lang/Throwable;)I
+	43      (000000ac) goto                 -15
+
+setRawTextSize-BB@0xae : [ setRawTextSize-BB@0x90 ]
+	44      (000000ae) iget-object          v4, v7, Landroidx/appcompat/widget/AppCompatTextViewAutoSizeHelper;->mTextView Landroid/widget/TextView;
+	45      (000000b2) invoke-virtual       v4, Landroid/widget/TextView;->forceLayout()V
+	46      (000000b8) goto                 -14
+

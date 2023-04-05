@@ -1,0 +1,16 @@
+# Lcom/afwsamples/testdpc/CrossProfileAppsAllowlistFragment;->resetApps()V [access_flags=private]
+#
+# Parameters:
+# local registers: v0...v3
+#
+# - return:void
+
+resetApps-BB@0x0 : 
+	0       (00000000) iget-object          v0, v3, Lcom/afwsamples/testdpc/CrossProfileAppsAllowlistFragment;->mDevicePolicyManager Landroid/app/admin/DevicePolicyManager;
+	1       (00000004) iget-object          v1, v3, Lcom/afwsamples/testdpc/CrossProfileAppsAllowlistFragment;->mAdminComponent Landroid/content/ComponentName;
+	2       (00000008) invoke-static        Ljava/util/Collections;->emptySet()Ljava/util/Set;
+	3       (0000000e) move-result-object   v2
+	4       (00000010) invoke-virtual       v0, v1, v2, Landroid/app/admin/DevicePolicyManager;->setCrossProfilePackages(Landroid/content/ComponentName; Ljava/util/Set;)V
+	5       (00000016) invoke-direct        v3, Lcom/afwsamples/testdpc/CrossProfileAppsAllowlistFragment;->updateCrossProfileAppsList()V
+	6       (0000001c) return-void          
+

@@ -1,0 +1,31 @@
+# Landroidx/appcompat/view/menu/MenuBuilder;->performShortcut(I Landroid/view/KeyEvent; I)Z [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v3
+# - v4:int
+# - v5:android.view.KeyEvent
+# - v6:int
+#
+# - return:boolean
+
+performShortcut-BB@0x0 : [ performShortcut-BB@0xe performShortcut-BB@0x16 ]
+	0       (00000000) invoke-virtual       v3, v4, v5, Landroidx/appcompat/view/menu/MenuBuilder;->findItemWithShortcutForKey(I Landroid/view/KeyEvent;)Landroidx/appcompat/view/menu/MenuItemImpl;
+	1       (00000006) move-result-object   v1
+	2       (00000008) const/4              v0, 0
+	3       (0000000a) if-eqz               v1, +6
+
+performShortcut-BB@0xe : [ performShortcut-BB@0x16 ]
+	4       (0000000e) invoke-virtual       v3, v1, v6, Landroidx/appcompat/view/menu/MenuBuilder;->performItemAction(Landroid/view/MenuItem; I)Z
+	5       (00000014) move-result          v0
+
+performShortcut-BB@0x16 : [ performShortcut-BB@0x1e performShortcut-BB@0x26 ]
+	6       (00000016) and-int/lit8         v2, v6, 2
+	7       (0000001a) if-eqz               v2, +6
+
+performShortcut-BB@0x1e : [ performShortcut-BB@0x26 ]
+	8       (0000001e) const/4              v2, 1
+	9       (00000020) invoke-virtual       v3, v2, Landroidx/appcompat/view/menu/MenuBuilder;->close(Z)V
+
+performShortcut-BB@0x26 : 
+	10      (00000026) return               v0
+

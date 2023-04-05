@@ -1,0 +1,29 @@
+# Landroidx/appcompat/app/AlertController$AlertParams$3;->onItemClick(Landroid/widget/AdapterView; Landroid/view/View; I J)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v3
+# - v4:android.widget.AdapterView
+# - v5:android.view.View
+# - v6:int
+# - v7:long
+#
+# - return:void
+
+onItemClick-BB@0x0 : [ onItemClick-BB@0x22 onItemClick-BB@0x30 ]
+	0       (00000000) iget-object          v0, v2, Landroidx/appcompat/app/AlertController$AlertParams$3;->this$0 Landroidx/appcompat/app/AlertController$AlertParams;
+	1       (00000004) iget-object          v0, v0, Landroidx/appcompat/app/AlertController$AlertParams;->mOnClickListener Landroid/content/DialogInterface$OnClickListener;
+	2       (00000008) iget-object          v1, v2, Landroidx/appcompat/app/AlertController$AlertParams$3;->val$dialog Landroidx/appcompat/app/AlertController;
+	3       (0000000c) iget-object          v1, v1, Landroidx/appcompat/app/AlertController;->mDialog Landroidx/appcompat/app/AppCompatDialog;
+	4       (00000010) invoke-interface     v0, v1, v5, Landroid/content/DialogInterface$OnClickListener;->onClick(Landroid/content/DialogInterface; I)V
+	5       (00000016) iget-object          v0, v2, Landroidx/appcompat/app/AlertController$AlertParams$3;->this$0 Landroidx/appcompat/app/AlertController$AlertParams;
+	6       (0000001a) iget-boolean         v0, v0, Landroidx/appcompat/app/AlertController$AlertParams;->mIsSingleChoice Z
+	7       (0000001e) if-nez               v0, +9
+
+onItemClick-BB@0x22 : [ onItemClick-BB@0x30 ]
+	8       (00000022) iget-object          v0, v2, Landroidx/appcompat/app/AlertController$AlertParams$3;->val$dialog Landroidx/appcompat/app/AlertController;
+	9       (00000026) iget-object          v0, v0, Landroidx/appcompat/app/AlertController;->mDialog Landroidx/appcompat/app/AppCompatDialog;
+	10      (0000002a) invoke-virtual       v0, Landroidx/appcompat/app/AppCompatDialog;->dismiss()V
+
+onItemClick-BB@0x30 : 
+	11      (00000030) return-void          
+

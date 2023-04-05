@@ -1,0 +1,11 @@
+# Landroidx/appcompat/app/WindowDecorActionBar;->getSelectedTab()Landroidx/appcompat/app/ActionBar$Tab; [access_flags=public]
+#
+# Parameters:
+# local registers: v0...v1
+#
+# - return:androidx.appcompat.app.ActionBar$Tab
+
+getSelectedTab-BB@0x0 : 
+	0       (00000000) iget-object          v0, v1, Landroidx/appcompat/app/WindowDecorActionBar;->mSelectedTab Landroidx/appcompat/app/WindowDecorActionBar$TabImpl;
+	1       (00000004) return-object        v0
+

@@ -1,0 +1,14 @@
+# Landroidx/appcompat/view/menu/MenuItemWrapperICS;->createActionProviderWrapper(Landroid/view/ActionProvider;)Landroidx/appcompat/view/menu/MenuItemWrapperICS$ActionProviderWrapper; [access_flags=]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:android.view.ActionProvider
+#
+# - return:androidx.appcompat.view.menu.MenuItemWrapperICS$ActionProviderWrapper
+
+createActionProviderWrapper-BB@0x0 : 
+	0       (00000000) new-instance         v0, Landroidx/appcompat/view/menu/MenuItemWrapperICS$ActionProviderWrapper;
+	1       (00000004) iget-object          v1, v2, Landroidx/appcompat/view/menu/MenuItemWrapperICS;->mContext Landroid/content/Context;
+	2       (00000008) invoke-direct        v0, v2, v1, v3, Landroidx/appcompat/view/menu/MenuItemWrapperICS$ActionProviderWrapper;-><init>(Landroidx/appcompat/view/menu/MenuItemWrapperICS; Landroid/content/Context; Landroid/view/ActionProvider;)V
+	3       (0000000e) return-object        v0
+

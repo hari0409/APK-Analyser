@@ -1,0 +1,25 @@
+# Landroidx/appcompat/widget/SearchView$SearchAutoComplete;->showSoftInputIfNecessary()V [access_flags=]
+#
+# Parameters:
+# local registers: v0...v4
+#
+# - return:void
+
+showSoftInputIfNecessary-BB@0x0 : [ showSoftInputIfNecessary-BB@0xa showSoftInputIfNecessary-BB@0x2c ]
+	0       (00000000) const/4              v3, 0
+	1       (00000002) iget-boolean         v1, v4, Landroidx/appcompat/widget/SearchView$SearchAutoComplete;->mHasPendingShowSoftInputRequest Z
+	2       (00000006) if-eqz               v1, +13
+
+showSoftInputIfNecessary-BB@0xa : [ showSoftInputIfNecessary-BB@0x2c ]
+	3       (0000000a) invoke-virtual       v4, Landroidx/appcompat/widget/SearchView$SearchAutoComplete;->getContext()Landroid/content/Context;
+	4       (00000010) move-result-object   v1
+	5       (00000012) const-string         v2, 'input_method'
+	6       (00000016) invoke-virtual       v1, v2, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
+	7       (0000001c) move-result-object   v0
+	8       (0000001e) check-cast           v0, Landroid/view/inputmethod/InputMethodManager;
+	9       (00000022) invoke-virtual       v0, v4, v3, Landroid/view/inputmethod/InputMethodManager;->showSoftInput(Landroid/view/View; I)Z
+	10      (00000028) iput-boolean         v3, v4, Landroidx/appcompat/widget/SearchView$SearchAutoComplete;->mHasPendingShowSoftInputRequest Z
+
+showSoftInputIfNecessary-BB@0x2c : 
+	11      (0000002c) return-void          
+

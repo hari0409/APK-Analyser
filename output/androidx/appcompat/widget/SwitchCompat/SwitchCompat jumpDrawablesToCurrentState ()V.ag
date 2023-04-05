@@ -1,0 +1,43 @@
+# Landroidx/appcompat/widget/SwitchCompat;->jumpDrawablesToCurrentState()V [access_flags=public]
+#
+# Parameters:
+# local registers: v0...v1
+#
+# - return:void
+
+jumpDrawablesToCurrentState-BB@0x0 : [ jumpDrawablesToCurrentState-BB@0xe jumpDrawablesToCurrentState-BB@0x18 ]
+	0       (00000000) invoke-super         v1, Landroid/widget/CompoundButton;->jumpDrawablesToCurrentState()V
+	1       (00000006) iget-object          v0, v1, Landroidx/appcompat/widget/SwitchCompat;->mThumbDrawable Landroid/graphics/drawable/Drawable;
+	2       (0000000a) if-eqz               v0, +7
+
+jumpDrawablesToCurrentState-BB@0xe : [ jumpDrawablesToCurrentState-BB@0x18 ]
+	3       (0000000e) iget-object          v0, v1, Landroidx/appcompat/widget/SwitchCompat;->mThumbDrawable Landroid/graphics/drawable/Drawable;
+	4       (00000012) invoke-virtual       v0, Landroid/graphics/drawable/Drawable;->jumpToCurrentState()V
+
+jumpDrawablesToCurrentState-BB@0x18 : [ jumpDrawablesToCurrentState-BB@0x20 jumpDrawablesToCurrentState-BB@0x2a ]
+	5       (00000018) iget-object          v0, v1, Landroidx/appcompat/widget/SwitchCompat;->mTrackDrawable Landroid/graphics/drawable/Drawable;
+	6       (0000001c) if-eqz               v0, +7
+
+jumpDrawablesToCurrentState-BB@0x20 : [ jumpDrawablesToCurrentState-BB@0x2a ]
+	7       (00000020) iget-object          v0, v1, Landroidx/appcompat/widget/SwitchCompat;->mTrackDrawable Landroid/graphics/drawable/Drawable;
+	8       (00000024) invoke-virtual       v0, Landroid/graphics/drawable/Drawable;->jumpToCurrentState()V
+
+jumpDrawablesToCurrentState-BB@0x2a : [ jumpDrawablesToCurrentState-BB@0x32 jumpDrawablesToCurrentState-BB@0x52 ]
+	9       (0000002a) iget-object          v0, v1, Landroidx/appcompat/widget/SwitchCompat;->mPositionAnimator Landroid/animation/ObjectAnimator;
+	10      (0000002e) if-eqz               v0, +12
+
+jumpDrawablesToCurrentState-BB@0x32 : [ jumpDrawablesToCurrentState-BB@0x42 jumpDrawablesToCurrentState-BB@0x52 ]
+	11      (00000032) iget-object          v0, v1, Landroidx/appcompat/widget/SwitchCompat;->mPositionAnimator Landroid/animation/ObjectAnimator;
+	12      (00000036) invoke-virtual       v0, Landroid/animation/ObjectAnimator;->isStarted()Z
+	13      (0000003c) move-result          v0
+	14      (0000003e) if-eqz               v0, +a
+
+jumpDrawablesToCurrentState-BB@0x42 : [ jumpDrawablesToCurrentState-BB@0x52 ]
+	15      (00000042) iget-object          v0, v1, Landroidx/appcompat/widget/SwitchCompat;->mPositionAnimator Landroid/animation/ObjectAnimator;
+	16      (00000046) invoke-virtual       v0, Landroid/animation/ObjectAnimator;->end()V
+	17      (0000004c) const/4              v0, 0
+	18      (0000004e) iput-object          v0, v1, Landroidx/appcompat/widget/SwitchCompat;->mPositionAnimator Landroid/animation/ObjectAnimator;
+
+jumpDrawablesToCurrentState-BB@0x52 : 
+	19      (00000052) return-void          
+

@@ -1,0 +1,44 @@
+# Lcom/afwsamples/testdpc/util/Flags$ArgsContainer;->get(Lcom/afwsamples/testdpc/util/Flags$Param;)Ljava/lang/Object; [access_flags=private]
+#
+# Parameters:
+# - local registers: v0...v3
+# - v4:com.afwsamples.testdpc.util.Flags$Param
+#
+# - return:java.lang.Object
+
+get-BB@0x0 : [ get-BB@0x10 get-BB@0x2e ]
+	0       (00000000) iget-object          v1, v3, Lcom/afwsamples/testdpc/util/Flags$ArgsContainer;->args Ljava/util/Map;
+	1       (00000004) invoke-interface     v1, v4, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
+	2       (0000000a) move-result-object   v0
+	3       (0000000c) if-nez               v0, +11
+
+get-BB@0x10 : [ get-BB@0x1c get-BB@0x30 ]
+	4       (00000010) invoke-interface     v4, Lcom/afwsamples/testdpc/util/Flags$Param;->acceptsMultipleValues()Z
+	5       (00000016) move-result          v1
+	6       (00000018) if-eqz               v1, +c
+
+get-BB@0x1c : [ get-BB@0x2e ]
+	7       (0000001c) invoke-interface     v4, Lcom/afwsamples/testdpc/util/Flags$Param;->dataType()Ljava/lang/Class;
+	8       (00000022) move-result-object   v1
+	9       (00000024) const/4              v2, 0
+	10      (00000026) invoke-static        v1, v2, Ljava/lang/reflect/Array;->newInstance(Ljava/lang/Class; I)Ljava/lang/Object;
+	11      (0000002c) move-result-object   v0
+
+get-BB@0x2e : 
+	12      (0000002e) return-object        v0
+
+get-BB@0x30 : [ get-BB@0x44 get-BB@0x2e ]
+	13      (00000030) invoke-interface     v4, Lcom/afwsamples/testdpc/util/Flags$Param;->dataType()Ljava/lang/Class;
+	14      (00000036) move-result-object   v1
+	15      (00000038) invoke-virtual       v1, Ljava/lang/Class;->isPrimitive()Z
+	16      (0000003e) move-result          v1
+	17      (00000040) if-eqz               v1, -9
+
+get-BB@0x44 : [ get-BB@0x2e ]
+	18      (00000044) sget-object          v1, Lcom/afwsamples/testdpc/util/Flags$ArgsContainer;->primitiveTypeDefaultValues Ljava/util/Map;
+	19      (00000048) invoke-interface     v4, Lcom/afwsamples/testdpc/util/Flags$Param;->dataType()Ljava/lang/Class;
+	20      (0000004e) move-result-object   v2
+	21      (00000050) invoke-interface     v1, v2, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
+	22      (00000056) move-result-object   v0
+	23      (00000058) goto                 -15
+

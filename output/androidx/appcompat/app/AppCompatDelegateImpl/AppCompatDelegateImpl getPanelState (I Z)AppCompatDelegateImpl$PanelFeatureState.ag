@@ -1,0 +1,43 @@
+# Landroidx/appcompat/app/AppCompatDelegateImpl;->getPanelState(I Z)Landroidx/appcompat/app/AppCompatDelegateImpl$PanelFeatureState; [access_flags=protected]
+#
+# Parameters:
+# - local registers: v0...v5
+# - v6:int
+# - v7:boolean
+#
+# - return:androidx.appcompat.app.AppCompatDelegateImpl$PanelFeatureState
+
+getPanelState-BB@0x0 : [ getPanelState-BB@0xa getPanelState-BB@0x10 ]
+	0       (00000000) const/4              v4, 0
+	1       (00000002) iget-object          v0, v5, Landroidx/appcompat/app/AppCompatDelegateImpl;->mPanels [Landroidx/appcompat/app/AppCompatDelegateImpl$PanelFeatureState;
+	2       (00000006) if-eqz               v0, +5
+
+getPanelState-BB@0xa : [ getPanelState-BB@0x10 getPanelState-BB@0x2a ]
+	3       (0000000a) array-length         v3, v0
+	4       (0000000c) if-gt                v3, v6, +f
+
+getPanelState-BB@0x10 : [ getPanelState-BB@0x1c getPanelState-BB@0x24 ]
+	5       (00000010) add-int/lit8         v3, v6, 1
+	6       (00000014) new-array            v1, v3, [Landroidx/appcompat/app/AppCompatDelegateImpl$PanelFeatureState;
+	7       (00000018) if-eqz               v0, +6
+
+getPanelState-BB@0x1c : [ getPanelState-BB@0x24 ]
+	8       (0000001c) array-length         v3, v0
+	9       (0000001e) invoke-static        v0, v4, v1, v4, v3, Ljava/lang/System;->arraycopy(Ljava/lang/Object; I Ljava/lang/Object; I I)V
+
+getPanelState-BB@0x24 : [ getPanelState-BB@0x2a ]
+	10      (00000024) move-object          v0, v1
+	11      (00000026) iput-object          v1, v5, Landroidx/appcompat/app/AppCompatDelegateImpl;->mPanels [Landroidx/appcompat/app/AppCompatDelegateImpl$PanelFeatureState;
+
+getPanelState-BB@0x2a : [ getPanelState-BB@0x32 getPanelState-BB@0x40 ]
+	12      (0000002a) aget-object          v2, v0, v6
+	13      (0000002e) if-nez               v2, +9
+
+getPanelState-BB@0x32 : [ getPanelState-BB@0x40 ]
+	14      (00000032) new-instance         v2, Landroidx/appcompat/app/AppCompatDelegateImpl$PanelFeatureState;
+	15      (00000036) invoke-direct        v2, v6, Landroidx/appcompat/app/AppCompatDelegateImpl$PanelFeatureState;-><init>(I)V
+	16      (0000003c) aput-object          v2, v0, v6
+
+getPanelState-BB@0x40 : 
+	17      (00000040) return-object        v2
+

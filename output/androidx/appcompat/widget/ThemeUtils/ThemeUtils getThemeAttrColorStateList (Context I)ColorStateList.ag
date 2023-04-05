@@ -1,0 +1,32 @@
+# Landroidx/appcompat/widget/ThemeUtils;->getThemeAttrColorStateList(Landroid/content/Context; I)Landroid/content/res/ColorStateList; [access_flags=public static]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:android.content.Context
+# - v4:int
+#
+# - return:android.content.res.ColorStateList
+
+getThemeAttrColorStateList-BB@0x0 : [ getThemeAttrColorStateList-BB@0x1a ]
+	0       (00000000) const/4              v2, 0
+	1       (00000002) sget-object          v1, Landroidx/appcompat/widget/ThemeUtils;->TEMP_ARRAY [I
+	2       (00000006) aput                 v4, v1, v2
+	3       (0000000a) const/4              v1, 0
+	4       (0000000c) sget-object          v2, Landroidx/appcompat/widget/ThemeUtils;->TEMP_ARRAY [I
+	5       (00000010) invoke-static        v3, v1, v2, Landroidx/appcompat/widget/TintTypedArray;->obtainStyledAttributes(Landroid/content/Context; Landroid/util/AttributeSet; [I)Landroidx/appcompat/widget/TintTypedArray;
+	6       (00000016) move-result-object   v0
+	7       (00000018) const/4              v1, 0
+
+getThemeAttrColorStateList-BB@0x1a : 
+	8       (0000001a) invoke-virtual       v0, v1, Landroidx/appcompat/widget/TintTypedArray;->getColorStateList(I)Landroid/content/res/ColorStateList;
+	9       (00000020) move-result-object   v1
+	10      (00000022) invoke-virtual       v0, Landroidx/appcompat/widget/TintTypedArray;->recycle()V
+	11      (00000028) return-object        v1
+	1a:1f
+	(Ljava/lang/Throwable; -> 2a getThemeAttrColorStateList-BB@0x2a)
+
+getThemeAttrColorStateList-BB@0x2a : 
+	12      (0000002a) move-exception       v1
+	13      (0000002c) invoke-virtual       v0, Landroidx/appcompat/widget/TintTypedArray;->recycle()V
+	14      (00000032) throw                v1
+

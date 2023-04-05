@@ -1,0 +1,102 @@
+# Landroidx/appcompat/view/menu/MenuBuilder;->addIntentOptions(I I I Landroid/content/ComponentName; [Landroid/content/Intent; Landroid/content/Intent; I [Landroid/view/MenuItem;)I [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v13
+# - v14:int
+# - v15:int
+# - v16:int
+# - v17:android.content.ComponentName
+# - v18:android.content.Intent[]
+# - v19:android.content.Intent
+# - v20:int
+# - v21:android.view.MenuItem[]
+#
+# - return:int
+
+addIntentOptions-BB@0x0 : [ addIntentOptions-BB@0x26 addIntentOptions-BB@0xce ]
+	0       (00000000) iget-object          v10, v13, Landroidx/appcompat/view/menu/MenuBuilder;->mContext Landroid/content/Context;
+	1       (00000004) invoke-virtual       v10, Landroid/content/Context;->getPackageManager()Landroid/content/pm/PackageManager;
+	2       (0000000a) move-result-object   v7
+	3       (0000000c) const/4              v10, 0
+	4       (0000000e) move-object/from16   v0, v17
+	5       (00000012) move-object/from16   v1, v18
+	6       (00000016) move-object/from16   v2, v19
+	7       (0000001a) invoke-virtual       v7, v0, v1, v2, v10, Landroid/content/pm/PackageManager;->queryIntentActivityOptions(Landroid/content/ComponentName; [Landroid/content/Intent; Landroid/content/Intent; I)Ljava/util/List;
+	8       (00000020) move-result-object   v6
+	9       (00000022) if-eqz               v6, +56
+
+addIntentOptions-BB@0x26 : [ addIntentOptions-BB@0x2e ]
+	10      (00000026) invoke-interface     v6, Ljava/util/List;->size()I
+	11      (0000002c) move-result          v3
+
+addIntentOptions-BB@0x2e : [ addIntentOptions-BB@0x36 addIntentOptions-BB@0x3c ]
+	12      (0000002e) and-int/lit8         v10, v20, 1
+	13      (00000032) if-nez               v10, +5
+
+addIntentOptions-BB@0x36 : [ addIntentOptions-BB@0x3c ]
+	14      (00000036) invoke-virtual       v13, v14, Landroidx/appcompat/view/menu/MenuBuilder;->removeGroup(I)V
+
+addIntentOptions-BB@0x3c : [ addIntentOptions-BB@0x3e ]
+	15      (0000003c) const/4              v4, 0
+
+addIntentOptions-BB@0x3e : [ addIntentOptions-BB@0x42 addIntentOptions-BB@0xdc ]
+	16      (0000003e) if-ge                v4, v3, +4f
+
+addIntentOptions-BB@0x42 : [ addIntentOptions-BB@0x5a addIntentOptions-BB@0xd2 ]
+	17      (00000042) invoke-interface     v6, v4, Ljava/util/List;->get(I)Ljava/lang/Object;
+	18      (00000048) move-result-object   v8
+	19      (0000004a) check-cast           v8, Landroid/content/pm/ResolveInfo;
+	20      (0000004e) new-instance         v9, Landroid/content/Intent;
+	21      (00000052) iget                 v10, v8, Landroid/content/pm/ResolveInfo;->specificIndex I
+	22      (00000056) if-gez               v10, +3e
+
+addIntentOptions-BB@0x5a : [ addIntentOptions-BB@0x5e ]
+	23      (0000005a) move-object/from16   v10, v19
+
+addIntentOptions-BB@0x5e : [ addIntentOptions-BB@0xb8 addIntentOptions-BB@0xc8 ]
+	24      (0000005e) invoke-direct        v9, v10, Landroid/content/Intent;-><init>(Landroid/content/Intent;)V
+	25      (00000064) new-instance         v10, Landroid/content/ComponentName;
+	26      (00000068) iget-object          v11, v8, Landroid/content/pm/ResolveInfo;->activityInfo Landroid/content/pm/ActivityInfo;
+	27      (0000006c) iget-object          v11, v11, Landroid/content/pm/ActivityInfo;->applicationInfo Landroid/content/pm/ApplicationInfo;
+	28      (00000070) iget-object          v11, v11, Landroid/content/pm/ApplicationInfo;->packageName Ljava/lang/String;
+	29      (00000074) iget-object          v12, v8, Landroid/content/pm/ResolveInfo;->activityInfo Landroid/content/pm/ActivityInfo;
+	30      (00000078) iget-object          v12, v12, Landroid/content/pm/ActivityInfo;->name Ljava/lang/String;
+	31      (0000007c) invoke-direct        v10, v11, v12, Landroid/content/ComponentName;-><init>(Ljava/lang/String; Ljava/lang/String;)V
+	32      (00000082) invoke-virtual       v9, v10, Landroid/content/Intent;->setComponent(Landroid/content/ComponentName;)Landroid/content/Intent;
+	33      (00000088) invoke-virtual       v8, v7, Landroid/content/pm/ResolveInfo;->loadLabel(Landroid/content/pm/PackageManager;)Ljava/lang/CharSequence;
+	34      (0000008e) move-result-object   v10
+	35      (00000090) move/from16          v0, v16
+	36      (00000094) invoke-virtual       v13, v14, v15, v0, v10, Landroidx/appcompat/view/menu/MenuBuilder;->add(I I I Ljava/lang/CharSequence;)Landroid/view/MenuItem;
+	37      (0000009a) move-result-object   v10
+	38      (0000009c) invoke-virtual       v8, v7, Landroid/content/pm/ResolveInfo;->loadIcon(Landroid/content/pm/PackageManager;)Landroid/graphics/drawable/Drawable;
+	39      (000000a2) move-result-object   v11
+	40      (000000a4) invoke-interface     v10, v11, Landroid/view/MenuItem;->setIcon(Landroid/graphics/drawable/Drawable;)Landroid/view/MenuItem;
+	41      (000000aa) move-result-object   v10
+	42      (000000ac) invoke-interface     v10, v9, Landroid/view/MenuItem;->setIntent(Landroid/content/Intent;)Landroid/view/MenuItem;
+	43      (000000b2) move-result-object   v5
+	44      (000000b4) if-eqz               v21, +a
+
+addIntentOptions-BB@0xb8 : [ addIntentOptions-BB@0xc0 addIntentOptions-BB@0xc8 ]
+	45      (000000b8) iget                 v10, v8, Landroid/content/pm/ResolveInfo;->specificIndex I
+	46      (000000bc) if-ltz               v10, +6
+
+addIntentOptions-BB@0xc0 : [ addIntentOptions-BB@0xc8 ]
+	47      (000000c0) iget                 v10, v8, Landroid/content/pm/ResolveInfo;->specificIndex I
+	48      (000000c4) aput-object          v5, v21, v10
+
+addIntentOptions-BB@0xc8 : [ addIntentOptions-BB@0x3e ]
+	49      (000000c8) add-int/lit8         v4, v4, 1
+	50      (000000cc) goto                 -47
+
+addIntentOptions-BB@0xce : [ addIntentOptions-BB@0x2e ]
+	51      (000000ce) const/4              v3, 0
+	52      (000000d0) goto                 -51
+
+addIntentOptions-BB@0xd2 : [ addIntentOptions-BB@0x5e ]
+	53      (000000d2) iget                 v10, v8, Landroid/content/pm/ResolveInfo;->specificIndex I
+	54      (000000d6) aget-object          v10, v18, v10
+	55      (000000da) goto                 -3e
+
+addIntentOptions-BB@0xdc : 
+	56      (000000dc) return               v3
+

@@ -1,0 +1,22 @@
+# Landroidx/appcompat/app/AppCompatDelegateImpl$AutoNightModeManager;->dispatchTimeChanged()V [access_flags=]
+#
+# Parameters:
+# local registers: v0...v2
+#
+# - return:void
+
+dispatchTimeChanged-BB@0x0 : [ dispatchTimeChanged-BB@0x14 dispatchTimeChanged-BB@0x22 ]
+	0       (00000000) iget-object          v1, v2, Landroidx/appcompat/app/AppCompatDelegateImpl$AutoNightModeManager;->mTwilightManager Landroidx/appcompat/app/TwilightManager;
+	1       (00000004) invoke-virtual       v1, Landroidx/appcompat/app/TwilightManager;->isNight()Z
+	2       (0000000a) move-result          v0
+	3       (0000000c) iget-boolean         v1, v2, Landroidx/appcompat/app/AppCompatDelegateImpl$AutoNightModeManager;->mIsNight Z
+	4       (00000010) if-eq                v0, v1, +9
+
+dispatchTimeChanged-BB@0x14 : [ dispatchTimeChanged-BB@0x22 ]
+	5       (00000014) iput-boolean         v0, v2, Landroidx/appcompat/app/AppCompatDelegateImpl$AutoNightModeManager;->mIsNight Z
+	6       (00000018) iget-object          v1, v2, Landroidx/appcompat/app/AppCompatDelegateImpl$AutoNightModeManager;->this$0 Landroidx/appcompat/app/AppCompatDelegateImpl;
+	7       (0000001c) invoke-virtual       v1, Landroidx/appcompat/app/AppCompatDelegateImpl;->applyDayNight()Z
+
+dispatchTimeChanged-BB@0x22 : 
+	8       (00000022) return-void          
+

@@ -1,0 +1,17 @@
+# Lcom/afwsamples/testdpc/common/CertificateUtil$PKCS12ParseInfo;-><init>(Ljava/lang/String; Ljava/security/cert/X509Certificate; Ljava/security/PrivateKey;)V [access_flags=public constructor]
+#
+# Parameters:
+# - local registers: v0...v0
+# - v1:java.lang.String
+# - v2:java.security.cert.X509Certificate
+# - v3:java.security.PrivateKey
+#
+# - return:void
+
+<init>-BB@0x0 : 
+	0       (00000000) invoke-direct        v0, Ljava/lang/Object;-><init>()V
+	1       (00000006) iput-object          v1, v0, Lcom/afwsamples/testdpc/common/CertificateUtil$PKCS12ParseInfo;->alias Ljava/lang/String;
+	2       (0000000a) iput-object          v2, v0, Lcom/afwsamples/testdpc/common/CertificateUtil$PKCS12ParseInfo;->certificate Ljava/security/cert/X509Certificate;
+	3       (0000000e) iput-object          v3, v0, Lcom/afwsamples/testdpc/common/CertificateUtil$PKCS12ParseInfo;->privateKey Ljava/security/PrivateKey;
+	4       (00000012) return-void          
+

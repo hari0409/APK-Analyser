@@ -1,0 +1,36 @@
+# Lcom/afwsamples/testdpc/policy/utils/RootOfTrust;->verifiedBootStateToString(I)Ljava/lang/String; [access_flags=public static]
+#
+# Parameters:
+# - local registers: v0...v0
+# - v1:int
+#
+# - return:java.lang.String
+
+verifiedBootStateToString-BB@0x0 : [ D:verifiedBootStateToString-BB@0x6 0:verifiedBootStateToString-BB@0xc 1:verifiedBootStateToString-BB@0x12 2:verifiedBootStateToString-BB@0x18 3:verifiedBootStateToString-BB@0x1e ]
+	0       (00000000) packed-switch        v1, +12 (0x24)
+
+verifiedBootStateToString-BB@0x6 : [ verifiedBootStateToString-BB@0xa ]
+	1       (00000006) const-string         v0, 'Unknown'
+
+verifiedBootStateToString-BB@0xa : 
+	2       (0000000a) return-object        v0
+
+verifiedBootStateToString-BB@0xc : [ verifiedBootStateToString-BB@0xa ]
+	3       (0000000c) const-string         v0, 'Verified'
+	4       (00000010) goto                 -3
+
+verifiedBootStateToString-BB@0x12 : [ verifiedBootStateToString-BB@0xa ]
+	5       (00000012) const-string         v0, 'Self-signed'
+	6       (00000016) goto                 -6
+
+verifiedBootStateToString-BB@0x18 : [ verifiedBootStateToString-BB@0xa ]
+	7       (00000018) const-string         v0, 'Unverified'
+	8       (0000001c) goto                 -9
+
+verifiedBootStateToString-BB@0x1e : [ verifiedBootStateToString-BB@0xa ]
+	9       (0000001e) const-string         v0, 'Failed'
+	10      (00000022) goto                 -c
+
+verifiedBootStateToString-BB@0x24 : 
+	11      (00000024) packed-switch-payload 0 1 2 3
+

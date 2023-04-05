@@ -1,0 +1,46 @@
+# Landroidx/appcompat/app/AlertDialog$Builder;->create()Landroidx/appcompat/app/AlertDialog; [access_flags=public]
+#
+# Parameters:
+# local registers: v0...v3
+#
+# - return:androidx.appcompat.app.AlertDialog
+
+create-BB@0x0 : [ create-BB@0x3e create-BB@0x46 ]
+	0       (00000000) new-instance         v0, Landroidx/appcompat/app/AlertDialog;
+	1       (00000004) iget-object          v1, v3, Landroidx/appcompat/app/AlertDialog$Builder;->P Landroidx/appcompat/app/AlertController$AlertParams;
+	2       (00000008) iget-object          v1, v1, Landroidx/appcompat/app/AlertController$AlertParams;->mContext Landroid/content/Context;
+	3       (0000000c) iget                 v2, v3, Landroidx/appcompat/app/AlertDialog$Builder;->mTheme I
+	4       (00000010) invoke-direct        v0, v1, v2, Landroidx/appcompat/app/AlertDialog;-><init>(Landroid/content/Context; I)V
+	5       (00000016) iget-object          v1, v3, Landroidx/appcompat/app/AlertDialog$Builder;->P Landroidx/appcompat/app/AlertController$AlertParams;
+	6       (0000001a) iget-object          v2, v0, Landroidx/appcompat/app/AlertDialog;->mAlert Landroidx/appcompat/app/AlertController;
+	7       (0000001e) invoke-virtual       v1, v2, Landroidx/appcompat/app/AlertController$AlertParams;->apply(Landroidx/appcompat/app/AlertController;)V
+	8       (00000024) iget-object          v1, v3, Landroidx/appcompat/app/AlertDialog$Builder;->P Landroidx/appcompat/app/AlertController$AlertParams;
+	9       (00000028) iget-boolean         v1, v1, Landroidx/appcompat/app/AlertController$AlertParams;->mCancelable Z
+	10      (0000002c) invoke-virtual       v0, v1, Landroidx/appcompat/app/AlertDialog;->setCancelable(Z)V
+	11      (00000032) iget-object          v1, v3, Landroidx/appcompat/app/AlertDialog$Builder;->P Landroidx/appcompat/app/AlertController$AlertParams;
+	12      (00000036) iget-boolean         v1, v1, Landroidx/appcompat/app/AlertController$AlertParams;->mCancelable Z
+	13      (0000003a) if-eqz               v1, +6
+
+create-BB@0x3e : [ create-BB@0x46 ]
+	14      (0000003e) const/4              v1, 1
+	15      (00000040) invoke-virtual       v0, v1, Landroidx/appcompat/app/AlertDialog;->setCanceledOnTouchOutside(Z)V
+
+create-BB@0x46 : [ create-BB@0x6e create-BB@0x7c ]
+	16      (00000046) iget-object          v1, v3, Landroidx/appcompat/app/AlertDialog$Builder;->P Landroidx/appcompat/app/AlertController$AlertParams;
+	17      (0000004a) iget-object          v1, v1, Landroidx/appcompat/app/AlertController$AlertParams;->mOnCancelListener Landroid/content/DialogInterface$OnCancelListener;
+	18      (0000004e) invoke-virtual       v0, v1, Landroidx/appcompat/app/AlertDialog;->setOnCancelListener(Landroid/content/DialogInterface$OnCancelListener;)V
+	19      (00000054) iget-object          v1, v3, Landroidx/appcompat/app/AlertDialog$Builder;->P Landroidx/appcompat/app/AlertController$AlertParams;
+	20      (00000058) iget-object          v1, v1, Landroidx/appcompat/app/AlertController$AlertParams;->mOnDismissListener Landroid/content/DialogInterface$OnDismissListener;
+	21      (0000005c) invoke-virtual       v0, v1, Landroidx/appcompat/app/AlertDialog;->setOnDismissListener(Landroid/content/DialogInterface$OnDismissListener;)V
+	22      (00000062) iget-object          v1, v3, Landroidx/appcompat/app/AlertDialog$Builder;->P Landroidx/appcompat/app/AlertController$AlertParams;
+	23      (00000066) iget-object          v1, v1, Landroidx/appcompat/app/AlertController$AlertParams;->mOnKeyListener Landroid/content/DialogInterface$OnKeyListener;
+	24      (0000006a) if-eqz               v1, +9
+
+create-BB@0x6e : [ create-BB@0x7c ]
+	25      (0000006e) iget-object          v1, v3, Landroidx/appcompat/app/AlertDialog$Builder;->P Landroidx/appcompat/app/AlertController$AlertParams;
+	26      (00000072) iget-object          v1, v1, Landroidx/appcompat/app/AlertController$AlertParams;->mOnKeyListener Landroid/content/DialogInterface$OnKeyListener;
+	27      (00000076) invoke-virtual       v0, v1, Landroidx/appcompat/app/AlertDialog;->setOnKeyListener(Landroid/content/DialogInterface$OnKeyListener;)V
+
+create-BB@0x7c : 
+	28      (0000007c) return-object        v0
+

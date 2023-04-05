@@ -1,0 +1,28 @@
+# Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->lambda$clearApplicationUserData$158$PolicyManagementFragment(Ljava/lang/String; Ljava/lang/String; Z)V [access_flags=final synthetic]
+#
+# Parameters:
+# - local registers: v0...v3
+# - v4:java.lang.String
+# - v5:java.lang.String
+# - v6:boolean
+#
+# - return:void
+
+lambda$clearApplicationUserData$158$PolicyManagementFragment-BB@0x0 : [ lambda$clearApplicationUserData$158$PolicyManagementFragment-BB@0x4 lambda$clearApplicationUserData$158$PolicyManagementFragment-BB@0x1e ]
+	0       (00000000) if-eqz               v6, +f
+
+lambda$clearApplicationUserData$158$PolicyManagementFragment-BB@0x4 : [ lambda$clearApplicationUserData$158$PolicyManagementFragment-BB@0xa ]
+	1       (00000004) const                v0, 2131689623 # [1.9008266604109312e+38]
+
+lambda$clearApplicationUserData$158$PolicyManagementFragment-BB@0xa : 
+	2       (0000000a) const/4              v1, 1
+	3       (0000000c) new-array            v1, v1, [Ljava/lang/Object;
+	4       (00000010) const/4              v2, 0
+	5       (00000012) aput-object          v4, v1, v2
+	6       (00000016) invoke-direct        v3, v0, v1, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->showToast(I [Ljava/lang/Object;)V
+	7       (0000001c) return-void          
+
+lambda$clearApplicationUserData$158$PolicyManagementFragment-BB@0x1e : [ lambda$clearApplicationUserData$158$PolicyManagementFragment-BB@0xa ]
+	8       (0000001e) const                v0, 2131689622 # [1.900826457586835e+38]
+	9       (00000024) goto                 -d
+

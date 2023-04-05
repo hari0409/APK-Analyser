@@ -1,0 +1,17 @@
+# Lcom/afwsamples/testdpc/ShellCommand;->setKeyguardDisabled(Z)V [access_flags=private]
+#
+# Parameters:
+# - local registers: v0...v3
+# - v4:boolean
+#
+# - return:void
+
+setKeyguardDisabled-BB@0x0 : 
+	0       (00000000) iget-object          v0, v3, Lcom/afwsamples/testdpc/ShellCommand;->mDevicePolicyManagerGateway Lcom/afwsamples/testdpc/DevicePolicyManagerGateway;
+	1       (00000004) new-instance         v1, Lcom/afwsamples/testdpc/ShellCommand$$Lambda$127;
+	2       (00000008) invoke-direct        v1, v3, v4, Lcom/afwsamples/testdpc/ShellCommand$$Lambda$127;-><init>(Lcom/afwsamples/testdpc/ShellCommand; Z)V
+	3       (0000000e) new-instance         v2, Lcom/afwsamples/testdpc/ShellCommand$$Lambda$128;
+	4       (00000012) invoke-direct        v2, v3, v4, Lcom/afwsamples/testdpc/ShellCommand$$Lambda$128;-><init>(Lcom/afwsamples/testdpc/ShellCommand; Z)V
+	5       (00000018) invoke-interface     v0, v4, v1, v2, Lcom/afwsamples/testdpc/DevicePolicyManagerGateway;->setKeyguardDisabled(Z Ljava/util/function/Consumer; Ljava/util/function/Consumer;)V
+	6       (0000001e) return-void          
+

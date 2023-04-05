@@ -1,0 +1,37 @@
+# Landroidx/appcompat/widget/ActivityChooserView$ActivityChooserViewAdapter;->getCount()I [access_flags=public]
+#
+# Parameters:
+# local registers: v0...v3
+#
+# - return:int
+
+getCount-BB@0x0 : [ getCount-BB@0x16 getCount-BB@0x2a ]
+	0       (00000000) const/4              v1, 0
+	1       (00000002) iget-object          v2, v3, Landroidx/appcompat/widget/ActivityChooserView$ActivityChooserViewAdapter;->mDataModel Landroidx/appcompat/widget/ActivityChooserModel;
+	2       (00000006) invoke-virtual       v2, Landroidx/appcompat/widget/ActivityChooserModel;->getActivityCount()I
+	3       (0000000c) move-result          v0
+	4       (0000000e) iget-boolean         v2, v3, Landroidx/appcompat/widget/ActivityChooserView$ActivityChooserViewAdapter;->mShowDefaultActivity Z
+	5       (00000012) if-nez               v2, +c
+
+getCount-BB@0x16 : [ getCount-BB@0x26 getCount-BB@0x2a ]
+	6       (00000016) iget-object          v2, v3, Landroidx/appcompat/widget/ActivityChooserView$ActivityChooserViewAdapter;->mDataModel Landroidx/appcompat/widget/ActivityChooserModel;
+	7       (0000001a) invoke-virtual       v2, Landroidx/appcompat/widget/ActivityChooserModel;->getDefaultActivity()Landroid/content/pm/ResolveInfo;
+	8       (00000020) move-result-object   v2
+	9       (00000022) if-eqz               v2, +4
+
+getCount-BB@0x26 : [ getCount-BB@0x2a ]
+	10      (00000026) add-int/lit8         v0, v0, -1
+
+getCount-BB@0x2a : [ getCount-BB@0x3e getCount-BB@0x42 ]
+	11      (0000002a) iget                 v2, v3, Landroidx/appcompat/widget/ActivityChooserView$ActivityChooserViewAdapter;->mMaxActivityCount I
+	12      (0000002e) invoke-static        v0, v2, Ljava/lang/Math;->min(I I)I
+	13      (00000034) move-result          v1
+	14      (00000036) iget-boolean         v2, v3, Landroidx/appcompat/widget/ActivityChooserView$ActivityChooserViewAdapter;->mShowFooterView Z
+	15      (0000003a) if-eqz               v2, +4
+
+getCount-BB@0x3e : [ getCount-BB@0x42 ]
+	16      (0000003e) add-int/lit8         v1, v1, 1
+
+getCount-BB@0x42 : 
+	17      (00000042) return               v1
+

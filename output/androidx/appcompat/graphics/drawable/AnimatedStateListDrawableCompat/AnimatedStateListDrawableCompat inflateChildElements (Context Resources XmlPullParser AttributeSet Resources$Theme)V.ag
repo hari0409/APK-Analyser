@@ -1,0 +1,66 @@
+# Landroidx/appcompat/graphics/drawable/AnimatedStateListDrawableCompat;->inflateChildElements(Landroid/content/Context; Landroid/content/res/Resources; Lorg/xmlpull/v1/XmlPullParser; Landroid/util/AttributeSet; Landroid/content/res/Resources$Theme;)V [access_flags=private]
+#
+# Parameters:
+# - local registers: v0...v5
+# - v6:android.content.Context
+# - v7:android.content.res.Resources
+# - v8:org.xmlpull.v1.XmlPullParser
+# - v9:android.util.AttributeSet
+# - v10:android.content.res.Resources$Theme
+#
+# - return:void
+
+inflateChildElements-BB@0x0 : [ inflateChildElements-BB@0xc ]
+	0       (00000000) invoke-interface     v8, Lorg/xmlpull/v1/XmlPullParser;->getDepth()I
+	1       (00000006) move-result          v3
+	2       (00000008) add-int/lit8         v1, v3, 1
+
+inflateChildElements-BB@0xc : [ inflateChildElements-BB@0x1a inflateChildElements-BB@0x76 ]
+	3       (0000000c) invoke-interface     v8, Lorg/xmlpull/v1/XmlPullParser;->next()I
+	4       (00000012) move-result          v2
+	5       (00000014) const/4              v3, 1
+	6       (00000016) if-eq                v2, v3, +30
+
+inflateChildElements-BB@0x1a : [ inflateChildElements-BB@0x26 inflateChildElements-BB@0x2c ]
+	7       (0000001a) invoke-interface     v8, Lorg/xmlpull/v1/XmlPullParser;->getDepth()I
+	8       (00000020) move-result          v0
+	9       (00000022) if-ge                v0, v1, +5
+
+inflateChildElements-BB@0x26 : [ inflateChildElements-BB@0x2c inflateChildElements-BB@0x76 ]
+	10      (00000026) const/4              v3, 3
+	11      (00000028) if-eq                v2, v3, +27
+
+inflateChildElements-BB@0x2c : [ inflateChildElements-BB@0x32 inflateChildElements-BB@0xc ]
+	12      (0000002c) const/4              v3, 2
+	13      (0000002e) if-ne                v2, v3, -11
+
+inflateChildElements-BB@0x32 : [ inflateChildElements-BB@0x36 inflateChildElements-BB@0xc ]
+	14      (00000032) if-gt                v0, v1, -13
+
+inflateChildElements-BB@0x36 : [ inflateChildElements-BB@0x4e inflateChildElements-BB@0x56 ]
+	15      (00000036) invoke-interface     v8, Lorg/xmlpull/v1/XmlPullParser;->getName()Ljava/lang/String;
+	16      (0000003c) move-result-object   v3
+	17      (0000003e) const-string         v4, 'item'
+	18      (00000042) invoke-virtual       v3, v4, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+	19      (00000048) move-result          v3
+	20      (0000004a) if-eqz               v3, +6
+
+inflateChildElements-BB@0x4e : [ inflateChildElements-BB@0xc ]
+	21      (0000004e) invoke-direct/range  v5 ... v10, Landroidx/appcompat/graphics/drawable/AnimatedStateListDrawableCompat;->parseItem(Landroid/content/Context; Landroid/content/res/Resources; Lorg/xmlpull/v1/XmlPullParser; Landroid/util/AttributeSet; Landroid/content/res/Resources$Theme;)I
+	22      (00000054) goto                 -24
+
+inflateChildElements-BB@0x56 : [ inflateChildElements-BB@0x6e inflateChildElements-BB@0xc ]
+	23      (00000056) invoke-interface     v8, Lorg/xmlpull/v1/XmlPullParser;->getName()Ljava/lang/String;
+	24      (0000005c) move-result-object   v3
+	25      (0000005e) const-string         v4, 'transition'
+	26      (00000062) invoke-virtual       v3, v4, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+	27      (00000068) move-result          v3
+	28      (0000006a) if-eqz               v3, -2f
+
+inflateChildElements-BB@0x6e : [ inflateChildElements-BB@0xc ]
+	29      (0000006e) invoke-direct/range  v5 ... v10, Landroidx/appcompat/graphics/drawable/AnimatedStateListDrawableCompat;->parseTransition(Landroid/content/Context; Landroid/content/res/Resources; Lorg/xmlpull/v1/XmlPullParser; Landroid/util/AttributeSet; Landroid/content/res/Resources$Theme;)I
+	30      (00000074) goto                 -34
+
+inflateChildElements-BB@0x76 : 
+	31      (00000076) return-void          
+

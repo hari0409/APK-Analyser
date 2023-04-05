@@ -1,0 +1,16 @@
+# Landroidx/appcompat/widget/ActionMenuPresenter;->setWidthLimit(I Z)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:int
+# - v3:boolean
+#
+# - return:void
+
+setWidthLimit-BB@0x0 : 
+	0       (00000000) iput                 v2, v1, Landroidx/appcompat/widget/ActionMenuPresenter;->mWidthLimit I
+	1       (00000004) iput-boolean         v3, v1, Landroidx/appcompat/widget/ActionMenuPresenter;->mStrictWidthLimit Z
+	2       (00000008) const/4              v0, 1
+	3       (0000000a) iput-boolean         v0, v1, Landroidx/appcompat/widget/ActionMenuPresenter;->mWidthLimitSet Z
+	4       (0000000e) return-void          
+

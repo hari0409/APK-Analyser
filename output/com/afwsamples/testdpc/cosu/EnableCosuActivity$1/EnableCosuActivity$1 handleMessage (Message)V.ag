@@ -1,0 +1,139 @@
+# Lcom/afwsamples/testdpc/cosu/EnableCosuActivity$1;->handleMessage(Landroid/os/Message;)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v7
+# - v8:android.os.Message
+#
+# - return:void
+
+handleMessage-BB@0x0 : [ D:handleMessage-BB@0x10 1:handleMessage-BB@0x12 2:handleMessage-BB@0x96 3:handleMessage-BB@0x156 ]
+	0       (00000000) const/4              v5, 2
+	1       (00000002) const/4              v4, 1
+	2       (00000004) const/4              v6, 0
+	3       (00000006) iget                 v2, v8, Landroid/os/Message;->what I
+	4       (0000000a) packed-switch        v2, +c7 (0x198)
+
+handleMessage-BB@0x10 : 
+	5       (00000010) return-void          
+
+handleMessage-BB@0x12 : [ handleMessage-BB@0x2e handleMessage-BB@0x4c ]
+	6       (00000012) iget-object          v2, v7, Lcom/afwsamples/testdpc/cosu/EnableCosuActivity$1;->this$0 Lcom/afwsamples/testdpc/cosu/EnableCosuActivity;
+	7       (00000016) invoke-static        v2, Lcom/afwsamples/testdpc/cosu/EnableCosuActivity;->access$000(Lcom/afwsamples/testdpc/cosu/EnableCosuActivity;)Ljava/lang/Long;
+	8       (0000001c) move-result-object   v2
+	9       (0000001e) iget-object          v3, v8, Landroid/os/Message;->obj Ljava/lang/Object;
+	10      (00000022) invoke-virtual       v2, v3, Ljava/lang/Long;->equals(Ljava/lang/Object;)Z
+	11      (00000028) move-result          v2
+	12      (0000002a) if-eqz               v2, +11
+
+handleMessage-BB@0x2e : [ handleMessage-BB@0x10 ]
+	13      (0000002e) iget-object          v2, v7, Lcom/afwsamples/testdpc/cosu/EnableCosuActivity$1;->this$0 Lcom/afwsamples/testdpc/cosu/EnableCosuActivity;
+	14      (00000032) invoke-static        v2, Lcom/afwsamples/testdpc/cosu/EnableCosuActivity;->access$100(Lcom/afwsamples/testdpc/cosu/EnableCosuActivity;)V
+	15      (00000038) iget-object          v2, v7, Lcom/afwsamples/testdpc/cosu/EnableCosuActivity$1;->this$0 Lcom/afwsamples/testdpc/cosu/EnableCosuActivity;
+	16      (0000003c) invoke-static        v2, Lcom/afwsamples/testdpc/cosu/EnableCosuActivity;->access$000(Lcom/afwsamples/testdpc/cosu/EnableCosuActivity;)Ljava/lang/Long;
+	17      (00000042) move-result-object   v2
+	18      (00000044) invoke-virtual       v7, v5, v2, Lcom/afwsamples/testdpc/cosu/EnableCosuActivity$1;->removeMessages(I Ljava/lang/Object;)V
+	19      (0000004a) goto                 -1d
+
+handleMessage-BB@0x4c : [ handleMessage-BB@0x6c handleMessage-BB@0x72 ]
+	20      (0000004c) iget-object          v2, v7, Lcom/afwsamples/testdpc/cosu/EnableCosuActivity$1;->this$0 Lcom/afwsamples/testdpc/cosu/EnableCosuActivity;
+	21      (00000050) invoke-static        v2, Lcom/afwsamples/testdpc/cosu/EnableCosuActivity;->access$200(Lcom/afwsamples/testdpc/cosu/EnableCosuActivity;)Lcom/afwsamples/testdpc/cosu/CosuConfig;
+	22      (00000056) move-result-object   v3
+	23      (00000058) iget-object          v2, v8, Landroid/os/Message;->obj Ljava/lang/Object;
+	24      (0000005c) check-cast           v2, Ljava/lang/Long;
+	25      (00000060) invoke-virtual       v3, v2, Lcom/afwsamples/testdpc/cosu/CosuConfig;->onDownloadComplete(Ljava/lang/Long;)Ljava/lang/Long;
+	26      (00000066) move-result-object   v0
+	27      (00000068) if-eqz               v0, +5
+
+handleMessage-BB@0x6c : [ handleMessage-BB@0x72 ]
+	28      (0000006c) invoke-virtual       v7, v5, v0, Lcom/afwsamples/testdpc/cosu/EnableCosuActivity$1;->removeMessages(I Ljava/lang/Object;)V
+
+handleMessage-BB@0x72 : [ handleMessage-BB@0x8a handleMessage-BB@0x10 ]
+	29      (00000072) iget-object          v2, v7, Lcom/afwsamples/testdpc/cosu/EnableCosuActivity$1;->this$0 Lcom/afwsamples/testdpc/cosu/EnableCosuActivity;
+	30      (00000076) invoke-static        v2, Lcom/afwsamples/testdpc/cosu/EnableCosuActivity;->access$200(Lcom/afwsamples/testdpc/cosu/EnableCosuActivity;)Lcom/afwsamples/testdpc/cosu/CosuConfig;
+	31      (0000007c) move-result-object   v2
+	32      (0000007e) invoke-virtual       v2, Lcom/afwsamples/testdpc/cosu/CosuConfig;->areAllInstallsFinished()Z
+	33      (00000084) move-result          v2
+	34      (00000086) if-eqz               v2, -3b
+
+handleMessage-BB@0x8a : [ handleMessage-BB@0x10 ]
+	35      (0000008a) iget-object          v2, v7, Lcom/afwsamples/testdpc/cosu/EnableCosuActivity$1;->this$0 Lcom/afwsamples/testdpc/cosu/EnableCosuActivity;
+	36      (0000008e) invoke-static        v2, Lcom/afwsamples/testdpc/cosu/EnableCosuActivity;->access$300(Lcom/afwsamples/testdpc/cosu/EnableCosuActivity;)V
+	37      (00000094) goto                 -42
+
+handleMessage-BB@0x96 : [ handleMessage-BB@0xc2 handleMessage-BB@0x10a ]
+	38      (00000096) iget-object          v2, v8, Landroid/os/Message;->obj Ljava/lang/Object;
+	39      (0000009a) check-cast           v2, Ljava/lang/Long;
+	40      (0000009e) invoke-virtual       v2, Ljava/lang/Long;->longValue()J
+	41      (000000a4) move-result-wide     v0
+	42      (000000a6) iget-object          v2, v7, Lcom/afwsamples/testdpc/cosu/EnableCosuActivity$1;->this$0 Lcom/afwsamples/testdpc/cosu/EnableCosuActivity;
+	43      (000000aa) invoke-static        v2, Lcom/afwsamples/testdpc/cosu/EnableCosuActivity;->access$000(Lcom/afwsamples/testdpc/cosu/EnableCosuActivity;)Ljava/lang/Long;
+	44      (000000b0) move-result-object   v2
+	45      (000000b2) invoke-virtual       v2, Ljava/lang/Long;->longValue()J
+	46      (000000b8) move-result-wide     v2
+	47      (000000ba) cmp-long             v2, v0, v2
+	48      (000000be) if-nez               v2, +26
+
+handleMessage-BB@0xc2 : [ handleMessage-BB@0xfe ]
+	49      (000000c2) const-string         v2, 'CosuSetup'
+	50      (000000c6) const-string         v3, 'Time out during download of config file'
+	51      (000000ca) invoke-static        v2, v3, Landroid/util/Log;->e(Ljava/lang/String; Ljava/lang/String;)I
+	52      (000000d0) iget-object          v2, v7, Lcom/afwsamples/testdpc/cosu/EnableCosuActivity$1;->this$0 Lcom/afwsamples/testdpc/cosu/EnableCosuActivity;
+	53      (000000d4) invoke-static        v2, Lcom/afwsamples/testdpc/cosu/EnableCosuActivity;->access$400(Lcom/afwsamples/testdpc/cosu/EnableCosuActivity;)Landroid/app/DownloadManager;
+	54      (000000da) move-result-object   v2
+	55      (000000dc) new-array            v3, v4, [J
+	56      (000000e0) iget-object          v4, v7, Lcom/afwsamples/testdpc/cosu/EnableCosuActivity$1;->this$0 Lcom/afwsamples/testdpc/cosu/EnableCosuActivity;
+	57      (000000e4) invoke-static        v4, Lcom/afwsamples/testdpc/cosu/EnableCosuActivity;->access$000(Lcom/afwsamples/testdpc/cosu/EnableCosuActivity;)Ljava/lang/Long;
+	58      (000000ea) move-result-object   v4
+	59      (000000ec) invoke-virtual       v4, Ljava/lang/Long;->longValue()J
+	60      (000000f2) move-result-wide     v4
+	61      (000000f4) aput-wide            v4, v3, v6
+	62      (000000f8) invoke-virtual       v2, v3, Landroid/app/DownloadManager;->remove([J)I
+
+handleMessage-BB@0xfe : [ handleMessage-BB@0x10 ]
+	63      (000000fe) iget-object          v2, v7, Lcom/afwsamples/testdpc/cosu/EnableCosuActivity$1;->this$0 Lcom/afwsamples/testdpc/cosu/EnableCosuActivity;
+	64      (00000102) invoke-static        v2, Lcom/afwsamples/testdpc/cosu/EnableCosuActivity;->access$500(Lcom/afwsamples/testdpc/cosu/EnableCosuActivity;)V
+	65      (00000108) goto                 -7c
+
+handleMessage-BB@0x10a : [ handleMessage-BB@0xfe ]
+	66      (0000010a) iget-object          v2, v7, Lcom/afwsamples/testdpc/cosu/EnableCosuActivity$1;->this$0 Lcom/afwsamples/testdpc/cosu/EnableCosuActivity;
+	67      (0000010e) invoke-static        v2, Lcom/afwsamples/testdpc/cosu/EnableCosuActivity;->access$400(Lcom/afwsamples/testdpc/cosu/EnableCosuActivity;)Landroid/app/DownloadManager;
+	68      (00000114) move-result-object   v2
+	69      (00000116) new-array            v3, v4, [J
+	70      (0000011a) aput-wide            v0, v3, v6
+	71      (0000011e) invoke-virtual       v2, v3, Landroid/app/DownloadManager;->remove([J)I
+	72      (00000124) const-string         v2, 'CosuSetup'
+	73      (00000128) new-instance         v3, Ljava/lang/StringBuilder;
+	74      (0000012c) invoke-direct        v3, Ljava/lang/StringBuilder;-><init>()V
+	75      (00000132) const-string         v4, 'Time out during app download with id: '
+	76      (00000136) invoke-virtual       v3, v4, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	77      (0000013c) move-result-object   v3
+	78      (0000013e) invoke-virtual       v3, v0, v1, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+	79      (00000144) move-result-object   v3
+	80      (00000146) invoke-virtual       v3, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+	81      (0000014c) move-result-object   v3
+	82      (0000014e) invoke-static        v2, v3, Landroid/util/Log;->e(Ljava/lang/String; Ljava/lang/String;)I
+	83      (00000154) goto                 -2b
+
+handleMessage-BB@0x156 : [ handleMessage-BB@0x188 handleMessage-BB@0x10 ]
+	84      (00000156) iget-object          v2, v7, Lcom/afwsamples/testdpc/cosu/EnableCosuActivity$1;->this$0 Lcom/afwsamples/testdpc/cosu/EnableCosuActivity;
+	85      (0000015a) invoke-static        v2, Lcom/afwsamples/testdpc/cosu/EnableCosuActivity;->access$200(Lcom/afwsamples/testdpc/cosu/EnableCosuActivity;)Lcom/afwsamples/testdpc/cosu/CosuConfig;
+	86      (00000160) move-result-object   v3
+	87      (00000162) iget-object          v2, v8, Landroid/os/Message;->obj Ljava/lang/Object;
+	88      (00000166) check-cast           v2, Ljava/lang/String;
+	89      (0000016a) invoke-virtual       v3, v2, Lcom/afwsamples/testdpc/cosu/CosuConfig;->onInstallComplete(Ljava/lang/String;)V
+	90      (00000170) iget-object          v2, v7, Lcom/afwsamples/testdpc/cosu/EnableCosuActivity$1;->this$0 Lcom/afwsamples/testdpc/cosu/EnableCosuActivity;
+	91      (00000174) invoke-static        v2, Lcom/afwsamples/testdpc/cosu/EnableCosuActivity;->access$200(Lcom/afwsamples/testdpc/cosu/EnableCosuActivity;)Lcom/afwsamples/testdpc/cosu/CosuConfig;
+	92      (0000017a) move-result-object   v2
+	93      (0000017c) invoke-virtual       v2, Lcom/afwsamples/testdpc/cosu/CosuConfig;->areAllInstallsFinished()Z
+	94      (00000182) move-result          v2
+	95      (00000184) if-eqz               v2, -ba
+
+handleMessage-BB@0x188 : [ handleMessage-BB@0x10 ]
+	96      (00000188) iget-object          v2, v7, Lcom/afwsamples/testdpc/cosu/EnableCosuActivity$1;->this$0 Lcom/afwsamples/testdpc/cosu/EnableCosuActivity;
+	97      (0000018c) invoke-static        v2, Lcom/afwsamples/testdpc/cosu/EnableCosuActivity;->access$300(Lcom/afwsamples/testdpc/cosu/EnableCosuActivity;)V
+	98      (00000192) goto/16              -c1
+
+handleMessage-BB@0x196 : 
+	99      (00000196) nop                  
+	100     (00000198) packed-switch-payload 1 2 3
+

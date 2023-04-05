@@ -1,0 +1,130 @@
+# Lcom/afwsamples/testdpc/policy/systemupdatepolicy/SystemUpdatePolicyFragment;->setSystemUpdatePolicy()Z [access_flags=private]
+#
+# Parameters:
+# local registers: v0...v8
+#
+# - return:boolean
+
+setSystemUpdatePolicy-BB@0x0 : [ D:setSystemUpdatePolicy-BB@0x14 2131296678:setSystemUpdatePolicy-BB@0xd4 2131296679:setSystemUpdatePolicy-BB@0xca 2131296685:setSystemUpdatePolicy-BB@0xe6 ]
+	0       (00000000) const/4              v4, 1
+	1       (00000002) iget-object          v5, v8, Lcom/afwsamples/testdpc/policy/systemupdatepolicy/SystemUpdatePolicyFragment;->mSystemUpdatePolicySelection Landroid/widget/RadioGroup;
+	2       (00000006) invoke-virtual       v5, Landroid/widget/RadioGroup;->getCheckedRadioButtonId()I
+	3       (0000000c) move-result          v5
+	4       (0000000e) sparse-switch        v5, +91 (0x130)
+
+setSystemUpdatePolicy-BB@0x14 : [ setSystemUpdatePolicy-BB@0x16 ]
+	5       (00000014) const/4              v1, 0
+
+setSystemUpdatePolicy-BB@0x16 : [ setSystemUpdatePolicy-BB@0x22 setSystemUpdatePolicy-BB@0xf6 ]
+	6       (00000016) sget                 v5, Lcom/afwsamples/testdpc/common/Util;->SDK_INT I
+	7       (0000001a) const/16             v6, 28
+	8       (0000001e) if-lt                v5, v6, +6c
+	16:7d
+	(Ljava/lang/IllegalArgumentException; -> 80 setSystemUpdatePolicy-BB@0x80)
+
+setSystemUpdatePolicy-BB@0x22 : [ setSystemUpdatePolicy-BB@0x26 setSystemUpdatePolicy-BB@0xf6 ]
+	9       (00000022) if-eqz               v1, +6a
+	16:7d
+	(Ljava/lang/IllegalArgumentException; -> 80 setSystemUpdatePolicy-BB@0x80)
+
+setSystemUpdatePolicy-BB@0x26 : [ setSystemUpdatePolicy-BB@0x36 setSystemUpdatePolicy-BB@0xf6 ]
+	10      (00000026) iget-object          v5, v8, Lcom/afwsamples/testdpc/policy/systemupdatepolicy/SystemUpdatePolicyFragment;->mFreezePeriods Ljava/util/ArrayList;
+	11      (0000002a) invoke-virtual       v5, Ljava/util/ArrayList;->size()I
+	12      (00000030) move-result          v5
+	13      (00000032) if-eqz               v5, +62
+	16:7d
+	(Ljava/lang/IllegalArgumentException; -> 80 setSystemUpdatePolicy-BB@0x80)
+
+setSystemUpdatePolicy-BB@0x36 : [ setSystemUpdatePolicy-BB@0x58 ]
+	14      (00000036) new-instance         v3, Ljava/util/ArrayList;
+	15      (0000003a) iget-object          v5, v8, Lcom/afwsamples/testdpc/policy/systemupdatepolicy/SystemUpdatePolicyFragment;->mFreezePeriods Ljava/util/ArrayList;
+	16      (0000003e) invoke-virtual       v5, Ljava/util/ArrayList;->size()I
+	17      (00000044) move-result          v5
+	18      (00000046) invoke-direct        v3, v5, Ljava/util/ArrayList;-><init>(I)V
+	19      (0000004c) iget-object          v5, v8, Lcom/afwsamples/testdpc/policy/systemupdatepolicy/SystemUpdatePolicyFragment;->mFreezePeriods Ljava/util/ArrayList;
+	20      (00000050) invoke-virtual       v5, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
+	21      (00000056) move-result-object   v5
+	16:7d
+	(Ljava/lang/IllegalArgumentException; -> 80 setSystemUpdatePolicy-BB@0x80)
+
+setSystemUpdatePolicy-BB@0x58 : [ setSystemUpdatePolicy-BB@0x64 setSystemUpdatePolicy-BB@0xf0 ]
+	22      (00000058) invoke-interface     v5, Ljava/util/Iterator;->hasNext()Z
+	23      (0000005e) move-result          v6
+	24      (00000060) if-eqz               v6, +48
+	16:7d
+	(Ljava/lang/IllegalArgumentException; -> 80 setSystemUpdatePolicy-BB@0x80)
+
+setSystemUpdatePolicy-BB@0x64 : [ setSystemUpdatePolicy-BB@0x58 ]
+	25      (00000064) invoke-interface     v5, Ljava/util/Iterator;->next()Ljava/lang/Object;
+	26      (0000006a) move-result-object   v2
+	27      (0000006c) check-cast           v2, Lcom/afwsamples/testdpc/policy/systemupdatepolicy/SystemUpdatePolicyFragment$Period;
+	28      (00000070) invoke-virtual       v2, Lcom/afwsamples/testdpc/policy/systemupdatepolicy/SystemUpdatePolicyFragment$Period;->toFreezePeriod()Landroid/app/admin/FreezePeriod;
+	29      (00000076) move-result-object   v6
+	30      (00000078) invoke-interface     v3, v6, Ljava/util/List;->add(Ljava/lang/Object;)Z
+	31      (0000007e) goto                 -13
+
+setSystemUpdatePolicy-BB@0x80 : [ setSystemUpdatePolicy-BB@0xc8 ]
+	32      (00000080) move-exception       v0
+	33      (00000082) invoke-virtual       v8, Lcom/afwsamples/testdpc/policy/systemupdatepolicy/SystemUpdatePolicyFragment;->getContext()Landroid/content/Context;
+	34      (00000088) move-result-object   v5
+	35      (0000008a) new-instance         v6, Ljava/lang/StringBuilder;
+	36      (0000008e) invoke-direct        v6, Ljava/lang/StringBuilder;-><init>()V
+	37      (00000094) const-string         v7, 'Failed to set system update policy: '
+	38      (00000098) invoke-virtual       v6, v7, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	39      (0000009e) move-result-object   v6
+	40      (000000a0) invoke-virtual       v0, Ljava/lang/IllegalArgumentException;->getMessage()Ljava/lang/String;
+	41      (000000a6) move-result-object   v7
+	42      (000000a8) invoke-virtual       v6, v7, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	43      (000000ae) move-result-object   v6
+	44      (000000b0) invoke-virtual       v6, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+	45      (000000b6) move-result-object   v6
+	46      (000000b8) invoke-static        v5, v6, v4, Landroid/widget/Toast;->makeText(Landroid/content/Context; Ljava/lang/CharSequence; I)Landroid/widget/Toast;
+	47      (000000be) move-result-object   v4
+	48      (000000c0) invoke-virtual       v4, Landroid/widget/Toast;->show()V
+	49      (000000c6) const/4              v4, 0
+
+setSystemUpdatePolicy-BB@0xc8 : 
+	50      (000000c8) return               v4
+
+setSystemUpdatePolicy-BB@0xca : [ setSystemUpdatePolicy-BB@0x16 ]
+	51      (000000ca) invoke-static        Landroid/app/admin/SystemUpdatePolicy;->createAutomaticInstallPolicy()Landroid/app/admin/SystemUpdatePolicy;
+	52      (000000d0) move-result-object   v1
+	53      (000000d2) goto                 -5e
+
+setSystemUpdatePolicy-BB@0xd4 : [ setSystemUpdatePolicy-BB@0x16 ]
+	54      (000000d4) iget                 v5, v8, Lcom/afwsamples/testdpc/policy/systemupdatepolicy/SystemUpdatePolicyFragment;->mMaintenanceStart I
+	55      (000000d8) iget                 v6, v8, Lcom/afwsamples/testdpc/policy/systemupdatepolicy/SystemUpdatePolicyFragment;->mMaintenanceEnd I
+	56      (000000dc) invoke-static        v5, v6, Landroid/app/admin/SystemUpdatePolicy;->createWindowedInstallPolicy(I I)Landroid/app/admin/SystemUpdatePolicy;
+	57      (000000e2) move-result-object   v1
+	58      (000000e4) goto                 -67
+
+setSystemUpdatePolicy-BB@0xe6 : [ setSystemUpdatePolicy-BB@0x16 ]
+	59      (000000e6) invoke-static        Landroid/app/admin/SystemUpdatePolicy;->createPostponeInstallPolicy()Landroid/app/admin/SystemUpdatePolicy;
+	60      (000000ec) move-result-object   v1
+	61      (000000ee) goto                 -6c
+
+setSystemUpdatePolicy-BB@0xf0 : [ setSystemUpdatePolicy-BB@0xf6 ]
+	62      (000000f0) invoke-virtual       v1, v3, Landroid/app/admin/SystemUpdatePolicy;->setFreezePeriods(Ljava/util/List;)Landroid/app/admin/SystemUpdatePolicy;
+	f0:12b
+	(Ljava/lang/IllegalArgumentException; -> 80 setSystemUpdatePolicy-BB@0x80)
+
+setSystemUpdatePolicy-BB@0xf6 : [ setSystemUpdatePolicy-BB@0xc8 ]
+	63      (000000f6) iget-object          v5, v8, Lcom/afwsamples/testdpc/policy/systemupdatepolicy/SystemUpdatePolicyFragment;->mDpm Landroid/app/admin/DevicePolicyManager;
+	64      (000000fa) invoke-virtual       v8, Lcom/afwsamples/testdpc/policy/systemupdatepolicy/SystemUpdatePolicyFragment;->getActivity()Landroid/app/Activity;
+	65      (00000100) move-result-object   v6
+	66      (00000102) invoke-static        v6, Lcom/afwsamples/testdpc/DeviceAdminReceiver;->getComponentName(Landroid/content/Context;)Landroid/content/ComponentName;
+	67      (00000108) move-result-object   v6
+	68      (0000010a) invoke-virtual       v5, v6, v1, Landroid/app/admin/DevicePolicyManager;->setSystemUpdatePolicy(Landroid/content/ComponentName; Landroid/app/admin/SystemUpdatePolicy;)V
+	69      (00000110) invoke-virtual       v8, Lcom/afwsamples/testdpc/policy/systemupdatepolicy/SystemUpdatePolicyFragment;->getContext()Landroid/content/Context;
+	70      (00000116) move-result-object   v5
+	71      (00000118) const-string         v6, 'Policy set successfully'
+	72      (0000011c) const/4              v7, 1
+	73      (0000011e) invoke-static        v5, v6, v7, Landroid/widget/Toast;->makeText(Landroid/content/Context; Ljava/lang/CharSequence; I)Landroid/widget/Toast;
+	74      (00000124) move-result-object   v5
+	75      (00000126) invoke-virtual       v5, Landroid/widget/Toast;->show()V
+	76      (0000012c) goto                 -32
+
+setSystemUpdatePolicy-BB@0x12e : 
+	77      (0000012e) nop                  
+	78      (00000130) sparse-switch-payload 7f0901a6 7f0901a7 7f0901ad
+

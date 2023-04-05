@@ -1,0 +1,28 @@
+# Landroidx/appcompat/view/menu/MenuItemImpl;->setEnabled(Z)Landroid/view/MenuItem; [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:boolean
+#
+# - return:android.view.MenuItem
+
+setEnabled-BB@0x0 : [ setEnabled-BB@0x4 setEnabled-BB@0x1e ]
+	0       (00000000) if-eqz               v3, +f
+
+setEnabled-BB@0x4 : [ setEnabled-BB@0x10 ]
+	1       (00000004) iget                 v0, v2, Landroidx/appcompat/view/menu/MenuItemImpl;->mFlags I
+	2       (00000008) or-int/lit8          v0, v0, 16
+	3       (0000000c) iput                 v0, v2, Landroidx/appcompat/view/menu/MenuItemImpl;->mFlags I
+
+setEnabled-BB@0x10 : 
+	4       (00000010) iget-object          v0, v2, Landroidx/appcompat/view/menu/MenuItemImpl;->mMenu Landroidx/appcompat/view/menu/MenuBuilder;
+	5       (00000014) const/4              v1, 0
+	6       (00000016) invoke-virtual       v0, v1, Landroidx/appcompat/view/menu/MenuBuilder;->onItemsChanged(Z)V
+	7       (0000001c) return-object        v2
+
+setEnabled-BB@0x1e : [ setEnabled-BB@0x10 ]
+	8       (0000001e) iget                 v0, v2, Landroidx/appcompat/view/menu/MenuItemImpl;->mFlags I
+	9       (00000022) and-int/lit8         v0, v0, -17
+	10      (00000026) iput                 v0, v2, Landroidx/appcompat/view/menu/MenuItemImpl;->mFlags I
+	11      (0000002a) goto                 -d
+

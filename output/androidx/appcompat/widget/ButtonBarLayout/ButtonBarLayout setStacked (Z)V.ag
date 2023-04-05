@@ -1,0 +1,67 @@
+# Landroidx/appcompat/widget/ButtonBarLayout;->setStacked(Z)V [access_flags=private]
+#
+# Parameters:
+# - local registers: v0...v4
+# - v5:boolean
+#
+# - return:void
+
+setStacked-BB@0x0 : [ setStacked-BB@0x4 setStacked-BB@0x5a ]
+	0       (00000000) if-eqz               v5, +2d
+
+setStacked-BB@0x4 : [ setStacked-BB@0x6 ]
+	1       (00000004) const/4              v3, 1
+
+setStacked-BB@0x6 : [ setStacked-BB@0x10 setStacked-BB@0x5e ]
+	2       (00000006) invoke-virtual       v4, v3, Landroidx/appcompat/widget/ButtonBarLayout;->setOrientation(I)V
+	3       (0000000c) if-eqz               v5, +29
+
+setStacked-BB@0x10 : [ setStacked-BB@0x12 ]
+	4       (00000010) const/4              v3, 5
+
+setStacked-BB@0x12 : [ setStacked-BB@0x28 setStacked-BB@0x36 ]
+	5       (00000012) invoke-virtual       v4, v3, Landroidx/appcompat/widget/ButtonBarLayout;->setGravity(I)V
+	6       (00000018) sget                 v3, Landroidx/appcompat/R$id;->spacer I
+	7       (0000001c) invoke-virtual       v4, v3, Landroidx/appcompat/widget/ButtonBarLayout;->findViewById(I)Landroid/view/View;
+	8       (00000022) move-result-object   v2
+	9       (00000024) if-eqz               v2, +9
+
+setStacked-BB@0x28 : [ setStacked-BB@0x2c setStacked-BB@0x64 ]
+	10      (00000028) if-eqz               v5, +1e
+
+setStacked-BB@0x2c : [ setStacked-BB@0x30 ]
+	11      (0000002c) const/16             v3, 8
+
+setStacked-BB@0x30 : [ setStacked-BB@0x36 ]
+	12      (00000030) invoke-virtual       v2, v3, Landroid/view/View;->setVisibility(I)V
+
+setStacked-BB@0x36 : [ setStacked-BB@0x42 ]
+	13      (00000036) invoke-virtual       v4, Landroidx/appcompat/widget/ButtonBarLayout;->getChildCount()I
+	14      (0000003c) move-result          v0
+	15      (0000003e) add-int/lit8         v1, v0, -2
+
+setStacked-BB@0x42 : [ setStacked-BB@0x46 setStacked-BB@0x68 ]
+	16      (00000042) if-ltz               v1, +13
+
+setStacked-BB@0x46 : [ setStacked-BB@0x42 ]
+	17      (00000046) invoke-virtual       v4, v1, Landroidx/appcompat/widget/ButtonBarLayout;->getChildAt(I)Landroid/view/View;
+	18      (0000004c) move-result-object   v3
+	19      (0000004e) invoke-virtual       v4, v3, Landroidx/appcompat/widget/ButtonBarLayout;->bringChildToFront(Landroid/view/View;)V
+	20      (00000054) add-int/lit8         v1, v1, -1
+	21      (00000058) goto                 -b
+
+setStacked-BB@0x5a : [ setStacked-BB@0x6 ]
+	22      (0000005a) const/4              v3, 0
+	23      (0000005c) goto                 -2b
+
+setStacked-BB@0x5e : [ setStacked-BB@0x12 ]
+	24      (0000005e) const/16             v3, 80
+	25      (00000062) goto                 -28
+
+setStacked-BB@0x64 : [ setStacked-BB@0x30 ]
+	26      (00000064) const/4              v3, 4
+	27      (00000066) goto                 -1b
+
+setStacked-BB@0x68 : 
+	28      (00000068) return-void          
+

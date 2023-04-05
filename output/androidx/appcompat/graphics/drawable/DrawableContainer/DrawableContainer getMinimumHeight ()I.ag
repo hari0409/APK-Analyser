@@ -1,0 +1,35 @@
+# Landroidx/appcompat/graphics/drawable/DrawableContainer;->getMinimumHeight()I [access_flags=public]
+#
+# Parameters:
+# local registers: v0...v1
+#
+# - return:int
+
+getMinimumHeight-BB@0x0 : [ getMinimumHeight-BB@0x10 getMinimumHeight-BB@0x1e ]
+	0       (00000000) iget-object          v0, v1, Landroidx/appcompat/graphics/drawable/DrawableContainer;->mDrawableContainerState Landroidx/appcompat/graphics/drawable/DrawableContainer$DrawableContainerState;
+	1       (00000004) invoke-virtual       v0, Landroidx/appcompat/graphics/drawable/DrawableContainer$DrawableContainerState;->isConstantSize()Z
+	2       (0000000a) move-result          v0
+	3       (0000000c) if-eqz               v0, +9
+
+getMinimumHeight-BB@0x10 : [ getMinimumHeight-BB@0x1c ]
+	4       (00000010) iget-object          v0, v1, Landroidx/appcompat/graphics/drawable/DrawableContainer;->mDrawableContainerState Landroidx/appcompat/graphics/drawable/DrawableContainer$DrawableContainerState;
+	5       (00000014) invoke-virtual       v0, Landroidx/appcompat/graphics/drawable/DrawableContainer$DrawableContainerState;->getConstantMinimumHeight()I
+	6       (0000001a) move-result          v0
+
+getMinimumHeight-BB@0x1c : 
+	7       (0000001c) return               v0
+
+getMinimumHeight-BB@0x1e : [ getMinimumHeight-BB@0x26 getMinimumHeight-BB@0x34 ]
+	8       (0000001e) iget-object          v0, v1, Landroidx/appcompat/graphics/drawable/DrawableContainer;->mCurrDrawable Landroid/graphics/drawable/Drawable;
+	9       (00000022) if-eqz               v0, +9
+
+getMinimumHeight-BB@0x26 : [ getMinimumHeight-BB@0x1c ]
+	10      (00000026) iget-object          v0, v1, Landroidx/appcompat/graphics/drawable/DrawableContainer;->mCurrDrawable Landroid/graphics/drawable/Drawable;
+	11      (0000002a) invoke-virtual       v0, Landroid/graphics/drawable/Drawable;->getMinimumHeight()I
+	12      (00000030) move-result          v0
+	13      (00000032) goto                 -b
+
+getMinimumHeight-BB@0x34 : [ getMinimumHeight-BB@0x1c ]
+	14      (00000034) const/4              v0, 0
+	15      (00000036) goto                 -d
+

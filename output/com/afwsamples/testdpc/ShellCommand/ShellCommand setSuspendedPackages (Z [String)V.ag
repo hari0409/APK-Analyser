@@ -1,0 +1,38 @@
+# Lcom/afwsamples/testdpc/ShellCommand;->setSuspendedPackages(Z [Ljava/lang/String;)V [access_flags=private]
+#
+# Parameters:
+# - local registers: v0...v5
+# - v6:boolean
+# - v7:java.lang.String[]
+#
+# - return:void
+
+setSuspendedPackages-BB@0x0 : 
+	0       (00000000) invoke-static        v7, Ljava/util/Arrays;->toString([Ljava/lang/Object;)Ljava/lang/String;
+	1       (00000006) move-result-object   v0
+	2       (00000008) invoke-static        v6, Lcom/afwsamples/testdpc/ShellCommand;->suspendedToString(Z)Ljava/lang/String;
+	3       (0000000e) move-result-object   v1
+	4       (00000010) const-string         v2, 'TestDPCShellCommand'
+	5       (00000014) new-instance         v3, Ljava/lang/StringBuilder;
+	6       (00000018) invoke-direct        v3, Ljava/lang/StringBuilder;-><init>()V
+	7       (0000001e) const-string         v4, 'setSuspendedPackages('
+	8       (00000022) invoke-virtual       v3, v4, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	9       (00000028) move-result-object   v3
+	10      (0000002a) invoke-virtual       v3, v0, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	11      (00000030) move-result-object   v3
+	12      (00000032) const-string         v4, '): '
+	13      (00000036) invoke-virtual       v3, v4, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	14      (0000003c) move-result-object   v3
+	15      (0000003e) invoke-virtual       v3, v1, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	16      (00000044) move-result-object   v3
+	17      (00000046) invoke-virtual       v3, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+	18      (0000004c) move-result-object   v3
+	19      (0000004e) invoke-static        v2, v3, Landroid/util/Log;->i(Ljava/lang/String; Ljava/lang/String;)I
+	20      (00000054) iget-object          v2, v5, Lcom/afwsamples/testdpc/ShellCommand;->mDevicePolicyManagerGateway Lcom/afwsamples/testdpc/DevicePolicyManagerGateway;
+	21      (00000058) new-instance         v3, Lcom/afwsamples/testdpc/ShellCommand$$Lambda$107;
+	22      (0000005c) invoke-direct        v3, v5, v0, v1, Lcom/afwsamples/testdpc/ShellCommand$$Lambda$107;-><init>(Lcom/afwsamples/testdpc/ShellCommand; Ljava/lang/String; Ljava/lang/String;)V
+	23      (00000062) new-instance         v4, Lcom/afwsamples/testdpc/ShellCommand$$Lambda$108;
+	24      (00000066) invoke-direct        v4, v5, v0, v1, Lcom/afwsamples/testdpc/ShellCommand$$Lambda$108;-><init>(Lcom/afwsamples/testdpc/ShellCommand; Ljava/lang/String; Ljava/lang/String;)V
+	25      (0000006c) invoke-interface     v2, v7, v6, v3, v4, Lcom/afwsamples/testdpc/DevicePolicyManagerGateway;->setPackagesSuspended([Ljava/lang/String; Z Ljava/util/function/Consumer; Ljava/util/function/Consumer;)V
+	26      (00000072) return-void          
+

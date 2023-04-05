@@ -1,0 +1,14 @@
+# Lcom/afwsamples/testdpc/comp/DeviceOwnerService;->onCreate()V [access_flags=public]
+#
+# Parameters:
+# local registers: v0...v2
+#
+# - return:void
+
+onCreate-BB@0x0 : 
+	0       (00000000) new-instance         v0, Lcom/afwsamples/testdpc/comp/DeviceOwnerService$DeviceOwnerServiceImpl;
+	1       (00000004) const/4              v1, 0
+	2       (00000006) invoke-direct        v0, v2, v1, Lcom/afwsamples/testdpc/comp/DeviceOwnerService$DeviceOwnerServiceImpl;-><init>(Landroid/content/Context; Lcom/afwsamples/testdpc/comp/DeviceOwnerService$1;)V
+	3       (0000000c) iput-object          v0, v2, Lcom/afwsamples/testdpc/comp/DeviceOwnerService;->mBinder Landroid/os/Binder;
+	4       (00000010) return-void          
+

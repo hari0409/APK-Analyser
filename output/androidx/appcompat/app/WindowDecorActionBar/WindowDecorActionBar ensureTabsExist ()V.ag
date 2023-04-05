@@ -1,0 +1,56 @@
+# Landroidx/appcompat/app/WindowDecorActionBar;->ensureTabsExist()V [access_flags=private]
+#
+# Parameters:
+# local registers: v0...v4
+#
+# - return:void
+
+ensureTabsExist-BB@0x0 : [ ensureTabsExist-BB@0xa ensureTabsExist-BB@0xc ]
+	0       (00000000) const/4              v3, 0
+	1       (00000002) iget-object          v1, v4, Landroidx/appcompat/app/WindowDecorActionBar;->mTabScrollView Landroidx/appcompat/widget/ScrollingTabContainerView;
+	2       (00000006) if-eqz               v1, +3
+
+ensureTabsExist-BB@0xa : 
+	3       (0000000a) return-void          
+
+ensureTabsExist-BB@0xc : [ ensureTabsExist-BB@0x22 ensureTabsExist-BB@0x38 ]
+	4       (0000000c) new-instance         v0, Landroidx/appcompat/widget/ScrollingTabContainerView;
+	5       (00000010) iget-object          v1, v4, Landroidx/appcompat/app/WindowDecorActionBar;->mContext Landroid/content/Context;
+	6       (00000014) invoke-direct        v0, v1, Landroidx/appcompat/widget/ScrollingTabContainerView;-><init>(Landroid/content/Context;)V
+	7       (0000001a) iget-boolean         v1, v4, Landroidx/appcompat/app/WindowDecorActionBar;->mHasEmbeddedTabs Z
+	8       (0000001e) if-eqz               v1, +d
+
+ensureTabsExist-BB@0x22 : [ ensureTabsExist-BB@0x32 ]
+	9       (00000022) invoke-virtual       v0, v3, Landroidx/appcompat/widget/ScrollingTabContainerView;->setVisibility(I)V
+	10      (00000028) iget-object          v1, v4, Landroidx/appcompat/app/WindowDecorActionBar;->mDecorToolbar Landroidx/appcompat/widget/DecorToolbar;
+	11      (0000002c) invoke-interface     v1, v0, Landroidx/appcompat/widget/DecorToolbar;->setEmbeddedTabView(Landroidx/appcompat/widget/ScrollingTabContainerView;)V
+
+ensureTabsExist-BB@0x32 : [ ensureTabsExist-BB@0xa ]
+	12      (00000032) iput-object          v0, v4, Landroidx/appcompat/app/WindowDecorActionBar;->mTabScrollView Landroidx/appcompat/widget/ScrollingTabContainerView;
+	13      (00000036) goto                 -16
+
+ensureTabsExist-BB@0x38 : [ ensureTabsExist-BB@0x46 ensureTabsExist-BB@0x6a ]
+	14      (00000038) invoke-virtual       v4, Landroidx/appcompat/app/WindowDecorActionBar;->getNavigationMode()I
+	15      (0000003e) move-result          v1
+	16      (00000040) const/4              v2, 2
+	17      (00000042) if-ne                v1, v2, +14
+
+ensureTabsExist-BB@0x46 : [ ensureTabsExist-BB@0x54 ensureTabsExist-BB@0x5e ]
+	18      (00000046) invoke-virtual       v0, v3, Landroidx/appcompat/widget/ScrollingTabContainerView;->setVisibility(I)V
+	19      (0000004c) iget-object          v1, v4, Landroidx/appcompat/app/WindowDecorActionBar;->mOverlayLayout Landroidx/appcompat/widget/ActionBarOverlayLayout;
+	20      (00000050) if-eqz               v1, +7
+
+ensureTabsExist-BB@0x54 : [ ensureTabsExist-BB@0x5e ]
+	21      (00000054) iget-object          v1, v4, Landroidx/appcompat/app/WindowDecorActionBar;->mOverlayLayout Landroidx/appcompat/widget/ActionBarOverlayLayout;
+	22      (00000058) invoke-static        v1, Landroidx/core/view/ViewCompat;->requestApplyInsets(Landroid/view/View;)V
+
+ensureTabsExist-BB@0x5e : [ ensureTabsExist-BB@0x32 ]
+	23      (0000005e) iget-object          v1, v4, Landroidx/appcompat/app/WindowDecorActionBar;->mContainerView Landroidx/appcompat/widget/ActionBarContainer;
+	24      (00000062) invoke-virtual       v1, v0, Landroidx/appcompat/widget/ActionBarContainer;->setTabContainer(Landroidx/appcompat/widget/ScrollingTabContainerView;)V
+	25      (00000068) goto                 -1b
+
+ensureTabsExist-BB@0x6a : [ ensureTabsExist-BB@0x5e ]
+	26      (0000006a) const/16             v1, 8
+	27      (0000006e) invoke-virtual       v0, v1, Landroidx/appcompat/widget/ScrollingTabContainerView;->setVisibility(I)V
+	28      (00000074) goto                 -b
+

@@ -1,0 +1,14 @@
+# Lcom/afwsamples/testdpc/AddAccountActivity$$Lambda$2;->run()V [access_flags=public]
+#
+# Parameters:
+# local registers: v0...v4
+#
+# - return:void
+
+run-BB@0x0 : 
+	0       (00000000) iget-object          v0, v4, Lcom/afwsamples/testdpc/AddAccountActivity$$Lambda$2;->arg$1 Lcom/afwsamples/testdpc/AddAccountActivity;
+	1       (00000004) iget-object          v1, v4, Lcom/afwsamples/testdpc/AddAccountActivity$$Lambda$2;->arg$2 Ljava/lang/Runnable;
+	2       (00000008) iget-wide            v2, v4, Lcom/afwsamples/testdpc/AddAccountActivity$$Lambda$2;->arg$3 J
+	3       (0000000c) invoke-virtual       v0, v1, v2, v3, Lcom/afwsamples/testdpc/AddAccountActivity;->lambda$waitForForeground$4$AddAccountActivity(Ljava/lang/Runnable; J)V
+	4       (00000012) return-void          
+

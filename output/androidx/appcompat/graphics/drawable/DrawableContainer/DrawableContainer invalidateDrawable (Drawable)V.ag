@@ -1,0 +1,33 @@
+# Landroidx/appcompat/graphics/drawable/DrawableContainer;->invalidateDrawable(Landroid/graphics/drawable/Drawable;)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:android.graphics.drawable.Drawable
+#
+# - return:void
+
+invalidateDrawable-BB@0x0 : [ invalidateDrawable-BB@0x8 invalidateDrawable-BB@0x12 ]
+	0       (00000000) iget-object          v0, v1, Landroidx/appcompat/graphics/drawable/DrawableContainer;->mDrawableContainerState Landroidx/appcompat/graphics/drawable/DrawableContainer$DrawableContainerState;
+	1       (00000004) if-eqz               v0, +7
+
+invalidateDrawable-BB@0x8 : [ invalidateDrawable-BB@0x12 ]
+	2       (00000008) iget-object          v0, v1, Landroidx/appcompat/graphics/drawable/DrawableContainer;->mDrawableContainerState Landroidx/appcompat/graphics/drawable/DrawableContainer$DrawableContainerState;
+	3       (0000000c) invoke-virtual       v0, Landroidx/appcompat/graphics/drawable/DrawableContainer$DrawableContainerState;->invalidateCache()V
+
+invalidateDrawable-BB@0x12 : [ invalidateDrawable-BB@0x1a invalidateDrawable-BB@0x34 ]
+	4       (00000012) iget-object          v0, v1, Landroidx/appcompat/graphics/drawable/DrawableContainer;->mCurrDrawable Landroid/graphics/drawable/Drawable;
+	5       (00000016) if-ne                v2, v0, +f
+
+invalidateDrawable-BB@0x1a : [ invalidateDrawable-BB@0x26 invalidateDrawable-BB@0x34 ]
+	6       (0000001a) invoke-virtual       v1, Landroidx/appcompat/graphics/drawable/DrawableContainer;->getCallback()Landroid/graphics/drawable/Drawable$Callback;
+	7       (00000020) move-result-object   v0
+	8       (00000022) if-eqz               v0, +9
+
+invalidateDrawable-BB@0x26 : [ invalidateDrawable-BB@0x34 ]
+	9       (00000026) invoke-virtual       v1, Landroidx/appcompat/graphics/drawable/DrawableContainer;->getCallback()Landroid/graphics/drawable/Drawable$Callback;
+	10      (0000002c) move-result-object   v0
+	11      (0000002e) invoke-interface     v0, v1, Landroid/graphics/drawable/Drawable$Callback;->invalidateDrawable(Landroid/graphics/drawable/Drawable;)V
+
+invalidateDrawable-BB@0x34 : 
+	12      (00000034) return-void          
+

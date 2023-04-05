@@ -1,0 +1,46 @@
+# Lcom/afwsamples/testdpc/profilepolicy/ProfilePolicyManagementFragment;->onCreatePreferences(Landroid/os/Bundle; Ljava/lang/String;)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:android.os.Bundle
+# - v3:java.lang.String
+#
+# - return:void
+
+onCreatePreferences-BB@0x0 : 
+	0       (00000000) const                v0, 2131886089 # [1.9406746992628415e+38]
+	1       (00000006) invoke-virtual       v1, v0, Lcom/afwsamples/testdpc/profilepolicy/ProfilePolicyManagementFragment;->addPreferencesFromResource(I)V
+	2       (0000000c) const-string         v0, 'add_cross_profile_intent_filter'
+	3       (00000010) invoke-virtual       v1, v0, Lcom/afwsamples/testdpc/profilepolicy/ProfilePolicyManagementFragment;->findPreference(Ljava/lang/CharSequence;)Landroidx/preference/Preference;
+	4       (00000016) move-result-object   v0
+	5       (00000018) iput-object          v0, v1, Lcom/afwsamples/testdpc/profilepolicy/ProfilePolicyManagementFragment;->mAddCrossProfileIntentFilterPreference Landroidx/preference/Preference;
+	6       (0000001c) iget-object          v0, v1, Lcom/afwsamples/testdpc/profilepolicy/ProfilePolicyManagementFragment;->mAddCrossProfileIntentFilterPreference Landroidx/preference/Preference;
+	7       (00000020) invoke-virtual       v0, v1, Landroidx/preference/Preference;->setOnPreferenceClickListener(Landroidx/preference/Preference$OnPreferenceClickListener;)V
+	8       (00000026) const-string         v0, 'clear_cross_profile_intent_filters'
+	9       (0000002a) invoke-virtual       v1, v0, Lcom/afwsamples/testdpc/profilepolicy/ProfilePolicyManagementFragment;->findPreference(Ljava/lang/CharSequence;)Landroidx/preference/Preference;
+	10      (00000030) move-result-object   v0
+	11      (00000032) iput-object          v0, v1, Lcom/afwsamples/testdpc/profilepolicy/ProfilePolicyManagementFragment;->mClearCrossProfileIntentFiltersPreference Landroidx/preference/Preference;
+	12      (00000036) iget-object          v0, v1, Lcom/afwsamples/testdpc/profilepolicy/ProfilePolicyManagementFragment;->mClearCrossProfileIntentFiltersPreference Landroidx/preference/Preference;
+	13      (0000003a) invoke-virtual       v0, v1, Landroidx/preference/Preference;->setOnPreferenceClickListener(Landroidx/preference/Preference$OnPreferenceClickListener;)V
+	14      (00000040) const-string         v0, 'remove_profile'
+	15      (00000044) invoke-virtual       v1, v0, Lcom/afwsamples/testdpc/profilepolicy/ProfilePolicyManagementFragment;->findPreference(Ljava/lang/CharSequence;)Landroidx/preference/Preference;
+	16      (0000004a) move-result-object   v0
+	17      (0000004c) iput-object          v0, v1, Lcom/afwsamples/testdpc/profilepolicy/ProfilePolicyManagementFragment;->mRemoveManagedProfilePreference Landroidx/preference/Preference;
+	18      (00000050) iget-object          v0, v1, Lcom/afwsamples/testdpc/profilepolicy/ProfilePolicyManagementFragment;->mRemoveManagedProfilePreference Landroidx/preference/Preference;
+	19      (00000054) invoke-virtual       v0, v1, Landroidx/preference/Preference;->setOnPreferenceClickListener(Landroidx/preference/Preference$OnPreferenceClickListener;)V
+	20      (0000005a) const-string         v0, 'add_cross_profile_app_widgets'
+	21      (0000005e) invoke-virtual       v1, v0, Lcom/afwsamples/testdpc/profilepolicy/ProfilePolicyManagementFragment;->findPreference(Ljava/lang/CharSequence;)Landroidx/preference/Preference;
+	22      (00000064) move-result-object   v0
+	23      (00000066) iput-object          v0, v1, Lcom/afwsamples/testdpc/profilepolicy/ProfilePolicyManagementFragment;->mAddCrossProfileAppWidgetsPreference Landroidx/preference/Preference;
+	24      (0000006a) iget-object          v0, v1, Lcom/afwsamples/testdpc/profilepolicy/ProfilePolicyManagementFragment;->mAddCrossProfileAppWidgetsPreference Landroidx/preference/Preference;
+	25      (0000006e) invoke-virtual       v0, v1, Landroidx/preference/Preference;->setOnPreferenceClickListener(Landroidx/preference/Preference$OnPreferenceClickListener;)V
+	26      (00000074) const-string         v0, 'remove_cross_profile_app_widgets'
+	27      (00000078) invoke-virtual       v1, v0, Lcom/afwsamples/testdpc/profilepolicy/ProfilePolicyManagementFragment;->findPreference(Ljava/lang/CharSequence;)Landroidx/preference/Preference;
+	28      (0000007e) move-result-object   v0
+	29      (00000080) iput-object          v0, v1, Lcom/afwsamples/testdpc/profilepolicy/ProfilePolicyManagementFragment;->mRemoveCrossProfileAppWidgetsPreference Landroidx/preference/Preference;
+	30      (00000084) iget-object          v0, v1, Lcom/afwsamples/testdpc/profilepolicy/ProfilePolicyManagementFragment;->mRemoveCrossProfileAppWidgetsPreference Landroidx/preference/Preference;
+	31      (00000088) invoke-virtual       v0, v1, Landroidx/preference/Preference;->setOnPreferenceClickListener(Landroidx/preference/Preference$OnPreferenceClickListener;)V
+	32      (0000008e) invoke-direct        v1, Lcom/afwsamples/testdpc/profilepolicy/ProfilePolicyManagementFragment;->initSwitchPreferences()V
+	33      (00000094) invoke-direct        v1, Lcom/afwsamples/testdpc/profilepolicy/ProfilePolicyManagementFragment;->initializeOrganizationInfoPreferences()V
+	34      (0000009a) return-void          
+

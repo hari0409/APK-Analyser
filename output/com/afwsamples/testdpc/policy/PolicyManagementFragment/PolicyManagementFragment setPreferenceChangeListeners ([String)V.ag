@@ -1,0 +1,26 @@
+# Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->setPreferenceChangeListeners([Ljava/lang/String;)V [access_flags=private]
+#
+# Parameters:
+# - local registers: v0...v4
+# - v5:java.lang.String[]
+#
+# - return:void
+
+setPreferenceChangeListeners-BB@0x0 : [ setPreferenceChangeListeners-BB@0x4 ]
+	0       (00000000) array-length         v2, v5
+	1       (00000002) const/4              v1, 0
+
+setPreferenceChangeListeners-BB@0x4 : [ setPreferenceChangeListeners-BB@0x8 setPreferenceChangeListeners-BB@0x20 ]
+	2       (00000004) if-ge                v1, v2, +e
+
+setPreferenceChangeListeners-BB@0x8 : [ setPreferenceChangeListeners-BB@0x4 ]
+	3       (00000008) aget-object          v0, v5, v1
+	4       (0000000c) invoke-virtual       v4, v0, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->findPreference(Ljava/lang/CharSequence;)Landroidx/preference/Preference;
+	5       (00000012) move-result-object   v3
+	6       (00000014) invoke-virtual       v3, v4, Landroidx/preference/Preference;->setOnPreferenceChangeListener(Landroidx/preference/Preference$OnPreferenceChangeListener;)V
+	7       (0000001a) add-int/lit8         v1, v1, 1
+	8       (0000001e) goto                 -d
+
+setPreferenceChangeListeners-BB@0x20 : 
+	9       (00000020) return-void          
+

@@ -1,0 +1,22 @@
+# Landroidx/print/PrintHelper$PrintBitmapAdapter;->onWrite([Landroid/print/PageRange; Landroid/os/ParcelFileDescriptor; Landroid/os/CancellationSignal; Landroid/print/PrintDocumentAdapter$WriteResultCallback;)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v7
+# - v8:android.print.PageRange[]
+# - v9:android.os.ParcelFileDescriptor
+# - v10:android.os.CancellationSignal
+# - v11:android.print.PrintDocumentAdapter$WriteResultCallback
+#
+# - return:void
+
+onWrite-BB@0x0 : 
+	0       (00000000) iget-object          v0, v7, Landroidx/print/PrintHelper$PrintBitmapAdapter;->this$0 Landroidx/print/PrintHelper;
+	1       (00000004) iget-object          v1, v7, Landroidx/print/PrintHelper$PrintBitmapAdapter;->mAttributes Landroid/print/PrintAttributes;
+	2       (00000008) iget                 v2, v7, Landroidx/print/PrintHelper$PrintBitmapAdapter;->mFittingMode I
+	3       (0000000c) iget-object          v3, v7, Landroidx/print/PrintHelper$PrintBitmapAdapter;->mBitmap Landroid/graphics/Bitmap;
+	4       (00000010) move-object          v4, v9
+	5       (00000012) move-object          v5, v10
+	6       (00000014) move-object          v6, v11
+	7       (00000016) invoke-virtual/range v0 ... v6, Landroidx/print/PrintHelper;->writeBitmap(Landroid/print/PrintAttributes; I Landroid/graphics/Bitmap; Landroid/os/ParcelFileDescriptor; Landroid/os/CancellationSignal; Landroid/print/PrintDocumentAdapter$WriteResultCallback;)V
+	8       (0000001c) return-void          
+

@@ -1,0 +1,15 @@
+# Lcom/afwsamples/testdpc/SetupManagementFragment;-><init>()V [access_flags=public constructor]
+#
+# Parameters:
+# local registers: v0...v1
+#
+# - return:void
+
+<init>-BB@0x0 : 
+	0       (00000000) invoke-direct        v1, Landroid/app/Fragment;-><init>()V
+	1       (00000006) const/4              v0, -1
+	2       (00000008) iput                 v0, v1, Lcom/afwsamples/testdpc/SetupManagementFragment;->mCurrentColor I
+	3       (0000000c) const/4              v0, 0
+	4       (0000000e) iput-object          v0, v1, Lcom/afwsamples/testdpc/SetupManagementFragment;->mLogoUri Landroid/net/Uri;
+	5       (00000012) return-void          
+

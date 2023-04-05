@@ -1,0 +1,24 @@
+# Lcom/afwsamples/testdpc/policy/OverrideApnFragment;->setUpSpinner(Landroid/view/View; I I)V [access_flags=]
+#
+# Parameters:
+# - local registers: v0...v4
+# - v5:android.view.View
+# - v6:int
+# - v7:int
+#
+# - return:void
+
+setUpSpinner-BB@0x0 : 
+	0       (00000000) invoke-virtual       v5, v6, Landroid/view/View;->findViewById(I)Landroid/view/View;
+	1       (00000006) move-result-object   v1
+	2       (00000008) check-cast           v1, Landroid/widget/Spinner;
+	3       (0000000c) invoke-virtual       v4, Lcom/afwsamples/testdpc/policy/OverrideApnFragment;->getActivity()Landroid/app/Activity;
+	4       (00000012) move-result-object   v2
+	5       (00000014) const                v3, 17367048 # [2.516294836806502e-38]
+	6       (0000001a) invoke-static        v2, v7, v3, Landroid/widget/ArrayAdapter;->createFromResource(Landroid/content/Context; I I)Landroid/widget/ArrayAdapter;
+	7       (00000020) move-result-object   v0
+	8       (00000022) const                v2, 17367049 # [2.516295117066195e-38]
+	9       (00000028) invoke-virtual       v0, v2, Landroid/widget/ArrayAdapter;->setDropDownViewResource(I)V
+	10      (0000002e) invoke-virtual       v1, v0, Landroid/widget/Spinner;->setAdapter(Landroid/widget/SpinnerAdapter;)V
+	11      (00000034) return-void          
+

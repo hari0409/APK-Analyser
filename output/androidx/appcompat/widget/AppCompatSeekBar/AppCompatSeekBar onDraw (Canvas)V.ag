@@ -1,0 +1,25 @@
+# Landroidx/appcompat/widget/AppCompatSeekBar;->onDraw(Landroid/graphics/Canvas;)V [access_flags=protected synchronized]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:android.graphics.Canvas
+#
+# - return:void
+
+onDraw-BB@0x0 : [ onDraw-BB@0x2 ]
+	0       (00000000) monitor-enter        v1
+
+onDraw-BB@0x2 : 
+	1       (00000002) invoke-super         v1, v2, Landroid/widget/SeekBar;->onDraw(Landroid/graphics/Canvas;)V
+	2       (00000008) iget-object          v0, v1, Landroidx/appcompat/widget/AppCompatSeekBar;->mAppCompatSeekBarHelper Landroidx/appcompat/widget/AppCompatSeekBarHelper;
+	3       (0000000c) invoke-virtual       v0, v2, Landroidx/appcompat/widget/AppCompatSeekBarHelper;->drawTickMarks(Landroid/graphics/Canvas;)V
+	4       (00000012) monitor-exit         v1
+	5       (00000014) return-void          
+	2:11
+	(Ljava/lang/Throwable; -> 16 onDraw-BB@0x16)
+
+onDraw-BB@0x16 : 
+	6       (00000016) move-exception       v0
+	7       (00000018) monitor-exit         v1
+	8       (0000001a) throw                v0
+

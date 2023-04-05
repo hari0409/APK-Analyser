@@ -1,0 +1,24 @@
+# Lcom/afwsamples/testdpc/common/ColorPicker;->newInstance(I Ljava/lang/String; Ljava/lang/String;)Lcom/afwsamples/testdpc/common/ColorPicker; [access_flags=public static]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:int
+# - v4:java.lang.String
+# - v5:java.lang.String
+#
+# - return:com.afwsamples.testdpc.common.ColorPicker
+
+newInstance-BB@0x0 : 
+	0       (00000000) new-instance         v1, Lcom/afwsamples/testdpc/common/ColorPicker;
+	1       (00000004) invoke-direct        v1, Lcom/afwsamples/testdpc/common/ColorPicker;-><init>()V
+	2       (0000000a) new-instance         v0, Landroid/os/Bundle;
+	3       (0000000e) invoke-direct        v0, Landroid/os/Bundle;-><init>()V
+	4       (00000014) const-string         v2, 'init_color'
+	5       (00000018) invoke-virtual       v0, v2, v3, Landroid/os/Bundle;->putInt(Ljava/lang/String; I)V
+	6       (0000001e) const-string         v2, 'listener_fragment_tag'
+	7       (00000022) invoke-virtual       v0, v2, v4, Landroid/os/Bundle;->putString(Ljava/lang/String; Ljava/lang/String;)V
+	8       (00000028) const-string         v2, 'id'
+	9       (0000002c) invoke-virtual       v0, v2, v5, Landroid/os/Bundle;->putString(Ljava/lang/String; Ljava/lang/String;)V
+	10      (00000032) invoke-virtual       v1, v0, Lcom/afwsamples/testdpc/common/ColorPicker;->setArguments(Landroid/os/Bundle;)V
+	11      (00000038) return-object        v1
+

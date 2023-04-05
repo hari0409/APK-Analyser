@@ -1,0 +1,32 @@
+# Landroidx/appcompat/widget/ListPopupWindow;->setSelection(I)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:int
+#
+# - return:void
+
+setSelection-BB@0x0 : [ setSelection-BB@0x10 setSelection-BB@0x36 ]
+	0       (00000000) iget-object          v0, v2, Landroidx/appcompat/widget/ListPopupWindow;->mDropDownList Landroidx/appcompat/widget/DropDownListView;
+	1       (00000004) invoke-virtual       v2, Landroidx/appcompat/widget/ListPopupWindow;->isShowing()Z
+	2       (0000000a) move-result          v1
+	3       (0000000c) if-eqz               v1, +15
+
+setSelection-BB@0x10 : [ setSelection-BB@0x14 setSelection-BB@0x36 ]
+	4       (00000010) if-eqz               v0, +13
+
+setSelection-BB@0x14 : [ setSelection-BB@0x2e setSelection-BB@0x36 ]
+	5       (00000014) const/4              v1, 0
+	6       (00000016) invoke-virtual       v0, v1, Landroidx/appcompat/widget/DropDownListView;->setListSelectionHidden(Z)V
+	7       (0000001c) invoke-virtual       v0, v3, Landroidx/appcompat/widget/DropDownListView;->setSelection(I)V
+	8       (00000022) invoke-virtual       v0, Landroidx/appcompat/widget/DropDownListView;->getChoiceMode()I
+	9       (00000028) move-result          v1
+	10      (0000002a) if-eqz               v1, +6
+
+setSelection-BB@0x2e : [ setSelection-BB@0x36 ]
+	11      (0000002e) const/4              v1, 1
+	12      (00000030) invoke-virtual       v0, v3, v1, Landroidx/appcompat/widget/DropDownListView;->setItemChecked(I Z)V
+
+setSelection-BB@0x36 : 
+	13      (00000036) return-void          
+

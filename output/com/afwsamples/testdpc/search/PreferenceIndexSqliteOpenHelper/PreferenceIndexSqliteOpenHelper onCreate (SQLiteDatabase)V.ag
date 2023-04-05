@@ -1,0 +1,15 @@
+# Lcom/afwsamples/testdpc/search/PreferenceIndexSqliteOpenHelper;->onCreate(Landroid/database/sqlite/SQLiteDatabase;)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:android.database.sqlite.SQLiteDatabase
+#
+# - return:void
+
+onCreate-BB@0x0 : 
+	0       (00000000) const-string         v0, 'CREATE TABLE preference_index (_id INTEGER PRIMARY KEY,key TEXT NOT NULL,title TEXT NOT NULL,fragment_class TEXT NOT NULL);'
+	1       (00000004) invoke-virtual       v2, v0, Landroid/database/sqlite/SQLiteDatabase;->execSQL(Ljava/lang/String;)V
+	2       (0000000a) const-string         v0, "CREATE VIRTUAL TABLE preference_index_fts USING fts4 (content='preference_index', title);"
+	3       (0000000e) invoke-virtual       v2, v0, Landroid/database/sqlite/SQLiteDatabase;->execSQL(Ljava/lang/String;)V
+	4       (00000014) return-void          
+

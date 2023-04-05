@@ -1,0 +1,23 @@
+# Lcom/afwsamples/testdpc/cosu/EnableCosuActivity;->finishWithFailure()V [access_flags=private]
+#
+# Parameters:
+# local registers: v0...v2
+#
+# - return:void
+
+finishWithFailure-BB@0x0 : 
+	0       (00000000) const                v0, 2131690247 # [1.900953222646858e+38]
+	1       (00000006) const/4              v1, 1
+	2       (00000008) invoke-static        v2, v0, v1, Landroid/widget/Toast;->makeText(Landroid/content/Context; I I)Landroid/widget/Toast;
+	3       (0000000e) move-result-object   v0
+	4       (00000010) invoke-virtual       v0, Landroid/widget/Toast;->show()V
+	5       (00000016) iget-object          v0, v2, Lcom/afwsamples/testdpc/cosu/EnableCosuActivity;->mInstallReceiver Landroid/content/BroadcastReceiver;
+	6       (0000001a) invoke-virtual       v2, v0, Lcom/afwsamples/testdpc/cosu/EnableCosuActivity;->unregisterReceiver(Landroid/content/BroadcastReceiver;)V
+	7       (00000020) iget-object          v0, v2, Lcom/afwsamples/testdpc/cosu/EnableCosuActivity;->mDownloadReceiver Landroid/content/BroadcastReceiver;
+	8       (00000024) invoke-virtual       v2, v0, Lcom/afwsamples/testdpc/cosu/EnableCosuActivity;->unregisterReceiver(Landroid/content/BroadcastReceiver;)V
+	9       (0000002a) iget-object          v0, v2, Lcom/afwsamples/testdpc/cosu/EnableCosuActivity;->mHandler Landroid/os/Handler;
+	10      (0000002e) const/4              v1, 2
+	11      (00000030) invoke-virtual       v0, v1, Landroid/os/Handler;->removeMessages(I)V
+	12      (00000036) invoke-virtual       v2, Lcom/afwsamples/testdpc/cosu/EnableCosuActivity;->finish()V
+	13      (0000003c) return-void          
+

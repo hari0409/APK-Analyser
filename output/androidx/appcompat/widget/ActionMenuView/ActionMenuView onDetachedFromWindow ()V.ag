@@ -1,0 +1,12 @@
+# Landroidx/appcompat/widget/ActionMenuView;->onDetachedFromWindow()V [access_flags=public]
+#
+# Parameters:
+# local registers: v0...v0
+#
+# - return:void
+
+onDetachedFromWindow-BB@0x0 : 
+	0       (00000000) invoke-super         v0, Landroidx/appcompat/widget/LinearLayoutCompat;->onDetachedFromWindow()V
+	1       (00000006) invoke-virtual       v0, Landroidx/appcompat/widget/ActionMenuView;->dismissPopupMenus()V
+	2       (0000000c) return-void          
+

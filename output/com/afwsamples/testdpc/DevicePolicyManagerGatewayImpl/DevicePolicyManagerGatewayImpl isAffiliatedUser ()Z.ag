@@ -1,0 +1,24 @@
+# Lcom/afwsamples/testdpc/DevicePolicyManagerGatewayImpl;->isAffiliatedUser()Z [access_flags=public]
+#
+# Parameters:
+# local registers: v0...v4
+#
+# - return:boolean
+
+isAffiliatedUser-BB@0x0 : 
+	0       (00000000) iget-object          v1, v4, Lcom/afwsamples/testdpc/DevicePolicyManagerGatewayImpl;->mDevicePolicyManager Landroid/app/admin/DevicePolicyManager;
+	1       (00000004) invoke-virtual       v1, Landroid/app/admin/DevicePolicyManager;->isAffiliatedUser()Z
+	2       (0000000a) move-result          v0
+	3       (0000000c) sget-object          v1, Lcom/afwsamples/testdpc/DevicePolicyManagerGatewayImpl;->TAG Ljava/lang/String;
+	4       (00000010) new-instance         v2, Ljava/lang/StringBuilder;
+	5       (00000014) invoke-direct        v2, Ljava/lang/StringBuilder;-><init>()V
+	6       (0000001a) const-string         v3, 'isAffiliatedUser(): '
+	7       (0000001e) invoke-virtual       v2, v3, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	8       (00000024) move-result-object   v2
+	9       (00000026) invoke-virtual       v2, v0, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+	10      (0000002c) move-result-object   v2
+	11      (0000002e) invoke-virtual       v2, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+	12      (00000034) move-result-object   v2
+	13      (00000036) invoke-static        v1, v2, Landroid/util/Log;->d(Ljava/lang/String; Ljava/lang/String;)I
+	14      (0000003c) return               v0
+

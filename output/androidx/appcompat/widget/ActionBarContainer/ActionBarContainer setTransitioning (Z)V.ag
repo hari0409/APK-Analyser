@@ -1,0 +1,23 @@
+# Landroidx/appcompat/widget/ActionBarContainer;->setTransitioning(Z)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:boolean
+#
+# - return:void
+
+setTransitioning-BB@0x0 : [ setTransitioning-BB@0x8 setTransitioning-BB@0x14 ]
+	0       (00000000) iput-boolean         v2, v1, Landroidx/appcompat/widget/ActionBarContainer;->mIsTransitioning Z
+	1       (00000004) if-eqz               v2, +8
+
+setTransitioning-BB@0x8 : [ setTransitioning-BB@0xc ]
+	2       (00000008) const/high16         v0, 6 # [5.510129769479473e-40]
+
+setTransitioning-BB@0xc : 
+	3       (0000000c) invoke-virtual       v1, v0, Landroidx/appcompat/widget/ActionBarContainer;->setDescendantFocusability(I)V
+	4       (00000012) return-void          
+
+setTransitioning-BB@0x14 : [ setTransitioning-BB@0xc ]
+	5       (00000014) const/high16         v0, 4 # [3.6734198463196485e-40]
+	6       (00000018) goto                 -6
+

@@ -1,0 +1,12 @@
+# Landroidx/appcompat/widget/SearchView;->setOnQueryTextFocusChangeListener(Landroid/view/View$OnFocusChangeListener;)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v0
+# - v1:android.view.View$OnFocusChangeListener
+#
+# - return:void
+
+setOnQueryTextFocusChangeListener-BB@0x0 : 
+	0       (00000000) iput-object          v1, v0, Landroidx/appcompat/widget/SearchView;->mOnQueryTextFocusChangeListener Landroid/view/View$OnFocusChangeListener;
+	1       (00000004) return-void          
+

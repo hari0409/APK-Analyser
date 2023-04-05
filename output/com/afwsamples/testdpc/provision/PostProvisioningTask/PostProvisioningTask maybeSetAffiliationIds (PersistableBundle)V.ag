@@ -1,0 +1,30 @@
+# Lcom/afwsamples/testdpc/provision/PostProvisioningTask;->maybeSetAffiliationIds(Landroid/os/PersistableBundle;)V [access_flags=private]
+#
+# Parameters:
+# - local registers: v0...v4
+# - v5:android.os.PersistableBundle
+#
+# - return:void
+
+maybeSetAffiliationIds-BB@0x0 : [ maybeSetAffiliationIds-BB@0x4 maybeSetAffiliationIds-BB@0x6 ]
+	0       (00000000) if-nez               v5, +3
+
+maybeSetAffiliationIds-BB@0x4 : 
+	1       (00000004) return-void          
+
+maybeSetAffiliationIds-BB@0x6 : [ maybeSetAffiliationIds-BB@0x16 maybeSetAffiliationIds-BB@0x4 ]
+	2       (00000006) const-string         v1, 'affiliation_id'
+	3       (0000000a) invoke-virtual       v5, v1, Landroid/os/PersistableBundle;->getString(Ljava/lang/String;)Ljava/lang/String;
+	4       (00000010) move-result-object   v0
+	5       (00000012) if-eqz               v0, -7
+
+maybeSetAffiliationIds-BB@0x16 : [ maybeSetAffiliationIds-BB@0x4 ]
+	6       (00000016) iget-object          v1, v4, Lcom/afwsamples/testdpc/provision/PostProvisioningTask;->mDevicePolicyManager Landroid/app/admin/DevicePolicyManager;
+	7       (0000001a) iget-object          v2, v4, Lcom/afwsamples/testdpc/provision/PostProvisioningTask;->mContext Landroid/content/Context;
+	8       (0000001e) invoke-static        v2, Lcom/afwsamples/testdpc/DeviceAdminReceiver;->getComponentName(Landroid/content/Context;)Landroid/content/ComponentName;
+	9       (00000024) move-result-object   v2
+	10      (00000026) invoke-static        v0, Ljava/util/Collections;->singleton(Ljava/lang/Object;)Ljava/util/Set;
+	11      (0000002c) move-result-object   v3
+	12      (0000002e) invoke-virtual       v1, v2, v3, Landroid/app/admin/DevicePolicyManager;->setAffiliationIds(Landroid/content/ComponentName; Ljava/util/Set;)V
+	13      (00000034) goto                 -18
+

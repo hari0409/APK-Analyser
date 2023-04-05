@@ -1,0 +1,16 @@
+# Landroidx/print/PrintHelper$PrintUriAdapter$1$1;->onCancel()V [access_flags=public]
+#
+# Parameters:
+# local registers: v0...v2
+#
+# - return:void
+
+onCancel-BB@0x0 : 
+	0       (00000000) iget-object          v0, v2, Landroidx/print/PrintHelper$PrintUriAdapter$1$1;->this$2 Landroidx/print/PrintHelper$PrintUriAdapter$1;
+	1       (00000004) iget-object          v0, v0, Landroidx/print/PrintHelper$PrintUriAdapter$1;->this$1 Landroidx/print/PrintHelper$PrintUriAdapter;
+	2       (00000008) invoke-virtual       v0, Landroidx/print/PrintHelper$PrintUriAdapter;->cancelLoad()V
+	3       (0000000e) iget-object          v0, v2, Landroidx/print/PrintHelper$PrintUriAdapter$1$1;->this$2 Landroidx/print/PrintHelper$PrintUriAdapter$1;
+	4       (00000012) const/4              v1, 0
+	5       (00000014) invoke-virtual       v0, v1, Landroidx/print/PrintHelper$PrintUriAdapter$1;->cancel(Z)Z
+	6       (0000001a) return-void          
+

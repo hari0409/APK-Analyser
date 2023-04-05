@@ -1,0 +1,11 @@
+# Lcom/afwsamples/testdpc/common/keyvaluepair/KeyValueBundleArrayFragment;->onSpinnerItemSelected(Landroid/content/pm/ApplicationInfo;)V [access_flags=protected]
+#
+# Parameters:
+# - local registers: v0...v0
+# - v1:android.content.pm.ApplicationInfo
+#
+# - return:void
+
+onSpinnerItemSelected-BB@0x0 : 
+	0       (00000000) return-void          
+

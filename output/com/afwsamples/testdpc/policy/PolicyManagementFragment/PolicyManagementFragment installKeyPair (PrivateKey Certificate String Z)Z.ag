@@ -1,0 +1,86 @@
+# Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->installKeyPair(Ljava/security/PrivateKey; Ljava/security/cert/Certificate; Ljava/lang/String; Z)Z [access_flags=private]
+#
+# Parameters:
+# - local registers: v0...v8
+# - v9:java.security.PrivateKey
+# - v10:java.security.cert.Certificate
+# - v11:java.lang.String
+# - v12:boolean
+#
+# - return:boolean
+
+installKeyPair-BB@0x0 : [ installKeyPair-BB@0x2 ]
+	0       (00000000) const/4              v7, 0
+
+installKeyPair-BB@0x2 : [ installKeyPair-BB@0xe installKeyPair-BB@0x3a ]
+	1       (00000002) sget                 v0, Lcom/afwsamples/testdpc/common/Util;->SDK_INT I
+	2       (00000006) const/16             v1, 28
+	3       (0000000a) if-lt                v0, v1, +18
+	2:4d
+	(Ljava/lang/SecurityException; -> 4e installKeyPair-BB@0x4e)
+
+installKeyPair-BB@0xe : [ installKeyPair-BB@0x26 installKeyPair-BB@0x36 ]
+	4       (0000000e) iget-object          v0, v8, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->mDevicePolicyManager Landroid/app/admin/DevicePolicyManager;
+	5       (00000012) iget-object          v1, v8, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->mAdminComponentName Landroid/content/ComponentName;
+	6       (00000016) const/4              v2, 1
+	7       (00000018) new-array            v3, v2, [Ljava/security/cert/Certificate;
+	8       (0000001c) const/4              v2, 0
+	9       (0000001e) aput-object          v10, v3, v2
+	10      (00000022) if-eqz               v12, +a
+	2:4d
+	(Ljava/lang/SecurityException; -> 4e installKeyPair-BB@0x4e)
+
+installKeyPair-BB@0x26 : [ installKeyPair-BB@0x28 ]
+	11      (00000026) const/4              v5, 2
+	2:4d
+	(Ljava/lang/SecurityException; -> 4e installKeyPair-BB@0x4e)
+
+installKeyPair-BB@0x28 : [ installKeyPair-BB@0x34 ]
+	12      (00000028) move-object          v2, v9
+	13      (0000002a) move-object          v4, v11
+	14      (0000002c) invoke-virtual/range v0 ... v5, Landroid/app/admin/DevicePolicyManager;->installKeyPair(Landroid/content/ComponentName; Ljava/security/PrivateKey; [Ljava/security/cert/Certificate; Ljava/lang/String; I)Z
+	15      (00000032) move-result          v0
+	2:4d
+	(Ljava/lang/SecurityException; -> 4e installKeyPair-BB@0x4e)
+
+installKeyPair-BB@0x34 : 
+	16      (00000034) return               v0
+	2:4d
+	(Ljava/lang/SecurityException; -> 4e installKeyPair-BB@0x4e)
+
+installKeyPair-BB@0x36 : [ installKeyPair-BB@0x28 ]
+	17      (00000036) move                 v5, v7
+	18      (00000038) goto                 -8
+	2:4d
+	(Ljava/lang/SecurityException; -> 4e installKeyPair-BB@0x4e)
+
+installKeyPair-BB@0x3a : [ installKeyPair-BB@0x3e installKeyPair-BB@0x62 ]
+	19      (0000003a) if-nez               v12, +14
+	2:4d
+	(Ljava/lang/SecurityException; -> 4e installKeyPair-BB@0x4e)
+
+installKeyPair-BB@0x3e : 
+	20      (0000003e) new-instance         v0, Ljava/lang/IllegalArgumentException;
+	21      (00000042) const-string         v1, 'Cannot set key as non-user-selectable prior to P'
+	22      (00000046) invoke-direct        v0, v1, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+	23      (0000004c) throw                v0
+	2:4d
+	(Ljava/lang/SecurityException; -> 4e installKeyPair-BB@0x4e)
+
+installKeyPair-BB@0x4e : [ installKeyPair-BB@0x34 ]
+	24      (0000004e) move-exception       v6
+	25      (00000050) const-string         v0, 'PolicyManagement'
+	26      (00000054) const-string         v1, 'Not allowed to install keys'
+	27      (00000058) invoke-static        v0, v1, v6, Landroid/util/Log;->w(Ljava/lang/String; Ljava/lang/String; Ljava/lang/Throwable;)I
+	28      (0000005e) move                 v0, v7
+	29      (00000060) goto                 -16
+
+installKeyPair-BB@0x62 : [ installKeyPair-BB@0x34 ]
+	30      (00000062) iget-object          v0, v8, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->mDevicePolicyManager Landroid/app/admin/DevicePolicyManager;
+	31      (00000066) iget-object          v1, v8, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->mAdminComponentName Landroid/content/ComponentName;
+	32      (0000006a) invoke-virtual       v0, v1, v9, v10, v11, Landroid/app/admin/DevicePolicyManager;->installKeyPair(Landroid/content/ComponentName; Ljava/security/PrivateKey; Ljava/security/cert/Certificate; Ljava/lang/String;)Z
+	33      (00000070) move-result          v0
+	34      (00000072) goto                 -1f
+	62:6f
+	(Ljava/lang/SecurityException; -> 4e installKeyPair-BB@0x4e)
+

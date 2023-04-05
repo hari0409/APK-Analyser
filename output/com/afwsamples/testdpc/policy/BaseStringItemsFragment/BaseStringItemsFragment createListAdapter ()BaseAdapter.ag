@@ -1,0 +1,17 @@
+# Lcom/afwsamples/testdpc/policy/BaseStringItemsFragment;->createListAdapter()Landroid/widget/BaseAdapter; [access_flags=protected]
+#
+# Parameters:
+# local registers: v0...v3
+#
+# - return:android.widget.BaseAdapter
+
+createListAdapter-BB@0x0 : 
+	0       (00000000) new-instance         v0, Lcom/afwsamples/testdpc/policy/BaseStringItemsFragment$ItemEntryArrayAdapter;
+	1       (00000004) invoke-virtual       v3, Lcom/afwsamples/testdpc/policy/BaseStringItemsFragment;->getActivity()Landroid/app/Activity;
+	2       (0000000a) move-result-object   v1
+	3       (0000000c) iget-object          v2, v3, Lcom/afwsamples/testdpc/policy/BaseStringItemsFragment;->mItems Ljava/util/List;
+	4       (00000010) invoke-direct        v0, v1, v2, v3, Lcom/afwsamples/testdpc/policy/BaseStringItemsFragment$ItemEntryArrayAdapter;-><init>(Landroid/content/Context; Ljava/util/List; Lcom/afwsamples/testdpc/common/EditDeleteArrayAdapter$OnEditButtonClickListener;)V
+	5       (00000016) iput-object          v0, v3, Lcom/afwsamples/testdpc/policy/BaseStringItemsFragment;->mItemArrayAdapter Lcom/afwsamples/testdpc/common/EditDeleteArrayAdapter;
+	6       (0000001a) iget-object          v0, v3, Lcom/afwsamples/testdpc/policy/BaseStringItemsFragment;->mItemArrayAdapter Lcom/afwsamples/testdpc/common/EditDeleteArrayAdapter;
+	7       (0000001e) return-object        v0
+

@@ -1,0 +1,19 @@
+# Lcom/afwsamples/testdpc/policy/systemupdatepolicy/SystemUpdatePolicyFragment;->lambda$showDatePicker$185$SystemUpdatePolicyFragment(Lcom/afwsamples/testdpc/policy/systemupdatepolicy/SystemUpdatePolicyFragment$DatePickResult; Landroid/widget/DatePicker; I I I)V [access_flags=static final synthetic]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:com.afwsamples.testdpc.policy.systemupdatepolicy.SystemUpdatePolicyFragment$DatePickResult
+# - v3:android.widget.DatePicker
+# - v4:int
+# - v5:int
+# - v6:int
+#
+# - return:void
+
+lambda$showDatePicker$185$SystemUpdatePolicyFragment-BB@0x0 : 
+	0       (00000000) add-int/lit8         v1, v5, 1
+	1       (00000004) invoke-static        v4, v1, v6, Ljava/time/LocalDate;->of(I I I)Ljava/time/LocalDate;
+	2       (0000000a) move-result-object   v0
+	3       (0000000c) invoke-interface     v2, v0, Lcom/afwsamples/testdpc/policy/systemupdatepolicy/SystemUpdatePolicyFragment$DatePickResult;->onResult(Ljava/time/LocalDate;)V
+	4       (00000012) return-void          
+

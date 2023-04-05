@@ -1,0 +1,31 @@
+# Landroidx/appcompat/widget/ActionMenuPresenter$OverflowMenuButton;-><init>(Landroidx/appcompat/widget/ActionMenuPresenter; Landroid/content/Context;)V [access_flags=public constructor]
+#
+# Parameters:
+# - local registers: v0...v3
+# - v4:androidx.appcompat.widget.ActionMenuPresenter
+# - v5:android.content.Context
+#
+# - return:void
+
+<init>-BB@0x0 : 
+	0       (00000000) const/4              v2, 1
+	1       (00000002) iput-object          v4, v3, Landroidx/appcompat/widget/ActionMenuPresenter$OverflowMenuButton;->this$0 Landroidx/appcompat/widget/ActionMenuPresenter;
+	2       (00000006) const/4              v0, 0
+	3       (00000008) sget                 v1, Landroidx/appcompat/R$attr;->actionOverflowButtonStyle I
+	4       (0000000c) invoke-direct        v3, v5, v0, v1, Landroidx/appcompat/widget/AppCompatImageView;-><init>(Landroid/content/Context; Landroid/util/AttributeSet; I)V
+	5       (00000012) const/4              v0, 2
+	6       (00000014) new-array            v0, v0, [F
+	7       (00000018) iput-object          v0, v3, Landroidx/appcompat/widget/ActionMenuPresenter$OverflowMenuButton;->mTempPts [F
+	8       (0000001c) invoke-virtual       v3, v2, Landroidx/appcompat/widget/ActionMenuPresenter$OverflowMenuButton;->setClickable(Z)V
+	9       (00000022) invoke-virtual       v3, v2, Landroidx/appcompat/widget/ActionMenuPresenter$OverflowMenuButton;->setFocusable(Z)V
+	10      (00000028) const/4              v0, 0
+	11      (0000002a) invoke-virtual       v3, v0, Landroidx/appcompat/widget/ActionMenuPresenter$OverflowMenuButton;->setVisibility(I)V
+	12      (00000030) invoke-virtual       v3, v2, Landroidx/appcompat/widget/ActionMenuPresenter$OverflowMenuButton;->setEnabled(Z)V
+	13      (00000036) invoke-virtual       v3, Landroidx/appcompat/widget/ActionMenuPresenter$OverflowMenuButton;->getContentDescription()Ljava/lang/CharSequence;
+	14      (0000003c) move-result-object   v0
+	15      (0000003e) invoke-static        v3, v0, Landroidx/appcompat/widget/TooltipCompat;->setTooltipText(Landroid/view/View; Ljava/lang/CharSequence;)V
+	16      (00000044) new-instance         v0, Landroidx/appcompat/widget/ActionMenuPresenter$OverflowMenuButton$1;
+	17      (00000048) invoke-direct        v0, v3, v3, v4, Landroidx/appcompat/widget/ActionMenuPresenter$OverflowMenuButton$1;-><init>(Landroidx/appcompat/widget/ActionMenuPresenter$OverflowMenuButton; Landroid/view/View; Landroidx/appcompat/widget/ActionMenuPresenter;)V
+	18      (0000004e) invoke-virtual       v3, v0, Landroidx/appcompat/widget/ActionMenuPresenter$OverflowMenuButton;->setOnTouchListener(Landroid/view/View$OnTouchListener;)V
+	19      (00000054) return-void          
+

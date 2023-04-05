@@ -1,0 +1,22 @@
+# Landroidx/appcompat/view/menu/ActionMenuItem;->isVisible()Z [access_flags=public]
+#
+# Parameters:
+# local registers: v0...v1
+#
+# - return:boolean
+
+isVisible-BB@0x0 : [ isVisible-BB@0xc isVisible-BB@0x10 ]
+	0       (00000000) iget                 v0, v1, Landroidx/appcompat/view/menu/ActionMenuItem;->mFlags I
+	1       (00000004) and-int/lit8         v0, v0, 8
+	2       (00000008) if-nez               v0, +4
+
+isVisible-BB@0xc : [ isVisible-BB@0xe ]
+	3       (0000000c) const/4              v0, 1
+
+isVisible-BB@0xe : 
+	4       (0000000e) return               v0
+
+isVisible-BB@0x10 : [ isVisible-BB@0xe ]
+	5       (00000010) const/4              v0, 0
+	6       (00000012) goto                 -2
+

@@ -1,0 +1,23 @@
+# Landroidx/appcompat/view/menu/MenuItemImpl;->isChecked()Z [access_flags=public]
+#
+# Parameters:
+# local registers: v0...v2
+#
+# - return:boolean
+
+isChecked-BB@0x0 : [ isChecked-BB@0xe isChecked-BB@0x12 ]
+	0       (00000000) iget                 v0, v2, Landroidx/appcompat/view/menu/MenuItemImpl;->mFlags I
+	1       (00000004) and-int/lit8         v0, v0, 2
+	2       (00000008) const/4              v1, 2
+	3       (0000000a) if-ne                v0, v1, +4
+
+isChecked-BB@0xe : [ isChecked-BB@0x10 ]
+	4       (0000000e) const/4              v0, 1
+
+isChecked-BB@0x10 : 
+	5       (00000010) return               v0
+
+isChecked-BB@0x12 : [ isChecked-BB@0x10 ]
+	6       (00000012) const/4              v0, 0
+	7       (00000014) goto                 -2
+

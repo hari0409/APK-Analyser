@@ -1,0 +1,27 @@
+# Landroidx/appcompat/widget/ActionBarContainer;->onInterceptTouchEvent(Landroid/view/MotionEvent;)Z [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:android.view.MotionEvent
+#
+# - return:boolean
+
+onInterceptTouchEvent-BB@0x0 : [ onInterceptTouchEvent-BB@0x8 onInterceptTouchEvent-BB@0x14 ]
+	0       (00000000) iget-boolean         v0, v1, Landroidx/appcompat/widget/ActionBarContainer;->mIsTransitioning Z
+	1       (00000004) if-nez               v0, +8
+
+onInterceptTouchEvent-BB@0x8 : [ onInterceptTouchEvent-BB@0x14 onInterceptTouchEvent-BB@0x18 ]
+	2       (00000008) invoke-super         v1, v2, Landroid/widget/FrameLayout;->onInterceptTouchEvent(Landroid/view/MotionEvent;)Z
+	3       (0000000e) move-result          v0
+	4       (00000010) if-eqz               v0, +4
+
+onInterceptTouchEvent-BB@0x14 : [ onInterceptTouchEvent-BB@0x16 ]
+	5       (00000014) const/4              v0, 1
+
+onInterceptTouchEvent-BB@0x16 : 
+	6       (00000016) return               v0
+
+onInterceptTouchEvent-BB@0x18 : [ onInterceptTouchEvent-BB@0x16 ]
+	7       (00000018) const/4              v0, 0
+	8       (0000001a) goto                 -2
+

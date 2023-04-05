@@ -1,0 +1,25 @@
+# Lcom/afwsamples/testdpc/PolicyManagementActivity;->startLockTaskMode()V [access_flags=private]
+#
+# Parameters:
+# local registers: v0...v2
+#
+# - return:void
+
+startLockTaskMode-BB@0x0 : [ startLockTaskMode-BB@0x8 startLockTaskMode-BB@0x16 ]
+	0       (00000000) iget-boolean         v0, v2, Lcom/afwsamples/testdpc/PolicyManagementActivity;->mLockTaskMode Z
+	1       (00000004) if-eqz               v0, +9
+
+startLockTaskMode-BB@0x8 : [ startLockTaskMode-BB@0x16 ]
+	2       (00000008) sget-object          v0, Lcom/afwsamples/testdpc/PolicyManagementActivity;->TAG Ljava/lang/String;
+	3       (0000000c) const-string         v1, 'startLockTaskMode(): mLockTaskMode already true'
+	4       (00000010) invoke-static        v0, v1, Landroid/util/Log;->w(Ljava/lang/String; Ljava/lang/String;)I
+
+startLockTaskMode-BB@0x16 : 
+	5       (00000016) const/4              v0, 1
+	6       (00000018) iput-boolean         v0, v2, Lcom/afwsamples/testdpc/PolicyManagementActivity;->mLockTaskMode Z
+	7       (0000001c) sget-object          v0, Lcom/afwsamples/testdpc/PolicyManagementActivity;->TAG Ljava/lang/String;
+	8       (00000020) const-string         v1, 'startLockTaskMode(): calling Activity.startLockTask()'
+	9       (00000024) invoke-static        v0, v1, Landroid/util/Log;->i(Ljava/lang/String; Ljava/lang/String;)I
+	10      (0000002a) invoke-virtual       v2, Lcom/afwsamples/testdpc/PolicyManagementActivity;->startLockTask()V
+	11      (00000030) return-void          
+

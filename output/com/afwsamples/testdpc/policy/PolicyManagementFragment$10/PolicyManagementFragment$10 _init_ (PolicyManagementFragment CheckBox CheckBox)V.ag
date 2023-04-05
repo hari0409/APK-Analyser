@@ -1,0 +1,17 @@
+# Lcom/afwsamples/testdpc/policy/PolicyManagementFragment$10;-><init>(Lcom/afwsamples/testdpc/policy/PolicyManagementFragment; Landroid/widget/CheckBox; Landroid/widget/CheckBox;)V [access_flags=constructor]
+#
+# Parameters:
+# - local registers: v0...v0
+# - v1:com.afwsamples.testdpc.policy.PolicyManagementFragment
+# - v2:android.widget.CheckBox
+# - v3:android.widget.CheckBox
+#
+# - return:void
+
+<init>-BB@0x0 : 
+	0       (00000000) iput-object          v1, v0, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment$10;->this$0 Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;
+	1       (00000004) iput-object          v2, v0, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment$10;->val$externalStorageCheckBox Landroid/widget/CheckBox;
+	2       (00000008) iput-object          v3, v0, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment$10;->val$resetProtectionCheckBox Landroid/widget/CheckBox;
+	3       (0000000c) invoke-direct        v0, Ljava/lang/Object;-><init>()V
+	4       (00000012) return-void          
+

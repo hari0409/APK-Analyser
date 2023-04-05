@@ -1,0 +1,33 @@
+# Lcom/afwsamples/testdpc/cosu/CosuConfig;->createConfig(Landroid/content/Context; Ljava/io/InputStream;)Lcom/afwsamples/testdpc/cosu/CosuConfig; [access_flags=public static]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:android.content.Context
+# - v4:java.io.InputStream
+#
+# - return:com.afwsamples.testdpc.cosu.CosuConfig
+
+createConfig-BB@0x0 : [ createConfig-BB@0xa ]
+	0       (00000000) new-instance         v1, Lcom/afwsamples/testdpc/cosu/CosuConfig;
+	1       (00000004) invoke-direct        v1, v3, v4, Lcom/afwsamples/testdpc/cosu/CosuConfig;-><init>(Landroid/content/Context; Ljava/io/InputStream;)V
+	0:9
+	(Lorg/xmlpull/v1/XmlPullParserException; -> c createConfig-BB@0xc)
+	(Ljava/io/IOException; -> 20 createConfig-BB@0x20)
+
+createConfig-BB@0xa : 
+	2       (0000000a) return-object        v1
+
+createConfig-BB@0xc : [ createConfig-BB@0xe ]
+	3       (0000000c) move-exception       v0
+
+createConfig-BB@0xe : [ createConfig-BB@0xa ]
+	4       (0000000e) const-string         v1, 'CosuSetup'
+	5       (00000012) const-string         v2, 'Exception during config creation.'
+	6       (00000016) invoke-static        v1, v2, v0, Landroid/util/Log;->e(Ljava/lang/String; Ljava/lang/String; Ljava/lang/Throwable;)I
+	7       (0000001c) const/4              v1, 0
+	8       (0000001e) goto                 -a
+
+createConfig-BB@0x20 : [ createConfig-BB@0xe ]
+	9       (00000020) move-exception       v0
+	10      (00000022) goto                 -a
+

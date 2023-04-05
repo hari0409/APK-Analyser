@@ -1,0 +1,16 @@
+# Lcom/afwsamples/testdpc/common/keyvaluepair/KeyValuePairDialogFragment;->configureKeyView(Z Ljava/lang/String;)V [access_flags=private]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:boolean
+# - v3:java.lang.String
+#
+# - return:void
+
+configureKeyView-BB@0x0 : 
+	0       (00000000) iget-object          v0, v1, Lcom/afwsamples/testdpc/common/keyvaluepair/KeyValuePairDialogFragment;->mKeyView Landroid/widget/EditText;
+	1       (00000004) invoke-virtual       v0, v2, Landroid/widget/EditText;->setEnabled(Z)V
+	2       (0000000a) iget-object          v0, v1, Lcom/afwsamples/testdpc/common/keyvaluepair/KeyValuePairDialogFragment;->mKeyView Landroid/widget/EditText;
+	3       (0000000e) invoke-virtual       v0, v3, Landroid/widget/EditText;->setText(Ljava/lang/CharSequence;)V
+	4       (00000014) return-void          
+

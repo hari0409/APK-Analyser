@@ -1,0 +1,49 @@
+# Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->lambda$showSetScreenOffTimeoutDialog$166$PolicyManagementFragment(Landroid/widget/EditText; Landroid/content/DialogInterface; I)V [access_flags=final synthetic]
+#
+# Parameters:
+# - local registers: v0...v6
+# - v7:android.widget.EditText
+# - v8:android.content.DialogInterface
+# - v9:int
+#
+# - return:void
+
+lambda$showSetScreenOffTimeoutDialog$166$PolicyManagementFragment-BB@0x0 : [ lambda$showSetScreenOffTimeoutDialog$166$PolicyManagementFragment-BB@0x1e lambda$showSetScreenOffTimeoutDialog$166$PolicyManagementFragment-BB@0x30 ]
+	0       (00000000) const/4              v3, 0
+	1       (00000002) invoke-virtual       v7, Landroid/widget/EditText;->getText()Landroid/text/Editable;
+	2       (00000008) move-result-object   v2
+	3       (0000000a) invoke-virtual       v2, Ljava/lang/Object;->toString()Ljava/lang/String;
+	4       (00000010) move-result-object   v0
+	5       (00000012) invoke-virtual       v0, Ljava/lang/String;->isEmpty()Z
+	6       (00000018) move-result          v2
+	7       (0000001a) if-eqz               v2, +b
+
+lambda$showSetScreenOffTimeoutDialog$166$PolicyManagementFragment-BB@0x1e : [ lambda$showSetScreenOffTimeoutDialog$166$PolicyManagementFragment-BB@0x2e ]
+	8       (0000001e) const                v2, 2131689987 # [1.9009004883818885e+38]
+	9       (00000024) new-array            v3, v3, [Ljava/lang/Object;
+	10      (00000028) invoke-direct        v6, v2, v3, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->showToast(I [Ljava/lang/Object;)V
+
+lambda$showSetScreenOffTimeoutDialog$166$PolicyManagementFragment-BB@0x2e : 
+	11      (0000002e) return-void          
+
+lambda$showSetScreenOffTimeoutDialog$166$PolicyManagementFragment-BB@0x30 : [ lambda$showSetScreenOffTimeoutDialog$166$PolicyManagementFragment-BB@0x3c lambda$showSetScreenOffTimeoutDialog$166$PolicyManagementFragment-BB@0x4e ]
+	12      (00000030) invoke-static        v0, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
+	13      (00000036) move-result          v1
+	14      (00000038) if-gez               v1, +b
+
+lambda$showSetScreenOffTimeoutDialog$166$PolicyManagementFragment-BB@0x3c : [ lambda$showSetScreenOffTimeoutDialog$166$PolicyManagementFragment-BB@0x2e ]
+	15      (0000003c) const                v2, 2131689872 # [1.9008771636108443e+38]
+	16      (00000042) new-array            v3, v3, [Ljava/lang/Object;
+	17      (00000046) invoke-direct        v6, v2, v3, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->showToast(I [Ljava/lang/Object;)V
+	18      (0000004c) goto                 -f
+
+lambda$showSetScreenOffTimeoutDialog$166$PolicyManagementFragment-BB@0x4e : [ lambda$showSetScreenOffTimeoutDialog$166$PolicyManagementFragment-BB@0x2e ]
+	19      (0000004e) iget-object          v2, v6, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->mDevicePolicyManager Landroid/app/admin/DevicePolicyManager;
+	20      (00000052) iget-object          v3, v6, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->mAdminComponentName Landroid/content/ComponentName;
+	21      (00000056) const-string         v4, 'screen_off_timeout'
+	22      (0000005a) mul-int/lit16        v5, v1, 1000
+	23      (0000005e) invoke-static        v5, Ljava/lang/Integer;->toString(I)Ljava/lang/String;
+	24      (00000064) move-result-object   v5
+	25      (00000066) invoke-virtual       v2, v3, v4, v5, Landroid/app/admin/DevicePolicyManager;->setSystemSetting(Landroid/content/ComponentName; Ljava/lang/String; Ljava/lang/String;)V
+	26      (0000006c) goto                 -1f
+

@@ -1,0 +1,34 @@
+# Lcom/afwsamples/testdpc/AddAccountActivity;->restoreUserRestrictions()V [access_flags=private]
+#
+# Parameters:
+# local registers: v0...v3
+#
+# - return:void
+
+restoreUserRestrictions-BB@0x0 : [ restoreUserRestrictions-BB@0xc restoreUserRestrictions-BB@0x1c ]
+	0       (00000000) sget                 v0, Lcom/afwsamples/testdpc/common/Util;->SDK_INT I
+	1       (00000004) const/16             v1, 24
+	2       (00000008) if-lt                v0, v1, +a
+
+restoreUserRestrictions-BB@0xc : [ restoreUserRestrictions-BB@0x1a ]
+	3       (0000000c) const-string         v0, 'AddAccountActivity'
+	4       (00000010) const-string         v1, 'skip restoring user restrictions on N or above'
+	5       (00000014) invoke-static        v0, v1, Landroid/util/Log;->v(Ljava/lang/String; Ljava/lang/String;)I
+
+restoreUserRestrictions-BB@0x1a : 
+	6       (0000001a) return-void          
+
+restoreUserRestrictions-BB@0x1c : [ restoreUserRestrictions-BB@0x32 restoreUserRestrictions-BB@0x1a ]
+	7       (0000001c) const-string         v0, 'AddAccountActivity'
+	8       (00000020) const-string         v1, 'restoring user restrictions'
+	9       (00000024) invoke-static        v0, v1, Landroid/util/Log;->v(Ljava/lang/String; Ljava/lang/String;)I
+	10      (0000002a) iget-boolean         v0, v3, Lcom/afwsamples/testdpc/AddAccountActivity;->mDisallowModifyAccounts Z
+	11      (0000002e) if-eqz               v0, -a
+
+restoreUserRestrictions-BB@0x32 : [ restoreUserRestrictions-BB@0x1a ]
+	12      (00000032) iget-object          v0, v3, Lcom/afwsamples/testdpc/AddAccountActivity;->mDevicePolicyManager Landroid/app/admin/DevicePolicyManager;
+	13      (00000036) iget-object          v1, v3, Lcom/afwsamples/testdpc/AddAccountActivity;->mAdminComponentName Landroid/content/ComponentName;
+	14      (0000003a) const-string         v2, 'no_modify_accounts'
+	15      (0000003e) invoke-virtual       v0, v1, v2, Landroid/app/admin/DevicePolicyManager;->addUserRestriction(Landroid/content/ComponentName; Ljava/lang/String;)V
+	16      (00000044) goto                 -15
+

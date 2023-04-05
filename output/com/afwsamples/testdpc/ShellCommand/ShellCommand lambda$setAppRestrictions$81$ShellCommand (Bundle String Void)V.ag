@@ -1,0 +1,25 @@
+# Lcom/afwsamples/testdpc/ShellCommand;->lambda$setAppRestrictions$81$ShellCommand(Landroid/os/Bundle; Ljava/lang/String; Ljava/lang/Void;)V [access_flags=final synthetic]
+#
+# Parameters:
+# - local registers: v0...v4
+# - v5:android.os.Bundle
+# - v6:java.lang.String
+# - v7:java.lang.Void
+#
+# - return:void
+
+lambda$setAppRestrictions$81$ShellCommand-BB@0x0 : 
+	0       (00000000) const-string         v0, 'Set %d app restrictions for %s'
+	1       (00000004) const/4              v1, 2
+	2       (00000006) new-array            v1, v1, [Ljava/lang/Object;
+	3       (0000000a) const/4              v2, 0
+	4       (0000000c) invoke-virtual       v5, Landroid/os/Bundle;->size()I
+	5       (00000012) move-result          v3
+	6       (00000014) invoke-static        v3, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+	7       (0000001a) move-result-object   v3
+	8       (0000001c) aput-object          v3, v1, v2
+	9       (00000020) const/4              v2, 1
+	10      (00000022) aput-object          v6, v1, v2
+	11      (00000026) invoke-direct        v4, v0, v1, Lcom/afwsamples/testdpc/ShellCommand;->onSuccess(Ljava/lang/String; [Ljava/lang/Object;)V
+	12      (0000002c) return-void          
+

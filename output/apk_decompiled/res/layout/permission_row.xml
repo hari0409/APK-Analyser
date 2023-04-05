@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView android:id="@id/permission_name" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_toLeftOf="@id/permission_group" />
+    <RadioGroup android:id="@id/permission_group" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_alignParentRight="true">
+        <RadioButton android:id="@id/permission_allow" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/permission_allow" />
+        <RadioButton android:id="@id/permission_default" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/permission_default" />
+        <RadioButton android:id="@id/permission_deny" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/permission_deny" />
+    </RadioGroup>
+</LinearLayout>

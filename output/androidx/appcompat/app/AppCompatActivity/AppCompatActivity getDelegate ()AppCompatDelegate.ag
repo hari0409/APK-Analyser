@@ -1,0 +1,20 @@
+# Landroidx/appcompat/app/AppCompatActivity;->getDelegate()Landroidx/appcompat/app/AppCompatDelegate; [access_flags=public]
+#
+# Parameters:
+# local registers: v0...v1
+#
+# - return:androidx.appcompat.app.AppCompatDelegate
+
+getDelegate-BB@0x0 : [ getDelegate-BB@0x8 getDelegate-BB@0x14 ]
+	0       (00000000) iget-object          v0, v1, Landroidx/appcompat/app/AppCompatActivity;->mDelegate Landroidx/appcompat/app/AppCompatDelegate;
+	1       (00000004) if-nez               v0, +8
+
+getDelegate-BB@0x8 : [ getDelegate-BB@0x14 ]
+	2       (00000008) invoke-static        v1, v1, Landroidx/appcompat/app/AppCompatDelegate;->create(Landroid/app/Activity; Landroidx/appcompat/app/AppCompatCallback;)Landroidx/appcompat/app/AppCompatDelegate;
+	3       (0000000e) move-result-object   v0
+	4       (00000010) iput-object          v0, v1, Landroidx/appcompat/app/AppCompatActivity;->mDelegate Landroidx/appcompat/app/AppCompatDelegate;
+
+getDelegate-BB@0x14 : 
+	5       (00000014) iget-object          v0, v1, Landroidx/appcompat/app/AppCompatActivity;->mDelegate Landroidx/appcompat/app/AppCompatDelegate;
+	6       (00000018) return-object        v0
+

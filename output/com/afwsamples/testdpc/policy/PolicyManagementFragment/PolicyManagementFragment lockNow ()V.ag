@@ -1,0 +1,48 @@
+# Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->lockNow()V [access_flags=private]
+#
+# Parameters:
+# local registers: v0...v3
+#
+# - return:void
+
+lockNow-BB@0x0 : [ lockNow-BB@0xc lockNow-BB@0x20 ]
+	0       (00000000) sget                 v1, Lcom/afwsamples/testdpc/common/Util;->SDK_INT I
+	1       (00000004) const/16             v2, 26
+	2       (00000008) if-lt                v1, v2, +c
+
+lockNow-BB@0xc : [ lockNow-BB@0x18 lockNow-BB@0x20 ]
+	3       (0000000c) invoke-direct        v3, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->isManagedProfileOwner()Z
+	4       (00000012) move-result          v1
+	5       (00000014) if-eqz               v1, +6
+
+lockNow-BB@0x18 : [ lockNow-BB@0x1e ]
+	6       (00000018) invoke-direct        v3, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->showLockNowPrompt()V
+
+lockNow-BB@0x1e : 
+	7       (0000001e) return-void          
+
+lockNow-BB@0x20 : [ lockNow-BB@0x30 lockNow-BB@0x4c ]
+	8       (00000020) iget-object          v0, v3, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->mDevicePolicyManagerGateway Lcom/afwsamples/testdpc/DevicePolicyManagerGateway;
+	9       (00000024) sget                 v1, Lcom/afwsamples/testdpc/common/Util;->SDK_INT I
+	10      (00000028) const/16             v2, 24
+	11      (0000002c) if-lt                v1, v2, +10
+
+lockNow-BB@0x30 : [ lockNow-BB@0x3c lockNow-BB@0x4c ]
+	12      (00000030) invoke-direct        v3, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->isManagedProfileOwner()Z
+	13      (00000036) move-result          v1
+	14      (00000038) if-eqz               v1, +a
+
+lockNow-BB@0x3c : [ lockNow-BB@0x4c ]
+	15      (0000003c) invoke-virtual       v3, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->getActivity()Landroid/app/Activity;
+	16      (00000042) move-result-object   v1
+	17      (00000044) invoke-static        v1, Lcom/afwsamples/testdpc/DevicePolicyManagerGatewayImpl;->forParentProfile(Landroid/content/Context;)Lcom/afwsamples/testdpc/DevicePolicyManagerGatewayImpl;
+	18      (0000004a) move-result-object   v0
+
+lockNow-BB@0x4c : [ lockNow-BB@0x1e ]
+	19      (0000004c) new-instance         v1, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment$$Lambda$22;
+	20      (00000050) invoke-direct        v1, v3, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment$$Lambda$22;-><init>(Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;)V
+	21      (00000056) new-instance         v2, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment$$Lambda$23;
+	22      (0000005a) invoke-direct        v2, v3, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment$$Lambda$23;-><init>(Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;)V
+	23      (00000060) invoke-interface     v0, v1, v2, Lcom/afwsamples/testdpc/DevicePolicyManagerGateway;->lockNow(Ljava/util/function/Consumer; Ljava/util/function/Consumer;)V
+	24      (00000066) goto                 -24
+

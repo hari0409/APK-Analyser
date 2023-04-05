@@ -1,0 +1,12 @@
+# Landroidx/appcompat/widget/LinearLayoutCompat;->checkLayoutParams(Landroid/view/ViewGroup$LayoutParams;)Z [access_flags=protected]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:android.view.ViewGroup$LayoutParams
+#
+# - return:boolean
+
+checkLayoutParams-BB@0x0 : 
+	0       (00000000) instance-of          v0, v2, Landroidx/appcompat/widget/LinearLayoutCompat$LayoutParams;
+	1       (00000004) return               v0
+

@@ -1,0 +1,27 @@
+# Lcom/afwsamples/testdpc/common/LaunchIntentUtil;->isSynchronousAuthLaunch(Landroid/os/PersistableBundle;)Z [access_flags=public static]
+#
+# Parameters:
+# - local registers: v0...v0
+# - v1:android.os.PersistableBundle
+#
+# - return:boolean
+
+isSynchronousAuthLaunch-BB@0x0 : [ isSynchronousAuthLaunch-BB@0x4 isSynchronousAuthLaunch-BB@0x18 ]
+	0       (00000000) if-eqz               v1, +c
+
+isSynchronousAuthLaunch-BB@0x4 : [ isSynchronousAuthLaunch-BB@0x14 isSynchronousAuthLaunch-BB@0x18 ]
+	1       (00000004) const-string         v0, 'is_setup_wizard'
+	2       (00000008) invoke-virtual       v1, v0, Landroid/os/PersistableBundle;->get(Ljava/lang/String;)Ljava/lang/Object;
+	3       (0000000e) move-result-object   v0
+	4       (00000010) if-eqz               v0, +4
+
+isSynchronousAuthLaunch-BB@0x14 : [ isSynchronousAuthLaunch-BB@0x16 ]
+	5       (00000014) const/4              v0, 1
+
+isSynchronousAuthLaunch-BB@0x16 : 
+	6       (00000016) return               v0
+
+isSynchronousAuthLaunch-BB@0x18 : [ isSynchronousAuthLaunch-BB@0x16 ]
+	7       (00000018) const/4              v0, 0
+	8       (0000001a) goto                 -2
+

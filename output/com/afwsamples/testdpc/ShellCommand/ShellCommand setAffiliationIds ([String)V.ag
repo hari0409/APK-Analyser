@@ -1,0 +1,27 @@
+# Lcom/afwsamples/testdpc/ShellCommand;->setAffiliationIds([Ljava/lang/String;)V [access_flags=private]
+#
+# Parameters:
+# - local registers: v0...v4
+# - v5:java.lang.String[]
+#
+# - return:void
+
+setAffiliationIds-BB@0x0 : 
+	0       (00000000) invoke-direct        v4, v5, Lcom/afwsamples/testdpc/ShellCommand;->getOrderedSortedSet([Ljava/lang/String;)Ljava/util/Set;
+	1       (00000006) move-result-object   v0
+	2       (00000008) const-string         v1, 'TestDPCShellCommand'
+	3       (0000000c) new-instance         v2, Ljava/lang/StringBuilder;
+	4       (00000010) invoke-direct        v2, Ljava/lang/StringBuilder;-><init>()V
+	5       (00000016) const-string         v3, 'setAffiliationIds(): ids='
+	6       (0000001a) invoke-virtual       v2, v3, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	7       (00000020) move-result-object   v2
+	8       (00000022) invoke-virtual       v2, v0, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+	9       (00000028) move-result-object   v2
+	10      (0000002a) invoke-virtual       v2, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+	11      (00000030) move-result-object   v2
+	12      (00000032) invoke-static        v1, v2, Landroid/util/Log;->i(Ljava/lang/String; Ljava/lang/String;)I
+	13      (00000038) iget-object          v1, v4, Lcom/afwsamples/testdpc/ShellCommand;->mDevicePolicyManagerGateway Lcom/afwsamples/testdpc/DevicePolicyManagerGateway;
+	14      (0000003c) invoke-interface     v1, v0, Lcom/afwsamples/testdpc/DevicePolicyManagerGateway;->setAffiliationIds(Ljava/util/Set;)V
+	15      (00000042) invoke-direct        v4, Lcom/afwsamples/testdpc/ShellCommand;->getAffiliationIds()V
+	16      (00000048) return-void          
+

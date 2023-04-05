@@ -1,0 +1,36 @@
+# Landroidx/appcompat/widget/ToolbarWidgetWrapper;->updateNavigationIcon()V [access_flags=private]
+#
+# Parameters:
+# local registers: v0...v2
+#
+# - return:void
+
+updateNavigationIcon-BB@0x0 : [ updateNavigationIcon-BB@0xc updateNavigationIcon-BB@0x2a ]
+	0       (00000000) iget                 v0, v2, Landroidx/appcompat/widget/ToolbarWidgetWrapper;->mDisplayOpts I
+	1       (00000004) and-int/lit8         v0, v0, 4
+	2       (00000008) if-eqz               v0, +11
+
+updateNavigationIcon-BB@0xc : [ updateNavigationIcon-BB@0x18 updateNavigationIcon-BB@0x24 ]
+	3       (0000000c) iget-object          v1, v2, Landroidx/appcompat/widget/ToolbarWidgetWrapper;->mToolbar Landroidx/appcompat/widget/Toolbar;
+	4       (00000010) iget-object          v0, v2, Landroidx/appcompat/widget/ToolbarWidgetWrapper;->mNavIcon Landroid/graphics/drawable/Drawable;
+	5       (00000014) if-eqz               v0, +8
+
+updateNavigationIcon-BB@0x18 : [ updateNavigationIcon-BB@0x1c ]
+	6       (00000018) iget-object          v0, v2, Landroidx/appcompat/widget/ToolbarWidgetWrapper;->mNavIcon Landroid/graphics/drawable/Drawable;
+
+updateNavigationIcon-BB@0x1c : [ updateNavigationIcon-BB@0x22 ]
+	7       (0000001c) invoke-virtual       v1, v0, Landroidx/appcompat/widget/Toolbar;->setNavigationIcon(Landroid/graphics/drawable/Drawable;)V
+
+updateNavigationIcon-BB@0x22 : 
+	8       (00000022) return-void          
+
+updateNavigationIcon-BB@0x24 : [ updateNavigationIcon-BB@0x1c ]
+	9       (00000024) iget-object          v0, v2, Landroidx/appcompat/widget/ToolbarWidgetWrapper;->mDefaultNavigationIcon Landroid/graphics/drawable/Drawable;
+	10      (00000028) goto                 -6
+
+updateNavigationIcon-BB@0x2a : [ updateNavigationIcon-BB@0x22 ]
+	11      (0000002a) iget-object          v0, v2, Landroidx/appcompat/widget/ToolbarWidgetWrapper;->mToolbar Landroidx/appcompat/widget/Toolbar;
+	12      (0000002e) const/4              v1, 0
+	13      (00000030) invoke-virtual       v0, v1, Landroidx/appcompat/widget/Toolbar;->setNavigationIcon(Landroid/graphics/drawable/Drawable;)V
+	14      (00000036) goto                 -a
+

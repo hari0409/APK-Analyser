@@ -1,0 +1,25 @@
+# Landroidx/print/PrintHelper;->isPortrait(Landroid/graphics/Bitmap;)Z [access_flags=static]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:android.graphics.Bitmap
+#
+# - return:boolean
+
+isPortrait-BB@0x0 : [ isPortrait-BB@0x14 isPortrait-BB@0x18 ]
+	0       (00000000) invoke-virtual       v2, Landroid/graphics/Bitmap;->getWidth()I
+	1       (00000006) move-result          v0
+	2       (00000008) invoke-virtual       v2, Landroid/graphics/Bitmap;->getHeight()I
+	3       (0000000e) move-result          v1
+	4       (00000010) if-gt                v0, v1, +4
+
+isPortrait-BB@0x14 : [ isPortrait-BB@0x16 ]
+	5       (00000014) const/4              v0, 1
+
+isPortrait-BB@0x16 : 
+	6       (00000016) return               v0
+
+isPortrait-BB@0x18 : [ isPortrait-BB@0x16 ]
+	7       (00000018) const/4              v0, 0
+	8       (0000001a) goto                 -2
+

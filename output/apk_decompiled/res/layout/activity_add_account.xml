@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.android.setupwizardlib.GlifLayout android:icon="@drawable/ic_enterprise_blue" android:id="@id/setup_wizard_layout" android:layout_width="fill_parent" android:layout_height="fill_parent" app:suwFooter="@layout/next_footer" app:suwHeaderText="@string/add_account"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent" style="@style/SuwItemContainer">
+        <TextView android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/add_account_explanation" style="@style/SuwItemTitle" />
+        <RadioGroup android:orientation="vertical" android:id="@id/add_account_options" android:paddingTop="@dimen/content_padding_between_text" android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <RadioButton android:id="@id/add_account" android:layout_width="wrap_content" android:layout_height="@dimen/add_account_option_height" android:text="@string/add_account" />
+            <RadioButton android:id="@id/add_account_with_name" android:layout_width="wrap_content" android:layout_height="@dimen/add_account_option_height" android:text="@string/add_account_with_name" />
+            <RadioButton android:id="@id/add_account_skip" android:layout_width="fill_parent" android:layout_height="@dimen/add_account_option_height" android:checked="true" android:text="@string/add_account_skip" />
+        </RadioGroup>
+    </LinearLayout>
+</com.android.setupwizardlib.GlifLayout>

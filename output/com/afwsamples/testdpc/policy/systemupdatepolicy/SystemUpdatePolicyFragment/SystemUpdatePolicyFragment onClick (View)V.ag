@@ -1,0 +1,49 @@
+# Lcom/afwsamples/testdpc/policy/systemupdatepolicy/SystemUpdatePolicyFragment;->onClick(Landroid/view/View;)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v3
+# - v4:android.view.View
+#
+# - return:void
+
+onClick-BB@0x0 : [ D:onClick-BB@0xe 2131296682:onClick-BB@0x38 2131296683:onClick-BB@0xe 2131296684:onClick-BB@0xe 2131296685:onClick-BB@0xe 2131296686:onClick-BB@0xe 2131296687:onClick-BB@0x24 2131296688:onClick-BB@0x1a 2131296689:onClick-BB@0x10 ]
+	0       (00000000) invoke-virtual       v4, Landroid/view/View;->getId()I
+	1       (00000006) move-result          v0
+	2       (00000008) packed-switch        v0, +2a (0x5c)
+
+onClick-BB@0xe : 
+	3       (0000000e) return-void          
+
+onClick-BB@0x10 : [ onClick-BB@0xe ]
+	4       (00000010) const/4              v0, 1
+	5       (00000012) invoke-direct        v3, v0, Lcom/afwsamples/testdpc/policy/systemupdatepolicy/SystemUpdatePolicyFragment;->selectTime(Z)V
+	6       (00000018) goto                 -5
+
+onClick-BB@0x1a : [ onClick-BB@0xe ]
+	7       (0000001a) const/4              v0, 0
+	8       (0000001c) invoke-direct        v3, v0, Lcom/afwsamples/testdpc/policy/systemupdatepolicy/SystemUpdatePolicyFragment;->selectTime(Z)V
+	9       (00000022) goto                 -a
+
+onClick-BB@0x24 : [ onClick-BB@0x30 onClick-BB@0xe ]
+	10      (00000024) invoke-direct        v3, Lcom/afwsamples/testdpc/policy/systemupdatepolicy/SystemUpdatePolicyFragment;->setSystemUpdatePolicy()Z
+	11      (0000002a) move-result          v0
+	12      (0000002c) if-eqz               v0, -f
+
+onClick-BB@0x30 : [ onClick-BB@0xe ]
+	13      (00000030) invoke-direct        v3, Lcom/afwsamples/testdpc/policy/systemupdatepolicy/SystemUpdatePolicyFragment;->reloadSystemUpdatePolicy()V
+	14      (00000036) goto                 -14
+
+onClick-BB@0x38 : [ onClick-BB@0xe ]
+	15      (00000038) new-instance         v0, Lcom/afwsamples/testdpc/policy/systemupdatepolicy/SystemUpdatePolicyFragment$$Lambda$1;
+	16      (0000003c) invoke-direct        v0, v3, Lcom/afwsamples/testdpc/policy/systemupdatepolicy/SystemUpdatePolicyFragment$$Lambda$1;-><init>(Lcom/afwsamples/testdpc/policy/systemupdatepolicy/SystemUpdatePolicyFragment;)V
+	17      (00000042) invoke-static        Ljava/time/LocalDate;->now()Ljava/time/LocalDate;
+	18      (00000048) move-result-object   v1
+	19      (0000004a) invoke-static        Ljava/time/LocalDate;->now()Ljava/time/LocalDate;
+	20      (00000050) move-result-object   v2
+	21      (00000052) invoke-direct        v3, v0, v1, v2, Lcom/afwsamples/testdpc/policy/systemupdatepolicy/SystemUpdatePolicyFragment;->promptToSetFreezePeriod(Lcom/afwsamples/testdpc/policy/systemupdatepolicy/SystemUpdatePolicyFragment$FreezePeriodPickResult; Ljava/time/LocalDate; Ljava/time/LocalDate;)V
+	22      (00000058) goto                 -25
+
+onClick-BB@0x5a : 
+	23      (0000005a) nop                  
+	24      (0000005c) packed-switch-payload 7f0901aa 7f0901ab 7f0901ac 7f0901ad 7f0901ae 7f0901af 7f0901b0 7f0901b1
+

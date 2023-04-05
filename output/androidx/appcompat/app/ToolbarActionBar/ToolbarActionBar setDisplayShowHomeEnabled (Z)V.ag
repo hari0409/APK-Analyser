@@ -1,0 +1,23 @@
+# Landroidx/appcompat/app/ToolbarActionBar;->setDisplayShowHomeEnabled(Z)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:boolean
+#
+# - return:void
+
+setDisplayShowHomeEnabled-BB@0x0 : [ setDisplayShowHomeEnabled-BB@0x6 setDisplayShowHomeEnabled-BB@0x10 ]
+	0       (00000000) const/4              v1, 2
+	1       (00000002) if-eqz               v3, +7
+
+setDisplayShowHomeEnabled-BB@0x6 : [ setDisplayShowHomeEnabled-BB@0x8 ]
+	2       (00000006) move                 v0, v1
+
+setDisplayShowHomeEnabled-BB@0x8 : 
+	3       (00000008) invoke-virtual       v2, v0, v1, Landroidx/appcompat/app/ToolbarActionBar;->setDisplayOptions(I I)V
+	4       (0000000e) return-void          
+
+setDisplayShowHomeEnabled-BB@0x10 : [ setDisplayShowHomeEnabled-BB@0x8 ]
+	5       (00000010) const/4              v0, 0
+	6       (00000012) goto                 -5
+

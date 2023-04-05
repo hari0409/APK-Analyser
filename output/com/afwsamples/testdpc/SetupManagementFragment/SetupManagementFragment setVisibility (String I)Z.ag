@@ -1,0 +1,38 @@
+# Lcom/afwsamples/testdpc/SetupManagementFragment;->setVisibility(Ljava/lang/String; I)Z [access_flags=private]
+#
+# Parameters:
+# - local registers: v0...v3
+# - v4:java.lang.String
+# - v5:int
+#
+# - return:boolean
+
+setVisibility-BB@0x0 : [ setVisibility-BB@0x16 setVisibility-BB@0x36 ]
+	0       (00000000) const/4              v1, 0
+	1       (00000002) invoke-virtual       v3, Lcom/afwsamples/testdpc/SetupManagementFragment;->getActivity()Landroid/app/Activity;
+	2       (00000008) move-result-object   v2
+	3       (0000000a) invoke-static        v2, v4, Lcom/afwsamples/testdpc/common/ProvisioningStateUtil;->isProvisioningAllowed(Landroid/content/Context; Ljava/lang/String;)Z
+	4       (00000010) move-result          v2
+	5       (00000012) if-eqz               v2, +12
+
+setVisibility-BB@0x16 : [ setVisibility-BB@0x18 ]
+	6       (00000016) move                 v0, v1
+
+setVisibility-BB@0x18 : [ setVisibility-BB@0x32 setVisibility-BB@0x34 ]
+	7       (00000018) invoke-virtual       v3, Lcom/afwsamples/testdpc/SetupManagementFragment;->getView()Landroid/view/View;
+	8       (0000001e) move-result-object   v2
+	9       (00000020) invoke-virtual       v2, v5, Landroid/view/View;->findViewById(I)Landroid/view/View;
+	10      (00000026) move-result-object   v2
+	11      (00000028) invoke-virtual       v2, v0, Landroid/view/View;->setVisibility(I)V
+	12      (0000002e) if-nez               v0, +3
+
+setVisibility-BB@0x32 : [ setVisibility-BB@0x34 ]
+	13      (00000032) const/4              v1, 1
+
+setVisibility-BB@0x34 : 
+	14      (00000034) return               v1
+
+setVisibility-BB@0x36 : [ setVisibility-BB@0x18 ]
+	15      (00000036) const/16             v0, 8
+	16      (0000003a) goto                 -11
+

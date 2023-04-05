@@ -1,0 +1,32 @@
+# Landroidx/appcompat/widget/AppCompatImageHelper;->shouldApplyFrameworkTintUsingColorFilter()Z [access_flags=private]
+#
+# Parameters:
+# local registers: v0...v4
+#
+# - return:boolean
+
+shouldApplyFrameworkTintUsingColorFilter-BB@0x0 : [ shouldApplyFrameworkTintUsingColorFilter-BB@0x10 shouldApplyFrameworkTintUsingColorFilter-BB@0x1e ]
+	0       (00000000) const/16             v3, 21
+	1       (00000004) const/4              v1, 1
+	2       (00000006) const/4              v2, 0
+	3       (00000008) sget                 v0, Landroid/os/Build$VERSION;->SDK_INT I
+	4       (0000000c) if-le                v0, v3, +9
+
+shouldApplyFrameworkTintUsingColorFilter-BB@0x10 : [ shouldApplyFrameworkTintUsingColorFilter-BB@0x18 shouldApplyFrameworkTintUsingColorFilter-BB@0x1a ]
+	5       (00000010) iget-object          v3, v4, Landroidx/appcompat/widget/AppCompatImageHelper;->mInternalImageTint Landroidx/appcompat/widget/TintInfo;
+	6       (00000014) if-eqz               v3, +3
+
+shouldApplyFrameworkTintUsingColorFilter-BB@0x18 : 
+	7       (00000018) return               v1
+
+shouldApplyFrameworkTintUsingColorFilter-BB@0x1a : [ shouldApplyFrameworkTintUsingColorFilter-BB@0x18 ]
+	8       (0000001a) move                 v1, v2
+	9       (0000001c) goto                 -2
+
+shouldApplyFrameworkTintUsingColorFilter-BB@0x1e : [ shouldApplyFrameworkTintUsingColorFilter-BB@0x22 shouldApplyFrameworkTintUsingColorFilter-BB@0x18 ]
+	10      (0000001e) if-eq                v0, v3, -3
+
+shouldApplyFrameworkTintUsingColorFilter-BB@0x22 : [ shouldApplyFrameworkTintUsingColorFilter-BB@0x18 ]
+	11      (00000022) move                 v1, v2
+	12      (00000024) goto                 -6
+

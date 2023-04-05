@@ -1,0 +1,26 @@
+# Landroidx/appcompat/widget/Toolbar$ExpandedActionViewMenuPresenter;->initForMenu(Landroid/content/Context; Landroidx/appcompat/view/menu/MenuBuilder;)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:android.content.Context
+# - v4:androidx.appcompat.view.menu.MenuBuilder
+#
+# - return:void
+
+initForMenu-BB@0x0 : [ initForMenu-BB@0x8 initForMenu-BB@0x1e ]
+	0       (00000000) iget-object          v0, v2, Landroidx/appcompat/widget/Toolbar$ExpandedActionViewMenuPresenter;->mMenu Landroidx/appcompat/view/menu/MenuBuilder;
+	1       (00000004) if-eqz               v0, +d
+
+initForMenu-BB@0x8 : [ initForMenu-BB@0x10 initForMenu-BB@0x1e ]
+	2       (00000008) iget-object          v0, v2, Landroidx/appcompat/widget/Toolbar$ExpandedActionViewMenuPresenter;->mCurrentExpandedItem Landroidx/appcompat/view/menu/MenuItemImpl;
+	3       (0000000c) if-eqz               v0, +9
+
+initForMenu-BB@0x10 : [ initForMenu-BB@0x1e ]
+	4       (00000010) iget-object          v0, v2, Landroidx/appcompat/widget/Toolbar$ExpandedActionViewMenuPresenter;->mMenu Landroidx/appcompat/view/menu/MenuBuilder;
+	5       (00000014) iget-object          v1, v2, Landroidx/appcompat/widget/Toolbar$ExpandedActionViewMenuPresenter;->mCurrentExpandedItem Landroidx/appcompat/view/menu/MenuItemImpl;
+	6       (00000018) invoke-virtual       v0, v1, Landroidx/appcompat/view/menu/MenuBuilder;->collapseItemActionView(Landroidx/appcompat/view/menu/MenuItemImpl;)Z
+
+initForMenu-BB@0x1e : 
+	7       (0000001e) iput-object          v4, v2, Landroidx/appcompat/widget/Toolbar$ExpandedActionViewMenuPresenter;->mMenu Landroidx/appcompat/view/menu/MenuBuilder;
+	8       (00000022) return-void          
+

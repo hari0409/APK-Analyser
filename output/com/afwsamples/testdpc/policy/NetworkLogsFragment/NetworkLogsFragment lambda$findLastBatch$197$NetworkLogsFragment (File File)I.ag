@@ -1,0 +1,19 @@
+# Lcom/afwsamples/testdpc/policy/NetworkLogsFragment;->lambda$findLastBatch$197$NetworkLogsFragment(Ljava/io/File; Ljava/io/File;)I [access_flags=static final synthetic]
+#
+# Parameters:
+# - local registers: v0...v3
+# - v4:java.io.File
+# - v5:java.io.File
+#
+# - return:int
+
+lambda$findLastBatch$197$NetworkLogsFragment-BB@0x0 : 
+	0       (00000000) invoke-virtual       v4, Ljava/io/File;->lastModified()J
+	1       (00000006) move-result-wide     v0
+	2       (00000008) invoke-virtual       v5, Ljava/io/File;->lastModified()J
+	3       (0000000e) move-result-wide     v2
+	4       (00000010) sub-long/2addr       v0, v2
+	5       (00000012) invoke-static        v0, v1, Ljava/lang/Long;->signum(J)I
+	6       (00000018) move-result          v0
+	7       (0000001a) return               v0
+

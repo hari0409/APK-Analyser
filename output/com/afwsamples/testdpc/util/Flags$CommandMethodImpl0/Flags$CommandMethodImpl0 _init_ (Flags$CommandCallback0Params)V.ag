@@ -1,0 +1,13 @@
+# Lcom/afwsamples/testdpc/util/Flags$CommandMethodImpl0;-><init>(Lcom/afwsamples/testdpc/util/Flags$CommandCallback0Params;)V [access_flags=private constructor]
+#
+# Parameters:
+# - local registers: v0...v0
+# - v1:com.afwsamples.testdpc.util.Flags$CommandCallback0Params
+#
+# - return:void
+
+<init>-BB@0x0 : 
+	0       (00000000) invoke-direct        v0, Ljava/lang/Object;-><init>()V
+	1       (00000006) iput-object          v1, v0, Lcom/afwsamples/testdpc/util/Flags$CommandMethodImpl0;->callback Lcom/afwsamples/testdpc/util/Flags$CommandCallback0Params;
+	2       (0000000a) return-void          
+

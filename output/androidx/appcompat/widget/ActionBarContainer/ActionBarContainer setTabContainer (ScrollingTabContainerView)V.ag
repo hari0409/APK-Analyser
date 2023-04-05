@@ -1,0 +1,34 @@
+# Landroidx/appcompat/widget/ActionBarContainer;->setTabContainer(Landroidx/appcompat/widget/ScrollingTabContainerView;)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:androidx.appcompat.widget.ScrollingTabContainerView
+#
+# - return:void
+
+setTabContainer-BB@0x0 : [ setTabContainer-BB@0x8 setTabContainer-BB@0x12 ]
+	0       (00000000) iget-object          v1, v2, Landroidx/appcompat/widget/ActionBarContainer;->mTabContainer Landroid/view/View;
+	1       (00000004) if-eqz               v1, +7
+
+setTabContainer-BB@0x8 : [ setTabContainer-BB@0x12 ]
+	2       (00000008) iget-object          v1, v2, Landroidx/appcompat/widget/ActionBarContainer;->mTabContainer Landroid/view/View;
+	3       (0000000c) invoke-virtual       v2, v1, Landroidx/appcompat/widget/ActionBarContainer;->removeView(Landroid/view/View;)V
+
+setTabContainer-BB@0x12 : [ setTabContainer-BB@0x1a setTabContainer-BB@0x3c ]
+	4       (00000012) iput-object          v3, v2, Landroidx/appcompat/widget/ActionBarContainer;->mTabContainer Landroid/view/View;
+	5       (00000016) if-eqz               v3, +13
+
+setTabContainer-BB@0x1a : [ setTabContainer-BB@0x3c ]
+	6       (0000001a) invoke-virtual       v2, v3, Landroidx/appcompat/widget/ActionBarContainer;->addView(Landroid/view/View;)V
+	7       (00000020) invoke-virtual       v3, Landroidx/appcompat/widget/ScrollingTabContainerView;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
+	8       (00000026) move-result-object   v0
+	9       (00000028) const/4              v1, -1
+	10      (0000002a) iput                 v1, v0, Landroid/view/ViewGroup$LayoutParams;->width I
+	11      (0000002e) const/4              v1, -2
+	12      (00000030) iput                 v1, v0, Landroid/view/ViewGroup$LayoutParams;->height I
+	13      (00000034) const/4              v1, 0
+	14      (00000036) invoke-virtual       v3, v1, Landroidx/appcompat/widget/ScrollingTabContainerView;->setAllowCollapse(Z)V
+
+setTabContainer-BB@0x3c : 
+	15      (0000003c) return-void          
+

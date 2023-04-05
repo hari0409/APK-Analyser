@@ -1,0 +1,28 @@
+# Lcom/afwsamples/testdpc/common/Util;->getLauncherIntent(Landroid/content/Context;)Landroid/content/Intent; [access_flags=public static]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:android.content.Context
+#
+# - return:android.content.Intent
+
+getLauncherIntent-BB@0x0 : [ getLauncherIntent-BB@0x1a getLauncherIntent-BB@0x26 ]
+	0       (00000000) new-instance         v0, Landroid/content/Intent;
+	1       (00000004) const-string         v1, 'android.intent.action.MAIN'
+	2       (00000008) invoke-direct        v0, v1, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
+	3       (0000000e) invoke-static        v2, Lcom/afwsamples/testdpc/common/Util;->isRunningOnTvDevice(Landroid/content/Context;)Z
+	4       (00000014) move-result          v1
+	5       (00000016) if-eqz               v1, +8
+
+getLauncherIntent-BB@0x1a : [ getLauncherIntent-BB@0x24 ]
+	6       (0000001a) const-string         v1, 'android.intent.category.LEANBACK_LAUNCHER'
+	7       (0000001e) invoke-virtual       v0, v1, Landroid/content/Intent;->addCategory(Ljava/lang/String;)Landroid/content/Intent;
+
+getLauncherIntent-BB@0x24 : 
+	8       (00000024) return-object        v0
+
+getLauncherIntent-BB@0x26 : [ getLauncherIntent-BB@0x24 ]
+	9       (00000026) const-string         v1, 'android.intent.category.LAUNCHER'
+	10      (0000002a) invoke-virtual       v0, v1, Landroid/content/Intent;->addCategory(Ljava/lang/String;)Landroid/content/Intent;
+	11      (00000030) goto                 -6
+

@@ -1,0 +1,44 @@
+# Landroidx/appcompat/widget/LinearLayoutCompat;->setDividerDrawable(Landroid/graphics/drawable/Drawable;)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:android.graphics.drawable.Drawable
+#
+# - return:void
+
+setDividerDrawable-BB@0x0 : [ setDividerDrawable-BB@0xa setDividerDrawable-BB@0xc ]
+	0       (00000000) const/4              v0, 0
+	1       (00000002) iget-object          v1, v2, Landroidx/appcompat/widget/LinearLayoutCompat;->mDivider Landroid/graphics/drawable/Drawable;
+	2       (00000006) if-ne                v3, v1, +3
+
+setDividerDrawable-BB@0xa : 
+	3       (0000000a) return-void          
+
+setDividerDrawable-BB@0xc : [ setDividerDrawable-BB@0x14 setDividerDrawable-BB@0x40 ]
+	4       (0000000c) iput-object          v3, v2, Landroidx/appcompat/widget/LinearLayoutCompat;->mDivider Landroid/graphics/drawable/Drawable;
+	5       (00000010) if-eqz               v3, +18
+
+setDividerDrawable-BB@0x14 : [ setDividerDrawable-BB@0x2c ]
+	6       (00000014) invoke-virtual       v3, Landroid/graphics/drawable/Drawable;->getIntrinsicWidth()I
+	7       (0000001a) move-result          v1
+	8       (0000001c) iput                 v1, v2, Landroidx/appcompat/widget/LinearLayoutCompat;->mDividerWidth I
+	9       (00000020) invoke-virtual       v3, Landroid/graphics/drawable/Drawable;->getIntrinsicHeight()I
+	10      (00000026) move-result          v1
+	11      (00000028) iput                 v1, v2, Landroidx/appcompat/widget/LinearLayoutCompat;->mDividerHeight I
+
+setDividerDrawable-BB@0x2c : [ setDividerDrawable-BB@0x30 setDividerDrawable-BB@0x32 ]
+	12      (0000002c) if-nez               v3, +3
+
+setDividerDrawable-BB@0x30 : [ setDividerDrawable-BB@0x32 ]
+	13      (00000030) const/4              v0, 1
+
+setDividerDrawable-BB@0x32 : [ setDividerDrawable-BB@0xa ]
+	14      (00000032) invoke-virtual       v2, v0, Landroidx/appcompat/widget/LinearLayoutCompat;->setWillNotDraw(Z)V
+	15      (00000038) invoke-virtual       v2, Landroidx/appcompat/widget/LinearLayoutCompat;->requestLayout()V
+	16      (0000003e) goto                 -1a
+
+setDividerDrawable-BB@0x40 : [ setDividerDrawable-BB@0x2c ]
+	17      (00000040) iput                 v0, v2, Landroidx/appcompat/widget/LinearLayoutCompat;->mDividerWidth I
+	18      (00000044) iput                 v0, v2, Landroidx/appcompat/widget/LinearLayoutCompat;->mDividerHeight I
+	19      (00000048) goto                 -e
+

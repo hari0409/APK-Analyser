@@ -1,0 +1,25 @@
+# Landroidx/appcompat/widget/ScrollingTabContainerView;->createTabLayout()Landroidx/appcompat/widget/LinearLayoutCompat; [access_flags=private]
+#
+# Parameters:
+# local registers: v0...v4
+#
+# - return:androidx.appcompat.widget.LinearLayoutCompat
+
+createTabLayout-BB@0x0 : 
+	0       (00000000) new-instance         v0, Landroidx/appcompat/widget/LinearLayoutCompat;
+	1       (00000004) invoke-virtual       v4, Landroidx/appcompat/widget/ScrollingTabContainerView;->getContext()Landroid/content/Context;
+	2       (0000000a) move-result-object   v1
+	3       (0000000c) const/4              v2, 0
+	4       (0000000e) sget                 v3, Landroidx/appcompat/R$attr;->actionBarTabBarStyle I
+	5       (00000012) invoke-direct        v0, v1, v2, v3, Landroidx/appcompat/widget/LinearLayoutCompat;-><init>(Landroid/content/Context; Landroid/util/AttributeSet; I)V
+	6       (00000018) const/4              v1, 1
+	7       (0000001a) invoke-virtual       v0, v1, Landroidx/appcompat/widget/LinearLayoutCompat;->setMeasureWithLargestChildEnabled(Z)V
+	8       (00000020) const/16             v1, 17
+	9       (00000024) invoke-virtual       v0, v1, Landroidx/appcompat/widget/LinearLayoutCompat;->setGravity(I)V
+	10      (0000002a) new-instance         v1, Landroidx/appcompat/widget/LinearLayoutCompat$LayoutParams;
+	11      (0000002e) const/4              v2, -2
+	12      (00000030) const/4              v3, -1
+	13      (00000032) invoke-direct        v1, v2, v3, Landroidx/appcompat/widget/LinearLayoutCompat$LayoutParams;-><init>(I I)V
+	14      (00000038) invoke-virtual       v0, v1, Landroidx/appcompat/widget/LinearLayoutCompat;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
+	15      (0000003e) return-object        v0
+

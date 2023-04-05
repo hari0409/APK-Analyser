@@ -1,0 +1,41 @@
+# Lcom/afwsamples/testdpc/comp/BindDeviceAdminFragment;->lambda$getCustomConstraint$213$BindDeviceAdminFragment(I)I [access_flags=final synthetic]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:int
+#
+# - return:int
+
+lambda$getCustomConstraint$213$BindDeviceAdminFragment-BB@0x0 : [ lambda$getCustomConstraint$213$BindDeviceAdminFragment-BB@0x8 lambda$getCustomConstraint$213$BindDeviceAdminFragment-BB@0x10 ]
+	0       (00000000) iget-object          v0, v1, Lcom/afwsamples/testdpc/comp/BindDeviceAdminFragment;->mProfileOwnerUser Landroid/os/UserHandle;
+	1       (00000004) if-nez               v0, +6
+
+lambda$getCustomConstraint$213$BindDeviceAdminFragment-BB@0x8 : [ lambda$getCustomConstraint$213$BindDeviceAdminFragment-BB@0xe ]
+	2       (00000008) const                v2, 2131690129 # [1.9009292894035257e+38]
+
+lambda$getCustomConstraint$213$BindDeviceAdminFragment-BB@0xe : 
+	3       (0000000e) return               v2
+
+lambda$getCustomConstraint$213$BindDeviceAdminFragment-BB@0x10 : [ lambda$getCustomConstraint$213$BindDeviceAdminFragment-BB@0x1c lambda$getCustomConstraint$213$BindDeviceAdminFragment-BB@0xe ]
+	4       (00000010) invoke-direct        v1, Lcom/afwsamples/testdpc/comp/BindDeviceAdminFragment;->isManagedProfileOwner()Z
+	5       (00000016) move-result          v0
+	6       (00000018) if-eqz               v0, -5
+
+lambda$getCustomConstraint$213$BindDeviceAdminFragment-BB@0x1c : [ lambda$getCustomConstraint$213$BindDeviceAdminFragment-BB@0x28 lambda$getCustomConstraint$213$BindDeviceAdminFragment-BB@0x34 ]
+	7       (0000001c) invoke-direct        v1, Lcom/afwsamples/testdpc/comp/BindDeviceAdminFragment;->isManagedProfileRunning()Z
+	8       (00000022) move-result          v0
+	9       (00000024) if-eqz               v0, +8
+
+lambda$getCustomConstraint$213$BindDeviceAdminFragment-BB@0x28 : [ lambda$getCustomConstraint$213$BindDeviceAdminFragment-BB@0x34 lambda$getCustomConstraint$213$BindDeviceAdminFragment-BB@0x3c ]
+	10      (00000028) invoke-direct        v1, Lcom/afwsamples/testdpc/comp/BindDeviceAdminFragment;->isManagedProfileUnlocked()Z
+	11      (0000002e) move-result          v0
+	12      (00000030) if-nez               v0, +6
+
+lambda$getCustomConstraint$213$BindDeviceAdminFragment-BB@0x34 : [ lambda$getCustomConstraint$213$BindDeviceAdminFragment-BB@0xe ]
+	13      (00000034) const                v2, 2131689930 # [1.9008889274084144e+38]
+	14      (0000003a) goto                 -16
+
+lambda$getCustomConstraint$213$BindDeviceAdminFragment-BB@0x3c : [ lambda$getCustomConstraint$213$BindDeviceAdminFragment-BB@0xe ]
+	15      (0000003c) const/4              v2, 0
+	16      (0000003e) goto                 -18
+

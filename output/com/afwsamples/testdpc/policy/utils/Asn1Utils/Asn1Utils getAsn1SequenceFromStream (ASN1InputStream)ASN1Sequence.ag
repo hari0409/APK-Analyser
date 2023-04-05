@@ -1,0 +1,138 @@
+# Lcom/afwsamples/testdpc/policy/utils/Asn1Utils;->getAsn1SequenceFromStream(Lorg/bouncycastle/asn1/ASN1InputStream;)Lorg/bouncycastle/asn1/ASN1Sequence; [access_flags=public static]
+#
+# Parameters:
+# - local registers: v0...v5
+# - v6:org.bouncycastle.asn1.ASN1InputStream
+#
+# - return:org.bouncycastle.asn1.ASN1Sequence
+
+getAsn1SequenceFromStream-BB@0x0 : [ getAsn1SequenceFromStream-BB@0x10 getAsn1SequenceFromStream-BB@0x52 ]
+	0       (00000000) invoke-virtual       v6, Lorg/bouncycastle/asn1/ASN1InputStream;->readObject()Lorg/bouncycastle/asn1/ASN1Primitive;
+	1       (00000006) move-result-object   v0
+	2       (00000008) instance-of          v2, v0, Lorg/bouncycastle/asn1/ASN1OctetString;
+	3       (0000000c) if-nez               v2, +23
+
+getAsn1SequenceFromStream-BB@0x10 : 
+	4       (00000010) new-instance         v2, Ljava/security/cert/CertificateParsingException;
+	5       (00000014) new-instance         v3, Ljava/lang/StringBuilder;
+	6       (00000018) invoke-direct        v3, Ljava/lang/StringBuilder;-><init>()V
+	7       (0000001e) const-string         v4, 'Expected octet stream, found '
+	8       (00000022) invoke-virtual       v3, v4, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	9       (00000028) move-result-object   v3
+	10      (0000002a) invoke-virtual       v0, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+	11      (00000030) move-result-object   v4
+	12      (00000032) invoke-virtual       v4, Ljava/lang/Class;->getName()Ljava/lang/String;
+	13      (00000038) move-result-object   v4
+	14      (0000003a) invoke-virtual       v3, v4, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	15      (00000040) move-result-object   v3
+	16      (00000042) invoke-virtual       v3, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+	17      (00000048) move-result-object   v3
+	18      (0000004a) invoke-direct        v2, v3, Ljava/security/cert/CertificateParsingException;-><init>(Ljava/lang/String;)V
+	19      (00000050) throw                v2
+
+getAsn1SequenceFromStream-BB@0x52 : [ getAsn1SequenceFromStream-BB@0x6c ]
+	20      (00000052) new-instance         v1, Lorg/bouncycastle/asn1/ASN1InputStream;
+	21      (00000056) move-object          v2, v0
+	22      (00000058) check-cast           v2, Lorg/bouncycastle/asn1/ASN1OctetString;
+	23      (0000005c) invoke-virtual       v2, Lorg/bouncycastle/asn1/ASN1OctetString;->getOctets()[B
+	24      (00000062) move-result-object   v2
+	25      (00000064) invoke-direct        v1, v2, Lorg/bouncycastle/asn1/ASN1InputStream;-><init>([B)V
+	26      (0000006a) const/4              v4, 0
+
+getAsn1SequenceFromStream-BB@0x6c : [ getAsn1SequenceFromStream-BB@0x7c getAsn1SequenceFromStream-BB@0xd6 ]
+	27      (0000006c) invoke-virtual       v1, Lorg/bouncycastle/asn1/ASN1InputStream;->readObject()Lorg/bouncycastle/asn1/ASN1Primitive;
+	28      (00000072) move-result-object   v0
+	29      (00000074) instance-of          v2, v0, Lorg/bouncycastle/asn1/ASN1Sequence;
+	30      (00000078) if-nez               v2, +2f
+	6c:bd
+	(Ljava/lang/Throwable; -> 10e getAsn1SequenceFromStream-BB@0x10e)
+	(Ljava/lang/Throwable; -> be getAsn1SequenceFromStream-BB@0xbe)
+
+getAsn1SequenceFromStream-BB@0x7c : 
+	31      (0000007c) new-instance         v2, Ljava/security/cert/CertificateParsingException;
+	32      (00000080) new-instance         v3, Ljava/lang/StringBuilder;
+	33      (00000084) invoke-direct        v3, Ljava/lang/StringBuilder;-><init>()V
+	34      (0000008a) const-string         v5, 'Expected sequence, found '
+	35      (0000008e) invoke-virtual       v3, v5, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	36      (00000094) move-result-object   v3
+	37      (00000096) invoke-virtual       v0, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+	38      (0000009c) move-result-object   v5
+	39      (0000009e) invoke-virtual       v5, Ljava/lang/Class;->getName()Ljava/lang/String;
+	40      (000000a4) move-result-object   v5
+	41      (000000a6) invoke-virtual       v3, v5, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	42      (000000ac) move-result-object   v3
+	43      (000000ae) invoke-virtual       v3, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+	44      (000000b4) move-result-object   v3
+	45      (000000b6) invoke-direct        v2, v3, Ljava/security/cert/CertificateParsingException;-><init>(Ljava/lang/String;)V
+	46      (000000bc) throw                v2
+	6c:bd
+	(Ljava/lang/Throwable; -> 10e getAsn1SequenceFromStream-BB@0x10e)
+	(Ljava/lang/Throwable; -> be getAsn1SequenceFromStream-BB@0xbe)
+
+getAsn1SequenceFromStream-BB@0xbe : [ getAsn1SequenceFromStream-BB@0xc0 ]
+	47      (000000be) move-exception       v2
+
+getAsn1SequenceFromStream-BB@0xc0 : 
+	48      (000000c0) throw                v2
+	c0:c1
+	(Ljava/lang/Throwable; -> c2 getAsn1SequenceFromStream-BB@0xc2)
+
+getAsn1SequenceFromStream-BB@0xc2 : [ getAsn1SequenceFromStream-BB@0xc6 ]
+	49      (000000c2) move-exception       v3
+	50      (000000c4) move-object          v4, v2
+
+getAsn1SequenceFromStream-BB@0xc6 : [ getAsn1SequenceFromStream-BB@0xca getAsn1SequenceFromStream-BB@0xd4 ]
+	51      (000000c6) if-eqz               v1, +7
+
+getAsn1SequenceFromStream-BB@0xca : [ getAsn1SequenceFromStream-BB@0xce getAsn1SequenceFromStream-BB@0x106 ]
+	52      (000000ca) if-eqz               v4, +1e
+
+getAsn1SequenceFromStream-BB@0xce : [ getAsn1SequenceFromStream-BB@0xd4 ]
+	53      (000000ce) invoke-virtual       v1, Lorg/bouncycastle/asn1/ASN1InputStream;->close()V
+	ce:d3
+	(Ljava/lang/Throwable; -> fc getAsn1SequenceFromStream-BB@0xfc)
+
+getAsn1SequenceFromStream-BB@0xd4 : 
+	54      (000000d4) throw                v3
+
+getAsn1SequenceFromStream-BB@0xd6 : [ getAsn1SequenceFromStream-BB@0xde getAsn1SequenceFromStream-BB@0xe8 ]
+	55      (000000d6) check-cast           v0, Lorg/bouncycastle/asn1/ASN1Sequence;
+	56      (000000da) if-eqz               v1, +7
+	d6:d9
+	(Ljava/lang/Throwable; -> 10e getAsn1SequenceFromStream-BB@0x10e)
+	(Ljava/lang/Throwable; -> be getAsn1SequenceFromStream-BB@0xbe)
+
+getAsn1SequenceFromStream-BB@0xde : [ getAsn1SequenceFromStream-BB@0xe2 getAsn1SequenceFromStream-BB@0xf4 ]
+	57      (000000de) if-eqz               v4, +b
+
+getAsn1SequenceFromStream-BB@0xe2 : [ getAsn1SequenceFromStream-BB@0xe8 ]
+	58      (000000e2) invoke-virtual       v1, Lorg/bouncycastle/asn1/ASN1InputStream;->close()V
+	e2:e7
+	(Ljava/lang/Throwable; -> ea getAsn1SequenceFromStream-BB@0xea)
+
+getAsn1SequenceFromStream-BB@0xe8 : 
+	59      (000000e8) return-object        v0
+
+getAsn1SequenceFromStream-BB@0xea : [ getAsn1SequenceFromStream-BB@0xe8 ]
+	60      (000000ea) move-exception       v2
+	61      (000000ec) invoke-virtual       v4, v2, Ljava/lang/Throwable;->addSuppressed(Ljava/lang/Throwable;)V
+	62      (000000f2) goto                 -5
+
+getAsn1SequenceFromStream-BB@0xf4 : [ getAsn1SequenceFromStream-BB@0xe8 ]
+	63      (000000f4) invoke-virtual       v1, Lorg/bouncycastle/asn1/ASN1InputStream;->close()V
+	64      (000000fa) goto                 -9
+
+getAsn1SequenceFromStream-BB@0xfc : [ getAsn1SequenceFromStream-BB@0xd4 ]
+	65      (000000fc) move-exception       v2
+	66      (000000fe) invoke-virtual       v4, v2, Ljava/lang/Throwable;->addSuppressed(Ljava/lang/Throwable;)V
+	67      (00000104) goto                 -18
+
+getAsn1SequenceFromStream-BB@0x106 : [ getAsn1SequenceFromStream-BB@0xd4 ]
+	68      (00000106) invoke-virtual       v1, Lorg/bouncycastle/asn1/ASN1InputStream;->close()V
+	69      (0000010c) goto                 -1c
+
+getAsn1SequenceFromStream-BB@0x10e : [ getAsn1SequenceFromStream-BB@0xc6 ]
+	70      (0000010e) move-exception       v2
+	71      (00000110) move-object          v3, v2
+	72      (00000112) goto                 -26
+

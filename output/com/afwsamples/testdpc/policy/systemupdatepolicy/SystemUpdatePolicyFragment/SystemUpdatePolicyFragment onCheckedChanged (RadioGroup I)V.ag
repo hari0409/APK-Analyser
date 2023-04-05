@@ -1,0 +1,47 @@
+# Lcom/afwsamples/testdpc/policy/systemupdatepolicy/SystemUpdatePolicyFragment;->onCheckedChanged(Landroid/widget/RadioGroup; I)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v3
+# - v4:android.widget.RadioGroup
+# - v5:int
+#
+# - return:void
+
+onCheckedChanged-BB@0x0 : [ onCheckedChanged-BB@0xc onCheckedChanged-BB@0x42 ]
+	0       (00000000) const/4              v2, 0
+	1       (00000002) const                v0, 2131296678 # [1.821127945993862e+38]
+	2       (00000008) if-ne                v5, v0, +1d
+
+onCheckedChanged-BB@0xc : [ onCheckedChanged-BB@0x1c ]
+	3       (0000000c) invoke-direct        v3, Lcom/afwsamples/testdpc/policy/systemupdatepolicy/SystemUpdatePolicyFragment;->updateMaintenanceWindowDisplay()V
+	4       (00000012) iget-object          v0, v3, Lcom/afwsamples/testdpc/policy/systemupdatepolicy/SystemUpdatePolicyFragment;->mMaintenanceWindowDetails Landroid/widget/LinearLayout;
+	5       (00000016) invoke-virtual       v0, v2, Landroid/widget/LinearLayout;->setVisibility(I)V
+
+onCheckedChanged-BB@0x1c : [ onCheckedChanged-BB@0x26 onCheckedChanged-BB@0x32 ]
+	6       (0000001c) const                v0, 2131296684 # [1.8211291629384384e+38]
+	7       (00000022) if-eq                v5, v0, +8
+
+onCheckedChanged-BB@0x26 : [ onCheckedChanged-BB@0x32 onCheckedChanged-BB@0x50 ]
+	8       (00000026) sget                 v0, Lcom/afwsamples/testdpc/common/Util;->SDK_INT I
+	9       (0000002a) const/16             v1, 28
+	10      (0000002e) if-ge                v0, v1, +11
+
+onCheckedChanged-BB@0x32 : [ onCheckedChanged-BB@0x40 ]
+	11      (00000032) iget-object          v0, v3, Lcom/afwsamples/testdpc/policy/systemupdatepolicy/SystemUpdatePolicyFragment;->mFreezePeriodPanel Landroid/widget/LinearLayout;
+	12      (00000036) const/16             v1, 8
+	13      (0000003a) invoke-virtual       v0, v1, Landroid/widget/LinearLayout;->setVisibility(I)V
+
+onCheckedChanged-BB@0x40 : 
+	14      (00000040) return-void          
+
+onCheckedChanged-BB@0x42 : [ onCheckedChanged-BB@0x1c ]
+	15      (00000042) iget-object          v0, v3, Lcom/afwsamples/testdpc/policy/systemupdatepolicy/SystemUpdatePolicyFragment;->mMaintenanceWindowDetails Landroid/widget/LinearLayout;
+	16      (00000046) const/4              v1, 4
+	17      (00000048) invoke-virtual       v0, v1, Landroid/widget/LinearLayout;->setVisibility(I)V
+	18      (0000004e) goto                 -19
+
+onCheckedChanged-BB@0x50 : [ onCheckedChanged-BB@0x40 ]
+	19      (00000050) iget-object          v0, v3, Lcom/afwsamples/testdpc/policy/systemupdatepolicy/SystemUpdatePolicyFragment;->mFreezePeriodPanel Landroid/widget/LinearLayout;
+	20      (00000054) invoke-virtual       v0, v2, Landroid/widget/LinearLayout;->setVisibility(I)V
+	21      (0000005a) goto                 -d
+

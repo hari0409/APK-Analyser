@@ -1,0 +1,27 @@
+# Landroidx/appcompat/app/WindowDecorActionBar;->checkShowingFlags(Z Z Z)Z [access_flags=static]
+#
+# Parameters:
+# - local registers: v0...v0
+# - v1:boolean
+# - v2:boolean
+# - v3:boolean
+#
+# - return:boolean
+
+checkShowingFlags-BB@0x0 : [ checkShowingFlags-BB@0x6 checkShowingFlags-BB@0x8 ]
+	0       (00000000) const/4              v0, 1
+	1       (00000002) if-eqz               v3, +3
+
+checkShowingFlags-BB@0x6 : 
+	2       (00000006) return               v0
+
+checkShowingFlags-BB@0x8 : [ checkShowingFlags-BB@0xc checkShowingFlags-BB@0x10 ]
+	3       (00000008) if-nez               v1, +4
+
+checkShowingFlags-BB@0xc : [ checkShowingFlags-BB@0x10 checkShowingFlags-BB@0x6 ]
+	4       (0000000c) if-eqz               v2, -3
+
+checkShowingFlags-BB@0x10 : [ checkShowingFlags-BB@0x6 ]
+	5       (00000010) const/4              v0, 0
+	6       (00000012) goto                 -6
+

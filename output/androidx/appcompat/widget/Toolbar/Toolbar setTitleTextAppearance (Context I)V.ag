@@ -1,0 +1,21 @@
+# Landroidx/appcompat/widget/Toolbar;->setTitleTextAppearance(Landroid/content/Context; I)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:android.content.Context
+# - v3:int
+#
+# - return:void
+
+setTitleTextAppearance-BB@0x0 : [ setTitleTextAppearance-BB@0xc setTitleTextAppearance-BB@0x16 ]
+	0       (00000000) iput                 v3, v1, Landroidx/appcompat/widget/Toolbar;->mTitleTextAppearance I
+	1       (00000004) iget-object          v0, v1, Landroidx/appcompat/widget/Toolbar;->mTitleTextView Landroid/widget/TextView;
+	2       (00000008) if-eqz               v0, +7
+
+setTitleTextAppearance-BB@0xc : [ setTitleTextAppearance-BB@0x16 ]
+	3       (0000000c) iget-object          v0, v1, Landroidx/appcompat/widget/Toolbar;->mTitleTextView Landroid/widget/TextView;
+	4       (00000010) invoke-virtual       v0, v2, v3, Landroid/widget/TextView;->setTextAppearance(Landroid/content/Context; I)V
+
+setTitleTextAppearance-BB@0x16 : 
+	5       (00000016) return-void          
+

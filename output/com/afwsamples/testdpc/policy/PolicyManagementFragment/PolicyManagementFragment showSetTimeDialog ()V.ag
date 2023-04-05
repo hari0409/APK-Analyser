@@ -1,0 +1,60 @@
+# Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->showSetTimeDialog()V [access_flags=private]
+#
+# Parameters:
+# local registers: v0...v7
+#
+# - return:void
+
+showSetTimeDialog-BB@0x0 : [ showSetTimeDialog-BB@0xe showSetTimeDialog-BB@0x22 ]
+	0       (00000000) const/4              v6, 0
+	1       (00000002) invoke-virtual       v7, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->getActivity()Landroid/app/Activity;
+	2       (00000008) move-result-object   v3
+	3       (0000000a) if-eqz               v3, +c
+
+showSetTimeDialog-BB@0xe : [ showSetTimeDialog-BB@0x22 showSetTimeDialog-BB@0x24 ]
+	4       (0000000e) invoke-virtual       v7, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->getActivity()Landroid/app/Activity;
+	5       (00000014) move-result-object   v3
+	6       (00000016) invoke-virtual       v3, Landroid/app/Activity;->isFinishing()Z
+	7       (0000001c) move-result          v3
+	8       (0000001e) if-eqz               v3, +3
+
+showSetTimeDialog-BB@0x22 : 
+	9       (00000022) return-void          
+
+showSetTimeDialog-BB@0x24 : [ showSetTimeDialog-BB@0x22 ]
+	10      (00000024) invoke-virtual       v7, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->getActivity()Landroid/app/Activity;
+	11      (0000002a) move-result-object   v3
+	12      (0000002c) invoke-virtual       v3, Landroid/app/Activity;->getLayoutInflater()Landroid/view/LayoutInflater;
+	13      (00000032) move-result-object   v3
+	14      (00000034) const                v4, 2131427446 # [1.8476508473843654e+38]
+	15      (0000003a) invoke-virtual       v3, v4, v6, Landroid/view/LayoutInflater;->inflate(I Landroid/view/ViewGroup;)Landroid/view/View;
+	16      (00000040) move-result-object   v1
+	17      (00000042) const                v3, 2131296472 # [1.8210861642300786e+38]
+	18      (00000048) invoke-virtual       v1, v3, Landroid/view/View;->findViewById(I)Landroid/view/View;
+	19      (0000004e) move-result-object   v2
+	20      (00000050) check-cast           v2, Landroid/widget/EditText;
+	21      (00000054) invoke-static        Ljava/lang/System;->currentTimeMillis()J
+	22      (0000005a) move-result-wide     v4
+	23      (0000005c) invoke-static        v4, v5, Ljava/lang/Long;->toString(J)Ljava/lang/String;
+	24      (00000062) move-result-object   v0
+	25      (00000064) invoke-virtual       v2, v0, Landroid/widget/EditText;->setText(Ljava/lang/CharSequence;)V
+	26      (0000006a) new-instance         v3, Landroid/app/AlertDialog$Builder;
+	27      (0000006e) invoke-virtual       v7, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->getActivity()Landroid/app/Activity;
+	28      (00000074) move-result-object   v4
+	29      (00000076) invoke-direct        v3, v4, Landroid/app/AlertDialog$Builder;-><init>(Landroid/content/Context;)V
+	30      (0000007c) const                v4, 2131690233 # [1.9009503831095135e+38]
+	31      (00000082) invoke-virtual       v3, v4, Landroid/app/AlertDialog$Builder;->setTitle(I)Landroid/app/AlertDialog$Builder;
+	32      (00000088) move-result-object   v3
+	33      (0000008a) invoke-virtual       v3, v1, Landroid/app/AlertDialog$Builder;->setView(Landroid/view/View;)Landroid/app/AlertDialog$Builder;
+	34      (00000090) move-result-object   v3
+	35      (00000092) const                v4, 17039370 # [2.4244599011678966e-38]
+	36      (00000098) new-instance         v5, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment$$Lambda$61;
+	37      (0000009c) invoke-direct        v5, v7, v2, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment$$Lambda$61;-><init>(Lcom/afwsamples/testdpc/policy/PolicyManagementFragment; Landroid/widget/EditText;)V
+	38      (000000a2) invoke-virtual       v3, v4, v5, Landroid/app/AlertDialog$Builder;->setPositiveButton(I Landroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
+	39      (000000a8) move-result-object   v3
+	40      (000000aa) const/high16         v4, 260 # [2.424457098570968e-38]
+	41      (000000ae) invoke-virtual       v3, v4, v6, Landroid/app/AlertDialog$Builder;->setNegativeButton(I Landroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
+	42      (000000b4) move-result-object   v3
+	43      (000000b6) invoke-virtual       v3, Landroid/app/AlertDialog$Builder;->show()Landroid/app/AlertDialog;
+	44      (000000bc) goto                 -4d
+

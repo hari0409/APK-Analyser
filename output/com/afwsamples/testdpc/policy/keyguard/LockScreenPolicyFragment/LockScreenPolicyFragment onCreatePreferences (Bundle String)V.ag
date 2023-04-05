@@ -1,0 +1,60 @@
+# Lcom/afwsamples/testdpc/policy/keyguard/LockScreenPolicyFragment;->onCreatePreferences(Landroid/os/Bundle; Ljava/lang/String;)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v5
+# - v6:android.os.Bundle
+# - v7:java.lang.String
+#
+# - return:void
+
+onCreatePreferences-BB@0x0 : [ onCreatePreferences-BB@0x3c ]
+	0       (00000000) const                v2, 2131886085 # [1.9406738879664574e+38]
+	1       (00000006) invoke-virtual       v5, v2, Lcom/afwsamples/testdpc/policy/keyguard/LockScreenPolicyFragment;->addPreferencesFromResource(I)V
+	2       (0000000c) invoke-direct        v5, Lcom/afwsamples/testdpc/policy/keyguard/LockScreenPolicyFragment;->setupAll()V
+	3       (00000012) invoke-direct        v5, Lcom/afwsamples/testdpc/policy/keyguard/LockScreenPolicyFragment;->disableIncompatibleManagementOptionsInCurrentProfile()V
+	4       (00000018) invoke-virtual       v5, Lcom/afwsamples/testdpc/policy/keyguard/LockScreenPolicyFragment;->getDpmGateway()Lcom/afwsamples/testdpc/DevicePolicyManagerGateway;
+	5       (0000001e) move-result-object   v2
+	6       (00000020) invoke-interface     v2, Lcom/afwsamples/testdpc/DevicePolicyManagerGateway;->getKeyguardDisabledFeatures()I
+	7       (00000026) move-result          v0
+	8       (00000028) sget-object          v2, Lcom/afwsamples/testdpc/policy/keyguard/LockScreenPolicyFragment;->KEYGUARD_FEATURES Ljava/util/Map;
+	9       (0000002c) invoke-interface     v2, Ljava/util/Map;->entrySet()Ljava/util/Set;
+	10      (00000032) move-result-object   v2
+	11      (00000034) invoke-interface     v2, Ljava/util/Set;->iterator()Ljava/util/Iterator;
+	12      (0000003a) move-result-object   v4
+
+onCreatePreferences-BB@0x3c : [ onCreatePreferences-BB@0x48 onCreatePreferences-BB@0x90 ]
+	13      (0000003c) invoke-interface     v4, Ljava/util/Iterator;->hasNext()Z
+	14      (00000042) move-result          v2
+	15      (00000044) if-eqz               v2, +26
+
+onCreatePreferences-BB@0x48 : [ onCreatePreferences-BB@0x7a onCreatePreferences-BB@0x8c ]
+	16      (00000048) invoke-interface     v4, Ljava/util/Iterator;->next()Ljava/lang/Object;
+	17      (0000004e) move-result-object   v1
+	18      (00000050) check-cast           v1, Ljava/util/Map$Entry;
+	19      (00000054) invoke-interface     v1, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
+	20      (0000005a) move-result-object   v2
+	21      (0000005c) check-cast           v2, Ljava/lang/String;
+	22      (00000060) invoke-interface     v1, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
+	23      (00000066) move-result-object   v3
+	24      (00000068) check-cast           v3, Ljava/lang/Integer;
+	25      (0000006c) invoke-virtual       v3, Ljava/lang/Integer;->intValue()I
+	26      (00000072) move-result          v3
+	27      (00000074) and-int/2addr        v3, v0
+	28      (00000076) if-eqz               v3, +b
+
+onCreatePreferences-BB@0x7a : [ onCreatePreferences-BB@0x7c ]
+	29      (0000007a) const/4              v3, 1
+
+onCreatePreferences-BB@0x7c : [ onCreatePreferences-BB@0x3c ]
+	30      (0000007c) invoke-static        v3, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+	31      (00000082) move-result-object   v3
+	32      (00000084) invoke-direct        v5, v2, v3, Lcom/afwsamples/testdpc/policy/keyguard/LockScreenPolicyFragment;->setup(Ljava/lang/String; Ljava/lang/Object;)V
+	33      (0000008a) goto                 -27
+
+onCreatePreferences-BB@0x8c : [ onCreatePreferences-BB@0x7c ]
+	34      (0000008c) const/4              v3, 0
+	35      (0000008e) goto                 -9
+
+onCreatePreferences-BB@0x90 : 
+	36      (00000090) return-void          
+

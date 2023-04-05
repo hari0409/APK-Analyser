@@ -1,0 +1,21 @@
+# Lcom/afwsamples/testdpc/policy/PolicyManagementFragment$22;-><init>(Lcom/afwsamples/testdpc/policy/PolicyManagementFragment; Landroid/widget/EditText; Landroid/widget/CheckBox; Ljava/security/PrivateKey; Ljava/security/cert/Certificate;)V [access_flags=constructor]
+#
+# Parameters:
+# - local registers: v0...v0
+# - v1:com.afwsamples.testdpc.policy.PolicyManagementFragment
+# - v2:android.widget.EditText
+# - v3:android.widget.CheckBox
+# - v4:java.security.PrivateKey
+# - v5:java.security.cert.Certificate
+#
+# - return:void
+
+<init>-BB@0x0 : 
+	0       (00000000) iput-object          v1, v0, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment$22;->this$0 Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;
+	1       (00000004) iput-object          v2, v0, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment$22;->val$input Landroid/widget/EditText;
+	2       (00000008) iput-object          v3, v0, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment$22;->val$userSelectableCheckbox Landroid/widget/CheckBox;
+	3       (0000000c) iput-object          v4, v0, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment$22;->val$key Ljava/security/PrivateKey;
+	4       (00000010) iput-object          v5, v0, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment$22;->val$certificate Ljava/security/cert/Certificate;
+	5       (00000014) invoke-direct        v0, Ljava/lang/Object;-><init>()V
+	6       (0000001a) return-void          
+

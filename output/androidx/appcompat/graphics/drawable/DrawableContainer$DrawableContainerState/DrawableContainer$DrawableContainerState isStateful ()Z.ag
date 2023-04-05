@@ -1,0 +1,46 @@
+# Landroidx/appcompat/graphics/drawable/DrawableContainer$DrawableContainerState;->isStateful()Z [access_flags=public final]
+#
+# Parameters:
+# local registers: v0...v5
+#
+# - return:boolean
+
+isStateful-BB@0x0 : [ isStateful-BB@0x8 isStateful-BB@0xe ]
+	0       (00000000) iget-boolean         v4, v5, Landroidx/appcompat/graphics/drawable/DrawableContainer$DrawableContainerState;->mCheckedStateful Z
+	1       (00000004) if-eqz               v4, +5
+
+isStateful-BB@0x8 : [ isStateful-BB@0xc ]
+	2       (00000008) iget-boolean         v3, v5, Landroidx/appcompat/graphics/drawable/DrawableContainer$DrawableContainerState;->mStateful Z
+
+isStateful-BB@0xc : 
+	3       (0000000c) return               v3
+
+isStateful-BB@0xe : [ isStateful-BB@0x20 ]
+	4       (0000000e) invoke-direct        v5, Landroidx/appcompat/graphics/drawable/DrawableContainer$DrawableContainerState;->createAllFutures()V
+	5       (00000014) iget                 v0, v5, Landroidx/appcompat/graphics/drawable/DrawableContainer$DrawableContainerState;->mNumChildren I
+	6       (00000018) iget-object          v1, v5, Landroidx/appcompat/graphics/drawable/DrawableContainer$DrawableContainerState;->mDrawables [Landroid/graphics/drawable/Drawable;
+	7       (0000001c) const/4              v3, 0
+	8       (0000001e) const/4              v2, 0
+
+isStateful-BB@0x20 : [ isStateful-BB@0x24 isStateful-BB@0x36 ]
+	9       (00000020) if-ge                v2, v0, +b
+
+isStateful-BB@0x24 : [ isStateful-BB@0x34 isStateful-BB@0x42 ]
+	10      (00000024) aget-object          v4, v1, v2
+	11      (00000028) invoke-virtual       v4, Landroid/graphics/drawable/Drawable;->isStateful()Z
+	12      (0000002e) move-result          v4
+	13      (00000030) if-eqz               v4, +9
+
+isStateful-BB@0x34 : [ isStateful-BB@0x36 ]
+	14      (00000034) const/4              v3, 1
+
+isStateful-BB@0x36 : [ isStateful-BB@0xc ]
+	15      (00000036) iput-boolean         v3, v5, Landroidx/appcompat/graphics/drawable/DrawableContainer$DrawableContainerState;->mStateful Z
+	16      (0000003a) const/4              v4, 1
+	17      (0000003c) iput-boolean         v4, v5, Landroidx/appcompat/graphics/drawable/DrawableContainer$DrawableContainerState;->mCheckedStateful Z
+	18      (00000040) goto                 -1a
+
+isStateful-BB@0x42 : [ isStateful-BB@0x20 ]
+	19      (00000042) add-int/lit8         v2, v2, 1
+	20      (00000046) goto                 -13
+

@@ -1,0 +1,36 @@
+# Lorg/checkerframework/checker/regex/RegexUtil;->asRegex(Ljava/lang/String; I)Ljava/lang/String; [access_flags=public static]
+#
+# Parameters:
+# - local registers: v0...v4
+# - v5:java.lang.String
+# - v6:int
+#
+# - return:java.lang.String
+
+asRegex-BB@0x0 : [ asRegex-BB@0x14 asRegex-BB@0x36 ]
+	0       (00000000) invoke-static        v5, Ljava/util/regex/Pattern;->compile(Ljava/lang/String;)Ljava/util/regex/Pattern;
+	1       (00000006) move-result-object   v2
+	2       (00000008) invoke-static        v2, Lorg/checkerframework/checker/regex/RegexUtil;->getGroupCount(Ljava/util/regex/Pattern;)I
+	3       (0000000e) move-result          v0
+	4       (00000010) if-ge                v0, v6, +13
+	0:27
+	(Ljava/util/regex/PatternSyntaxException; -> 28 asRegex-BB@0x28)
+
+asRegex-BB@0x14 : 
+	5       (00000014) new-instance         v3, Ljava/lang/Error;
+	6       (00000018) invoke-static        v5, v6, v0, Lorg/checkerframework/checker/regex/RegexUtil;->regexErrorMessage(Ljava/lang/String; I I)Ljava/lang/String;
+	7       (0000001e) move-result-object   v4
+	8       (00000020) invoke-direct        v3, v4, Ljava/lang/Error;-><init>(Ljava/lang/String;)V
+	9       (00000026) throw                v3
+	0:27
+	(Ljava/util/regex/PatternSyntaxException; -> 28 asRegex-BB@0x28)
+
+asRegex-BB@0x28 : 
+	10      (00000028) move-exception       v1
+	11      (0000002a) new-instance         v3, Ljava/lang/Error;
+	12      (0000002e) invoke-direct        v3, v1, Ljava/lang/Error;-><init>(Ljava/lang/Throwable;)V
+	13      (00000034) throw                v3
+
+asRegex-BB@0x36 : 
+	14      (00000036) return-object        v5
+

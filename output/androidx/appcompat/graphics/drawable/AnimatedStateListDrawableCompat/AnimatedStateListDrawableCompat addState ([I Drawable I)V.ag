@@ -1,0 +1,27 @@
+# Landroidx/appcompat/graphics/drawable/AnimatedStateListDrawableCompat;->addState([I Landroid/graphics/drawable/Drawable; I)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:int[]
+# - v4:android.graphics.drawable.Drawable
+# - v5:int
+#
+# - return:void
+
+addState-BB@0x0 : [ addState-BB@0x4 addState-BB@0x14 ]
+	0       (00000000) if-nez               v4, +a
+
+addState-BB@0x4 : 
+	1       (00000004) new-instance         v0, Ljava/lang/IllegalArgumentException;
+	2       (00000008) const-string         v1, 'Drawable must not be null'
+	3       (0000000c) invoke-direct        v0, v1, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+	4       (00000012) throw                v0
+
+addState-BB@0x14 : 
+	5       (00000014) iget-object          v0, v2, Landroidx/appcompat/graphics/drawable/AnimatedStateListDrawableCompat;->mState Landroidx/appcompat/graphics/drawable/AnimatedStateListDrawableCompat$AnimatedStateListState;
+	6       (00000018) invoke-virtual       v0, v3, v4, v5, Landroidx/appcompat/graphics/drawable/AnimatedStateListDrawableCompat$AnimatedStateListState;->addStateSet([I Landroid/graphics/drawable/Drawable; I)I
+	7       (0000001e) invoke-virtual       v2, Landroidx/appcompat/graphics/drawable/AnimatedStateListDrawableCompat;->getState()[I
+	8       (00000024) move-result-object   v0
+	9       (00000026) invoke-virtual       v2, v0, Landroidx/appcompat/graphics/drawable/AnimatedStateListDrawableCompat;->onStateChange([I)Z
+	10      (0000002c) return-void          
+

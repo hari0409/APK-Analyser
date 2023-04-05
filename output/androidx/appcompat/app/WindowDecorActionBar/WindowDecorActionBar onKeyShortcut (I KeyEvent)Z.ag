@@ -1,0 +1,55 @@
+# Landroidx/appcompat/app/WindowDecorActionBar;->onKeyShortcut(I Landroid/view/KeyEvent;)Z [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v5
+# - v6:int
+# - v7:android.view.KeyEvent
+#
+# - return:boolean
+
+onKeyShortcut-BB@0x0 : [ onKeyShortcut-BB@0xc onKeyShortcut-BB@0xe ]
+	0       (00000000) const/4              v3, 1
+	1       (00000002) const/4              v4, 0
+	2       (00000004) iget-object          v2, v5, Landroidx/appcompat/app/WindowDecorActionBar;->mActionMode Landroidx/appcompat/app/WindowDecorActionBar$ActionModeImpl;
+	3       (00000008) if-nez               v2, +3
+
+onKeyShortcut-BB@0xc : 
+	4       (0000000c) return               v4
+
+onKeyShortcut-BB@0xe : [ onKeyShortcut-BB@0x1e onKeyShortcut-BB@0xc ]
+	5       (0000000e) iget-object          v2, v5, Landroidx/appcompat/app/WindowDecorActionBar;->mActionMode Landroidx/appcompat/app/WindowDecorActionBar$ActionModeImpl;
+	6       (00000012) invoke-virtual       v2, Landroidx/appcompat/app/WindowDecorActionBar$ActionModeImpl;->getMenu()Landroid/view/Menu;
+	7       (00000018) move-result-object   v1
+	8       (0000001a) if-eqz               v1, -7
+
+onKeyShortcut-BB@0x1e : [ onKeyShortcut-BB@0x22 onKeyShortcut-BB@0x50 ]
+	9       (0000001e) if-eqz               v7, +19
+
+onKeyShortcut-BB@0x22 : [ onKeyShortcut-BB@0x2a ]
+	10      (00000022) invoke-virtual       v7, Landroid/view/KeyEvent;->getDeviceId()I
+	11      (00000028) move-result          v2
+
+onKeyShortcut-BB@0x2a : [ onKeyShortcut-BB@0x3e onKeyShortcut-BB@0x54 ]
+	12      (0000002a) invoke-static        v2, Landroid/view/KeyCharacterMap;->load(I)Landroid/view/KeyCharacterMap;
+	13      (00000030) move-result-object   v0
+	14      (00000032) invoke-virtual       v0, Landroid/view/KeyCharacterMap;->getKeyboardType()I
+	15      (00000038) move-result          v2
+	16      (0000003a) if-eq                v2, v3, +d
+
+onKeyShortcut-BB@0x3e : [ onKeyShortcut-BB@0x40 ]
+	17      (0000003e) move                 v2, v3
+
+onKeyShortcut-BB@0x40 : [ onKeyShortcut-BB@0xc ]
+	18      (00000040) invoke-interface     v1, v2, Landroid/view/Menu;->setQwertyMode(Z)V
+	19      (00000046) invoke-interface     v1, v6, v7, v4, Landroid/view/Menu;->performShortcut(I Landroid/view/KeyEvent; I)Z
+	20      (0000004c) move-result          v4
+	21      (0000004e) goto                 -21
+
+onKeyShortcut-BB@0x50 : [ onKeyShortcut-BB@0x2a ]
+	22      (00000050) const/4              v2, -1
+	23      (00000052) goto                 -14
+
+onKeyShortcut-BB@0x54 : [ onKeyShortcut-BB@0x40 ]
+	24      (00000054) move                 v2, v4
+	25      (00000056) goto                 -b
+

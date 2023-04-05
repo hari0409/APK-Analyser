@@ -1,0 +1,44 @@
+# Landroidx/appcompat/widget/TooltipCompatHandler;->hide()V [access_flags=]
+#
+# Parameters:
+# local registers: v0...v3
+#
+# - return:void
+
+hide-BB@0x0 : [ hide-BB@0xa hide-BB@0x34 ]
+	0       (00000000) const/4              v2, 0
+	1       (00000002) sget-object          v0, Landroidx/appcompat/widget/TooltipCompatHandler;->sActiveHandler Landroidx/appcompat/widget/TooltipCompatHandler;
+	2       (00000006) if-ne                v0, v3, +17
+
+hide-BB@0xa : [ hide-BB@0x16 hide-BB@0x52 ]
+	3       (0000000a) sput-object          v2, Landroidx/appcompat/widget/TooltipCompatHandler;->sActiveHandler Landroidx/appcompat/widget/TooltipCompatHandler;
+	4       (0000000e) iget-object          v0, v3, Landroidx/appcompat/widget/TooltipCompatHandler;->mPopup Landroidx/appcompat/widget/TooltipPopup;
+	5       (00000012) if-eqz               v0, +20
+
+hide-BB@0x16 : [ hide-BB@0x34 ]
+	6       (00000016) iget-object          v0, v3, Landroidx/appcompat/widget/TooltipCompatHandler;->mPopup Landroidx/appcompat/widget/TooltipPopup;
+	7       (0000001a) invoke-virtual       v0, Landroidx/appcompat/widget/TooltipPopup;->hide()V
+	8       (00000020) iput-object          v2, v3, Landroidx/appcompat/widget/TooltipCompatHandler;->mPopup Landroidx/appcompat/widget/TooltipPopup;
+	9       (00000024) invoke-direct        v3, Landroidx/appcompat/widget/TooltipCompatHandler;->clearAnchorPos()V
+	10      (0000002a) iget-object          v0, v3, Landroidx/appcompat/widget/TooltipCompatHandler;->mAnchor Landroid/view/View;
+	11      (0000002e) invoke-virtual       v0, v3, Landroid/view/View;->removeOnAttachStateChangeListener(Landroid/view/View$OnAttachStateChangeListener;)V
+
+hide-BB@0x34 : [ hide-BB@0x3c hide-BB@0x42 ]
+	12      (00000034) sget-object          v0, Landroidx/appcompat/widget/TooltipCompatHandler;->sPendingHandler Landroidx/appcompat/widget/TooltipCompatHandler;
+	13      (00000038) if-ne                v0, v3, +5
+
+hide-BB@0x3c : [ hide-BB@0x42 ]
+	14      (0000003c) invoke-static        v2, Landroidx/appcompat/widget/TooltipCompatHandler;->setPendingHandler(Landroidx/appcompat/widget/TooltipCompatHandler;)V
+
+hide-BB@0x42 : 
+	15      (00000042) iget-object          v0, v3, Landroidx/appcompat/widget/TooltipCompatHandler;->mAnchor Landroid/view/View;
+	16      (00000046) iget-object          v1, v3, Landroidx/appcompat/widget/TooltipCompatHandler;->mHideRunnable Ljava/lang/Runnable;
+	17      (0000004a) invoke-virtual       v0, v1, Landroid/view/View;->removeCallbacks(Ljava/lang/Runnable;)Z
+	18      (00000050) return-void          
+
+hide-BB@0x52 : [ hide-BB@0x34 ]
+	19      (00000052) const-string         v0, 'TooltipCompatHandler'
+	20      (00000056) const-string         v1, 'sActiveHandler.mPopup == null'
+	21      (0000005a) invoke-static        v0, v1, Landroid/util/Log;->e(Ljava/lang/String; Ljava/lang/String;)I
+	22      (00000060) goto                 -16
+

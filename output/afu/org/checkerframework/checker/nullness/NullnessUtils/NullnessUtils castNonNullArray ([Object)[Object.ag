@@ -1,0 +1,52 @@
+# Lafu/org/checkerframework/checker/nullness/NullnessUtils;->castNonNullArray([Ljava/lang/Object;)[Ljava/lang/Object; [access_flags=private static]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:java.lang.Object[]
+#
+# - return:java.lang.Object[]
+
+castNonNullArray-BB@0x0 : [ castNonNullArray-BB@0x8 castNonNullArray-BB@0x1c ]
+	0       (00000000) sget-boolean         v1, Lafu/org/checkerframework/checker/nullness/NullnessUtils;->$assertionsDisabled Z
+	1       (00000004) if-nez               v1, +c
+
+castNonNullArray-BB@0x8 : [ castNonNullArray-BB@0xc castNonNullArray-BB@0x1c ]
+	2       (00000008) if-nez               v3, +a
+
+castNonNullArray-BB@0xc : 
+	3       (0000000c) new-instance         v1, Ljava/lang/AssertionError;
+	4       (00000010) const-string         v2, 'Misuse of castNonNullArray: called with a null array argument'
+	5       (00000014) invoke-direct        v1, v2, Ljava/lang/AssertionError;-><init>(Ljava/lang/Object;)V
+	6       (0000001a) throw                v1
+
+castNonNullArray-BB@0x1c : [ castNonNullArray-BB@0x1e ]
+	7       (0000001c) const/4              v0, 0
+
+castNonNullArray-BB@0x1e : [ castNonNullArray-BB@0x24 castNonNullArray-BB@0x54 ]
+	8       (0000001e) array-length         v1, v3
+	9       (00000020) if-ge                v0, v1, +1a
+
+castNonNullArray-BB@0x24 : [ castNonNullArray-BB@0x2c castNonNullArray-BB@0x44 ]
+	10      (00000024) sget-boolean         v1, Lafu/org/checkerframework/checker/nullness/NullnessUtils;->$assertionsDisabled Z
+	11      (00000028) if-nez               v1, +e
+
+castNonNullArray-BB@0x2c : [ castNonNullArray-BB@0x34 castNonNullArray-BB@0x44 ]
+	12      (0000002c) aget-object          v1, v3, v0
+	13      (00000030) if-nez               v1, +a
+
+castNonNullArray-BB@0x34 : 
+	14      (00000034) new-instance         v1, Ljava/lang/AssertionError;
+	15      (00000038) const-string         v2, 'Misuse of castNonNull: called with a null array element'
+	16      (0000003c) invoke-direct        v1, v2, Ljava/lang/AssertionError;-><init>(Ljava/lang/Object;)V
+	17      (00000042) throw                v1
+
+castNonNullArray-BB@0x44 : [ castNonNullArray-BB@0x1e ]
+	18      (00000044) aget-object          v1, v3, v0
+	19      (00000048) invoke-static        v1, Lafu/org/checkerframework/checker/nullness/NullnessUtils;->checkIfArray(Ljava/lang/Object;)V
+	20      (0000004e) add-int/lit8         v0, v0, 1
+	21      (00000052) goto                 -1a
+
+castNonNullArray-BB@0x54 : 
+	22      (00000054) check-cast           v3, [Ljava/lang/Object;
+	23      (00000058) return-object        v3
+

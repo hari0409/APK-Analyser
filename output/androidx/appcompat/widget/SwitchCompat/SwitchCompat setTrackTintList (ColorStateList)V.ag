@@ -1,0 +1,15 @@
+# Landroidx/appcompat/widget/SwitchCompat;->setTrackTintList(Landroid/content/res/ColorStateList;)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:android.content.res.ColorStateList
+#
+# - return:void
+
+setTrackTintList-BB@0x0 : 
+	0       (00000000) iput-object          v2, v1, Landroidx/appcompat/widget/SwitchCompat;->mTrackTintList Landroid/content/res/ColorStateList;
+	1       (00000004) const/4              v0, 1
+	2       (00000006) iput-boolean         v0, v1, Landroidx/appcompat/widget/SwitchCompat;->mHasTrackTint Z
+	3       (0000000a) invoke-direct        v1, Landroidx/appcompat/widget/SwitchCompat;->applyTrackTint()V
+	4       (00000010) return-void          
+

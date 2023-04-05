@@ -1,0 +1,19 @@
+# Landroidx/appcompat/widget/LinearLayoutCompat;->setOrientation(I)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:int
+#
+# - return:void
+
+setOrientation-BB@0x0 : [ setOrientation-BB@0x8 setOrientation-BB@0x12 ]
+	0       (00000000) iget                 v0, v1, Landroidx/appcompat/widget/LinearLayoutCompat;->mOrientation I
+	1       (00000004) if-eq                v0, v2, +7
+
+setOrientation-BB@0x8 : [ setOrientation-BB@0x12 ]
+	2       (00000008) iput                 v2, v1, Landroidx/appcompat/widget/LinearLayoutCompat;->mOrientation I
+	3       (0000000c) invoke-virtual       v1, Landroidx/appcompat/widget/LinearLayoutCompat;->requestLayout()V
+
+setOrientation-BB@0x12 : 
+	4       (00000012) return-void          
+

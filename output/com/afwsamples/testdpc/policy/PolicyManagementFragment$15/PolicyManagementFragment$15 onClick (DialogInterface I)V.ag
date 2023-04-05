@@ -1,0 +1,37 @@
+# Lcom/afwsamples/testdpc/policy/PolicyManagementFragment$15;->onClick(Landroid/content/DialogInterface; I)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v4
+# - v5:android.content.DialogInterface
+# - v6:int
+#
+# - return:void
+
+onClick-BB@0x0 : [ onClick-BB@0x4 ]
+	0       (00000000) const-wide/16        v0, -1 # [-1.0]
+
+onClick-BB@0x4 : [ onClick-BB@0x3e ]
+	1       (00000004) iget-object          v2, v4, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment$15;->val$input Landroid/widget/EditText;
+	2       (00000008) invoke-virtual       v2, Landroid/widget/EditText;->getText()Landroid/text/Editable;
+	3       (0000000e) move-result-object   v2
+	4       (00000010) invoke-virtual       v2, Ljava/lang/Object;->toString()Ljava/lang/String;
+	5       (00000016) move-result-object   v2
+	6       (00000018) invoke-static        v2, Ljava/lang/Long;->parseLong(Ljava/lang/String;)J
+	7       (0000001e) move-result-wide     v0
+	8       (00000020) iget-object          v2, v4, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment$15;->this$0 Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;
+	9       (00000024) iget-object          v3, v4, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment$15;->this$0 Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;
+	10      (00000028) invoke-static        v3, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->access$300(Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;)Lcom/afwsamples/testdpc/DevicePolicyManagerGateway;
+	11      (0000002e) move-result-object   v3
+	12      (00000030) invoke-interface     v3, v0, v1, Lcom/afwsamples/testdpc/DevicePolicyManagerGateway;->getUserHandle(J)Landroid/os/UserHandle;
+	13      (00000036) move-result-object   v3
+	14      (00000038) invoke-static        v2, v3, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->access$1000(Lcom/afwsamples/testdpc/policy/PolicyManagementFragment; Landroid/os/UserHandle;)V
+	4:3d
+	(Ljava/lang/NumberFormatException; -> 40 onClick-BB@0x40)
+
+onClick-BB@0x3e : 
+	15      (0000003e) return-void          
+
+onClick-BB@0x40 : [ onClick-BB@0x3e ]
+	16      (00000040) move-exception       v2
+	17      (00000042) goto                 -2
+

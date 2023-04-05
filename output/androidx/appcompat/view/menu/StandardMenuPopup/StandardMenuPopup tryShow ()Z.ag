@@ -1,0 +1,139 @@
+# Landroidx/appcompat/view/menu/StandardMenuPopup;->tryShow()Z [access_flags=private]
+#
+# Parameters:
+# local registers: v0...v11
+#
+# - return:boolean
+
+tryShow-BB@0x0 : [ tryShow-BB@0x12 tryShow-BB@0x14 ]
+	0       (00000000) const/4              v10, 0
+	1       (00000002) const/4              v5, 1
+	2       (00000004) const/4              v6, 0
+	3       (00000006) invoke-virtual       v11, Landroidx/appcompat/view/menu/StandardMenuPopup;->isShowing()Z
+	4       (0000000c) move-result          v7
+	5       (0000000e) if-eqz               v7, +3
+
+tryShow-BB@0x12 : 
+	6       (00000012) return               v5
+
+tryShow-BB@0x14 : [ tryShow-BB@0x1c tryShow-BB@0x24 ]
+	7       (00000014) iget-boolean         v7, v11, Landroidx/appcompat/view/menu/StandardMenuPopup;->mWasDismissed Z
+	8       (00000018) if-nez               v7, +6
+
+tryShow-BB@0x1c : [ tryShow-BB@0x24 tryShow-BB@0x28 ]
+	9       (0000001c) iget-object          v7, v11, Landroidx/appcompat/view/menu/StandardMenuPopup;->mAnchorView Landroid/view/View;
+	10      (00000020) if-nez               v7, +4
+
+tryShow-BB@0x24 : [ tryShow-BB@0x12 ]
+	11      (00000024) move                 v5, v6
+	12      (00000026) goto                 -a
+
+tryShow-BB@0x28 : [ tryShow-BB@0x5a tryShow-BB@0x18c ]
+	13      (00000028) iget-object          v7, v11, Landroidx/appcompat/view/menu/StandardMenuPopup;->mAnchorView Landroid/view/View;
+	14      (0000002c) iput-object          v7, v11, Landroidx/appcompat/view/menu/StandardMenuPopup;->mShownAnchorView Landroid/view/View;
+	15      (00000030) iget-object          v7, v11, Landroidx/appcompat/view/menu/StandardMenuPopup;->mPopup Landroidx/appcompat/widget/MenuPopupWindow;
+	16      (00000034) invoke-virtual       v7, v11, Landroidx/appcompat/widget/MenuPopupWindow;->setOnDismissListener(Landroid/widget/PopupWindow$OnDismissListener;)V
+	17      (0000003a) iget-object          v7, v11, Landroidx/appcompat/view/menu/StandardMenuPopup;->mPopup Landroidx/appcompat/widget/MenuPopupWindow;
+	18      (0000003e) invoke-virtual       v7, v11, Landroidx/appcompat/widget/MenuPopupWindow;->setOnItemClickListener(Landroid/widget/AdapterView$OnItemClickListener;)V
+	19      (00000044) iget-object          v7, v11, Landroidx/appcompat/view/menu/StandardMenuPopup;->mPopup Landroidx/appcompat/widget/MenuPopupWindow;
+	20      (00000048) invoke-virtual       v7, v5, Landroidx/appcompat/widget/MenuPopupWindow;->setModal(Z)V
+	21      (0000004e) iget-object          v1, v11, Landroidx/appcompat/view/menu/StandardMenuPopup;->mShownAnchorView Landroid/view/View;
+	22      (00000052) iget-object          v7, v11, Landroidx/appcompat/view/menu/StandardMenuPopup;->mTreeObserver Landroid/view/ViewTreeObserver;
+	23      (00000056) if-nez               v7, +9b
+
+tryShow-BB@0x5a : [ tryShow-BB@0x5c ]
+	24      (0000005a) move                 v0, v5
+
+tryShow-BB@0x5c : [ tryShow-BB@0x6c tryShow-BB@0x7a ]
+	25      (0000005c) invoke-virtual       v1, Landroid/view/View;->getViewTreeObserver()Landroid/view/ViewTreeObserver;
+	26      (00000062) move-result-object   v7
+	27      (00000064) iput-object          v7, v11, Landroidx/appcompat/view/menu/StandardMenuPopup;->mTreeObserver Landroid/view/ViewTreeObserver;
+	28      (00000068) if-eqz               v0, +9
+
+tryShow-BB@0x6c : [ tryShow-BB@0x7a ]
+	29      (0000006c) iget-object          v7, v11, Landroidx/appcompat/view/menu/StandardMenuPopup;->mTreeObserver Landroid/view/ViewTreeObserver;
+	30      (00000070) iget-object          v8, v11, Landroidx/appcompat/view/menu/StandardMenuPopup;->mGlobalLayoutListener Landroid/view/ViewTreeObserver$OnGlobalLayoutListener;
+	31      (00000074) invoke-virtual       v7, v8, Landroid/view/ViewTreeObserver;->addOnGlobalLayoutListener(Landroid/view/ViewTreeObserver$OnGlobalLayoutListener;)V
+
+tryShow-BB@0x7a : [ tryShow-BB@0xa4 tryShow-BB@0xc0 ]
+	32      (0000007a) iget-object          v7, v11, Landroidx/appcompat/view/menu/StandardMenuPopup;->mAttachStateChangeListener Landroid/view/View$OnAttachStateChangeListener;
+	33      (0000007e) invoke-virtual       v1, v7, Landroid/view/View;->addOnAttachStateChangeListener(Landroid/view/View$OnAttachStateChangeListener;)V
+	34      (00000084) iget-object          v7, v11, Landroidx/appcompat/view/menu/StandardMenuPopup;->mPopup Landroidx/appcompat/widget/MenuPopupWindow;
+	35      (00000088) invoke-virtual       v7, v1, Landroidx/appcompat/widget/MenuPopupWindow;->setAnchorView(Landroid/view/View;)V
+	36      (0000008e) iget-object          v7, v11, Landroidx/appcompat/view/menu/StandardMenuPopup;->mPopup Landroidx/appcompat/widget/MenuPopupWindow;
+	37      (00000092) iget                 v8, v11, Landroidx/appcompat/view/menu/StandardMenuPopup;->mDropDownGravity I
+	38      (00000096) invoke-virtual       v7, v8, Landroidx/appcompat/widget/MenuPopupWindow;->setDropDownGravity(I)V
+	39      (0000009c) iget-boolean         v7, v11, Landroidx/appcompat/view/menu/StandardMenuPopup;->mHasContentWidth Z
+	40      (000000a0) if-nez               v7, +10
+
+tryShow-BB@0xa4 : [ tryShow-BB@0xc0 ]
+	41      (000000a4) iget-object          v7, v11, Landroidx/appcompat/view/menu/StandardMenuPopup;->mAdapter Landroidx/appcompat/view/menu/MenuAdapter;
+	42      (000000a8) iget-object          v8, v11, Landroidx/appcompat/view/menu/StandardMenuPopup;->mContext Landroid/content/Context;
+	43      (000000ac) iget                 v9, v11, Landroidx/appcompat/view/menu/StandardMenuPopup;->mPopupMaxWidth I
+	44      (000000b0) invoke-static        v7, v10, v8, v9, Landroidx/appcompat/view/menu/StandardMenuPopup;->measureIndividualMenuWidth(Landroid/widget/ListAdapter; Landroid/view/ViewGroup; Landroid/content/Context; I)I
+	45      (000000b6) move-result          v7
+	46      (000000b8) iput                 v7, v11, Landroidx/appcompat/view/menu/StandardMenuPopup;->mContentWidth I
+	47      (000000bc) iput-boolean         v5, v11, Landroidx/appcompat/view/menu/StandardMenuPopup;->mHasContentWidth Z
+
+tryShow-BB@0xc0 : [ tryShow-BB@0x110 tryShow-BB@0x170 ]
+	48      (000000c0) iget-object          v7, v11, Landroidx/appcompat/view/menu/StandardMenuPopup;->mPopup Landroidx/appcompat/widget/MenuPopupWindow;
+	49      (000000c4) iget                 v8, v11, Landroidx/appcompat/view/menu/StandardMenuPopup;->mContentWidth I
+	50      (000000c8) invoke-virtual       v7, v8, Landroidx/appcompat/widget/MenuPopupWindow;->setContentWidth(I)V
+	51      (000000ce) iget-object          v7, v11, Landroidx/appcompat/view/menu/StandardMenuPopup;->mPopup Landroidx/appcompat/widget/MenuPopupWindow;
+	52      (000000d2) const/4              v8, 2
+	53      (000000d4) invoke-virtual       v7, v8, Landroidx/appcompat/widget/MenuPopupWindow;->setInputMethodMode(I)V
+	54      (000000da) iget-object          v7, v11, Landroidx/appcompat/view/menu/StandardMenuPopup;->mPopup Landroidx/appcompat/widget/MenuPopupWindow;
+	55      (000000de) invoke-virtual       v11, Landroidx/appcompat/view/menu/StandardMenuPopup;->getEpicenterBounds()Landroid/graphics/Rect;
+	56      (000000e4) move-result-object   v8
+	57      (000000e6) invoke-virtual       v7, v8, Landroidx/appcompat/widget/MenuPopupWindow;->setEpicenterBounds(Landroid/graphics/Rect;)V
+	58      (000000ec) iget-object          v7, v11, Landroidx/appcompat/view/menu/StandardMenuPopup;->mPopup Landroidx/appcompat/widget/MenuPopupWindow;
+	59      (000000f0) invoke-virtual       v7, Landroidx/appcompat/widget/MenuPopupWindow;->show()V
+	60      (000000f6) iget-object          v7, v11, Landroidx/appcompat/view/menu/StandardMenuPopup;->mPopup Landroidx/appcompat/widget/MenuPopupWindow;
+	61      (000000fa) invoke-virtual       v7, Landroidx/appcompat/widget/MenuPopupWindow;->getListView()Landroid/widget/ListView;
+	62      (00000100) move-result-object   v2
+	63      (00000102) invoke-virtual       v2, v11, Landroid/widget/ListView;->setOnKeyListener(Landroid/view/View$OnKeyListener;)V
+	64      (00000108) iget-boolean         v7, v11, Landroidx/appcompat/view/menu/StandardMenuPopup;->mShowTitle Z
+	65      (0000010c) if-eqz               v7, +32
+
+tryShow-BB@0x110 : [ tryShow-BB@0x120 tryShow-BB@0x170 ]
+	66      (00000110) iget-object          v7, v11, Landroidx/appcompat/view/menu/StandardMenuPopup;->mMenu Landroidx/appcompat/view/menu/MenuBuilder;
+	67      (00000114) invoke-virtual       v7, Landroidx/appcompat/view/menu/MenuBuilder;->getHeaderTitle()Ljava/lang/CharSequence;
+	68      (0000011a) move-result-object   v7
+	69      (0000011c) if-eqz               v7, +2a
+
+tryShow-BB@0x120 : [ tryShow-BB@0x152 tryShow-BB@0x164 ]
+	70      (00000120) iget-object          v7, v11, Landroidx/appcompat/view/menu/StandardMenuPopup;->mContext Landroid/content/Context;
+	71      (00000124) invoke-static        v7, Landroid/view/LayoutInflater;->from(Landroid/content/Context;)Landroid/view/LayoutInflater;
+	72      (0000012a) move-result-object   v7
+	73      (0000012c) sget                 v8, Landroidx/appcompat/R$layout;->abc_popup_menu_header_item_layout I
+	74      (00000130) invoke-virtual       v7, v8, v2, v6, Landroid/view/LayoutInflater;->inflate(I Landroid/view/ViewGroup; Z)Landroid/view/View;
+	75      (00000136) move-result-object   v3
+	76      (00000138) check-cast           v3, Landroid/widget/FrameLayout;
+	77      (0000013c) const                v7, 16908310 # [2.3877290658210145e-38]
+	78      (00000142) invoke-virtual       v3, v7, Landroid/widget/FrameLayout;->findViewById(I)Landroid/view/View;
+	79      (00000148) move-result-object   v4
+	80      (0000014a) check-cast           v4, Landroid/widget/TextView;
+	81      (0000014e) if-eqz               v4, +b
+
+tryShow-BB@0x152 : [ tryShow-BB@0x164 ]
+	82      (00000152) iget-object          v7, v11, Landroidx/appcompat/view/menu/StandardMenuPopup;->mMenu Landroidx/appcompat/view/menu/MenuBuilder;
+	83      (00000156) invoke-virtual       v7, Landroidx/appcompat/view/menu/MenuBuilder;->getHeaderTitle()Ljava/lang/CharSequence;
+	84      (0000015c) move-result-object   v7
+	85      (0000015e) invoke-virtual       v4, v7, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+
+tryShow-BB@0x164 : [ tryShow-BB@0x170 ]
+	86      (00000164) invoke-virtual       v3, v6, Landroid/widget/FrameLayout;->setEnabled(Z)V
+	87      (0000016a) invoke-virtual       v2, v3, v10, v6, Landroid/widget/ListView;->addHeaderView(Landroid/view/View; Ljava/lang/Object; Z)V
+
+tryShow-BB@0x170 : [ tryShow-BB@0x12 ]
+	88      (00000170) iget-object          v6, v11, Landroidx/appcompat/view/menu/StandardMenuPopup;->mPopup Landroidx/appcompat/widget/MenuPopupWindow;
+	89      (00000174) iget-object          v7, v11, Landroidx/appcompat/view/menu/StandardMenuPopup;->mAdapter Landroidx/appcompat/view/menu/MenuAdapter;
+	90      (00000178) invoke-virtual       v6, v7, Landroidx/appcompat/widget/MenuPopupWindow;->setAdapter(Landroid/widget/ListAdapter;)V
+	91      (0000017e) iget-object          v6, v11, Landroidx/appcompat/view/menu/StandardMenuPopup;->mPopup Landroidx/appcompat/widget/MenuPopupWindow;
+	92      (00000182) invoke-virtual       v6, Landroidx/appcompat/widget/MenuPopupWindow;->show()V
+	93      (00000188) goto/16              -bb
+
+tryShow-BB@0x18c : [ tryShow-BB@0x5c ]
+	94      (0000018c) move                 v0, v6
+	95      (0000018e) goto/16              -99
+

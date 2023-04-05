@@ -1,0 +1,347 @@
+# Lcom/afwsamples/testdpc/policy/utils/AuthorizationList;->toString()Ljava/lang/String; [access_flags=public]
+#
+# Parameters:
+# local registers: v0...v5
+#
+# - return:java.lang.String
+
+toString-BB@0x0 : [ toString-BB@0x12 toString-BB@0x38 ]
+	0       (00000000) new-instance         v1, Ljava/lang/StringBuilder;
+	1       (00000004) invoke-direct        v1, Ljava/lang/StringBuilder;-><init>()V
+	2       (0000000a) iget-object          v2, v5, Lcom/afwsamples/testdpc/policy/utils/AuthorizationList;->algorithm Ljava/lang/Integer;
+	3       (0000000e) if-eqz               v2, +15
+
+toString-BB@0x12 : [ toString-BB@0x38 ]
+	4       (00000012) const-string         v2, '\nAlgorithm: '
+	5       (00000016) invoke-virtual       v1, v2, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	6       (0000001c) move-result-object   v2
+	7       (0000001e) iget-object          v3, v5, Lcom/afwsamples/testdpc/policy/utils/AuthorizationList;->algorithm Ljava/lang/Integer;
+	8       (00000022) invoke-virtual       v3, Ljava/lang/Integer;->intValue()I
+	9       (00000028) move-result          v3
+	10      (0000002a) invoke-static        v3, Lcom/afwsamples/testdpc/policy/utils/AuthorizationList;->algorithmToString(I)Ljava/lang/String;
+	11      (00000030) move-result-object   v3
+	12      (00000032) invoke-virtual       v2, v3, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+toString-BB@0x38 : [ toString-BB@0x40 toString-BB@0x56 ]
+	13      (00000038) iget-object          v2, v5, Lcom/afwsamples/testdpc/policy/utils/AuthorizationList;->keySize Ljava/lang/Integer;
+	14      (0000003c) if-eqz               v2, +d
+
+toString-BB@0x40 : [ toString-BB@0x56 ]
+	15      (00000040) const-string         v2, '\nKeySize: '
+	16      (00000044) invoke-virtual       v1, v2, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	17      (0000004a) move-result-object   v2
+	18      (0000004c) iget-object          v3, v5, Lcom/afwsamples/testdpc/policy/utils/AuthorizationList;->keySize Ljava/lang/Integer;
+	19      (00000050) invoke-virtual       v2, v3, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+toString-BB@0x56 : [ toString-BB@0x5e toString-BB@0x8c ]
+	20      (00000056) iget-object          v2, v5, Lcom/afwsamples/testdpc/policy/utils/AuthorizationList;->purposes Ljava/util/Set;
+	21      (0000005a) if-eqz               v2, +19
+
+toString-BB@0x5e : [ toString-BB@0x6e toString-BB@0x8c ]
+	22      (0000005e) iget-object          v2, v5, Lcom/afwsamples/testdpc/policy/utils/AuthorizationList;->purposes Ljava/util/Set;
+	23      (00000062) invoke-interface     v2, Ljava/util/Set;->isEmpty()Z
+	24      (00000068) move-result          v2
+	25      (0000006a) if-nez               v2, +11
+
+toString-BB@0x6e : [ toString-BB@0x8c ]
+	26      (0000006e) const-string         v2, '\nPurposes: '
+	27      (00000072) invoke-virtual       v1, v2, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	28      (00000078) move-result-object   v2
+	29      (0000007a) iget-object          v3, v5, Lcom/afwsamples/testdpc/policy/utils/AuthorizationList;->purposes Ljava/util/Set;
+	30      (0000007e) invoke-static        v3, Lcom/afwsamples/testdpc/policy/utils/AuthorizationList;->purposesToString(Ljava/util/Set;)Ljava/lang/String;
+	31      (00000084) move-result-object   v3
+	32      (00000086) invoke-virtual       v2, v3, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+toString-BB@0x8c : [ toString-BB@0x94 toString-BB@0xc2 ]
+	33      (0000008c) iget-object          v2, v5, Lcom/afwsamples/testdpc/policy/utils/AuthorizationList;->digests Ljava/util/Set;
+	34      (00000090) if-eqz               v2, +19
+
+toString-BB@0x94 : [ toString-BB@0xa4 toString-BB@0xc2 ]
+	35      (00000094) iget-object          v2, v5, Lcom/afwsamples/testdpc/policy/utils/AuthorizationList;->digests Ljava/util/Set;
+	36      (00000098) invoke-interface     v2, Ljava/util/Set;->isEmpty()Z
+	37      (0000009e) move-result          v2
+	38      (000000a0) if-nez               v2, +11
+
+toString-BB@0xa4 : [ toString-BB@0xc2 ]
+	39      (000000a4) const-string         v2, '\nDigests: '
+	40      (000000a8) invoke-virtual       v1, v2, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	41      (000000ae) move-result-object   v2
+	42      (000000b0) iget-object          v3, v5, Lcom/afwsamples/testdpc/policy/utils/AuthorizationList;->digests Ljava/util/Set;
+	43      (000000b4) invoke-static        v3, Lcom/afwsamples/testdpc/policy/utils/AuthorizationList;->digestsToString(Ljava/util/Set;)Ljava/lang/String;
+	44      (000000ba) move-result-object   v3
+	45      (000000bc) invoke-virtual       v2, v3, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+toString-BB@0xc2 : [ toString-BB@0xca toString-BB@0xf8 ]
+	46      (000000c2) iget-object          v2, v5, Lcom/afwsamples/testdpc/policy/utils/AuthorizationList;->paddingModes Ljava/util/Set;
+	47      (000000c6) if-eqz               v2, +19
+
+toString-BB@0xca : [ toString-BB@0xda toString-BB@0xf8 ]
+	48      (000000ca) iget-object          v2, v5, Lcom/afwsamples/testdpc/policy/utils/AuthorizationList;->paddingModes Ljava/util/Set;
+	49      (000000ce) invoke-interface     v2, Ljava/util/Set;->isEmpty()Z
+	50      (000000d4) move-result          v2
+	51      (000000d6) if-nez               v2, +11
+
+toString-BB@0xda : [ toString-BB@0xf8 ]
+	52      (000000da) const-string         v2, '\nPadding modes: '
+	53      (000000de) invoke-virtual       v1, v2, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	54      (000000e4) move-result-object   v2
+	55      (000000e6) iget-object          v3, v5, Lcom/afwsamples/testdpc/policy/utils/AuthorizationList;->paddingModes Ljava/util/Set;
+	56      (000000ea) invoke-static        v3, Lcom/afwsamples/testdpc/policy/utils/AuthorizationList;->paddingModesToString(Ljava/util/Set;)Ljava/lang/String;
+	57      (000000f0) move-result-object   v3
+	58      (000000f2) invoke-virtual       v2, v3, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+toString-BB@0xf8 : [ toString-BB@0x100 toString-BB@0x11a ]
+	59      (000000f8) iget-object          v2, v5, Lcom/afwsamples/testdpc/policy/utils/AuthorizationList;->ecCurve Ljava/lang/Integer;
+	60      (000000fc) if-eqz               v2, +f
+
+toString-BB@0x100 : [ toString-BB@0x11a ]
+	61      (00000100) const-string         v2, '\nEC Curve: '
+	62      (00000104) invoke-virtual       v1, v2, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	63      (0000010a) move-result-object   v2
+	64      (0000010c) invoke-virtual       v5, Lcom/afwsamples/testdpc/policy/utils/AuthorizationList;->ecCurveAsString()Ljava/lang/String;
+	65      (00000112) move-result-object   v3
+	66      (00000114) invoke-virtual       v2, v3, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+toString-BB@0x11a : [ toString-BB@0x126 toString-BB@0x138 ]
+	67      (0000011a) const-string         v0, '\nRSA exponent: '
+	68      (0000011e) iget-object          v2, v5, Lcom/afwsamples/testdpc/policy/utils/AuthorizationList;->rsaPublicExponent Ljava/lang/Long;
+	69      (00000122) if-eqz               v2, +b
+
+toString-BB@0x126 : [ toString-BB@0x138 ]
+	70      (00000126) invoke-virtual       v1, v0, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	71      (0000012c) move-result-object   v2
+	72      (0000012e) iget-object          v3, v5, Lcom/afwsamples/testdpc/policy/utils/AuthorizationList;->rsaPublicExponent Ljava/lang/Long;
+	73      (00000132) invoke-virtual       v2, v3, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+toString-BB@0x138 : [ toString-BB@0x140 toString-BB@0x15e ]
+	74      (00000138) iget-object          v2, v5, Lcom/afwsamples/testdpc/policy/utils/AuthorizationList;->activeDateTime Ljava/util/Date;
+	75      (0000013c) if-eqz               v2, +11
+
+toString-BB@0x140 : [ toString-BB@0x15e ]
+	76      (00000140) const-string         v2, '\nActive: '
+	77      (00000144) invoke-virtual       v1, v2, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	78      (0000014a) move-result-object   v2
+	79      (0000014c) iget-object          v3, v5, Lcom/afwsamples/testdpc/policy/utils/AuthorizationList;->activeDateTime Ljava/util/Date;
+	80      (00000150) invoke-static        v3, Lcom/afwsamples/testdpc/policy/utils/AuthorizationList;->formatDate(Ljava/util/Date;)Ljava/lang/String;
+	81      (00000156) move-result-object   v3
+	82      (00000158) invoke-virtual       v2, v3, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+toString-BB@0x15e : [ toString-BB@0x166 toString-BB@0x184 ]
+	83      (0000015e) iget-object          v2, v5, Lcom/afwsamples/testdpc/policy/utils/AuthorizationList;->originationExpireDateTime Ljava/util/Date;
+	84      (00000162) if-eqz               v2, +11
+
+toString-BB@0x166 : [ toString-BB@0x184 ]
+	85      (00000166) const-string         v2, '\nOrigination expire: '
+	86      (0000016a) invoke-virtual       v1, v2, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	87      (00000170) move-result-object   v2
+	88      (00000172) iget-object          v3, v5, Lcom/afwsamples/testdpc/policy/utils/AuthorizationList;->originationExpireDateTime Ljava/util/Date;
+	89      (00000176) invoke-static        v3, Lcom/afwsamples/testdpc/policy/utils/AuthorizationList;->formatDate(Ljava/util/Date;)Ljava/lang/String;
+	90      (0000017c) move-result-object   v3
+	91      (0000017e) invoke-virtual       v2, v3, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+toString-BB@0x184 : [ toString-BB@0x18c toString-BB@0x1aa ]
+	92      (00000184) iget-object          v2, v5, Lcom/afwsamples/testdpc/policy/utils/AuthorizationList;->usageExpireDateTime Ljava/util/Date;
+	93      (00000188) if-eqz               v2, +11
+
+toString-BB@0x18c : [ toString-BB@0x1aa ]
+	94      (0000018c) const-string         v2, '\nUsage expire: '
+	95      (00000190) invoke-virtual       v1, v2, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	96      (00000196) move-result-object   v2
+	97      (00000198) iget-object          v3, v5, Lcom/afwsamples/testdpc/policy/utils/AuthorizationList;->usageExpireDateTime Ljava/util/Date;
+	98      (0000019c) invoke-static        v3, Lcom/afwsamples/testdpc/policy/utils/AuthorizationList;->formatDate(Ljava/util/Date;)Ljava/lang/String;
+	99      (000001a2) move-result-object   v3
+	100     (000001a4) invoke-virtual       v2, v3, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+toString-BB@0x1aa : [ toString-BB@0x1b2 toString-BB@0x1fe ]
+	101     (000001aa) iget-boolean         v2, v5, Lcom/afwsamples/testdpc/policy/utils/AuthorizationList;->noAuthRequired Z
+	102     (000001ae) if-nez               v2, +28
+
+toString-BB@0x1b2 : [ toString-BB@0x1ba toString-BB@0x1fe ]
+	103     (000001b2) iget-object          v2, v5, Lcom/afwsamples/testdpc/policy/utils/AuthorizationList;->userAuthType Ljava/lang/Integer;
+	104     (000001b6) if-eqz               v2, +24
+
+toString-BB@0x1ba : [ toString-BB@0x1e8 toString-BB@0x1fe ]
+	105     (000001ba) const-string         v2, '\nAuth types: '
+	106     (000001be) invoke-virtual       v1, v2, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	107     (000001c4) move-result-object   v2
+	108     (000001c6) iget-object          v3, v5, Lcom/afwsamples/testdpc/policy/utils/AuthorizationList;->userAuthType Ljava/lang/Integer;
+	109     (000001ca) invoke-virtual       v3, Ljava/lang/Integer;->intValue()I
+	110     (000001d0) move-result          v3
+	111     (000001d2) invoke-static        v3, Lcom/afwsamples/testdpc/policy/utils/AuthorizationList;->userAuthTypeToString(I)Ljava/lang/String;
+	112     (000001d8) move-result-object   v3
+	113     (000001da) invoke-virtual       v2, v3, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	114     (000001e0) iget-object          v2, v5, Lcom/afwsamples/testdpc/policy/utils/AuthorizationList;->authTimeout Ljava/lang/Integer;
+	115     (000001e4) if-eqz               v2, +d
+
+toString-BB@0x1e8 : [ toString-BB@0x1fe ]
+	116     (000001e8) const-string         v2, '\nAuth timeout: '
+	117     (000001ec) invoke-virtual       v1, v2, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	118     (000001f2) move-result-object   v2
+	119     (000001f4) iget-object          v3, v5, Lcom/afwsamples/testdpc/policy/utils/AuthorizationList;->authTimeout Ljava/lang/Integer;
+	120     (000001f8) invoke-virtual       v2, v3, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+toString-BB@0x1fe : [ toString-BB@0x206 toString-BB@0x226 ]
+	121     (000001fe) iget-object          v2, v5, Lcom/afwsamples/testdpc/policy/utils/AuthorizationList;->applicationId [B
+	122     (00000202) if-eqz               v2, +12
+
+toString-BB@0x206 : [ toString-BB@0x226 ]
+	123     (00000206) const-string         v2, '\nApplication ID: '
+	124     (0000020a) invoke-virtual       v1, v2, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	125     (00000210) move-result-object   v2
+	126     (00000212) new-instance         v3, Ljava/lang/String;
+	127     (00000216) iget-object          v4, v5, Lcom/afwsamples/testdpc/policy/utils/AuthorizationList;->applicationId [B
+	128     (0000021a) invoke-direct        v3, v4, Ljava/lang/String;-><init>([B)V
+	129     (00000220) invoke-virtual       v2, v3, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+toString-BB@0x226 : [ toString-BB@0x22e toString-BB@0x24c ]
+	130     (00000226) iget-object          v2, v5, Lcom/afwsamples/testdpc/policy/utils/AuthorizationList;->creationDateTime Ljava/util/Date;
+	131     (0000022a) if-eqz               v2, +11
+
+toString-BB@0x22e : [ toString-BB@0x24c ]
+	132     (0000022e) const-string         v2, '\nCreated: '
+	133     (00000232) invoke-virtual       v1, v2, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	134     (00000238) move-result-object   v2
+	135     (0000023a) iget-object          v3, v5, Lcom/afwsamples/testdpc/policy/utils/AuthorizationList;->creationDateTime Ljava/util/Date;
+	136     (0000023e) invoke-static        v3, Lcom/afwsamples/testdpc/policy/utils/AuthorizationList;->formatDate(Ljava/util/Date;)Ljava/lang/String;
+	137     (00000244) move-result-object   v3
+	138     (00000246) invoke-virtual       v2, v3, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+toString-BB@0x24c : [ toString-BB@0x254 toString-BB@0x27a ]
+	139     (0000024c) iget-object          v2, v5, Lcom/afwsamples/testdpc/policy/utils/AuthorizationList;->origin Ljava/lang/Integer;
+	140     (00000250) if-eqz               v2, +15
+
+toString-BB@0x254 : [ toString-BB@0x27a ]
+	141     (00000254) const-string         v2, '\nOrigin: '
+	142     (00000258) invoke-virtual       v1, v2, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	143     (0000025e) move-result-object   v2
+	144     (00000260) iget-object          v3, v5, Lcom/afwsamples/testdpc/policy/utils/AuthorizationList;->origin Ljava/lang/Integer;
+	145     (00000264) invoke-virtual       v3, Ljava/lang/Integer;->intValue()I
+	146     (0000026a) move-result          v3
+	147     (0000026c) invoke-static        v3, Lcom/afwsamples/testdpc/policy/utils/AuthorizationList;->originToString(I)Ljava/lang/String;
+	148     (00000272) move-result-object   v3
+	149     (00000274) invoke-virtual       v2, v3, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+toString-BB@0x27a : [ toString-BB@0x282 toString-BB@0x28c ]
+	150     (0000027a) iget-boolean         v2, v5, Lcom/afwsamples/testdpc/policy/utils/AuthorizationList;->rollbackResistant Z
+	151     (0000027e) if-eqz               v2, +7
+
+toString-BB@0x282 : [ toString-BB@0x28c ]
+	152     (00000282) const-string         v2, '\nRollback resistant: true'
+	153     (00000286) invoke-virtual       v1, v2, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+toString-BB@0x28c : [ toString-BB@0x294 toString-BB@0x2a8 ]
+	154     (0000028c) iget-object          v2, v5, Lcom/afwsamples/testdpc/policy/utils/AuthorizationList;->rootOfTrust Lcom/afwsamples/testdpc/policy/utils/RootOfTrust;
+	155     (00000290) if-eqz               v2, +c
+
+toString-BB@0x294 : [ toString-BB@0x2a8 ]
+	156     (00000294) const-string         v2, '\nRoot of Trust:\n'
+	157     (00000298) invoke-virtual       v1, v2, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	158     (0000029e) iget-object          v2, v5, Lcom/afwsamples/testdpc/policy/utils/AuthorizationList;->rootOfTrust Lcom/afwsamples/testdpc/policy/utils/RootOfTrust;
+	159     (000002a2) invoke-virtual       v1, v2, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+toString-BB@0x2a8 : [ toString-BB@0x2b0 toString-BB@0x2c6 ]
+	160     (000002a8) iget-object          v2, v5, Lcom/afwsamples/testdpc/policy/utils/AuthorizationList;->osVersion Ljava/lang/Integer;
+	161     (000002ac) if-eqz               v2, +d
+
+toString-BB@0x2b0 : [ toString-BB@0x2c6 ]
+	162     (000002b0) const-string         v2, '\nOS Version: '
+	163     (000002b4) invoke-virtual       v1, v2, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	164     (000002ba) move-result-object   v2
+	165     (000002bc) iget-object          v3, v5, Lcom/afwsamples/testdpc/policy/utils/AuthorizationList;->osVersion Ljava/lang/Integer;
+	166     (000002c0) invoke-virtual       v2, v3, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+toString-BB@0x2c6 : [ toString-BB@0x2ce toString-BB@0x2e4 ]
+	167     (000002c6) iget-object          v2, v5, Lcom/afwsamples/testdpc/policy/utils/AuthorizationList;->osPatchLevel Ljava/lang/Integer;
+	168     (000002ca) if-eqz               v2, +d
+
+toString-BB@0x2ce : [ toString-BB@0x2e4 ]
+	169     (000002ce) const-string         v2, '\nOS Patchlevel: '
+	170     (000002d2) invoke-virtual       v1, v2, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	171     (000002d8) move-result-object   v2
+	172     (000002da) iget-object          v3, v5, Lcom/afwsamples/testdpc/policy/utils/AuthorizationList;->osPatchLevel Ljava/lang/Integer;
+	173     (000002de) invoke-virtual       v2, v3, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+toString-BB@0x2e4 : [ toString-BB@0x2ec toString-BB@0x302 ]
+	174     (000002e4) iget-object          v2, v5, Lcom/afwsamples/testdpc/policy/utils/AuthorizationList;->vendorPatchLevel Ljava/lang/Integer;
+	175     (000002e8) if-eqz               v2, +d
+
+toString-BB@0x2ec : [ toString-BB@0x302 ]
+	176     (000002ec) const-string         v2, '\nVendor Patchlevel: '
+	177     (000002f0) invoke-virtual       v1, v2, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	178     (000002f6) move-result-object   v2
+	179     (000002f8) iget-object          v3, v5, Lcom/afwsamples/testdpc/policy/utils/AuthorizationList;->vendorPatchLevel Ljava/lang/Integer;
+	180     (000002fc) invoke-virtual       v2, v3, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+toString-BB@0x302 : [ toString-BB@0x30a toString-BB@0x320 ]
+	181     (00000302) iget-object          v2, v5, Lcom/afwsamples/testdpc/policy/utils/AuthorizationList;->bootPatchLevel Ljava/lang/Integer;
+	182     (00000306) if-eqz               v2, +d
+
+toString-BB@0x30a : [ toString-BB@0x320 ]
+	183     (0000030a) const-string         v2, '\nBoot Patchlevel: '
+	184     (0000030e) invoke-virtual       v1, v2, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	185     (00000314) move-result-object   v2
+	186     (00000316) iget-object          v3, v5, Lcom/afwsamples/testdpc/policy/utils/AuthorizationList;->bootPatchLevel Ljava/lang/Integer;
+	187     (0000031a) invoke-virtual       v2, v3, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+toString-BB@0x320 : [ toString-BB@0x328 toString-BB@0x33e ]
+	188     (00000320) iget-object          v2, v5, Lcom/afwsamples/testdpc/policy/utils/AuthorizationList;->attestationApplicationId Lcom/afwsamples/testdpc/policy/utils/AttestationApplicationId;
+	189     (00000324) if-eqz               v2, +d
+
+toString-BB@0x328 : [ toString-BB@0x33e ]
+	190     (00000328) const-string         v2, '\nAttestation Application Id:'
+	191     (0000032c) invoke-virtual       v1, v2, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	192     (00000332) move-result-object   v2
+	193     (00000334) iget-object          v3, v5, Lcom/afwsamples/testdpc/policy/utils/AuthorizationList;->attestationApplicationId Lcom/afwsamples/testdpc/policy/utils/AttestationApplicationId;
+	194     (00000338) invoke-virtual       v2, v3, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+toString-BB@0x33e : [ toString-BB@0x346 toString-BB@0x350 ]
+	195     (0000033e) iget-boolean         v2, v5, Lcom/afwsamples/testdpc/policy/utils/AuthorizationList;->userPresenceRequired Z
+	196     (00000342) if-eqz               v2, +7
+
+toString-BB@0x346 : [ toString-BB@0x350 ]
+	197     (00000346) const-string         v2, '\nUser presence required'
+	198     (0000034a) invoke-virtual       v1, v2, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+toString-BB@0x350 : [ toString-BB@0x358 toString-BB@0x362 ]
+	199     (00000350) iget-boolean         v2, v5, Lcom/afwsamples/testdpc/policy/utils/AuthorizationList;->confirmationRequired Z
+	200     (00000354) if-eqz               v2, +7
+
+toString-BB@0x358 : [ toString-BB@0x362 ]
+	201     (00000358) const-string         v2, '\nConfirmation required'
+	202     (0000035c) invoke-virtual       v1, v2, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+toString-BB@0x362 : [ toString-BB@0x36a toString-BB@0x374 ]
+	203     (00000362) iget-boolean         v2, v5, Lcom/afwsamples/testdpc/policy/utils/AuthorizationList;->individualAttestation Z
+	204     (00000366) if-eqz               v2, +7
+
+toString-BB@0x36a : [ toString-BB@0x374 ]
+	205     (0000036a) const-string         v2, '\nIndividual attestation'
+	206     (0000036e) invoke-virtual       v1, v2, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+toString-BB@0x374 : [ toString-BB@0x37c toString-BB@0x392 ]
+	207     (00000374) iget-object          v2, v5, Lcom/afwsamples/testdpc/policy/utils/AuthorizationList;->brand Ljava/lang/String;
+	208     (00000378) if-eqz               v2, +d
+
+toString-BB@0x37c : [ toString-BB@0x392 ]
+	209     (0000037c) const-string         v2, '\nBrand: '
+	210     (00000380) invoke-virtual       v1, v2, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	211     (00000386) move-result-object   v2
+	212     (00000388) iget-object          v3, v5, Lcom/afwsamples/testdpc/policy/utils/AuthorizationList;->brand Ljava/lang/String;
+	213     (0000038c) invoke-virtual       v2, v3, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+toString-BB@0x392 : [ toString-BB@0x39a toString-BB@0x3b0 ]
+	214     (00000392) iget-object          v2, v5, Lcom/afwsamples/testdpc/policy/utils/AuthorizationList;->device Ljava/lang/String;
+	215     (00000396) if-eqz               v2, +d
+
+toString-BB@0x39a : [ toString-BB@0x3b0 ]
+	216     (0000039a) const-string         v2, '\nDevice type: '
+	217     (0000039e) invoke-virtual       v1, v2, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	218     (000003a4) move-result-object   v2
+	219     (000003a6) iget-object          v3, v5, Lcom/afwsamples/testdpc/policy/utils/AuthorizationList;->device Ljava/lang/String;
+	220     (000003aa) invoke-virtual       v2, v3, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+toString-BB@0x3b0 : 
+	221     (000003b0) invoke-virtual       v1, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+	222     (000003b6) move-result-object   v2
+	223     (000003b8) return-object        v2
+

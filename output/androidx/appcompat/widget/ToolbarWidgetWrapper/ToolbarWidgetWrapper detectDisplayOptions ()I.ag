@@ -1,0 +1,24 @@
+# Landroidx/appcompat/widget/ToolbarWidgetWrapper;->detectDisplayOptions()I [access_flags=private]
+#
+# Parameters:
+# local registers: v0...v2
+#
+# - return:int
+
+detectDisplayOptions-BB@0x0 : [ detectDisplayOptions-BB@0x14 detectDisplayOptions-BB@0x28 ]
+	0       (00000000) const/16             v0, 11
+	1       (00000004) iget-object          v1, v2, Landroidx/appcompat/widget/ToolbarWidgetWrapper;->mToolbar Landroidx/appcompat/widget/Toolbar;
+	2       (00000008) invoke-virtual       v1, Landroidx/appcompat/widget/Toolbar;->getNavigationIcon()Landroid/graphics/drawable/Drawable;
+	3       (0000000e) move-result-object   v1
+	4       (00000010) if-eqz               v1, +c
+
+detectDisplayOptions-BB@0x14 : [ detectDisplayOptions-BB@0x28 ]
+	5       (00000014) or-int/lit8          v0, v0, 4
+	6       (00000018) iget-object          v1, v2, Landroidx/appcompat/widget/ToolbarWidgetWrapper;->mToolbar Landroidx/appcompat/widget/Toolbar;
+	7       (0000001c) invoke-virtual       v1, Landroidx/appcompat/widget/Toolbar;->getNavigationIcon()Landroid/graphics/drawable/Drawable;
+	8       (00000022) move-result-object   v1
+	9       (00000024) iput-object          v1, v2, Landroidx/appcompat/widget/ToolbarWidgetWrapper;->mDefaultNavigationIcon Landroid/graphics/drawable/Drawable;
+
+detectDisplayOptions-BB@0x28 : 
+	10      (00000028) return               v0
+

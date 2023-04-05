@@ -1,0 +1,30 @@
+# Landroidx/appcompat/graphics/drawable/DrawableWrapper;->setVisible(Z Z)Z [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:boolean
+# - v3:boolean
+#
+# - return:boolean
+
+setVisible-BB@0x0 : [ setVisible-BB@0xc setVisible-BB@0x1c ]
+	0       (00000000) invoke-super         v1, v2, v3, Landroid/graphics/drawable/Drawable;->setVisible(Z Z)Z
+	1       (00000006) move-result          v0
+	2       (00000008) if-nez               v0, +a
+
+setVisible-BB@0xc : [ setVisible-BB@0x1c setVisible-BB@0x20 ]
+	3       (0000000c) iget-object          v0, v1, Landroidx/appcompat/graphics/drawable/DrawableWrapper;->mDrawable Landroid/graphics/drawable/Drawable;
+	4       (00000010) invoke-virtual       v0, v2, v3, Landroid/graphics/drawable/Drawable;->setVisible(Z Z)Z
+	5       (00000016) move-result          v0
+	6       (00000018) if-eqz               v0, +4
+
+setVisible-BB@0x1c : [ setVisible-BB@0x1e ]
+	7       (0000001c) const/4              v0, 1
+
+setVisible-BB@0x1e : 
+	8       (0000001e) return               v0
+
+setVisible-BB@0x20 : [ setVisible-BB@0x1e ]
+	9       (00000020) const/4              v0, 0
+	10      (00000022) goto                 -2
+

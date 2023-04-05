@@ -1,0 +1,25 @@
+# Landroidx/appcompat/app/AppCompatActivity;->onKeyDown(I Landroid/view/KeyEvent;)Z [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:int
+# - v3:android.view.KeyEvent
+#
+# - return:boolean
+
+onKeyDown-BB@0x0 : [ onKeyDown-BB@0xc onKeyDown-BB@0x10 ]
+	0       (00000000) invoke-direct        v1, v2, v3, Landroidx/appcompat/app/AppCompatActivity;->performMenuItemShortcut(I Landroid/view/KeyEvent;)Z
+	1       (00000006) move-result          v0
+	2       (00000008) if-eqz               v0, +4
+
+onKeyDown-BB@0xc : [ onKeyDown-BB@0xe ]
+	3       (0000000c) const/4              v0, 1
+
+onKeyDown-BB@0xe : 
+	4       (0000000e) return               v0
+
+onKeyDown-BB@0x10 : [ onKeyDown-BB@0xe ]
+	5       (00000010) invoke-super         v1, v2, v3, Landroidx/fragment/app/FragmentActivity;->onKeyDown(I Landroid/view/KeyEvent;)Z
+	6       (00000016) move-result          v0
+	7       (00000018) goto                 -5
+

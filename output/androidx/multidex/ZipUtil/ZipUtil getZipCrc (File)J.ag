@@ -1,0 +1,28 @@
+# Landroidx/multidex/ZipUtil;->getZipCrc(Ljava/io/File;)J [access_flags=static]
+#
+# Parameters:
+# - local registers: v0...v3
+# - v4:java.io.File
+#
+# - return:long
+
+getZipCrc-BB@0x0 : [ getZipCrc-BB@0xe ]
+	0       (00000000) new-instance         v1, Ljava/io/RandomAccessFile;
+	1       (00000004) const-string         v2, 'r'
+	2       (00000008) invoke-direct        v1, v4, v2, Ljava/io/RandomAccessFile;-><init>(Ljava/io/File; Ljava/lang/String;)V
+
+getZipCrc-BB@0xe : 
+	3       (0000000e) invoke-static        v1, Landroidx/multidex/ZipUtil;->findCentralDirectory(Ljava/io/RandomAccessFile;)Landroidx/multidex/ZipUtil$CentralDirectory;
+	4       (00000014) move-result-object   v0
+	5       (00000016) invoke-static        v1, v0, Landroidx/multidex/ZipUtil;->computeCrcOfCentralDir(Ljava/io/RandomAccessFile; Landroidx/multidex/ZipUtil$CentralDirectory;)J
+	6       (0000001c) move-result-wide     v2
+	7       (0000001e) invoke-virtual       v1, Ljava/io/RandomAccessFile;->close()V
+	8       (00000024) return-wide          v2
+	e:1b
+	(Ljava/lang/Throwable; -> 26 getZipCrc-BB@0x26)
+
+getZipCrc-BB@0x26 : 
+	9       (00000026) move-exception       v2
+	10      (00000028) invoke-virtual       v1, Ljava/io/RandomAccessFile;->close()V
+	11      (0000002e) throw                v2
+

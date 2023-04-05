@@ -1,0 +1,14 @@
+# Lcom/afwsamples/testdpc/common/preference/DpcEditTextPreference;->onAttachedToHierarchy(Landroidx/preference/PreferenceManager;)V [access_flags=protected]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:androidx.preference.PreferenceManager
+#
+# - return:void
+
+onAttachedToHierarchy-BB@0x0 : 
+	0       (00000000) iget-object          v0, v1, Lcom/afwsamples/testdpc/common/preference/DpcEditTextPreference;->mHelper Lcom/afwsamples/testdpc/common/preference/DpcPreferenceHelper;
+	1       (00000004) invoke-virtual       v0, Lcom/afwsamples/testdpc/common/preference/DpcPreferenceHelper;->disableIfConstraintsNotMet()V
+	2       (0000000a) invoke-super         v1, v2, Landroidx/preference/EditTextPreference;->onAttachedToHierarchy(Landroidx/preference/PreferenceManager;)V
+	3       (00000010) return-void          
+

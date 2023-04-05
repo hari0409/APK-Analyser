@@ -1,0 +1,40 @@
+# Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->showWifiMacAddress()V [access_flags=private]
+#
+# Parameters:
+# local registers: v0...v5
+#
+# - return:void
+
+showWifiMacAddress-BB@0x0 : [ showWifiMacAddress-BB@0x14 showWifiMacAddress-BB@0x56 ]
+	0       (00000000) iget-object          v2, v5, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->mDevicePolicyManager Landroid/app/admin/DevicePolicyManager;
+	1       (00000004) iget-object          v3, v5, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->mAdminComponentName Landroid/content/ComponentName;
+	2       (00000008) invoke-virtual       v2, v3, Landroid/app/admin/DevicePolicyManager;->getWifiMacAddress(Landroid/content/ComponentName;)Ljava/lang/String;
+	3       (0000000e) move-result-object   v0
+	4       (00000010) if-eqz               v0, +23
+
+showWifiMacAddress-BB@0x14 : [ showWifiMacAddress-BB@0x16 ]
+	5       (00000014) move-object          v1, v0
+
+showWifiMacAddress-BB@0x16 : 
+	6       (00000016) new-instance         v2, Landroid/app/AlertDialog$Builder;
+	7       (0000001a) invoke-virtual       v5, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->getActivity()Landroid/app/Activity;
+	8       (00000020) move-result-object   v3
+	9       (00000022) invoke-direct        v2, v3, Landroid/app/AlertDialog$Builder;-><init>(Landroid/content/Context;)V
+	10      (00000028) const                v3, 2131690258 # [1.9009554537119144e+38]
+	11      (0000002e) invoke-virtual       v2, v3, Landroid/app/AlertDialog$Builder;->setTitle(I)Landroid/app/AlertDialog$Builder;
+	12      (00000034) move-result-object   v2
+	13      (00000036) invoke-virtual       v2, v1, Landroid/app/AlertDialog$Builder;->setMessage(Ljava/lang/CharSequence;)Landroid/app/AlertDialog$Builder;
+	14      (0000003c) move-result-object   v2
+	15      (0000003e) const                v3, 17039370 # [2.4244599011678966e-38]
+	16      (00000044) const/4              v4, 0
+	17      (00000046) invoke-virtual       v2, v3, v4, Landroid/app/AlertDialog$Builder;->setPositiveButton(I Landroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
+	18      (0000004c) move-result-object   v2
+	19      (0000004e) invoke-virtual       v2, Landroid/app/AlertDialog$Builder;->show()Landroid/app/AlertDialog;
+	20      (00000054) return-void          
+
+showWifiMacAddress-BB@0x56 : [ showWifiMacAddress-BB@0x16 ]
+	21      (00000056) const                v2, 2131690257 # [1.9009552508878184e+38]
+	22      (0000005c) invoke-virtual       v5, v2, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->getString(I)Ljava/lang/String;
+	23      (00000062) move-result-object   v1
+	24      (00000064) goto                 -27
+

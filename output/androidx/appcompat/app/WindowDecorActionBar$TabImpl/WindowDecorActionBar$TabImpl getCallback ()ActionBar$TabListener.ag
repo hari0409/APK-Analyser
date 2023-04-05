@@ -1,0 +1,11 @@
+# Landroidx/appcompat/app/WindowDecorActionBar$TabImpl;->getCallback()Landroidx/appcompat/app/ActionBar$TabListener; [access_flags=public]
+#
+# Parameters:
+# local registers: v0...v1
+#
+# - return:androidx.appcompat.app.ActionBar$TabListener
+
+getCallback-BB@0x0 : 
+	0       (00000000) iget-object          v0, v1, Landroidx/appcompat/app/WindowDecorActionBar$TabImpl;->mCallback Landroidx/appcompat/app/ActionBar$TabListener;
+	1       (00000004) return-object        v0
+

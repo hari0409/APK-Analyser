@@ -1,0 +1,19 @@
+# Landroidx/appcompat/app/AlertDialog$Builder;->setCursor(Landroid/database/Cursor; Landroid/content/DialogInterface$OnClickListener; Ljava/lang/String;)Landroidx/appcompat/app/AlertDialog$Builder; [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:android.database.Cursor
+# - v3:android.content.DialogInterface$OnClickListener
+# - v4:java.lang.String
+#
+# - return:androidx.appcompat.app.AlertDialog$Builder
+
+setCursor-BB@0x0 : 
+	0       (00000000) iget-object          v0, v1, Landroidx/appcompat/app/AlertDialog$Builder;->P Landroidx/appcompat/app/AlertController$AlertParams;
+	1       (00000004) iput-object          v2, v0, Landroidx/appcompat/app/AlertController$AlertParams;->mCursor Landroid/database/Cursor;
+	2       (00000008) iget-object          v0, v1, Landroidx/appcompat/app/AlertDialog$Builder;->P Landroidx/appcompat/app/AlertController$AlertParams;
+	3       (0000000c) iput-object          v4, v0, Landroidx/appcompat/app/AlertController$AlertParams;->mLabelColumn Ljava/lang/String;
+	4       (00000010) iget-object          v0, v1, Landroidx/appcompat/app/AlertDialog$Builder;->P Landroidx/appcompat/app/AlertController$AlertParams;
+	5       (00000014) iput-object          v3, v0, Landroidx/appcompat/app/AlertController$AlertParams;->mOnClickListener Landroid/content/DialogInterface$OnClickListener;
+	6       (00000018) return-object        v1
+

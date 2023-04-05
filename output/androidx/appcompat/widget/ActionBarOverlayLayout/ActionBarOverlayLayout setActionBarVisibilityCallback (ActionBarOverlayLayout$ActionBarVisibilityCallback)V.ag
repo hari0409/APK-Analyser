@@ -1,0 +1,29 @@
+# Landroidx/appcompat/widget/ActionBarOverlayLayout;->setActionBarVisibilityCallback(Landroidx/appcompat/widget/ActionBarOverlayLayout$ActionBarVisibilityCallback;)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v3
+# - v4:androidx.appcompat.widget.ActionBarOverlayLayout$ActionBarVisibilityCallback
+#
+# - return:void
+
+setActionBarVisibilityCallback-BB@0x0 : [ setActionBarVisibilityCallback-BB@0x10 setActionBarVisibilityCallback-BB@0x36 ]
+	0       (00000000) iput-object          v4, v3, Landroidx/appcompat/widget/ActionBarOverlayLayout;->mActionBarVisibilityCallback Landroidx/appcompat/widget/ActionBarOverlayLayout$ActionBarVisibilityCallback;
+	1       (00000004) invoke-virtual       v3, Landroidx/appcompat/widget/ActionBarOverlayLayout;->getWindowToken()Landroid/os/IBinder;
+	2       (0000000a) move-result-object   v1
+	3       (0000000c) if-eqz               v1, +15
+
+setActionBarVisibilityCallback-BB@0x10 : [ setActionBarVisibilityCallback-BB@0x26 setActionBarVisibilityCallback-BB@0x36 ]
+	4       (00000010) iget-object          v1, v3, Landroidx/appcompat/widget/ActionBarOverlayLayout;->mActionBarVisibilityCallback Landroidx/appcompat/widget/ActionBarOverlayLayout$ActionBarVisibilityCallback;
+	5       (00000014) iget                 v2, v3, Landroidx/appcompat/widget/ActionBarOverlayLayout;->mWindowVisibility I
+	6       (00000018) invoke-interface     v1, v2, Landroidx/appcompat/widget/ActionBarOverlayLayout$ActionBarVisibilityCallback;->onWindowVisibilityChanged(I)V
+	7       (0000001e) iget                 v1, v3, Landroidx/appcompat/widget/ActionBarOverlayLayout;->mLastSystemUiVisibility I
+	8       (00000022) if-eqz               v1, +a
+
+setActionBarVisibilityCallback-BB@0x26 : [ setActionBarVisibilityCallback-BB@0x36 ]
+	9       (00000026) iget                 v0, v3, Landroidx/appcompat/widget/ActionBarOverlayLayout;->mLastSystemUiVisibility I
+	10      (0000002a) invoke-virtual       v3, v0, Landroidx/appcompat/widget/ActionBarOverlayLayout;->onWindowSystemUiVisibilityChanged(I)V
+	11      (00000030) invoke-static        v3, Landroidx/core/view/ViewCompat;->requestApplyInsets(Landroid/view/View;)V
+
+setActionBarVisibilityCallback-BB@0x36 : 
+	12      (00000036) return-void          
+

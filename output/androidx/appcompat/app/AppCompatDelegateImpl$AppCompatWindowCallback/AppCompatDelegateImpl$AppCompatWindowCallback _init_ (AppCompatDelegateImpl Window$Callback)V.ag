@@ -1,0 +1,14 @@
+# Landroidx/appcompat/app/AppCompatDelegateImpl$AppCompatWindowCallback;-><init>(Landroidx/appcompat/app/AppCompatDelegateImpl; Landroid/view/Window$Callback;)V [access_flags=constructor]
+#
+# Parameters:
+# - local registers: v0...v0
+# - v1:androidx.appcompat.app.AppCompatDelegateImpl
+# - v2:android.view.Window$Callback
+#
+# - return:void
+
+<init>-BB@0x0 : 
+	0       (00000000) iput-object          v1, v0, Landroidx/appcompat/app/AppCompatDelegateImpl$AppCompatWindowCallback;->this$0 Landroidx/appcompat/app/AppCompatDelegateImpl;
+	1       (00000004) invoke-direct        v0, v2, Landroidx/appcompat/view/WindowCallbackWrapper;-><init>(Landroid/view/Window$Callback;)V
+	2       (0000000a) return-void          
+

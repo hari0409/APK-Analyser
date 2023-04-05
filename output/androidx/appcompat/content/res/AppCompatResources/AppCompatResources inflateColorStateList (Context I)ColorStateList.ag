@@ -1,0 +1,40 @@
+# Landroidx/appcompat/content/res/AppCompatResources;->inflateColorStateList(Landroid/content/Context; I)Landroid/content/res/ColorStateList; [access_flags=private static]
+#
+# Parameters:
+# - local registers: v0...v5
+# - v6:android.content.Context
+# - v7:int
+#
+# - return:android.content.res.ColorStateList
+
+inflateColorStateList-BB@0x0 : [ inflateColorStateList-BB@0xe inflateColorStateList-BB@0x10 ]
+	0       (00000000) const/4              v3, 0
+	1       (00000002) invoke-static        v6, v7, Landroidx/appcompat/content/res/AppCompatResources;->isColorInt(Landroid/content/Context; I)Z
+	2       (00000008) move-result          v4
+	3       (0000000a) if-eqz               v4, +3
+
+inflateColorStateList-BB@0xe : 
+	4       (0000000e) return-object        v3
+
+inflateColorStateList-BB@0x10 : [ inflateColorStateList-BB@0x20 ]
+	5       (00000010) invoke-virtual       v6, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
+	6       (00000016) move-result-object   v1
+	7       (00000018) invoke-virtual       v1, v7, Landroid/content/res/Resources;->getXml(I)Landroid/content/res/XmlResourceParser;
+	8       (0000001e) move-result-object   v2
+
+inflateColorStateList-BB@0x20 : [ inflateColorStateList-BB@0xe ]
+	9       (00000020) invoke-virtual       v6, Landroid/content/Context;->getTheme()Landroid/content/res/Resources$Theme;
+	10      (00000026) move-result-object   v4
+	11      (00000028) invoke-static        v1, v2, v4, Landroidx/core/content/res/ColorStateListInflaterCompat;->createFromXml(Landroid/content/res/Resources; Lorg/xmlpull/v1/XmlPullParser; Landroid/content/res/Resources$Theme;)Landroid/content/res/ColorStateList;
+	12      (0000002e) move-result-object   v3
+	13      (00000030) goto                 -11
+	20:2d
+	(Ljava/lang/Exception; -> 32 inflateColorStateList-BB@0x32)
+
+inflateColorStateList-BB@0x32 : [ inflateColorStateList-BB@0xe ]
+	14      (00000032) move-exception       v0
+	15      (00000034) const-string         v4, 'AppCompatResources'
+	16      (00000038) const-string         v5, 'Failed to inflate ColorStateList, leaving it to the framework'
+	17      (0000003c) invoke-static        v4, v5, v0, Landroid/util/Log;->e(Ljava/lang/String; Ljava/lang/String; Ljava/lang/Throwable;)I
+	18      (00000042) goto                 -1a
+

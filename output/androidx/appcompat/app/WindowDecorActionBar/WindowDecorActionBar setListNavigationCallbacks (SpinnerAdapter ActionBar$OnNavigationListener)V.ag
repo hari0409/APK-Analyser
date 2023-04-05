@@ -1,0 +1,16 @@
+# Landroidx/appcompat/app/WindowDecorActionBar;->setListNavigationCallbacks(Landroid/widget/SpinnerAdapter; Landroidx/appcompat/app/ActionBar$OnNavigationListener;)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:android.widget.SpinnerAdapter
+# - v4:androidx.appcompat.app.ActionBar$OnNavigationListener
+#
+# - return:void
+
+setListNavigationCallbacks-BB@0x0 : 
+	0       (00000000) iget-object          v0, v2, Landroidx/appcompat/app/WindowDecorActionBar;->mDecorToolbar Landroidx/appcompat/widget/DecorToolbar;
+	1       (00000004) new-instance         v1, Landroidx/appcompat/app/NavItemSelectedListener;
+	2       (00000008) invoke-direct        v1, v4, Landroidx/appcompat/app/NavItemSelectedListener;-><init>(Landroidx/appcompat/app/ActionBar$OnNavigationListener;)V
+	3       (0000000e) invoke-interface     v0, v3, v1, Landroidx/appcompat/widget/DecorToolbar;->setDropdownParams(Landroid/widget/SpinnerAdapter; Landroid/widget/AdapterView$OnItemSelectedListener;)V
+	4       (00000014) return-void          
+

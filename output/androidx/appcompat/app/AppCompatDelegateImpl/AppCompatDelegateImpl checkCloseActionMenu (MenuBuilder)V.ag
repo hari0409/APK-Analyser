@@ -1,0 +1,37 @@
+# Landroidx/appcompat/app/AppCompatDelegateImpl;->checkCloseActionMenu(Landroidx/appcompat/view/menu/MenuBuilder;)V [access_flags=]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:androidx.appcompat.view.menu.MenuBuilder
+#
+# - return:void
+
+checkCloseActionMenu-BB@0x0 : [ checkCloseActionMenu-BB@0x8 checkCloseActionMenu-BB@0xa ]
+	0       (00000000) iget-boolean         v1, v2, Landroidx/appcompat/app/AppCompatDelegateImpl;->mClosingActionMenu Z
+	1       (00000004) if-eqz               v1, +3
+
+checkCloseActionMenu-BB@0x8 : 
+	2       (00000008) return-void          
+
+checkCloseActionMenu-BB@0xa : [ checkCloseActionMenu-BB@0x26 checkCloseActionMenu-BB@0x38 ]
+	3       (0000000a) const/4              v1, 1
+	4       (0000000c) iput-boolean         v1, v2, Landroidx/appcompat/app/AppCompatDelegateImpl;->mClosingActionMenu Z
+	5       (00000010) iget-object          v1, v2, Landroidx/appcompat/app/AppCompatDelegateImpl;->mDecorContentParent Landroidx/appcompat/widget/DecorContentParent;
+	6       (00000014) invoke-interface     v1, Landroidx/appcompat/widget/DecorContentParent;->dismissPopups()V
+	7       (0000001a) invoke-virtual       v2, Landroidx/appcompat/app/AppCompatDelegateImpl;->getWindowCallback()Landroid/view/Window$Callback;
+	8       (00000020) move-result-object   v0
+	9       (00000022) if-eqz               v0, +b
+
+checkCloseActionMenu-BB@0x26 : [ checkCloseActionMenu-BB@0x2e checkCloseActionMenu-BB@0x38 ]
+	10      (00000026) iget-boolean         v1, v2, Landroidx/appcompat/app/AppCompatDelegateImpl;->mIsDestroyed Z
+	11      (0000002a) if-nez               v1, +7
+
+checkCloseActionMenu-BB@0x2e : [ checkCloseActionMenu-BB@0x38 ]
+	12      (0000002e) const/16             v1, 108
+	13      (00000032) invoke-interface     v0, v1, v3, Landroid/view/Window$Callback;->onPanelClosed(I Landroid/view/Menu;)V
+
+checkCloseActionMenu-BB@0x38 : [ checkCloseActionMenu-BB@0x8 ]
+	14      (00000038) const/4              v1, 0
+	15      (0000003a) iput-boolean         v1, v2, Landroidx/appcompat/app/AppCompatDelegateImpl;->mClosingActionMenu Z
+	16      (0000003e) goto                 -1b
+

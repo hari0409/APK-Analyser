@@ -1,0 +1,29 @@
+# Lcom/afwsamples/testdpc/common/preference/DpcPreferenceHelper;->isSufficientlyPrivileged(I Ljava/util/List;)Z [access_flags=private]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:int
+# - v3:java.util.List
+#
+# - return:boolean
+
+isSufficientlyPrivileged-BB@0x0 : [ isSufficientlyPrivileged-BB@0xc isSufficientlyPrivileged-BB@0x18 ]
+	0       (00000000) invoke-direct        v1, v2, Lcom/afwsamples/testdpc/common/preference/DpcPreferenceHelper;->isEnabledForAdmin(I)Z
+	1       (00000006) move-result          v0
+	2       (00000008) if-nez               v0, +8
+
+isSufficientlyPrivileged-BB@0xc : [ isSufficientlyPrivileged-BB@0x18 isSufficientlyPrivileged-BB@0x1c ]
+	3       (0000000c) invoke-direct        v1, v3, Lcom/afwsamples/testdpc/common/preference/DpcPreferenceHelper;->hasDelegation(Ljava/util/List;)Z
+	4       (00000012) move-result          v0
+	5       (00000014) if-eqz               v0, +4
+
+isSufficientlyPrivileged-BB@0x18 : [ isSufficientlyPrivileged-BB@0x1a ]
+	6       (00000018) const/4              v0, 1
+
+isSufficientlyPrivileged-BB@0x1a : 
+	7       (0000001a) return               v0
+
+isSufficientlyPrivileged-BB@0x1c : [ isSufficientlyPrivileged-BB@0x1a ]
+	8       (0000001c) const/4              v0, 0
+	9       (0000001e) goto                 -2
+

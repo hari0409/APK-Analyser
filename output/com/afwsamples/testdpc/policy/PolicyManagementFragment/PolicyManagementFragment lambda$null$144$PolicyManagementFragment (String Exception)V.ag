@@ -1,0 +1,19 @@
+# Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->lambda$null$144$PolicyManagementFragment(Ljava/lang/String; Ljava/lang/Exception;)V [access_flags=final synthetic]
+#
+# Parameters:
+# - local registers: v0...v4
+# - v5:java.lang.String
+# - v6:java.lang.Exception
+#
+# - return:void
+
+lambda$null$144$PolicyManagementFragment-BB@0x0 : 
+	0       (00000000) const-string         v0, 'enableSystemApp'
+	1       (00000004) const                v1, 2131690021 # [1.9009073844011537e+38]
+	2       (0000000a) const/4              v2, 1
+	3       (0000000c) new-array            v2, v2, [Ljava/lang/Object;
+	4       (00000010) const/4              v3, 0
+	5       (00000012) aput-object          v5, v2, v3
+	6       (00000016) invoke-direct        v4, v0, v6, v1, v2, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->onErrorShowToast(Ljava/lang/String; Ljava/lang/Exception; I [Ljava/lang/Object;)V
+	7       (0000001c) return-void          
+

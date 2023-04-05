@@ -1,0 +1,18 @@
+# Lcom/afwsamples/testdpc/common/keyvaluepair/KeyValuePairDialogFragment;-><init>()V [access_flags=public constructor]
+#
+# Parameters:
+# local registers: v0...v2
+#
+# - return:void
+
+<init>-BB@0x0 : 
+	0       (00000000) const/4              v1, 0
+	1       (00000002) invoke-direct        v2, Landroid/app/DialogFragment;-><init>()V
+	2       (00000008) new-instance         v0, Lcom/afwsamples/testdpc/common/keyvaluepair/KeyValuePairDialogFragment$BundleButtonOnClickListener;
+	3       (0000000c) invoke-direct        v0, v2, v1, Lcom/afwsamples/testdpc/common/keyvaluepair/KeyValuePairDialogFragment$BundleButtonOnClickListener;-><init>(Lcom/afwsamples/testdpc/common/keyvaluepair/KeyValuePairDialogFragment; Lcom/afwsamples/testdpc/common/keyvaluepair/KeyValuePairDialogFragment$1;)V
+	4       (00000012) iput-object          v0, v2, Lcom/afwsamples/testdpc/common/keyvaluepair/KeyValuePairDialogFragment;->bundleButtonOnClickListener Lcom/afwsamples/testdpc/common/keyvaluepair/KeyValuePairDialogFragment$BundleButtonOnClickListener;
+	5       (00000016) new-instance         v0, Lcom/afwsamples/testdpc/common/keyvaluepair/KeyValuePairDialogFragment$BundleArrayButtonOnClickListener;
+	6       (0000001a) invoke-direct        v0, v2, v1, Lcom/afwsamples/testdpc/common/keyvaluepair/KeyValuePairDialogFragment$BundleArrayButtonOnClickListener;-><init>(Lcom/afwsamples/testdpc/common/keyvaluepair/KeyValuePairDialogFragment; Lcom/afwsamples/testdpc/common/keyvaluepair/KeyValuePairDialogFragment$1;)V
+	7       (00000020) iput-object          v0, v2, Lcom/afwsamples/testdpc/common/keyvaluepair/KeyValuePairDialogFragment;->bundleArrayButtonOnClickListener Lcom/afwsamples/testdpc/common/keyvaluepair/KeyValuePairDialogFragment$BundleArrayButtonOnClickListener;
+	8       (00000024) return-void          
+

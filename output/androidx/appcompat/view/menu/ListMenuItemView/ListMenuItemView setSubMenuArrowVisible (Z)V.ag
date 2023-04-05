@@ -1,0 +1,29 @@
+# Landroidx/appcompat/view/menu/ListMenuItemView;->setSubMenuArrowVisible(Z)V [access_flags=private]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:boolean
+#
+# - return:void
+
+setSubMenuArrowVisible-BB@0x0 : [ setSubMenuArrowVisible-BB@0x8 setSubMenuArrowVisible-BB@0x18 ]
+	0       (00000000) iget-object          v0, v2, Landroidx/appcompat/view/menu/ListMenuItemView;->mSubMenuArrowView Landroid/widget/ImageView;
+	1       (00000004) if-eqz               v0, +a
+
+setSubMenuArrowVisible-BB@0x8 : [ setSubMenuArrowVisible-BB@0x10 setSubMenuArrowVisible-BB@0x1a ]
+	2       (00000008) iget-object          v1, v2, Landroidx/appcompat/view/menu/ListMenuItemView;->mSubMenuArrowView Landroid/widget/ImageView;
+	3       (0000000c) if-eqz               v3, +7
+
+setSubMenuArrowVisible-BB@0x10 : [ setSubMenuArrowVisible-BB@0x12 ]
+	4       (00000010) const/4              v0, 0
+
+setSubMenuArrowVisible-BB@0x12 : [ setSubMenuArrowVisible-BB@0x18 ]
+	5       (00000012) invoke-virtual       v1, v0, Landroid/widget/ImageView;->setVisibility(I)V
+
+setSubMenuArrowVisible-BB@0x18 : 
+	6       (00000018) return-void          
+
+setSubMenuArrowVisible-BB@0x1a : [ setSubMenuArrowVisible-BB@0x12 ]
+	7       (0000001a) const/16             v0, 8
+	8       (0000001e) goto                 -6
+

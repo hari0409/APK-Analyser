@@ -1,0 +1,81 @@
+# Lcom/afwsamples/testdpc/ShellCommand;->printAppRestrictions(Ljava/lang/String; Ljava/lang/String; Landroid/os/Bundle;)V [access_flags=private]
+#
+# Parameters:
+# - local registers: v0...v11
+# - v12:java.lang.String
+# - v13:java.lang.String
+# - v14:android.os.Bundle
+#
+# - return:void
+
+printAppRestrictions-BB@0x0 : [ printAppRestrictions-BB@0xa printAppRestrictions-BB@0x16 ]
+	0       (00000000) const/4              v10, 2
+	1       (00000002) const/4              v9, 0
+	2       (00000004) const/4              v8, 1
+	3       (00000006) if-eqz               v14, +8
+
+printAppRestrictions-BB@0xa : [ printAppRestrictions-BB@0x16 printAppRestrictions-BB@0x32 ]
+	4       (0000000a) invoke-virtual       v14, Landroid/os/Bundle;->isEmpty()Z
+	5       (00000010) move-result          v4
+	6       (00000012) if-eqz               v4, +10
+
+printAppRestrictions-BB@0x16 : [ printAppRestrictions-BB@0x30 ]
+	7       (00000016) iget-object          v4, v11, Lcom/afwsamples/testdpc/ShellCommand;->mWriter Ljava/io/PrintWriter;
+	8       (0000001a) const-string         v5, 'No app restrictions (from %s) for %s\n'
+	9       (0000001e) new-array            v6, v10, [Ljava/lang/Object;
+	10      (00000022) aput-object          v13, v6, v9
+	11      (00000026) aput-object          v12, v6, v8
+	12      (0000002a) invoke-virtual       v4, v5, v6, Ljava/io/PrintWriter;->printf(Ljava/lang/String; [Ljava/lang/Object;)Ljava/io/PrintWriter;
+
+printAppRestrictions-BB@0x30 : 
+	13      (00000030) return-void          
+
+printAppRestrictions-BB@0x32 : [ printAppRestrictions-BB@0x3e printAppRestrictions-BB@0xbc ]
+	14      (00000032) invoke-virtual       v14, Landroid/os/Bundle;->size()I
+	15      (00000038) move-result          v2
+	16      (0000003a) if-le                v2, v8, +41
+
+printAppRestrictions-BB@0x3e : [ printAppRestrictions-BB@0x42 ]
+	17      (0000003e) const-string         v1, 's'
+
+printAppRestrictions-BB@0x42 : [ printAppRestrictions-BB@0x80 ]
+	18      (00000042) iget-object          v4, v11, Lcom/afwsamples/testdpc/ShellCommand;->mWriter Ljava/io/PrintWriter;
+	19      (00000046) const-string         v5, '%d app restriction%s%s for %s\n'
+	20      (0000004a) const/4              v6, 4
+	21      (0000004c) new-array            v6, v6, [Ljava/lang/Object;
+	22      (00000050) invoke-static        v2, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+	23      (00000056) move-result-object   v7
+	24      (00000058) aput-object          v7, v6, v9
+	25      (0000005c) aput-object          v1, v6, v8
+	26      (00000060) aput-object          v13, v6, v10
+	27      (00000064) const/4              v7, 3
+	28      (00000066) aput-object          v12, v6, v7
+	29      (0000006a) invoke-virtual       v4, v5, v6, Ljava/io/PrintWriter;->printf(Ljava/lang/String; [Ljava/lang/Object;)Ljava/io/PrintWriter;
+	30      (00000070) invoke-virtual       v14, Landroid/os/Bundle;->keySet()Ljava/util/Set;
+	31      (00000076) move-result-object   v4
+	32      (00000078) invoke-interface     v4, Ljava/util/Set;->iterator()Ljava/util/Iterator;
+	33      (0000007e) move-result-object   v4
+
+printAppRestrictions-BB@0x80 : [ printAppRestrictions-BB@0x8c printAppRestrictions-BB@0x30 ]
+	34      (00000080) invoke-interface     v4, Ljava/util/Iterator;->hasNext()Z
+	35      (00000086) move-result          v5
+	36      (00000088) if-eqz               v5, -2c
+
+printAppRestrictions-BB@0x8c : [ printAppRestrictions-BB@0x80 ]
+	37      (0000008c) invoke-interface     v4, Ljava/util/Iterator;->next()Ljava/lang/Object;
+	38      (00000092) move-result-object   v0
+	39      (00000094) check-cast           v0, Ljava/lang/String;
+	40      (00000098) invoke-virtual       v14, v0, Landroid/os/Bundle;->get(Ljava/lang/String;)Ljava/lang/Object;
+	41      (0000009e) move-result-object   v3
+	42      (000000a0) iget-object          v5, v11, Lcom/afwsamples/testdpc/ShellCommand;->mWriter Ljava/io/PrintWriter;
+	43      (000000a4) const-string         v6, '  %s = %s\n'
+	44      (000000a8) new-array            v7, v10, [Ljava/lang/Object;
+	45      (000000ac) aput-object          v0, v7, v9
+	46      (000000b0) aput-object          v3, v7, v8
+	47      (000000b4) invoke-virtual       v5, v6, v7, Ljava/io/PrintWriter;->printf(Ljava/lang/String; [Ljava/lang/Object;)Ljava/io/PrintWriter;
+	48      (000000ba) goto                 -1d
+
+printAppRestrictions-BB@0xbc : [ printAppRestrictions-BB@0x42 ]
+	49      (000000bc) const-string         v1, ''
+	50      (000000c0) goto                 -3f
+

@@ -1,0 +1,89 @@
+# Lcom/afwsamples/testdpc/policy/systemupdatepolicy/SystemUpdatePolicyFragment;->onCreateView(Landroid/view/LayoutInflater; Landroid/view/ViewGroup; Landroid/os/Bundle;)Landroid/view/View; [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v4
+# - v5:android.view.LayoutInflater
+# - v6:android.view.ViewGroup
+# - v7:android.os.Bundle
+#
+# - return:android.view.View
+
+onCreateView-BB@0x0 : [ onCreateView-BB@0x128 onCreateView-BB@0x132 ]
+	0       (00000000) const                v1, 2131427511 # [1.8476640309506077e+38]
+	1       (00000006) const/4              v2, 0
+	2       (00000008) invoke-virtual       v5, v1, v2, Landroid/view/LayoutInflater;->inflate(I Landroid/view/ViewGroup;)Landroid/view/View;
+	3       (0000000e) move-result-object   v0
+	4       (00000010) const                v1, 2131296683 # [1.8211289601143423e+38]
+	5       (00000016) invoke-virtual       v0, v1, Landroid/view/View;->findViewById(I)Landroid/view/View;
+	6       (0000001c) move-result-object   v1
+	7       (0000001e) check-cast           v1, Landroid/widget/EditText;
+	8       (00000022) iput-object          v1, v4, Lcom/afwsamples/testdpc/policy/systemupdatepolicy/SystemUpdatePolicyFragment;->mCurrentSystemUpdatePolicy Landroid/widget/EditText;
+	9       (00000026) const                v1, 2131296686 # [1.8211295685866304e+38]
+	10      (0000002c) invoke-virtual       v0, v1, Landroid/view/View;->findViewById(I)Landroid/view/View;
+	11      (00000032) move-result-object   v1
+	12      (00000034) check-cast           v1, Landroid/widget/RadioGroup;
+	13      (00000038) iput-object          v1, v4, Lcom/afwsamples/testdpc/policy/systemupdatepolicy/SystemUpdatePolicyFragment;->mSystemUpdatePolicySelection Landroid/widget/RadioGroup;
+	14      (0000003c) const                v1, 2131296690 # [1.8211303798830146e+38]
+	15      (00000042) invoke-virtual       v0, v1, Landroid/view/View;->findViewById(I)Landroid/view/View;
+	16      (00000048) move-result-object   v1
+	17      (0000004a) check-cast           v1, Landroid/widget/LinearLayout;
+	18      (0000004e) iput-object          v1, v4, Lcom/afwsamples/testdpc/policy/systemupdatepolicy/SystemUpdatePolicyFragment;->mMaintenanceWindowDetails Landroid/widget/LinearLayout;
+	19      (00000052) const                v1, 2131296689 # [1.8211301770589186e+38]
+	20      (00000058) invoke-virtual       v0, v1, Landroid/view/View;->findViewById(I)Landroid/view/View;
+	21      (0000005e) move-result-object   v1
+	22      (00000060) check-cast           v1, Landroid/widget/Button;
+	23      (00000064) iput-object          v1, v4, Lcom/afwsamples/testdpc/policy/systemupdatepolicy/SystemUpdatePolicyFragment;->mSetMaintenanceWindowStart Landroid/widget/Button;
+	24      (00000068) const                v1, 2131296688 # [1.8211299742348225e+38]
+	25      (0000006e) invoke-virtual       v0, v1, Landroid/view/View;->findViewById(I)Landroid/view/View;
+	26      (00000074) move-result-object   v1
+	27      (00000076) check-cast           v1, Landroid/widget/Button;
+	28      (0000007a) iput-object          v1, v4, Lcom/afwsamples/testdpc/policy/systemupdatepolicy/SystemUpdatePolicyFragment;->mSetMaintenanceWindowEnd Landroid/widget/Button;
+	29      (0000007e) const                v1, 2131296681 # [1.8211285544661503e+38]
+	30      (00000084) invoke-virtual       v0, v1, Landroid/view/View;->findViewById(I)Landroid/view/View;
+	31      (0000008a) move-result-object   v1
+	32      (0000008c) check-cast           v1, Landroid/widget/LinearLayout;
+	33      (00000090) iput-object          v1, v4, Lcom/afwsamples/testdpc/policy/systemupdatepolicy/SystemUpdatePolicyFragment;->mFreezePeriodPanel Landroid/widget/LinearLayout;
+	34      (00000094) const                v1, 2131296680 # [1.8211283516420542e+38]
+	35      (0000009a) invoke-virtual       v0, v1, Landroid/view/View;->findViewById(I)Landroid/view/View;
+	36      (000000a0) move-result-object   v1
+	37      (000000a2) check-cast           v1, Landroid/widget/ListView;
+	38      (000000a6) iput-object          v1, v4, Lcom/afwsamples/testdpc/policy/systemupdatepolicy/SystemUpdatePolicyFragment;->mFreezePeriodList Landroid/widget/ListView;
+	39      (000000aa) new-instance         v1, Lcom/afwsamples/testdpc/policy/systemupdatepolicy/SystemUpdatePolicyFragment$FreezePeriodAdapter;
+	40      (000000ae) invoke-virtual       v4, Lcom/afwsamples/testdpc/policy/systemupdatepolicy/SystemUpdatePolicyFragment;->getContext()Landroid/content/Context;
+	41      (000000b4) move-result-object   v2
+	42      (000000b6) iget-object          v3, v4, Lcom/afwsamples/testdpc/policy/systemupdatepolicy/SystemUpdatePolicyFragment;->mFreezePeriods Ljava/util/ArrayList;
+	43      (000000ba) invoke-direct        v1, v4, v2, v3, Lcom/afwsamples/testdpc/policy/systemupdatepolicy/SystemUpdatePolicyFragment$FreezePeriodAdapter;-><init>(Lcom/afwsamples/testdpc/policy/systemupdatepolicy/SystemUpdatePolicyFragment; Landroid/content/Context; Ljava/util/ArrayList;)V
+	44      (000000c0) iput-object          v1, v4, Lcom/afwsamples/testdpc/policy/systemupdatepolicy/SystemUpdatePolicyFragment;->mFreezePeriodAdapter Lcom/afwsamples/testdpc/policy/systemupdatepolicy/SystemUpdatePolicyFragment$FreezePeriodAdapter;
+	45      (000000c4) iget-object          v1, v4, Lcom/afwsamples/testdpc/policy/systemupdatepolicy/SystemUpdatePolicyFragment;->mFreezePeriodList Landroid/widget/ListView;
+	46      (000000c8) iget-object          v2, v4, Lcom/afwsamples/testdpc/policy/systemupdatepolicy/SystemUpdatePolicyFragment;->mFreezePeriodAdapter Lcom/afwsamples/testdpc/policy/systemupdatepolicy/SystemUpdatePolicyFragment$FreezePeriodAdapter;
+	47      (000000cc) invoke-virtual       v1, v2, Landroid/widget/ListView;->setAdapter(Landroid/widget/ListAdapter;)V
+	48      (000000d2) iget-object          v1, v4, Lcom/afwsamples/testdpc/policy/systemupdatepolicy/SystemUpdatePolicyFragment;->mSetMaintenanceWindowStart Landroid/widget/Button;
+	49      (000000d6) invoke-virtual       v1, v4, Landroid/widget/Button;->setOnClickListener(Landroid/view/View$OnClickListener;)V
+	50      (000000dc) iget-object          v1, v4, Lcom/afwsamples/testdpc/policy/systemupdatepolicy/SystemUpdatePolicyFragment;->mSetMaintenanceWindowEnd Landroid/widget/Button;
+	51      (000000e0) invoke-virtual       v1, v4, Landroid/widget/Button;->setOnClickListener(Landroid/view/View$OnClickListener;)V
+	52      (000000e6) const                v1, 2131296687 # [1.8211297714107265e+38]
+	53      (000000ec) invoke-virtual       v0, v1, Landroid/view/View;->findViewById(I)Landroid/view/View;
+	54      (000000f2) move-result-object   v1
+	55      (000000f4) invoke-virtual       v1, v4, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
+	56      (000000fa) const                v1, 2131296682 # [1.8211287572902463e+38]
+	57      (00000100) invoke-virtual       v0, v1, Landroid/view/View;->findViewById(I)Landroid/view/View;
+	58      (00000106) move-result-object   v1
+	59      (00000108) invoke-virtual       v1, v4, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
+	60      (0000010e) iget-object          v1, v4, Lcom/afwsamples/testdpc/policy/systemupdatepolicy/SystemUpdatePolicyFragment;->mSystemUpdatePolicySelection Landroid/widget/RadioGroup;
+	61      (00000112) invoke-virtual       v1, v4, Landroid/widget/RadioGroup;->setOnCheckedChangeListener(Landroid/widget/RadioGroup$OnCheckedChangeListener;)V
+	62      (00000118) iget-object          v2, v4, Lcom/afwsamples/testdpc/policy/systemupdatepolicy/SystemUpdatePolicyFragment;->mFreezePeriodPanel Landroid/widget/LinearLayout;
+	63      (0000011c) sget                 v1, Lcom/afwsamples/testdpc/common/Util;->SDK_INT I
+	64      (00000120) const/16             v3, 28
+	65      (00000124) if-lt                v1, v3, +7
+
+onCreateView-BB@0x128 : [ onCreateView-BB@0x12a ]
+	66      (00000128) const/4              v1, 0
+
+onCreateView-BB@0x12a : 
+	67      (0000012a) invoke-virtual       v2, v1, Landroid/widget/LinearLayout;->setVisibility(I)V
+	68      (00000130) return-object        v0
+
+onCreateView-BB@0x132 : [ onCreateView-BB@0x12a ]
+	69      (00000132) const/16             v1, 8
+	70      (00000136) goto                 -6
+

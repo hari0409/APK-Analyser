@@ -1,0 +1,14 @@
+# Landroidx/appcompat/app/AppCompatDelegateImpl$PanelFeatureState$SavedState$1;->createFromParcel(Landroid/os/Parcel;)Landroidx/appcompat/app/AppCompatDelegateImpl$PanelFeatureState$SavedState; [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:android.os.Parcel
+#
+# - return:androidx.appcompat.app.AppCompatDelegateImpl$PanelFeatureState$SavedState
+
+createFromParcel-BB@0x0 : 
+	0       (00000000) const/4              v0, 0
+	1       (00000002) invoke-static        v2, v0, Landroidx/appcompat/app/AppCompatDelegateImpl$PanelFeatureState$SavedState;->readFromParcel(Landroid/os/Parcel; Ljava/lang/ClassLoader;)Landroidx/appcompat/app/AppCompatDelegateImpl$PanelFeatureState$SavedState;
+	2       (00000008) move-result-object   v0
+	3       (0000000a) return-object        v0
+

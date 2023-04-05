@@ -1,0 +1,40 @@
+# Landroidx/appcompat/content/res/AppCompatResources;->getColorStateList(Landroid/content/Context; I)Landroid/content/res/ColorStateList; [access_flags=public static]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:android.content.Context
+# - v4:int
+#
+# - return:android.content.res.ColorStateList
+
+getColorStateList-BB@0x0 : [ getColorStateList-BB@0xc getColorStateList-BB@0x16 ]
+	0       (00000000) sget                 v1, Landroid/os/Build$VERSION;->SDK_INT I
+	1       (00000004) const/16             v2, 23
+	2       (00000008) if-lt                v1, v2, +7
+
+getColorStateList-BB@0xc : [ getColorStateList-BB@0x14 ]
+	3       (0000000c) invoke-virtual       v3, v4, Landroid/content/Context;->getColorStateList(I)Landroid/content/res/ColorStateList;
+	4       (00000012) move-result-object   v0
+
+getColorStateList-BB@0x14 : 
+	5       (00000014) return-object        v0
+
+getColorStateList-BB@0x16 : [ getColorStateList-BB@0x22 getColorStateList-BB@0x14 ]
+	6       (00000016) invoke-static        v3, v4, Landroidx/appcompat/content/res/AppCompatResources;->getCachedColorStateList(Landroid/content/Context; I)Landroid/content/res/ColorStateList;
+	7       (0000001c) move-result-object   v0
+	8       (0000001e) if-nez               v0, -5
+
+getColorStateList-BB@0x22 : [ getColorStateList-BB@0x2e getColorStateList-BB@0x36 ]
+	9       (00000022) invoke-static        v3, v4, Landroidx/appcompat/content/res/AppCompatResources;->inflateColorStateList(Landroid/content/Context; I)Landroid/content/res/ColorStateList;
+	10      (00000028) move-result-object   v0
+	11      (0000002a) if-eqz               v0, +6
+
+getColorStateList-BB@0x2e : [ getColorStateList-BB@0x14 ]
+	12      (0000002e) invoke-static        v3, v4, v0, Landroidx/appcompat/content/res/AppCompatResources;->addColorStateListToCache(Landroid/content/Context; I Landroid/content/res/ColorStateList;)V
+	13      (00000034) goto                 -10
+
+getColorStateList-BB@0x36 : [ getColorStateList-BB@0x14 ]
+	14      (00000036) invoke-static        v3, v4, Landroidx/core/content/ContextCompat;->getColorStateList(Landroid/content/Context; I)Landroid/content/res/ColorStateList;
+	15      (0000003c) move-result-object   v0
+	16      (0000003e) goto                 -15
+

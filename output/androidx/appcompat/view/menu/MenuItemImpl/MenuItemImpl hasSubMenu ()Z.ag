@@ -1,0 +1,21 @@
+# Landroidx/appcompat/view/menu/MenuItemImpl;->hasSubMenu()Z [access_flags=public]
+#
+# Parameters:
+# local registers: v0...v1
+#
+# - return:boolean
+
+hasSubMenu-BB@0x0 : [ hasSubMenu-BB@0x8 hasSubMenu-BB@0xc ]
+	0       (00000000) iget-object          v0, v1, Landroidx/appcompat/view/menu/MenuItemImpl;->mSubMenu Landroidx/appcompat/view/menu/SubMenuBuilder;
+	1       (00000004) if-eqz               v0, +4
+
+hasSubMenu-BB@0x8 : [ hasSubMenu-BB@0xa ]
+	2       (00000008) const/4              v0, 1
+
+hasSubMenu-BB@0xa : 
+	3       (0000000a) return               v0
+
+hasSubMenu-BB@0xc : [ hasSubMenu-BB@0xa ]
+	4       (0000000c) const/4              v0, 0
+	5       (0000000e) goto                 -2
+

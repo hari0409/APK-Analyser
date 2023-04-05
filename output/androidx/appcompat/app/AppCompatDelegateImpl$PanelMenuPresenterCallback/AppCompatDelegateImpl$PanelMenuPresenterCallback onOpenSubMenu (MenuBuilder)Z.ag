@@ -1,0 +1,35 @@
+# Landroidx/appcompat/app/AppCompatDelegateImpl$PanelMenuPresenterCallback;->onOpenSubMenu(Landroidx/appcompat/view/menu/MenuBuilder;)Z [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:androidx.appcompat.view.menu.MenuBuilder
+#
+# - return:boolean
+
+onOpenSubMenu-BB@0x0 : [ onOpenSubMenu-BB@0x4 onOpenSubMenu-BB@0x36 ]
+	0       (00000000) if-nez               v3, +1b
+
+onOpenSubMenu-BB@0x4 : [ onOpenSubMenu-BB@0x10 onOpenSubMenu-BB@0x36 ]
+	1       (00000004) iget-object          v1, v2, Landroidx/appcompat/app/AppCompatDelegateImpl$PanelMenuPresenterCallback;->this$0 Landroidx/appcompat/app/AppCompatDelegateImpl;
+	2       (00000008) iget-boolean         v1, v1, Landroidx/appcompat/app/AppCompatDelegateImpl;->mHasActionBar Z
+	3       (0000000c) if-eqz               v1, +15
+
+onOpenSubMenu-BB@0x10 : [ onOpenSubMenu-BB@0x20 onOpenSubMenu-BB@0x36 ]
+	4       (00000010) iget-object          v1, v2, Landroidx/appcompat/app/AppCompatDelegateImpl$PanelMenuPresenterCallback;->this$0 Landroidx/appcompat/app/AppCompatDelegateImpl;
+	5       (00000014) invoke-virtual       v1, Landroidx/appcompat/app/AppCompatDelegateImpl;->getWindowCallback()Landroid/view/Window$Callback;
+	6       (0000001a) move-result-object   v0
+	7       (0000001c) if-eqz               v0, +d
+
+onOpenSubMenu-BB@0x20 : [ onOpenSubMenu-BB@0x2c onOpenSubMenu-BB@0x36 ]
+	8       (00000020) iget-object          v1, v2, Landroidx/appcompat/app/AppCompatDelegateImpl$PanelMenuPresenterCallback;->this$0 Landroidx/appcompat/app/AppCompatDelegateImpl;
+	9       (00000024) iget-boolean         v1, v1, Landroidx/appcompat/app/AppCompatDelegateImpl;->mIsDestroyed Z
+	10      (00000028) if-nez               v1, +7
+
+onOpenSubMenu-BB@0x2c : [ onOpenSubMenu-BB@0x36 ]
+	11      (0000002c) const/16             v1, 108
+	12      (00000030) invoke-interface     v0, v1, v3, Landroid/view/Window$Callback;->onMenuOpened(I Landroid/view/Menu;)Z
+
+onOpenSubMenu-BB@0x36 : 
+	13      (00000036) const/4              v1, 1
+	14      (00000038) return               v1
+

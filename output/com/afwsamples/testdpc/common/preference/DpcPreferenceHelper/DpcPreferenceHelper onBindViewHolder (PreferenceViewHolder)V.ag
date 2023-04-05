@@ -1,0 +1,29 @@
+# Lcom/afwsamples/testdpc/common/preference/DpcPreferenceHelper;->onBindViewHolder(Landroidx/preference/PreferenceViewHolder;)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:androidx.preference.PreferenceViewHolder
+#
+# - return:void
+
+onBindViewHolder-BB@0x0 : [ onBindViewHolder-BB@0xc onBindViewHolder-BB@0x34 ]
+	0       (00000000) invoke-virtual       v2, Lcom/afwsamples/testdpc/common/preference/DpcPreferenceHelper;->constraintsMet()Z
+	1       (00000006) move-result          v1
+	2       (00000008) if-nez               v1, +16
+
+onBindViewHolder-BB@0xc : [ onBindViewHolder-BB@0x22 onBindViewHolder-BB@0x34 ]
+	3       (0000000c) const                v1, 16908304 # [2.3877273842628573e-38]
+	4       (00000012) invoke-virtual       v3, v1, Landroidx/preference/PreferenceViewHolder;->findViewById(I)Landroid/view/View;
+	5       (00000018) move-result-object   v0
+	6       (0000001a) check-cast           v0, Landroid/widget/TextView;
+	7       (0000001e) if-eqz               v0, +b
+
+onBindViewHolder-BB@0x22 : [ onBindViewHolder-BB@0x34 ]
+	8       (00000022) iget-object          v1, v2, Lcom/afwsamples/testdpc/common/preference/DpcPreferenceHelper;->mConstraintViolationSummary Ljava/lang/CharSequence;
+	9       (00000026) invoke-virtual       v0, v1, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+	10      (0000002c) const/4              v1, 0
+	11      (0000002e) invoke-virtual       v0, v1, Landroid/widget/TextView;->setVisibility(I)V
+
+onBindViewHolder-BB@0x34 : 
+	12      (00000034) return-void          
+

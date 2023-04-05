@@ -1,0 +1,60 @@
+# Lcom/afwsamples/testdpc/policy/FactoryResetProtectionPolicyFragment;->onCreateView(Landroid/view/LayoutInflater; Landroid/view/ViewGroup; Landroid/os/Bundle;)Landroid/view/View; [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v9
+# - v10:android.view.LayoutInflater
+# - v11:android.view.ViewGroup
+# - v12:android.os.Bundle
+#
+# - return:android.view.View
+
+onCreateView-BB@0x0 : 
+	0       (00000000) invoke-super         v9, v10, v11, v12, Landroid/app/Fragment;->onCreateView(Landroid/view/LayoutInflater; Landroid/view/ViewGroup; Landroid/os/Bundle;)Landroid/view/View;
+	1       (00000006) const                v6, 2131427381 # [1.847637663818123e+38]
+	2       (0000000c) const/4              v7, 0
+	3       (0000000e) invoke-virtual       v10, v6, v11, v7, Landroid/view/LayoutInflater;->inflate(I Landroid/view/ViewGroup; Z)Landroid/view/View;
+	4       (00000014) move-result-object   v5
+	5       (00000016) const                v6, 2131296444 # [1.8210804851553896e+38]
+	6       (0000001c) invoke-virtual       v5, v6, Landroid/view/View;->findViewById(I)Landroid/view/View;
+	7       (00000022) move-result-object   v3
+	8       (00000024) check-cast           v3, Landroid/widget/ListView;
+	9       (00000028) new-instance         v6, Lcom/afwsamples/testdpc/policy/FactoryResetProtectionPolicyFragment$FrpAccountsAdapter;
+	10      (0000002c) invoke-direct        v6, v9, Lcom/afwsamples/testdpc/policy/FactoryResetProtectionPolicyFragment$FrpAccountsAdapter;-><init>(Lcom/afwsamples/testdpc/policy/FactoryResetProtectionPolicyFragment;)V
+	11      (00000032) iput-object          v6, v9, Lcom/afwsamples/testdpc/policy/FactoryResetProtectionPolicyFragment;->mAccountsAdapter Lcom/afwsamples/testdpc/policy/FactoryResetProtectionPolicyFragment$FrpAccountsAdapter;
+	12      (00000036) iget-object          v6, v9, Lcom/afwsamples/testdpc/policy/FactoryResetProtectionPolicyFragment;->mAccountsAdapter Lcom/afwsamples/testdpc/policy/FactoryResetProtectionPolicyFragment$FrpAccountsAdapter;
+	13      (0000003a) invoke-virtual       v3, v6, Landroid/widget/ListView;->setAdapter(Landroid/widget/ListAdapter;)V
+	14      (00000040) const                v6, 2131296300 # [1.8210512784855604e+38]
+	15      (00000046) invoke-virtual       v5, v6, Landroid/view/View;->findViewById(I)Landroid/view/View;
+	16      (0000004c) move-result-object   v0
+	17      (0000004e) check-cast           v0, Landroid/widget/Button;
+	18      (00000052) invoke-virtual       v0, v9, Landroid/widget/Button;->setOnClickListener(Landroid/view/View$OnClickListener;)V
+	19      (00000058) const                v6, 2131296365 # [1.8210644620518027e+38]
+	20      (0000005e) invoke-virtual       v5, v6, Landroid/view/View;->findViewById(I)Landroid/view/View;
+	21      (00000064) move-result-object   v1
+	22      (00000066) check-cast           v1, Landroid/widget/Button;
+	23      (0000006a) invoke-virtual       v1, v9, Landroid/widget/Button;->setOnClickListener(Landroid/view/View$OnClickListener;)V
+	24      (00000070) const                v6, 2131296578 # [1.8211076635842585e+38]
+	25      (00000076) invoke-virtual       v5, v6, Landroid/view/View;->findViewById(I)Landroid/view/View;
+	26      (0000007c) move-result-object   v4
+	27      (0000007e) check-cast           v4, Landroid/widget/Button;
+	28      (00000082) invoke-virtual       v4, v9, Landroid/widget/Button;->setOnClickListener(Landroid/view/View$OnClickListener;)V
+	29      (00000088) const                v6, 2131296445 # [1.8210806879794856e+38]
+	30      (0000008e) invoke-virtual       v5, v6, Landroid/view/View;->findViewById(I)Landroid/view/View;
+	31      (00000094) move-result-object   v6
+	32      (00000096) check-cast           v6, Landroid/widget/Spinner;
+	33      (0000009a) iput-object          v6, v9, Lcom/afwsamples/testdpc/policy/FactoryResetProtectionPolicyFragment;->mFrpEnabledSpinner Landroid/widget/Spinner;
+	34      (0000009e) iget-object          v6, v9, Lcom/afwsamples/testdpc/policy/FactoryResetProtectionPolicyFragment;->mFrpEnabledSpinner Landroid/widget/Spinner;
+	35      (000000a2) invoke-virtual       v6, v9, Landroid/widget/Spinner;->setOnItemSelectedListener(Landroid/widget/AdapterView$OnItemSelectedListener;)V
+	36      (000000a8) invoke-virtual       v9, Lcom/afwsamples/testdpc/policy/FactoryResetProtectionPolicyFragment;->getActivity()Landroid/app/Activity;
+	37      (000000ae) move-result-object   v6
+	38      (000000b0) const                v7, 2130903044 # [1.741289485774624e+38]
+	39      (000000b6) const                v8, 17367048 # [2.516294836806502e-38]
+	40      (000000bc) invoke-static        v6, v7, v8, Landroid/widget/ArrayAdapter;->createFromResource(Landroid/content/Context; I I)Landroid/widget/ArrayAdapter;
+	41      (000000c2) move-result-object   v2
+	42      (000000c4) const                v6, 17367049 # [2.516295117066195e-38]
+	43      (000000ca) invoke-virtual       v2, v6, Landroid/widget/ArrayAdapter;->setDropDownViewResource(I)V
+	44      (000000d0) iget-object          v6, v9, Lcom/afwsamples/testdpc/policy/FactoryResetProtectionPolicyFragment;->mFrpEnabledSpinner Landroid/widget/Spinner;
+	45      (000000d4) invoke-virtual       v6, v2, Landroid/widget/Spinner;->setAdapter(Landroid/widget/SpinnerAdapter;)V
+	46      (000000da) invoke-direct        v9, Lcom/afwsamples/testdpc/policy/FactoryResetProtectionPolicyFragment;->refreshUi()V
+	47      (000000e0) return-object        v5
+

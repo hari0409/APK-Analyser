@@ -1,0 +1,27 @@
+# Landroidx/appcompat/view/SupportActionModeWrapper$CallbackWrapper;->getMenuWrapper(Landroid/view/Menu;)Landroid/view/Menu; [access_flags=private]
+#
+# Parameters:
+# - local registers: v0...v3
+# - v4:android.view.Menu
+#
+# - return:android.view.Menu
+
+getMenuWrapper-BB@0x0 : [ getMenuWrapper-BB@0x14 getMenuWrapper-BB@0x30 ]
+	0       (00000000) iget-object          v1, v3, Landroidx/appcompat/view/SupportActionModeWrapper$CallbackWrapper;->mMenus Landroidx/collection/SimpleArrayMap;
+	1       (00000004) invoke-virtual       v1, v4, Landroidx/collection/SimpleArrayMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
+	2       (0000000a) move-result-object   v0
+	3       (0000000c) check-cast           v0, Landroid/view/Menu;
+	4       (00000010) if-nez               v0, +10
+
+getMenuWrapper-BB@0x14 : [ getMenuWrapper-BB@0x30 ]
+	5       (00000014) iget-object          v2, v3, Landroidx/appcompat/view/SupportActionModeWrapper$CallbackWrapper;->mContext Landroid/content/Context;
+	6       (00000018) move-object          v1, v4
+	7       (0000001a) check-cast           v1, Landroidx/core/internal/view/SupportMenu;
+	8       (0000001e) invoke-static        v2, v1, Landroidx/appcompat/view/menu/MenuWrapperFactory;->wrapSupportMenu(Landroid/content/Context; Landroidx/core/internal/view/SupportMenu;)Landroid/view/Menu;
+	9       (00000024) move-result-object   v0
+	10      (00000026) iget-object          v1, v3, Landroidx/appcompat/view/SupportActionModeWrapper$CallbackWrapper;->mMenus Landroidx/collection/SimpleArrayMap;
+	11      (0000002a) invoke-virtual       v1, v4, v0, Landroidx/collection/SimpleArrayMap;->put(Ljava/lang/Object; Ljava/lang/Object;)Ljava/lang/Object;
+
+getMenuWrapper-BB@0x30 : 
+	12      (00000030) return-object        v0
+

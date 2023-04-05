@@ -1,0 +1,23 @@
+# Landroidx/appcompat/widget/SearchView;->onTextFocusChanged()V [access_flags=]
+#
+# Parameters:
+# local registers: v0...v1
+#
+# - return:void
+
+onTextFocusChanged-BB@0x0 : [ onTextFocusChanged-BB@0x24 onTextFocusChanged-BB@0x2a ]
+	0       (00000000) invoke-virtual       v1, Landroidx/appcompat/widget/SearchView;->isIconified()Z
+	1       (00000006) move-result          v0
+	2       (00000008) invoke-direct        v1, v0, Landroidx/appcompat/widget/SearchView;->updateViewsVisibility(Z)V
+	3       (0000000e) invoke-direct        v1, Landroidx/appcompat/widget/SearchView;->postUpdateFocusedState()V
+	4       (00000014) iget-object          v0, v1, Landroidx/appcompat/widget/SearchView;->mSearchSrcTextView Landroidx/appcompat/widget/SearchView$SearchAutoComplete;
+	5       (00000018) invoke-virtual       v0, Landroidx/appcompat/widget/SearchView$SearchAutoComplete;->hasFocus()Z
+	6       (0000001e) move-result          v0
+	7       (00000020) if-eqz               v0, +5
+
+onTextFocusChanged-BB@0x24 : [ onTextFocusChanged-BB@0x2a ]
+	8       (00000024) invoke-virtual       v1, Landroidx/appcompat/widget/SearchView;->forceSuggestionQuery()V
+
+onTextFocusChanged-BB@0x2a : 
+	9       (0000002a) return-void          
+

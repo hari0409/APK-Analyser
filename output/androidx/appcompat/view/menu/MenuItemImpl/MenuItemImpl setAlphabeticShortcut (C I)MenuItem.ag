@@ -1,0 +1,32 @@
+# Landroidx/appcompat/view/menu/MenuItemImpl;->setAlphabeticShortcut(C I)Landroid/view/MenuItem; [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:char
+# - v4:int
+#
+# - return:android.view.MenuItem
+
+setAlphabeticShortcut-BB@0x0 : [ setAlphabeticShortcut-BB@0x8 setAlphabeticShortcut-BB@0x12 ]
+	0       (00000000) iget-char            v0, v2, Landroidx/appcompat/view/menu/MenuItemImpl;->mShortcutAlphabeticChar C
+	1       (00000004) if-ne                v0, v3, +7
+
+setAlphabeticShortcut-BB@0x8 : [ setAlphabeticShortcut-BB@0x10 setAlphabeticShortcut-BB@0x12 ]
+	2       (00000008) iget                 v0, v2, Landroidx/appcompat/view/menu/MenuItemImpl;->mShortcutAlphabeticModifiers I
+	3       (0000000c) if-ne                v0, v4, +3
+
+setAlphabeticShortcut-BB@0x10 : 
+	4       (00000010) return-object        v2
+
+setAlphabeticShortcut-BB@0x12 : [ setAlphabeticShortcut-BB@0x10 ]
+	5       (00000012) invoke-static        v3, Ljava/lang/Character;->toLowerCase(C)C
+	6       (00000018) move-result          v0
+	7       (0000001a) iput-char            v0, v2, Landroidx/appcompat/view/menu/MenuItemImpl;->mShortcutAlphabeticChar C
+	8       (0000001e) invoke-static        v4, Landroid/view/KeyEvent;->normalizeMetaState(I)I
+	9       (00000024) move-result          v0
+	10      (00000026) iput                 v0, v2, Landroidx/appcompat/view/menu/MenuItemImpl;->mShortcutAlphabeticModifiers I
+	11      (0000002a) iget-object          v0, v2, Landroidx/appcompat/view/menu/MenuItemImpl;->mMenu Landroidx/appcompat/view/menu/MenuBuilder;
+	12      (0000002e) const/4              v1, 0
+	13      (00000030) invoke-virtual       v0, v1, Landroidx/appcompat/view/menu/MenuBuilder;->onItemsChanged(Z)V
+	14      (00000036) goto                 -13
+

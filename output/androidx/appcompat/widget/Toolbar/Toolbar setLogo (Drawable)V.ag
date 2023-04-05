@@ -1,0 +1,52 @@
+# Landroidx/appcompat/widget/Toolbar;->setLogo(Landroid/graphics/drawable/Drawable;)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:android.graphics.drawable.Drawable
+#
+# - return:void
+
+setLogo-BB@0x0 : [ setLogo-BB@0x4 setLogo-BB@0x3a ]
+	0       (00000000) if-eqz               v3, +1d
+
+setLogo-BB@0x4 : [ setLogo-BB@0x1a setLogo-BB@0x26 ]
+	1       (00000004) invoke-direct        v2, Landroidx/appcompat/widget/Toolbar;->ensureLogoView()V
+	2       (0000000a) iget-object          v0, v2, Landroidx/appcompat/widget/Toolbar;->mLogoView Landroid/widget/ImageView;
+	3       (0000000e) invoke-direct        v2, v0, Landroidx/appcompat/widget/Toolbar;->isChildOrHidden(Landroid/view/View;)Z
+	4       (00000014) move-result          v0
+	5       (00000016) if-nez               v0, +8
+
+setLogo-BB@0x1a : [ setLogo-BB@0x26 ]
+	6       (0000001a) iget-object          v0, v2, Landroidx/appcompat/widget/Toolbar;->mLogoView Landroid/widget/ImageView;
+	7       (0000001e) const/4              v1, 1
+	8       (00000020) invoke-direct        v2, v0, v1, Landroidx/appcompat/widget/Toolbar;->addSystemView(Landroid/view/View; Z)V
+
+setLogo-BB@0x26 : [ setLogo-BB@0x2e setLogo-BB@0x38 ]
+	9       (00000026) iget-object          v0, v2, Landroidx/appcompat/widget/Toolbar;->mLogoView Landroid/widget/ImageView;
+	10      (0000002a) if-eqz               v0, +7
+
+setLogo-BB@0x2e : [ setLogo-BB@0x38 ]
+	11      (0000002e) iget-object          v0, v2, Landroidx/appcompat/widget/Toolbar;->mLogoView Landroid/widget/ImageView;
+	12      (00000032) invoke-virtual       v0, v3, Landroid/widget/ImageView;->setImageDrawable(Landroid/graphics/drawable/Drawable;)V
+
+setLogo-BB@0x38 : 
+	13      (00000038) return-void          
+
+setLogo-BB@0x3a : [ setLogo-BB@0x42 setLogo-BB@0x26 ]
+	14      (0000003a) iget-object          v0, v2, Landroidx/appcompat/widget/Toolbar;->mLogoView Landroid/widget/ImageView;
+	15      (0000003e) if-eqz               v0, -c
+
+setLogo-BB@0x42 : [ setLogo-BB@0x52 setLogo-BB@0x26 ]
+	16      (00000042) iget-object          v0, v2, Landroidx/appcompat/widget/Toolbar;->mLogoView Landroid/widget/ImageView;
+	17      (00000046) invoke-direct        v2, v0, Landroidx/appcompat/widget/Toolbar;->isChildOrHidden(Landroid/view/View;)Z
+	18      (0000004c) move-result          v0
+	19      (0000004e) if-eqz               v0, -14
+
+setLogo-BB@0x52 : [ setLogo-BB@0x26 ]
+	20      (00000052) iget-object          v0, v2, Landroidx/appcompat/widget/Toolbar;->mLogoView Landroid/widget/ImageView;
+	21      (00000056) invoke-virtual       v2, v0, Landroidx/appcompat/widget/Toolbar;->removeView(Landroid/view/View;)V
+	22      (0000005c) iget-object          v0, v2, Landroidx/appcompat/widget/Toolbar;->mHiddenViews Ljava/util/ArrayList;
+	23      (00000060) iget-object          v1, v2, Landroidx/appcompat/widget/Toolbar;->mLogoView Landroid/widget/ImageView;
+	24      (00000064) invoke-virtual       v0, v1, Ljava/util/ArrayList;->remove(Ljava/lang/Object;)Z
+	25      (0000006a) goto                 -22
+

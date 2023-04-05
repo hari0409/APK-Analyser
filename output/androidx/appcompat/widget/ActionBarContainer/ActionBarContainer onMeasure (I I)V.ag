@@ -1,0 +1,107 @@
+# Landroidx/appcompat/widget/ActionBarContainer;->onMeasure(I I)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v6
+# - v7:int
+# - v8:int
+#
+# - return:void
+
+onMeasure-BB@0x0 : [ onMeasure-BB@0xc onMeasure-BB@0x3c ]
+	0       (00000000) const/high16         v5, -32768 # [-0.0]
+	1       (00000004) iget-object          v3, v6, Landroidx/appcompat/widget/ActionBarContainer;->mActionBarView Landroid/view/View;
+	2       (00000008) if-nez               v3, +1a
+
+onMeasure-BB@0xc : [ onMeasure-BB@0x18 onMeasure-BB@0x3c ]
+	3       (0000000c) invoke-static        v8, Landroid/view/View$MeasureSpec;->getMode(I)I
+	4       (00000012) move-result          v3
+	5       (00000014) if-ne                v3, v5, +14
+
+onMeasure-BB@0x18 : [ onMeasure-BB@0x20 onMeasure-BB@0x3c ]
+	6       (00000018) iget                 v3, v6, Landroidx/appcompat/widget/ActionBarContainer;->mHeight I
+	7       (0000001c) if-ltz               v3, +10
+
+onMeasure-BB@0x20 : [ onMeasure-BB@0x3c ]
+	8       (00000020) iget                 v3, v6, Landroidx/appcompat/widget/ActionBarContainer;->mHeight I
+	9       (00000024) invoke-static        v8, Landroid/view/View$MeasureSpec;->getSize(I)I
+	10      (0000002a) move-result          v4
+	11      (0000002c) invoke-static        v3, v4, Ljava/lang/Math;->min(I I)I
+	12      (00000032) move-result          v3
+	13      (00000034) invoke-static        v3, v5, Landroid/view/View$MeasureSpec;->makeMeasureSpec(I I)I
+	14      (0000003a) move-result          v8
+
+onMeasure-BB@0x3c : [ onMeasure-BB@0x4a onMeasure-BB@0x4c ]
+	15      (0000003c) invoke-super         v6, v7, v8, Landroid/widget/FrameLayout;->onMeasure(I I)V
+	16      (00000042) iget-object          v3, v6, Landroidx/appcompat/widget/ActionBarContainer;->mActionBarView Landroid/view/View;
+	17      (00000046) if-nez               v3, +3
+
+onMeasure-BB@0x4a : 
+	18      (0000004a) return-void          
+
+onMeasure-BB@0x4c : [ onMeasure-BB@0x5c onMeasure-BB@0x4a ]
+	19      (0000004c) invoke-static        v8, Landroid/view/View$MeasureSpec;->getMode(I)I
+	20      (00000052) move-result          v1
+	21      (00000054) iget-object          v3, v6, Landroidx/appcompat/widget/ActionBarContainer;->mTabContainer Landroid/view/View;
+	22      (00000058) if-eqz               v3, -7
+
+onMeasure-BB@0x5c : [ onMeasure-BB@0x70 onMeasure-BB@0x4a ]
+	23      (0000005c) iget-object          v3, v6, Landroidx/appcompat/widget/ActionBarContainer;->mTabContainer Landroid/view/View;
+	24      (00000060) invoke-virtual       v3, Landroid/view/View;->getVisibility()I
+	25      (00000066) move-result          v3
+	26      (00000068) const/16             v4, 8
+	27      (0000006c) if-eq                v3, v4, -11
+
+onMeasure-BB@0x70 : [ onMeasure-BB@0x78 onMeasure-BB@0x4a ]
+	28      (00000070) const/high16         v3, 16384 # [2.0]
+	29      (00000074) if-eq                v1, v3, -15
+
+onMeasure-BB@0x78 : [ onMeasure-BB@0x88 onMeasure-BB@0xc6 ]
+	30      (00000078) iget-object          v3, v6, Landroidx/appcompat/widget/ActionBarContainer;->mActionBarView Landroid/view/View;
+	31      (0000007c) invoke-direct        v6, v3, Landroidx/appcompat/widget/ActionBarContainer;->isCollapsed(Landroid/view/View;)Z
+	32      (00000082) move-result          v3
+	33      (00000084) if-nez               v3, +21
+
+onMeasure-BB@0x88 : [ onMeasure-BB@0x94 ]
+	34      (00000088) iget-object          v3, v6, Landroidx/appcompat/widget/ActionBarContainer;->mActionBarView Landroid/view/View;
+	35      (0000008c) invoke-direct        v6, v3, Landroidx/appcompat/widget/ActionBarContainer;->getMeasuredHeightWithMargins(Landroid/view/View;)I
+	36      (00000092) move-result          v2
+
+onMeasure-BB@0x94 : [ onMeasure-BB@0x98 onMeasure-BB@0xe8 ]
+	37      (00000094) if-ne                v1, v5, +2a
+
+onMeasure-BB@0x98 : [ onMeasure-BB@0xa0 ]
+	38      (00000098) invoke-static        v8, Landroid/view/View$MeasureSpec;->getSize(I)I
+	39      (0000009e) move-result          v0
+
+onMeasure-BB@0xa0 : [ onMeasure-BB@0x4a ]
+	40      (000000a0) invoke-virtual       v6, Landroidx/appcompat/widget/ActionBarContainer;->getMeasuredWidth()I
+	41      (000000a6) move-result          v3
+	42      (000000a8) iget-object          v4, v6, Landroidx/appcompat/widget/ActionBarContainer;->mTabContainer Landroid/view/View;
+	43      (000000ac) invoke-direct        v6, v4, Landroidx/appcompat/widget/ActionBarContainer;->getMeasuredHeightWithMargins(Landroid/view/View;)I
+	44      (000000b2) move-result          v4
+	45      (000000b4) add-int/2addr        v4, v2
+	46      (000000b6) invoke-static        v4, v0, Ljava/lang/Math;->min(I I)I
+	47      (000000bc) move-result          v4
+	48      (000000be) invoke-virtual       v6, v3, v4, Landroidx/appcompat/widget/ActionBarContainer;->setMeasuredDimension(I I)V
+	49      (000000c4) goto                 -3d
+
+onMeasure-BB@0xc6 : [ onMeasure-BB@0xd6 onMeasure-BB@0xe4 ]
+	50      (000000c6) iget-object          v3, v6, Landroidx/appcompat/widget/ActionBarContainer;->mContextView Landroid/view/View;
+	51      (000000ca) invoke-direct        v6, v3, Landroidx/appcompat/widget/ActionBarContainer;->isCollapsed(Landroid/view/View;)Z
+	52      (000000d0) move-result          v3
+	53      (000000d2) if-nez               v3, +9
+
+onMeasure-BB@0xd6 : [ onMeasure-BB@0x94 ]
+	54      (000000d6) iget-object          v3, v6, Landroidx/appcompat/widget/ActionBarContainer;->mContextView Landroid/view/View;
+	55      (000000da) invoke-direct        v6, v3, Landroidx/appcompat/widget/ActionBarContainer;->getMeasuredHeightWithMargins(Landroid/view/View;)I
+	56      (000000e0) move-result          v2
+	57      (000000e2) goto                 -27
+
+onMeasure-BB@0xe4 : [ onMeasure-BB@0x94 ]
+	58      (000000e4) const/4              v2, 0
+	59      (000000e6) goto                 -29
+
+onMeasure-BB@0xe8 : [ onMeasure-BB@0xa0 ]
+	60      (000000e8) const                v0, 2147483647 # [nan]
+	61      (000000ee) goto                 -27
+

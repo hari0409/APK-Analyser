@@ -1,0 +1,19 @@
+# Landroidx/appcompat/app/ActionBarDrawerToggle;->setDrawerSlideAnimationEnabled(Z)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:boolean
+#
+# - return:void
+
+setDrawerSlideAnimationEnabled-BB@0x0 : [ setDrawerSlideAnimationEnabled-BB@0x8 setDrawerSlideAnimationEnabled-BB@0x10 ]
+	0       (00000000) iput-boolean         v2, v1, Landroidx/appcompat/app/ActionBarDrawerToggle;->mDrawerSlideAnimationEnabled Z
+	1       (00000004) if-nez               v2, +6
+
+setDrawerSlideAnimationEnabled-BB@0x8 : [ setDrawerSlideAnimationEnabled-BB@0x10 ]
+	2       (00000008) const/4              v0, 0
+	3       (0000000a) invoke-direct        v1, v0, Landroidx/appcompat/app/ActionBarDrawerToggle;->setPosition(F)V
+
+setDrawerSlideAnimationEnabled-BB@0x10 : 
+	4       (00000010) return-void          
+

@@ -1,0 +1,14 @@
+# Lcom/afwsamples/testdpc/policy/ManageAffiliationIdsFragment;-><init>()V [access_flags=public constructor]
+#
+# Parameters:
+# local registers: v0...v3
+#
+# - return:void
+
+<init>-BB@0x0 : 
+	0       (00000000) const                v0, 2131689918 # [1.900886493519262e+38]
+	1       (00000006) const                v1, 2131689797 # [1.9008619518036416e+38]
+	2       (0000000c) const                v2, 2131689535 # [1.90080881189048e+38]
+	3       (00000012) invoke-direct        v3, v0, v1, v2, Lcom/afwsamples/testdpc/policy/BaseStringItemsFragment;-><init>(I I I)V
+	4       (00000018) return-void          
+

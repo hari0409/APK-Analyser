@@ -1,0 +1,100 @@
+# Landroidx/appcompat/app/WindowDecorActionBar;->doHide(Z)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v7
+# - v8:boolean
+#
+# - return:void
+
+doHide-BB@0x0 : [ doHide-BB@0xa doHide-BB@0x14 ]
+	0       (00000000) const/4              v6, 1
+	1       (00000002) iget-object          v4, v7, Landroidx/appcompat/app/WindowDecorActionBar;->mCurrentShowAnim Landroidx/appcompat/view/ViewPropertyAnimatorCompatSet;
+	2       (00000006) if-eqz               v4, +7
+
+doHide-BB@0xa : [ doHide-BB@0x14 ]
+	3       (0000000a) iget-object          v4, v7, Landroidx/appcompat/app/WindowDecorActionBar;->mCurrentShowAnim Landroidx/appcompat/view/ViewPropertyAnimatorCompatSet;
+	4       (0000000e) invoke-virtual       v4, Landroidx/appcompat/view/ViewPropertyAnimatorCompatSet;->cancel()V
+
+doHide-BB@0x14 : [ doHide-BB@0x1c doHide-BB@0xf4 ]
+	5       (00000014) iget                 v4, v7, Landroidx/appcompat/app/WindowDecorActionBar;->mCurWindowVisibility I
+	6       (00000018) if-nez               v4, +6e
+
+doHide-BB@0x1c : [ doHide-BB@0x24 doHide-BB@0x28 ]
+	7       (0000001c) iget-boolean         v4, v7, Landroidx/appcompat/app/WindowDecorActionBar;->mShowHideAnimationEnabled Z
+	8       (00000020) if-nez               v4, +4
+
+doHide-BB@0x24 : [ doHide-BB@0x28 doHide-BB@0xf4 ]
+	9       (00000024) if-eqz               v8, +68
+
+doHide-BB@0x28 : [ doHide-BB@0x5e doHide-BB@0x7c ]
+	10      (00000028) iget-object          v4, v7, Landroidx/appcompat/app/WindowDecorActionBar;->mContainerView Landroidx/appcompat/widget/ActionBarContainer;
+	11      (0000002c) const/high16         v5, 16256 # [1.0]
+	12      (00000030) invoke-virtual       v4, v5, Landroidx/appcompat/widget/ActionBarContainer;->setAlpha(F)V
+	13      (00000036) iget-object          v4, v7, Landroidx/appcompat/app/WindowDecorActionBar;->mContainerView Landroidx/appcompat/widget/ActionBarContainer;
+	14      (0000003a) invoke-virtual       v4, v6, Landroidx/appcompat/widget/ActionBarContainer;->setTransitioning(Z)V
+	15      (00000040) new-instance         v1, Landroidx/appcompat/view/ViewPropertyAnimatorCompatSet;
+	16      (00000044) invoke-direct        v1, Landroidx/appcompat/view/ViewPropertyAnimatorCompatSet;-><init>()V
+	17      (0000004a) iget-object          v4, v7, Landroidx/appcompat/app/WindowDecorActionBar;->mContainerView Landroidx/appcompat/widget/ActionBarContainer;
+	18      (0000004e) invoke-virtual       v4, Landroidx/appcompat/widget/ActionBarContainer;->getHeight()I
+	19      (00000054) move-result          v4
+	20      (00000056) neg-int              v4, v4
+	21      (00000058) int-to-float         v2, v4
+	22      (0000005a) if-eqz               v8, +11
+
+doHide-BB@0x5e : [ doHide-BB@0x7c ]
+	23      (0000005e) const/4              v4, 2
+	24      (00000060) new-array            v3, v4, [I
+	25      (00000064) fill-array-data      v3, +50 (0x104)
+	26      (0000006a) iget-object          v4, v7, Landroidx/appcompat/app/WindowDecorActionBar;->mContainerView Landroidx/appcompat/widget/ActionBarContainer;
+	27      (0000006e) invoke-virtual       v4, v3, Landroidx/appcompat/widget/ActionBarContainer;->getLocationInWindow([I)V
+	28      (00000074) aget                 v4, v3, v6
+	29      (00000078) int-to-float         v4, v4
+	30      (0000007a) sub-float/2addr      v2, v4
+
+doHide-BB@0x7c : [ doHide-BB@0xa8 doHide-BB@0xca ]
+	31      (0000007c) iget-object          v4, v7, Landroidx/appcompat/app/WindowDecorActionBar;->mContainerView Landroidx/appcompat/widget/ActionBarContainer;
+	32      (00000080) invoke-static        v4, Landroidx/core/view/ViewCompat;->animate(Landroid/view/View;)Landroidx/core/view/ViewPropertyAnimatorCompat;
+	33      (00000086) move-result-object   v4
+	34      (00000088) invoke-virtual       v4, v2, Landroidx/core/view/ViewPropertyAnimatorCompat;->translationY(F)Landroidx/core/view/ViewPropertyAnimatorCompat;
+	35      (0000008e) move-result-object   v0
+	36      (00000090) iget-object          v4, v7, Landroidx/appcompat/app/WindowDecorActionBar;->mUpdateListener Landroidx/core/view/ViewPropertyAnimatorUpdateListener;
+	37      (00000094) invoke-virtual       v0, v4, Landroidx/core/view/ViewPropertyAnimatorCompat;->setUpdateListener(Landroidx/core/view/ViewPropertyAnimatorUpdateListener;)Landroidx/core/view/ViewPropertyAnimatorCompat;
+	38      (0000009a) invoke-virtual       v1, v0, Landroidx/appcompat/view/ViewPropertyAnimatorCompatSet;->play(Landroidx/core/view/ViewPropertyAnimatorCompat;)Landroidx/appcompat/view/ViewPropertyAnimatorCompatSet;
+	39      (000000a0) iget-boolean         v4, v7, Landroidx/appcompat/app/WindowDecorActionBar;->mContentAnimations Z
+	40      (000000a4) if-eqz               v4, +13
+
+doHide-BB@0xa8 : [ doHide-BB@0xb0 doHide-BB@0xca ]
+	41      (000000a8) iget-object          v4, v7, Landroidx/appcompat/app/WindowDecorActionBar;->mContentView Landroid/view/View;
+	42      (000000ac) if-eqz               v4, +f
+
+doHide-BB@0xb0 : [ doHide-BB@0xca ]
+	43      (000000b0) iget-object          v4, v7, Landroidx/appcompat/app/WindowDecorActionBar;->mContentView Landroid/view/View;
+	44      (000000b4) invoke-static        v4, Landroidx/core/view/ViewCompat;->animate(Landroid/view/View;)Landroidx/core/view/ViewPropertyAnimatorCompat;
+	45      (000000ba) move-result-object   v4
+	46      (000000bc) invoke-virtual       v4, v2, Landroidx/core/view/ViewPropertyAnimatorCompat;->translationY(F)Landroidx/core/view/ViewPropertyAnimatorCompat;
+	47      (000000c2) move-result-object   v4
+	48      (000000c4) invoke-virtual       v1, v4, Landroidx/appcompat/view/ViewPropertyAnimatorCompatSet;->play(Landroidx/core/view/ViewPropertyAnimatorCompat;)Landroidx/appcompat/view/ViewPropertyAnimatorCompatSet;
+
+doHide-BB@0xca : [ doHide-BB@0xf2 ]
+	49      (000000ca) sget-object          v4, Landroidx/appcompat/app/WindowDecorActionBar;->sHideInterpolator Landroid/view/animation/Interpolator;
+	50      (000000ce) invoke-virtual       v1, v4, Landroidx/appcompat/view/ViewPropertyAnimatorCompatSet;->setInterpolator(Landroid/view/animation/Interpolator;)Landroidx/appcompat/view/ViewPropertyAnimatorCompatSet;
+	51      (000000d4) const-wide/16        v4, 250 # [250.0]
+	52      (000000d8) invoke-virtual       v1, v4, v5, Landroidx/appcompat/view/ViewPropertyAnimatorCompatSet;->setDuration(J)Landroidx/appcompat/view/ViewPropertyAnimatorCompatSet;
+	53      (000000de) iget-object          v4, v7, Landroidx/appcompat/app/WindowDecorActionBar;->mHideListener Landroidx/core/view/ViewPropertyAnimatorListener;
+	54      (000000e2) invoke-virtual       v1, v4, Landroidx/appcompat/view/ViewPropertyAnimatorCompatSet;->setListener(Landroidx/core/view/ViewPropertyAnimatorListener;)Landroidx/appcompat/view/ViewPropertyAnimatorCompatSet;
+	55      (000000e8) iput-object          v1, v7, Landroidx/appcompat/app/WindowDecorActionBar;->mCurrentShowAnim Landroidx/appcompat/view/ViewPropertyAnimatorCompatSet;
+	56      (000000ec) invoke-virtual       v1, Landroidx/appcompat/view/ViewPropertyAnimatorCompatSet;->start()V
+
+doHide-BB@0xf2 : 
+	57      (000000f2) return-void          
+
+doHide-BB@0xf4 : [ doHide-BB@0xf2 ]
+	58      (000000f4) iget-object          v4, v7, Landroidx/appcompat/app/WindowDecorActionBar;->mHideListener Landroidx/core/view/ViewPropertyAnimatorListener;
+	59      (000000f8) const/4              v5, 0
+	60      (000000fa) invoke-interface     v4, v5, Landroidx/core/view/ViewPropertyAnimatorListener;->onAnimationEnd(Landroid/view/View;)V
+	61      (00000100) goto                 -7
+
+doHide-BB@0x102 : 
+	62      (00000102) nop                  
+	63      (00000104) fill-array-data-payload bytearray(b'\x00\x00\x00\x00\x00\x00\x00\x00') | \x00\x00\x00\x00\x00\x00\x00\x00
+

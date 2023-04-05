@@ -1,0 +1,34 @@
+# Lcom/afwsamples/testdpc/common/Util;->hasDelegation(Landroid/content/Context; Ljava/lang/String;)Z [access_flags=public static]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:android.content.Context
+# - v4:java.lang.String
+#
+# - return:boolean
+
+hasDelegation-BB@0x0 : [ hasDelegation-BB@0xc hasDelegation-BB@0x10 ]
+	0       (00000000) sget                 v1, Lcom/afwsamples/testdpc/common/Util;->SDK_INT I
+	1       (00000004) const/16             v2, 26
+	2       (00000008) if-ge                v1, v2, +4
+
+hasDelegation-BB@0xc : [ hasDelegation-BB@0xe ]
+	3       (0000000c) const/4              v1, 0
+
+hasDelegation-BB@0xe : 
+	4       (0000000e) return               v1
+
+hasDelegation-BB@0x10 : [ hasDelegation-BB@0xe ]
+	5       (00000010) const-class          v1, Landroid/app/admin/DevicePolicyManager;
+	6       (00000014) invoke-virtual       v3, v1, Landroid/content/Context;->getSystemService(Ljava/lang/Class;)Ljava/lang/Object;
+	7       (0000001a) move-result-object   v0
+	8       (0000001c) check-cast           v0, Landroid/app/admin/DevicePolicyManager;
+	9       (00000020) const/4              v1, 0
+	10      (00000022) invoke-virtual       v3, Landroid/content/Context;->getPackageName()Ljava/lang/String;
+	11      (00000028) move-result-object   v2
+	12      (0000002a) invoke-virtual       v0, v1, v2, Landroid/app/admin/DevicePolicyManager;->getDelegatedScopes(Landroid/content/ComponentName; Ljava/lang/String;)Ljava/util/List;
+	13      (00000030) move-result-object   v1
+	14      (00000032) invoke-interface     v1, v4, Ljava/util/List;->contains(Ljava/lang/Object;)Z
+	15      (00000038) move-result          v1
+	16      (0000003a) goto                 -16
+

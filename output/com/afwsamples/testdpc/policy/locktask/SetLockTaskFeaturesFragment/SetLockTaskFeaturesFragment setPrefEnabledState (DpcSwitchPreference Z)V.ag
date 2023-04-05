@@ -1,0 +1,27 @@
+# Lcom/afwsamples/testdpc/policy/locktask/SetLockTaskFeaturesFragment;->setPrefEnabledState(Lcom/afwsamples/testdpc/common/preference/DpcSwitchPreference; Z)V [access_flags=private]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:com.afwsamples.testdpc.common.preference.DpcSwitchPreference
+# - v3:boolean
+#
+# - return:void
+
+setPrefEnabledState-BB@0x0 : [ setPrefEnabledState-BB@0x12 setPrefEnabledState-BB@0x26 ]
+	0       (00000000) invoke-virtual       v2, v3, Lcom/afwsamples/testdpc/common/preference/DpcSwitchPreference;->setEnabled(Z)V
+	1       (00000006) invoke-virtual       v2, Lcom/afwsamples/testdpc/common/preference/DpcSwitchPreference;->isEnabled()Z
+	2       (0000000c) move-result          v0
+	3       (0000000e) if-nez               v0, +c
+
+setPrefEnabledState-BB@0x12 : [ setPrefEnabledState-BB@0x1e setPrefEnabledState-BB@0x26 ]
+	4       (00000012) invoke-virtual       v2, Lcom/afwsamples/testdpc/common/preference/DpcSwitchPreference;->isChecked()Z
+	5       (00000018) move-result          v0
+	6       (0000001a) if-eqz               v0, +6
+
+setPrefEnabledState-BB@0x1e : [ setPrefEnabledState-BB@0x26 ]
+	7       (0000001e) const/4              v0, 0
+	8       (00000020) invoke-virtual       v2, v0, Lcom/afwsamples/testdpc/common/preference/DpcSwitchPreference;->setChecked(Z)V
+
+setPrefEnabledState-BB@0x26 : 
+	9       (00000026) return-void          
+

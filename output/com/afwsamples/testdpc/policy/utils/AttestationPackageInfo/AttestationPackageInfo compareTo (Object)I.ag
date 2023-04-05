@@ -1,0 +1,14 @@
+# Lcom/afwsamples/testdpc/policy/utils/AttestationPackageInfo;->compareTo(Ljava/lang/Object;)I [access_flags=public bridge synthetic]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:java.lang.Object
+#
+# - return:int
+
+compareTo-BB@0x0 : 
+	0       (00000000) check-cast           v2, Lcom/afwsamples/testdpc/policy/utils/AttestationPackageInfo;
+	1       (00000004) invoke-virtual       v1, v2, Lcom/afwsamples/testdpc/policy/utils/AttestationPackageInfo;->compareTo(Lcom/afwsamples/testdpc/policy/utils/AttestationPackageInfo;)I
+	2       (0000000a) move-result          v0
+	3       (0000000c) return               v0
+

@@ -1,0 +1,21 @@
+# Lcom/afwsamples/testdpc/SetupManagementFragment;->maybeSpecifyNExtras(Landroid/content/Intent;)Z [access_flags=private]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:android.content.Intent
+#
+# - return:boolean
+
+maybeSpecifyNExtras-BB@0x0 : [ maybeSpecifyNExtras-BB@0xc maybeSpecifyNExtras-BB@0x18 ]
+	0       (00000000) sget                 v0, Lcom/afwsamples/testdpc/common/Util;->SDK_INT I
+	1       (00000004) const/16             v1, 24
+	2       (00000008) if-lt                v0, v1, +8
+
+maybeSpecifyNExtras-BB@0xc : [ maybeSpecifyNExtras-BB@0x18 ]
+	3       (0000000c) invoke-direct        v2, v3, Lcom/afwsamples/testdpc/SetupManagementFragment;->specifyLogoUri(Landroid/content/Intent;)V
+	4       (00000012) invoke-direct        v2, v3, Lcom/afwsamples/testdpc/SetupManagementFragment;->specifyColor(Landroid/content/Intent;)V
+
+maybeSpecifyNExtras-BB@0x18 : 
+	5       (00000018) const/4              v0, 1
+	6       (0000001a) return               v0
+

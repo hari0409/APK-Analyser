@@ -1,0 +1,32 @@
+# Landroidx/appcompat/widget/ActionMenuPresenter;->onConfigurationChanged(Landroid/content/res/Configuration;)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:android.content.res.Configuration
+#
+# - return:void
+
+onConfigurationChanged-BB@0x0 : [ onConfigurationChanged-BB@0x8 onConfigurationChanged-BB@0x20 ]
+	0       (00000000) iget-boolean         v0, v2, Landroidx/appcompat/widget/ActionMenuPresenter;->mMaxItemsSet Z
+	1       (00000004) if-nez               v0, +e
+
+onConfigurationChanged-BB@0x8 : [ onConfigurationChanged-BB@0x20 ]
+	2       (00000008) iget-object          v0, v2, Landroidx/appcompat/widget/ActionMenuPresenter;->mContext Landroid/content/Context;
+	3       (0000000c) invoke-static        v0, Landroidx/appcompat/view/ActionBarPolicy;->get(Landroid/content/Context;)Landroidx/appcompat/view/ActionBarPolicy;
+	4       (00000012) move-result-object   v0
+	5       (00000014) invoke-virtual       v0, Landroidx/appcompat/view/ActionBarPolicy;->getMaxActionButtons()I
+	6       (0000001a) move-result          v0
+	7       (0000001c) iput                 v0, v2, Landroidx/appcompat/widget/ActionMenuPresenter;->mMaxItems I
+
+onConfigurationChanged-BB@0x20 : [ onConfigurationChanged-BB@0x28 onConfigurationChanged-BB@0x34 ]
+	8       (00000020) iget-object          v0, v2, Landroidx/appcompat/widget/ActionMenuPresenter;->mMenu Landroidx/appcompat/view/menu/MenuBuilder;
+	9       (00000024) if-eqz               v0, +8
+
+onConfigurationChanged-BB@0x28 : [ onConfigurationChanged-BB@0x34 ]
+	10      (00000028) iget-object          v0, v2, Landroidx/appcompat/widget/ActionMenuPresenter;->mMenu Landroidx/appcompat/view/menu/MenuBuilder;
+	11      (0000002c) const/4              v1, 1
+	12      (0000002e) invoke-virtual       v0, v1, Landroidx/appcompat/view/menu/MenuBuilder;->onItemsChanged(Z)V
+
+onConfigurationChanged-BB@0x34 : 
+	13      (00000034) return-void          
+

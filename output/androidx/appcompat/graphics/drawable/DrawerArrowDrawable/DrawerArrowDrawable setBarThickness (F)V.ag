@@ -1,0 +1,33 @@
+# Landroidx/appcompat/graphics/drawable/DrawerArrowDrawable;->setBarThickness(F)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v4
+# - v5:float
+#
+# - return:void
+
+setBarThickness-BB@0x0 : [ setBarThickness-BB@0x14 setBarThickness-BB@0x44 ]
+	0       (00000000) iget-object          v0, v4, Landroidx/appcompat/graphics/drawable/DrawerArrowDrawable;->mPaint Landroid/graphics/Paint;
+	1       (00000004) invoke-virtual       v0, Landroid/graphics/Paint;->getStrokeWidth()F
+	2       (0000000a) move-result          v0
+	3       (0000000c) cmpl-float           v0, v0, v5
+	4       (00000010) if-eqz               v0, +1a
+
+setBarThickness-BB@0x14 : [ setBarThickness-BB@0x44 ]
+	5       (00000014) iget-object          v0, v4, Landroidx/appcompat/graphics/drawable/DrawerArrowDrawable;->mPaint Landroid/graphics/Paint;
+	6       (00000018) invoke-virtual       v0, v5, Landroid/graphics/Paint;->setStrokeWidth(F)V
+	7       (0000001e) const/high16         v0, 16384 # [2.0]
+	8       (00000022) div-float            v0, v5, v0
+	9       (00000026) float-to-double      v0, v0
+	10      (00000028) sget                 v2, Landroidx/appcompat/graphics/drawable/DrawerArrowDrawable;->ARROW_HEAD_ANGLE F
+	11      (0000002c) float-to-double      v2, v2
+	12      (0000002e) invoke-static        v2, v3, Ljava/lang/Math;->cos(D)D
+	13      (00000034) move-result-wide     v2
+	14      (00000036) mul-double/2addr     v0, v2
+	15      (00000038) double-to-float      v0, v0
+	16      (0000003a) iput                 v0, v4, Landroidx/appcompat/graphics/drawable/DrawerArrowDrawable;->mMaxCutForBarSize F
+	17      (0000003e) invoke-virtual       v4, Landroidx/appcompat/graphics/drawable/DrawerArrowDrawable;->invalidateSelf()V
+
+setBarThickness-BB@0x44 : 
+	18      (00000044) return-void          
+

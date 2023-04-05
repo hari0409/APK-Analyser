@@ -1,0 +1,37 @@
+# Landroidx/appcompat/app/AppCompatDelegateImpl;->onMenuItemSelected(Landroidx/appcompat/view/menu/MenuBuilder; Landroid/view/MenuItem;)Z [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v3
+# - v4:androidx.appcompat.view.menu.MenuBuilder
+# - v5:android.view.MenuItem
+#
+# - return:boolean
+
+onMenuItemSelected-BB@0x0 : [ onMenuItemSelected-BB@0xc onMenuItemSelected-BB@0x36 ]
+	0       (00000000) invoke-virtual       v3, Landroidx/appcompat/app/AppCompatDelegateImpl;->getWindowCallback()Landroid/view/Window$Callback;
+	1       (00000006) move-result-object   v0
+	2       (00000008) if-eqz               v0, +17
+
+onMenuItemSelected-BB@0xc : [ onMenuItemSelected-BB@0x14 onMenuItemSelected-BB@0x36 ]
+	3       (0000000c) iget-boolean         v2, v3, Landroidx/appcompat/app/AppCompatDelegateImpl;->mIsDestroyed Z
+	4       (00000010) if-nez               v2, +13
+
+onMenuItemSelected-BB@0x14 : [ onMenuItemSelected-BB@0x28 onMenuItemSelected-BB@0x36 ]
+	5       (00000014) invoke-virtual       v4, Landroidx/appcompat/view/menu/MenuBuilder;->getRootMenu()Landroidx/appcompat/view/menu/MenuBuilder;
+	6       (0000001a) move-result-object   v2
+	7       (0000001c) invoke-virtual       v3, v2, Landroidx/appcompat/app/AppCompatDelegateImpl;->findMenuPanel(Landroid/view/Menu;)Landroidx/appcompat/app/AppCompatDelegateImpl$PanelFeatureState;
+	8       (00000022) move-result-object   v1
+	9       (00000024) if-eqz               v1, +9
+
+onMenuItemSelected-BB@0x28 : [ onMenuItemSelected-BB@0x34 ]
+	10      (00000028) iget                 v2, v1, Landroidx/appcompat/app/AppCompatDelegateImpl$PanelFeatureState;->featureId I
+	11      (0000002c) invoke-interface     v0, v2, v5, Landroid/view/Window$Callback;->onMenuItemSelected(I Landroid/view/MenuItem;)Z
+	12      (00000032) move-result          v2
+
+onMenuItemSelected-BB@0x34 : 
+	13      (00000034) return               v2
+
+onMenuItemSelected-BB@0x36 : [ onMenuItemSelected-BB@0x34 ]
+	14      (00000036) const/4              v2, 0
+	15      (00000038) goto                 -2
+

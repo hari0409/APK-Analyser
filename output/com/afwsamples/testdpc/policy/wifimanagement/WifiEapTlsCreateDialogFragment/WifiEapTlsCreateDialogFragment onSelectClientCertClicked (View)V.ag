@@ -1,0 +1,20 @@
+# Lcom/afwsamples/testdpc/policy/wifimanagement/WifiEapTlsCreateDialogFragment;->onSelectClientCertClicked(Landroid/view/View;)V [access_flags=private]
+#
+# Parameters:
+# - local registers: v0...v6
+# - v7:android.view.View
+#
+# - return:void
+
+onSelectClientCertClicked-BB@0x0 : 
+	0       (00000000) const/4              v2, 0
+	1       (00000002) invoke-virtual       v6, Lcom/afwsamples/testdpc/policy/wifimanagement/WifiEapTlsCreateDialogFragment;->getActivity()Landroid/app/Activity;
+	2       (00000008) move-result-object   v0
+	3       (0000000a) new-instance         v1, Lcom/afwsamples/testdpc/policy/wifimanagement/WifiEapTlsCreateDialogFragment$$Lambda$1;
+	4       (0000000e) invoke-direct        v1, v6, Lcom/afwsamples/testdpc/policy/wifimanagement/WifiEapTlsCreateDialogFragment$$Lambda$1;-><init>(Lcom/afwsamples/testdpc/policy/wifimanagement/WifiEapTlsCreateDialogFragment;)V
+	5       (00000014) move-object          v3, v2
+	6       (00000016) move-object          v4, v2
+	7       (00000018) move-object          v5, v2
+	8       (0000001a) invoke-static/range  v0 ... v5, Landroid/security/KeyChain;->choosePrivateKeyAlias(Landroid/app/Activity; Landroid/security/KeyChainAliasCallback; [Ljava/lang/String; [Ljava/security/Principal; Landroid/net/Uri; Ljava/lang/String;)V
+	9       (00000020) return-void          
+

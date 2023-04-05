@@ -1,0 +1,15 @@
+# Landroidx/appcompat/text/AllCapsTransformationMethod;->onFocusChanged(Landroid/view/View; Ljava/lang/CharSequence; Z I Landroid/graphics/Rect;)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v0
+# - v1:android.view.View
+# - v2:java.lang.CharSequence
+# - v3:boolean
+# - v4:int
+# - v5:android.graphics.Rect
+#
+# - return:void
+
+onFocusChanged-BB@0x0 : 
+	0       (00000000) return-void          
+

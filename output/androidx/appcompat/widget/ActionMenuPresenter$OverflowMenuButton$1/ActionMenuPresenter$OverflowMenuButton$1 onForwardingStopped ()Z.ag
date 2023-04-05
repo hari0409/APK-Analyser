@@ -1,0 +1,26 @@
+# Landroidx/appcompat/widget/ActionMenuPresenter$OverflowMenuButton$1;->onForwardingStopped()Z [access_flags=public]
+#
+# Parameters:
+# local registers: v0...v1
+#
+# - return:boolean
+
+onForwardingStopped-BB@0x0 : [ onForwardingStopped-BB@0x10 onForwardingStopped-BB@0x14 ]
+	0       (00000000) iget-object          v0, v1, Landroidx/appcompat/widget/ActionMenuPresenter$OverflowMenuButton$1;->this$1 Landroidx/appcompat/widget/ActionMenuPresenter$OverflowMenuButton;
+	1       (00000004) iget-object          v0, v0, Landroidx/appcompat/widget/ActionMenuPresenter$OverflowMenuButton;->this$0 Landroidx/appcompat/widget/ActionMenuPresenter;
+	2       (00000008) iget-object          v0, v0, Landroidx/appcompat/widget/ActionMenuPresenter;->mPostedOpenRunnable Landroidx/appcompat/widget/ActionMenuPresenter$OpenOverflowRunnable;
+	3       (0000000c) if-eqz               v0, +4
+
+onForwardingStopped-BB@0x10 : [ onForwardingStopped-BB@0x12 ]
+	4       (00000010) const/4              v0, 0
+
+onForwardingStopped-BB@0x12 : 
+	5       (00000012) return               v0
+
+onForwardingStopped-BB@0x14 : [ onForwardingStopped-BB@0x12 ]
+	6       (00000014) iget-object          v0, v1, Landroidx/appcompat/widget/ActionMenuPresenter$OverflowMenuButton$1;->this$1 Landroidx/appcompat/widget/ActionMenuPresenter$OverflowMenuButton;
+	7       (00000018) iget-object          v0, v0, Landroidx/appcompat/widget/ActionMenuPresenter$OverflowMenuButton;->this$0 Landroidx/appcompat/widget/ActionMenuPresenter;
+	8       (0000001c) invoke-virtual       v0, Landroidx/appcompat/widget/ActionMenuPresenter;->hideOverflowMenu()Z
+	9       (00000022) const/4              v0, 1
+	10      (00000024) goto                 -9
+

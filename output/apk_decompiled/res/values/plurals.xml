@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="password_failed_attempts_content">
+        <item quantity="other">Set to wipe after %d attempts.</item>
+        <item quantity="one">Set to wipe after %d attempt.</item>
+    </plurals>
+    <plurals name="password_failed_attempts_title">
+        <item quantity="other">Password entered incorrectly %d times</item>
+        <item quantity="one">Password entered incorrectly %d time</item>
+    </plurals>
+</resources>

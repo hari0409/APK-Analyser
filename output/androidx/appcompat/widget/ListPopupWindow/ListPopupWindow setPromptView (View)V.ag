@@ -1,0 +1,26 @@
+# Landroidx/appcompat/widget/ListPopupWindow;->setPromptView(Landroid/view/View;)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:android.view.View
+#
+# - return:void
+
+setPromptView-BB@0x0 : [ setPromptView-BB@0xc setPromptView-BB@0x12 ]
+	0       (00000000) invoke-virtual       v1, Landroidx/appcompat/widget/ListPopupWindow;->isShowing()Z
+	1       (00000006) move-result          v0
+	2       (00000008) if-eqz               v0, +5
+
+setPromptView-BB@0xc : [ setPromptView-BB@0x12 ]
+	3       (0000000c) invoke-direct        v1, Landroidx/appcompat/widget/ListPopupWindow;->removePromptView()V
+
+setPromptView-BB@0x12 : [ setPromptView-BB@0x1a setPromptView-BB@0x20 ]
+	4       (00000012) iput-object          v2, v1, Landroidx/appcompat/widget/ListPopupWindow;->mPromptView Landroid/view/View;
+	5       (00000016) if-eqz               v0, +5
+
+setPromptView-BB@0x1a : [ setPromptView-BB@0x20 ]
+	6       (0000001a) invoke-virtual       v1, Landroidx/appcompat/widget/ListPopupWindow;->show()V
+
+setPromptView-BB@0x20 : 
+	7       (00000020) return-void          
+

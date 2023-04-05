@@ -1,0 +1,43 @@
+# Lcom/afwsamples/testdpc/policy/PolicyManagementFragment$11;->onClick(Landroid/content/DialogInterface; I)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v4
+# - v5:android.content.DialogInterface
+# - v6:int
+#
+# - return:void
+
+onClick-BB@0x0 : [ D:onClick-BB@0x14 2131296271:onClick-BB@0x3e 2131296402:onClick-BB@0x42 2131296559:onClick-BB@0x3a ]
+	0       (00000000) const/4              v1, 0
+	1       (00000002) iget-object          v2, v4, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment$11;->val$permissionGroup Landroid/widget/RadioGroup;
+	2       (00000006) invoke-virtual       v2, Landroid/widget/RadioGroup;->getCheckedRadioButtonId()I
+	3       (0000000c) move-result          v0
+	4       (0000000e) sparse-switch        v0, +1d (0x48)
+
+onClick-BB@0x14 : 
+	5       (00000014) iget-object          v2, v4, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment$11;->this$0 Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;
+	6       (00000018) invoke-static        v2, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->access$400(Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;)Landroid/app/admin/DevicePolicyManager;
+	7       (0000001e) move-result-object   v2
+	8       (00000020) iget-object          v3, v4, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment$11;->this$0 Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;
+	9       (00000024) invoke-static        v3, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->access$700(Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;)Landroid/content/ComponentName;
+	10      (0000002a) move-result-object   v3
+	11      (0000002c) invoke-virtual       v2, v3, v1, Landroid/app/admin/DevicePolicyManager;->setPermissionPolicy(Landroid/content/ComponentName; I)V
+	12      (00000032) invoke-interface     v5, Landroid/content/DialogInterface;->dismiss()V
+	13      (00000038) return-void          
+
+onClick-BB@0x3a : [ onClick-BB@0x14 ]
+	14      (0000003a) const/4              v1, 0
+	15      (0000003c) goto                 -14
+
+onClick-BB@0x3e : [ onClick-BB@0x14 ]
+	16      (0000003e) const/4              v1, 1
+	17      (00000040) goto                 -16
+
+onClick-BB@0x42 : [ onClick-BB@0x14 ]
+	18      (00000042) const/4              v1, 2
+	19      (00000044) goto                 -18
+
+onClick-BB@0x46 : 
+	20      (00000046) nop                  
+	21      (00000048) sparse-switch-payload 7f09000f 7f090092 7f09012f
+

@@ -1,0 +1,51 @@
+# Lcom/afwsamples/testdpc/search/PreferenceIndexSqliteOpenHelper;->insertIndexablePreferences(Ljava/util/List;)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v6
+# - v7:java.util.List
+#
+# - return:void
+
+insertIndexablePreferences-BB@0x0 : [ insertIndexablePreferences-BB@0xe ]
+	0       (00000000) invoke-virtual       v6, Lcom/afwsamples/testdpc/search/PreferenceIndexSqliteOpenHelper;->getWritableDatabase()Landroid/database/sqlite/SQLiteDatabase;
+	1       (00000006) move-result-object   v0
+	2       (00000008) invoke-virtual       v0, Landroid/database/sqlite/SQLiteDatabase;->beginTransaction()V
+
+insertIndexablePreferences-BB@0xe : [ insertIndexablePreferences-BB@0x16 ]
+	3       (0000000e) invoke-interface     v7, Ljava/util/List;->iterator()Ljava/util/Iterator;
+	4       (00000014) move-result-object   v2
+	e:41
+	(Ljava/lang/Throwable; -> 44 insertIndexablePreferences-BB@0x44)
+
+insertIndexablePreferences-BB@0x16 : [ insertIndexablePreferences-BB@0x22 insertIndexablePreferences-BB@0x4e ]
+	5       (00000016) invoke-interface     v2, Ljava/util/Iterator;->hasNext()Z
+	6       (0000001c) move-result          v3
+	7       (0000001e) if-eqz               v3, +18
+	e:41
+	(Ljava/lang/Throwable; -> 44 insertIndexablePreferences-BB@0x44)
+
+insertIndexablePreferences-BB@0x22 : [ insertIndexablePreferences-BB@0x16 ]
+	8       (00000022) invoke-interface     v2, Ljava/util/Iterator;->next()Ljava/lang/Object;
+	9       (00000028) move-result-object   v1
+	10      (0000002a) check-cast           v1, Lcom/afwsamples/testdpc/search/PreferenceIndex;
+	11      (0000002e) const-string         v3, 'preference_index'
+	12      (00000032) const/4              v4, 0
+	13      (00000034) invoke-static        v1, Lcom/afwsamples/testdpc/search/PreferenceIndexSqliteOpenHelper$PreferenceIndexTable;->toContentValues(Lcom/afwsamples/testdpc/search/PreferenceIndex;)Landroid/content/ContentValues;
+	14      (0000003a) move-result-object   v5
+	15      (0000003c) invoke-virtual       v0, v3, v4, v5, Landroid/database/sqlite/SQLiteDatabase;->insert(Ljava/lang/String; Ljava/lang/String; Landroid/content/ContentValues;)J
+	16      (00000042) goto                 -16
+
+insertIndexablePreferences-BB@0x44 : 
+	17      (00000044) move-exception       v2
+	18      (00000046) invoke-virtual       v0, Landroid/database/sqlite/SQLiteDatabase;->endTransaction()V
+	19      (0000004c) throw                v2
+
+insertIndexablePreferences-BB@0x4e : 
+	20      (0000004e) const-string         v2, "INSERT INTO preference_index_fts(preference_index_fts) VALUES('rebuild')"
+	21      (00000052) invoke-virtual       v0, v2, Landroid/database/sqlite/SQLiteDatabase;->execSQL(Ljava/lang/String;)V
+	22      (00000058) invoke-virtual       v0, Landroid/database/sqlite/SQLiteDatabase;->setTransactionSuccessful()V
+	23      (0000005e) invoke-virtual       v0, Landroid/database/sqlite/SQLiteDatabase;->endTransaction()V
+	24      (00000064) return-void          
+	4e:5d
+	(Ljava/lang/Throwable; -> 44 insertIndexablePreferences-BB@0x44)
+

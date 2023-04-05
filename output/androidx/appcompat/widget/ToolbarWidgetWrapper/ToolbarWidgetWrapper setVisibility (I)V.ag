@@ -1,0 +1,13 @@
+# Landroidx/appcompat/widget/ToolbarWidgetWrapper;->setVisibility(I)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:int
+#
+# - return:void
+
+setVisibility-BB@0x0 : 
+	0       (00000000) iget-object          v0, v1, Landroidx/appcompat/widget/ToolbarWidgetWrapper;->mToolbar Landroidx/appcompat/widget/Toolbar;
+	1       (00000004) invoke-virtual       v0, v2, Landroidx/appcompat/widget/Toolbar;->setVisibility(I)V
+	2       (0000000a) return-void          
+

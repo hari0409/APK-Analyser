@@ -1,0 +1,30 @@
+# Landroidx/appcompat/widget/DrawableUtils;-><clinit>()V [access_flags=static constructor]
+#
+# Parameters:
+# local registers: v0...v1
+#
+# - return:void
+
+<clinit>-BB@0x0 : [ <clinit>-BB@0x1a <clinit>-BB@0x2a ]
+	0       (00000000) new-instance         v0, Landroid/graphics/Rect;
+	1       (00000004) invoke-direct        v0, Landroid/graphics/Rect;-><init>()V
+	2       (0000000a) sput-object          v0, Landroidx/appcompat/widget/DrawableUtils;->INSETS_NONE Landroid/graphics/Rect;
+	3       (0000000e) sget                 v0, Landroid/os/Build$VERSION;->SDK_INT I
+	4       (00000012) const/16             v1, 18
+	5       (00000016) if-lt                v0, v1, +a
+
+<clinit>-BB@0x1a : [ <clinit>-BB@0x2a ]
+	6       (0000001a) const-string         v0, 'android.graphics.Insets'
+	7       (0000001e) invoke-static        v0, Ljava/lang/Class;->forName(Ljava/lang/String;)Ljava/lang/Class;
+	8       (00000024) move-result-object   v0
+	9       (00000026) sput-object          v0, Landroidx/appcompat/widget/DrawableUtils;->sInsetsClazz Ljava/lang/Class;
+	1a:29
+	(Ljava/lang/ClassNotFoundException; -> 2c <clinit>-BB@0x2c)
+
+<clinit>-BB@0x2a : 
+	10      (0000002a) return-void          
+
+<clinit>-BB@0x2c : [ <clinit>-BB@0x2a ]
+	11      (0000002c) move-exception       v0
+	12      (0000002e) goto                 -2
+

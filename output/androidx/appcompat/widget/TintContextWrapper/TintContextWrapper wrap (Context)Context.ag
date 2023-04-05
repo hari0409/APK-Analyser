@@ -1,0 +1,152 @@
+# Landroidx/appcompat/widget/TintContextWrapper;->wrap(Landroid/content/Context;)Landroid/content/Context; [access_flags=public static]
+#
+# Parameters:
+# - local registers: v0...v5
+# - v6:android.content.Context
+#
+# - return:android.content.Context
+
+wrap-BB@0x0 : [ wrap-BB@0xc wrap-BB@0xe8 ]
+	0       (00000000) invoke-static        v6, Landroidx/appcompat/widget/TintContextWrapper;->shouldWrap(Landroid/content/Context;)Z
+	1       (00000006) move-result          v3
+	2       (00000008) if-eqz               v3, +70
+
+wrap-BB@0xc : [ wrap-BB@0x12 ]
+	3       (0000000c) sget-object          v4, Landroidx/appcompat/widget/TintContextWrapper;->CACHE_LOCK Ljava/lang/Object;
+	4       (00000010) monitor-enter        v4
+
+wrap-BB@0x12 : [ wrap-BB@0x1a wrap-BB@0x4a ]
+	5       (00000012) sget-object          v3, Landroidx/appcompat/widget/TintContextWrapper;->sCache Ljava/util/ArrayList;
+	6       (00000016) if-nez               v3, +1a
+	12:db
+	(Ljava/lang/Throwable; -> d8 wrap-BB@0xd8)
+
+wrap-BB@0x1a : [ wrap-BB@0x28 ]
+	7       (0000001a) new-instance         v3, Ljava/util/ArrayList;
+	8       (0000001e) invoke-direct        v3, Ljava/util/ArrayList;-><init>()V
+	9       (00000024) sput-object          v3, Landroidx/appcompat/widget/TintContextWrapper;->sCache Ljava/util/ArrayList;
+	12:db
+	(Ljava/lang/Throwable; -> d8 wrap-BB@0xd8)
+
+wrap-BB@0x28 : [ wrap-BB@0x48 ]
+	10      (00000028) new-instance         v2, Landroidx/appcompat/widget/TintContextWrapper;
+	11      (0000002c) invoke-direct        v2, v6, Landroidx/appcompat/widget/TintContextWrapper;-><init>(Landroid/content/Context;)V
+	12      (00000032) sget-object          v3, Landroidx/appcompat/widget/TintContextWrapper;->sCache Ljava/util/ArrayList;
+	13      (00000036) new-instance         v5, Ljava/lang/ref/WeakReference;
+	14      (0000003a) invoke-direct        v5, v2, Ljava/lang/ref/WeakReference;-><init>(Ljava/lang/Object;)V
+	15      (00000040) invoke-virtual       v3, v5, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+	16      (00000046) monitor-exit         v4
+	12:db
+	(Ljava/lang/Throwable; -> d8 wrap-BB@0xd8)
+
+wrap-BB@0x48 : 
+	17      (00000048) return-object        v2
+	12:db
+	(Ljava/lang/Throwable; -> d8 wrap-BB@0xd8)
+
+wrap-BB@0x4a : [ wrap-BB@0x5a ]
+	18      (0000004a) sget-object          v3, Landroidx/appcompat/widget/TintContextWrapper;->sCache Ljava/util/ArrayList;
+	19      (0000004e) invoke-virtual       v3, Ljava/util/ArrayList;->size()I
+	20      (00000054) move-result          v3
+	21      (00000056) add-int/lit8         v0, v3, -1
+	12:db
+	(Ljava/lang/Throwable; -> d8 wrap-BB@0xd8)
+
+wrap-BB@0x5a : [ wrap-BB@0x5e wrap-BB@0x8e ]
+	22      (0000005a) if-ltz               v0, +1a
+	12:db
+	(Ljava/lang/Throwable; -> d8 wrap-BB@0xd8)
+
+wrap-BB@0x5e : [ wrap-BB@0x72 wrap-BB@0x7e ]
+	23      (0000005e) sget-object          v3, Landroidx/appcompat/widget/TintContextWrapper;->sCache Ljava/util/ArrayList;
+	24      (00000062) invoke-virtual       v3, v0, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+	25      (00000068) move-result-object   v1
+	26      (0000006a) check-cast           v1, Ljava/lang/ref/WeakReference;
+	27      (0000006e) if-eqz               v1, +8
+	12:db
+	(Ljava/lang/Throwable; -> d8 wrap-BB@0xd8)
+
+wrap-BB@0x72 : [ wrap-BB@0x7e wrap-BB@0x88 ]
+	28      (00000072) invoke-virtual       v1, Ljava/lang/ref/WeakReference;->get()Ljava/lang/Object;
+	29      (00000078) move-result-object   v3
+	30      (0000007a) if-nez               v3, +7
+	12:db
+	(Ljava/lang/Throwable; -> d8 wrap-BB@0xd8)
+
+wrap-BB@0x7e : [ wrap-BB@0x88 ]
+	31      (0000007e) sget-object          v3, Landroidx/appcompat/widget/TintContextWrapper;->sCache Ljava/util/ArrayList;
+	32      (00000082) invoke-virtual       v3, v0, Ljava/util/ArrayList;->remove(I)Ljava/lang/Object;
+	12:db
+	(Ljava/lang/Throwable; -> d8 wrap-BB@0xd8)
+
+wrap-BB@0x88 : [ wrap-BB@0x5a ]
+	33      (00000088) add-int/lit8         v0, v0, -1
+	34      (0000008c) goto                 -19
+	12:db
+	(Ljava/lang/Throwable; -> d8 wrap-BB@0xd8)
+
+wrap-BB@0x8e : [ wrap-BB@0x9e ]
+	35      (0000008e) sget-object          v3, Landroidx/appcompat/widget/TintContextWrapper;->sCache Ljava/util/ArrayList;
+	36      (00000092) invoke-virtual       v3, Ljava/util/ArrayList;->size()I
+	37      (00000098) move-result          v3
+	38      (0000009a) add-int/lit8         v0, v3, -1
+	12:db
+	(Ljava/lang/Throwable; -> d8 wrap-BB@0xd8)
+
+wrap-BB@0x9e : [ wrap-BB@0xa2 wrap-BB@0x28 ]
+	39      (0000009e) if-ltz               v0, -3b
+	12:db
+	(Ljava/lang/Throwable; -> d8 wrap-BB@0xd8)
+
+wrap-BB@0xa2 : [ wrap-BB@0xb6 wrap-BB@0xde ]
+	40      (000000a2) sget-object          v3, Landroidx/appcompat/widget/TintContextWrapper;->sCache Ljava/util/ArrayList;
+	41      (000000a6) invoke-virtual       v3, v0, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+	42      (000000ac) move-result-object   v1
+	43      (000000ae) check-cast           v1, Ljava/lang/ref/WeakReference;
+	44      (000000b2) if-eqz               v1, +16
+	12:db
+	(Ljava/lang/Throwable; -> d8 wrap-BB@0xd8)
+
+wrap-BB@0xb6 : [ wrap-BB@0xc4 ]
+	45      (000000b6) invoke-virtual       v1, Ljava/lang/ref/WeakReference;->get()Ljava/lang/Object;
+	46      (000000bc) move-result-object   v3
+	47      (000000be) check-cast           v3, Landroidx/appcompat/widget/TintContextWrapper;
+	48      (000000c2) move-object          v2, v3
+	12:db
+	(Ljava/lang/Throwable; -> d8 wrap-BB@0xd8)
+
+wrap-BB@0xc4 : [ wrap-BB@0xc8 wrap-BB@0xe2 ]
+	49      (000000c4) if-eqz               v2, +f
+	12:db
+	(Ljava/lang/Throwable; -> d8 wrap-BB@0xd8)
+
+wrap-BB@0xc8 : [ wrap-BB@0xd4 wrap-BB@0xe2 ]
+	50      (000000c8) invoke-virtual       v2, Landroidx/appcompat/widget/TintContextWrapper;->getBaseContext()Landroid/content/Context;
+	51      (000000ce) move-result-object   v3
+	52      (000000d0) if-ne                v3, v6, +9
+	12:db
+	(Ljava/lang/Throwable; -> d8 wrap-BB@0xd8)
+
+wrap-BB@0xd4 : [ wrap-BB@0x48 ]
+	53      (000000d4) monitor-exit         v4
+	54      (000000d6) goto                 -47
+	12:db
+	(Ljava/lang/Throwable; -> d8 wrap-BB@0xd8)
+
+wrap-BB@0xd8 : 
+	55      (000000d8) move-exception       v3
+	56      (000000da) monitor-exit         v4
+	57      (000000dc) throw                v3
+
+wrap-BB@0xde : [ wrap-BB@0xc4 ]
+	58      (000000de) const/4              v2, 0
+	59      (000000e0) goto                 -e
+
+wrap-BB@0xe2 : [ wrap-BB@0x9e ]
+	60      (000000e2) add-int/lit8         v0, v0, -1
+	61      (000000e6) goto                 -24
+
+wrap-BB@0xe8 : [ wrap-BB@0x48 ]
+	62      (000000e8) move-object          v2, v6
+	63      (000000ea) goto                 -51
+

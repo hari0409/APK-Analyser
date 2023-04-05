@@ -1,0 +1,15 @@
+# Lcom/afwsamples/testdpc/policy/ManageAffiliationIdsFragment;->saveItems(Ljava/util/List;)V [access_flags=protected]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:java.util.List
+#
+# - return:void
+
+saveItems-BB@0x0 : 
+	0       (00000000) iget-object          v0, v2, Lcom/afwsamples/testdpc/policy/ManageAffiliationIdsFragment;->mDevicePolicyManagerGateway Lcom/afwsamples/testdpc/DevicePolicyManagerGateway;
+	1       (00000004) new-instance         v1, Landroidx/collection/ArraySet;
+	2       (00000008) invoke-direct        v1, v3, Landroidx/collection/ArraySet;-><init>(Ljava/util/Collection;)V
+	3       (0000000e) invoke-interface     v0, v1, Lcom/afwsamples/testdpc/DevicePolicyManagerGateway;->setAffiliationIds(Ljava/util/Set;)V
+	4       (00000014) return-void          
+

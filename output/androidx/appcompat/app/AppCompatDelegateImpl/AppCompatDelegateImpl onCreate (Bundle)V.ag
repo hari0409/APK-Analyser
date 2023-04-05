@@ -1,0 +1,61 @@
+# Landroidx/appcompat/app/AppCompatDelegateImpl;->onCreate(Landroid/os/Bundle;)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v5
+# - v6:android.os.Bundle
+#
+# - return:void
+
+onCreate-BB@0x0 : [ onCreate-BB@0x12 onCreate-BB@0x38 ]
+	0       (00000000) const/4              v4, 1
+	1       (00000002) const/16             v3, -100
+	2       (00000006) iget-object          v2, v5, Landroidx/appcompat/app/AppCompatDelegateImpl;->mOriginalWindowCallback Landroid/view/Window$Callback;
+	3       (0000000a) instance-of          v2, v2, Landroid/app/Activity;
+	4       (0000000e) if-eqz               v2, +15
+
+onCreate-BB@0x12 : [ onCreate-BB@0x14 ]
+	5       (00000012) const/4              v1, 0
+
+onCreate-BB@0x14 : [ onCreate-BB@0x24 ]
+	6       (00000014) iget-object          v2, v5, Landroidx/appcompat/app/AppCompatDelegateImpl;->mOriginalWindowCallback Landroid/view/Window$Callback;
+	7       (00000018) check-cast           v2, Landroid/app/Activity;
+	8       (0000001c) invoke-static        v2, Landroidx/core/app/NavUtils;->getParentActivityName(Landroid/app/Activity;)Ljava/lang/String;
+	9       (00000022) move-result-object   v1
+	14:21
+	(Ljava/lang/IllegalArgumentException; -> 5e onCreate-BB@0x5e)
+
+onCreate-BB@0x24 : [ onCreate-BB@0x28 onCreate-BB@0x38 ]
+	10      (00000024) if-eqz               v1, +a
+
+onCreate-BB@0x28 : [ onCreate-BB@0x34 onCreate-BB@0x56 ]
+	11      (00000028) invoke-virtual       v5, Landroidx/appcompat/app/AppCompatDelegateImpl;->peekSupportActionBar()Landroidx/appcompat/app/ActionBar;
+	12      (0000002e) move-result-object   v0
+	13      (00000030) if-nez               v0, +13
+
+onCreate-BB@0x34 : [ onCreate-BB@0x38 ]
+	14      (00000034) iput-boolean         v4, v5, Landroidx/appcompat/app/AppCompatDelegateImpl;->mEnableDefaultActionBarUp Z
+
+onCreate-BB@0x38 : [ onCreate-BB@0x3c onCreate-BB@0x54 ]
+	15      (00000038) if-eqz               v6, +e
+
+onCreate-BB@0x3c : [ onCreate-BB@0x44 onCreate-BB@0x54 ]
+	16      (0000003c) iget                 v2, v5, Landroidx/appcompat/app/AppCompatDelegateImpl;->mLocalNightMode I
+	17      (00000040) if-ne                v2, v3, +a
+
+onCreate-BB@0x44 : [ onCreate-BB@0x54 ]
+	18      (00000044) const-string         v2, 'appcompat:local_night_mode'
+	19      (00000048) invoke-virtual       v6, v2, v3, Landroid/os/Bundle;->getInt(Ljava/lang/String; I)I
+	20      (0000004e) move-result          v2
+	21      (00000050) iput                 v2, v5, Landroidx/appcompat/app/AppCompatDelegateImpl;->mLocalNightMode I
+
+onCreate-BB@0x54 : 
+	22      (00000054) return-void          
+
+onCreate-BB@0x56 : [ onCreate-BB@0x38 ]
+	23      (00000056) invoke-virtual       v0, v4, Landroidx/appcompat/app/ActionBar;->setDefaultDisplayHomeAsUpEnabled(Z)V
+	24      (0000005c) goto                 -12
+
+onCreate-BB@0x5e : [ onCreate-BB@0x24 ]
+	25      (0000005e) move-exception       v2
+	26      (00000060) goto                 -1e
+

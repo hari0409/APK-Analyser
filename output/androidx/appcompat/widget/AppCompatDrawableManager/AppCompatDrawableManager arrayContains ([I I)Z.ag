@@ -1,0 +1,31 @@
+# Landroidx/appcompat/widget/AppCompatDrawableManager;->arrayContains([I I)Z [access_flags=private static]
+#
+# Parameters:
+# - local registers: v0...v3
+# - v4:int[]
+# - v5:int
+#
+# - return:boolean
+
+arrayContains-BB@0x0 : [ arrayContains-BB@0x6 ]
+	0       (00000000) const/4              v1, 0
+	1       (00000002) array-length         v3, v4
+	2       (00000004) move                 v2, v1
+
+arrayContains-BB@0x6 : [ arrayContains-BB@0xa arrayContains-BB@0x14 ]
+	3       (00000006) if-ge                v2, v3, +7
+
+arrayContains-BB@0xa : [ arrayContains-BB@0x12 arrayContains-BB@0x16 ]
+	4       (0000000a) aget                 v0, v4, v2
+	5       (0000000e) if-ne                v0, v5, +4
+
+arrayContains-BB@0x12 : [ arrayContains-BB@0x14 ]
+	6       (00000012) const/4              v1, 1
+
+arrayContains-BB@0x14 : 
+	7       (00000014) return               v1
+
+arrayContains-BB@0x16 : [ arrayContains-BB@0x6 ]
+	8       (00000016) add-int/lit8         v2, v2, 1
+	9       (0000001a) goto                 -a
+

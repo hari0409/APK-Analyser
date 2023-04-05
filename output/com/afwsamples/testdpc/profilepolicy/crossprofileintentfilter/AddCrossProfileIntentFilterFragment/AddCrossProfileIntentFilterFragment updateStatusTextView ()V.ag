@@ -1,0 +1,90 @@
+# Lcom/afwsamples/testdpc/profilepolicy/crossprofileintentfilter/AddCrossProfileIntentFilterFragment;->updateStatusTextView()V [access_flags=protected]
+#
+# Parameters:
+# local registers: v0...v3
+#
+# - return:void
+
+updateStatusTextView-BB@0x0 : [ updateStatusTextView-BB@0x1a updateStatusTextView-BB@0x4e ]
+	0       (00000000) new-instance         v0, Ljava/lang/StringBuilder;
+	1       (00000004) invoke-direct        v0, Ljava/lang/StringBuilder;-><init>()V
+	2       (0000000a) iget-object          v1, v3, Lcom/afwsamples/testdpc/profilepolicy/crossprofileintentfilter/AddCrossProfileIntentFilterFragment;->mActions Ljava/util/HashSet;
+	3       (0000000e) invoke-virtual       v1, Ljava/util/HashSet;->isEmpty()Z
+	4       (00000014) move-result          v1
+	5       (00000016) if-nez               v1, +1c
+
+updateStatusTextView-BB@0x1a : [ updateStatusTextView-BB@0x4e ]
+	6       (0000001a) const                v1, 2131689517 # [1.9008051610567513e+38]
+	7       (00000020) invoke-virtual       v3, v1, Lcom/afwsamples/testdpc/profilepolicy/crossprofileintentfilter/AddCrossProfileIntentFilterFragment;->getString(I)Ljava/lang/String;
+	8       (00000026) move-result-object   v1
+	9       (00000028) invoke-virtual       v0, v1, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	10      (0000002e) move-result-object   v1
+	11      (00000030) sget-object          v2, Lcom/afwsamples/testdpc/profilepolicy/crossprofileintentfilter/AddCrossProfileIntentFilterFragment;->NEW_LINE Ljava/lang/String;
+	12      (00000034) invoke-virtual       v1, v2, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	13      (0000003a) iget-object          v1, v3, Lcom/afwsamples/testdpc/profilepolicy/crossprofileintentfilter/AddCrossProfileIntentFilterFragment;->mActions Ljava/util/HashSet;
+	14      (0000003e) invoke-direct        v3, v0, v1, Lcom/afwsamples/testdpc/profilepolicy/crossprofileintentfilter/AddCrossProfileIntentFilterFragment;->dumpSet(Ljava/lang/StringBuilder; Ljava/util/Set;)V
+	15      (00000044) sget-object          v1, Lcom/afwsamples/testdpc/profilepolicy/crossprofileintentfilter/AddCrossProfileIntentFilterFragment;->NEW_LINE Ljava/lang/String;
+	16      (00000048) invoke-virtual       v0, v1, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+updateStatusTextView-BB@0x4e : [ updateStatusTextView-BB@0x5e updateStatusTextView-BB@0x92 ]
+	17      (0000004e) iget-object          v1, v3, Lcom/afwsamples/testdpc/profilepolicy/crossprofileintentfilter/AddCrossProfileIntentFilterFragment;->mCategories Ljava/util/HashSet;
+	18      (00000052) invoke-virtual       v1, Ljava/util/HashSet;->isEmpty()Z
+	19      (00000058) move-result          v1
+	20      (0000005a) if-nez               v1, +1c
+
+updateStatusTextView-BB@0x5e : [ updateStatusTextView-BB@0x92 ]
+	21      (0000005e) const                v1, 2131689606 # [1.9008232124012986e+38]
+	22      (00000064) invoke-virtual       v3, v1, Lcom/afwsamples/testdpc/profilepolicy/crossprofileintentfilter/AddCrossProfileIntentFilterFragment;->getString(I)Ljava/lang/String;
+	23      (0000006a) move-result-object   v1
+	24      (0000006c) invoke-virtual       v0, v1, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	25      (00000072) move-result-object   v1
+	26      (00000074) sget-object          v2, Lcom/afwsamples/testdpc/profilepolicy/crossprofileintentfilter/AddCrossProfileIntentFilterFragment;->NEW_LINE Ljava/lang/String;
+	27      (00000078) invoke-virtual       v1, v2, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	28      (0000007e) iget-object          v1, v3, Lcom/afwsamples/testdpc/profilepolicy/crossprofileintentfilter/AddCrossProfileIntentFilterFragment;->mCategories Ljava/util/HashSet;
+	29      (00000082) invoke-direct        v3, v0, v1, Lcom/afwsamples/testdpc/profilepolicy/crossprofileintentfilter/AddCrossProfileIntentFilterFragment;->dumpSet(Ljava/lang/StringBuilder; Ljava/util/Set;)V
+	30      (00000088) sget-object          v1, Lcom/afwsamples/testdpc/profilepolicy/crossprofileintentfilter/AddCrossProfileIntentFilterFragment;->NEW_LINE Ljava/lang/String;
+	31      (0000008c) invoke-virtual       v0, v1, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+updateStatusTextView-BB@0x92 : [ updateStatusTextView-BB@0xa2 updateStatusTextView-BB@0xd6 ]
+	32      (00000092) iget-object          v1, v3, Lcom/afwsamples/testdpc/profilepolicy/crossprofileintentfilter/AddCrossProfileIntentFilterFragment;->mDataSchemes Ljava/util/HashSet;
+	33      (00000096) invoke-virtual       v1, Ljava/util/HashSet;->isEmpty()Z
+	34      (0000009c) move-result          v1
+	35      (0000009e) if-nez               v1, +1c
+
+updateStatusTextView-BB@0xa2 : [ updateStatusTextView-BB@0xd6 ]
+	36      (000000a2) const                v1, 2131689669 # [1.900835990319349e+38]
+	37      (000000a8) invoke-virtual       v3, v1, Lcom/afwsamples/testdpc/profilepolicy/crossprofileintentfilter/AddCrossProfileIntentFilterFragment;->getString(I)Ljava/lang/String;
+	38      (000000ae) move-result-object   v1
+	39      (000000b0) invoke-virtual       v0, v1, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	40      (000000b6) move-result-object   v1
+	41      (000000b8) sget-object          v2, Lcom/afwsamples/testdpc/profilepolicy/crossprofileintentfilter/AddCrossProfileIntentFilterFragment;->NEW_LINE Ljava/lang/String;
+	42      (000000bc) invoke-virtual       v1, v2, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	43      (000000c2) iget-object          v1, v3, Lcom/afwsamples/testdpc/profilepolicy/crossprofileintentfilter/AddCrossProfileIntentFilterFragment;->mDataSchemes Ljava/util/HashSet;
+	44      (000000c6) invoke-direct        v3, v0, v1, Lcom/afwsamples/testdpc/profilepolicy/crossprofileintentfilter/AddCrossProfileIntentFilterFragment;->dumpSet(Ljava/lang/StringBuilder; Ljava/util/Set;)V
+	45      (000000cc) sget-object          v1, Lcom/afwsamples/testdpc/profilepolicy/crossprofileintentfilter/AddCrossProfileIntentFilterFragment;->NEW_LINE Ljava/lang/String;
+	46      (000000d0) invoke-virtual       v0, v1, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+updateStatusTextView-BB@0xd6 : [ updateStatusTextView-BB@0xe6 updateStatusTextView-BB@0x110 ]
+	47      (000000d6) iget-object          v1, v3, Lcom/afwsamples/testdpc/profilepolicy/crossprofileintentfilter/AddCrossProfileIntentFilterFragment;->mDataTypes Ljava/util/HashSet;
+	48      (000000da) invoke-virtual       v1, Ljava/util/HashSet;->isEmpty()Z
+	49      (000000e0) move-result          v1
+	50      (000000e2) if-nez               v1, +17
+
+updateStatusTextView-BB@0xe6 : [ updateStatusTextView-BB@0x110 ]
+	51      (000000e6) const                v1, 2131689670 # [1.900836193143445e+38]
+	52      (000000ec) invoke-virtual       v3, v1, Lcom/afwsamples/testdpc/profilepolicy/crossprofileintentfilter/AddCrossProfileIntentFilterFragment;->getString(I)Ljava/lang/String;
+	53      (000000f2) move-result-object   v1
+	54      (000000f4) invoke-virtual       v0, v1, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	55      (000000fa) move-result-object   v1
+	56      (000000fc) sget-object          v2, Lcom/afwsamples/testdpc/profilepolicy/crossprofileintentfilter/AddCrossProfileIntentFilterFragment;->NEW_LINE Ljava/lang/String;
+	57      (00000100) invoke-virtual       v1, v2, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	58      (00000106) iget-object          v1, v3, Lcom/afwsamples/testdpc/profilepolicy/crossprofileintentfilter/AddCrossProfileIntentFilterFragment;->mDataTypes Ljava/util/HashSet;
+	59      (0000010a) invoke-direct        v3, v0, v1, Lcom/afwsamples/testdpc/profilepolicy/crossprofileintentfilter/AddCrossProfileIntentFilterFragment;->dumpSet(Ljava/lang/StringBuilder; Ljava/util/Set;)V
+
+updateStatusTextView-BB@0x110 : 
+	60      (00000110) iget-object          v1, v3, Lcom/afwsamples/testdpc/profilepolicy/crossprofileintentfilter/AddCrossProfileIntentFilterFragment;->mStatusTextView Landroid/widget/TextView;
+	61      (00000114) invoke-virtual       v0, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+	62      (0000011a) move-result-object   v2
+	63      (0000011c) invoke-virtual       v1, v2, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+	64      (00000122) return-void          
+

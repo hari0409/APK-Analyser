@@ -1,0 +1,61 @@
+# Landroidx/multidex/MultiDex;->findField(Ljava/lang/Object; Ljava/lang/String;)Ljava/lang/reflect/Field; [access_flags=private static]
+#
+# Parameters:
+# - local registers: v0...v4
+# - v5:java.lang.Object
+# - v6:java.lang.String
+#
+# - return:java.lang.reflect.Field
+
+findField-BB@0x0 : [ findField-BB@0x8 ]
+	0       (00000000) invoke-virtual       v5, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+	1       (00000006) move-result-object   v0
+
+findField-BB@0x8 : [ findField-BB@0xc findField-BB@0x36 ]
+	2       (00000008) if-eqz               v0, +17
+
+findField-BB@0xc : [ findField-BB@0x20 findField-BB@0x28 ]
+	3       (0000000c) invoke-virtual       v0, v6, Ljava/lang/Class;->getDeclaredField(Ljava/lang/String;)Ljava/lang/reflect/Field;
+	4       (00000012) move-result-object   v1
+	5       (00000014) invoke-virtual       v1, Ljava/lang/reflect/Field;->isAccessible()Z
+	6       (0000001a) move-result          v2
+	7       (0000001c) if-nez               v2, +6
+	c:27
+	(Ljava/lang/NoSuchFieldException; -> 2a findField-BB@0x2a)
+
+findField-BB@0x20 : [ findField-BB@0x28 ]
+	8       (00000020) const/4              v2, 1
+	9       (00000022) invoke-virtual       v1, v2, Ljava/lang/reflect/Field;->setAccessible(Z)V
+	c:27
+	(Ljava/lang/NoSuchFieldException; -> 2a findField-BB@0x2a)
+
+findField-BB@0x28 : 
+	10      (00000028) return-object        v1
+
+findField-BB@0x2a : [ findField-BB@0x8 ]
+	11      (0000002a) move-exception       v2
+	12      (0000002c) invoke-virtual       v0, Ljava/lang/Class;->getSuperclass()Ljava/lang/Class;
+	13      (00000032) move-result-object   v0
+	14      (00000034) goto                 -16
+
+findField-BB@0x36 : 
+	15      (00000036) new-instance         v2, Ljava/lang/NoSuchFieldException;
+	16      (0000003a) new-instance         v3, Ljava/lang/StringBuilder;
+	17      (0000003e) invoke-direct        v3, Ljava/lang/StringBuilder;-><init>()V
+	18      (00000044) const-string         v4, 'Field '
+	19      (00000048) invoke-virtual       v3, v4, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	20      (0000004e) move-result-object   v3
+	21      (00000050) invoke-virtual       v3, v6, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	22      (00000056) move-result-object   v3
+	23      (00000058) const-string         v4, ' not found in '
+	24      (0000005c) invoke-virtual       v3, v4, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	25      (00000062) move-result-object   v3
+	26      (00000064) invoke-virtual       v5, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+	27      (0000006a) move-result-object   v4
+	28      (0000006c) invoke-virtual       v3, v4, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+	29      (00000072) move-result-object   v3
+	30      (00000074) invoke-virtual       v3, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+	31      (0000007a) move-result-object   v3
+	32      (0000007c) invoke-direct        v2, v3, Ljava/lang/NoSuchFieldException;-><init>(Ljava/lang/String;)V
+	33      (00000082) throw                v2
+

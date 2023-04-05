@@ -1,0 +1,17 @@
+# Lcom/afwsamples/testdpc/profilepolicy/apprestrictions/ManagedConfigurationsFragment$RestrictionEntryEditDeleteArrayAdapter;-><init>(Lcom/afwsamples/testdpc/profilepolicy/apprestrictions/ManagedConfigurationsFragment; Landroid/content/Context; Ljava/util/List; Lcom/afwsamples/testdpc/common/EditDeleteArrayAdapter$OnEditButtonClickListener; Lcom/afwsamples/testdpc/common/EditDeleteArrayAdapter$OnDeleteButtonClickListener;)V [access_flags=public constructor]
+#
+# Parameters:
+# - local registers: v0...v0
+# - v1:com.afwsamples.testdpc.profilepolicy.apprestrictions.ManagedConfigurationsFragment
+# - v2:android.content.Context
+# - v3:java.util.List
+# - v4:com.afwsamples.testdpc.common.EditDeleteArrayAdapter$OnEditButtonClickListener
+# - v5:com.afwsamples.testdpc.common.EditDeleteArrayAdapter$OnDeleteButtonClickListener
+#
+# - return:void
+
+<init>-BB@0x0 : 
+	0       (00000000) iput-object          v1, v0, Lcom/afwsamples/testdpc/profilepolicy/apprestrictions/ManagedConfigurationsFragment$RestrictionEntryEditDeleteArrayAdapter;->this$0 Lcom/afwsamples/testdpc/profilepolicy/apprestrictions/ManagedConfigurationsFragment;
+	1       (00000004) invoke-direct        v0, v2, v3, v4, v5, Lcom/afwsamples/testdpc/common/EditDeleteArrayAdapter;-><init>(Landroid/content/Context; Ljava/util/List; Lcom/afwsamples/testdpc/common/EditDeleteArrayAdapter$OnEditButtonClickListener; Lcom/afwsamples/testdpc/common/EditDeleteArrayAdapter$OnDeleteButtonClickListener;)V
+	2       (0000000a) return-void          
+

@@ -1,0 +1,27 @@
+# Landroidx/appcompat/graphics/drawable/DrawableContainer;->getConstantState()Landroid/graphics/drawable/Drawable$ConstantState; [access_flags=public final]
+#
+# Parameters:
+# local registers: v0...v2
+#
+# - return:android.graphics.drawable.Drawable$ConstantState
+
+getConstantState-BB@0x0 : [ getConstantState-BB@0x10 getConstantState-BB@0x26 ]
+	0       (00000000) iget-object          v0, v2, Landroidx/appcompat/graphics/drawable/DrawableContainer;->mDrawableContainerState Landroidx/appcompat/graphics/drawable/DrawableContainer$DrawableContainerState;
+	1       (00000004) invoke-virtual       v0, Landroidx/appcompat/graphics/drawable/DrawableContainer$DrawableContainerState;->canConstantState()Z
+	2       (0000000a) move-result          v0
+	3       (0000000c) if-eqz               v0, +d
+
+getConstantState-BB@0x10 : [ getConstantState-BB@0x24 ]
+	4       (00000010) iget-object          v0, v2, Landroidx/appcompat/graphics/drawable/DrawableContainer;->mDrawableContainerState Landroidx/appcompat/graphics/drawable/DrawableContainer$DrawableContainerState;
+	5       (00000014) invoke-virtual       v2, Landroidx/appcompat/graphics/drawable/DrawableContainer;->getChangingConfigurations()I
+	6       (0000001a) move-result          v1
+	7       (0000001c) iput                 v1, v0, Landroidx/appcompat/graphics/drawable/DrawableContainer$DrawableContainerState;->mChangingConfigurations I
+	8       (00000020) iget-object          v0, v2, Landroidx/appcompat/graphics/drawable/DrawableContainer;->mDrawableContainerState Landroidx/appcompat/graphics/drawable/DrawableContainer$DrawableContainerState;
+
+getConstantState-BB@0x24 : 
+	9       (00000024) return-object        v0
+
+getConstantState-BB@0x26 : [ getConstantState-BB@0x24 ]
+	10      (00000026) const/4              v0, 0
+	11      (00000028) goto                 -2
+

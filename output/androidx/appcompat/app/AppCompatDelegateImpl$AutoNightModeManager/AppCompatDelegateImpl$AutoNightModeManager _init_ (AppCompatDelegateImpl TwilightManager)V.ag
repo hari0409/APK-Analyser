@@ -1,0 +1,18 @@
+# Landroidx/appcompat/app/AppCompatDelegateImpl$AutoNightModeManager;-><init>(Landroidx/appcompat/app/AppCompatDelegateImpl; Landroidx/appcompat/app/TwilightManager;)V [access_flags=constructor]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:androidx.appcompat.app.AppCompatDelegateImpl
+# - v3:androidx.appcompat.app.TwilightManager
+#
+# - return:void
+
+<init>-BB@0x0 : 
+	0       (00000000) iput-object          v2, v1, Landroidx/appcompat/app/AppCompatDelegateImpl$AutoNightModeManager;->this$0 Landroidx/appcompat/app/AppCompatDelegateImpl;
+	1       (00000004) invoke-direct        v1, Ljava/lang/Object;-><init>()V
+	2       (0000000a) iput-object          v3, v1, Landroidx/appcompat/app/AppCompatDelegateImpl$AutoNightModeManager;->mTwilightManager Landroidx/appcompat/app/TwilightManager;
+	3       (0000000e) invoke-virtual       v3, Landroidx/appcompat/app/TwilightManager;->isNight()Z
+	4       (00000014) move-result          v0
+	5       (00000016) iput-boolean         v0, v1, Landroidx/appcompat/app/AppCompatDelegateImpl$AutoNightModeManager;->mIsNight Z
+	6       (0000001a) return-void          
+

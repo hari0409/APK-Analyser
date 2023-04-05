@@ -1,0 +1,37 @@
+# Lcom/afwsamples/testdpc/util/Flags$CommandMethodImpl12;-><init>(Lcom/afwsamples/testdpc/util/Flags$CommandCallback12Params; Lcom/afwsamples/testdpc/util/Flags$Param; Lcom/afwsamples/testdpc/util/Flags$Param; Lcom/afwsamples/testdpc/util/Flags$Param; Lcom/afwsamples/testdpc/util/Flags$Param; Lcom/afwsamples/testdpc/util/Flags$Param; Lcom/afwsamples/testdpc/util/Flags$Param; Lcom/afwsamples/testdpc/util/Flags$Param; Lcom/afwsamples/testdpc/util/Flags$Param; Lcom/afwsamples/testdpc/util/Flags$Param; Lcom/afwsamples/testdpc/util/Flags$Param; Lcom/afwsamples/testdpc/util/Flags$Param; Lcom/afwsamples/testdpc/util/Flags$Param;)V [access_flags=private constructor]
+#
+# Parameters:
+# - local registers: v0...v0
+# - v1:com.afwsamples.testdpc.util.Flags$CommandCallback12Params
+# - v2:com.afwsamples.testdpc.util.Flags$Param
+# - v3:com.afwsamples.testdpc.util.Flags$Param
+# - v4:com.afwsamples.testdpc.util.Flags$Param
+# - v5:com.afwsamples.testdpc.util.Flags$Param
+# - v6:com.afwsamples.testdpc.util.Flags$Param
+# - v7:com.afwsamples.testdpc.util.Flags$Param
+# - v8:com.afwsamples.testdpc.util.Flags$Param
+# - v9:com.afwsamples.testdpc.util.Flags$Param
+# - v10:com.afwsamples.testdpc.util.Flags$Param
+# - v11:com.afwsamples.testdpc.util.Flags$Param
+# - v12:com.afwsamples.testdpc.util.Flags$Param
+# - v13:com.afwsamples.testdpc.util.Flags$Param
+#
+# - return:void
+
+<init>-BB@0x0 : 
+	0       (00000000) invoke-direct        v0, Ljava/lang/Object;-><init>()V
+	1       (00000006) iput-object          v1, v0, Lcom/afwsamples/testdpc/util/Flags$CommandMethodImpl12;->callback Lcom/afwsamples/testdpc/util/Flags$CommandCallback12Params;
+	2       (0000000a) iput-object          v2, v0, Lcom/afwsamples/testdpc/util/Flags$CommandMethodImpl12;->param1 Lcom/afwsamples/testdpc/util/Flags$Param;
+	3       (0000000e) iput-object          v3, v0, Lcom/afwsamples/testdpc/util/Flags$CommandMethodImpl12;->param2 Lcom/afwsamples/testdpc/util/Flags$Param;
+	4       (00000012) iput-object          v4, v0, Lcom/afwsamples/testdpc/util/Flags$CommandMethodImpl12;->param3 Lcom/afwsamples/testdpc/util/Flags$Param;
+	5       (00000016) iput-object          v5, v0, Lcom/afwsamples/testdpc/util/Flags$CommandMethodImpl12;->param4 Lcom/afwsamples/testdpc/util/Flags$Param;
+	6       (0000001a) iput-object          v6, v0, Lcom/afwsamples/testdpc/util/Flags$CommandMethodImpl12;->param5 Lcom/afwsamples/testdpc/util/Flags$Param;
+	7       (0000001e) iput-object          v7, v0, Lcom/afwsamples/testdpc/util/Flags$CommandMethodImpl12;->param6 Lcom/afwsamples/testdpc/util/Flags$Param;
+	8       (00000022) iput-object          v8, v0, Lcom/afwsamples/testdpc/util/Flags$CommandMethodImpl12;->param7 Lcom/afwsamples/testdpc/util/Flags$Param;
+	9       (00000026) iput-object          v9, v0, Lcom/afwsamples/testdpc/util/Flags$CommandMethodImpl12;->param8 Lcom/afwsamples/testdpc/util/Flags$Param;
+	10      (0000002a) iput-object          v10, v0, Lcom/afwsamples/testdpc/util/Flags$CommandMethodImpl12;->param9 Lcom/afwsamples/testdpc/util/Flags$Param;
+	11      (0000002e) iput-object          v11, v0, Lcom/afwsamples/testdpc/util/Flags$CommandMethodImpl12;->param10 Lcom/afwsamples/testdpc/util/Flags$Param;
+	12      (00000032) iput-object          v12, v0, Lcom/afwsamples/testdpc/util/Flags$CommandMethodImpl12;->param11 Lcom/afwsamples/testdpc/util/Flags$Param;
+	13      (00000036) iput-object          v13, v0, Lcom/afwsamples/testdpc/util/Flags$CommandMethodImpl12;->param12 Lcom/afwsamples/testdpc/util/Flags$Param;
+	14      (0000003a) return-void          
+

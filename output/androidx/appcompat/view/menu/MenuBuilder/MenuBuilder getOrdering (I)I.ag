@@ -1,0 +1,34 @@
+# Landroidx/appcompat/view/menu/MenuBuilder;->getOrdering(I)I [access_flags=private static]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:int
+#
+# - return:int
+
+getOrdering-BB@0x0 : [ getOrdering-BB@0xe getOrdering-BB@0x18 ]
+	0       (00000000) const/high16         v1, -1 # [nan]
+	1       (00000004) and-int/2addr        v1, v3
+	2       (00000006) shr-int/lit8         v0, v1, 16
+	3       (0000000a) if-ltz               v0, +7
+
+getOrdering-BB@0xe : [ getOrdering-BB@0x18 getOrdering-BB@0x28 ]
+	4       (0000000e) sget-object          v1, Landroidx/appcompat/view/menu/MenuBuilder;->sCategoryToOrder [I
+	5       (00000012) array-length         v1, v1
+	6       (00000014) if-lt                v0, v1, +a
+
+getOrdering-BB@0x18 : 
+	7       (00000018) new-instance         v1, Ljava/lang/IllegalArgumentException;
+	8       (0000001c) const-string         v2, 'order does not contain a valid category.'
+	9       (00000020) invoke-direct        v1, v2, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+	10      (00000026) throw                v1
+
+getOrdering-BB@0x28 : 
+	11      (00000028) sget-object          v1, Landroidx/appcompat/view/menu/MenuBuilder;->sCategoryToOrder [I
+	12      (0000002c) aget                 v1, v1, v0
+	13      (00000030) shl-int/lit8         v1, v1, 16
+	14      (00000034) const                v2, 65535 # [9.183409485952689e-41]
+	15      (0000003a) and-int/2addr        v2, v3
+	16      (0000003c) or-int/2addr         v1, v2
+	17      (0000003e) return               v1
+

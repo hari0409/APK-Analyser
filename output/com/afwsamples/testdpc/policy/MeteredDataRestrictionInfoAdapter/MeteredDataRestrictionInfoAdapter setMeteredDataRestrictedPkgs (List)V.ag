@@ -1,0 +1,36 @@
+# Lcom/afwsamples/testdpc/policy/MeteredDataRestrictionInfoAdapter;->setMeteredDataRestrictedPkgs(Ljava/util/List;)V [access_flags=private]
+#
+# Parameters:
+# - local registers: v0...v7
+# - v8:java.util.List
+#
+# - return:void
+
+setMeteredDataRestrictedPkgs-BB@0x0 : [ setMeteredDataRestrictedPkgs-BB@0x26 setMeteredDataRestrictedPkgs-BB@0x54 ]
+	0       (00000000) const/4              v6, 1
+	1       (00000002) iget-object          v1, v7, Lcom/afwsamples/testdpc/policy/MeteredDataRestrictionInfoAdapter;->mDevicePolicyManager Landroid/app/admin/DevicePolicyManager;
+	2       (00000006) iget-object          v2, v7, Lcom/afwsamples/testdpc/policy/MeteredDataRestrictionInfoAdapter;->mContext Landroid/content/Context;
+	3       (0000000a) invoke-static        v2, Lcom/afwsamples/testdpc/DeviceAdminReceiver;->getComponentName(Landroid/content/Context;)Landroid/content/ComponentName;
+	4       (00000010) move-result-object   v2
+	5       (00000012) invoke-virtual       v1, v2, v8, Landroid/app/admin/DevicePolicyManager;->setMeteredDataDisabledPackages(Landroid/content/ComponentName; Ljava/util/List;)Ljava/util/List;
+	6       (00000018) move-result-object   v0
+	7       (0000001a) invoke-interface     v0, Ljava/util/List;->isEmpty()Z
+	8       (00000020) move-result          v1
+	9       (00000022) if-nez               v1, +19
+
+setMeteredDataRestrictedPkgs-BB@0x26 : [ setMeteredDataRestrictedPkgs-BB@0x54 ]
+	10      (00000026) iget-object          v1, v7, Lcom/afwsamples/testdpc/policy/MeteredDataRestrictionInfoAdapter;->mContext Landroid/content/Context;
+	11      (0000002a) iget-object          v2, v7, Lcom/afwsamples/testdpc/policy/MeteredDataRestrictionInfoAdapter;->mContext Landroid/content/Context;
+	12      (0000002e) const                v3, 2131689944 # [1.900891766945759e+38]
+	13      (00000034) new-array            v4, v6, [Ljava/lang/Object;
+	14      (00000038) const/4              v5, 0
+	15      (0000003a) aput-object          v0, v4, v5
+	16      (0000003e) invoke-virtual       v2, v3, v4, Landroid/content/Context;->getString(I [Ljava/lang/Object;)Ljava/lang/String;
+	17      (00000044) move-result-object   v2
+	18      (00000046) invoke-static        v1, v2, v6, Landroid/widget/Toast;->makeText(Landroid/content/Context; Ljava/lang/CharSequence; I)Landroid/widget/Toast;
+	19      (0000004c) move-result-object   v1
+	20      (0000004e) invoke-virtual       v1, Landroid/widget/Toast;->show()V
+
+setMeteredDataRestrictedPkgs-BB@0x54 : 
+	21      (00000054) return-void          
+

@@ -1,0 +1,38 @@
+# Landroidx/appcompat/app/AppCompatDelegateImpl;->onPanelClosed(I)V [access_flags=]
+#
+# Parameters:
+# - local registers: v0...v4
+# - v5:int
+#
+# - return:void
+
+onPanelClosed-BB@0x0 : [ onPanelClosed-BB@0xa onPanelClosed-BB@0x1e ]
+	0       (00000000) const/4              v3, 0
+	1       (00000002) const/16             v2, 108
+	2       (00000006) if-ne                v5, v2, +c
+
+onPanelClosed-BB@0xa : [ onPanelClosed-BB@0x16 onPanelClosed-BB@0x1c ]
+	3       (0000000a) invoke-virtual       v4, Landroidx/appcompat/app/AppCompatDelegateImpl;->getSupportActionBar()Landroidx/appcompat/app/ActionBar;
+	4       (00000010) move-result-object   v0
+	5       (00000012) if-eqz               v0, +5
+
+onPanelClosed-BB@0x16 : [ onPanelClosed-BB@0x1c ]
+	6       (00000016) invoke-virtual       v0, v3, Landroidx/appcompat/app/ActionBar;->dispatchMenuVisibilityChanged(Z)V
+
+onPanelClosed-BB@0x1c : 
+	7       (0000001c) return-void          
+
+onPanelClosed-BB@0x1e : [ onPanelClosed-BB@0x22 onPanelClosed-BB@0x1c ]
+	8       (0000001e) if-nez               v5, -1
+
+onPanelClosed-BB@0x22 : [ onPanelClosed-BB@0x34 onPanelClosed-BB@0x1c ]
+	9       (00000022) const/4              v2, 1
+	10      (00000024) invoke-virtual       v4, v5, v2, Landroidx/appcompat/app/AppCompatDelegateImpl;->getPanelState(I Z)Landroidx/appcompat/app/AppCompatDelegateImpl$PanelFeatureState;
+	11      (0000002a) move-result-object   v1
+	12      (0000002c) iget-boolean         v2, v1, Landroidx/appcompat/app/AppCompatDelegateImpl$PanelFeatureState;->isOpen Z
+	13      (00000030) if-eqz               v2, -a
+
+onPanelClosed-BB@0x34 : [ onPanelClosed-BB@0x1c ]
+	14      (00000034) invoke-virtual       v4, v1, v3, Landroidx/appcompat/app/AppCompatDelegateImpl;->closePanel(Landroidx/appcompat/app/AppCompatDelegateImpl$PanelFeatureState; Z)V
+	15      (0000003a) goto                 -f
+

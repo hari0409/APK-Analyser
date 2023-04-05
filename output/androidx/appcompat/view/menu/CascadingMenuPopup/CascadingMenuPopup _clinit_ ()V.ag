@@ -1,0 +1,12 @@
+# Landroidx/appcompat/view/menu/CascadingMenuPopup;-><clinit>()V [access_flags=static constructor]
+#
+# Parameters:
+# local registers: v0...v0
+#
+# - return:void
+
+<clinit>-BB@0x0 : 
+	0       (00000000) sget                 v0, Landroidx/appcompat/R$layout;->abc_cascading_menu_item_layout I
+	1       (00000004) sput                 v0, Landroidx/appcompat/view/menu/CascadingMenuPopup;->ITEM_LAYOUT I
+	2       (00000008) return-void          
+

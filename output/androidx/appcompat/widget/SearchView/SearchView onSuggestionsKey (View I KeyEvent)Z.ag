@@ -1,0 +1,100 @@
+# Landroidx/appcompat/widget/SearchView;->onSuggestionsKey(Landroid/view/View; I Landroid/view/KeyEvent;)Z [access_flags=]
+#
+# Parameters:
+# - local registers: v0...v6
+# - v7:android.view.View
+# - v8:int
+# - v9:android.view.KeyEvent
+#
+# - return:boolean
+
+onSuggestionsKey-BB@0x0 : [ onSuggestionsKey-BB@0x10 onSuggestionsKey-BB@0x12 ]
+	0       (00000000) const/16             v5, 21
+	1       (00000004) const/4              v3, 1
+	2       (00000006) const/4              v2, 0
+	3       (00000008) iget-object          v4, v6, Landroidx/appcompat/widget/SearchView;->mSearchable Landroid/app/SearchableInfo;
+	4       (0000000c) if-nez               v4, +3
+
+onSuggestionsKey-BB@0x10 : 
+	5       (00000010) return               v2
+
+onSuggestionsKey-BB@0x12 : [ onSuggestionsKey-BB@0x1a onSuggestionsKey-BB@0x10 ]
+	6       (00000012) iget-object          v4, v6, Landroidx/appcompat/widget/SearchView;->mSuggestionsAdapter Landroidx/cursoradapter/widget/CursorAdapter;
+	7       (00000016) if-eqz               v4, -3
+
+onSuggestionsKey-BB@0x1a : [ onSuggestionsKey-BB@0x26 onSuggestionsKey-BB@0x10 ]
+	8       (0000001a) invoke-virtual       v9, Landroid/view/KeyEvent;->getAction()I
+	9       (00000020) move-result          v4
+	10      (00000022) if-nez               v4, -9
+
+onSuggestionsKey-BB@0x26 : [ onSuggestionsKey-BB@0x32 onSuggestionsKey-BB@0x10 ]
+	11      (00000026) invoke-virtual       v9, Landroid/view/KeyEvent;->hasNoModifiers()Z
+	12      (0000002c) move-result          v4
+	13      (0000002e) if-eqz               v4, -f
+
+onSuggestionsKey-BB@0x32 : [ onSuggestionsKey-BB@0x3a onSuggestionsKey-BB@0x4a ]
+	14      (00000032) const/16             v4, 66
+	15      (00000036) if-eq                v8, v4, +a
+
+onSuggestionsKey-BB@0x3a : [ onSuggestionsKey-BB@0x42 onSuggestionsKey-BB@0x4a ]
+	16      (0000003a) const/16             v4, 84
+	17      (0000003e) if-eq                v8, v4, +6
+
+onSuggestionsKey-BB@0x42 : [ onSuggestionsKey-BB@0x4a onSuggestionsKey-BB@0x62 ]
+	18      (00000042) const/16             v4, 61
+	19      (00000046) if-ne                v8, v4, +e
+
+onSuggestionsKey-BB@0x4a : [ onSuggestionsKey-BB@0x10 ]
+	20      (0000004a) iget-object          v3, v6, Landroidx/appcompat/widget/SearchView;->mSearchSrcTextView Landroidx/appcompat/widget/SearchView$SearchAutoComplete;
+	21      (0000004e) invoke-virtual       v3, Landroidx/appcompat/widget/SearchView$SearchAutoComplete;->getListSelection()I
+	22      (00000054) move-result          v0
+	23      (00000056) const/4              v3, 0
+	24      (00000058) invoke-virtual       v6, v0, v2, v3, Landroidx/appcompat/widget/SearchView;->onItemClicked(I I Ljava/lang/String;)Z
+	25      (0000005e) move-result          v2
+	26      (00000060) goto                 -28
+
+onSuggestionsKey-BB@0x62 : [ onSuggestionsKey-BB@0x66 onSuggestionsKey-BB@0x6e ]
+	27      (00000062) if-eq                v8, v5, +6
+
+onSuggestionsKey-BB@0x66 : [ onSuggestionsKey-BB@0x6e onSuggestionsKey-BB@0xb2 ]
+	28      (00000066) const/16             v4, 22
+	29      (0000006a) if-ne                v8, v4, +24
+
+onSuggestionsKey-BB@0x6e : [ onSuggestionsKey-BB@0x72 onSuggestionsKey-BB@0xa4 ]
+	30      (0000006e) if-ne                v8, v5, +1b
+
+onSuggestionsKey-BB@0x72 : [ onSuggestionsKey-BB@0x74 ]
+	31      (00000072) move                 v1, v2
+
+onSuggestionsKey-BB@0x74 : [ onSuggestionsKey-BB@0x10 ]
+	32      (00000074) iget-object          v4, v6, Landroidx/appcompat/widget/SearchView;->mSearchSrcTextView Landroidx/appcompat/widget/SearchView$SearchAutoComplete;
+	33      (00000078) invoke-virtual       v4, v1, Landroidx/appcompat/widget/SearchView$SearchAutoComplete;->setSelection(I)V
+	34      (0000007e) iget-object          v4, v6, Landroidx/appcompat/widget/SearchView;->mSearchSrcTextView Landroidx/appcompat/widget/SearchView$SearchAutoComplete;
+	35      (00000082) invoke-virtual       v4, v2, Landroidx/appcompat/widget/SearchView$SearchAutoComplete;->setListSelection(I)V
+	36      (00000088) iget-object          v2, v6, Landroidx/appcompat/widget/SearchView;->mSearchSrcTextView Landroidx/appcompat/widget/SearchView$SearchAutoComplete;
+	37      (0000008c) invoke-virtual       v2, Landroidx/appcompat/widget/SearchView$SearchAutoComplete;->clearListSelection()V
+	38      (00000092) sget-object          v2, Landroidx/appcompat/widget/SearchView;->HIDDEN_METHOD_INVOKER Landroidx/appcompat/widget/SearchView$AutoCompleteTextViewReflector;
+	39      (00000096) iget-object          v4, v6, Landroidx/appcompat/widget/SearchView;->mSearchSrcTextView Landroidx/appcompat/widget/SearchView$SearchAutoComplete;
+	40      (0000009a) invoke-virtual       v2, v4, v3, Landroidx/appcompat/widget/SearchView$AutoCompleteTextViewReflector;->ensureImeVisible(Landroid/widget/AutoCompleteTextView; Z)V
+	41      (000000a0) move                 v2, v3
+	42      (000000a2) goto                 -49
+
+onSuggestionsKey-BB@0xa4 : [ onSuggestionsKey-BB@0x74 ]
+	43      (000000a4) iget-object          v4, v6, Landroidx/appcompat/widget/SearchView;->mSearchSrcTextView Landroidx/appcompat/widget/SearchView$SearchAutoComplete;
+	44      (000000a8) invoke-virtual       v4, Landroidx/appcompat/widget/SearchView$SearchAutoComplete;->length()I
+	45      (000000ae) move-result          v1
+	46      (000000b0) goto                 -1e
+
+onSuggestionsKey-BB@0xb2 : [ onSuggestionsKey-BB@0xba onSuggestionsKey-BB@0x10 ]
+	47      (000000b2) const/16             v3, 19
+	48      (000000b6) if-ne                v8, v3, -53
+
+onSuggestionsKey-BB@0xba : [ onSuggestionsKey-BB@0xca onSuggestionsKey-BB@0x10 ]
+	49      (000000ba) iget-object          v3, v6, Landroidx/appcompat/widget/SearchView;->mSearchSrcTextView Landroidx/appcompat/widget/SearchView$SearchAutoComplete;
+	50      (000000be) invoke-virtual       v3, Landroidx/appcompat/widget/SearchView$SearchAutoComplete;->getListSelection()I
+	51      (000000c4) move-result          v3
+	52      (000000c6) if-nez               v3, -5b
+
+onSuggestionsKey-BB@0xca : [ onSuggestionsKey-BB@0x10 ]
+	53      (000000ca) goto                 -5d
+

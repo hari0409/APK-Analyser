@@ -1,0 +1,76 @@
+# Landroidx/appcompat/view/menu/MenuAdapter;->getView(I Landroid/view/View; Landroid/view/ViewGroup;)Landroid/view/View; [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v7
+# - v8:int
+# - v9:android.view.View
+# - v10:android.view.ViewGroup
+#
+# - return:android.view.View
+
+getView-BB@0x0 : [ getView-BB@0x8 getView-BB@0x18 ]
+	0       (00000000) const/4              v5, 1
+	1       (00000002) const/4              v6, 0
+	2       (00000004) if-nez               v9, +a
+
+getView-BB@0x8 : [ getView-BB@0x18 ]
+	3       (00000008) iget-object          v3, v7, Landroidx/appcompat/view/menu/MenuAdapter;->mInflater Landroid/view/LayoutInflater;
+	4       (0000000c) iget                 v4, v7, Landroidx/appcompat/view/menu/MenuAdapter;->mItemLayoutRes I
+	5       (00000010) invoke-virtual       v3, v4, v10, v6, Landroid/view/LayoutInflater;->inflate(I Landroid/view/ViewGroup; Z)Landroid/view/View;
+	6       (00000016) move-result-object   v9
+
+getView-BB@0x18 : [ getView-BB@0x30 getView-BB@0x90 ]
+	7       (00000018) invoke-virtual       v7, v8, Landroidx/appcompat/view/menu/MenuAdapter;->getItem(I)Landroidx/appcompat/view/menu/MenuItemImpl;
+	8       (0000001e) move-result-object   v3
+	9       (00000020) invoke-virtual       v3, Landroidx/appcompat/view/menu/MenuItemImpl;->getGroupId()I
+	10      (00000026) move-result          v0
+	11      (00000028) add-int/lit8         v3, v8, -1
+	12      (0000002c) if-ltz               v3, +32
+
+getView-BB@0x30 : [ getView-BB@0x44 ]
+	13      (00000030) add-int/lit8         v3, v8, -1
+	14      (00000034) invoke-virtual       v7, v3, Landroidx/appcompat/view/menu/MenuAdapter;->getItem(I)Landroidx/appcompat/view/menu/MenuItemImpl;
+	15      (0000003a) move-result-object   v3
+	16      (0000003c) invoke-virtual       v3, Landroidx/appcompat/view/menu/MenuItemImpl;->getGroupId()I
+	17      (00000042) move-result          v2
+
+getView-BB@0x44 : [ getView-BB@0x5a getView-BB@0x94 ]
+	18      (00000044) move-object          v3, v9
+	19      (00000046) check-cast           v3, Landroidx/appcompat/view/menu/ListMenuItemView;
+	20      (0000004a) iget-object          v4, v7, Landroidx/appcompat/view/menu/MenuAdapter;->mAdapterMenu Landroidx/appcompat/view/menu/MenuBuilder;
+	21      (0000004e) invoke-virtual       v4, Landroidx/appcompat/view/menu/MenuBuilder;->isGroupDividerEnabled()Z
+	22      (00000054) move-result          v4
+	23      (00000056) if-eqz               v4, +1f
+
+getView-BB@0x5a : [ getView-BB@0x5e getView-BB@0x94 ]
+	24      (0000005a) if-eq                v0, v2, +1d
+
+getView-BB@0x5e : [ getView-BB@0x60 ]
+	25      (0000005e) move                 v4, v5
+
+getView-BB@0x60 : [ getView-BB@0x74 getView-BB@0x80 ]
+	26      (00000060) invoke-virtual       v3, v4, Landroidx/appcompat/view/menu/ListMenuItemView;->setGroupDividerEnabled(Z)V
+	27      (00000066) move-object          v1, v9
+	28      (00000068) check-cast           v1, Landroidx/appcompat/view/menu/MenuView$ItemView;
+	29      (0000006c) iget-boolean         v3, v7, Landroidx/appcompat/view/menu/MenuAdapter;->mForceShowIcon Z
+	30      (00000070) if-eqz               v3, +8
+
+getView-BB@0x74 : [ getView-BB@0x80 ]
+	31      (00000074) move-object          v3, v9
+	32      (00000076) check-cast           v3, Landroidx/appcompat/view/menu/ListMenuItemView;
+	33      (0000007a) invoke-virtual       v3, v5, Landroidx/appcompat/view/menu/ListMenuItemView;->setForceShowIcon(Z)V
+
+getView-BB@0x80 : 
+	34      (00000080) invoke-virtual       v7, v8, Landroidx/appcompat/view/menu/MenuAdapter;->getItem(I)Landroidx/appcompat/view/menu/MenuItemImpl;
+	35      (00000086) move-result-object   v3
+	36      (00000088) invoke-interface     v1, v3, v6, Landroidx/appcompat/view/menu/MenuView$ItemView;->initialize(Landroidx/appcompat/view/menu/MenuItemImpl; I)V
+	37      (0000008e) return-object        v9
+
+getView-BB@0x90 : [ getView-BB@0x44 ]
+	38      (00000090) move                 v2, v0
+	39      (00000092) goto                 -27
+
+getView-BB@0x94 : [ getView-BB@0x60 ]
+	40      (00000094) move                 v4, v6
+	41      (00000096) goto                 -1b
+

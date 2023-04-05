@@ -1,0 +1,70 @@
+# Landroidx/appcompat/widget/SearchView$AutoCompleteTextViewReflector;-><init>()V [access_flags=constructor]
+#
+# Parameters:
+# local registers: v0...v5
+#
+# - return:void
+
+<init>-BB@0x0 : [ <init>-BB@0x6 ]
+	0       (00000000) invoke-direct        v5, Ljava/lang/Object;-><init>()V
+
+<init>-BB@0x6 : [ <init>-BB@0x2c ]
+	1       (00000006) const-class          v0, Landroid/widget/AutoCompleteTextView;
+	2       (0000000a) const-string         v1, 'doBeforeTextChanged'
+	3       (0000000e) const/4              v2, 0
+	4       (00000010) new-array            v2, v2, [Ljava/lang/Class;
+	5       (00000014) invoke-virtual       v0, v1, v2, Ljava/lang/Class;->getDeclaredMethod(Ljava/lang/String; [Ljava/lang/Class;)Ljava/lang/reflect/Method;
+	6       (0000001a) move-result-object   v0
+	7       (0000001c) iput-object          v0, v5, Landroidx/appcompat/widget/SearchView$AutoCompleteTextViewReflector;->doBeforeTextChanged Ljava/lang/reflect/Method;
+	8       (00000020) iget-object          v0, v5, Landroidx/appcompat/widget/SearchView$AutoCompleteTextViewReflector;->doBeforeTextChanged Ljava/lang/reflect/Method;
+	9       (00000024) const/4              v1, 1
+	10      (00000026) invoke-virtual       v0, v1, Ljava/lang/reflect/Method;->setAccessible(Z)V
+	6:2b
+	(Ljava/lang/NoSuchMethodException; -> 8c <init>-BB@0x8c)
+
+<init>-BB@0x2c : [ <init>-BB@0x52 ]
+	11      (0000002c) const-class          v0, Landroid/widget/AutoCompleteTextView;
+	12      (00000030) const-string         v1, 'doAfterTextChanged'
+	13      (00000034) const/4              v2, 0
+	14      (00000036) new-array            v2, v2, [Ljava/lang/Class;
+	15      (0000003a) invoke-virtual       v0, v1, v2, Ljava/lang/Class;->getDeclaredMethod(Ljava/lang/String; [Ljava/lang/Class;)Ljava/lang/reflect/Method;
+	16      (00000040) move-result-object   v0
+	17      (00000042) iput-object          v0, v5, Landroidx/appcompat/widget/SearchView$AutoCompleteTextViewReflector;->doAfterTextChanged Ljava/lang/reflect/Method;
+	18      (00000046) iget-object          v0, v5, Landroidx/appcompat/widget/SearchView$AutoCompleteTextViewReflector;->doAfterTextChanged Ljava/lang/reflect/Method;
+	19      (0000004a) const/4              v1, 1
+	20      (0000004c) invoke-virtual       v0, v1, Ljava/lang/reflect/Method;->setAccessible(Z)V
+	2c:51
+	(Ljava/lang/NoSuchMethodException; -> 88 <init>-BB@0x88)
+
+<init>-BB@0x52 : [ <init>-BB@0x82 ]
+	21      (00000052) const-class          v0, Landroid/widget/AutoCompleteTextView;
+	22      (00000056) const-string         v1, 'ensureImeVisible'
+	23      (0000005a) const/4              v2, 1
+	24      (0000005c) new-array            v2, v2, [Ljava/lang/Class;
+	25      (00000060) const/4              v3, 0
+	26      (00000062) sget-object          v4, Ljava/lang/Boolean;->TYPE Ljava/lang/Class;
+	27      (00000066) aput-object          v4, v2, v3
+	28      (0000006a) invoke-virtual       v0, v1, v2, Ljava/lang/Class;->getMethod(Ljava/lang/String; [Ljava/lang/Class;)Ljava/lang/reflect/Method;
+	29      (00000070) move-result-object   v0
+	30      (00000072) iput-object          v0, v5, Landroidx/appcompat/widget/SearchView$AutoCompleteTextViewReflector;->ensureImeVisible Ljava/lang/reflect/Method;
+	31      (00000076) iget-object          v0, v5, Landroidx/appcompat/widget/SearchView$AutoCompleteTextViewReflector;->ensureImeVisible Ljava/lang/reflect/Method;
+	32      (0000007a) const/4              v1, 1
+	33      (0000007c) invoke-virtual       v0, v1, Ljava/lang/reflect/Method;->setAccessible(Z)V
+	52:81
+	(Ljava/lang/NoSuchMethodException; -> 84 <init>-BB@0x84)
+
+<init>-BB@0x82 : 
+	34      (00000082) return-void          
+
+<init>-BB@0x84 : [ <init>-BB@0x82 ]
+	35      (00000084) move-exception       v0
+	36      (00000086) goto                 -2
+
+<init>-BB@0x88 : [ <init>-BB@0x52 ]
+	37      (00000088) move-exception       v0
+	38      (0000008a) goto                 -1c
+
+<init>-BB@0x8c : [ <init>-BB@0x2c ]
+	39      (0000008c) move-exception       v0
+	40      (0000008e) goto                 -31
+

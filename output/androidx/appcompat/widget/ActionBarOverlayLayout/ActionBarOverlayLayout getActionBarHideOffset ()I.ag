@@ -1,0 +1,25 @@
+# Landroidx/appcompat/widget/ActionBarOverlayLayout;->getActionBarHideOffset()I [access_flags=public]
+#
+# Parameters:
+# local registers: v0...v1
+#
+# - return:int
+
+getActionBarHideOffset-BB@0x0 : [ getActionBarHideOffset-BB@0x8 getActionBarHideOffset-BB@0x1a ]
+	0       (00000000) iget-object          v0, v1, Landroidx/appcompat/widget/ActionBarOverlayLayout;->mActionBarTop Landroidx/appcompat/widget/ActionBarContainer;
+	1       (00000004) if-eqz               v0, +b
+
+getActionBarHideOffset-BB@0x8 : [ getActionBarHideOffset-BB@0x18 ]
+	2       (00000008) iget-object          v0, v1, Landroidx/appcompat/widget/ActionBarOverlayLayout;->mActionBarTop Landroidx/appcompat/widget/ActionBarContainer;
+	3       (0000000c) invoke-virtual       v0, Landroidx/appcompat/widget/ActionBarContainer;->getTranslationY()F
+	4       (00000012) move-result          v0
+	5       (00000014) float-to-int         v0, v0
+	6       (00000016) neg-int              v0, v0
+
+getActionBarHideOffset-BB@0x18 : 
+	7       (00000018) return               v0
+
+getActionBarHideOffset-BB@0x1a : [ getActionBarHideOffset-BB@0x18 ]
+	8       (0000001a) const/4              v0, 0
+	9       (0000001c) goto                 -2
+

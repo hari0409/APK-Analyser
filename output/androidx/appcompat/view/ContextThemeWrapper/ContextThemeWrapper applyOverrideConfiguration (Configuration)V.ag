@@ -1,0 +1,34 @@
+# Landroidx/appcompat/view/ContextThemeWrapper;->applyOverrideConfiguration(Landroid/content/res/Configuration;)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:android.content.res.Configuration
+#
+# - return:void
+
+applyOverrideConfiguration-BB@0x0 : [ applyOverrideConfiguration-BB@0x8 applyOverrideConfiguration-BB@0x18 ]
+	0       (00000000) iget-object          v0, v2, Landroidx/appcompat/view/ContextThemeWrapper;->mResources Landroid/content/res/Resources;
+	1       (00000004) if-eqz               v0, +a
+
+applyOverrideConfiguration-BB@0x8 : 
+	2       (00000008) new-instance         v0, Ljava/lang/IllegalStateException;
+	3       (0000000c) const-string         v1, 'getResources() or getAssets() has already been called'
+	4       (00000010) invoke-direct        v0, v1, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+	5       (00000016) throw                v0
+
+applyOverrideConfiguration-BB@0x18 : [ applyOverrideConfiguration-BB@0x20 applyOverrideConfiguration-BB@0x30 ]
+	6       (00000018) iget-object          v0, v2, Landroidx/appcompat/view/ContextThemeWrapper;->mOverrideConfiguration Landroid/content/res/Configuration;
+	7       (0000001c) if-eqz               v0, +a
+
+applyOverrideConfiguration-BB@0x20 : 
+	8       (00000020) new-instance         v0, Ljava/lang/IllegalStateException;
+	9       (00000024) const-string         v1, 'Override configuration has already been set'
+	10      (00000028) invoke-direct        v0, v1, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+	11      (0000002e) throw                v0
+
+applyOverrideConfiguration-BB@0x30 : 
+	12      (00000030) new-instance         v0, Landroid/content/res/Configuration;
+	13      (00000034) invoke-direct        v0, v3, Landroid/content/res/Configuration;-><init>(Landroid/content/res/Configuration;)V
+	14      (0000003a) iput-object          v0, v2, Landroidx/appcompat/view/ContextThemeWrapper;->mOverrideConfiguration Landroid/content/res/Configuration;
+	15      (0000003e) return-void          
+

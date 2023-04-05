@@ -1,0 +1,45 @@
+# Lcom/afwsamples/testdpc/policy/keyguard/SetTrustAgentConfigFragment;->loadResolveInfoList()Ljava/util/List; [access_flags=protected]
+#
+# Parameters:
+# local registers: v0...v8
+#
+# - return:java.util.List
+
+loadResolveInfoList-BB@0x0 : [ loadResolveInfoList-BB@0x3e ]
+	0       (00000000) invoke-virtual       v8, Lcom/afwsamples/testdpc/policy/keyguard/SetTrustAgentConfigFragment;->getActivity()Landroid/app/Activity;
+	1       (00000006) move-result-object   v7
+	2       (00000008) invoke-virtual       v7, Landroid/app/Activity;->getPackageManager()Landroid/content/pm/PackageManager;
+	3       (0000000e) move-result-object   v3
+	4       (00000010) new-instance         v6, Landroid/content/Intent;
+	5       (00000014) const-string         v7, 'android.service.trust.TrustAgentService'
+	6       (00000018) invoke-direct        v6, v7, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
+	7       (0000001e) const/16             v7, 128
+	8       (00000022) invoke-virtual       v3, v6, v7, Landroid/content/pm/PackageManager;->queryIntentServices(Landroid/content/Intent; I)Ljava/util/List;
+	9       (00000028) move-result-object   v5
+	10      (0000002a) new-instance         v0, Ljava/util/ArrayList;
+	11      (0000002e) invoke-direct        v0, Ljava/util/ArrayList;-><init>()V
+	12      (00000034) invoke-interface     v5, Ljava/util/List;->size()I
+	13      (0000003a) move-result          v1
+	14      (0000003c) const/4              v2, 0
+
+loadResolveInfoList-BB@0x3e : [ loadResolveInfoList-BB@0x42 loadResolveInfoList-BB@0x64 ]
+	15      (0000003e) if-ge                v2, v1, +13
+
+loadResolveInfoList-BB@0x42 : [ loadResolveInfoList-BB@0x56 loadResolveInfoList-BB@0x5c ]
+	16      (00000042) invoke-interface     v5, v2, Ljava/util/List;->get(I)Ljava/lang/Object;
+	17      (00000048) move-result-object   v4
+	18      (0000004a) check-cast           v4, Landroid/content/pm/ResolveInfo;
+	19      (0000004e) iget-object          v7, v4, Landroid/content/pm/ResolveInfo;->serviceInfo Landroid/content/pm/ServiceInfo;
+	20      (00000052) if-nez               v7, +5
+
+loadResolveInfoList-BB@0x56 : [ loadResolveInfoList-BB@0x3e ]
+	21      (00000056) add-int/lit8         v2, v2, 1
+	22      (0000005a) goto                 -e
+
+loadResolveInfoList-BB@0x5c : [ loadResolveInfoList-BB@0x56 ]
+	23      (0000005c) invoke-interface     v0, v4, Ljava/util/List;->add(Ljava/lang/Object;)Z
+	24      (00000062) goto                 -6
+
+loadResolveInfoList-BB@0x64 : 
+	25      (00000064) return-object        v0
+

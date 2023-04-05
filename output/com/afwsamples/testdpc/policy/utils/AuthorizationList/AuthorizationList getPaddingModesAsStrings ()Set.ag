@@ -1,0 +1,85 @@
+# Lcom/afwsamples/testdpc/policy/utils/AuthorizationList;->getPaddingModesAsStrings()Ljava/util/Set; [access_flags=public]
+#
+# Parameters:
+# local registers: v0...v5
+#
+# - return:java.util.Set
+
+getPaddingModesAsStrings-BB@0x0 : [ getPaddingModesAsStrings-BB@0x8 getPaddingModesAsStrings-BB@0x12 ]
+	0       (00000000) iget-object          v2, v5, Lcom/afwsamples/testdpc/policy/utils/AuthorizationList;->paddingModes Ljava/util/Set;
+	1       (00000004) if-nez               v2, +7
+
+getPaddingModesAsStrings-BB@0x8 : [ getPaddingModesAsStrings-BB@0x10 ]
+	2       (00000008) invoke-static        Lcom/google/common/collect/ImmutableSet;->of()Lcom/google/common/collect/ImmutableSet;
+	3       (0000000e) move-result-object   v2
+
+getPaddingModesAsStrings-BB@0x10 : 
+	4       (00000010) return-object        v2
+
+getPaddingModesAsStrings-BB@0x12 : [ getPaddingModesAsStrings-BB@0x26 ]
+	5       (00000012) invoke-static        Lcom/google/common/collect/ImmutableSet;->builder()Lcom/google/common/collect/ImmutableSet$Builder;
+	6       (00000018) move-result-object   v0
+	7       (0000001a) iget-object          v2, v5, Lcom/afwsamples/testdpc/policy/utils/AuthorizationList;->paddingModes Ljava/util/Set;
+	8       (0000001e) invoke-interface     v2, Ljava/util/Set;->iterator()Ljava/util/Iterator;
+	9       (00000024) move-result-object   v3
+
+getPaddingModesAsStrings-BB@0x26 : [ getPaddingModesAsStrings-BB@0x32 getPaddingModesAsStrings-BB@0xba ]
+	10      (00000026) invoke-interface     v3, Ljava/util/Iterator;->hasNext()Z
+	11      (0000002c) move-result          v2
+	12      (0000002e) if-eqz               v2, +46
+
+getPaddingModesAsStrings-BB@0x32 : [ D:getPaddingModesAsStrings-BB@0x4c 1:getPaddingModesAsStrings-BB@0x7e 2:getPaddingModesAsStrings-BB@0x8a 3:getPaddingModesAsStrings-BB@0xae 4:getPaddingModesAsStrings-BB@0x96 5:getPaddingModesAsStrings-BB@0xa2 ]
+	13      (00000032) invoke-interface     v3, Ljava/util/Iterator;->next()Ljava/lang/Object;
+	14      (00000038) move-result-object   v2
+	15      (0000003a) check-cast           v2, Ljava/lang/Integer;
+	16      (0000003e) invoke-virtual       v2, Ljava/lang/Integer;->intValue()I
+	17      (00000044) move-result          v1
+	18      (00000046) packed-switch        v1, +3f (0xc4)
+
+getPaddingModesAsStrings-BB@0x4c : 
+	19      (0000004c) new-instance         v2, Ljava/security/cert/CertificateParsingException;
+	20      (00000050) new-instance         v3, Ljava/lang/StringBuilder;
+	21      (00000054) invoke-direct        v3, Ljava/lang/StringBuilder;-><init>()V
+	22      (0000005a) const-string         v4, 'Invalid padding mode '
+	23      (0000005e) invoke-virtual       v3, v4, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	24      (00000064) move-result-object   v3
+	25      (00000066) invoke-virtual       v3, v1, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+	26      (0000006c) move-result-object   v3
+	27      (0000006e) invoke-virtual       v3, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+	28      (00000074) move-result-object   v3
+	29      (00000076) invoke-direct        v2, v3, Ljava/security/cert/CertificateParsingException;-><init>(Ljava/lang/String;)V
+	30      (0000007c) throw                v2
+
+getPaddingModesAsStrings-BB@0x7e : [ getPaddingModesAsStrings-BB@0x26 ]
+	31      (0000007e) const-string         v2, 'NoPadding'
+	32      (00000082) invoke-virtual       v0, v2, Lcom/google/common/collect/ImmutableSet$Builder;->add(Ljava/lang/Object;)Lcom/google/common/collect/ImmutableSet$Builder;
+	33      (00000088) goto                 -31
+
+getPaddingModesAsStrings-BB@0x8a : [ getPaddingModesAsStrings-BB@0x26 ]
+	34      (0000008a) const-string         v2, 'OAEPPadding'
+	35      (0000008e) invoke-virtual       v0, v2, Lcom/google/common/collect/ImmutableSet$Builder;->add(Ljava/lang/Object;)Lcom/google/common/collect/ImmutableSet$Builder;
+	36      (00000094) goto                 -37
+
+getPaddingModesAsStrings-BB@0x96 : [ getPaddingModesAsStrings-BB@0x26 ]
+	37      (00000096) const-string         v2, 'PKCS1Padding'
+	38      (0000009a) invoke-virtual       v0, v2, Lcom/google/common/collect/ImmutableSet$Builder;->add(Ljava/lang/Object;)Lcom/google/common/collect/ImmutableSet$Builder;
+	39      (000000a0) goto                 -3d
+
+getPaddingModesAsStrings-BB@0xa2 : [ getPaddingModesAsStrings-BB@0x26 ]
+	40      (000000a2) const-string         v2, 'PKCS1'
+	41      (000000a6) invoke-virtual       v0, v2, Lcom/google/common/collect/ImmutableSet$Builder;->add(Ljava/lang/Object;)Lcom/google/common/collect/ImmutableSet$Builder;
+	42      (000000ac) goto                 -43
+
+getPaddingModesAsStrings-BB@0xae : [ getPaddingModesAsStrings-BB@0x26 ]
+	43      (000000ae) const-string         v2, 'PSS'
+	44      (000000b2) invoke-virtual       v0, v2, Lcom/google/common/collect/ImmutableSet$Builder;->add(Ljava/lang/Object;)Lcom/google/common/collect/ImmutableSet$Builder;
+	45      (000000b8) goto                 -49
+
+getPaddingModesAsStrings-BB@0xba : [ getPaddingModesAsStrings-BB@0x10 ]
+	46      (000000ba) invoke-virtual       v0, Lcom/google/common/collect/ImmutableSet$Builder;->build()Lcom/google/common/collect/ImmutableSet;
+	47      (000000c0) move-result-object   v2
+	48      (000000c2) goto                 -59
+
+getPaddingModesAsStrings-BB@0xc4 : 
+	49      (000000c4) packed-switch-payload 1 2 3 4 5
+

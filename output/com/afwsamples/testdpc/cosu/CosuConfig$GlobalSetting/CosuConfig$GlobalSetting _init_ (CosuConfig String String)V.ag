@@ -1,0 +1,17 @@
+# Lcom/afwsamples/testdpc/cosu/CosuConfig$GlobalSetting;-><init>(Lcom/afwsamples/testdpc/cosu/CosuConfig; Ljava/lang/String; Ljava/lang/String;)V [access_flags=public constructor]
+#
+# Parameters:
+# - local registers: v0...v0
+# - v1:com.afwsamples.testdpc.cosu.CosuConfig
+# - v2:java.lang.String
+# - v3:java.lang.String
+#
+# - return:void
+
+<init>-BB@0x0 : 
+	0       (00000000) iput-object          v1, v0, Lcom/afwsamples/testdpc/cosu/CosuConfig$GlobalSetting;->this$0 Lcom/afwsamples/testdpc/cosu/CosuConfig;
+	1       (00000004) invoke-direct        v0, Ljava/lang/Object;-><init>()V
+	2       (0000000a) iput-object          v2, v0, Lcom/afwsamples/testdpc/cosu/CosuConfig$GlobalSetting;->key Ljava/lang/String;
+	3       (0000000e) iput-object          v3, v0, Lcom/afwsamples/testdpc/cosu/CosuConfig$GlobalSetting;->value Ljava/lang/String;
+	4       (00000012) return-void          
+

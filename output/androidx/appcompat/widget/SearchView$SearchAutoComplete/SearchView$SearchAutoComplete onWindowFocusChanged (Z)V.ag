@@ -1,0 +1,39 @@
+# Landroidx/appcompat/widget/SearchView$SearchAutoComplete;->onWindowFocusChanged(Z)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:boolean
+#
+# - return:void
+
+onWindowFocusChanged-BB@0x0 : [ onWindowFocusChanged-BB@0xc onWindowFocusChanged-BB@0x4a ]
+	0       (00000000) const/4              v1, 1
+	1       (00000002) invoke-super         v2, v3, Landroidx/appcompat/widget/AppCompatAutoCompleteTextView;->onWindowFocusChanged(Z)V
+	2       (00000008) if-eqz               v3, +21
+
+onWindowFocusChanged-BB@0xc : [ onWindowFocusChanged-BB@0x1c onWindowFocusChanged-BB@0x4a ]
+	3       (0000000c) iget-object          v0, v2, Landroidx/appcompat/widget/SearchView$SearchAutoComplete;->mSearchView Landroidx/appcompat/widget/SearchView;
+	4       (00000010) invoke-virtual       v0, Landroidx/appcompat/widget/SearchView;->hasFocus()Z
+	5       (00000016) move-result          v0
+	6       (00000018) if-eqz               v0, +19
+
+onWindowFocusChanged-BB@0x1c : [ onWindowFocusChanged-BB@0x28 onWindowFocusChanged-BB@0x4a ]
+	7       (0000001c) invoke-virtual       v2, Landroidx/appcompat/widget/SearchView$SearchAutoComplete;->getVisibility()I
+	8       (00000022) move-result          v0
+	9       (00000024) if-nez               v0, +13
+
+onWindowFocusChanged-BB@0x28 : [ onWindowFocusChanged-BB@0x40 onWindowFocusChanged-BB@0x4a ]
+	10      (00000028) iput-boolean         v1, v2, Landroidx/appcompat/widget/SearchView$SearchAutoComplete;->mHasPendingShowSoftInputRequest Z
+	11      (0000002c) invoke-virtual       v2, Landroidx/appcompat/widget/SearchView$SearchAutoComplete;->getContext()Landroid/content/Context;
+	12      (00000032) move-result-object   v0
+	13      (00000034) invoke-static        v0, Landroidx/appcompat/widget/SearchView;->isLandscapeMode(Landroid/content/Context;)Z
+	14      (0000003a) move-result          v0
+	15      (0000003c) if-eqz               v0, +7
+
+onWindowFocusChanged-BB@0x40 : [ onWindowFocusChanged-BB@0x4a ]
+	16      (00000040) sget-object          v0, Landroidx/appcompat/widget/SearchView;->HIDDEN_METHOD_INVOKER Landroidx/appcompat/widget/SearchView$AutoCompleteTextViewReflector;
+	17      (00000044) invoke-virtual       v0, v2, v1, Landroidx/appcompat/widget/SearchView$AutoCompleteTextViewReflector;->ensureImeVisible(Landroid/widget/AutoCompleteTextView; Z)V
+
+onWindowFocusChanged-BB@0x4a : 
+	18      (0000004a) return-void          
+

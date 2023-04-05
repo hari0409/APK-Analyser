@@ -1,0 +1,27 @@
+# Landroidx/appcompat/widget/LinearLayoutCompat;->onLayout(Z I I I I)V [access_flags=protected]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:boolean
+# - v4:int
+# - v5:int
+# - v6:int
+# - v7:int
+#
+# - return:void
+
+onLayout-BB@0x0 : [ onLayout-BB@0xa onLayout-BB@0x12 ]
+	0       (00000000) iget                 v0, v2, Landroidx/appcompat/widget/LinearLayoutCompat;->mOrientation I
+	1       (00000004) const/4              v1, 1
+	2       (00000006) if-ne                v0, v1, +6
+
+onLayout-BB@0xa : [ onLayout-BB@0x10 ]
+	3       (0000000a) invoke-virtual       v2, v4, v5, v6, v7, Landroidx/appcompat/widget/LinearLayoutCompat;->layoutVertical(I I I I)V
+
+onLayout-BB@0x10 : 
+	4       (00000010) return-void          
+
+onLayout-BB@0x12 : [ onLayout-BB@0x10 ]
+	5       (00000012) invoke-virtual       v2, v4, v5, v6, v7, Landroidx/appcompat/widget/LinearLayoutCompat;->layoutHorizontal(I I I I)V
+	6       (00000018) goto                 -4
+

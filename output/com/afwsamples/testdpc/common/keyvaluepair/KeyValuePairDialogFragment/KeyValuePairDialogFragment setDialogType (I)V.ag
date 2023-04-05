@@ -1,0 +1,43 @@
+# Lcom/afwsamples/testdpc/common/keyvaluepair/KeyValuePairDialogFragment;->setDialogType(I)V [access_flags=private]
+#
+# Parameters:
+# - local registers: v0...v3
+# - v4:int
+#
+# - return:void
+
+setDialogType-BB@0x0 : [ setDialogType-BB@0x10 ]
+	0       (00000000) iput                 v4, v3, Lcom/afwsamples/testdpc/common/keyvaluepair/KeyValuePairDialogFragment;->mDialogType I
+	1       (00000004) iget-object          v1, v3, Lcom/afwsamples/testdpc/common/keyvaluepair/KeyValuePairDialogFragment;->mTypeSpinner Landroid/widget/Spinner;
+	2       (00000008) invoke-virtual       v1, v4, Landroid/widget/Spinner;->setSelection(I)V
+	3       (0000000e) const/4              v0, 0
+
+setDialogType-BB@0x10 : [ setDialogType-BB@0x1a setDialogType-BB@0x4c ]
+	4       (00000010) iget-object          v1, v3, Lcom/afwsamples/testdpc/common/keyvaluepair/KeyValuePairDialogFragment;->mValueViews [Landroid/view/View;
+	5       (00000014) array-length         v1, v1
+	6       (00000016) if-ge                v0, v1, +1b
+
+setDialogType-BB@0x1a : [ setDialogType-BB@0x22 setDialogType-BB@0x38 ]
+	7       (0000001a) iget                 v1, v3, Lcom/afwsamples/testdpc/common/keyvaluepair/KeyValuePairDialogFragment;->mDialogType I
+	8       (0000001e) if-ne                v1, v0, +d
+
+setDialogType-BB@0x22 : [ setDialogType-BB@0x32 ]
+	9       (00000022) iget-object          v1, v3, Lcom/afwsamples/testdpc/common/keyvaluepair/KeyValuePairDialogFragment;->mValueViews [Landroid/view/View;
+	10      (00000026) aget-object          v1, v1, v0
+	11      (0000002a) const/4              v2, 0
+	12      (0000002c) invoke-virtual       v1, v2, Landroid/view/View;->setVisibility(I)V
+
+setDialogType-BB@0x32 : [ setDialogType-BB@0x10 ]
+	13      (00000032) add-int/lit8         v0, v0, 1
+	14      (00000036) goto                 -13
+
+setDialogType-BB@0x38 : [ setDialogType-BB@0x32 ]
+	15      (00000038) iget-object          v1, v3, Lcom/afwsamples/testdpc/common/keyvaluepair/KeyValuePairDialogFragment;->mValueViews [Landroid/view/View;
+	16      (0000003c) aget-object          v1, v1, v0
+	17      (00000040) const/16             v2, 8
+	18      (00000044) invoke-virtual       v1, v2, Landroid/view/View;->setVisibility(I)V
+	19      (0000004a) goto                 -c
+
+setDialogType-BB@0x4c : 
+	20      (0000004c) return-void          
+

@@ -1,0 +1,21 @@
+# Landroidx/appcompat/view/menu/MenuDialogHelper;->onClick(Landroid/content/DialogInterface; I)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v3
+# - v4:android.content.DialogInterface
+# - v5:int
+#
+# - return:void
+
+onClick-BB@0x0 : 
+	0       (00000000) iget-object          v1, v3, Landroidx/appcompat/view/menu/MenuDialogHelper;->mMenu Landroidx/appcompat/view/menu/MenuBuilder;
+	1       (00000004) iget-object          v0, v3, Landroidx/appcompat/view/menu/MenuDialogHelper;->mPresenter Landroidx/appcompat/view/menu/ListMenuPresenter;
+	2       (00000008) invoke-virtual       v0, Landroidx/appcompat/view/menu/ListMenuPresenter;->getAdapter()Landroid/widget/ListAdapter;
+	3       (0000000e) move-result-object   v0
+	4       (00000010) invoke-interface     v0, v5, Landroid/widget/ListAdapter;->getItem(I)Ljava/lang/Object;
+	5       (00000016) move-result-object   v0
+	6       (00000018) check-cast           v0, Landroidx/appcompat/view/menu/MenuItemImpl;
+	7       (0000001c) const/4              v2, 0
+	8       (0000001e) invoke-virtual       v1, v0, v2, Landroidx/appcompat/view/menu/MenuBuilder;->performItemAction(Landroid/view/MenuItem; I)Z
+	9       (00000024) return-void          
+

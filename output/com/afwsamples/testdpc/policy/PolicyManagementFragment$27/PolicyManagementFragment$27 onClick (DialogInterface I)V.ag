@@ -1,0 +1,58 @@
+# Lcom/afwsamples/testdpc/policy/PolicyManagementFragment$27;->onClick(Landroid/content/DialogInterface; I)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v7
+# - v8:android.content.DialogInterface
+# - v9:int
+#
+# - return:void
+
+onClick-BB@0x0 : [ onClick-BB@0x34 onClick-BB@0x5a ]
+	0       (00000000) const/4              v3, 0
+	1       (00000002) const/4              v2, 1
+	2       (00000004) iget-object          v1, v7, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment$27;->val$showApps Ljava/util/List;
+	3       (00000008) invoke-interface     v1, v9, Ljava/util/List;->get(I)Ljava/lang/Object;
+	4       (0000000e) move-result-object   v0
+	5       (00000010) check-cast           v0, Ljava/lang/String;
+	6       (00000014) iget-object          v1, v7, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment$27;->this$0 Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;
+	7       (00000018) invoke-static        v1, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->access$400(Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;)Landroid/app/admin/DevicePolicyManager;
+	8       (0000001e) move-result-object   v4
+	9       (00000020) iget-object          v1, v7, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment$27;->this$0 Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;
+	10      (00000024) invoke-static        v1, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->access$700(Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;)Landroid/content/ComponentName;
+	11      (0000002a) move-result-object   v5
+	12      (0000002c) iget-boolean         v1, v7, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment$27;->val$showHiddenApps Z
+	13      (00000030) if-nez               v1, +15
+
+onClick-BB@0x34 : [ onClick-BB@0x36 ]
+	14      (00000034) move                 v1, v2
+
+onClick-BB@0x36 : [ onClick-BB@0x42 onClick-BB@0x5e ]
+	15      (00000036) invoke-virtual       v4, v5, v0, v1, Landroid/app/admin/DevicePolicyManager;->setApplicationHidden(Landroid/content/ComponentName; Ljava/lang/String; Z)Z
+	16      (0000003c) move-result          v1
+	17      (0000003e) if-eqz               v1, +10
+
+onClick-BB@0x42 : [ onClick-BB@0x58 ]
+	18      (00000042) iget-object          v1, v7, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment$27;->this$0 Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;
+	19      (00000046) iget                 v4, v7, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment$27;->val$successResId I
+	20      (0000004a) new-array            v2, v2, [Ljava/lang/Object;
+	21      (0000004e) aput-object          v0, v2, v3
+	22      (00000052) invoke-static        v1, v4, v2, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->access$200(Lcom/afwsamples/testdpc/policy/PolicyManagementFragment; I [Ljava/lang/Object;)V
+
+onClick-BB@0x58 : 
+	23      (00000058) return-void          
+
+onClick-BB@0x5a : [ onClick-BB@0x36 ]
+	24      (0000005a) move                 v1, v3
+	25      (0000005c) goto                 -13
+
+onClick-BB@0x5e : [ onClick-BB@0x58 ]
+	26      (0000005e) iget-object          v1, v7, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment$27;->this$0 Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;
+	27      (00000062) iget-object          v4, v7, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment$27;->this$0 Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;
+	28      (00000066) iget                 v5, v7, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment$27;->val$failureResId I
+	29      (0000006a) new-array            v6, v2, [Ljava/lang/Object;
+	30      (0000006e) aput-object          v0, v6, v3
+	31      (00000072) invoke-virtual       v4, v5, v6, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->getString(I [Ljava/lang/Object;)Ljava/lang/String;
+	32      (00000078) move-result-object   v3
+	33      (0000007a) invoke-static        v1, v3, v2, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->access$1600(Lcom/afwsamples/testdpc/policy/PolicyManagementFragment; Ljava/lang/String; I)V
+	34      (00000080) goto                 -14
+

@@ -1,0 +1,35 @@
+# Landroidx/appcompat/app/AppCompatDelegateImpl$7;->onAnimationStart(Landroid/view/View;)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:android.view.View
+#
+# - return:void
+
+onAnimationStart-BB@0x0 : [ onAnimationStart-BB@0x3a onAnimationStart-BB@0x54 ]
+	0       (00000000) iget-object          v0, v2, Landroidx/appcompat/app/AppCompatDelegateImpl$7;->this$0 Landroidx/appcompat/app/AppCompatDelegateImpl;
+	1       (00000004) iget-object          v0, v0, Landroidx/appcompat/app/AppCompatDelegateImpl;->mActionModeView Landroidx/appcompat/widget/ActionBarContextView;
+	2       (00000008) const/4              v1, 0
+	3       (0000000a) invoke-virtual       v0, v1, Landroidx/appcompat/widget/ActionBarContextView;->setVisibility(I)V
+	4       (00000010) iget-object          v0, v2, Landroidx/appcompat/app/AppCompatDelegateImpl$7;->this$0 Landroidx/appcompat/app/AppCompatDelegateImpl;
+	5       (00000014) iget-object          v0, v0, Landroidx/appcompat/app/AppCompatDelegateImpl;->mActionModeView Landroidx/appcompat/widget/ActionBarContextView;
+	6       (00000018) const/16             v1, 32
+	7       (0000001c) invoke-virtual       v0, v1, Landroidx/appcompat/widget/ActionBarContextView;->sendAccessibilityEvent(I)V
+	8       (00000022) iget-object          v0, v2, Landroidx/appcompat/app/AppCompatDelegateImpl$7;->this$0 Landroidx/appcompat/app/AppCompatDelegateImpl;
+	9       (00000026) iget-object          v0, v0, Landroidx/appcompat/app/AppCompatDelegateImpl;->mActionModeView Landroidx/appcompat/widget/ActionBarContextView;
+	10      (0000002a) invoke-virtual       v0, Landroidx/appcompat/widget/ActionBarContextView;->getParent()Landroid/view/ViewParent;
+	11      (00000030) move-result-object   v0
+	12      (00000032) instance-of          v0, v0, Landroid/view/View;
+	13      (00000036) if-eqz               v0, +f
+
+onAnimationStart-BB@0x3a : [ onAnimationStart-BB@0x54 ]
+	14      (0000003a) iget-object          v0, v2, Landroidx/appcompat/app/AppCompatDelegateImpl$7;->this$0 Landroidx/appcompat/app/AppCompatDelegateImpl;
+	15      (0000003e) iget-object          v0, v0, Landroidx/appcompat/app/AppCompatDelegateImpl;->mActionModeView Landroidx/appcompat/widget/ActionBarContextView;
+	16      (00000042) invoke-virtual       v0, Landroidx/appcompat/widget/ActionBarContextView;->getParent()Landroid/view/ViewParent;
+	17      (00000048) move-result-object   v0
+	18      (0000004a) check-cast           v0, Landroid/view/View;
+	19      (0000004e) invoke-static        v0, Landroidx/core/view/ViewCompat;->requestApplyInsets(Landroid/view/View;)V
+
+onAnimationStart-BB@0x54 : 
+	20      (00000054) return-void          
+

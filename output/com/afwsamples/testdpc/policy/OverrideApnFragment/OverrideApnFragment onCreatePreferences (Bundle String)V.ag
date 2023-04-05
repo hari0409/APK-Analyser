@@ -1,0 +1,29 @@
+# Lcom/afwsamples/testdpc/policy/OverrideApnFragment;->onCreatePreferences(Landroid/os/Bundle; Ljava/lang/String;)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:android.os.Bundle
+# - v3:java.lang.String
+#
+# - return:void
+
+onCreatePreferences-BB@0x0 : 
+	0       (00000000) const                v0, 2131886087 # [1.9406742936146494e+38]
+	1       (00000006) invoke-virtual       v1, v0, Lcom/afwsamples/testdpc/policy/OverrideApnFragment;->addPreferencesFromResource(I)V
+	2       (0000000c) const-string         v0, 'insert_override_apn'
+	3       (00000010) invoke-virtual       v1, v0, Lcom/afwsamples/testdpc/policy/OverrideApnFragment;->findPreference(Ljava/lang/CharSequence;)Landroidx/preference/Preference;
+	4       (00000016) move-result-object   v0
+	5       (00000018) invoke-virtual       v0, v1, Landroidx/preference/Preference;->setOnPreferenceClickListener(Landroidx/preference/Preference$OnPreferenceClickListener;)V
+	6       (0000001e) const-string         v0, 'remove_override_apn'
+	7       (00000022) invoke-virtual       v1, v0, Lcom/afwsamples/testdpc/policy/OverrideApnFragment;->findPreference(Ljava/lang/CharSequence;)Landroidx/preference/Preference;
+	8       (00000028) move-result-object   v0
+	9       (0000002a) invoke-virtual       v0, v1, Landroidx/preference/Preference;->setOnPreferenceClickListener(Landroidx/preference/Preference$OnPreferenceClickListener;)V
+	10      (00000030) const-string         v0, 'enable_override_apn'
+	11      (00000034) invoke-virtual       v1, v0, Lcom/afwsamples/testdpc/policy/OverrideApnFragment;->findPreference(Ljava/lang/CharSequence;)Landroidx/preference/Preference;
+	12      (0000003a) move-result-object   v0
+	13      (0000003c) check-cast           v0, Landroidx/preference/SwitchPreference;
+	14      (00000040) iput-object          v0, v1, Lcom/afwsamples/testdpc/policy/OverrideApnFragment;->mEnableOverrideApnPreference Landroidx/preference/SwitchPreference;
+	15      (00000044) iget-object          v0, v1, Lcom/afwsamples/testdpc/policy/OverrideApnFragment;->mEnableOverrideApnPreference Landroidx/preference/SwitchPreference;
+	16      (00000048) invoke-virtual       v0, v1, Landroidx/preference/SwitchPreference;->setOnPreferenceChangeListener(Landroidx/preference/Preference$OnPreferenceChangeListener;)V
+	17      (0000004e) return-void          
+

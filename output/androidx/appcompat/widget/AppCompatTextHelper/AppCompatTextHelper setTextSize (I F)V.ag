@@ -1,0 +1,24 @@
+# Landroidx/appcompat/widget/AppCompatTextHelper;->setTextSize(I F)V [access_flags=]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:int
+# - v3:float
+#
+# - return:void
+
+setTextSize-BB@0x0 : [ setTextSize-BB@0x8 setTextSize-BB@0x1a ]
+	0       (00000000) sget-boolean         v0, Landroidx/core/widget/AutoSizeableTextView;->PLATFORM_SUPPORTS_AUTOSIZE Z
+	1       (00000004) if-nez               v0, +b
+
+setTextSize-BB@0x8 : [ setTextSize-BB@0x14 setTextSize-BB@0x1a ]
+	2       (00000008) invoke-virtual       v1, Landroidx/appcompat/widget/AppCompatTextHelper;->isAutoSizeEnabled()Z
+	3       (0000000e) move-result          v0
+	4       (00000010) if-nez               v0, +5
+
+setTextSize-BB@0x14 : [ setTextSize-BB@0x1a ]
+	5       (00000014) invoke-direct        v1, v2, v3, Landroidx/appcompat/widget/AppCompatTextHelper;->setTextSizeInternal(I F)V
+
+setTextSize-BB@0x1a : 
+	6       (0000001a) return-void          
+

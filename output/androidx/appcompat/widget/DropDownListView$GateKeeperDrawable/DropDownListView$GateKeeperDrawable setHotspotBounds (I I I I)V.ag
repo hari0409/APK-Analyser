@@ -1,0 +1,21 @@
+# Landroidx/appcompat/widget/DropDownListView$GateKeeperDrawable;->setHotspotBounds(I I I I)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:int
+# - v3:int
+# - v4:int
+# - v5:int
+#
+# - return:void
+
+setHotspotBounds-BB@0x0 : [ setHotspotBounds-BB@0x8 setHotspotBounds-BB@0xe ]
+	0       (00000000) iget-boolean         v0, v1, Landroidx/appcompat/widget/DropDownListView$GateKeeperDrawable;->mEnabled Z
+	1       (00000004) if-eqz               v0, +5
+
+setHotspotBounds-BB@0x8 : [ setHotspotBounds-BB@0xe ]
+	2       (00000008) invoke-super         v1, v2, v3, v4, v5, Landroidx/appcompat/graphics/drawable/DrawableWrapper;->setHotspotBounds(I I I I)V
+
+setHotspotBounds-BB@0xe : 
+	3       (0000000e) return-void          
+

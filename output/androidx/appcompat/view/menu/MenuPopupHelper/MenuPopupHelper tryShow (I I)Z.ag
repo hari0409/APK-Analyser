@@ -1,0 +1,30 @@
+# Landroidx/appcompat/view/menu/MenuPopupHelper;->tryShow(I I)Z [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:int
+# - v4:int
+#
+# - return:boolean
+
+tryShow-BB@0x0 : [ tryShow-BB@0xe tryShow-BB@0x10 ]
+	0       (00000000) const/4              v0, 1
+	1       (00000002) invoke-virtual       v2, Landroidx/appcompat/view/menu/MenuPopupHelper;->isShowing()Z
+	2       (00000008) move-result          v1
+	3       (0000000a) if-eqz               v1, +3
+
+tryShow-BB@0xe : 
+	4       (0000000e) return               v0
+
+tryShow-BB@0x10 : [ tryShow-BB@0x18 tryShow-BB@0x1c ]
+	5       (00000010) iget-object          v1, v2, Landroidx/appcompat/view/menu/MenuPopupHelper;->mAnchorView Landroid/view/View;
+	6       (00000014) if-nez               v1, +4
+
+tryShow-BB@0x18 : [ tryShow-BB@0xe ]
+	7       (00000018) const/4              v0, 0
+	8       (0000001a) goto                 -6
+
+tryShow-BB@0x1c : [ tryShow-BB@0xe ]
+	9       (0000001c) invoke-direct        v2, v3, v4, v0, v0, Landroidx/appcompat/view/menu/MenuPopupHelper;->showPopup(I I Z Z)V
+	10      (00000022) goto                 -a
+

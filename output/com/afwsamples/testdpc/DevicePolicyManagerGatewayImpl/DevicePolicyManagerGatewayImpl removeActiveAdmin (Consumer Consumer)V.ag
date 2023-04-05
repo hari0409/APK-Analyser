@@ -1,0 +1,31 @@
+# Lcom/afwsamples/testdpc/DevicePolicyManagerGatewayImpl;->removeActiveAdmin(Ljava/util/function/Consumer; Ljava/util/function/Consumer;)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v3
+# - v4:java.util.function.Consumer
+# - v5:java.util.function.Consumer
+#
+# - return:void
+
+removeActiveAdmin-BB@0x0 : [ removeActiveAdmin-BB@0xe ]
+	0       (00000000) sget-object          v1, Lcom/afwsamples/testdpc/DevicePolicyManagerGatewayImpl;->TAG Ljava/lang/String;
+	1       (00000004) const-string         v2, 'removeActiveAdmin()'
+	2       (00000008) invoke-static        v1, v2, Landroid/util/Log;->d(Ljava/lang/String; Ljava/lang/String;)I
+
+removeActiveAdmin-BB@0xe : [ removeActiveAdmin-BB@0x24 ]
+	3       (0000000e) iget-object          v1, v3, Lcom/afwsamples/testdpc/DevicePolicyManagerGatewayImpl;->mDevicePolicyManager Landroid/app/admin/DevicePolicyManager;
+	4       (00000012) iget-object          v2, v3, Lcom/afwsamples/testdpc/DevicePolicyManagerGatewayImpl;->mAdminComponentName Landroid/content/ComponentName;
+	5       (00000016) invoke-virtual       v1, v2, Landroid/app/admin/DevicePolicyManager;->removeActiveAdmin(Landroid/content/ComponentName;)V
+	6       (0000001c) const/4              v1, 0
+	7       (0000001e) invoke-interface     v4, v1, Ljava/util/function/Consumer;->accept(Ljava/lang/Object;)V
+	e:23
+	(Ljava/lang/Exception; -> 26 removeActiveAdmin-BB@0x26)
+
+removeActiveAdmin-BB@0x24 : 
+	8       (00000024) return-void          
+
+removeActiveAdmin-BB@0x26 : [ removeActiveAdmin-BB@0x24 ]
+	9       (00000026) move-exception       v0
+	10      (00000028) invoke-interface     v5, v0, Ljava/util/function/Consumer;->accept(Ljava/lang/Object;)V
+	11      (0000002e) goto                 -5
+

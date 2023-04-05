@@ -1,0 +1,41 @@
+# Landroidx/appcompat/widget/ActionBarOverlayLayout;->onStopNestedScroll(Landroid/view/View;)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:android.view.View
+#
+# - return:void
+
+onStopNestedScroll-BB@0x0 : [ onStopNestedScroll-BB@0x8 onStopNestedScroll-BB@0x2a ]
+	0       (00000000) iget-boolean         v0, v2, Landroidx/appcompat/widget/ActionBarOverlayLayout;->mHideOnContentScroll Z
+	1       (00000004) if-eqz               v0, +13
+
+onStopNestedScroll-BB@0x8 : [ onStopNestedScroll-BB@0x10 onStopNestedScroll-BB@0x2a ]
+	2       (00000008) iget-boolean         v0, v2, Landroidx/appcompat/widget/ActionBarOverlayLayout;->mAnimatingForFling Z
+	3       (0000000c) if-nez               v0, +f
+
+onStopNestedScroll-BB@0x10 : [ onStopNestedScroll-BB@0x24 onStopNestedScroll-BB@0x3e ]
+	4       (00000010) iget                 v0, v2, Landroidx/appcompat/widget/ActionBarOverlayLayout;->mHideOnContentScrollReference I
+	5       (00000014) iget-object          v1, v2, Landroidx/appcompat/widget/ActionBarOverlayLayout;->mActionBarTop Landroidx/appcompat/widget/ActionBarContainer;
+	6       (00000018) invoke-virtual       v1, Landroidx/appcompat/widget/ActionBarContainer;->getHeight()I
+	7       (0000001e) move-result          v1
+	8       (00000020) if-gt                v0, v1, +f
+
+onStopNestedScroll-BB@0x24 : [ onStopNestedScroll-BB@0x2a ]
+	9       (00000024) invoke-direct        v2, Landroidx/appcompat/widget/ActionBarOverlayLayout;->postRemoveActionBarHideOffset()V
+
+onStopNestedScroll-BB@0x2a : [ onStopNestedScroll-BB@0x32 onStopNestedScroll-BB@0x3c ]
+	10      (0000002a) iget-object          v0, v2, Landroidx/appcompat/widget/ActionBarOverlayLayout;->mActionBarVisibilityCallback Landroidx/appcompat/widget/ActionBarOverlayLayout$ActionBarVisibilityCallback;
+	11      (0000002e) if-eqz               v0, +7
+
+onStopNestedScroll-BB@0x32 : [ onStopNestedScroll-BB@0x3c ]
+	12      (00000032) iget-object          v0, v2, Landroidx/appcompat/widget/ActionBarOverlayLayout;->mActionBarVisibilityCallback Landroidx/appcompat/widget/ActionBarOverlayLayout$ActionBarVisibilityCallback;
+	13      (00000036) invoke-interface     v0, Landroidx/appcompat/widget/ActionBarOverlayLayout$ActionBarVisibilityCallback;->onContentScrollStopped()V
+
+onStopNestedScroll-BB@0x3c : 
+	14      (0000003c) return-void          
+
+onStopNestedScroll-BB@0x3e : [ onStopNestedScroll-BB@0x2a ]
+	15      (0000003e) invoke-direct        v2, Landroidx/appcompat/widget/ActionBarOverlayLayout;->postAddActionBarHideOffset()V
+	16      (00000044) goto                 -d
+

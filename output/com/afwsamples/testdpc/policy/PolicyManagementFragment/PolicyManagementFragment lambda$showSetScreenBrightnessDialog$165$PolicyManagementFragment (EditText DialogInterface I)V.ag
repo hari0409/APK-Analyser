@@ -1,0 +1,50 @@
+# Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->lambda$showSetScreenBrightnessDialog$165$PolicyManagementFragment(Landroid/widget/EditText; Landroid/content/DialogInterface; I)V [access_flags=final synthetic]
+#
+# Parameters:
+# - local registers: v0...v5
+# - v6:android.widget.EditText
+# - v7:android.content.DialogInterface
+# - v8:int
+#
+# - return:void
+
+lambda$showSetScreenBrightnessDialog$165$PolicyManagementFragment-BB@0x0 : [ lambda$showSetScreenBrightnessDialog$165$PolicyManagementFragment-BB@0x1e lambda$showSetScreenBrightnessDialog$165$PolicyManagementFragment-BB@0x30 ]
+	0       (00000000) const/4              v3, 0
+	1       (00000002) invoke-virtual       v6, Landroid/widget/EditText;->getText()Landroid/text/Editable;
+	2       (00000008) move-result-object   v2
+	3       (0000000a) invoke-virtual       v2, Ljava/lang/Object;->toString()Ljava/lang/String;
+	4       (00000010) move-result-object   v0
+	5       (00000012) invoke-virtual       v0, Ljava/lang/String;->isEmpty()Z
+	6       (00000018) move-result          v2
+	7       (0000001a) if-eqz               v2, +b
+
+lambda$showSetScreenBrightnessDialog$165$PolicyManagementFragment-BB@0x1e : [ lambda$showSetScreenBrightnessDialog$165$PolicyManagementFragment-BB@0x2e ]
+	8       (0000001e) const                v2, 2131689986 # [1.9009002855577925e+38]
+	9       (00000024) new-array            v3, v3, [Ljava/lang/Object;
+	10      (00000028) invoke-direct        v5, v2, v3, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->showToast(I [Ljava/lang/Object;)V
+
+lambda$showSetScreenBrightnessDialog$165$PolicyManagementFragment-BB@0x2e : 
+	11      (0000002e) return-void          
+
+lambda$showSetScreenBrightnessDialog$165$PolicyManagementFragment-BB@0x30 : [ lambda$showSetScreenBrightnessDialog$165$PolicyManagementFragment-BB@0x40 lambda$showSetScreenBrightnessDialog$165$PolicyManagementFragment-BB@0x44 ]
+	12      (00000030) invoke-static        v0, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
+	13      (00000036) move-result          v1
+	14      (00000038) const/16             v2, 255
+	15      (0000003c) if-gt                v1, v2, +4
+
+lambda$showSetScreenBrightnessDialog$165$PolicyManagementFragment-BB@0x40 : [ lambda$showSetScreenBrightnessDialog$165$PolicyManagementFragment-BB@0x44 lambda$showSetScreenBrightnessDialog$165$PolicyManagementFragment-BB@0x56 ]
+	16      (00000040) if-gez               v1, +b
+
+lambda$showSetScreenBrightnessDialog$165$PolicyManagementFragment-BB@0x44 : [ lambda$showSetScreenBrightnessDialog$165$PolicyManagementFragment-BB@0x2e ]
+	17      (00000044) const                v2, 2131689871 # [1.9008769607867483e+38]
+	18      (0000004a) new-array            v3, v3, [Ljava/lang/Object;
+	19      (0000004e) invoke-direct        v5, v2, v3, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->showToast(I [Ljava/lang/Object;)V
+	20      (00000054) goto                 -13
+
+lambda$showSetScreenBrightnessDialog$165$PolicyManagementFragment-BB@0x56 : [ lambda$showSetScreenBrightnessDialog$165$PolicyManagementFragment-BB@0x2e ]
+	21      (00000056) iget-object          v2, v5, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->mDevicePolicyManager Landroid/app/admin/DevicePolicyManager;
+	22      (0000005a) iget-object          v3, v5, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->mAdminComponentName Landroid/content/ComponentName;
+	23      (0000005e) const-string         v4, 'screen_brightness'
+	24      (00000062) invoke-virtual       v2, v3, v4, v0, Landroid/app/admin/DevicePolicyManager;->setSystemSetting(Landroid/content/ComponentName; Ljava/lang/String; Ljava/lang/String;)V
+	25      (00000068) goto                 -1d
+

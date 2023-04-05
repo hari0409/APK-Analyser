@@ -1,0 +1,16 @@
+# Landroidx/appcompat/view/ViewPropertyAnimatorCompatSet$1;-><init>(Landroidx/appcompat/view/ViewPropertyAnimatorCompatSet;)V [access_flags=constructor]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:androidx.appcompat.view.ViewPropertyAnimatorCompatSet
+#
+# - return:void
+
+<init>-BB@0x0 : 
+	0       (00000000) const/4              v0, 0
+	1       (00000002) iput-object          v2, v1, Landroidx/appcompat/view/ViewPropertyAnimatorCompatSet$1;->this$0 Landroidx/appcompat/view/ViewPropertyAnimatorCompatSet;
+	2       (00000006) invoke-direct        v1, Landroidx/core/view/ViewPropertyAnimatorListenerAdapter;-><init>()V
+	3       (0000000c) iput-boolean         v0, v1, Landroidx/appcompat/view/ViewPropertyAnimatorCompatSet$1;->mProxyStarted Z
+	4       (00000010) iput                 v0, v1, Landroidx/appcompat/view/ViewPropertyAnimatorCompatSet$1;->mProxyEndCount I
+	5       (00000014) return-void          
+

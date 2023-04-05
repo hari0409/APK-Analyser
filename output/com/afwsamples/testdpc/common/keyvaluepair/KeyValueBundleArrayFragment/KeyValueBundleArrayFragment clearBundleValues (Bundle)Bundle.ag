@@ -1,0 +1,64 @@
+# Lcom/afwsamples/testdpc/common/keyvaluepair/KeyValueBundleArrayFragment;->clearBundleValues(Landroid/os/Bundle;)Landroid/os/Bundle; [access_flags=private]
+#
+# Parameters:
+# - local registers: v0...v6
+# - v7:android.os.Bundle
+#
+# - return:android.os.Bundle
+
+clearBundleValues-BB@0x0 : [ clearBundleValues-BB@0x12 ]
+	0       (00000000) const/4              v5, 0
+	1       (00000002) invoke-virtual       v7, Landroid/os/Bundle;->keySet()Ljava/util/Set;
+	2       (00000008) move-result-object   v1
+	3       (0000000a) invoke-interface     v1, Ljava/util/Set;->iterator()Ljava/util/Iterator;
+	4       (00000010) move-result-object   v3
+
+clearBundleValues-BB@0x12 : [ clearBundleValues-BB@0x1e clearBundleValues-BB@0x82 ]
+	5       (00000012) invoke-interface     v3, Ljava/util/Iterator;->hasNext()Z
+	6       (00000018) move-result          v4
+	7       (0000001a) if-eqz               v4, +34
+
+clearBundleValues-BB@0x1e : [ clearBundleValues-BB@0x3a clearBundleValues-BB@0x46 ]
+	8       (0000001e) invoke-interface     v3, Ljava/util/Iterator;->next()Ljava/lang/Object;
+	9       (00000024) move-result-object   v0
+	10      (00000026) check-cast           v0, Ljava/lang/String;
+	11      (0000002a) invoke-virtual       v7, v0, Landroid/os/Bundle;->get(Ljava/lang/String;)Ljava/lang/Object;
+	12      (00000030) move-result-object   v2
+	13      (00000032) instance-of          v4, v2, Ljava/lang/String;
+	14      (00000036) if-eqz               v4, +8
+
+clearBundleValues-BB@0x3a : [ clearBundleValues-BB@0x12 ]
+	15      (0000003a) const-string         v4, ''
+	16      (0000003e) invoke-virtual       v7, v0, v4, Landroid/os/Bundle;->putString(Ljava/lang/String; Ljava/lang/String;)V
+	17      (00000044) goto                 -19
+
+clearBundleValues-BB@0x46 : [ clearBundleValues-BB@0x4e clearBundleValues-BB@0x56 ]
+	18      (00000046) instance-of          v4, v2, Ljava/lang/Integer;
+	19      (0000004a) if-eqz               v4, +6
+
+clearBundleValues-BB@0x4e : [ clearBundleValues-BB@0x12 ]
+	20      (0000004e) invoke-virtual       v7, v0, v5, Landroid/os/Bundle;->putInt(Ljava/lang/String; I)V
+	21      (00000054) goto                 -21
+
+clearBundleValues-BB@0x56 : [ clearBundleValues-BB@0x5e clearBundleValues-BB@0x66 ]
+	22      (00000056) instance-of          v4, v2, Ljava/lang/Boolean;
+	23      (0000005a) if-eqz               v4, +6
+
+clearBundleValues-BB@0x5e : [ clearBundleValues-BB@0x12 ]
+	24      (0000005e) invoke-virtual       v7, v0, v5, Landroid/os/Bundle;->putBoolean(Ljava/lang/String; Z)V
+	25      (00000064) goto                 -29
+
+clearBundleValues-BB@0x66 : [ clearBundleValues-BB@0x6e clearBundleValues-BB@0x12 ]
+	26      (00000066) instance-of          v4, v2, Landroid/os/Bundle;
+	27      (0000006a) if-eqz               v4, -2c
+
+clearBundleValues-BB@0x6e : [ clearBundleValues-BB@0x12 ]
+	28      (0000006e) check-cast           v2, Landroid/os/Bundle;
+	29      (00000072) invoke-direct        v6, v2, Lcom/afwsamples/testdpc/common/keyvaluepair/KeyValueBundleArrayFragment;->clearBundleValues(Landroid/os/Bundle;)Landroid/os/Bundle;
+	30      (00000078) move-result-object   v4
+	31      (0000007a) invoke-virtual       v7, v0, v4, Landroid/os/Bundle;->putBundle(Ljava/lang/String; Landroid/os/Bundle;)V
+	32      (00000080) goto                 -37
+
+clearBundleValues-BB@0x82 : 
+	33      (00000082) return-object        v7
+

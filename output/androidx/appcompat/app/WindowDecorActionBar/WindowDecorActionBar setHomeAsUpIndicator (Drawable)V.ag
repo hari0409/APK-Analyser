@@ -1,0 +1,13 @@
+# Landroidx/appcompat/app/WindowDecorActionBar;->setHomeAsUpIndicator(Landroid/graphics/drawable/Drawable;)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:android.graphics.drawable.Drawable
+#
+# - return:void
+
+setHomeAsUpIndicator-BB@0x0 : 
+	0       (00000000) iget-object          v0, v1, Landroidx/appcompat/app/WindowDecorActionBar;->mDecorToolbar Landroidx/appcompat/widget/DecorToolbar;
+	1       (00000004) invoke-interface     v0, v2, Landroidx/appcompat/widget/DecorToolbar;->setNavigationIcon(Landroid/graphics/drawable/Drawable;)V
+	2       (0000000a) return-void          
+

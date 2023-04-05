@@ -1,0 +1,15 @@
+# Landroidx/appcompat/widget/AppCompatSpinner$DropdownPopup$3;-><init>(Landroidx/appcompat/widget/AppCompatSpinner$DropdownPopup; Landroid/view/ViewTreeObserver$OnGlobalLayoutListener;)V [access_flags=constructor]
+#
+# Parameters:
+# - local registers: v0...v0
+# - v1:androidx.appcompat.widget.AppCompatSpinner$DropdownPopup
+# - v2:android.view.ViewTreeObserver$OnGlobalLayoutListener
+#
+# - return:void
+
+<init>-BB@0x0 : 
+	0       (00000000) iput-object          v1, v0, Landroidx/appcompat/widget/AppCompatSpinner$DropdownPopup$3;->this$1 Landroidx/appcompat/widget/AppCompatSpinner$DropdownPopup;
+	1       (00000004) iput-object          v2, v0, Landroidx/appcompat/widget/AppCompatSpinner$DropdownPopup$3;->val$layoutListener Landroid/view/ViewTreeObserver$OnGlobalLayoutListener;
+	2       (00000008) invoke-direct        v0, Ljava/lang/Object;-><init>()V
+	3       (0000000e) return-void          
+

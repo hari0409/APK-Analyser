@@ -1,0 +1,26 @@
+# Landroidx/appcompat/app/AppCompatDelegateImpl;->getActionBarThemedContext()Landroid/content/Context; [access_flags=final]
+#
+# Parameters:
+# local registers: v0...v2
+#
+# - return:android.content.Context
+
+getActionBarThemedContext-BB@0x0 : [ getActionBarThemedContext-BB@0xe getActionBarThemedContext-BB@0x16 ]
+	0       (00000000) const/4              v1, 0
+	1       (00000002) invoke-virtual       v2, Landroidx/appcompat/app/AppCompatDelegateImpl;->getSupportActionBar()Landroidx/appcompat/app/ActionBar;
+	2       (00000008) move-result-object   v0
+	3       (0000000a) if-eqz               v0, +6
+
+getActionBarThemedContext-BB@0xe : [ getActionBarThemedContext-BB@0x16 ]
+	4       (0000000e) invoke-virtual       v0, Landroidx/appcompat/app/ActionBar;->getThemedContext()Landroid/content/Context;
+	5       (00000014) move-result-object   v1
+
+getActionBarThemedContext-BB@0x16 : [ getActionBarThemedContext-BB@0x1a getActionBarThemedContext-BB@0x1e ]
+	6       (00000016) if-nez               v1, +4
+
+getActionBarThemedContext-BB@0x1a : [ getActionBarThemedContext-BB@0x1e ]
+	7       (0000001a) iget-object          v1, v2, Landroidx/appcompat/app/AppCompatDelegateImpl;->mContext Landroid/content/Context;
+
+getActionBarThemedContext-BB@0x1e : 
+	8       (0000001e) return-object        v1
+

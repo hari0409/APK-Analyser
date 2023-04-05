@@ -1,0 +1,25 @@
+# Landroidx/appcompat/view/menu/MenuItemImpl;->setIsActionButton(Z)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:boolean
+#
+# - return:void
+
+setIsActionButton-BB@0x0 : [ setIsActionButton-BB@0x4 setIsActionButton-BB@0x12 ]
+	0       (00000000) if-eqz               v2, +9
+
+setIsActionButton-BB@0x4 : [ setIsActionButton-BB@0x10 ]
+	1       (00000004) iget                 v0, v1, Landroidx/appcompat/view/menu/MenuItemImpl;->mFlags I
+	2       (00000008) or-int/lit8          v0, v0, 32
+	3       (0000000c) iput                 v0, v1, Landroidx/appcompat/view/menu/MenuItemImpl;->mFlags I
+
+setIsActionButton-BB@0x10 : 
+	4       (00000010) return-void          
+
+setIsActionButton-BB@0x12 : [ setIsActionButton-BB@0x10 ]
+	5       (00000012) iget                 v0, v1, Landroidx/appcompat/view/menu/MenuItemImpl;->mFlags I
+	6       (00000016) and-int/lit8         v0, v0, -33
+	7       (0000001a) iput                 v0, v1, Landroidx/appcompat/view/menu/MenuItemImpl;->mFlags I
+	8       (0000001e) goto                 -7
+

@@ -1,0 +1,37 @@
+# Landroidx/appcompat/widget/Toolbar;->getChildHorizontalGravity(I)I [access_flags=private]
+#
+# Parameters:
+# - local registers: v0...v4
+# - v5:int
+#
+# - return:int
+
+getChildHorizontalGravity-BB@0x0 : [ D:getChildHorizontalGravity-BB@0x1a 1:getChildHorizontalGravity-BB@0x24 2:getChildHorizontalGravity-BB@0x1a 3:getChildHorizontalGravity-BB@0x24 4:getChildHorizontalGravity-BB@0x1a 5:getChildHorizontalGravity-BB@0x24 ]
+	0       (00000000) invoke-static        v4, Landroidx/core/view/ViewCompat;->getLayoutDirection(Landroid/view/View;)I
+	1       (00000006) move-result          v2
+	2       (00000008) invoke-static        v5, v2, Landroidx/core/view/GravityCompat;->getAbsoluteGravity(I I)I
+	3       (0000000e) move-result          v0
+	4       (00000010) and-int/lit8         v1, v0, 7
+	5       (00000014) packed-switch        v1, +c (0x2c)
+
+getChildHorizontalGravity-BB@0x1a : [ getChildHorizontalGravity-BB@0x20 getChildHorizontalGravity-BB@0x26 ]
+	6       (0000001a) const/4              v3, 1
+	7       (0000001c) if-ne                v2, v3, +5
+
+getChildHorizontalGravity-BB@0x20 : [ getChildHorizontalGravity-BB@0x22 ]
+	8       (00000020) const/4              v3, 5
+
+getChildHorizontalGravity-BB@0x22 : [ getChildHorizontalGravity-BB@0x24 ]
+	9       (00000022) move                 v1, v3
+
+getChildHorizontalGravity-BB@0x24 : 
+	10      (00000024) return               v1
+
+getChildHorizontalGravity-BB@0x26 : [ getChildHorizontalGravity-BB@0x22 ]
+	11      (00000026) const/4              v3, 3
+	12      (00000028) goto                 -3
+
+getChildHorizontalGravity-BB@0x2a : 
+	13      (0000002a) nop                  
+	14      (0000002c) packed-switch-payload 1 2 3 4 5
+

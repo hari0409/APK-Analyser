@@ -1,0 +1,62 @@
+# Landroidx/appcompat/widget/ScrollingTabContainerView;->animateToVisibility(I)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v6
+# - v7:int
+#
+# - return:void
+
+animateToVisibility-BB@0x0 : [ animateToVisibility-BB@0xe animateToVisibility-BB@0x18 ]
+	0       (00000000) const-wide/16        v4, 200 # [200.0]
+	1       (00000004) const/4              v2, 0
+	2       (00000006) iget-object          v1, v6, Landroidx/appcompat/widget/ScrollingTabContainerView;->mVisibilityAnim Landroid/view/ViewPropertyAnimator;
+	3       (0000000a) if-eqz               v1, +7
+
+animateToVisibility-BB@0xe : [ animateToVisibility-BB@0x18 ]
+	4       (0000000e) iget-object          v1, v6, Landroidx/appcompat/widget/ScrollingTabContainerView;->mVisibilityAnim Landroid/view/ViewPropertyAnimator;
+	5       (00000012) invoke-virtual       v1, Landroid/view/ViewPropertyAnimator;->cancel()V
+
+animateToVisibility-BB@0x18 : [ animateToVisibility-BB@0x1c animateToVisibility-BB@0x6c ]
+	6       (00000018) if-nez               v7, +2a
+
+animateToVisibility-BB@0x1c : [ animateToVisibility-BB@0x28 animateToVisibility-BB@0x2e ]
+	7       (0000001c) invoke-virtual       v6, Landroidx/appcompat/widget/ScrollingTabContainerView;->getVisibility()I
+	8       (00000022) move-result          v1
+	9       (00000024) if-eqz               v1, +5
+
+animateToVisibility-BB@0x28 : [ animateToVisibility-BB@0x2e ]
+	10      (00000028) invoke-virtual       v6, v2, Landroidx/appcompat/widget/ScrollingTabContainerView;->setAlpha(F)V
+
+animateToVisibility-BB@0x2e : [ animateToVisibility-BB@0x6a ]
+	11      (0000002e) invoke-virtual       v6, Landroidx/appcompat/widget/ScrollingTabContainerView;->animate()Landroid/view/ViewPropertyAnimator;
+	12      (00000034) move-result-object   v1
+	13      (00000036) const/high16         v2, 16256 # [1.0]
+	14      (0000003a) invoke-virtual       v1, v2, Landroid/view/ViewPropertyAnimator;->alpha(F)Landroid/view/ViewPropertyAnimator;
+	15      (00000040) move-result-object   v0
+	16      (00000042) invoke-virtual       v0, v4, v5, Landroid/view/ViewPropertyAnimator;->setDuration(J)Landroid/view/ViewPropertyAnimator;
+	17      (00000048) sget-object          v1, Landroidx/appcompat/widget/ScrollingTabContainerView;->sAlphaInterpolator Landroid/view/animation/Interpolator;
+	18      (0000004c) invoke-virtual       v0, v1, Landroid/view/ViewPropertyAnimator;->setInterpolator(Landroid/animation/TimeInterpolator;)Landroid/view/ViewPropertyAnimator;
+	19      (00000052) iget-object          v1, v6, Landroidx/appcompat/widget/ScrollingTabContainerView;->mVisAnimListener Landroidx/appcompat/widget/ScrollingTabContainerView$VisibilityAnimListener;
+	20      (00000056) invoke-virtual       v1, v0, v7, Landroidx/appcompat/widget/ScrollingTabContainerView$VisibilityAnimListener;->withFinalVisibility(Landroid/view/ViewPropertyAnimator; I)Landroidx/appcompat/widget/ScrollingTabContainerView$VisibilityAnimListener;
+	21      (0000005c) move-result-object   v1
+	22      (0000005e) invoke-virtual       v0, v1, Landroid/view/ViewPropertyAnimator;->setListener(Landroid/animation/Animator$AnimatorListener;)Landroid/view/ViewPropertyAnimator;
+	23      (00000064) invoke-virtual       v0, Landroid/view/ViewPropertyAnimator;->start()V
+
+animateToVisibility-BB@0x6a : 
+	24      (0000006a) return-void          
+
+animateToVisibility-BB@0x6c : [ animateToVisibility-BB@0x6a ]
+	25      (0000006c) invoke-virtual       v6, Landroidx/appcompat/widget/ScrollingTabContainerView;->animate()Landroid/view/ViewPropertyAnimator;
+	26      (00000072) move-result-object   v1
+	27      (00000074) invoke-virtual       v1, v2, Landroid/view/ViewPropertyAnimator;->alpha(F)Landroid/view/ViewPropertyAnimator;
+	28      (0000007a) move-result-object   v0
+	29      (0000007c) invoke-virtual       v0, v4, v5, Landroid/view/ViewPropertyAnimator;->setDuration(J)Landroid/view/ViewPropertyAnimator;
+	30      (00000082) sget-object          v1, Landroidx/appcompat/widget/ScrollingTabContainerView;->sAlphaInterpolator Landroid/view/animation/Interpolator;
+	31      (00000086) invoke-virtual       v0, v1, Landroid/view/ViewPropertyAnimator;->setInterpolator(Landroid/animation/TimeInterpolator;)Landroid/view/ViewPropertyAnimator;
+	32      (0000008c) iget-object          v1, v6, Landroidx/appcompat/widget/ScrollingTabContainerView;->mVisAnimListener Landroidx/appcompat/widget/ScrollingTabContainerView$VisibilityAnimListener;
+	33      (00000090) invoke-virtual       v1, v0, v7, Landroidx/appcompat/widget/ScrollingTabContainerView$VisibilityAnimListener;->withFinalVisibility(Landroid/view/ViewPropertyAnimator; I)Landroidx/appcompat/widget/ScrollingTabContainerView$VisibilityAnimListener;
+	34      (00000096) move-result-object   v1
+	35      (00000098) invoke-virtual       v0, v1, Landroid/view/ViewPropertyAnimator;->setListener(Landroid/animation/Animator$AnimatorListener;)Landroid/view/ViewPropertyAnimator;
+	36      (0000009e) invoke-virtual       v0, Landroid/view/ViewPropertyAnimator;->start()V
+	37      (000000a4) goto                 -1d
+

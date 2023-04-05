@@ -1,0 +1,15 @@
+# Lcom/afwsamples/testdpc/policy/PolicyManagementFragment$$Lambda$54;-><init>(Lcom/afwsamples/testdpc/policy/PolicyManagementFragment; Lcom/afwsamples/testdpc/DevicePolicyManagerGateway;)V [access_flags=constructor]
+#
+# Parameters:
+# - local registers: v0...v0
+# - v1:com.afwsamples.testdpc.policy.PolicyManagementFragment
+# - v2:com.afwsamples.testdpc.DevicePolicyManagerGateway
+#
+# - return:void
+
+<init>-BB@0x0 : 
+	0       (00000000) invoke-direct        v0, Ljava/lang/Object;-><init>()V
+	1       (00000006) iput-object          v1, v0, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment$$Lambda$54;->arg$1 Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;
+	2       (0000000a) iput-object          v2, v0, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment$$Lambda$54;->arg$2 Lcom/afwsamples/testdpc/DevicePolicyManagerGateway;
+	3       (0000000e) return-void          
+

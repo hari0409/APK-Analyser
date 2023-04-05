@@ -1,0 +1,23 @@
+# Landroidx/appcompat/widget/ActivityChooserModel;->getIntent()Landroid/content/Intent; [access_flags=public]
+#
+# Parameters:
+# local registers: v0...v2
+#
+# - return:android.content.Intent
+
+getIntent-BB@0x0 : [ getIntent-BB@0x6 ]
+	0       (00000000) iget-object          v1, v2, Landroidx/appcompat/widget/ActivityChooserModel;->mInstanceLock Ljava/lang/Object;
+	1       (00000004) monitor-enter        v1
+
+getIntent-BB@0x6 : 
+	2       (00000006) iget-object          v0, v2, Landroidx/appcompat/widget/ActivityChooserModel;->mIntent Landroid/content/Intent;
+	3       (0000000a) monitor-exit         v1
+	4       (0000000c) return-object        v0
+	6:11
+	(Ljava/lang/Throwable; -> e getIntent-BB@0xe)
+
+getIntent-BB@0xe : 
+	5       (0000000e) move-exception       v0
+	6       (00000010) monitor-exit         v1
+	7       (00000012) throw                v0
+

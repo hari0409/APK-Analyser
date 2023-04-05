@@ -1,0 +1,11 @@
+# Landroidx/appcompat/view/menu/MenuPopup;->closeMenuOnSubMenuOpened()Z [access_flags=protected]
+#
+# Parameters:
+# local registers: v0...v1
+#
+# - return:boolean
+
+closeMenuOnSubMenuOpened-BB@0x0 : 
+	0       (00000000) const/4              v0, 1
+	1       (00000002) return               v0
+

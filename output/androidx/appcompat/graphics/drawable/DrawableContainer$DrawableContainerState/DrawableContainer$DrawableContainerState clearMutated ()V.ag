@@ -1,0 +1,12 @@
+# Landroidx/appcompat/graphics/drawable/DrawableContainer$DrawableContainerState;->clearMutated()V [access_flags=final]
+#
+# Parameters:
+# local registers: v0...v1
+#
+# - return:void
+
+clearMutated-BB@0x0 : 
+	0       (00000000) const/4              v0, 0
+	1       (00000002) iput-boolean         v0, v1, Landroidx/appcompat/graphics/drawable/DrawableContainer$DrawableContainerState;->mMutated Z
+	2       (00000006) return-void          
+

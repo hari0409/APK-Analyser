@@ -1,0 +1,41 @@
+# Landroidx/appcompat/widget/ActionMenuPresenter;->hideOverflowMenu()Z [access_flags=public]
+#
+# Parameters:
+# local registers: v0...v4
+#
+# - return:boolean
+
+hideOverflowMenu-BB@0x0 : [ hideOverflowMenu-BB@0xa hideOverflowMenu-BB@0x2e ]
+	0       (00000000) const/4              v2, 1
+	1       (00000002) iget-object          v1, v4, Landroidx/appcompat/widget/ActionMenuPresenter;->mPostedOpenRunnable Landroidx/appcompat/widget/ActionMenuPresenter$OpenOverflowRunnable;
+	2       (00000006) if-eqz               v1, +14
+
+hideOverflowMenu-BB@0xa : [ hideOverflowMenu-BB@0x12 hideOverflowMenu-BB@0x2e ]
+	3       (0000000a) iget-object          v1, v4, Landroidx/appcompat/widget/ActionMenuPresenter;->mMenuView Landroidx/appcompat/view/menu/MenuView;
+	4       (0000000e) if-eqz               v1, +10
+
+hideOverflowMenu-BB@0x12 : [ hideOverflowMenu-BB@0x2c ]
+	5       (00000012) iget-object          v1, v4, Landroidx/appcompat/widget/ActionMenuPresenter;->mMenuView Landroidx/appcompat/view/menu/MenuView;
+	6       (00000016) check-cast           v1, Landroid/view/View;
+	7       (0000001a) iget-object          v3, v4, Landroidx/appcompat/widget/ActionMenuPresenter;->mPostedOpenRunnable Landroidx/appcompat/widget/ActionMenuPresenter$OpenOverflowRunnable;
+	8       (0000001e) invoke-virtual       v1, v3, Landroid/view/View;->removeCallbacks(Ljava/lang/Runnable;)Z
+	9       (00000024) const/4              v1, 0
+	10      (00000026) iput-object          v1, v4, Landroidx/appcompat/widget/ActionMenuPresenter;->mPostedOpenRunnable Landroidx/appcompat/widget/ActionMenuPresenter$OpenOverflowRunnable;
+	11      (0000002a) move                 v1, v2
+
+hideOverflowMenu-BB@0x2c : 
+	12      (0000002c) return               v1
+
+hideOverflowMenu-BB@0x2e : [ hideOverflowMenu-BB@0x36 hideOverflowMenu-BB@0x40 ]
+	13      (0000002e) iget-object          v0, v4, Landroidx/appcompat/widget/ActionMenuPresenter;->mOverflowPopup Landroidx/appcompat/widget/ActionMenuPresenter$OverflowPopup;
+	14      (00000032) if-eqz               v0, +7
+
+hideOverflowMenu-BB@0x36 : [ hideOverflowMenu-BB@0x2c ]
+	15      (00000036) invoke-virtual       v0, Landroidx/appcompat/view/menu/MenuPopupHelper;->dismiss()V
+	16      (0000003c) move                 v1, v2
+	17      (0000003e) goto                 -9
+
+hideOverflowMenu-BB@0x40 : [ hideOverflowMenu-BB@0x2c ]
+	18      (00000040) const/4              v1, 0
+	19      (00000042) goto                 -b
+

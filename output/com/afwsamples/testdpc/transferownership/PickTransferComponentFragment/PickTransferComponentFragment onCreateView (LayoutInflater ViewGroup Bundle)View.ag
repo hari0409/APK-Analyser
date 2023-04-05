@@ -1,0 +1,93 @@
+# Lcom/afwsamples/testdpc/transferownership/PickTransferComponentFragment;->onCreateView(Landroid/view/LayoutInflater; Landroid/view/ViewGroup; Landroid/os/Bundle;)Landroid/view/View; [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v16
+# - v17:android.view.LayoutInflater
+# - v18:android.view.ViewGroup
+# - v19:android.os.Bundle
+#
+# - return:android.view.View
+
+onCreateView-BB@0x0 : [ onCreateView-BB@0x9a ]
+	0       (00000000) const                v13, 2131427512 # [1.8476642337747038e+38]
+	1       (00000006) const/4              v14, 0
+	2       (00000008) move-object/from16   v0, v17
+	3       (0000000c) invoke-virtual       v0, v13, v14, Landroid/view/LayoutInflater;->inflate(I Landroid/view/ViewGroup;)Landroid/view/View;
+	4       (00000012) move-result-object   v11
+	5       (00000014) check-cast           v11, Landroid/view/ViewGroup;
+	6       (00000018) const                v13, 2131296484 # [1.821088598119231e+38]
+	7       (0000001e) invoke-virtual       v11, v13, Landroid/view/ViewGroup;->findViewById(I)Landroid/view/View;
+	8       (00000024) move-result-object   v6
+	9       (00000026) check-cast           v6, Landroid/widget/ListView;
+	10      (0000002a) const                v13, 2131296373 # [1.821066084644571e+38]
+	11      (00000030) invoke-virtual       v11, v13, Landroid/view/ViewGroup;->findViewById(I)Landroid/view/View;
+	12      (00000036) move-result-object   v3
+	13      (00000038) check-cast           v3, Landroid/widget/EditText;
+	14      (0000003c) const                v13, 2131296573 # [1.8211066494637783e+38]
+	15      (00000042) invoke-virtual       v11, v13, Landroid/view/ViewGroup;->findViewById(I)Landroid/view/View;
+	16      (00000048) move-result-object   v10
+	17      (0000004a) check-cast           v10, Landroid/widget/EditText;
+	18      (0000004e) const                v13, 2131296712 # [1.8211348420131274e+38]
+	19      (00000054) invoke-virtual       v11, v13, Landroid/view/ViewGroup;->findViewById(I)Landroid/view/View;
+	20      (0000005a) move-result-object   v12
+	21      (0000005c) check-cast           v12, Landroid/widget/Button;
+	22      (00000060) new-instance         v4, Landroid/content/Intent;
+	23      (00000064) const-string         v13, 'android.app.action.DEVICE_ADMIN_ENABLED'
+	24      (00000068) invoke-direct        v4, v13, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
+	25      (0000006e) new-instance         v5, Ljava/util/ArrayList;
+	26      (00000072) invoke-direct        v5, Ljava/util/ArrayList;-><init>()V
+	27      (00000078) invoke-virtual/range v16, Lcom/afwsamples/testdpc/transferownership/PickTransferComponentFragment;->getActivity()Landroid/app/Activity;
+	28      (0000007e) move-result-object   v13
+	29      (00000080) invoke-virtual       v13, Landroid/app/Activity;->getPackageManager()Landroid/content/pm/PackageManager;
+	30      (00000086) move-result-object   v7
+	31      (00000088) const/4              v13, 0
+	32      (0000008a) invoke-virtual       v7, v4, v13, Landroid/content/pm/PackageManager;->queryBroadcastReceivers(Landroid/content/Intent; I)Ljava/util/List;
+	33      (00000090) move-result-object   v9
+	34      (00000092) invoke-interface     v9, Ljava/util/List;->iterator()Ljava/util/Iterator;
+	35      (00000098) move-result-object   v13
+
+onCreateView-BB@0x9a : [ onCreateView-BB@0xa6 onCreateView-BB@0xf8 ]
+	36      (0000009a) invoke-interface     v13, Ljava/util/Iterator;->hasNext()Z
+	37      (000000a0) move-result          v14
+	38      (000000a2) if-eqz               v14, +2b
+
+onCreateView-BB@0xa6 : [ onCreateView-BB@0xba onCreateView-BB@0x9a ]
+	39      (000000a6) invoke-interface     v13, Ljava/util/Iterator;->next()Ljava/lang/Object;
+	40      (000000ac) move-result-object   v8
+	41      (000000ae) check-cast           v8, Landroid/content/pm/ResolveInfo;
+	42      (000000b2) iget-object          v1, v8, Landroid/content/pm/ResolveInfo;->activityInfo Landroid/content/pm/ActivityInfo;
+	43      (000000b6) if-eqz               v1, -e
+
+onCreateView-BB@0xba : [ onCreateView-BB@0x9a ]
+	44      (000000ba) new-instance         v14, Ljava/lang/StringBuilder;
+	45      (000000be) invoke-direct        v14, Ljava/lang/StringBuilder;-><init>()V
+	46      (000000c4) iget-object          v15, v1, Landroid/content/pm/ActivityInfo;->packageName Ljava/lang/String;
+	47      (000000c8) invoke-virtual       v14, v15, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	48      (000000ce) move-result-object   v14
+	49      (000000d0) const-string         v15, '/'
+	50      (000000d4) invoke-virtual       v14, v15, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	51      (000000da) move-result-object   v14
+	52      (000000dc) iget-object          v15, v1, Landroid/content/pm/ActivityInfo;->name Ljava/lang/String;
+	53      (000000e0) invoke-virtual       v14, v15, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	54      (000000e6) move-result-object   v14
+	55      (000000e8) invoke-virtual       v14, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+	56      (000000ee) move-result-object   v14
+	57      (000000f0) invoke-interface     v5, v14, Ljava/util/List;->add(Ljava/lang/Object;)Z
+	58      (000000f6) goto                 -2e
+
+onCreateView-BB@0xf8 : 
+	59      (000000f8) new-instance         v2, Landroid/widget/ArrayAdapter;
+	60      (000000fc) invoke-virtual/range v16, Lcom/afwsamples/testdpc/transferownership/PickTransferComponentFragment;->getActivity()Landroid/app/Activity;
+	61      (00000102) move-result-object   v13
+	62      (00000104) const                v14, 17367043 # [2.516293435508038e-38]
+	63      (0000010a) invoke-direct        v2, v13, v14, v5, Landroid/widget/ArrayAdapter;-><init>(Landroid/content/Context; I Ljava/util/List;)V
+	64      (00000110) invoke-virtual       v6, v2, Landroid/widget/ListView;->setAdapter(Landroid/widget/ListAdapter;)V
+	65      (00000116) new-instance         v13, Lcom/afwsamples/testdpc/transferownership/PickTransferComponentFragment$$Lambda$0;
+	66      (0000011a) invoke-direct        v13, v3, Lcom/afwsamples/testdpc/transferownership/PickTransferComponentFragment$$Lambda$0;-><init>(Landroid/widget/EditText;)V
+	67      (00000120) invoke-virtual       v6, v13, Landroid/widget/ListView;->setOnItemClickListener(Landroid/widget/AdapterView$OnItemClickListener;)V
+	68      (00000126) new-instance         v13, Lcom/afwsamples/testdpc/transferownership/PickTransferComponentFragment$$Lambda$1;
+	69      (0000012a) move-object/from16   v0, v16
+	70      (0000012e) invoke-direct        v13, v0, v3, v10, Lcom/afwsamples/testdpc/transferownership/PickTransferComponentFragment$$Lambda$1;-><init>(Lcom/afwsamples/testdpc/transferownership/PickTransferComponentFragment; Landroid/widget/EditText; Landroid/widget/EditText;)V
+	71      (00000134) invoke-virtual       v12, v13, Landroid/widget/Button;->setOnClickListener(Landroid/view/View$OnClickListener;)V
+	72      (0000013a) return-object        v11
+

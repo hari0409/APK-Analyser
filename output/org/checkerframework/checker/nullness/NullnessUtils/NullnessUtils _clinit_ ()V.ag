@@ -1,0 +1,24 @@
+# Lorg/checkerframework/checker/nullness/NullnessUtils;-><clinit>()V [access_flags=static constructor]
+#
+# Parameters:
+# local registers: v0...v0
+#
+# - return:void
+
+<clinit>-BB@0x0 : [ <clinit>-BB@0x10 <clinit>-BB@0x18 ]
+	0       (00000000) const-class          v0, Lorg/checkerframework/checker/nullness/NullnessUtils;
+	1       (00000004) invoke-virtual       v0, Ljava/lang/Class;->desiredAssertionStatus()Z
+	2       (0000000a) move-result          v0
+	3       (0000000c) if-nez               v0, +6
+
+<clinit>-BB@0x10 : [ <clinit>-BB@0x12 ]
+	4       (00000010) const/4              v0, 1
+
+<clinit>-BB@0x12 : 
+	5       (00000012) sput-boolean         v0, Lorg/checkerframework/checker/nullness/NullnessUtils;->$assertionsDisabled Z
+	6       (00000016) return-void          
+
+<clinit>-BB@0x18 : [ <clinit>-BB@0x12 ]
+	7       (00000018) const/4              v0, 0
+	8       (0000001a) goto                 -4
+

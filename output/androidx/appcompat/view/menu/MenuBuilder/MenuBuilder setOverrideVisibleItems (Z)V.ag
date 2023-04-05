@@ -1,0 +1,12 @@
+# Landroidx/appcompat/view/menu/MenuBuilder;->setOverrideVisibleItems(Z)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v0
+# - v1:boolean
+#
+# - return:void
+
+setOverrideVisibleItems-BB@0x0 : 
+	0       (00000000) iput-boolean         v1, v0, Landroidx/appcompat/view/menu/MenuBuilder;->mOverrideVisibleItems Z
+	1       (00000004) return-void          
+

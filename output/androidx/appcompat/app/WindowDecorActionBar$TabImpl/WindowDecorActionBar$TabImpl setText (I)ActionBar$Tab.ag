@@ -1,0 +1,19 @@
+# Landroidx/appcompat/app/WindowDecorActionBar$TabImpl;->setText(I)Landroidx/appcompat/app/ActionBar$Tab; [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:int
+#
+# - return:androidx.appcompat.app.ActionBar$Tab
+
+setText-BB@0x0 : 
+	0       (00000000) iget-object          v0, v1, Landroidx/appcompat/app/WindowDecorActionBar$TabImpl;->this$0 Landroidx/appcompat/app/WindowDecorActionBar;
+	1       (00000004) iget-object          v0, v0, Landroidx/appcompat/app/WindowDecorActionBar;->mContext Landroid/content/Context;
+	2       (00000008) invoke-virtual       v0, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
+	3       (0000000e) move-result-object   v0
+	4       (00000010) invoke-virtual       v0, v2, Landroid/content/res/Resources;->getText(I)Ljava/lang/CharSequence;
+	5       (00000016) move-result-object   v0
+	6       (00000018) invoke-virtual       v1, v0, Landroidx/appcompat/app/WindowDecorActionBar$TabImpl;->setText(Ljava/lang/CharSequence;)Landroidx/appcompat/app/ActionBar$Tab;
+	7       (0000001e) move-result-object   v0
+	8       (00000020) return-object        v0
+

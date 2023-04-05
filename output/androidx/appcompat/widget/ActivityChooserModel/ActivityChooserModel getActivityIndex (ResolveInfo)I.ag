@@ -1,0 +1,63 @@
+# Landroidx/appcompat/widget/ActivityChooserModel;->getActivityIndex(Landroid/content/pm/ResolveInfo;)I [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v6
+# - v7:android.content.pm.ResolveInfo
+#
+# - return:int
+
+getActivityIndex-BB@0x0 : [ getActivityIndex-BB@0x6 ]
+	0       (00000000) iget-object          v5, v6, Landroidx/appcompat/widget/ActivityChooserModel;->mInstanceLock Ljava/lang/Object;
+	1       (00000004) monitor-enter        v5
+
+getActivityIndex-BB@0x6 : [ getActivityIndex-BB@0x1a ]
+	2       (00000006) invoke-direct        v6, Landroidx/appcompat/widget/ActivityChooserModel;->ensureConsistentState()V
+	3       (0000000c) iget-object          v0, v6, Landroidx/appcompat/widget/ActivityChooserModel;->mActivities Ljava/util/List;
+	4       (00000010) invoke-interface     v0, Ljava/util/List;->size()I
+	5       (00000016) move-result          v1
+	6       (00000018) const/4              v3, 0
+	6:45
+	(Ljava/lang/Throwable; -> 42 getActivityIndex-BB@0x42)
+
+getActivityIndex-BB@0x1a : [ getActivityIndex-BB@0x1e getActivityIndex-BB@0x3c ]
+	7       (0000001a) if-ge                v3, v1, +11
+	6:45
+	(Ljava/lang/Throwable; -> 42 getActivityIndex-BB@0x42)
+
+getActivityIndex-BB@0x1e : [ getActivityIndex-BB@0x32 getActivityIndex-BB@0x36 ]
+	8       (0000001e) invoke-interface     v0, v3, Ljava/util/List;->get(I)Ljava/lang/Object;
+	9       (00000024) move-result-object   v2
+	10      (00000026) check-cast           v2, Landroidx/appcompat/widget/ActivityChooserModel$ActivityResolveInfo;
+	11      (0000002a) iget-object          v4, v2, Landroidx/appcompat/widget/ActivityChooserModel$ActivityResolveInfo;->resolveInfo Landroid/content/pm/ResolveInfo;
+	12      (0000002e) if-ne                v4, v7, +4
+	6:45
+	(Ljava/lang/Throwable; -> 42 getActivityIndex-BB@0x42)
+
+getActivityIndex-BB@0x32 : [ getActivityIndex-BB@0x34 ]
+	13      (00000032) monitor-exit         v5
+	6:45
+	(Ljava/lang/Throwable; -> 42 getActivityIndex-BB@0x42)
+
+getActivityIndex-BB@0x34 : 
+	14      (00000034) return               v3
+	6:45
+	(Ljava/lang/Throwable; -> 42 getActivityIndex-BB@0x42)
+
+getActivityIndex-BB@0x36 : [ getActivityIndex-BB@0x1a ]
+	15      (00000036) add-int/lit8         v3, v3, 1
+	16      (0000003a) goto                 -10
+	6:45
+	(Ljava/lang/Throwable; -> 42 getActivityIndex-BB@0x42)
+
+getActivityIndex-BB@0x3c : [ getActivityIndex-BB@0x34 ]
+	17      (0000003c) const/4              v3, -1
+	18      (0000003e) monitor-exit         v5
+	19      (00000040) goto                 -6
+	6:45
+	(Ljava/lang/Throwable; -> 42 getActivityIndex-BB@0x42)
+
+getActivityIndex-BB@0x42 : 
+	20      (00000042) move-exception       v4
+	21      (00000044) monitor-exit         v5
+	22      (00000046) throw                v4
+

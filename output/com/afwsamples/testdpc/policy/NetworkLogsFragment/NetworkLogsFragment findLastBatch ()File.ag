@@ -1,0 +1,37 @@
+# Lcom/afwsamples/testdpc/policy/NetworkLogsFragment;->findLastBatch()Ljava/io/File; [access_flags=private]
+#
+# Parameters:
+# local registers: v0...v4
+#
+# - return:java.io.File
+
+findLastBatch-BB@0x0 : [ findLastBatch-BB@0x16 findLastBatch-BB@0x18 ]
+	0       (00000000) const/4              v2, 0
+	1       (00000002) invoke-virtual       v4, Lcom/afwsamples/testdpc/policy/NetworkLogsFragment;->getContext()Landroid/content/Context;
+	2       (00000008) move-result-object   v3
+	3       (0000000a) invoke-virtual       v3, v2, Landroid/content/Context;->getExternalFilesDir(Ljava/lang/String;)Ljava/io/File;
+	4       (00000010) move-result-object   v1
+	5       (00000012) if-nez               v1, +3
+
+findLastBatch-BB@0x16 : 
+	6       (00000016) return-object        v2
+
+findLastBatch-BB@0x18 : [ findLastBatch-BB@0x28 findLastBatch-BB@0x16 ]
+	7       (00000018) sget-object          v3, Lcom/afwsamples/testdpc/policy/NetworkLogsFragment$$Lambda$0;->$instance Ljava/io/FilenameFilter;
+	8       (0000001c) invoke-virtual       v1, v3, Ljava/io/File;->listFiles(Ljava/io/FilenameFilter;)[Ljava/io/File;
+	9       (00000022) move-result-object   v0
+	10      (00000024) if-eqz               v0, -7
+
+findLastBatch-BB@0x28 : [ findLastBatch-BB@0x2e findLastBatch-BB@0x16 ]
+	11      (00000028) array-length         v3, v0
+	12      (0000002a) if-eqz               v3, -a
+
+findLastBatch-BB@0x2e : [ findLastBatch-BB@0x16 ]
+	13      (0000002e) invoke-static        v0, Ljava/util/Arrays;->asList([Ljava/lang/Object;)Ljava/util/List;
+	14      (00000034) move-result-object   v2
+	15      (00000036) sget-object          v3, Lcom/afwsamples/testdpc/policy/NetworkLogsFragment$$Lambda$1;->$instance Ljava/util/Comparator;
+	16      (0000003a) invoke-static        v2, v3, Ljava/util/Collections;->max(Ljava/util/Collection; Ljava/util/Comparator;)Ljava/lang/Object;
+	17      (00000040) move-result-object   v2
+	18      (00000042) check-cast           v2, Ljava/io/File;
+	19      (00000046) goto                 -18
+

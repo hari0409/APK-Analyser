@@ -1,0 +1,19 @@
+# Landroidx/appcompat/widget/AppCompatImageButton;->setSupportImageTintMode(Landroid/graphics/PorterDuff$Mode;)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:android.graphics.PorterDuff$Mode
+#
+# - return:void
+
+setSupportImageTintMode-BB@0x0 : [ setSupportImageTintMode-BB@0x8 setSupportImageTintMode-BB@0x12 ]
+	0       (00000000) iget-object          v0, v1, Landroidx/appcompat/widget/AppCompatImageButton;->mImageHelper Landroidx/appcompat/widget/AppCompatImageHelper;
+	1       (00000004) if-eqz               v0, +7
+
+setSupportImageTintMode-BB@0x8 : [ setSupportImageTintMode-BB@0x12 ]
+	2       (00000008) iget-object          v0, v1, Landroidx/appcompat/widget/AppCompatImageButton;->mImageHelper Landroidx/appcompat/widget/AppCompatImageHelper;
+	3       (0000000c) invoke-virtual       v0, v2, Landroidx/appcompat/widget/AppCompatImageHelper;->setSupportImageTintMode(Landroid/graphics/PorterDuff$Mode;)V
+
+setSupportImageTintMode-BB@0x12 : 
+	4       (00000012) return-void          
+

@@ -1,0 +1,16 @@
+# Landroidx/appcompat/widget/SearchView;->forceSuggestionQuery()V [access_flags=]
+#
+# Parameters:
+# local registers: v0...v2
+#
+# - return:void
+
+forceSuggestionQuery-BB@0x0 : 
+	0       (00000000) sget-object          v0, Landroidx/appcompat/widget/SearchView;->HIDDEN_METHOD_INVOKER Landroidx/appcompat/widget/SearchView$AutoCompleteTextViewReflector;
+	1       (00000004) iget-object          v1, v2, Landroidx/appcompat/widget/SearchView;->mSearchSrcTextView Landroidx/appcompat/widget/SearchView$SearchAutoComplete;
+	2       (00000008) invoke-virtual       v0, v1, Landroidx/appcompat/widget/SearchView$AutoCompleteTextViewReflector;->doBeforeTextChanged(Landroid/widget/AutoCompleteTextView;)V
+	3       (0000000e) sget-object          v0, Landroidx/appcompat/widget/SearchView;->HIDDEN_METHOD_INVOKER Landroidx/appcompat/widget/SearchView$AutoCompleteTextViewReflector;
+	4       (00000012) iget-object          v1, v2, Landroidx/appcompat/widget/SearchView;->mSearchSrcTextView Landroidx/appcompat/widget/SearchView$SearchAutoComplete;
+	5       (00000016) invoke-virtual       v0, v1, Landroidx/appcompat/widget/SearchView$AutoCompleteTextViewReflector;->doAfterTextChanged(Landroid/widget/AutoCompleteTextView;)V
+	6       (0000001c) return-void          
+

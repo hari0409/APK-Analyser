@@ -1,0 +1,31 @@
+# Lcom/afwsamples/testdpc/common/ColorPicker;->onProgressChanged(Landroid/widget/SeekBar; I Z)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v3
+# - v4:android.widget.SeekBar
+# - v5:int
+# - v6:boolean
+#
+# - return:void
+
+onProgressChanged-BB@0x0 : [ onProgressChanged-BB@0x4 onProgressChanged-BB@0x3a ]
+	0       (00000000) if-eqz               v6, +1d
+
+onProgressChanged-BB@0x4 : [ onProgressChanged-BB@0x3a ]
+	1       (00000004) iget-object          v0, v3, Lcom/afwsamples/testdpc/common/ColorPicker;->mRedBar Landroid/widget/SeekBar;
+	2       (00000008) invoke-virtual       v0, Landroid/widget/SeekBar;->getProgress()I
+	3       (0000000e) move-result          v0
+	4       (00000010) iget-object          v1, v3, Lcom/afwsamples/testdpc/common/ColorPicker;->mGreenBar Landroid/widget/SeekBar;
+	5       (00000014) invoke-virtual       v1, Landroid/widget/SeekBar;->getProgress()I
+	6       (0000001a) move-result          v1
+	7       (0000001c) iget-object          v2, v3, Lcom/afwsamples/testdpc/common/ColorPicker;->mBlueBar Landroid/widget/SeekBar;
+	8       (00000020) invoke-virtual       v2, Landroid/widget/SeekBar;->getProgress()I
+	9       (00000026) move-result          v2
+	10      (00000028) invoke-static        v0, v1, v2, Landroid/graphics/Color;->rgb(I I I)I
+	11      (0000002e) move-result          v0
+	12      (00000030) iput                 v0, v3, Lcom/afwsamples/testdpc/common/ColorPicker;->mCurrentColor I
+	13      (00000034) invoke-direct        v3, Lcom/afwsamples/testdpc/common/ColorPicker;->updateViewsColor()V
+
+onProgressChanged-BB@0x3a : 
+	14      (0000003a) return-void          
+

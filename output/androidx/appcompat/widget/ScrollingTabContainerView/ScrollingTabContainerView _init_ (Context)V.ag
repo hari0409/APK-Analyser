@@ -1,0 +1,34 @@
+# Landroidx/appcompat/widget/ScrollingTabContainerView;-><init>(Landroid/content/Context;)V [access_flags=public constructor]
+#
+# Parameters:
+# - local registers: v0...v5
+# - v6:android.content.Context
+#
+# - return:void
+
+<init>-BB@0x0 : 
+	0       (00000000) invoke-direct        v5, v6, Landroid/widget/HorizontalScrollView;-><init>(Landroid/content/Context;)V
+	1       (00000006) new-instance         v1, Landroidx/appcompat/widget/ScrollingTabContainerView$VisibilityAnimListener;
+	2       (0000000a) invoke-direct        v1, v5, Landroidx/appcompat/widget/ScrollingTabContainerView$VisibilityAnimListener;-><init>(Landroidx/appcompat/widget/ScrollingTabContainerView;)V
+	3       (00000010) iput-object          v1, v5, Landroidx/appcompat/widget/ScrollingTabContainerView;->mVisAnimListener Landroidx/appcompat/widget/ScrollingTabContainerView$VisibilityAnimListener;
+	4       (00000014) const/4              v1, 0
+	5       (00000016) invoke-virtual       v5, v1, Landroidx/appcompat/widget/ScrollingTabContainerView;->setHorizontalScrollBarEnabled(Z)V
+	6       (0000001c) invoke-static        v6, Landroidx/appcompat/view/ActionBarPolicy;->get(Landroid/content/Context;)Landroidx/appcompat/view/ActionBarPolicy;
+	7       (00000022) move-result-object   v0
+	8       (00000024) invoke-virtual       v0, Landroidx/appcompat/view/ActionBarPolicy;->getTabContainerHeight()I
+	9       (0000002a) move-result          v1
+	10      (0000002c) invoke-virtual       v5, v1, Landroidx/appcompat/widget/ScrollingTabContainerView;->setContentHeight(I)V
+	11      (00000032) invoke-virtual       v0, Landroidx/appcompat/view/ActionBarPolicy;->getStackedTabMaxWidth()I
+	12      (00000038) move-result          v1
+	13      (0000003a) iput                 v1, v5, Landroidx/appcompat/widget/ScrollingTabContainerView;->mStackedTabMaxWidth I
+	14      (0000003e) invoke-direct        v5, Landroidx/appcompat/widget/ScrollingTabContainerView;->createTabLayout()Landroidx/appcompat/widget/LinearLayoutCompat;
+	15      (00000044) move-result-object   v1
+	16      (00000046) iput-object          v1, v5, Landroidx/appcompat/widget/ScrollingTabContainerView;->mTabLayout Landroidx/appcompat/widget/LinearLayoutCompat;
+	17      (0000004a) iget-object          v1, v5, Landroidx/appcompat/widget/ScrollingTabContainerView;->mTabLayout Landroidx/appcompat/widget/LinearLayoutCompat;
+	18      (0000004e) new-instance         v2, Landroid/view/ViewGroup$LayoutParams;
+	19      (00000052) const/4              v3, -2
+	20      (00000054) const/4              v4, -1
+	21      (00000056) invoke-direct        v2, v3, v4, Landroid/view/ViewGroup$LayoutParams;-><init>(I I)V
+	22      (0000005c) invoke-virtual       v5, v1, v2, Landroidx/appcompat/widget/ScrollingTabContainerView;->addView(Landroid/view/View; Landroid/view/ViewGroup$LayoutParams;)V
+	23      (00000062) return-void          
+

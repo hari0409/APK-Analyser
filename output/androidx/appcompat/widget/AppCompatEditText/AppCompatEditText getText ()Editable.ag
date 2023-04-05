@@ -1,0 +1,24 @@
+# Landroidx/appcompat/widget/AppCompatEditText;->getText()Landroid/text/Editable; [access_flags=public]
+#
+# Parameters:
+# local registers: v0...v2
+#
+# - return:android.text.Editable
+
+getText-BB@0x0 : [ getText-BB@0xc getText-BB@0x16 ]
+	0       (00000000) sget                 v0, Landroid/os/Build$VERSION;->SDK_INT I
+	1       (00000004) const/16             v1, 28
+	2       (00000008) if-lt                v0, v1, +7
+
+getText-BB@0xc : [ getText-BB@0x14 ]
+	3       (0000000c) invoke-super         v2, Landroid/widget/EditText;->getText()Landroid/text/Editable;
+	4       (00000012) move-result-object   v0
+
+getText-BB@0x14 : 
+	5       (00000014) return-object        v0
+
+getText-BB@0x16 : [ getText-BB@0x14 ]
+	6       (00000016) invoke-super         v2, Landroid/widget/EditText;->getEditableText()Landroid/text/Editable;
+	7       (0000001c) move-result-object   v0
+	8       (0000001e) goto                 -5
+

@@ -1,0 +1,20 @@
+# Landroidx/appcompat/widget/ActionBarOverlayLayout;->onNestedScroll(Landroid/view/View; I I I I)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:android.view.View
+# - v3:int
+# - v4:int
+# - v5:int
+# - v6:int
+#
+# - return:void
+
+onNestedScroll-BB@0x0 : 
+	0       (00000000) iget                 v0, v1, Landroidx/appcompat/widget/ActionBarOverlayLayout;->mHideOnContentScrollReference I
+	1       (00000004) add-int/2addr        v0, v4
+	2       (00000006) iput                 v0, v1, Landroidx/appcompat/widget/ActionBarOverlayLayout;->mHideOnContentScrollReference I
+	3       (0000000a) iget                 v0, v1, Landroidx/appcompat/widget/ActionBarOverlayLayout;->mHideOnContentScrollReference I
+	4       (0000000e) invoke-virtual       v1, v0, Landroidx/appcompat/widget/ActionBarOverlayLayout;->setActionBarHideOffset(I)V
+	5       (00000014) return-void          
+

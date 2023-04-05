@@ -1,0 +1,17 @@
+# Lcom/afwsamples/testdpc/profilepolicy/permission/ManageAppPermissionsFragment;->createListAdapter()Landroid/widget/BaseAdapter; [access_flags=protected]
+#
+# Parameters:
+# local registers: v0...v5
+#
+# - return:android.widget.BaseAdapter
+
+createListAdapter-BB@0x0 : 
+	0       (00000000) new-instance         v0, Lcom/afwsamples/testdpc/profilepolicy/permission/AppPermissionsArrayAdapter;
+	1       (00000004) invoke-virtual       v5, Lcom/afwsamples/testdpc/profilepolicy/permission/ManageAppPermissionsFragment;->getActivity()Landroid/app/Activity;
+	2       (0000000a) move-result-object   v1
+	3       (0000000c) const/4              v2, 0
+	4       (0000000e) iget-object          v3, v5, Lcom/afwsamples/testdpc/profilepolicy/permission/ManageAppPermissionsFragment;->mAppPermissions Ljava/util/List;
+	5       (00000012) iget-object          v4, v5, Lcom/afwsamples/testdpc/profilepolicy/permission/ManageAppPermissionsFragment;->mAdminComponent Landroid/content/ComponentName;
+	6       (00000016) invoke-direct        v0, v1, v2, v3, v4, Lcom/afwsamples/testdpc/profilepolicy/permission/AppPermissionsArrayAdapter;-><init>(Landroid/content/Context; I Ljava/util/List; Landroid/content/ComponentName;)V
+	7       (0000001c) return-object        v0
+

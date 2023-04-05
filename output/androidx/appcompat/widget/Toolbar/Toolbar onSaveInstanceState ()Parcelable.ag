@@ -1,0 +1,33 @@
+# Landroidx/appcompat/widget/Toolbar;->onSaveInstanceState()Landroid/os/Parcelable; [access_flags=protected]
+#
+# Parameters:
+# local registers: v0...v2
+#
+# - return:android.os.Parcelable
+
+onSaveInstanceState-BB@0x0 : [ onSaveInstanceState-BB@0x1a onSaveInstanceState-BB@0x3a ]
+	0       (00000000) new-instance         v0, Landroidx/appcompat/widget/Toolbar$SavedState;
+	1       (00000004) invoke-super         v2, Landroid/view/ViewGroup;->onSaveInstanceState()Landroid/os/Parcelable;
+	2       (0000000a) move-result-object   v1
+	3       (0000000c) invoke-direct        v0, v1, Landroidx/appcompat/widget/Toolbar$SavedState;-><init>(Landroid/os/Parcelable;)V
+	4       (00000012) iget-object          v1, v2, Landroidx/appcompat/widget/Toolbar;->mExpandedMenuPresenter Landroidx/appcompat/widget/Toolbar$ExpandedActionViewMenuPresenter;
+	5       (00000016) if-eqz               v1, +12
+
+onSaveInstanceState-BB@0x1a : [ onSaveInstanceState-BB@0x26 onSaveInstanceState-BB@0x3a ]
+	6       (0000001a) iget-object          v1, v2, Landroidx/appcompat/widget/Toolbar;->mExpandedMenuPresenter Landroidx/appcompat/widget/Toolbar$ExpandedActionViewMenuPresenter;
+	7       (0000001e) iget-object          v1, v1, Landroidx/appcompat/widget/Toolbar$ExpandedActionViewMenuPresenter;->mCurrentExpandedItem Landroidx/appcompat/view/menu/MenuItemImpl;
+	8       (00000022) if-eqz               v1, +c
+
+onSaveInstanceState-BB@0x26 : [ onSaveInstanceState-BB@0x3a ]
+	9       (00000026) iget-object          v1, v2, Landroidx/appcompat/widget/Toolbar;->mExpandedMenuPresenter Landroidx/appcompat/widget/Toolbar$ExpandedActionViewMenuPresenter;
+	10      (0000002a) iget-object          v1, v1, Landroidx/appcompat/widget/Toolbar$ExpandedActionViewMenuPresenter;->mCurrentExpandedItem Landroidx/appcompat/view/menu/MenuItemImpl;
+	11      (0000002e) invoke-virtual       v1, Landroidx/appcompat/view/menu/MenuItemImpl;->getItemId()I
+	12      (00000034) move-result          v1
+	13      (00000036) iput                 v1, v0, Landroidx/appcompat/widget/Toolbar$SavedState;->expandedMenuItemId I
+
+onSaveInstanceState-BB@0x3a : 
+	14      (0000003a) invoke-virtual       v2, Landroidx/appcompat/widget/Toolbar;->isOverflowMenuShowing()Z
+	15      (00000040) move-result          v1
+	16      (00000042) iput-boolean         v1, v0, Landroidx/appcompat/widget/Toolbar$SavedState;->isOverflowOpen Z
+	17      (00000046) return-object        v0
+

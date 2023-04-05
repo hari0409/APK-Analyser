@@ -1,0 +1,35 @@
+# Lcom/afwsamples/testdpc/SetupManagementFragment;->maybePassAffiliationIds(Landroid/content/Intent; Landroid/os/PersistableBundle;)V [access_flags=private]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:android.content.Intent
+# - v4:android.os.PersistableBundle
+#
+# - return:void
+
+maybePassAffiliationIds-BB@0x0 : [ maybePassAffiliationIds-BB@0x14 maybePassAffiliationIds-BB@0x3e ]
+	0       (00000000) invoke-virtual       v2, Lcom/afwsamples/testdpc/SetupManagementFragment;->getActivity()Landroid/app/Activity;
+	1       (00000006) move-result-object   v0
+	2       (00000008) invoke-static        v0, Lcom/afwsamples/testdpc/common/Util;->isDeviceOwner(Landroid/content/Context;)Z
+	3       (0000000e) move-result          v0
+	4       (00000010) if-eqz               v0, +17
+
+maybePassAffiliationIds-BB@0x14 : [ maybePassAffiliationIds-BB@0x2c maybePassAffiliationIds-BB@0x3e ]
+	5       (00000014) const-string         v0, 'android.app.action.PROVISION_MANAGED_PROFILE'
+	6       (00000018) invoke-virtual       v3, Landroid/content/Intent;->getAction()Ljava/lang/String;
+	7       (0000001e) move-result-object   v1
+	8       (00000020) invoke-virtual       v0, v1, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+	9       (00000026) move-result          v0
+	10      (00000028) if-eqz               v0, +b
+
+maybePassAffiliationIds-BB@0x2c : [ maybePassAffiliationIds-BB@0x38 maybePassAffiliationIds-BB@0x3e ]
+	11      (0000002c) sget                 v0, Lcom/afwsamples/testdpc/common/Util;->SDK_INT I
+	12      (00000030) const/16             v1, 26
+	13      (00000034) if-lt                v0, v1, +5
+
+maybePassAffiliationIds-BB@0x38 : [ maybePassAffiliationIds-BB@0x3e ]
+	14      (00000038) invoke-direct        v2, v3, v4, Lcom/afwsamples/testdpc/SetupManagementFragment;->passAffiliationIds(Landroid/content/Intent; Landroid/os/PersistableBundle;)V
+
+maybePassAffiliationIds-BB@0x3e : 
+	15      (0000003e) return-void          
+

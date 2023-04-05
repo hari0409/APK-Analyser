@@ -1,0 +1,60 @@
+# Lcom/afwsamples/testdpc/comp/BindDeviceAdminFragment;->onPreferenceChange(Landroidx/preference/Preference; Ljava/lang/Object;)Z [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v5
+# - v6:androidx.preference.Preference
+# - v7:java.lang.Object
+#
+# - return:boolean
+
+onPreferenceChange-BB@0x0 : [ D:onPreferenceChange-BB@0x1c 676466901:onPreferenceChange-BB@0x26 ]
+	0       (00000000) const/4              v0, 1
+	1       (00000002) const/4              v1, 0
+	2       (00000004) invoke-virtual       v6, Landroidx/preference/Preference;->getKey()Ljava/lang/String;
+	3       (0000000a) move-result-object   v3
+	4       (0000000c) const/4              v2, -1
+	5       (0000000e) invoke-virtual       v3, Ljava/lang/String;->hashCode()I
+	6       (00000014) move-result          v4
+	7       (00000016) packed-switch        v4, +2f (0x74)
+
+onPreferenceChange-BB@0x1c : [ D:onPreferenceChange-BB@0x22 0:onPreferenceChange-BB@0x3a ]
+	8       (0000001c) packed-switch        v2, +32 (0x80)
+
+onPreferenceChange-BB@0x22 : [ onPreferenceChange-BB@0x24 ]
+	9       (00000022) move                 v0, v1
+
+onPreferenceChange-BB@0x24 : 
+	10      (00000024) return               v0
+
+onPreferenceChange-BB@0x26 : [ onPreferenceChange-BB@0x36 onPreferenceChange-BB@0x1c ]
+	11      (00000026) const-string         v4, 'hide_po_launcher_icon'
+	12      (0000002a) invoke-virtual       v3, v4, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+	13      (00000030) move-result          v3
+	14      (00000032) if-eqz               v3, -b
+
+onPreferenceChange-BB@0x36 : [ onPreferenceChange-BB@0x1c ]
+	15      (00000036) move                 v2, v1
+	16      (00000038) goto                 -e
+
+onPreferenceChange-BB@0x3a : [ onPreferenceChange-BB@0x54 onPreferenceChange-BB@0x24 ]
+	17      (0000003a) iget-object          v1, v5, Lcom/afwsamples/testdpc/comp/BindDeviceAdminFragment;->mBindDeviceAdminServiceHelper Lcom/afwsamples/testdpc/comp/BindDeviceAdminServiceHelper;
+	18      (0000003e) new-instance         v2, Lcom/afwsamples/testdpc/comp/BindDeviceAdminFragment$$Lambda$4;
+	19      (00000042) invoke-direct        v2, v7, Lcom/afwsamples/testdpc/comp/BindDeviceAdminFragment$$Lambda$4;-><init>(Ljava/lang/Object;)V
+	20      (00000048) invoke-virtual       v1, v2, Lcom/afwsamples/testdpc/comp/BindDeviceAdminServiceHelper;->crossUserCall(Lcom/afwsamples/testdpc/comp/OnServiceConnectedListener;)Z
+	21      (0000004e) move-result          v1
+	22      (00000050) if-nez               v1, -16
+
+onPreferenceChange-BB@0x54 : [ onPreferenceChange-BB@0x24 ]
+	23      (00000054) invoke-virtual       v5, Lcom/afwsamples/testdpc/comp/BindDeviceAdminFragment;->getActivity()Landroid/app/Activity;
+	24      (0000005a) move-result-object   v1
+	25      (0000005c) const                v2, 2131689587 # [1.900819358743474e+38]
+	26      (00000062) invoke-static        v1, v2, v0, Landroid/widget/Toast;->makeText(Landroid/content/Context; I I)Landroid/widget/Toast;
+	27      (00000068) move-result-object   v1
+	28      (0000006a) invoke-virtual       v1, Landroid/widget/Toast;->show()V
+	29      (00000070) goto                 -26
+
+onPreferenceChange-BB@0x72 : 
+	30      (00000072) nop                  
+	31      (00000074) packed-switch-payload 285210d5
+	32      (00000080) packed-switch-payload 0
+

@@ -1,0 +1,124 @@
+# Lcom/afwsamples/testdpc/common/IntentOrIntentFilterFragment;->onCreateView(Landroid/view/LayoutInflater; Landroid/view/ViewGroup; Landroid/os/Bundle;)Landroid/view/View; [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v7
+# - v8:android.view.LayoutInflater
+# - v9:android.view.ViewGroup
+# - v10:android.os.Bundle
+#
+# - return:android.view.View
+
+onCreateView-BB@0x0 : 
+	0       (00000000) const                v6, 17367048 # [2.516294836806502e-38]
+	1       (00000006) invoke-virtual       v7, Lcom/afwsamples/testdpc/common/IntentOrIntentFilterFragment;->getActivity()Landroid/app/Activity;
+	2       (0000000c) move-result-object   v0
+	3       (0000000e) new-instance         v3, Lcom/afwsamples/testdpc/DevicePolicyManagerGatewayImpl;
+	4       (00000012) invoke-direct        v3, v0, Lcom/afwsamples/testdpc/DevicePolicyManagerGatewayImpl;-><init>(Landroid/content/Context;)V
+	5       (00000018) iput-object          v3, v7, Lcom/afwsamples/testdpc/common/IntentOrIntentFilterFragment;->mDevicePolicyManagerGateway Lcom/afwsamples/testdpc/DevicePolicyManagerGateway;
+	6       (0000001c) const                v3, 2131427361 # [1.8476336073362023e+38]
+	7       (00000022) const/4              v4, 0
+	8       (00000024) invoke-virtual       v8, v3, v4, Landroid/view/LayoutInflater;->inflate(I Landroid/view/ViewGroup;)Landroid/view/View;
+	9       (0000002a) move-result-object   v2
+	10      (0000002c) const                v3, 2131296487 # [1.821089206591519e+38]
+	11      (00000032) invoke-virtual       v2, v3, Landroid/view/View;->findViewById(I)Landroid/view/View;
+	12      (00000038) move-result-object   v3
+	13      (0000003a) check-cast           v3, Landroid/widget/Spinner;
+	14      (0000003e) iput-object          v3, v7, Lcom/afwsamples/testdpc/common/IntentOrIntentFilterFragment;->mActionsSpinner Landroid/widget/Spinner;
+	15      (00000042) iget-object          v3, v7, Lcom/afwsamples/testdpc/common/IntentOrIntentFilterFragment;->mActionsSpinner Landroid/widget/Spinner;
+	16      (00000046) new-instance         v4, Landroid/widget/ArrayAdapter;
+	17      (0000004a) sget-object          v5, Lcom/afwsamples/testdpc/common/IntentOrIntentFilterFragment;->ACTIONS_LIST [Ljava/lang/String;
+	18      (0000004e) invoke-static        v5, Ljava/util/Arrays;->asList([Ljava/lang/Object;)Ljava/util/List;
+	19      (00000054) move-result-object   v5
+	20      (00000056) invoke-direct        v4, v0, v6, v5, Landroid/widget/ArrayAdapter;-><init>(Landroid/content/Context; I Ljava/util/List;)V
+	21      (0000005c) invoke-virtual       v3, v4, Landroid/widget/Spinner;->setAdapter(Landroid/widget/SpinnerAdapter;)V
+	22      (00000062) iget-object          v3, v7, Lcom/afwsamples/testdpc/common/IntentOrIntentFilterFragment;->mActionsSpinner Landroid/widget/Spinner;
+	23      (00000066) invoke-virtual       v3, v7, Landroid/widget/Spinner;->setOnItemSelectedListener(Landroid/widget/AdapterView$OnItemSelectedListener;)V
+	24      (0000006c) const                v3, 2131296348 # [1.82106101404217e+38]
+	25      (00000072) invoke-virtual       v2, v3, Landroid/view/View;->findViewById(I)Landroid/view/View;
+	26      (00000078) move-result-object   v3
+	27      (0000007a) check-cast           v3, Landroid/widget/Button;
+	28      (0000007e) iput-object          v3, v7, Lcom/afwsamples/testdpc/common/IntentOrIntentFilterFragment;->mAddActionButton Landroid/widget/Button;
+	29      (00000082) iget-object          v3, v7, Lcom/afwsamples/testdpc/common/IntentOrIntentFilterFragment;->mAddActionButton Landroid/widget/Button;
+	30      (00000086) invoke-virtual       v3, v7, Landroid/widget/Button;->setOnClickListener(Landroid/view/View$OnClickListener;)V
+	31      (0000008c) const                v3, 2131296488 # [1.8210894094156152e+38]
+	32      (00000092) invoke-virtual       v2, v3, Landroid/view/View;->findViewById(I)Landroid/view/View;
+	33      (00000098) move-result-object   v3
+	34      (0000009a) check-cast           v3, Landroid/widget/Spinner;
+	35      (0000009e) iput-object          v3, v7, Lcom/afwsamples/testdpc/common/IntentOrIntentFilterFragment;->mCategoriesSpinner Landroid/widget/Spinner;
+	36      (000000a2) iget-object          v3, v7, Lcom/afwsamples/testdpc/common/IntentOrIntentFilterFragment;->mCategoriesSpinner Landroid/widget/Spinner;
+	37      (000000a6) new-instance         v4, Landroid/widget/ArrayAdapter;
+	38      (000000aa) sget-object          v5, Lcom/afwsamples/testdpc/common/IntentOrIntentFilterFragment;->CATEGORIES_LIST [Ljava/lang/String;
+	39      (000000ae) invoke-static        v5, Ljava/util/Arrays;->asList([Ljava/lang/Object;)Ljava/util/List;
+	40      (000000b4) move-result-object   v5
+	41      (000000b6) invoke-direct        v4, v0, v6, v5, Landroid/widget/ArrayAdapter;-><init>(Landroid/content/Context; I Ljava/util/List;)V
+	42      (000000bc) invoke-virtual       v3, v4, Landroid/widget/Spinner;->setAdapter(Landroid/widget/SpinnerAdapter;)V
+	43      (000000c2) iget-object          v3, v7, Lcom/afwsamples/testdpc/common/IntentOrIntentFilterFragment;->mCategoriesSpinner Landroid/widget/Spinner;
+	44      (000000c6) invoke-virtual       v3, v7, Landroid/widget/Spinner;->setOnItemSelectedListener(Landroid/widget/AdapterView$OnItemSelectedListener;)V
+	45      (000000cc) const                v3, 2131296349 # [1.821061216866266e+38]
+	46      (000000d2) invoke-virtual       v2, v3, Landroid/view/View;->findViewById(I)Landroid/view/View;
+	47      (000000d8) move-result-object   v1
+	48      (000000da) check-cast           v1, Landroid/widget/Button;
+	49      (000000de) invoke-virtual       v1, v7, Landroid/widget/Button;->setOnClickListener(Landroid/view/View$OnClickListener;)V
+	50      (000000e4) const                v3, 2131296489 # [1.8210896122397113e+38]
+	51      (000000ea) invoke-virtual       v2, v3, Landroid/view/View;->findViewById(I)Landroid/view/View;
+	52      (000000f0) move-result-object   v3
+	53      (000000f2) check-cast           v3, Landroid/widget/Spinner;
+	54      (000000f6) iput-object          v3, v7, Lcom/afwsamples/testdpc/common/IntentOrIntentFilterFragment;->mDataSchemesSpinner Landroid/widget/Spinner;
+	55      (000000fa) iget-object          v3, v7, Lcom/afwsamples/testdpc/common/IntentOrIntentFilterFragment;->mDataSchemesSpinner Landroid/widget/Spinner;
+	56      (000000fe) new-instance         v4, Landroid/widget/ArrayAdapter;
+	57      (00000102) sget-object          v5, Lcom/afwsamples/testdpc/common/IntentOrIntentFilterFragment;->DATA_SCHEMES_LIST [Ljava/lang/String;
+	58      (00000106) invoke-static        v5, Ljava/util/Arrays;->asList([Ljava/lang/Object;)Ljava/util/List;
+	59      (0000010c) move-result-object   v5
+	60      (0000010e) invoke-direct        v4, v0, v6, v5, Landroid/widget/ArrayAdapter;-><init>(Landroid/content/Context; I Ljava/util/List;)V
+	61      (00000114) invoke-virtual       v3, v4, Landroid/widget/Spinner;->setAdapter(Landroid/widget/SpinnerAdapter;)V
+	62      (0000011a) iget-object          v3, v7, Lcom/afwsamples/testdpc/common/IntentOrIntentFilterFragment;->mDataSchemesSpinner Landroid/widget/Spinner;
+	63      (0000011e) invoke-virtual       v3, v7, Landroid/widget/Spinner;->setOnItemSelectedListener(Landroid/widget/AdapterView$OnItemSelectedListener;)V
+	64      (00000124) const                v3, 2131296350 # [1.821061419690362e+38]
+	65      (0000012a) invoke-virtual       v2, v3, Landroid/view/View;->findViewById(I)Landroid/view/View;
+	66      (00000130) move-result-object   v3
+	67      (00000132) check-cast           v3, Landroid/widget/Button;
+	68      (00000136) iput-object          v3, v7, Lcom/afwsamples/testdpc/common/IntentOrIntentFilterFragment;->mAddDataSchemeAction Landroid/widget/Button;
+	69      (0000013a) iget-object          v3, v7, Lcom/afwsamples/testdpc/common/IntentOrIntentFilterFragment;->mAddDataSchemeAction Landroid/widget/Button;
+	70      (0000013e) invoke-virtual       v3, v7, Landroid/widget/Button;->setOnClickListener(Landroid/view/View$OnClickListener;)V
+	71      (00000144) const                v3, 2131296490 # [1.8210898150638073e+38]
+	72      (0000014a) invoke-virtual       v2, v3, Landroid/view/View;->findViewById(I)Landroid/view/View;
+	73      (00000150) move-result-object   v3
+	74      (00000152) check-cast           v3, Landroid/widget/Spinner;
+	75      (00000156) iput-object          v3, v7, Lcom/afwsamples/testdpc/common/IntentOrIntentFilterFragment;->mDataTypesSpinner Landroid/widget/Spinner;
+	76      (0000015a) iget-object          v3, v7, Lcom/afwsamples/testdpc/common/IntentOrIntentFilterFragment;->mDataTypesSpinner Landroid/widget/Spinner;
+	77      (0000015e) new-instance         v4, Landroid/widget/ArrayAdapter;
+	78      (00000162) sget-object          v5, Lcom/afwsamples/testdpc/common/IntentOrIntentFilterFragment;->DATA_TYPES_LIST [Ljava/lang/String;
+	79      (00000166) invoke-static        v5, Ljava/util/Arrays;->asList([Ljava/lang/Object;)Ljava/util/List;
+	80      (0000016c) move-result-object   v5
+	81      (0000016e) invoke-direct        v4, v0, v6, v5, Landroid/widget/ArrayAdapter;-><init>(Landroid/content/Context; I Ljava/util/List;)V
+	82      (00000174) invoke-virtual       v3, v4, Landroid/widget/Spinner;->setAdapter(Landroid/widget/SpinnerAdapter;)V
+	83      (0000017a) iget-object          v3, v7, Lcom/afwsamples/testdpc/common/IntentOrIntentFilterFragment;->mDataTypesSpinner Landroid/widget/Spinner;
+	84      (0000017e) invoke-virtual       v3, v7, Landroid/widget/Spinner;->setOnItemSelectedListener(Landroid/widget/AdapterView$OnItemSelectedListener;)V
+	85      (00000184) const                v3, 2131296351 # [1.8210616225144582e+38]
+	86      (0000018a) invoke-virtual       v2, v3, Landroid/view/View;->findViewById(I)Landroid/view/View;
+	87      (00000190) move-result-object   v3
+	88      (00000192) check-cast           v3, Landroid/widget/Button;
+	89      (00000196) iput-object          v3, v7, Lcom/afwsamples/testdpc/common/IntentOrIntentFilterFragment;->mAddDataTypeButton Landroid/widget/Button;
+	90      (0000019a) iget-object          v3, v7, Lcom/afwsamples/testdpc/common/IntentOrIntentFilterFragment;->mAddDataTypeButton Landroid/widget/Button;
+	91      (0000019e) invoke-virtual       v3, v7, Landroid/widget/Button;->setOnClickListener(Landroid/view/View$OnClickListener;)V
+	92      (000001a4) const                v3, 2131296713 # [1.8211350448372234e+38]
+	93      (000001aa) invoke-virtual       v2, v3, Landroid/view/View;->findViewById(I)Landroid/view/View;
+	94      (000001b0) move-result-object   v3
+	95      (000001b2) check-cast           v3, Landroid/widget/TextView;
+	96      (000001b6) iput-object          v3, v7, Lcom/afwsamples/testdpc/common/IntentOrIntentFilterFragment;->mStatusTextView Landroid/widget/TextView;
+	97      (000001ba) const                v3, 2131296347 # [1.821060811218074e+38]
+	98      (000001c0) invoke-virtual       v2, v3, Landroid/view/View;->findViewById(I)Landroid/view/View;
+	99      (000001c6) move-result-object   v3
+	100     (000001c8) check-cast           v3, Landroid/widget/Button;
+	101     (000001cc) iput-object          v3, v7, Lcom/afwsamples/testdpc/common/IntentOrIntentFilterFragment;->mAddButton Landroid/widget/Button;
+	102     (000001d0) iget-object          v3, v7, Lcom/afwsamples/testdpc/common/IntentOrIntentFilterFragment;->mAddButton Landroid/widget/Button;
+	103     (000001d4) invoke-virtual       v3, v7, Landroid/widget/Button;->setOnClickListener(Landroid/view/View$OnClickListener;)V
+	104     (000001da) const                v3, 2131296352 # [1.8210618253385543e+38]
+	105     (000001e0) invoke-virtual       v2, v3, Landroid/view/View;->findViewById(I)Landroid/view/View;
+	106     (000001e6) move-result-object   v3
+	107     (000001e8) check-cast           v3, Landroid/widget/Button;
+	108     (000001ec) iput-object          v3, v7, Lcom/afwsamples/testdpc/common/IntentOrIntentFilterFragment;->mClearButton Landroid/widget/Button;
+	109     (000001f0) iget-object          v3, v7, Lcom/afwsamples/testdpc/common/IntentOrIntentFilterFragment;->mClearButton Landroid/widget/Button;
+	110     (000001f4) invoke-virtual       v3, v7, Landroid/widget/Button;->setOnClickListener(Landroid/view/View$OnClickListener;)V
+	111     (000001fa) return-object        v2
+

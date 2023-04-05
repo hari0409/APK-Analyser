@@ -1,0 +1,22 @@
+# Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->parseInt(Ljava/lang/String; I)I [access_flags=private static]
+#
+# Parameters:
+# - local registers: v0...v0
+# - v1:java.lang.String
+# - v2:int
+#
+# - return:int
+
+parseInt-BB@0x0 : [ parseInt-BB@0x8 ]
+	0       (00000000) invoke-static        v1, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
+	1       (00000006) move-result          v2
+	0:5
+	(Ljava/lang/NumberFormatException; -> a parseInt-BB@0xa)
+
+parseInt-BB@0x8 : 
+	2       (00000008) return               v2
+
+parseInt-BB@0xa : [ parseInt-BB@0x8 ]
+	3       (0000000a) move-exception       v0
+	4       (0000000c) goto                 -2
+

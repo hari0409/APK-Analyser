@@ -1,0 +1,199 @@
+# Landroidx/multidex/MultiDexExtractor;->extract(Ljava/util/zip/ZipFile; Ljava/util/zip/ZipEntry; Ljava/io/File; Ljava/lang/String;)V [access_flags=private static]
+#
+# Parameters:
+# - local registers: v0...v9
+# - v10:java.util.zip.ZipFile
+# - v11:java.util.zip.ZipEntry
+# - v12:java.io.File
+# - v13:java.lang.String
+#
+# - return:void
+
+extract-BB@0x0 : [ extract-BB@0x7c ]
+	0       (00000000) invoke-virtual       v10, v11, Ljava/util/zip/ZipFile;->getInputStream(Ljava/util/zip/ZipEntry;)Ljava/io/InputStream;
+	1       (00000006) move-result-object   v2
+	2       (00000008) const/4              v4, 0
+	3       (0000000a) new-instance         v7, Ljava/lang/StringBuilder;
+	4       (0000000e) invoke-direct        v7, Ljava/lang/StringBuilder;-><init>()V
+	5       (00000014) const-string         v8, 'tmp-'
+	6       (00000018) invoke-virtual       v7, v8, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	7       (0000001e) move-result-object   v7
+	8       (00000020) invoke-virtual       v7, v13, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	9       (00000026) move-result-object   v7
+	10      (00000028) invoke-virtual       v7, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+	11      (0000002e) move-result-object   v7
+	12      (00000030) const-string         v8, '.zip'
+	13      (00000034) invoke-virtual       v12, Ljava/io/File;->getParentFile()Ljava/io/File;
+	14      (0000003a) move-result-object   v9
+	15      (0000003c) invoke-static        v7, v8, v9, Ljava/io/File;->createTempFile(Ljava/lang/String; Ljava/lang/String; Ljava/io/File;)Ljava/io/File;
+	16      (00000042) move-result-object   v6
+	17      (00000044) const-string         v7, 'MultiDex'
+	18      (00000048) new-instance         v8, Ljava/lang/StringBuilder;
+	19      (0000004c) invoke-direct        v8, Ljava/lang/StringBuilder;-><init>()V
+	20      (00000052) const-string         v9, 'Extracting '
+	21      (00000056) invoke-virtual       v8, v9, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	22      (0000005c) move-result-object   v8
+	23      (0000005e) invoke-virtual       v6, Ljava/io/File;->getPath()Ljava/lang/String;
+	24      (00000064) move-result-object   v9
+	25      (00000066) invoke-virtual       v8, v9, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	26      (0000006c) move-result-object   v8
+	27      (0000006e) invoke-virtual       v8, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+	28      (00000074) move-result-object   v8
+	29      (00000076) invoke-static        v7, v8, Landroid/util/Log;->i(Ljava/lang/String; Ljava/lang/String;)I
+
+extract-BB@0x7c : [ extract-BB@0x9a ]
+	30      (0000007c) new-instance         v5, Ljava/util/zip/ZipOutputStream;
+	31      (00000080) new-instance         v7, Ljava/io/BufferedOutputStream;
+	32      (00000084) new-instance         v8, Ljava/io/FileOutputStream;
+	33      (00000088) invoke-direct        v8, v6, Ljava/io/FileOutputStream;-><init>(Ljava/io/File;)V
+	34      (0000008e) invoke-direct        v7, v8, Ljava/io/BufferedOutputStream;-><init>(Ljava/io/OutputStream;)V
+	35      (00000094) invoke-direct        v5, v7, Ljava/util/zip/ZipOutputStream;-><init>(Ljava/io/OutputStream;)V
+	7c:99
+	(Ljava/lang/Throwable; -> 22e extract-BB@0x22e)
+
+extract-BB@0x9a : [ extract-BB@0xcc ]
+	36      (0000009a) new-instance         v1, Ljava/util/zip/ZipEntry;
+	37      (0000009e) const-string         v7, 'classes.dex'
+	38      (000000a2) invoke-direct        v1, v7, Ljava/util/zip/ZipEntry;-><init>(Ljava/lang/String;)V
+	39      (000000a8) invoke-virtual       v11, Ljava/util/zip/ZipEntry;->getTime()J
+	40      (000000ae) move-result-wide     v8
+	41      (000000b0) invoke-virtual       v1, v8, v9, Ljava/util/zip/ZipEntry;->setTime(J)V
+	42      (000000b6) invoke-virtual       v5, v1, Ljava/util/zip/ZipOutputStream;->putNextEntry(Ljava/util/zip/ZipEntry;)V
+	43      (000000bc) const/16             v7, 16384
+	44      (000000c0) new-array            v0, v7, [B
+	45      (000000c4) invoke-virtual       v2, v0, Ljava/io/InputStream;->read([B)I
+	46      (000000ca) move-result          v3
+	9a:e9
+	(Ljava/lang/Throwable; -> 170 extract-BB@0x170)
+
+extract-BB@0xcc : [ extract-BB@0xd2 extract-BB@0xe4 ]
+	47      (000000cc) const/4              v7, -1
+	48      (000000ce) if-eq                v3, v7, +b
+	9a:e9
+	(Ljava/lang/Throwable; -> 170 extract-BB@0x170)
+
+extract-BB@0xd2 : [ extract-BB@0xcc ]
+	49      (000000d2) const/4              v7, 0
+	50      (000000d4) invoke-virtual       v5, v0, v7, v3, Ljava/util/zip/ZipOutputStream;->write([B I I)V
+	51      (000000da) invoke-virtual       v2, v0, Ljava/io/InputStream;->read([B)I
+	52      (000000e0) move-result          v3
+	53      (000000e2) goto                 -b
+	9a:e9
+	(Ljava/lang/Throwable; -> 170 extract-BB@0x170)
+
+extract-BB@0xe4 : [ extract-BB@0xea ]
+	54      (000000e4) invoke-virtual       v5, Ljava/util/zip/ZipOutputStream;->closeEntry()V
+	9a:e9
+	(Ljava/lang/Throwable; -> 170 extract-BB@0x170)
+
+extract-BB@0xea : [ extract-BB@0xfc extract-BB@0x17a ]
+	55      (000000ea) invoke-virtual       v5, Ljava/util/zip/ZipOutputStream;->close()V
+	56      (000000f0) invoke-virtual       v6, Ljava/io/File;->setReadOnly()Z
+	57      (000000f6) move-result          v7
+	58      (000000f8) if-nez               v7, +41
+	ea:15d
+	(Ljava/lang/Throwable; -> 15e extract-BB@0x15e)
+
+extract-BB@0xfc : 
+	59      (000000fc) new-instance         v7, Ljava/io/IOException;
+	60      (00000100) new-instance         v8, Ljava/lang/StringBuilder;
+	61      (00000104) invoke-direct        v8, Ljava/lang/StringBuilder;-><init>()V
+	62      (0000010a) const-string         v9, 'Failed to mark readonly "'
+	63      (0000010e) invoke-virtual       v8, v9, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	64      (00000114) move-result-object   v8
+	65      (00000116) invoke-virtual       v6, Ljava/io/File;->getAbsolutePath()Ljava/lang/String;
+	66      (0000011c) move-result-object   v9
+	67      (0000011e) invoke-virtual       v8, v9, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	68      (00000124) move-result-object   v8
+	69      (00000126) const-string         v9, '" (tmp of "'
+	70      (0000012a) invoke-virtual       v8, v9, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	71      (00000130) move-result-object   v8
+	72      (00000132) invoke-virtual       v12, Ljava/io/File;->getAbsolutePath()Ljava/lang/String;
+	73      (00000138) move-result-object   v9
+	74      (0000013a) invoke-virtual       v8, v9, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	75      (00000140) move-result-object   v8
+	76      (00000142) const-string         v9, '")'
+	77      (00000146) invoke-virtual       v8, v9, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	78      (0000014c) move-result-object   v8
+	79      (0000014e) invoke-virtual       v8, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+	80      (00000154) move-result-object   v8
+	81      (00000156) invoke-direct        v7, v8, Ljava/io/IOException;-><init>(Ljava/lang/String;)V
+	82      (0000015c) throw                v7
+	ea:15d
+	(Ljava/lang/Throwable; -> 15e extract-BB@0x15e)
+
+extract-BB@0x15e : [ extract-BB@0x162 ]
+	83      (0000015e) move-exception       v7
+	84      (00000160) move-object          v4, v5
+
+extract-BB@0x162 : 
+	85      (00000162) invoke-static        v2, Landroidx/multidex/MultiDexExtractor;->closeQuietly(Ljava/io/Closeable;)V
+	86      (00000168) invoke-virtual       v6, Ljava/io/File;->delete()Z
+	87      (0000016e) throw                v7
+
+extract-BB@0x170 : [ extract-BB@0x172 ]
+	88      (00000170) move-exception       v7
+
+extract-BB@0x172 : 
+	89      (00000172) invoke-virtual       v5, Ljava/util/zip/ZipOutputStream;->close()V
+	90      (00000178) throw                v7
+	172:21f
+	(Ljava/lang/Throwable; -> 15e extract-BB@0x15e)
+
+extract-BB@0x17a : [ extract-BB@0x1be extract-BB@0x220 ]
+	91      (0000017a) const-string         v7, 'MultiDex'
+	92      (0000017e) new-instance         v8, Ljava/lang/StringBuilder;
+	93      (00000182) invoke-direct        v8, Ljava/lang/StringBuilder;-><init>()V
+	94      (00000188) const-string         v9, 'Renaming to '
+	95      (0000018c) invoke-virtual       v8, v9, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	96      (00000192) move-result-object   v8
+	97      (00000194) invoke-virtual       v12, Ljava/io/File;->getPath()Ljava/lang/String;
+	98      (0000019a) move-result-object   v9
+	99      (0000019c) invoke-virtual       v8, v9, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	100     (000001a2) move-result-object   v8
+	101     (000001a4) invoke-virtual       v8, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+	102     (000001aa) move-result-object   v8
+	103     (000001ac) invoke-static        v7, v8, Landroid/util/Log;->i(Ljava/lang/String; Ljava/lang/String;)I
+	104     (000001b2) invoke-virtual       v6, v12, Ljava/io/File;->renameTo(Ljava/io/File;)Z
+	105     (000001b8) move-result          v7
+	106     (000001ba) if-nez               v7, +33
+	172:21f
+	(Ljava/lang/Throwable; -> 15e extract-BB@0x15e)
+
+extract-BB@0x1be : 
+	107     (000001be) new-instance         v7, Ljava/io/IOException;
+	108     (000001c2) new-instance         v8, Ljava/lang/StringBuilder;
+	109     (000001c6) invoke-direct        v8, Ljava/lang/StringBuilder;-><init>()V
+	110     (000001cc) const-string         v9, 'Failed to rename "'
+	111     (000001d0) invoke-virtual       v8, v9, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	112     (000001d6) move-result-object   v8
+	113     (000001d8) invoke-virtual       v6, Ljava/io/File;->getAbsolutePath()Ljava/lang/String;
+	114     (000001de) move-result-object   v9
+	115     (000001e0) invoke-virtual       v8, v9, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	116     (000001e6) move-result-object   v8
+	117     (000001e8) const-string         v9, '" to "'
+	118     (000001ec) invoke-virtual       v8, v9, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	119     (000001f2) move-result-object   v8
+	120     (000001f4) invoke-virtual       v12, Ljava/io/File;->getAbsolutePath()Ljava/lang/String;
+	121     (000001fa) move-result-object   v9
+	122     (000001fc) invoke-virtual       v8, v9, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	123     (00000202) move-result-object   v8
+	124     (00000204) const-string         v9, '"'
+	125     (00000208) invoke-virtual       v8, v9, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	126     (0000020e) move-result-object   v8
+	127     (00000210) invoke-virtual       v8, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+	128     (00000216) move-result-object   v8
+	129     (00000218) invoke-direct        v7, v8, Ljava/io/IOException;-><init>(Ljava/lang/String;)V
+	130     (0000021e) throw                v7
+	172:21f
+	(Ljava/lang/Throwable; -> 15e extract-BB@0x15e)
+
+extract-BB@0x220 : 
+	131     (00000220) invoke-static        v2, Landroidx/multidex/MultiDexExtractor;->closeQuietly(Ljava/io/Closeable;)V
+	132     (00000226) invoke-virtual       v6, Ljava/io/File;->delete()Z
+	133     (0000022c) return-void          
+
+extract-BB@0x22e : [ extract-BB@0x162 ]
+	134     (0000022e) move-exception       v7
+	135     (00000230) goto                 -67
+

@@ -1,0 +1,21 @@
+# Lafu/org/checkerframework/checker/formatter/FormatUtil$IllegalFormatConversionCategoryException;->getMessage()Ljava/lang/String; [access_flags=public]
+#
+# Parameters:
+# local registers: v0...v4
+#
+# - return:java.lang.String
+
+getMessage-BB@0x0 : 
+	0       (00000000) const-string         v0, 'Expected category %s but found %s.'
+	1       (00000004) const/4              v1, 2
+	2       (00000006) new-array            v1, v1, [Ljava/lang/Object;
+	3       (0000000a) const/4              v2, 0
+	4       (0000000c) iget-object          v3, v4, Lafu/org/checkerframework/checker/formatter/FormatUtil$IllegalFormatConversionCategoryException;->expected Lafu/org/checkerframework/checker/formatter/qual/ConversionCategory;
+	5       (00000010) aput-object          v3, v1, v2
+	6       (00000014) const/4              v2, 1
+	7       (00000016) iget-object          v3, v4, Lafu/org/checkerframework/checker/formatter/FormatUtil$IllegalFormatConversionCategoryException;->found Lafu/org/checkerframework/checker/formatter/qual/ConversionCategory;
+	8       (0000001a) aput-object          v3, v1, v2
+	9       (0000001e) invoke-static        v0, v1, Ljava/lang/String;->format(Ljava/lang/String; [Ljava/lang/Object;)Ljava/lang/String;
+	10      (00000024) move-result-object   v0
+	11      (00000026) return-object        v0
+

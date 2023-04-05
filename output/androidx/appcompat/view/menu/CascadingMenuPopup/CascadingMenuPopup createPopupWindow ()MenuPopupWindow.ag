@@ -1,0 +1,28 @@
+# Landroidx/appcompat/view/menu/CascadingMenuPopup;->createPopupWindow()Landroidx/appcompat/widget/MenuPopupWindow; [access_flags=private]
+#
+# Parameters:
+# local registers: v0...v5
+#
+# - return:androidx.appcompat.widget.MenuPopupWindow
+
+createPopupWindow-BB@0x0 : 
+	0       (00000000) new-instance         v0, Landroidx/appcompat/widget/MenuPopupWindow;
+	1       (00000004) iget-object          v1, v5, Landroidx/appcompat/view/menu/CascadingMenuPopup;->mContext Landroid/content/Context;
+	2       (00000008) const/4              v2, 0
+	3       (0000000a) iget                 v3, v5, Landroidx/appcompat/view/menu/CascadingMenuPopup;->mPopupStyleAttr I
+	4       (0000000e) iget                 v4, v5, Landroidx/appcompat/view/menu/CascadingMenuPopup;->mPopupStyleRes I
+	5       (00000012) invoke-direct        v0, v1, v2, v3, v4, Landroidx/appcompat/widget/MenuPopupWindow;-><init>(Landroid/content/Context; Landroid/util/AttributeSet; I I)V
+	6       (00000018) iget-object          v1, v5, Landroidx/appcompat/view/menu/CascadingMenuPopup;->mMenuItemHoverListener Landroidx/appcompat/widget/MenuItemHoverListener;
+	7       (0000001c) invoke-virtual       v0, v1, Landroidx/appcompat/widget/MenuPopupWindow;->setHoverListener(Landroidx/appcompat/widget/MenuItemHoverListener;)V
+	8       (00000022) invoke-virtual       v0, v5, Landroidx/appcompat/widget/MenuPopupWindow;->setOnItemClickListener(Landroid/widget/AdapterView$OnItemClickListener;)V
+	9       (00000028) invoke-virtual       v0, v5, Landroidx/appcompat/widget/MenuPopupWindow;->setOnDismissListener(Landroid/widget/PopupWindow$OnDismissListener;)V
+	10      (0000002e) iget-object          v1, v5, Landroidx/appcompat/view/menu/CascadingMenuPopup;->mAnchorView Landroid/view/View;
+	11      (00000032) invoke-virtual       v0, v1, Landroidx/appcompat/widget/MenuPopupWindow;->setAnchorView(Landroid/view/View;)V
+	12      (00000038) iget                 v1, v5, Landroidx/appcompat/view/menu/CascadingMenuPopup;->mDropDownGravity I
+	13      (0000003c) invoke-virtual       v0, v1, Landroidx/appcompat/widget/MenuPopupWindow;->setDropDownGravity(I)V
+	14      (00000042) const/4              v1, 1
+	15      (00000044) invoke-virtual       v0, v1, Landroidx/appcompat/widget/MenuPopupWindow;->setModal(Z)V
+	16      (0000004a) const/4              v1, 2
+	17      (0000004c) invoke-virtual       v0, v1, Landroidx/appcompat/widget/MenuPopupWindow;->setInputMethodMode(I)V
+	18      (00000052) return-object        v0
+

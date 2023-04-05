@@ -1,0 +1,14 @@
+# Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->showStartUserInBackgroundPrompt()V [access_flags=private]
+#
+# Parameters:
+# local registers: v0...v2
+#
+# - return:void
+
+showStartUserInBackgroundPrompt-BB@0x0 : 
+	0       (00000000) const                v0, 2131690266 # [1.9009570763046827e+38]
+	1       (00000006) new-instance         v1, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment$$Lambda$40;
+	2       (0000000a) invoke-direct        v1, v2, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment$$Lambda$40;-><init>(Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;)V
+	3       (00000010) invoke-direct        v2, v0, v1, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->showChooseUserPrompt(I Lcom/afwsamples/testdpc/policy/PolicyManagementFragment$UserCallback;)V
+	4       (00000016) return-void          
+

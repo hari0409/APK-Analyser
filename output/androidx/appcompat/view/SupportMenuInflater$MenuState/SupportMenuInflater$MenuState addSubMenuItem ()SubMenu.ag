@@ -1,0 +1,22 @@
+# Landroidx/appcompat/view/SupportMenuInflater$MenuState;->addSubMenuItem()Landroid/view/SubMenu; [access_flags=public]
+#
+# Parameters:
+# local registers: v0...v6
+#
+# - return:android.view.SubMenu
+
+addSubMenuItem-BB@0x0 : 
+	0       (00000000) const/4              v1, 1
+	1       (00000002) iput-boolean         v1, v6, Landroidx/appcompat/view/SupportMenuInflater$MenuState;->itemAdded Z
+	2       (00000006) iget-object          v1, v6, Landroidx/appcompat/view/SupportMenuInflater$MenuState;->menu Landroid/view/Menu;
+	3       (0000000a) iget                 v2, v6, Landroidx/appcompat/view/SupportMenuInflater$MenuState;->groupId I
+	4       (0000000e) iget                 v3, v6, Landroidx/appcompat/view/SupportMenuInflater$MenuState;->itemId I
+	5       (00000012) iget                 v4, v6, Landroidx/appcompat/view/SupportMenuInflater$MenuState;->itemCategoryOrder I
+	6       (00000016) iget-object          v5, v6, Landroidx/appcompat/view/SupportMenuInflater$MenuState;->itemTitle Ljava/lang/CharSequence;
+	7       (0000001a) invoke-interface     v1, v2, v3, v4, v5, Landroid/view/Menu;->addSubMenu(I I I Ljava/lang/CharSequence;)Landroid/view/SubMenu;
+	8       (00000020) move-result-object   v0
+	9       (00000022) invoke-interface     v0, Landroid/view/SubMenu;->getItem()Landroid/view/MenuItem;
+	10      (00000028) move-result-object   v1
+	11      (0000002a) invoke-direct        v6, v1, Landroidx/appcompat/view/SupportMenuInflater$MenuState;->setItem(Landroid/view/MenuItem;)V
+	12      (00000030) return-object        v0
+

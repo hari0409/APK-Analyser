@@ -1,0 +1,34 @@
+# Landroidx/appcompat/widget/AppCompatTextView;->consumeTextFutureAndSetBlocking()V [access_flags=private]
+#
+# Parameters:
+# local registers: v0...v2
+#
+# - return:void
+
+consumeTextFutureAndSetBlocking-BB@0x0 : [ consumeTextFutureAndSetBlocking-BB@0x8 consumeTextFutureAndSetBlocking-BB@0x24 ]
+	0       (00000000) iget-object          v1, v2, Landroidx/appcompat/widget/AppCompatTextView;->mPrecomputedTextFuture Ljava/util/concurrent/Future;
+	1       (00000004) if-eqz               v1, +10
+
+consumeTextFutureAndSetBlocking-BB@0x8 : [ consumeTextFutureAndSetBlocking-BB@0x24 ]
+	2       (00000008) iget-object          v0, v2, Landroidx/appcompat/widget/AppCompatTextView;->mPrecomputedTextFuture Ljava/util/concurrent/Future;
+	3       (0000000c) const/4              v1, 0
+	4       (0000000e) iput-object          v1, v2, Landroidx/appcompat/widget/AppCompatTextView;->mPrecomputedTextFuture Ljava/util/concurrent/Future;
+	5       (00000012) invoke-interface     v0, Ljava/util/concurrent/Future;->get()Ljava/lang/Object;
+	6       (00000018) move-result-object   v1
+	7       (0000001a) check-cast           v1, Landroidx/core/text/PrecomputedTextCompat;
+	8       (0000001e) invoke-static        v2, v1, Landroidx/core/widget/TextViewCompat;->setPrecomputedText(Landroid/widget/TextView; Landroidx/core/text/PrecomputedTextCompat;)V
+	8:23
+	(Ljava/lang/InterruptedException; -> 26 consumeTextFutureAndSetBlocking-BB@0x26)
+	(Ljava/util/concurrent/ExecutionException; -> 2a consumeTextFutureAndSetBlocking-BB@0x2a)
+
+consumeTextFutureAndSetBlocking-BB@0x24 : 
+	9       (00000024) return-void          
+
+consumeTextFutureAndSetBlocking-BB@0x26 : [ consumeTextFutureAndSetBlocking-BB@0x24 ]
+	10      (00000026) move-exception       v1
+	11      (00000028) goto                 -2
+
+consumeTextFutureAndSetBlocking-BB@0x2a : [ consumeTextFutureAndSetBlocking-BB@0x24 ]
+	12      (0000002a) move-exception       v1
+	13      (0000002c) goto                 -4
+

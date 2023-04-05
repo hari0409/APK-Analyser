@@ -1,0 +1,14 @@
+# Landroidx/appcompat/widget/AppCompatTextHelper$1;->onFontRetrieved(Landroid/graphics/Typeface;)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:android.graphics.Typeface
+#
+# - return:void
+
+onFontRetrieved-BB@0x0 : 
+	0       (00000000) iget-object          v0, v2, Landroidx/appcompat/widget/AppCompatTextHelper$1;->this$0 Landroidx/appcompat/widget/AppCompatTextHelper;
+	1       (00000004) iget-object          v1, v2, Landroidx/appcompat/widget/AppCompatTextHelper$1;->val$textViewWeak Ljava/lang/ref/WeakReference;
+	2       (00000008) invoke-virtual       v0, v1, v3, Landroidx/appcompat/widget/AppCompatTextHelper;->onAsyncTypefaceReceived(Ljava/lang/ref/WeakReference; Landroid/graphics/Typeface;)V
+	3       (0000000e) return-void          
+

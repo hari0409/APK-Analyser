@@ -1,0 +1,108 @@
+# Lcom/afwsamples/testdpc/cosu/EnableCosuActivity;->onCreate(Landroid/os/Bundle;)V [access_flags=protected]
+#
+# Parameters:
+# - local registers: v0...v8
+# - v9:android.os.Bundle
+#
+# - return:void
+
+onCreate-BB@0x0 : [ onCreate-BB@0x2e onCreate-BB@0x44 ]
+	0       (00000000) const/16             v7, 8
+	1       (00000004) invoke-super         v8, v9, Landroid/app/Activity;->onCreate(Landroid/os/Bundle;)V
+	2       (0000000a) const-string         v5, 'device_policy'
+	3       (0000000e) invoke-virtual       v8, v5, Lcom/afwsamples/testdpc/cosu/EnableCosuActivity;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
+	4       (00000014) move-result-object   v1
+	5       (00000016) check-cast           v1, Landroid/app/admin/DevicePolicyManager;
+	6       (0000001a) invoke-virtual       v8, Lcom/afwsamples/testdpc/cosu/EnableCosuActivity;->getPackageName()Ljava/lang/String;
+	7       (00000020) move-result-object   v5
+	8       (00000022) invoke-virtual       v1, v5, Landroid/app/admin/DevicePolicyManager;->isDeviceOwnerApp(Ljava/lang/String;)Z
+	9       (00000028) move-result          v5
+	10      (0000002a) if-nez               v5, +d
+
+onCreate-BB@0x2e : [ onCreate-BB@0x42 ]
+	11      (0000002e) const-string         v5, 'CosuSetup'
+	12      (00000032) const-string         v6, 'TestDPC is not the device owner, cannot set up COSU device.'
+	13      (00000036) invoke-static        v5, v6, Landroid/util/Log;->e(Ljava/lang/String; Ljava/lang/String;)I
+	14      (0000003c) invoke-virtual       v8, Lcom/afwsamples/testdpc/cosu/EnableCosuActivity;->finish()V
+
+onCreate-BB@0x42 : 
+	15      (00000042) return-void          
+
+onCreate-BB@0x44 : [ onCreate-BB@0x60 onCreate-BB@0x76 ]
+	16      (00000044) invoke-virtual       v8, Lcom/afwsamples/testdpc/cosu/EnableCosuActivity;->getIntent()Landroid/content/Intent;
+	17      (0000004a) move-result-object   v5
+	18      (0000004c) const-string         v6, 'android.app.extra.PROVISIONING_ADMIN_EXTRAS_BUNDLE'
+	19      (00000050) invoke-virtual       v5, v6, Landroid/content/Intent;->getParcelableExtra(Ljava/lang/String;)Landroid/os/Parcelable;
+	20      (00000056) move-result-object   v4
+	21      (00000058) check-cast           v4, Landroid/os/PersistableBundle;
+	22      (0000005c) if-nez               v4, +d
+
+onCreate-BB@0x60 : [ onCreate-BB@0x42 ]
+	23      (00000060) const-string         v5, 'CosuSetup'
+	24      (00000064) const-string         v6, 'No admin extra bundle'
+	25      (00000068) invoke-static        v5, v6, Landroid/util/Log;->e(Ljava/lang/String; Ljava/lang/String;)I
+	26      (0000006e) invoke-virtual       v8, Lcom/afwsamples/testdpc/cosu/EnableCosuActivity;->finish()V
+	27      (00000074) goto                 -19
+
+onCreate-BB@0x76 : [ onCreate-BB@0x12c onCreate-BB@0x142 ]
+	28      (00000076) const                v5, 2131427379 # [1.847637258169931e+38]
+	29      (0000007c) invoke-virtual       v8, v5, Lcom/afwsamples/testdpc/cosu/EnableCosuActivity;->setContentView(I)V
+	30      (00000082) const                v5, 2131296619 # [1.821115979372196e+38]
+	31      (00000088) invoke-virtual       v8, v5, Lcom/afwsamples/testdpc/cosu/EnableCosuActivity;->findViewById(I)Landroid/view/View;
+	32      (0000008e) move-result-object   v2
+	33      (00000090) check-cast           v2, Lcom/android/setupwizardlib/SetupWizardLayout;
+	34      (00000094) invoke-virtual       v2, Lcom/android/setupwizardlib/SetupWizardLayout;->getNavigationBar()Lcom/android/setupwizardlib/view/NavigationBar;
+	35      (0000009a) move-result-object   v3
+	36      (0000009c) invoke-virtual       v3, Lcom/android/setupwizardlib/view/NavigationBar;->getNextButton()Landroid/widget/Button;
+	37      (000000a2) move-result-object   v5
+	38      (000000a4) invoke-virtual       v5, v7, Landroid/widget/Button;->setVisibility(I)V
+	39      (000000aa) invoke-virtual       v3, Lcom/android/setupwizardlib/view/NavigationBar;->getBackButton()Landroid/widget/Button;
+	40      (000000b0) move-result-object   v5
+	41      (000000b2) invoke-virtual       v5, v7, Landroid/widget/Button;->setVisibility(I)V
+	42      (000000b8) invoke-virtual       v2, Lcom/android/setupwizardlib/SetupWizardLayout;->showProgressBar()V
+	43      (000000be) const                v5, 2131296642 # [1.821120644326405e+38]
+	44      (000000c4) invoke-virtual       v8, v5, Lcom/afwsamples/testdpc/cosu/EnableCosuActivity;->findViewById(I)Landroid/view/View;
+	45      (000000ca) move-result-object   v5
+	46      (000000cc) check-cast           v5, Landroid/widget/TextView;
+	47      (000000d0) iput-object          v5, v8, Lcom/afwsamples/testdpc/cosu/EnableCosuActivity;->mStatusText Landroid/widget/TextView;
+	48      (000000d4) const-string         v5, 'download'
+	49      (000000d8) invoke-virtual       v8, v5, Lcom/afwsamples/testdpc/cosu/EnableCosuActivity;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
+	50      (000000de) move-result-object   v5
+	51      (000000e0) check-cast           v5, Landroid/app/DownloadManager;
+	52      (000000e4) iput-object          v5, v8, Lcom/afwsamples/testdpc/cosu/EnableCosuActivity;->mDownloadManager Landroid/app/DownloadManager;
+	53      (000000e8) iget-object          v5, v8, Lcom/afwsamples/testdpc/cosu/EnableCosuActivity;->mDownloadReceiver Landroid/content/BroadcastReceiver;
+	54      (000000ec) new-instance         v6, Landroid/content/IntentFilter;
+	55      (000000f0) const-string         v7, 'android.intent.action.DOWNLOAD_COMPLETE'
+	56      (000000f4) invoke-direct        v6, v7, Landroid/content/IntentFilter;-><init>(Ljava/lang/String;)V
+	57      (000000fa) invoke-virtual       v8, v5, v6, Lcom/afwsamples/testdpc/cosu/EnableCosuActivity;->registerReceiver(Landroid/content/BroadcastReceiver; Landroid/content/IntentFilter;)Landroid/content/Intent;
+	58      (00000100) iget-object          v5, v8, Lcom/afwsamples/testdpc/cosu/EnableCosuActivity;->mInstallReceiver Landroid/content/BroadcastReceiver;
+	59      (00000104) new-instance         v6, Landroid/content/IntentFilter;
+	60      (00000108) const-string         v7, 'com.afwsamples.testdpc.INSTALL_COMPLETE'
+	61      (0000010c) invoke-direct        v6, v7, Landroid/content/IntentFilter;-><init>(Ljava/lang/String;)V
+	62      (00000112) invoke-virtual       v8, v5, v6, Lcom/afwsamples/testdpc/cosu/EnableCosuActivity;->registerReceiver(Landroid/content/BroadcastReceiver; Landroid/content/IntentFilter;)Landroid/content/Intent;
+	63      (00000118) const-string         v5, 'cosu-demo-config-location'
+	64      (0000011c) invoke-virtual       v4, v5, Landroid/os/PersistableBundle;->get(Ljava/lang/String;)Ljava/lang/Object;
+	65      (00000122) move-result-object   v0
+	66      (00000124) check-cast           v0, Ljava/lang/String;
+	67      (00000128) if-nez               v0, +d
+
+onCreate-BB@0x12c : [ onCreate-BB@0x42 ]
+	68      (0000012c) const-string         v5, 'CosuSetup'
+	69      (00000130) const-string         v6, 'No download-location specified'
+	70      (00000134) invoke-static        v5, v6, Landroid/util/Log;->e(Ljava/lang/String; Ljava/lang/String;)I
+	71      (0000013a) invoke-direct        v8, Lcom/afwsamples/testdpc/cosu/EnableCosuActivity;->finishWithFailure()V
+	72      (00000140) goto                 -7f
+
+onCreate-BB@0x142 : [ onCreate-BB@0x42 ]
+	73      (00000142) iget-object          v5, v8, Lcom/afwsamples/testdpc/cosu/EnableCosuActivity;->mDownloadManager Landroid/app/DownloadManager;
+	74      (00000146) iget-object          v6, v8, Lcom/afwsamples/testdpc/cosu/EnableCosuActivity;->mHandler Landroid/os/Handler;
+	75      (0000014a) invoke-static        v5, v6, v0, Lcom/afwsamples/testdpc/cosu/CosuUtils;->startDownload(Landroid/app/DownloadManager; Landroid/os/Handler; Ljava/lang/String;)Ljava/lang/Long;
+	76      (00000150) move-result-object   v5
+	77      (00000152) iput-object          v5, v8, Lcom/afwsamples/testdpc/cosu/EnableCosuActivity;->mConfigDownloadId Ljava/lang/Long;
+	78      (00000156) iget-object          v5, v8, Lcom/afwsamples/testdpc/cosu/EnableCosuActivity;->mStatusText Landroid/widget/TextView;
+	79      (0000015a) const                v6, 2131690249 # [1.90095362829505e+38]
+	80      (00000160) invoke-virtual       v8, v6, Lcom/afwsamples/testdpc/cosu/EnableCosuActivity;->getString(I)Ljava/lang/String;
+	81      (00000166) move-result-object   v6
+	82      (00000168) invoke-virtual       v5, v6, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+	83      (0000016e) goto/16              -96
+

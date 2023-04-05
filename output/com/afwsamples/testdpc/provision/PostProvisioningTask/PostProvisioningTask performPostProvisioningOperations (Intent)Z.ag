@@ -1,0 +1,53 @@
+# Lcom/afwsamples/testdpc/provision/PostProvisioningTask;->performPostProvisioningOperations(Landroid/content/Intent;)Z [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v6
+# - v7:android.content.Intent
+#
+# - return:boolean
+
+performPostProvisioningOperations-BB@0x0 : [ performPostProvisioningOperations-BB@0xe performPostProvisioningOperations-BB@0x12 ]
+	0       (00000000) const/4              v1, 1
+	1       (00000002) invoke-direct        v6, Lcom/afwsamples/testdpc/provision/PostProvisioningTask;->isPostProvisioningDone()Z
+	2       (00000008) move-result          v2
+	3       (0000000a) if-eqz               v2, +4
+
+performPostProvisioningOperations-BB@0xe : [ performPostProvisioningOperations-BB@0x10 ]
+	4       (0000000e) const/4              v1, 0
+
+performPostProvisioningOperations-BB@0x10 : 
+	5       (00000010) return               v1
+
+performPostProvisioningOperations-BB@0x12 : [ performPostProvisioningOperations-BB@0x24 performPostProvisioningOperations-BB@0x2a ]
+	6       (00000012) invoke-direct        v6, Lcom/afwsamples/testdpc/provision/PostProvisioningTask;->markPostProvisioningDone()V
+	7       (00000018) sget                 v2, Lcom/afwsamples/testdpc/common/Util;->SDK_INT I
+	8       (0000001c) const/16             v3, 23
+	9       (00000020) if-lt                v2, v3, +5
+
+performPostProvisioningOperations-BB@0x24 : [ performPostProvisioningOperations-BB@0x2a ]
+	10      (00000024) invoke-direct        v6, Lcom/afwsamples/testdpc/provision/PostProvisioningTask;->autoGrantRequestedPermissionsToSelf()V
+
+performPostProvisioningOperations-BB@0x2a : [ performPostProvisioningOperations-BB@0x46 performPostProvisioningOperations-BB@0x4c ]
+	11      (0000002a) const-string         v2, 'android.app.extra.PROVISIONING_ADMIN_EXTRAS_BUNDLE'
+	12      (0000002e) invoke-virtual       v7, v2, Landroid/content/Intent;->getParcelableExtra(Ljava/lang/String;)Landroid/os/Parcelable;
+	13      (00000034) move-result-object   v0
+	14      (00000036) check-cast           v0, Landroid/os/PersistableBundle;
+	15      (0000003a) sget                 v2, Lcom/afwsamples/testdpc/common/Util;->SDK_INT I
+	16      (0000003e) const/16             v3, 26
+	17      (00000042) if-lt                v2, v3, +5
+
+performPostProvisioningOperations-BB@0x46 : [ performPostProvisioningOperations-BB@0x4c ]
+	18      (00000046) invoke-direct        v6, v0, Lcom/afwsamples/testdpc/provision/PostProvisioningTask;->maybeSetAffiliationIds(Landroid/os/PersistableBundle;)V
+
+performPostProvisioningOperations-BB@0x4c : [ performPostProvisioningOperations-BB@0x10 ]
+	19      (0000004c) iget-object          v2, v6, Lcom/afwsamples/testdpc/provision/PostProvisioningTask;->mContext Landroid/content/Context;
+	20      (00000050) invoke-virtual       v2, Landroid/content/Context;->getPackageManager()Landroid/content/pm/PackageManager;
+	21      (00000056) move-result-object   v2
+	22      (00000058) new-instance         v3, Landroid/content/ComponentName;
+	23      (0000005c) iget-object          v4, v6, Lcom/afwsamples/testdpc/provision/PostProvisioningTask;->mContext Landroid/content/Context;
+	24      (00000060) const-string         v5, 'com.afwsamples.testdpc.SetupManagementLaunchActivity'
+	25      (00000064) invoke-direct        v3, v4, v5, Landroid/content/ComponentName;-><init>(Landroid/content/Context; Ljava/lang/String;)V
+	26      (0000006a) const/4              v4, 2
+	27      (0000006c) invoke-virtual       v2, v3, v4, v1, Landroid/content/pm/PackageManager;->setComponentEnabledSetting(Landroid/content/ComponentName; I I)V
+	28      (00000072) goto                 -31
+

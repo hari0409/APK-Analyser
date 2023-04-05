@@ -1,0 +1,25 @@
+# Lcom/afwsamples/testdpc/policy/AvailableComponentsInfoArrayAdapter;->canModifyComponent(I)Z [access_flags=protected]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:int
+#
+# - return:boolean
+
+canModifyComponent-BB@0x0 : [ canModifyComponent-BB@0x14 canModifyComponent-BB@0x18 ]
+	0       (00000000) invoke-virtual       v1, v2, Lcom/afwsamples/testdpc/policy/AvailableComponentsInfoArrayAdapter;->getApplicationInfo(I)Landroid/content/pm/ApplicationInfo;
+	1       (00000006) move-result-object   v0
+	2       (00000008) invoke-virtual       v1, v0, Lcom/afwsamples/testdpc/policy/AvailableComponentsInfoArrayAdapter;->isSystemApp(Landroid/content/pm/ApplicationInfo;)Z
+	3       (0000000e) move-result          v0
+	4       (00000010) if-nez               v0, +4
+
+canModifyComponent-BB@0x14 : [ canModifyComponent-BB@0x16 ]
+	5       (00000014) const/4              v0, 1
+
+canModifyComponent-BB@0x16 : 
+	6       (00000016) return               v0
+
+canModifyComponent-BB@0x18 : [ canModifyComponent-BB@0x16 ]
+	7       (00000018) const/4              v0, 0
+	8       (0000001a) goto                 -2
+

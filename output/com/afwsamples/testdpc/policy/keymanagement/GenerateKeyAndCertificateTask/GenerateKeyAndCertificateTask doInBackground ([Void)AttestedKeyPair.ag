@@ -1,0 +1,268 @@
+# Lcom/afwsamples/testdpc/policy/keymanagement/GenerateKeyAndCertificateTask;->doInBackground([Ljava/lang/Void;)Landroid/security/AttestedKeyPair; [access_flags=protected varargs]
+#
+# Parameters:
+# - local registers: v0...v14
+# - v15:java.lang.Void[]
+#
+# - return:android.security.AttestedKeyPair
+
+doInBackground-BB@0x0 : [ doInBackground-BB@0x3e doInBackground-BB@0x48 ]
+	0       (00000000) new-instance         v10, Landroid/security/keystore/KeyGenParameterSpec$Builder;
+	1       (00000004) iget-object          v11, v14, Lcom/afwsamples/testdpc/policy/keymanagement/GenerateKeyAndCertificateTask;->mAlias Ljava/lang/String;
+	2       (00000008) const/16             v12, 12
+	3       (0000000c) invoke-direct        v10, v11, v12, Landroid/security/keystore/KeyGenParameterSpec$Builder;-><init>(Ljava/lang/String; I)V
+	4       (00000012) const/4              v11, 1
+	5       (00000014) new-array            v11, v11, [Ljava/lang/String;
+	6       (00000018) const/4              v12, 0
+	7       (0000001a) const-string         v13, 'SHA-256'
+	8       (0000001e) aput-object          v13, v11, v12
+	9       (00000022) invoke-virtual       v10, v11, Landroid/security/keystore/KeyGenParameterSpec$Builder;->setDigests([Ljava/lang/String;)Landroid/security/keystore/KeyGenParameterSpec$Builder;
+	10      (00000028) move-result-object   v10
+	11      (0000002a) iget-boolean         v11, v14, Lcom/afwsamples/testdpc/policy/keymanagement/GenerateKeyAndCertificateTask;->mUseStrongBox Z
+	12      (0000002e) invoke-virtual       v10, v11, Landroid/security/keystore/KeyGenParameterSpec$Builder;->setIsStrongBoxBacked(Z)Landroid/security/keystore/KeyGenParameterSpec$Builder;
+	13      (00000034) move-result-object   v7
+	14      (00000036) iget-object          v10, v14, Lcom/afwsamples/testdpc/policy/keymanagement/GenerateKeyAndCertificateTask;->mAttestationChallenge [B
+	15      (0000003a) if-eqz               v10, +7
+	0:b5
+	(Ljava/security/cert/CertificateException; -> b8 doInBackground-BB@0xb8)
+	(Lorg/bouncycastle/operator/OperatorCreationException; -> 12a doInBackground-BB@0x12a)
+	(Ljava/io/IOException; -> 1ae doInBackground-BB@0x1ae)
+	(Landroid/security/keystore/StrongBoxUnavailableException; -> 18a doInBackground-BB@0x18a)
+	(Ljava/lang/SecurityException; -> 19c doInBackground-BB@0x19c)
+
+doInBackground-BB@0x3e : [ doInBackground-BB@0x48 ]
+	16      (0000003e) iget-object          v10, v14, Lcom/afwsamples/testdpc/policy/keymanagement/GenerateKeyAndCertificateTask;->mAttestationChallenge [B
+	17      (00000042) invoke-virtual       v7, v10, Landroid/security/keystore/KeyGenParameterSpec$Builder;->setAttestationChallenge([B)Landroid/security/keystore/KeyGenParameterSpec$Builder;
+	0:b5
+	(Ljava/security/cert/CertificateException; -> b8 doInBackground-BB@0xb8)
+	(Lorg/bouncycastle/operator/OperatorCreationException; -> 12a doInBackground-BB@0x12a)
+	(Ljava/io/IOException; -> 1ae doInBackground-BB@0x1ae)
+	(Landroid/security/keystore/StrongBoxUnavailableException; -> 18a doInBackground-BB@0x18a)
+	(Ljava/lang/SecurityException; -> 19c doInBackground-BB@0x19c)
+
+doInBackground-BB@0x48 : [ doInBackground-BB@0x50 doInBackground-BB@0x8a ]
+	18      (00000048) iget-boolean         v10, v14, Lcom/afwsamples/testdpc/policy/keymanagement/GenerateKeyAndCertificateTask;->mGenerateEcKey Z
+	19      (0000004c) if-eqz               v10, +1f
+	0:b5
+	(Ljava/security/cert/CertificateException; -> b8 doInBackground-BB@0xb8)
+	(Lorg/bouncycastle/operator/OperatorCreationException; -> 12a doInBackground-BB@0x12a)
+	(Ljava/io/IOException; -> 1ae doInBackground-BB@0x1ae)
+	(Landroid/security/keystore/StrongBoxUnavailableException; -> 18a doInBackground-BB@0x18a)
+	(Ljava/lang/SecurityException; -> 19c doInBackground-BB@0x19c)
+
+doInBackground-BB@0x50 : [ doInBackground-BB@0x5a ]
+	20      (00000050) const/16             v10, 256
+	21      (00000054) invoke-virtual       v7, v10, Landroid/security/keystore/KeyGenParameterSpec$Builder;->setKeySize(I)Landroid/security/keystore/KeyGenParameterSpec$Builder;
+	0:b5
+	(Ljava/security/cert/CertificateException; -> b8 doInBackground-BB@0xb8)
+	(Lorg/bouncycastle/operator/OperatorCreationException; -> 12a doInBackground-BB@0x12a)
+	(Ljava/io/IOException; -> 1ae doInBackground-BB@0x1ae)
+	(Landroid/security/keystore/StrongBoxUnavailableException; -> 18a doInBackground-BB@0x18a)
+	(Ljava/lang/SecurityException; -> 19c doInBackground-BB@0x19c)
+
+doInBackground-BB@0x5a : [ doInBackground-BB@0x62 doInBackground-BB@0xcc ]
+	22      (0000005a) iget-boolean         v10, v14, Lcom/afwsamples/testdpc/policy/keymanagement/GenerateKeyAndCertificateTask;->mGenerateEcKey Z
+	23      (0000005e) if-eqz               v10, +37
+	0:b5
+	(Ljava/security/cert/CertificateException; -> b8 doInBackground-BB@0xb8)
+	(Lorg/bouncycastle/operator/OperatorCreationException; -> 12a doInBackground-BB@0x12a)
+	(Ljava/io/IOException; -> 1ae doInBackground-BB@0x1ae)
+	(Landroid/security/keystore/StrongBoxUnavailableException; -> 18a doInBackground-BB@0x18a)
+	(Ljava/lang/SecurityException; -> 19c doInBackground-BB@0x19c)
+
+doInBackground-BB@0x62 : [ doInBackground-BB@0x66 ]
+	24      (00000062) const-string         v4, 'EC'
+	0:b5
+	(Ljava/security/cert/CertificateException; -> b8 doInBackground-BB@0xb8)
+	(Lorg/bouncycastle/operator/OperatorCreationException; -> 12a doInBackground-BB@0x12a)
+	(Ljava/io/IOException; -> 1ae doInBackground-BB@0x1ae)
+	(Landroid/security/keystore/StrongBoxUnavailableException; -> 18a doInBackground-BB@0x18a)
+	(Ljava/lang/SecurityException; -> 19c doInBackground-BB@0x19c)
+
+doInBackground-BB@0x66 : [ doInBackground-BB@0x86 doInBackground-BB@0xd2 ]
+	25      (00000066) invoke-virtual       v7, Landroid/security/keystore/KeyGenParameterSpec$Builder;->build()Landroid/security/keystore/KeyGenParameterSpec;
+	26      (0000006c) move-result-object   v6
+	27      (0000006e) iget-object          v10, v14, Lcom/afwsamples/testdpc/policy/keymanagement/GenerateKeyAndCertificateTask;->mDevicePolicyManager Landroid/app/admin/DevicePolicyManager;
+	28      (00000072) iget-object          v11, v14, Lcom/afwsamples/testdpc/policy/keymanagement/GenerateKeyAndCertificateTask;->mAdminComponentName Landroid/content/ComponentName;
+	29      (00000076) iget                 v12, v14, Lcom/afwsamples/testdpc/policy/keymanagement/GenerateKeyAndCertificateTask;->mIdAttestationFlags I
+	30      (0000007a) invoke-virtual       v10, v11, v4, v6, v12, Landroid/app/admin/DevicePolicyManager;->generateKeyPair(Landroid/content/ComponentName; Ljava/lang/String; Landroid/security/keystore/KeyGenParameterSpec; I)Landroid/security/AttestedKeyPair;
+	31      (00000080) move-result-object   v5
+	32      (00000082) if-nez               v5, +28
+	0:b5
+	(Ljava/security/cert/CertificateException; -> b8 doInBackground-BB@0xb8)
+	(Lorg/bouncycastle/operator/OperatorCreationException; -> 12a doInBackground-BB@0x12a)
+	(Ljava/io/IOException; -> 1ae doInBackground-BB@0x1ae)
+	(Landroid/security/keystore/StrongBoxUnavailableException; -> 18a doInBackground-BB@0x18a)
+	(Ljava/lang/SecurityException; -> 19c doInBackground-BB@0x19c)
+
+doInBackground-BB@0x86 : [ doInBackground-BB@0x88 ]
+	33      (00000086) const/4              v5, 0
+	0:b5
+	(Ljava/security/cert/CertificateException; -> b8 doInBackground-BB@0xb8)
+	(Lorg/bouncycastle/operator/OperatorCreationException; -> 12a doInBackground-BB@0x12a)
+	(Ljava/io/IOException; -> 1ae doInBackground-BB@0x1ae)
+	(Landroid/security/keystore/StrongBoxUnavailableException; -> 18a doInBackground-BB@0x18a)
+	(Ljava/lang/SecurityException; -> 19c doInBackground-BB@0x19c)
+
+doInBackground-BB@0x88 : 
+	34      (00000088) return-object        v5
+	0:b5
+	(Ljava/security/cert/CertificateException; -> b8 doInBackground-BB@0xb8)
+	(Lorg/bouncycastle/operator/OperatorCreationException; -> 12a doInBackground-BB@0x12a)
+	(Ljava/io/IOException; -> 1ae doInBackground-BB@0x1ae)
+	(Landroid/security/keystore/StrongBoxUnavailableException; -> 18a doInBackground-BB@0x18a)
+	(Ljava/lang/SecurityException; -> 19c doInBackground-BB@0x19c)
+
+doInBackground-BB@0x8a : [ doInBackground-BB@0x5a ]
+	35      (0000008a) const/4              v10, 2
+	36      (0000008c) new-array            v10, v10, [Ljava/lang/String;
+	37      (00000090) const/4              v11, 0
+	38      (00000092) const-string         v12, 'PSS'
+	39      (00000096) aput-object          v12, v10, v11
+	40      (0000009a) const/4              v11, 1
+	41      (0000009c) const-string         v12, 'PKCS1'
+	42      (000000a0) aput-object          v12, v10, v11
+	43      (000000a4) invoke-virtual       v7, v10, Landroid/security/keystore/KeyGenParameterSpec$Builder;->setSignaturePaddings([Ljava/lang/String;)Landroid/security/keystore/KeyGenParameterSpec$Builder;
+	44      (000000aa) move-result-object   v10
+	45      (000000ac) const/16             v11, 2048
+	46      (000000b0) invoke-virtual       v10, v11, Landroid/security/keystore/KeyGenParameterSpec$Builder;->setKeySize(I)Landroid/security/keystore/KeyGenParameterSpec$Builder;
+	47      (000000b6) goto                 -2e
+
+doInBackground-BB@0xb8 : [ doInBackground-BB@0xba ]
+	48      (000000b8) move-exception       v3
+
+doInBackground-BB@0xba : [ doInBackground-BB@0xc8 ]
+	49      (000000ba) const-string         v10, 'PolicyManagement'
+	50      (000000be) const-string         v11, 'Failed to create certificate'
+	51      (000000c2) invoke-static        v10, v11, v3, Landroid/util/Log;->e(Ljava/lang/String; Ljava/lang/String; Ljava/lang/Throwable;)I
+
+doInBackground-BB@0xc8 : [ doInBackground-BB@0x88 ]
+	52      (000000c8) const/4              v5, 0
+	53      (000000ca) goto                 -21
+
+doInBackground-BB@0xcc : [ doInBackground-BB@0x66 ]
+	54      (000000cc) const-string         v4, 'RSA'
+	55      (000000d0) goto                 -35
+	cc:17f
+	(Ljava/security/cert/CertificateException; -> b8 doInBackground-BB@0xb8)
+	(Lorg/bouncycastle/operator/OperatorCreationException; -> 12a doInBackground-BB@0x12a)
+	(Ljava/io/IOException; -> 1ae doInBackground-BB@0x1ae)
+	(Landroid/security/keystore/StrongBoxUnavailableException; -> 18a doInBackground-BB@0x18a)
+	(Ljava/lang/SecurityException; -> 19c doInBackground-BB@0x19c)
+
+doInBackground-BB@0xd2 : [ doInBackground-BB@0xde doInBackground-BB@0x13c ]
+	56      (000000d2) invoke-virtual       v5, Landroid/security/AttestedKeyPair;->getAttestationRecord()Ljava/util/List;
+	57      (000000d8) move-result-object   v0
+	58      (000000da) if-eqz               v0, +31
+	cc:17f
+	(Ljava/security/cert/CertificateException; -> b8 doInBackground-BB@0xb8)
+	(Lorg/bouncycastle/operator/OperatorCreationException; -> 12a doInBackground-BB@0x12a)
+	(Ljava/io/IOException; -> 1ae doInBackground-BB@0x1ae)
+	(Landroid/security/keystore/StrongBoxUnavailableException; -> 18a doInBackground-BB@0x18a)
+	(Ljava/lang/SecurityException; -> 19c doInBackground-BB@0x19c)
+
+doInBackground-BB@0xde : [ doInBackground-BB@0xf4 ]
+	59      (000000de) const-string         v10, 'PolicyManagement'
+	60      (000000e2) const-string         v11, 'Attestation record:'
+	61      (000000e6) invoke-static        v10, v11, Landroid/util/Log;->i(Ljava/lang/String; Ljava/lang/String;)I
+	62      (000000ec) invoke-interface     v0, Ljava/util/List;->iterator()Ljava/util/Iterator;
+	63      (000000f2) move-result-object   v10
+	cc:17f
+	(Ljava/security/cert/CertificateException; -> b8 doInBackground-BB@0xb8)
+	(Lorg/bouncycastle/operator/OperatorCreationException; -> 12a doInBackground-BB@0x12a)
+	(Ljava/io/IOException; -> 1ae doInBackground-BB@0x1ae)
+	(Landroid/security/keystore/StrongBoxUnavailableException; -> 18a doInBackground-BB@0x18a)
+	(Ljava/lang/SecurityException; -> 19c doInBackground-BB@0x19c)
+
+doInBackground-BB@0xf4 : [ doInBackground-BB@0x100 doInBackground-BB@0x12e ]
+	64      (000000f4) invoke-interface     v10, Ljava/util/Iterator;->hasNext()Z
+	65      (000000fa) move-result          v11
+	66      (000000fc) if-eqz               v11, +19
+	cc:17f
+	(Ljava/security/cert/CertificateException; -> b8 doInBackground-BB@0xb8)
+	(Lorg/bouncycastle/operator/OperatorCreationException; -> 12a doInBackground-BB@0x12a)
+	(Ljava/io/IOException; -> 1ae doInBackground-BB@0x1ae)
+	(Landroid/security/keystore/StrongBoxUnavailableException; -> 18a doInBackground-BB@0x18a)
+	(Ljava/lang/SecurityException; -> 19c doInBackground-BB@0x19c)
+
+doInBackground-BB@0x100 : [ doInBackground-BB@0xf4 ]
+	67      (00000100) invoke-interface     v10, Ljava/util/Iterator;->next()Ljava/lang/Object;
+	68      (00000106) move-result-object   v1
+	69      (00000108) check-cast           v1, Ljava/security/cert/Certificate;
+	70      (0000010c) const-string         v11, 'PolicyManagement'
+	71      (00000110) invoke-virtual       v1, Ljava/security/cert/Certificate;->getEncoded()[B
+	72      (00000116) move-result-object   v12
+	73      (00000118) const/4              v13, 2
+	74      (0000011a) invoke-static        v12, v13, Landroid/util/Base64;->encodeToString([B I)Ljava/lang/String;
+	75      (00000120) move-result-object   v12
+	76      (00000122) invoke-static        v11, v12, Landroid/util/Log;->i(Ljava/lang/String; Ljava/lang/String;)I
+	77      (00000128) goto                 -1a
+	cc:17f
+	(Ljava/security/cert/CertificateException; -> b8 doInBackground-BB@0xb8)
+	(Lorg/bouncycastle/operator/OperatorCreationException; -> 12a doInBackground-BB@0x12a)
+	(Ljava/io/IOException; -> 1ae doInBackground-BB@0x1ae)
+	(Landroid/security/keystore/StrongBoxUnavailableException; -> 18a doInBackground-BB@0x18a)
+	(Ljava/lang/SecurityException; -> 19c doInBackground-BB@0x19c)
+
+doInBackground-BB@0x12a : [ doInBackground-BB@0xba ]
+	78      (0000012a) move-exception       v3
+	79      (0000012c) goto                 -39
+	cc:17f
+	(Ljava/security/cert/CertificateException; -> b8 doInBackground-BB@0xb8)
+	(Lorg/bouncycastle/operator/OperatorCreationException; -> 12a doInBackground-BB@0x12a)
+	(Ljava/io/IOException; -> 1ae doInBackground-BB@0x1ae)
+	(Landroid/security/keystore/StrongBoxUnavailableException; -> 18a doInBackground-BB@0x18a)
+	(Ljava/lang/SecurityException; -> 19c doInBackground-BB@0x19c)
+
+doInBackground-BB@0x12e : [ doInBackground-BB@0x13c ]
+	80      (0000012e) const-string         v10, 'PolicyManagement'
+	81      (00000132) const-string         v11, 'End of attestation record.'
+	82      (00000136) invoke-static        v10, v11, Landroid/util/Log;->i(Ljava/lang/String; Ljava/lang/String;)I
+	cc:17f
+	(Ljava/security/cert/CertificateException; -> b8 doInBackground-BB@0xb8)
+	(Lorg/bouncycastle/operator/OperatorCreationException; -> 12a doInBackground-BB@0x12a)
+	(Ljava/io/IOException; -> 1ae doInBackground-BB@0x1ae)
+	(Landroid/security/keystore/StrongBoxUnavailableException; -> 18a doInBackground-BB@0x18a)
+	(Ljava/lang/SecurityException; -> 19c doInBackground-BB@0x19c)
+
+doInBackground-BB@0x13c : [ doInBackground-BB@0x186 doInBackground-BB@0x88 ]
+	83      (0000013c) new-instance         v9, Ljavax/security/auth/x500/X500Principal;
+	84      (00000140) const-string         v10, 'CN=TestDPC, O=Android, C=US'
+	85      (00000144) invoke-direct        v9, v10, Ljavax/security/auth/x500/X500Principal;-><init>(Ljava/lang/String;)V
+	86      (0000014a) invoke-virtual       v5, Landroid/security/AttestedKeyPair;->getKeyPair()Ljava/security/KeyPair;
+	87      (00000150) move-result-object   v10
+	88      (00000152) invoke-static        v10, v9, v9, Lcom/afwsamples/testdpc/policy/utils/CertificateUtils;->createCertificate(Ljava/security/KeyPair; Ljavax/security/auth/x500/X500Principal; Ljavax/security/auth/x500/X500Principal;)Ljava/security/cert/X509Certificate;
+	89      (00000158) move-result-object   v8
+	90      (0000015a) new-instance         v2, Ljava/util/ArrayList;
+	91      (0000015e) invoke-direct        v2, Ljava/util/ArrayList;-><init>()V
+	92      (00000164) invoke-interface     v2, v8, Ljava/util/List;->add(Ljava/lang/Object;)Z
+	93      (0000016a) iget-object          v10, v14, Lcom/afwsamples/testdpc/policy/keymanagement/GenerateKeyAndCertificateTask;->mDevicePolicyManager Landroid/app/admin/DevicePolicyManager;
+	94      (0000016e) iget-object          v11, v14, Lcom/afwsamples/testdpc/policy/keymanagement/GenerateKeyAndCertificateTask;->mAdminComponentName Landroid/content/ComponentName;
+	95      (00000172) iget-object          v12, v14, Lcom/afwsamples/testdpc/policy/keymanagement/GenerateKeyAndCertificateTask;->mAlias Ljava/lang/String;
+	96      (00000176) iget-boolean         v13, v14, Lcom/afwsamples/testdpc/policy/keymanagement/GenerateKeyAndCertificateTask;->mIsUserSelectable Z
+	97      (0000017a) invoke-virtual       v10, v11, v12, v2, v13, Landroid/app/admin/DevicePolicyManager;->setKeyPairCertificate(Landroid/content/ComponentName; Ljava/lang/String; Ljava/util/List; Z)Z
+	98      (00000180) move-result          v10
+	99      (00000182) if-nez               v10, -7d
+
+doInBackground-BB@0x186 : [ doInBackground-BB@0x88 ]
+	100     (00000186) const/4              v5, 0
+	101     (00000188) goto                 -80
+
+doInBackground-BB@0x18a : [ doInBackground-BB@0xc8 ]
+	102     (0000018a) move-exception       v3
+	103     (0000018c) const-string         v10, 'PolicyManagement'
+	104     (00000190) const-string         v11, 'StrongBox unavailable'
+	105     (00000194) invoke-static        v10, v11, v3, Landroid/util/Log;->e(Ljava/lang/String; Ljava/lang/String; Ljava/lang/Throwable;)I
+	106     (0000019a) goto                 -69
+
+doInBackground-BB@0x19c : [ doInBackground-BB@0xc8 ]
+	107     (0000019c) move-exception       v3
+	108     (0000019e) const-string         v10, 'PolicyManagement'
+	109     (000001a2) const-string         v11, 'Not permitted to generate key'
+	110     (000001a6) invoke-static        v10, v11, v3, Landroid/util/Log;->e(Ljava/lang/String; Ljava/lang/String; Ljava/lang/Throwable;)I
+	111     (000001ac) goto                 -72
+
+doInBackground-BB@0x1ae : [ doInBackground-BB@0xba ]
+	112     (000001ae) move-exception       v3
+	113     (000001b0) goto                 -7b
+

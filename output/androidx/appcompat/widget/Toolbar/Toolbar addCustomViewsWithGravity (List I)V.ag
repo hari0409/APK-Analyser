@@ -1,0 +1,98 @@
+# Landroidx/appcompat/widget/Toolbar;->addCustomViewsWithGravity(Ljava/util/List; I)V [access_flags=private]
+#
+# Parameters:
+# - local registers: v0...v7
+# - v8:java.util.List
+# - v9:int
+#
+# - return:void
+
+addCustomViewsWithGravity-BB@0x0 : [ addCustomViewsWithGravity-BB@0xe addCustomViewsWithGravity-BB@0x7c ]
+	0       (00000000) const/4              v4, 1
+	1       (00000002) invoke-static        v7, Landroidx/core/view/ViewCompat;->getLayoutDirection(Landroid/view/View;)I
+	2       (00000008) move-result          v6
+	3       (0000000a) if-ne                v6, v4, +39
+
+addCustomViewsWithGravity-BB@0xe : [ addCustomViewsWithGravity-BB@0x30 addCustomViewsWithGravity-BB@0x80 ]
+	4       (0000000e) invoke-virtual       v7, Landroidx/appcompat/widget/Toolbar;->getChildCount()I
+	5       (00000014) move-result          v2
+	6       (00000016) invoke-static        v7, Landroidx/core/view/ViewCompat;->getLayoutDirection(Landroid/view/View;)I
+	7       (0000001c) move-result          v6
+	8       (0000001e) invoke-static        v9, v6, Landroidx/core/view/GravityCompat;->getAbsoluteGravity(I I)I
+	9       (00000024) move-result          v0
+	10      (00000026) invoke-interface     v8, Ljava/util/List;->clear()V
+	11      (0000002c) if-eqz               v4, +2a
+
+addCustomViewsWithGravity-BB@0x30 : [ addCustomViewsWithGravity-BB@0x34 ]
+	12      (00000030) add-int/lit8         v3, v2, -1
+
+addCustomViewsWithGravity-BB@0x34 : [ addCustomViewsWithGravity-BB@0x38 addCustomViewsWithGravity-BB@0xca ]
+	13      (00000034) if-ltz               v3, +4b
+
+addCustomViewsWithGravity-BB@0x38 : [ addCustomViewsWithGravity-BB@0x54 addCustomViewsWithGravity-BB@0x76 ]
+	14      (00000038) invoke-virtual       v7, v3, Landroidx/appcompat/widget/Toolbar;->getChildAt(I)Landroid/view/View;
+	15      (0000003e) move-result-object   v1
+	16      (00000040) invoke-virtual       v1, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
+	17      (00000046) move-result-object   v5
+	18      (00000048) check-cast           v5, Landroidx/appcompat/widget/Toolbar$LayoutParams;
+	19      (0000004c) iget                 v6, v5, Landroidx/appcompat/widget/Toolbar$LayoutParams;->mViewType I
+	20      (00000050) if-nez               v6, +13
+
+addCustomViewsWithGravity-BB@0x54 : [ addCustomViewsWithGravity-BB@0x60 addCustomViewsWithGravity-BB@0x76 ]
+	21      (00000054) invoke-direct        v7, v1, Landroidx/appcompat/widget/Toolbar;->shouldLayout(Landroid/view/View;)Z
+	22      (0000005a) move-result          v6
+	23      (0000005c) if-eqz               v6, +d
+
+addCustomViewsWithGravity-BB@0x60 : [ addCustomViewsWithGravity-BB@0x70 addCustomViewsWithGravity-BB@0x76 ]
+	24      (00000060) iget                 v6, v5, Landroidx/appcompat/widget/Toolbar$LayoutParams;->gravity I
+	25      (00000064) invoke-direct        v7, v6, Landroidx/appcompat/widget/Toolbar;->getChildHorizontalGravity(I)I
+	26      (0000006a) move-result          v6
+	27      (0000006c) if-ne                v6, v0, +5
+
+addCustomViewsWithGravity-BB@0x70 : [ addCustomViewsWithGravity-BB@0x76 ]
+	28      (00000070) invoke-interface     v8, v1, Ljava/util/List;->add(Ljava/lang/Object;)Z
+
+addCustomViewsWithGravity-BB@0x76 : [ addCustomViewsWithGravity-BB@0x34 ]
+	29      (00000076) add-int/lit8         v3, v3, -1
+	30      (0000007a) goto                 -23
+
+addCustomViewsWithGravity-BB@0x7c : [ addCustomViewsWithGravity-BB@0xe ]
+	31      (0000007c) const/4              v4, 0
+	32      (0000007e) goto                 -38
+
+addCustomViewsWithGravity-BB@0x80 : [ addCustomViewsWithGravity-BB@0x82 ]
+	33      (00000080) const/4              v3, 0
+
+addCustomViewsWithGravity-BB@0x82 : [ addCustomViewsWithGravity-BB@0x86 addCustomViewsWithGravity-BB@0xca ]
+	34      (00000082) if-ge                v3, v2, +24
+
+addCustomViewsWithGravity-BB@0x86 : [ addCustomViewsWithGravity-BB@0xa2 addCustomViewsWithGravity-BB@0xc4 ]
+	35      (00000086) invoke-virtual       v7, v3, Landroidx/appcompat/widget/Toolbar;->getChildAt(I)Landroid/view/View;
+	36      (0000008c) move-result-object   v1
+	37      (0000008e) invoke-virtual       v1, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
+	38      (00000094) move-result-object   v5
+	39      (00000096) check-cast           v5, Landroidx/appcompat/widget/Toolbar$LayoutParams;
+	40      (0000009a) iget                 v6, v5, Landroidx/appcompat/widget/Toolbar$LayoutParams;->mViewType I
+	41      (0000009e) if-nez               v6, +13
+
+addCustomViewsWithGravity-BB@0xa2 : [ addCustomViewsWithGravity-BB@0xae addCustomViewsWithGravity-BB@0xc4 ]
+	42      (000000a2) invoke-direct        v7, v1, Landroidx/appcompat/widget/Toolbar;->shouldLayout(Landroid/view/View;)Z
+	43      (000000a8) move-result          v6
+	44      (000000aa) if-eqz               v6, +d
+
+addCustomViewsWithGravity-BB@0xae : [ addCustomViewsWithGravity-BB@0xbe addCustomViewsWithGravity-BB@0xc4 ]
+	45      (000000ae) iget                 v6, v5, Landroidx/appcompat/widget/Toolbar$LayoutParams;->gravity I
+	46      (000000b2) invoke-direct        v7, v6, Landroidx/appcompat/widget/Toolbar;->getChildHorizontalGravity(I)I
+	47      (000000b8) move-result          v6
+	48      (000000ba) if-ne                v6, v0, +5
+
+addCustomViewsWithGravity-BB@0xbe : [ addCustomViewsWithGravity-BB@0xc4 ]
+	49      (000000be) invoke-interface     v8, v1, Ljava/util/List;->add(Ljava/lang/Object;)Z
+
+addCustomViewsWithGravity-BB@0xc4 : [ addCustomViewsWithGravity-BB@0x82 ]
+	50      (000000c4) add-int/lit8         v3, v3, 1
+	51      (000000c8) goto                 -23
+
+addCustomViewsWithGravity-BB@0xca : 
+	52      (000000ca) return-void          
+

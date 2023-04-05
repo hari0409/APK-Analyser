@@ -1,0 +1,74 @@
+# Landroidx/appcompat/graphics/drawable/DrawableContainer$DrawableContainerState;->canConstantState()Z [access_flags=public synchronized]
+#
+# Parameters:
+# local registers: v0...v6
+#
+# - return:boolean
+
+canConstantState-BB@0x0 : [ canConstantState-BB@0x6 ]
+	0       (00000000) const/4              v3, 0
+	1       (00000002) const/4              v4, 1
+	2       (00000004) monitor-enter        v6
+
+canConstantState-BB@0x6 : [ canConstantState-BB@0xe canConstantState-BB@0x16 ]
+	3       (00000006) iget-boolean         v5, v6, Landroidx/appcompat/graphics/drawable/DrawableContainer$DrawableContainerState;->mCheckedConstantState Z
+	4       (0000000a) if-eqz               v5, +6
+	6:11
+	(Ljava/lang/Throwable; -> 48 canConstantState-BB@0x48)
+
+canConstantState-BB@0xe : [ canConstantState-BB@0x12 ]
+	5       (0000000e) iget-boolean         v3, v6, Landroidx/appcompat/graphics/drawable/DrawableContainer$DrawableContainerState;->mCanConstantState Z
+	6:11
+	(Ljava/lang/Throwable; -> 48 canConstantState-BB@0x48)
+
+canConstantState-BB@0x12 : 
+	6       (00000012) monitor-exit         v6
+	7       (00000014) return               v3
+
+canConstantState-BB@0x16 : [ canConstantState-BB@0x2c ]
+	8       (00000016) invoke-direct        v6, Landroidx/appcompat/graphics/drawable/DrawableContainer$DrawableContainerState;->createAllFutures()V
+	9       (0000001c) const/4              v5, 1
+	10      (0000001e) iput-boolean         v5, v6, Landroidx/appcompat/graphics/drawable/DrawableContainer$DrawableContainerState;->mCheckedConstantState Z
+	11      (00000022) iget                 v0, v6, Landroidx/appcompat/graphics/drawable/DrawableContainer$DrawableContainerState;->mNumChildren I
+	12      (00000026) iget-object          v1, v6, Landroidx/appcompat/graphics/drawable/DrawableContainer$DrawableContainerState;->mDrawables [Landroid/graphics/drawable/Drawable;
+	13      (0000002a) const/4              v2, 0
+	16:45
+	(Ljava/lang/Throwable; -> 48 canConstantState-BB@0x48)
+
+canConstantState-BB@0x2c : [ canConstantState-BB@0x30 canConstantState-BB@0x54 ]
+	14      (0000002c) if-ge                v2, v0, +14
+	16:45
+	(Ljava/lang/Throwable; -> 48 canConstantState-BB@0x48)
+
+canConstantState-BB@0x30 : [ canConstantState-BB@0x40 canConstantState-BB@0x4e ]
+	15      (00000030) aget-object          v5, v1, v2
+	16      (00000034) invoke-virtual       v5, Landroid/graphics/drawable/Drawable;->getConstantState()Landroid/graphics/drawable/Drawable$ConstantState;
+	17      (0000003a) move-result-object   v5
+	18      (0000003c) if-nez               v5, +9
+	16:45
+	(Ljava/lang/Throwable; -> 48 canConstantState-BB@0x48)
+
+canConstantState-BB@0x40 : [ canConstantState-BB@0x12 ]
+	19      (00000040) const/4              v4, 0
+	20      (00000042) iput-boolean         v4, v6, Landroidx/appcompat/graphics/drawable/DrawableContainer$DrawableContainerState;->mCanConstantState Z
+	21      (00000046) goto                 -1a
+
+canConstantState-BB@0x48 : 
+	22      (00000048) move-exception       v3
+	23      (0000004a) monitor-exit         v6
+	24      (0000004c) throw                v3
+
+canConstantState-BB@0x4e : [ canConstantState-BB@0x2c ]
+	25      (0000004e) add-int/lit8         v2, v2, 1
+	26      (00000052) goto                 -13
+
+canConstantState-BB@0x54 : [ canConstantState-BB@0x56 ]
+	27      (00000054) const/4              v3, 1
+
+canConstantState-BB@0x56 : [ canConstantState-BB@0x12 ]
+	28      (00000056) iput-boolean         v3, v6, Landroidx/appcompat/graphics/drawable/DrawableContainer$DrawableContainerState;->mCanConstantState Z
+	29      (0000005a) move                 v3, v4
+	30      (0000005c) goto                 -25
+	56:59
+	(Ljava/lang/Throwable; -> 48 canConstantState-BB@0x48)
+

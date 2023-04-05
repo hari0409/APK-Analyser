@@ -1,0 +1,64 @@
+# Landroidx/appcompat/view/menu/MenuBuilder;->collapseItemActionView(Landroidx/appcompat/view/menu/MenuItemImpl;)Z [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v5
+# - v6:androidx.appcompat.view.menu.MenuItemImpl
+#
+# - return:boolean
+
+collapseItemActionView-BB@0x0 : [ collapseItemActionView-BB@0x10 collapseItemActionView-BB@0x18 ]
+	0       (00000000) iget-object          v3, v5, Landroidx/appcompat/view/menu/MenuBuilder;->mPresenters Ljava/util/concurrent/CopyOnWriteArrayList;
+	1       (00000004) invoke-virtual       v3, Ljava/util/concurrent/CopyOnWriteArrayList;->isEmpty()Z
+	2       (0000000a) move-result          v3
+	3       (0000000c) if-nez               v3, +6
+
+collapseItemActionView-BB@0x10 : [ collapseItemActionView-BB@0x18 collapseItemActionView-BB@0x1c ]
+	4       (00000010) iget-object          v3, v5, Landroidx/appcompat/view/menu/MenuBuilder;->mExpandedItem Landroidx/appcompat/view/menu/MenuItemImpl;
+	5       (00000014) if-eq                v3, v6, +4
+
+collapseItemActionView-BB@0x18 : [ collapseItemActionView-BB@0x1a ]
+	6       (00000018) const/4              v0, 0
+
+collapseItemActionView-BB@0x1a : 
+	7       (0000001a) return               v0
+
+collapseItemActionView-BB@0x1c : [ collapseItemActionView-BB@0x30 ]
+	8       (0000001c) const/4              v0, 0
+	9       (0000001e) invoke-virtual       v5, Landroidx/appcompat/view/menu/MenuBuilder;->stopDispatchingItemsChanged()V
+	10      (00000024) iget-object          v3, v5, Landroidx/appcompat/view/menu/MenuBuilder;->mPresenters Ljava/util/concurrent/CopyOnWriteArrayList;
+	11      (00000028) invoke-virtual       v3, Ljava/util/concurrent/CopyOnWriteArrayList;->iterator()Ljava/util/Iterator;
+	12      (0000002e) move-result-object   v3
+
+collapseItemActionView-BB@0x30 : [ collapseItemActionView-BB@0x3c collapseItemActionView-BB@0x70 ]
+	13      (00000030) invoke-interface     v3, Ljava/util/Iterator;->hasNext()Z
+	14      (00000036) move-result          v4
+	15      (00000038) if-eqz               v4, +1c
+
+collapseItemActionView-BB@0x3c : [ collapseItemActionView-BB@0x58 collapseItemActionView-BB@0x64 ]
+	16      (0000003c) invoke-interface     v3, Ljava/util/Iterator;->next()Ljava/lang/Object;
+	17      (00000042) move-result-object   v2
+	18      (00000044) check-cast           v2, Ljava/lang/ref/WeakReference;
+	19      (00000048) invoke-virtual       v2, Ljava/lang/ref/WeakReference;->get()Ljava/lang/Object;
+	20      (0000004e) move-result-object   v1
+	21      (00000050) check-cast           v1, Landroidx/appcompat/view/menu/MenuPresenter;
+	22      (00000054) if-nez               v1, +8
+
+collapseItemActionView-BB@0x58 : [ collapseItemActionView-BB@0x30 ]
+	23      (00000058) iget-object          v4, v5, Landroidx/appcompat/view/menu/MenuBuilder;->mPresenters Ljava/util/concurrent/CopyOnWriteArrayList;
+	24      (0000005c) invoke-virtual       v4, v2, Ljava/util/concurrent/CopyOnWriteArrayList;->remove(Ljava/lang/Object;)Z
+	25      (00000062) goto                 -19
+
+collapseItemActionView-BB@0x64 : [ collapseItemActionView-BB@0x70 collapseItemActionView-BB@0x30 ]
+	26      (00000064) invoke-interface     v1, v5, v6, Landroidx/appcompat/view/menu/MenuPresenter;->collapseItemActionView(Landroidx/appcompat/view/menu/MenuBuilder; Landroidx/appcompat/view/menu/MenuItemImpl;)Z
+	27      (0000006a) move-result          v0
+	28      (0000006c) if-eqz               v0, -1e
+
+collapseItemActionView-BB@0x70 : [ collapseItemActionView-BB@0x7a collapseItemActionView-BB@0x1a ]
+	29      (00000070) invoke-virtual       v5, Landroidx/appcompat/view/menu/MenuBuilder;->startDispatchingItemsChanged()V
+	30      (00000076) if-eqz               v0, -2e
+
+collapseItemActionView-BB@0x7a : [ collapseItemActionView-BB@0x1a ]
+	31      (0000007a) const/4              v3, 0
+	32      (0000007c) iput-object          v3, v5, Landroidx/appcompat/view/menu/MenuBuilder;->mExpandedItem Landroidx/appcompat/view/menu/MenuItemImpl;
+	33      (00000080) goto                 -33
+

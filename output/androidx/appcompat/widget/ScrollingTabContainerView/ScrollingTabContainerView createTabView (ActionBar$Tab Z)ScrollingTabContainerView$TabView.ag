@@ -1,0 +1,44 @@
+# Landroidx/appcompat/widget/ScrollingTabContainerView;->createTabView(Landroidx/appcompat/app/ActionBar$Tab; Z)Landroidx/appcompat/widget/ScrollingTabContainerView$TabView; [access_flags=]
+#
+# Parameters:
+# - local registers: v0...v4
+# - v5:androidx.appcompat.app.ActionBar$Tab
+# - v6:boolean
+#
+# - return:androidx.appcompat.widget.ScrollingTabContainerView$TabView
+
+createTabView-BB@0x0 : [ createTabView-BB@0x16 createTabView-BB@0x36 ]
+	0       (00000000) new-instance         v0, Landroidx/appcompat/widget/ScrollingTabContainerView$TabView;
+	1       (00000004) invoke-virtual       v4, Landroidx/appcompat/widget/ScrollingTabContainerView;->getContext()Landroid/content/Context;
+	2       (0000000a) move-result-object   v1
+	3       (0000000c) invoke-direct        v0, v4, v1, v5, v6, Landroidx/appcompat/widget/ScrollingTabContainerView$TabView;-><init>(Landroidx/appcompat/widget/ScrollingTabContainerView; Landroid/content/Context; Landroidx/appcompat/app/ActionBar$Tab; Z)V
+	4       (00000012) if-eqz               v6, +12
+
+createTabView-BB@0x16 : [ createTabView-BB@0x34 ]
+	5       (00000016) const/4              v1, 0
+	6       (00000018) invoke-virtual       v0, v1, Landroidx/appcompat/widget/ScrollingTabContainerView$TabView;->setBackgroundDrawable(Landroid/graphics/drawable/Drawable;)V
+	7       (0000001e) new-instance         v1, Landroid/widget/AbsListView$LayoutParams;
+	8       (00000022) const/4              v2, -1
+	9       (00000024) iget                 v3, v4, Landroidx/appcompat/widget/ScrollingTabContainerView;->mContentHeight I
+	10      (00000028) invoke-direct        v1, v2, v3, Landroid/widget/AbsListView$LayoutParams;-><init>(I I)V
+	11      (0000002e) invoke-virtual       v0, v1, Landroidx/appcompat/widget/ScrollingTabContainerView$TabView;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
+
+createTabView-BB@0x34 : 
+	12      (00000034) return-object        v0
+
+createTabView-BB@0x36 : [ createTabView-BB@0x46 createTabView-BB@0x54 ]
+	13      (00000036) const/4              v1, 1
+	14      (00000038) invoke-virtual       v0, v1, Landroidx/appcompat/widget/ScrollingTabContainerView$TabView;->setFocusable(Z)V
+	15      (0000003e) iget-object          v1, v4, Landroidx/appcompat/widget/ScrollingTabContainerView;->mTabClickListener Landroidx/appcompat/widget/ScrollingTabContainerView$TabClickListener;
+	16      (00000042) if-nez               v1, +9
+
+createTabView-BB@0x46 : [ createTabView-BB@0x54 ]
+	17      (00000046) new-instance         v1, Landroidx/appcompat/widget/ScrollingTabContainerView$TabClickListener;
+	18      (0000004a) invoke-direct        v1, v4, Landroidx/appcompat/widget/ScrollingTabContainerView$TabClickListener;-><init>(Landroidx/appcompat/widget/ScrollingTabContainerView;)V
+	19      (00000050) iput-object          v1, v4, Landroidx/appcompat/widget/ScrollingTabContainerView;->mTabClickListener Landroidx/appcompat/widget/ScrollingTabContainerView$TabClickListener;
+
+createTabView-BB@0x54 : [ createTabView-BB@0x34 ]
+	20      (00000054) iget-object          v1, v4, Landroidx/appcompat/widget/ScrollingTabContainerView;->mTabClickListener Landroidx/appcompat/widget/ScrollingTabContainerView$TabClickListener;
+	21      (00000058) invoke-virtual       v0, v1, Landroidx/appcompat/widget/ScrollingTabContainerView$TabView;->setOnClickListener(Landroid/view/View$OnClickListener;)V
+	22      (0000005e) goto                 -15
+

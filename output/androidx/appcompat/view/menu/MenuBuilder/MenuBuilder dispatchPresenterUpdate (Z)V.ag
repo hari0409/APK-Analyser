@@ -1,0 +1,50 @@
+# Landroidx/appcompat/view/menu/MenuBuilder;->dispatchPresenterUpdate(Z)V [access_flags=private]
+#
+# Parameters:
+# - local registers: v0...v4
+# - v5:boolean
+#
+# - return:void
+
+dispatchPresenterUpdate-BB@0x0 : [ dispatchPresenterUpdate-BB@0x10 dispatchPresenterUpdate-BB@0x12 ]
+	0       (00000000) iget-object          v2, v4, Landroidx/appcompat/view/menu/MenuBuilder;->mPresenters Ljava/util/concurrent/CopyOnWriteArrayList;
+	1       (00000004) invoke-virtual       v2, Ljava/util/concurrent/CopyOnWriteArrayList;->isEmpty()Z
+	2       (0000000a) move-result          v2
+	3       (0000000c) if-eqz               v2, +3
+
+dispatchPresenterUpdate-BB@0x10 : 
+	4       (00000010) return-void          
+
+dispatchPresenterUpdate-BB@0x12 : [ dispatchPresenterUpdate-BB@0x24 ]
+	5       (00000012) invoke-virtual       v4, Landroidx/appcompat/view/menu/MenuBuilder;->stopDispatchingItemsChanged()V
+	6       (00000018) iget-object          v2, v4, Landroidx/appcompat/view/menu/MenuBuilder;->mPresenters Ljava/util/concurrent/CopyOnWriteArrayList;
+	7       (0000001c) invoke-virtual       v2, Ljava/util/concurrent/CopyOnWriteArrayList;->iterator()Ljava/util/Iterator;
+	8       (00000022) move-result-object   v2
+
+dispatchPresenterUpdate-BB@0x24 : [ dispatchPresenterUpdate-BB@0x30 dispatchPresenterUpdate-BB@0x60 ]
+	9       (00000024) invoke-interface     v2, Ljava/util/Iterator;->hasNext()Z
+	10      (0000002a) move-result          v3
+	11      (0000002c) if-eqz               v3, +1a
+
+dispatchPresenterUpdate-BB@0x30 : [ dispatchPresenterUpdate-BB@0x4c dispatchPresenterUpdate-BB@0x58 ]
+	12      (00000030) invoke-interface     v2, Ljava/util/Iterator;->next()Ljava/lang/Object;
+	13      (00000036) move-result-object   v1
+	14      (00000038) check-cast           v1, Ljava/lang/ref/WeakReference;
+	15      (0000003c) invoke-virtual       v1, Ljava/lang/ref/WeakReference;->get()Ljava/lang/Object;
+	16      (00000042) move-result-object   v0
+	17      (00000044) check-cast           v0, Landroidx/appcompat/view/menu/MenuPresenter;
+	18      (00000048) if-nez               v0, +8
+
+dispatchPresenterUpdate-BB@0x4c : [ dispatchPresenterUpdate-BB@0x24 ]
+	19      (0000004c) iget-object          v3, v4, Landroidx/appcompat/view/menu/MenuBuilder;->mPresenters Ljava/util/concurrent/CopyOnWriteArrayList;
+	20      (00000050) invoke-virtual       v3, v1, Ljava/util/concurrent/CopyOnWriteArrayList;->remove(Ljava/lang/Object;)Z
+	21      (00000056) goto                 -19
+
+dispatchPresenterUpdate-BB@0x58 : [ dispatchPresenterUpdate-BB@0x24 ]
+	22      (00000058) invoke-interface     v0, v5, Landroidx/appcompat/view/menu/MenuPresenter;->updateMenuView(Z)V
+	23      (0000005e) goto                 -1d
+
+dispatchPresenterUpdate-BB@0x60 : [ dispatchPresenterUpdate-BB@0x10 ]
+	24      (00000060) invoke-virtual       v4, Landroidx/appcompat/view/menu/MenuBuilder;->startDispatchingItemsChanged()V
+	25      (00000066) goto                 -2b
+

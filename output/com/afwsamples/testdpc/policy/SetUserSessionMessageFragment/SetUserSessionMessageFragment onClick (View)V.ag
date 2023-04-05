@@ -1,0 +1,45 @@
+# Lcom/afwsamples/testdpc/policy/SetUserSessionMessageFragment;->onClick(Landroid/view/View;)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v4
+# - v5:android.view.View
+#
+# - return:void
+
+onClick-BB@0x0 : [ D:onClick-BB@0x14 2131296366:onClick-BB@0x4c 2131296613:onClick-BB@0x32 ]
+	0       (00000000) const/4              v3, 0
+	1       (00000002) const/4              v1, 0
+	2       (00000004) const/4              v0, 0
+	3       (00000006) invoke-virtual       v5, Landroid/view/View;->getId()I
+	4       (0000000c) move-result          v2
+	5       (0000000e) sparse-switch        v2, +2b (0x64)
+
+onClick-BB@0x14 : 
+	6       (00000014) iget-object          v2, v4, Lcom/afwsamples/testdpc/policy/SetUserSessionMessageFragment;->mDevicePolicyManager Landroid/app/admin/DevicePolicyManager;
+	7       (00000018) iget-object          v3, v4, Lcom/afwsamples/testdpc/policy/SetUserSessionMessageFragment;->mComponentName Landroid/content/ComponentName;
+	8       (0000001c) invoke-virtual       v2, v3, v1, Landroid/app/admin/DevicePolicyManager;->setStartUserSessionMessage(Landroid/content/ComponentName; Ljava/lang/CharSequence;)V
+	9       (00000022) iget-object          v2, v4, Lcom/afwsamples/testdpc/policy/SetUserSessionMessageFragment;->mDevicePolicyManager Landroid/app/admin/DevicePolicyManager;
+	10      (00000026) iget-object          v3, v4, Lcom/afwsamples/testdpc/policy/SetUserSessionMessageFragment;->mComponentName Landroid/content/ComponentName;
+	11      (0000002a) invoke-virtual       v2, v3, v0, Landroid/app/admin/DevicePolicyManager;->setEndUserSessionMessage(Landroid/content/ComponentName; Ljava/lang/CharSequence;)V
+	12      (00000030) return-void          
+
+onClick-BB@0x32 : [ onClick-BB@0x14 ]
+	13      (00000032) iget-object          v2, v4, Lcom/afwsamples/testdpc/policy/SetUserSessionMessageFragment;->mStartSessionMessage Landroid/widget/EditText;
+	14      (00000036) invoke-virtual       v2, Landroid/widget/EditText;->getText()Landroid/text/Editable;
+	15      (0000003c) move-result-object   v1
+	16      (0000003e) iget-object          v2, v4, Lcom/afwsamples/testdpc/policy/SetUserSessionMessageFragment;->mEndSessionMessage Landroid/widget/EditText;
+	17      (00000042) invoke-virtual       v2, Landroid/widget/EditText;->getText()Landroid/text/Editable;
+	18      (00000048) move-result-object   v0
+	19      (0000004a) goto                 -1b
+
+onClick-BB@0x4c : [ onClick-BB@0x14 ]
+	20      (0000004c) iget-object          v2, v4, Lcom/afwsamples/testdpc/policy/SetUserSessionMessageFragment;->mStartSessionMessage Landroid/widget/EditText;
+	21      (00000050) invoke-virtual       v2, v3, Landroid/widget/EditText;->setText(Ljava/lang/CharSequence;)V
+	22      (00000056) iget-object          v2, v4, Lcom/afwsamples/testdpc/policy/SetUserSessionMessageFragment;->mEndSessionMessage Landroid/widget/EditText;
+	23      (0000005a) invoke-virtual       v2, v3, Landroid/widget/EditText;->setText(Ljava/lang/CharSequence;)V
+	24      (00000060) goto                 -26
+
+onClick-BB@0x62 : 
+	25      (00000062) nop                  
+	26      (00000064) sparse-switch-payload 7f09006e 7f090165
+

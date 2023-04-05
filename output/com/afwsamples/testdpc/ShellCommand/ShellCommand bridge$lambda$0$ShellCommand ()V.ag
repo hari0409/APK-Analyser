@@ -1,0 +1,11 @@
+# Lcom/afwsamples/testdpc/ShellCommand;->bridge$lambda$0$ShellCommand()V [access_flags=final bridge synthetic]
+#
+# Parameters:
+# local registers: v0...v0
+#
+# - return:void
+
+bridge$lambda$0$ShellCommand-BB@0x0 : 
+	0       (00000000) invoke-direct        v0, Lcom/afwsamples/testdpc/ShellCommand;->dumpState()V
+	1       (00000006) return-void          
+

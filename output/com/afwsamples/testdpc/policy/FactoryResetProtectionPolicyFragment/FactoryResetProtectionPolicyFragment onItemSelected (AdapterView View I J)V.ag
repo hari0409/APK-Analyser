@@ -1,0 +1,37 @@
+# Lcom/afwsamples/testdpc/policy/FactoryResetProtectionPolicyFragment;->onItemSelected(Landroid/widget/AdapterView; Landroid/view/View; I J)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v3
+# - v4:android.widget.AdapterView
+# - v5:android.view.View
+# - v6:int
+# - v7:long
+#
+# - return:void
+
+onItemSelected-BB@0x0 : [ onItemSelected-BB@0x12 onItemSelected-BB@0x18 ]
+	0       (00000000) invoke-virtual       v3, Landroid/widget/AdapterView;->getId()I
+	1       (00000006) move-result          v0
+	2       (00000008) const                v1, 2131296445 # [1.8210806879794856e+38]
+	3       (0000000e) if-ne                v0, v1, +5
+
+onItemSelected-BB@0x12 : [ D:onItemSelected-BB@0x18 0:onItemSelected-BB@0x1a 1:onItemSelected-BB@0x22 ]
+	4       (00000012) packed-switch        v5, +d (0x2c)
+
+onItemSelected-BB@0x18 : 
+	5       (00000018) return-void          
+
+onItemSelected-BB@0x1a : [ onItemSelected-BB@0x18 ]
+	6       (0000001a) const/4              v0, 0
+	7       (0000001c) iput-boolean         v0, v2, Lcom/afwsamples/testdpc/policy/FactoryResetProtectionPolicyFragment;->mEnabled Z
+	8       (00000020) goto                 -4
+
+onItemSelected-BB@0x22 : [ onItemSelected-BB@0x18 ]
+	9       (00000022) const/4              v0, 1
+	10      (00000024) iput-boolean         v0, v2, Lcom/afwsamples/testdpc/policy/FactoryResetProtectionPolicyFragment;->mEnabled Z
+	11      (00000028) goto                 -8
+
+onItemSelected-BB@0x2a : 
+	12      (0000002a) nop                  
+	13      (0000002c) packed-switch-payload 0 1
+

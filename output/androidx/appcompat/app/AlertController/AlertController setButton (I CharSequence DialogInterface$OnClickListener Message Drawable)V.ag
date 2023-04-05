@@ -1,0 +1,55 @@
+# Landroidx/appcompat/app/AlertController;->setButton(I Ljava/lang/CharSequence; Landroid/content/DialogInterface$OnClickListener; Landroid/os/Message; Landroid/graphics/drawable/Drawable;)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:int
+# - v4:java.lang.CharSequence
+# - v5:android.content.DialogInterface$OnClickListener
+# - v6:android.os.Message
+# - v7:android.graphics.drawable.Drawable
+#
+# - return:void
+
+setButton-BB@0x0 : [ setButton-BB@0x4 setButton-BB@0x14 ]
+	0       (00000000) if-nez               v6, +a
+
+setButton-BB@0x4 : [ setButton-BB@0x8 setButton-BB@0x14 ]
+	1       (00000004) if-eqz               v5, +8
+
+setButton-BB@0x8 : [ setButton-BB@0x14 ]
+	2       (00000008) iget-object          v0, v2, Landroidx/appcompat/app/AlertController;->mHandler Landroid/os/Handler;
+	3       (0000000c) invoke-virtual       v0, v3, v5, Landroid/os/Handler;->obtainMessage(I Ljava/lang/Object;)Landroid/os/Message;
+	4       (00000012) move-result-object   v6
+
+setButton-BB@0x14 : [ D:setButton-BB@0x1a -3:setButton-BB@0x46 -2:setButton-BB@0x38 -1:setButton-BB@0x2a ]
+	5       (00000014) packed-switch        v3, +20 (0x54)
+
+setButton-BB@0x1a : 
+	6       (0000001a) new-instance         v0, Ljava/lang/IllegalArgumentException;
+	7       (0000001e) const-string         v1, 'Button does not exist'
+	8       (00000022) invoke-direct        v0, v1, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+	9       (00000028) throw                v0
+
+setButton-BB@0x2a : [ setButton-BB@0x36 ]
+	10      (0000002a) iput-object          v4, v2, Landroidx/appcompat/app/AlertController;->mButtonPositiveText Ljava/lang/CharSequence;
+	11      (0000002e) iput-object          v6, v2, Landroidx/appcompat/app/AlertController;->mButtonPositiveMessage Landroid/os/Message;
+	12      (00000032) iput-object          v7, v2, Landroidx/appcompat/app/AlertController;->mButtonPositiveIcon Landroid/graphics/drawable/Drawable;
+
+setButton-BB@0x36 : 
+	13      (00000036) return-void          
+
+setButton-BB@0x38 : [ setButton-BB@0x36 ]
+	14      (00000038) iput-object          v4, v2, Landroidx/appcompat/app/AlertController;->mButtonNegativeText Ljava/lang/CharSequence;
+	15      (0000003c) iput-object          v6, v2, Landroidx/appcompat/app/AlertController;->mButtonNegativeMessage Landroid/os/Message;
+	16      (00000040) iput-object          v7, v2, Landroidx/appcompat/app/AlertController;->mButtonNegativeIcon Landroid/graphics/drawable/Drawable;
+	17      (00000044) goto                 -7
+
+setButton-BB@0x46 : [ setButton-BB@0x36 ]
+	18      (00000046) iput-object          v4, v2, Landroidx/appcompat/app/AlertController;->mButtonNeutralText Ljava/lang/CharSequence;
+	19      (0000004a) iput-object          v6, v2, Landroidx/appcompat/app/AlertController;->mButtonNeutralMessage Landroid/os/Message;
+	20      (0000004e) iput-object          v7, v2, Landroidx/appcompat/app/AlertController;->mButtonNeutralIcon Landroid/graphics/drawable/Drawable;
+	21      (00000052) goto                 -e
+
+setButton-BB@0x54 : 
+	22      (00000054) packed-switch-payload -3 -2 -1
+

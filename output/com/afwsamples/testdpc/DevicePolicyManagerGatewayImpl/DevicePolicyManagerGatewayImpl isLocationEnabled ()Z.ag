@@ -1,0 +1,13 @@
+# Lcom/afwsamples/testdpc/DevicePolicyManagerGatewayImpl;->isLocationEnabled()Z [access_flags=public]
+#
+# Parameters:
+# local registers: v0...v1
+#
+# - return:boolean
+
+isLocationEnabled-BB@0x0 : 
+	0       (00000000) iget-object          v0, v1, Lcom/afwsamples/testdpc/DevicePolicyManagerGatewayImpl;->mLocationManager Landroid/location/LocationManager;
+	1       (00000004) invoke-virtual       v0, Landroid/location/LocationManager;->isLocationEnabled()Z
+	2       (0000000a) move-result          v0
+	3       (0000000c) return               v0
+

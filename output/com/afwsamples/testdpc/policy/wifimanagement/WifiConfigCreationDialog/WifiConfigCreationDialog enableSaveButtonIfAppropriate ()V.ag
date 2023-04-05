@@ -1,0 +1,63 @@
+# Lcom/afwsamples/testdpc/policy/wifimanagement/WifiConfigCreationDialog;->enableSaveButtonIfAppropriate()V [access_flags=private]
+#
+# Parameters:
+# local registers: v0...v5
+#
+# - return:void
+
+enableSaveButtonIfAppropriate-BB@0x0 : [ enableSaveButtonIfAppropriate-BB@0x14 enableSaveButtonIfAppropriate-BB@0x5e ]
+	0       (00000000) const/4              v1, 1
+	1       (00000002) const/4              v2, 0
+	2       (00000004) iget-object          v3, v5, Lcom/afwsamples/testdpc/policy/wifimanagement/WifiConfigCreationDialog;->mSsidText Landroid/widget/EditText;
+	3       (00000008) invoke-virtual       v3, Landroid/widget/EditText;->length()I
+	4       (0000000e) move-result          v3
+	5       (00000010) if-eqz               v3, +27
+
+enableSaveButtonIfAppropriate-BB@0x14 : [ enableSaveButtonIfAppropriate-BB@0x16 ]
+	6       (00000014) move                 v0, v1
+
+enableSaveButtonIfAppropriate-BB@0x16 : [ enableSaveButtonIfAppropriate-BB@0x1a enableSaveButtonIfAppropriate-BB@0x62 ]
+	7       (00000016) if-eqz               v0, +26
+
+enableSaveButtonIfAppropriate-BB@0x1a : [ enableSaveButtonIfAppropriate-BB@0x24 enableSaveButtonIfAppropriate-BB@0x48 ]
+	8       (0000001a) iget                 v3, v5, Lcom/afwsamples/testdpc/policy/wifimanagement/WifiConfigCreationDialog;->mSecurityType I
+	9       (0000001e) const/4              v4, 2
+	10      (00000020) if-ne                v3, v4, +14
+
+enableSaveButtonIfAppropriate-BB@0x24 : [ enableSaveButtonIfAppropriate-BB@0x38 enableSaveButtonIfAppropriate-BB@0x48 ]
+	11      (00000024) iget-object          v3, v5, Lcom/afwsamples/testdpc/policy/wifimanagement/WifiConfigCreationDialog;->mPasswordText Landroid/widget/EditText;
+	12      (00000028) invoke-virtual       v3, Landroid/widget/EditText;->length()I
+	13      (0000002e) move-result          v3
+	14      (00000030) const/16             v4, 8
+	15      (00000034) if-ge                v3, v4, +a
+
+enableSaveButtonIfAppropriate-BB@0x38 : [ enableSaveButtonIfAppropriate-BB@0x40 enableSaveButtonIfAppropriate-BB@0x62 ]
+	16      (00000038) iget-boolean         v3, v5, Lcom/afwsamples/testdpc/policy/wifimanagement/WifiConfigCreationDialog;->mPasswordDirty Z
+	17      (0000003c) if-nez               v3, +13
+
+enableSaveButtonIfAppropriate-BB@0x40 : [ enableSaveButtonIfAppropriate-BB@0x48 enableSaveButtonIfAppropriate-BB@0x62 ]
+	18      (00000040) iget-object          v3, v5, Lcom/afwsamples/testdpc/policy/wifimanagement/WifiConfigCreationDialog;->mOldConfig Landroid/net/wifi/WifiConfiguration;
+	19      (00000044) if-eqz               v3, +f
+
+enableSaveButtonIfAppropriate-BB@0x48 : [ enableSaveButtonIfAppropriate-BB@0x4a ]
+	20      (00000048) move                 v0, v1
+
+enableSaveButtonIfAppropriate-BB@0x4a : [ enableSaveButtonIfAppropriate-BB@0x52 enableSaveButtonIfAppropriate-BB@0x5c ]
+	21      (0000004a) iget-object          v1, v5, Lcom/afwsamples/testdpc/policy/wifimanagement/WifiConfigCreationDialog;->mSaveButton Landroid/widget/Button;
+	22      (0000004e) if-eqz               v1, +7
+
+enableSaveButtonIfAppropriate-BB@0x52 : [ enableSaveButtonIfAppropriate-BB@0x5c ]
+	23      (00000052) iget-object          v1, v5, Lcom/afwsamples/testdpc/policy/wifimanagement/WifiConfigCreationDialog;->mSaveButton Landroid/widget/Button;
+	24      (00000056) invoke-virtual       v1, v0, Landroid/widget/Button;->setEnabled(Z)V
+
+enableSaveButtonIfAppropriate-BB@0x5c : 
+	25      (0000005c) return-void          
+
+enableSaveButtonIfAppropriate-BB@0x5e : [ enableSaveButtonIfAppropriate-BB@0x16 ]
+	26      (0000005e) move                 v0, v2
+	27      (00000060) goto                 -25
+
+enableSaveButtonIfAppropriate-BB@0x62 : [ enableSaveButtonIfAppropriate-BB@0x4a ]
+	28      (00000062) move                 v0, v2
+	29      (00000064) goto                 -d
+

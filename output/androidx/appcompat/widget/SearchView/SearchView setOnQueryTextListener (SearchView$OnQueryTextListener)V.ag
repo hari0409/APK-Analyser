@@ -1,0 +1,12 @@
+# Landroidx/appcompat/widget/SearchView;->setOnQueryTextListener(Landroidx/appcompat/widget/SearchView$OnQueryTextListener;)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v0
+# - v1:androidx.appcompat.widget.SearchView$OnQueryTextListener
+#
+# - return:void
+
+setOnQueryTextListener-BB@0x0 : 
+	0       (00000000) iput-object          v1, v0, Landroidx/appcompat/widget/SearchView;->mOnQueryChangeListener Landroidx/appcompat/widget/SearchView$OnQueryTextListener;
+	1       (00000004) return-void          
+

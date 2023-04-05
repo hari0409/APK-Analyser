@@ -1,0 +1,23 @@
+# Lcom/afwsamples/testdpc/profilepolicy/crossprofileintentfilter/AddCrossProfileIntentFilterFragment;->getAddCrossProfileIntentFilterFlag()I [access_flags=private]
+#
+# Parameters:
+# local registers: v0...v1
+#
+# - return:int
+
+getAddCrossProfileIntentFilterFlag-BB@0x0 : [ getAddCrossProfileIntentFilterFlag-BB@0x10 getAddCrossProfileIntentFilterFlag-BB@0x14 ]
+	0       (00000000) iget-object          v0, v1, Lcom/afwsamples/testdpc/profilepolicy/crossprofileintentfilter/AddCrossProfileIntentFilterFragment;->mCrossProfileDirectionSpinner Landroid/widget/Spinner;
+	1       (00000004) invoke-virtual       v0, Landroid/widget/Spinner;->getSelectedItemPosition()I
+	2       (0000000a) move-result          v0
+	3       (0000000c) if-nez               v0, +4
+
+getAddCrossProfileIntentFilterFlag-BB@0x10 : [ getAddCrossProfileIntentFilterFlag-BB@0x12 ]
+	4       (00000010) const/4              v0, 2
+
+getAddCrossProfileIntentFilterFlag-BB@0x12 : 
+	5       (00000012) return               v0
+
+getAddCrossProfileIntentFilterFlag-BB@0x14 : [ getAddCrossProfileIntentFilterFlag-BB@0x12 ]
+	6       (00000014) const/4              v0, 1
+	7       (00000016) goto                 -2
+

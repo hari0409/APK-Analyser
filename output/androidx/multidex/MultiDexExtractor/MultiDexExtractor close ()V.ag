@@ -1,0 +1,16 @@
+# Landroidx/multidex/MultiDexExtractor;->close()V [access_flags=public]
+#
+# Parameters:
+# local registers: v0...v1
+#
+# - return:void
+
+close-BB@0x0 : 
+	0       (00000000) iget-object          v0, v1, Landroidx/multidex/MultiDexExtractor;->cacheLock Ljava/nio/channels/FileLock;
+	1       (00000004) invoke-virtual       v0, Ljava/nio/channels/FileLock;->release()V
+	2       (0000000a) iget-object          v0, v1, Landroidx/multidex/MultiDexExtractor;->lockChannel Ljava/nio/channels/FileChannel;
+	3       (0000000e) invoke-virtual       v0, Ljava/nio/channels/FileChannel;->close()V
+	4       (00000014) iget-object          v0, v1, Landroidx/multidex/MultiDexExtractor;->lockRaf Ljava/io/RandomAccessFile;
+	5       (00000018) invoke-virtual       v0, Ljava/io/RandomAccessFile;->close()V
+	6       (0000001e) return-void          
+

@@ -1,0 +1,55 @@
+# Lcom/afwsamples/testdpc/policy/utils/AttestationApplicationId;-><init>(Lorg/bouncycastle/asn1/ASN1Encodable;)V [access_flags=public constructor]
+#
+# Parameters:
+# - local registers: v0...v4
+# - v5:org.bouncycastle.asn1.ASN1Encodable
+#
+# - return:void
+
+<init>-BB@0x0 : [ <init>-BB@0x10 <init>-BB@0x52 ]
+	0       (00000000) const/4              v3, 0
+	1       (00000002) invoke-direct        v4, Ljava/lang/Object;-><init>()V
+	2       (00000008) instance-of          v1, v5, Lorg/bouncycastle/asn1/ASN1Sequence;
+	3       (0000000c) if-nez               v1, +23
+
+<init>-BB@0x10 : 
+	4       (00000010) new-instance         v1, Ljava/security/cert/CertificateParsingException;
+	5       (00000014) new-instance         v2, Ljava/lang/StringBuilder;
+	6       (00000018) invoke-direct        v2, Ljava/lang/StringBuilder;-><init>()V
+	7       (0000001e) const-string         v3, 'Expected sequence for AttestationApplicationId, found '
+	8       (00000022) invoke-virtual       v2, v3, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	9       (00000028) move-result-object   v2
+	10      (0000002a) invoke-virtual       v5, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+	11      (00000030) move-result-object   v3
+	12      (00000032) invoke-virtual       v3, Ljava/lang/Class;->getName()Ljava/lang/String;
+	13      (00000038) move-result-object   v3
+	14      (0000003a) invoke-virtual       v2, v3, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	15      (00000040) move-result-object   v2
+	16      (00000042) invoke-virtual       v2, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+	17      (00000048) move-result-object   v2
+	18      (0000004a) invoke-direct        v1, v2, Ljava/security/cert/CertificateParsingException;-><init>(Ljava/lang/String;)V
+	19      (00000050) throw                v1
+
+<init>-BB@0x52 : 
+	20      (00000052) move-object          v0, v5
+	21      (00000054) check-cast           v0, Lorg/bouncycastle/asn1/ASN1Sequence;
+	22      (00000058) const/4              v1, 0
+	23      (0000005a) invoke-virtual       v0, v1, Lorg/bouncycastle/asn1/ASN1Sequence;->getObjectAt(I)Lorg/bouncycastle/asn1/ASN1Encodable;
+	24      (00000060) move-result-object   v1
+	25      (00000062) invoke-direct        v4, v1, Lcom/afwsamples/testdpc/policy/utils/AttestationApplicationId;->parseAttestationPackageInfos(Lorg/bouncycastle/asn1/ASN1Encodable;)Ljava/util/List;
+	26      (00000068) move-result-object   v1
+	27      (0000006a) iput-object          v1, v4, Lcom/afwsamples/testdpc/policy/utils/AttestationApplicationId;->packageInfos Ljava/util/List;
+	28      (0000006e) iget-object          v1, v4, Lcom/afwsamples/testdpc/policy/utils/AttestationApplicationId;->packageInfos Ljava/util/List;
+	29      (00000072) invoke-interface     v1, v3, Ljava/util/List;->sort(Ljava/util/Comparator;)V
+	30      (00000078) const/4              v1, 1
+	31      (0000007a) invoke-virtual       v0, v1, Lorg/bouncycastle/asn1/ASN1Sequence;->getObjectAt(I)Lorg/bouncycastle/asn1/ASN1Encodable;
+	32      (00000080) move-result-object   v1
+	33      (00000082) invoke-direct        v4, v1, Lcom/afwsamples/testdpc/policy/utils/AttestationApplicationId;->parseSignatures(Lorg/bouncycastle/asn1/ASN1Encodable;)Ljava/util/List;
+	34      (00000088) move-result-object   v1
+	35      (0000008a) iput-object          v1, v4, Lcom/afwsamples/testdpc/policy/utils/AttestationApplicationId;->signatureDigests Ljava/util/List;
+	36      (0000008e) iget-object          v1, v4, Lcom/afwsamples/testdpc/policy/utils/AttestationApplicationId;->signatureDigests Ljava/util/List;
+	37      (00000092) new-instance         v2, Lcom/afwsamples/testdpc/policy/utils/AttestationApplicationId$ByteArrayComparator;
+	38      (00000096) invoke-direct        v2, v4, v3, Lcom/afwsamples/testdpc/policy/utils/AttestationApplicationId$ByteArrayComparator;-><init>(Lcom/afwsamples/testdpc/policy/utils/AttestationApplicationId; Lcom/afwsamples/testdpc/policy/utils/AttestationApplicationId$1;)V
+	39      (0000009c) invoke-interface     v1, v2, Ljava/util/List;->sort(Ljava/util/Comparator;)V
+	40      (000000a2) return-void          
+

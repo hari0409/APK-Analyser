@@ -1,0 +1,27 @@
+# Lcom/afwsamples/testdpc/ShellCommand;->toString(Landroid/os/UserHandle;)Ljava/lang/String; [access_flags=private]
+#
+# Parameters:
+# - local registers: v0...v4
+# - v5:android.os.UserHandle
+#
+# - return:java.lang.String
+
+toString-BB@0x0 : 
+	0       (00000000) new-instance         v0, Ljava/lang/StringBuilder;
+	1       (00000004) invoke-direct        v0, Ljava/lang/StringBuilder;-><init>()V
+	2       (0000000a) invoke-virtual       v5, Landroid/os/UserHandle;->toString()Ljava/lang/String;
+	3       (00000010) move-result-object   v1
+	4       (00000012) invoke-virtual       v0, v1, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	5       (00000018) move-result-object   v0
+	6       (0000001a) const-string         v1, ' serial='
+	7       (0000001e) invoke-virtual       v0, v1, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	8       (00000024) move-result-object   v0
+	9       (00000026) iget-object          v1, v4, Lcom/afwsamples/testdpc/ShellCommand;->mDevicePolicyManagerGateway Lcom/afwsamples/testdpc/DevicePolicyManagerGateway;
+	10      (0000002a) invoke-interface     v1, v5, Lcom/afwsamples/testdpc/DevicePolicyManagerGateway;->getSerialNumber(Landroid/os/UserHandle;)J
+	11      (00000030) move-result-wide     v2
+	12      (00000032) invoke-virtual       v0, v2, v3, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+	13      (00000038) move-result-object   v0
+	14      (0000003a) invoke-virtual       v0, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+	15      (00000040) move-result-object   v0
+	16      (00000042) return-object        v0
+

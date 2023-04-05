@@ -1,0 +1,13 @@
+# Lorg/checkerframework/checker/regex/RegexUtil$CheckedPatternSyntaxException;->getIndex()I [access_flags=public]
+#
+# Parameters:
+# local registers: v0...v1
+#
+# - return:int
+
+getIndex-BB@0x0 : 
+	0       (00000000) iget-object          v0, v1, Lorg/checkerframework/checker/regex/RegexUtil$CheckedPatternSyntaxException;->pse Ljava/util/regex/PatternSyntaxException;
+	1       (00000004) invoke-virtual       v0, Ljava/util/regex/PatternSyntaxException;->getIndex()I
+	2       (0000000a) move-result          v0
+	3       (0000000c) return               v0
+

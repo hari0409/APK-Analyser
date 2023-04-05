@@ -1,0 +1,23 @@
+# Landroidx/appcompat/widget/AbsActionBarView;->next(I I Z)I [access_flags=protected static]
+#
+# Parameters:
+# - local registers: v0...v0
+# - v1:int
+# - v2:int
+# - v3:boolean
+#
+# - return:int
+
+next-BB@0x0 : [ next-BB@0x4 next-BB@0xa ]
+	0       (00000000) if-eqz               v3, +5
+
+next-BB@0x4 : [ next-BB@0x8 ]
+	1       (00000004) sub-int              v0, v1, v2
+
+next-BB@0x8 : 
+	2       (00000008) return               v0
+
+next-BB@0xa : [ next-BB@0x8 ]
+	3       (0000000a) add-int              v0, v1, v2
+	4       (0000000e) goto                 -3
+

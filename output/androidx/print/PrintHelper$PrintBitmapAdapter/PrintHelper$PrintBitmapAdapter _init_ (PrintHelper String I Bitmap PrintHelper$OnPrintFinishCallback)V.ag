@@ -1,0 +1,21 @@
+# Landroidx/print/PrintHelper$PrintBitmapAdapter;-><init>(Landroidx/print/PrintHelper; Ljava/lang/String; I Landroid/graphics/Bitmap; Landroidx/print/PrintHelper$OnPrintFinishCallback;)V [access_flags=constructor]
+#
+# Parameters:
+# - local registers: v0...v0
+# - v1:androidx.print.PrintHelper
+# - v2:java.lang.String
+# - v3:int
+# - v4:android.graphics.Bitmap
+# - v5:androidx.print.PrintHelper$OnPrintFinishCallback
+#
+# - return:void
+
+<init>-BB@0x0 : 
+	0       (00000000) iput-object          v1, v0, Landroidx/print/PrintHelper$PrintBitmapAdapter;->this$0 Landroidx/print/PrintHelper;
+	1       (00000004) invoke-direct        v0, Landroid/print/PrintDocumentAdapter;-><init>()V
+	2       (0000000a) iput-object          v2, v0, Landroidx/print/PrintHelper$PrintBitmapAdapter;->mJobName Ljava/lang/String;
+	3       (0000000e) iput                 v3, v0, Landroidx/print/PrintHelper$PrintBitmapAdapter;->mFittingMode I
+	4       (00000012) iput-object          v4, v0, Landroidx/print/PrintHelper$PrintBitmapAdapter;->mBitmap Landroid/graphics/Bitmap;
+	5       (00000016) iput-object          v5, v0, Landroidx/print/PrintHelper$PrintBitmapAdapter;->mCallback Landroidx/print/PrintHelper$OnPrintFinishCallback;
+	6       (0000001a) return-void          
+

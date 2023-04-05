@@ -1,0 +1,17 @@
+# Landroidx/appcompat/widget/ActionBarContextView;->closeMode()V [access_flags=public]
+#
+# Parameters:
+# local registers: v0...v1
+#
+# - return:void
+
+closeMode-BB@0x0 : [ closeMode-BB@0x8 closeMode-BB@0xe ]
+	0       (00000000) iget-object          v0, v1, Landroidx/appcompat/widget/ActionBarContextView;->mClose Landroid/view/View;
+	1       (00000004) if-nez               v0, +5
+
+closeMode-BB@0x8 : [ closeMode-BB@0xe ]
+	2       (00000008) invoke-virtual       v1, Landroidx/appcompat/widget/ActionBarContextView;->killMode()V
+
+closeMode-BB@0xe : 
+	3       (0000000e) return-void          
+

@@ -1,0 +1,52 @@
+# Landroidx/appcompat/widget/ActivityChooserModel;->setActivitySorter(Landroidx/appcompat/widget/ActivityChooserModel$ActivitySorter;)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:androidx.appcompat.widget.ActivityChooserModel$ActivitySorter
+#
+# - return:void
+
+setActivitySorter-BB@0x0 : [ setActivitySorter-BB@0x6 ]
+	0       (00000000) iget-object          v1, v2, Landroidx/appcompat/widget/ActivityChooserModel;->mInstanceLock Ljava/lang/Object;
+	1       (00000004) monitor-enter        v1
+
+setActivitySorter-BB@0x6 : [ setActivitySorter-BB@0xe setActivitySorter-BB@0x12 ]
+	2       (00000006) iget-object          v0, v2, Landroidx/appcompat/widget/ActivityChooserModel;->mActivitySorter Landroidx/appcompat/widget/ActivityChooserModel$ActivitySorter;
+	3       (0000000a) if-ne                v0, v3, +4
+	6:2f
+	(Ljava/lang/Throwable; -> 2c setActivitySorter-BB@0x2c)
+
+setActivitySorter-BB@0xe : [ setActivitySorter-BB@0x10 ]
+	4       (0000000e) monitor-exit         v1
+	6:2f
+	(Ljava/lang/Throwable; -> 2c setActivitySorter-BB@0x2c)
+
+setActivitySorter-BB@0x10 : 
+	5       (00000010) return-void          
+	6:2f
+	(Ljava/lang/Throwable; -> 2c setActivitySorter-BB@0x2c)
+
+setActivitySorter-BB@0x12 : [ setActivitySorter-BB@0x22 setActivitySorter-BB@0x28 ]
+	6       (00000012) iput-object          v3, v2, Landroidx/appcompat/widget/ActivityChooserModel;->mActivitySorter Landroidx/appcompat/widget/ActivityChooserModel$ActivitySorter;
+	7       (00000016) invoke-direct        v2, Landroidx/appcompat/widget/ActivityChooserModel;->sortActivitiesIfNeeded()Z
+	8       (0000001c) move-result          v0
+	9       (0000001e) if-eqz               v0, +5
+	6:2f
+	(Ljava/lang/Throwable; -> 2c setActivitySorter-BB@0x2c)
+
+setActivitySorter-BB@0x22 : [ setActivitySorter-BB@0x28 ]
+	10      (00000022) invoke-virtual       v2, Landroidx/appcompat/widget/ActivityChooserModel;->notifyChanged()V
+	6:2f
+	(Ljava/lang/Throwable; -> 2c setActivitySorter-BB@0x2c)
+
+setActivitySorter-BB@0x28 : [ setActivitySorter-BB@0x10 ]
+	11      (00000028) monitor-exit         v1
+	12      (0000002a) goto                 -d
+	6:2f
+	(Ljava/lang/Throwable; -> 2c setActivitySorter-BB@0x2c)
+
+setActivitySorter-BB@0x2c : 
+	13      (0000002c) move-exception       v0
+	14      (0000002e) monitor-exit         v1
+	15      (00000030) throw                v0
+

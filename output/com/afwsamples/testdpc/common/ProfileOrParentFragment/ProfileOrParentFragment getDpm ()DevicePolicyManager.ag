@@ -1,0 +1,13 @@
+# Lcom/afwsamples/testdpc/common/ProfileOrParentFragment;->getDpm()Landroid/app/admin/DevicePolicyManager; [access_flags=protected final]
+#
+# Parameters:
+# local registers: v0...v1
+#
+# - return:android.app.admin.DevicePolicyManager
+
+getDpm-BB@0x0 : 
+	0       (00000000) iget-object          v0, v1, Lcom/afwsamples/testdpc/common/ProfileOrParentFragment;->mDevicePolicyGateway Lcom/afwsamples/testdpc/DevicePolicyManagerGateway;
+	1       (00000004) invoke-interface     v0, Lcom/afwsamples/testdpc/DevicePolicyManagerGateway;->getDevicePolicyManager()Landroid/app/admin/DevicePolicyManager;
+	2       (0000000a) move-result-object   v0
+	3       (0000000c) return-object        v0
+

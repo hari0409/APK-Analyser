@@ -1,0 +1,31 @@
+# Lcom/afwsamples/testdpc/common/ReselectionSpinner;->setSelection(I)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v7
+# - v8:int
+#
+# - return:void
+
+setSelection-BB@0x0 : [ setSelection-BB@0x12 setSelection-BB@0x38 ]
+	0       (00000000) invoke-virtual       v7, Lcom/afwsamples/testdpc/common/ReselectionSpinner;->getSelectedItemPosition()I
+	1       (00000006) move-result          v6
+	2       (00000008) invoke-super         v7, v8, Landroid/widget/Spinner;->setSelection(I)V
+	3       (0000000e) if-ne                v8, v6, +15
+
+setSelection-BB@0x12 : [ setSelection-BB@0x1e setSelection-BB@0x38 ]
+	4       (00000012) invoke-virtual       v7, Lcom/afwsamples/testdpc/common/ReselectionSpinner;->getOnItemSelectedListener()Landroid/widget/AdapterView$OnItemSelectedListener;
+	5       (00000018) move-result-object   v0
+	6       (0000001a) if-eqz               v0, +f
+
+setSelection-BB@0x1e : [ setSelection-BB@0x38 ]
+	7       (0000001e) invoke-virtual       v7, Lcom/afwsamples/testdpc/common/ReselectionSpinner;->getSelectedView()Landroid/view/View;
+	8       (00000024) move-result-object   v2
+	9       (00000026) invoke-virtual       v7, Lcom/afwsamples/testdpc/common/ReselectionSpinner;->getSelectedItemId()J
+	10      (0000002c) move-result-wide     v4
+	11      (0000002e) move-object          v1, v7
+	12      (00000030) move                 v3, v8
+	13      (00000032) invoke-interface/range v0 ... v5, Landroid/widget/AdapterView$OnItemSelectedListener;->onItemSelected(Landroid/widget/AdapterView; Landroid/view/View; I J)V
+
+setSelection-BB@0x38 : 
+	14      (00000038) return-void          
+

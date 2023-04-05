@@ -1,0 +1,217 @@
+# Landroidx/multidex/MultiDex;->doInstallation(Landroid/content/Context; Ljava/io/File; Ljava/io/File; Ljava/lang/String; Ljava/lang/String; Z)V [access_flags=private static]
+#
+# Parameters:
+# - local registers: v0...v10
+# - v11:android.content.Context
+# - v12:java.io.File
+# - v13:java.io.File
+# - v14:java.lang.String
+# - v15:java.lang.String
+# - v16:boolean
+#
+# - return:void
+
+doInstallation-BB@0x0 : [ doInstallation-BB@0x6 ]
+	0       (00000000) sget-object          v8, Landroidx/multidex/MultiDex;->installedApk Ljava/util/Set;
+	1       (00000004) monitor-enter        v8
+
+doInstallation-BB@0x6 : [ doInstallation-BB@0x16 doInstallation-BB@0x1a ]
+	2       (00000006) sget-object          v7, Landroidx/multidex/MultiDex;->installedApk Ljava/util/Set;
+	3       (0000000a) invoke-interface     v7, v12, Ljava/util/Set;->contains(Ljava/lang/Object;)Z
+	4       (00000010) move-result          v7
+	5       (00000012) if-eqz               v7, +4
+	6:bf
+	(Ljava/lang/Throwable; -> de doInstallation-BB@0xde)
+
+doInstallation-BB@0x16 : [ doInstallation-BB@0x18 ]
+	6       (00000016) monitor-exit         v8
+	6:bf
+	(Ljava/lang/Throwable; -> de doInstallation-BB@0xde)
+
+doInstallation-BB@0x18 : 
+	7       (00000018) return-void          
+	6:bf
+	(Ljava/lang/Throwable; -> de doInstallation-BB@0xde)
+
+doInstallation-BB@0x1a : [ doInstallation-BB@0x30 doInstallation-BB@0xc0 ]
+	8       (0000001a) sget-object          v7, Landroidx/multidex/MultiDex;->installedApk Ljava/util/Set;
+	9       (0000001e) invoke-interface     v7, v12, Ljava/util/Set;->add(Ljava/lang/Object;)Z
+	10      (00000024) sget                 v7, Landroid/os/Build$VERSION;->SDK_INT I
+	11      (00000028) const/16             v9, 20
+	12      (0000002c) if-le                v7, v9, +4a
+	6:bf
+	(Ljava/lang/Throwable; -> de doInstallation-BB@0xde)
+
+doInstallation-BB@0x30 : [ doInstallation-BB@0xc0 ]
+	13      (00000030) const-string         v7, 'MultiDex'
+	14      (00000034) new-instance         v9, Ljava/lang/StringBuilder;
+	15      (00000038) invoke-direct        v9, Ljava/lang/StringBuilder;-><init>()V
+	16      (0000003e) const-string         v10, 'MultiDex is not guaranteed to work in SDK version '
+	17      (00000042) invoke-virtual       v9, v10, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	18      (00000048) move-result-object   v9
+	19      (0000004a) sget                 v10, Landroid/os/Build$VERSION;->SDK_INT I
+	20      (0000004e) invoke-virtual       v9, v10, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+	21      (00000054) move-result-object   v9
+	22      (00000056) const-string         v10, ': SDK version higher than '
+	23      (0000005a) invoke-virtual       v9, v10, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	24      (00000060) move-result-object   v9
+	25      (00000062) const/16             v10, 20
+	26      (00000066) invoke-virtual       v9, v10, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+	27      (0000006c) move-result-object   v9
+	28      (0000006e) const-string         v10, ' should be backed by '
+	29      (00000072) invoke-virtual       v9, v10, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	30      (00000078) move-result-object   v9
+	31      (0000007a) const-string         v10, "runtime with built-in multidex capabilty but it's not the "
+	32      (0000007e) invoke-virtual       v9, v10, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	33      (00000084) move-result-object   v9
+	34      (00000086) const-string         v10, 'case here: java.vm.version="'
+	35      (0000008a) invoke-virtual       v9, v10, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	36      (00000090) move-result-object   v9
+	37      (00000092) const-string         v10, 'java.vm.version'
+	38      (00000096) invoke-static        v10, Ljava/lang/System;->getProperty(Ljava/lang/String;)Ljava/lang/String;
+	39      (0000009c) move-result-object   v10
+	40      (0000009e) invoke-virtual       v9, v10, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	41      (000000a4) move-result-object   v9
+	42      (000000a6) const-string         v10, '"'
+	43      (000000aa) invoke-virtual       v9, v10, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	44      (000000b0) move-result-object   v9
+	45      (000000b2) invoke-virtual       v9, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+	46      (000000b8) move-result-object   v9
+	47      (000000ba) invoke-static        v7, v9, Landroid/util/Log;->w(Ljava/lang/String; Ljava/lang/String;)I
+	6:bf
+	(Ljava/lang/Throwable; -> de doInstallation-BB@0xde)
+
+doInstallation-BB@0xc0 : [ doInstallation-BB@0xcc doInstallation-BB@0xf8 ]
+	48      (000000c0) invoke-virtual       v11, Landroid/content/Context;->getClassLoader()Ljava/lang/ClassLoader;
+	49      (000000c6) move-result-object   v5
+	50      (000000c8) if-nez               v5, +18
+	c0:c5
+	(Ljava/lang/Throwable; -> de doInstallation-BB@0xde)
+	(Ljava/lang/RuntimeException; -> e4 doInstallation-BB@0xe4)
+
+doInstallation-BB@0xcc : [ doInstallation-BB@0x18 ]
+	51      (000000cc) const-string         v7, 'MultiDex'
+	52      (000000d0) const-string         v9, 'Context class loader is null. Must be running in test mode. Skip patching.'
+	53      (000000d4) invoke-static        v7, v9, Landroid/util/Log;->e(Ljava/lang/String; Ljava/lang/String;)I
+	54      (000000da) monitor-exit         v8
+	55      (000000dc) goto                 -62
+	cc:e1
+	(Ljava/lang/Throwable; -> de doInstallation-BB@0xde)
+
+doInstallation-BB@0xde : 
+	56      (000000de) move-exception       v7
+	57      (000000e0) monitor-exit         v8
+	58      (000000e2) throw                v7
+
+doInstallation-BB@0xe4 : [ doInstallation-BB@0xe6 ]
+	59      (000000e4) move-exception       v2
+
+doInstallation-BB@0xe6 : [ doInstallation-BB@0x18 ]
+	60      (000000e6) const-string         v7, 'MultiDex'
+	61      (000000ea) const-string         v9, 'Failure while trying to obtain Context class loader. Must be running in test mode. Skip patching.'
+	62      (000000ee) invoke-static        v7, v9, v2, Landroid/util/Log;->w(Ljava/lang/String; Ljava/lang/String; Ljava/lang/Throwable;)I
+	63      (000000f4) monitor-exit         v8
+	64      (000000f6) goto                 -6f
+	e6:f5
+	(Ljava/lang/Throwable; -> de doInstallation-BB@0xde)
+
+doInstallation-BB@0xf8 : [ doInstallation-BB@0xfe ]
+	65      (000000f8) invoke-static        v11, Landroidx/multidex/MultiDex;->clearOldDexDir(Landroid/content/Context;)V
+	f8:fd
+	(Ljava/lang/Throwable; -> de doInstallation-BB@0xde)
+	(Ljava/lang/Throwable; -> 12e doInstallation-BB@0x12e)
+
+doInstallation-BB@0xfe : [ doInstallation-BB@0x114 ]
+	66      (000000fe) invoke-static        v11, v13, v14, Landroidx/multidex/MultiDex;->getDexDir(Landroid/content/Context; Ljava/io/File; Ljava/lang/String;)Ljava/io/File;
+	67      (00000104) move-result-object   v1
+	68      (00000106) new-instance         v3, Landroidx/multidex/MultiDexExtractor;
+	69      (0000010a) invoke-direct        v3, v12, v1, Landroidx/multidex/MultiDexExtractor;-><init>(Ljava/io/File; Ljava/io/File;)V
+	70      (00000110) const/4              v0, 0
+	71      (00000112) const/4              v7, 0
+	fe:10f
+	(Ljava/lang/Throwable; -> de doInstallation-BB@0xde)
+
+doInstallation-BB@0x114 : [ doInstallation-BB@0x11c ]
+	72      (00000114) invoke-virtual       v3, v11, v15, v7, Landroidx/multidex/MultiDexExtractor;->load(Landroid/content/Context; Ljava/lang/String; Z)Ljava/util/List;
+	73      (0000011a) move-result-object   v4
+	114:119
+	(Ljava/lang/Throwable; -> 148 doInstallation-BB@0x148)
+
+doInstallation-BB@0x11c : [ doInstallation-BB@0x122 ]
+	74      (0000011c) invoke-static        v5, v1, v4, Landroidx/multidex/MultiDex;->installSecondaryDexes(Ljava/lang/ClassLoader; Ljava/io/File; Ljava/util/List;)V
+	11c:121
+	(Ljava/lang/Throwable; -> 148 doInstallation-BB@0x148)
+	(Ljava/io/IOException; -> 140 doInstallation-BB@0x140)
+
+doInstallation-BB@0x122 : [ doInstallation-BB@0x128 ]
+	75      (00000122) invoke-virtual       v3, Landroidx/multidex/MultiDexExtractor;->close()V
+	122:127
+	(Ljava/lang/Throwable; -> de doInstallation-BB@0xde)
+	(Ljava/io/IOException; -> 172 doInstallation-BB@0x172)
+
+doInstallation-BB@0x128 : [ doInstallation-BB@0x12c doInstallation-BB@0x17e ]
+	76      (00000128) if-eqz               v0, +2b
+
+doInstallation-BB@0x12c : 
+	77      (0000012c) throw                v0
+	12c:13d
+	(Ljava/lang/Throwable; -> de doInstallation-BB@0xde)
+
+doInstallation-BB@0x12e : [ doInstallation-BB@0xfe ]
+	78      (0000012e) move-exception       v6
+	79      (00000130) const-string         v7, 'MultiDex'
+	80      (00000134) const-string         v9, 'Something went wrong when trying to clear old MultiDex extraction, continuing without cleaning.'
+	81      (00000138) invoke-static        v7, v9, v6, Landroid/util/Log;->w(Ljava/lang/String; Ljava/lang/String; Ljava/lang/Throwable;)I
+	82      (0000013e) goto                 -20
+
+doInstallation-BB@0x140 : [ doInstallation-BB@0x146 doInstallation-BB@0x152 ]
+	83      (00000140) move-exception       v2
+	84      (00000142) if-nez               v16, +8
+
+doInstallation-BB@0x146 : 
+	85      (00000146) throw                v2
+	146:147
+	(Ljava/lang/Throwable; -> 148 doInstallation-BB@0x148)
+
+doInstallation-BB@0x148 : [ doInstallation-BB@0x14a ]
+	86      (00000148) move-exception       v7
+
+doInstallation-BB@0x14a : [ doInstallation-BB@0x150 ]
+	87      (0000014a) invoke-virtual       v3, Landroidx/multidex/MultiDexExtractor;->close()V
+	14a:14f
+	(Ljava/lang/Throwable; -> de doInstallation-BB@0xde)
+	(Ljava/io/IOException; -> 178 doInstallation-BB@0x178)
+
+doInstallation-BB@0x150 : 
+	88      (00000150) throw                v7
+	150:151
+	(Ljava/lang/Throwable; -> de doInstallation-BB@0xde)
+
+doInstallation-BB@0x152 : [ doInstallation-BB@0x122 ]
+	89      (00000152) const-string         v7, 'MultiDex'
+	90      (00000156) const-string         v9, 'Failed to install extracted secondary dex files, retrying with forced extraction'
+	91      (0000015a) invoke-static        v7, v9, v2, Landroid/util/Log;->w(Ljava/lang/String; Ljava/lang/String; Ljava/lang/Throwable;)I
+	92      (00000160) const/4              v7, 1
+	93      (00000162) invoke-virtual       v3, v11, v15, v7, Landroidx/multidex/MultiDexExtractor;->load(Landroid/content/Context; Ljava/lang/String; Z)Ljava/util/List;
+	94      (00000168) move-result-object   v4
+	95      (0000016a) invoke-static        v5, v1, v4, Landroidx/multidex/MultiDex;->installSecondaryDexes(Ljava/lang/ClassLoader; Ljava/io/File; Ljava/util/List;)V
+	96      (00000170) goto                 -27
+	152:16f
+	(Ljava/lang/Throwable; -> 148 doInstallation-BB@0x148)
+
+doInstallation-BB@0x172 : [ doInstallation-BB@0x128 ]
+	97      (00000172) move-exception       v2
+	98      (00000174) move-object          v0, v2
+	99      (00000176) goto                 -27
+
+doInstallation-BB@0x178 : [ doInstallation-BB@0x150 ]
+	100     (00000178) move-exception       v2
+	101     (0000017a) move-object          v0, v2
+	102     (0000017c) goto                 -16
+
+doInstallation-BB@0x17e : [ doInstallation-BB@0x18 ]
+	103     (0000017e) monitor-exit         v8
+	104     (00000180) goto/16              -b4
+	17e:17f
+	(Ljava/lang/Throwable; -> de doInstallation-BB@0xde)
+

@@ -1,0 +1,13 @@
+# Lcom/afwsamples/testdpc/policy/ManageAffiliationIdsFragment;->loadItems()Ljava/util/Collection; [access_flags=protected]
+#
+# Parameters:
+# local registers: v0...v1
+#
+# - return:java.util.Collection
+
+loadItems-BB@0x0 : 
+	0       (00000000) iget-object          v0, v1, Lcom/afwsamples/testdpc/policy/ManageAffiliationIdsFragment;->mDevicePolicyManagerGateway Lcom/afwsamples/testdpc/DevicePolicyManagerGateway;
+	1       (00000004) invoke-interface     v0, Lcom/afwsamples/testdpc/DevicePolicyManagerGateway;->getAffiliationIds()Ljava/util/Set;
+	2       (0000000a) move-result-object   v0
+	3       (0000000c) return-object        v0
+

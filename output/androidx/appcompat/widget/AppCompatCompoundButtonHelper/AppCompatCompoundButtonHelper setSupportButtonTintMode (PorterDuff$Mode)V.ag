@@ -1,0 +1,15 @@
+# Landroidx/appcompat/widget/AppCompatCompoundButtonHelper;->setSupportButtonTintMode(Landroid/graphics/PorterDuff$Mode;)V [access_flags=]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:android.graphics.PorterDuff$Mode
+#
+# - return:void
+
+setSupportButtonTintMode-BB@0x0 : 
+	0       (00000000) iput-object          v2, v1, Landroidx/appcompat/widget/AppCompatCompoundButtonHelper;->mButtonTintMode Landroid/graphics/PorterDuff$Mode;
+	1       (00000004) const/4              v0, 1
+	2       (00000006) iput-boolean         v0, v1, Landroidx/appcompat/widget/AppCompatCompoundButtonHelper;->mHasButtonTintMode Z
+	3       (0000000a) invoke-virtual       v1, Landroidx/appcompat/widget/AppCompatCompoundButtonHelper;->applyButtonTint()V
+	4       (00000010) return-void          
+

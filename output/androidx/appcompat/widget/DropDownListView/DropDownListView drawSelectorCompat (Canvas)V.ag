@@ -1,0 +1,27 @@
+# Landroidx/appcompat/widget/DropDownListView;->drawSelectorCompat(Landroid/graphics/Canvas;)V [access_flags=private]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:android.graphics.Canvas
+#
+# - return:void
+
+drawSelectorCompat-BB@0x0 : [ drawSelectorCompat-BB@0x10 drawSelectorCompat-BB@0x2c ]
+	0       (00000000) iget-object          v1, v2, Landroidx/appcompat/widget/DropDownListView;->mSelectorRect Landroid/graphics/Rect;
+	1       (00000004) invoke-virtual       v1, Landroid/graphics/Rect;->isEmpty()Z
+	2       (0000000a) move-result          v1
+	3       (0000000c) if-nez               v1, +10
+
+drawSelectorCompat-BB@0x10 : [ drawSelectorCompat-BB@0x1c drawSelectorCompat-BB@0x2c ]
+	4       (00000010) invoke-virtual       v2, Landroidx/appcompat/widget/DropDownListView;->getSelector()Landroid/graphics/drawable/Drawable;
+	5       (00000016) move-result-object   v0
+	6       (00000018) if-eqz               v0, +a
+
+drawSelectorCompat-BB@0x1c : [ drawSelectorCompat-BB@0x2c ]
+	7       (0000001c) iget-object          v1, v2, Landroidx/appcompat/widget/DropDownListView;->mSelectorRect Landroid/graphics/Rect;
+	8       (00000020) invoke-virtual       v0, v1, Landroid/graphics/drawable/Drawable;->setBounds(Landroid/graphics/Rect;)V
+	9       (00000026) invoke-virtual       v0, v3, Landroid/graphics/drawable/Drawable;->draw(Landroid/graphics/Canvas;)V
+
+drawSelectorCompat-BB@0x2c : 
+	10      (0000002c) return-void          
+

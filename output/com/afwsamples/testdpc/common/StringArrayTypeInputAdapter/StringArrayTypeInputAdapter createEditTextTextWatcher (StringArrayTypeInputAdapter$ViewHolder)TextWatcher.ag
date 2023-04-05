@@ -1,0 +1,13 @@
+# Lcom/afwsamples/testdpc/common/StringArrayTypeInputAdapter;->createEditTextTextWatcher(Lcom/afwsamples/testdpc/common/StringArrayTypeInputAdapter$ViewHolder;)Landroid/text/TextWatcher; [access_flags=private]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:com.afwsamples.testdpc.common.StringArrayTypeInputAdapter$ViewHolder
+#
+# - return:android.text.TextWatcher
+
+createEditTextTextWatcher-BB@0x0 : 
+	0       (00000000) new-instance         v0, Lcom/afwsamples/testdpc/common/StringArrayTypeInputAdapter$2;
+	1       (00000004) invoke-direct        v0, v1, v2, Lcom/afwsamples/testdpc/common/StringArrayTypeInputAdapter$2;-><init>(Lcom/afwsamples/testdpc/common/StringArrayTypeInputAdapter; Lcom/afwsamples/testdpc/common/StringArrayTypeInputAdapter$ViewHolder;)V
+	2       (0000000a) return-object        v0
+

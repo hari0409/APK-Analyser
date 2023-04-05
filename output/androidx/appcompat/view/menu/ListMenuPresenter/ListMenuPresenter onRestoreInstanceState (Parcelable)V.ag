@@ -1,0 +1,13 @@
+# Landroidx/appcompat/view/menu/ListMenuPresenter;->onRestoreInstanceState(Landroid/os/Parcelable;)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v0
+# - v1:android.os.Parcelable
+#
+# - return:void
+
+onRestoreInstanceState-BB@0x0 : 
+	0       (00000000) check-cast           v1, Landroid/os/Bundle;
+	1       (00000004) invoke-virtual       v0, v1, Landroidx/appcompat/view/menu/ListMenuPresenter;->restoreHierarchyState(Landroid/os/Bundle;)V
+	2       (0000000a) return-void          
+

@@ -1,0 +1,84 @@
+# Landroidx/multidex/MultiDex;->isVMMultidexCapable(Ljava/lang/String;)Z [access_flags=static]
+#
+# Parameters:
+# - local registers: v0...v6
+# - v7:java.lang.String
+#
+# - return:boolean
+
+isVMMultidexCapable-BB@0x0 : [ isVMMultidexCapable-BB@0xa isVMMultidexCapable-BB@0x5c ]
+	0       (00000000) const/4              v6, 2
+	1       (00000002) const/4              v4, 1
+	2       (00000004) const/4              v0, 0
+	3       (00000006) if-eqz               v7, +2b
+
+isVMMultidexCapable-BB@0xa : [ isVMMultidexCapable-BB@0x2a isVMMultidexCapable-BB@0x5c ]
+	4       (0000000a) const-string         v5, '(\\d+)\\.(\\d+)(\\.\\d+)?'
+	5       (0000000e) invoke-static        v5, Ljava/util/regex/Pattern;->compile(Ljava/lang/String;)Ljava/util/regex/Pattern;
+	6       (00000014) move-result-object   v5
+	7       (00000016) invoke-virtual       v5, v7, Ljava/util/regex/Pattern;->matcher(Ljava/lang/CharSequence;)Ljava/util/regex/Matcher;
+	8       (0000001c) move-result-object   v2
+	9       (0000001e) invoke-virtual       v2, Ljava/util/regex/Matcher;->matches()Z
+	10      (00000024) move-result          v5
+	11      (00000026) if-eqz               v5, +1b
+
+isVMMultidexCapable-BB@0x2a : [ isVMMultidexCapable-BB@0x2c ]
+	12      (0000002a) const/4              v5, 1
+
+isVMMultidexCapable-BB@0x2c : [ isVMMultidexCapable-BB@0x52 isVMMultidexCapable-BB@0x5a ]
+	13      (0000002c) invoke-virtual       v2, v5, Ljava/util/regex/Matcher;->group(I)Ljava/lang/String;
+	14      (00000032) move-result-object   v5
+	15      (00000034) invoke-static        v5, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
+	16      (0000003a) move-result          v1
+	17      (0000003c) const/4              v5, 2
+	18      (0000003e) invoke-virtual       v2, v5, Ljava/util/regex/Matcher;->group(I)Ljava/lang/String;
+	19      (00000044) move-result-object   v5
+	20      (00000046) invoke-static        v5, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
+	21      (0000004c) move-result          v3
+	22      (0000004e) if-gt                v1, v6, +6
+	2c:4b
+	(Ljava/lang/NumberFormatException; -> a8 isVMMultidexCapable-BB@0xa8)
+
+isVMMultidexCapable-BB@0x52 : [ isVMMultidexCapable-BB@0x56 isVMMultidexCapable-BB@0x9e ]
+	23      (00000052) if-ne                v1, v6, +26
+
+isVMMultidexCapable-BB@0x56 : [ isVMMultidexCapable-BB@0x5a isVMMultidexCapable-BB@0x9e ]
+	24      (00000056) if-lt                v3, v4, +24
+
+isVMMultidexCapable-BB@0x5a : [ isVMMultidexCapable-BB@0x5c ]
+	25      (0000005a) move                 v0, v4
+
+isVMMultidexCapable-BB@0x5c : [ isVMMultidexCapable-BB@0x82 isVMMultidexCapable-BB@0xa2 ]
+	26      (0000005c) const-string         v5, 'MultiDex'
+	27      (00000060) new-instance         v4, Ljava/lang/StringBuilder;
+	28      (00000064) invoke-direct        v4, Ljava/lang/StringBuilder;-><init>()V
+	29      (0000006a) const-string         v6, 'VM with version '
+	30      (0000006e) invoke-virtual       v4, v6, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	31      (00000074) move-result-object   v4
+	32      (00000076) invoke-virtual       v4, v7, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	33      (0000007c) move-result-object   v6
+	34      (0000007e) if-eqz               v0, +12
+
+isVMMultidexCapable-BB@0x82 : [ isVMMultidexCapable-BB@0x86 ]
+	35      (00000082) const-string         v4, ' has multidex support'
+
+isVMMultidexCapable-BB@0x86 : 
+	36      (00000086) invoke-virtual       v6, v4, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	37      (0000008c) move-result-object   v4
+	38      (0000008e) invoke-virtual       v4, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+	39      (00000094) move-result-object   v4
+	40      (00000096) invoke-static        v5, v4, Landroid/util/Log;->i(Ljava/lang/String; Ljava/lang/String;)I
+	41      (0000009c) return               v0
+
+isVMMultidexCapable-BB@0x9e : [ isVMMultidexCapable-BB@0x5c ]
+	42      (0000009e) const/4              v0, 0
+	43      (000000a0) goto                 -22
+
+isVMMultidexCapable-BB@0xa2 : [ isVMMultidexCapable-BB@0x86 ]
+	44      (000000a2) const-string         v4, ' does not have multidex support'
+	45      (000000a6) goto                 -10
+
+isVMMultidexCapable-BB@0xa8 : [ isVMMultidexCapable-BB@0x5c ]
+	46      (000000a8) move-exception       v4
+	47      (000000aa) goto                 -27
+

@@ -1,0 +1,115 @@
+# Landroidx/appcompat/app/ResourcesFlusher;->flushNougats(Landroid/content/res/Resources;)V [access_flags=private static]
+#
+# Parameters:
+# - local registers: v0...v5
+# - v6:android.content.res.Resources
+#
+# - return:void
+
+flushNougats-BB@0x0 : [ flushNougats-BB@0xa flushNougats-BB@0x2e ]
+	0       (00000000) const/4              v5, 1
+	1       (00000002) sget-boolean         v3, Landroidx/appcompat/app/ResourcesFlusher;->sResourcesImplFieldFetched Z
+	2       (00000006) if-nez               v3, +14
+
+flushNougats-BB@0xa : [ flushNougats-BB@0x2a ]
+	3       (0000000a) const-class          v3, Landroid/content/res/Resources;
+	4       (0000000e) const-string         v4, 'mResourcesImpl'
+	5       (00000012) invoke-virtual       v3, v4, Ljava/lang/Class;->getDeclaredField(Ljava/lang/String;)Ljava/lang/reflect/Field;
+	6       (00000018) move-result-object   v3
+	7       (0000001a) sput-object          v3, Landroidx/appcompat/app/ResourcesFlusher;->sResourcesImplField Ljava/lang/reflect/Field;
+	8       (0000001e) sget-object          v3, Landroidx/appcompat/app/ResourcesFlusher;->sResourcesImplField Ljava/lang/reflect/Field;
+	9       (00000022) const/4              v4, 1
+	10      (00000024) invoke-virtual       v3, v4, Ljava/lang/reflect/Field;->setAccessible(Z)V
+	a:29
+	(Ljava/lang/NoSuchFieldException; -> 38 flushNougats-BB@0x38)
+
+flushNougats-BB@0x2a : [ flushNougats-BB@0x2e ]
+	11      (0000002a) sput-boolean         v5, Landroidx/appcompat/app/ResourcesFlusher;->sResourcesImplFieldFetched Z
+
+flushNougats-BB@0x2e : [ flushNougats-BB@0x36 flushNougats-BB@0x4a ]
+	12      (0000002e) sget-object          v3, Landroidx/appcompat/app/ResourcesFlusher;->sResourcesImplField Ljava/lang/reflect/Field;
+	13      (00000032) if-nez               v3, +c
+
+flushNougats-BB@0x36 : 
+	14      (00000036) return-void          
+
+flushNougats-BB@0x38 : [ flushNougats-BB@0x2a ]
+	15      (00000038) move-exception       v1
+	16      (0000003a) const-string         v3, 'ResourcesFlusher'
+	17      (0000003e) const-string         v4, 'Could not retrieve Resources#mResourcesImpl field'
+	18      (00000042) invoke-static        v3, v4, v1, Landroid/util/Log;->e(Ljava/lang/String; Ljava/lang/String; Ljava/lang/Throwable;)I
+	19      (00000048) goto                 -f
+
+flushNougats-BB@0x4a : [ flushNougats-BB@0x4c ]
+	20      (0000004a) const/4              v2, 0
+
+flushNougats-BB@0x4c : [ flushNougats-BB@0x58 ]
+	21      (0000004c) sget-object          v3, Landroidx/appcompat/app/ResourcesFlusher;->sResourcesImplField Ljava/lang/reflect/Field;
+	22      (00000050) invoke-virtual       v3, v6, Ljava/lang/reflect/Field;->get(Ljava/lang/Object;)Ljava/lang/Object;
+	23      (00000056) move-result-object   v2
+	4c:55
+	(Ljava/lang/IllegalAccessException; -> ae flushNougats-BB@0xae)
+
+flushNougats-BB@0x58 : [ flushNougats-BB@0x5c flushNougats-BB@0x36 ]
+	24      (00000058) if-eqz               v2, -11
+
+flushNougats-BB@0x5c : [ flushNougats-BB@0x64 flushNougats-BB@0x8c ]
+	25      (0000005c) sget-boolean         v3, Landroidx/appcompat/app/ResourcesFlusher;->sDrawableCacheFieldFetched Z
+	26      (00000060) if-nez               v3, +16
+
+flushNougats-BB@0x64 : [ flushNougats-BB@0x88 ]
+	27      (00000064) invoke-virtual       v2, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+	28      (0000006a) move-result-object   v3
+	29      (0000006c) const-string         v4, 'mDrawableCache'
+	30      (00000070) invoke-virtual       v3, v4, Ljava/lang/Class;->getDeclaredField(Ljava/lang/String;)Ljava/lang/reflect/Field;
+	31      (00000076) move-result-object   v3
+	32      (00000078) sput-object          v3, Landroidx/appcompat/app/ResourcesFlusher;->sDrawableCacheField Ljava/lang/reflect/Field;
+	33      (0000007c) sget-object          v3, Landroidx/appcompat/app/ResourcesFlusher;->sDrawableCacheField Ljava/lang/reflect/Field;
+	34      (00000080) const/4              v4, 1
+	35      (00000082) invoke-virtual       v3, v4, Ljava/lang/reflect/Field;->setAccessible(Z)V
+	64:87
+	(Ljava/lang/NoSuchFieldException; -> c0 flushNougats-BB@0xc0)
+
+flushNougats-BB@0x88 : [ flushNougats-BB@0x8c ]
+	36      (00000088) sput-boolean         v5, Landroidx/appcompat/app/ResourcesFlusher;->sDrawableCacheFieldFetched Z
+
+flushNougats-BB@0x8c : [ flushNougats-BB@0x96 flushNougats-BB@0xa2 ]
+	37      (0000008c) const/4              v0, 0
+	38      (0000008e) sget-object          v3, Landroidx/appcompat/app/ResourcesFlusher;->sDrawableCacheField Ljava/lang/reflect/Field;
+	39      (00000092) if-eqz               v3, +8
+
+flushNougats-BB@0x96 : [ flushNougats-BB@0xa2 ]
+	40      (00000096) sget-object          v3, Landroidx/appcompat/app/ResourcesFlusher;->sDrawableCacheField Ljava/lang/reflect/Field;
+	41      (0000009a) invoke-virtual       v3, v2, Ljava/lang/reflect/Field;->get(Ljava/lang/Object;)Ljava/lang/Object;
+	42      (000000a0) move-result-object   v0
+	96:9f
+	(Ljava/lang/IllegalAccessException; -> d2 flushNougats-BB@0xd2)
+
+flushNougats-BB@0xa2 : [ flushNougats-BB@0xa6 flushNougats-BB@0x36 ]
+	43      (000000a2) if-eqz               v0, -36
+
+flushNougats-BB@0xa6 : [ flushNougats-BB@0x36 ]
+	44      (000000a6) invoke-static        v0, Landroidx/appcompat/app/ResourcesFlusher;->flushThemedResourcesCache(Ljava/lang/Object;)V
+	45      (000000ac) goto                 -3b
+
+flushNougats-BB@0xae : [ flushNougats-BB@0x58 ]
+	46      (000000ae) move-exception       v1
+	47      (000000b0) const-string         v3, 'ResourcesFlusher'
+	48      (000000b4) const-string         v4, 'Could not retrieve value from Resources#mResourcesImpl'
+	49      (000000b8) invoke-static        v3, v4, v1, Landroid/util/Log;->e(Ljava/lang/String; Ljava/lang/String; Ljava/lang/Throwable;)I
+	50      (000000be) goto                 -33
+
+flushNougats-BB@0xc0 : [ flushNougats-BB@0x88 ]
+	51      (000000c0) move-exception       v1
+	52      (000000c2) const-string         v3, 'ResourcesFlusher'
+	53      (000000c6) const-string         v4, 'Could not retrieve ResourcesImpl#mDrawableCache field'
+	54      (000000ca) invoke-static        v3, v4, v1, Landroid/util/Log;->e(Ljava/lang/String; Ljava/lang/String; Ljava/lang/Throwable;)I
+	55      (000000d0) goto                 -24
+
+flushNougats-BB@0xd2 : [ flushNougats-BB@0xa2 ]
+	56      (000000d2) move-exception       v1
+	57      (000000d4) const-string         v3, 'ResourcesFlusher'
+	58      (000000d8) const-string         v4, 'Could not retrieve value from ResourcesImpl#mDrawableCache'
+	59      (000000dc) invoke-static        v3, v4, v1, Landroid/util/Log;->e(Ljava/lang/String; Ljava/lang/String; Ljava/lang/Throwable;)I
+	60      (000000e2) goto                 -20
+

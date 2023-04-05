@@ -1,0 +1,29 @@
+# Landroidx/appcompat/widget/SearchView;->onItemSelected(I)Z [access_flags=]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:int
+#
+# - return:boolean
+
+onItemSelected-BB@0x0 : [ onItemSelected-BB@0x8 onItemSelected-BB@0x18 ]
+	0       (00000000) iget-object          v0, v1, Landroidx/appcompat/widget/SearchView;->mOnSuggestionListener Landroidx/appcompat/widget/SearchView$OnSuggestionListener;
+	1       (00000004) if-eqz               v0, +a
+
+onItemSelected-BB@0x8 : [ onItemSelected-BB@0x18 onItemSelected-BB@0x22 ]
+	2       (00000008) iget-object          v0, v1, Landroidx/appcompat/widget/SearchView;->mOnSuggestionListener Landroidx/appcompat/widget/SearchView$OnSuggestionListener;
+	3       (0000000c) invoke-interface     v0, v2, Landroidx/appcompat/widget/SearchView$OnSuggestionListener;->onSuggestionSelect(I)Z
+	4       (00000012) move-result          v0
+	5       (00000014) if-nez               v0, +7
+
+onItemSelected-BB@0x18 : [ onItemSelected-BB@0x20 ]
+	6       (00000018) invoke-direct        v1, v2, Landroidx/appcompat/widget/SearchView;->rewriteQueryFromSuggestion(I)V
+	7       (0000001e) const/4              v0, 1
+
+onItemSelected-BB@0x20 : 
+	8       (00000020) return               v0
+
+onItemSelected-BB@0x22 : [ onItemSelected-BB@0x20 ]
+	9       (00000022) const/4              v0, 0
+	10      (00000024) goto                 -2
+

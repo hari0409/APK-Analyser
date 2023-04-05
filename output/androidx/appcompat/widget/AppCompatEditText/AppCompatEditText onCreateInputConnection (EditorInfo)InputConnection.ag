@@ -1,0 +1,15 @@
+# Landroidx/appcompat/widget/AppCompatEditText;->onCreateInputConnection(Landroid/view/inputmethod/EditorInfo;)Landroid/view/inputmethod/InputConnection; [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:android.view.inputmethod.EditorInfo
+#
+# - return:android.view.inputmethod.InputConnection
+
+onCreateInputConnection-BB@0x0 : 
+	0       (00000000) invoke-super         v1, v2, Landroid/widget/EditText;->onCreateInputConnection(Landroid/view/inputmethod/EditorInfo;)Landroid/view/inputmethod/InputConnection;
+	1       (00000006) move-result-object   v0
+	2       (00000008) invoke-static        v0, v2, v1, Landroidx/appcompat/widget/AppCompatHintHelper;->onCreateInputConnection(Landroid/view/inputmethod/InputConnection; Landroid/view/inputmethod/EditorInfo; Landroid/view/View;)Landroid/view/inputmethod/InputConnection;
+	3       (0000000e) move-result-object   v0
+	4       (00000010) return-object        v0
+

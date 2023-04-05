@@ -1,0 +1,21 @@
+# Landroidx/appcompat/widget/AppCompatEditText;->setTextAppearance(Landroid/content/Context; I)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:android.content.Context
+# - v3:int
+#
+# - return:void
+
+setTextAppearance-BB@0x0 : [ setTextAppearance-BB@0xe setTextAppearance-BB@0x18 ]
+	0       (00000000) invoke-super         v1, v2, v3, Landroid/widget/EditText;->setTextAppearance(Landroid/content/Context; I)V
+	1       (00000006) iget-object          v0, v1, Landroidx/appcompat/widget/AppCompatEditText;->mTextHelper Landroidx/appcompat/widget/AppCompatTextHelper;
+	2       (0000000a) if-eqz               v0, +7
+
+setTextAppearance-BB@0xe : [ setTextAppearance-BB@0x18 ]
+	3       (0000000e) iget-object          v0, v1, Landroidx/appcompat/widget/AppCompatEditText;->mTextHelper Landroidx/appcompat/widget/AppCompatTextHelper;
+	4       (00000012) invoke-virtual       v0, v2, v3, Landroidx/appcompat/widget/AppCompatTextHelper;->onSetTextAppearance(Landroid/content/Context; I)V
+
+setTextAppearance-BB@0x18 : 
+	5       (00000018) return-void          
+

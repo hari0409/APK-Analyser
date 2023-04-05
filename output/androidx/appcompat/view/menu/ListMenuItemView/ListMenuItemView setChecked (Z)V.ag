@@ -1,0 +1,39 @@
+# Landroidx/appcompat/view/menu/ListMenuItemView;->setChecked(Z)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:boolean
+#
+# - return:void
+
+setChecked-BB@0x0 : [ setChecked-BB@0x10 setChecked-BB@0x2a ]
+	0       (00000000) iget-object          v1, v2, Landroidx/appcompat/view/menu/ListMenuItemView;->mItemData Landroidx/appcompat/view/menu/MenuItemImpl;
+	1       (00000004) invoke-virtual       v1, Landroidx/appcompat/view/menu/MenuItemImpl;->isExclusiveCheckable()Z
+	2       (0000000a) move-result          v1
+	3       (0000000c) if-eqz               v1, +f
+
+setChecked-BB@0x10 : [ setChecked-BB@0x18 setChecked-BB@0x1e ]
+	4       (00000010) iget-object          v1, v2, Landroidx/appcompat/view/menu/ListMenuItemView;->mRadioButton Landroid/widget/RadioButton;
+	5       (00000014) if-nez               v1, +5
+
+setChecked-BB@0x18 : [ setChecked-BB@0x1e ]
+	6       (00000018) invoke-direct        v2, Landroidx/appcompat/view/menu/ListMenuItemView;->insertRadioButton()V
+
+setChecked-BB@0x1e : [ setChecked-BB@0x22 ]
+	7       (0000001e) iget-object          v0, v2, Landroidx/appcompat/view/menu/ListMenuItemView;->mRadioButton Landroid/widget/RadioButton;
+
+setChecked-BB@0x22 : 
+	8       (00000022) invoke-virtual       v0, v3, Landroid/widget/CompoundButton;->setChecked(Z)V
+	9       (00000028) return-void          
+
+setChecked-BB@0x2a : [ setChecked-BB@0x32 setChecked-BB@0x38 ]
+	10      (0000002a) iget-object          v1, v2, Landroidx/appcompat/view/menu/ListMenuItemView;->mCheckBox Landroid/widget/CheckBox;
+	11      (0000002e) if-nez               v1, +5
+
+setChecked-BB@0x32 : [ setChecked-BB@0x38 ]
+	12      (00000032) invoke-direct        v2, Landroidx/appcompat/view/menu/ListMenuItemView;->insertCheckBox()V
+
+setChecked-BB@0x38 : [ setChecked-BB@0x22 ]
+	13      (00000038) iget-object          v0, v2, Landroidx/appcompat/view/menu/ListMenuItemView;->mCheckBox Landroid/widget/CheckBox;
+	14      (0000003c) goto                 -d
+

@@ -1,0 +1,81 @@
+# Lcom/afwsamples/testdpc/common/BundleUtil;->bundleToPersistableBundle(Landroid/os/Bundle;)Landroid/os/PersistableBundle; [access_flags=public static]
+#
+# Parameters:
+# - local registers: v0...v6
+# - v7:android.os.Bundle
+#
+# - return:android.os.PersistableBundle
+
+bundleToPersistableBundle-BB@0x0 : [ bundleToPersistableBundle-BB@0x1a ]
+	0       (00000000) invoke-virtual       v7, Landroid/os/Bundle;->keySet()Ljava/util/Set;
+	1       (00000006) move-result-object   v2
+	2       (00000008) new-instance         v3, Landroid/os/PersistableBundle;
+	3       (0000000c) invoke-direct        v3, Landroid/os/PersistableBundle;-><init>()V
+	4       (00000012) invoke-interface     v2, Ljava/util/Set;->iterator()Ljava/util/Iterator;
+	5       (00000018) move-result-object   v5
+
+bundleToPersistableBundle-BB@0x1a : [ bundleToPersistableBundle-BB@0x26 bundleToPersistableBundle-BB@0xba ]
+	6       (0000001a) invoke-interface     v5, Ljava/util/Iterator;->hasNext()Z
+	7       (00000020) move-result          v6
+	8       (00000022) if-eqz               v6, +4c
+
+bundleToPersistableBundle-BB@0x26 : [ bundleToPersistableBundle-BB@0x42 bundleToPersistableBundle-BB@0x56 ]
+	9       (00000026) invoke-interface     v5, Ljava/util/Iterator;->next()Ljava/lang/Object;
+	10      (0000002c) move-result-object   v1
+	11      (0000002e) check-cast           v1, Ljava/lang/String;
+	12      (00000032) invoke-virtual       v7, v1, Landroid/os/Bundle;->get(Ljava/lang/String;)Ljava/lang/Object;
+	13      (00000038) move-result-object   v4
+	14      (0000003a) instance-of          v6, v4, Ljava/lang/Boolean;
+	15      (0000003e) if-eqz               v6, +c
+
+bundleToPersistableBundle-BB@0x42 : [ bundleToPersistableBundle-BB@0x1a ]
+	16      (00000042) check-cast           v4, Ljava/lang/Boolean;
+	17      (00000046) invoke-virtual       v4, Ljava/lang/Boolean;->booleanValue()Z
+	18      (0000004c) move-result          v6
+	19      (0000004e) invoke-virtual       v3, v1, v6, Landroid/os/PersistableBundle;->putBoolean(Ljava/lang/String; Z)V
+	20      (00000054) goto                 -1d
+
+bundleToPersistableBundle-BB@0x56 : [ bundleToPersistableBundle-BB@0x5e bundleToPersistableBundle-BB@0x72 ]
+	21      (00000056) instance-of          v6, v4, Ljava/lang/Integer;
+	22      (0000005a) if-eqz               v6, +c
+
+bundleToPersistableBundle-BB@0x5e : [ bundleToPersistableBundle-BB@0x1a ]
+	23      (0000005e) check-cast           v4, Ljava/lang/Integer;
+	24      (00000062) invoke-virtual       v4, Ljava/lang/Integer;->intValue()I
+	25      (00000068) move-result          v6
+	26      (0000006a) invoke-virtual       v3, v1, v6, Landroid/os/PersistableBundle;->putInt(Ljava/lang/String; I)V
+	27      (00000070) goto                 -2b
+
+bundleToPersistableBundle-BB@0x72 : [ bundleToPersistableBundle-BB@0x7a bundleToPersistableBundle-BB@0x86 ]
+	28      (00000072) instance-of          v6, v4, Ljava/lang/String;
+	29      (00000076) if-eqz               v6, +8
+
+bundleToPersistableBundle-BB@0x7a : [ bundleToPersistableBundle-BB@0x1a ]
+	30      (0000007a) check-cast           v4, Ljava/lang/String;
+	31      (0000007e) invoke-virtual       v3, v1, v4, Landroid/os/PersistableBundle;->putString(Ljava/lang/String; Ljava/lang/String;)V
+	32      (00000084) goto                 -35
+
+bundleToPersistableBundle-BB@0x86 : [ bundleToPersistableBundle-BB@0x8e bundleToPersistableBundle-BB@0x9e ]
+	33      (00000086) instance-of          v6, v4, [Ljava/lang/String;
+	34      (0000008a) if-eqz               v6, +a
+
+bundleToPersistableBundle-BB@0x8e : [ bundleToPersistableBundle-BB@0x1a ]
+	35      (0000008e) check-cast           v4, [Ljava/lang/String;
+	36      (00000092) check-cast           v4, [Ljava/lang/String;
+	37      (00000096) invoke-virtual       v3, v1, v4, Landroid/os/PersistableBundle;->putStringArray(Ljava/lang/String; [Ljava/lang/String;)V
+	38      (0000009c) goto                 -41
+
+bundleToPersistableBundle-BB@0x9e : [ bundleToPersistableBundle-BB@0xa6 bundleToPersistableBundle-BB@0x1a ]
+	39      (0000009e) instance-of          v6, v4, Landroid/os/Bundle;
+	40      (000000a2) if-eqz               v6, -44
+
+bundleToPersistableBundle-BB@0xa6 : [ bundleToPersistableBundle-BB@0x1a ]
+	41      (000000a6) check-cast           v4, Landroid/os/Bundle;
+	42      (000000aa) invoke-static        v4, Lcom/afwsamples/testdpc/common/BundleUtil;->bundleToPersistableBundle(Landroid/os/Bundle;)Landroid/os/PersistableBundle;
+	43      (000000b0) move-result-object   v0
+	44      (000000b2) invoke-virtual       v3, v1, v0, Landroid/os/PersistableBundle;->putPersistableBundle(Ljava/lang/String; Landroid/os/PersistableBundle;)V
+	45      (000000b8) goto                 -4f
+
+bundleToPersistableBundle-BB@0xba : 
+	46      (000000ba) return-object        v3
+

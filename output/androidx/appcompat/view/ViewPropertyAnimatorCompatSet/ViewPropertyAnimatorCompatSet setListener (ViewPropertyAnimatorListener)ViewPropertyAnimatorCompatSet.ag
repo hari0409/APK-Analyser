@@ -1,0 +1,18 @@
+# Landroidx/appcompat/view/ViewPropertyAnimatorCompatSet;->setListener(Landroidx/core/view/ViewPropertyAnimatorListener;)Landroidx/appcompat/view/ViewPropertyAnimatorCompatSet; [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:androidx.core.view.ViewPropertyAnimatorListener
+#
+# - return:androidx.appcompat.view.ViewPropertyAnimatorCompatSet
+
+setListener-BB@0x0 : [ setListener-BB@0x8 setListener-BB@0xc ]
+	0       (00000000) iget-boolean         v0, v1, Landroidx/appcompat/view/ViewPropertyAnimatorCompatSet;->mIsStarted Z
+	1       (00000004) if-nez               v0, +4
+
+setListener-BB@0x8 : [ setListener-BB@0xc ]
+	2       (00000008) iput-object          v2, v1, Landroidx/appcompat/view/ViewPropertyAnimatorCompatSet;->mListener Landroidx/core/view/ViewPropertyAnimatorListener;
+
+setListener-BB@0xc : 
+	3       (0000000c) return-object        v1
+

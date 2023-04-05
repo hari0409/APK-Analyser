@@ -1,0 +1,137 @@
+# Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->showHideAppsPrompt(Z)V [access_flags=private]
+#
+# Parameters:
+# - local registers: v0...v11
+# - v12:boolean
+#
+# - return:void
+
+showHideAppsPrompt-BB@0x0 : [ showHideAppsPrompt-BB@0xe showHideAppsPrompt-BB@0x5a ]
+	0       (00000000) new-instance         v2, Ljava/util/ArrayList;
+	1       (00000004) invoke-direct        v2, Ljava/util/ArrayList;-><init>()V
+	2       (0000000a) if-eqz               v12, +28
+
+showHideAppsPrompt-BB@0xe : [ showHideAppsPrompt-BB@0x1e ]
+	3       (0000000e) invoke-direct        v11, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->getAllInstalledApplicationsSorted()Ljava/util/List;
+	4       (00000014) move-result-object   v0
+	5       (00000016) invoke-interface     v0, Ljava/util/List;->iterator()Ljava/util/Iterator;
+	6       (0000001c) move-result-object   v0
+
+showHideAppsPrompt-BB@0x1e : [ showHideAppsPrompt-BB@0x2a showHideAppsPrompt-BB@0xc2 ]
+	7       (0000001e) invoke-interface     v0, Ljava/util/Iterator;->hasNext()Z
+	8       (00000024) move-result          v1
+	9       (00000026) if-eqz               v1, +4e
+
+showHideAppsPrompt-BB@0x2a : [ showHideAppsPrompt-BB@0x4e showHideAppsPrompt-BB@0x1e ]
+	10      (0000002a) invoke-interface     v0, Ljava/util/Iterator;->next()Ljava/lang/Object;
+	11      (00000030) move-result-object   v7
+	12      (00000032) check-cast           v7, Landroid/content/pm/ApplicationInfo;
+	13      (00000036) iget-object          v1, v11, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->mDevicePolicyManager Landroid/app/admin/DevicePolicyManager;
+	14      (0000003a) iget-object          v3, v11, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->mAdminComponentName Landroid/content/ComponentName;
+	15      (0000003e) iget-object          v10, v7, Landroid/content/pm/ApplicationInfo;->packageName Ljava/lang/String;
+	16      (00000042) invoke-virtual       v1, v3, v10, Landroid/app/admin/DevicePolicyManager;->isApplicationHidden(Landroid/content/ComponentName; Ljava/lang/String;)Z
+	17      (00000048) move-result          v1
+	18      (0000004a) if-eqz               v1, -16
+
+showHideAppsPrompt-BB@0x4e : [ showHideAppsPrompt-BB@0x1e ]
+	19      (0000004e) iget-object          v1, v7, Landroid/content/pm/ApplicationInfo;->packageName Ljava/lang/String;
+	20      (00000052) invoke-interface     v2, v1, Ljava/util/List;->add(Ljava/lang/Object;)Z
+	21      (00000058) goto                 -1d
+
+showHideAppsPrompt-BB@0x5a : [ showHideAppsPrompt-BB@0x6a ]
+	22      (0000005a) invoke-direct        v11, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->getAllLauncherIntentResolversSorted()Ljava/util/List;
+	23      (00000060) move-result-object   v0
+	24      (00000062) invoke-interface     v0, Ljava/util/List;->iterator()Ljava/util/Iterator;
+	25      (00000068) move-result-object   v0
+
+showHideAppsPrompt-BB@0x6a : [ showHideAppsPrompt-BB@0x76 showHideAppsPrompt-BB@0xc2 ]
+	26      (0000006a) invoke-interface     v0, Ljava/util/Iterator;->hasNext()Z
+	27      (00000070) move-result          v1
+	28      (00000072) if-eqz               v1, +28
+
+showHideAppsPrompt-BB@0x76 : [ showHideAppsPrompt-BB@0x96 showHideAppsPrompt-BB@0x6a ]
+	29      (00000076) invoke-interface     v0, Ljava/util/Iterator;->next()Ljava/lang/Object;
+	30      (0000007c) move-result-object   v9
+	31      (0000007e) check-cast           v9, Landroid/content/pm/ResolveInfo;
+	32      (00000082) iget-object          v1, v9, Landroid/content/pm/ResolveInfo;->activityInfo Landroid/content/pm/ActivityInfo;
+	33      (00000086) iget-object          v1, v1, Landroid/content/pm/ActivityInfo;->packageName Ljava/lang/String;
+	34      (0000008a) invoke-interface     v2, v1, Ljava/util/List;->contains(Ljava/lang/Object;)Z
+	35      (00000090) move-result          v1
+	36      (00000092) if-nez               v1, -14
+
+showHideAppsPrompt-BB@0x96 : [ showHideAppsPrompt-BB@0xb2 showHideAppsPrompt-BB@0x6a ]
+	37      (00000096) iget-object          v1, v11, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->mDevicePolicyManager Landroid/app/admin/DevicePolicyManager;
+	38      (0000009a) iget-object          v3, v11, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->mAdminComponentName Landroid/content/ComponentName;
+	39      (0000009e) iget-object          v10, v9, Landroid/content/pm/ResolveInfo;->activityInfo Landroid/content/pm/ActivityInfo;
+	40      (000000a2) iget-object          v10, v10, Landroid/content/pm/ActivityInfo;->packageName Ljava/lang/String;
+	41      (000000a6) invoke-virtual       v1, v3, v10, Landroid/app/admin/DevicePolicyManager;->isApplicationHidden(Landroid/content/ComponentName; Ljava/lang/String;)Z
+	42      (000000ac) move-result          v1
+	43      (000000ae) if-nez               v1, -22
+
+showHideAppsPrompt-BB@0xb2 : [ showHideAppsPrompt-BB@0x6a ]
+	44      (000000b2) iget-object          v1, v9, Landroid/content/pm/ResolveInfo;->activityInfo Landroid/content/pm/ActivityInfo;
+	45      (000000b6) iget-object          v1, v1, Landroid/content/pm/ActivityInfo;->packageName Ljava/lang/String;
+	46      (000000ba) invoke-interface     v2, v1, Ljava/util/List;->add(Ljava/lang/Object;)Z
+	47      (000000c0) goto                 -2b
+
+showHideAppsPrompt-BB@0xc2 : [ showHideAppsPrompt-BB@0xce showHideAppsPrompt-BB@0xee ]
+	48      (000000c2) invoke-interface     v2, Ljava/util/List;->isEmpty()Z
+	49      (000000c8) move-result          v0
+	50      (000000ca) if-eqz               v0, +12
+
+showHideAppsPrompt-BB@0xce : [ showHideAppsPrompt-BB@0xd2 showHideAppsPrompt-BB@0xe6 ]
+	51      (000000ce) if-eqz               v12, +c
+
+showHideAppsPrompt-BB@0xd2 : [ showHideAppsPrompt-BB@0xd8 ]
+	52      (000000d2) const                v0, 2131690329 # [1.900969854222733e+38]
+
+showHideAppsPrompt-BB@0xd8 : [ showHideAppsPrompt-BB@0xe4 ]
+	53      (000000d8) const/4              v1, 0
+	54      (000000da) new-array            v1, v1, [Ljava/lang/Object;
+	55      (000000de) invoke-direct        v11, v0, v1, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->showToast(I [Ljava/lang/Object;)V
+
+showHideAppsPrompt-BB@0xe4 : 
+	56      (000000e4) return-void          
+
+showHideAppsPrompt-BB@0xe6 : [ showHideAppsPrompt-BB@0xd8 ]
+	57      (000000e6) const                v0, 2131689837 # [1.900870064767483e+38]
+	58      (000000ec) goto                 -a
+
+showHideAppsPrompt-BB@0xee : [ showHideAppsPrompt-BB@0x10c showHideAppsPrompt-BB@0x15e ]
+	59      (000000ee) new-instance         v6, Lcom/afwsamples/testdpc/common/AppInfoArrayAdapter;
+	60      (000000f2) invoke-virtual       v11, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->getActivity()Landroid/app/Activity;
+	61      (000000f8) move-result-object   v0
+	62      (000000fa) const                v1, 2131296534 # [1.821098739324033e+38]
+	63      (00000100) const/4              v3, 1
+	64      (00000102) invoke-direct        v6, v0, v1, v2, v3, Lcom/afwsamples/testdpc/common/AppInfoArrayAdapter;-><init>(Landroid/content/Context; I Ljava/util/List; Z)V
+	65      (00000108) if-eqz               v12, +2b
+
+showHideAppsPrompt-BB@0x10c : [ showHideAppsPrompt-BB@0x11e ]
+	66      (0000010c) const                v8, 2131690334 # [1.900970868343213e+38]
+	67      (00000112) const                v4, 2131690332 # [1.900970462695021e+38]
+	68      (00000118) const                v5, 2131690330 # [1.900970057046829e+38]
+
+showHideAppsPrompt-BB@0x11e : [ showHideAppsPrompt-BB@0xe4 ]
+	69      (0000011e) new-instance         v0, Landroid/app/AlertDialog$Builder;
+	70      (00000122) invoke-virtual       v11, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->getActivity()Landroid/app/Activity;
+	71      (00000128) move-result-object   v1
+	72      (0000012a) invoke-direct        v0, v1, Landroid/app/AlertDialog$Builder;-><init>(Landroid/content/Context;)V
+	73      (00000130) invoke-virtual       v11, v8, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->getString(I)Ljava/lang/String;
+	74      (00000136) move-result-object   v1
+	75      (00000138) invoke-virtual       v0, v1, Landroid/app/AlertDialog$Builder;->setTitle(Ljava/lang/CharSequence;)Landroid/app/AlertDialog$Builder;
+	76      (0000013e) move-result-object   v10
+	77      (00000140) new-instance         v0, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment$27;
+	78      (00000144) move-object          v1, v11
+	79      (00000146) move                 v3, v12
+	80      (00000148) invoke-direct/range  v0 ... v5, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment$27;-><init>(Lcom/afwsamples/testdpc/policy/PolicyManagementFragment; Ljava/util/List; Z I I)V
+	81      (0000014e) invoke-virtual       v10, v6, v0, Landroid/app/AlertDialog$Builder;->setAdapter(Landroid/widget/ListAdapter; Landroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
+	82      (00000154) move-result-object   v0
+	83      (00000156) invoke-virtual       v0, Landroid/app/AlertDialog$Builder;->show()Landroid/app/AlertDialog;
+	84      (0000015c) goto                 -3c
+
+showHideAppsPrompt-BB@0x15e : [ showHideAppsPrompt-BB@0x11e ]
+	85      (0000015e) const                v8, 2131689842 # [1.9008710788879632e+38]
+	86      (00000164) const                v4, 2131689840 # [1.900870673239771e+38]
+	87      (0000016a) const                v5, 2131689838 # [1.900870267591579e+38]
+	88      (00000170) goto                 -29
+

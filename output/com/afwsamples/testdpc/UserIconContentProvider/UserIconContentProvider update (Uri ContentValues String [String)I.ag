@@ -1,0 +1,67 @@
+# Lcom/afwsamples/testdpc/UserIconContentProvider;->update(Landroid/net/Uri; Landroid/content/ContentValues; Ljava/lang/String; [Ljava/lang/String;)I [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v5
+# - v6:android.net.Uri
+# - v7:android.content.ContentValues
+# - v8:java.lang.String
+# - v9:java.lang.String[]
+#
+# - return:int
+
+update-BB@0x0 : [ update-BB@0x16 update-BB@0x54 ]
+	0       (00000000) const/4              v1, 0
+	1       (00000002) invoke-direct        v5, v6, Lcom/afwsamples/testdpc/UserIconContentProvider;->getFileForUri(Landroid/net/Uri;)Ljava/io/File;
+	2       (00000008) move-result-object   v0
+	3       (0000000a) invoke-virtual       v0, Ljava/io/File;->exists()Z
+	4       (00000010) move-result          v2
+	5       (00000012) if-nez               v2, +21
+
+update-BB@0x16 : [ update-BB@0x52 ]
+	6       (00000016) sget-object          v2, Lcom/afwsamples/testdpc/UserIconContentProvider;->TAG Ljava/lang/String;
+	7       (0000001a) new-instance         v3, Ljava/lang/StringBuilder;
+	8       (0000001e) invoke-direct        v3, Ljava/lang/StringBuilder;-><init>()V
+	9       (00000024) const-string         v4, "Update - File from uri: '"
+	10      (00000028) invoke-virtual       v3, v4, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	11      (0000002e) move-result-object   v3
+	12      (00000030) invoke-virtual       v3, v6, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+	13      (00000036) move-result-object   v3
+	14      (00000038) const-string         v4, "' doesn't exist"
+	15      (0000003c) invoke-virtual       v3, v4, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	16      (00000042) move-result-object   v3
+	17      (00000044) invoke-virtual       v3, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+	18      (0000004a) move-result-object   v3
+	19      (0000004c) invoke-static        v2, v3, Landroid/util/Log;->e(Ljava/lang/String; Ljava/lang/String;)I
+
+update-BB@0x52 : 
+	20      (00000052) return               v1
+
+update-BB@0x54 : [ update-BB@0x64 update-BB@0xa2 ]
+	21      (00000054) iget-object          v2, v5, Lcom/afwsamples/testdpc/UserIconContentProvider;->mFileTracker Ljava/util/Map;
+	22      (00000058) invoke-interface     v2, v6, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
+	23      (0000005e) move-result-object   v2
+	24      (00000060) if-nez               v2, +21
+
+update-BB@0x64 : [ update-BB@0x52 ]
+	25      (00000064) sget-object          v2, Lcom/afwsamples/testdpc/UserIconContentProvider;->TAG Ljava/lang/String;
+	26      (00000068) new-instance         v3, Ljava/lang/StringBuilder;
+	27      (0000006c) invoke-direct        v3, Ljava/lang/StringBuilder;-><init>()V
+	28      (00000072) const-string         v4, "Update - File from uri: '"
+	29      (00000076) invoke-virtual       v3, v4, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	30      (0000007c) move-result-object   v3
+	31      (0000007e) invoke-virtual       v3, v6, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+	32      (00000084) move-result-object   v3
+	33      (00000086) const-string         v4, "' isn't tracked yet, use insert"
+	34      (0000008a) invoke-virtual       v3, v4, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	35      (00000090) move-result-object   v3
+	36      (00000092) invoke-virtual       v3, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+	37      (00000098) move-result-object   v3
+	38      (0000009a) invoke-static        v2, v3, Landroid/util/Log;->e(Ljava/lang/String; Ljava/lang/String;)I
+	39      (000000a0) goto                 -27
+
+update-BB@0xa2 : [ update-BB@0x52 ]
+	40      (000000a2) iget-object          v1, v5, Lcom/afwsamples/testdpc/UserIconContentProvider;->mFileTracker Ljava/util/Map;
+	41      (000000a6) invoke-interface     v1, v6, v7, Ljava/util/Map;->put(Ljava/lang/Object; Ljava/lang/Object;)Ljava/lang/Object;
+	42      (000000ac) const/4              v1, 1
+	43      (000000ae) goto                 -2e
+

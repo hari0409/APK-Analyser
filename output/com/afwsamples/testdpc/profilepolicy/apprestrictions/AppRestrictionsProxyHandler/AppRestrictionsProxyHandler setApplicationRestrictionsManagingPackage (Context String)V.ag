@@ -1,0 +1,135 @@
+# Lcom/afwsamples/testdpc/profilepolicy/apprestrictions/AppRestrictionsProxyHandler;->setApplicationRestrictionsManagingPackage(Landroid/content/Context; Ljava/lang/String;)V [access_flags=public static]
+#
+# Parameters:
+# - local registers: v0...v8
+# - v9:android.content.Context
+# - v10:java.lang.String
+#
+# - return:void
+
+setApplicationRestrictionsManagingPackage-BB@0x0 : [ setApplicationRestrictionsManagingPackage-BB@0x6 setApplicationRestrictionsManagingPackage-BB@0x36 ]
+	0       (00000000) const/4              v8, 0
+	1       (00000002) if-nez               v10, +1a
+
+setApplicationRestrictionsManagingPackage-BB@0x6 : [ setApplicationRestrictionsManagingPackage-BB@0x34 ]
+	2       (00000006) invoke-static        v9, Landroid/preference/PreferenceManager;->getDefaultSharedPreferences(Landroid/content/Context;)Landroid/content/SharedPreferences;
+	3       (0000000c) move-result-object   v6
+	4       (0000000e) invoke-interface     v6, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
+	5       (00000014) move-result-object   v6
+	6       (00000016) const-string         v7, 'application_restrictions_managing_package_signatures'
+	7       (0000001a) invoke-interface     v6, v7, v8, Landroid/content/SharedPreferences$Editor;->putStringSet(Ljava/lang/String; Ljava/util/Set;)Landroid/content/SharedPreferences$Editor;
+	8       (00000020) move-result-object   v6
+	9       (00000022) const-string         v7, 'application_restrictions_managing_package'
+	10      (00000026) invoke-interface     v6, v7, v8, Landroid/content/SharedPreferences$Editor;->putString(Ljava/lang/String; Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
+	11      (0000002c) move-result-object   v6
+	12      (0000002e) invoke-interface     v6, Landroid/content/SharedPreferences$Editor;->apply()V
+
+setApplicationRestrictionsManagingPackage-BB@0x34 : 
+	13      (00000034) return-void          
+
+setApplicationRestrictionsManagingPackage-BB@0x36 : [ setApplicationRestrictionsManagingPackage-BB@0x4e setApplicationRestrictionsManagingPackage-BB@0xd8 ]
+	14      (00000036) invoke-virtual       v9, Landroid/content/Context;->getPackageManager()Landroid/content/pm/PackageManager;
+	15      (0000003c) move-result-object   v2
+	16      (0000003e) const/16             v6, 64
+	17      (00000042) invoke-virtual       v2, v10, v6, Landroid/content/pm/PackageManager;->getPackageInfo(Ljava/lang/String; I)Landroid/content/pm/PackageInfo;
+	18      (00000048) move-result-object   v1
+	19      (0000004a) if-nez               v1, +47
+	36:8b
+	(Landroid/content/pm/PackageManager$NameNotFoundException; -> 8c setApplicationRestrictionsManagingPackage-BB@0x8c)
+
+setApplicationRestrictionsManagingPackage-BB@0x4e : 
+	20      (0000004e) new-instance         v6, Ljava/lang/IllegalArgumentException;
+	21      (00000052) new-instance         v7, Ljava/lang/StringBuilder;
+	22      (00000056) invoke-direct        v7, Ljava/lang/StringBuilder;-><init>()V
+	23      (0000005c) const-string         v8, 'Package info could not be retrieved for package '
+	24      (00000060) invoke-virtual       v7, v8, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	25      (00000066) move-result-object   v7
+	26      (00000068) invoke-virtual       v7, v10, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	27      (0000006e) move-result-object   v7
+	28      (00000070) const-string         v8, '.'
+	29      (00000074) invoke-virtual       v7, v8, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	30      (0000007a) move-result-object   v7
+	31      (0000007c) invoke-virtual       v7, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+	32      (00000082) move-result-object   v7
+	33      (00000084) invoke-direct        v6, v7, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+	34      (0000008a) throw                v6
+	36:8b
+	(Landroid/content/pm/PackageManager$NameNotFoundException; -> 8c setApplicationRestrictionsManagingPackage-BB@0x8c)
+
+setApplicationRestrictionsManagingPackage-BB@0x8c : 
+	35      (0000008c) move-exception       v0
+	36      (0000008e) new-instance         v6, Ljava/lang/IllegalArgumentException;
+	37      (00000092) new-instance         v7, Ljava/lang/StringBuilder;
+	38      (00000096) invoke-direct        v7, Ljava/lang/StringBuilder;-><init>()V
+	39      (0000009c) const-string         v8, 'Cannot set '
+	40      (000000a0) invoke-virtual       v7, v8, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	41      (000000a6) move-result-object   v7
+	42      (000000a8) invoke-virtual       v7, v10, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	43      (000000ae) move-result-object   v7
+	44      (000000b0) const-string         v8, ' as application '
+	45      (000000b4) invoke-virtual       v7, v8, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	46      (000000ba) move-result-object   v7
+	47      (000000bc) const-string         v8, 'restriction managing package as it is not installed.'
+	48      (000000c0) invoke-virtual       v7, v8, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	49      (000000c6) move-result-object   v7
+	50      (000000c8) invoke-virtual       v7, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+	51      (000000ce) move-result-object   v7
+	52      (000000d0) invoke-direct        v6, v7, v0, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String; Ljava/lang/Throwable;)V
+	53      (000000d6) throw                v6
+
+setApplicationRestrictionsManagingPackage-BB@0xd8 : [ setApplicationRestrictionsManagingPackage-BB@0xe0 setApplicationRestrictionsManagingPackage-BB@0x11e ]
+	54      (000000d8) iget-object          v5, v1, Landroid/content/pm/PackageInfo;->signatures [Landroid/content/pm/Signature;
+	55      (000000dc) if-nez               v5, +21
+	d8:11d
+	(Landroid/content/pm/PackageManager$NameNotFoundException; -> 8c setApplicationRestrictionsManagingPackage-BB@0x8c)
+
+setApplicationRestrictionsManagingPackage-BB@0xe0 : 
+	56      (000000e0) new-instance         v6, Ljava/lang/IllegalArgumentException;
+	57      (000000e4) new-instance         v7, Ljava/lang/StringBuilder;
+	58      (000000e8) invoke-direct        v7, Ljava/lang/StringBuilder;-><init>()V
+	59      (000000ee) const-string         v8, 'Package info did not contain signatures for package '
+	60      (000000f2) invoke-virtual       v7, v8, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	61      (000000f8) move-result-object   v7
+	62      (000000fa) invoke-virtual       v7, v10, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	63      (00000100) move-result-object   v7
+	64      (00000102) const-string         v8, '.'
+	65      (00000106) invoke-virtual       v7, v8, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	66      (0000010c) move-result-object   v7
+	67      (0000010e) invoke-virtual       v7, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+	68      (00000114) move-result-object   v7
+	69      (00000116) invoke-direct        v6, v7, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+	70      (0000011c) throw                v6
+	d8:11d
+	(Landroid/content/pm/PackageManager$NameNotFoundException; -> 8c setApplicationRestrictionsManagingPackage-BB@0x8c)
+
+setApplicationRestrictionsManagingPackage-BB@0x11e : [ setApplicationRestrictionsManagingPackage-BB@0x12c ]
+	71      (0000011e) new-instance         v4, Ljava/util/HashSet;
+	72      (00000122) invoke-direct        v4, Ljava/util/HashSet;-><init>()V
+	73      (00000128) array-length         v7, v5
+	74      (0000012a) const/4              v6, 0
+
+setApplicationRestrictionsManagingPackage-BB@0x12c : [ setApplicationRestrictionsManagingPackage-BB@0x130 setApplicationRestrictionsManagingPackage-BB@0x148 ]
+	75      (0000012c) if-ge                v6, v7, +e
+
+setApplicationRestrictionsManagingPackage-BB@0x130 : [ setApplicationRestrictionsManagingPackage-BB@0x12c ]
+	76      (00000130) aget-object          v3, v5, v6
+	77      (00000134) invoke-virtual       v3, Landroid/content/pm/Signature;->toCharsString()Ljava/lang/String;
+	78      (0000013a) move-result-object   v8
+	79      (0000013c) invoke-interface     v4, v8, Ljava/util/Set;->add(Ljava/lang/Object;)Z
+	80      (00000142) add-int/lit8         v6, v6, 1
+	81      (00000146) goto                 -d
+
+setApplicationRestrictionsManagingPackage-BB@0x148 : [ setApplicationRestrictionsManagingPackage-BB@0x34 ]
+	82      (00000148) invoke-static        v9, Landroid/preference/PreferenceManager;->getDefaultSharedPreferences(Landroid/content/Context;)Landroid/content/SharedPreferences;
+	83      (0000014e) move-result-object   v6
+	84      (00000150) invoke-interface     v6, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
+	85      (00000156) move-result-object   v6
+	86      (00000158) const-string         v7, 'application_restrictions_managing_package_signatures'
+	87      (0000015c) invoke-interface     v6, v7, v4, Landroid/content/SharedPreferences$Editor;->putStringSet(Ljava/lang/String; Ljava/util/Set;)Landroid/content/SharedPreferences$Editor;
+	88      (00000162) move-result-object   v6
+	89      (00000164) const-string         v7, 'application_restrictions_managing_package'
+	90      (00000168) invoke-interface     v6, v7, v10, Landroid/content/SharedPreferences$Editor;->putString(Ljava/lang/String; Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
+	91      (0000016e) move-result-object   v6
+	92      (00000170) invoke-interface     v6, Landroid/content/SharedPreferences$Editor;->apply()V
+	93      (00000176) goto/16              -a1
+

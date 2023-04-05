@@ -1,0 +1,19 @@
+# Lcom/afwsamples/testdpc/util/Flags$CommandLineParser;->getCurrentOrdinalParam(Lcom/afwsamples/testdpc/util/Flags$Params;)Lcom/afwsamples/testdpc/util/Flags$Param; [access_flags=private]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:com.afwsamples.testdpc.util.Flags$Params
+#
+# - return:com.afwsamples.testdpc.util.Flags$Param
+
+getCurrentOrdinalParam-BB@0x0 : 
+	0       (00000000) invoke-static        v3, Lcom/afwsamples/testdpc/util/Flags$Params;->access$1600(Lcom/afwsamples/testdpc/util/Flags$Params;)Ljava/util/List;
+	1       (00000006) move-result-object   v0
+	2       (00000008) iget-object          v1, v2, Lcom/afwsamples/testdpc/util/Flags$CommandLineParser;->parsedOrdinalParams Ljava/util/Set;
+	3       (0000000c) invoke-interface     v1, Ljava/util/Set;->size()I
+	4       (00000012) move-result          v1
+	5       (00000014) invoke-interface     v0, v1, Ljava/util/List;->get(I)Ljava/lang/Object;
+	6       (0000001a) move-result-object   v0
+	7       (0000001c) check-cast           v0, Lcom/afwsamples/testdpc/util/Flags$Param;
+	8       (00000020) return-object        v0
+

@@ -1,0 +1,32 @@
+# Landroidx/appcompat/app/ActionBarDrawerToggle;->onOptionsItemSelected(Landroid/view/MenuItem;)Z [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:android.view.MenuItem
+#
+# - return:boolean
+
+onOptionsItemSelected-BB@0x0 : [ onOptionsItemSelected-BB@0x4 onOptionsItemSelected-BB@0x28 ]
+	0       (00000000) if-eqz               v3, +14
+
+onOptionsItemSelected-BB@0x4 : [ onOptionsItemSelected-BB@0x16 onOptionsItemSelected-BB@0x28 ]
+	1       (00000004) invoke-interface     v3, Landroid/view/MenuItem;->getItemId()I
+	2       (0000000a) move-result          v0
+	3       (0000000c) const                v1, 16908332 # [2.3877352315342576e-38]
+	4       (00000012) if-ne                v0, v1, +b
+
+onOptionsItemSelected-BB@0x16 : [ onOptionsItemSelected-BB@0x1e onOptionsItemSelected-BB@0x28 ]
+	5       (00000016) iget-boolean         v0, v2, Landroidx/appcompat/app/ActionBarDrawerToggle;->mDrawerIndicatorEnabled Z
+	6       (0000001a) if-eqz               v0, +7
+
+onOptionsItemSelected-BB@0x1e : [ onOptionsItemSelected-BB@0x26 ]
+	7       (0000001e) invoke-virtual       v2, Landroidx/appcompat/app/ActionBarDrawerToggle;->toggle()V
+	8       (00000024) const/4              v0, 1
+
+onOptionsItemSelected-BB@0x26 : 
+	9       (00000026) return               v0
+
+onOptionsItemSelected-BB@0x28 : [ onOptionsItemSelected-BB@0x26 ]
+	10      (00000028) const/4              v0, 0
+	11      (0000002a) goto                 -2
+

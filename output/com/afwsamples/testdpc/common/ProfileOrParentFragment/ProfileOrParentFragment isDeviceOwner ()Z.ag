@@ -1,0 +1,11 @@
+# Lcom/afwsamples/testdpc/common/ProfileOrParentFragment;->isDeviceOwner()Z [access_flags=protected]
+#
+# Parameters:
+# local registers: v0...v1
+#
+# - return:boolean
+
+isDeviceOwner-BB@0x0 : 
+	0       (00000000) iget-boolean         v0, v1, Lcom/afwsamples/testdpc/common/ProfileOrParentFragment;->mDeviceOwner Z
+	1       (00000004) return               v0
+

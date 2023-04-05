@@ -1,0 +1,29 @@
+# Lcom/afwsamples/testdpc/common/AppInfoArrayAdapter;-><init>(Landroid/content/Context; I Ljava/util/List; Z)V [access_flags=public constructor]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:android.content.Context
+# - v3:int
+# - v4:java.util.List
+# - v5:boolean
+#
+# - return:void
+
+<init>-BB@0x0 : [ <init>-BB@0x24 <init>-BB@0x2c ]
+	0       (00000000) invoke-direct        v1, v2, v3, v4, Landroid/widget/ArrayAdapter;-><init>(Landroid/content/Context; I Ljava/util/List;)V
+	1       (00000006) const/4              v0, 0
+	2       (00000008) iput                 v0, v1, Lcom/afwsamples/testdpc/common/AppInfoArrayAdapter;->mAppInfoFlags I
+	3       (0000000c) invoke-virtual       v1, Lcom/afwsamples/testdpc/common/AppInfoArrayAdapter;->getContext()Landroid/content/Context;
+	4       (00000012) move-result-object   v0
+	5       (00000014) invoke-virtual       v0, Landroid/content/Context;->getPackageManager()Landroid/content/pm/PackageManager;
+	6       (0000001a) move-result-object   v0
+	7       (0000001c) iput-object          v0, v1, Lcom/afwsamples/testdpc/common/AppInfoArrayAdapter;->mPackageManager Landroid/content/pm/PackageManager;
+	8       (00000020) if-eqz               v5, +6
+
+<init>-BB@0x24 : [ <init>-BB@0x2c ]
+	9       (00000024) const/16             v0, 8192
+	10      (00000028) iput                 v0, v1, Lcom/afwsamples/testdpc/common/AppInfoArrayAdapter;->mAppInfoFlags I
+
+<init>-BB@0x2c : 
+	11      (0000002c) return-void          
+

@@ -1,0 +1,119 @@
+# Lcom/afwsamples/testdpc/policy/locktask/SetLockTaskFeaturesFragment;->onPreferenceChange(Landroidx/preference/Preference; Ljava/lang/Object;)Z [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v8
+# - v9:androidx.preference.Preference
+# - v10:java.lang.Object
+#
+# - return:boolean
+
+onPreferenceChange-BB@0x0 : [ onPreferenceChange-BB@0x1a onPreferenceChange-BB@0x4e ]
+	0       (00000000) const/4              v5, 0
+	1       (00000002) invoke-virtual       v9, Landroidx/preference/Preference;->getKey()Ljava/lang/String;
+	2       (00000008) move-result-object   v3
+	3       (0000000a) sget-object          v4, Lcom/afwsamples/testdpc/policy/locktask/SetLockTaskFeaturesFragment;->FEATURE_FLAGS Landroid/util/ArrayMap;
+	4       (0000000e) invoke-virtual       v4, v3, Landroid/util/ArrayMap;->containsKey(Ljava/lang/Object;)Z
+	5       (00000014) move-result          v4
+	6       (00000016) if-nez               v4, +1c
+
+onPreferenceChange-BB@0x1a : [ onPreferenceChange-BB@0x4c ]
+	7       (0000001a) const-string         v4, 'SetLockTaskFeatures'
+	8       (0000001e) new-instance         v6, Ljava/lang/StringBuilder;
+	9       (00000022) invoke-direct        v6, Ljava/lang/StringBuilder;-><init>()V
+	10      (00000028) const-string         v7, 'Undefined preference key: '
+	11      (0000002c) invoke-virtual       v6, v7, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	12      (00000032) move-result-object   v6
+	13      (00000034) invoke-virtual       v6, v3, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	14      (0000003a) move-result-object   v6
+	15      (0000003c) invoke-virtual       v6, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+	16      (00000042) move-result-object   v6
+	17      (00000044) invoke-static        v4, v6, Landroid/util/Log;->e(Ljava/lang/String; Ljava/lang/String;)I
+	18      (0000004a) move                 v4, v5
+
+onPreferenceChange-BB@0x4c : 
+	19      (0000004c) return               v4
+
+onPreferenceChange-BB@0x4e : [ onPreferenceChange-BB@0x66 onPreferenceChange-BB@0xf6 ]
+	20      (0000004e) invoke-direct        v8, Lcom/afwsamples/testdpc/policy/locktask/SetLockTaskFeaturesFragment;->getLockTaskFeatures()I
+	21      (00000054) move-result          v2
+	22      (00000056) check-cast           v10, Ljava/lang/Boolean;
+	23      (0000005a) invoke-virtual       v10, Ljava/lang/Boolean;->booleanValue()Z
+	24      (00000060) move-result          v4
+	25      (00000062) if-eqz               v4, +4a
+
+onPreferenceChange-BB@0x66 : [ onPreferenceChange-BB@0x82 ]
+	26      (00000066) sget-object          v4, Lcom/afwsamples/testdpc/policy/locktask/SetLockTaskFeaturesFragment;->FEATURE_FLAGS Landroid/util/ArrayMap;
+	27      (0000006a) invoke-virtual       v4, v3, Landroid/util/ArrayMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
+	28      (00000070) move-result-object   v4
+	29      (00000072) check-cast           v4, Ljava/lang/Integer;
+	30      (00000076) invoke-virtual       v4, Ljava/lang/Integer;->intValue()I
+	31      (0000007c) move-result          v4
+	32      (0000007e) or-int               v1, v2, v4
+
+onPreferenceChange-BB@0x82 : [ onPreferenceChange-BB@0x8a onPreferenceChange-BB@0x8e ]
+	33      (00000082) and-int/lit8         v4, v1, 4
+	34      (00000086) if-nez               v4, +4
+
+onPreferenceChange-BB@0x8a : [ onPreferenceChange-BB@0x8e ]
+	35      (0000008a) and-int/lit8         v1, v1, -11
+
+onPreferenceChange-BB@0x8e : [ onPreferenceChange-BB@0x92 onPreferenceChange-BB@0x142 ]
+	36      (0000008e) if-eq                v1, v2, +5a
+
+onPreferenceChange-BB@0x92 : [ onPreferenceChange-BB@0xe6 ]
+	37      (00000092) const-string         v4, 'SetLockTaskFeatures'
+	38      (00000096) new-instance         v6, Ljava/lang/StringBuilder;
+	39      (0000009a) invoke-direct        v6, Ljava/lang/StringBuilder;-><init>()V
+	40      (000000a0) const-string         v7, 'LockTask feature flags changing from 0x'
+	41      (000000a4) invoke-virtual       v6, v7, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	42      (000000aa) move-result-object   v6
+	43      (000000ac) invoke-static        v2, Ljava/lang/Integer;->toHexString(I)Ljava/lang/String;
+	44      (000000b2) move-result-object   v7
+	45      (000000b4) invoke-virtual       v6, v7, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	46      (000000ba) move-result-object   v6
+	47      (000000bc) const-string         v7, ' to 0x'
+	48      (000000c0) invoke-virtual       v6, v7, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	49      (000000c6) move-result-object   v6
+	50      (000000c8) invoke-static        v1, Ljava/lang/Integer;->toHexString(I)Ljava/lang/String;
+	51      (000000ce) move-result-object   v7
+	52      (000000d0) invoke-virtual       v6, v7, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	53      (000000d6) move-result-object   v6
+	54      (000000d8) invoke-virtual       v6, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+	55      (000000de) move-result-object   v6
+	56      (000000e0) invoke-static        v4, v6, Landroid/util/Log;->i(Ljava/lang/String; Ljava/lang/String;)I
+
+onPreferenceChange-BB@0xe6 : [ onPreferenceChange-BB@0x4c ]
+	57      (000000e6) invoke-direct        v8, v1, Lcom/afwsamples/testdpc/policy/locktask/SetLockTaskFeaturesFragment;->setLockTaskFeatures(I)V
+	58      (000000ec) invoke-direct        v8, v1, Lcom/afwsamples/testdpc/policy/locktask/SetLockTaskFeaturesFragment;->enforceEnablingRestrictions(I)V
+	59      (000000f2) const/4              v4, 1
+	60      (000000f4) goto                 -54
+	e6:f1
+	(Ljava/lang/SecurityException; -> 118 onPreferenceChange-BB@0x118)
+
+onPreferenceChange-BB@0xf6 : [ onPreferenceChange-BB@0x82 ]
+	61      (000000f6) sget-object          v4, Lcom/afwsamples/testdpc/policy/locktask/SetLockTaskFeaturesFragment;->FEATURE_FLAGS Landroid/util/ArrayMap;
+	62      (000000fa) invoke-virtual       v4, v3, Landroid/util/ArrayMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
+	63      (00000100) move-result-object   v4
+	64      (00000102) check-cast           v4, Ljava/lang/Integer;
+	65      (00000106) invoke-virtual       v4, Ljava/lang/Integer;->intValue()I
+	66      (0000010c) move-result          v4
+	67      (0000010e) xor-int/lit8         v4, v4, -1
+	68      (00000112) and-int              v1, v2, v4
+	69      (00000116) goto                 -4a
+
+onPreferenceChange-BB@0x118 : [ onPreferenceChange-BB@0x142 ]
+	70      (00000118) move-exception       v0
+	71      (0000011a) const-string         v4, 'SetLockTaskFeatures'
+	72      (0000011e) const-string         v6, 'setLockTaskFeatures() can only be called by DO and affiliated PO'
+	73      (00000122) invoke-static        v4, v6, Landroid/util/Log;->e(Ljava/lang/String; Ljava/lang/String;)I
+	74      (00000128) invoke-virtual       v8, Lcom/afwsamples/testdpc/policy/locktask/SetLockTaskFeaturesFragment;->getActivity()Landroid/app/Activity;
+	75      (0000012e) move-result-object   v4
+	76      (00000130) const-string         v6, 'Requires device owner or affiliated profile owner'
+	77      (00000134) invoke-static        v4, v6, v5, Landroid/widget/Toast;->makeText(Landroid/content/Context; Ljava/lang/CharSequence; I)Landroid/widget/Toast;
+	78      (0000013a) move-result-object   v4
+	79      (0000013c) invoke-virtual       v4, Landroid/widget/Toast;->show()V
+
+onPreferenceChange-BB@0x142 : [ onPreferenceChange-BB@0x4c ]
+	80      (00000142) move                 v4, v5
+	81      (00000144) goto                 -7c
+

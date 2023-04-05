@@ -1,0 +1,29 @@
+# Lcom/afwsamples/testdpc/comp/BindDeviceAdminFragment;->isManagedProfileRunning()Z [access_flags=private]
+#
+# Parameters:
+# local registers: v0...v2
+#
+# - return:boolean
+
+isManagedProfileRunning-BB@0x0 : [ isManagedProfileRunning-BB@0xc isManagedProfileRunning-BB@0x24 ]
+	0       (00000000) invoke-direct        v2, Lcom/afwsamples/testdpc/comp/BindDeviceAdminFragment;->isManagedProfileOwner()Z
+	1       (00000006) move-result          v0
+	2       (00000008) if-eqz               v0, +e
+
+isManagedProfileRunning-BB@0xc : [ isManagedProfileRunning-BB@0x20 isManagedProfileRunning-BB@0x24 ]
+	3       (0000000c) iget-object          v0, v2, Lcom/afwsamples/testdpc/comp/BindDeviceAdminFragment;->mUserManager Landroid/os/UserManager;
+	4       (00000010) iget-object          v1, v2, Lcom/afwsamples/testdpc/comp/BindDeviceAdminFragment;->mProfileOwnerUser Landroid/os/UserHandle;
+	5       (00000014) invoke-virtual       v0, v1, Landroid/os/UserManager;->isUserRunning(Landroid/os/UserHandle;)Z
+	6       (0000001a) move-result          v0
+	7       (0000001c) if-eqz               v0, +4
+
+isManagedProfileRunning-BB@0x20 : [ isManagedProfileRunning-BB@0x22 ]
+	8       (00000020) const/4              v0, 1
+
+isManagedProfileRunning-BB@0x22 : 
+	9       (00000022) return               v0
+
+isManagedProfileRunning-BB@0x24 : [ isManagedProfileRunning-BB@0x22 ]
+	10      (00000024) const/4              v0, 0
+	11      (00000026) goto                 -2
+

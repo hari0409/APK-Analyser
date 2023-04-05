@@ -1,0 +1,14 @@
+# Lcom/afwsamples/testdpc/util/Flags$ArgsContainer;->access$2800(Lcom/afwsamples/testdpc/util/Flags$ArgsContainer; Lcom/afwsamples/testdpc/util/Flags$Param;)Ljava/lang/Object; [access_flags=static synthetic]
+#
+# Parameters:
+# - local registers: v0...v0
+# - v1:com.afwsamples.testdpc.util.Flags$ArgsContainer
+# - v2:com.afwsamples.testdpc.util.Flags$Param
+#
+# - return:java.lang.Object
+
+access$2800-BB@0x0 : 
+	0       (00000000) invoke-direct        v1, v2, Lcom/afwsamples/testdpc/util/Flags$ArgsContainer;->get(Lcom/afwsamples/testdpc/util/Flags$Param;)Ljava/lang/Object;
+	1       (00000006) move-result-object   v0
+	2       (00000008) return-object        v0
+

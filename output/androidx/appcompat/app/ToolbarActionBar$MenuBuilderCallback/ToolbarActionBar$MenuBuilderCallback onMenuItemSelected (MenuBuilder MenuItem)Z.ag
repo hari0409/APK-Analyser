@@ -1,0 +1,13 @@
+# Landroidx/appcompat/app/ToolbarActionBar$MenuBuilderCallback;->onMenuItemSelected(Landroidx/appcompat/view/menu/MenuBuilder; Landroid/view/MenuItem;)Z [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:androidx.appcompat.view.menu.MenuBuilder
+# - v3:android.view.MenuItem
+#
+# - return:boolean
+
+onMenuItemSelected-BB@0x0 : 
+	0       (00000000) const/4              v0, 0
+	1       (00000002) return               v0
+

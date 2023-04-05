@@ -1,0 +1,55 @@
+# Landroidx/appcompat/widget/DialogTitle;->onMeasure(I I)V [access_flags=protected]
+#
+# Parameters:
+# - local registers: v0...v11
+# - v12:int
+# - v13:int
+#
+# - return:void
+
+onMeasure-BB@0x0 : [ onMeasure-BB@0x14 onMeasure-BB@0x84 ]
+	0       (00000000) const/4              v10, 0
+	1       (00000002) invoke-super         v11, v12, v13, Landroid/widget/TextView;->onMeasure(I I)V
+	2       (00000008) invoke-virtual       v11, Landroidx/appcompat/widget/DialogTitle;->getLayout()Landroid/text/Layout;
+	3       (0000000e) move-result-object   v2
+	4       (00000010) if-eqz               v2, +3a
+
+onMeasure-BB@0x14 : [ onMeasure-BB@0x20 onMeasure-BB@0x84 ]
+	5       (00000014) invoke-virtual       v2, Landroid/text/Layout;->getLineCount()I
+	6       (0000001a) move-result          v3
+	7       (0000001c) if-lez               v3, +34
+
+onMeasure-BB@0x20 : [ onMeasure-BB@0x30 onMeasure-BB@0x84 ]
+	8       (00000020) add-int/lit8         v5, v3, -1
+	9       (00000024) invoke-virtual       v2, v5, Landroid/text/Layout;->getEllipsisCount(I)I
+	10      (0000002a) move-result          v1
+	11      (0000002c) if-lez               v1, +2c
+
+onMeasure-BB@0x30 : [ onMeasure-BB@0x70 onMeasure-BB@0x78 ]
+	12      (00000030) invoke-virtual       v11, v10, Landroidx/appcompat/widget/DialogTitle;->setSingleLine(Z)V
+	13      (00000036) const/4              v5, 2
+	14      (00000038) invoke-virtual       v11, v5, Landroidx/appcompat/widget/DialogTitle;->setMaxLines(I)V
+	15      (0000003e) invoke-virtual       v11, Landroidx/appcompat/widget/DialogTitle;->getContext()Landroid/content/Context;
+	16      (00000044) move-result-object   v5
+	17      (00000046) const/4              v6, 0
+	18      (00000048) sget-object          v7, Landroidx/appcompat/R$styleable;->TextAppearance [I
+	19      (0000004c) const                v8, 16842817 # [2.3693740177562095e-38]
+	20      (00000052) const                v9, 16973892 # [2.4061090569984846e-38]
+	21      (00000058) invoke-virtual       v5, v6, v7, v8, v9, Landroid/content/Context;->obtainStyledAttributes(Landroid/util/AttributeSet; [I I I)Landroid/content/res/TypedArray;
+	22      (0000005e) move-result-object   v0
+	23      (00000060) sget                 v5, Landroidx/appcompat/R$styleable;->TextAppearance_android_textSize I
+	24      (00000064) invoke-virtual       v0, v5, v10, Landroid/content/res/TypedArray;->getDimensionPixelSize(I I)I
+	25      (0000006a) move-result          v4
+	26      (0000006c) if-eqz               v4, +6
+
+onMeasure-BB@0x70 : [ onMeasure-BB@0x78 ]
+	27      (00000070) int-to-float         v5, v4
+	28      (00000072) invoke-virtual       v11, v10, v5, Landroidx/appcompat/widget/DialogTitle;->setTextSize(I F)V
+
+onMeasure-BB@0x78 : [ onMeasure-BB@0x84 ]
+	29      (00000078) invoke-virtual       v0, Landroid/content/res/TypedArray;->recycle()V
+	30      (0000007e) invoke-super         v11, v12, v13, Landroid/widget/TextView;->onMeasure(I I)V
+
+onMeasure-BB@0x84 : 
+	31      (00000084) return-void          
+

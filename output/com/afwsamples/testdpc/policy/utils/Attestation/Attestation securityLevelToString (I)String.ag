@@ -1,0 +1,28 @@
+# Lcom/afwsamples/testdpc/policy/utils/Attestation;->securityLevelToString(I)Ljava/lang/String; [access_flags=public static]
+#
+# Parameters:
+# - local registers: v0...v0
+# - v1:int
+#
+# - return:java.lang.String
+
+securityLevelToString-BB@0x0 : [ D:securityLevelToString-BB@0x6 0:securityLevelToString-BB@0xc 1:securityLevelToString-BB@0x12 ]
+	0       (00000000) packed-switch        v1, +c (0x18)
+
+securityLevelToString-BB@0x6 : [ securityLevelToString-BB@0xa ]
+	1       (00000006) const-string         v0, 'Unkown'
+
+securityLevelToString-BB@0xa : 
+	2       (0000000a) return-object        v0
+
+securityLevelToString-BB@0xc : [ securityLevelToString-BB@0xa ]
+	3       (0000000c) const-string         v0, 'Software'
+	4       (00000010) goto                 -3
+
+securityLevelToString-BB@0x12 : [ securityLevelToString-BB@0xa ]
+	5       (00000012) const-string         v0, 'TEE'
+	6       (00000016) goto                 -6
+
+securityLevelToString-BB@0x18 : 
+	7       (00000018) packed-switch-payload 0 1
+

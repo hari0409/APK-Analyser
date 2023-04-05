@@ -1,0 +1,24 @@
+# Lcom/afwsamples/testdpc/policy/OverrideApnFragment;->reloadEnableOverrideApnUi()V [access_flags=private]
+#
+# Parameters:
+# local registers: v0...v3
+#
+# - return:void
+
+reloadEnableOverrideApnUi-BB@0x0 : [ reloadEnableOverrideApnUi-BB@0x20 reloadEnableOverrideApnUi-BB@0x2a ]
+	0       (00000000) iget-object          v1, v3, Lcom/afwsamples/testdpc/policy/OverrideApnFragment;->mDevicePolicyManager Landroid/app/admin/DevicePolicyManager;
+	1       (00000004) iget-object          v2, v3, Lcom/afwsamples/testdpc/policy/OverrideApnFragment;->mAdminComponentName Landroid/content/ComponentName;
+	2       (00000008) invoke-virtual       v1, v2, Landroid/app/admin/DevicePolicyManager;->isOverrideApnEnabled(Landroid/content/ComponentName;)Z
+	3       (0000000e) move-result          v0
+	4       (00000010) iget-object          v1, v3, Lcom/afwsamples/testdpc/policy/OverrideApnFragment;->mEnableOverrideApnPreference Landroidx/preference/SwitchPreference;
+	5       (00000014) invoke-virtual       v1, Landroidx/preference/SwitchPreference;->isEnabled()Z
+	6       (0000001a) move-result          v1
+	7       (0000001c) if-eqz               v1, +7
+
+reloadEnableOverrideApnUi-BB@0x20 : [ reloadEnableOverrideApnUi-BB@0x2a ]
+	8       (00000020) iget-object          v1, v3, Lcom/afwsamples/testdpc/policy/OverrideApnFragment;->mEnableOverrideApnPreference Landroidx/preference/SwitchPreference;
+	9       (00000024) invoke-virtual       v1, v0, Landroidx/preference/SwitchPreference;->setChecked(Z)V
+
+reloadEnableOverrideApnUi-BB@0x2a : 
+	10      (0000002a) return-void          
+

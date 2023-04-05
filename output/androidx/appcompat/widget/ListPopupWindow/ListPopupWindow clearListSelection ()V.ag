@@ -1,0 +1,19 @@
+# Landroidx/appcompat/widget/ListPopupWindow;->clearListSelection()V [access_flags=public]
+#
+# Parameters:
+# local registers: v0...v2
+#
+# - return:void
+
+clearListSelection-BB@0x0 : [ clearListSelection-BB@0x8 clearListSelection-BB@0x16 ]
+	0       (00000000) iget-object          v0, v2, Landroidx/appcompat/widget/ListPopupWindow;->mDropDownList Landroidx/appcompat/widget/DropDownListView;
+	1       (00000004) if-eqz               v0, +9
+
+clearListSelection-BB@0x8 : [ clearListSelection-BB@0x16 ]
+	2       (00000008) const/4              v1, 1
+	3       (0000000a) invoke-virtual       v0, v1, Landroidx/appcompat/widget/DropDownListView;->setListSelectionHidden(Z)V
+	4       (00000010) invoke-virtual       v0, Landroidx/appcompat/widget/DropDownListView;->requestLayout()V
+
+clearListSelection-BB@0x16 : 
+	5       (00000016) return-void          
+

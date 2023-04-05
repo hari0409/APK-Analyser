@@ -1,0 +1,43 @@
+# Lcom/afwsamples/testdpc/policy/wifimanagement/WifiEapTlsCreateDialogFragment;->onActivityResult(I I Landroid/content/Intent;)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v3
+# - v4:int
+# - v5:int
+# - v6:android.content.Intent
+#
+# - return:void
+
+onActivityResult-BB@0x0 : [ onActivityResult-BB@0x8 onActivityResult-BB@0xe ]
+	0       (00000000) const/4              v2, 0
+	1       (00000002) const/4              v0, -1
+	2       (00000004) if-ne                v5, v0, +5
+
+onActivityResult-BB@0x8 : [ D:onActivityResult-BB@0xe 1:onActivityResult-BB@0x10 2:onActivityResult-BB@0x2c ]
+	3       (00000008) packed-switch        v4, +22 (0x4c)
+
+onActivityResult-BB@0xe : 
+	4       (0000000e) return-void          
+
+onActivityResult-BB@0x10 : [ onActivityResult-BB@0xe ]
+	5       (00000010) invoke-virtual       v6, Landroid/content/Intent;->getData()Landroid/net/Uri;
+	6       (00000016) move-result-object   v0
+	7       (00000018) iput-object          v0, v3, Lcom/afwsamples/testdpc/policy/wifimanagement/WifiEapTlsCreateDialogFragment;->mCaCertUri Landroid/net/Uri;
+	8       (0000001c) iget-object          v0, v3, Lcom/afwsamples/testdpc/policy/wifimanagement/WifiEapTlsCreateDialogFragment;->mCaCertTextView Landroid/widget/TextView;
+	9       (00000020) iget-object          v1, v3, Lcom/afwsamples/testdpc/policy/wifimanagement/WifiEapTlsCreateDialogFragment;->mCaCertUri Landroid/net/Uri;
+	10      (00000024) invoke-direct        v3, v0, v1, v2, Lcom/afwsamples/testdpc/policy/wifimanagement/WifiEapTlsCreateDialogFragment;->updateSelectedCert(Landroid/widget/TextView; Landroid/net/Uri; Ljava/lang/String;)V
+	11      (0000002a) goto                 -e
+
+onActivityResult-BB@0x2c : [ onActivityResult-BB@0xe ]
+	12      (0000002c) invoke-virtual       v6, Landroid/content/Intent;->getData()Landroid/net/Uri;
+	13      (00000032) move-result-object   v0
+	14      (00000034) iput-object          v0, v3, Lcom/afwsamples/testdpc/policy/wifimanagement/WifiEapTlsCreateDialogFragment;->mUserCertUri Landroid/net/Uri;
+	15      (00000038) iput-object          v2, v3, Lcom/afwsamples/testdpc/policy/wifimanagement/WifiEapTlsCreateDialogFragment;->mUserCertAlias Ljava/lang/String;
+	16      (0000003c) iget-object          v0, v3, Lcom/afwsamples/testdpc/policy/wifimanagement/WifiEapTlsCreateDialogFragment;->mUserCertTextView Landroid/widget/TextView;
+	17      (00000040) iget-object          v1, v3, Lcom/afwsamples/testdpc/policy/wifimanagement/WifiEapTlsCreateDialogFragment;->mUserCertUri Landroid/net/Uri;
+	18      (00000044) invoke-direct        v3, v0, v1, v2, Lcom/afwsamples/testdpc/policy/wifimanagement/WifiEapTlsCreateDialogFragment;->updateSelectedCert(Landroid/widget/TextView; Landroid/net/Uri; Ljava/lang/String;)V
+	19      (0000004a) goto                 -1e
+
+onActivityResult-BB@0x4c : 
+	20      (0000004c) packed-switch-payload 1 2
+

@@ -1,0 +1,27 @@
+# Landroidx/print/PrintHelper$1;-><init>(Landroidx/print/PrintHelper; Landroid/os/CancellationSignal; Landroid/print/PrintAttributes; Landroid/graphics/Bitmap; Landroid/print/PrintAttributes; I Landroid/os/ParcelFileDescriptor; Landroid/print/PrintDocumentAdapter$WriteResultCallback;)V [access_flags=constructor]
+#
+# Parameters:
+# - local registers: v0...v0
+# - v1:androidx.print.PrintHelper
+# - v2:android.os.CancellationSignal
+# - v3:android.print.PrintAttributes
+# - v4:android.graphics.Bitmap
+# - v5:android.print.PrintAttributes
+# - v6:int
+# - v7:android.os.ParcelFileDescriptor
+# - v8:android.print.PrintDocumentAdapter$WriteResultCallback
+#
+# - return:void
+
+<init>-BB@0x0 : 
+	0       (00000000) iput-object          v1, v0, Landroidx/print/PrintHelper$1;->this$0 Landroidx/print/PrintHelper;
+	1       (00000004) iput-object          v2, v0, Landroidx/print/PrintHelper$1;->val$cancellationSignal Landroid/os/CancellationSignal;
+	2       (00000008) iput-object          v3, v0, Landroidx/print/PrintHelper$1;->val$pdfAttributes Landroid/print/PrintAttributes;
+	3       (0000000c) iput-object          v4, v0, Landroidx/print/PrintHelper$1;->val$bitmap Landroid/graphics/Bitmap;
+	4       (00000010) iput-object          v5, v0, Landroidx/print/PrintHelper$1;->val$attributes Landroid/print/PrintAttributes;
+	5       (00000014) iput                 v6, v0, Landroidx/print/PrintHelper$1;->val$fittingMode I
+	6       (00000018) iput-object          v7, v0, Landroidx/print/PrintHelper$1;->val$fileDescriptor Landroid/os/ParcelFileDescriptor;
+	7       (0000001c) iput-object          v8, v0, Landroidx/print/PrintHelper$1;->val$writeResultCallback Landroid/print/PrintDocumentAdapter$WriteResultCallback;
+	8       (00000020) invoke-direct        v0, Landroid/os/AsyncTask;-><init>()V
+	9       (00000026) return-void          
+

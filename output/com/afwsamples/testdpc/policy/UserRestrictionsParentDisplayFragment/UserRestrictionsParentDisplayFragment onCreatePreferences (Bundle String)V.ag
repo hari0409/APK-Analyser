@@ -1,0 +1,48 @@
+# Lcom/afwsamples/testdpc/policy/UserRestrictionsParentDisplayFragment;->onCreatePreferences(Landroid/os/Bundle; Ljava/lang/String;)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v8
+# - v9:android.os.Bundle
+# - v10:java.lang.String
+#
+# - return:void
+
+onCreatePreferences-BB@0x0 : [ onCreatePreferences-BB@0x3e ]
+	0       (00000000) invoke-virtual       v8, Lcom/afwsamples/testdpc/policy/UserRestrictionsParentDisplayFragment;->getPreferenceManager()Landroidx/preference/PreferenceManager;
+	1       (00000006) move-result-object   v4
+	2       (00000008) invoke-virtual       v8, Lcom/afwsamples/testdpc/policy/UserRestrictionsParentDisplayFragment;->getPreferenceManager()Landroidx/preference/PreferenceManager;
+	3       (0000000e) move-result-object   v5
+	4       (00000010) invoke-virtual       v5, Landroidx/preference/PreferenceManager;->getContext()Landroid/content/Context;
+	5       (00000016) move-result-object   v5
+	6       (00000018) invoke-virtual       v4, v5, Landroidx/preference/PreferenceManager;->createPreferenceScreen(Landroid/content/Context;)Landroidx/preference/PreferenceScreen;
+	7       (0000001e) move-result-object   v2
+	8       (00000020) invoke-virtual       v8, v2, Lcom/afwsamples/testdpc/policy/UserRestrictionsParentDisplayFragment;->setPreferenceScreen(Landroidx/preference/PreferenceScreen;)V
+	9       (00000026) invoke-virtual       v8, Lcom/afwsamples/testdpc/policy/UserRestrictionsParentDisplayFragment;->getPreferenceManager()Landroidx/preference/PreferenceManager;
+	10      (0000002c) move-result-object   v4
+	11      (0000002e) invoke-virtual       v4, Landroidx/preference/PreferenceManager;->getContext()Landroid/content/Context;
+	12      (00000034) move-result-object   v1
+	13      (00000036) sget-object          v5, Lcom/afwsamples/testdpc/policy/UserRestriction;->PROFILE_OWNER_ORG_DEVICE_RESTRICTIONS [Lcom/afwsamples/testdpc/policy/UserRestriction;
+	14      (0000003a) array-length         v6, v5
+	15      (0000003c) const/4              v4, 0
+
+onCreatePreferences-BB@0x3e : [ onCreatePreferences-BB@0x42 onCreatePreferences-BB@0x76 ]
+	16      (0000003e) if-ge                v4, v6, +1c
+
+onCreatePreferences-BB@0x42 : [ onCreatePreferences-BB@0x3e ]
+	17      (00000042) aget-object          v3, v5, v4
+	18      (00000046) new-instance         v0, Lcom/afwsamples/testdpc/common/preference/DpcSwitchPreference;
+	19      (0000004a) invoke-direct        v0, v1, Lcom/afwsamples/testdpc/common/preference/DpcSwitchPreference;-><init>(Landroid/content/Context;)V
+	20      (00000050) iget                 v7, v3, Lcom/afwsamples/testdpc/policy/UserRestriction;->titleResId I
+	21      (00000054) invoke-virtual       v0, v7, Lcom/afwsamples/testdpc/common/preference/DpcSwitchPreference;->setTitle(I)V
+	22      (0000005a) iget-object          v7, v3, Lcom/afwsamples/testdpc/policy/UserRestriction;->key Ljava/lang/String;
+	23      (0000005e) invoke-virtual       v0, v7, Lcom/afwsamples/testdpc/common/preference/DpcSwitchPreference;->setKey(Ljava/lang/String;)V
+	24      (00000064) invoke-virtual       v0, v8, Lcom/afwsamples/testdpc/common/preference/DpcSwitchPreference;->setOnPreferenceChangeListener(Landroidx/preference/Preference$OnPreferenceChangeListener;)V
+	25      (0000006a) invoke-virtual       v2, v0, Landroidx/preference/PreferenceScreen;->addPreference(Landroidx/preference/Preference;)Z
+	26      (00000070) add-int/lit8         v4, v4, 1
+	27      (00000074) goto                 -1b
+
+onCreatePreferences-BB@0x76 : 
+	28      (00000076) invoke-direct        v8, Lcom/afwsamples/testdpc/policy/UserRestrictionsParentDisplayFragment;->updateAllUserRestrictions()V
+	29      (0000007c) invoke-direct        v8, Lcom/afwsamples/testdpc/policy/UserRestrictionsParentDisplayFragment;->constrainPreferences()V
+	30      (00000082) return-void          
+

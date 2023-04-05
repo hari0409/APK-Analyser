@@ -1,0 +1,49 @@
+# Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->reloadAffiliatedApis()V [access_flags=private]
+#
+# Parameters:
+# local registers: v0...v2
+#
+# - return:void
+
+reloadAffiliatedApis-BB@0x0 : [ reloadAffiliatedApis-BB@0x10 reloadAffiliatedApis-BB@0x30 ]
+	0       (00000000) iget-object          v0, v2, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->mAffiliatedUserPreference Landroidx/preference/Preference;
+	1       (00000004) invoke-virtual       v0, Landroidx/preference/Preference;->isEnabled()Z
+	2       (0000000a) move-result          v0
+	3       (0000000c) if-eqz               v0, +12
+
+reloadAffiliatedApis-BB@0x10 : [ reloadAffiliatedApis-BB@0x24 reloadAffiliatedApis-BB@0x82 ]
+	4       (00000010) iget-object          v1, v2, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->mAffiliatedUserPreference Landroidx/preference/Preference;
+	5       (00000014) iget-object          v0, v2, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->mDevicePolicyManager Landroid/app/admin/DevicePolicyManager;
+	6       (00000018) invoke-virtual       v0, Landroid/app/admin/DevicePolicyManager;->isAffiliatedUser()Z
+	7       (0000001e) move-result          v0
+	8       (00000020) if-eqz               v0, +31
+
+reloadAffiliatedApis-BB@0x24 : [ reloadAffiliatedApis-BB@0x2a ]
+	9       (00000024) const                v0, 2131690404 # [1.9009850660299357e+38]
+
+reloadAffiliatedApis-BB@0x2a : [ reloadAffiliatedApis-BB@0x30 ]
+	10      (0000002a) invoke-virtual       v1, v0, Landroidx/preference/Preference;->setSummary(I)V
+
+reloadAffiliatedApis-BB@0x30 : 
+	11      (00000030) iget-object          v0, v2, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->mInstallExistingPackagePreference Lcom/afwsamples/testdpc/common/preference/DpcPreference;
+	12      (00000034) invoke-virtual       v0, Lcom/afwsamples/testdpc/common/preference/DpcPreference;->refreshEnabledState()V
+	13      (0000003a) iget-object          v0, v2, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->mManageLockTaskListPreference Lcom/afwsamples/testdpc/common/preference/DpcPreference;
+	14      (0000003e) invoke-virtual       v0, Lcom/afwsamples/testdpc/common/preference/DpcPreference;->refreshEnabledState()V
+	15      (00000044) iget-object          v0, v2, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->mSetLockTaskFeaturesPreference Lcom/afwsamples/testdpc/common/preference/DpcPreference;
+	16      (00000048) invoke-virtual       v0, Lcom/afwsamples/testdpc/common/preference/DpcPreference;->refreshEnabledState()V
+	17      (0000004e) iget-object          v0, v2, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->mLogoutUserPreference Lcom/afwsamples/testdpc/common/preference/DpcPreference;
+	18      (00000052) invoke-virtual       v0, Lcom/afwsamples/testdpc/common/preference/DpcPreference;->refreshEnabledState()V
+	19      (00000058) iget-object          v0, v2, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->mDisableStatusBarPreference Lcom/afwsamples/testdpc/common/preference/DpcPreference;
+	20      (0000005c) invoke-virtual       v0, Lcom/afwsamples/testdpc/common/preference/DpcPreference;->refreshEnabledState()V
+	21      (00000062) iget-object          v0, v2, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->mReenableStatusBarPreference Lcom/afwsamples/testdpc/common/preference/DpcPreference;
+	22      (00000066) invoke-virtual       v0, Lcom/afwsamples/testdpc/common/preference/DpcPreference;->refreshEnabledState()V
+	23      (0000006c) iget-object          v0, v2, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->mDisableKeyguardPreference Lcom/afwsamples/testdpc/common/preference/DpcPreference;
+	24      (00000070) invoke-virtual       v0, Lcom/afwsamples/testdpc/common/preference/DpcPreference;->refreshEnabledState()V
+	25      (00000076) iget-object          v0, v2, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->mReenableKeyguardPreference Lcom/afwsamples/testdpc/common/preference/DpcPreference;
+	26      (0000007a) invoke-virtual       v0, Lcom/afwsamples/testdpc/common/preference/DpcPreference;->refreshEnabledState()V
+	27      (00000080) return-void          
+
+reloadAffiliatedApis-BB@0x82 : [ reloadAffiliatedApis-BB@0x2a ]
+	28      (00000082) const                v0, 2131689977 # [1.900898460140928e+38]
+	29      (00000088) goto                 -2f
+

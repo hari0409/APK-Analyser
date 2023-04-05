@@ -1,0 +1,21 @@
+# Landroidx/appcompat/widget/SearchView;->setIconifiedByDefault(Z)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:boolean
+#
+# - return:void
+
+setIconifiedByDefault-BB@0x0 : [ setIconifiedByDefault-BB@0x8 setIconifiedByDefault-BB@0xa ]
+	0       (00000000) iget-boolean         v0, v1, Landroidx/appcompat/widget/SearchView;->mIconifiedByDefault Z
+	1       (00000004) if-ne                v0, v2, +3
+
+setIconifiedByDefault-BB@0x8 : 
+	2       (00000008) return-void          
+
+setIconifiedByDefault-BB@0xa : [ setIconifiedByDefault-BB@0x8 ]
+	3       (0000000a) iput-boolean         v2, v1, Landroidx/appcompat/widget/SearchView;->mIconifiedByDefault Z
+	4       (0000000e) invoke-direct        v1, v2, Landroidx/appcompat/widget/SearchView;->updateViewsVisibility(Z)V
+	5       (00000014) invoke-direct        v1, Landroidx/appcompat/widget/SearchView;->updateQueryHint()V
+	6       (0000001a) goto                 -9
+

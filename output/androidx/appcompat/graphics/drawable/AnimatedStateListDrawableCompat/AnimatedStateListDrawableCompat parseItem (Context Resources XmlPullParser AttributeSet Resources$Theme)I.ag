@@ -1,0 +1,115 @@
+# Landroidx/appcompat/graphics/drawable/AnimatedStateListDrawableCompat;->parseItem(Landroid/content/Context; Landroid/content/res/Resources; Lorg/xmlpull/v1/XmlPullParser; Landroid/util/AttributeSet; Landroid/content/res/Resources$Theme;)I [access_flags=private]
+#
+# Parameters:
+# - local registers: v0...v9
+# - v10:android.content.Context
+# - v11:android.content.res.Resources
+# - v12:org.xmlpull.v1.XmlPullParser
+# - v13:android.util.AttributeSet
+# - v14:android.content.res.Resources$Theme
+#
+# - return:int
+
+parseItem-BB@0x0 : [ parseItem-BB@0x2e parseItem-BB@0x36 ]
+	0       (00000000) sget-object          v6, Landroidx/appcompat/R$styleable;->AnimatedStateListDrawableItem [I
+	1       (00000004) invoke-static        v11, v14, v13, v6, Landroidx/core/content/res/TypedArrayUtils;->obtainAttributes(Landroid/content/res/Resources; Landroid/content/res/Resources$Theme; Landroid/util/AttributeSet; [I)Landroid/content/res/TypedArray;
+	2       (0000000a) move-result-object   v0
+	3       (0000000c) sget                 v6, Landroidx/appcompat/R$styleable;->AnimatedStateListDrawableItem_android_id I
+	4       (00000010) const/4              v7, 0
+	5       (00000012) invoke-virtual       v0, v6, v7, Landroid/content/res/TypedArray;->getResourceId(I I)I
+	6       (00000018) move-result          v3
+	7       (0000001a) const/4              v1, 0
+	8       (0000001c) sget                 v6, Landroidx/appcompat/R$styleable;->AnimatedStateListDrawableItem_android_drawable I
+	9       (00000020) const/4              v7, -1
+	10      (00000022) invoke-virtual       v0, v6, v7, Landroid/content/res/TypedArray;->getResourceId(I I)I
+	11      (00000028) move-result          v2
+	12      (0000002a) if-lez               v2, +6
+
+parseItem-BB@0x2e : [ parseItem-BB@0x36 ]
+	13      (0000002e) invoke-static        v10, v2, Landroidx/appcompat/content/res/AppCompatResources;->getDrawable(Landroid/content/Context; I)Landroid/graphics/drawable/Drawable;
+	14      (00000034) move-result-object   v1
+
+parseItem-BB@0x36 : [ parseItem-BB@0x48 parseItem-BB@0xb6 ]
+	15      (00000036) invoke-virtual       v0, Landroid/content/res/TypedArray;->recycle()V
+	16      (0000003c) invoke-virtual       v9, v13, Landroidx/appcompat/graphics/drawable/AnimatedStateListDrawableCompat;->extractStateSet(Landroid/util/AttributeSet;)[I
+	17      (00000042) move-result-object   v4
+	18      (00000044) if-nez               v1, +39
+
+parseItem-BB@0x48 : [ parseItem-BB@0x56 parseItem-BB@0x48 ]
+	19      (00000048) invoke-interface     v12, Lorg/xmlpull/v1/XmlPullParser;->next()I
+	20      (0000004e) move-result          v5
+	21      (00000050) const/4              v6, 4
+	22      (00000052) if-eq                v5, v6, -5
+
+parseItem-BB@0x56 : [ parseItem-BB@0x5c parseItem-BB@0x96 ]
+	23      (00000056) const/4              v6, 2
+	24      (00000058) if-eq                v5, v6, +1f
+
+parseItem-BB@0x5c : 
+	25      (0000005c) new-instance         v6, Lorg/xmlpull/v1/XmlPullParserException;
+	26      (00000060) new-instance         v7, Ljava/lang/StringBuilder;
+	27      (00000064) invoke-direct        v7, Ljava/lang/StringBuilder;-><init>()V
+	28      (0000006a) invoke-interface     v12, Lorg/xmlpull/v1/XmlPullParser;->getPositionDescription()Ljava/lang/String;
+	29      (00000070) move-result-object   v8
+	30      (00000072) invoke-virtual       v7, v8, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	31      (00000078) move-result-object   v7
+	32      (0000007a) const-string         v8, ": <item> tag requires a 'drawable' attribute or child tag defining a drawable"
+	33      (0000007e) invoke-virtual       v7, v8, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	34      (00000084) move-result-object   v7
+	35      (00000086) invoke-virtual       v7, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+	36      (0000008c) move-result-object   v7
+	37      (0000008e) invoke-direct        v6, v7, Lorg/xmlpull/v1/XmlPullParserException;-><init>(Ljava/lang/String;)V
+	38      (00000094) throw                v6
+
+parseItem-BB@0x96 : [ parseItem-BB@0xae parseItem-BB@0xf4 ]
+	39      (00000096) invoke-interface     v12, Lorg/xmlpull/v1/XmlPullParser;->getName()Ljava/lang/String;
+	40      (0000009c) move-result-object   v6
+	41      (0000009e) const-string         v7, 'vector'
+	42      (000000a2) invoke-virtual       v6, v7, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+	43      (000000a8) move-result          v6
+	44      (000000aa) if-eqz               v6, +25
+
+parseItem-BB@0xae : [ parseItem-BB@0xb6 ]
+	45      (000000ae) invoke-static        v11, v12, v13, v14, Landroidx/vectordrawable/graphics/drawable/VectorDrawableCompat;->createFromXmlInner(Landroid/content/res/Resources; Lorg/xmlpull/v1/XmlPullParser; Landroid/util/AttributeSet; Landroid/content/res/Resources$Theme;)Landroidx/vectordrawable/graphics/drawable/VectorDrawableCompat;
+	46      (000000b4) move-result-object   v1
+
+parseItem-BB@0xb6 : [ parseItem-BB@0xba parseItem-BB@0x114 ]
+	47      (000000b6) if-nez               v1, +2f
+
+parseItem-BB@0xba : 
+	48      (000000ba) new-instance         v6, Lorg/xmlpull/v1/XmlPullParserException;
+	49      (000000be) new-instance         v7, Ljava/lang/StringBuilder;
+	50      (000000c2) invoke-direct        v7, Ljava/lang/StringBuilder;-><init>()V
+	51      (000000c8) invoke-interface     v12, Lorg/xmlpull/v1/XmlPullParser;->getPositionDescription()Ljava/lang/String;
+	52      (000000ce) move-result-object   v8
+	53      (000000d0) invoke-virtual       v7, v8, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	54      (000000d6) move-result-object   v7
+	55      (000000d8) const-string         v8, ": <item> tag requires a 'drawable' attribute or child tag defining a drawable"
+	56      (000000dc) invoke-virtual       v7, v8, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	57      (000000e2) move-result-object   v7
+	58      (000000e4) invoke-virtual       v7, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+	59      (000000ea) move-result-object   v7
+	60      (000000ec) invoke-direct        v6, v7, Lorg/xmlpull/v1/XmlPullParserException;-><init>(Ljava/lang/String;)V
+	61      (000000f2) throw                v6
+
+parseItem-BB@0xf4 : [ parseItem-BB@0x100 parseItem-BB@0x10a ]
+	62      (000000f4) sget                 v6, Landroid/os/Build$VERSION;->SDK_INT I
+	63      (000000f8) const/16             v7, 21
+	64      (000000fc) if-lt                v6, v7, +7
+
+parseItem-BB@0x100 : [ parseItem-BB@0xb6 ]
+	65      (00000100) invoke-static        v11, v12, v13, v14, Landroid/graphics/drawable/Drawable;->createFromXmlInner(Landroid/content/res/Resources; Lorg/xmlpull/v1/XmlPullParser; Landroid/util/AttributeSet; Landroid/content/res/Resources$Theme;)Landroid/graphics/drawable/Drawable;
+	66      (00000106) move-result-object   v1
+	67      (00000108) goto                 -29
+
+parseItem-BB@0x10a : [ parseItem-BB@0xb6 ]
+	68      (0000010a) invoke-static        v11, v12, v13, Landroid/graphics/drawable/Drawable;->createFromXmlInner(Landroid/content/res/Resources; Lorg/xmlpull/v1/XmlPullParser; Landroid/util/AttributeSet;)Landroid/graphics/drawable/Drawable;
+	69      (00000110) move-result-object   v1
+	70      (00000112) goto                 -2e
+
+parseItem-BB@0x114 : 
+	71      (00000114) iget-object          v6, v9, Landroidx/appcompat/graphics/drawable/AnimatedStateListDrawableCompat;->mState Landroidx/appcompat/graphics/drawable/AnimatedStateListDrawableCompat$AnimatedStateListState;
+	72      (00000118) invoke-virtual       v6, v4, v1, v3, Landroidx/appcompat/graphics/drawable/AnimatedStateListDrawableCompat$AnimatedStateListState;->addStateSet([I Landroid/graphics/drawable/Drawable; I)I
+	73      (0000011e) move-result          v6
+	74      (00000120) return               v6
+

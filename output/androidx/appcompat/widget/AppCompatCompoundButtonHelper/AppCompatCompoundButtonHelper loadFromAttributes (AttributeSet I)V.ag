@@ -1,0 +1,93 @@
+# Landroidx/appcompat/widget/AppCompatCompoundButtonHelper;->loadFromAttributes(Landroid/util/AttributeSet; I)V [access_flags=]
+#
+# Parameters:
+# - local registers: v0...v5
+# - v6:android.util.AttributeSet
+# - v7:int
+#
+# - return:void
+
+loadFromAttributes-BB@0x0 : [ loadFromAttributes-BB@0x1a ]
+	0       (00000000) const/4              v4, 0
+	1       (00000002) iget-object          v2, v5, Landroidx/appcompat/widget/AppCompatCompoundButtonHelper;->mView Landroid/widget/CompoundButton;
+	2       (00000006) invoke-virtual       v2, Landroid/widget/CompoundButton;->getContext()Landroid/content/Context;
+	3       (0000000c) move-result-object   v2
+	4       (0000000e) sget-object          v3, Landroidx/appcompat/R$styleable;->CompoundButton [I
+	5       (00000012) invoke-virtual       v2, v6, v3, v7, v4, Landroid/content/Context;->obtainStyledAttributes(Landroid/util/AttributeSet; [I I I)Landroid/content/res/TypedArray;
+	6       (00000018) move-result-object   v0
+
+loadFromAttributes-BB@0x1a : [ loadFromAttributes-BB@0x2a loadFromAttributes-BB@0x5a ]
+	7       (0000001a) sget                 v2, Landroidx/appcompat/R$styleable;->CompoundButton_android_button I
+	8       (0000001e) invoke-virtual       v0, v2, Landroid/content/res/TypedArray;->hasValue(I)Z
+	9       (00000024) move-result          v2
+	10      (00000026) if-eqz               v2, +1a
+	1a:b1
+	(Ljava/lang/Throwable; -> ba loadFromAttributes-BB@0xba)
+
+loadFromAttributes-BB@0x2a : [ loadFromAttributes-BB@0x3c loadFromAttributes-BB@0x5a ]
+	11      (0000002a) sget                 v2, Landroidx/appcompat/R$styleable;->CompoundButton_android_button I
+	12      (0000002e) const/4              v3, 0
+	13      (00000030) invoke-virtual       v0, v2, v3, Landroid/content/res/TypedArray;->getResourceId(I I)I
+	14      (00000036) move-result          v1
+	15      (00000038) if-eqz               v1, +11
+	1a:b1
+	(Ljava/lang/Throwable; -> ba loadFromAttributes-BB@0xba)
+
+loadFromAttributes-BB@0x3c : [ loadFromAttributes-BB@0x5a ]
+	16      (0000003c) iget-object          v2, v5, Landroidx/appcompat/widget/AppCompatCompoundButtonHelper;->mView Landroid/widget/CompoundButton;
+	17      (00000040) iget-object          v3, v5, Landroidx/appcompat/widget/AppCompatCompoundButtonHelper;->mView Landroid/widget/CompoundButton;
+	18      (00000044) invoke-virtual       v3, Landroid/widget/CompoundButton;->getContext()Landroid/content/Context;
+	19      (0000004a) move-result-object   v3
+	20      (0000004c) invoke-static        v3, v1, Landroidx/appcompat/content/res/AppCompatResources;->getDrawable(Landroid/content/Context; I)Landroid/graphics/drawable/Drawable;
+	21      (00000052) move-result-object   v3
+	22      (00000054) invoke-virtual       v2, v3, Landroid/widget/CompoundButton;->setButtonDrawable(Landroid/graphics/drawable/Drawable;)V
+	1a:b1
+	(Ljava/lang/Throwable; -> ba loadFromAttributes-BB@0xba)
+
+loadFromAttributes-BB@0x5a : [ loadFromAttributes-BB@0x6a loadFromAttributes-BB@0x80 ]
+	23      (0000005a) sget                 v2, Landroidx/appcompat/R$styleable;->CompoundButton_buttonTint I
+	24      (0000005e) invoke-virtual       v0, v2, Landroid/content/res/TypedArray;->hasValue(I)Z
+	25      (00000064) move-result          v2
+	26      (00000066) if-eqz               v2, +d
+	1a:b1
+	(Ljava/lang/Throwable; -> ba loadFromAttributes-BB@0xba)
+
+loadFromAttributes-BB@0x6a : [ loadFromAttributes-BB@0x80 ]
+	27      (0000006a) iget-object          v2, v5, Landroidx/appcompat/widget/AppCompatCompoundButtonHelper;->mView Landroid/widget/CompoundButton;
+	28      (0000006e) sget                 v3, Landroidx/appcompat/R$styleable;->CompoundButton_buttonTint I
+	29      (00000072) invoke-virtual       v0, v3, Landroid/content/res/TypedArray;->getColorStateList(I)Landroid/content/res/ColorStateList;
+	30      (00000078) move-result-object   v3
+	31      (0000007a) invoke-static        v2, v3, Landroidx/core/widget/CompoundButtonCompat;->setButtonTintList(Landroid/widget/CompoundButton; Landroid/content/res/ColorStateList;)V
+	1a:b1
+	(Ljava/lang/Throwable; -> ba loadFromAttributes-BB@0xba)
+
+loadFromAttributes-BB@0x80 : [ loadFromAttributes-BB@0x90 loadFromAttributes-BB@0xb2 ]
+	32      (00000080) sget                 v2, Landroidx/appcompat/R$styleable;->CompoundButton_buttonTintMode I
+	33      (00000084) invoke-virtual       v0, v2, Landroid/content/res/TypedArray;->hasValue(I)Z
+	34      (0000008a) move-result          v2
+	35      (0000008c) if-eqz               v2, +13
+	1a:b1
+	(Ljava/lang/Throwable; -> ba loadFromAttributes-BB@0xba)
+
+loadFromAttributes-BB@0x90 : [ loadFromAttributes-BB@0xb2 ]
+	36      (00000090) iget-object          v2, v5, Landroidx/appcompat/widget/AppCompatCompoundButtonHelper;->mView Landroid/widget/CompoundButton;
+	37      (00000094) sget                 v3, Landroidx/appcompat/R$styleable;->CompoundButton_buttonTintMode I
+	38      (00000098) const/4              v4, -1
+	39      (0000009a) invoke-virtual       v0, v3, v4, Landroid/content/res/TypedArray;->getInt(I I)I
+	40      (000000a0) move-result          v3
+	41      (000000a2) const/4              v4, 0
+	42      (000000a4) invoke-static        v3, v4, Landroidx/appcompat/widget/DrawableUtils;->parseTintMode(I Landroid/graphics/PorterDuff$Mode;)Landroid/graphics/PorterDuff$Mode;
+	43      (000000aa) move-result-object   v3
+	44      (000000ac) invoke-static        v2, v3, Landroidx/core/widget/CompoundButtonCompat;->setButtonTintMode(Landroid/widget/CompoundButton; Landroid/graphics/PorterDuff$Mode;)V
+	1a:b1
+	(Ljava/lang/Throwable; -> ba loadFromAttributes-BB@0xba)
+
+loadFromAttributes-BB@0xb2 : 
+	45      (000000b2) invoke-virtual       v0, Landroid/content/res/TypedArray;->recycle()V
+	46      (000000b8) return-void          
+
+loadFromAttributes-BB@0xba : 
+	47      (000000ba) move-exception       v2
+	48      (000000bc) invoke-virtual       v0, Landroid/content/res/TypedArray;->recycle()V
+	49      (000000c2) throw                v2
+

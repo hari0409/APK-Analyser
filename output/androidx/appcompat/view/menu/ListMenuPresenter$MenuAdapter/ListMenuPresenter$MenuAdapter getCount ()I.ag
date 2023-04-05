@@ -1,0 +1,27 @@
+# Landroidx/appcompat/view/menu/ListMenuPresenter$MenuAdapter;->getCount()I [access_flags=public]
+#
+# Parameters:
+# local registers: v0...v4
+#
+# - return:int
+
+getCount-BB@0x0 : [ getCount-BB@0x2c getCount-BB@0x2e ]
+	0       (00000000) iget-object          v2, v4, Landroidx/appcompat/view/menu/ListMenuPresenter$MenuAdapter;->this$0 Landroidx/appcompat/view/menu/ListMenuPresenter;
+	1       (00000004) iget-object          v2, v2, Landroidx/appcompat/view/menu/ListMenuPresenter;->mMenu Landroidx/appcompat/view/menu/MenuBuilder;
+	2       (00000008) invoke-virtual       v2, Landroidx/appcompat/view/menu/MenuBuilder;->getNonActionItems()Ljava/util/ArrayList;
+	3       (0000000e) move-result-object   v1
+	4       (00000010) invoke-virtual       v1, Ljava/util/ArrayList;->size()I
+	5       (00000016) move-result          v2
+	6       (00000018) iget-object          v3, v4, Landroidx/appcompat/view/menu/ListMenuPresenter$MenuAdapter;->this$0 Landroidx/appcompat/view/menu/ListMenuPresenter;
+	7       (0000001c) iget                 v3, v3, Landroidx/appcompat/view/menu/ListMenuPresenter;->mItemIndexOffset I
+	8       (00000020) sub-int              v0, v2, v3
+	9       (00000024) iget                 v2, v4, Landroidx/appcompat/view/menu/ListMenuPresenter$MenuAdapter;->mExpandedIndex I
+	10      (00000028) if-gez               v2, +3
+
+getCount-BB@0x2c : 
+	11      (0000002c) return               v0
+
+getCount-BB@0x2e : [ getCount-BB@0x2c ]
+	12      (0000002e) add-int/lit8         v0, v0, -1
+	13      (00000032) goto                 -3
+

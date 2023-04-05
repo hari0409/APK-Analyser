@@ -1,0 +1,35 @@
+# Landroidx/appcompat/widget/TintTypedArray;->getDrawable(I)Landroid/graphics/drawable/Drawable; [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v3
+# - v4:int
+#
+# - return:android.graphics.drawable.Drawable
+
+getDrawable-BB@0x0 : [ getDrawable-BB@0x10 getDrawable-BB@0x30 ]
+	0       (00000000) iget-object          v1, v3, Landroidx/appcompat/widget/TintTypedArray;->mWrapped Landroid/content/res/TypedArray;
+	1       (00000004) invoke-virtual       v1, v4, Landroid/content/res/TypedArray;->hasValue(I)Z
+	2       (0000000a) move-result          v1
+	3       (0000000c) if-eqz               v1, +12
+
+getDrawable-BB@0x10 : [ getDrawable-BB@0x22 getDrawable-BB@0x30 ]
+	4       (00000010) iget-object          v1, v3, Landroidx/appcompat/widget/TintTypedArray;->mWrapped Landroid/content/res/TypedArray;
+	5       (00000014) const/4              v2, 0
+	6       (00000016) invoke-virtual       v1, v4, v2, Landroid/content/res/TypedArray;->getResourceId(I I)I
+	7       (0000001c) move-result          v0
+	8       (0000001e) if-eqz               v0, +9
+
+getDrawable-BB@0x22 : [ getDrawable-BB@0x2e ]
+	9       (00000022) iget-object          v1, v3, Landroidx/appcompat/widget/TintTypedArray;->mContext Landroid/content/Context;
+	10      (00000026) invoke-static        v1, v0, Landroidx/appcompat/content/res/AppCompatResources;->getDrawable(Landroid/content/Context; I)Landroid/graphics/drawable/Drawable;
+	11      (0000002c) move-result-object   v1
+
+getDrawable-BB@0x2e : 
+	12      (0000002e) return-object        v1
+
+getDrawable-BB@0x30 : [ getDrawable-BB@0x2e ]
+	13      (00000030) iget-object          v1, v3, Landroidx/appcompat/widget/TintTypedArray;->mWrapped Landroid/content/res/TypedArray;
+	14      (00000034) invoke-virtual       v1, v4, Landroid/content/res/TypedArray;->getDrawable(I)Landroid/graphics/drawable/Drawable;
+	15      (0000003a) move-result-object   v1
+	16      (0000003c) goto                 -7
+

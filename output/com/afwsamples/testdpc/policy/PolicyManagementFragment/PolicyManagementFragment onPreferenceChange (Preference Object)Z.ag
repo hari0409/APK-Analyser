@@ -1,0 +1,755 @@
+# Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->onPreferenceChange(Landroidx/preference/Preference; Ljava/lang/Object;)Z [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v17
+# - v18:androidx.preference.Preference
+# - v19:java.lang.Object
+#
+# - return:boolean
+
+onPreferenceChange-BB@0x0 : [ D:onPreferenceChange-BB@0x18 -1841325265:onPreferenceChange-BB@0x72 -1829820353:onPreferenceChange-BB@0x20a -1642581132:onPreferenceChange-BB@0x5e -1344698432:onPreferenceChange-BB@0x17a -1311918388:onPreferenceChange-BB@0x14a -1235509682:onPreferenceChange-BB@0x282 -1025322094:onPreferenceChange-BB@0xae -844677988:onPreferenceChange-BB@0x9a -713343563:onPreferenceChange-BB@0xd8 -602604049:onPreferenceChange-BB@0x1f2 -214228822:onPreferenceChange-BB@0xc2 -201749186:onPreferenceChange-BB@0x162 -82236213:onPreferenceChange-BB@0x192 151262635:onPreferenceChange-BB@0x1aa 239266573:onPreferenceChange-BB@0x104 359790670:onPreferenceChange-BB@0x29a 368913684:onPreferenceChange-BB@0x11a 392597729:onPreferenceChange-BB@0x1da 913138876:onPreferenceChange-BB@0x132 1060751932:onPreferenceChange-BB@0x86 1065960390:onPreferenceChange-BB@0x1c2 1251084380:onPreferenceChange-BB@0x36 1311674122:onPreferenceChange-BB@0x222 1410454924:onPreferenceChange-BB@0x23a 1484527312:onPreferenceChange-BB@0x26a 1570877159:onPreferenceChange-BB@0x4a 1595120176:onPreferenceChange-BB@0xee 1733427956:onPreferenceChange-BB@0x252 1990080633:onPreferenceChange-BB@0x22 ]
+	0       (00000000) invoke-virtual/range v18, Landroidx/preference/Preference;->getKey()Ljava/lang/String;
+	1       (00000006) move-result-object   v4
+	2       (00000008) const/4              v10, -1
+	3       (0000000a) invoke-virtual       v4, Ljava/lang/String;->hashCode()I
+	4       (00000010) move-result          v11
+	5       (00000012) sparse-switch        v11, +421 (0x854)
+
+onPreferenceChange-BB@0x18 : [ D:onPreferenceChange-BB@0x1e 0:onPreferenceChange-BB@0x2b2 1:onPreferenceChange-BB@0x2c2 2:onPreferenceChange-BB@0x2e4 3:onPreferenceChange-BB@0x306 4:onPreferenceChange-BB@0x328 5:onPreferenceChange-BB@0x34a 6:onPreferenceChange-BB@0x36c 7:onPreferenceChange-BB@0x38e 8:onPreferenceChange-BB@0x3b4 9:onPreferenceChange-BB@0x3d6 10:onPreferenceChange-BB@0x3f8 11:onPreferenceChange-BB@0x426 12:onPreferenceChange-BB@0x462 13:onPreferenceChange-BB@0x4ac 14:onPreferenceChange-BB@0x4e4 15:onPreferenceChange-BB@0x52e 16:onPreferenceChange-BB@0x566 17:onPreferenceChange-BB@0x592 18:onPreferenceChange-BB@0x5be 19:onPreferenceChange-BB@0x60c 20:onPreferenceChange-BB@0x63a 21:onPreferenceChange-BB@0x684 22:onPreferenceChange-BB@0x6b8 23:onPreferenceChange-BB@0x6d4 24:onPreferenceChange-BB@0x6f0 25:onPreferenceChange-BB@0x742 26:onPreferenceChange-BB@0x780 27:onPreferenceChange-BB@0x7ec 28:onPreferenceChange-BB@0x81a ]
+	6       (00000018) packed-switch        v10, +494 (0x940)
+
+onPreferenceChange-BB@0x1e : [ onPreferenceChange-BB@0x20 ]
+	7       (0000001e) const/4              v10, 0
+
+onPreferenceChange-BB@0x20 : 
+	8       (00000020) return               v10
+
+onPreferenceChange-BB@0x22 : [ onPreferenceChange-BB@0x32 onPreferenceChange-BB@0x18 ]
+	9       (00000022) const-string         v11, 'override_key_selection'
+	10      (00000026) invoke-virtual       v4, v11, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+	11      (0000002c) move-result          v11
+	12      (0000002e) if-eqz               v11, -b
+
+onPreferenceChange-BB@0x32 : [ onPreferenceChange-BB@0x18 ]
+	13      (00000032) const/4              v10, 0
+	14      (00000034) goto                 -e
+
+onPreferenceChange-BB@0x36 : [ onPreferenceChange-BB@0x46 onPreferenceChange-BB@0x18 ]
+	15      (00000036) const-string         v11, 'disable_camera'
+	16      (0000003a) invoke-virtual       v4, v11, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+	17      (00000040) move-result          v11
+	18      (00000042) if-eqz               v11, -15
+
+onPreferenceChange-BB@0x46 : [ onPreferenceChange-BB@0x18 ]
+	19      (00000046) const/4              v10, 1
+	20      (00000048) goto                 -18
+
+onPreferenceChange-BB@0x4a : [ onPreferenceChange-BB@0x5a onPreferenceChange-BB@0x18 ]
+	21      (0000004a) const-string         v11, 'disable_camera_on_parent'
+	22      (0000004e) invoke-virtual       v4, v11, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+	23      (00000054) move-result          v11
+	24      (00000056) if-eqz               v11, -1f
+
+onPreferenceChange-BB@0x5a : [ onPreferenceChange-BB@0x18 ]
+	25      (0000005a) const/4              v10, 2
+	26      (0000005c) goto                 -22
+
+onPreferenceChange-BB@0x5e : [ onPreferenceChange-BB@0x6e onPreferenceChange-BB@0x18 ]
+	27      (0000005e) const-string         v11, 'enable_backup_service'
+	28      (00000062) invoke-virtual       v4, v11, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+	29      (00000068) move-result          v11
+	30      (0000006a) if-eqz               v11, -29
+
+onPreferenceChange-BB@0x6e : [ onPreferenceChange-BB@0x18 ]
+	31      (0000006e) const/4              v10, 3
+	32      (00000070) goto                 -2c
+
+onPreferenceChange-BB@0x72 : [ onPreferenceChange-BB@0x82 onPreferenceChange-BB@0x18 ]
+	33      (00000072) const-string         v11, 'common_criteria_mode'
+	34      (00000076) invoke-virtual       v4, v11, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+	35      (0000007c) move-result          v11
+	36      (0000007e) if-eqz               v11, -33
+
+onPreferenceChange-BB@0x82 : [ onPreferenceChange-BB@0x18 ]
+	37      (00000082) const/4              v10, 4
+	38      (00000084) goto                 -36
+
+onPreferenceChange-BB@0x86 : [ onPreferenceChange-BB@0x96 onPreferenceChange-BB@0x18 ]
+	39      (00000086) const-string         v11, 'enable_usb_data_signaling'
+	40      (0000008a) invoke-virtual       v4, v11, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+	41      (00000090) move-result          v11
+	42      (00000092) if-eqz               v11, -3d
+
+onPreferenceChange-BB@0x96 : [ onPreferenceChange-BB@0x18 ]
+	43      (00000096) const/4              v10, 5
+	44      (00000098) goto                 -40
+
+onPreferenceChange-BB@0x9a : [ onPreferenceChange-BB@0xaa onPreferenceChange-BB@0x18 ]
+	45      (0000009a) const-string         v11, 'enable_security_logging'
+	46      (0000009e) invoke-virtual       v4, v11, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+	47      (000000a4) move-result          v11
+	48      (000000a6) if-eqz               v11, -47
+
+onPreferenceChange-BB@0xaa : [ onPreferenceChange-BB@0x18 ]
+	49      (000000aa) const/4              v10, 6
+	50      (000000ac) goto                 -4a
+
+onPreferenceChange-BB@0xae : [ onPreferenceChange-BB@0xbe onPreferenceChange-BB@0x18 ]
+	51      (000000ae) const-string         v11, 'enable_network_logging'
+	52      (000000b2) invoke-virtual       v4, v11, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+	53      (000000b8) move-result          v11
+	54      (000000ba) if-eqz               v11, -51
+
+onPreferenceChange-BB@0xbe : [ onPreferenceChange-BB@0x18 ]
+	55      (000000be) const/4              v10, 7
+	56      (000000c0) goto                 -54
+
+onPreferenceChange-BB@0xc2 : [ onPreferenceChange-BB@0xd2 onPreferenceChange-BB@0x18 ]
+	57      (000000c2) const-string         v11, 'disable_screen_capture'
+	58      (000000c6) invoke-virtual       v4, v11, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+	59      (000000cc) move-result          v11
+	60      (000000ce) if-eqz               v11, -5b
+
+onPreferenceChange-BB@0xd2 : [ onPreferenceChange-BB@0x18 ]
+	61      (000000d2) const/16             v10, 8
+	62      (000000d6) goto                 -5f
+
+onPreferenceChange-BB@0xd8 : [ onPreferenceChange-BB@0xe8 onPreferenceChange-BB@0x18 ]
+	63      (000000d8) const-string         v11, 'disable_screen_capture_on_parent'
+	64      (000000dc) invoke-virtual       v4, v11, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+	65      (000000e2) move-result          v11
+	66      (000000e4) if-eqz               v11, -66
+
+onPreferenceChange-BB@0xe8 : [ onPreferenceChange-BB@0x18 ]
+	67      (000000e8) const/16             v10, 9
+	68      (000000ec) goto                 -6a
+
+onPreferenceChange-BB@0xee : [ onPreferenceChange-BB@0xfe onPreferenceChange-BB@0x18 ]
+	69      (000000ee) const-string         v11, 'mute_audio'
+	70      (000000f2) invoke-virtual       v4, v11, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+	71      (000000f8) move-result          v11
+	72      (000000fa) if-eqz               v11, -71
+
+onPreferenceChange-BB@0xfe : [ onPreferenceChange-BB@0x18 ]
+	73      (000000fe) const/16             v10, 10
+	74      (00000102) goto                 -75
+
+onPreferenceChange-BB@0x104 : [ onPreferenceChange-BB@0x114 onPreferenceChange-BB@0x18 ]
+	75      (00000104) const-string         v11, 'set_get_preferential_network_service_status'
+	76      (00000108) invoke-virtual       v4, v11, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+	77      (0000010e) move-result          v11
+	78      (00000110) if-eqz               v11, -7c
+
+onPreferenceChange-BB@0x114 : [ onPreferenceChange-BB@0x18 ]
+	79      (00000114) const/16             v10, 11
+	80      (00000118) goto                 -80
+
+onPreferenceChange-BB@0x11a : [ onPreferenceChange-BB@0x12a onPreferenceChange-BB@0x18 ]
+	81      (0000011a) const-string         v11, 'stay_on_while_plugged_in'
+	82      (0000011e) invoke-virtual       v4, v11, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+	83      (00000124) move-result          v11
+	84      (00000126) if-eqz               v11, -87
+
+onPreferenceChange-BB@0x12a : [ onPreferenceChange-BB@0x18 ]
+	85      (0000012a) const/16             v10, 12
+	86      (0000012e) goto/16              -8b
+
+onPreferenceChange-BB@0x132 : [ onPreferenceChange-BB@0x142 onPreferenceChange-BB@0x18 ]
+	87      (00000132) const-string         v11, 'enable_wifi_config_lockdown'
+	88      (00000136) invoke-virtual       v4, v11, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+	89      (0000013c) move-result          v11
+	90      (0000013e) if-eqz               v11, -93
+
+onPreferenceChange-BB@0x142 : [ onPreferenceChange-BB@0x18 ]
+	91      (00000142) const/16             v10, 13
+	92      (00000146) goto/16              -97
+
+onPreferenceChange-BB@0x14a : [ onPreferenceChange-BB@0x15a onPreferenceChange-BB@0x18 ]
+	93      (0000014a) const-string         v11, 'install_nonmarket_apps'
+	94      (0000014e) invoke-virtual       v4, v11, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+	95      (00000154) move-result          v11
+	96      (00000156) if-eqz               v11, -9f
+
+onPreferenceChange-BB@0x15a : [ onPreferenceChange-BB@0x18 ]
+	97      (0000015a) const/16             v10, 14
+	98      (0000015e) goto/16              -a3
+
+onPreferenceChange-BB@0x162 : [ onPreferenceChange-BB@0x172 onPreferenceChange-BB@0x18 ]
+	99      (00000162) const-string         v11, 'set_auto_time_required'
+	100     (00000166) invoke-virtual       v4, v11, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+	101     (0000016c) move-result          v11
+	102     (0000016e) if-eqz               v11, -ab
+
+onPreferenceChange-BB@0x172 : [ onPreferenceChange-BB@0x18 ]
+	103     (00000172) const/16             v10, 15
+	104     (00000176) goto/16              -af
+
+onPreferenceChange-BB@0x17a : [ onPreferenceChange-BB@0x18a onPreferenceChange-BB@0x18 ]
+	105     (0000017a) const-string         v11, 'set_auto_time'
+	106     (0000017e) invoke-virtual       v4, v11, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+	107     (00000184) move-result          v11
+	108     (00000186) if-eqz               v11, -b7
+
+onPreferenceChange-BB@0x18a : [ onPreferenceChange-BB@0x18 ]
+	109     (0000018a) const/16             v10, 16
+	110     (0000018e) goto/16              -bb
+
+onPreferenceChange-BB@0x192 : [ onPreferenceChange-BB@0x1a2 onPreferenceChange-BB@0x18 ]
+	111     (00000192) const-string         v11, 'set_auto_time_zone'
+	112     (00000196) invoke-virtual       v4, v11, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+	113     (0000019c) move-result          v11
+	114     (0000019e) if-eqz               v11, -c3
+
+onPreferenceChange-BB@0x1a2 : [ onPreferenceChange-BB@0x18 ]
+	115     (000001a2) const/16             v10, 17
+	116     (000001a6) goto/16              -c7
+
+onPreferenceChange-BB@0x1aa : [ onPreferenceChange-BB@0x1ba onPreferenceChange-BB@0x18 ]
+	117     (000001aa) const-string         v11, 'set_device_organization_name'
+	118     (000001ae) invoke-virtual       v4, v11, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+	119     (000001b4) move-result          v11
+	120     (000001b6) if-eqz               v11, -cf
+
+onPreferenceChange-BB@0x1ba : [ onPreferenceChange-BB@0x18 ]
+	121     (000001ba) const/16             v10, 18
+	122     (000001be) goto/16              -d3
+
+onPreferenceChange-BB@0x1c2 : [ onPreferenceChange-BB@0x1d2 onPreferenceChange-BB@0x18 ]
+	123     (000001c2) const-string         v11, 'enable_logout'
+	124     (000001c6) invoke-virtual       v4, v11, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+	125     (000001cc) move-result          v11
+	126     (000001ce) if-eqz               v11, -db
+
+onPreferenceChange-BB@0x1d2 : [ onPreferenceChange-BB@0x18 ]
+	127     (000001d2) const/16             v10, 19
+	128     (000001d6) goto/16              -df
+
+onPreferenceChange-BB@0x1da : [ onPreferenceChange-BB@0x1ea onPreferenceChange-BB@0x18 ]
+	129     (000001da) const-string         v11, 'auto_brightness'
+	130     (000001de) invoke-virtual       v4, v11, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+	131     (000001e4) move-result          v11
+	132     (000001e6) if-eqz               v11, -e7
+
+onPreferenceChange-BB@0x1ea : [ onPreferenceChange-BB@0x18 ]
+	133     (000001ea) const/16             v10, 20
+	134     (000001ee) goto/16              -eb
+
+onPreferenceChange-BB@0x1f2 : [ onPreferenceChange-BB@0x202 onPreferenceChange-BB@0x18 ]
+	135     (000001f2) const-string         v11, 'set_new_password_with_complexity'
+	136     (000001f6) invoke-virtual       v4, v11, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+	137     (000001fc) move-result          v11
+	138     (000001fe) if-eqz               v11, -f3
+
+onPreferenceChange-BB@0x202 : [ onPreferenceChange-BB@0x18 ]
+	139     (00000202) const/16             v10, 21
+	140     (00000206) goto/16              -f7
+
+onPreferenceChange-BB@0x20a : [ onPreferenceChange-BB@0x21a onPreferenceChange-BB@0x18 ]
+	141     (0000020a) const-string         v11, 'set_required_password_complexity'
+	142     (0000020e) invoke-virtual       v4, v11, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+	143     (00000214) move-result          v11
+	144     (00000216) if-eqz               v11, -ff
+
+onPreferenceChange-BB@0x21a : [ onPreferenceChange-BB@0x18 ]
+	145     (0000021a) const/16             v10, 22
+	146     (0000021e) goto/16              -103
+
+onPreferenceChange-BB@0x222 : [ onPreferenceChange-BB@0x232 onPreferenceChange-BB@0x18 ]
+	147     (00000222) const-string         v11, 'set_required_password_complexity_on_parent'
+	148     (00000226) invoke-virtual       v4, v11, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+	149     (0000022c) move-result          v11
+	150     (0000022e) if-eqz               v11, -10b
+
+onPreferenceChange-BB@0x232 : [ onPreferenceChange-BB@0x18 ]
+	151     (00000232) const/16             v10, 23
+	152     (00000236) goto/16              -10f
+
+onPreferenceChange-BB@0x23a : [ onPreferenceChange-BB@0x24a onPreferenceChange-BB@0x18 ]
+	153     (0000023a) const-string         v11, 'app_feedback_notifications'
+	154     (0000023e) invoke-virtual       v4, v11, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+	155     (00000244) move-result          v11
+	156     (00000246) if-eqz               v11, -117
+
+onPreferenceChange-BB@0x24a : [ onPreferenceChange-BB@0x18 ]
+	157     (0000024a) const/16             v10, 24
+	158     (0000024e) goto/16              -11b
+
+onPreferenceChange-BB@0x252 : [ onPreferenceChange-BB@0x262 onPreferenceChange-BB@0x18 ]
+	159     (00000252) const-string         v11, 'set_location_enabled'
+	160     (00000256) invoke-virtual       v4, v11, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+	161     (0000025c) move-result          v11
+	162     (0000025e) if-eqz               v11, -123
+
+onPreferenceChange-BB@0x262 : [ onPreferenceChange-BB@0x18 ]
+	163     (00000262) const/16             v10, 25
+	164     (00000266) goto/16              -127
+
+onPreferenceChange-BB@0x26a : [ onPreferenceChange-BB@0x27a onPreferenceChange-BB@0x18 ]
+	165     (0000026a) const-string         v11, 'set_location_mode'
+	166     (0000026e) invoke-virtual       v4, v11, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+	167     (00000274) move-result          v11
+	168     (00000276) if-eqz               v11, -12f
+
+onPreferenceChange-BB@0x27a : [ onPreferenceChange-BB@0x18 ]
+	169     (0000027a) const/16             v10, 26
+	170     (0000027e) goto/16              -133
+
+onPreferenceChange-BB@0x282 : [ onPreferenceChange-BB@0x292 onPreferenceChange-BB@0x18 ]
+	171     (00000282) const-string         v11, 'suspend_personal_apps'
+	172     (00000286) invoke-virtual       v4, v11, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+	173     (0000028c) move-result          v11
+	174     (0000028e) if-eqz               v11, -13b
+
+onPreferenceChange-BB@0x292 : [ onPreferenceChange-BB@0x18 ]
+	175     (00000292) const/16             v10, 27
+	176     (00000296) goto/16              -13f
+
+onPreferenceChange-BB@0x29a : [ onPreferenceChange-BB@0x2aa onPreferenceChange-BB@0x18 ]
+	177     (0000029a) const-string         v11, 'profile_max_time_off'
+	178     (0000029e) invoke-virtual       v4, v11, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+	179     (000002a4) move-result          v11
+	180     (000002a6) if-eqz               v11, -147
+
+onPreferenceChange-BB@0x2aa : [ onPreferenceChange-BB@0x18 ]
+	181     (000002aa) const/16             v10, 28
+	182     (000002ae) goto/16              -14b
+
+onPreferenceChange-BB@0x2b2 : [ onPreferenceChange-BB@0x20 ]
+	183     (000002b2) check-cast           v19, Ljava/lang/String;
+	184     (000002b6) invoke-virtual/range v18 ... v19, Landroidx/preference/Preference;->setSummary(Ljava/lang/CharSequence;)V
+	185     (000002bc) const/4              v10, 1
+	186     (000002be) goto/16              -14f
+
+onPreferenceChange-BB@0x2c2 : [ onPreferenceChange-BB@0x20 ]
+	187     (000002c2) check-cast           v19, Ljava/lang/Boolean;
+	188     (000002c6) invoke-virtual/range v19, Ljava/lang/Boolean;->booleanValue()Z
+	189     (000002cc) move-result          v10
+	190     (000002ce) move-object/from16   v0, v17
+	191     (000002d2) invoke-direct        v0, v10, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->setCameraDisabled(Z)V
+	192     (000002d8) invoke-direct/range  v17, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->reloadCameraDisableUi()V
+	193     (000002de) const/4              v10, 1
+	194     (000002e0) goto/16              -160
+
+onPreferenceChange-BB@0x2e4 : [ onPreferenceChange-BB@0x20 ]
+	195     (000002e4) check-cast           v19, Ljava/lang/Boolean;
+	196     (000002e8) invoke-virtual/range v19, Ljava/lang/Boolean;->booleanValue()Z
+	197     (000002ee) move-result          v10
+	198     (000002f0) move-object/from16   v0, v17
+	199     (000002f4) invoke-direct        v0, v10, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->setCameraDisabledOnParent(Z)V
+	200     (000002fa) invoke-direct/range  v17, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->reloadCameraDisableOnParentUi()V
+	201     (00000300) const/4              v10, 1
+	202     (00000302) goto/16              -171
+
+onPreferenceChange-BB@0x306 : [ onPreferenceChange-BB@0x20 ]
+	203     (00000306) check-cast           v19, Ljava/lang/Boolean;
+	204     (0000030a) invoke-virtual/range v19, Ljava/lang/Boolean;->booleanValue()Z
+	205     (00000310) move-result          v10
+	206     (00000312) move-object/from16   v0, v17
+	207     (00000316) invoke-direct        v0, v10, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->setBackupServiceEnabled(Z)V
+	208     (0000031c) invoke-direct/range  v17, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->reloadEnableBackupServiceUi()V
+	209     (00000322) const/4              v10, 1
+	210     (00000324) goto/16              -182
+
+onPreferenceChange-BB@0x328 : [ onPreferenceChange-BB@0x20 ]
+	211     (00000328) check-cast           v19, Ljava/lang/Boolean;
+	212     (0000032c) invoke-virtual/range v19, Ljava/lang/Boolean;->booleanValue()Z
+	213     (00000332) move-result          v10
+	214     (00000334) move-object/from16   v0, v17
+	215     (00000338) invoke-direct        v0, v10, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->setCommonCriteriaModeEnabled(Z)V
+	216     (0000033e) invoke-direct/range  v17, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->reloadCommonCriteriaModeUi()V
+	217     (00000344) const/4              v10, 1
+	218     (00000346) goto/16              -193
+
+onPreferenceChange-BB@0x34a : [ onPreferenceChange-BB@0x20 ]
+	219     (0000034a) check-cast           v19, Ljava/lang/Boolean;
+	220     (0000034e) invoke-virtual/range v19, Ljava/lang/Boolean;->booleanValue()Z
+	221     (00000354) move-result          v10
+	222     (00000356) move-object/from16   v0, v17
+	223     (0000035a) invoke-direct        v0, v10, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->setUsbDataSignalingEnabled(Z)V
+	224     (00000360) invoke-direct/range  v17, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->reloadEnableUsbDataSignalingUi()V
+	225     (00000366) const/4              v10, 1
+	226     (00000368) goto/16              -1a4
+
+onPreferenceChange-BB@0x36c : [ onPreferenceChange-BB@0x20 ]
+	227     (0000036c) check-cast           v19, Ljava/lang/Boolean;
+	228     (00000370) invoke-virtual/range v19, Ljava/lang/Boolean;->booleanValue()Z
+	229     (00000376) move-result          v10
+	230     (00000378) move-object/from16   v0, v17
+	231     (0000037c) invoke-direct        v0, v10, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->setSecurityLoggingEnabled(Z)V
+	232     (00000382) invoke-direct/range  v17, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->reloadEnableSecurityLoggingUi()V
+	233     (00000388) const/4              v10, 1
+	234     (0000038a) goto/16              -1b5
+
+onPreferenceChange-BB@0x38e : [ onPreferenceChange-BB@0x20 ]
+	235     (0000038e) move-object/from16   v0, v17
+	236     (00000392) iget-object          v10, v0, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->mDevicePolicyManagerGateway Lcom/afwsamples/testdpc/DevicePolicyManagerGateway;
+	237     (00000396) check-cast           v19, Ljava/lang/Boolean;
+	238     (0000039a) invoke-virtual/range v19, Ljava/lang/Boolean;->booleanValue()Z
+	239     (000003a0) move-result          v11
+	240     (000003a2) invoke-interface     v10, v11, Lcom/afwsamples/testdpc/DevicePolicyManagerGateway;->setNetworkLogging(Z)V
+	241     (000003a8) invoke-direct/range  v17, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->reloadEnableNetworkLoggingUi()V
+	242     (000003ae) const/4              v10, 1
+	243     (000003b0) goto/16              -1c8
+
+onPreferenceChange-BB@0x3b4 : [ onPreferenceChange-BB@0x20 ]
+	244     (000003b4) check-cast           v19, Ljava/lang/Boolean;
+	245     (000003b8) invoke-virtual/range v19, Ljava/lang/Boolean;->booleanValue()Z
+	246     (000003be) move-result          v10
+	247     (000003c0) move-object/from16   v0, v17
+	248     (000003c4) invoke-direct        v0, v10, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->setScreenCaptureDisabled(Z)V
+	249     (000003ca) invoke-direct/range  v17, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->reloadScreenCaptureDisableUi()V
+	250     (000003d0) const/4              v10, 1
+	251     (000003d2) goto/16              -1d9
+
+onPreferenceChange-BB@0x3d6 : [ onPreferenceChange-BB@0x20 ]
+	252     (000003d6) check-cast           v19, Ljava/lang/Boolean;
+	253     (000003da) invoke-virtual/range v19, Ljava/lang/Boolean;->booleanValue()Z
+	254     (000003e0) move-result          v10
+	255     (000003e2) move-object/from16   v0, v17
+	256     (000003e6) invoke-direct        v0, v10, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->setScreenCaptureDisabledOnParent(Z)V
+	257     (000003ec) invoke-direct/range  v17, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->reloadScreenCaptureDisableOnParentUi()V
+	258     (000003f2) const/4              v10, 1
+	259     (000003f4) goto/16              -1ea
+
+onPreferenceChange-BB@0x3f8 : [ onPreferenceChange-BB@0x20 ]
+	260     (000003f8) move-object/from16   v0, v17
+	261     (000003fc) iget-object          v10, v0, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->mDevicePolicyManager Landroid/app/admin/DevicePolicyManager;
+	262     (00000400) move-object/from16   v0, v17
+	263     (00000404) iget-object          v11, v0, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->mAdminComponentName Landroid/content/ComponentName;
+	264     (00000408) check-cast           v19, Ljava/lang/Boolean;
+	265     (0000040c) invoke-virtual/range v19, Ljava/lang/Boolean;->booleanValue()Z
+	266     (00000412) move-result          v12
+	267     (00000414) invoke-virtual       v10, v11, v12, Landroid/app/admin/DevicePolicyManager;->setMasterVolumeMuted(Landroid/content/ComponentName; Z)V
+	268     (0000041a) invoke-direct/range  v17, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->reloadMuteAudioUi()V
+	269     (00000420) const/4              v10, 1
+	270     (00000422) goto/16              -201
+
+onPreferenceChange-BB@0x426 : [ onPreferenceChange-BB@0x20 ]
+	271     (00000426) move-object/from16   v0, v17
+	272     (0000042a) iget-object          v10, v0, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->mDevicePolicyManagerGateway Lcom/afwsamples/testdpc/DevicePolicyManagerGateway;
+	273     (0000042e) check-cast           v19, Ljava/lang/Boolean;
+	274     (00000432) invoke-virtual/range v19, Ljava/lang/Boolean;->booleanValue()Z
+	275     (00000438) move-result          v11
+	276     (0000043a) new-instance         v12, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment$$Lambda$27;
+	277     (0000043e) move-object/from16   v0, v17
+	278     (00000442) invoke-direct        v12, v0, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment$$Lambda$27;-><init>(Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;)V
+	279     (00000448) new-instance         v13, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment$$Lambda$28;
+	280     (0000044c) move-object/from16   v0, v17
+	281     (00000450) invoke-direct        v13, v0, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment$$Lambda$28;-><init>(Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;)V
+	282     (00000456) invoke-interface     v10, v11, v12, v13, Lcom/afwsamples/testdpc/DevicePolicyManagerGateway;->setPreferentialNetworkServiceEnabled(Z Ljava/util/function/Consumer; Ljava/util/function/Consumer;)V
+	283     (0000045c) const/4              v10, 1
+	284     (0000045e) goto/16              -21f
+
+onPreferenceChange-BB@0x462 : [ onPreferenceChange-BB@0x490 onPreferenceChange-BB@0x4a6 ]
+	285     (00000462) move-object/from16   v0, v17
+	286     (00000466) iget-object          v11, v0, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->mDevicePolicyManager Landroid/app/admin/DevicePolicyManager;
+	287     (0000046a) move-object/from16   v0, v17
+	288     (0000046e) iget-object          v12, v0, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->mAdminComponentName Landroid/content/ComponentName;
+	289     (00000472) const-string         v13, 'stay_on_while_plugged_in'
+	290     (00000476) const/4              v10, 1
+	291     (00000478) invoke-static        v10, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+	292     (0000047e) move-result-object   v10
+	293     (00000480) move-object/from16   v0, v19
+	294     (00000484) invoke-virtual       v0, v10, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
+	295     (0000048a) move-result          v10
+	296     (0000048c) if-eqz               v10, +d
+
+onPreferenceChange-BB@0x490 : [ onPreferenceChange-BB@0x494 ]
+	297     (00000490) sget-object          v10, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->BATTERY_PLUGGED_ANY Ljava/lang/String;
+
+onPreferenceChange-BB@0x494 : [ onPreferenceChange-BB@0x20 ]
+	298     (00000494) invoke-virtual       v11, v12, v13, v10, Landroid/app/admin/DevicePolicyManager;->setGlobalSetting(Landroid/content/ComponentName; Ljava/lang/String; Ljava/lang/String;)V
+	299     (0000049a) invoke-direct/range  v17, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->updateStayOnWhilePluggedInPreference()V
+	300     (000004a0) const/4              v10, 1
+	301     (000004a2) goto/16              -241
+
+onPreferenceChange-BB@0x4a6 : [ onPreferenceChange-BB@0x494 ]
+	302     (000004a6) sget-object          v10, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->DONT_STAY_ON Ljava/lang/String;
+	303     (000004aa) goto                 -b
+
+onPreferenceChange-BB@0x4ac : [ onPreferenceChange-BB@0x20 ]
+	304     (000004ac) move-object/from16   v0, v17
+	305     (000004b0) iget-object          v10, v0, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->mDevicePolicyManager Landroid/app/admin/DevicePolicyManager;
+	306     (000004b4) move-object/from16   v0, v17
+	307     (000004b8) iget-object          v11, v0, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->mAdminComponentName Landroid/content/ComponentName;
+	308     (000004bc) const/4              v12, 1
+	309     (000004be) invoke-static        v12, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+	310     (000004c4) move-result-object   v12
+	311     (000004c6) move-object/from16   v0, v19
+	312     (000004ca) invoke-virtual       v0, v12, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
+	313     (000004d0) move-result          v12
+	314     (000004d2) invoke-virtual       v10, v11, v12, Landroid/app/admin/DevicePolicyManager;->setConfiguredNetworksLockdownState(Landroid/content/ComponentName; Z)V
+	315     (000004d8) invoke-direct/range  v17, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->reloadLockdownAdminConfiguredNetworksUi()V
+	316     (000004de) const/4              v10, 1
+	317     (000004e0) goto/16              -260
+
+onPreferenceChange-BB@0x4e4 : [ onPreferenceChange-BB@0x512 onPreferenceChange-BB@0x528 ]
+	318     (000004e4) move-object/from16   v0, v17
+	319     (000004e8) iget-object          v11, v0, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->mDevicePolicyManager Landroid/app/admin/DevicePolicyManager;
+	320     (000004ec) move-object/from16   v0, v17
+	321     (000004f0) iget-object          v12, v0, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->mAdminComponentName Landroid/content/ComponentName;
+	322     (000004f4) const-string         v13, 'install_non_market_apps'
+	323     (000004f8) const/4              v10, 1
+	324     (000004fa) invoke-static        v10, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+	325     (00000500) move-result-object   v10
+	326     (00000502) move-object/from16   v0, v19
+	327     (00000506) invoke-virtual       v0, v10, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
+	328     (0000050c) move-result          v10
+	329     (0000050e) if-eqz               v10, +d
+
+onPreferenceChange-BB@0x512 : [ onPreferenceChange-BB@0x516 ]
+	330     (00000512) const-string         v10, '1'
+
+onPreferenceChange-BB@0x516 : [ onPreferenceChange-BB@0x20 ]
+	331     (00000516) invoke-virtual       v11, v12, v13, v10, Landroid/app/admin/DevicePolicyManager;->setSecureSetting(Landroid/content/ComponentName; Ljava/lang/String; Ljava/lang/String;)V
+	332     (0000051c) invoke-virtual/range v17, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->updateInstallNonMarketAppsPreference()V
+	333     (00000522) const/4              v10, 1
+	334     (00000524) goto/16              -282
+
+onPreferenceChange-BB@0x528 : [ onPreferenceChange-BB@0x516 ]
+	335     (00000528) const-string         v10, '0'
+	336     (0000052c) goto                 -b
+
+onPreferenceChange-BB@0x52e : [ onPreferenceChange-BB@0x20 ]
+	337     (0000052e) move-object/from16   v0, v17
+	338     (00000532) iget-object          v10, v0, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->mDevicePolicyManager Landroid/app/admin/DevicePolicyManager;
+	339     (00000536) move-object/from16   v0, v17
+	340     (0000053a) iget-object          v11, v0, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->mAdminComponentName Landroid/content/ComponentName;
+	341     (0000053e) const/4              v12, 1
+	342     (00000540) invoke-static        v12, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+	343     (00000546) move-result-object   v12
+	344     (00000548) move-object/from16   v0, v19
+	345     (0000054c) invoke-virtual       v0, v12, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
+	346     (00000552) move-result          v12
+	347     (00000554) invoke-virtual       v10, v11, v12, Landroid/app/admin/DevicePolicyManager;->setAutoTimeRequired(Landroid/content/ComponentName; Z)V
+	348     (0000055a) invoke-direct/range  v17, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->reloadSetAutoTimeRequiredUi()V
+	349     (00000560) const/4              v10, 1
+	350     (00000562) goto/16              -2a1
+
+onPreferenceChange-BB@0x566 : [ onPreferenceChange-BB@0x20 ]
+	351     (00000566) const/4              v10, 1
+	352     (00000568) invoke-static        v10, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+	353     (0000056e) move-result-object   v10
+	354     (00000570) move-object/from16   v0, v19
+	355     (00000574) invoke-virtual       v0, v10, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
+	356     (0000057a) move-result          v10
+	357     (0000057c) move-object/from16   v0, v17
+	358     (00000580) invoke-direct        v0, v10, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->setAutoTimeEnabled(Z)V
+	359     (00000586) invoke-direct/range  v17, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->reloadSetAutoTimeUi()V
+	360     (0000058c) const/4              v10, 1
+	361     (0000058e) goto/16              -2b7
+
+onPreferenceChange-BB@0x592 : [ onPreferenceChange-BB@0x20 ]
+	362     (00000592) const/4              v10, 1
+	363     (00000594) invoke-static        v10, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+	364     (0000059a) move-result-object   v10
+	365     (0000059c) move-object/from16   v0, v19
+	366     (000005a0) invoke-virtual       v0, v10, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
+	367     (000005a6) move-result          v10
+	368     (000005a8) move-object/from16   v0, v17
+	369     (000005ac) invoke-direct        v0, v10, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->setAutoTimeZoneEnabled(Z)V
+	370     (000005b2) invoke-direct/range  v17, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->reloadSetAutoTimeZoneUi()V
+	371     (000005b8) const/4              v10, 1
+	372     (000005ba) goto/16              -2cd
+
+onPreferenceChange-BB@0x5be : [ onPreferenceChange-BB@0x20 ]
+	373     (000005be) move-object/from16   v0, v17
+	374     (000005c2) iget-object          v11, v0, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->mDevicePolicyManagerGateway Lcom/afwsamples/testdpc/DevicePolicyManagerGateway;
+	375     (000005c6) move-object/from16   v10, v19
+	376     (000005ca) check-cast           v10, Ljava/lang/String;
+	377     (000005ce) new-instance         v12, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment$$Lambda$29;
+	378     (000005d2) move-object/from16   v0, v17
+	379     (000005d6) invoke-direct        v12, v0, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment$$Lambda$29;-><init>(Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;)V
+	380     (000005dc) new-instance         v13, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment$$Lambda$30;
+	381     (000005e0) move-object/from16   v0, v17
+	382     (000005e4) invoke-direct        v13, v0, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment$$Lambda$30;-><init>(Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;)V
+	383     (000005ea) invoke-interface     v11, v10, v12, v13, Lcom/afwsamples/testdpc/DevicePolicyManagerGateway;->setOrganizationName(Ljava/lang/CharSequence; Ljava/util/function/Consumer; Ljava/util/function/Consumer;)V
+	384     (000005f0) move-object/from16   v0, v17
+	385     (000005f4) iget-object          v10, v0, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->mSetDeviceOrganizationNamePreference Landroidx/preference/Preference;
+	386     (000005f8) check-cast           v19, Ljava/lang/String;
+	387     (000005fc) move-object/from16   v0, v19
+	388     (00000600) invoke-virtual       v10, v0, Landroidx/preference/Preference;->setSummary(Ljava/lang/CharSequence;)V
+	389     (00000606) const/4              v10, 1
+	390     (00000608) goto/16              -2f4
+
+onPreferenceChange-BB@0x60c : [ onPreferenceChange-BB@0x20 ]
+	391     (0000060c) move-object/from16   v0, v17
+	392     (00000610) iget-object          v10, v0, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->mDevicePolicyManager Landroid/app/admin/DevicePolicyManager;
+	393     (00000614) move-object/from16   v0, v17
+	394     (00000618) iget-object          v11, v0, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->mAdminComponentName Landroid/content/ComponentName;
+	395     (0000061c) check-cast           v19, Ljava/lang/Boolean;
+	396     (00000620) invoke-virtual/range v19, Ljava/lang/Boolean;->booleanValue()Z
+	397     (00000626) move-result          v12
+	398     (00000628) invoke-virtual       v10, v11, v12, Landroid/app/admin/DevicePolicyManager;->setLogoutEnabled(Landroid/content/ComponentName; Z)V
+	399     (0000062e) invoke-direct/range  v17, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->reloadEnableLogoutUi()V
+	400     (00000634) const/4              v10, 1
+	401     (00000636) goto/16              -30b
+
+onPreferenceChange-BB@0x63a : [ onPreferenceChange-BB@0x668 onPreferenceChange-BB@0x67e ]
+	402     (0000063a) move-object/from16   v0, v17
+	403     (0000063e) iget-object          v11, v0, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->mDevicePolicyManager Landroid/app/admin/DevicePolicyManager;
+	404     (00000642) move-object/from16   v0, v17
+	405     (00000646) iget-object          v12, v0, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->mAdminComponentName Landroid/content/ComponentName;
+	406     (0000064a) const-string         v13, 'screen_brightness_mode'
+	407     (0000064e) const/4              v10, 1
+	408     (00000650) invoke-static        v10, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+	409     (00000656) move-result-object   v10
+	410     (00000658) move-object/from16   v0, v19
+	411     (0000065c) invoke-virtual       v0, v10, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
+	412     (00000662) move-result          v10
+	413     (00000664) if-eqz               v10, +d
+
+onPreferenceChange-BB@0x668 : [ onPreferenceChange-BB@0x66c ]
+	414     (00000668) const-string         v10, '1'
+
+onPreferenceChange-BB@0x66c : [ onPreferenceChange-BB@0x20 ]
+	415     (0000066c) invoke-virtual       v11, v12, v13, v10, Landroid/app/admin/DevicePolicyManager;->setSystemSetting(Landroid/content/ComponentName; Ljava/lang/String; Ljava/lang/String;)V
+	416     (00000672) invoke-direct/range  v17, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->reloadAutoBrightnessUi()V
+	417     (00000678) const/4              v10, 1
+	418     (0000067a) goto/16              -32d
+
+onPreferenceChange-BB@0x67e : [ onPreferenceChange-BB@0x66c ]
+	419     (0000067e) const-string         v10, '0'
+	420     (00000682) goto                 -b
+
+onPreferenceChange-BB@0x684 : [ onPreferenceChange-BB@0x20 ]
+	421     (00000684) new-instance         v3, Landroid/content/Intent;
+	422     (00000688) const-string         v10, 'android.app.action.SET_NEW_PASSWORD'
+	423     (0000068c) invoke-direct        v3, v10, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
+	424     (00000692) const-string         v10, 'android.app.extra.PASSWORD_COMPLEXITY'
+	425     (00000696) check-cast           v19, Ljava/lang/String;
+	426     (0000069a) invoke-static/range  v19, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
+	427     (000006a0) move-result          v11
+	428     (000006a2) invoke-virtual       v3, v10, v11, Landroid/content/Intent;->putExtra(Ljava/lang/String; I)Landroid/content/Intent;
+	429     (000006a8) move-object/from16   v0, v17
+	430     (000006ac) invoke-virtual       v0, v3, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->startActivity(Landroid/content/Intent;)V
+	431     (000006b2) const/4              v10, 1
+	432     (000006b4) goto/16              -34a
+
+onPreferenceChange-BB@0x6b8 : [ onPreferenceChange-BB@0x20 ]
+	433     (000006b8) check-cast           v19, Ljava/lang/String;
+	434     (000006bc) invoke-static/range  v19, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
+	435     (000006c2) move-result          v6
+	436     (000006c4) move-object/from16   v0, v17
+	437     (000006c8) invoke-direct        v0, v6, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->setRequiredPasswordComplexity(I)V
+	438     (000006ce) const/4              v10, 1
+	439     (000006d0) goto/16              -358
+
+onPreferenceChange-BB@0x6d4 : [ onPreferenceChange-BB@0x20 ]
+	440     (000006d4) check-cast           v19, Ljava/lang/String;
+	441     (000006d8) invoke-static/range  v19, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
+	442     (000006de) move-result          v7
+	443     (000006e0) move-object/from16   v0, v17
+	444     (000006e4) invoke-direct        v0, v7, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->setRequiredPasswordComplexityOnParent(I)V
+	445     (000006ea) const/4              v10, 1
+	446     (000006ec) goto/16              -366
+
+onPreferenceChange-BB@0x6f0 : [ onPreferenceChange-BB@0x20 ]
+	447     (000006f0) invoke-virtual/range v17, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->getContext()Landroid/content/Context;
+	448     (000006f6) move-result-object   v10
+	449     (000006f8) invoke-static        v10, Landroidx/preference/PreferenceManager;->getDefaultSharedPreferences(Landroid/content/Context;)Landroid/content/SharedPreferences;
+	450     (000006fe) move-result-object   v10
+	451     (00000700) invoke-interface     v10, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
+	452     (00000706) move-result-object   v2
+	453     (00000708) const                v10, 2131689572 # [1.9008163163820333e+38]
+	454     (0000070e) move-object/from16   v0, v17
+	455     (00000712) invoke-virtual       v0, v10, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->getString(I)Ljava/lang/String;
+	456     (00000718) move-result-object   v10
+	457     (0000071a) const/4              v11, 1
+	458     (0000071c) invoke-static        v11, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+	459     (00000722) move-result-object   v11
+	460     (00000724) move-object/from16   v0, v19
+	461     (00000728) invoke-virtual       v0, v11, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
+	462     (0000072e) move-result          v11
+	463     (00000730) invoke-interface     v2, v10, v11, Landroid/content/SharedPreferences$Editor;->putBoolean(Ljava/lang/String; Z)Landroid/content/SharedPreferences$Editor;
+	464     (00000736) invoke-interface     v2, Landroid/content/SharedPreferences$Editor;->commit()Z
+	465     (0000073c) const/4              v10, 1
+	466     (0000073e) goto/16              -38f
+
+onPreferenceChange-BB@0x742 : [ onPreferenceChange-BB@0x20 ]
+	467     (00000742) move-object/from16   v0, v17
+	468     (00000746) iget-object          v10, v0, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->mDevicePolicyManager Landroid/app/admin/DevicePolicyManager;
+	469     (0000074a) move-object/from16   v0, v17
+	470     (0000074e) iget-object          v11, v0, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->mAdminComponentName Landroid/content/ComponentName;
+	471     (00000752) const/4              v12, 1
+	472     (00000754) invoke-static        v12, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+	473     (0000075a) move-result-object   v12
+	474     (0000075c) move-object/from16   v0, v19
+	475     (00000760) invoke-virtual       v0, v12, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
+	476     (00000766) move-result          v12
+	477     (00000768) invoke-virtual       v10, v11, v12, Landroid/app/admin/DevicePolicyManager;->setLocationEnabled(Landroid/content/ComponentName; Z)V
+	478     (0000076e) invoke-direct/range  v17, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->reloadLocationEnabledUi()V
+	479     (00000774) invoke-direct/range  v17, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->reloadLocationModeUi()V
+	480     (0000077a) const/4              v10, 1
+	481     (0000077c) goto/16              -3ae
+
+onPreferenceChange-BB@0x780 : [ onPreferenceChange-BB@0x79a onPreferenceChange-BB@0x7e8 ]
+	482     (00000780) const/4              v10, 1
+	483     (00000782) invoke-static        v10, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+	484     (00000788) move-result-object   v10
+	485     (0000078a) move-object/from16   v0, v19
+	486     (0000078e) invoke-virtual       v0, v10, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
+	487     (00000794) move-result          v10
+	488     (00000796) if-eqz               v10, +29
+
+onPreferenceChange-BB@0x79a : [ onPreferenceChange-BB@0x79c ]
+	489     (0000079a) const/4              v5, 3
+
+onPreferenceChange-BB@0x79c : [ onPreferenceChange-BB@0x20 ]
+	490     (0000079c) move-object/from16   v0, v17
+	491     (000007a0) iget-object          v10, v0, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->mDevicePolicyManager Landroid/app/admin/DevicePolicyManager;
+	492     (000007a4) move-object/from16   v0, v17
+	493     (000007a8) iget-object          v11, v0, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->mAdminComponentName Landroid/content/ComponentName;
+	494     (000007ac) const-string         v12, 'location_mode'
+	495     (000007b0) const-string         v13, '%d'
+	496     (000007b4) const/4              v14, 1
+	497     (000007b6) new-array            v14, v14, [Ljava/lang/Object;
+	498     (000007ba) const/4              v15, 0
+	499     (000007bc) invoke-static        v5, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+	500     (000007c2) move-result-object   v16
+	501     (000007c4) aput-object          v16, v14, v15
+	502     (000007c8) invoke-static        v13, v14, Ljava/lang/String;->format(Ljava/lang/String; [Ljava/lang/Object;)Ljava/lang/String;
+	503     (000007ce) move-result-object   v13
+	504     (000007d0) invoke-virtual       v10, v11, v12, v13, Landroid/app/admin/DevicePolicyManager;->setSecureSetting(Landroid/content/ComponentName; Ljava/lang/String; Ljava/lang/String;)V
+	505     (000007d6) invoke-direct/range  v17, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->reloadLocationEnabledUi()V
+	506     (000007dc) invoke-direct/range  v17, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->reloadLocationModeUi()V
+	507     (000007e2) const/4              v10, 1
+	508     (000007e4) goto/16              -3e2
+
+onPreferenceChange-BB@0x7e8 : [ onPreferenceChange-BB@0x79c ]
+	509     (000007e8) const/4              v5, 0
+	510     (000007ea) goto                 -27
+
+onPreferenceChange-BB@0x7ec : [ onPreferenceChange-BB@0x20 ]
+	511     (000007ec) move-object/from16   v0, v17
+	512     (000007f0) iget-object          v10, v0, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->mDevicePolicyManager Landroid/app/admin/DevicePolicyManager;
+	513     (000007f4) move-object/from16   v0, v17
+	514     (000007f8) iget-object          v11, v0, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->mAdminComponentName Landroid/content/ComponentName;
+	515     (000007fc) check-cast           v19, Ljava/lang/Boolean;
+	516     (00000800) invoke-virtual/range v19, Ljava/lang/Boolean;->booleanValue()Z
+	517     (00000806) move-result          v12
+	518     (00000808) invoke-virtual       v10, v11, v12, Landroid/app/admin/DevicePolicyManager;->setPersonalAppsSuspended(Landroid/content/ComponentName; Z)V
+	519     (0000080e) invoke-direct/range  v17, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->reloadPersonalAppsSuspendedUi()V
+	520     (00000814) const/4              v10, 1
+	521     (00000816) goto/16              -3fb
+
+onPreferenceChange-BB@0x81a : [ onPreferenceChange-BB@0x20 ]
+	522     (0000081a) check-cast           v19, Ljava/lang/String;
+	523     (0000081e) invoke-static/range  v19, Ljava/lang/Long;->parseLong(Ljava/lang/String;)J
+	524     (00000824) move-result-wide     v8
+	525     (00000826) move-object/from16   v0, v17
+	526     (0000082a) iget-object          v10, v0, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->mDevicePolicyManager Landroid/app/admin/DevicePolicyManager;
+	527     (0000082e) move-object/from16   v0, v17
+	528     (00000832) iget-object          v11, v0, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->mAdminComponentName Landroid/content/ComponentName;
+	529     (00000836) sget-object          v12, Ljava/util/concurrent/TimeUnit;->SECONDS Ljava/util/concurrent/TimeUnit;
+	530     (0000083a) invoke-virtual       v12, v8, v9, Ljava/util/concurrent/TimeUnit;->toMillis(J)J
+	531     (00000840) move-result-wide     v12
+	532     (00000842) invoke-virtual       v10, v11, v12, v13, Landroid/app/admin/DevicePolicyManager;->setManagedProfileMaximumTimeOff(Landroid/content/ComponentName; J)V
+	533     (00000848) invoke-direct/range  v17, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->maybeUpdateProfileMaxTimeOff()V
+	534     (0000084e) const/4              v10, 1
+	535     (00000850) goto/16              -418
+
+onPreferenceChange-BB@0x854 : 
+	536     (00000854) sparse-switch-payload -6dc064d1 -6d10d7c1 -61e7cc8c -50267840 -4e324934 -49a461b2 -3d1d2c6e -3258c364 -2a84c24b -23eb0211 -cc4df56 -c0672c2 -4e6d335 90415ab e42eb0d 1571f84e 15fd2d14 176690e1 366d64bc 3f39ca3c 3f8943c6 4a92085c 4e2e8f0a 5411d58c 587c16d0 5da1aee7 5f139a30 675202f4 769e3879
+	537     (00000940) packed-switch-payload 0 1 2 3 4 5 6 7 8 9 a b c d e f 10 11 12 13 14 15 16 17 18 19 1a 1b 1c
+

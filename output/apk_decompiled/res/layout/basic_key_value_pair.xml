@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:padding="@dimen/key_value_pair_dialog_padding" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:gravity="start" android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content" android:paddingStart="8.0dip" android:paddingEnd="8.0dip" android:layout_marginStart="8.0dip" android:layout_marginEnd="8.0dip">
+        <TextView android:layout_gravity="center_vertical" android:id="@id/type_text" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Select type" />
+        <Spinner android:id="@id/type_spinner" android:layout_width="wrap_content" android:layout_height="wrap_content" android:textAlignment="viewStart" android:layout_marginStart="8.0dip" />
+    </LinearLayout>
+    <LinearLayout android:gravity="start" android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content" android:paddingStart="8.0dip" android:paddingEnd="8.0dip" android:layout_marginStart="8.0dip" android:layout_marginEnd="8.0dip">
+        <TextView android:id="@id/key_text" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/app_restrictions_key" />
+        <EditText android:id="@id/key" android:layout_width="fill_parent" android:layout_height="wrap_content" android:hint="@string/key_hint" android:scrollHorizontally="true" android:singleLine="true" android:layout_marginStart="4.0dip" />
+    </LinearLayout>
+    <LinearLayout android:gravity="start" android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content" android:paddingStart="8.0dip" android:paddingEnd="8.0dip" android:layout_marginStart="8.0dip" android:layout_marginEnd="8.0dip">
+        <TextView android:id="@id/value_text" android:paddingTop="8.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/app_restrictions_value" />
+        <Switch android:id="@id/value_bool" android:paddingTop="8.0dip" android:paddingBottom="4.0dip" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginStart="4.0dip" />
+        <EditText android:id="@id/value_int" android:paddingTop="8.0dip" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" android:inputType="number" android:layout_marginStart="4.0dip" />
+        <EditText android:id="@id/value_string" android:paddingTop="8.0dip" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" android:inputType="textNoSuggestions" android:layout_marginStart="4.0dip" />
+        <LinearLayout android:orientation="vertical" android:id="@id/value_str_array_container" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <androidx.recyclerview.widget.RecyclerView android:id="@id/value_str_array_list" android:layout_width="fill_parent" android:layout_height="wrap_content" android:minHeight="30.0dip" />/ <ImageView android:layout_gravity="right" android:id="@id/add_new_row" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@android:drawable/ic_input_add" android:layout_alignParentRight="true" />
+        </LinearLayout>
+        <Button android:id="@id/configure_bundle" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="8.0dip" android:text="@string/configure" />
+        <Button android:id="@id/configure_bundle_array" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="8.0dip" android:text="@string/configure" />
+    </LinearLayout>
+</LinearLayout>

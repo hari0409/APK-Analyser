@@ -1,0 +1,12 @@
+# Landroidx/appcompat/widget/AppCompatTextView;->setTextMetricsParamsCompat(Landroidx/core/text/PrecomputedTextCompat$Params;)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v0
+# - v1:androidx.core.text.PrecomputedTextCompat$Params
+#
+# - return:void
+
+setTextMetricsParamsCompat-BB@0x0 : 
+	0       (00000000) invoke-static        v0, v1, Landroidx/core/widget/TextViewCompat;->setTextMetricsParams(Landroid/widget/TextView; Landroidx/core/text/PrecomputedTextCompat$Params;)V
+	1       (00000006) return-void          
+

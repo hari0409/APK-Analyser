@@ -1,0 +1,48 @@
+# Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->lambda$showSetTimeDialog$167$PolicyManagementFragment(Landroid/widget/EditText; Landroid/content/DialogInterface; I)V [access_flags=final synthetic]
+#
+# Parameters:
+# - local registers: v0...v6
+# - v7:android.widget.EditText
+# - v8:android.content.DialogInterface
+# - v9:int
+#
+# - return:void
+
+lambda$showSetTimeDialog$167$PolicyManagementFragment-BB@0x0 : [ lambda$showSetTimeDialog$167$PolicyManagementFragment-BB@0x1e lambda$showSetTimeDialog$167$PolicyManagementFragment-BB@0x30 ]
+	0       (00000000) const/4              v5, 0
+	1       (00000002) invoke-virtual       v7, Landroid/widget/EditText;->getText()Landroid/text/Editable;
+	2       (00000008) move-result-object   v4
+	3       (0000000a) invoke-virtual       v4, Ljava/lang/Object;->toString()Ljava/lang/String;
+	4       (00000010) move-result-object   v1
+	5       (00000012) invoke-virtual       v1, Ljava/lang/String;->isEmpty()Z
+	6       (00000018) move-result          v4
+	7       (0000001a) if-eqz               v4, +b
+
+lambda$showSetTimeDialog$167$PolicyManagementFragment-BB@0x1e : [ lambda$showSetTimeDialog$167$PolicyManagementFragment-BB@0x2e ]
+	8       (0000001e) const                v4, 2131689989 # [1.9009008940300806e+38]
+	9       (00000024) new-array            v5, v5, [Ljava/lang/Object;
+	10      (00000028) invoke-direct        v6, v4, v5, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->showToast(I [Ljava/lang/Object;)V
+
+lambda$showSetTimeDialog$167$PolicyManagementFragment-BB@0x2e : 
+	11      (0000002e) return-void          
+
+lambda$showSetTimeDialog$167$PolicyManagementFragment-BB@0x30 : [ lambda$showSetTimeDialog$167$PolicyManagementFragment-BB@0x34 ]
+	12      (00000030) const-wide/16        v2, 0 # [0.0]
+
+lambda$showSetTimeDialog$167$PolicyManagementFragment-BB@0x34 : [ lambda$showSetTimeDialog$167$PolicyManagementFragment-BB@0x2e ]
+	13      (00000034) invoke-static        v1, Ljava/lang/Long;->parseLong(Ljava/lang/String;)J
+	14      (0000003a) move-result-wide     v2
+	15      (0000003c) iget-object          v4, v6, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->mDevicePolicyManager Landroid/app/admin/DevicePolicyManager;
+	16      (00000040) iget-object          v5, v6, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->mAdminComponentName Landroid/content/ComponentName;
+	17      (00000044) invoke-virtual       v4, v5, v2, v3, Landroid/app/admin/DevicePolicyManager;->setTime(Landroid/content/ComponentName; J)Z
+	18      (0000004a) goto                 -e
+	34:39
+	(Ljava/lang/NumberFormatException; -> 4c lambda$showSetTimeDialog$167$PolicyManagementFragment-BB@0x4c)
+
+lambda$showSetTimeDialog$167$PolicyManagementFragment-BB@0x4c : [ lambda$showSetTimeDialog$167$PolicyManagementFragment-BB@0x2e ]
+	19      (0000004c) move-exception       v0
+	20      (0000004e) const                v4, 2131689874 # [1.9008775692590364e+38]
+	21      (00000054) new-array            v5, v5, [Ljava/lang/Object;
+	22      (00000058) invoke-direct        v6, v4, v5, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->showToast(I [Ljava/lang/Object;)V
+	23      (0000005e) goto                 -18
+

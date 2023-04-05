@@ -1,0 +1,41 @@
+# Landroidx/appcompat/widget/ActionMenuView;->generateLayoutParams(Landroid/view/ViewGroup$LayoutParams;)Landroidx/appcompat/widget/ActionMenuView$LayoutParams; [access_flags=protected]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:android.view.ViewGroup$LayoutParams
+#
+# - return:androidx.appcompat.widget.ActionMenuView$LayoutParams
+
+generateLayoutParams-BB@0x0 : [ generateLayoutParams-BB@0x4 generateLayoutParams-BB@0x38 ]
+	0       (00000000) if-eqz               v3, +1c
+
+generateLayoutParams-BB@0x4 : [ generateLayoutParams-BB@0xc generateLayoutParams-BB@0x2c ]
+	1       (00000004) instance-of          v1, v3, Landroidx/appcompat/widget/ActionMenuView$LayoutParams;
+	2       (00000008) if-eqz               v1, +12
+
+generateLayoutParams-BB@0xc : [ generateLayoutParams-BB@0x1a ]
+	3       (0000000c) new-instance         v0, Landroidx/appcompat/widget/ActionMenuView$LayoutParams;
+	4       (00000010) check-cast           v3, Landroidx/appcompat/widget/ActionMenuView$LayoutParams;
+	5       (00000014) invoke-direct        v0, v3, Landroidx/appcompat/widget/ActionMenuView$LayoutParams;-><init>(Landroidx/appcompat/widget/ActionMenuView$LayoutParams;)V
+
+generateLayoutParams-BB@0x1a : [ generateLayoutParams-BB@0x22 generateLayoutParams-BB@0x2a ]
+	6       (0000001a) iget                 v1, v0, Landroidx/appcompat/widget/ActionMenuView$LayoutParams;->gravity I
+	7       (0000001e) if-gtz               v1, +6
+
+generateLayoutParams-BB@0x22 : [ generateLayoutParams-BB@0x2a ]
+	8       (00000022) const/16             v1, 16
+	9       (00000026) iput                 v1, v0, Landroidx/appcompat/widget/ActionMenuView$LayoutParams;->gravity I
+
+generateLayoutParams-BB@0x2a : 
+	10      (0000002a) return-object        v0
+
+generateLayoutParams-BB@0x2c : [ generateLayoutParams-BB@0x1a ]
+	11      (0000002c) new-instance         v0, Landroidx/appcompat/widget/ActionMenuView$LayoutParams;
+	12      (00000030) invoke-direct        v0, v3, Landroidx/appcompat/widget/ActionMenuView$LayoutParams;-><init>(Landroid/view/ViewGroup$LayoutParams;)V
+	13      (00000036) goto                 -e
+
+generateLayoutParams-BB@0x38 : [ generateLayoutParams-BB@0x2a ]
+	14      (00000038) invoke-virtual       v2, Landroidx/appcompat/widget/ActionMenuView;->generateDefaultLayoutParams()Landroidx/appcompat/widget/ActionMenuView$LayoutParams;
+	15      (0000003e) move-result-object   v0
+	16      (00000040) goto                 -b
+

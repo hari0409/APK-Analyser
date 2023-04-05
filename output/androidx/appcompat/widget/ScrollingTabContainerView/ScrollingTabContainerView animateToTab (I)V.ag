@@ -1,0 +1,27 @@
+# Landroidx/appcompat/widget/ScrollingTabContainerView;->animateToTab(I)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:int
+#
+# - return:void
+
+animateToTab-BB@0x0 : [ animateToTab-BB@0x14 animateToTab-BB@0x1e ]
+	0       (00000000) iget-object          v1, v2, Landroidx/appcompat/widget/ScrollingTabContainerView;->mTabLayout Landroidx/appcompat/widget/LinearLayoutCompat;
+	1       (00000004) invoke-virtual       v1, v3, Landroidx/appcompat/widget/LinearLayoutCompat;->getChildAt(I)Landroid/view/View;
+	2       (0000000a) move-result-object   v0
+	3       (0000000c) iget-object          v1, v2, Landroidx/appcompat/widget/ScrollingTabContainerView;->mTabSelector Ljava/lang/Runnable;
+	4       (00000010) if-eqz               v1, +7
+
+animateToTab-BB@0x14 : [ animateToTab-BB@0x1e ]
+	5       (00000014) iget-object          v1, v2, Landroidx/appcompat/widget/ScrollingTabContainerView;->mTabSelector Ljava/lang/Runnable;
+	6       (00000018) invoke-virtual       v2, v1, Landroidx/appcompat/widget/ScrollingTabContainerView;->removeCallbacks(Ljava/lang/Runnable;)Z
+
+animateToTab-BB@0x1e : 
+	7       (0000001e) new-instance         v1, Landroidx/appcompat/widget/ScrollingTabContainerView$1;
+	8       (00000022) invoke-direct        v1, v2, v0, Landroidx/appcompat/widget/ScrollingTabContainerView$1;-><init>(Landroidx/appcompat/widget/ScrollingTabContainerView; Landroid/view/View;)V
+	9       (00000028) iput-object          v1, v2, Landroidx/appcompat/widget/ScrollingTabContainerView;->mTabSelector Ljava/lang/Runnable;
+	10      (0000002c) iget-object          v1, v2, Landroidx/appcompat/widget/ScrollingTabContainerView;->mTabSelector Ljava/lang/Runnable;
+	11      (00000030) invoke-virtual       v2, v1, Landroidx/appcompat/widget/ScrollingTabContainerView;->post(Ljava/lang/Runnable;)Z
+	12      (00000036) return-void          
+

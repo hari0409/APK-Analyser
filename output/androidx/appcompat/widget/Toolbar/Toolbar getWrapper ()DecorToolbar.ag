@@ -1,0 +1,21 @@
+# Landroidx/appcompat/widget/Toolbar;->getWrapper()Landroidx/appcompat/widget/DecorToolbar; [access_flags=public]
+#
+# Parameters:
+# local registers: v0...v2
+#
+# - return:androidx.appcompat.widget.DecorToolbar
+
+getWrapper-BB@0x0 : [ getWrapper-BB@0x8 getWrapper-BB@0x18 ]
+	0       (00000000) iget-object          v0, v2, Landroidx/appcompat/widget/Toolbar;->mWrapper Landroidx/appcompat/widget/ToolbarWidgetWrapper;
+	1       (00000004) if-nez               v0, +a
+
+getWrapper-BB@0x8 : [ getWrapper-BB@0x18 ]
+	2       (00000008) new-instance         v0, Landroidx/appcompat/widget/ToolbarWidgetWrapper;
+	3       (0000000c) const/4              v1, 1
+	4       (0000000e) invoke-direct        v0, v2, v1, Landroidx/appcompat/widget/ToolbarWidgetWrapper;-><init>(Landroidx/appcompat/widget/Toolbar; Z)V
+	5       (00000014) iput-object          v0, v2, Landroidx/appcompat/widget/Toolbar;->mWrapper Landroidx/appcompat/widget/ToolbarWidgetWrapper;
+
+getWrapper-BB@0x18 : 
+	6       (00000018) iget-object          v0, v2, Landroidx/appcompat/widget/Toolbar;->mWrapper Landroidx/appcompat/widget/ToolbarWidgetWrapper;
+	7       (0000001c) return-object        v0
+

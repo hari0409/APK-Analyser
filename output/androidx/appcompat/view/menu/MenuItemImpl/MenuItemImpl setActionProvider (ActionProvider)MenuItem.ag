@@ -1,0 +1,14 @@
+# Landroidx/appcompat/view/menu/MenuItemImpl;->setActionProvider(Landroid/view/ActionProvider;)Landroid/view/MenuItem; [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:android.view.ActionProvider
+#
+# - return:android.view.MenuItem
+
+setActionProvider-BB@0x0 : 
+	0       (00000000) new-instance         v0, Ljava/lang/UnsupportedOperationException;
+	1       (00000004) const-string         v1, 'This is not supported, use MenuItemCompat.setActionProvider()'
+	2       (00000008) invoke-direct        v0, v1, Ljava/lang/UnsupportedOperationException;-><init>(Ljava/lang/String;)V
+	3       (0000000e) throw                v0
+

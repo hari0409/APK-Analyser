@@ -1,0 +1,35 @@
+# Landroidx/appcompat/app/AppCompatDelegateImpl$AppCompatWindowCallback;->onWindowStartingActionMode(Landroid/view/ActionMode$Callback;)Landroid/view/ActionMode; [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:android.view.ActionMode$Callback
+#
+# - return:android.view.ActionMode
+
+onWindowStartingActionMode-BB@0x0 : [ onWindowStartingActionMode-BB@0xc onWindowStartingActionMode-BB@0x10 ]
+	0       (00000000) sget                 v0, Landroid/os/Build$VERSION;->SDK_INT I
+	1       (00000004) const/16             v1, 23
+	2       (00000008) if-lt                v0, v1, +4
+
+onWindowStartingActionMode-BB@0xc : [ onWindowStartingActionMode-BB@0xe ]
+	3       (0000000c) const/4              v0, 0
+
+onWindowStartingActionMode-BB@0xe : 
+	4       (0000000e) return-object        v0
+
+onWindowStartingActionMode-BB@0x10 : [ onWindowStartingActionMode-BB@0x20 onWindowStartingActionMode-BB@0x2a ]
+	5       (00000010) iget-object          v0, v2, Landroidx/appcompat/app/AppCompatDelegateImpl$AppCompatWindowCallback;->this$0 Landroidx/appcompat/app/AppCompatDelegateImpl;
+	6       (00000014) invoke-virtual       v0, Landroidx/appcompat/app/AppCompatDelegateImpl;->isHandleNativeActionModesEnabled()Z
+	7       (0000001a) move-result          v0
+	8       (0000001c) if-eqz               v0, +7
+
+onWindowStartingActionMode-BB@0x20 : [ onWindowStartingActionMode-BB@0xe ]
+	9       (00000020) invoke-virtual       v2, v3, Landroidx/appcompat/app/AppCompatDelegateImpl$AppCompatWindowCallback;->startAsSupportActionMode(Landroid/view/ActionMode$Callback;)Landroid/view/ActionMode;
+	10      (00000026) move-result-object   v0
+	11      (00000028) goto                 -d
+
+onWindowStartingActionMode-BB@0x2a : [ onWindowStartingActionMode-BB@0xe ]
+	12      (0000002a) invoke-super         v2, v3, Landroidx/appcompat/view/WindowCallbackWrapper;->onWindowStartingActionMode(Landroid/view/ActionMode$Callback;)Landroid/view/ActionMode;
+	13      (00000030) move-result-object   v0
+	14      (00000032) goto                 -12
+

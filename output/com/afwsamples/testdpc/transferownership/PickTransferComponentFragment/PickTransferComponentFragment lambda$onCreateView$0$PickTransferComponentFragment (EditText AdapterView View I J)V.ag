@@ -1,0 +1,20 @@
+# Lcom/afwsamples/testdpc/transferownership/PickTransferComponentFragment;->lambda$onCreateView$0$PickTransferComponentFragment(Landroid/widget/EditText; Landroid/widget/AdapterView; Landroid/view/View; I J)V [access_flags=static final synthetic]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:android.widget.EditText
+# - v3:android.widget.AdapterView
+# - v4:android.view.View
+# - v5:int
+# - v6:long
+#
+# - return:void
+
+lambda$onCreateView$0$PickTransferComponentFragment-BB@0x0 : 
+	0       (00000000) invoke-virtual       v2, v4, Landroid/widget/AdapterView;->getItemAtPosition(I)Ljava/lang/Object;
+	1       (00000006) move-result-object   v0
+	2       (00000008) invoke-virtual       v0, Ljava/lang/Object;->toString()Ljava/lang/String;
+	3       (0000000e) move-result-object   v0
+	4       (00000010) invoke-virtual       v1, v0, Landroid/widget/EditText;->setText(Ljava/lang/CharSequence;)V
+	5       (00000016) return-void          
+

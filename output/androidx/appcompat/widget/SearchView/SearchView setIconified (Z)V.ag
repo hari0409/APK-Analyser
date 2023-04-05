@@ -1,0 +1,21 @@
+# Landroidx/appcompat/widget/SearchView;->setIconified(Z)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v0
+# - v1:boolean
+#
+# - return:void
+
+setIconified-BB@0x0 : [ setIconified-BB@0x4 setIconified-BB@0xc ]
+	0       (00000000) if-eqz               v1, +6
+
+setIconified-BB@0x4 : [ setIconified-BB@0xa ]
+	1       (00000004) invoke-virtual       v0, Landroidx/appcompat/widget/SearchView;->onCloseClicked()V
+
+setIconified-BB@0xa : 
+	2       (0000000a) return-void          
+
+setIconified-BB@0xc : [ setIconified-BB@0xa ]
+	3       (0000000c) invoke-virtual       v0, Landroidx/appcompat/widget/SearchView;->onSearchClicked()V
+	4       (00000012) goto                 -4
+

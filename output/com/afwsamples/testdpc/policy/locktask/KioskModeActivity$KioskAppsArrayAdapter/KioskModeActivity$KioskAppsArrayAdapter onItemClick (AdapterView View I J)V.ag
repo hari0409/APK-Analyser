@@ -1,0 +1,55 @@
+# Lcom/afwsamples/testdpc/policy/locktask/KioskModeActivity$KioskAppsArrayAdapter;->onItemClick(Landroid/widget/AdapterView; Landroid/view/View; I J)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v6
+# - v7:android.widget.AdapterView
+# - v8:android.view.View
+# - v9:int
+# - v10:long
+#
+# - return:void
+
+onItemClick-BB@0x0 : [ onItemClick-BB@0x20 onItemClick-BB@0x2c ]
+	0       (00000000) iget-object          v3, v5, Lcom/afwsamples/testdpc/policy/locktask/KioskModeActivity$KioskAppsArrayAdapter;->this$0 Lcom/afwsamples/testdpc/policy/locktask/KioskModeActivity;
+	1       (00000004) invoke-virtual       v3, Lcom/afwsamples/testdpc/policy/locktask/KioskModeActivity;->getPackageName()Ljava/lang/String;
+	2       (0000000a) move-result-object   v3
+	3       (0000000c) invoke-virtual       v5, v8, Lcom/afwsamples/testdpc/policy/locktask/KioskModeActivity$KioskAppsArrayAdapter;->getItem(I)Ljava/lang/Object;
+	4       (00000012) move-result-object   v4
+	5       (00000014) invoke-virtual       v3, v4, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+	6       (0000001a) move-result          v3
+	7       (0000001c) if-eqz               v3, +8
+
+onItemClick-BB@0x20 : [ onItemClick-BB@0x2a ]
+	8       (00000020) iget-object          v3, v5, Lcom/afwsamples/testdpc/policy/locktask/KioskModeActivity$KioskAppsArrayAdapter;->this$0 Lcom/afwsamples/testdpc/policy/locktask/KioskModeActivity;
+	9       (00000024) invoke-virtual       v3, Lcom/afwsamples/testdpc/policy/locktask/KioskModeActivity;->onBackdoorClicked()V
+
+onItemClick-BB@0x2a : 
+	10      (0000002a) return-void          
+
+onItemClick-BB@0x2c : [ onItemClick-BB@0x58 onItemClick-BB@0x6c ]
+	11      (0000002c) iget-object          v3, v5, Lcom/afwsamples/testdpc/policy/locktask/KioskModeActivity$KioskAppsArrayAdapter;->this$0 Lcom/afwsamples/testdpc/policy/locktask/KioskModeActivity;
+	12      (00000030) invoke-virtual       v3, Lcom/afwsamples/testdpc/policy/locktask/KioskModeActivity;->getPackageManager()Landroid/content/pm/PackageManager;
+	13      (00000036) move-result-object   v2
+	14      (00000038) invoke-virtual       v5, v8, Lcom/afwsamples/testdpc/policy/locktask/KioskModeActivity$KioskAppsArrayAdapter;->getItem(I)Ljava/lang/Object;
+	15      (0000003e) move-result-object   v0
+	16      (00000040) check-cast           v0, Ljava/lang/String;
+	17      (00000044) invoke-virtual       v5, Lcom/afwsamples/testdpc/policy/locktask/KioskModeActivity$KioskAppsArrayAdapter;->getContext()Landroid/content/Context;
+	18      (0000004a) move-result-object   v3
+	19      (0000004c) invoke-static        v3, Lcom/afwsamples/testdpc/common/Util;->isRunningOnTvDevice(Landroid/content/Context;)Z
+	20      (00000052) move-result          v3
+	21      (00000054) if-eqz               v3, +c
+
+onItemClick-BB@0x58 : [ onItemClick-BB@0x60 ]
+	22      (00000058) invoke-virtual       v2, v0, Landroid/content/pm/PackageManager;->getLeanbackLaunchIntentForPackage(Ljava/lang/String;)Landroid/content/Intent;
+	23      (0000005e) move-result-object   v1
+
+onItemClick-BB@0x60 : [ onItemClick-BB@0x2a ]
+	24      (00000060) iget-object          v3, v5, Lcom/afwsamples/testdpc/policy/locktask/KioskModeActivity$KioskAppsArrayAdapter;->this$0 Lcom/afwsamples/testdpc/policy/locktask/KioskModeActivity;
+	25      (00000064) invoke-virtual       v3, v1, Lcom/afwsamples/testdpc/policy/locktask/KioskModeActivity;->startActivity(Landroid/content/Intent;)V
+	26      (0000006a) goto                 -20
+
+onItemClick-BB@0x6c : [ onItemClick-BB@0x60 ]
+	27      (0000006c) invoke-virtual       v2, v0, Landroid/content/pm/PackageManager;->getLaunchIntentForPackage(Ljava/lang/String;)Landroid/content/Intent;
+	28      (00000072) move-result-object   v1
+	29      (00000074) goto                 -a
+

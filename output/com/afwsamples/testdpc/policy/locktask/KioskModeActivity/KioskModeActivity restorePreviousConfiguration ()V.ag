@@ -1,0 +1,35 @@
+# Lcom/afwsamples/testdpc/policy/locktask/KioskModeActivity;->restorePreviousConfiguration()V [access_flags=private]
+#
+# Parameters:
+# local registers: v0...v7
+#
+# - return:void
+
+restorePreviousConfiguration-BB@0x0 : [ restorePreviousConfiguration-BB@0xe restorePreviousConfiguration-BB@0x3e ]
+	0       (00000000) const/4              v4, 0
+	1       (00000002) sget                 v3, Lcom/afwsamples/testdpc/common/Util;->SDK_INT I
+	2       (00000006) const/16             v5, 24
+	3       (0000000a) if-lt                v3, v5, +1a
+
+restorePreviousConfiguration-BB@0xe : [ restorePreviousConfiguration-BB@0x22 ]
+	4       (0000000e) const-string         v3, 'kiosk_preference_file'
+	5       (00000012) invoke-virtual       v7, v3, v4, Lcom/afwsamples/testdpc/policy/locktask/KioskModeActivity;->getSharedPreferences(Ljava/lang/String; I)Landroid/content/SharedPreferences;
+	6       (00000018) move-result-object   v1
+	7       (0000001a) sget-object          v5, Lcom/afwsamples/testdpc/policy/locktask/KioskModeActivity;->KIOSK_USER_RESTRICTIONS [Ljava/lang/String;
+	8       (0000001e) array-length         v6, v5
+	9       (00000020) move                 v3, v4
+
+restorePreviousConfiguration-BB@0x22 : [ restorePreviousConfiguration-BB@0x26 restorePreviousConfiguration-BB@0x3e ]
+	10      (00000022) if-ge                v3, v6, +e
+
+restorePreviousConfiguration-BB@0x26 : [ restorePreviousConfiguration-BB@0x22 ]
+	11      (00000026) aget-object          v2, v5, v3
+	12      (0000002a) invoke-interface     v1, v2, v4, Landroid/content/SharedPreferences;->getBoolean(Ljava/lang/String; Z)Z
+	13      (00000030) move-result          v0
+	14      (00000032) invoke-direct        v7, v2, v0, Lcom/afwsamples/testdpc/policy/locktask/KioskModeActivity;->setUserRestriction(Ljava/lang/String; Z)V
+	15      (00000038) add-int/lit8         v3, v3, 1
+	16      (0000003c) goto                 -d
+
+restorePreviousConfiguration-BB@0x3e : 
+	17      (0000003e) return-void          
+

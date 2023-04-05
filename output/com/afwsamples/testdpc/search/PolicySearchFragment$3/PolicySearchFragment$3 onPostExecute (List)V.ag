@@ -1,0 +1,19 @@
+# Lcom/afwsamples/testdpc/search/PolicySearchFragment$3;->onPostExecute(Ljava/util/List;)V [access_flags=protected]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:java.util.List
+#
+# - return:void
+
+onPostExecute-BB@0x0 : 
+	0       (00000000) iget-object          v0, v1, Lcom/afwsamples/testdpc/search/PolicySearchFragment$3;->this$0 Lcom/afwsamples/testdpc/search/PolicySearchFragment;
+	1       (00000004) invoke-static        v0, Lcom/afwsamples/testdpc/search/PolicySearchFragment;->access$300(Lcom/afwsamples/testdpc/search/PolicySearchFragment;)Lcom/afwsamples/testdpc/search/SearchItemAdapter;
+	2       (0000000a) move-result-object   v0
+	3       (0000000c) invoke-virtual       v0, v2, Lcom/afwsamples/testdpc/search/SearchItemAdapter;->setSearchResult(Ljava/util/List;)V
+	4       (00000012) iget-object          v0, v1, Lcom/afwsamples/testdpc/search/PolicySearchFragment$3;->this$0 Lcom/afwsamples/testdpc/search/PolicySearchFragment;
+	5       (00000016) invoke-static        v0, Lcom/afwsamples/testdpc/search/PolicySearchFragment;->access$300(Lcom/afwsamples/testdpc/search/PolicySearchFragment;)Lcom/afwsamples/testdpc/search/SearchItemAdapter;
+	6       (0000001c) move-result-object   v0
+	7       (0000001e) invoke-virtual       v0, Lcom/afwsamples/testdpc/search/SearchItemAdapter;->notifyDataSetChanged()V
+	8       (00000024) return-void          
+

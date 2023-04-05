@@ -1,0 +1,37 @@
+# Lcom/afwsamples/testdpc/policy/PolicyManagementFragment$GetInputMethodsTask;->getResolveInfoListFromAvailableComponents(Ljava/util/List;)Ljava/util/List; [access_flags=protected]
+#
+# Parameters:
+# - local registers: v0...v5
+# - v6:java.util.List
+#
+# - return:java.util.List
+
+getResolveInfoListFromAvailableComponents-BB@0x0 : [ getResolveInfoListFromAvailableComponents-BB@0x12 ]
+	0       (00000000) new-instance         v1, Ljava/util/ArrayList;
+	1       (00000004) invoke-direct        v1, Ljava/util/ArrayList;-><init>()V
+	2       (0000000a) invoke-interface     v6, Ljava/util/List;->iterator()Ljava/util/Iterator;
+	3       (00000010) move-result-object   v3
+
+getResolveInfoListFromAvailableComponents-BB@0x12 : [ getResolveInfoListFromAvailableComponents-BB@0x1e getResolveInfoListFromAvailableComponents-BB@0x54 ]
+	4       (00000012) invoke-interface     v3, Ljava/util/Iterator;->hasNext()Z
+	5       (00000018) move-result          v4
+	6       (0000001a) if-eqz               v4, +1d
+
+getResolveInfoListFromAvailableComponents-BB@0x1e : [ getResolveInfoListFromAvailableComponents-BB@0x12 ]
+	7       (0000001e) invoke-interface     v3, Ljava/util/Iterator;->next()Ljava/lang/Object;
+	8       (00000024) move-result-object   v0
+	9       (00000026) check-cast           v0, Landroid/view/inputmethod/InputMethodInfo;
+	10      (0000002a) new-instance         v2, Landroid/content/pm/ResolveInfo;
+	11      (0000002e) invoke-direct        v2, Landroid/content/pm/ResolveInfo;-><init>()V
+	12      (00000034) invoke-virtual       v0, Landroid/view/inputmethod/InputMethodInfo;->getServiceInfo()Landroid/content/pm/ServiceInfo;
+	13      (0000003a) move-result-object   v4
+	14      (0000003c) iput-object          v4, v2, Landroid/content/pm/ResolveInfo;->serviceInfo Landroid/content/pm/ServiceInfo;
+	15      (00000040) invoke-virtual       v0, Landroid/view/inputmethod/InputMethodInfo;->getPackageName()Ljava/lang/String;
+	16      (00000046) move-result-object   v4
+	17      (00000048) iput-object          v4, v2, Landroid/content/pm/ResolveInfo;->resolvePackageName Ljava/lang/String;
+	18      (0000004c) invoke-interface     v1, v2, Ljava/util/List;->add(Ljava/lang/Object;)Z
+	19      (00000052) goto                 -20
+
+getResolveInfoListFromAvailableComponents-BB@0x54 : 
+	20      (00000054) return-object        v1
+

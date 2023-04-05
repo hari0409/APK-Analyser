@@ -1,0 +1,43 @@
+# Landroidx/appcompat/view/SupportMenuInflater$MenuState;->readGroup(Landroid/util/AttributeSet;)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v5
+# - v6:android.util.AttributeSet
+#
+# - return:void
+
+readGroup-BB@0x0 : 
+	0       (00000000) const/4              v4, 1
+	1       (00000002) const/4              v3, 0
+	2       (00000004) iget-object          v1, v5, Landroidx/appcompat/view/SupportMenuInflater$MenuState;->this$0 Landroidx/appcompat/view/SupportMenuInflater;
+	3       (00000008) iget-object          v1, v1, Landroidx/appcompat/view/SupportMenuInflater;->mContext Landroid/content/Context;
+	4       (0000000c) sget-object          v2, Landroidx/appcompat/R$styleable;->MenuGroup [I
+	5       (00000010) invoke-virtual       v1, v6, v2, Landroid/content/Context;->obtainStyledAttributes(Landroid/util/AttributeSet; [I)Landroid/content/res/TypedArray;
+	6       (00000016) move-result-object   v0
+	7       (00000018) sget                 v1, Landroidx/appcompat/R$styleable;->MenuGroup_android_id I
+	8       (0000001c) invoke-virtual       v0, v1, v3, Landroid/content/res/TypedArray;->getResourceId(I I)I
+	9       (00000022) move-result          v1
+	10      (00000024) iput                 v1, v5, Landroidx/appcompat/view/SupportMenuInflater$MenuState;->groupId I
+	11      (00000028) sget                 v1, Landroidx/appcompat/R$styleable;->MenuGroup_android_menuCategory I
+	12      (0000002c) invoke-virtual       v0, v1, v3, Landroid/content/res/TypedArray;->getInt(I I)I
+	13      (00000032) move-result          v1
+	14      (00000034) iput                 v1, v5, Landroidx/appcompat/view/SupportMenuInflater$MenuState;->groupCategory I
+	15      (00000038) sget                 v1, Landroidx/appcompat/R$styleable;->MenuGroup_android_orderInCategory I
+	16      (0000003c) invoke-virtual       v0, v1, v3, Landroid/content/res/TypedArray;->getInt(I I)I
+	17      (00000042) move-result          v1
+	18      (00000044) iput                 v1, v5, Landroidx/appcompat/view/SupportMenuInflater$MenuState;->groupOrder I
+	19      (00000048) sget                 v1, Landroidx/appcompat/R$styleable;->MenuGroup_android_checkableBehavior I
+	20      (0000004c) invoke-virtual       v0, v1, v3, Landroid/content/res/TypedArray;->getInt(I I)I
+	21      (00000052) move-result          v1
+	22      (00000054) iput                 v1, v5, Landroidx/appcompat/view/SupportMenuInflater$MenuState;->groupCheckable I
+	23      (00000058) sget                 v1, Landroidx/appcompat/R$styleable;->MenuGroup_android_visible I
+	24      (0000005c) invoke-virtual       v0, v1, v4, Landroid/content/res/TypedArray;->getBoolean(I Z)Z
+	25      (00000062) move-result          v1
+	26      (00000064) iput-boolean         v1, v5, Landroidx/appcompat/view/SupportMenuInflater$MenuState;->groupVisible Z
+	27      (00000068) sget                 v1, Landroidx/appcompat/R$styleable;->MenuGroup_android_enabled I
+	28      (0000006c) invoke-virtual       v0, v1, v4, Landroid/content/res/TypedArray;->getBoolean(I Z)Z
+	29      (00000072) move-result          v1
+	30      (00000074) iput-boolean         v1, v5, Landroidx/appcompat/view/SupportMenuInflater$MenuState;->groupEnabled Z
+	31      (00000078) invoke-virtual       v0, Landroid/content/res/TypedArray;->recycle()V
+	32      (0000007e) return-void          
+

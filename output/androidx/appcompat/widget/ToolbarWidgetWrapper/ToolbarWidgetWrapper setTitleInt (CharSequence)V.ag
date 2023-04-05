@@ -1,0 +1,21 @@
+# Landroidx/appcompat/widget/ToolbarWidgetWrapper;->setTitleInt(Ljava/lang/CharSequence;)V [access_flags=private]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:java.lang.CharSequence
+#
+# - return:void
+
+setTitleInt-BB@0x0 : [ setTitleInt-BB@0x10 setTitleInt-BB@0x1a ]
+	0       (00000000) iput-object          v2, v1, Landroidx/appcompat/widget/ToolbarWidgetWrapper;->mTitle Ljava/lang/CharSequence;
+	1       (00000004) iget                 v0, v1, Landroidx/appcompat/widget/ToolbarWidgetWrapper;->mDisplayOpts I
+	2       (00000008) and-int/lit8         v0, v0, 8
+	3       (0000000c) if-eqz               v0, +7
+
+setTitleInt-BB@0x10 : [ setTitleInt-BB@0x1a ]
+	4       (00000010) iget-object          v0, v1, Landroidx/appcompat/widget/ToolbarWidgetWrapper;->mToolbar Landroidx/appcompat/widget/Toolbar;
+	5       (00000014) invoke-virtual       v0, v2, Landroidx/appcompat/widget/Toolbar;->setTitle(Ljava/lang/CharSequence;)V
+
+setTitleInt-BB@0x1a : 
+	6       (0000001a) return-void          
+

@@ -1,0 +1,35 @@
+# Landroidx/appcompat/app/WindowDecorActionBar$ActionModeImpl;->invalidate()V [access_flags=public]
+#
+# Parameters:
+# local registers: v0...v2
+#
+# - return:void
+
+invalidate-BB@0x0 : [ invalidate-BB@0xc invalidate-BB@0xe ]
+	0       (00000000) iget-object          v0, v2, Landroidx/appcompat/app/WindowDecorActionBar$ActionModeImpl;->this$0 Landroidx/appcompat/app/WindowDecorActionBar;
+	1       (00000004) iget-object          v0, v0, Landroidx/appcompat/app/WindowDecorActionBar;->mActionMode Landroidx/appcompat/app/WindowDecorActionBar$ActionModeImpl;
+	2       (00000008) if-eq                v0, v2, +3
+
+invalidate-BB@0xc : 
+	3       (0000000c) return-void          
+
+invalidate-BB@0xe : [ invalidate-BB@0x18 ]
+	4       (0000000e) iget-object          v0, v2, Landroidx/appcompat/app/WindowDecorActionBar$ActionModeImpl;->mMenu Landroidx/appcompat/view/menu/MenuBuilder;
+	5       (00000012) invoke-virtual       v0, Landroidx/appcompat/view/menu/MenuBuilder;->stopDispatchingItemsChanged()V
+
+invalidate-BB@0x18 : [ invalidate-BB@0xc ]
+	6       (00000018) iget-object          v0, v2, Landroidx/appcompat/app/WindowDecorActionBar$ActionModeImpl;->mCallback Landroidx/appcompat/view/ActionMode$Callback;
+	7       (0000001c) iget-object          v1, v2, Landroidx/appcompat/app/WindowDecorActionBar$ActionModeImpl;->mMenu Landroidx/appcompat/view/menu/MenuBuilder;
+	8       (00000020) invoke-interface     v0, v2, v1, Landroidx/appcompat/view/ActionMode$Callback;->onPrepareActionMode(Landroidx/appcompat/view/ActionMode; Landroid/view/Menu;)Z
+	9       (00000026) iget-object          v0, v2, Landroidx/appcompat/app/WindowDecorActionBar$ActionModeImpl;->mMenu Landroidx/appcompat/view/menu/MenuBuilder;
+	10      (0000002a) invoke-virtual       v0, Landroidx/appcompat/view/menu/MenuBuilder;->startDispatchingItemsChanged()V
+	11      (00000030) goto                 -12
+	18:25
+	(Ljava/lang/Throwable; -> 32 invalidate-BB@0x32)
+
+invalidate-BB@0x32 : 
+	12      (00000032) move-exception       v0
+	13      (00000034) iget-object          v1, v2, Landroidx/appcompat/app/WindowDecorActionBar$ActionModeImpl;->mMenu Landroidx/appcompat/view/menu/MenuBuilder;
+	14      (00000038) invoke-virtual       v1, Landroidx/appcompat/view/menu/MenuBuilder;->startDispatchingItemsChanged()V
+	15      (0000003e) throw                v0
+

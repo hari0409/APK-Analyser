@@ -1,0 +1,25 @@
+# Lcom/afwsamples/testdpc/common/NotificationUtil;->createDefaultNotificationChannel(Landroid/content/Context;)V [access_flags=private static]
+#
+# Parameters:
+# - local registers: v0...v4
+# - v5:android.content.Context
+#
+# - return:void
+
+createDefaultNotificationChannel-BB@0x0 : 
+	0       (00000000) const-string         v3, 'notification'
+	1       (00000004) invoke-virtual       v5, v3, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
+	2       (0000000a) move-result-object   v2
+	3       (0000000c) check-cast           v2, Landroid/app/NotificationManager;
+	4       (00000010) const                v3, 2131689573 # [1.9008165192061294e+38]
+	5       (00000016) invoke-virtual       v5, v3, Landroid/content/Context;->getString(I)Ljava/lang/String;
+	6       (0000001c) move-result-object   v0
+	7       (0000001e) new-instance         v1, Landroid/app/NotificationChannel;
+	8       (00000022) const-string         v3, 'default_testdpc_channel'
+	9       (00000026) const/4              v4, 3
+	10      (00000028) invoke-direct        v1, v3, v0, v4, Landroid/app/NotificationChannel;-><init>(Ljava/lang/String; Ljava/lang/CharSequence; I)V
+	11      (0000002e) const/4              v3, 2
+	12      (00000030) invoke-virtual       v1, v3, Landroid/app/NotificationChannel;->setImportance(I)V
+	13      (00000036) invoke-virtual       v2, v1, Landroid/app/NotificationManager;->createNotificationChannel(Landroid/app/NotificationChannel;)V
+	14      (0000003c) return-void          
+

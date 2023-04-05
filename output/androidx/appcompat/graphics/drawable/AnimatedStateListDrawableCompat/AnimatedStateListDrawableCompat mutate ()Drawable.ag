@@ -1,0 +1,25 @@
+# Landroidx/appcompat/graphics/drawable/AnimatedStateListDrawableCompat;->mutate()Landroid/graphics/drawable/Drawable; [access_flags=public]
+#
+# Parameters:
+# local registers: v0...v1
+#
+# - return:android.graphics.drawable.Drawable
+
+mutate-BB@0x0 : [ mutate-BB@0x8 mutate-BB@0x24 ]
+	0       (00000000) iget-boolean         v0, v1, Landroidx/appcompat/graphics/drawable/AnimatedStateListDrawableCompat;->mMutated Z
+	1       (00000004) if-nez               v0, +10
+
+mutate-BB@0x8 : [ mutate-BB@0x14 mutate-BB@0x24 ]
+	2       (00000008) invoke-super         v1, Landroidx/appcompat/graphics/drawable/StateListDrawable;->mutate()Landroid/graphics/drawable/Drawable;
+	3       (0000000e) move-result-object   v0
+	4       (00000010) if-ne                v0, v1, +a
+
+mutate-BB@0x14 : [ mutate-BB@0x24 ]
+	5       (00000014) iget-object          v0, v1, Landroidx/appcompat/graphics/drawable/AnimatedStateListDrawableCompat;->mState Landroidx/appcompat/graphics/drawable/AnimatedStateListDrawableCompat$AnimatedStateListState;
+	6       (00000018) invoke-virtual       v0, Landroidx/appcompat/graphics/drawable/AnimatedStateListDrawableCompat$AnimatedStateListState;->mutate()V
+	7       (0000001e) const/4              v0, 1
+	8       (00000020) iput-boolean         v0, v1, Landroidx/appcompat/graphics/drawable/AnimatedStateListDrawableCompat;->mMutated Z
+
+mutate-BB@0x24 : 
+	9       (00000024) return-object        v1
+

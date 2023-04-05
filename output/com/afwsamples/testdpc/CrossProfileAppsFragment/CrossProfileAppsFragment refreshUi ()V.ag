@@ -1,0 +1,29 @@
+# Lcom/afwsamples/testdpc/CrossProfileAppsFragment;->refreshUi()V [access_flags=private]
+#
+# Parameters:
+# local registers: v0...v2
+#
+# - return:void
+
+refreshUi-BB@0x0 : [ refreshUi-BB@0x18 refreshUi-BB@0x20 ]
+	0       (00000000) iget-object          v1, v2, Lcom/afwsamples/testdpc/CrossProfileAppsFragment;->mCrossProfileApps Landroid/content/pm/CrossProfileApps;
+	1       (00000004) invoke-virtual       v1, Landroid/content/pm/CrossProfileApps;->getTargetUserProfiles()Ljava/util/List;
+	2       (0000000a) move-result-object   v0
+	3       (0000000c) invoke-interface     v0, Ljava/util/List;->isEmpty()Z
+	4       (00000012) move-result          v1
+	5       (00000014) if-eqz               v1, +6
+
+refreshUi-BB@0x18 : [ refreshUi-BB@0x1e ]
+	6       (00000018) invoke-direct        v2, Lcom/afwsamples/testdpc/CrossProfileAppsFragment;->showNoTargetUserUi()V
+
+refreshUi-BB@0x1e : 
+	7       (0000001e) return-void          
+
+refreshUi-BB@0x20 : [ refreshUi-BB@0x1e ]
+	8       (00000020) const/4              v1, 0
+	9       (00000022) invoke-interface     v0, v1, Ljava/util/List;->get(I)Ljava/lang/Object;
+	10      (00000028) move-result-object   v1
+	11      (0000002a) check-cast           v1, Landroid/os/UserHandle;
+	12      (0000002e) invoke-direct        v2, v1, Lcom/afwsamples/testdpc/CrossProfileAppsFragment;->showHasTargetUserUi(Landroid/os/UserHandle;)V
+	13      (00000034) goto                 -b
+

@@ -1,0 +1,16 @@
+# Lcom/afwsamples/testdpc/DeviceAdminReceiver;->getComponentName(Landroid/content/Context;)Landroid/content/ComponentName; [access_flags=public static]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:android.content.Context
+#
+# - return:android.content.ComponentName
+
+getComponentName-BB@0x0 : 
+	0       (00000000) new-instance         v0, Landroid/content/ComponentName;
+	1       (00000004) invoke-virtual       v3, Landroid/content/Context;->getApplicationContext()Landroid/content/Context;
+	2       (0000000a) move-result-object   v1
+	3       (0000000c) const-class          v2, Lcom/afwsamples/testdpc/DeviceAdminReceiver;
+	4       (00000010) invoke-direct        v0, v1, v2, Landroid/content/ComponentName;-><init>(Landroid/content/Context; Ljava/lang/Class;)V
+	5       (00000016) return-object        v0
+

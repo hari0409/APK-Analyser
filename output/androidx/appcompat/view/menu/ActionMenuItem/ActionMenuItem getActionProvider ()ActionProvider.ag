@@ -1,0 +1,12 @@
+# Landroidx/appcompat/view/menu/ActionMenuItem;->getActionProvider()Landroid/view/ActionProvider; [access_flags=public]
+#
+# Parameters:
+# local registers: v0...v1
+#
+# - return:android.view.ActionProvider
+
+getActionProvider-BB@0x0 : 
+	0       (00000000) new-instance         v0, Ljava/lang/UnsupportedOperationException;
+	1       (00000004) invoke-direct        v0, Ljava/lang/UnsupportedOperationException;-><init>()V
+	2       (0000000a) throw                v0
+

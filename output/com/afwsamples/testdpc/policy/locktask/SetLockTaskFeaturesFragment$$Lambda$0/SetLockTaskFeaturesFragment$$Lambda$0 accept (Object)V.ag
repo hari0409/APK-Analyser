@@ -1,0 +1,13 @@
+# Lcom/afwsamples/testdpc/policy/locktask/SetLockTaskFeaturesFragment$$Lambda$0;->accept(Ljava/lang/Object;)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v0
+# - v1:java.lang.Object
+#
+# - return:void
+
+accept-BB@0x0 : 
+	0       (00000000) check-cast           v1, Ljava/lang/Void;
+	1       (00000004) invoke-static        v1, Lcom/afwsamples/testdpc/policy/locktask/SetLockTaskFeaturesFragment;->lambda$setLockTaskFeatures$198$SetLockTaskFeaturesFragment(Ljava/lang/Void;)V
+	2       (0000000a) return-void          
+

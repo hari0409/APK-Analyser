@@ -1,0 +1,73 @@
+# Landroidx/appcompat/view/SupportMenuInflater;->inflate(I Landroid/view/Menu;)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v5
+# - v6:int
+# - v7:android.view.Menu
+#
+# - return:void
+
+inflate-BB@0x0 : [ inflate-BB@0x8 inflate-BB@0x10 ]
+	0       (00000000) instance-of          v3, v7, Landroidx/core/internal/view/SupportMenu;
+	1       (00000004) if-nez               v3, +6
+
+inflate-BB@0x8 : [ inflate-BB@0xe ]
+	2       (00000008) invoke-super         v5, v6, v7, Landroid/view/MenuInflater;->inflate(I Landroid/view/Menu;)V
+
+inflate-BB@0xe : 
+	3       (0000000e) return-void          
+
+inflate-BB@0x10 : [ inflate-BB@0x12 ]
+	4       (00000010) const/4              v2, 0
+
+inflate-BB@0x12 : [ inflate-BB@0x38 inflate-BB@0xe ]
+	5       (00000012) iget-object          v3, v5, Landroidx/appcompat/view/SupportMenuInflater;->mContext Landroid/content/Context;
+	6       (00000016) invoke-virtual       v3, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
+	7       (0000001c) move-result-object   v3
+	8       (0000001e) invoke-virtual       v3, v6, Landroid/content/res/Resources;->getLayout(I)Landroid/content/res/XmlResourceParser;
+	9       (00000024) move-result-object   v2
+	10      (00000026) invoke-static        v2, Landroid/util/Xml;->asAttributeSet(Lorg/xmlpull/v1/XmlPullParser;)Landroid/util/AttributeSet;
+	11      (0000002c) move-result-object   v0
+	12      (0000002e) invoke-direct        v5, v2, v0, v7, Landroidx/appcompat/view/SupportMenuInflater;->parseMenu(Lorg/xmlpull/v1/XmlPullParser; Landroid/util/AttributeSet; Landroid/view/Menu;)V
+	13      (00000034) if-eqz               v2, -13
+	12:33
+	(Ljava/lang/Throwable; -> 52 inflate-BB@0x52)
+	(Lorg/xmlpull/v1/XmlPullParserException; -> 40 inflate-BB@0x40)
+	(Ljava/io/IOException; -> 60 inflate-BB@0x60)
+
+inflate-BB@0x38 : [ inflate-BB@0xe ]
+	14      (00000038) invoke-interface     v2, Landroid/content/res/XmlResourceParser;->close()V
+	15      (0000003e) goto                 -18
+
+inflate-BB@0x40 : [ inflate-BB@0x42 ]
+	16      (00000040) move-exception       v1
+
+inflate-BB@0x42 : 
+	17      (00000042) new-instance         v3, Landroid/view/InflateException;
+	18      (00000046) const-string         v4, 'Error inflating menu XML'
+	19      (0000004a) invoke-direct        v3, v4, v1, Landroid/view/InflateException;-><init>(Ljava/lang/String; Ljava/lang/Throwable;)V
+	20      (00000050) throw                v3
+	42:51
+	(Ljava/lang/Throwable; -> 52 inflate-BB@0x52)
+
+inflate-BB@0x52 : [ inflate-BB@0x58 inflate-BB@0x5e ]
+	21      (00000052) move-exception       v3
+	22      (00000054) if-eqz               v2, +5
+
+inflate-BB@0x58 : [ inflate-BB@0x5e ]
+	23      (00000058) invoke-interface     v2, Landroid/content/res/XmlResourceParser;->close()V
+
+inflate-BB@0x5e : 
+	24      (0000005e) throw                v3
+
+inflate-BB@0x60 : [ inflate-BB@0x62 ]
+	25      (00000060) move-exception       v1
+
+inflate-BB@0x62 : 
+	26      (00000062) new-instance         v3, Landroid/view/InflateException;
+	27      (00000066) const-string         v4, 'Error inflating menu XML'
+	28      (0000006a) invoke-direct        v3, v4, v1, Landroid/view/InflateException;-><init>(Ljava/lang/String; Ljava/lang/Throwable;)V
+	29      (00000070) throw                v3
+	62:71
+	(Ljava/lang/Throwable; -> 52 inflate-BB@0x52)
+

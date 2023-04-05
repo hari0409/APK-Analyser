@@ -1,0 +1,22 @@
+# Lcom/afwsamples/testdpc/common/BaseSearchablePolicyPreferenceFragment;->dump(Ljava/lang/String; Ljava/io/FileDescriptor; Ljava/io/PrintWriter; [Ljava/lang/String;)V [access_flags=public final]
+#
+# Parameters:
+# - local registers: v0...v6
+# - v7:java.lang.String
+# - v8:java.io.FileDescriptor
+# - v9:java.io.PrintWriter
+# - v10:java.lang.String[]
+#
+# - return:void
+
+dump-BB@0x0 : 
+	0       (00000000) invoke-static        v10, Lcom/afwsamples/testdpc/common/Dumpable$$CC;->isQuietMode$$STATIC$$([Ljava/lang/String;)Z
+	1       (00000006) move-result          v4
+	2       (00000008) move-object          v0, v6
+	3       (0000000a) move-object          v1, v7
+	4       (0000000c) move-object          v2, v9
+	5       (0000000e) move-object          v3, v8
+	6       (00000010) move-object          v5, v10
+	7       (00000012) invoke-virtual/range v0 ... v5, Lcom/afwsamples/testdpc/common/BaseSearchablePolicyPreferenceFragment;->dump(Ljava/lang/String; Ljava/io/PrintWriter; Ljava/io/FileDescriptor; Z [Ljava/lang/String;)V
+	8       (00000018) return-void          
+

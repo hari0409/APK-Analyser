@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:paddingTop="@dimen/params_padding_top_bottom" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:id="@id/params_title" android:paddingTop="@dimen/params_padding_top_bottom" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/provisioning_params_title" style="@style/containerText" />
+        <ImageButton android:gravity="center" android:id="@id/params_indicator" android:background="@null" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/arrow_up_down" android:tint="?android:colorAccent" />
+    </LinearLayout>
+    <LinearLayout android:orientation="vertical" android:id="@id/params" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <include layout="@layout/choose_color_item" />
+        <include layout="@layout/choose_logo_item" />
+        <CheckBox android:id="@id/skip_user_consent" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/params_padding_top_bottom" android:checked="true" android:text="@string/skip_user_consent" style="@style/containerText" />
+        <CheckBox android:id="@id/keep_account_migrated" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/params_padding_top_bottom" android:checked="false" android:text="@string/keep_account_migrated" style="@style/containerText" />
+        <CheckBox android:id="@id/skip_encryption" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/params_padding_top_bottom" android:checked="false" android:text="@string/skip_encryption" style="@style/containerText" />
+    </LinearLayout>
+</LinearLayout>

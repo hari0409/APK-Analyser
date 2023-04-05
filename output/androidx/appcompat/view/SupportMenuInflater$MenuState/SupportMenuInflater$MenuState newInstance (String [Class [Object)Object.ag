@@ -1,0 +1,45 @@
+# Landroidx/appcompat/view/SupportMenuInflater$MenuState;->newInstance(Ljava/lang/String; [Ljava/lang/Class; [Ljava/lang/Object;)Ljava/lang/Object; [access_flags=private]
+#
+# Parameters:
+# - local registers: v0...v6
+# - v7:java.lang.String
+# - v8:java.lang.Class[]
+# - v9:java.lang.Object[]
+#
+# - return:java.lang.Object
+
+newInstance-BB@0x0 : [ newInstance-BB@0x30 ]
+	0       (00000000) iget-object          v3, v6, Landroidx/appcompat/view/SupportMenuInflater$MenuState;->this$0 Landroidx/appcompat/view/SupportMenuInflater;
+	1       (00000004) iget-object          v3, v3, Landroidx/appcompat/view/SupportMenuInflater;->mContext Landroid/content/Context;
+	2       (00000008) invoke-virtual       v3, Landroid/content/Context;->getClassLoader()Ljava/lang/ClassLoader;
+	3       (0000000e) move-result-object   v3
+	4       (00000010) invoke-virtual       v3, v7, Ljava/lang/ClassLoader;->loadClass(Ljava/lang/String;)Ljava/lang/Class;
+	5       (00000016) move-result-object   v0
+	6       (00000018) invoke-virtual       v0, v8, Ljava/lang/Class;->getConstructor([Ljava/lang/Class;)Ljava/lang/reflect/Constructor;
+	7       (0000001e) move-result-object   v1
+	8       (00000020) const/4              v3, 1
+	9       (00000022) invoke-virtual       v1, v3, Ljava/lang/reflect/Constructor;->setAccessible(Z)V
+	10      (00000028) invoke-virtual       v1, v9, Ljava/lang/reflect/Constructor;->newInstance([Ljava/lang/Object;)Ljava/lang/Object;
+	11      (0000002e) move-result-object   v3
+	0:2d
+	(Ljava/lang/Exception; -> 32 newInstance-BB@0x32)
+
+newInstance-BB@0x30 : 
+	12      (00000030) return-object        v3
+
+newInstance-BB@0x32 : [ newInstance-BB@0x30 ]
+	13      (00000032) move-exception       v2
+	14      (00000034) const-string         v3, 'SupportMenuInflater'
+	15      (00000038) new-instance         v4, Ljava/lang/StringBuilder;
+	16      (0000003c) invoke-direct        v4, Ljava/lang/StringBuilder;-><init>()V
+	17      (00000042) const-string         v5, 'Cannot instantiate class: '
+	18      (00000046) invoke-virtual       v4, v5, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	19      (0000004c) move-result-object   v4
+	20      (0000004e) invoke-virtual       v4, v7, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	21      (00000054) move-result-object   v4
+	22      (00000056) invoke-virtual       v4, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+	23      (0000005c) move-result-object   v4
+	24      (0000005e) invoke-static        v3, v4, v2, Landroid/util/Log;->w(Ljava/lang/String; Ljava/lang/String; Ljava/lang/Throwable;)I
+	25      (00000064) const/4              v3, 0
+	26      (00000066) goto                 -1b
+

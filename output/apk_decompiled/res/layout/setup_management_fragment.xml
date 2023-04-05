@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.android.setupwizardlib.GlifLayout android:icon="@drawable/ic_enterprise_blue" android:id="@id/setup_wizard_layout" android:layout_width="fill_parent" android:layout_height="fill_parent" app:suwFooter="@layout/setup_footer" app:suwHeaderText="@string/set_up_management_header"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent" style="@style/SuwContentFrame">
+        <TextView android:id="@id/managed_account_desc" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/managed_account_message" style="@style/SuwDescription.Glif" />
+        <TextView android:id="@id/managed_account_name" android:paddingBottom="@dimen/content_padding_between_text" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" style="@style/SuwDescription.Glif" />
+        <TextView android:id="@id/setup_management_message_id" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/setup_management_message" style="@style/SuwDescription.Glif" />
+        <RadioGroup android:orientation="vertical" android:id="@id/setup_options" android:paddingTop="@dimen/content_padding_between_text" android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <RadioButton android:id="@id/setup_managed_profile" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:checked="true" android:text="@string/set_up_managed_profile" />
+            <RadioButton android:id="@id/setup_device_owner" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/set_up_device_owner" />
+        </RadioGroup>
+        <include layout="@layout/provisioning_params_display" />
+    </LinearLayout>
+</com.android.setupwizardlib.GlifLayout>

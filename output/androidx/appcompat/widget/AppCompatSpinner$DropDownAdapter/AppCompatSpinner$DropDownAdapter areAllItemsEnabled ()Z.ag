@@ -1,0 +1,22 @@
+# Landroidx/appcompat/widget/AppCompatSpinner$DropDownAdapter;->areAllItemsEnabled()Z [access_flags=public]
+#
+# Parameters:
+# local registers: v0...v2
+#
+# - return:boolean
+
+areAllItemsEnabled-BB@0x0 : [ areAllItemsEnabled-BB@0x8 areAllItemsEnabled-BB@0x12 ]
+	0       (00000000) iget-object          v0, v2, Landroidx/appcompat/widget/AppCompatSpinner$DropDownAdapter;->mListAdapter Landroid/widget/ListAdapter;
+	1       (00000004) if-eqz               v0, +7
+
+areAllItemsEnabled-BB@0x8 : [ areAllItemsEnabled-BB@0x10 ]
+	2       (00000008) invoke-interface     v0, Landroid/widget/ListAdapter;->areAllItemsEnabled()Z
+	3       (0000000e) move-result          v1
+
+areAllItemsEnabled-BB@0x10 : 
+	4       (00000010) return               v1
+
+areAllItemsEnabled-BB@0x12 : [ areAllItemsEnabled-BB@0x10 ]
+	5       (00000012) const/4              v1, 1
+	6       (00000014) goto                 -2
+

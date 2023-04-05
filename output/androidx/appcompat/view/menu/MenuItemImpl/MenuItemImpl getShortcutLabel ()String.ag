@@ -1,0 +1,119 @@
+# Landroidx/appcompat/view/menu/MenuItemImpl;->getShortcutLabel()Ljava/lang/String; [access_flags=]
+#
+# Parameters:
+# local registers: v0...v6
+#
+# - return:java.lang.String
+
+getShortcutLabel-BB@0x0 : [ getShortcutLabel-BB@0xc getShortcutLabel-BB@0x12 ]
+	0       (00000000) invoke-virtual       v6, Landroidx/appcompat/view/menu/MenuItemImpl;->getShortcut()C
+	1       (00000006) move-result          v3
+	2       (00000008) if-nez               v3, +5
+
+getShortcutLabel-BB@0xc : [ getShortcutLabel-BB@0x10 ]
+	3       (0000000c) const-string         v4, ''
+
+getShortcutLabel-BB@0x10 : 
+	4       (00000010) return-object        v4
+
+getShortcutLabel-BB@0x12 : [ getShortcutLabel-BB@0x50 getShortcutLabel-BB@0x62 ]
+	5       (00000012) iget-object          v4, v6, Landroidx/appcompat/view/menu/MenuItemImpl;->mMenu Landroidx/appcompat/view/menu/MenuBuilder;
+	6       (00000016) invoke-virtual       v4, Landroidx/appcompat/view/menu/MenuBuilder;->getContext()Landroid/content/Context;
+	7       (0000001c) move-result-object   v4
+	8       (0000001e) invoke-virtual       v4, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
+	9       (00000024) move-result-object   v1
+	10      (00000026) new-instance         v2, Ljava/lang/StringBuilder;
+	11      (0000002a) invoke-direct        v2, Ljava/lang/StringBuilder;-><init>()V
+	12      (00000030) iget-object          v4, v6, Landroidx/appcompat/view/menu/MenuItemImpl;->mMenu Landroidx/appcompat/view/menu/MenuBuilder;
+	13      (00000034) invoke-virtual       v4, Landroidx/appcompat/view/menu/MenuBuilder;->getContext()Landroid/content/Context;
+	14      (0000003a) move-result-object   v4
+	15      (0000003c) invoke-static        v4, Landroid/view/ViewConfiguration;->get(Landroid/content/Context;)Landroid/view/ViewConfiguration;
+	16      (00000042) move-result-object   v4
+	17      (00000044) invoke-virtual       v4, Landroid/view/ViewConfiguration;->hasPermanentMenuKey()Z
+	18      (0000004a) move-result          v4
+	19      (0000004c) if-eqz               v4, +b
+
+getShortcutLabel-BB@0x50 : [ getShortcutLabel-BB@0x62 ]
+	20      (00000050) sget                 v4, Landroidx/appcompat/R$string;->abc_prepend_shortcut_label I
+	21      (00000054) invoke-virtual       v1, v4, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
+	22      (0000005a) move-result-object   v4
+	23      (0000005c) invoke-virtual       v2, v4, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+getShortcutLabel-BB@0x62 : [ getShortcutLabel-BB@0x72 getShortcutLabel-BB@0x10a ]
+	24      (00000062) iget-object          v4, v6, Landroidx/appcompat/view/menu/MenuItemImpl;->mMenu Landroidx/appcompat/view/menu/MenuBuilder;
+	25      (00000066) invoke-virtual       v4, Landroidx/appcompat/view/menu/MenuBuilder;->isQwertyMode()Z
+	26      (0000006c) move-result          v4
+	27      (0000006e) if-eqz               v4, +4e
+
+getShortcutLabel-BB@0x72 : [ getShortcutLabel-BB@0x76 ]
+	28      (00000072) iget                 v0, v6, Landroidx/appcompat/view/menu/MenuItemImpl;->mShortcutAlphabeticModifiers I
+
+getShortcutLabel-BB@0x76 : [ D:getShortcutLabel-BB@0xfa 8:getShortcutLabel-BB@0x124 10:getShortcutLabel-BB@0x110 32:getShortcutLabel-BB@0x138 ]
+	29      (00000076) const/high16         v4, 1 # [9.183549615799121e-41]
+	30      (0000007a) sget                 v5, Landroidx/appcompat/R$string;->abc_menu_meta_shortcut_label I
+	31      (0000007e) invoke-virtual       v1, v5, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
+	32      (00000084) move-result-object   v5
+	33      (00000086) invoke-static        v2, v0, v4, v5, Landroidx/appcompat/view/menu/MenuItemImpl;->appendModifier(Ljava/lang/StringBuilder; I I Ljava/lang/String;)V
+	34      (0000008c) const/16             v4, 4096
+	35      (00000090) sget                 v5, Landroidx/appcompat/R$string;->abc_menu_ctrl_shortcut_label I
+	36      (00000094) invoke-virtual       v1, v5, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
+	37      (0000009a) move-result-object   v5
+	38      (0000009c) invoke-static        v2, v0, v4, v5, Landroidx/appcompat/view/menu/MenuItemImpl;->appendModifier(Ljava/lang/StringBuilder; I I Ljava/lang/String;)V
+	39      (000000a2) const/4              v4, 2
+	40      (000000a4) sget                 v5, Landroidx/appcompat/R$string;->abc_menu_alt_shortcut_label I
+	41      (000000a8) invoke-virtual       v1, v5, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
+	42      (000000ae) move-result-object   v5
+	43      (000000b0) invoke-static        v2, v0, v4, v5, Landroidx/appcompat/view/menu/MenuItemImpl;->appendModifier(Ljava/lang/StringBuilder; I I Ljava/lang/String;)V
+	44      (000000b6) const/4              v4, 1
+	45      (000000b8) sget                 v5, Landroidx/appcompat/R$string;->abc_menu_shift_shortcut_label I
+	46      (000000bc) invoke-virtual       v1, v5, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
+	47      (000000c2) move-result-object   v5
+	48      (000000c4) invoke-static        v2, v0, v4, v5, Landroidx/appcompat/view/menu/MenuItemImpl;->appendModifier(Ljava/lang/StringBuilder; I I Ljava/lang/String;)V
+	49      (000000ca) const/4              v4, 4
+	50      (000000cc) sget                 v5, Landroidx/appcompat/R$string;->abc_menu_sym_shortcut_label I
+	51      (000000d0) invoke-virtual       v1, v5, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
+	52      (000000d6) move-result-object   v5
+	53      (000000d8) invoke-static        v2, v0, v4, v5, Landroidx/appcompat/view/menu/MenuItemImpl;->appendModifier(Ljava/lang/StringBuilder; I I Ljava/lang/String;)V
+	54      (000000de) const/16             v4, 8
+	55      (000000e2) sget                 v5, Landroidx/appcompat/R$string;->abc_menu_function_shortcut_label I
+	56      (000000e6) invoke-virtual       v1, v5, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
+	57      (000000ec) move-result-object   v5
+	58      (000000ee) invoke-static        v2, v0, v4, v5, Landroidx/appcompat/view/menu/MenuItemImpl;->appendModifier(Ljava/lang/StringBuilder; I I Ljava/lang/String;)V
+	59      (000000f4) sparse-switch        v3, +2c (0x14c)
+
+getShortcutLabel-BB@0xfa : [ getShortcutLabel-BB@0x100 ]
+	60      (000000fa) invoke-virtual       v2, v3, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+
+getShortcutLabel-BB@0x100 : [ getShortcutLabel-BB@0x10 ]
+	61      (00000100) invoke-virtual       v2, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+	62      (00000106) move-result-object   v4
+	63      (00000108) goto                 -7c
+
+getShortcutLabel-BB@0x10a : [ getShortcutLabel-BB@0x76 ]
+	64      (0000010a) iget                 v0, v6, Landroidx/appcompat/view/menu/MenuItemImpl;->mShortcutNumericModifiers I
+	65      (0000010e) goto                 -4c
+
+getShortcutLabel-BB@0x110 : [ getShortcutLabel-BB@0x100 ]
+	66      (00000110) sget                 v4, Landroidx/appcompat/R$string;->abc_menu_enter_shortcut_label I
+	67      (00000114) invoke-virtual       v1, v4, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
+	68      (0000011a) move-result-object   v4
+	69      (0000011c) invoke-virtual       v2, v4, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	70      (00000122) goto                 -11
+
+getShortcutLabel-BB@0x124 : [ getShortcutLabel-BB@0x100 ]
+	71      (00000124) sget                 v4, Landroidx/appcompat/R$string;->abc_menu_delete_shortcut_label I
+	72      (00000128) invoke-virtual       v1, v4, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
+	73      (0000012e) move-result-object   v4
+	74      (00000130) invoke-virtual       v2, v4, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	75      (00000136) goto                 -1b
+
+getShortcutLabel-BB@0x138 : [ getShortcutLabel-BB@0x100 ]
+	76      (00000138) sget                 v4, Landroidx/appcompat/R$string;->abc_menu_space_shortcut_label I
+	77      (0000013c) invoke-virtual       v1, v4, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
+	78      (00000142) move-result-object   v4
+	79      (00000144) invoke-virtual       v2, v4, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	80      (0000014a) goto                 -25
+
+getShortcutLabel-BB@0x14c : 
+	81      (0000014c) sparse-switch-payload 8 a 20
+

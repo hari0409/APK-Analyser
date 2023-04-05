@@ -1,0 +1,90 @@
+# Landroidx/appcompat/widget/ForwardingListener;->onTouchObserved(Landroid/view/MotionEvent;)Z [access_flags=private]
+#
+# Parameters:
+# - local registers: v0...v10
+# - v11:android.view.MotionEvent
+#
+# - return:boolean
+
+onTouchObserved-BB@0x0 : [ onTouchObserved-BB@0x14 onTouchObserved-BB@0x16 ]
+	0       (00000000) const/4              v6, 1
+	1       (00000002) const/4              v5, 0
+	2       (00000004) iget-object          v2, v10, Landroidx/appcompat/widget/ForwardingListener;->mSrc Landroid/view/View;
+	3       (00000008) invoke-virtual       v2, Landroid/view/View;->isEnabled()Z
+	4       (0000000e) move-result          v7
+	5       (00000010) if-nez               v7, +3
+
+onTouchObserved-BB@0x14 : 
+	6       (00000014) return               v5
+
+onTouchObserved-BB@0x16 : [ D:onTouchObserved-BB@0x24 0:onTouchObserved-BB@0x26 1:onTouchObserved-BB@0xc8 2:onTouchObserved-BB@0x80 3:onTouchObserved-BB@0xc8 ]
+	7       (00000016) invoke-virtual       v11, Landroid/view/MotionEvent;->getActionMasked()I
+	8       (0000001c) move-result          v0
+	9       (0000001e) packed-switch        v0, +59 (0xd0)
+
+onTouchObserved-BB@0x24 : [ onTouchObserved-BB@0x14 ]
+	10      (00000024) goto                 -8
+
+onTouchObserved-BB@0x26 : [ onTouchObserved-BB@0x3a onTouchObserved-BB@0x48 ]
+	11      (00000026) invoke-virtual       v11, v5, Landroid/view/MotionEvent;->getPointerId(I)I
+	12      (0000002c) move-result          v6
+	13      (0000002e) iput                 v6, v10, Landroidx/appcompat/widget/ForwardingListener;->mActivePointerId I
+	14      (00000032) iget-object          v6, v10, Landroidx/appcompat/widget/ForwardingListener;->mDisallowIntercept Ljava/lang/Runnable;
+	15      (00000036) if-nez               v6, +9
+
+onTouchObserved-BB@0x3a : [ onTouchObserved-BB@0x48 ]
+	16      (0000003a) new-instance         v6, Landroidx/appcompat/widget/ForwardingListener$DisallowIntercept;
+	17      (0000003e) invoke-direct        v6, v10, Landroidx/appcompat/widget/ForwardingListener$DisallowIntercept;-><init>(Landroidx/appcompat/widget/ForwardingListener;)V
+	18      (00000044) iput-object          v6, v10, Landroidx/appcompat/widget/ForwardingListener;->mDisallowIntercept Ljava/lang/Runnable;
+
+onTouchObserved-BB@0x48 : [ onTouchObserved-BB@0x60 onTouchObserved-BB@0x6e ]
+	19      (00000048) iget-object          v6, v10, Landroidx/appcompat/widget/ForwardingListener;->mDisallowIntercept Ljava/lang/Runnable;
+	20      (0000004c) iget                 v7, v10, Landroidx/appcompat/widget/ForwardingListener;->mTapTimeout I
+	21      (00000050) int-to-long          v8, v7
+	22      (00000052) invoke-virtual       v2, v6, v8, v9, Landroid/view/View;->postDelayed(Ljava/lang/Runnable; J)Z
+	23      (00000058) iget-object          v6, v10, Landroidx/appcompat/widget/ForwardingListener;->mTriggerLongPress Ljava/lang/Runnable;
+	24      (0000005c) if-nez               v6, +9
+
+onTouchObserved-BB@0x60 : [ onTouchObserved-BB@0x6e ]
+	25      (00000060) new-instance         v6, Landroidx/appcompat/widget/ForwardingListener$TriggerLongPress;
+	26      (00000064) invoke-direct        v6, v10, Landroidx/appcompat/widget/ForwardingListener$TriggerLongPress;-><init>(Landroidx/appcompat/widget/ForwardingListener;)V
+	27      (0000006a) iput-object          v6, v10, Landroidx/appcompat/widget/ForwardingListener;->mTriggerLongPress Ljava/lang/Runnable;
+
+onTouchObserved-BB@0x6e : [ onTouchObserved-BB@0x14 ]
+	28      (0000006e) iget-object          v6, v10, Landroidx/appcompat/widget/ForwardingListener;->mTriggerLongPress Ljava/lang/Runnable;
+	29      (00000072) iget                 v7, v10, Landroidx/appcompat/widget/ForwardingListener;->mLongPressTimeout I
+	30      (00000076) int-to-long          v8, v7
+	31      (00000078) invoke-virtual       v2, v6, v8, v9, Landroid/view/View;->postDelayed(Ljava/lang/Runnable; J)Z
+	32      (0000007e) goto                 -35
+
+onTouchObserved-BB@0x80 : [ onTouchObserved-BB@0x90 onTouchObserved-BB@0x14 ]
+	33      (00000080) iget                 v7, v10, Landroidx/appcompat/widget/ForwardingListener;->mActivePointerId I
+	34      (00000084) invoke-virtual       v11, v7, Landroid/view/MotionEvent;->findPointerIndex(I)I
+	35      (0000008a) move-result          v1
+	36      (0000008c) if-ltz               v1, -3c
+
+onTouchObserved-BB@0x90 : [ onTouchObserved-BB@0xb0 onTouchObserved-BB@0x14 ]
+	37      (00000090) invoke-virtual       v11, v1, Landroid/view/MotionEvent;->getX(I)F
+	38      (00000096) move-result          v3
+	39      (00000098) invoke-virtual       v11, v1, Landroid/view/MotionEvent;->getY(I)F
+	40      (0000009e) move-result          v4
+	41      (000000a0) iget                 v7, v10, Landroidx/appcompat/widget/ForwardingListener;->mScaledTouchSlop F
+	42      (000000a4) invoke-static        v2, v3, v4, v7, Landroidx/appcompat/widget/ForwardingListener;->pointInView(Landroid/view/View; F F F)Z
+	43      (000000aa) move-result          v7
+	44      (000000ac) if-nez               v7, -4c
+
+onTouchObserved-BB@0xb0 : [ onTouchObserved-BB@0x14 ]
+	45      (000000b0) invoke-direct        v10, Landroidx/appcompat/widget/ForwardingListener;->clearCallbacks()V
+	46      (000000b6) invoke-virtual       v2, Landroid/view/View;->getParent()Landroid/view/ViewParent;
+	47      (000000bc) move-result-object   v5
+	48      (000000be) invoke-interface     v5, v6, Landroid/view/ViewParent;->requestDisallowInterceptTouchEvent(Z)V
+	49      (000000c4) move                 v5, v6
+	50      (000000c6) goto                 -59
+
+onTouchObserved-BB@0xc8 : [ onTouchObserved-BB@0x14 ]
+	51      (000000c8) invoke-direct        v10, Landroidx/appcompat/widget/ForwardingListener;->clearCallbacks()V
+	52      (000000ce) goto                 -5d
+
+onTouchObserved-BB@0xd0 : 
+	53      (000000d0) packed-switch-payload 0 1 2 3
+

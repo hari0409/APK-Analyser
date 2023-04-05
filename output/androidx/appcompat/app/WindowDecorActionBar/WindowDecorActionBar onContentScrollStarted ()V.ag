@@ -1,0 +1,20 @@
+# Landroidx/appcompat/app/WindowDecorActionBar;->onContentScrollStarted()V [access_flags=public]
+#
+# Parameters:
+# local registers: v0...v1
+#
+# - return:void
+
+onContentScrollStarted-BB@0x0 : [ onContentScrollStarted-BB@0x8 onContentScrollStarted-BB@0x18 ]
+	0       (00000000) iget-object          v0, v1, Landroidx/appcompat/app/WindowDecorActionBar;->mCurrentShowAnim Landroidx/appcompat/view/ViewPropertyAnimatorCompatSet;
+	1       (00000004) if-eqz               v0, +a
+
+onContentScrollStarted-BB@0x8 : [ onContentScrollStarted-BB@0x18 ]
+	2       (00000008) iget-object          v0, v1, Landroidx/appcompat/app/WindowDecorActionBar;->mCurrentShowAnim Landroidx/appcompat/view/ViewPropertyAnimatorCompatSet;
+	3       (0000000c) invoke-virtual       v0, Landroidx/appcompat/view/ViewPropertyAnimatorCompatSet;->cancel()V
+	4       (00000012) const/4              v0, 0
+	5       (00000014) iput-object          v0, v1, Landroidx/appcompat/app/WindowDecorActionBar;->mCurrentShowAnim Landroidx/appcompat/view/ViewPropertyAnimatorCompatSet;
+
+onContentScrollStarted-BB@0x18 : 
+	6       (00000018) return-void          
+

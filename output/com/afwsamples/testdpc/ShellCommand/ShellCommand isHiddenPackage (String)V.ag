@@ -1,0 +1,42 @@
+# Lcom/afwsamples/testdpc/ShellCommand;->isHiddenPackage(Ljava/lang/String;)V [access_flags=private]
+#
+# Parameters:
+# - local registers: v0...v9
+# - v10:java.lang.String
+#
+# - return:void
+
+isHiddenPackage-BB@0x0 : [ isHiddenPackage-BB@0x4 ]
+	0       (00000000) const/4              v8, 1
+	1       (00000002) const/4              v7, 0
+
+isHiddenPackage-BB@0x4 : [ isHiddenPackage-BB@0x38 ]
+	2       (00000004) iget-object          v2, v9, Lcom/afwsamples/testdpc/ShellCommand;->mDevicePolicyManagerGateway Lcom/afwsamples/testdpc/DevicePolicyManagerGateway;
+	3       (00000008) invoke-interface     v2, v10, Lcom/afwsamples/testdpc/DevicePolicyManagerGateway;->isApplicationHidden(Ljava/lang/String;)Z
+	4       (0000000e) move-result          v1
+	5       (00000010) iget-object          v2, v9, Lcom/afwsamples/testdpc/ShellCommand;->mWriter Ljava/io/PrintWriter;
+	6       (00000014) const-string         v3, '%s: %s\n'
+	7       (00000018) const/4              v4, 2
+	8       (0000001a) new-array            v4, v4, [Ljava/lang/Object;
+	9       (0000001e) const/4              v5, 0
+	10      (00000020) aput-object          v10, v4, v5
+	11      (00000024) const/4              v5, 1
+	12      (00000026) invoke-static        v1, Lcom/afwsamples/testdpc/ShellCommand;->hiddenToString(Z)Ljava/lang/String;
+	13      (0000002c) move-result-object   v6
+	14      (0000002e) aput-object          v6, v4, v5
+	15      (00000032) invoke-virtual       v2, v3, v4, Ljava/io/PrintWriter;->printf(Ljava/lang/String; [Ljava/lang/Object;)Ljava/io/PrintWriter;
+	4:37
+	(Landroid/content/pm/PackageManager$NameNotFoundException; -> 3a isHiddenPackage-BB@0x3a)
+
+isHiddenPackage-BB@0x38 : 
+	16      (00000038) return-void          
+
+isHiddenPackage-BB@0x3a : [ isHiddenPackage-BB@0x38 ]
+	17      (0000003a) move-exception       v0
+	18      (0000003c) iget-object          v2, v9, Lcom/afwsamples/testdpc/ShellCommand;->mWriter Ljava/io/PrintWriter;
+	19      (00000040) const-string         v3, 'Invalid package name: %s\n'
+	20      (00000044) new-array            v4, v8, [Ljava/lang/Object;
+	21      (00000048) aput-object          v10, v4, v7
+	22      (0000004c) invoke-virtual       v2, v3, v4, Ljava/io/PrintWriter;->printf(Ljava/lang/String; [Ljava/lang/Object;)Ljava/io/PrintWriter;
+	23      (00000052) goto                 -d
+

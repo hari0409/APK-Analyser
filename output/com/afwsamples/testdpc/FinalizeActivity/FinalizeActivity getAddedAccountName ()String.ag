@@ -1,0 +1,28 @@
+# Lcom/afwsamples/testdpc/FinalizeActivity;->getAddedAccountName()Ljava/lang/String; [access_flags=private]
+#
+# Parameters:
+# local registers: v0...v3
+#
+# - return:java.lang.String
+
+getAddedAccountName-BB@0x0 : [ getAddedAccountName-BB@0x18 getAddedAccountName-BB@0x38 ]
+	0       (00000000) invoke-virtual       v3, Lcom/afwsamples/testdpc/FinalizeActivity;->getIntent()Landroid/content/Intent;
+	1       (00000006) move-result-object   v1
+	2       (00000008) const-string         v2, 'account_name'
+	3       (0000000c) invoke-virtual       v1, v2, Landroid/content/Intent;->getStringExtra(Ljava/lang/String;)Ljava/lang/String;
+	4       (00000012) move-result-object   v0
+	5       (00000014) if-nez               v0, +12
+
+getAddedAccountName-BB@0x18 : [ getAddedAccountName-BB@0x38 ]
+	6       (00000018) invoke-virtual       v3, Lcom/afwsamples/testdpc/FinalizeActivity;->getIntent()Landroid/content/Intent;
+	7       (0000001e) move-result-object   v1
+	8       (00000020) const-string         v2, 'android.app.extra.PROVISIONING_ADMIN_EXTRAS_BUNDLE'
+	9       (00000024) invoke-virtual       v1, v2, Landroid/content/Intent;->getParcelableExtra(Ljava/lang/String;)Landroid/os/Parcelable;
+	10      (0000002a) move-result-object   v1
+	11      (0000002c) check-cast           v1, Landroid/os/PersistableBundle;
+	12      (00000030) invoke-static        v1, Lcom/afwsamples/testdpc/common/LaunchIntentUtil;->getAddedAccountName(Landroid/os/PersistableBundle;)Ljava/lang/String;
+	13      (00000036) move-result-object   v0
+
+getAddedAccountName-BB@0x38 : 
+	14      (00000038) return-object        v0
+

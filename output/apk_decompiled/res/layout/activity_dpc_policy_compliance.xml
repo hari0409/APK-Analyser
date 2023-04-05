@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.android.setupwizardlib.GlifLayout android:icon="@drawable/ic_enterprise_blue" android:id="@id/dpc_policy_compliance" android:layout_width="fill_parent" android:layout_height="fill_parent" app:suwFooter="@layout/next_footer" app:suwHeaderText="@string/dpc_policy_compliance_title"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent" style="@style/SuwItemContainer">
+        <TextView android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/dpc_policy_compliance_explanation" style="@style/SuwItemTitle" />
+    </LinearLayout>
+</com.android.setupwizardlib.GlifLayout>

@@ -1,0 +1,31 @@
+# Lcom/afwsamples/testdpc/policy/blockuninstallation/BlockUninstallationInfoArrayAdapter;->getApplicationInfo(I)Landroid/content/pm/ApplicationInfo; [access_flags=protected]
+#
+# Parameters:
+# - local registers: v0...v4
+# - v5:int
+#
+# - return:android.content.pm.ApplicationInfo
+
+getApplicationInfo-BB@0x0 : [ getApplicationInfo-BB@0x1e ]
+	0       (00000000) iget-object          v2, v4, Lcom/afwsamples/testdpc/policy/blockuninstallation/BlockUninstallationInfoArrayAdapter;->mPackageManager Landroid/content/pm/PackageManager;
+	1       (00000004) invoke-virtual       v4, v5, Lcom/afwsamples/testdpc/policy/blockuninstallation/BlockUninstallationInfoArrayAdapter;->getItem(I)Ljava/lang/Object;
+	2       (0000000a) move-result-object   v1
+	3       (0000000c) check-cast           v1, Landroid/content/pm/ResolveInfo;
+	4       (00000010) iget-object          v1, v1, Landroid/content/pm/ResolveInfo;->resolvePackageName Ljava/lang/String;
+	5       (00000014) const/4              v3, 0
+	6       (00000016) invoke-virtual       v2, v1, v3, Landroid/content/pm/PackageManager;->getApplicationInfo(Ljava/lang/String; I)Landroid/content/pm/ApplicationInfo;
+	7       (0000001c) move-result-object   v1
+	0:1b
+	(Landroid/content/pm/PackageManager$NameNotFoundException; -> 20 getApplicationInfo-BB@0x20)
+
+getApplicationInfo-BB@0x1e : 
+	8       (0000001e) return-object        v1
+
+getApplicationInfo-BB@0x20 : [ getApplicationInfo-BB@0x1e ]
+	9       (00000020) move-exception       v0
+	10      (00000022) sget-object          v1, Lcom/afwsamples/testdpc/policy/blockuninstallation/BlockUninstallationInfoArrayAdapter;->TAG Ljava/lang/String;
+	11      (00000026) const-string         v2, 'getApplicationInfo: '
+	12      (0000002a) invoke-static        v1, v2, v0, Landroid/util/Log;->e(Ljava/lang/String; Ljava/lang/String; Ljava/lang/Throwable;)I
+	13      (00000030) const/4              v1, 0
+	14      (00000032) goto                 -a
+

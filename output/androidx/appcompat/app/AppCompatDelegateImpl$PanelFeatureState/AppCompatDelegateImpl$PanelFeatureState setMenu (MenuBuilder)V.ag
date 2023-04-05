@@ -1,0 +1,37 @@
+# Landroidx/appcompat/app/AppCompatDelegateImpl$PanelFeatureState;->setMenu(Landroidx/appcompat/view/menu/MenuBuilder;)V [access_flags=]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:androidx.appcompat.view.menu.MenuBuilder
+#
+# - return:void
+
+setMenu-BB@0x0 : [ setMenu-BB@0x8 setMenu-BB@0xa ]
+	0       (00000000) iget-object          v0, v2, Landroidx/appcompat/app/AppCompatDelegateImpl$PanelFeatureState;->menu Landroidx/appcompat/view/menu/MenuBuilder;
+	1       (00000004) if-ne                v3, v0, +3
+
+setMenu-BB@0x8 : 
+	2       (00000008) return-void          
+
+setMenu-BB@0xa : [ setMenu-BB@0x12 setMenu-BB@0x20 ]
+	3       (0000000a) iget-object          v0, v2, Landroidx/appcompat/app/AppCompatDelegateImpl$PanelFeatureState;->menu Landroidx/appcompat/view/menu/MenuBuilder;
+	4       (0000000e) if-eqz               v0, +9
+
+setMenu-BB@0x12 : [ setMenu-BB@0x20 ]
+	5       (00000012) iget-object          v0, v2, Landroidx/appcompat/app/AppCompatDelegateImpl$PanelFeatureState;->menu Landroidx/appcompat/view/menu/MenuBuilder;
+	6       (00000016) iget-object          v1, v2, Landroidx/appcompat/app/AppCompatDelegateImpl$PanelFeatureState;->listMenuPresenter Landroidx/appcompat/view/menu/ListMenuPresenter;
+	7       (0000001a) invoke-virtual       v0, v1, Landroidx/appcompat/view/menu/MenuBuilder;->removeMenuPresenter(Landroidx/appcompat/view/menu/MenuPresenter;)V
+
+setMenu-BB@0x20 : [ setMenu-BB@0x28 setMenu-BB@0x8 ]
+	8       (00000020) iput-object          v3, v2, Landroidx/appcompat/app/AppCompatDelegateImpl$PanelFeatureState;->menu Landroidx/appcompat/view/menu/MenuBuilder;
+	9       (00000024) if-eqz               v3, -e
+
+setMenu-BB@0x28 : [ setMenu-BB@0x30 setMenu-BB@0x8 ]
+	10      (00000028) iget-object          v0, v2, Landroidx/appcompat/app/AppCompatDelegateImpl$PanelFeatureState;->listMenuPresenter Landroidx/appcompat/view/menu/ListMenuPresenter;
+	11      (0000002c) if-eqz               v0, -12
+
+setMenu-BB@0x30 : [ setMenu-BB@0x8 ]
+	12      (00000030) iget-object          v0, v2, Landroidx/appcompat/app/AppCompatDelegateImpl$PanelFeatureState;->listMenuPresenter Landroidx/appcompat/view/menu/ListMenuPresenter;
+	13      (00000034) invoke-virtual       v3, v0, Landroidx/appcompat/view/menu/MenuBuilder;->addMenuPresenter(Landroidx/appcompat/view/menu/MenuPresenter;)V
+	14      (0000003a) goto                 -19
+

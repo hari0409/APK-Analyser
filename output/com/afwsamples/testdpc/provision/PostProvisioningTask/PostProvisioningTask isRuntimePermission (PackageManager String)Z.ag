@@ -1,0 +1,47 @@
+# Lcom/afwsamples/testdpc/provision/PostProvisioningTask;->isRuntimePermission(Landroid/content/pm/PackageManager; Ljava/lang/String;)Z [access_flags=private]
+#
+# Parameters:
+# - local registers: v0...v6
+# - v7:android.content.pm.PackageManager
+# - v8:java.lang.String
+#
+# - return:boolean
+
+isRuntimePermission-BB@0x0 : [ isRuntimePermission-BB@0x6 ]
+	0       (00000000) const/4              v2, 1
+	1       (00000002) const/4              v3, 0
+	2       (00000004) const/4              v4, 0
+
+isRuntimePermission-BB@0x6 : [ isRuntimePermission-BB@0x12 isRuntimePermission-BB@0x52 ]
+	3       (00000006) invoke-virtual       v7, v8, v4, Landroid/content/pm/PackageManager;->getPermissionInfo(Ljava/lang/String; I)Landroid/content/pm/PermissionInfo;
+	4       (0000000c) move-result-object   v1
+	5       (0000000e) if-eqz               v1, +22
+	6:15
+	(Landroid/content/pm/PackageManager$NameNotFoundException; -> 20 isRuntimePermission-BB@0x20)
+
+isRuntimePermission-BB@0x12 : [ isRuntimePermission-BB@0x1e isRuntimePermission-BB@0x52 ]
+	6       (00000012) iget                 v4, v1, Landroid/content/pm/PermissionInfo;->protectionLevel I
+	7       (00000016) and-int/lit8         v4, v4, 15
+	8       (0000001a) if-ne                v4, v2, +1c
+
+isRuntimePermission-BB@0x1e : 
+	9       (0000001e) return               v2
+
+isRuntimePermission-BB@0x20 : [ isRuntimePermission-BB@0x52 ]
+	10      (00000020) move-exception       v0
+	11      (00000022) const-string         v2, 'PostProvisioningTask'
+	12      (00000026) new-instance         v4, Ljava/lang/StringBuilder;
+	13      (0000002a) invoke-direct        v4, Ljava/lang/StringBuilder;-><init>()V
+	14      (00000030) const-string         v5, 'Could not retrieve info about the permission: '
+	15      (00000034) invoke-virtual       v4, v5, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	16      (0000003a) move-result-object   v4
+	17      (0000003c) invoke-virtual       v4, v8, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	18      (00000042) move-result-object   v4
+	19      (00000044) invoke-virtual       v4, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+	20      (0000004a) move-result-object   v4
+	21      (0000004c) invoke-static        v2, v4, Landroid/util/Log;->i(Ljava/lang/String; Ljava/lang/String;)I
+
+isRuntimePermission-BB@0x52 : [ isRuntimePermission-BB@0x1e ]
+	22      (00000052) move                 v2, v3
+	23      (00000054) goto                 -1b
+

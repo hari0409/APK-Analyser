@@ -1,0 +1,33 @@
+# Landroidx/appcompat/widget/ToolbarWidgetWrapper;->setupAnimatorToVisibility(I J)Landroidx/core/view/ViewPropertyAnimatorCompat; [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v3
+# - v4:int
+# - v5:long
+#
+# - return:androidx.core.view.ViewPropertyAnimatorCompat
+
+setupAnimatorToVisibility-BB@0x0 : [ setupAnimatorToVisibility-BB@0x10 setupAnimatorToVisibility-BB@0x38 ]
+	0       (00000000) iget-object          v0, v2, Landroidx/appcompat/widget/ToolbarWidgetWrapper;->mToolbar Landroidx/appcompat/widget/Toolbar;
+	1       (00000004) invoke-static        v0, Landroidx/core/view/ViewCompat;->animate(Landroid/view/View;)Landroidx/core/view/ViewPropertyAnimatorCompat;
+	2       (0000000a) move-result-object   v1
+	3       (0000000c) if-nez               v3, +16
+
+setupAnimatorToVisibility-BB@0x10 : [ setupAnimatorToVisibility-BB@0x14 ]
+	4       (00000010) const/high16         v0, 16256 # [1.0]
+
+setupAnimatorToVisibility-BB@0x14 : 
+	5       (00000014) invoke-virtual       v1, v0, Landroidx/core/view/ViewPropertyAnimatorCompat;->alpha(F)Landroidx/core/view/ViewPropertyAnimatorCompat;
+	6       (0000001a) move-result-object   v0
+	7       (0000001c) invoke-virtual       v0, v4, v5, Landroidx/core/view/ViewPropertyAnimatorCompat;->setDuration(J)Landroidx/core/view/ViewPropertyAnimatorCompat;
+	8       (00000022) move-result-object   v0
+	9       (00000024) new-instance         v1, Landroidx/appcompat/widget/ToolbarWidgetWrapper$2;
+	10      (00000028) invoke-direct        v1, v2, v3, Landroidx/appcompat/widget/ToolbarWidgetWrapper$2;-><init>(Landroidx/appcompat/widget/ToolbarWidgetWrapper; I)V
+	11      (0000002e) invoke-virtual       v0, v1, Landroidx/core/view/ViewPropertyAnimatorCompat;->setListener(Landroidx/core/view/ViewPropertyAnimatorListener;)Landroidx/core/view/ViewPropertyAnimatorCompat;
+	12      (00000034) move-result-object   v0
+	13      (00000036) return-object        v0
+
+setupAnimatorToVisibility-BB@0x38 : [ setupAnimatorToVisibility-BB@0x14 ]
+	14      (00000038) const/4              v0, 0
+	15      (0000003a) goto                 -13
+

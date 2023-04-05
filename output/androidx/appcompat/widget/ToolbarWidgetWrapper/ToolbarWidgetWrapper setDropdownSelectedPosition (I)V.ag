@@ -1,0 +1,23 @@
+# Landroidx/appcompat/widget/ToolbarWidgetWrapper;->setDropdownSelectedPosition(I)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:int
+#
+# - return:void
+
+setDropdownSelectedPosition-BB@0x0 : [ setDropdownSelectedPosition-BB@0x8 setDropdownSelectedPosition-BB@0x18 ]
+	0       (00000000) iget-object          v0, v2, Landroidx/appcompat/widget/ToolbarWidgetWrapper;->mSpinner Landroid/widget/Spinner;
+	1       (00000004) if-nez               v0, +a
+
+setDropdownSelectedPosition-BB@0x8 : 
+	2       (00000008) new-instance         v0, Ljava/lang/IllegalStateException;
+	3       (0000000c) const-string         v1, "Can't set dropdown selected position without an adapter"
+	4       (00000010) invoke-direct        v0, v1, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+	5       (00000016) throw                v0
+
+setDropdownSelectedPosition-BB@0x18 : 
+	6       (00000018) iget-object          v0, v2, Landroidx/appcompat/widget/ToolbarWidgetWrapper;->mSpinner Landroid/widget/Spinner;
+	7       (0000001c) invoke-virtual       v0, v3, Landroid/widget/Spinner;->setSelection(I)V
+	8       (00000022) return-void          
+

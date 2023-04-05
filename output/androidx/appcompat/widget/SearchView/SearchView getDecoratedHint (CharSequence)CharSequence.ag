@@ -1,0 +1,46 @@
+# Landroidx/appcompat/widget/SearchView;->getDecoratedHint(Ljava/lang/CharSequence;)Ljava/lang/CharSequence; [access_flags=private]
+#
+# Parameters:
+# - local registers: v0...v7
+# - v8:java.lang.CharSequence
+#
+# - return:java.lang.CharSequence
+
+getDecoratedHint-BB@0x0 : [ getDecoratedHint-BB@0xa getDecoratedHint-BB@0x12 ]
+	0       (00000000) const/4              v6, 0
+	1       (00000002) iget-boolean         v2, v7, Landroidx/appcompat/widget/SearchView;->mIconifiedByDefault Z
+	2       (00000006) if-eqz               v2, +6
+
+getDecoratedHint-BB@0xa : [ getDecoratedHint-BB@0x12 getDecoratedHint-BB@0x16 ]
+	3       (0000000a) iget-object          v2, v7, Landroidx/appcompat/widget/SearchView;->mSearchHintIcon Landroid/graphics/drawable/Drawable;
+	4       (0000000e) if-nez               v2, +4
+
+getDecoratedHint-BB@0x12 : [ getDecoratedHint-BB@0x14 ]
+	5       (00000012) move-object          v0, v8
+
+getDecoratedHint-BB@0x14 : 
+	6       (00000014) return-object        v0
+
+getDecoratedHint-BB@0x16 : [ getDecoratedHint-BB@0x14 ]
+	7       (00000016) iget-object          v2, v7, Landroidx/appcompat/widget/SearchView;->mSearchSrcTextView Landroidx/appcompat/widget/SearchView$SearchAutoComplete;
+	8       (0000001a) invoke-virtual       v2, Landroidx/appcompat/widget/SearchView$SearchAutoComplete;->getTextSize()F
+	9       (00000020) move-result          v2
+	10      (00000022) float-to-double      v2, v2
+	11      (00000024) const-wide/high16    v4, 16372 # [1.25]
+	12      (00000028) mul-double/2addr     v2, v4
+	13      (0000002a) double-to-int        v1, v2
+	14      (0000002c) iget-object          v2, v7, Landroidx/appcompat/widget/SearchView;->mSearchHintIcon Landroid/graphics/drawable/Drawable;
+	15      (00000030) invoke-virtual       v2, v6, v6, v1, v1, Landroid/graphics/drawable/Drawable;->setBounds(I I I I)V
+	16      (00000036) new-instance         v0, Landroid/text/SpannableStringBuilder;
+	17      (0000003a) const-string         v2, '   '
+	18      (0000003e) invoke-direct        v0, v2, Landroid/text/SpannableStringBuilder;-><init>(Ljava/lang/CharSequence;)V
+	19      (00000044) new-instance         v2, Landroid/text/style/ImageSpan;
+	20      (00000048) iget-object          v3, v7, Landroidx/appcompat/widget/SearchView;->mSearchHintIcon Landroid/graphics/drawable/Drawable;
+	21      (0000004c) invoke-direct        v2, v3, Landroid/text/style/ImageSpan;-><init>(Landroid/graphics/drawable/Drawable;)V
+	22      (00000052) const/4              v3, 1
+	23      (00000054) const/4              v4, 2
+	24      (00000056) const/16             v5, 33
+	25      (0000005a) invoke-virtual       v0, v2, v3, v4, v5, Landroid/text/SpannableStringBuilder;->setSpan(Ljava/lang/Object; I I I)V
+	26      (00000060) invoke-virtual       v0, v8, Landroid/text/SpannableStringBuilder;->append(Ljava/lang/CharSequence;)Landroid/text/SpannableStringBuilder;
+	27      (00000066) goto                 -29
+

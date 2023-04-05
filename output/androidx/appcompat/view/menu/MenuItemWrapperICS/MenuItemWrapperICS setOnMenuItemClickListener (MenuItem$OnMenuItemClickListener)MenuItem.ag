@@ -1,0 +1,25 @@
+# Landroidx/appcompat/view/menu/MenuItemWrapperICS;->setOnMenuItemClickListener(Landroid/view/MenuItem$OnMenuItemClickListener;)Landroid/view/MenuItem; [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:android.view.MenuItem$OnMenuItemClickListener
+#
+# - return:android.view.MenuItem
+
+setOnMenuItemClickListener-BB@0x0 : [ setOnMenuItemClickListener-BB@0xc setOnMenuItemClickListener-BB@0x1e ]
+	0       (00000000) iget-object          v0, v2, Landroidx/appcompat/view/menu/MenuItemWrapperICS;->mWrappedObject Ljava/lang/Object;
+	1       (00000004) check-cast           v0, Landroidx/core/internal/view/SupportMenuItem;
+	2       (00000008) if-eqz               v3, +b
+
+setOnMenuItemClickListener-BB@0xc : [ setOnMenuItemClickListener-BB@0x16 ]
+	3       (0000000c) new-instance         v1, Landroidx/appcompat/view/menu/MenuItemWrapperICS$OnMenuItemClickListenerWrapper;
+	4       (00000010) invoke-direct        v1, v2, v3, Landroidx/appcompat/view/menu/MenuItemWrapperICS$OnMenuItemClickListenerWrapper;-><init>(Landroidx/appcompat/view/menu/MenuItemWrapperICS; Landroid/view/MenuItem$OnMenuItemClickListener;)V
+
+setOnMenuItemClickListener-BB@0x16 : 
+	5       (00000016) invoke-interface     v0, v1, Landroidx/core/internal/view/SupportMenuItem;->setOnMenuItemClickListener(Landroid/view/MenuItem$OnMenuItemClickListener;)Landroid/view/MenuItem;
+	6       (0000001c) return-object        v2
+
+setOnMenuItemClickListener-BB@0x1e : [ setOnMenuItemClickListener-BB@0x16 ]
+	7       (0000001e) const/4              v1, 0
+	8       (00000020) goto                 -5
+

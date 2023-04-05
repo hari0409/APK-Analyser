@@ -1,0 +1,33 @@
+# Landroidx/appcompat/widget/ActionBarOverlayLayout;->initFeature(I)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:int
+#
+# - return:void
+
+initFeature-BB@0x0 : [ D:initFeature-BB@0xc 2:initFeature-BB@0xe 5:initFeature-BB@0x1a 109:initFeature-BB@0x26 ]
+	0       (00000000) invoke-virtual       v1, Landroidx/appcompat/widget/ActionBarOverlayLayout;->pullChildren()V
+	1       (00000006) sparse-switch        v2, +15 (0x30)
+
+initFeature-BB@0xc : 
+	2       (0000000c) return-void          
+
+initFeature-BB@0xe : [ initFeature-BB@0xc ]
+	3       (0000000e) iget-object          v0, v1, Landroidx/appcompat/widget/ActionBarOverlayLayout;->mDecorToolbar Landroidx/appcompat/widget/DecorToolbar;
+	4       (00000012) invoke-interface     v0, Landroidx/appcompat/widget/DecorToolbar;->initProgress()V
+	5       (00000018) goto                 -6
+
+initFeature-BB@0x1a : [ initFeature-BB@0xc ]
+	6       (0000001a) iget-object          v0, v1, Landroidx/appcompat/widget/ActionBarOverlayLayout;->mDecorToolbar Landroidx/appcompat/widget/DecorToolbar;
+	7       (0000001e) invoke-interface     v0, Landroidx/appcompat/widget/DecorToolbar;->initIndeterminateProgress()V
+	8       (00000024) goto                 -c
+
+initFeature-BB@0x26 : [ initFeature-BB@0xc ]
+	9       (00000026) const/4              v0, 1
+	10      (00000028) invoke-virtual       v1, v0, Landroidx/appcompat/widget/ActionBarOverlayLayout;->setOverlayMode(Z)V
+	11      (0000002e) goto                 -11
+
+initFeature-BB@0x30 : 
+	12      (00000030) sparse-switch-payload 2 5 6d
+

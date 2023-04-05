@@ -1,0 +1,56 @@
+# Landroidx/appcompat/widget/SwitchCompat;->applyThumbTint()V [access_flags=private]
+#
+# Parameters:
+# local registers: v0...v2
+#
+# - return:void
+
+applyThumbTint-BB@0x0 : [ applyThumbTint-BB@0x8 applyThumbTint-BB@0x76 ]
+	0       (00000000) iget-object          v0, v2, Landroidx/appcompat/widget/SwitchCompat;->mThumbDrawable Landroid/graphics/drawable/Drawable;
+	1       (00000004) if-eqz               v0, +39
+
+applyThumbTint-BB@0x8 : [ applyThumbTint-BB@0x10 applyThumbTint-BB@0x18 ]
+	2       (00000008) iget-boolean         v0, v2, Landroidx/appcompat/widget/SwitchCompat;->mHasThumbTint Z
+	3       (0000000c) if-nez               v0, +6
+
+applyThumbTint-BB@0x10 : [ applyThumbTint-BB@0x18 applyThumbTint-BB@0x76 ]
+	4       (00000010) iget-boolean         v0, v2, Landroidx/appcompat/widget/SwitchCompat;->mHasThumbTintMode Z
+	5       (00000014) if-eqz               v0, +31
+
+applyThumbTint-BB@0x18 : [ applyThumbTint-BB@0x30 applyThumbTint-BB@0x3e ]
+	6       (00000018) iget-object          v0, v2, Landroidx/appcompat/widget/SwitchCompat;->mThumbDrawable Landroid/graphics/drawable/Drawable;
+	7       (0000001c) invoke-virtual       v0, Landroid/graphics/drawable/Drawable;->mutate()Landroid/graphics/drawable/Drawable;
+	8       (00000022) move-result-object   v0
+	9       (00000024) iput-object          v0, v2, Landroidx/appcompat/widget/SwitchCompat;->mThumbDrawable Landroid/graphics/drawable/Drawable;
+	10      (00000028) iget-boolean         v0, v2, Landroidx/appcompat/widget/SwitchCompat;->mHasThumbTint Z
+	11      (0000002c) if-eqz               v0, +9
+
+applyThumbTint-BB@0x30 : [ applyThumbTint-BB@0x3e ]
+	12      (00000030) iget-object          v0, v2, Landroidx/appcompat/widget/SwitchCompat;->mThumbDrawable Landroid/graphics/drawable/Drawable;
+	13      (00000034) iget-object          v1, v2, Landroidx/appcompat/widget/SwitchCompat;->mThumbTintList Landroid/content/res/ColorStateList;
+	14      (00000038) invoke-static        v0, v1, Landroidx/core/graphics/drawable/DrawableCompat;->setTintList(Landroid/graphics/drawable/Drawable; Landroid/content/res/ColorStateList;)V
+
+applyThumbTint-BB@0x3e : [ applyThumbTint-BB@0x46 applyThumbTint-BB@0x54 ]
+	15      (0000003e) iget-boolean         v0, v2, Landroidx/appcompat/widget/SwitchCompat;->mHasThumbTintMode Z
+	16      (00000042) if-eqz               v0, +9
+
+applyThumbTint-BB@0x46 : [ applyThumbTint-BB@0x54 ]
+	17      (00000046) iget-object          v0, v2, Landroidx/appcompat/widget/SwitchCompat;->mThumbDrawable Landroid/graphics/drawable/Drawable;
+	18      (0000004a) iget-object          v1, v2, Landroidx/appcompat/widget/SwitchCompat;->mThumbTintMode Landroid/graphics/PorterDuff$Mode;
+	19      (0000004e) invoke-static        v0, v1, Landroidx/core/graphics/drawable/DrawableCompat;->setTintMode(Landroid/graphics/drawable/Drawable; Landroid/graphics/PorterDuff$Mode;)V
+
+applyThumbTint-BB@0x54 : [ applyThumbTint-BB@0x64 applyThumbTint-BB@0x76 ]
+	20      (00000054) iget-object          v0, v2, Landroidx/appcompat/widget/SwitchCompat;->mThumbDrawable Landroid/graphics/drawable/Drawable;
+	21      (00000058) invoke-virtual       v0, Landroid/graphics/drawable/Drawable;->isStateful()Z
+	22      (0000005e) move-result          v0
+	23      (00000060) if-eqz               v0, +b
+
+applyThumbTint-BB@0x64 : [ applyThumbTint-BB@0x76 ]
+	24      (00000064) iget-object          v0, v2, Landroidx/appcompat/widget/SwitchCompat;->mThumbDrawable Landroid/graphics/drawable/Drawable;
+	25      (00000068) invoke-virtual       v2, Landroidx/appcompat/widget/SwitchCompat;->getDrawableState()[I
+	26      (0000006e) move-result-object   v1
+	27      (00000070) invoke-virtual       v0, v1, Landroid/graphics/drawable/Drawable;->setState([I)Z
+
+applyThumbTint-BB@0x76 : 
+	28      (00000076) return-void          
+

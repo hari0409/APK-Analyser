@@ -1,0 +1,16 @@
+# Landroidx/appcompat/widget/TintInfo;->clear()V [access_flags=]
+#
+# Parameters:
+# local registers: v0...v2
+#
+# - return:void
+
+clear-BB@0x0 : 
+	0       (00000000) const/4              v1, 0
+	1       (00000002) const/4              v0, 0
+	2       (00000004) iput-object          v1, v2, Landroidx/appcompat/widget/TintInfo;->mTintList Landroid/content/res/ColorStateList;
+	3       (00000008) iput-boolean         v0, v2, Landroidx/appcompat/widget/TintInfo;->mHasTintList Z
+	4       (0000000c) iput-object          v1, v2, Landroidx/appcompat/widget/TintInfo;->mTintMode Landroid/graphics/PorterDuff$Mode;
+	5       (00000010) iput-boolean         v0, v2, Landroidx/appcompat/widget/TintInfo;->mHasTintMode Z
+	6       (00000014) return-void          
+

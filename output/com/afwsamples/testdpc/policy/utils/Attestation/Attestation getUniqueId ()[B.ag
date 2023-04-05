@@ -1,0 +1,11 @@
+# Lcom/afwsamples/testdpc/policy/utils/Attestation;->getUniqueId()[B [access_flags=public]
+#
+# Parameters:
+# local registers: v0...v1
+#
+# - return:byte[]
+
+getUniqueId-BB@0x0 : 
+	0       (00000000) iget-object          v0, v1, Lcom/afwsamples/testdpc/policy/utils/Attestation;->uniqueId [B
+	1       (00000004) return-object        v0
+

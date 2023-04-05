@@ -1,0 +1,13 @@
+# Landroidx/appcompat/widget/ActionBarOverlayLayout;->generateLayoutParams(Landroid/util/AttributeSet;)Landroid/view/ViewGroup$LayoutParams; [access_flags=public bridge synthetic]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:android.util.AttributeSet
+#
+# - return:android.view.ViewGroup$LayoutParams
+
+generateLayoutParams-BB@0x0 : 
+	0       (00000000) invoke-virtual       v1, v2, Landroidx/appcompat/widget/ActionBarOverlayLayout;->generateLayoutParams(Landroid/util/AttributeSet;)Landroidx/appcompat/widget/ActionBarOverlayLayout$LayoutParams;
+	1       (00000006) move-result-object   v0
+	2       (00000008) return-object        v0
+

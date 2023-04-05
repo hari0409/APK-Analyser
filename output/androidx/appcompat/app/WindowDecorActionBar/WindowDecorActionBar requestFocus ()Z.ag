@@ -1,0 +1,29 @@
+# Landroidx/appcompat/app/WindowDecorActionBar;->requestFocus()Z [access_flags=public]
+#
+# Parameters:
+# local registers: v0...v2
+#
+# - return:boolean
+
+requestFocus-BB@0x0 : [ requestFocus-BB@0x10 requestFocus-BB@0x26 ]
+	0       (00000000) iget-object          v1, v2, Landroidx/appcompat/app/WindowDecorActionBar;->mDecorToolbar Landroidx/appcompat/widget/DecorToolbar;
+	1       (00000004) invoke-interface     v1, Landroidx/appcompat/widget/DecorToolbar;->getViewGroup()Landroid/view/ViewGroup;
+	2       (0000000a) move-result-object   v0
+	3       (0000000c) if-eqz               v0, +d
+
+requestFocus-BB@0x10 : [ requestFocus-BB@0x1c requestFocus-BB@0x26 ]
+	4       (00000010) invoke-virtual       v0, Landroid/view/ViewGroup;->hasFocus()Z
+	5       (00000016) move-result          v1
+	6       (00000018) if-nez               v1, +7
+
+requestFocus-BB@0x1c : [ requestFocus-BB@0x24 ]
+	7       (0000001c) invoke-virtual       v0, Landroid/view/ViewGroup;->requestFocus()Z
+	8       (00000022) const/4              v1, 1
+
+requestFocus-BB@0x24 : 
+	9       (00000024) return               v1
+
+requestFocus-BB@0x26 : [ requestFocus-BB@0x24 ]
+	10      (00000026) const/4              v1, 0
+	11      (00000028) goto                 -2
+

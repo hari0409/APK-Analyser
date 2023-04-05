@@ -1,0 +1,21 @@
+# Landroidx/appcompat/widget/AppCompatSpinner$DropdownPopup$3;->onDismiss()V [access_flags=public]
+#
+# Parameters:
+# local registers: v0...v2
+#
+# - return:void
+
+onDismiss-BB@0x0 : [ onDismiss-BB@0x14 onDismiss-BB@0x1e ]
+	0       (00000000) iget-object          v1, v2, Landroidx/appcompat/widget/AppCompatSpinner$DropdownPopup$3;->this$1 Landroidx/appcompat/widget/AppCompatSpinner$DropdownPopup;
+	1       (00000004) iget-object          v1, v1, Landroidx/appcompat/widget/AppCompatSpinner$DropdownPopup;->this$0 Landroidx/appcompat/widget/AppCompatSpinner;
+	2       (00000008) invoke-virtual       v1, Landroidx/appcompat/widget/AppCompatSpinner;->getViewTreeObserver()Landroid/view/ViewTreeObserver;
+	3       (0000000e) move-result-object   v0
+	4       (00000010) if-eqz               v0, +7
+
+onDismiss-BB@0x14 : [ onDismiss-BB@0x1e ]
+	5       (00000014) iget-object          v1, v2, Landroidx/appcompat/widget/AppCompatSpinner$DropdownPopup$3;->val$layoutListener Landroid/view/ViewTreeObserver$OnGlobalLayoutListener;
+	6       (00000018) invoke-virtual       v0, v1, Landroid/view/ViewTreeObserver;->removeGlobalOnLayoutListener(Landroid/view/ViewTreeObserver$OnGlobalLayoutListener;)V
+
+onDismiss-BB@0x1e : 
+	7       (0000001e) return-void          
+

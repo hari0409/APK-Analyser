@@ -1,0 +1,16 @@
+# Landroidx/print/PrintHelper$PrintUriAdapter$1;->onCancelled(Landroid/graphics/Bitmap;)V [access_flags=protected]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:android.graphics.Bitmap
+#
+# - return:void
+
+onCancelled-BB@0x0 : 
+	0       (00000000) iget-object          v0, v2, Landroidx/print/PrintHelper$PrintUriAdapter$1;->val$layoutResultCallback Landroid/print/PrintDocumentAdapter$LayoutResultCallback;
+	1       (00000004) invoke-virtual       v0, Landroid/print/PrintDocumentAdapter$LayoutResultCallback;->onLayoutCancelled()V
+	2       (0000000a) iget-object          v0, v2, Landroidx/print/PrintHelper$PrintUriAdapter$1;->this$1 Landroidx/print/PrintHelper$PrintUriAdapter;
+	3       (0000000e) const/4              v1, 0
+	4       (00000010) iput-object          v1, v0, Landroidx/print/PrintHelper$PrintUriAdapter;->mLoadBitmap Landroid/os/AsyncTask;
+	5       (00000014) return-void          
+

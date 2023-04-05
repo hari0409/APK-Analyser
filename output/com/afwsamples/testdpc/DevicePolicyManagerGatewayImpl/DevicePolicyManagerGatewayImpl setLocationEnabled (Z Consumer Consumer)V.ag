@@ -1,0 +1,43 @@
+# Lcom/afwsamples/testdpc/DevicePolicyManagerGatewayImpl;->setLocationEnabled(Z Ljava/util/function/Consumer; Ljava/util/function/Consumer;)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v4
+# - v5:boolean
+# - v6:java.util.function.Consumer
+# - v7:java.util.function.Consumer
+#
+# - return:void
+
+setLocationEnabled-BB@0x0 : [ setLocationEnabled-BB@0x3c ]
+	0       (00000000) sget-object          v1, Lcom/afwsamples/testdpc/DevicePolicyManagerGatewayImpl;->TAG Ljava/lang/String;
+	1       (00000004) new-instance         v2, Ljava/lang/StringBuilder;
+	2       (00000008) invoke-direct        v2, Ljava/lang/StringBuilder;-><init>()V
+	3       (0000000e) const-string         v3, 'setLocationEnabled('
+	4       (00000012) invoke-virtual       v2, v3, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	5       (00000018) move-result-object   v2
+	6       (0000001a) invoke-virtual       v2, v5, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+	7       (00000020) move-result-object   v2
+	8       (00000022) const-string         v3, ')'
+	9       (00000026) invoke-virtual       v2, v3, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	10      (0000002c) move-result-object   v2
+	11      (0000002e) invoke-virtual       v2, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+	12      (00000034) move-result-object   v2
+	13      (00000036) invoke-static        v1, v2, Landroid/util/Log;->d(Ljava/lang/String; Ljava/lang/String;)I
+
+setLocationEnabled-BB@0x3c : [ setLocationEnabled-BB@0x52 ]
+	14      (0000003c) iget-object          v1, v4, Lcom/afwsamples/testdpc/DevicePolicyManagerGatewayImpl;->mDevicePolicyManager Landroid/app/admin/DevicePolicyManager;
+	15      (00000040) iget-object          v2, v4, Lcom/afwsamples/testdpc/DevicePolicyManagerGatewayImpl;->mAdminComponentName Landroid/content/ComponentName;
+	16      (00000044) invoke-virtual       v1, v2, v5, Landroid/app/admin/DevicePolicyManager;->setLocationEnabled(Landroid/content/ComponentName; Z)V
+	17      (0000004a) const/4              v1, 0
+	18      (0000004c) invoke-interface     v6, v1, Ljava/util/function/Consumer;->accept(Ljava/lang/Object;)V
+	3c:51
+	(Ljava/lang/Exception; -> 54 setLocationEnabled-BB@0x54)
+
+setLocationEnabled-BB@0x52 : 
+	19      (00000052) return-void          
+
+setLocationEnabled-BB@0x54 : [ setLocationEnabled-BB@0x52 ]
+	20      (00000054) move-exception       v0
+	21      (00000056) invoke-interface     v7, v0, Ljava/util/function/Consumer;->accept(Ljava/lang/Object;)V
+	22      (0000005c) goto                 -5
+

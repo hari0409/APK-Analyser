@@ -1,0 +1,19 @@
+# Lcom/afwsamples/testdpc/profilepolicy/addsystemapps/EnableSystemAppsByIntentFragment;->lambda$onClick$96$EnableSystemAppsByIntentFragment(Ljava/lang/Exception;)V [access_flags=final synthetic]
+#
+# Parameters:
+# - local registers: v0...v3
+# - v4:java.lang.Exception
+#
+# - return:void
+
+lambda$onClick$96$EnableSystemAppsByIntentFragment-BB@0x0 : 
+	0       (00000000) invoke-virtual       v3, Lcom/afwsamples/testdpc/profilepolicy/addsystemapps/EnableSystemAppsByIntentFragment;->getActivity()Landroid/app/Activity;
+	1       (00000006) move-result-object   v0
+	2       (00000008) invoke-virtual       v4, Ljava/lang/Exception;->getLocalizedMessage()Ljava/lang/String;
+	3       (0000000e) move-result-object   v1
+	4       (00000010) const/4              v2, 0
+	5       (00000012) invoke-static        v0, v1, v2, Landroid/widget/Toast;->makeText(Landroid/content/Context; Ljava/lang/CharSequence; I)Landroid/widget/Toast;
+	6       (00000018) move-result-object   v0
+	7       (0000001a) invoke-virtual       v0, Landroid/widget/Toast;->show()V
+	8       (00000020) return-void          
+

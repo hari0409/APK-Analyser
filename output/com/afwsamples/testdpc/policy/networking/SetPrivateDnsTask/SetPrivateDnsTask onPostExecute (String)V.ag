@@ -1,0 +1,30 @@
+# Lcom/afwsamples/testdpc/policy/networking/SetPrivateDnsTask;->onPostExecute(Ljava/lang/String;)V [access_flags=protected]
+#
+# Parameters:
+# - local registers: v0...v4
+# - v5:java.lang.String
+#
+# - return:void
+
+onPostExecute-BB@0x0 : [ onPostExecute-BB@0x6 onPostExecute-BB@0x1c ]
+	0       (00000000) const/4              v3, 0
+	1       (00000002) if-nez               v5, +d
+
+onPostExecute-BB@0x6 : [ onPostExecute-BB@0x1a ]
+	2       (00000006) iget-object          v0, v4, Lcom/afwsamples/testdpc/policy/networking/SetPrivateDnsTask;->mCallback Lcom/afwsamples/testdpc/policy/keymanagement/ShowToastCallback;
+	3       (0000000a) const                v1, 2131690243 # [1.900952411350474e+38]
+	4       (00000010) new-array            v2, v3, [Ljava/lang/Object;
+	5       (00000014) invoke-interface     v0, v1, v2, Lcom/afwsamples/testdpc/policy/keymanagement/ShowToastCallback;->showToast(I [Ljava/lang/Object;)V
+
+onPostExecute-BB@0x1a : 
+	6       (0000001a) return-void          
+
+onPostExecute-BB@0x1c : [ onPostExecute-BB@0x1a ]
+	7       (0000001c) iget-object          v0, v4, Lcom/afwsamples/testdpc/policy/networking/SetPrivateDnsTask;->mCallback Lcom/afwsamples/testdpc/policy/keymanagement/ShowToastCallback;
+	8       (00000020) const                v1, 2131690242 # [1.900952208526378e+38]
+	9       (00000026) const/4              v2, 1
+	10      (00000028) new-array            v2, v2, [Ljava/lang/Object;
+	11      (0000002c) aput-object          v5, v2, v3
+	12      (00000030) invoke-interface     v0, v1, v2, Lcom/afwsamples/testdpc/policy/keymanagement/ShowToastCallback;->showToast(I [Ljava/lang/Object;)V
+	13      (00000036) goto                 -e
+

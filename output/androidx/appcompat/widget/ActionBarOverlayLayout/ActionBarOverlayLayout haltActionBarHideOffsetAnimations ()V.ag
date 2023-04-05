@@ -1,0 +1,22 @@
+# Landroidx/appcompat/widget/ActionBarOverlayLayout;->haltActionBarHideOffsetAnimations()V [access_flags=]
+#
+# Parameters:
+# local registers: v0...v1
+#
+# - return:void
+
+haltActionBarHideOffsetAnimations-BB@0x0 : [ haltActionBarHideOffsetAnimations-BB@0x1c haltActionBarHideOffsetAnimations-BB@0x26 ]
+	0       (00000000) iget-object          v0, v1, Landroidx/appcompat/widget/ActionBarOverlayLayout;->mRemoveActionBarHideOffset Ljava/lang/Runnable;
+	1       (00000004) invoke-virtual       v1, v0, Landroidx/appcompat/widget/ActionBarOverlayLayout;->removeCallbacks(Ljava/lang/Runnable;)Z
+	2       (0000000a) iget-object          v0, v1, Landroidx/appcompat/widget/ActionBarOverlayLayout;->mAddActionBarHideOffset Ljava/lang/Runnable;
+	3       (0000000e) invoke-virtual       v1, v0, Landroidx/appcompat/widget/ActionBarOverlayLayout;->removeCallbacks(Ljava/lang/Runnable;)Z
+	4       (00000014) iget-object          v0, v1, Landroidx/appcompat/widget/ActionBarOverlayLayout;->mCurrentActionBarTopAnimator Landroid/view/ViewPropertyAnimator;
+	5       (00000018) if-eqz               v0, +7
+
+haltActionBarHideOffsetAnimations-BB@0x1c : [ haltActionBarHideOffsetAnimations-BB@0x26 ]
+	6       (0000001c) iget-object          v0, v1, Landroidx/appcompat/widget/ActionBarOverlayLayout;->mCurrentActionBarTopAnimator Landroid/view/ViewPropertyAnimator;
+	7       (00000020) invoke-virtual       v0, Landroid/view/ViewPropertyAnimator;->cancel()V
+
+haltActionBarHideOffsetAnimations-BB@0x26 : 
+	8       (00000026) return-void          
+

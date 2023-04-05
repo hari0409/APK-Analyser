@@ -1,0 +1,14 @@
+# Lcom/afwsamples/testdpc/common/preference/DpcPreferenceHelper;->addCustomConstraint(Lcom/afwsamples/testdpc/common/preference/CustomConstraint;)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:com.afwsamples.testdpc.common.preference.CustomConstraint
+#
+# - return:void
+
+addCustomConstraint-BB@0x0 : 
+	0       (00000000) iget-object          v0, v1, Lcom/afwsamples/testdpc/common/preference/DpcPreferenceHelper;->mCustomConstraints Ljava/util/List;
+	1       (00000004) invoke-interface     v0, v2, Ljava/util/List;->add(Ljava/lang/Object;)Z
+	2       (0000000a) invoke-virtual       v1, Lcom/afwsamples/testdpc/common/preference/DpcPreferenceHelper;->disableIfConstraintsNotMet()V
+	3       (00000010) return-void          
+

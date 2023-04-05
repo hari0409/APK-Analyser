@@ -1,0 +1,15 @@
+# Landroidx/appcompat/widget/AppCompatDrawableManager;-><init>()V [access_flags=public constructor]
+#
+# Parameters:
+# local registers: v0...v2
+#
+# - return:void
+
+<init>-BB@0x0 : 
+	0       (00000000) invoke-direct        v2, Ljava/lang/Object;-><init>()V
+	1       (00000006) new-instance         v0, Ljava/util/WeakHashMap;
+	2       (0000000a) const/4              v1, 0
+	3       (0000000c) invoke-direct        v0, v1, Ljava/util/WeakHashMap;-><init>(I)V
+	4       (00000012) iput-object          v0, v2, Landroidx/appcompat/widget/AppCompatDrawableManager;->mDrawableCaches Ljava/util/WeakHashMap;
+	5       (00000016) return-void          
+

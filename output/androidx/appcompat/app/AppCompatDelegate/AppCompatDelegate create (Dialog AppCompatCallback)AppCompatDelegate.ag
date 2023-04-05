@@ -1,0 +1,18 @@
+# Landroidx/appcompat/app/AppCompatDelegate;->create(Landroid/app/Dialog; Landroidx/appcompat/app/AppCompatCallback;)Landroidx/appcompat/app/AppCompatDelegate; [access_flags=public static]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:android.app.Dialog
+# - v4:androidx.appcompat.app.AppCompatCallback
+#
+# - return:androidx.appcompat.app.AppCompatDelegate
+
+create-BB@0x0 : 
+	0       (00000000) new-instance         v0, Landroidx/appcompat/app/AppCompatDelegateImpl;
+	1       (00000004) invoke-virtual       v3, Landroid/app/Dialog;->getContext()Landroid/content/Context;
+	2       (0000000a) move-result-object   v1
+	3       (0000000c) invoke-virtual       v3, Landroid/app/Dialog;->getWindow()Landroid/view/Window;
+	4       (00000012) move-result-object   v2
+	5       (00000014) invoke-direct        v0, v1, v2, v4, Landroidx/appcompat/app/AppCompatDelegateImpl;-><init>(Landroid/content/Context; Landroid/view/Window; Landroidx/appcompat/app/AppCompatCallback;)V
+	6       (0000001a) return-object        v0
+

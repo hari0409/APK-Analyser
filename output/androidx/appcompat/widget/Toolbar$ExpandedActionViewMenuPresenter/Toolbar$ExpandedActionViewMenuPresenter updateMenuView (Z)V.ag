@@ -1,0 +1,51 @@
+# Landroidx/appcompat/widget/Toolbar$ExpandedActionViewMenuPresenter;->updateMenuView(Z)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v6
+# - v7:boolean
+#
+# - return:void
+
+updateMenuView-BB@0x0 : [ updateMenuView-BB@0x8 updateMenuView-BB@0x4c ]
+	0       (00000000) iget-object          v4, v6, Landroidx/appcompat/widget/Toolbar$ExpandedActionViewMenuPresenter;->mCurrentExpandedItem Landroidx/appcompat/view/menu/MenuItemImpl;
+	1       (00000004) if-eqz               v4, +24
+
+updateMenuView-BB@0x8 : [ updateMenuView-BB@0x12 updateMenuView-BB@0x3a ]
+	2       (00000008) const/4              v1, 0
+	3       (0000000a) iget-object          v4, v6, Landroidx/appcompat/widget/Toolbar$ExpandedActionViewMenuPresenter;->mMenu Landroidx/appcompat/view/menu/MenuBuilder;
+	4       (0000000e) if-eqz               v4, +16
+
+updateMenuView-BB@0x12 : [ updateMenuView-BB@0x20 ]
+	5       (00000012) iget-object          v4, v6, Landroidx/appcompat/widget/Toolbar$ExpandedActionViewMenuPresenter;->mMenu Landroidx/appcompat/view/menu/MenuBuilder;
+	6       (00000016) invoke-virtual       v4, Landroidx/appcompat/view/menu/MenuBuilder;->size()I
+	7       (0000001c) move-result          v0
+	8       (0000001e) const/4              v2, 0
+
+updateMenuView-BB@0x20 : [ updateMenuView-BB@0x24 updateMenuView-BB@0x3a ]
+	9       (00000020) if-ge                v2, v0, +d
+
+updateMenuView-BB@0x24 : [ updateMenuView-BB@0x38 updateMenuView-BB@0x4e ]
+	10      (00000024) iget-object          v4, v6, Landroidx/appcompat/widget/Toolbar$ExpandedActionViewMenuPresenter;->mMenu Landroidx/appcompat/view/menu/MenuBuilder;
+	11      (00000028) invoke-virtual       v4, v2, Landroidx/appcompat/view/menu/MenuBuilder;->getItem(I)Landroid/view/MenuItem;
+	12      (0000002e) move-result-object   v3
+	13      (00000030) iget-object          v4, v6, Landroidx/appcompat/widget/Toolbar$ExpandedActionViewMenuPresenter;->mCurrentExpandedItem Landroidx/appcompat/view/menu/MenuItemImpl;
+	14      (00000034) if-ne                v3, v4, +d
+
+updateMenuView-BB@0x38 : [ updateMenuView-BB@0x3a ]
+	15      (00000038) const/4              v1, 1
+
+updateMenuView-BB@0x3a : [ updateMenuView-BB@0x3e updateMenuView-BB@0x4c ]
+	16      (0000003a) if-nez               v1, +9
+
+updateMenuView-BB@0x3e : [ updateMenuView-BB@0x4c ]
+	17      (0000003e) iget-object          v4, v6, Landroidx/appcompat/widget/Toolbar$ExpandedActionViewMenuPresenter;->mMenu Landroidx/appcompat/view/menu/MenuBuilder;
+	18      (00000042) iget-object          v5, v6, Landroidx/appcompat/widget/Toolbar$ExpandedActionViewMenuPresenter;->mCurrentExpandedItem Landroidx/appcompat/view/menu/MenuItemImpl;
+	19      (00000046) invoke-virtual       v6, v4, v5, Landroidx/appcompat/widget/Toolbar$ExpandedActionViewMenuPresenter;->collapseItemActionView(Landroidx/appcompat/view/menu/MenuBuilder; Landroidx/appcompat/view/menu/MenuItemImpl;)Z
+
+updateMenuView-BB@0x4c : 
+	20      (0000004c) return-void          
+
+updateMenuView-BB@0x4e : [ updateMenuView-BB@0x20 ]
+	21      (0000004e) add-int/lit8         v2, v2, 1
+	22      (00000052) goto                 -19
+

@@ -1,0 +1,33 @@
+# Landroidx/appcompat/widget/AppCompatCheckedTextView;-><init>(Landroid/content/Context; Landroid/util/AttributeSet; I)V [access_flags=public constructor]
+#
+# Parameters:
+# - local registers: v0...v4
+# - v5:android.content.Context
+# - v6:android.util.AttributeSet
+# - v7:int
+#
+# - return:void
+
+<init>-BB@0x0 : 
+	0       (00000000) const/4              v3, 0
+	1       (00000002) invoke-static        v5, Landroidx/appcompat/widget/TintContextWrapper;->wrap(Landroid/content/Context;)Landroid/content/Context;
+	2       (00000008) move-result-object   v1
+	3       (0000000a) invoke-direct        v4, v1, v6, v7, Landroid/widget/CheckedTextView;-><init>(Landroid/content/Context; Landroid/util/AttributeSet; I)V
+	4       (00000010) new-instance         v1, Landroidx/appcompat/widget/AppCompatTextHelper;
+	5       (00000014) invoke-direct        v1, v4, Landroidx/appcompat/widget/AppCompatTextHelper;-><init>(Landroid/widget/TextView;)V
+	6       (0000001a) iput-object          v1, v4, Landroidx/appcompat/widget/AppCompatCheckedTextView;->mTextHelper Landroidx/appcompat/widget/AppCompatTextHelper;
+	7       (0000001e) iget-object          v1, v4, Landroidx/appcompat/widget/AppCompatCheckedTextView;->mTextHelper Landroidx/appcompat/widget/AppCompatTextHelper;
+	8       (00000022) invoke-virtual       v1, v6, v7, Landroidx/appcompat/widget/AppCompatTextHelper;->loadFromAttributes(Landroid/util/AttributeSet; I)V
+	9       (00000028) iget-object          v1, v4, Landroidx/appcompat/widget/AppCompatCheckedTextView;->mTextHelper Landroidx/appcompat/widget/AppCompatTextHelper;
+	10      (0000002c) invoke-virtual       v1, Landroidx/appcompat/widget/AppCompatTextHelper;->applyCompoundDrawablesTints()V
+	11      (00000032) invoke-virtual       v4, Landroidx/appcompat/widget/AppCompatCheckedTextView;->getContext()Landroid/content/Context;
+	12      (00000038) move-result-object   v1
+	13      (0000003a) sget-object          v2, Landroidx/appcompat/widget/AppCompatCheckedTextView;->TINT_ATTRS [I
+	14      (0000003e) invoke-static        v1, v6, v2, v7, v3, Landroidx/appcompat/widget/TintTypedArray;->obtainStyledAttributes(Landroid/content/Context; Landroid/util/AttributeSet; [I I I)Landroidx/appcompat/widget/TintTypedArray;
+	15      (00000044) move-result-object   v0
+	16      (00000046) invoke-virtual       v0, v3, Landroidx/appcompat/widget/TintTypedArray;->getDrawable(I)Landroid/graphics/drawable/Drawable;
+	17      (0000004c) move-result-object   v1
+	18      (0000004e) invoke-virtual       v4, v1, Landroidx/appcompat/widget/AppCompatCheckedTextView;->setCheckMarkDrawable(Landroid/graphics/drawable/Drawable;)V
+	19      (00000054) invoke-virtual       v0, Landroidx/appcompat/widget/TintTypedArray;->recycle()V
+	20      (0000005a) return-void          
+

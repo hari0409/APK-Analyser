@@ -1,0 +1,62 @@
+# Landroidx/appcompat/view/ViewPropertyAnimatorCompatSet;->start()V [access_flags=public]
+#
+# Parameters:
+# local registers: v0...v6
+#
+# - return:void
+
+start-BB@0x0 : [ start-BB@0x8 start-BB@0xa ]
+	0       (00000000) iget-boolean         v1, v6, Landroidx/appcompat/view/ViewPropertyAnimatorCompatSet;->mIsStarted Z
+	1       (00000004) if-eqz               v1, +3
+
+start-BB@0x8 : 
+	2       (00000008) return-void          
+
+start-BB@0xa : [ start-BB@0x16 ]
+	3       (0000000a) iget-object          v1, v6, Landroidx/appcompat/view/ViewPropertyAnimatorCompatSet;->mAnimators Ljava/util/ArrayList;
+	4       (0000000e) invoke-virtual       v1, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
+	5       (00000014) move-result-object   v1
+
+start-BB@0x16 : [ start-BB@0x22 start-BB@0x74 ]
+	6       (00000016) invoke-interface     v1, Ljava/util/Iterator;->hasNext()Z
+	7       (0000001c) move-result          v2
+	8       (0000001e) if-eqz               v2, +2b
+
+start-BB@0x22 : [ start-BB@0x3e start-BB@0x48 ]
+	9       (00000022) invoke-interface     v1, Ljava/util/Iterator;->next()Ljava/lang/Object;
+	10      (00000028) move-result-object   v0
+	11      (0000002a) check-cast           v0, Landroidx/core/view/ViewPropertyAnimatorCompat;
+	12      (0000002e) iget-wide            v2, v6, Landroidx/appcompat/view/ViewPropertyAnimatorCompatSet;->mDuration J
+	13      (00000032) const-wide/16        v4, 0 # [0.0]
+	14      (00000036) cmp-long             v2, v2, v4
+	15      (0000003a) if-ltz               v2, +7
+
+start-BB@0x3e : [ start-BB@0x48 ]
+	16      (0000003e) iget-wide            v2, v6, Landroidx/appcompat/view/ViewPropertyAnimatorCompatSet;->mDuration J
+	17      (00000042) invoke-virtual       v0, v2, v3, Landroidx/core/view/ViewPropertyAnimatorCompat;->setDuration(J)Landroidx/core/view/ViewPropertyAnimatorCompat;
+
+start-BB@0x48 : [ start-BB@0x50 start-BB@0x5a ]
+	18      (00000048) iget-object          v2, v6, Landroidx/appcompat/view/ViewPropertyAnimatorCompatSet;->mInterpolator Landroid/view/animation/Interpolator;
+	19      (0000004c) if-eqz               v2, +7
+
+start-BB@0x50 : [ start-BB@0x5a ]
+	20      (00000050) iget-object          v2, v6, Landroidx/appcompat/view/ViewPropertyAnimatorCompatSet;->mInterpolator Landroid/view/animation/Interpolator;
+	21      (00000054) invoke-virtual       v0, v2, Landroidx/core/view/ViewPropertyAnimatorCompat;->setInterpolator(Landroid/view/animation/Interpolator;)Landroidx/core/view/ViewPropertyAnimatorCompat;
+
+start-BB@0x5a : [ start-BB@0x62 start-BB@0x6c ]
+	22      (0000005a) iget-object          v2, v6, Landroidx/appcompat/view/ViewPropertyAnimatorCompatSet;->mListener Landroidx/core/view/ViewPropertyAnimatorListener;
+	23      (0000005e) if-eqz               v2, +7
+
+start-BB@0x62 : [ start-BB@0x6c ]
+	24      (00000062) iget-object          v2, v6, Landroidx/appcompat/view/ViewPropertyAnimatorCompatSet;->mProxyListener Landroidx/core/view/ViewPropertyAnimatorListenerAdapter;
+	25      (00000066) invoke-virtual       v0, v2, Landroidx/core/view/ViewPropertyAnimatorCompat;->setListener(Landroidx/core/view/ViewPropertyAnimatorListener;)Landroidx/core/view/ViewPropertyAnimatorCompat;
+
+start-BB@0x6c : [ start-BB@0x16 ]
+	26      (0000006c) invoke-virtual       v0, Landroidx/core/view/ViewPropertyAnimatorCompat;->start()V
+	27      (00000072) goto                 -2e
+
+start-BB@0x74 : [ start-BB@0x8 ]
+	28      (00000074) const/4              v1, 1
+	29      (00000076) iput-boolean         v1, v6, Landroidx/appcompat/view/ViewPropertyAnimatorCompatSet;->mIsStarted Z
+	30      (0000007a) goto                 -39
+

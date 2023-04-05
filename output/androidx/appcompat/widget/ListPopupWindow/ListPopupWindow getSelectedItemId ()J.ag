@@ -1,0 +1,24 @@
+# Landroidx/appcompat/widget/ListPopupWindow;->getSelectedItemId()J [access_flags=public]
+#
+# Parameters:
+# local registers: v0...v2
+#
+# - return:long
+
+getSelectedItemId-BB@0x0 : [ getSelectedItemId-BB@0xc getSelectedItemId-BB@0x12 ]
+	0       (00000000) invoke-virtual       v2, Landroidx/appcompat/widget/ListPopupWindow;->isShowing()Z
+	1       (00000006) move-result          v0
+	2       (00000008) if-nez               v0, +5
+
+getSelectedItemId-BB@0xc : [ getSelectedItemId-BB@0x10 ]
+	3       (0000000c) const-wide/high16    v0, -32768 # [-0.0]
+
+getSelectedItemId-BB@0x10 : 
+	4       (00000010) return-wide          v0
+
+getSelectedItemId-BB@0x12 : [ getSelectedItemId-BB@0x10 ]
+	5       (00000012) iget-object          v0, v2, Landroidx/appcompat/widget/ListPopupWindow;->mDropDownList Landroidx/appcompat/widget/DropDownListView;
+	6       (00000016) invoke-virtual       v0, Landroidx/appcompat/widget/DropDownListView;->getSelectedItemId()J
+	7       (0000001c) move-result-wide     v0
+	8       (0000001e) goto                 -7
+

@@ -1,0 +1,62 @@
+# Lcom/afwsamples/testdpc/policy/wifimanagement/WifiModificationFragment$1;->onClick(Landroid/view/View;)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v5
+# - v6:android.view.View
+#
+# - return:void
+
+onClick-BB@0x0 : [ onClick-BB@0x10 onClick-BB@0x12 ]
+	0       (00000000) iget-object          v3, v5, Lcom/afwsamples/testdpc/policy/wifimanagement/WifiModificationFragment$1;->this$0 Lcom/afwsamples/testdpc/policy/wifimanagement/WifiModificationFragment;
+	1       (00000004) invoke-static        v3, Lcom/afwsamples/testdpc/policy/wifimanagement/WifiModificationFragment;->access$100(Lcom/afwsamples/testdpc/policy/wifimanagement/WifiModificationFragment;)Landroid/net/wifi/WifiConfiguration;
+	2       (0000000a) move-result-object   v2
+	3       (0000000c) if-nez               v2, +3
+
+onClick-BB@0x10 : 
+	4       (00000010) return-void          
+
+onClick-BB@0x12 : [ onClick-BB@0x1a onClick-BB@0x2c ]
+	5       (00000012) iget-object          v3, v2, Landroid/net/wifi/WifiConfiguration;->enterpriseConfig Landroid/net/wifi/WifiEnterpriseConfig;
+	6       (00000016) if-eqz               v3, +b
+	12:4d
+	(Ljava/lang/SecurityException; -> 50 onClick-BB@0x50)
+
+onClick-BB@0x1a : [ onClick-BB@0x2c onClick-BB@0x66 ]
+	7       (0000001a) iget-object          v3, v2, Landroid/net/wifi/WifiConfiguration;->enterpriseConfig Landroid/net/wifi/WifiEnterpriseConfig;
+	8       (0000001e) invoke-virtual       v3, Landroid/net/wifi/WifiEnterpriseConfig;->getEapMethod()I
+	9       (00000024) move-result          v3
+	10      (00000026) const/4              v4, -1
+	11      (00000028) if-ne                v3, v4, +1f
+	12:4d
+	(Ljava/lang/SecurityException; -> 50 onClick-BB@0x50)
+
+onClick-BB@0x2c : [ onClick-BB@0x38 ]
+	12      (0000002c) iget-object          v3, v5, Lcom/afwsamples/testdpc/policy/wifimanagement/WifiModificationFragment$1;->this$0 Lcom/afwsamples/testdpc/policy/wifimanagement/WifiModificationFragment;
+	13      (00000030) invoke-static        v2, v3, Lcom/afwsamples/testdpc/policy/wifimanagement/WifiConfigCreationDialog;->newInstance(Landroid/net/wifi/WifiConfiguration; Lcom/afwsamples/testdpc/policy/wifimanagement/WifiConfigCreationDialog$Listener;)Lcom/afwsamples/testdpc/policy/wifimanagement/WifiConfigCreationDialog;
+	14      (00000036) move-result-object   v0
+	12:4d
+	(Ljava/lang/SecurityException; -> 50 onClick-BB@0x50)
+
+onClick-BB@0x38 : [ onClick-BB@0x10 ]
+	15      (00000038) iget-object          v3, v5, Lcom/afwsamples/testdpc/policy/wifimanagement/WifiModificationFragment$1;->this$0 Lcom/afwsamples/testdpc/policy/wifimanagement/WifiModificationFragment;
+	16      (0000003c) invoke-virtual       v3, Lcom/afwsamples/testdpc/policy/wifimanagement/WifiModificationFragment;->getFragmentManager()Landroid/app/FragmentManager;
+	17      (00000042) move-result-object   v3
+	18      (00000044) const-string         v4, 'wifi_config_modification'
+	19      (00000048) invoke-virtual       v0, v3, v4, Landroid/app/DialogFragment;->show(Landroid/app/FragmentManager; Ljava/lang/String;)V
+	20      (0000004e) goto                 -1f
+
+onClick-BB@0x50 : [ onClick-BB@0x10 ]
+	21      (00000050) move-exception       v1
+	22      (00000052) iget-object          v3, v5, Lcom/afwsamples/testdpc/policy/wifimanagement/WifiModificationFragment$1;->this$0 Lcom/afwsamples/testdpc/policy/wifimanagement/WifiModificationFragment;
+	23      (00000056) invoke-virtual       v1, Ljava/lang/SecurityException;->getMessage()Ljava/lang/String;
+	24      (0000005c) move-result-object   v4
+	25      (0000005e) invoke-static        v3, v4, Lcom/afwsamples/testdpc/policy/wifimanagement/WifiModificationFragment;->access$200(Lcom/afwsamples/testdpc/policy/wifimanagement/WifiModificationFragment; Ljava/lang/String;)V
+	26      (00000064) goto                 -2a
+
+onClick-BB@0x66 : [ onClick-BB@0x38 ]
+	27      (00000066) invoke-static        v2, Lcom/afwsamples/testdpc/policy/wifimanagement/WifiEapTlsCreateDialogFragment;->newInstance(Landroid/net/wifi/WifiConfiguration;)Lcom/afwsamples/testdpc/policy/wifimanagement/WifiEapTlsCreateDialogFragment;
+	28      (0000006c) move-result-object   v0
+	29      (0000006e) goto                 -1b
+	66:6b
+	(Ljava/lang/SecurityException; -> 50 onClick-BB@0x50)
+

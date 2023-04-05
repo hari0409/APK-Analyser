@@ -1,0 +1,15 @@
+# Lcom/afwsamples/testdpc/ShellCommand$$Lambda$125;-><init>(Lcom/afwsamples/testdpc/ShellCommand; Ljava/lang/String;)V [access_flags=constructor]
+#
+# Parameters:
+# - local registers: v0...v0
+# - v1:com.afwsamples.testdpc.ShellCommand
+# - v2:java.lang.String
+#
+# - return:void
+
+<init>-BB@0x0 : 
+	0       (00000000) invoke-direct        v0, Ljava/lang/Object;-><init>()V
+	1       (00000006) iput-object          v1, v0, Lcom/afwsamples/testdpc/ShellCommand$$Lambda$125;->arg$1 Lcom/afwsamples/testdpc/ShellCommand;
+	2       (0000000a) iput-object          v2, v0, Lcom/afwsamples/testdpc/ShellCommand$$Lambda$125;->arg$2 Ljava/lang/String;
+	3       (0000000e) return-void          
+

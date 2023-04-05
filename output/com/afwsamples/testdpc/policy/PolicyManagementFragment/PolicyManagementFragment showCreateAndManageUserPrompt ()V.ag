@@ -1,0 +1,80 @@
+# Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->showCreateAndManageUserPrompt()V [access_flags=private]
+#
+# Parameters:
+# local registers: v0...v10
+#
+# - return:void
+
+showCreateAndManageUserPrompt-BB@0x0 : [ showCreateAndManageUserPrompt-BB@0x10 showCreateAndManageUserPrompt-BB@0x24 ]
+	0       (00000000) const/4              v9, 0
+	1       (00000002) const/4              v7, 0
+	2       (00000004) invoke-virtual       v10, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->getActivity()Landroid/app/Activity;
+	3       (0000000a) move-result-object   v0
+	4       (0000000c) if-eqz               v0, +c
+
+showCreateAndManageUserPrompt-BB@0x10 : [ showCreateAndManageUserPrompt-BB@0x24 showCreateAndManageUserPrompt-BB@0x26 ]
+	5       (00000010) invoke-virtual       v10, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->getActivity()Landroid/app/Activity;
+	6       (00000016) move-result-object   v0
+	7       (00000018) invoke-virtual       v0, Landroid/app/Activity;->isFinishing()Z
+	8       (0000001e) move-result          v0
+	9       (00000020) if-eqz               v0, +3
+
+showCreateAndManageUserPrompt-BB@0x24 : 
+	10      (00000024) return-void          
+
+showCreateAndManageUserPrompt-BB@0x26 : [ showCreateAndManageUserPrompt-BB@0xa4 showCreateAndManageUserPrompt-BB@0xb0 ]
+	11      (00000026) invoke-virtual       v10, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->getActivity()Landroid/app/Activity;
+	12      (0000002c) move-result-object   v0
+	13      (0000002e) invoke-virtual       v0, Landroid/app/Activity;->getLayoutInflater()Landroid/view/LayoutInflater;
+	14      (00000034) move-result-object   v0
+	15      (00000036) const                v1, 2131427370 # [1.8476354327530666e+38]
+	16      (0000003c) invoke-virtual       v0, v1, v9, Landroid/view/LayoutInflater;->inflate(I Landroid/view/ViewGroup;)Landroid/view/View;
+	17      (00000042) move-result-object   v6
+	18      (00000044) const                v0, 2131296722 # [1.8211368702540878e+38]
+	19      (0000004a) invoke-virtual       v6, v0, Landroid/view/View;->findViewById(I)Landroid/view/View;
+	20      (00000050) move-result-object   v2
+	21      (00000052) check-cast           v2, Landroid/widget/EditText;
+	22      (00000056) const                v0, 2131689803 # [1.9008631687482178e+38]
+	23      (0000005c) invoke-virtual       v2, v0, Landroid/widget/EditText;->setHint(I)V
+	24      (00000062) const                v0, 2131296625 # [1.8211171963167722e+38]
+	25      (00000068) invoke-virtual       v6, v0, Landroid/view/View;->findViewById(I)Landroid/view/View;
+	26      (0000006e) move-result-object   v3
+	27      (00000070) check-cast           v3, Landroid/widget/CheckBox;
+	28      (00000074) const                v0, 2131296494 # [1.8210906263601914e+38]
+	29      (0000007a) invoke-virtual       v6, v0, Landroid/view/View;->findViewById(I)Landroid/view/View;
+	30      (00000080) move-result-object   v4
+	31      (00000082) check-cast           v4, Landroid/widget/CheckBox;
+	32      (00000086) const                v0, 2131296480 # [1.821087786822847e+38]
+	33      (0000008c) invoke-virtual       v6, v0, Landroid/view/View;->findViewById(I)Landroid/view/View;
+	34      (00000092) move-result-object   v5
+	35      (00000094) check-cast           v5, Landroid/widget/CheckBox;
+	36      (00000098) sget                 v0, Lcom/afwsamples/testdpc/common/Util;->SDK_INT I
+	37      (0000009c) const/16             v1, 28
+	38      (000000a0) if-ge                v0, v1, +8
+
+showCreateAndManageUserPrompt-BB@0xa4 : [ showCreateAndManageUserPrompt-BB@0xb0 ]
+	39      (000000a4) invoke-virtual       v4, v7, Landroid/widget/CheckBox;->setEnabled(Z)V
+	40      (000000aa) invoke-virtual       v5, v7, Landroid/widget/CheckBox;->setEnabled(Z)V
+
+showCreateAndManageUserPrompt-BB@0xb0 : [ showCreateAndManageUserPrompt-BB@0x24 ]
+	41      (000000b0) new-instance         v0, Landroid/app/AlertDialog$Builder;
+	42      (000000b4) invoke-virtual       v10, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->getActivity()Landroid/app/Activity;
+	43      (000000ba) move-result-object   v1
+	44      (000000bc) invoke-direct        v0, v1, Landroid/app/AlertDialog$Builder;-><init>(Landroid/content/Context;)V
+	45      (000000c2) const                v1, 2131689640 # [1.900830108420564e+38]
+	46      (000000c8) invoke-virtual       v0, v1, Landroid/app/AlertDialog$Builder;->setTitle(I)Landroid/app/AlertDialog$Builder;
+	47      (000000ce) move-result-object   v0
+	48      (000000d0) invoke-virtual       v0, v6, Landroid/app/AlertDialog$Builder;->setView(Landroid/view/View;)Landroid/app/AlertDialog$Builder;
+	49      (000000d6) move-result-object   v7
+	50      (000000d8) const                v8, 17039370 # [2.4244599011678966e-38]
+	51      (000000de) new-instance         v0, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment$14;
+	52      (000000e2) move-object          v1, v10
+	53      (000000e4) invoke-direct/range  v0 ... v5, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment$14;-><init>(Lcom/afwsamples/testdpc/policy/PolicyManagementFragment; Landroid/widget/EditText; Landroid/widget/CheckBox; Landroid/widget/CheckBox; Landroid/widget/CheckBox;)V
+	54      (000000ea) invoke-virtual       v7, v8, v0, Landroid/app/AlertDialog$Builder;->setPositiveButton(I Landroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
+	55      (000000f0) move-result-object   v0
+	56      (000000f2) const/high16         v1, 260 # [2.424457098570968e-38]
+	57      (000000f6) invoke-virtual       v0, v1, v9, Landroid/app/AlertDialog$Builder;->setNegativeButton(I Landroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
+	58      (000000fc) move-result-object   v0
+	59      (000000fe) invoke-virtual       v0, Landroid/app/AlertDialog$Builder;->show()Landroid/app/AlertDialog;
+	60      (00000104) goto                 -70
+

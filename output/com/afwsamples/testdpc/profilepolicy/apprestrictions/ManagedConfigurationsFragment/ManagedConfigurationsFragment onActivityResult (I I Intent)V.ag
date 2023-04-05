@@ -1,0 +1,49 @@
+# Lcom/afwsamples/testdpc/profilepolicy/apprestrictions/ManagedConfigurationsFragment;->onActivityResult(I I Landroid/content/Intent;)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v5
+# - v6:int
+# - v7:int
+# - v8:android.content.Intent
+#
+# - return:void
+
+onActivityResult-BB@0x0 : [ onActivityResult-BB@0x6 onActivityResult-BB@0x8 ]
+	0       (00000000) const/4              v3, -1
+	1       (00000002) if-eq                v7, v3, +3
+
+onActivityResult-BB@0x6 : 
+	2       (00000006) return-void          
+
+onActivityResult-BB@0x8 : [ D:onActivityResult-BB@0xe 1:onActivityResult-BB@0x10 ]
+	3       (00000008) packed-switch        v6, +2e (0x64)
+
+onActivityResult-BB@0xe : [ onActivityResult-BB@0x6 ]
+	4       (0000000e) goto                 -4
+
+onActivityResult-BB@0x10 : [ onActivityResult-BB@0x6 ]
+	5       (00000010) const-string         v3, 'type'
+	6       (00000014) const/4              v4, 0
+	7       (00000016) invoke-virtual       v8, v3, v4, Landroid/content/Intent;->getIntExtra(Ljava/lang/String; I)I
+	8       (0000001c) move-result          v2
+	9       (0000001e) const-string         v3, 'key'
+	10      (00000022) invoke-virtual       v8, v3, Landroid/content/Intent;->getStringExtra(Ljava/lang/String;)Ljava/lang/String;
+	11      (00000028) move-result-object   v0
+	12      (0000002a) new-instance         v1, Landroid/content/RestrictionEntry;
+	13      (0000002e) invoke-direct        v5, v2, Lcom/afwsamples/testdpc/profilepolicy/apprestrictions/ManagedConfigurationsFragment;->getRestrictionTypeFromDialogType(I)I
+	14      (00000034) move-result          v3
+	15      (00000036) invoke-direct        v1, v3, v0, Landroid/content/RestrictionEntry;-><init>(I Ljava/lang/String;)V
+	16      (0000003c) invoke-direct        v5, v1, v8, Lcom/afwsamples/testdpc/profilepolicy/apprestrictions/ManagedConfigurationsFragment;->updateRestrictionEntryFromResultIntent(Landroid/content/RestrictionEntry; Landroid/content/Intent;)V
+	17      (00000042) iget-object          v3, v5, Lcom/afwsamples/testdpc/profilepolicy/apprestrictions/ManagedConfigurationsFragment;->mAppRestrictionsArrayAdapter Lcom/afwsamples/testdpc/common/EditDeleteArrayAdapter;
+	18      (00000046) iget-object          v4, v5, Lcom/afwsamples/testdpc/profilepolicy/apprestrictions/ManagedConfigurationsFragment;->mEditingRestrictionEntry Landroid/content/RestrictionEntry;
+	19      (0000004a) invoke-virtual       v3, v4, Lcom/afwsamples/testdpc/common/EditDeleteArrayAdapter;->remove(Ljava/lang/Object;)V
+	20      (00000050) const/4              v3, 0
+	21      (00000052) iput-object          v3, v5, Lcom/afwsamples/testdpc/profilepolicy/apprestrictions/ManagedConfigurationsFragment;->mEditingRestrictionEntry Landroid/content/RestrictionEntry;
+	22      (00000056) iget-object          v3, v5, Lcom/afwsamples/testdpc/profilepolicy/apprestrictions/ManagedConfigurationsFragment;->mAppRestrictionsArrayAdapter Lcom/afwsamples/testdpc/common/EditDeleteArrayAdapter;
+	23      (0000005a) invoke-virtual       v3, v1, Lcom/afwsamples/testdpc/common/EditDeleteArrayAdapter;->add(Ljava/lang/Object;)V
+	24      (00000060) goto                 -2d
+
+onActivityResult-BB@0x62 : 
+	25      (00000062) nop                  
+	26      (00000064) packed-switch-payload 1
+

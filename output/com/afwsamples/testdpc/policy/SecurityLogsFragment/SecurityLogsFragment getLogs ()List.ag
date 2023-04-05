@@ -1,0 +1,37 @@
+# Lcom/afwsamples/testdpc/policy/SecurityLogsFragment;->getLogs()Ljava/util/List; [access_flags=private]
+#
+# Parameters:
+# local registers: v0...v2
+#
+# - return:java.util.List
+
+getLogs-BB@0x0 : [ getLogs-BB@0xc getLogs-BB@0x24 ]
+	0       (00000000) invoke-direct        v2, Lcom/afwsamples/testdpc/policy/SecurityLogsFragment;->hasSecurityLoggingDelegation()Z
+	1       (00000006) move-result          v1
+	2       (00000008) if-eqz               v1, +e
+
+getLogs-BB@0xc : [ getLogs-BB@0xe ]
+	3       (0000000c) const/4              v0, 0
+
+getLogs-BB@0xe : [ getLogs-BB@0x16 getLogs-BB@0x2a ]
+	4       (0000000e) iget-boolean         v1, v2, Lcom/afwsamples/testdpc/policy/SecurityLogsFragment;->mPreReboot Z
+	5       (00000012) if-eqz               v1, +c
+
+getLogs-BB@0x16 : [ getLogs-BB@0x22 ]
+	6       (00000016) iget-object          v1, v2, Lcom/afwsamples/testdpc/policy/SecurityLogsFragment;->mDevicePolicyManager Landroid/app/admin/DevicePolicyManager;
+	7       (0000001a) invoke-virtual       v1, v0, Landroid/app/admin/DevicePolicyManager;->retrievePreRebootSecurityLogs(Landroid/content/ComponentName;)Ljava/util/List;
+	8       (00000020) move-result-object   v1
+
+getLogs-BB@0x22 : 
+	9       (00000022) return-object        v1
+
+getLogs-BB@0x24 : [ getLogs-BB@0xe ]
+	10      (00000024) iget-object          v0, v2, Lcom/afwsamples/testdpc/policy/SecurityLogsFragment;->mAdminName Landroid/content/ComponentName;
+	11      (00000028) goto                 -d
+
+getLogs-BB@0x2a : [ getLogs-BB@0x22 ]
+	12      (0000002a) iget-object          v1, v2, Lcom/afwsamples/testdpc/policy/SecurityLogsFragment;->mDevicePolicyManager Landroid/app/admin/DevicePolicyManager;
+	13      (0000002e) invoke-virtual       v1, v0, Landroid/app/admin/DevicePolicyManager;->retrieveSecurityLogs(Landroid/content/ComponentName;)Ljava/util/List;
+	14      (00000034) move-result-object   v1
+	15      (00000036) goto                 -a
+

@@ -1,0 +1,71 @@
+# Lcom/afwsamples/testdpc/DeviceAdminReceiver;->onOperationSafetyStateChanged(Landroid/content/Context; I Z)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v6
+# - v7:android.content.Context
+# - v8:int
+# - v9:boolean
+#
+# - return:void
+
+onOperationSafetyStateChanged-BB@0x0 : [ onOperationSafetyStateChanged-BB@0x48 onOperationSafetyStateChanged-BB@0x92 ]
+	0       (00000000) const-string         v3, 'DeviceAdminReceiver'
+	1       (00000004) new-instance         v4, Ljava/lang/StringBuilder;
+	2       (00000008) invoke-direct        v4, Ljava/lang/StringBuilder;-><init>()V
+	3       (0000000e) const-string         v5, 'onOperationSafetyStateChanged(): '
+	4       (00000012) invoke-virtual       v4, v5, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	5       (00000018) move-result-object   v4
+	6       (0000001a) invoke-virtual       v4, v8, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+	7       (00000020) move-result-object   v4
+	8       (00000022) const-string         v5, ' = '
+	9       (00000026) invoke-virtual       v4, v5, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	10      (0000002c) move-result-object   v4
+	11      (0000002e) invoke-virtual       v4, v9, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+	12      (00000034) move-result-object   v4
+	13      (00000036) invoke-virtual       v4, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+	14      (0000003c) move-result-object   v4
+	15      (0000003e) invoke-static        v3, v4, Landroid/util/Log;->d(Ljava/lang/String; Ljava/lang/String;)I
+	16      (00000044) if-eqz               v9, +27
+
+onOperationSafetyStateChanged-BB@0x48 : [ onOperationSafetyStateChanged-BB@0x56 ]
+	17      (00000048) const                v3, 2131690164 # [1.900936388246887e+38]
+	18      (0000004e) invoke-virtual       v7, v3, Landroid/content/Context;->getString(I)Ljava/lang/String;
+	19      (00000054) move-result-object   v2
+
+onOperationSafetyStateChanged-BB@0x56 : [ D:onOperationSafetyStateChanged-BB@0x5c 1:onOperationSafetyStateChanged-BB@0xa2 ]
+	20      (00000056) packed-switch        v8, +2f (0xb4)
+
+onOperationSafetyStateChanged-BB@0x5c : [ onOperationSafetyStateChanged-BB@0x6a ]
+	21      (0000005c) const                v3, 2131690340 # [1.9009720852877894e+38]
+	22      (00000062) invoke-virtual       v7, v3, Landroid/content/Context;->getString(I)Ljava/lang/String;
+	23      (00000068) move-result-object   v1
+
+onOperationSafetyStateChanged-BB@0x6a : 
+	24      (0000006a) const                v3, 2131690165 # [1.900936591070983e+38]
+	25      (00000070) const/4              v4, 2
+	26      (00000072) new-array            v4, v4, [Ljava/lang/Object;
+	27      (00000076) const/4              v5, 0
+	28      (00000078) aput-object          v1, v4, v5
+	29      (0000007c) const/4              v5, 1
+	30      (0000007e) aput-object          v2, v4, v5
+	31      (00000082) invoke-virtual       v7, v3, v4, Landroid/content/Context;->getString(I [Ljava/lang/Object;)Ljava/lang/String;
+	32      (00000088) move-result-object   v0
+	33      (0000008a) invoke-direct        v6, v7, v0, Lcom/afwsamples/testdpc/DeviceAdminReceiver;->showToast(Landroid/content/Context; Ljava/lang/String;)V
+	34      (00000090) return-void          
+
+onOperationSafetyStateChanged-BB@0x92 : [ onOperationSafetyStateChanged-BB@0x56 ]
+	35      (00000092) const                v3, 2131690338 # [1.9009716796395973e+38]
+	36      (00000098) invoke-virtual       v7, v3, Landroid/content/Context;->getString(I)Ljava/lang/String;
+	37      (0000009e) move-result-object   v2
+	38      (000000a0) goto                 -25
+
+onOperationSafetyStateChanged-BB@0xa2 : [ onOperationSafetyStateChanged-BB@0x6a ]
+	39      (000000a2) const                v3, 2131690339 # [1.9009718824636934e+38]
+	40      (000000a8) invoke-virtual       v7, v3, Landroid/content/Context;->getString(I)Ljava/lang/String;
+	41      (000000ae) move-result-object   v1
+	42      (000000b0) goto                 -23
+
+onOperationSafetyStateChanged-BB@0xb2 : 
+	43      (000000b2) nop                  
+	44      (000000b4) packed-switch-payload 1
+

@@ -1,0 +1,41 @@
+# Landroidx/appcompat/view/menu/ActionMenuItemView;->shouldAllowTextWithIcon()Z [access_flags=private]
+#
+# Parameters:
+# local registers: v0...v5
+#
+# - return:boolean
+
+shouldAllowTextWithIcon-BB@0x0 : [ shouldAllowTextWithIcon-BB@0x28 shouldAllowTextWithIcon-BB@0x3e ]
+	0       (00000000) const/16             v4, 480
+	1       (00000004) invoke-virtual       v5, Landroidx/appcompat/view/menu/ActionMenuItemView;->getContext()Landroid/content/Context;
+	2       (0000000a) move-result-object   v3
+	3       (0000000c) invoke-virtual       v3, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
+	4       (00000012) move-result-object   v3
+	5       (00000014) invoke-virtual       v3, Landroid/content/res/Resources;->getConfiguration()Landroid/content/res/Configuration;
+	6       (0000001a) move-result-object   v0
+	7       (0000001c) iget                 v2, v0, Landroid/content/res/Configuration;->screenWidthDp I
+	8       (00000020) iget                 v1, v0, Landroid/content/res/Configuration;->screenHeightDp I
+	9       (00000024) if-ge                v2, v4, +d
+
+shouldAllowTextWithIcon-BB@0x28 : [ shouldAllowTextWithIcon-BB@0x30 shouldAllowTextWithIcon-BB@0x34 ]
+	10      (00000028) const/16             v3, 640
+	11      (0000002c) if-lt                v2, v3, +4
+
+shouldAllowTextWithIcon-BB@0x30 : [ shouldAllowTextWithIcon-BB@0x34 shouldAllowTextWithIcon-BB@0x3e ]
+	12      (00000030) if-ge                v1, v4, +7
+
+shouldAllowTextWithIcon-BB@0x34 : [ shouldAllowTextWithIcon-BB@0x3e shouldAllowTextWithIcon-BB@0x42 ]
+	13      (00000034) iget                 v3, v0, Landroid/content/res/Configuration;->orientation I
+	14      (00000038) const/4              v4, 2
+	15      (0000003a) if-ne                v3, v4, +4
+
+shouldAllowTextWithIcon-BB@0x3e : [ shouldAllowTextWithIcon-BB@0x40 ]
+	16      (0000003e) const/4              v3, 1
+
+shouldAllowTextWithIcon-BB@0x40 : 
+	17      (00000040) return               v3
+
+shouldAllowTextWithIcon-BB@0x42 : [ shouldAllowTextWithIcon-BB@0x40 ]
+	18      (00000042) const/4              v3, 0
+	19      (00000044) goto                 -2
+

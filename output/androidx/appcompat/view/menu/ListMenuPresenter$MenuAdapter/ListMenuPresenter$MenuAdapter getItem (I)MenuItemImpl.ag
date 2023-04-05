@@ -1,0 +1,32 @@
+# Landroidx/appcompat/view/menu/ListMenuPresenter$MenuAdapter;->getItem(I)Landroidx/appcompat/view/menu/MenuItemImpl; [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:int
+#
+# - return:androidx.appcompat.view.menu.MenuItemImpl
+
+getItem-BB@0x0 : [ getItem-BB@0x22 getItem-BB@0x2e ]
+	0       (00000000) iget-object          v1, v2, Landroidx/appcompat/view/menu/ListMenuPresenter$MenuAdapter;->this$0 Landroidx/appcompat/view/menu/ListMenuPresenter;
+	1       (00000004) iget-object          v1, v1, Landroidx/appcompat/view/menu/ListMenuPresenter;->mMenu Landroidx/appcompat/view/menu/MenuBuilder;
+	2       (00000008) invoke-virtual       v1, Landroidx/appcompat/view/menu/MenuBuilder;->getNonActionItems()Ljava/util/ArrayList;
+	3       (0000000e) move-result-object   v0
+	4       (00000010) iget-object          v1, v2, Landroidx/appcompat/view/menu/ListMenuPresenter$MenuAdapter;->this$0 Landroidx/appcompat/view/menu/ListMenuPresenter;
+	5       (00000014) iget                 v1, v1, Landroidx/appcompat/view/menu/ListMenuPresenter;->mItemIndexOffset I
+	6       (00000018) add-int/2addr        v3, v1
+	7       (0000001a) iget                 v1, v2, Landroidx/appcompat/view/menu/ListMenuPresenter$MenuAdapter;->mExpandedIndex I
+	8       (0000001e) if-ltz               v1, +8
+
+getItem-BB@0x22 : [ getItem-BB@0x2a getItem-BB@0x2e ]
+	9       (00000022) iget                 v1, v2, Landroidx/appcompat/view/menu/ListMenuPresenter$MenuAdapter;->mExpandedIndex I
+	10      (00000026) if-lt                v3, v1, +4
+
+getItem-BB@0x2a : [ getItem-BB@0x2e ]
+	11      (0000002a) add-int/lit8         v3, v3, 1
+
+getItem-BB@0x2e : 
+	12      (0000002e) invoke-virtual       v0, v3, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+	13      (00000034) move-result-object   v1
+	14      (00000036) check-cast           v1, Landroidx/appcompat/view/menu/MenuItemImpl;
+	15      (0000003a) return-object        v1
+

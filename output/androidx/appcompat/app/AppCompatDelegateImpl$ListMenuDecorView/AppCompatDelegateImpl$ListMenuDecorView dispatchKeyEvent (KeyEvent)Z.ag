@@ -1,0 +1,29 @@
+# Landroidx/appcompat/app/AppCompatDelegateImpl$ListMenuDecorView;->dispatchKeyEvent(Landroid/view/KeyEvent;)Z [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:android.view.KeyEvent
+#
+# - return:boolean
+
+dispatchKeyEvent-BB@0x0 : [ dispatchKeyEvent-BB@0x10 dispatchKeyEvent-BB@0x1c ]
+	0       (00000000) iget-object          v0, v1, Landroidx/appcompat/app/AppCompatDelegateImpl$ListMenuDecorView;->this$0 Landroidx/appcompat/app/AppCompatDelegateImpl;
+	1       (00000004) invoke-virtual       v0, v2, Landroidx/appcompat/app/AppCompatDelegateImpl;->dispatchKeyEvent(Landroid/view/KeyEvent;)Z
+	2       (0000000a) move-result          v0
+	3       (0000000c) if-nez               v0, +8
+
+dispatchKeyEvent-BB@0x10 : [ dispatchKeyEvent-BB@0x1c dispatchKeyEvent-BB@0x20 ]
+	4       (00000010) invoke-super         v1, v2, Landroidx/appcompat/widget/ContentFrameLayout;->dispatchKeyEvent(Landroid/view/KeyEvent;)Z
+	5       (00000016) move-result          v0
+	6       (00000018) if-eqz               v0, +4
+
+dispatchKeyEvent-BB@0x1c : [ dispatchKeyEvent-BB@0x1e ]
+	7       (0000001c) const/4              v0, 1
+
+dispatchKeyEvent-BB@0x1e : 
+	8       (0000001e) return               v0
+
+dispatchKeyEvent-BB@0x20 : [ dispatchKeyEvent-BB@0x1e ]
+	9       (00000020) const/4              v0, 0
+	10      (00000022) goto                 -2
+

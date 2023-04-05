@@ -1,0 +1,48 @@
+# Lcom/afwsamples/testdpc/common/keyvaluepair/KeyValueBundleArrayFragment;->onCreate(Landroid/os/Bundle;)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v3
+# - v4:android.os.Bundle
+#
+# - return:void
+
+onCreate-BB@0x0 : [ onCreate-BB@0x40 onCreate-BB@0x46 ]
+	0       (00000000) invoke-super         v3, v4, Lcom/afwsamples/testdpc/common/ManageAppFragment;->onCreate(Landroid/os/Bundle;)V
+	1       (00000006) invoke-virtual       v3, Lcom/afwsamples/testdpc/common/keyvaluepair/KeyValueBundleArrayFragment;->getArguments()Landroid/os/Bundle;
+	2       (0000000c) move-result-object   v1
+	3       (0000000e) const-string         v2, 'key'
+	4       (00000012) invoke-virtual       v1, v2, Landroid/os/Bundle;->getString(Ljava/lang/String;)Ljava/lang/String;
+	5       (00000018) move-result-object   v1
+	6       (0000001a) iput-object          v1, v3, Lcom/afwsamples/testdpc/common/keyvaluepair/KeyValueBundleArrayFragment;->mKey Ljava/lang/String;
+	7       (0000001e) invoke-virtual       v3, Lcom/afwsamples/testdpc/common/keyvaluepair/KeyValueBundleArrayFragment;->getArguments()Landroid/os/Bundle;
+	8       (00000024) move-result-object   v1
+	9       (00000026) const-string         v2, 'initial_value'
+	10      (0000002a) invoke-virtual       v1, v2, Landroid/os/Bundle;->getParcelableArray(Ljava/lang/String;)[Landroid/os/Parcelable;
+	11      (00000030) move-result-object   v1
+	12      (00000032) check-cast           v1, [Landroid/os/Bundle;
+	13      (00000036) move-object          v0, v1
+	14      (00000038) check-cast           v0, [Landroid/os/Bundle;
+	15      (0000003c) if-nez               v0, +5
+
+onCreate-BB@0x40 : [ onCreate-BB@0x46 ]
+	16      (00000040) const/4              v1, 0
+	17      (00000042) new-array            v0, v1, [Landroid/os/Bundle;
+
+onCreate-BB@0x46 : 
+	18      (00000046) new-instance         v1, Ljava/util/ArrayList;
+	19      (0000004a) invoke-static        v0, Ljava/util/Arrays;->asList([Ljava/lang/Object;)Ljava/util/List;
+	20      (00000050) move-result-object   v2
+	21      (00000052) invoke-direct        v1, v2, Ljava/util/ArrayList;-><init>(Ljava/util/Collection;)V
+	22      (00000058) iput-object          v1, v3, Lcom/afwsamples/testdpc/common/keyvaluepair/KeyValueBundleArrayFragment;->mBundleList Ljava/util/List;
+	23      (0000005c) new-instance         v1, Ljava/util/ArrayList;
+	24      (00000060) iget-object          v2, v3, Lcom/afwsamples/testdpc/common/keyvaluepair/KeyValueBundleArrayFragment;->mBundleList Ljava/util/List;
+	25      (00000064) invoke-direct        v1, v2, Ljava/util/ArrayList;-><init>(Ljava/util/Collection;)V
+	26      (0000006a) iput-object          v1, v3, Lcom/afwsamples/testdpc/common/keyvaluepair/KeyValueBundleArrayFragment;->mInitialBundleList Ljava/util/List;
+	27      (0000006e) invoke-virtual       v3, Lcom/afwsamples/testdpc/common/keyvaluepair/KeyValueBundleArrayFragment;->getArguments()Landroid/os/Bundle;
+	28      (00000074) move-result-object   v1
+	29      (00000076) const-string         v2, 'app_name'
+	30      (0000007a) invoke-virtual       v1, v2, Landroid/os/Bundle;->getString(Ljava/lang/String;)Ljava/lang/String;
+	31      (00000080) move-result-object   v1
+	32      (00000082) iput-object          v1, v3, Lcom/afwsamples/testdpc/common/keyvaluepair/KeyValueBundleArrayFragment;->mAppName Ljava/lang/String;
+	33      (00000086) return-void          
+

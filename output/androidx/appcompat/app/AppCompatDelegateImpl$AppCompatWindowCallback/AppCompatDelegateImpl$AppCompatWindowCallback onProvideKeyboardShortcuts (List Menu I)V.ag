@@ -1,0 +1,33 @@
+# Landroidx/appcompat/app/AppCompatDelegateImpl$AppCompatWindowCallback;->onProvideKeyboardShortcuts(Ljava/util/List; Landroid/view/Menu; I)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v4
+# - v5:java.util.List
+# - v6:android.view.Menu
+# - v7:int
+#
+# - return:void
+
+onProvideKeyboardShortcuts-BB@0x0 : [ onProvideKeyboardShortcuts-BB@0x14 onProvideKeyboardShortcuts-BB@0x28 ]
+	0       (00000000) iget-object          v1, v4, Landroidx/appcompat/app/AppCompatDelegateImpl$AppCompatWindowCallback;->this$0 Landroidx/appcompat/app/AppCompatDelegateImpl;
+	1       (00000004) const/4              v2, 0
+	2       (00000006) const/4              v3, 1
+	3       (00000008) invoke-virtual       v1, v2, v3, Landroidx/appcompat/app/AppCompatDelegateImpl;->getPanelState(I Z)Landroidx/appcompat/app/AppCompatDelegateImpl$PanelFeatureState;
+	4       (0000000e) move-result-object   v0
+	5       (00000010) if-eqz               v0, +c
+
+onProvideKeyboardShortcuts-BB@0x14 : [ onProvideKeyboardShortcuts-BB@0x1c onProvideKeyboardShortcuts-BB@0x28 ]
+	6       (00000014) iget-object          v1, v0, Landroidx/appcompat/app/AppCompatDelegateImpl$PanelFeatureState;->menu Landroidx/appcompat/view/menu/MenuBuilder;
+	7       (00000018) if-eqz               v1, +8
+
+onProvideKeyboardShortcuts-BB@0x1c : [ onProvideKeyboardShortcuts-BB@0x26 ]
+	8       (0000001c) iget-object          v1, v0, Landroidx/appcompat/app/AppCompatDelegateImpl$PanelFeatureState;->menu Landroidx/appcompat/view/menu/MenuBuilder;
+	9       (00000020) invoke-super         v4, v5, v1, v7, Landroidx/appcompat/view/WindowCallbackWrapper;->onProvideKeyboardShortcuts(Ljava/util/List; Landroid/view/Menu; I)V
+
+onProvideKeyboardShortcuts-BB@0x26 : 
+	10      (00000026) return-void          
+
+onProvideKeyboardShortcuts-BB@0x28 : [ onProvideKeyboardShortcuts-BB@0x26 ]
+	11      (00000028) invoke-super         v4, v5, v6, v7, Landroidx/appcompat/view/WindowCallbackWrapper;->onProvideKeyboardShortcuts(Ljava/util/List; Landroid/view/Menu; I)V
+	12      (0000002e) goto                 -4
+

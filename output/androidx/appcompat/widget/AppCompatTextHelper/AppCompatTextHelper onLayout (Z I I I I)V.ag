@@ -1,0 +1,22 @@
+# Landroidx/appcompat/widget/AppCompatTextHelper;->onLayout(Z I I I I)V [access_flags=]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:boolean
+# - v3:int
+# - v4:int
+# - v5:int
+# - v6:int
+#
+# - return:void
+
+onLayout-BB@0x0 : [ onLayout-BB@0x8 onLayout-BB@0xe ]
+	0       (00000000) sget-boolean         v0, Landroidx/core/widget/AutoSizeableTextView;->PLATFORM_SUPPORTS_AUTOSIZE Z
+	1       (00000004) if-nez               v0, +5
+
+onLayout-BB@0x8 : [ onLayout-BB@0xe ]
+	2       (00000008) invoke-virtual       v1, Landroidx/appcompat/widget/AppCompatTextHelper;->autoSizeText()V
+
+onLayout-BB@0xe : 
+	3       (0000000e) return-void          
+

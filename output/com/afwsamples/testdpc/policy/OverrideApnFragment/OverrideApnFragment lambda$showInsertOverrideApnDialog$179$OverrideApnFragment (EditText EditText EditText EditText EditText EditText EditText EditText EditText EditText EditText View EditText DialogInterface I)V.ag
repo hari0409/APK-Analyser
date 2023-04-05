@@ -1,0 +1,224 @@
+# Lcom/afwsamples/testdpc/policy/OverrideApnFragment;->lambda$showInsertOverrideApnDialog$179$OverrideApnFragment(Landroid/widget/EditText; Landroid/widget/EditText; Landroid/widget/EditText; Landroid/widget/EditText; Landroid/widget/EditText; Landroid/widget/EditText; Landroid/widget/EditText; Landroid/widget/EditText; Landroid/widget/EditText; Landroid/widget/EditText; Landroid/widget/EditText; Landroid/view/View; Landroid/widget/EditText; Landroid/content/DialogInterface; I)V [access_flags=final synthetic]
+#
+# Parameters:
+# - local registers: v0...v22
+# - v23:android.widget.EditText
+# - v24:android.widget.EditText
+# - v25:android.widget.EditText
+# - v26:android.widget.EditText
+# - v27:android.widget.EditText
+# - v28:android.widget.EditText
+# - v29:android.widget.EditText
+# - v30:android.widget.EditText
+# - v31:android.widget.EditText
+# - v32:android.widget.EditText
+# - v33:android.widget.EditText
+# - v34:android.view.View
+# - v35:android.widget.EditText
+# - v36:android.content.DialogInterface
+# - v37:int
+#
+# - return:void
+
+lambda$showInsertOverrideApnDialog$179$OverrideApnFragment-BB@0x0 : [ lambda$showInsertOverrideApnDialog$179$OverrideApnFragment-BB@0x1c lambda$showInsertOverrideApnDialog$179$OverrideApnFragment-BB@0x34 ]
+	0       (00000000) invoke-virtual/range v23, Landroid/widget/EditText;->getText()Landroid/text/Editable;
+	1       (00000006) move-result-object   v2
+	2       (00000008) invoke-virtual       v2, Ljava/lang/Object;->toString()Ljava/lang/String;
+	3       (0000000e) move-result-object   v4
+	4       (00000010) invoke-virtual       v4, Ljava/lang/String;->isEmpty()Z
+	5       (00000016) move-result          v2
+	6       (00000018) if-eqz               v2, +e
+
+lambda$showInsertOverrideApnDialog$179$OverrideApnFragment-BB@0x1c : [ lambda$showInsertOverrideApnDialog$179$OverrideApnFragment-BB@0x32 ]
+	7       (0000001c) const                v2, 2131689552 # [1.9008122599001126e+38]
+	8       (00000022) const/4              v3, 0
+	9       (00000024) new-array            v3, v3, [Ljava/lang/Object;
+	10      (00000028) move-object/from16   v0, v22
+	11      (0000002c) invoke-direct        v0, v2, v3, Lcom/afwsamples/testdpc/policy/OverrideApnFragment;->showToast(I [Ljava/lang/Object;)V
+
+lambda$showInsertOverrideApnDialog$179$OverrideApnFragment-BB@0x32 : 
+	12      (00000032) return-void          
+
+lambda$showInsertOverrideApnDialog$179$OverrideApnFragment-BB@0x34 : [ lambda$showInsertOverrideApnDialog$179$OverrideApnFragment-BB@0x50 lambda$showInsertOverrideApnDialog$179$OverrideApnFragment-BB@0x68 ]
+	13      (00000034) invoke-virtual/range v24, Landroid/widget/EditText;->getText()Landroid/text/Editable;
+	14      (0000003a) move-result-object   v2
+	15      (0000003c) invoke-virtual       v2, Ljava/lang/Object;->toString()Ljava/lang/String;
+	16      (00000042) move-result-object   v5
+	17      (00000044) invoke-virtual       v5, Ljava/lang/String;->isEmpty()Z
+	18      (0000004a) move-result          v2
+	19      (0000004c) if-eqz               v2, +e
+
+lambda$showInsertOverrideApnDialog$179$OverrideApnFragment-BB@0x50 : [ lambda$showInsertOverrideApnDialog$179$OverrideApnFragment-BB@0x32 ]
+	20      (00000050) const                v2, 2131689557 # [1.9008132740205928e+38]
+	21      (00000056) const/4              v3, 0
+	22      (00000058) new-array            v3, v3, [Ljava/lang/Object;
+	23      (0000005c) move-object/from16   v0, v22
+	24      (00000060) invoke-direct        v0, v2, v3, Lcom/afwsamples/testdpc/policy/OverrideApnFragment;->showToast(I [Ljava/lang/Object;)V
+	25      (00000066) goto                 -1a
+
+lambda$showInsertOverrideApnDialog$179$OverrideApnFragment-BB@0x68 : [ lambda$showInsertOverrideApnDialog$179$OverrideApnFragment-BB@0x8a lambda$showInsertOverrideApnDialog$179$OverrideApnFragment-BB@0xa2 ]
+	26      (00000068) invoke-virtual/range v25, Landroid/widget/EditText;->getText()Landroid/text/Editable;
+	27      (0000006e) move-result-object   v2
+	28      (00000070) invoke-virtual       v2, Ljava/lang/Object;->toString()Ljava/lang/String;
+	29      (00000076) move-result-object   v2
+	30      (00000078) const/4              v3, 0
+	31      (0000007a) move-object/from16   v0, v22
+	32      (0000007e) invoke-direct        v0, v2, v3, Lcom/afwsamples/testdpc/policy/OverrideApnFragment;->parseInt(Ljava/lang/String; I)I
+	33      (00000084) move-result          v14
+	34      (00000086) if-nez               v14, +e
+
+lambda$showInsertOverrideApnDialog$179$OverrideApnFragment-BB@0x8a : [ lambda$showInsertOverrideApnDialog$179$OverrideApnFragment-BB@0x32 ]
+	35      (0000008a) const                v2, 2131689567 # [1.900815302261553e+38]
+	36      (00000090) const/4              v3, 0
+	37      (00000092) new-array            v3, v3, [Ljava/lang/Object;
+	38      (00000096) move-object/from16   v0, v22
+	39      (0000009a) invoke-direct        v0, v2, v3, Lcom/afwsamples/testdpc/policy/OverrideApnFragment;->showToast(I [Ljava/lang/Object;)V
+	40      (000000a0) goto                 -37
+
+lambda$showInsertOverrideApnDialog$179$OverrideApnFragment-BB@0xa2 : [ lambda$showInsertOverrideApnDialog$179$OverrideApnFragment-BB@0x1f2 lambda$showInsertOverrideApnDialog$179$OverrideApnFragment-BB@0x288 ]
+	41      (000000a2) invoke-virtual/range v26, Landroid/widget/EditText;->getText()Landroid/text/Editable;
+	42      (000000a8) move-result-object   v2
+	43      (000000aa) invoke-virtual       v2, Ljava/lang/Object;->toString()Ljava/lang/String;
+	44      (000000b0) move-result-object   v3
+	45      (000000b2) invoke-virtual/range v27, Landroid/widget/EditText;->getText()Landroid/text/Editable;
+	46      (000000b8) move-result-object   v2
+	47      (000000ba) invoke-virtual       v2, Ljava/lang/Object;->toString()Ljava/lang/String;
+	48      (000000c0) move-result-object   v2
+	49      (000000c2) move-object/from16   v0, v22
+	50      (000000c6) invoke-direct        v0, v2, Lcom/afwsamples/testdpc/policy/OverrideApnFragment;->inetAddressFromString(Ljava/lang/String;)Ljava/net/InetAddress;
+	51      (000000cc) move-result-object   v6
+	52      (000000ce) invoke-virtual/range v28, Landroid/widget/EditText;->getText()Landroid/text/Editable;
+	53      (000000d4) move-result-object   v2
+	54      (000000d6) invoke-virtual       v2, Ljava/lang/Object;->toString()Ljava/lang/String;
+	55      (000000dc) move-result-object   v2
+	56      (000000de) const/4              v7, -1
+	57      (000000e0) move-object/from16   v0, v22
+	58      (000000e4) invoke-direct        v0, v2, v7, Lcom/afwsamples/testdpc/policy/OverrideApnFragment;->parseInt(Ljava/lang/String; I)I
+	59      (000000ea) move-result          v7
+	60      (000000ec) invoke-virtual/range v29, Landroid/widget/EditText;->getText()Landroid/text/Editable;
+	61      (000000f2) move-result-object   v2
+	62      (000000f4) invoke-virtual       v2, Ljava/lang/Object;->toString()Ljava/lang/String;
+	63      (000000fa) move-result-object   v2
+	64      (000000fc) move-object/from16   v0, v22
+	65      (00000100) invoke-direct        v0, v2, Lcom/afwsamples/testdpc/policy/OverrideApnFragment;->UriFromString(Ljava/lang/String;)Landroid/net/Uri;
+	66      (00000106) move-result-object   v8
+	67      (00000108) invoke-virtual/range v30, Landroid/widget/EditText;->getText()Landroid/text/Editable;
+	68      (0000010e) move-result-object   v2
+	69      (00000110) invoke-virtual       v2, Ljava/lang/Object;->toString()Ljava/lang/String;
+	70      (00000116) move-result-object   v2
+	71      (00000118) move-object/from16   v0, v22
+	72      (0000011c) invoke-direct        v0, v2, Lcom/afwsamples/testdpc/policy/OverrideApnFragment;->inetAddressFromString(Ljava/lang/String;)Ljava/net/InetAddress;
+	73      (00000122) move-result-object   v9
+	74      (00000124) invoke-virtual/range v31, Landroid/widget/EditText;->getText()Landroid/text/Editable;
+	75      (0000012a) move-result-object   v2
+	76      (0000012c) invoke-virtual       v2, Ljava/lang/Object;->toString()Ljava/lang/String;
+	77      (00000132) move-result-object   v2
+	78      (00000134) const/4              v10, -1
+	79      (00000136) move-object/from16   v0, v22
+	80      (0000013a) invoke-direct        v0, v2, v10, Lcom/afwsamples/testdpc/policy/OverrideApnFragment;->parseInt(Ljava/lang/String; I)I
+	81      (00000140) move-result          v10
+	82      (00000142) invoke-virtual/range v32, Landroid/widget/EditText;->getText()Landroid/text/Editable;
+	83      (00000148) move-result-object   v2
+	84      (0000014a) invoke-virtual       v2, Ljava/lang/Object;->toString()Ljava/lang/String;
+	85      (00000150) move-result-object   v11
+	86      (00000152) invoke-virtual/range v33, Landroid/widget/EditText;->getText()Landroid/text/Editable;
+	87      (00000158) move-result-object   v2
+	88      (0000015a) invoke-virtual       v2, Ljava/lang/Object;->toString()Ljava/lang/String;
+	89      (00000160) move-result-object   v12
+	90      (00000162) const                v2, 2131296313 # [1.821053915198809e+38]
+	91      (00000168) move-object/from16   v0, v34
+	92      (0000016c) invoke-virtual       v0, v2, Landroid/view/View;->findViewById(I)Landroid/view/View;
+	93      (00000172) move-result-object   v2
+	94      (00000174) check-cast           v2, Landroid/widget/Spinner;
+	95      (00000178) invoke-virtual       v2, Landroid/widget/Spinner;->getSelectedItemPosition()I
+	96      (0000017e) move-result          v2
+	97      (00000180) add-int/lit8         v13, v2, -1
+	98      (00000184) const                v2, 2131296324 # [1.8210561462638652e+38]
+	99      (0000018a) move-object/from16   v0, v34
+	100     (0000018e) invoke-virtual       v0, v2, Landroid/view/View;->findViewById(I)Landroid/view/View;
+	101     (00000194) move-result-object   v2
+	102     (00000196) check-cast           v2, Landroid/widget/Spinner;
+	103     (0000019a) invoke-virtual       v2, Landroid/widget/Spinner;->getSelectedItemPosition()I
+	104     (000001a0) move-result          v2
+	105     (000001a2) add-int/lit8         v15, v2, -1
+	106     (000001a6) const                v2, 2131296326 # [1.8210565519120573e+38]
+	107     (000001ac) move-object/from16   v0, v34
+	108     (000001b0) invoke-virtual       v0, v2, Landroid/view/View;->findViewById(I)Landroid/view/View;
+	109     (000001b6) move-result-object   v2
+	110     (000001b8) check-cast           v2, Landroid/widget/Spinner;
+	111     (000001bc) invoke-virtual       v2, Landroid/widget/Spinner;->getSelectedItemPosition()I
+	112     (000001c2) move-result          v2
+	113     (000001c4) add-int/lit8         v16, v2, -1
+	114     (000001c8) const                v2, 2131296314 # [1.821054118022905e+38]
+	115     (000001ce) move-object/from16   v0, v34
+	116     (000001d2) invoke-virtual       v0, v2, Landroid/view/View;->findViewById(I)Landroid/view/View;
+	117     (000001d8) move-result-object   v2
+	118     (000001da) check-cast           v2, Landroid/widget/Spinner;
+	119     (000001de) invoke-virtual       v2, Landroid/widget/Spinner;->getSelectedItemPosition()I
+	120     (000001e4) move-result          v2
+	121     (000001e6) const/16             v17, 1
+	122     (000001ea) move/from16          v0, v17
+	123     (000001ee) if-ne                v2, v0, +4d
+
+lambda$showInsertOverrideApnDialog$179$OverrideApnFragment-BB@0x1f2 : [ lambda$showInsertOverrideApnDialog$179$OverrideApnFragment-BB@0x1f6 ]
+	124     (000001f2) const/16             v17, 1
+
+lambda$showInsertOverrideApnDialog$179$OverrideApnFragment-BB@0x1f6 : [ lambda$showInsertOverrideApnDialog$179$OverrideApnFragment-BB@0x26e lambda$showInsertOverrideApnDialog$179$OverrideApnFragment-BB@0x28e ]
+	125     (000001f6) invoke-virtual/range v35, Landroid/widget/EditText;->getText()Landroid/text/Editable;
+	126     (000001fc) move-result-object   v2
+	127     (000001fe) invoke-virtual       v2, Ljava/lang/Object;->toString()Ljava/lang/String;
+	128     (00000204) move-result-object   v2
+	129     (00000206) const/16             v18, 0
+	130     (0000020a) move-object/from16   v0, v22
+	131     (0000020e) move/from16          v1, v18
+	132     (00000212) invoke-direct        v0, v2, v1, Lcom/afwsamples/testdpc/policy/OverrideApnFragment;->parseInt(Ljava/lang/String; I)I
+	133     (00000218) move-result          v18
+	134     (0000021a) const                v2, 2131296319 # [1.821055132143385e+38]
+	135     (00000220) move-object/from16   v0, v34
+	136     (00000224) invoke-virtual       v0, v2, Landroid/view/View;->findViewById(I)Landroid/view/View;
+	137     (0000022a) move-result-object   v2
+	138     (0000022c) check-cast           v2, Landroid/widget/Spinner;
+	139     (00000230) invoke-virtual       v2, Landroid/widget/Spinner;->getSelectedItemPosition()I
+	140     (00000236) move-result          v2
+	141     (00000238) add-int/lit8         v19, v2, -1
+	142     (0000023c) move-object/from16   v2, v22
+	143     (00000240) invoke-direct/range  v2 ... v19, Lcom/afwsamples/testdpc/policy/OverrideApnFragment;->makeApnSetting(Ljava/lang/String; Ljava/lang/String; Ljava/lang/String; Ljava/net/InetAddress; I Landroid/net/Uri; Ljava/net/InetAddress; I Ljava/lang/String; Ljava/lang/String; I I I I Z I I)Landroid/telephony/data/ApnSetting;
+	144     (00000246) move-result-object   v20
+	145     (00000248) move-object/from16   v0, v22
+	146     (0000024c) iget-object          v2, v0, Lcom/afwsamples/testdpc/policy/OverrideApnFragment;->mDevicePolicyManager Landroid/app/admin/DevicePolicyManager;
+	147     (00000250) move-object/from16   v0, v22
+	148     (00000254) iget-object          v3, v0, Lcom/afwsamples/testdpc/policy/OverrideApnFragment;->mAdminComponentName Landroid/content/ComponentName;
+	149     (00000258) move-object/from16   v0, v20
+	150     (0000025c) invoke-virtual       v2, v3, v0, Landroid/app/admin/DevicePolicyManager;->addOverrideApn(Landroid/content/ComponentName; Landroid/telephony/data/ApnSetting;)I
+	151     (00000262) move-result          v21
+	152     (00000264) const/4              v2, -1
+	153     (00000266) move/from16          v0, v21
+	154     (0000026a) if-ne                v0, v2, +12
+
+lambda$showInsertOverrideApnDialog$179$OverrideApnFragment-BB@0x26e : [ lambda$showInsertOverrideApnDialog$179$OverrideApnFragment-BB@0x32 ]
+	155     (0000026e) const                v2, 2131689853 # [1.9008733099530196e+38]
+	156     (00000274) const/4              v3, 0
+	157     (00000276) new-array            v3, v3, [Ljava/lang/Object;
+	158     (0000027a) move-object/from16   v0, v22
+	159     (0000027e) invoke-direct        v0, v2, v3, Lcom/afwsamples/testdpc/policy/OverrideApnFragment;->showToast(I [Ljava/lang/Object;)V
+	160     (00000284) goto/16              -129
+
+lambda$showInsertOverrideApnDialog$179$OverrideApnFragment-BB@0x288 : [ lambda$showInsertOverrideApnDialog$179$OverrideApnFragment-BB@0x1f6 ]
+	161     (00000288) const/16             v17, 0
+	162     (0000028c) goto                 -4b
+
+lambda$showInsertOverrideApnDialog$179$OverrideApnFragment-BB@0x28e : [ lambda$showInsertOverrideApnDialog$179$OverrideApnFragment-BB@0x32 ]
+	163     (0000028e) new-instance         v2, Ljava/lang/StringBuilder;
+	164     (00000292) invoke-direct        v2, Ljava/lang/StringBuilder;-><init>()V
+	165     (00000298) const-string         v3, 'Inserted APN id: '
+	166     (0000029c) invoke-virtual       v2, v3, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	167     (000002a2) move-result-object   v2
+	168     (000002a4) move/from16          v0, v21
+	169     (000002a8) invoke-virtual       v2, v0, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+	170     (000002ae) move-result-object   v2
+	171     (000002b0) invoke-virtual       v2, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+	172     (000002b6) move-result-object   v2
+	173     (000002b8) move-object/from16   v0, v22
+	174     (000002bc) invoke-direct        v0, v2, Lcom/afwsamples/testdpc/policy/OverrideApnFragment;->showToast(Ljava/lang/String;)V
+	175     (000002c2) goto/16              -148
+

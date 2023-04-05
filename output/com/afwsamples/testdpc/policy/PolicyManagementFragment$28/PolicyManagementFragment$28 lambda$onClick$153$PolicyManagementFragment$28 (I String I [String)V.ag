@@ -1,0 +1,35 @@
+# Lcom/afwsamples/testdpc/policy/PolicyManagementFragment$28;->lambda$onClick$153$PolicyManagementFragment$28(I Ljava/lang/String; I [Ljava/lang/String;)V [access_flags=final synthetic]
+#
+# Parameters:
+# - local registers: v0...v4
+# - v5:int
+# - v6:java.lang.String
+# - v7:int
+# - v8:java.lang.String[]
+#
+# - return:void
+
+lambda$onClick$153$PolicyManagementFragment$28-BB@0x0 : [ lambda$onClick$153$PolicyManagementFragment$28-BB@0xa lambda$onClick$153$PolicyManagementFragment$28-BB@0x22 ]
+	0       (00000000) const/4              v2, 1
+	1       (00000002) const/4              v3, 0
+	2       (00000004) array-length         v0, v8
+	3       (00000006) if-nez               v0, +e
+
+lambda$onClick$153$PolicyManagementFragment$28-BB@0xa : [ lambda$onClick$153$PolicyManagementFragment$28-BB@0x20 ]
+	4       (0000000a) iget-object          v0, v4, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment$28;->this$0 Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;
+	5       (0000000e) const-string         v1, 'setPackagesSuspended'
+	6       (00000012) new-array            v2, v2, [Ljava/lang/Object;
+	7       (00000016) aput-object          v6, v2, v3
+	8       (0000001a) invoke-static        v0, v1, v5, v2, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->access$1800(Lcom/afwsamples/testdpc/policy/PolicyManagementFragment; Ljava/lang/String; I [Ljava/lang/Object;)V
+
+lambda$onClick$153$PolicyManagementFragment$28-BB@0x20 : 
+	9       (00000020) return-void          
+
+lambda$onClick$153$PolicyManagementFragment$28-BB@0x22 : [ lambda$onClick$153$PolicyManagementFragment$28-BB@0x20 ]
+	10      (00000022) iget-object          v0, v4, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment$28;->this$0 Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;
+	11      (00000026) const-string         v1, 'setPackagesSuspended'
+	12      (0000002a) new-array            v2, v2, [Ljava/lang/Object;
+	13      (0000002e) aput-object          v6, v2, v3
+	14      (00000032) invoke-static        v0, v1, v7, v2, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->access$1900(Lcom/afwsamples/testdpc/policy/PolicyManagementFragment; Ljava/lang/String; I [Ljava/lang/Object;)V
+	15      (00000038) goto                 -c
+

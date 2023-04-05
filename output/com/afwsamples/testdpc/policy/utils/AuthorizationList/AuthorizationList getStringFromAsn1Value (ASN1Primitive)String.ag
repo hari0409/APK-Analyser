@@ -1,0 +1,22 @@
+# Lcom/afwsamples/testdpc/policy/utils/AuthorizationList;->getStringFromAsn1Value(Lorg/bouncycastle/asn1/ASN1Primitive;)Ljava/lang/String; [access_flags=private]
+#
+# Parameters:
+# - local registers: v0...v3
+# - v4:org.bouncycastle.asn1.ASN1Primitive
+#
+# - return:java.lang.String
+
+getStringFromAsn1Value-BB@0x0 : 
+	0       (00000000) invoke-static        v4, Lcom/afwsamples/testdpc/policy/utils/Asn1Utils;->getStringFromAsn1OctetStreamAssumingUTF8(Lorg/bouncycastle/asn1/ASN1Encodable;)Ljava/lang/String;
+	1       (00000006) move-result-object   v1
+	2       (00000008) return-object        v1
+	0:5
+	(Ljava/io/UnsupportedEncodingException; -> a getStringFromAsn1Value-BB@0xa)
+
+getStringFromAsn1Value-BB@0xa : 
+	3       (0000000a) move-exception       v0
+	4       (0000000c) new-instance         v1, Ljava/security/cert/CertificateParsingException;
+	5       (00000010) const-string         v2, 'Error parsing ASN.1 value'
+	6       (00000014) invoke-direct        v1, v2, v0, Ljava/security/cert/CertificateParsingException;-><init>(Ljava/lang/String; Ljava/lang/Throwable;)V
+	7       (0000001a) throw                v1
+

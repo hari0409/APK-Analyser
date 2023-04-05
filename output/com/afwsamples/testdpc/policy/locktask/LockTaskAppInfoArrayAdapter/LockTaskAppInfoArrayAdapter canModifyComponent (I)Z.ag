@@ -1,0 +1,12 @@
+# Lcom/afwsamples/testdpc/policy/locktask/LockTaskAppInfoArrayAdapter;->canModifyComponent(I)Z [access_flags=protected]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:int
+#
+# - return:boolean
+
+canModifyComponent-BB@0x0 : 
+	0       (00000000) const/4              v0, 1
+	1       (00000002) return               v0
+

@@ -1,0 +1,47 @@
+# Lcom/afwsamples/testdpc/comp/BindDeviceAdminFragment;->onCreatePreferences(Landroid/os/Bundle; Ljava/lang/String;)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:android.os.Bundle
+# - v4:java.lang.String
+#
+# - return:void
+
+onCreatePreferences-BB@0x0 : 
+	0       (00000000) const/high16         v0, 32530 # [1.940672873845977e+38]
+	1       (00000004) invoke-virtual       v2, v0, Lcom/afwsamples/testdpc/comp/BindDeviceAdminFragment;->addPreferencesFromResource(I)V
+	2       (0000000a) invoke-virtual       v2, Lcom/afwsamples/testdpc/comp/BindDeviceAdminFragment;->getActivity()Landroid/app/Activity;
+	3       (00000010) move-result-object   v0
+	4       (00000012) const-string         v1, 'user'
+	5       (00000016) invoke-virtual       v0, v1, Landroid/app/Activity;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
+	6       (0000001c) move-result-object   v0
+	7       (0000001e) check-cast           v0, Landroid/os/UserManager;
+	8       (00000022) iput-object          v0, v2, Lcom/afwsamples/testdpc/comp/BindDeviceAdminFragment;->mUserManager Landroid/os/UserManager;
+	9       (00000026) const-string         v0, 'hide_po_launcher_icon'
+	10      (0000002a) invoke-virtual       v2, v0, Lcom/afwsamples/testdpc/comp/BindDeviceAdminFragment;->findPreference(Ljava/lang/CharSequence;)Landroidx/preference/Preference;
+	11      (00000030) move-result-object   v0
+	12      (00000032) check-cast           v0, Lcom/afwsamples/testdpc/common/preference/DpcSwitchPreference;
+	13      (00000036) iput-object          v0, v2, Lcom/afwsamples/testdpc/comp/BindDeviceAdminFragment;->mHideLauncherIconPreference Lcom/afwsamples/testdpc/common/preference/DpcSwitchPreference;
+	14      (0000003a) iget-object          v0, v2, Lcom/afwsamples/testdpc/comp/BindDeviceAdminFragment;->mHideLauncherIconPreference Lcom/afwsamples/testdpc/common/preference/DpcSwitchPreference;
+	15      (0000003e) invoke-virtual       v0, v2, Lcom/afwsamples/testdpc/common/preference/DpcSwitchPreference;->setOnPreferenceChangeListener(Landroidx/preference/Preference$OnPreferenceChangeListener;)V
+	16      (00000044) const-string         v0, 'install_ca_cert'
+	17      (00000048) invoke-virtual       v2, v0, Lcom/afwsamples/testdpc/comp/BindDeviceAdminFragment;->findPreference(Ljava/lang/CharSequence;)Landroidx/preference/Preference;
+	18      (0000004e) move-result-object   v0
+	19      (00000050) check-cast           v0, Lcom/afwsamples/testdpc/common/preference/DpcPreference;
+	20      (00000054) iput-object          v0, v2, Lcom/afwsamples/testdpc/comp/BindDeviceAdminFragment;->mInstallCaCertificatePreference Lcom/afwsamples/testdpc/common/preference/DpcPreference;
+	21      (00000058) iget-object          v0, v2, Lcom/afwsamples/testdpc/comp/BindDeviceAdminFragment;->mInstallCaCertificatePreference Lcom/afwsamples/testdpc/common/preference/DpcPreference;
+	22      (0000005c) new-instance         v1, Lcom/afwsamples/testdpc/comp/BindDeviceAdminFragment$$Lambda$0;
+	23      (00000060) invoke-direct        v1, v2, Lcom/afwsamples/testdpc/comp/BindDeviceAdminFragment$$Lambda$0;-><init>(Lcom/afwsamples/testdpc/comp/BindDeviceAdminFragment;)V
+	24      (00000066) invoke-virtual       v0, v1, Lcom/afwsamples/testdpc/common/preference/DpcPreference;->setOnPreferenceClickListener(Landroidx/preference/Preference$OnPreferenceClickListener;)V
+	25      (0000006c) iget-object          v0, v2, Lcom/afwsamples/testdpc/comp/BindDeviceAdminFragment;->mHideLauncherIconPreference Lcom/afwsamples/testdpc/common/preference/DpcSwitchPreference;
+	26      (00000070) const                v1, 2131690073 # [1.9009179312541476e+38]
+	27      (00000076) invoke-direct        v2, v1, Lcom/afwsamples/testdpc/comp/BindDeviceAdminFragment;->getCustomConstraint(I)Lcom/afwsamples/testdpc/common/preference/CustomConstraint;
+	28      (0000007c) move-result-object   v1
+	29      (0000007e) invoke-virtual       v0, v1, Lcom/afwsamples/testdpc/common/preference/DpcSwitchPreference;->setCustomConstraint(Lcom/afwsamples/testdpc/common/preference/CustomConstraint;)V
+	30      (00000084) iget-object          v0, v2, Lcom/afwsamples/testdpc/comp/BindDeviceAdminFragment;->mInstallCaCertificatePreference Lcom/afwsamples/testdpc/common/preference/DpcPreference;
+	31      (00000088) const/4              v1, 0
+	32      (0000008a) invoke-direct        v2, v1, Lcom/afwsamples/testdpc/comp/BindDeviceAdminFragment;->getCustomConstraint(I)Lcom/afwsamples/testdpc/common/preference/CustomConstraint;
+	33      (00000090) move-result-object   v1
+	34      (00000092) invoke-virtual       v0, v1, Lcom/afwsamples/testdpc/common/preference/DpcPreference;->setCustomConstraint(Lcom/afwsamples/testdpc/common/preference/CustomConstraint;)V
+	35      (00000098) return-void          
+

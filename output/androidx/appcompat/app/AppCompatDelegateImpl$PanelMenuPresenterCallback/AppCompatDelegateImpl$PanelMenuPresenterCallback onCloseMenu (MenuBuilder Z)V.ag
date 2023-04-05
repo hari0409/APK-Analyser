@@ -1,0 +1,52 @@
+# Landroidx/appcompat/app/AppCompatDelegateImpl$PanelMenuPresenterCallback;->onCloseMenu(Landroidx/appcompat/view/menu/MenuBuilder; Z)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v6
+# - v7:androidx.appcompat.view.menu.MenuBuilder
+# - v8:boolean
+#
+# - return:void
+
+onCloseMenu-BB@0x0 : [ onCloseMenu-BB@0xe onCloseMenu-BB@0x44 ]
+	0       (00000000) const/4              v3, 1
+	1       (00000002) invoke-virtual       v7, Landroidx/appcompat/view/menu/MenuBuilder;->getRootMenu()Landroidx/appcompat/view/menu/MenuBuilder;
+	2       (00000008) move-result-object   v2
+	3       (0000000a) if-eq                v2, v7, +1d
+
+onCloseMenu-BB@0xe : [ onCloseMenu-BB@0x10 ]
+	4       (0000000e) move                 v0, v3
+
+onCloseMenu-BB@0x10 : [ onCloseMenu-BB@0x18 onCloseMenu-BB@0x1a ]
+	5       (00000010) iget-object          v4, v6, Landroidx/appcompat/app/AppCompatDelegateImpl$PanelMenuPresenterCallback;->this$0 Landroidx/appcompat/app/AppCompatDelegateImpl;
+	6       (00000014) if-eqz               v0, +3
+
+onCloseMenu-BB@0x18 : [ onCloseMenu-BB@0x1a ]
+	7       (00000018) move-object          v7, v2
+
+onCloseMenu-BB@0x1a : [ onCloseMenu-BB@0x26 onCloseMenu-BB@0x42 ]
+	8       (0000001a) invoke-virtual       v4, v7, Landroidx/appcompat/app/AppCompatDelegateImpl;->findMenuPanel(Landroid/view/Menu;)Landroidx/appcompat/app/AppCompatDelegateImpl$PanelFeatureState;
+	9       (00000020) move-result-object   v1
+	10      (00000022) if-eqz               v1, +10
+
+onCloseMenu-BB@0x26 : [ onCloseMenu-BB@0x2a onCloseMenu-BB@0x48 ]
+	11      (00000026) if-eqz               v0, +11
+
+onCloseMenu-BB@0x2a : [ onCloseMenu-BB@0x42 ]
+	12      (0000002a) iget-object          v4, v6, Landroidx/appcompat/app/AppCompatDelegateImpl$PanelMenuPresenterCallback;->this$0 Landroidx/appcompat/app/AppCompatDelegateImpl;
+	13      (0000002e) iget                 v5, v1, Landroidx/appcompat/app/AppCompatDelegateImpl$PanelFeatureState;->featureId I
+	14      (00000032) invoke-virtual       v4, v5, v1, v2, Landroidx/appcompat/app/AppCompatDelegateImpl;->callOnPanelClosed(I Landroidx/appcompat/app/AppCompatDelegateImpl$PanelFeatureState; Landroid/view/Menu;)V
+	15      (00000038) iget-object          v4, v6, Landroidx/appcompat/app/AppCompatDelegateImpl$PanelMenuPresenterCallback;->this$0 Landroidx/appcompat/app/AppCompatDelegateImpl;
+	16      (0000003c) invoke-virtual       v4, v1, v3, Landroidx/appcompat/app/AppCompatDelegateImpl;->closePanel(Landroidx/appcompat/app/AppCompatDelegateImpl$PanelFeatureState; Z)V
+
+onCloseMenu-BB@0x42 : 
+	17      (00000042) return-void          
+
+onCloseMenu-BB@0x44 : [ onCloseMenu-BB@0x10 ]
+	18      (00000044) const/4              v0, 0
+	19      (00000046) goto                 -1b
+
+onCloseMenu-BB@0x48 : [ onCloseMenu-BB@0x42 ]
+	20      (00000048) iget-object          v3, v6, Landroidx/appcompat/app/AppCompatDelegateImpl$PanelMenuPresenterCallback;->this$0 Landroidx/appcompat/app/AppCompatDelegateImpl;
+	21      (0000004c) invoke-virtual       v3, v1, v8, Landroidx/appcompat/app/AppCompatDelegateImpl;->closePanel(Landroidx/appcompat/app/AppCompatDelegateImpl$PanelFeatureState; Z)V
+	22      (00000052) goto                 -8
+

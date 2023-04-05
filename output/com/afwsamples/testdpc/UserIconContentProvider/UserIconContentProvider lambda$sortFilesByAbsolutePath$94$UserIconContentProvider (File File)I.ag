@@ -1,0 +1,18 @@
+# Lcom/afwsamples/testdpc/UserIconContentProvider;->lambda$sortFilesByAbsolutePath$94$UserIconContentProvider(Ljava/io/File; Ljava/io/File;)I [access_flags=static final synthetic]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:java.io.File
+# - v3:java.io.File
+#
+# - return:int
+
+lambda$sortFilesByAbsolutePath$94$UserIconContentProvider-BB@0x0 : 
+	0       (00000000) invoke-virtual       v2, Ljava/io/File;->getAbsolutePath()Ljava/lang/String;
+	1       (00000006) move-result-object   v0
+	2       (00000008) invoke-virtual       v3, Ljava/io/File;->getAbsolutePath()Ljava/lang/String;
+	3       (0000000e) move-result-object   v1
+	4       (00000010) invoke-virtual       v0, v1, Ljava/lang/String;->compareTo(Ljava/lang/String;)I
+	5       (00000016) move-result          v0
+	6       (00000018) return               v0
+

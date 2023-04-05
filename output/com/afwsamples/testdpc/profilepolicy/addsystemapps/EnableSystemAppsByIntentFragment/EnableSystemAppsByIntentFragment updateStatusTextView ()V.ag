@@ -1,0 +1,154 @@
+# Lcom/afwsamples/testdpc/profilepolicy/addsystemapps/EnableSystemAppsByIntentFragment;->updateStatusTextView()V [access_flags=protected]
+#
+# Parameters:
+# local registers: v0...v7
+#
+# - return:void
+
+updateStatusTextView-BB@0x0 : [ updateStatusTextView-BB@0x1a updateStatusTextView-BB@0x38 ]
+	0       (00000000) new-instance         v4, Ljava/lang/StringBuilder;
+	1       (00000004) invoke-direct        v4, Ljava/lang/StringBuilder;-><init>()V
+	2       (0000000a) iget-object          v5, v7, Lcom/afwsamples/testdpc/profilepolicy/addsystemapps/EnableSystemAppsByIntentFragment;->mActions Ljava/util/HashSet;
+	3       (0000000e) invoke-virtual       v5, Ljava/util/HashSet;->isEmpty()Z
+	4       (00000014) move-result          v5
+	5       (00000016) if-nez               v5, +11
+
+updateStatusTextView-BB@0x1a : [ updateStatusTextView-BB@0x38 ]
+	6       (0000001a) const                v5, 2131689517 # [1.9008051610567513e+38]
+	7       (00000020) invoke-virtual       v7, v5, Lcom/afwsamples/testdpc/profilepolicy/addsystemapps/EnableSystemAppsByIntentFragment;->getString(I)Ljava/lang/String;
+	8       (00000026) move-result-object   v5
+	9       (00000028) invoke-virtual       v4, v5, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	10      (0000002e) const-string         v5, '\n'
+	11      (00000032) invoke-virtual       v4, v5, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+updateStatusTextView-BB@0x38 : [ updateStatusTextView-BB@0x44 ]
+	12      (00000038) iget-object          v5, v7, Lcom/afwsamples/testdpc/profilepolicy/addsystemapps/EnableSystemAppsByIntentFragment;->mActions Ljava/util/HashSet;
+	13      (0000003c) invoke-virtual       v5, Ljava/util/HashSet;->iterator()Ljava/util/Iterator;
+	14      (00000042) move-result-object   v5
+
+updateStatusTextView-BB@0x44 : [ updateStatusTextView-BB@0x50 updateStatusTextView-BB@0x6e ]
+	15      (00000044) invoke-interface     v5, Ljava/util/Iterator;->hasNext()Z
+	16      (0000004a) move-result          v6
+	17      (0000004c) if-eqz               v6, +11
+
+updateStatusTextView-BB@0x50 : [ updateStatusTextView-BB@0x44 ]
+	18      (00000050) invoke-interface     v5, Ljava/util/Iterator;->next()Ljava/lang/Object;
+	19      (00000056) move-result-object   v0
+	20      (00000058) check-cast           v0, Ljava/lang/String;
+	21      (0000005c) invoke-virtual       v4, v0, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	22      (00000062) const-string         v6, '\n'
+	23      (00000066) invoke-virtual       v4, v6, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	24      (0000006c) goto                 -14
+
+updateStatusTextView-BB@0x6e : [ updateStatusTextView-BB@0x7e updateStatusTextView-BB@0xa6 ]
+	25      (0000006e) iget-object          v5, v7, Lcom/afwsamples/testdpc/profilepolicy/addsystemapps/EnableSystemAppsByIntentFragment;->mCategories Ljava/util/HashSet;
+	26      (00000072) invoke-virtual       v5, Ljava/util/HashSet;->isEmpty()Z
+	27      (00000078) move-result          v5
+	28      (0000007a) if-nez               v5, +16
+
+updateStatusTextView-BB@0x7e : [ updateStatusTextView-BB@0xa6 ]
+	29      (0000007e) const-string         v5, '\n'
+	30      (00000082) invoke-virtual       v4, v5, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	31      (00000088) const                v5, 2131689606 # [1.9008232124012986e+38]
+	32      (0000008e) invoke-virtual       v7, v5, Lcom/afwsamples/testdpc/profilepolicy/addsystemapps/EnableSystemAppsByIntentFragment;->getString(I)Ljava/lang/String;
+	33      (00000094) move-result-object   v5
+	34      (00000096) invoke-virtual       v4, v5, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	35      (0000009c) const-string         v5, '\n'
+	36      (000000a0) invoke-virtual       v4, v5, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+updateStatusTextView-BB@0xa6 : [ updateStatusTextView-BB@0xb2 ]
+	37      (000000a6) iget-object          v5, v7, Lcom/afwsamples/testdpc/profilepolicy/addsystemapps/EnableSystemAppsByIntentFragment;->mCategories Ljava/util/HashSet;
+	38      (000000aa) invoke-virtual       v5, Ljava/util/HashSet;->iterator()Ljava/util/Iterator;
+	39      (000000b0) move-result-object   v5
+
+updateStatusTextView-BB@0xb2 : [ updateStatusTextView-BB@0xbe updateStatusTextView-BB@0xdc ]
+	40      (000000b2) invoke-interface     v5, Ljava/util/Iterator;->hasNext()Z
+	41      (000000b8) move-result          v6
+	42      (000000ba) if-eqz               v6, +11
+
+updateStatusTextView-BB@0xbe : [ updateStatusTextView-BB@0xb2 ]
+	43      (000000be) invoke-interface     v5, Ljava/util/Iterator;->next()Ljava/lang/Object;
+	44      (000000c4) move-result-object   v1
+	45      (000000c6) check-cast           v1, Ljava/lang/String;
+	46      (000000ca) invoke-virtual       v4, v1, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	47      (000000d0) const-string         v6, '\n'
+	48      (000000d4) invoke-virtual       v4, v6, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	49      (000000da) goto                 -14
+
+updateStatusTextView-BB@0xdc : [ updateStatusTextView-BB@0xec updateStatusTextView-BB@0x114 ]
+	50      (000000dc) iget-object          v5, v7, Lcom/afwsamples/testdpc/profilepolicy/addsystemapps/EnableSystemAppsByIntentFragment;->mDataSchemes Ljava/util/HashSet;
+	51      (000000e0) invoke-virtual       v5, Ljava/util/HashSet;->isEmpty()Z
+	52      (000000e6) move-result          v5
+	53      (000000e8) if-nez               v5, +16
+
+updateStatusTextView-BB@0xec : [ updateStatusTextView-BB@0x114 ]
+	54      (000000ec) const-string         v5, '\n'
+	55      (000000f0) invoke-virtual       v4, v5, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	56      (000000f6) const                v5, 2131689669 # [1.900835990319349e+38]
+	57      (000000fc) invoke-virtual       v7, v5, Lcom/afwsamples/testdpc/profilepolicy/addsystemapps/EnableSystemAppsByIntentFragment;->getString(I)Ljava/lang/String;
+	58      (00000102) move-result-object   v5
+	59      (00000104) invoke-virtual       v4, v5, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	60      (0000010a) const-string         v5, '\n'
+	61      (0000010e) invoke-virtual       v4, v5, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+updateStatusTextView-BB@0x114 : [ updateStatusTextView-BB@0x120 ]
+	62      (00000114) iget-object          v5, v7, Lcom/afwsamples/testdpc/profilepolicy/addsystemapps/EnableSystemAppsByIntentFragment;->mDataSchemes Ljava/util/HashSet;
+	63      (00000118) invoke-virtual       v5, Ljava/util/HashSet;->iterator()Ljava/util/Iterator;
+	64      (0000011e) move-result-object   v5
+
+updateStatusTextView-BB@0x120 : [ updateStatusTextView-BB@0x12c updateStatusTextView-BB@0x14a ]
+	65      (00000120) invoke-interface     v5, Ljava/util/Iterator;->hasNext()Z
+	66      (00000126) move-result          v6
+	67      (00000128) if-eqz               v6, +11
+
+updateStatusTextView-BB@0x12c : [ updateStatusTextView-BB@0x120 ]
+	68      (0000012c) invoke-interface     v5, Ljava/util/Iterator;->next()Ljava/lang/Object;
+	69      (00000132) move-result-object   v2
+	70      (00000134) check-cast           v2, Ljava/lang/String;
+	71      (00000138) invoke-virtual       v4, v2, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	72      (0000013e) const-string         v6, '\n'
+	73      (00000142) invoke-virtual       v4, v6, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	74      (00000148) goto                 -14
+
+updateStatusTextView-BB@0x14a : [ updateStatusTextView-BB@0x15a updateStatusTextView-BB@0x182 ]
+	75      (0000014a) iget-object          v5, v7, Lcom/afwsamples/testdpc/profilepolicy/addsystemapps/EnableSystemAppsByIntentFragment;->mDataTypes Ljava/util/HashSet;
+	76      (0000014e) invoke-virtual       v5, Ljava/util/HashSet;->isEmpty()Z
+	77      (00000154) move-result          v5
+	78      (00000156) if-nez               v5, +16
+
+updateStatusTextView-BB@0x15a : [ updateStatusTextView-BB@0x182 ]
+	79      (0000015a) const-string         v5, '\n'
+	80      (0000015e) invoke-virtual       v4, v5, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	81      (00000164) const                v5, 2131689670 # [1.900836193143445e+38]
+	82      (0000016a) invoke-virtual       v7, v5, Lcom/afwsamples/testdpc/profilepolicy/addsystemapps/EnableSystemAppsByIntentFragment;->getString(I)Ljava/lang/String;
+	83      (00000170) move-result-object   v5
+	84      (00000172) invoke-virtual       v4, v5, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	85      (00000178) const-string         v5, '\n'
+	86      (0000017c) invoke-virtual       v4, v5, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+updateStatusTextView-BB@0x182 : [ updateStatusTextView-BB@0x18e ]
+	87      (00000182) iget-object          v5, v7, Lcom/afwsamples/testdpc/profilepolicy/addsystemapps/EnableSystemAppsByIntentFragment;->mDataTypes Ljava/util/HashSet;
+	88      (00000186) invoke-virtual       v5, Ljava/util/HashSet;->iterator()Ljava/util/Iterator;
+	89      (0000018c) move-result-object   v5
+
+updateStatusTextView-BB@0x18e : [ updateStatusTextView-BB@0x19a updateStatusTextView-BB@0x1b8 ]
+	90      (0000018e) invoke-interface     v5, Ljava/util/Iterator;->hasNext()Z
+	91      (00000194) move-result          v6
+	92      (00000196) if-eqz               v6, +11
+
+updateStatusTextView-BB@0x19a : [ updateStatusTextView-BB@0x18e ]
+	93      (0000019a) invoke-interface     v5, Ljava/util/Iterator;->next()Ljava/lang/Object;
+	94      (000001a0) move-result-object   v3
+	95      (000001a2) check-cast           v3, Ljava/lang/String;
+	96      (000001a6) invoke-virtual       v4, v3, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	97      (000001ac) const-string         v6, '\n'
+	98      (000001b0) invoke-virtual       v4, v6, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	99      (000001b6) goto                 -14
+
+updateStatusTextView-BB@0x1b8 : 
+	100     (000001b8) iget-object          v5, v7, Lcom/afwsamples/testdpc/profilepolicy/addsystemapps/EnableSystemAppsByIntentFragment;->mStatusTextView Landroid/widget/TextView;
+	101     (000001bc) invoke-virtual       v4, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+	102     (000001c2) move-result-object   v6
+	103     (000001c4) invoke-virtual       v5, v6, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+	104     (000001ca) return-void          
+

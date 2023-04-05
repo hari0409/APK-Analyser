@@ -1,0 +1,49 @@
+# Lorg/checkerframework/checker/formatter/FormatUtil;->asFormat(Ljava/lang/String; [Lorg/checkerframework/checker/formatter/qual/ConversionCategory;)Ljava/lang/String; [access_flags=public static varargs]
+#
+# Parameters:
+# - local registers: v0...v4
+# - v5:java.lang.String
+# - v6:org.checkerframework.checker.formatter.qual.ConversionCategory[]
+#
+# - return:java.lang.String
+
+asFormat-BB@0x0 : [ asFormat-BB@0x10 asFormat-BB@0x20 ]
+	0       (00000000) invoke-static        v5, Lorg/checkerframework/checker/formatter/FormatUtil;->formatParameterCategories(Ljava/lang/String;)[Lorg/checkerframework/checker/formatter/qual/ConversionCategory;
+	1       (00000006) move-result-object   v0
+	2       (00000008) array-length         v2, v0
+	3       (0000000a) array-length         v3, v6
+	4       (0000000c) if-eq                v2, v3, +a
+
+asFormat-BB@0x10 : 
+	5       (00000010) new-instance         v2, Lorg/checkerframework/checker/formatter/FormatUtil$ExcessiveOrMissingFormatArgumentException;
+	6       (00000014) array-length         v3, v6
+	7       (00000016) array-length         v4, v0
+	8       (00000018) invoke-direct        v2, v3, v4, Lorg/checkerframework/checker/formatter/FormatUtil$ExcessiveOrMissingFormatArgumentException;-><init>(I I)V
+	9       (0000001e) throw                v2
+
+asFormat-BB@0x20 : [ asFormat-BB@0x22 ]
+	10      (00000020) const/4              v1, 0
+
+asFormat-BB@0x22 : [ asFormat-BB@0x28 asFormat-BB@0x4e ]
+	11      (00000022) array-length         v2, v6
+	12      (00000024) if-ge                v1, v2, +15
+
+asFormat-BB@0x28 : [ asFormat-BB@0x34 asFormat-BB@0x48 ]
+	13      (00000028) aget-object          v2, v6, v1
+	14      (0000002c) aget-object          v3, v0, v1
+	15      (00000030) if-eq                v2, v3, +c
+
+asFormat-BB@0x34 : 
+	16      (00000034) new-instance         v2, Lorg/checkerframework/checker/formatter/FormatUtil$IllegalFormatConversionCategoryException;
+	17      (00000038) aget-object          v3, v6, v1
+	18      (0000003c) aget-object          v4, v0, v1
+	19      (00000040) invoke-direct        v2, v3, v4, Lorg/checkerframework/checker/formatter/FormatUtil$IllegalFormatConversionCategoryException;-><init>(Lorg/checkerframework/checker/formatter/qual/ConversionCategory; Lorg/checkerframework/checker/formatter/qual/ConversionCategory;)V
+	20      (00000046) throw                v2
+
+asFormat-BB@0x48 : [ asFormat-BB@0x22 ]
+	21      (00000048) add-int/lit8         v1, v1, 1
+	22      (0000004c) goto                 -15
+
+asFormat-BB@0x4e : 
+	23      (0000004e) return-object        v5
+

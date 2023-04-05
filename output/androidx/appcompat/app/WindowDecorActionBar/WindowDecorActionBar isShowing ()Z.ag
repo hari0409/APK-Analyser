@@ -1,0 +1,31 @@
+# Landroidx/appcompat/app/WindowDecorActionBar;->isShowing()Z [access_flags=public]
+#
+# Parameters:
+# local registers: v0...v2
+#
+# - return:boolean
+
+isShowing-BB@0x0 : [ isShowing-BB@0x10 isShowing-BB@0x24 ]
+	0       (00000000) invoke-virtual       v2, Landroidx/appcompat/app/WindowDecorActionBar;->getHeight()I
+	1       (00000006) move-result          v0
+	2       (00000008) iget-boolean         v1, v2, Landroidx/appcompat/app/WindowDecorActionBar;->mNowShowing Z
+	3       (0000000c) if-eqz               v1, +c
+
+isShowing-BB@0x10 : [ isShowing-BB@0x14 isShowing-BB@0x20 ]
+	4       (00000010) if-eqz               v0, +8
+
+isShowing-BB@0x14 : [ isShowing-BB@0x20 isShowing-BB@0x24 ]
+	5       (00000014) invoke-virtual       v2, Landroidx/appcompat/app/WindowDecorActionBar;->getHideOffset()I
+	6       (0000001a) move-result          v1
+	7       (0000001c) if-ge                v1, v0, +4
+
+isShowing-BB@0x20 : [ isShowing-BB@0x22 ]
+	8       (00000020) const/4              v1, 1
+
+isShowing-BB@0x22 : 
+	9       (00000022) return               v1
+
+isShowing-BB@0x24 : [ isShowing-BB@0x22 ]
+	10      (00000024) const/4              v1, 0
+	11      (00000026) goto                 -2
+

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:padding="15.0dip" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/certificate_alias_prompt_certificate_name" />
+    <EditText android:ellipsize="end" android:id="@id/alias_input" android:layout_width="fill_parent" android:layout_height="wrap_content" android:maxLines="1" android:lines="1" android:scrollHorizontally="true" android:inputType="text" />
+    <TextView android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/user_selectability_description" />
+    <CheckBox android:id="@id/alias_user_selectable" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/user_selectability_checkbox" />
+    <CheckBox android:id="@id/generate_ec_key" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/ec_key_checkbox" />
+    <TextView android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/key_attestation_description" />
+    <CheckBox android:id="@id/include_key_attestation_challenge" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/key_attestation_checkbox" />
+    <EditText android:ellipsize="end" android:id="@id/custom_challenge_input" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="YWJj" android:hint="Custom Challenge (Base64)" android:maxLines="1" android:lines="1" android:scrollHorizontally="true" android:inputType="text" />
+    <TextView android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/device_id_attestation_description" />
+    <CheckBox android:id="@id/include_device_brand_attestation" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/brand_attestation_checkbox" />
+    <CheckBox android:id="@id/include_device_serial_in_attestation" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/serial_num_attestation_checkbox" />
+    <CheckBox android:id="@id/include_device_imei_in_attestation" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/imei_attestation_checkbox" />
+    <CheckBox android:id="@id/include_device_meid_in_attestation" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/meid_attestation_checkbox" />
+    <TextView android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/strongbox_features_description" />
+    <CheckBox android:id="@id/use_strongbox" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/use_strongbox_checkbox" />
+    <CheckBox android:id="@id/use_individual_attestation" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/use_individual_attestation_checkbox" />
+</LinearLayout>

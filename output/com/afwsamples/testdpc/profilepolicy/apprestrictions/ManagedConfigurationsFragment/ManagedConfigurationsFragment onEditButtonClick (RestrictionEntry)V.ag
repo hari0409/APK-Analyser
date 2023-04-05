@@ -1,0 +1,12 @@
+# Lcom/afwsamples/testdpc/profilepolicy/apprestrictions/ManagedConfigurationsFragment;->onEditButtonClick(Landroid/content/RestrictionEntry;)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v0
+# - v1:android.content.RestrictionEntry
+#
+# - return:void
+
+onEditButtonClick-BB@0x0 : 
+	0       (00000000) invoke-direct        v0, v1, Lcom/afwsamples/testdpc/profilepolicy/apprestrictions/ManagedConfigurationsFragment;->showEditDialog(Landroid/content/RestrictionEntry;)V
+	1       (00000006) return-void          
+

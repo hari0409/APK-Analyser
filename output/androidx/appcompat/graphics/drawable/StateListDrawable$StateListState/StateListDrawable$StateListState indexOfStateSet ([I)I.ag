@@ -1,0 +1,34 @@
+# Landroidx/appcompat/graphics/drawable/StateListDrawable$StateListState;->indexOfStateSet([I)I [access_flags=]
+#
+# Parameters:
+# - local registers: v0...v4
+# - v5:int[]
+#
+# - return:int
+
+indexOfStateSet-BB@0x0 : [ indexOfStateSet-BB@0xe ]
+	0       (00000000) iget-object          v2, v4, Landroidx/appcompat/graphics/drawable/StateListDrawable$StateListState;->mStateSets [[I
+	1       (00000004) invoke-virtual       v4, Landroidx/appcompat/graphics/drawable/StateListDrawable$StateListState;->getChildCount()I
+	2       (0000000a) move-result          v0
+	3       (0000000c) const/4              v1, 0
+
+indexOfStateSet-BB@0xe : [ indexOfStateSet-BB@0x12 indexOfStateSet-BB@0x2a ]
+	4       (0000000e) if-ge                v1, v0, +e
+
+indexOfStateSet-BB@0x12 : [ indexOfStateSet-BB@0x22 indexOfStateSet-BB@0x24 ]
+	5       (00000012) aget-object          v3, v2, v1
+	6       (00000016) invoke-static        v3, v5, Landroid/util/StateSet;->stateSetMatches([I [I)Z
+	7       (0000001c) move-result          v3
+	8       (0000001e) if-eqz               v3, +3
+
+indexOfStateSet-BB@0x22 : 
+	9       (00000022) return               v1
+
+indexOfStateSet-BB@0x24 : [ indexOfStateSet-BB@0xe ]
+	10      (00000024) add-int/lit8         v1, v1, 1
+	11      (00000028) goto                 -d
+
+indexOfStateSet-BB@0x2a : [ indexOfStateSet-BB@0x22 ]
+	12      (0000002a) const/4              v1, -1
+	13      (0000002c) goto                 -5
+

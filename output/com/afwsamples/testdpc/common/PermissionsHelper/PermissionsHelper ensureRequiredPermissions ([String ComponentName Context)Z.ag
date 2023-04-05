@@ -1,0 +1,74 @@
+# Lcom/afwsamples/testdpc/common/PermissionsHelper;->ensureRequiredPermissions([Ljava/lang/String; Landroid/content/ComponentName; Landroid/content/Context;)Z [access_flags=public static]
+#
+# Parameters:
+# - local registers: v0...v7
+# - v8:java.lang.String[]
+# - v9:android.content.ComponentName
+# - v10:android.content.Context
+#
+# - return:boolean
+
+ensureRequiredPermissions-BB@0x0 : [ ensureRequiredPermissions-BB@0x2 ]
+	0       (00000000) const/4              v4, 0
+
+ensureRequiredPermissions-BB@0x2 : [ ensureRequiredPermissions-BB@0x2e ]
+	1       (00000002) invoke-virtual       v10, Landroid/content/Context;->getPackageManager()Landroid/content/pm/PackageManager;
+	2       (00000008) move-result-object   v5
+	3       (0000000a) invoke-virtual       v10, Landroid/content/Context;->getPackageName()Ljava/lang/String;
+	4       (00000010) move-result-object   v6
+	5       (00000012) const/16             v7, 4096
+	6       (00000016) invoke-virtual       v5, v6, v7, Landroid/content/pm/PackageManager;->getPackageInfo(Ljava/lang/String; I)Landroid/content/pm/PackageInfo;
+	7       (0000001c) move-result-object   v3
+	8       (0000001e) iget-object          v5, v3, Landroid/content/pm/PackageInfo;->requestedPermissions [Ljava/lang/String;
+	9       (00000022) invoke-static        v5, Ljava/util/Arrays;->asList([Ljava/lang/Object;)Ljava/util/List;
+	10      (00000028) move-result-object   v2
+	11      (0000002a) array-length         v6, v8
+	12      (0000002c) move                 v5, v4
+	2:1b
+	(Landroid/content/pm/PackageManager$NameNotFoundException; -> 74 ensureRequiredPermissions-BB@0x74)
+
+ensureRequiredPermissions-BB@0x2e : [ ensureRequiredPermissions-BB@0x32 ensureRequiredPermissions-BB@0x98 ]
+	13      (0000002e) if-ge                v5, v6, +35
+
+ensureRequiredPermissions-BB@0x32 : [ ensureRequiredPermissions-BB@0x42 ensureRequiredPermissions-BB@0x86 ]
+	14      (00000032) aget-object          v1, v8, v5
+	15      (00000036) invoke-interface     v2, v1, Ljava/util/List;->contains(Ljava/lang/Object;)Z
+	16      (0000003c) move-result          v7
+	17      (0000003e) if-nez               v7, +24
+
+ensureRequiredPermissions-BB@0x42 : [ ensureRequiredPermissions-BB@0x72 ]
+	18      (00000042) sget-object          v5, Lcom/afwsamples/testdpc/common/PermissionsHelper;->TAG Ljava/lang/String;
+	19      (00000046) new-instance         v6, Ljava/lang/StringBuilder;
+	20      (0000004a) invoke-direct        v6, Ljava/lang/StringBuilder;-><init>()V
+	21      (00000050) const-string         v7, 'Missing required permission from manifest: '
+	22      (00000054) invoke-virtual       v6, v7, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	23      (0000005a) move-result-object   v6
+	24      (0000005c) invoke-virtual       v6, v1, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	25      (00000062) move-result-object   v6
+	26      (00000064) invoke-virtual       v6, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+	27      (0000006a) move-result-object   v6
+	28      (0000006c) invoke-static        v5, v6, Landroid/util/Log;->e(Ljava/lang/String; Ljava/lang/String;)I
+
+ensureRequiredPermissions-BB@0x72 : 
+	29      (00000072) return               v4
+
+ensureRequiredPermissions-BB@0x74 : [ ensureRequiredPermissions-BB@0x72 ]
+	30      (00000074) move-exception       v0
+	31      (00000076) sget-object          v5, Lcom/afwsamples/testdpc/common/PermissionsHelper;->TAG Ljava/lang/String;
+	32      (0000007a) const-string         v6, 'Could not find own package.'
+	33      (0000007e) invoke-static        v5, v6, v0, Landroid/util/Log;->e(Ljava/lang/String; Ljava/lang/String; Ljava/lang/Throwable;)I
+	34      (00000084) goto                 -9
+
+ensureRequiredPermissions-BB@0x86 : [ ensureRequiredPermissions-BB@0x92 ensureRequiredPermissions-BB@0x72 ]
+	35      (00000086) invoke-static        v1, v9, v10, Lcom/afwsamples/testdpc/common/PermissionsHelper;->maybeGrantDangerousPermission(Ljava/lang/String; Landroid/content/ComponentName; Landroid/content/Context;)Z
+	36      (0000008c) move-result          v7
+	37      (0000008e) if-eqz               v7, -e
+
+ensureRequiredPermissions-BB@0x92 : [ ensureRequiredPermissions-BB@0x2e ]
+	38      (00000092) add-int/lit8         v5, v5, 1
+	39      (00000096) goto                 -34
+
+ensureRequiredPermissions-BB@0x98 : [ ensureRequiredPermissions-BB@0x72 ]
+	40      (00000098) const/4              v4, 1
+	41      (0000009a) goto                 -14
+

@@ -1,0 +1,22 @@
+# Landroidx/appcompat/widget/ActivityChooserView$Callbacks;->onDismiss()V [access_flags=public]
+#
+# Parameters:
+# local registers: v0...v2
+#
+# - return:void
+
+onDismiss-BB@0x0 : [ onDismiss-BB@0x12 onDismiss-BB@0x22 ]
+	0       (00000000) invoke-direct        v2, Landroidx/appcompat/widget/ActivityChooserView$Callbacks;->notifyOnDismissListener()V
+	1       (00000006) iget-object          v0, v2, Landroidx/appcompat/widget/ActivityChooserView$Callbacks;->this$0 Landroidx/appcompat/widget/ActivityChooserView;
+	2       (0000000a) iget-object          v0, v0, Landroidx/appcompat/widget/ActivityChooserView;->mProvider Landroidx/core/view/ActionProvider;
+	3       (0000000e) if-eqz               v0, +a
+
+onDismiss-BB@0x12 : [ onDismiss-BB@0x22 ]
+	4       (00000012) iget-object          v0, v2, Landroidx/appcompat/widget/ActivityChooserView$Callbacks;->this$0 Landroidx/appcompat/widget/ActivityChooserView;
+	5       (00000016) iget-object          v0, v0, Landroidx/appcompat/widget/ActivityChooserView;->mProvider Landroidx/core/view/ActionProvider;
+	6       (0000001a) const/4              v1, 0
+	7       (0000001c) invoke-virtual       v0, v1, Landroidx/core/view/ActionProvider;->subUiVisibilityChanged(Z)V
+
+onDismiss-BB@0x22 : 
+	8       (00000022) return-void          
+

@@ -1,0 +1,64 @@
+# Landroidx/appcompat/widget/AppCompatTextViewAutoSizeHelper;->createStaticLayoutForMeasuring(Ljava/lang/CharSequence; Landroid/text/Layout$Alignment; I I)Landroid/text/StaticLayout; [access_flags=private]
+#
+# Parameters:
+# - local registers: v0...v5
+# - v6:java.lang.CharSequence
+# - v7:android.text.Layout$Alignment
+# - v8:int
+# - v9:int
+#
+# - return:android.text.StaticLayout
+
+createStaticLayoutForMeasuring-BB@0x0 : [ createStaticLayoutForMeasuring-BB@0x98 createStaticLayoutForMeasuring-BB@0x9e ]
+	0       (00000000) iget-object          v2, v5, Landroidx/appcompat/widget/AppCompatTextViewAutoSizeHelper;->mTextView Landroid/widget/TextView;
+	1       (00000004) const-string         v3, 'getTextDirectionHeuristic'
+	2       (00000008) sget-object          v4, Landroid/text/TextDirectionHeuristics;->FIRSTSTRONG_LTR Landroid/text/TextDirectionHeuristic;
+	3       (0000000c) invoke-direct        v5, v2, v3, v4, Landroidx/appcompat/widget/AppCompatTextViewAutoSizeHelper;->invokeAndReturnWithDefault(Ljava/lang/Object; Ljava/lang/String; Ljava/lang/Object;)Ljava/lang/Object;
+	4       (00000012) move-result-object   v1
+	5       (00000014) check-cast           v1, Landroid/text/TextDirectionHeuristic;
+	6       (00000018) const/4              v2, 0
+	7       (0000001a) invoke-interface     v6, Ljava/lang/CharSequence;->length()I
+	8       (00000020) move-result          v3
+	9       (00000022) iget-object          v4, v5, Landroidx/appcompat/widget/AppCompatTextViewAutoSizeHelper;->mTempTextPaint Landroid/text/TextPaint;
+	10      (00000026) invoke-static        v6, v2, v3, v4, v8, Landroid/text/StaticLayout$Builder;->obtain(Ljava/lang/CharSequence; I I Landroid/text/TextPaint; I)Landroid/text/StaticLayout$Builder;
+	11      (0000002c) move-result-object   v0
+	12      (0000002e) invoke-virtual       v0, v7, Landroid/text/StaticLayout$Builder;->setAlignment(Landroid/text/Layout$Alignment;)Landroid/text/StaticLayout$Builder;
+	13      (00000034) move-result-object   v2
+	14      (00000036) iget-object          v3, v5, Landroidx/appcompat/widget/AppCompatTextViewAutoSizeHelper;->mTextView Landroid/widget/TextView;
+	15      (0000003a) invoke-virtual       v3, Landroid/widget/TextView;->getLineSpacingExtra()F
+	16      (00000040) move-result          v3
+	17      (00000042) iget-object          v4, v5, Landroidx/appcompat/widget/AppCompatTextViewAutoSizeHelper;->mTextView Landroid/widget/TextView;
+	18      (00000046) invoke-virtual       v4, Landroid/widget/TextView;->getLineSpacingMultiplier()F
+	19      (0000004c) move-result          v4
+	20      (0000004e) invoke-virtual       v2, v3, v4, Landroid/text/StaticLayout$Builder;->setLineSpacing(F F)Landroid/text/StaticLayout$Builder;
+	21      (00000054) move-result-object   v2
+	22      (00000056) iget-object          v3, v5, Landroidx/appcompat/widget/AppCompatTextViewAutoSizeHelper;->mTextView Landroid/widget/TextView;
+	23      (0000005a) invoke-virtual       v3, Landroid/widget/TextView;->getIncludeFontPadding()Z
+	24      (00000060) move-result          v3
+	25      (00000062) invoke-virtual       v2, v3, Landroid/text/StaticLayout$Builder;->setIncludePad(Z)Landroid/text/StaticLayout$Builder;
+	26      (00000068) move-result-object   v2
+	27      (0000006a) iget-object          v3, v5, Landroidx/appcompat/widget/AppCompatTextViewAutoSizeHelper;->mTextView Landroid/widget/TextView;
+	28      (0000006e) invoke-virtual       v3, Landroid/widget/TextView;->getBreakStrategy()I
+	29      (00000074) move-result          v3
+	30      (00000076) invoke-virtual       v2, v3, Landroid/text/StaticLayout$Builder;->setBreakStrategy(I)Landroid/text/StaticLayout$Builder;
+	31      (0000007c) move-result-object   v2
+	32      (0000007e) iget-object          v3, v5, Landroidx/appcompat/widget/AppCompatTextViewAutoSizeHelper;->mTextView Landroid/widget/TextView;
+	33      (00000082) invoke-virtual       v3, Landroid/widget/TextView;->getHyphenationFrequency()I
+	34      (00000088) move-result          v3
+	35      (0000008a) invoke-virtual       v2, v3, Landroid/text/StaticLayout$Builder;->setHyphenationFrequency(I)Landroid/text/StaticLayout$Builder;
+	36      (00000090) move-result-object   v2
+	37      (00000092) const/4              v3, -1
+	38      (00000094) if-ne                v9, v3, +5
+
+createStaticLayoutForMeasuring-BB@0x98 : [ createStaticLayoutForMeasuring-BB@0x9e ]
+	39      (00000098) const                v9, 2147483647 # [nan]
+
+createStaticLayoutForMeasuring-BB@0x9e : 
+	40      (0000009e) invoke-virtual       v2, v9, Landroid/text/StaticLayout$Builder;->setMaxLines(I)Landroid/text/StaticLayout$Builder;
+	41      (000000a4) move-result-object   v2
+	42      (000000a6) invoke-virtual       v2, v1, Landroid/text/StaticLayout$Builder;->setTextDirection(Landroid/text/TextDirectionHeuristic;)Landroid/text/StaticLayout$Builder;
+	43      (000000ac) move-result-object   v2
+	44      (000000ae) invoke-virtual       v2, Landroid/text/StaticLayout$Builder;->build()Landroid/text/StaticLayout;
+	45      (000000b4) move-result-object   v2
+	46      (000000b6) return-object        v2
+

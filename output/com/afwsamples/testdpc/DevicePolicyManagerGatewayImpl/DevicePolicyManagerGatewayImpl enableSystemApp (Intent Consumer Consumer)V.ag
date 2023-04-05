@@ -1,0 +1,59 @@
+# Lcom/afwsamples/testdpc/DevicePolicyManagerGatewayImpl;->enableSystemApp(Landroid/content/Intent; Ljava/util/function/Consumer; Ljava/util/function/Consumer;)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v5
+# - v6:android.content.Intent
+# - v7:java.util.function.Consumer
+# - v8:java.util.function.Consumer
+#
+# - return:void
+
+enableSystemApp-BB@0x0 : [ enableSystemApp-BB@0x3c ]
+	0       (00000000) sget-object          v2, Lcom/afwsamples/testdpc/DevicePolicyManagerGatewayImpl;->TAG Ljava/lang/String;
+	1       (00000004) new-instance         v3, Ljava/lang/StringBuilder;
+	2       (00000008) invoke-direct        v3, Ljava/lang/StringBuilder;-><init>()V
+	3       (0000000e) const-string         v4, 'enableSystemApp('
+	4       (00000012) invoke-virtual       v3, v4, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	5       (00000018) move-result-object   v3
+	6       (0000001a) invoke-virtual       v3, v6, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+	7       (00000020) move-result-object   v3
+	8       (00000022) const-string         v4, ')'
+	9       (00000026) invoke-virtual       v3, v4, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	10      (0000002c) move-result-object   v3
+	11      (0000002e) invoke-virtual       v3, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+	12      (00000034) move-result-object   v3
+	13      (00000036) invoke-static        v2, v3, Landroid/util/Log;->d(Ljava/lang/String; Ljava/lang/String;)I
+
+enableSystemApp-BB@0x3c : [ enableSystemApp-BB@0x96 ]
+	14      (0000003c) iget-object          v2, v5, Lcom/afwsamples/testdpc/DevicePolicyManagerGatewayImpl;->mDevicePolicyManager Landroid/app/admin/DevicePolicyManager;
+	15      (00000040) iget-object          v3, v5, Lcom/afwsamples/testdpc/DevicePolicyManagerGatewayImpl;->mAdminComponentName Landroid/content/ComponentName;
+	16      (00000044) invoke-virtual       v2, v3, v6, Landroid/app/admin/DevicePolicyManager;->enableSystemApp(Landroid/content/ComponentName; Landroid/content/Intent;)I
+	17      (0000004a) move-result          v1
+	18      (0000004c) sget-object          v2, Lcom/afwsamples/testdpc/DevicePolicyManagerGatewayImpl;->TAG Ljava/lang/String;
+	19      (00000050) new-instance         v3, Ljava/lang/StringBuilder;
+	20      (00000054) invoke-direct        v3, Ljava/lang/StringBuilder;-><init>()V
+	21      (0000005a) const-string         v4, 'returning '
+	22      (0000005e) invoke-virtual       v3, v4, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	23      (00000064) move-result-object   v3
+	24      (00000066) invoke-virtual       v3, v1, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+	25      (0000006c) move-result-object   v3
+	26      (0000006e) const-string         v4, ' activities'
+	27      (00000072) invoke-virtual       v3, v4, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	28      (00000078) move-result-object   v3
+	29      (0000007a) invoke-virtual       v3, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+	30      (00000080) move-result-object   v3
+	31      (00000082) invoke-static        v2, v3, Landroid/util/Log;->d(Ljava/lang/String; Ljava/lang/String;)I
+	32      (00000088) invoke-static        v1, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+	33      (0000008e) move-result-object   v2
+	34      (00000090) invoke-interface     v7, v2, Ljava/util/function/Consumer;->accept(Ljava/lang/Object;)V
+	3c:95
+	(Ljava/lang/Exception; -> 98 enableSystemApp-BB@0x98)
+
+enableSystemApp-BB@0x96 : 
+	35      (00000096) return-void          
+
+enableSystemApp-BB@0x98 : [ enableSystemApp-BB@0x96 ]
+	36      (00000098) move-exception       v0
+	37      (0000009a) invoke-interface     v8, v0, Ljava/util/function/Consumer;->accept(Ljava/lang/Object;)V
+	38      (000000a0) goto                 -5
+

@@ -1,0 +1,11 @@
+# Landroidx/appcompat/widget/ActionBarContainer;->getTabContainer()Landroid/view/View; [access_flags=public]
+#
+# Parameters:
+# local registers: v0...v1
+#
+# - return:android.view.View
+
+getTabContainer-BB@0x0 : 
+	0       (00000000) iget-object          v0, v1, Landroidx/appcompat/widget/ActionBarContainer;->mTabContainer Landroid/view/View;
+	1       (00000004) return-object        v0
+

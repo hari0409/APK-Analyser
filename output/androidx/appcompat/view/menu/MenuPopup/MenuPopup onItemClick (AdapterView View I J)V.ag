@@ -1,0 +1,36 @@
+# Landroidx/appcompat/view/menu/MenuPopup;->onItemClick(Landroid/widget/AdapterView; Landroid/view/View; I J)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v6
+# - v7:android.widget.AdapterView
+# - v8:android.view.View
+# - v9:int
+# - v10:long
+#
+# - return:void
+
+onItemClick-BB@0x0 : [ onItemClick-BB@0x30 onItemClick-BB@0x3a ]
+	0       (00000000) invoke-virtual       v6, Landroid/widget/AdapterView;->getAdapter()Landroid/widget/Adapter;
+	1       (00000006) move-result-object   v0
+	2       (00000008) check-cast           v0, Landroid/widget/ListAdapter;
+	3       (0000000c) invoke-static        v0, Landroidx/appcompat/view/menu/MenuPopup;->toMenuAdapter(Landroid/widget/ListAdapter;)Landroidx/appcompat/view/menu/MenuAdapter;
+	4       (00000012) move-result-object   v1
+	5       (00000014) iget-object          v4, v1, Landroidx/appcompat/view/menu/MenuAdapter;->mAdapterMenu Landroidx/appcompat/view/menu/MenuBuilder;
+	6       (00000018) invoke-interface     v0, v8, Landroid/widget/ListAdapter;->getItem(I)Ljava/lang/Object;
+	7       (0000001e) move-result-object   v2
+	8       (00000020) check-cast           v2, Landroid/view/MenuItem;
+	9       (00000024) invoke-virtual       v5, Landroidx/appcompat/view/menu/MenuPopup;->closeMenuOnSubMenuOpened()Z
+	10      (0000002a) move-result          v3
+	11      (0000002c) if-eqz               v3, +7
+
+onItemClick-BB@0x30 : [ onItemClick-BB@0x32 ]
+	12      (00000030) const/4              v3, 0
+
+onItemClick-BB@0x32 : 
+	13      (00000032) invoke-virtual       v4, v2, v5, v3, Landroidx/appcompat/view/menu/MenuBuilder;->performItemAction(Landroid/view/MenuItem; Landroidx/appcompat/view/menu/MenuPresenter; I)Z
+	14      (00000038) return-void          
+
+onItemClick-BB@0x3a : [ onItemClick-BB@0x32 ]
+	15      (0000003a) const/4              v3, 4
+	16      (0000003c) goto                 -5
+

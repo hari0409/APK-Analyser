@@ -1,0 +1,23 @@
+# Landroidx/appcompat/app/ToolbarActionBar;->setNavigationMode(I)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:int
+#
+# - return:void
+
+setNavigationMode-BB@0x0 : [ setNavigationMode-BB@0x6 setNavigationMode-BB@0x16 ]
+	0       (00000000) const/4              v0, 2
+	1       (00000002) if-ne                v3, v0, +a
+
+setNavigationMode-BB@0x6 : 
+	2       (00000006) new-instance         v0, Ljava/lang/IllegalArgumentException;
+	3       (0000000a) const-string         v1, 'Tabs not supported in this configuration'
+	4       (0000000e) invoke-direct        v0, v1, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+	5       (00000014) throw                v0
+
+setNavigationMode-BB@0x16 : 
+	6       (00000016) iget-object          v0, v2, Landroidx/appcompat/app/ToolbarActionBar;->mDecorToolbar Landroidx/appcompat/widget/DecorToolbar;
+	7       (0000001a) invoke-interface     v0, v3, Landroidx/appcompat/widget/DecorToolbar;->setNavigationMode(I)V
+	8       (00000020) return-void          
+

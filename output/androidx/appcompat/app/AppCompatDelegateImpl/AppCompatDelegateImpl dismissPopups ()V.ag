@@ -1,0 +1,62 @@
+# Landroidx/appcompat/app/AppCompatDelegateImpl;->dismissPopups()V [access_flags=]
+#
+# Parameters:
+# local registers: v0...v4
+#
+# - return:void
+
+dismissPopups-BB@0x0 : [ dismissPopups-BB@0xa dismissPopups-BB@0x14 ]
+	0       (00000000) const/4              v3, 0
+	1       (00000002) iget-object          v1, v4, Landroidx/appcompat/app/AppCompatDelegateImpl;->mDecorContentParent Landroidx/appcompat/widget/DecorContentParent;
+	2       (00000006) if-eqz               v1, +7
+
+dismissPopups-BB@0xa : [ dismissPopups-BB@0x14 ]
+	3       (0000000a) iget-object          v1, v4, Landroidx/appcompat/app/AppCompatDelegateImpl;->mDecorContentParent Landroidx/appcompat/widget/DecorContentParent;
+	4       (0000000e) invoke-interface     v1, Landroidx/appcompat/widget/DecorContentParent;->dismissPopups()V
+
+dismissPopups-BB@0x14 : [ dismissPopups-BB@0x1c dismissPopups-BB@0x52 ]
+	5       (00000014) iget-object          v1, v4, Landroidx/appcompat/app/AppCompatDelegateImpl;->mActionModePopup Landroid/widget/PopupWindow;
+	6       (00000018) if-eqz               v1, +1d
+
+dismissPopups-BB@0x1c : [ dismissPopups-BB@0x42 dismissPopups-BB@0x4c ]
+	7       (0000001c) iget-object          v1, v4, Landroidx/appcompat/app/AppCompatDelegateImpl;->mWindow Landroid/view/Window;
+	8       (00000020) invoke-virtual       v1, Landroid/view/Window;->getDecorView()Landroid/view/View;
+	9       (00000026) move-result-object   v1
+	10      (00000028) iget-object          v2, v4, Landroidx/appcompat/app/AppCompatDelegateImpl;->mShowActionModePopup Ljava/lang/Runnable;
+	11      (0000002c) invoke-virtual       v1, v2, Landroid/view/View;->removeCallbacks(Ljava/lang/Runnable;)Z
+	12      (00000032) iget-object          v1, v4, Landroidx/appcompat/app/AppCompatDelegateImpl;->mActionModePopup Landroid/widget/PopupWindow;
+	13      (00000036) invoke-virtual       v1, Landroid/widget/PopupWindow;->isShowing()Z
+	14      (0000003c) move-result          v1
+	15      (0000003e) if-eqz               v1, +7
+
+dismissPopups-BB@0x42 : [ dismissPopups-BB@0x4c ]
+	16      (00000042) iget-object          v1, v4, Landroidx/appcompat/app/AppCompatDelegateImpl;->mActionModePopup Landroid/widget/PopupWindow;
+	17      (00000046) invoke-virtual       v1, Landroid/widget/PopupWindow;->dismiss()V
+	42:4b
+	(Ljava/lang/IllegalArgumentException; -> 78 dismissPopups-BB@0x78)
+
+dismissPopups-BB@0x4c : [ dismissPopups-BB@0x52 ]
+	18      (0000004c) const/4              v1, 0
+	19      (0000004e) iput-object          v1, v4, Landroidx/appcompat/app/AppCompatDelegateImpl;->mActionModePopup Landroid/widget/PopupWindow;
+
+dismissPopups-BB@0x52 : [ dismissPopups-BB@0x64 dismissPopups-BB@0x76 ]
+	20      (00000052) invoke-virtual       v4, Landroidx/appcompat/app/AppCompatDelegateImpl;->endOnGoingFadeAnimation()V
+	21      (00000058) invoke-virtual       v4, v3, v3, Landroidx/appcompat/app/AppCompatDelegateImpl;->getPanelState(I Z)Landroidx/appcompat/app/AppCompatDelegateImpl$PanelFeatureState;
+	22      (0000005e) move-result-object   v0
+	23      (00000060) if-eqz               v0, +b
+
+dismissPopups-BB@0x64 : [ dismissPopups-BB@0x6c dismissPopups-BB@0x76 ]
+	24      (00000064) iget-object          v1, v0, Landroidx/appcompat/app/AppCompatDelegateImpl$PanelFeatureState;->menu Landroidx/appcompat/view/menu/MenuBuilder;
+	25      (00000068) if-eqz               v1, +7
+
+dismissPopups-BB@0x6c : [ dismissPopups-BB@0x76 ]
+	26      (0000006c) iget-object          v1, v0, Landroidx/appcompat/app/AppCompatDelegateImpl$PanelFeatureState;->menu Landroidx/appcompat/view/menu/MenuBuilder;
+	27      (00000070) invoke-virtual       v1, Landroidx/appcompat/view/menu/MenuBuilder;->close()V
+
+dismissPopups-BB@0x76 : 
+	28      (00000076) return-void          
+
+dismissPopups-BB@0x78 : [ dismissPopups-BB@0x4c ]
+	29      (00000078) move-exception       v1
+	30      (0000007a) goto                 -17
+

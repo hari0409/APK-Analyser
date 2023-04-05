@@ -1,0 +1,51 @@
+# Lcom/afwsamples/testdpc/DevicePolicyManagerGatewayImpl;->setPackagesSuspended([Ljava/lang/String; Z Ljava/util/function/Consumer; Ljava/util/function/Consumer;)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v5
+# - v6:java.lang.String[]
+# - v7:boolean
+# - v8:java.util.function.Consumer
+# - v9:java.util.function.Consumer
+#
+# - return:void
+
+setPackagesSuspended-BB@0x0 : [ setPackagesSuspended-BB@0x58 ]
+	0       (00000000) sget-object          v2, Lcom/afwsamples/testdpc/DevicePolicyManagerGatewayImpl;->TAG Ljava/lang/String;
+	1       (00000004) new-instance         v3, Ljava/lang/StringBuilder;
+	2       (00000008) invoke-direct        v3, Ljava/lang/StringBuilder;-><init>()V
+	3       (0000000e) const-string         v4, 'setPackagesSuspended('
+	4       (00000012) invoke-virtual       v3, v4, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	5       (00000018) move-result-object   v3
+	6       (0000001a) invoke-static        v6, Ljava/util/Arrays;->toString([Ljava/lang/Object;)Ljava/lang/String;
+	7       (00000020) move-result-object   v4
+	8       (00000022) invoke-virtual       v3, v4, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	9       (00000028) move-result-object   v3
+	10      (0000002a) const-string         v4, ': '
+	11      (0000002e) invoke-virtual       v3, v4, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	12      (00000034) move-result-object   v3
+	13      (00000036) invoke-virtual       v3, v7, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+	14      (0000003c) move-result-object   v3
+	15      (0000003e) const-string         v4, ')'
+	16      (00000042) invoke-virtual       v3, v4, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	17      (00000048) move-result-object   v3
+	18      (0000004a) invoke-virtual       v3, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+	19      (00000050) move-result-object   v3
+	20      (00000052) invoke-static        v2, v3, Landroid/util/Log;->d(Ljava/lang/String; Ljava/lang/String;)I
+
+setPackagesSuspended-BB@0x58 : [ setPackagesSuspended-BB@0x6e ]
+	21      (00000058) iget-object          v2, v5, Lcom/afwsamples/testdpc/DevicePolicyManagerGatewayImpl;->mDevicePolicyManager Landroid/app/admin/DevicePolicyManager;
+	22      (0000005c) iget-object          v3, v5, Lcom/afwsamples/testdpc/DevicePolicyManagerGatewayImpl;->mAdminComponentName Landroid/content/ComponentName;
+	23      (00000060) invoke-virtual       v2, v3, v6, v7, Landroid/app/admin/DevicePolicyManager;->setPackagesSuspended(Landroid/content/ComponentName; [Ljava/lang/String; Z)[Ljava/lang/String;
+	24      (00000066) move-result-object   v1
+	25      (00000068) invoke-interface     v8, v1, Ljava/util/function/Consumer;->accept(Ljava/lang/Object;)V
+	58:6d
+	(Ljava/lang/Exception; -> 70 setPackagesSuspended-BB@0x70)
+
+setPackagesSuspended-BB@0x6e : 
+	26      (0000006e) return-void          
+
+setPackagesSuspended-BB@0x70 : [ setPackagesSuspended-BB@0x6e ]
+	27      (00000070) move-exception       v0
+	28      (00000072) invoke-interface     v9, v0, Ljava/util/function/Consumer;->accept(Ljava/lang/Object;)V
+	29      (00000078) goto                 -5
+

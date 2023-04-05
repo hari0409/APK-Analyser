@@ -1,0 +1,14 @@
+# Landroidx/appcompat/graphics/drawable/DrawableContainer;->clearMutated()V [access_flags=]
+#
+# Parameters:
+# local registers: v0...v1
+#
+# - return:void
+
+clearMutated-BB@0x0 : 
+	0       (00000000) iget-object          v0, v1, Landroidx/appcompat/graphics/drawable/DrawableContainer;->mDrawableContainerState Landroidx/appcompat/graphics/drawable/DrawableContainer$DrawableContainerState;
+	1       (00000004) invoke-virtual       v0, Landroidx/appcompat/graphics/drawable/DrawableContainer$DrawableContainerState;->clearMutated()V
+	2       (0000000a) const/4              v0, 0
+	3       (0000000c) iput-boolean         v0, v1, Landroidx/appcompat/graphics/drawable/DrawableContainer;->mMutated Z
+	4       (00000010) return-void          
+

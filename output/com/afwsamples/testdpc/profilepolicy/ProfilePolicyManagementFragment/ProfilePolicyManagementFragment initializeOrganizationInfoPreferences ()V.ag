@@ -1,0 +1,70 @@
+# Lcom/afwsamples/testdpc/profilepolicy/ProfilePolicyManagementFragment;->initializeOrganizationInfoPreferences()V [access_flags=private]
+#
+# Parameters:
+# local registers: v0...v8
+#
+# - return:void
+
+initializeOrganizationInfoPreferences-BB@0x0 : [ initializeOrganizationInfoPreferences-BB@0x30 initializeOrganizationInfoPreferences-BB@0x74 ]
+	0       (00000000) const-string         v3, 'set_organization_color'
+	1       (00000004) invoke-virtual       v8, v3, Lcom/afwsamples/testdpc/profilepolicy/ProfilePolicyManagementFragment;->findPreference(Ljava/lang/CharSequence;)Landroidx/preference/Preference;
+	2       (0000000a) move-result-object   v3
+	3       (0000000c) iput-object          v3, v8, Lcom/afwsamples/testdpc/profilepolicy/ProfilePolicyManagementFragment;->mSetOrganizationColorPreference Landroidx/preference/Preference;
+	4       (00000010) const-string         v3, 'set_profile_organization_name'
+	5       (00000014) invoke-virtual       v8, v3, Lcom/afwsamples/testdpc/profilepolicy/ProfilePolicyManagementFragment;->findPreference(Ljava/lang/CharSequence;)Landroidx/preference/Preference;
+	6       (0000001a) move-result-object   v3
+	7       (0000001c) iput-object          v3, v8, Lcom/afwsamples/testdpc/profilepolicy/ProfilePolicyManagementFragment;->mSetOrganizationNamePreference Landroidx/preference/Preference;
+	8       (00000020) iget-object          v3, v8, Lcom/afwsamples/testdpc/profilepolicy/ProfilePolicyManagementFragment;->mSetOrganizationColorPreference Landroidx/preference/Preference;
+	9       (00000024) invoke-virtual       v3, Landroidx/preference/Preference;->isEnabled()Z
+	10      (0000002a) move-result          v3
+	11      (0000002c) if-eqz               v3, +24
+
+initializeOrganizationInfoPreferences-BB@0x30 : [ initializeOrganizationInfoPreferences-BB@0x74 ]
+	12      (00000030) iget-object          v3, v8, Lcom/afwsamples/testdpc/profilepolicy/ProfilePolicyManagementFragment;->mSetOrganizationColorPreference Landroidx/preference/Preference;
+	13      (00000034) invoke-virtual       v3, v8, Landroidx/preference/Preference;->setOnPreferenceClickListener(Landroidx/preference/Preference$OnPreferenceClickListener;)V
+	14      (0000003a) iget-object          v3, v8, Lcom/afwsamples/testdpc/profilepolicy/ProfilePolicyManagementFragment;->mDevicePolicyManager Landroid/app/admin/DevicePolicyManager;
+	15      (0000003e) iget-object          v4, v8, Lcom/afwsamples/testdpc/profilepolicy/ProfilePolicyManagementFragment;->mAdminComponentName Landroid/content/ComponentName;
+	16      (00000042) invoke-virtual       v3, v4, Landroid/app/admin/DevicePolicyManager;->getOrganizationColor(Landroid/content/ComponentName;)I
+	17      (00000048) move-result          v0
+	18      (0000004a) iget-object          v3, v8, Lcom/afwsamples/testdpc/profilepolicy/ProfilePolicyManagementFragment;->mSetOrganizationColorPreference Landroidx/preference/Preference;
+	19      (0000004e) const-string         v4, '#%08x'
+	20      (00000052) const/4              v5, 1
+	21      (00000054) new-array            v5, v5, [Ljava/lang/Object;
+	22      (00000058) const/4              v6, 0
+	23      (0000005a) invoke-static        v0, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+	24      (00000060) move-result-object   v7
+	25      (00000062) aput-object          v7, v5, v6
+	26      (00000066) invoke-static        v4, v5, Ljava/lang/String;->format(Ljava/lang/String; [Ljava/lang/Object;)Ljava/lang/String;
+	27      (0000006c) move-result-object   v4
+	28      (0000006e) invoke-virtual       v3, v4, Landroidx/preference/Preference;->setSummary(Ljava/lang/CharSequence;)V
+
+initializeOrganizationInfoPreferences-BB@0x74 : [ initializeOrganizationInfoPreferences-BB@0x84 initializeOrganizationInfoPreferences-BB@0xb4 ]
+	29      (00000074) iget-object          v3, v8, Lcom/afwsamples/testdpc/profilepolicy/ProfilePolicyManagementFragment;->mSetOrganizationNamePreference Landroidx/preference/Preference;
+	30      (00000078) invoke-virtual       v3, Landroidx/preference/Preference;->isEnabled()Z
+	31      (0000007e) move-result          v3
+	32      (00000080) if-eqz               v3, +1a
+
+initializeOrganizationInfoPreferences-BB@0x84 : [ initializeOrganizationInfoPreferences-BB@0xa2 initializeOrganizationInfoPreferences-BB@0xb6 ]
+	33      (00000084) iget-object          v3, v8, Lcom/afwsamples/testdpc/profilepolicy/ProfilePolicyManagementFragment;->mSetOrganizationNamePreference Landroidx/preference/Preference;
+	34      (00000088) invoke-virtual       v3, v8, Landroidx/preference/Preference;->setOnPreferenceChangeListener(Landroidx/preference/Preference$OnPreferenceChangeListener;)V
+	35      (0000008e) iget-object          v3, v8, Lcom/afwsamples/testdpc/profilepolicy/ProfilePolicyManagementFragment;->mDevicePolicyManager Landroid/app/admin/DevicePolicyManager;
+	36      (00000092) iget-object          v4, v8, Lcom/afwsamples/testdpc/profilepolicy/ProfilePolicyManagementFragment;->mAdminComponentName Landroid/content/ComponentName;
+	37      (00000096) invoke-virtual       v3, v4, Landroid/app/admin/DevicePolicyManager;->getOrganizationName(Landroid/content/ComponentName;)Ljava/lang/CharSequence;
+	38      (0000009c) move-result-object   v2
+	39      (0000009e) if-eqz               v2, +c
+
+initializeOrganizationInfoPreferences-BB@0xa2 : [ initializeOrganizationInfoPreferences-BB@0xaa ]
+	40      (000000a2) invoke-interface     v2, Ljava/lang/CharSequence;->toString()Ljava/lang/String;
+	41      (000000a8) move-result-object   v1
+
+initializeOrganizationInfoPreferences-BB@0xaa : [ initializeOrganizationInfoPreferences-BB@0xb4 ]
+	42      (000000aa) iget-object          v3, v8, Lcom/afwsamples/testdpc/profilepolicy/ProfilePolicyManagementFragment;->mSetOrganizationNamePreference Landroidx/preference/Preference;
+	43      (000000ae) invoke-virtual       v3, v1, Landroidx/preference/Preference;->setSummary(Ljava/lang/CharSequence;)V
+
+initializeOrganizationInfoPreferences-BB@0xb4 : 
+	44      (000000b4) return-void          
+
+initializeOrganizationInfoPreferences-BB@0xb6 : [ initializeOrganizationInfoPreferences-BB@0xaa ]
+	45      (000000b6) const/4              v1, 0
+	46      (000000b8) goto                 -7
+

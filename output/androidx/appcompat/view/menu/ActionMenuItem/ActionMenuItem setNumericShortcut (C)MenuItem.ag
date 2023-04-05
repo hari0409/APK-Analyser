@@ -1,0 +1,12 @@
+# Landroidx/appcompat/view/menu/ActionMenuItem;->setNumericShortcut(C)Landroid/view/MenuItem; [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v0
+# - v1:char
+#
+# - return:android.view.MenuItem
+
+setNumericShortcut-BB@0x0 : 
+	0       (00000000) iput-char            v1, v0, Landroidx/appcompat/view/menu/ActionMenuItem;->mShortcutNumericChar C
+	1       (00000004) return-object        v0
+

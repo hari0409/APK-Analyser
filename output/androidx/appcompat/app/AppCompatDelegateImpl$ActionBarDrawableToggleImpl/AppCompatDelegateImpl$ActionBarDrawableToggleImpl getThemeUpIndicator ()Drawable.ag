@@ -1,0 +1,23 @@
+# Landroidx/appcompat/app/AppCompatDelegateImpl$ActionBarDrawableToggleImpl;->getThemeUpIndicator()Landroid/graphics/drawable/Drawable; [access_flags=public]
+#
+# Parameters:
+# local registers: v0...v7
+#
+# - return:android.graphics.drawable.Drawable
+
+getThemeUpIndicator-BB@0x0 : 
+	0       (00000000) const/4              v6, 0
+	1       (00000002) invoke-virtual       v7, Landroidx/appcompat/app/AppCompatDelegateImpl$ActionBarDrawableToggleImpl;->getActionBarThemedContext()Landroid/content/Context;
+	2       (00000008) move-result-object   v2
+	3       (0000000a) const/4              v3, 0
+	4       (0000000c) const/4              v4, 1
+	5       (0000000e) new-array            v4, v4, [I
+	6       (00000012) sget                 v5, Landroidx/appcompat/R$attr;->homeAsUpIndicator I
+	7       (00000016) aput                 v5, v4, v6
+	8       (0000001a) invoke-static        v2, v3, v4, Landroidx/appcompat/widget/TintTypedArray;->obtainStyledAttributes(Landroid/content/Context; Landroid/util/AttributeSet; [I)Landroidx/appcompat/widget/TintTypedArray;
+	9       (00000020) move-result-object   v0
+	10      (00000022) invoke-virtual       v0, v6, Landroidx/appcompat/widget/TintTypedArray;->getDrawable(I)Landroid/graphics/drawable/Drawable;
+	11      (00000028) move-result-object   v1
+	12      (0000002a) invoke-virtual       v0, Landroidx/appcompat/widget/TintTypedArray;->recycle()V
+	13      (00000030) return-object        v1
+

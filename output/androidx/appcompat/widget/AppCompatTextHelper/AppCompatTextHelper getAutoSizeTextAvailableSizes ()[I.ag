@@ -1,0 +1,13 @@
+# Landroidx/appcompat/widget/AppCompatTextHelper;->getAutoSizeTextAvailableSizes()[I [access_flags=]
+#
+# Parameters:
+# local registers: v0...v1
+#
+# - return:int[]
+
+getAutoSizeTextAvailableSizes-BB@0x0 : 
+	0       (00000000) iget-object          v0, v1, Landroidx/appcompat/widget/AppCompatTextHelper;->mAutoSizeTextHelper Landroidx/appcompat/widget/AppCompatTextViewAutoSizeHelper;
+	1       (00000004) invoke-virtual       v0, Landroidx/appcompat/widget/AppCompatTextViewAutoSizeHelper;->getAutoSizeTextAvailableSizes()[I
+	2       (0000000a) move-result-object   v0
+	3       (0000000c) return-object        v0
+

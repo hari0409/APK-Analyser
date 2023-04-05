@@ -1,0 +1,25 @@
+# Landroidx/appcompat/widget/ToolbarWidgetWrapper;->setIcon(I)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:int
+#
+# - return:void
+
+setIcon-BB@0x0 : [ setIcon-BB@0x4 setIcon-BB@0x1c ]
+	0       (00000000) if-eqz               v2, +e
+
+setIcon-BB@0x4 : [ setIcon-BB@0x14 ]
+	1       (00000004) invoke-virtual       v1, Landroidx/appcompat/widget/ToolbarWidgetWrapper;->getContext()Landroid/content/Context;
+	2       (0000000a) move-result-object   v0
+	3       (0000000c) invoke-static        v0, v2, Landroidx/appcompat/content/res/AppCompatResources;->getDrawable(Landroid/content/Context; I)Landroid/graphics/drawable/Drawable;
+	4       (00000012) move-result-object   v0
+
+setIcon-BB@0x14 : 
+	5       (00000014) invoke-virtual       v1, v0, Landroidx/appcompat/widget/ToolbarWidgetWrapper;->setIcon(Landroid/graphics/drawable/Drawable;)V
+	6       (0000001a) return-void          
+
+setIcon-BB@0x1c : [ setIcon-BB@0x14 ]
+	7       (0000001c) const/4              v0, 0
+	8       (0000001e) goto                 -5
+

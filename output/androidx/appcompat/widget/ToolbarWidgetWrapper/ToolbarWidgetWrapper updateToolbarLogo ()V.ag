@@ -1,0 +1,38 @@
+# Landroidx/appcompat/widget/ToolbarWidgetWrapper;->updateToolbarLogo()V [access_flags=private]
+#
+# Parameters:
+# local registers: v0...v2
+#
+# - return:void
+
+updateToolbarLogo-BB@0x0 : [ updateToolbarLogo-BB@0xe updateToolbarLogo-BB@0x26 ]
+	0       (00000000) const/4              v0, 0
+	1       (00000002) iget                 v1, v2, Landroidx/appcompat/widget/ToolbarWidgetWrapper;->mDisplayOpts I
+	2       (00000006) and-int/lit8         v1, v1, 2
+	3       (0000000a) if-eqz               v1, +e
+
+updateToolbarLogo-BB@0xe : [ updateToolbarLogo-BB@0x1a updateToolbarLogo-BB@0x38 ]
+	4       (0000000e) iget                 v1, v2, Landroidx/appcompat/widget/ToolbarWidgetWrapper;->mDisplayOpts I
+	5       (00000012) and-int/lit8         v1, v1, 1
+	6       (00000016) if-eqz               v1, +11
+
+updateToolbarLogo-BB@0x1a : [ updateToolbarLogo-BB@0x22 updateToolbarLogo-BB@0x32 ]
+	7       (0000001a) iget-object          v1, v2, Landroidx/appcompat/widget/ToolbarWidgetWrapper;->mLogo Landroid/graphics/drawable/Drawable;
+	8       (0000001e) if-eqz               v1, +a
+
+updateToolbarLogo-BB@0x22 : [ updateToolbarLogo-BB@0x26 ]
+	9       (00000022) iget-object          v0, v2, Landroidx/appcompat/widget/ToolbarWidgetWrapper;->mLogo Landroid/graphics/drawable/Drawable;
+
+updateToolbarLogo-BB@0x26 : 
+	10      (00000026) iget-object          v1, v2, Landroidx/appcompat/widget/ToolbarWidgetWrapper;->mToolbar Landroidx/appcompat/widget/Toolbar;
+	11      (0000002a) invoke-virtual       v1, v0, Landroidx/appcompat/widget/Toolbar;->setLogo(Landroid/graphics/drawable/Drawable;)V
+	12      (00000030) return-void          
+
+updateToolbarLogo-BB@0x32 : [ updateToolbarLogo-BB@0x26 ]
+	13      (00000032) iget-object          v0, v2, Landroidx/appcompat/widget/ToolbarWidgetWrapper;->mIcon Landroid/graphics/drawable/Drawable;
+	14      (00000036) goto                 -8
+
+updateToolbarLogo-BB@0x38 : [ updateToolbarLogo-BB@0x26 ]
+	15      (00000038) iget-object          v0, v2, Landroidx/appcompat/widget/ToolbarWidgetWrapper;->mIcon Landroid/graphics/drawable/Drawable;
+	16      (0000003c) goto                 -b
+

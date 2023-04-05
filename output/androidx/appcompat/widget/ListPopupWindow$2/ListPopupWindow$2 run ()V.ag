@@ -1,0 +1,25 @@
+# Landroidx/appcompat/widget/ListPopupWindow$2;->run()V [access_flags=public]
+#
+# Parameters:
+# local registers: v0...v2
+#
+# - return:void
+
+run-BB@0x0 : [ run-BB@0x10 run-BB@0x26 ]
+	0       (00000000) iget-object          v1, v2, Landroidx/appcompat/widget/ListPopupWindow$2;->this$0 Landroidx/appcompat/widget/ListPopupWindow;
+	1       (00000004) invoke-virtual       v1, Landroidx/appcompat/widget/ListPopupWindow;->getAnchorView()Landroid/view/View;
+	2       (0000000a) move-result-object   v0
+	3       (0000000c) if-eqz               v0, +d
+
+run-BB@0x10 : [ run-BB@0x1c run-BB@0x26 ]
+	4       (00000010) invoke-virtual       v0, Landroid/view/View;->getWindowToken()Landroid/os/IBinder;
+	5       (00000016) move-result-object   v1
+	6       (00000018) if-eqz               v1, +7
+
+run-BB@0x1c : [ run-BB@0x26 ]
+	7       (0000001c) iget-object          v1, v2, Landroidx/appcompat/widget/ListPopupWindow$2;->this$0 Landroidx/appcompat/widget/ListPopupWindow;
+	8       (00000020) invoke-virtual       v1, Landroidx/appcompat/widget/ListPopupWindow;->show()V
+
+run-BB@0x26 : 
+	9       (00000026) return-void          
+

@@ -1,0 +1,13 @@
+# Landroidx/appcompat/app/ToolbarActionBar;->hide()V [access_flags=public]
+#
+# Parameters:
+# local registers: v0...v2
+#
+# - return:void
+
+hide-BB@0x0 : 
+	0       (00000000) iget-object          v0, v2, Landroidx/appcompat/app/ToolbarActionBar;->mDecorToolbar Landroidx/appcompat/widget/DecorToolbar;
+	1       (00000004) const/16             v1, 8
+	2       (00000008) invoke-interface     v0, v1, Landroidx/appcompat/widget/DecorToolbar;->setVisibility(I)V
+	3       (0000000e) return-void          
+

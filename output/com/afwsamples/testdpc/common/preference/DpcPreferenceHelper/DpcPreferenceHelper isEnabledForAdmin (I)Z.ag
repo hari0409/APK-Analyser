@@ -1,0 +1,23 @@
+# Lcom/afwsamples/testdpc/common/preference/DpcPreferenceHelper;->isEnabledForAdmin(I)Z [access_flags=private]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:int
+#
+# - return:boolean
+
+isEnabledForAdmin-BB@0x0 : [ isEnabledForAdmin-BB@0xa isEnabledForAdmin-BB@0xe ]
+	0       (00000000) iget                 v0, v1, Lcom/afwsamples/testdpc/common/preference/DpcPreferenceHelper;->mAdminConstraint I
+	1       (00000004) and-int/2addr        v0, v2
+	2       (00000006) if-ne                v0, v2, +4
+
+isEnabledForAdmin-BB@0xa : [ isEnabledForAdmin-BB@0xc ]
+	3       (0000000a) const/4              v0, 1
+
+isEnabledForAdmin-BB@0xc : 
+	4       (0000000c) return               v0
+
+isEnabledForAdmin-BB@0xe : [ isEnabledForAdmin-BB@0xc ]
+	5       (0000000e) const/4              v0, 0
+	6       (00000010) goto                 -2
+

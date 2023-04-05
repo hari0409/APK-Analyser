@@ -1,0 +1,42 @@
+# Landroidx/appcompat/widget/TintContextWrapper;-><init>(Landroid/content/Context;)V [access_flags=private constructor]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:android.content.Context
+#
+# - return:void
+
+<init>-BB@0x0 : [ <init>-BB@0x12 <init>-BB@0x4c ]
+	0       (00000000) invoke-direct        v2, v3, Landroid/content/ContextWrapper;-><init>(Landroid/content/Context;)V
+	1       (00000006) invoke-static        Landroidx/appcompat/widget/VectorEnabledTintResources;->shouldBeUsed()Z
+	2       (0000000c) move-result          v0
+	3       (0000000e) if-eqz               v0, +1f
+
+<init>-BB@0x12 : [ <init>-BB@0x4a ]
+	4       (00000012) new-instance         v0, Landroidx/appcompat/widget/VectorEnabledTintResources;
+	5       (00000016) invoke-virtual       v3, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
+	6       (0000001c) move-result-object   v1
+	7       (0000001e) invoke-direct        v0, v2, v1, Landroidx/appcompat/widget/VectorEnabledTintResources;-><init>(Landroid/content/Context; Landroid/content/res/Resources;)V
+	8       (00000024) iput-object          v0, v2, Landroidx/appcompat/widget/TintContextWrapper;->mResources Landroid/content/res/Resources;
+	9       (00000028) iget-object          v0, v2, Landroidx/appcompat/widget/TintContextWrapper;->mResources Landroid/content/res/Resources;
+	10      (0000002c) invoke-virtual       v0, Landroid/content/res/Resources;->newTheme()Landroid/content/res/Resources$Theme;
+	11      (00000032) move-result-object   v0
+	12      (00000034) iput-object          v0, v2, Landroidx/appcompat/widget/TintContextWrapper;->mTheme Landroid/content/res/Resources$Theme;
+	13      (00000038) iget-object          v0, v2, Landroidx/appcompat/widget/TintContextWrapper;->mTheme Landroid/content/res/Resources$Theme;
+	14      (0000003c) invoke-virtual       v3, Landroid/content/Context;->getTheme()Landroid/content/res/Resources$Theme;
+	15      (00000042) move-result-object   v1
+	16      (00000044) invoke-virtual       v0, v1, Landroid/content/res/Resources$Theme;->setTo(Landroid/content/res/Resources$Theme;)V
+
+<init>-BB@0x4a : 
+	17      (0000004a) return-void          
+
+<init>-BB@0x4c : [ <init>-BB@0x4a ]
+	18      (0000004c) new-instance         v0, Landroidx/appcompat/widget/TintResources;
+	19      (00000050) invoke-virtual       v3, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
+	20      (00000056) move-result-object   v1
+	21      (00000058) invoke-direct        v0, v2, v1, Landroidx/appcompat/widget/TintResources;-><init>(Landroid/content/Context; Landroid/content/res/Resources;)V
+	22      (0000005e) iput-object          v0, v2, Landroidx/appcompat/widget/TintContextWrapper;->mResources Landroid/content/res/Resources;
+	23      (00000062) const/4              v0, 0
+	24      (00000064) iput-object          v0, v2, Landroidx/appcompat/widget/TintContextWrapper;->mTheme Landroid/content/res/Resources$Theme;
+	25      (00000068) goto                 -f
+

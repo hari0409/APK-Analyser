@@ -1,0 +1,27 @@
+# Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->lambda$onCreatePreferences$101$PolicyManagementFragment()I [access_flags=final synthetic]
+#
+# Parameters:
+# local registers: v0...v2
+#
+# - return:int
+
+lambda$onCreatePreferences$101$PolicyManagementFragment-BB@0x0 : [ lambda$onCreatePreferences$101$PolicyManagementFragment-BB@0x1e lambda$onCreatePreferences$101$PolicyManagementFragment-BB@0x22 ]
+	0       (00000000) invoke-virtual       v2, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->getActivity()Landroid/app/Activity;
+	1       (00000006) move-result-object   v0
+	2       (00000008) invoke-static        v0, Lcom/afwsamples/testdpc/common/Util;->getBindDeviceAdminTargetUsers(Landroid/content/Context;)Ljava/util/List;
+	3       (0000000e) move-result-object   v0
+	4       (00000010) invoke-interface     v0, Ljava/util/List;->size()I
+	5       (00000016) move-result          v0
+	6       (00000018) const/4              v1, 1
+	7       (0000001a) if-ne                v0, v1, +4
+
+lambda$onCreatePreferences$101$PolicyManagementFragment-BB@0x1e : [ lambda$onCreatePreferences$101$PolicyManagementFragment-BB@0x20 ]
+	8       (0000001e) const/4              v0, 0
+
+lambda$onCreatePreferences$101$PolicyManagementFragment-BB@0x20 : 
+	9       (00000020) return               v0
+
+lambda$onCreatePreferences$101$PolicyManagementFragment-BB@0x22 : [ lambda$onCreatePreferences$101$PolicyManagementFragment-BB@0x20 ]
+	10      (00000022) const                v0, 2131690129 # [1.9009292894035257e+38]
+	11      (00000028) goto                 -4
+

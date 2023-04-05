@@ -1,0 +1,22 @@
+# Landroidx/appcompat/app/AppCompatDelegateImpl$PanelFeatureState;->onRestoreInstanceState(Landroid/os/Parcelable;)V [access_flags=]
+#
+# Parameters:
+# - local registers: v0...v3
+# - v4:android.os.Parcelable
+#
+# - return:void
+
+onRestoreInstanceState-BB@0x0 : 
+	0       (00000000) const/4              v2, 0
+	1       (00000002) move-object          v0, v4
+	2       (00000004) check-cast           v0, Landroidx/appcompat/app/AppCompatDelegateImpl$PanelFeatureState$SavedState;
+	3       (00000008) iget                 v1, v0, Landroidx/appcompat/app/AppCompatDelegateImpl$PanelFeatureState$SavedState;->featureId I
+	4       (0000000c) iput                 v1, v3, Landroidx/appcompat/app/AppCompatDelegateImpl$PanelFeatureState;->featureId I
+	5       (00000010) iget-boolean         v1, v0, Landroidx/appcompat/app/AppCompatDelegateImpl$PanelFeatureState$SavedState;->isOpen Z
+	6       (00000014) iput-boolean         v1, v3, Landroidx/appcompat/app/AppCompatDelegateImpl$PanelFeatureState;->wasLastOpen Z
+	7       (00000018) iget-object          v1, v0, Landroidx/appcompat/app/AppCompatDelegateImpl$PanelFeatureState$SavedState;->menuState Landroid/os/Bundle;
+	8       (0000001c) iput-object          v1, v3, Landroidx/appcompat/app/AppCompatDelegateImpl$PanelFeatureState;->frozenMenuState Landroid/os/Bundle;
+	9       (00000020) iput-object          v2, v3, Landroidx/appcompat/app/AppCompatDelegateImpl$PanelFeatureState;->shownPanelView Landroid/view/View;
+	10      (00000024) iput-object          v2, v3, Landroidx/appcompat/app/AppCompatDelegateImpl$PanelFeatureState;->decorView Landroid/view/ViewGroup;
+	11      (00000028) return-void          
+

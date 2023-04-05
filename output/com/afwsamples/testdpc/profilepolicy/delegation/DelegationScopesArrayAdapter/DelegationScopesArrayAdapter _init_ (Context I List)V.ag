@@ -1,0 +1,14 @@
+# Lcom/afwsamples/testdpc/profilepolicy/delegation/DelegationScopesArrayAdapter;-><init>(Landroid/content/Context; I Ljava/util/List;)V [access_flags=public constructor]
+#
+# Parameters:
+# - local registers: v0...v0
+# - v1:android.content.Context
+# - v2:int
+# - v3:java.util.List
+#
+# - return:void
+
+<init>-BB@0x0 : 
+	0       (00000000) invoke-direct        v0, v1, v2, v3, Landroid/widget/ArrayAdapter;-><init>(Landroid/content/Context; I Ljava/util/List;)V
+	1       (00000006) return-void          
+

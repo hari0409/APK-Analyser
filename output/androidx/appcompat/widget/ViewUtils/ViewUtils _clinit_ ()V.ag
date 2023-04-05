@@ -1,0 +1,50 @@
+# Landroidx/appcompat/widget/ViewUtils;-><clinit>()V [access_flags=static constructor]
+#
+# Parameters:
+# local registers: v0...v5
+#
+# - return:void
+
+<clinit>-BB@0x0 : [ <clinit>-BB@0xc <clinit>-BB@0x56 ]
+	0       (00000000) sget                 v1, Landroid/os/Build$VERSION;->SDK_INT I
+	1       (00000004) const/16             v2, 18
+	2       (00000008) if-lt                v1, v2, +27
+
+<clinit>-BB@0xc : [ <clinit>-BB@0x4a <clinit>-BB@0x56 ]
+	3       (0000000c) const-class          v1, Landroid/view/View;
+	4       (00000010) const-string         v2, 'computeFitSystemWindows'
+	5       (00000014) const/4              v3, 2
+	6       (00000016) new-array            v3, v3, [Ljava/lang/Class;
+	7       (0000001a) const/4              v4, 0
+	8       (0000001c) const-class          v5, Landroid/graphics/Rect;
+	9       (00000020) aput-object          v5, v3, v4
+	10      (00000024) const/4              v4, 1
+	11      (00000026) const-class          v5, Landroid/graphics/Rect;
+	12      (0000002a) aput-object          v5, v3, v4
+	13      (0000002e) invoke-virtual       v1, v2, v3, Ljava/lang/Class;->getDeclaredMethod(Ljava/lang/String; [Ljava/lang/Class;)Ljava/lang/reflect/Method;
+	14      (00000034) move-result-object   v1
+	15      (00000036) sput-object          v1, Landroidx/appcompat/widget/ViewUtils;->sComputeFitSystemWindowsMethod Ljava/lang/reflect/Method;
+	16      (0000003a) sget-object          v1, Landroidx/appcompat/widget/ViewUtils;->sComputeFitSystemWindowsMethod Ljava/lang/reflect/Method;
+	17      (0000003e) invoke-virtual       v1, Ljava/lang/reflect/Method;->isAccessible()Z
+	18      (00000044) move-result          v1
+	19      (00000046) if-nez               v1, +8
+	c:55
+	(Ljava/lang/NoSuchMethodException; -> 58 <clinit>-BB@0x58)
+
+<clinit>-BB@0x4a : [ <clinit>-BB@0x56 ]
+	20      (0000004a) sget-object          v1, Landroidx/appcompat/widget/ViewUtils;->sComputeFitSystemWindowsMethod Ljava/lang/reflect/Method;
+	21      (0000004e) const/4              v2, 1
+	22      (00000050) invoke-virtual       v1, v2, Ljava/lang/reflect/Method;->setAccessible(Z)V
+	c:55
+	(Ljava/lang/NoSuchMethodException; -> 58 <clinit>-BB@0x58)
+
+<clinit>-BB@0x56 : 
+	23      (00000056) return-void          
+
+<clinit>-BB@0x58 : [ <clinit>-BB@0x56 ]
+	24      (00000058) move-exception       v0
+	25      (0000005a) const-string         v1, 'ViewUtils'
+	26      (0000005e) const-string         v2, 'Could not find method computeFitSystemWindows. Oh well.'
+	27      (00000062) invoke-static        v1, v2, Landroid/util/Log;->d(Ljava/lang/String; Ljava/lang/String;)I
+	28      (00000068) goto                 -9
+

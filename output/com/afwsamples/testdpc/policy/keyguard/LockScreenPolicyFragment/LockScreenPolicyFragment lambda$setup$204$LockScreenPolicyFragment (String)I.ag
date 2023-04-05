@@ -1,0 +1,29 @@
+# Lcom/afwsamples/testdpc/policy/keyguard/LockScreenPolicyFragment;->lambda$setup$204$LockScreenPolicyFragment(Ljava/lang/String;)I [access_flags=final synthetic]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:java.lang.String
+#
+# - return:int
+
+lambda$setup$204$LockScreenPolicyFragment-BB@0x0 : [ lambda$setup$204$LockScreenPolicyFragment-BB@0x10 lambda$setup$204$LockScreenPolicyFragment-BB@0x24 ]
+	0       (00000000) sget-object          v0, Lcom/afwsamples/testdpc/policy/keyguard/LockScreenPolicyFragment$Keys;->NOT_APPLICABLE_TO_PARENT Ljava/util/Set;
+	1       (00000004) invoke-interface     v0, v2, Ljava/util/Set;->contains(Ljava/lang/Object;)Z
+	2       (0000000a) move-result          v0
+	3       (0000000c) if-eqz               v0, +c
+
+lambda$setup$204$LockScreenPolicyFragment-BB@0x10 : [ lambda$setup$204$LockScreenPolicyFragment-BB@0x1c lambda$setup$204$LockScreenPolicyFragment-BB@0x24 ]
+	4       (00000010) invoke-virtual       v1, Lcom/afwsamples/testdpc/policy/keyguard/LockScreenPolicyFragment;->isParentProfileInstance()Z
+	5       (00000016) move-result          v0
+	6       (00000018) if-eqz               v0, +6
+
+lambda$setup$204$LockScreenPolicyFragment-BB@0x1c : [ lambda$setup$204$LockScreenPolicyFragment-BB@0x22 ]
+	7       (0000001c) const                v0, 2131689993 # [1.9009017053264647e+38]
+
+lambda$setup$204$LockScreenPolicyFragment-BB@0x22 : 
+	8       (00000022) return               v0
+
+lambda$setup$204$LockScreenPolicyFragment-BB@0x24 : [ lambda$setup$204$LockScreenPolicyFragment-BB@0x22 ]
+	9       (00000024) const/4              v0, 0
+	10      (00000026) goto                 -2
+

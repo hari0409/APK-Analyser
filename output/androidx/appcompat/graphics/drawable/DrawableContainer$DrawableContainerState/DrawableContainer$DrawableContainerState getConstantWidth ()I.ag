@@ -1,0 +1,18 @@
+# Landroidx/appcompat/graphics/drawable/DrawableContainer$DrawableContainerState;->getConstantWidth()I [access_flags=public final]
+#
+# Parameters:
+# local registers: v0...v1
+#
+# - return:int
+
+getConstantWidth-BB@0x0 : [ getConstantWidth-BB@0x8 getConstantWidth-BB@0xe ]
+	0       (00000000) iget-boolean         v0, v1, Landroidx/appcompat/graphics/drawable/DrawableContainer$DrawableContainerState;->mCheckedConstantSize Z
+	1       (00000004) if-nez               v0, +5
+
+getConstantWidth-BB@0x8 : [ getConstantWidth-BB@0xe ]
+	2       (00000008) invoke-virtual       v1, Landroidx/appcompat/graphics/drawable/DrawableContainer$DrawableContainerState;->computeConstantSize()V
+
+getConstantWidth-BB@0xe : 
+	3       (0000000e) iget                 v0, v1, Landroidx/appcompat/graphics/drawable/DrawableContainer$DrawableContainerState;->mConstantWidth I
+	4       (00000012) return               v0
+

@@ -1,0 +1,23 @@
+# Landroidx/appcompat/widget/ForwardingListener;->toLocalMotionEvent(Landroid/view/View; Landroid/view/MotionEvent;)Z [access_flags=private]
+#
+# Parameters:
+# - local registers: v0...v4
+# - v5:android.view.View
+# - v6:android.view.MotionEvent
+#
+# - return:boolean
+
+toLocalMotionEvent-BB@0x0 : 
+	0       (00000000) const/4              v3, 1
+	1       (00000002) iget-object          v0, v4, Landroidx/appcompat/widget/ForwardingListener;->mTmpLocation [I
+	2       (00000006) invoke-virtual       v5, v0, Landroid/view/View;->getLocationOnScreen([I)V
+	3       (0000000c) const/4              v1, 0
+	4       (0000000e) aget                 v1, v0, v1
+	5       (00000012) neg-int              v1, v1
+	6       (00000014) int-to-float         v1, v1
+	7       (00000016) aget                 v2, v0, v3
+	8       (0000001a) neg-int              v2, v2
+	9       (0000001c) int-to-float         v2, v2
+	10      (0000001e) invoke-virtual       v6, v1, v2, Landroid/view/MotionEvent;->offsetLocation(F F)V
+	11      (00000024) return               v3
+

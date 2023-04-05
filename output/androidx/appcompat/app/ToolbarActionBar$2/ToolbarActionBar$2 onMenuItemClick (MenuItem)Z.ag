@@ -1,0 +1,16 @@
+# Landroidx/appcompat/app/ToolbarActionBar$2;->onMenuItemClick(Landroid/view/MenuItem;)Z [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:android.view.MenuItem
+#
+# - return:boolean
+
+onMenuItemClick-BB@0x0 : 
+	0       (00000000) iget-object          v0, v2, Landroidx/appcompat/app/ToolbarActionBar$2;->this$0 Landroidx/appcompat/app/ToolbarActionBar;
+	1       (00000004) iget-object          v0, v0, Landroidx/appcompat/app/ToolbarActionBar;->mWindowCallback Landroid/view/Window$Callback;
+	2       (00000008) const/4              v1, 0
+	3       (0000000a) invoke-interface     v0, v1, v3, Landroid/view/Window$Callback;->onMenuItemSelected(I Landroid/view/MenuItem;)Z
+	4       (00000010) move-result          v0
+	5       (00000012) return               v0
+

@@ -1,0 +1,110 @@
+# Landroidx/appcompat/widget/ActionMenuView;->measureChildForCells(Landroid/view/View; I I I I)I [access_flags=static]
+#
+# Parameters:
+# - local registers: v0...v12
+# - v13:android.view.View
+# - v14:int
+# - v15:int
+# - v16:int
+# - v17:int
+#
+# - return:int
+
+measureChildForCells-BB@0x0 : [ measureChildForCells-BB@0x30 measureChildForCells-BB@0xc2 ]
+	0       (00000000) invoke-virtual       v13, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
+	1       (00000006) move-result-object   v8
+	2       (00000008) check-cast           v8, Landroidx/appcompat/widget/ActionMenuView$LayoutParams;
+	3       (0000000c) invoke-static/range  v16, Landroid/view/View$MeasureSpec;->getSize(I)I
+	4       (00000012) move-result          v11
+	5       (00000014) sub-int              v2, v11, v17
+	6       (00000018) invoke-static/range  v16, Landroid/view/View$MeasureSpec;->getMode(I)I
+	7       (0000001e) move-result          v1
+	8       (00000020) invoke-static        v2, v1, Landroid/view/View$MeasureSpec;->makeMeasureSpec(I I)I
+	9       (00000026) move-result          v3
+	10      (00000028) instance-of          v11, v13, Landroidx/appcompat/view/menu/ActionMenuItemView;
+	11      (0000002c) if-eqz               v11, +4b
+
+measureChildForCells-BB@0x30 : [ measureChildForCells-BB@0x38 ]
+	12      (00000030) move-object          v11, v13
+	13      (00000032) check-cast           v11, Landroidx/appcompat/view/menu/ActionMenuItemView;
+	14      (00000036) move-object          v7, v11
+
+measureChildForCells-BB@0x38 : [ measureChildForCells-BB@0x3c measureChildForCells-BB@0xc6 ]
+	15      (00000038) if-eqz               v7, +47
+
+measureChildForCells-BB@0x3c : [ measureChildForCells-BB@0x48 measureChildForCells-BB@0xc6 ]
+	16      (0000003c) invoke-virtual       v7, Landroidx/appcompat/view/menu/ActionMenuItemView;->hasText()Z
+	17      (00000042) move-result          v11
+	18      (00000044) if-eqz               v11, +41
+
+measureChildForCells-BB@0x48 : [ measureChildForCells-BB@0x4a ]
+	19      (00000048) const/4              v6, 1
+
+measureChildForCells-BB@0x4a : [ measureChildForCells-BB@0x50 measureChildForCells-BB@0x94 ]
+	20      (0000004a) const/4              v0, 0
+	21      (0000004c) if-lez               v15, +24
+
+measureChildForCells-BB@0x50 : [ measureChildForCells-BB@0x54 measureChildForCells-BB@0x5a ]
+	22      (00000050) if-eqz               v6, +5
+
+measureChildForCells-BB@0x54 : [ measureChildForCells-BB@0x5a measureChildForCells-BB@0x94 ]
+	23      (00000054) const/4              v11, 2
+	24      (00000056) if-lt                v15, v11, +1f
+
+measureChildForCells-BB@0x5a : [ measureChildForCells-BB@0x84 measureChildForCells-BB@0x88 ]
+	25      (0000005a) mul-int              v11, v14, v15
+	26      (0000005e) const/high16         v12, -32768 # [-0.0]
+	27      (00000062) invoke-static        v11, v12, Landroid/view/View$MeasureSpec;->makeMeasureSpec(I I)I
+	28      (00000068) move-result          v4
+	29      (0000006a) invoke-virtual       v13, v4, v3, Landroid/view/View;->measure(I I)V
+	30      (00000070) invoke-virtual       v13, Landroid/view/View;->getMeasuredWidth()I
+	31      (00000076) move-result          v9
+	32      (00000078) div-int              v0, v9, v14
+	33      (0000007c) rem-int              v11, v9, v14
+	34      (00000080) if-eqz               v11, +4
+
+measureChildForCells-BB@0x84 : [ measureChildForCells-BB@0x88 ]
+	35      (00000084) add-int/lit8         v0, v0, 1
+
+measureChildForCells-BB@0x88 : [ measureChildForCells-BB@0x8c measureChildForCells-BB@0x94 ]
+	36      (00000088) if-eqz               v6, +6
+
+measureChildForCells-BB@0x8c : [ measureChildForCells-BB@0x92 measureChildForCells-BB@0x94 ]
+	37      (0000008c) const/4              v11, 2
+	38      (0000008e) if-ge                v0, v11, +3
+
+measureChildForCells-BB@0x92 : [ measureChildForCells-BB@0x94 ]
+	39      (00000092) const/4              v0, 2
+
+measureChildForCells-BB@0x94 : [ measureChildForCells-BB@0x9c measureChildForCells-BB@0xca ]
+	40      (00000094) iget-boolean         v11, v8, Landroidx/appcompat/widget/ActionMenuView$LayoutParams;->isOverflowButton Z
+	41      (00000098) if-nez               v11, +19
+
+measureChildForCells-BB@0x9c : [ measureChildForCells-BB@0xa0 measureChildForCells-BB@0xca ]
+	42      (0000009c) if-eqz               v6, +17
+
+measureChildForCells-BB@0xa0 : [ measureChildForCells-BB@0xa2 ]
+	43      (000000a0) const/4              v5, 1
+
+measureChildForCells-BB@0xa2 : 
+	44      (000000a2) iput-boolean         v5, v8, Landroidx/appcompat/widget/ActionMenuView$LayoutParams;->expandable Z
+	45      (000000a6) iput                 v0, v8, Landroidx/appcompat/widget/ActionMenuView$LayoutParams;->cellsUsed I
+	46      (000000aa) mul-int              v10, v0, v14
+	47      (000000ae) const/high16         v11, 16384 # [2.0]
+	48      (000000b2) invoke-static        v10, v11, Landroid/view/View$MeasureSpec;->makeMeasureSpec(I I)I
+	49      (000000b8) move-result          v11
+	50      (000000ba) invoke-virtual       v13, v11, v3, Landroid/view/View;->measure(I I)V
+	51      (000000c0) return               v0
+
+measureChildForCells-BB@0xc2 : [ measureChildForCells-BB@0x38 ]
+	52      (000000c2) const/4              v7, 0
+	53      (000000c4) goto                 -46
+
+measureChildForCells-BB@0xc6 : [ measureChildForCells-BB@0x4a ]
+	54      (000000c6) const/4              v6, 0
+	55      (000000c8) goto                 -3f
+
+measureChildForCells-BB@0xca : [ measureChildForCells-BB@0xa2 ]
+	56      (000000ca) const/4              v5, 0
+	57      (000000cc) goto                 -15
+

@@ -1,0 +1,24 @@
+# Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->lambda$showLockNowPrompt$110$PolicyManagementFragment(Landroid/widget/CheckBox; Landroid/widget/CompoundButton; Z)V [access_flags=static final synthetic]
+#
+# Parameters:
+# - local registers: v0...v0
+# - v1:android.widget.CheckBox
+# - v2:android.widget.CompoundButton
+# - v3:boolean
+#
+# - return:void
+
+lambda$showLockNowPrompt$110$PolicyManagementFragment-BB@0x0 : [ lambda$showLockNowPrompt$110$PolicyManagementFragment-BB@0x4 lambda$showLockNowPrompt$110$PolicyManagementFragment-BB@0xe ]
+	0       (00000000) if-nez               v3, +7
+
+lambda$showLockNowPrompt$110$PolicyManagementFragment-BB@0x4 : [ lambda$showLockNowPrompt$110$PolicyManagementFragment-BB@0x6 ]
+	1       (00000004) const/4              v0, 1
+
+lambda$showLockNowPrompt$110$PolicyManagementFragment-BB@0x6 : 
+	2       (00000006) invoke-virtual       v1, v0, Landroid/widget/CheckBox;->setEnabled(Z)V
+	3       (0000000c) return-void          
+
+lambda$showLockNowPrompt$110$PolicyManagementFragment-BB@0xe : [ lambda$showLockNowPrompt$110$PolicyManagementFragment-BB@0x6 ]
+	4       (0000000e) const/4              v0, 0
+	5       (00000010) goto                 -5
+

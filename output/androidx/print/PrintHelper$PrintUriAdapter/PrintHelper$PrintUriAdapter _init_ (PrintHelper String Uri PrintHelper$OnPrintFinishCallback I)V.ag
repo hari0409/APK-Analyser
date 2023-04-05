@@ -1,0 +1,23 @@
+# Landroidx/print/PrintHelper$PrintUriAdapter;-><init>(Landroidx/print/PrintHelper; Ljava/lang/String; Landroid/net/Uri; Landroidx/print/PrintHelper$OnPrintFinishCallback; I)V [access_flags=constructor]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:androidx.print.PrintHelper
+# - v3:java.lang.String
+# - v4:android.net.Uri
+# - v5:androidx.print.PrintHelper$OnPrintFinishCallback
+# - v6:int
+#
+# - return:void
+
+<init>-BB@0x0 : 
+	0       (00000000) iput-object          v2, v1, Landroidx/print/PrintHelper$PrintUriAdapter;->this$0 Landroidx/print/PrintHelper;
+	1       (00000004) invoke-direct        v1, Landroid/print/PrintDocumentAdapter;-><init>()V
+	2       (0000000a) iput-object          v3, v1, Landroidx/print/PrintHelper$PrintUriAdapter;->mJobName Ljava/lang/String;
+	3       (0000000e) iput-object          v4, v1, Landroidx/print/PrintHelper$PrintUriAdapter;->mImageFile Landroid/net/Uri;
+	4       (00000012) iput-object          v5, v1, Landroidx/print/PrintHelper$PrintUriAdapter;->mCallback Landroidx/print/PrintHelper$OnPrintFinishCallback;
+	5       (00000016) iput                 v6, v1, Landroidx/print/PrintHelper$PrintUriAdapter;->mFittingMode I
+	6       (0000001a) const/4              v0, 0
+	7       (0000001c) iput-object          v0, v1, Landroidx/print/PrintHelper$PrintUriAdapter;->mBitmap Landroid/graphics/Bitmap;
+	8       (00000020) return-void          
+

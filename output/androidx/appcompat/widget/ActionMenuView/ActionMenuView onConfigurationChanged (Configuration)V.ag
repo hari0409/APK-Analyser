@@ -1,0 +1,31 @@
+# Landroidx/appcompat/widget/ActionMenuView;->onConfigurationChanged(Landroid/content/res/Configuration;)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:android.content.res.Configuration
+#
+# - return:void
+
+onConfigurationChanged-BB@0x0 : [ onConfigurationChanged-BB@0xe onConfigurationChanged-BB@0x3e ]
+	0       (00000000) invoke-super         v2, v3, Landroidx/appcompat/widget/LinearLayoutCompat;->onConfigurationChanged(Landroid/content/res/Configuration;)V
+	1       (00000006) iget-object          v0, v2, Landroidx/appcompat/widget/ActionMenuView;->mPresenter Landroidx/appcompat/widget/ActionMenuPresenter;
+	2       (0000000a) if-eqz               v0, +1a
+
+onConfigurationChanged-BB@0xe : [ onConfigurationChanged-BB@0x2a onConfigurationChanged-BB@0x3e ]
+	3       (0000000e) iget-object          v0, v2, Landroidx/appcompat/widget/ActionMenuView;->mPresenter Landroidx/appcompat/widget/ActionMenuPresenter;
+	4       (00000012) const/4              v1, 0
+	5       (00000014) invoke-virtual       v0, v1, Landroidx/appcompat/widget/ActionMenuPresenter;->updateMenuView(Z)V
+	6       (0000001a) iget-object          v0, v2, Landroidx/appcompat/widget/ActionMenuView;->mPresenter Landroidx/appcompat/widget/ActionMenuPresenter;
+	7       (0000001e) invoke-virtual       v0, Landroidx/appcompat/widget/ActionMenuPresenter;->isOverflowMenuShowing()Z
+	8       (00000024) move-result          v0
+	9       (00000026) if-eqz               v0, +c
+
+onConfigurationChanged-BB@0x2a : [ onConfigurationChanged-BB@0x3e ]
+	10      (0000002a) iget-object          v0, v2, Landroidx/appcompat/widget/ActionMenuView;->mPresenter Landroidx/appcompat/widget/ActionMenuPresenter;
+	11      (0000002e) invoke-virtual       v0, Landroidx/appcompat/widget/ActionMenuPresenter;->hideOverflowMenu()Z
+	12      (00000034) iget-object          v0, v2, Landroidx/appcompat/widget/ActionMenuView;->mPresenter Landroidx/appcompat/widget/ActionMenuPresenter;
+	13      (00000038) invoke-virtual       v0, Landroidx/appcompat/widget/ActionMenuPresenter;->showOverflowMenu()Z
+
+onConfigurationChanged-BB@0x3e : 
+	14      (0000003e) return-void          
+

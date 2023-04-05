@@ -1,0 +1,32 @@
+# Lcom/afwsamples/testdpc/PackageMonitorReceiver;->buildNotificationText(Landroid/content/Context; Ljava/lang/String; Ljava/lang/String;)Ljava/lang/String; [access_flags=private]
+#
+# Parameters:
+# - local registers: v0...v3
+# - v4:android.content.Context
+# - v5:java.lang.String
+# - v6:java.lang.String
+#
+# - return:java.lang.String
+
+buildNotificationText-BB@0x0 : [ buildNotificationText-BB@0x10 buildNotificationText-BB@0x2c ]
+	0       (00000000) const-string         v1, 'android.intent.action.PACKAGE_ADDED'
+	1       (00000004) invoke-virtual       v1, v6, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+	2       (0000000a) move-result          v1
+	3       (0000000c) if-eqz               v1, +10
+
+buildNotificationText-BB@0x10 : [ buildNotificationText-BB@0x16 ]
+	4       (00000010) const                v0, 2131690018 # [1.9009067759288656e+38]
+
+buildNotificationText-BB@0x16 : 
+	5       (00000016) const/4              v1, 1
+	6       (00000018) new-array            v1, v1, [Ljava/lang/Object;
+	7       (0000001c) const/4              v2, 0
+	8       (0000001e) aput-object          v5, v1, v2
+	9       (00000022) invoke-virtual       v4, v0, v1, Landroid/content/Context;->getString(I [Ljava/lang/Object;)Ljava/lang/String;
+	10      (00000028) move-result-object   v1
+	11      (0000002a) return-object        v1
+
+buildNotificationText-BB@0x2c : [ buildNotificationText-BB@0x16 ]
+	12      (0000002c) const                v0, 2131690023 # [1.900907790049346e+38]
+	13      (00000032) goto                 -e
+

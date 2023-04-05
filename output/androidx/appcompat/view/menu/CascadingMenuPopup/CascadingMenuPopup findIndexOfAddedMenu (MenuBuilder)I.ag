@@ -1,0 +1,36 @@
+# Landroidx/appcompat/view/menu/CascadingMenuPopup;->findIndexOfAddedMenu(Landroidx/appcompat/view/menu/MenuBuilder;)I [access_flags=private]
+#
+# Parameters:
+# - local registers: v0...v4
+# - v5:androidx.appcompat.view.menu.MenuBuilder
+#
+# - return:int
+
+findIndexOfAddedMenu-BB@0x0 : [ findIndexOfAddedMenu-BB@0xe ]
+	0       (00000000) const/4              v1, 0
+	1       (00000002) iget-object          v3, v4, Landroidx/appcompat/view/menu/CascadingMenuPopup;->mShowingMenus Ljava/util/List;
+	2       (00000006) invoke-interface     v3, Ljava/util/List;->size()I
+	3       (0000000c) move-result          v0
+
+findIndexOfAddedMenu-BB@0xe : [ findIndexOfAddedMenu-BB@0x12 findIndexOfAddedMenu-BB@0x32 ]
+	4       (0000000e) if-ge                v1, v0, +12
+
+findIndexOfAddedMenu-BB@0x12 : [ findIndexOfAddedMenu-BB@0x2a findIndexOfAddedMenu-BB@0x2c ]
+	5       (00000012) iget-object          v3, v4, Landroidx/appcompat/view/menu/CascadingMenuPopup;->mShowingMenus Ljava/util/List;
+	6       (00000016) invoke-interface     v3, v1, Ljava/util/List;->get(I)Ljava/lang/Object;
+	7       (0000001c) move-result-object   v2
+	8       (0000001e) check-cast           v2, Landroidx/appcompat/view/menu/CascadingMenuPopup$CascadingMenuInfo;
+	9       (00000022) iget-object          v3, v2, Landroidx/appcompat/view/menu/CascadingMenuPopup$CascadingMenuInfo;->menu Landroidx/appcompat/view/menu/MenuBuilder;
+	10      (00000026) if-ne                v5, v3, +3
+
+findIndexOfAddedMenu-BB@0x2a : 
+	11      (0000002a) return               v1
+
+findIndexOfAddedMenu-BB@0x2c : [ findIndexOfAddedMenu-BB@0xe ]
+	12      (0000002c) add-int/lit8         v1, v1, 1
+	13      (00000030) goto                 -11
+
+findIndexOfAddedMenu-BB@0x32 : [ findIndexOfAddedMenu-BB@0x2a ]
+	14      (00000032) const/4              v1, -1
+	15      (00000034) goto                 -5
+

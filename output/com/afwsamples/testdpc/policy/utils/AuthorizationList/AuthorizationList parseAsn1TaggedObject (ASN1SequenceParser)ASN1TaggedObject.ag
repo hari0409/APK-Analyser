@@ -1,0 +1,39 @@
+# Lcom/afwsamples/testdpc/policy/utils/AuthorizationList;->parseAsn1TaggedObject(Lorg/bouncycastle/asn1/ASN1SequenceParser;)Lorg/bouncycastle/asn1/ASN1TaggedObject; [access_flags=private static]
+#
+# Parameters:
+# - local registers: v0...v3
+# - v4:org.bouncycastle.asn1.ASN1SequenceParser
+#
+# - return:org.bouncycastle.asn1.ASN1TaggedObject
+
+parseAsn1TaggedObject-BB@0x0 : [ parseAsn1TaggedObject-BB@0xc parseAsn1TaggedObject-BB@0x14 ]
+	0       (00000000) invoke-static        v4, Lcom/afwsamples/testdpc/policy/utils/AuthorizationList;->parseAsn1Encodable(Lorg/bouncycastle/asn1/ASN1SequenceParser;)Lorg/bouncycastle/asn1/ASN1Encodable;
+	1       (00000006) move-result-object   v0
+	2       (00000008) if-eqz               v0, +6
+
+parseAsn1TaggedObject-BB@0xc : [ parseAsn1TaggedObject-BB@0x14 parseAsn1TaggedObject-BB@0x1a ]
+	3       (0000000c) instance-of          v1, v0, Lorg/bouncycastle/asn1/ASN1TaggedObject;
+	4       (00000010) if-eqz               v1, +5
+
+parseAsn1TaggedObject-BB@0x14 : 
+	5       (00000014) check-cast           v0, Lorg/bouncycastle/asn1/ASN1TaggedObject;
+	6       (00000018) return-object        v0
+
+parseAsn1TaggedObject-BB@0x1a : 
+	7       (0000001a) new-instance         v1, Ljava/security/cert/CertificateParsingException;
+	8       (0000001e) new-instance         v2, Ljava/lang/StringBuilder;
+	9       (00000022) invoke-direct        v2, Ljava/lang/StringBuilder;-><init>()V
+	10      (00000028) const-string         v3, 'Expected tagged object, found '
+	11      (0000002c) invoke-virtual       v2, v3, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	12      (00000032) move-result-object   v2
+	13      (00000034) invoke-virtual       v0, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+	14      (0000003a) move-result-object   v3
+	15      (0000003c) invoke-virtual       v3, Ljava/lang/Class;->getName()Ljava/lang/String;
+	16      (00000042) move-result-object   v3
+	17      (00000044) invoke-virtual       v2, v3, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	18      (0000004a) move-result-object   v2
+	19      (0000004c) invoke-virtual       v2, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+	20      (00000052) move-result-object   v2
+	21      (00000054) invoke-direct        v1, v2, Ljava/security/cert/CertificateParsingException;-><init>(Ljava/lang/String;)V
+	22      (0000005a) throw                v1
+

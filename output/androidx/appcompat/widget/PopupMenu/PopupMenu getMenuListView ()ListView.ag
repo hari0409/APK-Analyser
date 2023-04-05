@@ -1,0 +1,25 @@
+# Landroidx/appcompat/widget/PopupMenu;->getMenuListView()Landroid/widget/ListView; [access_flags=]
+#
+# Parameters:
+# local registers: v0...v1
+#
+# - return:android.widget.ListView
+
+getMenuListView-BB@0x0 : [ getMenuListView-BB@0x10 getMenuListView-BB@0x14 ]
+	0       (00000000) iget-object          v0, v1, Landroidx/appcompat/widget/PopupMenu;->mPopup Landroidx/appcompat/view/menu/MenuPopupHelper;
+	1       (00000004) invoke-virtual       v0, Landroidx/appcompat/view/menu/MenuPopupHelper;->isShowing()Z
+	2       (0000000a) move-result          v0
+	3       (0000000c) if-nez               v0, +4
+
+getMenuListView-BB@0x10 : [ getMenuListView-BB@0x12 ]
+	4       (00000010) const/4              v0, 0
+
+getMenuListView-BB@0x12 : 
+	5       (00000012) return-object        v0
+
+getMenuListView-BB@0x14 : [ getMenuListView-BB@0x12 ]
+	6       (00000014) iget-object          v0, v1, Landroidx/appcompat/widget/PopupMenu;->mPopup Landroidx/appcompat/view/menu/MenuPopupHelper;
+	7       (00000018) invoke-virtual       v0, Landroidx/appcompat/view/menu/MenuPopupHelper;->getListView()Landroid/widget/ListView;
+	8       (0000001e) move-result-object   v0
+	9       (00000020) goto                 -7
+

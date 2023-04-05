@@ -1,0 +1,13 @@
+# Landroidx/appcompat/widget/ActionBarContextView;->onHoverEvent(Landroid/view/MotionEvent;)Z [access_flags=public bridge synthetic]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:android.view.MotionEvent
+#
+# - return:boolean
+
+onHoverEvent-BB@0x0 : 
+	0       (00000000) invoke-super         v1, v2, Landroidx/appcompat/widget/AbsActionBarView;->onHoverEvent(Landroid/view/MotionEvent;)Z
+	1       (00000006) move-result          v0
+	2       (00000008) return               v0
+

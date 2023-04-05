@@ -1,0 +1,29 @@
+# Landroidx/appcompat/widget/AppCompatTextHelper;->createTintInfo(Landroid/content/Context; Landroidx/appcompat/widget/AppCompatDrawableManager; I)Landroidx/appcompat/widget/TintInfo; [access_flags=private static]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:android.content.Context
+# - v4:androidx.appcompat.widget.AppCompatDrawableManager
+# - v5:int
+#
+# - return:androidx.appcompat.widget.TintInfo
+
+createTintInfo-BB@0x0 : [ createTintInfo-BB@0xc createTintInfo-BB@0x22 ]
+	0       (00000000) invoke-virtual       v4, v3, v5, Landroidx/appcompat/widget/AppCompatDrawableManager;->getTintList(Landroid/content/Context; I)Landroid/content/res/ColorStateList;
+	1       (00000006) move-result-object   v1
+	2       (00000008) if-eqz               v1, +d
+
+createTintInfo-BB@0xc : [ createTintInfo-BB@0x20 ]
+	3       (0000000c) new-instance         v0, Landroidx/appcompat/widget/TintInfo;
+	4       (00000010) invoke-direct        v0, Landroidx/appcompat/widget/TintInfo;-><init>()V
+	5       (00000016) const/4              v2, 1
+	6       (00000018) iput-boolean         v2, v0, Landroidx/appcompat/widget/TintInfo;->mHasTintList Z
+	7       (0000001c) iput-object          v1, v0, Landroidx/appcompat/widget/TintInfo;->mTintList Landroid/content/res/ColorStateList;
+
+createTintInfo-BB@0x20 : 
+	8       (00000020) return-object        v0
+
+createTintInfo-BB@0x22 : [ createTintInfo-BB@0x20 ]
+	9       (00000022) const/4              v0, 0
+	10      (00000024) goto                 -2
+

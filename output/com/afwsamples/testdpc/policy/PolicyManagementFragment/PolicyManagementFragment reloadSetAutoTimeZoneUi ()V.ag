@@ -1,0 +1,29 @@
+# Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->reloadSetAutoTimeZoneUi()V [access_flags=private]
+#
+# Parameters:
+# local registers: v0...v3
+#
+# - return:void
+
+reloadSetAutoTimeZoneUi-BB@0x0 : [ reloadSetAutoTimeZoneUi-BB@0xc reloadSetAutoTimeZoneUi-BB@0xe ]
+	0       (00000000) sget                 v1, Lcom/afwsamples/testdpc/common/Util;->SDK_INT I
+	1       (00000004) const/16             v2, 30
+	2       (00000008) if-ge                v1, v2, +3
+
+reloadSetAutoTimeZoneUi-BB@0xc : 
+	3       (0000000c) return-void          
+
+reloadSetAutoTimeZoneUi-BB@0xe : [ reloadSetAutoTimeZoneUi-BB@0x1a reloadSetAutoTimeZoneUi-BB@0xc ]
+	4       (0000000e) invoke-direct        v3, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->isOrganizationOwnedDevice()Z
+	5       (00000014) move-result          v1
+	6       (00000016) if-eqz               v1, -5
+
+reloadSetAutoTimeZoneUi-BB@0x1a : [ reloadSetAutoTimeZoneUi-BB@0xc ]
+	7       (0000001a) iget-object          v1, v3, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->mDevicePolicyManager Landroid/app/admin/DevicePolicyManager;
+	8       (0000001e) iget-object          v2, v3, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->mAdminComponentName Landroid/content/ComponentName;
+	9       (00000022) invoke-virtual       v1, v2, Landroid/app/admin/DevicePolicyManager;->getAutoTimeZoneEnabled(Landroid/content/ComponentName;)Z
+	10      (00000028) move-result          v0
+	11      (0000002a) iget-object          v1, v3, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->mSetAutoTimeZonePreference Lcom/afwsamples/testdpc/common/preference/DpcSwitchPreference;
+	12      (0000002e) invoke-virtual       v1, v0, Lcom/afwsamples/testdpc/common/preference/DpcSwitchPreference;->setChecked(Z)V
+	13      (00000034) goto                 -14
+

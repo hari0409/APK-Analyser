@@ -1,0 +1,30 @@
+# Landroidx/appcompat/widget/DrawableUtils;->fixVectorDrawableTinting(Landroid/graphics/drawable/Drawable;)V [access_flags=private static]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:android.graphics.drawable.Drawable
+#
+# - return:void
+
+fixVectorDrawableTinting-BB@0x0 : [ fixVectorDrawableTinting-BB@0xc fixVectorDrawableTinting-BB@0x12 ]
+	0       (00000000) invoke-virtual       v2, Landroid/graphics/drawable/Drawable;->getState()[I
+	1       (00000006) move-result-object   v0
+	2       (00000008) if-eqz               v0, +5
+
+fixVectorDrawableTinting-BB@0xc : [ fixVectorDrawableTinting-BB@0x12 fixVectorDrawableTinting-BB@0x24 ]
+	3       (0000000c) array-length         v1, v0
+	4       (0000000e) if-nez               v1, +b
+
+fixVectorDrawableTinting-BB@0x12 : [ fixVectorDrawableTinting-BB@0x1c ]
+	5       (00000012) sget-object          v1, Landroidx/appcompat/widget/ThemeUtils;->CHECKED_STATE_SET [I
+	6       (00000016) invoke-virtual       v2, v1, Landroid/graphics/drawable/Drawable;->setState([I)Z
+
+fixVectorDrawableTinting-BB@0x1c : 
+	7       (0000001c) invoke-virtual       v2, v0, Landroid/graphics/drawable/Drawable;->setState([I)Z
+	8       (00000022) return-void          
+
+fixVectorDrawableTinting-BB@0x24 : [ fixVectorDrawableTinting-BB@0x1c ]
+	9       (00000024) sget-object          v1, Landroidx/appcompat/widget/ThemeUtils;->EMPTY_STATE_SET [I
+	10      (00000028) invoke-virtual       v2, v1, Landroid/graphics/drawable/Drawable;->setState([I)Z
+	11      (0000002e) goto                 -9
+

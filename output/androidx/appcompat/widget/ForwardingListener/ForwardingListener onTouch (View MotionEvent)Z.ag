@@ -1,0 +1,79 @@
+# Landroidx/appcompat/widget/ForwardingListener;->onTouch(Landroid/view/View; Landroid/view/MotionEvent;)Z [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v12
+# - v13:android.view.View
+# - v14:android.view.MotionEvent
+#
+# - return:boolean
+
+onTouch-BB@0x0 : [ onTouch-BB@0xe onTouch-BB@0x3c ]
+	0       (00000000) const/4              v5, 0
+	1       (00000002) const/4              v11, 1
+	2       (00000004) const/4              v7, 0
+	3       (00000006) iget-boolean         v10, v12, Landroidx/appcompat/widget/ForwardingListener;->mForwarding Z
+	4       (0000000a) if-eqz               v10, +19
+
+onTouch-BB@0xe : [ onTouch-BB@0x1a onTouch-BB@0x26 ]
+	5       (0000000e) invoke-direct        v12, v14, Landroidx/appcompat/widget/ForwardingListener;->onTouchForwarded(Landroid/view/MotionEvent;)Z
+	6       (00000014) move-result          v2
+	7       (00000016) if-nez               v2, +8
+
+onTouch-BB@0x1a : [ onTouch-BB@0x26 onTouch-BB@0x38 ]
+	8       (0000001a) invoke-virtual       v12, Landroidx/appcompat/widget/ForwardingListener;->onForwardingStopped()Z
+	9       (00000020) move-result          v2
+	10      (00000022) if-nez               v2, +b
+
+onTouch-BB@0x26 : [ onTouch-BB@0x28 ]
+	11      (00000026) move                 v9, v11
+
+onTouch-BB@0x28 : [ onTouch-BB@0x30 onTouch-BB@0x34 ]
+	12      (00000028) iput-boolean         v9, v12, Landroidx/appcompat/widget/ForwardingListener;->mForwarding Z
+	13      (0000002c) if-nez               v9, +4
+
+onTouch-BB@0x30 : [ onTouch-BB@0x34 onTouch-BB@0x36 ]
+	14      (00000030) if-eqz               v10, +3
+
+onTouch-BB@0x34 : [ onTouch-BB@0x36 ]
+	15      (00000034) move                 v7, v11
+
+onTouch-BB@0x36 : 
+	16      (00000036) return               v7
+
+onTouch-BB@0x38 : [ onTouch-BB@0x28 ]
+	17      (00000038) move                 v9, v7
+	18      (0000003a) goto                 -9
+
+onTouch-BB@0x3c : [ onTouch-BB@0x48 onTouch-BB@0x82 ]
+	19      (0000003c) invoke-direct        v12, v14, Landroidx/appcompat/widget/ForwardingListener;->onTouchObserved(Landroid/view/MotionEvent;)Z
+	20      (00000042) move-result          v2
+	21      (00000044) if-eqz               v2, +1f
+
+onTouch-BB@0x48 : [ onTouch-BB@0x54 onTouch-BB@0x82 ]
+	22      (00000048) invoke-virtual       v12, Landroidx/appcompat/widget/ForwardingListener;->onForwardingStarted()Z
+	23      (0000004e) move-result          v2
+	24      (00000050) if-eqz               v2, +19
+
+onTouch-BB@0x54 : [ onTouch-BB@0x56 ]
+	25      (00000054) move                 v9, v11
+
+onTouch-BB@0x56 : [ onTouch-BB@0x5a onTouch-BB@0x28 ]
+	26      (00000056) if-eqz               v9, -17
+
+onTouch-BB@0x5a : [ onTouch-BB@0x28 ]
+	27      (0000005a) invoke-static        Landroid/os/SystemClock;->uptimeMillis()J
+	28      (00000060) move-result-wide     v0
+	29      (00000062) const/4              v4, 3
+	30      (00000064) move-wide            v2, v0
+	31      (00000066) move                 v6, v5
+	32      (00000068) invoke-static/range  v0 ... v7, Landroid/view/MotionEvent;->obtain(J J I F F I)Landroid/view/MotionEvent;
+	33      (0000006e) move-result-object   v8
+	34      (00000070) iget-object          v2, v12, Landroidx/appcompat/widget/ForwardingListener;->mSrc Landroid/view/View;
+	35      (00000074) invoke-virtual       v2, v8, Landroid/view/View;->onTouchEvent(Landroid/view/MotionEvent;)Z
+	36      (0000007a) invoke-virtual       v8, Landroid/view/MotionEvent;->recycle()V
+	37      (00000080) goto                 -2c
+
+onTouch-BB@0x82 : [ onTouch-BB@0x56 ]
+	38      (00000082) move                 v9, v7
+	39      (00000084) goto                 -17
+

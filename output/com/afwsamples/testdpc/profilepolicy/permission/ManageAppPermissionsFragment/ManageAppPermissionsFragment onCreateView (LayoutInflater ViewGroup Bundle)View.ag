@@ -1,0 +1,36 @@
+# Lcom/afwsamples/testdpc/profilepolicy/permission/ManageAppPermissionsFragment;->onCreateView(Landroid/view/LayoutInflater; Landroid/view/ViewGroup; Landroid/os/Bundle;)Landroid/view/View; [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v3
+# - v4:android.view.LayoutInflater
+# - v5:android.view.ViewGroup
+# - v6:android.os.Bundle
+#
+# - return:android.view.View
+
+onCreateView-BB@0x0 : 
+	0       (00000000) const/16             v2, 8
+	1       (00000004) invoke-super         v3, v4, v5, v6, Lcom/afwsamples/testdpc/common/ManageAppFragment;->onCreateView(Landroid/view/LayoutInflater; Landroid/view/ViewGroup; Landroid/os/Bundle;)Landroid/view/View;
+	2       (0000000a) move-result-object   v0
+	3       (0000000c) const                v1, 2131296491 # [1.8210900178879033e+38]
+	4       (00000012) invoke-virtual       v0, v1, Landroid/view/View;->findViewById(I)Landroid/view/View;
+	5       (00000018) move-result-object   v1
+	6       (0000001a) invoke-virtual       v1, v2, Landroid/view/View;->setVisibility(I)V
+	7       (00000020) const                v1, 2131296304 # [1.8210520897819445e+38]
+	8       (00000026) invoke-virtual       v0, v1, Landroid/view/View;->findViewById(I)Landroid/view/View;
+	9       (0000002c) move-result-object   v1
+	10      (0000002e) invoke-virtual       v1, v2, Landroid/view/View;->setVisibility(I)V
+	11      (00000034) const                v1, 2131296495 # [1.8210908291842875e+38]
+	12      (0000003a) invoke-virtual       v0, v1, Landroid/view/View;->findViewById(I)Landroid/view/View;
+	13      (00000040) move-result-object   v1
+	14      (00000042) invoke-virtual       v1, v2, Landroid/view/View;->setVisibility(I)V
+	15      (00000048) const                v1, 2131296430 # [1.821077645618045e+38]
+	16      (0000004e) invoke-virtual       v0, v1, Landroid/view/View;->findViewById(I)Landroid/view/View;
+	17      (00000054) move-result-object   v1
+	18      (00000056) check-cast           v1, Landroid/widget/TextView;
+	19      (0000005a) iput-object          v1, v3, Lcom/afwsamples/testdpc/profilepolicy/permission/ManageAppPermissionsFragment;->mAppPermissionsView Landroid/widget/TextView;
+	20      (0000005e) iget-object          v1, v3, Lcom/afwsamples/testdpc/profilepolicy/permission/ManageAppPermissionsFragment;->mAppPermissionsView Landroid/widget/TextView;
+	21      (00000062) const                v2, 2131689574 # [1.9008167220302254e+38]
+	22      (00000068) invoke-virtual       v1, v2, Landroid/widget/TextView;->setText(I)V
+	23      (0000006e) return-object        v0
+

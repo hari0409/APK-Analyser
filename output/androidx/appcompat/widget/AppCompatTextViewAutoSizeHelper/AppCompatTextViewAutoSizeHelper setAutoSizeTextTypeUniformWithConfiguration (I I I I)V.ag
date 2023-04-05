@@ -1,0 +1,42 @@
+# Landroidx/appcompat/widget/AppCompatTextViewAutoSizeHelper;->setAutoSizeTextTypeUniformWithConfiguration(I I I I)V [access_flags=]
+#
+# Parameters:
+# - local registers: v0...v5
+# - v6:int
+# - v7:int
+# - v8:int
+# - v9:int
+#
+# - return:void
+
+setAutoSizeTextTypeUniformWithConfiguration-BB@0x0 : [ setAutoSizeTextTypeUniformWithConfiguration-BB@0xc setAutoSizeTextTypeUniformWithConfiguration-BB@0x56 ]
+	0       (00000000) invoke-direct        v5, Landroidx/appcompat/widget/AppCompatTextViewAutoSizeHelper;->supportsAutoSizeText()Z
+	1       (00000006) move-result          v4
+	2       (00000008) if-eqz               v4, +27
+
+setAutoSizeTextTypeUniformWithConfiguration-BB@0xc : [ setAutoSizeTextTypeUniformWithConfiguration-BB@0x50 setAutoSizeTextTypeUniformWithConfiguration-BB@0x56 ]
+	3       (0000000c) iget-object          v4, v5, Landroidx/appcompat/widget/AppCompatTextViewAutoSizeHelper;->mContext Landroid/content/Context;
+	4       (00000010) invoke-virtual       v4, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
+	5       (00000016) move-result-object   v4
+	6       (00000018) invoke-virtual       v4, Landroid/content/res/Resources;->getDisplayMetrics()Landroid/util/DisplayMetrics;
+	7       (0000001e) move-result-object   v3
+	8       (00000020) int-to-float         v4, v6
+	9       (00000022) invoke-static        v9, v4, v3, Landroid/util/TypedValue;->applyDimension(I F Landroid/util/DisplayMetrics;)F
+	10      (00000028) move-result          v1
+	11      (0000002a) int-to-float         v4, v7
+	12      (0000002c) invoke-static        v9, v4, v3, Landroid/util/TypedValue;->applyDimension(I F Landroid/util/DisplayMetrics;)F
+	13      (00000032) move-result          v0
+	14      (00000034) int-to-float         v4, v8
+	15      (00000036) invoke-static        v9, v4, v3, Landroid/util/TypedValue;->applyDimension(I F Landroid/util/DisplayMetrics;)F
+	16      (0000003c) move-result          v2
+	17      (0000003e) invoke-direct        v5, v1, v0, v2, Landroidx/appcompat/widget/AppCompatTextViewAutoSizeHelper;->validateAndSetAutoSizeTextTypeUniformConfiguration(F F F)V
+	18      (00000044) invoke-direct        v5, Landroidx/appcompat/widget/AppCompatTextViewAutoSizeHelper;->setupAutoSizeText()Z
+	19      (0000004a) move-result          v4
+	20      (0000004c) if-eqz               v4, +5
+
+setAutoSizeTextTypeUniformWithConfiguration-BB@0x50 : [ setAutoSizeTextTypeUniformWithConfiguration-BB@0x56 ]
+	21      (00000050) invoke-virtual       v5, Landroidx/appcompat/widget/AppCompatTextViewAutoSizeHelper;->autoSizeText()V
+
+setAutoSizeTextTypeUniformWithConfiguration-BB@0x56 : 
+	22      (00000056) return-void          
+

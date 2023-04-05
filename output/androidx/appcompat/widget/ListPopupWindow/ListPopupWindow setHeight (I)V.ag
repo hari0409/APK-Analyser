@@ -1,0 +1,29 @@
+# Landroidx/appcompat/widget/ListPopupWindow;->setHeight(I)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:int
+#
+# - return:void
+
+setHeight-BB@0x0 : [ setHeight-BB@0x4 setHeight-BB@0x20 ]
+	0       (00000000) if-gez               v3, +10
+
+setHeight-BB@0x4 : [ setHeight-BB@0xa setHeight-BB@0x20 ]
+	1       (00000004) const/4              v0, -2
+	2       (00000006) if-eq                v0, v3, +d
+
+setHeight-BB@0xa : [ setHeight-BB@0x10 setHeight-BB@0x20 ]
+	3       (0000000a) const/4              v0, -1
+	4       (0000000c) if-eq                v0, v3, +a
+
+setHeight-BB@0x10 : 
+	5       (00000010) new-instance         v0, Ljava/lang/IllegalArgumentException;
+	6       (00000014) const-string         v1, 'Invalid height. Must be a positive value, MATCH_PARENT, or WRAP_CONTENT.'
+	7       (00000018) invoke-direct        v0, v1, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+	8       (0000001e) throw                v0
+
+setHeight-BB@0x20 : 
+	9       (00000020) iput                 v3, v2, Landroidx/appcompat/widget/ListPopupWindow;->mDropDownHeight I
+	10      (00000024) return-void          
+

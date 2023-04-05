@@ -1,0 +1,53 @@
+# Landroidx/appcompat/view/menu/ListMenuItemView;-><init>(Landroid/content/Context; Landroid/util/AttributeSet; I)V [access_flags=public constructor]
+#
+# Parameters:
+# - local registers: v0...v7
+# - v8:android.content.Context
+# - v9:android.util.AttributeSet
+# - v10:int
+#
+# - return:void
+
+<init>-BB@0x0 : 
+	0       (00000000) const/4              v6, 0
+	1       (00000002) invoke-direct        v7, v8, v9, Landroid/widget/LinearLayout;-><init>(Landroid/content/Context; Landroid/util/AttributeSet;)V
+	2       (00000008) invoke-virtual       v7, Landroidx/appcompat/view/menu/ListMenuItemView;->getContext()Landroid/content/Context;
+	3       (0000000e) move-result-object   v2
+	4       (00000010) sget-object          v3, Landroidx/appcompat/R$styleable;->MenuView [I
+	5       (00000014) invoke-static        v2, v9, v3, v10, v6, Landroidx/appcompat/widget/TintTypedArray;->obtainStyledAttributes(Landroid/content/Context; Landroid/util/AttributeSet; [I I I)Landroidx/appcompat/widget/TintTypedArray;
+	6       (0000001a) move-result-object   v0
+	7       (0000001c) sget                 v2, Landroidx/appcompat/R$styleable;->MenuView_android_itemBackground I
+	8       (00000020) invoke-virtual       v0, v2, Landroidx/appcompat/widget/TintTypedArray;->getDrawable(I)Landroid/graphics/drawable/Drawable;
+	9       (00000026) move-result-object   v2
+	10      (00000028) iput-object          v2, v7, Landroidx/appcompat/view/menu/ListMenuItemView;->mBackground Landroid/graphics/drawable/Drawable;
+	11      (0000002c) sget                 v2, Landroidx/appcompat/R$styleable;->MenuView_android_itemTextAppearance I
+	12      (00000030) const/4              v3, -1
+	13      (00000032) invoke-virtual       v0, v2, v3, Landroidx/appcompat/widget/TintTypedArray;->getResourceId(I I)I
+	14      (00000038) move-result          v2
+	15      (0000003a) iput                 v2, v7, Landroidx/appcompat/view/menu/ListMenuItemView;->mTextAppearance I
+	16      (0000003e) sget                 v2, Landroidx/appcompat/R$styleable;->MenuView_preserveIconSpacing I
+	17      (00000042) invoke-virtual       v0, v2, v6, Landroidx/appcompat/widget/TintTypedArray;->getBoolean(I Z)Z
+	18      (00000048) move-result          v2
+	19      (0000004a) iput-boolean         v2, v7, Landroidx/appcompat/view/menu/ListMenuItemView;->mPreserveIconSpacing Z
+	20      (0000004e) iput-object          v8, v7, Landroidx/appcompat/view/menu/ListMenuItemView;->mTextAppearanceContext Landroid/content/Context;
+	21      (00000052) sget                 v2, Landroidx/appcompat/R$styleable;->MenuView_subMenuArrow I
+	22      (00000056) invoke-virtual       v0, v2, Landroidx/appcompat/widget/TintTypedArray;->getDrawable(I)Landroid/graphics/drawable/Drawable;
+	23      (0000005c) move-result-object   v2
+	24      (0000005e) iput-object          v2, v7, Landroidx/appcompat/view/menu/ListMenuItemView;->mSubMenuArrow Landroid/graphics/drawable/Drawable;
+	25      (00000062) invoke-virtual       v8, Landroid/content/Context;->getTheme()Landroid/content/res/Resources$Theme;
+	26      (00000068) move-result-object   v2
+	27      (0000006a) const/4              v3, 0
+	28      (0000006c) const/4              v4, 1
+	29      (0000006e) new-array            v4, v4, [I
+	30      (00000072) const                v5, 16843049 # [2.369439038004954e-38]
+	31      (00000078) aput                 v5, v4, v6
+	32      (0000007c) sget                 v5, Landroidx/appcompat/R$attr;->dropDownListViewStyle I
+	33      (00000080) invoke-virtual       v2, v3, v4, v5, v6, Landroid/content/res/Resources$Theme;->obtainStyledAttributes(Landroid/util/AttributeSet; [I I I)Landroid/content/res/TypedArray;
+	34      (00000086) move-result-object   v1
+	35      (00000088) invoke-virtual       v1, v6, Landroid/content/res/TypedArray;->hasValue(I)Z
+	36      (0000008e) move-result          v2
+	37      (00000090) iput-boolean         v2, v7, Landroidx/appcompat/view/menu/ListMenuItemView;->mHasListDivider Z
+	38      (00000094) invoke-virtual       v0, Landroidx/appcompat/widget/TintTypedArray;->recycle()V
+	39      (0000009a) invoke-virtual       v1, Landroid/content/res/TypedArray;->recycle()V
+	40      (000000a0) return-void          
+

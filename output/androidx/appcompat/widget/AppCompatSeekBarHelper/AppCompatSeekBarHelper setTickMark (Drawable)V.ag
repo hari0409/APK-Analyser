@@ -1,0 +1,46 @@
+# Landroidx/appcompat/widget/AppCompatSeekBarHelper;->setTickMark(Landroid/graphics/drawable/Drawable;)V [access_flags=]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:android.graphics.drawable.Drawable
+#
+# - return:void
+
+setTickMark-BB@0x0 : [ setTickMark-BB@0x8 setTickMark-BB@0x14 ]
+	0       (00000000) iget-object          v0, v2, Landroidx/appcompat/widget/AppCompatSeekBarHelper;->mTickMark Landroid/graphics/drawable/Drawable;
+	1       (00000004) if-eqz               v0, +8
+
+setTickMark-BB@0x8 : [ setTickMark-BB@0x14 ]
+	2       (00000008) iget-object          v0, v2, Landroidx/appcompat/widget/AppCompatSeekBarHelper;->mTickMark Landroid/graphics/drawable/Drawable;
+	3       (0000000c) const/4              v1, 0
+	4       (0000000e) invoke-virtual       v0, v1, Landroid/graphics/drawable/Drawable;->setCallback(Landroid/graphics/drawable/Drawable$Callback;)V
+
+setTickMark-BB@0x14 : [ setTickMark-BB@0x1c setTickMark-BB@0x5c ]
+	5       (00000014) iput-object          v3, v2, Landroidx/appcompat/widget/AppCompatSeekBarHelper;->mTickMark Landroid/graphics/drawable/Drawable;
+	6       (00000018) if-eqz               v3, +22
+
+setTickMark-BB@0x1c : [ setTickMark-BB@0x44 setTickMark-BB@0x56 ]
+	7       (0000001c) iget-object          v0, v2, Landroidx/appcompat/widget/AppCompatSeekBarHelper;->mView Landroid/widget/SeekBar;
+	8       (00000020) invoke-virtual       v3, v0, Landroid/graphics/drawable/Drawable;->setCallback(Landroid/graphics/drawable/Drawable$Callback;)V
+	9       (00000026) iget-object          v0, v2, Landroidx/appcompat/widget/AppCompatSeekBarHelper;->mView Landroid/widget/SeekBar;
+	10      (0000002a) invoke-static        v0, Landroidx/core/view/ViewCompat;->getLayoutDirection(Landroid/view/View;)I
+	11      (00000030) move-result          v0
+	12      (00000032) invoke-static        v3, v0, Landroidx/core/graphics/drawable/DrawableCompat;->setLayoutDirection(Landroid/graphics/drawable/Drawable; I)Z
+	13      (00000038) invoke-virtual       v3, Landroid/graphics/drawable/Drawable;->isStateful()Z
+	14      (0000003e) move-result          v0
+	15      (00000040) if-eqz               v0, +b
+
+setTickMark-BB@0x44 : [ setTickMark-BB@0x56 ]
+	16      (00000044) iget-object          v0, v2, Landroidx/appcompat/widget/AppCompatSeekBarHelper;->mView Landroid/widget/SeekBar;
+	17      (00000048) invoke-virtual       v0, Landroid/widget/SeekBar;->getDrawableState()[I
+	18      (0000004e) move-result-object   v0
+	19      (00000050) invoke-virtual       v3, v0, Landroid/graphics/drawable/Drawable;->setState([I)Z
+
+setTickMark-BB@0x56 : [ setTickMark-BB@0x5c ]
+	20      (00000056) invoke-direct        v2, Landroidx/appcompat/widget/AppCompatSeekBarHelper;->applyTickMarkTint()V
+
+setTickMark-BB@0x5c : 
+	21      (0000005c) iget-object          v0, v2, Landroidx/appcompat/widget/AppCompatSeekBarHelper;->mView Landroid/widget/SeekBar;
+	22      (00000060) invoke-virtual       v0, Landroid/widget/SeekBar;->invalidate()V
+	23      (00000066) return-void          
+

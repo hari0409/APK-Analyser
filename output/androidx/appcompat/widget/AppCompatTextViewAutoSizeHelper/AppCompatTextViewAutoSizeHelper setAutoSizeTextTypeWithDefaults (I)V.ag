@@ -1,0 +1,62 @@
+# Landroidx/appcompat/widget/AppCompatTextViewAutoSizeHelper;->setAutoSizeTextTypeWithDefaults(I)V [access_flags=]
+#
+# Parameters:
+# - local registers: v0...v6
+# - v7:int
+#
+# - return:void
+
+setAutoSizeTextTypeWithDefaults-BB@0x0 : [ setAutoSizeTextTypeWithDefaults-BB@0xe setAutoSizeTextTypeWithDefaults-BB@0x4c ]
+	0       (00000000) const/4              v4, 2
+	1       (00000002) invoke-direct        v6, Landroidx/appcompat/widget/AppCompatTextViewAutoSizeHelper;->supportsAutoSizeText()Z
+	2       (00000008) move-result          v3
+	3       (0000000a) if-eqz               v3, +21
+
+setAutoSizeTextTypeWithDefaults-BB@0xe : [ D:setAutoSizeTextTypeWithDefaults-BB@0x14 0:setAutoSizeTextTypeWithDefaults-BB@0x46 1:setAutoSizeTextTypeWithDefaults-BB@0x4e ]
+	4       (0000000e) packed-switch        v7, +45 (0x98)
+
+setAutoSizeTextTypeWithDefaults-BB@0x14 : 
+	5       (00000014) new-instance         v3, Ljava/lang/IllegalArgumentException;
+	6       (00000018) new-instance         v4, Ljava/lang/StringBuilder;
+	7       (0000001c) invoke-direct        v4, Ljava/lang/StringBuilder;-><init>()V
+	8       (00000022) const-string         v5, 'Unknown auto-size text type: '
+	9       (00000026) invoke-virtual       v4, v5, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	10      (0000002c) move-result-object   v4
+	11      (0000002e) invoke-virtual       v4, v7, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+	12      (00000034) move-result-object   v4
+	13      (00000036) invoke-virtual       v4, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+	14      (0000003c) move-result-object   v4
+	15      (0000003e) invoke-direct        v3, v4, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+	16      (00000044) throw                v3
+
+setAutoSizeTextTypeWithDefaults-BB@0x46 : [ setAutoSizeTextTypeWithDefaults-BB@0x4c ]
+	17      (00000046) invoke-direct        v6, Landroidx/appcompat/widget/AppCompatTextViewAutoSizeHelper;->clearAutoSizeConfiguration()V
+
+setAutoSizeTextTypeWithDefaults-BB@0x4c : 
+	18      (0000004c) return-void          
+
+setAutoSizeTextTypeWithDefaults-BB@0x4e : [ setAutoSizeTextTypeWithDefaults-BB@0x90 setAutoSizeTextTypeWithDefaults-BB@0x4c ]
+	19      (0000004e) iget-object          v3, v6, Landroidx/appcompat/widget/AppCompatTextViewAutoSizeHelper;->mContext Landroid/content/Context;
+	20      (00000052) invoke-virtual       v3, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
+	21      (00000058) move-result-object   v3
+	22      (0000005a) invoke-virtual       v3, Landroid/content/res/Resources;->getDisplayMetrics()Landroid/util/DisplayMetrics;
+	23      (00000060) move-result-object   v2
+	24      (00000062) const/high16         v3, 16704 # [12.0]
+	25      (00000066) invoke-static        v4, v3, v2, Landroid/util/TypedValue;->applyDimension(I F Landroid/util/DisplayMetrics;)F
+	26      (0000006c) move-result          v1
+	27      (0000006e) const/high16         v3, 17120 # [112.0]
+	28      (00000072) invoke-static        v4, v3, v2, Landroid/util/TypedValue;->applyDimension(I F Landroid/util/DisplayMetrics;)F
+	29      (00000078) move-result          v0
+	30      (0000007a) const/high16         v3, 16256 # [1.0]
+	31      (0000007e) invoke-direct        v6, v1, v0, v3, Landroidx/appcompat/widget/AppCompatTextViewAutoSizeHelper;->validateAndSetAutoSizeTextTypeUniformConfiguration(F F F)V
+	32      (00000084) invoke-direct        v6, Landroidx/appcompat/widget/AppCompatTextViewAutoSizeHelper;->setupAutoSizeText()Z
+	33      (0000008a) move-result          v3
+	34      (0000008c) if-eqz               v3, -20
+
+setAutoSizeTextTypeWithDefaults-BB@0x90 : [ setAutoSizeTextTypeWithDefaults-BB@0x4c ]
+	35      (00000090) invoke-virtual       v6, Landroidx/appcompat/widget/AppCompatTextViewAutoSizeHelper;->autoSizeText()V
+	36      (00000096) goto                 -25
+
+setAutoSizeTextTypeWithDefaults-BB@0x98 : 
+	37      (00000098) packed-switch-payload 0 1
+

@@ -1,0 +1,24 @@
+# Lcom/afwsamples/testdpc/common/preference/DpcPreference;->setEnabled(Z)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:boolean
+#
+# - return:void
+
+setEnabled-BB@0x0 : [ setEnabled-BB@0x4 setEnabled-BB@0x16 ]
+	0       (00000000) if-eqz               v2, +b
+
+setEnabled-BB@0x4 : [ setEnabled-BB@0x14 setEnabled-BB@0x16 ]
+	1       (00000004) iget-object          v0, v1, Lcom/afwsamples/testdpc/common/preference/DpcPreference;->mHelper Lcom/afwsamples/testdpc/common/preference/DpcPreferenceHelper;
+	2       (00000008) invoke-virtual       v0, Lcom/afwsamples/testdpc/common/preference/DpcPreferenceHelper;->constraintsMet()Z
+	3       (0000000e) move-result          v0
+	4       (00000010) if-nez               v0, +3
+
+setEnabled-BB@0x14 : 
+	5       (00000014) return-void          
+
+setEnabled-BB@0x16 : [ setEnabled-BB@0x14 ]
+	6       (00000016) invoke-super         v1, v2, Landroidx/preference/Preference;->setEnabled(Z)V
+	7       (0000001c) goto                 -4
+

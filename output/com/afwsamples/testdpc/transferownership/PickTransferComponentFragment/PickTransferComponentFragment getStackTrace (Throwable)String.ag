@@ -1,0 +1,18 @@
+# Lcom/afwsamples/testdpc/transferownership/PickTransferComponentFragment;->getStackTrace(Ljava/lang/Throwable;)Ljava/lang/String; [access_flags=private]
+#
+# Parameters:
+# - local registers: v0...v3
+# - v4:java.lang.Throwable
+#
+# - return:java.lang.String
+
+getStackTrace-BB@0x0 : 
+	0       (00000000) new-instance         v1, Ljava/io/StringWriter;
+	1       (00000004) invoke-direct        v1, Ljava/io/StringWriter;-><init>()V
+	2       (0000000a) new-instance         v0, Ljava/io/PrintWriter;
+	3       (0000000e) invoke-direct        v0, v1, Ljava/io/PrintWriter;-><init>(Ljava/io/Writer;)V
+	4       (00000014) invoke-virtual       v4, v0, Ljava/lang/Throwable;->printStackTrace(Ljava/io/PrintWriter;)V
+	5       (0000001a) invoke-virtual       v1, Ljava/io/StringWriter;->toString()Ljava/lang/String;
+	6       (00000020) move-result-object   v2
+	7       (00000022) return-object        v2
+

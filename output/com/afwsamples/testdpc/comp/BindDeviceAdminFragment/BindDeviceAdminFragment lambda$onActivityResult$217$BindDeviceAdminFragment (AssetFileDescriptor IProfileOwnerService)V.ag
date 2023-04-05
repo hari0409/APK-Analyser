@@ -1,0 +1,39 @@
+# Lcom/afwsamples/testdpc/comp/BindDeviceAdminFragment;->lambda$onActivityResult$217$BindDeviceAdminFragment(Landroid/content/res/AssetFileDescriptor; Lcom/afwsamples/testdpc/comp/IProfileOwnerService;)V [access_flags=final synthetic]
+#
+# Parameters:
+# - local registers: v0...v4
+# - v5:android.content.res.AssetFileDescriptor
+# - v6:com.afwsamples.testdpc.comp.IProfileOwnerService
+#
+# - return:void
+
+lambda$onActivityResult$217$BindDeviceAdminFragment-BB@0x0 : [ lambda$onActivityResult$217$BindDeviceAdminFragment-BB@0xc lambda$onActivityResult$217$BindDeviceAdminFragment-BB@0x4c ]
+	0       (00000000) invoke-interface     v6, v5, Lcom/afwsamples/testdpc/comp/IProfileOwnerService;->installCaCertificate(Landroid/content/res/AssetFileDescriptor;)Z
+	1       (00000006) move-result          v0
+	2       (00000008) if-eqz               v0, +22
+
+lambda$onActivityResult$217$BindDeviceAdminFragment-BB@0xc : [ lambda$onActivityResult$217$BindDeviceAdminFragment-BB@0x1a ]
+	3       (0000000c) const                v2, 2131689858 # [1.9008743240734998e+38]
+	4       (00000012) invoke-virtual       v4, v2, Lcom/afwsamples/testdpc/comp/BindDeviceAdminFragment;->getString(I)Ljava/lang/String;
+	5       (00000018) move-result-object   v1
+
+lambda$onActivityResult$217$BindDeviceAdminFragment-BB@0x1a : 
+	6       (0000001a) invoke-virtual       v4, Lcom/afwsamples/testdpc/comp/BindDeviceAdminFragment;->getActivity()Landroid/app/Activity;
+	7       (00000020) move-result-object   v2
+	8       (00000022) new-instance         v3, Lcom/afwsamples/testdpc/comp/BindDeviceAdminFragment$$Lambda$6;
+	9       (00000026) invoke-direct        v3, v4, v1, Lcom/afwsamples/testdpc/comp/BindDeviceAdminFragment$$Lambda$6;-><init>(Lcom/afwsamples/testdpc/comp/BindDeviceAdminFragment; Ljava/lang/String;)V
+	10      (0000002c) invoke-virtual       v2, v3, Landroid/app/Activity;->runOnUiThread(Ljava/lang/Runnable;)V
+	11      (00000032) invoke-virtual       v4, Lcom/afwsamples/testdpc/comp/BindDeviceAdminFragment;->getActivity()Landroid/app/Activity;
+	12      (00000038) move-result-object   v2
+	13      (0000003a) const/4              v3, 0
+	14      (0000003c) invoke-static        v2, v1, v3, Landroid/widget/Toast;->makeText(Landroid/content/Context; Ljava/lang/CharSequence; I)Landroid/widget/Toast;
+	15      (00000042) move-result-object   v2
+	16      (00000044) invoke-virtual       v2, Landroid/widget/Toast;->show()V
+	17      (0000004a) return-void          
+
+lambda$onActivityResult$217$BindDeviceAdminFragment-BB@0x4c : [ lambda$onActivityResult$217$BindDeviceAdminFragment-BB@0x1a ]
+	18      (0000004c) const                v2, 2131689857 # [1.9008741212494038e+38]
+	19      (00000052) invoke-virtual       v4, v2, Lcom/afwsamples/testdpc/comp/BindDeviceAdminFragment;->getString(I)Ljava/lang/String;
+	20      (00000058) move-result-object   v1
+	21      (0000005a) goto                 -20
+

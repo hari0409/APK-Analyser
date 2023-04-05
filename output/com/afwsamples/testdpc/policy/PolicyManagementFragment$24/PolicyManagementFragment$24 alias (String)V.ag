@@ -1,0 +1,31 @@
+# Lcom/afwsamples/testdpc/policy/PolicyManagementFragment$24;->alias(Ljava/lang/String;)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v3
+# - v4:java.lang.String
+#
+# - return:void
+
+alias-BB@0x0 : [ alias-BB@0x4 alias-BB@0x6 ]
+	0       (00000000) if-nez               v4, +3
+
+alias-BB@0x4 : 
+	1       (00000004) return-void          
+
+alias-BB@0x6 : [ alias-BB@0x4 ]
+	2       (00000006) iget-object          v1, v3, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment$24;->this$0 Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;
+	3       (0000000a) invoke-static        v1, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->access$400(Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;)Landroid/app/admin/DevicePolicyManager;
+	4       (00000010) move-result-object   v1
+	5       (00000012) iget-object          v2, v3, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment$24;->this$0 Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;
+	6       (00000016) invoke-static        v2, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->access$700(Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;)Landroid/content/ComponentName;
+	7       (0000001c) move-result-object   v2
+	8       (0000001e) invoke-virtual       v1, v2, v4, Landroid/app/admin/DevicePolicyManager;->removeKeyPair(Landroid/content/ComponentName; Ljava/lang/String;)Z
+	9       (00000024) move-result          v0
+	10      (00000026) iget-object          v1, v3, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment$24;->this$0 Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;
+	11      (0000002a) invoke-virtual       v1, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->getActivity()Landroid/app/Activity;
+	12      (00000030) move-result-object   v1
+	13      (00000032) new-instance         v2, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment$24$1;
+	14      (00000036) invoke-direct        v2, v3, v0, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment$24$1;-><init>(Lcom/afwsamples/testdpc/policy/PolicyManagementFragment$24; Z)V
+	15      (0000003c) invoke-virtual       v1, v2, Landroid/app/Activity;->runOnUiThread(Ljava/lang/Runnable;)V
+	16      (00000042) goto                 -1f
+

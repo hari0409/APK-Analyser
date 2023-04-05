@@ -1,0 +1,17 @@
+# Landroidx/appcompat/app/WindowDecorActionBar$3;->onAnimationUpdate(Landroid/view/View;)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:android.view.View
+#
+# - return:void
+
+onAnimationUpdate-BB@0x0 : 
+	0       (00000000) iget-object          v1, v2, Landroidx/appcompat/app/WindowDecorActionBar$3;->this$0 Landroidx/appcompat/app/WindowDecorActionBar;
+	1       (00000004) iget-object          v1, v1, Landroidx/appcompat/app/WindowDecorActionBar;->mContainerView Landroidx/appcompat/widget/ActionBarContainer;
+	2       (00000008) invoke-virtual       v1, Landroidx/appcompat/widget/ActionBarContainer;->getParent()Landroid/view/ViewParent;
+	3       (0000000e) move-result-object   v0
+	4       (00000010) check-cast           v0, Landroid/view/View;
+	5       (00000014) invoke-virtual       v0, Landroid/view/View;->invalidate()V
+	6       (0000001a) return-void          
+

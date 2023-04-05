@@ -1,0 +1,59 @@
+# Lcom/afwsamples/testdpc/UserIconContentProvider;->recursiveDelete(Ljava/io/File;)I [access_flags=private]
+#
+# Parameters:
+# - local registers: v0...v7
+# - v8:java.io.File
+#
+# - return:int
+
+recursiveDelete-BB@0x0 : [ recursiveDelete-BB@0x36 recursiveDelete-BB@0x3a ]
+	0       (00000000) const/4              v3, 0
+	1       (00000002) sget-object          v4, Lcom/afwsamples/testdpc/UserIconContentProvider;->TAG Ljava/lang/String;
+	2       (00000006) new-instance         v5, Ljava/lang/StringBuilder;
+	3       (0000000a) invoke-direct        v5, Ljava/lang/StringBuilder;-><init>()V
+	4       (00000010) const-string         v6, 'recursiveDelete(): rootDir='
+	5       (00000014) invoke-virtual       v5, v6, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	6       (0000001a) move-result-object   v5
+	7       (0000001c) invoke-virtual       v5, v8, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+	8       (00000022) move-result-object   v5
+	9       (00000024) invoke-virtual       v5, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+	10      (0000002a) move-result-object   v5
+	11      (0000002c) invoke-static        v4, v5, Landroid/util/Log;->v(Ljava/lang/String; Ljava/lang/String;)I
+	12      (00000032) if-nez               v8, +4
+
+recursiveDelete-BB@0x36 : [ recursiveDelete-BB@0x38 ]
+	13      (00000036) move                 v2, v3
+
+recursiveDelete-BB@0x38 : 
+	14      (00000038) return               v2
+
+recursiveDelete-BB@0x3a : [ recursiveDelete-BB@0x48 recursiveDelete-BB@0x6e ]
+	15      (0000003a) const/4              v2, 0
+	16      (0000003c) invoke-virtual       v8, Ljava/io/File;->isDirectory()Z
+	17      (00000042) move-result          v4
+	18      (00000044) if-eqz               v4, +15
+
+recursiveDelete-BB@0x48 : [ recursiveDelete-BB@0x54 recursiveDelete-BB@0x6e ]
+	19      (00000048) invoke-virtual       v8, Ljava/io/File;->listFiles()[Ljava/io/File;
+	20      (0000004e) move-result-object   v1
+	21      (00000050) if-eqz               v1, +f
+
+recursiveDelete-BB@0x54 : [ recursiveDelete-BB@0x56 ]
+	22      (00000054) array-length         v4, v1
+
+recursiveDelete-BB@0x56 : [ recursiveDelete-BB@0x5a recursiveDelete-BB@0x6e ]
+	23      (00000056) if-ge                v3, v4, +c
+
+recursiveDelete-BB@0x5a : [ recursiveDelete-BB@0x56 ]
+	24      (0000005a) aget-object          v0, v1, v3
+	25      (0000005e) invoke-direct        v7, v0, Lcom/afwsamples/testdpc/UserIconContentProvider;->recursiveDelete(Ljava/io/File;)I
+	26      (00000064) move-result          v5
+	27      (00000066) add-int/2addr        v2, v5
+	28      (00000068) add-int/lit8         v3, v3, 1
+	29      (0000006c) goto                 -b
+
+recursiveDelete-BB@0x6e : [ recursiveDelete-BB@0x38 ]
+	30      (0000006e) invoke-virtual       v8, Ljava/io/File;->delete()Z
+	31      (00000074) add-int/lit8         v2, v2, 1
+	32      (00000078) goto                 -20
+

@@ -1,0 +1,28 @@
+# Landroidx/appcompat/view/menu/MenuItemImpl;->setShowAsAction(I)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:int
+#
+# - return:void
+
+setShowAsAction-BB@0x0 : [ D:setShowAsAction-BB@0xa 0:setShowAsAction-BB@0x1a 1:setShowAsAction-BB@0x1a 2:setShowAsAction-BB@0x1a ]
+	0       (00000000) and-int/lit8         v0, v3, 3
+	1       (00000004) packed-switch        v0, +14 (0x2c)
+
+setShowAsAction-BB@0xa : 
+	2       (0000000a) new-instance         v0, Ljava/lang/IllegalArgumentException;
+	3       (0000000e) const-string         v1, 'SHOW_AS_ACTION_ALWAYS, SHOW_AS_ACTION_IF_ROOM, and SHOW_AS_ACTION_NEVER are mutually exclusive.'
+	4       (00000012) invoke-direct        v0, v1, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+	5       (00000018) throw                v0
+
+setShowAsAction-BB@0x1a : 
+	6       (0000001a) iput                 v3, v2, Landroidx/appcompat/view/menu/MenuItemImpl;->mShowAsAction I
+	7       (0000001e) iget-object          v0, v2, Landroidx/appcompat/view/menu/MenuItemImpl;->mMenu Landroidx/appcompat/view/menu/MenuBuilder;
+	8       (00000022) invoke-virtual       v0, v2, Landroidx/appcompat/view/menu/MenuBuilder;->onItemActionRequestChanged(Landroidx/appcompat/view/menu/MenuItemImpl;)V
+	9       (00000028) return-void          
+
+setShowAsAction-BB@0x2a : 
+	10      (0000002a) nop                  
+	11      (0000002c) packed-switch-payload 0 1 2
+

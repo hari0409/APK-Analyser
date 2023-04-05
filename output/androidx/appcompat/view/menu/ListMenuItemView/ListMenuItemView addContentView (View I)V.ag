@@ -1,0 +1,24 @@
+# Landroidx/appcompat/view/menu/ListMenuItemView;->addContentView(Landroid/view/View; I)V [access_flags=private]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:android.view.View
+# - v3:int
+#
+# - return:void
+
+addContentView-BB@0x0 : [ addContentView-BB@0x8 addContentView-BB@0x14 ]
+	0       (00000000) iget-object          v0, v1, Landroidx/appcompat/view/menu/ListMenuItemView;->mContent Landroid/widget/LinearLayout;
+	1       (00000004) if-eqz               v0, +8
+
+addContentView-BB@0x8 : [ addContentView-BB@0x12 ]
+	2       (00000008) iget-object          v0, v1, Landroidx/appcompat/view/menu/ListMenuItemView;->mContent Landroid/widget/LinearLayout;
+	3       (0000000c) invoke-virtual       v0, v2, v3, Landroid/widget/LinearLayout;->addView(Landroid/view/View; I)V
+
+addContentView-BB@0x12 : 
+	4       (00000012) return-void          
+
+addContentView-BB@0x14 : [ addContentView-BB@0x12 ]
+	5       (00000014) invoke-virtual       v1, v2, v3, Landroidx/appcompat/view/menu/ListMenuItemView;->addView(Landroid/view/View; I)V
+	6       (0000001a) goto                 -4
+

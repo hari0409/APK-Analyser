@@ -1,0 +1,68 @@
+# Landroidx/appcompat/view/menu/CascadingMenuPopup$1;->onGlobalLayout()V [access_flags=public]
+#
+# Parameters:
+# local registers: v0...v4
+#
+# - return:void
+
+onGlobalLayout-BB@0x0 : [ onGlobalLayout-BB@0x10 onGlobalLayout-BB@0x6c ]
+	0       (00000000) iget-object          v2, v4, Landroidx/appcompat/view/menu/CascadingMenuPopup$1;->this$0 Landroidx/appcompat/view/menu/CascadingMenuPopup;
+	1       (00000004) invoke-virtual       v2, Landroidx/appcompat/view/menu/CascadingMenuPopup;->isShowing()Z
+	2       (0000000a) move-result          v2
+	3       (0000000c) if-eqz               v2, +30
+
+onGlobalLayout-BB@0x10 : [ onGlobalLayout-BB@0x24 onGlobalLayout-BB@0x6c ]
+	4       (00000010) iget-object          v2, v4, Landroidx/appcompat/view/menu/CascadingMenuPopup$1;->this$0 Landroidx/appcompat/view/menu/CascadingMenuPopup;
+	5       (00000014) iget-object          v2, v2, Landroidx/appcompat/view/menu/CascadingMenuPopup;->mShowingMenus Ljava/util/List;
+	6       (00000018) invoke-interface     v2, Ljava/util/List;->size()I
+	7       (0000001e) move-result          v2
+	8       (00000020) if-lez               v2, +26
+
+onGlobalLayout-BB@0x24 : [ onGlobalLayout-BB@0x4a onGlobalLayout-BB@0x6c ]
+	9       (00000024) iget-object          v2, v4, Landroidx/appcompat/view/menu/CascadingMenuPopup$1;->this$0 Landroidx/appcompat/view/menu/CascadingMenuPopup;
+	10      (00000028) iget-object          v2, v2, Landroidx/appcompat/view/menu/CascadingMenuPopup;->mShowingMenus Ljava/util/List;
+	11      (0000002c) const/4              v3, 0
+	12      (0000002e) invoke-interface     v2, v3, Ljava/util/List;->get(I)Ljava/lang/Object;
+	13      (00000034) move-result-object   v2
+	14      (00000036) check-cast           v2, Landroidx/appcompat/view/menu/CascadingMenuPopup$CascadingMenuInfo;
+	15      (0000003a) iget-object          v2, v2, Landroidx/appcompat/view/menu/CascadingMenuPopup$CascadingMenuInfo;->window Landroidx/appcompat/widget/MenuPopupWindow;
+	16      (0000003e) invoke-virtual       v2, Landroidx/appcompat/widget/MenuPopupWindow;->isModal()Z
+	17      (00000044) move-result          v2
+	18      (00000046) if-nez               v2, +13
+
+onGlobalLayout-BB@0x4a : [ onGlobalLayout-BB@0x56 onGlobalLayout-BB@0x62 ]
+	19      (0000004a) iget-object          v2, v4, Landroidx/appcompat/view/menu/CascadingMenuPopup$1;->this$0 Landroidx/appcompat/view/menu/CascadingMenuPopup;
+	20      (0000004e) iget-object          v0, v2, Landroidx/appcompat/view/menu/CascadingMenuPopup;->mShownAnchorView Landroid/view/View;
+	21      (00000052) if-eqz               v0, +8
+
+onGlobalLayout-BB@0x56 : [ onGlobalLayout-BB@0x62 onGlobalLayout-BB@0x6e ]
+	22      (00000056) invoke-virtual       v0, Landroid/view/View;->isShown()Z
+	23      (0000005c) move-result          v2
+	24      (0000005e) if-nez               v2, +8
+
+onGlobalLayout-BB@0x62 : [ onGlobalLayout-BB@0x6c ]
+	25      (00000062) iget-object          v2, v4, Landroidx/appcompat/view/menu/CascadingMenuPopup$1;->this$0 Landroidx/appcompat/view/menu/CascadingMenuPopup;
+	26      (00000066) invoke-virtual       v2, Landroidx/appcompat/view/menu/CascadingMenuPopup;->dismiss()V
+
+onGlobalLayout-BB@0x6c : 
+	27      (0000006c) return-void          
+
+onGlobalLayout-BB@0x6e : [ onGlobalLayout-BB@0x7e ]
+	28      (0000006e) iget-object          v2, v4, Landroidx/appcompat/view/menu/CascadingMenuPopup$1;->this$0 Landroidx/appcompat/view/menu/CascadingMenuPopup;
+	29      (00000072) iget-object          v2, v2, Landroidx/appcompat/view/menu/CascadingMenuPopup;->mShowingMenus Ljava/util/List;
+	30      (00000076) invoke-interface     v2, Ljava/util/List;->iterator()Ljava/util/Iterator;
+	31      (0000007c) move-result-object   v2
+
+onGlobalLayout-BB@0x7e : [ onGlobalLayout-BB@0x8a onGlobalLayout-BB@0x6c ]
+	32      (0000007e) invoke-interface     v2, Ljava/util/Iterator;->hasNext()Z
+	33      (00000084) move-result          v3
+	34      (00000086) if-eqz               v3, -d
+
+onGlobalLayout-BB@0x8a : [ onGlobalLayout-BB@0x7e ]
+	35      (0000008a) invoke-interface     v2, Ljava/util/Iterator;->next()Ljava/lang/Object;
+	36      (00000090) move-result-object   v1
+	37      (00000092) check-cast           v1, Landroidx/appcompat/view/menu/CascadingMenuPopup$CascadingMenuInfo;
+	38      (00000096) iget-object          v3, v1, Landroidx/appcompat/view/menu/CascadingMenuPopup$CascadingMenuInfo;->window Landroidx/appcompat/widget/MenuPopupWindow;
+	39      (0000009a) invoke-virtual       v3, Landroidx/appcompat/widget/MenuPopupWindow;->show()V
+	40      (000000a0) goto                 -11
+

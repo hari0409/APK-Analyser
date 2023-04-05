@@ -1,0 +1,107 @@
+# Landroidx/appcompat/widget/LinearLayoutCompat;->getBaseline()I [access_flags=public]
+#
+# Parameters:
+# local registers: v0...v8
+#
+# - return:int
+
+getBaseline-BB@0x0 : [ getBaseline-BB@0xa getBaseline-BB@0x14 ]
+	0       (00000000) const/4              v5, -1
+	1       (00000002) iget                 v6, v8, Landroidx/appcompat/widget/LinearLayoutCompat;->mBaselineAlignedChildIndex I
+	2       (00000006) if-gez               v6, +7
+
+getBaseline-BB@0xa : [ getBaseline-BB@0x12 ]
+	3       (0000000a) invoke-super         v8, Landroid/view/ViewGroup;->getBaseline()I
+	4       (00000010) move-result          v5
+
+getBaseline-BB@0x12 : 
+	5       (00000012) return               v5
+
+getBaseline-BB@0x14 : [ getBaseline-BB@0x24 getBaseline-BB@0x34 ]
+	6       (00000014) invoke-virtual       v8, Landroidx/appcompat/widget/LinearLayoutCompat;->getChildCount()I
+	7       (0000001a) move-result          v6
+	8       (0000001c) iget                 v7, v8, Landroidx/appcompat/widget/LinearLayoutCompat;->mBaselineAlignedChildIndex I
+	9       (00000020) if-gt                v6, v7, +a
+
+getBaseline-BB@0x24 : 
+	10      (00000024) new-instance         v5, Ljava/lang/RuntimeException;
+	11      (00000028) const-string         v6, 'mBaselineAlignedChildIndex of LinearLayout set to an index that is out of bounds.'
+	12      (0000002c) invoke-direct        v5, v6, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;)V
+	13      (00000032) throw                v5
+
+getBaseline-BB@0x34 : [ getBaseline-BB@0x4c getBaseline-BB@0x64 ]
+	14      (00000034) iget                 v6, v8, Landroidx/appcompat/widget/LinearLayoutCompat;->mBaselineAlignedChildIndex I
+	15      (00000038) invoke-virtual       v8, v6, Landroidx/appcompat/widget/LinearLayoutCompat;->getChildAt(I)Landroid/view/View;
+	16      (0000003e) move-result-object   v0
+	17      (00000040) invoke-virtual       v0, Landroid/view/View;->getBaseline()I
+	18      (00000046) move-result          v1
+	19      (00000048) if-ne                v1, v5, +e
+
+getBaseline-BB@0x4c : [ getBaseline-BB@0x54 getBaseline-BB@0x12 ]
+	20      (0000004c) iget                 v6, v8, Landroidx/appcompat/widget/LinearLayoutCompat;->mBaselineAlignedChildIndex I
+	21      (00000050) if-eqz               v6, -1f
+
+getBaseline-BB@0x54 : 
+	22      (00000054) new-instance         v5, Ljava/lang/RuntimeException;
+	23      (00000058) const-string         v6, "mBaselineAlignedChildIndex of LinearLayout points to a View that doesn't know how to get its baseline."
+	24      (0000005c) invoke-direct        v5, v6, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;)V
+	25      (00000062) throw                v5
+
+getBaseline-BB@0x64 : [ getBaseline-BB@0x72 getBaseline-BB@0x88 ]
+	26      (00000064) iget                 v2, v8, Landroidx/appcompat/widget/LinearLayoutCompat;->mBaselineChildTop I
+	27      (00000068) iget                 v5, v8, Landroidx/appcompat/widget/LinearLayoutCompat;->mOrientation I
+	28      (0000006c) const/4              v6, 1
+	29      (0000006e) if-ne                v5, v6, +d
+
+getBaseline-BB@0x72 : [ getBaseline-BB@0x82 getBaseline-BB@0x88 ]
+	30      (00000072) iget                 v5, v8, Landroidx/appcompat/widget/LinearLayoutCompat;->mGravity I
+	31      (00000076) and-int/lit8         v4, v5, 112
+	32      (0000007a) const/16             v5, 48
+	33      (0000007e) if-eq                v4, v5, +5
+
+getBaseline-BB@0x82 : [ D:getBaseline-BB@0x88 16:getBaseline-BB@0xc4 80:getBaseline-BB@0x9e ]
+	34      (00000082) sparse-switch        v4, +3b (0xf8)
+
+getBaseline-BB@0x88 : [ getBaseline-BB@0x12 ]
+	35      (00000088) invoke-virtual       v0, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
+	36      (0000008e) move-result-object   v3
+	37      (00000090) check-cast           v3, Landroidx/appcompat/widget/LinearLayoutCompat$LayoutParams;
+	38      (00000094) iget                 v5, v3, Landroidx/appcompat/widget/LinearLayoutCompat$LayoutParams;->topMargin I
+	39      (00000098) add-int/2addr        v5, v2
+	40      (0000009a) add-int/2addr        v5, v1
+	41      (0000009c) goto                 -45
+
+getBaseline-BB@0x9e : [ getBaseline-BB@0x88 ]
+	42      (0000009e) invoke-virtual       v8, Landroidx/appcompat/widget/LinearLayoutCompat;->getBottom()I
+	43      (000000a4) move-result          v5
+	44      (000000a6) invoke-virtual       v8, Landroidx/appcompat/widget/LinearLayoutCompat;->getTop()I
+	45      (000000ac) move-result          v6
+	46      (000000ae) sub-int/2addr        v5, v6
+	47      (000000b0) invoke-virtual       v8, Landroidx/appcompat/widget/LinearLayoutCompat;->getPaddingBottom()I
+	48      (000000b6) move-result          v6
+	49      (000000b8) sub-int/2addr        v5, v6
+	50      (000000ba) iget                 v6, v8, Landroidx/appcompat/widget/LinearLayoutCompat;->mTotalLength I
+	51      (000000be) sub-int              v2, v5, v6
+	52      (000000c2) goto                 -1d
+
+getBaseline-BB@0xc4 : [ getBaseline-BB@0x88 ]
+	53      (000000c4) invoke-virtual       v8, Landroidx/appcompat/widget/LinearLayoutCompat;->getBottom()I
+	54      (000000ca) move-result          v5
+	55      (000000cc) invoke-virtual       v8, Landroidx/appcompat/widget/LinearLayoutCompat;->getTop()I
+	56      (000000d2) move-result          v6
+	57      (000000d4) sub-int/2addr        v5, v6
+	58      (000000d6) invoke-virtual       v8, Landroidx/appcompat/widget/LinearLayoutCompat;->getPaddingTop()I
+	59      (000000dc) move-result          v6
+	60      (000000de) sub-int/2addr        v5, v6
+	61      (000000e0) invoke-virtual       v8, Landroidx/appcompat/widget/LinearLayoutCompat;->getPaddingBottom()I
+	62      (000000e6) move-result          v6
+	63      (000000e8) sub-int/2addr        v5, v6
+	64      (000000ea) iget                 v6, v8, Landroidx/appcompat/widget/LinearLayoutCompat;->mTotalLength I
+	65      (000000ee) sub-int/2addr        v5, v6
+	66      (000000f0) div-int/lit8         v5, v5, 2
+	67      (000000f4) add-int/2addr        v2, v5
+	68      (000000f6) goto                 -37
+
+getBaseline-BB@0xf8 : 
+	69      (000000f8) sparse-switch-payload 10 50
+

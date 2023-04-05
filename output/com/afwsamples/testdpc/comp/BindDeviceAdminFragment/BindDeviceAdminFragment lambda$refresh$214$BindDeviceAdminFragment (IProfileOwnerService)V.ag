@@ -1,0 +1,15 @@
+# Lcom/afwsamples/testdpc/comp/BindDeviceAdminFragment;->lambda$refresh$214$BindDeviceAdminFragment(Lcom/afwsamples/testdpc/comp/IProfileOwnerService;)V [access_flags=final synthetic]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:com.afwsamples.testdpc.comp.IProfileOwnerService
+#
+# - return:void
+
+lambda$refresh$214$BindDeviceAdminFragment-BB@0x0 : 
+	0       (00000000) iget-object          v0, v2, Lcom/afwsamples/testdpc/comp/BindDeviceAdminFragment;->mHideLauncherIconPreference Lcom/afwsamples/testdpc/common/preference/DpcSwitchPreference;
+	1       (00000004) invoke-interface     v3, Lcom/afwsamples/testdpc/comp/IProfileOwnerService;->isLauncherIconHidden()Z
+	2       (0000000a) move-result          v1
+	3       (0000000c) invoke-virtual       v0, v1, Lcom/afwsamples/testdpc/common/preference/DpcSwitchPreference;->setChecked(Z)V
+	4       (00000012) return-void          
+

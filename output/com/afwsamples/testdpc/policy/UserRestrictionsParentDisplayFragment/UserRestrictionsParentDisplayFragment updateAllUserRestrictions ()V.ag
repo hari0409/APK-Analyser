@@ -1,0 +1,25 @@
+# Lcom/afwsamples/testdpc/policy/UserRestrictionsParentDisplayFragment;->updateAllUserRestrictions()V [access_flags=private]
+#
+# Parameters:
+# local registers: v0...v5
+#
+# - return:void
+
+updateAllUserRestrictions-BB@0x0 : [ updateAllUserRestrictions-BB@0x8 ]
+	0       (00000000) sget-object          v2, Lcom/afwsamples/testdpc/policy/UserRestriction;->PROFILE_OWNER_ORG_DEVICE_RESTRICTIONS [Lcom/afwsamples/testdpc/policy/UserRestriction;
+	1       (00000004) array-length         v3, v2
+	2       (00000006) const/4              v1, 0
+
+updateAllUserRestrictions-BB@0x8 : [ updateAllUserRestrictions-BB@0xc updateAllUserRestrictions-BB@0x20 ]
+	3       (00000008) if-ge                v1, v3, +c
+
+updateAllUserRestrictions-BB@0xc : [ updateAllUserRestrictions-BB@0x8 ]
+	4       (0000000c) aget-object          v0, v2, v1
+	5       (00000010) iget-object          v4, v0, Lcom/afwsamples/testdpc/policy/UserRestriction;->key Ljava/lang/String;
+	6       (00000014) invoke-direct        v5, v4, Lcom/afwsamples/testdpc/policy/UserRestrictionsParentDisplayFragment;->updateUserRestriction(Ljava/lang/String;)V
+	7       (0000001a) add-int/lit8         v1, v1, 1
+	8       (0000001e) goto                 -b
+
+updateAllUserRestrictions-BB@0x20 : 
+	9       (00000020) return-void          
+

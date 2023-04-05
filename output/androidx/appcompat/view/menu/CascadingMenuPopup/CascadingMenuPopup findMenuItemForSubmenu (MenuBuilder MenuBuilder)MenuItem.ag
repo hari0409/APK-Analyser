@@ -1,0 +1,40 @@
+# Landroidx/appcompat/view/menu/CascadingMenuPopup;->findMenuItemForSubmenu(Landroidx/appcompat/view/menu/MenuBuilder; Landroidx/appcompat/view/menu/MenuBuilder;)Landroid/view/MenuItem; [access_flags=private]
+#
+# Parameters:
+# - local registers: v0...v4
+# - v5:androidx.appcompat.view.menu.MenuBuilder
+# - v6:androidx.appcompat.view.menu.MenuBuilder
+#
+# - return:android.view.MenuItem
+
+findMenuItemForSubmenu-BB@0x0 : [ findMenuItemForSubmenu-BB@0xa ]
+	0       (00000000) const/4              v1, 0
+	1       (00000002) invoke-virtual       v5, Landroidx/appcompat/view/menu/MenuBuilder;->size()I
+	2       (00000008) move-result          v0
+
+findMenuItemForSubmenu-BB@0xa : [ findMenuItemForSubmenu-BB@0xe findMenuItemForSubmenu-BB@0x36 ]
+	3       (0000000a) if-ge                v1, v0, +16
+
+findMenuItemForSubmenu-BB@0xe : [ findMenuItemForSubmenu-BB@0x22 findMenuItemForSubmenu-BB@0x30 ]
+	4       (0000000e) invoke-virtual       v5, v1, Landroidx/appcompat/view/menu/MenuBuilder;->getItem(I)Landroid/view/MenuItem;
+	5       (00000014) move-result-object   v2
+	6       (00000016) invoke-interface     v2, Landroid/view/MenuItem;->hasSubMenu()Z
+	7       (0000001c) move-result          v3
+	8       (0000001e) if-eqz               v3, +9
+
+findMenuItemForSubmenu-BB@0x22 : [ findMenuItemForSubmenu-BB@0x2e findMenuItemForSubmenu-BB@0x30 ]
+	9       (00000022) invoke-interface     v2, Landroid/view/MenuItem;->getSubMenu()Landroid/view/SubMenu;
+	10      (00000028) move-result-object   v3
+	11      (0000002a) if-ne                v6, v3, +3
+
+findMenuItemForSubmenu-BB@0x2e : 
+	12      (0000002e) return-object        v2
+
+findMenuItemForSubmenu-BB@0x30 : [ findMenuItemForSubmenu-BB@0xa ]
+	13      (00000030) add-int/lit8         v1, v1, 1
+	14      (00000034) goto                 -15
+
+findMenuItemForSubmenu-BB@0x36 : [ findMenuItemForSubmenu-BB@0x2e ]
+	15      (00000036) const/4              v2, 0
+	16      (00000038) goto                 -5
+

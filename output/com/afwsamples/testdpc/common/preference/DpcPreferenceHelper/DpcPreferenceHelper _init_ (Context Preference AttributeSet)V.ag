@@ -1,0 +1,60 @@
+# Lcom/afwsamples/testdpc/common/preference/DpcPreferenceHelper;-><init>(Landroid/content/Context; Landroidx/preference/Preference; Landroid/util/AttributeSet;)V [access_flags=public constructor]
+#
+# Parameters:
+# - local registers: v0...v3
+# - v4:android.content.Context
+# - v5:androidx.preference.Preference
+# - v6:android.util.AttributeSet
+#
+# - return:void
+
+<init>-BB@0x0 : [ <init>-BB@0x42 <init>-BB@0x4a ]
+	0       (00000000) const/4              v2, 0
+	1       (00000002) invoke-direct        v3, Ljava/lang/Object;-><init>()V
+	2       (00000008) const/4              v1, 0
+	3       (0000000a) iput-object          v1, v3, Lcom/afwsamples/testdpc/common/preference/DpcPreferenceHelper;->mConstraintViolationSummary Ljava/lang/CharSequence;
+	4       (0000000e) new-instance         v1, Ljava/util/ArrayList;
+	5       (00000012) invoke-direct        v1, Ljava/util/ArrayList;-><init>()V
+	6       (00000018) iput-object          v1, v3, Lcom/afwsamples/testdpc/common/preference/DpcPreferenceHelper;->mCustomConstraints Ljava/util/List;
+	7       (0000001c) iput-object          v4, v3, Lcom/afwsamples/testdpc/common/preference/DpcPreferenceHelper;->mContext Landroid/content/Context;
+	8       (00000020) iput-object          v5, v3, Lcom/afwsamples/testdpc/common/preference/DpcPreferenceHelper;->mPreference Landroidx/preference/Preference;
+	9       (00000024) sget-object          v1, Lcom/afwsamples/testdpc/R$styleable;->DpcPreference [I
+	10      (00000028) invoke-virtual       v4, v6, v1, Landroid/content/Context;->obtainStyledAttributes(Landroid/util/AttributeSet; [I)Landroid/content/res/TypedArray;
+	11      (0000002e) move-result-object   v0
+	12      (00000030) const/4              v1, 2
+	13      (00000032) invoke-virtual       v0, v1, v2, Landroid/content/res/TypedArray;->getInt(I I)I
+	14      (00000038) move-result          v1
+	15      (0000003a) iput                 v1, v3, Lcom/afwsamples/testdpc/common/preference/DpcPreferenceHelper;->mMinSdkVersion I
+	16      (0000003e) if-nez               v6, +6
+
+<init>-BB@0x42 : [ <init>-BB@0x4a ]
+	17      (00000042) const/16             v1, 21
+	18      (00000046) iput                 v1, v3, Lcom/afwsamples/testdpc/common/preference/DpcPreferenceHelper;->mMinSdkVersion I
+
+<init>-BB@0x4a : [ <init>-BB@0x52 <init>-BB@0x62 ]
+	19      (0000004a) iget                 v1, v3, Lcom/afwsamples/testdpc/common/preference/DpcPreferenceHelper;->mMinSdkVersion I
+	20      (0000004e) if-nez               v1, +a
+
+<init>-BB@0x52 : 
+	21      (00000052) new-instance         v1, Ljava/lang/RuntimeException;
+	22      (00000056) const-string         v2, 'testdpc:minSdkVersion must be specified.'
+	23      (0000005a) invoke-direct        v1, v2, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;)V
+	24      (00000060) throw                v1
+
+<init>-BB@0x62 : 
+	25      (00000062) const/16             v1, 14
+	26      (00000066) invoke-virtual       v0, v2, v1, Landroid/content/res/TypedArray;->getInt(I I)I
+	27      (0000006c) move-result          v1
+	28      (0000006e) iput                 v1, v3, Lcom/afwsamples/testdpc/common/preference/DpcPreferenceHelper;->mAdminConstraint I
+	29      (00000072) const/4              v1, 3
+	30      (00000074) const/4              v2, 7
+	31      (00000076) invoke-virtual       v0, v1, v2, Landroid/content/res/TypedArray;->getInt(I I)I
+	32      (0000007c) move-result          v1
+	33      (0000007e) iput                 v1, v3, Lcom/afwsamples/testdpc/common/preference/DpcPreferenceHelper;->mUserConstraint I
+	34      (00000082) const/4              v1, 1
+	35      (00000084) invoke-virtual       v0, v1, Landroid/content/res/TypedArray;->getString(I)Ljava/lang/String;
+	36      (0000008a) move-result-object   v1
+	37      (0000008c) iput-object          v1, v3, Lcom/afwsamples/testdpc/common/preference/DpcPreferenceHelper;->mDelegationConstraint Ljava/lang/String;
+	38      (00000090) invoke-virtual       v0, Landroid/content/res/TypedArray;->recycle()V
+	39      (00000096) return-void          
+

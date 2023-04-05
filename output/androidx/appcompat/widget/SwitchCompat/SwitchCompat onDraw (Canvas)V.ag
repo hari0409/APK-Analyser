@@ -1,0 +1,184 @@
+# Landroidx/appcompat/widget/SwitchCompat;->onDraw(Landroid/graphics/Canvas;)V [access_flags=protected]
+#
+# Parameters:
+# - local registers: v0...v21
+# - v22:android.graphics.Canvas
+#
+# - return:void
+
+onDraw-BB@0x0 : [ onDraw-BB@0x1e onDraw-BB@0x1f8 ]
+	0       (00000000) invoke-super/range   v21 ... v22, Landroid/widget/CompoundButton;->onDraw(Landroid/graphics/Canvas;)V
+	1       (00000006) move-object/from16   v0, v21
+	2       (0000000a) iget-object          v8, v0, Landroidx/appcompat/widget/SwitchCompat;->mTempRect Landroid/graphics/Rect;
+	3       (0000000e) move-object/from16   v0, v21
+	4       (00000012) iget-object          v0, v0, Landroidx/appcompat/widget/SwitchCompat;->mTrackDrawable Landroid/graphics/drawable/Drawable;
+	5       (00000016) move-object/from16   v17, v0
+	6       (0000001a) if-eqz               v17, +ef
+
+onDraw-BB@0x1e : [ onDraw-BB@0x28 ]
+	7       (0000001e) move-object/from16   v0, v17
+	8       (00000022) invoke-virtual       v0, v8, Landroid/graphics/drawable/Drawable;->getPadding(Landroid/graphics/Rect;)Z
+
+onDraw-BB@0x28 : [ onDraw-BB@0x5c onDraw-BB@0xe8 ]
+	9       (00000028) move-object/from16   v0, v21
+	10      (0000002c) iget                 v14, v0, Landroidx/appcompat/widget/SwitchCompat;->mSwitchTop I
+	11      (00000030) move-object/from16   v0, v21
+	12      (00000034) iget                 v10, v0, Landroidx/appcompat/widget/SwitchCompat;->mSwitchBottom I
+	13      (00000038) iget                 v0, v8, Landroid/graphics/Rect;->top I
+	14      (0000003c) move/from16          v18, v0
+	15      (00000040) add-int              v12, v14, v18
+	16      (00000044) iget                 v0, v8, Landroid/graphics/Rect;->bottom I
+	17      (00000048) move/from16          v18, v0
+	18      (0000004c) sub-int              v11, v10, v18
+	19      (00000050) move-object/from16   v0, v21
+	20      (00000054) iget-object          v15, v0, Landroidx/appcompat/widget/SwitchCompat;->mThumbDrawable Landroid/graphics/drawable/Drawable;
+	21      (00000058) if-eqz               v17, +48
+
+onDraw-BB@0x5c : [ onDraw-BB@0x6c onDraw-BB@0x202 ]
+	22      (0000005c) move-object/from16   v0, v21
+	23      (00000060) iget-boolean         v0, v0, Landroidx/appcompat/widget/SwitchCompat;->mSplitTrack Z
+	24      (00000064) move/from16          v18, v0
+	25      (00000068) if-eqz               v18, +cd
+
+onDraw-BB@0x6c : [ onDraw-BB@0x70 onDraw-BB@0x202 ]
+	26      (0000006c) if-eqz               v15, +cb
+
+onDraw-BB@0x70 : [ onDraw-BB@0xe8 ]
+	27      (00000070) invoke-static        v15, Landroidx/appcompat/widget/DrawableUtils;->getOpticalBounds(Landroid/graphics/drawable/Drawable;)Landroid/graphics/Rect;
+	28      (00000076) move-result-object   v6
+	29      (00000078) invoke-virtual       v15, v8, Landroid/graphics/drawable/Drawable;->copyBounds(Landroid/graphics/Rect;)V
+	30      (0000007e) iget                 v0, v8, Landroid/graphics/Rect;->left I
+	31      (00000082) move/from16          v18, v0
+	32      (00000086) iget                 v0, v6, Landroid/graphics/Rect;->left I
+	33      (0000008a) move/from16          v19, v0
+	34      (0000008e) add-int              v18, v18, v19
+	35      (00000092) move/from16          v0, v18
+	36      (00000096) iput                 v0, v8, Landroid/graphics/Rect;->left I
+	37      (0000009a) iget                 v0, v8, Landroid/graphics/Rect;->right I
+	38      (0000009e) move/from16          v18, v0
+	39      (000000a2) iget                 v0, v6, Landroid/graphics/Rect;->right I
+	40      (000000a6) move/from16          v19, v0
+	41      (000000aa) sub-int              v18, v18, v19
+	42      (000000ae) move/from16          v0, v18
+	43      (000000b2) iput                 v0, v8, Landroid/graphics/Rect;->right I
+	44      (000000b6) invoke-virtual/range v22, Landroid/graphics/Canvas;->save()I
+	45      (000000bc) move-result          v9
+	46      (000000be) sget-object          v18, Landroid/graphics/Region$Op;->DIFFERENCE Landroid/graphics/Region$Op;
+	47      (000000c2) move-object/from16   v0, v22
+	48      (000000c6) move-object/from16   v1, v18
+	49      (000000ca) invoke-virtual       v0, v8, v1, Landroid/graphics/Canvas;->clipRect(Landroid/graphics/Rect; Landroid/graphics/Region$Op;)Z
+	50      (000000d0) move-object/from16   v0, v17
+	51      (000000d4) move-object/from16   v1, v22
+	52      (000000d8) invoke-virtual       v0, v1, Landroid/graphics/drawable/Drawable;->draw(Landroid/graphics/Canvas;)V
+	53      (000000de) move-object/from16   v0, v22
+	54      (000000e2) invoke-virtual       v0, v9, Landroid/graphics/Canvas;->restoreToCount(I)V
+
+onDraw-BB@0xe8 : [ onDraw-BB@0xf4 onDraw-BB@0xfe ]
+	55      (000000e8) invoke-virtual/range v22, Landroid/graphics/Canvas;->save()I
+	56      (000000ee) move-result          v9
+	57      (000000f0) if-eqz               v15, +7
+
+onDraw-BB@0xf4 : [ onDraw-BB@0xfe ]
+	58      (000000f4) move-object/from16   v0, v22
+	59      (000000f8) invoke-virtual       v15, v0, Landroid/graphics/drawable/Drawable;->draw(Landroid/graphics/Canvas;)V
+
+onDraw-BB@0xfe : [ onDraw-BB@0x10a onDraw-BB@0x214 ]
+	60      (000000fe) invoke-direct/range  v21, Landroidx/appcompat/widget/SwitchCompat;->getTargetCheckedState()Z
+	61      (00000104) move-result          v18
+	62      (00000106) if-eqz               v18, +87
+
+onDraw-BB@0x10a : [ onDraw-BB@0x112 ]
+	63      (0000010a) move-object/from16   v0, v21
+	64      (0000010e) iget-object          v13, v0, Landroidx/appcompat/widget/SwitchCompat;->mOnLayout Landroid/text/Layout;
+
+onDraw-BB@0x112 : [ onDraw-BB@0x116 onDraw-BB@0x1ec ]
+	65      (00000112) if-eqz               v13, +6d
+
+onDraw-BB@0x116 : [ onDraw-BB@0x12e onDraw-BB@0x160 ]
+	66      (00000116) invoke-virtual/range v21, Landroidx/appcompat/widget/SwitchCompat;->getDrawableState()[I
+	67      (0000011c) move-result-object   v5
+	68      (0000011e) move-object/from16   v0, v21
+	69      (00000122) iget-object          v0, v0, Landroidx/appcompat/widget/SwitchCompat;->mTextColors Landroid/content/res/ColorStateList;
+	70      (00000126) move-object/from16   v18, v0
+	71      (0000012a) if-eqz               v18, +1b
+
+onDraw-BB@0x12e : [ onDraw-BB@0x160 ]
+	72      (0000012e) move-object/from16   v0, v21
+	73      (00000132) iget-object          v0, v0, Landroidx/appcompat/widget/SwitchCompat;->mTextPaint Landroid/text/TextPaint;
+	74      (00000136) move-object/from16   v18, v0
+	75      (0000013a) move-object/from16   v0, v21
+	76      (0000013e) iget-object          v0, v0, Landroidx/appcompat/widget/SwitchCompat;->mTextColors Landroid/content/res/ColorStateList;
+	77      (00000142) move-object/from16   v19, v0
+	78      (00000146) const/16             v20, 0
+	79      (0000014a) move-object/from16   v0, v19
+	80      (0000014e) move/from16          v1, v20
+	81      (00000152) invoke-virtual       v0, v5, v1, Landroid/content/res/ColorStateList;->getColorForState([I I)I
+	82      (00000158) move-result          v19
+	83      (0000015a) invoke-virtual/range v18 ... v19, Landroid/text/TextPaint;->setColor(I)V
+
+onDraw-BB@0x160 : [ onDraw-BB@0x178 onDraw-BB@0x220 ]
+	84      (00000160) move-object/from16   v0, v21
+	85      (00000164) iget-object          v0, v0, Landroidx/appcompat/widget/SwitchCompat;->mTextPaint Landroid/text/TextPaint;
+	86      (00000168) move-object/from16   v18, v0
+	87      (0000016c) move-object/from16   v0, v18
+	88      (00000170) iput-object          v5, v0, Landroid/text/TextPaint;->drawableState [I
+	89      (00000174) if-eqz               v15, +56
+
+onDraw-BB@0x178 : [ onDraw-BB@0x194 ]
+	90      (00000178) invoke-virtual       v15, Landroid/graphics/drawable/Drawable;->getBounds()Landroid/graphics/Rect;
+	91      (0000017e) move-result-object   v3
+	92      (00000180) iget                 v0, v3, Landroid/graphics/Rect;->left I
+	93      (00000184) move/from16          v18, v0
+	94      (00000188) iget                 v0, v3, Landroid/graphics/Rect;->right I
+	95      (0000018c) move/from16          v19, v0
+	96      (00000190) add-int              v4, v18, v19
+
+onDraw-BB@0x194 : [ onDraw-BB@0x1ec ]
+	97      (00000194) div-int/lit8         v18, v4, 2
+	98      (00000198) invoke-virtual       v13, Landroid/text/Layout;->getWidth()I
+	99      (0000019e) move-result          v19
+	100     (000001a0) div-int/lit8         v19, v19, 2
+	101     (000001a4) sub-int              v7, v18, v19
+	102     (000001a8) add-int              v18, v12, v11
+	103     (000001ac) div-int/lit8         v18, v18, 2
+	104     (000001b0) invoke-virtual       v13, Landroid/text/Layout;->getHeight()I
+	105     (000001b6) move-result          v19
+	106     (000001b8) div-int/lit8         v19, v19, 2
+	107     (000001bc) sub-int              v16, v18, v19
+	108     (000001c0) int-to-float         v0, v7
+	109     (000001c2) move/from16          v18, v0
+	110     (000001c6) move/from16          v0, v16
+	111     (000001ca) int-to-float         v0, v0
+	112     (000001cc) move/from16          v19, v0
+	113     (000001d0) move-object/from16   v0, v22
+	114     (000001d4) move/from16          v1, v18
+	115     (000001d8) move/from16          v2, v19
+	116     (000001dc) invoke-virtual       v0, v1, v2, Landroid/graphics/Canvas;->translate(F F)V
+	117     (000001e2) move-object/from16   v0, v22
+	118     (000001e6) invoke-virtual       v13, v0, Landroid/text/Layout;->draw(Landroid/graphics/Canvas;)V
+
+onDraw-BB@0x1ec : 
+	119     (000001ec) move-object/from16   v0, v22
+	120     (000001f0) invoke-virtual       v0, v9, Landroid/graphics/Canvas;->restoreToCount(I)V
+	121     (000001f6) return-void          
+
+onDraw-BB@0x1f8 : [ onDraw-BB@0x28 ]
+	122     (000001f8) invoke-virtual       v8, Landroid/graphics/Rect;->setEmpty()V
+	123     (000001fe) goto/16              -eb
+
+onDraw-BB@0x202 : [ onDraw-BB@0xe8 ]
+	124     (00000202) move-object/from16   v0, v17
+	125     (00000206) move-object/from16   v1, v22
+	126     (0000020a) invoke-virtual       v0, v1, Landroid/graphics/drawable/Drawable;->draw(Landroid/graphics/Canvas;)V
+	127     (00000210) goto/16              -94
+
+onDraw-BB@0x214 : [ onDraw-BB@0x112 ]
+	128     (00000214) move-object/from16   v0, v21
+	129     (00000218) iget-object          v13, v0, Landroidx/appcompat/widget/SwitchCompat;->mOffLayout Landroid/text/Layout;
+	130     (0000021c) goto/16              -85
+
+onDraw-BB@0x220 : [ onDraw-BB@0x194 ]
+	131     (00000220) invoke-virtual/range v21, Landroidx/appcompat/widget/SwitchCompat;->getWidth()I
+	132     (00000226) move-result          v4
+	133     (00000228) goto                 -4a
+

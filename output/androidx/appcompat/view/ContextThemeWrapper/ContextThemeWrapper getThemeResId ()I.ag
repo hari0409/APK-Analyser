@@ -1,0 +1,11 @@
+# Landroidx/appcompat/view/ContextThemeWrapper;->getThemeResId()I [access_flags=public]
+#
+# Parameters:
+# local registers: v0...v1
+#
+# - return:int
+
+getThemeResId-BB@0x0 : 
+	0       (00000000) iget                 v0, v1, Landroidx/appcompat/view/ContextThemeWrapper;->mThemeResource I
+	1       (00000004) return               v0
+

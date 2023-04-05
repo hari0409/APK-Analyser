@@ -1,0 +1,39 @@
+# Landroidx/appcompat/widget/ToolbarWidgetWrapper;->setCustomView(Landroid/view/View;)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:android.view.View
+#
+# - return:void
+
+setCustomView-BB@0x0 : [ setCustomView-BB@0x8 setCustomView-BB@0x22 ]
+	0       (00000000) iget-object          v0, v2, Landroidx/appcompat/widget/ToolbarWidgetWrapper;->mCustomView Landroid/view/View;
+	1       (00000004) if-eqz               v0, +f
+
+setCustomView-BB@0x8 : [ setCustomView-BB@0x14 setCustomView-BB@0x22 ]
+	2       (00000008) iget                 v0, v2, Landroidx/appcompat/widget/ToolbarWidgetWrapper;->mDisplayOpts I
+	3       (0000000c) and-int/lit8         v0, v0, 16
+	4       (00000010) if-eqz               v0, +9
+
+setCustomView-BB@0x14 : [ setCustomView-BB@0x22 ]
+	5       (00000014) iget-object          v0, v2, Landroidx/appcompat/widget/ToolbarWidgetWrapper;->mToolbar Landroidx/appcompat/widget/Toolbar;
+	6       (00000018) iget-object          v1, v2, Landroidx/appcompat/widget/ToolbarWidgetWrapper;->mCustomView Landroid/view/View;
+	7       (0000001c) invoke-virtual       v0, v1, Landroidx/appcompat/widget/Toolbar;->removeView(Landroid/view/View;)V
+
+setCustomView-BB@0x22 : [ setCustomView-BB@0x2a setCustomView-BB@0x44 ]
+	8       (00000022) iput-object          v3, v2, Landroidx/appcompat/widget/ToolbarWidgetWrapper;->mCustomView Landroid/view/View;
+	9       (00000026) if-eqz               v3, +f
+
+setCustomView-BB@0x2a : [ setCustomView-BB@0x36 setCustomView-BB@0x44 ]
+	10      (0000002a) iget                 v0, v2, Landroidx/appcompat/widget/ToolbarWidgetWrapper;->mDisplayOpts I
+	11      (0000002e) and-int/lit8         v0, v0, 16
+	12      (00000032) if-eqz               v0, +9
+
+setCustomView-BB@0x36 : [ setCustomView-BB@0x44 ]
+	13      (00000036) iget-object          v0, v2, Landroidx/appcompat/widget/ToolbarWidgetWrapper;->mToolbar Landroidx/appcompat/widget/Toolbar;
+	14      (0000003a) iget-object          v1, v2, Landroidx/appcompat/widget/ToolbarWidgetWrapper;->mCustomView Landroid/view/View;
+	15      (0000003e) invoke-virtual       v0, v1, Landroidx/appcompat/widget/Toolbar;->addView(Landroid/view/View;)V
+
+setCustomView-BB@0x44 : 
+	16      (00000044) return-void          
+

@@ -1,0 +1,45 @@
+# Lcom/afwsamples/testdpc/profilepolicy/addsystemapps/EnableSystemAppsByIntentFragment;->onItemSelected(Landroid/widget/AdapterView; Landroid/view/View; I J)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v3
+# - v4:android.widget.AdapterView
+# - v5:android.view.View
+# - v6:int
+# - v7:long
+#
+# - return:void
+
+onItemSelected-BB@0x0 : [ D:onItemSelected-BB@0xe 2131296487:onItemSelected-BB@0x16 ]
+	0       (00000000) invoke-virtual       v3, Landroid/widget/AdapterView;->getId()I
+	1       (00000006) move-result          v0
+	2       (00000008) packed-switch        v0, +24 (0x50)
+
+onItemSelected-BB@0xe : [ onItemSelected-BB@0x14 ]
+	3       (0000000e) invoke-super/range   v2 ... v7, Lcom/afwsamples/testdpc/common/IntentOrIntentFilterFragment;->onItemSelected(Landroid/widget/AdapterView; Landroid/view/View; I J)V
+
+onItemSelected-BB@0x14 : 
+	4       (00000014) return-void          
+
+onItemSelected-BB@0x16 : [ onItemSelected-BB@0x24 onItemSelected-BB@0x2c ]
+	5       (00000016) sget-object          v0, Lcom/afwsamples/testdpc/profilepolicy/addsystemapps/EnableSystemAppsByIntentFragment;->ACTIONS_LIST [Ljava/lang/String;
+	6       (0000001a) array-length         v0, v0
+	7       (0000001c) add-int/lit8         v0, v0, -1
+	8       (00000020) if-ne                v5, v0, +6
+
+onItemSelected-BB@0x24 : [ onItemSelected-BB@0x14 ]
+	9       (00000024) invoke-direct        v2, Lcom/afwsamples/testdpc/profilepolicy/addsystemapps/EnableSystemAppsByIntentFragment;->showCustomActionInputDialog()V
+	10      (0000002a) goto                 -b
+
+onItemSelected-BB@0x2c : [ onItemSelected-BB@0x14 ]
+	11      (0000002c) iget-object          v0, v2, Lcom/afwsamples/testdpc/profilepolicy/addsystemapps/EnableSystemAppsByIntentFragment;->mActions Ljava/util/HashSet;
+	12      (00000030) invoke-virtual       v0, Ljava/util/HashSet;->clear()V
+	13      (00000036) iget-object          v0, v2, Lcom/afwsamples/testdpc/profilepolicy/addsystemapps/EnableSystemAppsByIntentFragment;->mActions Ljava/util/HashSet;
+	14      (0000003a) sget-object          v1, Lcom/afwsamples/testdpc/profilepolicy/addsystemapps/EnableSystemAppsByIntentFragment;->ACTIONS_LIST [Ljava/lang/String;
+	15      (0000003e) aget-object          v1, v1, v5
+	16      (00000042) invoke-virtual       v0, v1, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
+	17      (00000048) invoke-virtual       v2, Lcom/afwsamples/testdpc/profilepolicy/addsystemapps/EnableSystemAppsByIntentFragment;->updateStatusTextView()V
+	18      (0000004e) goto                 -1d
+
+onItemSelected-BB@0x50 : 
+	19      (00000050) packed-switch-payload 7f0900e7
+

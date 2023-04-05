@@ -1,0 +1,14 @@
+# Lcom/afwsamples/testdpc/policy/keyguard/LockScreenPolicyFragment$$Lambda$4;->validateConstraint()I [access_flags=public]
+#
+# Parameters:
+# local registers: v0...v2
+#
+# - return:int
+
+validateConstraint-BB@0x0 : 
+	0       (00000000) iget-object          v0, v2, Lcom/afwsamples/testdpc/policy/keyguard/LockScreenPolicyFragment$$Lambda$4;->arg$1 Lcom/afwsamples/testdpc/policy/keyguard/LockScreenPolicyFragment;
+	1       (00000004) iget-object          v1, v2, Lcom/afwsamples/testdpc/policy/keyguard/LockScreenPolicyFragment$$Lambda$4;->arg$2 Ljava/lang/String;
+	2       (00000008) invoke-virtual       v0, v1, Lcom/afwsamples/testdpc/policy/keyguard/LockScreenPolicyFragment;->lambda$setup$204$LockScreenPolicyFragment(Ljava/lang/String;)I
+	3       (0000000e) move-result          v0
+	4       (00000010) return               v0
+

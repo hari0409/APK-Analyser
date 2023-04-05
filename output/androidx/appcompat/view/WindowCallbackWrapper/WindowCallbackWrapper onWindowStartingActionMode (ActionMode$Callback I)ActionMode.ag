@@ -1,0 +1,15 @@
+# Landroidx/appcompat/view/WindowCallbackWrapper;->onWindowStartingActionMode(Landroid/view/ActionMode$Callback; I)Landroid/view/ActionMode; [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:android.view.ActionMode$Callback
+# - v3:int
+#
+# - return:android.view.ActionMode
+
+onWindowStartingActionMode-BB@0x0 : 
+	0       (00000000) iget-object          v0, v1, Landroidx/appcompat/view/WindowCallbackWrapper;->mWrapped Landroid/view/Window$Callback;
+	1       (00000004) invoke-interface     v0, v2, v3, Landroid/view/Window$Callback;->onWindowStartingActionMode(Landroid/view/ActionMode$Callback; I)Landroid/view/ActionMode;
+	2       (0000000a) move-result-object   v0
+	3       (0000000c) return-object        v0
+

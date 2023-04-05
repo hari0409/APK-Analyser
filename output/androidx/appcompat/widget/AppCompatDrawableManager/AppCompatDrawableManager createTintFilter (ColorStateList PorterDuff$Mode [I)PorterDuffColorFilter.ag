@@ -1,0 +1,30 @@
+# Landroidx/appcompat/widget/AppCompatDrawableManager;->createTintFilter(Landroid/content/res/ColorStateList; Landroid/graphics/PorterDuff$Mode; [I)Landroid/graphics/PorterDuffColorFilter; [access_flags=private static]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:android.content.res.ColorStateList
+# - v3:android.graphics.PorterDuff$Mode
+# - v4:int[]
+#
+# - return:android.graphics.PorterDuffColorFilter
+
+createTintFilter-BB@0x0 : [ createTintFilter-BB@0x4 createTintFilter-BB@0x8 ]
+	0       (00000000) if-eqz               v2, +4
+
+createTintFilter-BB@0x4 : [ createTintFilter-BB@0x8 createTintFilter-BB@0xc ]
+	1       (00000004) if-nez               v3, +4
+
+createTintFilter-BB@0x8 : [ createTintFilter-BB@0xa ]
+	2       (00000008) const/4              v1, 0
+
+createTintFilter-BB@0xa : 
+	3       (0000000a) return-object        v1
+
+createTintFilter-BB@0xc : [ createTintFilter-BB@0xa ]
+	4       (0000000c) const/4              v1, 0
+	5       (0000000e) invoke-virtual       v2, v4, v1, Landroid/content/res/ColorStateList;->getColorForState([I I)I
+	6       (00000014) move-result          v0
+	7       (00000016) invoke-static        v0, v3, Landroidx/appcompat/widget/AppCompatDrawableManager;->getPorterDuffColorFilter(I Landroid/graphics/PorterDuff$Mode;)Landroid/graphics/PorterDuffColorFilter;
+	8       (0000001c) move-result-object   v1
+	9       (0000001e) goto                 -a
+

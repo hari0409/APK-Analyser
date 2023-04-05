@@ -1,0 +1,28 @@
+# Landroidx/appcompat/widget/ActivityChooserView;->onLayout(Z I I I I)V [access_flags=protected]
+#
+# Parameters:
+# - local registers: v0...v4
+# - v5:boolean
+# - v6:int
+# - v7:int
+# - v8:int
+# - v9:int
+#
+# - return:void
+
+onLayout-BB@0x0 : [ onLayout-BB@0x20 onLayout-BB@0x26 ]
+	0       (00000000) const/4              v3, 0
+	1       (00000002) iget-object          v0, v4, Landroidx/appcompat/widget/ActivityChooserView;->mActivityChooserContent Landroid/view/View;
+	2       (00000006) sub-int              v1, v8, v6
+	3       (0000000a) sub-int              v2, v9, v7
+	4       (0000000e) invoke-virtual       v0, v3, v3, v1, v2, Landroid/view/View;->layout(I I I I)V
+	5       (00000014) invoke-virtual       v4, Landroidx/appcompat/widget/ActivityChooserView;->isShowingPopup()Z
+	6       (0000001a) move-result          v0
+	7       (0000001c) if-nez               v0, +5
+
+onLayout-BB@0x20 : [ onLayout-BB@0x26 ]
+	8       (00000020) invoke-virtual       v4, Landroidx/appcompat/widget/ActivityChooserView;->dismissPopup()Z
+
+onLayout-BB@0x26 : 
+	9       (00000026) return-void          
+

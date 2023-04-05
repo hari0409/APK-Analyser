@@ -1,0 +1,29 @@
+# Lcom/afwsamples/testdpc/common/Util;->getBindDeviceAdminTargetUsers(Landroid/content/Context;)Ljava/util/List; [access_flags=public static]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:android.content.Context
+#
+# - return:java.util.List
+
+getBindDeviceAdminTargetUsers-BB@0x0 : [ getBindDeviceAdminTargetUsers-BB@0xc getBindDeviceAdminTargetUsers-BB@0x16 ]
+	0       (00000000) sget                 v1, Lcom/afwsamples/testdpc/common/Util;->SDK_INT I
+	1       (00000004) const/16             v2, 26
+	2       (00000008) if-ge                v1, v2, +7
+
+getBindDeviceAdminTargetUsers-BB@0xc : [ getBindDeviceAdminTargetUsers-BB@0x14 ]
+	3       (0000000c) invoke-static        Ljava/util/Collections;->emptyList()Ljava/util/List;
+	4       (00000012) move-result-object   v1
+
+getBindDeviceAdminTargetUsers-BB@0x14 : 
+	5       (00000014) return-object        v1
+
+getBindDeviceAdminTargetUsers-BB@0x16 : [ getBindDeviceAdminTargetUsers-BB@0x14 ]
+	6       (00000016) invoke-static        v3, Lcom/afwsamples/testdpc/common/Util;->getDevicePolicyManager(Landroid/content/Context;)Landroid/app/admin/DevicePolicyManager;
+	7       (0000001c) move-result-object   v0
+	8       (0000001e) invoke-static        v3, Lcom/afwsamples/testdpc/DeviceAdminReceiver;->getComponentName(Landroid/content/Context;)Landroid/content/ComponentName;
+	9       (00000024) move-result-object   v1
+	10      (00000026) invoke-virtual       v0, v1, Landroid/app/admin/DevicePolicyManager;->getBindDeviceAdminTargetUsers(Landroid/content/ComponentName;)Ljava/util/List;
+	11      (0000002c) move-result-object   v1
+	12      (0000002e) goto                 -d
+

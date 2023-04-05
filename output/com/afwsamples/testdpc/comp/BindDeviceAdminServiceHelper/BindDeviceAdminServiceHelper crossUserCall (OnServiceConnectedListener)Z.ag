@@ -1,0 +1,52 @@
+# Lcom/afwsamples/testdpc/comp/BindDeviceAdminServiceHelper;->crossUserCall(Lcom/afwsamples/testdpc/comp/OnServiceConnectedListener;)Z [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v7
+# - v8:com.afwsamples.testdpc.comp.OnServiceConnectedListener
+#
+# - return:boolean
+
+crossUserCall-BB@0x0 : [ crossUserCall-BB@0xa ]
+	0       (00000000) new-instance         v3, Lcom/afwsamples/testdpc/comp/BindDeviceAdminServiceHelper$1;
+	1       (00000004) invoke-direct        v3, v7, v8, Lcom/afwsamples/testdpc/comp/BindDeviceAdminServiceHelper$1;-><init>(Lcom/afwsamples/testdpc/comp/BindDeviceAdminServiceHelper; Lcom/afwsamples/testdpc/comp/OnServiceConnectedListener;)V
+
+crossUserCall-BB@0xa : [ crossUserCall-BB@0x2c ]
+	2       (0000000a) iget-object          v0, v7, Lcom/afwsamples/testdpc/comp/BindDeviceAdminServiceHelper;->mDpm Landroid/app/admin/DevicePolicyManager;
+	3       (0000000e) iget-object          v1, v7, Lcom/afwsamples/testdpc/comp/BindDeviceAdminServiceHelper;->mContext Landroid/content/Context;
+	4       (00000012) invoke-static        v1, Lcom/afwsamples/testdpc/DeviceAdminReceiver;->getComponentName(Landroid/content/Context;)Landroid/content/ComponentName;
+	5       (00000018) move-result-object   v1
+	6       (0000001a) iget-object          v2, v7, Lcom/afwsamples/testdpc/comp/BindDeviceAdminServiceHelper;->mServiceIntent Landroid/content/Intent;
+	7       (0000001e) const/4              v4, 1
+	8       (00000020) iget-object          v5, v7, Lcom/afwsamples/testdpc/comp/BindDeviceAdminServiceHelper;->mTargetUserHandle Landroid/os/UserHandle;
+	9       (00000024) invoke-virtual/range v0 ... v5, Landroid/app/admin/DevicePolicyManager;->bindDeviceAdminServiceAsUser(Landroid/content/ComponentName; Landroid/content/Intent; Landroid/content/ServiceConnection; I Landroid/os/UserHandle;)Z
+	10      (0000002a) move-result          v0
+	a:29
+	(Ljava/lang/SecurityException; -> 68 crossUserCall-BB@0x68)
+	(Ljava/lang/IllegalArgumentException; -> 2e crossUserCall-BB@0x2e)
+
+crossUserCall-BB@0x2c : 
+	11      (0000002c) return               v0
+
+crossUserCall-BB@0x2e : [ crossUserCall-BB@0x30 ]
+	12      (0000002e) move-exception       v6
+
+crossUserCall-BB@0x30 : [ crossUserCall-BB@0x2c ]
+	13      (00000030) const-string         v0, 'BindDeviceAdminService'
+	14      (00000034) new-instance         v1, Ljava/lang/StringBuilder;
+	15      (00000038) invoke-direct        v1, Ljava/lang/StringBuilder;-><init>()V
+	16      (0000003e) const-string         v2, 'Cannot bind to user '
+	17      (00000042) invoke-virtual       v1, v2, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	18      (00000048) move-result-object   v1
+	19      (0000004a) iget-object          v2, v7, Lcom/afwsamples/testdpc/comp/BindDeviceAdminServiceHelper;->mTargetUserHandle Landroid/os/UserHandle;
+	20      (0000004e) invoke-virtual       v1, v2, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+	21      (00000054) move-result-object   v1
+	22      (00000056) invoke-virtual       v1, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+	23      (0000005c) move-result-object   v1
+	24      (0000005e) invoke-static        v0, v1, v6, Landroid/util/Log;->e(Ljava/lang/String; Ljava/lang/String; Ljava/lang/Throwable;)I
+	25      (00000064) const/4              v0, 0
+	26      (00000066) goto                 -1d
+
+crossUserCall-BB@0x68 : [ crossUserCall-BB@0x30 ]
+	27      (00000068) move-exception       v6
+	28      (0000006a) goto                 -1d
+

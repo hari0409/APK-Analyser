@@ -1,0 +1,51 @@
+# Lcom/afwsamples/testdpc/common/SelectAppFragment;->onCreateView(Landroid/view/LayoutInflater; Landroid/view/ViewGroup; Landroid/os/Bundle;)Landroid/view/View; [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v6
+# - v7:android.view.LayoutInflater
+# - v8:android.view.ViewGroup
+# - v9:android.os.Bundle
+#
+# - return:android.view.View
+
+onCreateView-BB@0x0 : 
+	0       (00000000) const                v2, 2131427437 # [1.847649021967501e+38]
+	1       (00000006) const/4              v3, 0
+	2       (00000008) invoke-virtual       v7, v2, v3, Landroid/view/LayoutInflater;->inflate(I Landroid/view/ViewGroup;)Landroid/view/View;
+	3       (0000000e) move-result-object   v1
+	4       (00000010) const                v2, 2131296607 # [1.8211135454830436e+38]
+	5       (00000016) invoke-virtual       v1, v2, Landroid/view/View;->findViewById(I)Landroid/view/View;
+	6       (0000001c) move-result-object   v2
+	7       (0000001e) check-cast           v2, Landroid/widget/EditText;
+	8       (00000022) iput-object          v2, v6, Lcom/afwsamples/testdpc/common/SelectAppFragment;->mCurrentSelectedPackage Landroid/widget/EditText;
+	9       (00000026) const                v2, 2131296608 # [1.8211137483071396e+38]
+	10      (0000002c) invoke-virtual       v1, v2, Landroid/view/View;->findViewById(I)Landroid/view/View;
+	11      (00000032) move-result-object   v2
+	12      (00000034) check-cast           v2, Landroid/widget/EditText;
+	13      (00000038) iput-object          v2, v6, Lcom/afwsamples/testdpc/common/SelectAppFragment;->mNewSelectedPackage Landroid/widget/EditText;
+	14      (0000003c) const                v2, 2131296598 # [1.8211117200661792e+38]
+	15      (00000042) invoke-virtual       v1, v2, Landroid/view/View;->findViewById(I)Landroid/view/View;
+	16      (00000048) move-result-object   v2
+	17      (0000004a) check-cast           v2, Landroid/widget/ListView;
+	18      (0000004e) iput-object          v2, v6, Lcom/afwsamples/testdpc/common/SelectAppFragment;->mAppListView Landroid/widget/ListView;
+	19      (00000052) new-instance         v0, Lcom/afwsamples/testdpc/common/AppInfoArrayAdapter;
+	20      (00000056) invoke-virtual       v6, Lcom/afwsamples/testdpc/common/SelectAppFragment;->getActivity()Landroid/app/Activity;
+	21      (0000005c) move-result-object   v2
+	22      (0000005e) const                v3, 2131296534 # [1.821098739324033e+38]
+	23      (00000064) iget-object          v4, v6, Lcom/afwsamples/testdpc/common/SelectAppFragment;->mAppPackages Ljava/util/List;
+	24      (00000068) const/4              v5, 1
+	25      (0000006a) invoke-direct        v0, v2, v3, v4, v5, Lcom/afwsamples/testdpc/common/AppInfoArrayAdapter;-><init>(Landroid/content/Context; I Ljava/util/List; Z)V
+	26      (00000070) iget-object          v2, v6, Lcom/afwsamples/testdpc/common/SelectAppFragment;->mAppListView Landroid/widget/ListView;
+	27      (00000074) invoke-virtual       v2, v0, Landroid/widget/ListView;->setAdapter(Landroid/widget/ListAdapter;)V
+	28      (0000007a) const                v2, 2131296609 # [1.8211139511312356e+38]
+	29      (00000080) invoke-virtual       v1, v2, Landroid/view/View;->findViewById(I)Landroid/view/View;
+	30      (00000086) move-result-object   v2
+	31      (00000088) invoke-virtual       v2, v6, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
+	32      (0000008e) const                v2, 2131296606 # [1.8211133426589475e+38]
+	33      (00000094) invoke-virtual       v1, v2, Landroid/view/View;->findViewById(I)Landroid/view/View;
+	34      (0000009a) move-result-object   v2
+	35      (0000009c) invoke-virtual       v2, v6, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
+	36      (000000a2) iget-object          v2, v6, Lcom/afwsamples/testdpc/common/SelectAppFragment;->mAppListView Landroid/widget/ListView;
+	37      (000000a6) invoke-virtual       v2, v6, Landroid/widget/ListView;->setOnItemClickListener(Landroid/widget/AdapterView$OnItemClickListener;)V
+	38      (000000ac) return-object        v1
+

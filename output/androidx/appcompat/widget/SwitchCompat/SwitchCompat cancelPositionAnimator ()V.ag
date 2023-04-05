@@ -1,0 +1,18 @@
+# Landroidx/appcompat/widget/SwitchCompat;->cancelPositionAnimator()V [access_flags=private]
+#
+# Parameters:
+# local registers: v0...v1
+#
+# - return:void
+
+cancelPositionAnimator-BB@0x0 : [ cancelPositionAnimator-BB@0x8 cancelPositionAnimator-BB@0x12 ]
+	0       (00000000) iget-object          v0, v1, Landroidx/appcompat/widget/SwitchCompat;->mPositionAnimator Landroid/animation/ObjectAnimator;
+	1       (00000004) if-eqz               v0, +7
+
+cancelPositionAnimator-BB@0x8 : [ cancelPositionAnimator-BB@0x12 ]
+	2       (00000008) iget-object          v0, v1, Landroidx/appcompat/widget/SwitchCompat;->mPositionAnimator Landroid/animation/ObjectAnimator;
+	3       (0000000c) invoke-virtual       v0, Landroid/animation/ObjectAnimator;->cancel()V
+
+cancelPositionAnimator-BB@0x12 : 
+	4       (00000012) return-void          
+

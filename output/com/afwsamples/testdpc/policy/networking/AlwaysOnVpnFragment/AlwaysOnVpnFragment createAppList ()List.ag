@@ -1,0 +1,44 @@
+# Lcom/afwsamples/testdpc/policy/networking/AlwaysOnVpnFragment;->createAppList()Ljava/util/List; [access_flags=protected]
+#
+# Parameters:
+# local registers: v0...v6
+#
+# - return:java.util.List
+
+createAppList-BB@0x0 : [ createAppList-BB@0x30 ]
+	0       (00000000) new-instance         v0, Ljava/util/HashSet;
+	1       (00000004) invoke-direct        v0, Ljava/util/HashSet;-><init>()V
+	2       (0000000a) invoke-virtual       v6, Lcom/afwsamples/testdpc/policy/networking/AlwaysOnVpnFragment;->getActivity()Landroid/app/Activity;
+	3       (00000010) move-result-object   v4
+	4       (00000012) invoke-virtual       v4, Landroid/app/Activity;->getPackageManager()Landroid/content/pm/PackageManager;
+	5       (00000018) move-result-object   v1
+	6       (0000001a) sget-object          v4, Lcom/afwsamples/testdpc/policy/networking/AlwaysOnVpnFragment;->VPN_INTENT Landroid/content/Intent;
+	7       (0000001e) const/4              v5, 0
+	8       (00000020) invoke-virtual       v1, v4, v5, Landroid/content/pm/PackageManager;->queryIntentServices(Landroid/content/Intent; I)Ljava/util/List;
+	9       (00000026) move-result-object   v3
+	10      (00000028) invoke-interface     v3, Ljava/util/List;->iterator()Ljava/util/Iterator;
+	11      (0000002e) move-result-object   v4
+
+createAppList-BB@0x30 : [ createAppList-BB@0x3c createAppList-BB@0x60 ]
+	12      (00000030) invoke-interface     v4, Ljava/util/Iterator;->hasNext()Z
+	13      (00000036) move-result          v5
+	14      (00000038) if-eqz               v5, +14
+
+createAppList-BB@0x3c : [ createAppList-BB@0x50 createAppList-BB@0x30 ]
+	15      (0000003c) invoke-interface     v4, Ljava/util/Iterator;->next()Ljava/lang/Object;
+	16      (00000042) move-result-object   v2
+	17      (00000044) check-cast           v2, Landroid/content/pm/ResolveInfo;
+	18      (00000048) iget-object          v5, v2, Landroid/content/pm/ResolveInfo;->serviceInfo Landroid/content/pm/ServiceInfo;
+	19      (0000004c) if-eqz               v5, -e
+
+createAppList-BB@0x50 : [ createAppList-BB@0x30 ]
+	20      (00000050) iget-object          v5, v2, Landroid/content/pm/ResolveInfo;->serviceInfo Landroid/content/pm/ServiceInfo;
+	21      (00000054) iget-object          v5, v5, Landroid/content/pm/ServiceInfo;->packageName Ljava/lang/String;
+	22      (00000058) invoke-interface     v0, v5, Ljava/util/Set;->add(Ljava/lang/Object;)Z
+	23      (0000005e) goto                 -17
+
+createAppList-BB@0x60 : 
+	24      (00000060) new-instance         v4, Ljava/util/ArrayList;
+	25      (00000064) invoke-direct        v4, v0, Ljava/util/ArrayList;-><init>(Ljava/util/Collection;)V
+	26      (0000006a) return-object        v4
+

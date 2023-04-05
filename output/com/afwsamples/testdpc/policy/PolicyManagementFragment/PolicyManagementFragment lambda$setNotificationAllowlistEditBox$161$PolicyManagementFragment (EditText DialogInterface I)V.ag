@@ -1,0 +1,41 @@
+# Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->lambda$setNotificationAllowlistEditBox$161$PolicyManagementFragment(Landroid/widget/EditText; Landroid/content/DialogInterface; I)V [access_flags=final synthetic]
+#
+# Parameters:
+# - local registers: v0...v4
+# - v5:android.widget.EditText
+# - v6:android.content.DialogInterface
+# - v7:int
+#
+# - return:void
+
+lambda$setNotificationAllowlistEditBox$161$PolicyManagementFragment-BB@0x0 : [ lambda$setNotificationAllowlistEditBox$161$PolicyManagementFragment-BB@0x28 lambda$setNotificationAllowlistEditBox$161$PolicyManagementFragment-BB@0x38 ]
+	0       (00000000) invoke-virtual       v5, Landroid/widget/EditText;->getText()Landroid/text/Editable;
+	1       (00000006) move-result-object   v2
+	2       (00000008) invoke-virtual       v2, Ljava/lang/Object;->toString()Ljava/lang/String;
+	3       (0000000e) move-result-object   v1
+	4       (00000010) invoke-virtual       v1, Ljava/lang/String;->trim()Ljava/lang/String;
+	5       (00000016) move-result-object   v2
+	6       (00000018) const-string         v3, 'null'
+	7       (0000001c) invoke-virtual       v2, v3, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+	8       (00000022) move-result          v2
+	9       (00000024) if-eqz               v2, +a
+
+lambda$setNotificationAllowlistEditBox$161$PolicyManagementFragment-BB@0x28 : [ lambda$setNotificationAllowlistEditBox$161$PolicyManagementFragment-BB@0x30 ]
+	10      (00000028) const/4              v2, 0
+	11      (0000002a) invoke-direct        v4, v2, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->setPermittedNotificationListeners(Ljava/util/List;)V
+
+lambda$setNotificationAllowlistEditBox$161$PolicyManagementFragment-BB@0x30 : 
+	12      (00000030) invoke-interface     v6, Landroid/content/DialogInterface;->dismiss()V
+	13      (00000036) return-void          
+
+lambda$setNotificationAllowlistEditBox$161$PolicyManagementFragment-BB@0x38 : [ lambda$setNotificationAllowlistEditBox$161$PolicyManagementFragment-BB@0x30 ]
+	14      (00000038) invoke-virtual       v1, Ljava/lang/String;->trim()Ljava/lang/String;
+	15      (0000003e) move-result-object   v2
+	16      (00000040) const-string         v3, '\\s*,\\s*'
+	17      (00000044) invoke-virtual       v2, v3, Ljava/lang/String;->split(Ljava/lang/String;)[Ljava/lang/String;
+	18      (0000004a) move-result-object   v2
+	19      (0000004c) invoke-static        v2, Ljava/util/Arrays;->asList([Ljava/lang/Object;)Ljava/util/List;
+	20      (00000052) move-result-object   v0
+	21      (00000054) invoke-direct        v4, v0, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->setPermittedNotificationListeners(Ljava/util/List;)V
+	22      (0000005a) goto                 -15
+

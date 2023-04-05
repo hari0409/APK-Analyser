@@ -1,0 +1,38 @@
+# Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->reloadAutoBrightnessUi()V [access_flags=private]
+#
+# Parameters:
+# local registers: v0...v5
+#
+# - return:void
+
+reloadAutoBrightnessUi-BB@0x0 : [ reloadAutoBrightnessUi-BB@0x14 reloadAutoBrightnessUi-BB@0x46 ]
+	0       (00000000) const/4              v1, 1
+	1       (00000002) const/4              v2, 0
+	2       (00000004) iget-object          v3, v5, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->mAutoBrightnessPreference Lcom/afwsamples/testdpc/common/preference/DpcSwitchPreference;
+	3       (00000008) invoke-virtual       v3, Lcom/afwsamples/testdpc/common/preference/DpcSwitchPreference;->isEnabled()Z
+	4       (0000000e) move-result          v3
+	5       (00000010) if-eqz               v3, +1b
+
+reloadAutoBrightnessUi-BB@0x14 : [ reloadAutoBrightnessUi-BB@0x40 reloadAutoBrightnessUi-BB@0x48 ]
+	6       (00000014) invoke-virtual       v5, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->getActivity()Landroid/app/Activity;
+	7       (0000001a) move-result-object   v3
+	8       (0000001c) invoke-virtual       v3, Landroid/app/Activity;->getContentResolver()Landroid/content/ContentResolver;
+	9       (00000022) move-result-object   v3
+	10      (00000024) const-string         v4, 'screen_brightness_mode'
+	11      (00000028) invoke-static        v3, v4, Landroid/provider/Settings$System;->getString(Landroid/content/ContentResolver; Ljava/lang/String;)Ljava/lang/String;
+	12      (0000002e) move-result-object   v0
+	13      (00000030) iget-object          v3, v5, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->mAutoBrightnessPreference Lcom/afwsamples/testdpc/common/preference/DpcSwitchPreference;
+	14      (00000034) invoke-static        v0, v2, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->parseInt(Ljava/lang/String; I)I
+	15      (0000003a) move-result          v4
+	16      (0000003c) if-ne                v4, v1, +6
+
+reloadAutoBrightnessUi-BB@0x40 : [ reloadAutoBrightnessUi-BB@0x46 ]
+	17      (00000040) invoke-virtual       v3, v1, Lcom/afwsamples/testdpc/common/preference/DpcSwitchPreference;->setChecked(Z)V
+
+reloadAutoBrightnessUi-BB@0x46 : 
+	18      (00000046) return-void          
+
+reloadAutoBrightnessUi-BB@0x48 : [ reloadAutoBrightnessUi-BB@0x40 ]
+	19      (00000048) move                 v1, v2
+	20      (0000004a) goto                 -5
+

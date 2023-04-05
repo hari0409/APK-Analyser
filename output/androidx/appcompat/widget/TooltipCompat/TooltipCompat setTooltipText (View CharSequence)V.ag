@@ -1,0 +1,24 @@
+# Landroidx/appcompat/widget/TooltipCompat;->setTooltipText(Landroid/view/View; Ljava/lang/CharSequence;)V [access_flags=public static]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:android.view.View
+# - v3:java.lang.CharSequence
+#
+# - return:void
+
+setTooltipText-BB@0x0 : [ setTooltipText-BB@0xc setTooltipText-BB@0x14 ]
+	0       (00000000) sget                 v0, Landroid/os/Build$VERSION;->SDK_INT I
+	1       (00000004) const/16             v1, 26
+	2       (00000008) if-lt                v0, v1, +6
+
+setTooltipText-BB@0xc : [ setTooltipText-BB@0x12 ]
+	3       (0000000c) invoke-virtual       v2, v3, Landroid/view/View;->setTooltipText(Ljava/lang/CharSequence;)V
+
+setTooltipText-BB@0x12 : 
+	4       (00000012) return-void          
+
+setTooltipText-BB@0x14 : [ setTooltipText-BB@0x12 ]
+	5       (00000014) invoke-static        v2, v3, Landroidx/appcompat/widget/TooltipCompatHandler;->setTooltipText(Landroid/view/View; Ljava/lang/CharSequence;)V
+	6       (0000001a) goto                 -4
+

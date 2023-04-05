@@ -1,0 +1,48 @@
+# Lcom/afwsamples/testdpc/policy/networking/NetworkUsageStatsFragment$1;->getView(I Landroid/view/View; Landroid/view/ViewGroup;)Landroid/view/View; [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v9
+# - v10:int
+# - v11:android.view.View
+# - v12:android.view.ViewGroup
+#
+# - return:android.view.View
+
+getView-BB@0x0 : [ getView-BB@0x6 getView-BB@0x72 ]
+	0       (00000000) move-object          v0, v11
+	1       (00000002) if-nez               v11, +38
+
+getView-BB@0x6 : [ getView-BB@0x72 ]
+	2       (00000006) iget-object          v6, v9, Lcom/afwsamples/testdpc/policy/networking/NetworkUsageStatsFragment$1;->val$inflater Landroid/view/LayoutInflater;
+	3       (0000000a) const                v7, 2131427374 # [1.8476362440494507e+38]
+	4       (00000010) const/4              v8, 0
+	5       (00000012) invoke-virtual       v6, v7, v12, v8, Landroid/view/LayoutInflater;->inflate(I Landroid/view/ViewGroup; Z)Landroid/view/View;
+	6       (00000018) move-result-object   v0
+	7       (0000001a) const                v6, 16908310 # [2.3877290658210145e-38]
+	8       (00000020) invoke-virtual       v0, v6, Landroid/view/View;->findViewById(I)Landroid/view/View;
+	9       (00000026) move-result-object   v5
+	10      (00000028) check-cast           v5, Landroid/widget/TextView;
+	11      (0000002c) const                v6, 16908304 # [2.3877273842628573e-38]
+	12      (00000032) invoke-virtual       v0, v6, Landroid/view/View;->findViewById(I)Landroid/view/View;
+	13      (00000038) move-result-object   v4
+	14      (0000003a) check-cast           v4, Landroid/widget/TextView;
+	15      (0000003e) const                v6, 2131296640 # [1.8211202386782128e+38]
+	16      (00000044) invoke-virtual       v0, v6, Landroid/view/View;->findViewById(I)Landroid/view/View;
+	17      (0000004a) move-result-object   v3
+	18      (0000004c) check-cast           v3, Landroid/widget/TextView;
+	19      (00000050) const                v6, 16908294 # [2.3877245816659287e-38]
+	20      (00000056) invoke-virtual       v0, v6, Landroid/view/View;->findViewById(I)Landroid/view/View;
+	21      (0000005c) move-result-object   v1
+	22      (0000005e) check-cast           v1, Landroid/widget/ImageView;
+	23      (00000062) new-instance         v6, Lcom/afwsamples/testdpc/policy/networking/NetworkUsageStatsFragment$ViewHolder;
+	24      (00000066) invoke-direct        v6, v5, v4, v3, v1, Lcom/afwsamples/testdpc/policy/networking/NetworkUsageStatsFragment$ViewHolder;-><init>(Landroid/widget/TextView; Landroid/widget/TextView; Landroid/widget/TextView; Landroid/widget/ImageView;)V
+	25      (0000006c) invoke-virtual       v0, v6, Landroid/view/View;->setTag(Ljava/lang/Object;)V
+
+getView-BB@0x72 : 
+	26      (00000072) invoke-virtual       v9, v10, Lcom/afwsamples/testdpc/policy/networking/NetworkUsageStatsFragment$1;->getItem(I)Ljava/lang/Object;
+	27      (00000078) move-result-object   v2
+	28      (0000007a) check-cast           v2, Ljava/util/List;
+	29      (0000007e) iget-object          v6, v9, Lcom/afwsamples/testdpc/policy/networking/NetworkUsageStatsFragment$1;->this$0 Lcom/afwsamples/testdpc/policy/networking/NetworkUsageStatsFragment;
+	30      (00000082) invoke-static        v6, v0, v2, Lcom/afwsamples/testdpc/policy/networking/NetworkUsageStatsFragment;->access$000(Lcom/afwsamples/testdpc/policy/networking/NetworkUsageStatsFragment; Landroid/view/View; Ljava/util/List;)V
+	31      (00000088) return-object        v0
+

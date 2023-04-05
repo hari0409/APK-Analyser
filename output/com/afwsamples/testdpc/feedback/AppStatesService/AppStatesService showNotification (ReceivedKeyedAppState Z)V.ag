@@ -1,0 +1,174 @@
+# Lcom/afwsamples/testdpc/feedback/AppStatesService;->showNotification(Landroidx/enterprise/feedback/ReceivedKeyedAppState; Z)V [access_flags=private]
+#
+# Parameters:
+# - local registers: v0...v9
+# - v10:androidx.enterprise.feedback.ReceivedKeyedAppState
+# - v11:boolean
+#
+# - return:void
+
+showNotification-BB@0x0 : [ showNotification-BB@0x9c showNotification-BB@0x1ea ]
+	0       (00000000) const/4              v8, 2
+	1       (00000002) new-instance         v4, Ljava/lang/StringBuilder;
+	2       (00000006) invoke-direct        v4, Ljava/lang/StringBuilder;-><init>()V
+	3       (0000000c) invoke-virtual       v10, Landroidx/enterprise/feedback/ReceivedKeyedAppState;->getTimestamp()J
+	4       (00000012) move-result-wide     v6
+	5       (00000014) invoke-virtual       v4, v6, v7, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+	6       (0000001a) move-result-object   v4
+	7       (0000001c) const-string         v5, ' '
+	8       (00000020) invoke-virtual       v4, v5, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	9       (00000026) move-result-object   v4
+	10      (00000028) invoke-virtual       v10, Landroidx/enterprise/feedback/ReceivedKeyedAppState;->getPackageName()Ljava/lang/String;
+	11      (0000002e) move-result-object   v5
+	12      (00000030) invoke-virtual       v4, v5, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	13      (00000036) move-result-object   v4
+	14      (00000038) const-string         v5, ':'
+	15      (0000003c) invoke-virtual       v4, v5, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	16      (00000042) move-result-object   v4
+	17      (00000044) invoke-virtual       v10, Landroidx/enterprise/feedback/ReceivedKeyedAppState;->getKey()Ljava/lang/String;
+	18      (0000004a) move-result-object   v5
+	19      (0000004c) invoke-virtual       v4, v5, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	20      (00000052) move-result-object   v4
+	21      (00000054) const-string         v5, '='
+	22      (00000058) invoke-virtual       v4, v5, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	23      (0000005e) move-result-object   v4
+	24      (00000060) invoke-virtual       v10, Landroidx/enterprise/feedback/ReceivedKeyedAppState;->getData()Ljava/lang/String;
+	25      (00000066) move-result-object   v5
+	26      (00000068) invoke-virtual       v4, v5, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	27      (0000006e) move-result-object   v4
+	28      (00000070) const-string         v5, ' ('
+	29      (00000074) invoke-virtual       v4, v5, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	30      (0000007a) move-result-object   v4
+	31      (0000007c) invoke-virtual       v10, Landroidx/enterprise/feedback/ReceivedKeyedAppState;->getMessage()Ljava/lang/String;
+	32      (00000082) move-result-object   v5
+	33      (00000084) invoke-virtual       v4, v5, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	34      (0000008a) move-result-object   v4
+	35      (0000008c) const-string         v5, ')'
+	36      (00000090) invoke-virtual       v4, v5, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	37      (00000096) move-result-object   v5
+	38      (00000098) if-eqz               v11, +a9
+
+showNotification-BB@0x9c : [ showNotification-BB@0xa0 ]
+	39      (0000009c) const-string         v4, ' - SYNC REQUESTED'
+
+showNotification-BB@0xa0 : [ showNotification-BB@0xbc showNotification-BB@0x1f2 ]
+	40      (000000a0) invoke-virtual       v5, v4, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	41      (000000a6) move-result-object   v4
+	42      (000000a8) invoke-virtual       v4, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+	43      (000000ae) move-result-object   v0
+	44      (000000b0) invoke-virtual       v10, Landroidx/enterprise/feedback/ReceivedKeyedAppState;->getSeverity()I
+	45      (000000b6) move-result          v4
+	46      (000000b8) if-ne                v4, v8, +9d
+
+showNotification-BB@0xbc : [ showNotification-BB@0xc6 ]
+	47      (000000bc) const-string         v4, 'KeyedAppStates'
+	48      (000000c0) invoke-static        v4, v0, Landroid/util/Log;->e(Ljava/lang/String; Ljava/lang/String;)I
+
+showNotification-BB@0xc6 : [ showNotification-BB@0xd2 showNotification-BB@0x200 ]
+	49      (000000c6) invoke-virtual       v10, Landroidx/enterprise/feedback/ReceivedKeyedAppState;->getSeverity()I
+	50      (000000cc) move-result          v4
+	51      (000000ce) if-ne                v4, v8, +99
+
+showNotification-BB@0xd2 : [ showNotification-BB@0xd6 ]
+	52      (000000d2) const-string         v3, 'ERROR'
+
+showNotification-BB@0xd6 : [ showNotification-BB@0x1ae showNotification-BB@0x21e ]
+	53      (000000d6) new-instance         v4, Landroidx/core/app/NotificationCompat$Builder;
+	54      (000000da) const-string         v5, 'KeyedAppStates'
+	55      (000000de) invoke-direct        v4, v9, v5, Landroidx/core/app/NotificationCompat$Builder;-><init>(Landroid/content/Context; Ljava/lang/String;)V
+	56      (000000e4) const                v5, 2131230829 # [1.8077721820939536e+38]
+	57      (000000ea) invoke-virtual       v4, v5, Landroidx/core/app/NotificationCompat$Builder;->setSmallIcon(I)Landroidx/core/app/NotificationCompat$Builder;
+	58      (000000f0) move-result-object   v4
+	59      (000000f2) new-instance         v5, Ljava/lang/StringBuilder;
+	60      (000000f6) invoke-direct        v5, Ljava/lang/StringBuilder;-><init>()V
+	61      (000000fc) invoke-virtual       v10, Landroidx/enterprise/feedback/ReceivedKeyedAppState;->getPackageName()Ljava/lang/String;
+	62      (00000102) move-result-object   v6
+	63      (00000104) invoke-virtual       v5, v6, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	64      (0000010a) move-result-object   v5
+	65      (0000010c) const-string         v6, ':'
+	66      (00000110) invoke-virtual       v5, v6, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	67      (00000116) move-result-object   v5
+	68      (00000118) invoke-virtual       v10, Landroidx/enterprise/feedback/ReceivedKeyedAppState;->getKey()Ljava/lang/String;
+	69      (0000011e) move-result-object   v6
+	70      (00000120) invoke-virtual       v5, v6, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	71      (00000126) move-result-object   v5
+	72      (00000128) const-string         v6, ' '
+	73      (0000012c) invoke-virtual       v5, v6, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	74      (00000132) move-result-object   v5
+	75      (00000134) invoke-virtual       v5, v3, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	76      (0000013a) move-result-object   v5
+	77      (0000013c) invoke-virtual       v5, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+	78      (00000142) move-result-object   v5
+	79      (00000144) invoke-virtual       v4, v5, Landroidx/core/app/NotificationCompat$Builder;->setContentTitle(Ljava/lang/CharSequence;)Landroidx/core/app/NotificationCompat$Builder;
+	80      (0000014a) move-result-object   v5
+	81      (0000014c) new-instance         v4, Ljava/lang/StringBuilder;
+	82      (00000150) invoke-direct        v4, Ljava/lang/StringBuilder;-><init>()V
+	83      (00000156) invoke-virtual       v10, Landroidx/enterprise/feedback/ReceivedKeyedAppState;->getTimestamp()J
+	84      (0000015c) move-result-wide     v6
+	85      (0000015e) invoke-virtual       v4, v6, v7, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+	86      (00000164) move-result-object   v4
+	87      (00000166) const-string         v6, ' '
+	88      (0000016a) invoke-virtual       v4, v6, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	89      (00000170) move-result-object   v4
+	90      (00000172) invoke-virtual       v10, Landroidx/enterprise/feedback/ReceivedKeyedAppState;->getData()Ljava/lang/String;
+	91      (00000178) move-result-object   v6
+	92      (0000017a) invoke-virtual       v4, v6, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	93      (00000180) move-result-object   v4
+	94      (00000182) const-string         v6, ' ('
+	95      (00000186) invoke-virtual       v4, v6, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	96      (0000018c) move-result-object   v4
+	97      (0000018e) invoke-virtual       v10, Landroidx/enterprise/feedback/ReceivedKeyedAppState;->getMessage()Ljava/lang/String;
+	98      (00000194) move-result-object   v6
+	99      (00000196) invoke-virtual       v4, v6, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	100     (0000019c) move-result-object   v4
+	101     (0000019e) const-string         v6, ')'
+	102     (000001a2) invoke-virtual       v4, v6, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	103     (000001a8) move-result-object   v6
+	104     (000001aa) if-eqz               v11, +3a
+
+showNotification-BB@0x1ae : [ showNotification-BB@0x1b2 ]
+	105     (000001ae) const-string         v4, '\nSYNC REQUESTED'
+
+showNotification-BB@0x1b2 : 
+	106     (000001b2) invoke-virtual       v6, v4, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	107     (000001b8) move-result-object   v4
+	108     (000001ba) invoke-virtual       v4, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+	109     (000001c0) move-result-object   v4
+	110     (000001c2) invoke-virtual       v5, v4, Landroidx/core/app/NotificationCompat$Builder;->setContentText(Ljava/lang/CharSequence;)Landroidx/core/app/NotificationCompat$Builder;
+	111     (000001c8) move-result-object   v1
+	112     (000001ca) invoke-static        v9, Landroidx/core/app/NotificationManagerCompat;->from(Landroid/content/Context;)Landroidx/core/app/NotificationManagerCompat;
+	113     (000001d0) move-result-object   v2
+	114     (000001d2) invoke-direct        v9, v10, Lcom/afwsamples/testdpc/feedback/AppStatesService;->getIdForState(Landroidx/enterprise/feedback/ReceivedKeyedAppState;)I
+	115     (000001d8) move-result          v4
+	116     (000001da) invoke-virtual       v1, Landroidx/core/app/NotificationCompat$Builder;->build()Landroid/app/Notification;
+	117     (000001e0) move-result-object   v5
+	118     (000001e2) invoke-virtual       v2, v4, v5, Landroidx/core/app/NotificationManagerCompat;->notify(I Landroid/app/Notification;)V
+	119     (000001e8) return-void          
+
+showNotification-BB@0x1ea : [ showNotification-BB@0xa0 ]
+	120     (000001ea) const-string         v4, ''
+	121     (000001ee) goto/16              -a7
+
+showNotification-BB@0x1f2 : [ showNotification-BB@0xc6 ]
+	122     (000001f2) const-string         v4, 'KeyedAppStates'
+	123     (000001f6) invoke-static        v4, v0, Landroid/util/Log;->i(Ljava/lang/String; Ljava/lang/String;)I
+	124     (000001fc) goto/16              -9b
+
+showNotification-BB@0x200 : [ showNotification-BB@0x20e showNotification-BB@0x216 ]
+	125     (00000200) invoke-virtual       v10, Landroidx/enterprise/feedback/ReceivedKeyedAppState;->getSeverity()I
+	126     (00000206) move-result          v4
+	127     (00000208) const/4              v5, 1
+	128     (0000020a) if-ne                v4, v5, +6
+
+showNotification-BB@0x20e : [ showNotification-BB@0xd6 ]
+	129     (0000020e) const-string         v3, 'INFO'
+	130     (00000212) goto/16              -9e
+
+showNotification-BB@0x216 : [ showNotification-BB@0xd6 ]
+	131     (00000216) const-string         v3, 'UNKNOWN'
+	132     (0000021a) goto/16              -a2
+
+showNotification-BB@0x21e : [ showNotification-BB@0x1b2 ]
+	133     (0000021e) const-string         v4, ''
+	134     (00000222) goto                 -38
+

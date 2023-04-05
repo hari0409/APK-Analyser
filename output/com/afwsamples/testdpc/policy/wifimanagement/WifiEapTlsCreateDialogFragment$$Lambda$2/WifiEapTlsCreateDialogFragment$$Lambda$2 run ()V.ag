@@ -1,0 +1,13 @@
+# Lcom/afwsamples/testdpc/policy/wifimanagement/WifiEapTlsCreateDialogFragment$$Lambda$2;->run()V [access_flags=public]
+#
+# Parameters:
+# local registers: v0...v2
+#
+# - return:void
+
+run-BB@0x0 : 
+	0       (00000000) iget-object          v0, v2, Lcom/afwsamples/testdpc/policy/wifimanagement/WifiEapTlsCreateDialogFragment$$Lambda$2;->arg$1 Lcom/afwsamples/testdpc/policy/wifimanagement/WifiEapTlsCreateDialogFragment;
+	1       (00000004) iget-object          v1, v2, Lcom/afwsamples/testdpc/policy/wifimanagement/WifiEapTlsCreateDialogFragment$$Lambda$2;->arg$2 Ljava/lang/String;
+	2       (00000008) invoke-virtual       v0, v1, Lcom/afwsamples/testdpc/policy/wifimanagement/WifiEapTlsCreateDialogFragment;->lambda$null$175$WifiEapTlsCreateDialogFragment(Ljava/lang/String;)V
+	3       (0000000e) return-void          
+

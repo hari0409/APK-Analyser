@@ -1,0 +1,19 @@
+# Landroidx/appcompat/graphics/drawable/DrawerArrowDrawable;->setDirection(I)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:int
+#
+# - return:void
+
+setDirection-BB@0x0 : [ setDirection-BB@0x8 setDirection-BB@0x12 ]
+	0       (00000000) iget                 v0, v1, Landroidx/appcompat/graphics/drawable/DrawerArrowDrawable;->mDirection I
+	1       (00000004) if-eq                v2, v0, +7
+
+setDirection-BB@0x8 : [ setDirection-BB@0x12 ]
+	2       (00000008) iput                 v2, v1, Landroidx/appcompat/graphics/drawable/DrawerArrowDrawable;->mDirection I
+	3       (0000000c) invoke-virtual       v1, Landroidx/appcompat/graphics/drawable/DrawerArrowDrawable;->invalidateSelf()V
+
+setDirection-BB@0x12 : 
+	4       (00000012) return-void          
+

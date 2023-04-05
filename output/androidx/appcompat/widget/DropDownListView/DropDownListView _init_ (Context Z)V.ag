@@ -1,0 +1,44 @@
+# Landroidx/appcompat/widget/DropDownListView;-><init>(Landroid/content/Context; Z)V [access_flags=constructor]
+#
+# Parameters:
+# - local registers: v0...v4
+# - v5:android.content.Context
+# - v6:boolean
+#
+# - return:void
+
+<init>-BB@0x0 : [ <init>-BB@0x36 ]
+	0       (00000000) const/4              v3, 0
+	1       (00000002) const/4              v1, 0
+	2       (00000004) sget                 v2, Landroidx/appcompat/R$attr;->dropDownListViewStyle I
+	3       (00000008) invoke-direct        v4, v5, v1, v2, Landroid/widget/ListView;-><init>(Landroid/content/Context; Landroid/util/AttributeSet; I)V
+	4       (0000000e) new-instance         v1, Landroid/graphics/Rect;
+	5       (00000012) invoke-direct        v1, Landroid/graphics/Rect;-><init>()V
+	6       (00000018) iput-object          v1, v4, Landroidx/appcompat/widget/DropDownListView;->mSelectorRect Landroid/graphics/Rect;
+	7       (0000001c) iput                 v3, v4, Landroidx/appcompat/widget/DropDownListView;->mSelectionLeftPadding I
+	8       (00000020) iput                 v3, v4, Landroidx/appcompat/widget/DropDownListView;->mSelectionTopPadding I
+	9       (00000024) iput                 v3, v4, Landroidx/appcompat/widget/DropDownListView;->mSelectionRightPadding I
+	10      (00000028) iput                 v3, v4, Landroidx/appcompat/widget/DropDownListView;->mSelectionBottomPadding I
+	11      (0000002c) iput-boolean         v6, v4, Landroidx/appcompat/widget/DropDownListView;->mHijackFocus Z
+	12      (00000030) invoke-virtual       v4, v3, Landroidx/appcompat/widget/DropDownListView;->setCacheColorHint(I)V
+
+<init>-BB@0x36 : [ <init>-BB@0x56 ]
+	13      (00000036) const-class          v1, Landroid/widget/AbsListView;
+	14      (0000003a) const-string         v2, 'mIsChildViewEnabled'
+	15      (0000003e) invoke-virtual       v1, v2, Ljava/lang/Class;->getDeclaredField(Ljava/lang/String;)Ljava/lang/reflect/Field;
+	16      (00000044) move-result-object   v1
+	17      (00000046) iput-object          v1, v4, Landroidx/appcompat/widget/DropDownListView;->mIsChildViewEnabled Ljava/lang/reflect/Field;
+	18      (0000004a) iget-object          v1, v4, Landroidx/appcompat/widget/DropDownListView;->mIsChildViewEnabled Ljava/lang/reflect/Field;
+	19      (0000004e) const/4              v2, 1
+	20      (00000050) invoke-virtual       v1, v2, Ljava/lang/reflect/Field;->setAccessible(Z)V
+	36:55
+	(Ljava/lang/NoSuchFieldException; -> 58 <init>-BB@0x58)
+
+<init>-BB@0x56 : 
+	21      (00000056) return-void          
+
+<init>-BB@0x58 : [ <init>-BB@0x56 ]
+	22      (00000058) move-exception       v0
+	23      (0000005a) invoke-virtual       v0, Ljava/lang/NoSuchFieldException;->printStackTrace()V
+	24      (00000060) goto                 -5
+

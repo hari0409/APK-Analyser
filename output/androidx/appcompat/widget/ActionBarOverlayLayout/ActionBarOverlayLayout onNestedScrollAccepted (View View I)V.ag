@@ -1,0 +1,27 @@
+# Landroidx/appcompat/widget/ActionBarOverlayLayout;->onNestedScrollAccepted(Landroid/view/View; Landroid/view/View; I)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:android.view.View
+# - v3:android.view.View
+# - v4:int
+#
+# - return:void
+
+onNestedScrollAccepted-BB@0x0 : [ onNestedScrollAccepted-BB@0x24 onNestedScrollAccepted-BB@0x2e ]
+	0       (00000000) iget-object          v0, v1, Landroidx/appcompat/widget/ActionBarOverlayLayout;->mParentHelper Landroidx/core/view/NestedScrollingParentHelper;
+	1       (00000004) invoke-virtual       v0, v2, v3, v4, Landroidx/core/view/NestedScrollingParentHelper;->onNestedScrollAccepted(Landroid/view/View; Landroid/view/View; I)V
+	2       (0000000a) invoke-virtual       v1, Landroidx/appcompat/widget/ActionBarOverlayLayout;->getActionBarHideOffset()I
+	3       (00000010) move-result          v0
+	4       (00000012) iput                 v0, v1, Landroidx/appcompat/widget/ActionBarOverlayLayout;->mHideOnContentScrollReference I
+	5       (00000016) invoke-virtual       v1, Landroidx/appcompat/widget/ActionBarOverlayLayout;->haltActionBarHideOffsetAnimations()V
+	6       (0000001c) iget-object          v0, v1, Landroidx/appcompat/widget/ActionBarOverlayLayout;->mActionBarVisibilityCallback Landroidx/appcompat/widget/ActionBarOverlayLayout$ActionBarVisibilityCallback;
+	7       (00000020) if-eqz               v0, +7
+
+onNestedScrollAccepted-BB@0x24 : [ onNestedScrollAccepted-BB@0x2e ]
+	8       (00000024) iget-object          v0, v1, Landroidx/appcompat/widget/ActionBarOverlayLayout;->mActionBarVisibilityCallback Landroidx/appcompat/widget/ActionBarOverlayLayout$ActionBarVisibilityCallback;
+	9       (00000028) invoke-interface     v0, Landroidx/appcompat/widget/ActionBarOverlayLayout$ActionBarVisibilityCallback;->onContentScrollStarted()V
+
+onNestedScrollAccepted-BB@0x2e : 
+	10      (0000002e) return-void          
+

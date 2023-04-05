@@ -1,0 +1,66 @@
+# Landroidx/appcompat/widget/TooltipPopup;-><init>(Landroid/content/Context;)V [access_flags=constructor]
+#
+# Parameters:
+# - local registers: v0...v4
+# - v5:android.content.Context
+#
+# - return:void
+
+<init>-BB@0x0 : 
+	0       (00000000) const/4              v1, 2
+	1       (00000002) const/4              v3, -2
+	2       (00000004) invoke-direct        v4, Ljava/lang/Object;-><init>()V
+	3       (0000000a) new-instance         v0, Landroid/view/WindowManager$LayoutParams;
+	4       (0000000e) invoke-direct        v0, Landroid/view/WindowManager$LayoutParams;-><init>()V
+	5       (00000014) iput-object          v0, v4, Landroidx/appcompat/widget/TooltipPopup;->mLayoutParams Landroid/view/WindowManager$LayoutParams;
+	6       (00000018) new-instance         v0, Landroid/graphics/Rect;
+	7       (0000001c) invoke-direct        v0, Landroid/graphics/Rect;-><init>()V
+	8       (00000022) iput-object          v0, v4, Landroidx/appcompat/widget/TooltipPopup;->mTmpDisplayFrame Landroid/graphics/Rect;
+	9       (00000026) new-array            v0, v1, [I
+	10      (0000002a) iput-object          v0, v4, Landroidx/appcompat/widget/TooltipPopup;->mTmpAnchorPos [I
+	11      (0000002e) new-array            v0, v1, [I
+	12      (00000032) iput-object          v0, v4, Landroidx/appcompat/widget/TooltipPopup;->mTmpAppPos [I
+	13      (00000036) iput-object          v5, v4, Landroidx/appcompat/widget/TooltipPopup;->mContext Landroid/content/Context;
+	14      (0000003a) iget-object          v0, v4, Landroidx/appcompat/widget/TooltipPopup;->mContext Landroid/content/Context;
+	15      (0000003e) invoke-static        v0, Landroid/view/LayoutInflater;->from(Landroid/content/Context;)Landroid/view/LayoutInflater;
+	16      (00000044) move-result-object   v0
+	17      (00000046) sget                 v1, Landroidx/appcompat/R$layout;->abc_tooltip I
+	18      (0000004a) const/4              v2, 0
+	19      (0000004c) invoke-virtual       v0, v1, v2, Landroid/view/LayoutInflater;->inflate(I Landroid/view/ViewGroup;)Landroid/view/View;
+	20      (00000052) move-result-object   v0
+	21      (00000054) iput-object          v0, v4, Landroidx/appcompat/widget/TooltipPopup;->mContentView Landroid/view/View;
+	22      (00000058) iget-object          v0, v4, Landroidx/appcompat/widget/TooltipPopup;->mContentView Landroid/view/View;
+	23      (0000005c) sget                 v1, Landroidx/appcompat/R$id;->message I
+	24      (00000060) invoke-virtual       v0, v1, Landroid/view/View;->findViewById(I)Landroid/view/View;
+	25      (00000066) move-result-object   v0
+	26      (00000068) check-cast           v0, Landroid/widget/TextView;
+	27      (0000006c) iput-object          v0, v4, Landroidx/appcompat/widget/TooltipPopup;->mMessageView Landroid/widget/TextView;
+	28      (00000070) iget-object          v0, v4, Landroidx/appcompat/widget/TooltipPopup;->mLayoutParams Landroid/view/WindowManager$LayoutParams;
+	29      (00000074) invoke-virtual       v4, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+	30      (0000007a) move-result-object   v1
+	31      (0000007c) invoke-virtual       v1, Ljava/lang/Class;->getSimpleName()Ljava/lang/String;
+	32      (00000082) move-result-object   v1
+	33      (00000084) invoke-virtual       v0, v1, Landroid/view/WindowManager$LayoutParams;->setTitle(Ljava/lang/CharSequence;)V
+	34      (0000008a) iget-object          v0, v4, Landroidx/appcompat/widget/TooltipPopup;->mLayoutParams Landroid/view/WindowManager$LayoutParams;
+	35      (0000008e) iget-object          v1, v4, Landroidx/appcompat/widget/TooltipPopup;->mContext Landroid/content/Context;
+	36      (00000092) invoke-virtual       v1, Landroid/content/Context;->getPackageName()Ljava/lang/String;
+	37      (00000098) move-result-object   v1
+	38      (0000009a) iput-object          v1, v0, Landroid/view/WindowManager$LayoutParams;->packageName Ljava/lang/String;
+	39      (0000009e) iget-object          v0, v4, Landroidx/appcompat/widget/TooltipPopup;->mLayoutParams Landroid/view/WindowManager$LayoutParams;
+	40      (000000a2) const/16             v1, 1002
+	41      (000000a6) iput                 v1, v0, Landroid/view/WindowManager$LayoutParams;->type I
+	42      (000000aa) iget-object          v0, v4, Landroidx/appcompat/widget/TooltipPopup;->mLayoutParams Landroid/view/WindowManager$LayoutParams;
+	43      (000000ae) iput                 v3, v0, Landroid/view/WindowManager$LayoutParams;->width I
+	44      (000000b2) iget-object          v0, v4, Landroidx/appcompat/widget/TooltipPopup;->mLayoutParams Landroid/view/WindowManager$LayoutParams;
+	45      (000000b6) iput                 v3, v0, Landroid/view/WindowManager$LayoutParams;->height I
+	46      (000000ba) iget-object          v0, v4, Landroidx/appcompat/widget/TooltipPopup;->mLayoutParams Landroid/view/WindowManager$LayoutParams;
+	47      (000000be) const/4              v1, -3
+	48      (000000c0) iput                 v1, v0, Landroid/view/WindowManager$LayoutParams;->format I
+	49      (000000c4) iget-object          v0, v4, Landroidx/appcompat/widget/TooltipPopup;->mLayoutParams Landroid/view/WindowManager$LayoutParams;
+	50      (000000c8) sget                 v1, Landroidx/appcompat/R$style;->Animation_AppCompat_Tooltip I
+	51      (000000cc) iput                 v1, v0, Landroid/view/WindowManager$LayoutParams;->windowAnimations I
+	52      (000000d0) iget-object          v0, v4, Landroidx/appcompat/widget/TooltipPopup;->mLayoutParams Landroid/view/WindowManager$LayoutParams;
+	53      (000000d4) const/16             v1, 24
+	54      (000000d8) iput                 v1, v0, Landroid/view/WindowManager$LayoutParams;->flags I
+	55      (000000dc) return-void          
+

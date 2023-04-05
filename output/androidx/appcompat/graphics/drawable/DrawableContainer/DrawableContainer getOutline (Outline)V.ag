@@ -1,0 +1,19 @@
+# Landroidx/appcompat/graphics/drawable/DrawableContainer;->getOutline(Landroid/graphics/Outline;)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:android.graphics.Outline
+#
+# - return:void
+
+getOutline-BB@0x0 : [ getOutline-BB@0x8 getOutline-BB@0x12 ]
+	0       (00000000) iget-object          v0, v1, Landroidx/appcompat/graphics/drawable/DrawableContainer;->mCurrDrawable Landroid/graphics/drawable/Drawable;
+	1       (00000004) if-eqz               v0, +7
+
+getOutline-BB@0x8 : [ getOutline-BB@0x12 ]
+	2       (00000008) iget-object          v0, v1, Landroidx/appcompat/graphics/drawable/DrawableContainer;->mCurrDrawable Landroid/graphics/drawable/Drawable;
+	3       (0000000c) invoke-virtual       v0, v2, Landroid/graphics/drawable/Drawable;->getOutline(Landroid/graphics/Outline;)V
+
+getOutline-BB@0x12 : 
+	4       (00000012) return-void          
+

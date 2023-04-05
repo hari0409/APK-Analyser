@@ -1,0 +1,46 @@
+# Landroidx/appcompat/graphics/drawable/AnimatedStateListDrawableCompat$AnimatedStateListState;->addTransition(I I Landroid/graphics/drawable/Drawable; Z)I [access_flags=]
+#
+# Parameters:
+# - local registers: v0...v12
+# - v13:int
+# - v14:int
+# - v15:android.graphics.drawable.Drawable
+# - v16:boolean
+#
+# - return:int
+
+addTransition-BB@0x0 : [ addTransition-BB@0x18 addTransition-BB@0x22 ]
+	0       (00000000) invoke-super         v12, v15, Landroidx/appcompat/graphics/drawable/StateListDrawable$StateListState;->addChild(Landroid/graphics/drawable/Drawable;)I
+	1       (00000006) move-result          v4
+	2       (00000008) invoke-static        v13, v14, Landroidx/appcompat/graphics/drawable/AnimatedStateListDrawableCompat$AnimatedStateListState;->generateTransitionKey(I I)J
+	3       (0000000e) move-result-wide     v0
+	4       (00000010) const-wide/16        v6, 0 # [0.0]
+	5       (00000014) if-eqz               v16, +7
+
+addTransition-BB@0x18 : [ addTransition-BB@0x22 ]
+	6       (00000018) const-wide           v6, 8589934592 # [4.243991582e-314]
+
+addTransition-BB@0x22 : [ addTransition-BB@0x3c addTransition-BB@0x66 ]
+	7       (00000022) iget-object          v5, v12, Landroidx/appcompat/graphics/drawable/AnimatedStateListDrawableCompat$AnimatedStateListState;->mTransitions Landroidx/collection/LongSparseArray;
+	8       (00000026) int-to-long          v8, v4
+	9       (00000028) or-long/2addr        v8, v6
+	10      (0000002a) invoke-static        v8, v9, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+	11      (00000030) move-result-object   v8
+	12      (00000032) invoke-virtual       v5, v0, v1, v8, Landroidx/collection/LongSparseArray;->append(J Ljava/lang/Object;)V
+	13      (00000038) if-eqz               v16, +17
+
+addTransition-BB@0x3c : [ addTransition-BB@0x66 ]
+	14      (0000003c) invoke-static        v14, v13, Landroidx/appcompat/graphics/drawable/AnimatedStateListDrawableCompat$AnimatedStateListState;->generateTransitionKey(I I)J
+	15      (00000042) move-result-wide     v2
+	16      (00000044) iget-object          v5, v12, Landroidx/appcompat/graphics/drawable/AnimatedStateListDrawableCompat$AnimatedStateListState;->mTransitions Landroidx/collection/LongSparseArray;
+	17      (00000048) int-to-long          v8, v4
+	18      (0000004a) const-wide           v10, 4294967296 # [2.121995791e-314]
+	19      (00000054) or-long/2addr        v8, v10
+	20      (00000056) or-long/2addr        v8, v6
+	21      (00000058) invoke-static        v8, v9, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+	22      (0000005e) move-result-object   v8
+	23      (00000060) invoke-virtual       v5, v2, v3, v8, Landroidx/collection/LongSparseArray;->append(J Ljava/lang/Object;)V
+
+addTransition-BB@0x66 : 
+	24      (00000066) return               v4
+

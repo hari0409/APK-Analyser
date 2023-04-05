@@ -1,0 +1,35 @@
+# Lcom/afwsamples/testdpc/policy/OverrideApnFragment;->inetAddressFromString(Ljava/lang/String;)Ljava/net/InetAddress; [access_flags=private]
+#
+# Parameters:
+# - local registers: v0...v4
+# - v5:java.lang.String
+#
+# - return:java.net.InetAddress
+
+inetAddressFromString-BB@0x0 : [ inetAddressFromString-BB@0xe inetAddressFromString-BB@0x10 ]
+	0       (00000000) const/4              v1, 0
+	1       (00000002) invoke-static        v5, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
+	2       (00000008) move-result          v2
+	3       (0000000a) if-eqz               v2, +3
+
+inetAddressFromString-BB@0xe : 
+	4       (0000000e) return-object        v1
+
+inetAddressFromString-BB@0x10 : [ inetAddressFromString-BB@0xe ]
+	5       (00000010) invoke-static        v5, Ljava/net/InetAddress;->getByName(Ljava/lang/String;)Ljava/net/InetAddress;
+	6       (00000016) move-result-object   v1
+	7       (00000018) goto                 -5
+	10:15
+	(Ljava/net/UnknownHostException; -> 1a inetAddressFromString-BB@0x1a)
+
+inetAddressFromString-BB@0x1a : [ inetAddressFromString-BB@0xe ]
+	8       (0000001a) move-exception       v0
+	9       (0000001c) sget-object          v2, Lcom/afwsamples/testdpc/policy/OverrideApnFragment;->LOG_TAG Ljava/lang/String;
+	10      (00000020) const-string         v3, "Can't parse InetAddress from string: unknown host."
+	11      (00000024) invoke-static        v2, v3, Landroid/util/Log;->e(Ljava/lang/String; Ljava/lang/String;)I
+	12      (0000002a) const                v2, 2131689569 # [1.9008157079097452e+38]
+	13      (00000030) const/4              v3, 0
+	14      (00000032) new-array            v3, v3, [Ljava/lang/Object;
+	15      (00000036) invoke-direct        v4, v2, v3, Lcom/afwsamples/testdpc/policy/OverrideApnFragment;->showToast(I [Ljava/lang/Object;)V
+	16      (0000003c) goto                 -17
+

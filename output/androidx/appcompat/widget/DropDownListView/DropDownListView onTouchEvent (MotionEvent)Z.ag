@@ -1,0 +1,41 @@
+# Landroidx/appcompat/widget/DropDownListView;->onTouchEvent(Landroid/view/MotionEvent;)Z [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:android.view.MotionEvent
+#
+# - return:boolean
+
+onTouchEvent-BB@0x0 : [ D:onTouchEvent-BB@0xe 0:onTouchEvent-BB@0x2a ]
+	0       (00000000) invoke-virtual       v3, Landroid/view/MotionEvent;->getAction()I
+	1       (00000006) move-result          v0
+	2       (00000008) packed-switch        v0, +22 (0x4c)
+
+onTouchEvent-BB@0xe : [ onTouchEvent-BB@0x16 onTouchEvent-BB@0x20 ]
+	3       (0000000e) iget-object          v0, v2, Landroidx/appcompat/widget/DropDownListView;->mResolveHoverRunnable Landroidx/appcompat/widget/DropDownListView$ResolveHoverRunnable;
+	4       (00000012) if-eqz               v0, +7
+
+onTouchEvent-BB@0x16 : [ onTouchEvent-BB@0x20 ]
+	5       (00000016) iget-object          v0, v2, Landroidx/appcompat/widget/DropDownListView;->mResolveHoverRunnable Landroidx/appcompat/widget/DropDownListView$ResolveHoverRunnable;
+	6       (0000001a) invoke-virtual       v0, Landroidx/appcompat/widget/DropDownListView$ResolveHoverRunnable;->cancel()V
+
+onTouchEvent-BB@0x20 : 
+	7       (00000020) invoke-super         v2, v3, Landroid/widget/ListView;->onTouchEvent(Landroid/view/MotionEvent;)Z
+	8       (00000026) move-result          v0
+	9       (00000028) return               v0
+
+onTouchEvent-BB@0x2a : [ onTouchEvent-BB@0xe ]
+	10      (0000002a) invoke-virtual       v3, Landroid/view/MotionEvent;->getX()F
+	11      (00000030) move-result          v0
+	12      (00000032) float-to-int         v0, v0
+	13      (00000034) invoke-virtual       v3, Landroid/view/MotionEvent;->getY()F
+	14      (0000003a) move-result          v1
+	15      (0000003c) float-to-int         v1, v1
+	16      (0000003e) invoke-virtual       v2, v0, v1, Landroidx/appcompat/widget/DropDownListView;->pointToPosition(I I)I
+	17      (00000044) move-result          v0
+	18      (00000046) iput                 v0, v2, Landroidx/appcompat/widget/DropDownListView;->mMotionPosition I
+	19      (0000004a) goto                 -1e
+
+onTouchEvent-BB@0x4c : 
+	20      (0000004c) packed-switch-payload 0
+

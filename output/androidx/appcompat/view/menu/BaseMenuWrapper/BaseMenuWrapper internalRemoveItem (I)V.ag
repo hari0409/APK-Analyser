@@ -1,0 +1,39 @@
+# Landroidx/appcompat/view/menu/BaseMenuWrapper;->internalRemoveItem(I)V [access_flags=final]
+#
+# Parameters:
+# - local registers: v0...v3
+# - v4:int
+#
+# - return:void
+
+internalRemoveItem-BB@0x0 : [ internalRemoveItem-BB@0x8 internalRemoveItem-BB@0xa ]
+	0       (00000000) iget-object          v2, v3, Landroidx/appcompat/view/menu/BaseMenuWrapper;->mMenuItems Ljava/util/Map;
+	1       (00000004) if-nez               v2, +3
+
+internalRemoveItem-BB@0x8 : 
+	2       (00000008) return-void          
+
+internalRemoveItem-BB@0xa : [ internalRemoveItem-BB@0x1e ]
+	3       (0000000a) iget-object          v2, v3, Landroidx/appcompat/view/menu/BaseMenuWrapper;->mMenuItems Ljava/util/Map;
+	4       (0000000e) invoke-interface     v2, Ljava/util/Map;->keySet()Ljava/util/Set;
+	5       (00000014) move-result-object   v2
+	6       (00000016) invoke-interface     v2, Ljava/util/Set;->iterator()Ljava/util/Iterator;
+	7       (0000001c) move-result-object   v0
+
+internalRemoveItem-BB@0x1e : [ internalRemoveItem-BB@0x2a internalRemoveItem-BB@0x8 ]
+	8       (0000001e) invoke-interface     v0, Ljava/util/Iterator;->hasNext()Z
+	9       (00000024) move-result          v2
+	10      (00000026) if-eqz               v2, -f
+
+internalRemoveItem-BB@0x2a : [ internalRemoveItem-BB@0x42 internalRemoveItem-BB@0x1e ]
+	11      (0000002a) invoke-interface     v0, Ljava/util/Iterator;->next()Ljava/lang/Object;
+	12      (00000030) move-result-object   v1
+	13      (00000032) check-cast           v1, Landroid/view/MenuItem;
+	14      (00000036) invoke-interface     v1, Landroid/view/MenuItem;->getItemId()I
+	15      (0000003c) move-result          v2
+	16      (0000003e) if-ne                v4, v2, -10
+
+internalRemoveItem-BB@0x42 : [ internalRemoveItem-BB@0x8 ]
+	17      (00000042) invoke-interface     v0, Ljava/util/Iterator;->remove()V
+	18      (00000048) goto                 -20
+

@@ -1,0 +1,25 @@
+# Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->lambda$setKeyGuardDisabled$120$PolicyManagementFragment(Z Ljava/lang/Exception;)V [access_flags=final synthetic]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:boolean
+# - v4:java.lang.Exception
+#
+# - return:void
+
+lambda$setKeyGuardDisabled$120$PolicyManagementFragment-BB@0x0 : [ lambda$setKeyGuardDisabled$120$PolicyManagementFragment-BB@0x4 lambda$setKeyGuardDisabled$120$PolicyManagementFragment-BB@0x18 ]
+	0       (00000000) if-eqz               v3, +c
+
+lambda$setKeyGuardDisabled$120$PolicyManagementFragment-BB@0x4 : [ lambda$setKeyGuardDisabled$120$PolicyManagementFragment-BB@0xa ]
+	1       (00000004) const                v0, 2131690326 # [1.900969245750445e+38]
+
+lambda$setKeyGuardDisabled$120$PolicyManagementFragment-BB@0xa : 
+	2       (0000000a) const/4              v1, 0
+	3       (0000000c) new-array            v1, v1, [Ljava/lang/Object;
+	4       (00000010) invoke-direct        v2, v0, v1, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->showToast(I [Ljava/lang/Object;)V
+	5       (00000016) return-void          
+
+lambda$setKeyGuardDisabled$120$PolicyManagementFragment-BB@0x18 : [ lambda$setKeyGuardDisabled$120$PolicyManagementFragment-BB@0xa ]
+	6       (00000018) const                v0, 2131690327 # [1.900969448574541e+38]
+	7       (0000001e) goto                 -a
+

@@ -1,0 +1,26 @@
+# Landroidx/appcompat/widget/ThemeUtils;->createDisabledStateList(I I)Landroid/content/res/ColorStateList; [access_flags=public static]
+#
+# Parameters:
+# - local registers: v0...v3
+# - v4:int
+# - v5:int
+#
+# - return:android.content.res.ColorStateList
+
+createDisabledStateList-BB@0x0 : 
+	0       (00000000) const/4              v3, 2
+	1       (00000002) new-array            v2, v3, [[I
+	2       (00000006) new-array            v0, v3, [I
+	3       (0000000a) const/4              v1, 0
+	4       (0000000c) sget-object          v3, Landroidx/appcompat/widget/ThemeUtils;->DISABLED_STATE_SET [I
+	5       (00000010) aput-object          v3, v2, v1
+	6       (00000014) aput                 v5, v0, v1
+	7       (00000018) add-int/lit8         v1, v1, 1
+	8       (0000001c) sget-object          v3, Landroidx/appcompat/widget/ThemeUtils;->EMPTY_STATE_SET [I
+	9       (00000020) aput-object          v3, v2, v1
+	10      (00000024) aput                 v4, v0, v1
+	11      (00000028) add-int/lit8         v1, v1, 1
+	12      (0000002c) new-instance         v3, Landroid/content/res/ColorStateList;
+	13      (00000030) invoke-direct        v3, v2, v0, Landroid/content/res/ColorStateList;-><init>([[I [I)V
+	14      (00000036) return-object        v3
+

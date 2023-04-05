@@ -1,0 +1,12 @@
+# Lcom/afwsamples/testdpc/cosu/EnableCosuActivity;->access$000(Lcom/afwsamples/testdpc/cosu/EnableCosuActivity;)Ljava/lang/Long; [access_flags=static synthetic]
+#
+# Parameters:
+# - local registers: v0...v0
+# - v1:com.afwsamples.testdpc.cosu.EnableCosuActivity
+#
+# - return:java.lang.Long
+
+access$000-BB@0x0 : 
+	0       (00000000) iget-object          v0, v1, Lcom/afwsamples/testdpc/cosu/EnableCosuActivity;->mConfigDownloadId Ljava/lang/Long;
+	1       (00000004) return-object        v0
+

@@ -1,0 +1,16 @@
+# Lcom/afwsamples/testdpc/common/ReflectionUtil;->invoke(Ljava/lang/Class; Ljava/lang/String; [Ljava/lang/Object;)Ljava/lang/Object; [access_flags=public static varargs]
+#
+# Parameters:
+# - local registers: v0...v0
+# - v1:java.lang.Class
+# - v2:java.lang.String
+# - v3:java.lang.Object[]
+#
+# - return:java.lang.Object
+
+invoke-BB@0x0 : 
+	0       (00000000) const/4              v0, 0
+	1       (00000002) invoke-static        v1, v0, v2, v3, Lcom/afwsamples/testdpc/common/ReflectionUtil;->invoke(Ljava/lang/Class; Ljava/lang/Object; Ljava/lang/String; [Ljava/lang/Object;)Ljava/lang/Object;
+	2       (00000008) move-result-object   v0
+	3       (0000000a) return-object        v0
+

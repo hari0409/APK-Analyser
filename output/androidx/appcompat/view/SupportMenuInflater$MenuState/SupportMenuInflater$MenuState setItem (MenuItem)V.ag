@@ -1,0 +1,178 @@
+# Landroidx/appcompat/view/SupportMenuInflater$MenuState;->setItem(Landroid/view/MenuItem;)V [access_flags=private]
+#
+# Parameters:
+# - local registers: v0...v7
+# - v8:android.view.MenuItem
+#
+# - return:void
+
+setItem-BB@0x0 : [ setItem-BB@0x2e setItem-BB@0x8c ]
+	0       (00000000) const/4              v4, 1
+	1       (00000002) iget-boolean         v3, v7, Landroidx/appcompat/view/SupportMenuInflater$MenuState;->itemChecked Z
+	2       (00000006) invoke-interface     v8, v3, Landroid/view/MenuItem;->setChecked(Z)Landroid/view/MenuItem;
+	3       (0000000c) move-result-object   v3
+	4       (0000000e) iget-boolean         v5, v7, Landroidx/appcompat/view/SupportMenuInflater$MenuState;->itemVisible Z
+	5       (00000012) invoke-interface     v3, v5, Landroid/view/MenuItem;->setVisible(Z)Landroid/view/MenuItem;
+	6       (00000018) move-result-object   v3
+	7       (0000001a) iget-boolean         v5, v7, Landroidx/appcompat/view/SupportMenuInflater$MenuState;->itemEnabled Z
+	8       (0000001e) invoke-interface     v3, v5, Landroid/view/MenuItem;->setEnabled(Z)Landroid/view/MenuItem;
+	9       (00000024) move-result-object   v5
+	10      (00000026) iget                 v3, v7, Landroidx/appcompat/view/SupportMenuInflater$MenuState;->itemCheckable I
+	11      (0000002a) if-lt                v3, v4, +31
+
+setItem-BB@0x2e : [ setItem-BB@0x30 ]
+	12      (0000002e) move                 v3, v4
+
+setItem-BB@0x30 : [ setItem-BB@0x56 setItem-BB@0x60 ]
+	13      (00000030) invoke-interface     v5, v3, Landroid/view/MenuItem;->setCheckable(Z)Landroid/view/MenuItem;
+	14      (00000036) move-result-object   v3
+	15      (00000038) iget-object          v5, v7, Landroidx/appcompat/view/SupportMenuInflater$MenuState;->itemTitleCondensed Ljava/lang/CharSequence;
+	16      (0000003c) invoke-interface     v3, v5, Landroid/view/MenuItem;->setTitleCondensed(Ljava/lang/CharSequence;)Landroid/view/MenuItem;
+	17      (00000042) move-result-object   v3
+	18      (00000044) iget                 v5, v7, Landroidx/appcompat/view/SupportMenuInflater$MenuState;->itemIconResId I
+	19      (00000048) invoke-interface     v3, v5, Landroid/view/MenuItem;->setIcon(I)Landroid/view/MenuItem;
+	20      (0000004e) iget                 v3, v7, Landroidx/appcompat/view/SupportMenuInflater$MenuState;->itemShowAsAction I
+	21      (00000052) if-ltz               v3, +7
+
+setItem-BB@0x56 : [ setItem-BB@0x60 ]
+	22      (00000056) iget                 v3, v7, Landroidx/appcompat/view/SupportMenuInflater$MenuState;->itemShowAsAction I
+	23      (0000005a) invoke-interface     v8, v3, Landroid/view/MenuItem;->setShowAsAction(I)V
+
+setItem-BB@0x60 : [ setItem-BB@0x68 setItem-BB@0xb0 ]
+	24      (00000060) iget-object          v3, v7, Landroidx/appcompat/view/SupportMenuInflater$MenuState;->itemListenerMethodName Ljava/lang/String;
+	25      (00000064) if-eqz               v3, +26
+
+setItem-BB@0x68 : [ setItem-BB@0x7c setItem-BB@0x90 ]
+	26      (00000068) iget-object          v3, v7, Landroidx/appcompat/view/SupportMenuInflater$MenuState;->this$0 Landroidx/appcompat/view/SupportMenuInflater;
+	27      (0000006c) iget-object          v3, v3, Landroidx/appcompat/view/SupportMenuInflater;->mContext Landroid/content/Context;
+	28      (00000070) invoke-virtual       v3, Landroid/content/Context;->isRestricted()Z
+	29      (00000076) move-result          v3
+	30      (00000078) if-eqz               v3, +c
+
+setItem-BB@0x7c : 
+	31      (0000007c) new-instance         v3, Ljava/lang/IllegalStateException;
+	32      (00000080) const-string         v4, 'The android:onClick attribute cannot be used within a restricted context'
+	33      (00000084) invoke-direct        v3, v4, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+	34      (0000008a) throw                v3
+
+setItem-BB@0x8c : [ setItem-BB@0x30 ]
+	35      (0000008c) const/4              v3, 0
+	36      (0000008e) goto                 -2f
+
+setItem-BB@0x90 : [ setItem-BB@0xb0 ]
+	37      (00000090) new-instance         v3, Landroidx/appcompat/view/SupportMenuInflater$InflatedOnMenuItemClickListener;
+	38      (00000094) iget-object          v5, v7, Landroidx/appcompat/view/SupportMenuInflater$MenuState;->this$0 Landroidx/appcompat/view/SupportMenuInflater;
+	39      (00000098) invoke-virtual       v5, Landroidx/appcompat/view/SupportMenuInflater;->getRealOwner()Ljava/lang/Object;
+	40      (0000009e) move-result-object   v5
+	41      (000000a0) iget-object          v6, v7, Landroidx/appcompat/view/SupportMenuInflater$MenuState;->itemListenerMethodName Ljava/lang/String;
+	42      (000000a4) invoke-direct        v3, v5, v6, Landroidx/appcompat/view/SupportMenuInflater$InflatedOnMenuItemClickListener;-><init>(Ljava/lang/Object; Ljava/lang/String;)V
+	43      (000000aa) invoke-interface     v8, v3, Landroid/view/MenuItem;->setOnMenuItemClickListener(Landroid/view/MenuItem$OnMenuItemClickListener;)Landroid/view/MenuItem;
+
+setItem-BB@0xb0 : [ setItem-BB@0xb8 setItem-BB@0x18c ]
+	44      (000000b0) instance-of          v3, v8, Landroidx/appcompat/view/menu/MenuItemImpl;
+	45      (000000b4) if-eqz               v3, +6c
+
+setItem-BB@0xb8 : [ setItem-BB@0xc0 ]
+	46      (000000b8) move-object          v3, v8
+	47      (000000ba) check-cast           v3, Landroidx/appcompat/view/menu/MenuItemImpl;
+	48      (000000be) move-object          v2, v3
+
+setItem-BB@0xc0 : [ setItem-BB@0xca setItem-BB@0xde ]
+	49      (000000c0) iget                 v3, v7, Landroidx/appcompat/view/SupportMenuInflater$MenuState;->itemCheckable I
+	50      (000000c4) const/4              v5, 2
+	51      (000000c6) if-lt                v3, v5, +c
+
+setItem-BB@0xca : [ setItem-BB@0xd2 setItem-BB@0x190 ]
+	52      (000000ca) instance-of          v3, v8, Landroidx/appcompat/view/menu/MenuItemImpl;
+	53      (000000ce) if-eqz               v3, +61
+
+setItem-BB@0xd2 : [ setItem-BB@0xde ]
+	54      (000000d2) move-object          v3, v8
+	55      (000000d4) check-cast           v3, Landroidx/appcompat/view/menu/MenuItemImpl;
+	56      (000000d8) invoke-virtual       v3, v4, Landroidx/appcompat/view/menu/MenuItemImpl;->setExclusiveCheckable(Z)V
+
+setItem-BB@0xde : [ setItem-BB@0xe8 setItem-BB@0x10c ]
+	57      (000000de) const/4              v1, 0
+	58      (000000e0) iget-object          v3, v7, Landroidx/appcompat/view/SupportMenuInflater$MenuState;->itemActionViewClassName Ljava/lang/String;
+	59      (000000e4) if-eqz               v3, +14
+
+setItem-BB@0xe8 : [ setItem-BB@0x10c ]
+	60      (000000e8) iget-object          v3, v7, Landroidx/appcompat/view/SupportMenuInflater$MenuState;->itemActionViewClassName Ljava/lang/String;
+	61      (000000ec) sget-object          v4, Landroidx/appcompat/view/SupportMenuInflater;->ACTION_VIEW_CONSTRUCTOR_SIGNATURE [Ljava/lang/Class;
+	62      (000000f0) iget-object          v5, v7, Landroidx/appcompat/view/SupportMenuInflater$MenuState;->this$0 Landroidx/appcompat/view/SupportMenuInflater;
+	63      (000000f4) iget-object          v5, v5, Landroidx/appcompat/view/SupportMenuInflater;->mActionViewConstructorArguments [Ljava/lang/Object;
+	64      (000000f8) invoke-direct        v7, v3, v4, v5, Landroidx/appcompat/view/SupportMenuInflater$MenuState;->newInstance(Ljava/lang/String; [Ljava/lang/Class; [Ljava/lang/Object;)Ljava/lang/Object;
+	65      (000000fe) move-result-object   v0
+	66      (00000100) check-cast           v0, Landroid/view/View;
+	67      (00000104) invoke-interface     v8, v0, Landroid/view/MenuItem;->setActionView(Landroid/view/View;)Landroid/view/MenuItem;
+	68      (0000010a) const/4              v1, 1
+
+setItem-BB@0x10c : [ setItem-BB@0x114 setItem-BB@0x124 ]
+	69      (0000010c) iget                 v3, v7, Landroidx/appcompat/view/SupportMenuInflater$MenuState;->itemActionViewLayout I
+	70      (00000110) if-lez               v3, +a
+
+setItem-BB@0x114 : [ setItem-BB@0x118 setItem-BB@0x1a6 ]
+	71      (00000114) if-nez               v1, +49
+
+setItem-BB@0x118 : [ setItem-BB@0x124 ]
+	72      (00000118) iget                 v3, v7, Landroidx/appcompat/view/SupportMenuInflater$MenuState;->itemActionViewLayout I
+	73      (0000011c) invoke-interface     v8, v3, Landroid/view/MenuItem;->setActionView(I)Landroid/view/MenuItem;
+	74      (00000122) const/4              v1, 1
+
+setItem-BB@0x124 : [ setItem-BB@0x12c setItem-BB@0x136 ]
+	75      (00000124) iget-object          v3, v7, Landroidx/appcompat/view/SupportMenuInflater$MenuState;->itemActionProvider Landroidx/core/view/ActionProvider;
+	76      (00000128) if-eqz               v3, +7
+
+setItem-BB@0x12c : [ setItem-BB@0x136 ]
+	77      (0000012c) iget-object          v3, v7, Landroidx/appcompat/view/SupportMenuInflater$MenuState;->itemActionProvider Landroidx/core/view/ActionProvider;
+	78      (00000130) invoke-static        v8, v3, Landroidx/core/view/MenuItemCompat;->setActionProvider(Landroid/view/MenuItem; Landroidx/core/view/ActionProvider;)Landroid/view/MenuItem;
+
+setItem-BB@0x136 : [ setItem-BB@0x16e setItem-BB@0x178 ]
+	79      (00000136) iget-object          v3, v7, Landroidx/appcompat/view/SupportMenuInflater$MenuState;->itemContentDescription Ljava/lang/CharSequence;
+	80      (0000013a) invoke-static        v8, v3, Landroidx/core/view/MenuItemCompat;->setContentDescription(Landroid/view/MenuItem; Ljava/lang/CharSequence;)V
+	81      (00000140) iget-object          v3, v7, Landroidx/appcompat/view/SupportMenuInflater$MenuState;->itemTooltipText Ljava/lang/CharSequence;
+	82      (00000144) invoke-static        v8, v3, Landroidx/core/view/MenuItemCompat;->setTooltipText(Landroid/view/MenuItem; Ljava/lang/CharSequence;)V
+	83      (0000014a) iget-char            v3, v7, Landroidx/appcompat/view/SupportMenuInflater$MenuState;->itemAlphabeticShortcut C
+	84      (0000014e) iget                 v4, v7, Landroidx/appcompat/view/SupportMenuInflater$MenuState;->itemAlphabeticModifiers I
+	85      (00000152) invoke-static        v8, v3, v4, Landroidx/core/view/MenuItemCompat;->setAlphabeticShortcut(Landroid/view/MenuItem; C I)V
+	86      (00000158) iget-char            v3, v7, Landroidx/appcompat/view/SupportMenuInflater$MenuState;->itemNumericShortcut C
+	87      (0000015c) iget                 v4, v7, Landroidx/appcompat/view/SupportMenuInflater$MenuState;->itemNumericModifiers I
+	88      (00000160) invoke-static        v8, v3, v4, Landroidx/core/view/MenuItemCompat;->setNumericShortcut(Landroid/view/MenuItem; C I)V
+	89      (00000166) iget-object          v3, v7, Landroidx/appcompat/view/SupportMenuInflater$MenuState;->itemIconTintMode Landroid/graphics/PorterDuff$Mode;
+	90      (0000016a) if-eqz               v3, +7
+
+setItem-BB@0x16e : [ setItem-BB@0x178 ]
+	91      (0000016e) iget-object          v3, v7, Landroidx/appcompat/view/SupportMenuInflater$MenuState;->itemIconTintMode Landroid/graphics/PorterDuff$Mode;
+	92      (00000172) invoke-static        v8, v3, Landroidx/core/view/MenuItemCompat;->setIconTintMode(Landroid/view/MenuItem; Landroid/graphics/PorterDuff$Mode;)V
+
+setItem-BB@0x178 : [ setItem-BB@0x180 setItem-BB@0x18a ]
+	93      (00000178) iget-object          v3, v7, Landroidx/appcompat/view/SupportMenuInflater$MenuState;->itemIconTintList Landroid/content/res/ColorStateList;
+	94      (0000017c) if-eqz               v3, +7
+
+setItem-BB@0x180 : [ setItem-BB@0x18a ]
+	95      (00000180) iget-object          v3, v7, Landroidx/appcompat/view/SupportMenuInflater$MenuState;->itemIconTintList Landroid/content/res/ColorStateList;
+	96      (00000184) invoke-static        v8, v3, Landroidx/core/view/MenuItemCompat;->setIconTintList(Landroid/view/MenuItem; Landroid/content/res/ColorStateList;)V
+
+setItem-BB@0x18a : 
+	97      (0000018a) return-void          
+
+setItem-BB@0x18c : [ setItem-BB@0xc0 ]
+	98      (0000018c) const/4              v2, 0
+	99      (0000018e) goto                 -67
+
+setItem-BB@0x190 : [ setItem-BB@0x198 setItem-BB@0xde ]
+	100     (00000190) instance-of          v3, v8, Landroidx/appcompat/view/menu/MenuItemWrapperICS;
+	101     (00000194) if-eqz               v3, -5b
+
+setItem-BB@0x198 : [ setItem-BB@0xde ]
+	102     (00000198) move-object          v3, v8
+	103     (0000019a) check-cast           v3, Landroidx/appcompat/view/menu/MenuItemWrapperICS;
+	104     (0000019e) invoke-virtual       v3, v4, Landroidx/appcompat/view/menu/MenuItemWrapperICS;->setExclusiveCheckable(Z)V
+	105     (000001a4) goto                 -63
+
+setItem-BB@0x1a6 : [ setItem-BB@0x124 ]
+	106     (000001a6) const-string         v3, 'SupportMenuInflater'
+	107     (000001aa) const-string         v4, "Ignoring attribute 'itemActionViewLayout'. Action view already specified."
+	108     (000001ae) invoke-static        v3, v4, Landroid/util/Log;->w(Ljava/lang/String; Ljava/lang/String;)I
+	109     (000001b4) goto                 -48
+

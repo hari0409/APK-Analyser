@@ -1,0 +1,59 @@
+# Landroidx/appcompat/widget/AppCompatCompoundButtonHelper;->applyButtonTint()V [access_flags=]
+#
+# Parameters:
+# local registers: v0...v2
+#
+# - return:void
+
+applyButtonTint-BB@0x0 : [ applyButtonTint-BB@0x10 applyButtonTint-BB@0x7c ]
+	0       (00000000) iget-object          v1, v2, Landroidx/appcompat/widget/AppCompatCompoundButtonHelper;->mView Landroid/widget/CompoundButton;
+	1       (00000004) invoke-static        v1, Landroidx/core/widget/CompoundButtonCompat;->getButtonDrawable(Landroid/widget/CompoundButton;)Landroid/graphics/drawable/Drawable;
+	2       (0000000a) move-result-object   v0
+	3       (0000000c) if-eqz               v0, +38
+
+applyButtonTint-BB@0x10 : [ applyButtonTint-BB@0x18 applyButtonTint-BB@0x20 ]
+	4       (00000010) iget-boolean         v1, v2, Landroidx/appcompat/widget/AppCompatCompoundButtonHelper;->mHasButtonTint Z
+	5       (00000014) if-nez               v1, +6
+
+applyButtonTint-BB@0x18 : [ applyButtonTint-BB@0x20 applyButtonTint-BB@0x7c ]
+	6       (00000018) iget-boolean         v1, v2, Landroidx/appcompat/widget/AppCompatCompoundButtonHelper;->mHasButtonTintMode Z
+	7       (0000001c) if-eqz               v1, +30
+
+applyButtonTint-BB@0x20 : [ applyButtonTint-BB@0x38 applyButtonTint-BB@0x42 ]
+	8       (00000020) invoke-static        v0, Landroidx/core/graphics/drawable/DrawableCompat;->wrap(Landroid/graphics/drawable/Drawable;)Landroid/graphics/drawable/Drawable;
+	9       (00000026) move-result-object   v0
+	10      (00000028) invoke-virtual       v0, Landroid/graphics/drawable/Drawable;->mutate()Landroid/graphics/drawable/Drawable;
+	11      (0000002e) move-result-object   v0
+	12      (00000030) iget-boolean         v1, v2, Landroidx/appcompat/widget/AppCompatCompoundButtonHelper;->mHasButtonTint Z
+	13      (00000034) if-eqz               v1, +7
+
+applyButtonTint-BB@0x38 : [ applyButtonTint-BB@0x42 ]
+	14      (00000038) iget-object          v1, v2, Landroidx/appcompat/widget/AppCompatCompoundButtonHelper;->mButtonTintList Landroid/content/res/ColorStateList;
+	15      (0000003c) invoke-static        v0, v1, Landroidx/core/graphics/drawable/DrawableCompat;->setTintList(Landroid/graphics/drawable/Drawable; Landroid/content/res/ColorStateList;)V
+
+applyButtonTint-BB@0x42 : [ applyButtonTint-BB@0x4a applyButtonTint-BB@0x54 ]
+	16      (00000042) iget-boolean         v1, v2, Landroidx/appcompat/widget/AppCompatCompoundButtonHelper;->mHasButtonTintMode Z
+	17      (00000046) if-eqz               v1, +7
+
+applyButtonTint-BB@0x4a : [ applyButtonTint-BB@0x54 ]
+	18      (0000004a) iget-object          v1, v2, Landroidx/appcompat/widget/AppCompatCompoundButtonHelper;->mButtonTintMode Landroid/graphics/PorterDuff$Mode;
+	19      (0000004e) invoke-static        v0, v1, Landroidx/core/graphics/drawable/DrawableCompat;->setTintMode(Landroid/graphics/drawable/Drawable; Landroid/graphics/PorterDuff$Mode;)V
+
+applyButtonTint-BB@0x54 : [ applyButtonTint-BB@0x60 applyButtonTint-BB@0x72 ]
+	20      (00000054) invoke-virtual       v0, Landroid/graphics/drawable/Drawable;->isStateful()Z
+	21      (0000005a) move-result          v1
+	22      (0000005c) if-eqz               v1, +b
+
+applyButtonTint-BB@0x60 : [ applyButtonTint-BB@0x72 ]
+	23      (00000060) iget-object          v1, v2, Landroidx/appcompat/widget/AppCompatCompoundButtonHelper;->mView Landroid/widget/CompoundButton;
+	24      (00000064) invoke-virtual       v1, Landroid/widget/CompoundButton;->getDrawableState()[I
+	25      (0000006a) move-result-object   v1
+	26      (0000006c) invoke-virtual       v0, v1, Landroid/graphics/drawable/Drawable;->setState([I)Z
+
+applyButtonTint-BB@0x72 : [ applyButtonTint-BB@0x7c ]
+	27      (00000072) iget-object          v1, v2, Landroidx/appcompat/widget/AppCompatCompoundButtonHelper;->mView Landroid/widget/CompoundButton;
+	28      (00000076) invoke-virtual       v1, v0, Landroid/widget/CompoundButton;->setButtonDrawable(Landroid/graphics/drawable/Drawable;)V
+
+applyButtonTint-BB@0x7c : 
+	29      (0000007c) return-void          
+

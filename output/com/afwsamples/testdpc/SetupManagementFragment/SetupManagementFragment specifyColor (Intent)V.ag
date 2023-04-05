@@ -1,0 +1,22 @@
+# Lcom/afwsamples/testdpc/SetupManagementFragment;->specifyColor(Landroid/content/Intent;)V [access_flags=private]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:android.content.Intent
+#
+# - return:void
+
+specifyColor-BB@0x0 : [ specifyColor-BB@0xa specifyColor-BB@0xc ]
+	0       (00000000) iget                 v0, v2, Lcom/afwsamples/testdpc/SetupManagementFragment;->mCurrentColor I
+	1       (00000004) const/4              v1, -1
+	2       (00000006) if-ne                v0, v1, +3
+
+specifyColor-BB@0xa : 
+	3       (0000000a) return-void          
+
+specifyColor-BB@0xc : [ specifyColor-BB@0xa ]
+	4       (0000000c) const-string         v0, 'android.app.extra.PROVISIONING_MAIN_COLOR'
+	5       (00000010) iget                 v1, v2, Lcom/afwsamples/testdpc/SetupManagementFragment;->mCurrentColor I
+	6       (00000014) invoke-virtual       v3, v0, v1, Landroid/content/Intent;->putExtra(Ljava/lang/String; I)Landroid/content/Intent;
+	7       (0000001a) goto                 -8
+

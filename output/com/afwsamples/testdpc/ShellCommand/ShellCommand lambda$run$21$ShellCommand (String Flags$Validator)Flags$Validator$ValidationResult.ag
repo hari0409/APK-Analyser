@@ -1,0 +1,47 @@
+# Lcom/afwsamples/testdpc/ShellCommand;->lambda$run$21$ShellCommand(Ljava/lang/String; Lcom/afwsamples/testdpc/util/Flags$Validator;)Lcom/afwsamples/testdpc/util/Flags$Validator$ValidationResult; [access_flags=final synthetic]
+#
+# Parameters:
+# - local registers: v0...v8
+# - v9:java.lang.String
+# - v10:com.afwsamples.testdpc.util.Flags$Validator
+#
+# - return:com.afwsamples.testdpc.util.Flags$Validator$ValidationResult
+
+lambda$run$21$ShellCommand-BB@0x0 : [ lambda$run$21$ShellCommand-BB@0x18 lambda$run$21$ShellCommand-BB@0x52 ]
+	0       (00000000) invoke-static        v9, Ljava/lang/Long;->parseLong(Ljava/lang/String;)J
+	1       (00000006) move-result-wide     v2
+	2       (00000008) iget-object          v4, v8, Lcom/afwsamples/testdpc/ShellCommand;->mDevicePolicyManagerGateway Lcom/afwsamples/testdpc/DevicePolicyManagerGateway;
+	3       (0000000c) invoke-interface     v4, v2, v3, Lcom/afwsamples/testdpc/DevicePolicyManagerGateway;->getUserHandle(J)Landroid/os/UserHandle;
+	4       (00000012) move-result-object   v1
+	5       (00000014) if-nez               v1, +1f
+	0:5
+	(Ljava/lang/NumberFormatException; -> 42 lambda$run$21$ShellCommand-BB@0x42)
+
+lambda$run$21$ShellCommand-BB@0x18 : [ lambda$run$21$ShellCommand-BB@0x40 ]
+	6       (00000018) const-string         v4, 'User %d does not exist.'
+	7       (0000001c) const/4              v5, 1
+	8       (0000001e) new-array            v5, v5, [Ljava/lang/Object;
+	9       (00000022) const/4              v6, 0
+	10      (00000024) invoke-static        v2, v3, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+	11      (0000002a) move-result-object   v7
+	12      (0000002c) aput-object          v7, v5, v6
+	13      (00000030) invoke-static        v4, v5, Ljava/lang/String;->format(Ljava/lang/String; [Ljava/lang/Object;)Ljava/lang/String;
+	14      (00000036) move-result-object   v4
+	15      (00000038) invoke-virtual       v10, v4, Lcom/afwsamples/testdpc/util/Flags$Validator;->invalid(Ljava/lang/String;)Lcom/afwsamples/testdpc/util/Flags$Validator$ValidationResult;
+	16      (0000003e) move-result-object   v4
+
+lambda$run$21$ShellCommand-BB@0x40 : 
+	17      (00000040) return-object        v4
+
+lambda$run$21$ShellCommand-BB@0x42 : [ lambda$run$21$ShellCommand-BB@0x40 ]
+	18      (00000042) move-exception       v0
+	19      (00000044) const-string         v4, 'UserHandle must be a long integer.'
+	20      (00000048) invoke-virtual       v10, v4, Lcom/afwsamples/testdpc/util/Flags$Validator;->invalid(Ljava/lang/String;)Lcom/afwsamples/testdpc/util/Flags$Validator$ValidationResult;
+	21      (0000004e) move-result-object   v4
+	22      (00000050) goto                 -8
+
+lambda$run$21$ShellCommand-BB@0x52 : [ lambda$run$21$ShellCommand-BB@0x40 ]
+	23      (00000052) invoke-virtual       v10, v1, Lcom/afwsamples/testdpc/util/Flags$Validator;->valid(Ljava/lang/Object;)Lcom/afwsamples/testdpc/util/Flags$Validator$ValidationResult;
+	24      (00000058) move-result-object   v4
+	25      (0000005a) goto                 -d
+

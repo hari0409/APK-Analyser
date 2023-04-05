@@ -1,0 +1,29 @@
+# Lcom/afwsamples/testdpc/common/Util;->formatTimestamp(J)Ljava/lang/CharSequence; [access_flags=public static]
+#
+# Parameters:
+# - local registers: v0...v6
+# - v7:long
+#
+# - return:java.lang.CharSequence
+
+formatTimestamp-BB@0x0 : [ formatTimestamp-BB@0xc formatTimestamp-BB@0x10 ]
+	0       (00000000) const-wide/16        v0, 0 # [0.0]
+	1       (00000004) cmp-long             v0, v6, v0
+	2       (00000008) if-nez               v0, +4
+
+formatTimestamp-BB@0xc : [ formatTimestamp-BB@0xe ]
+	3       (0000000c) const/4              v0, 0
+
+formatTimestamp-BB@0xe : 
+	4       (0000000e) return-object        v0
+
+formatTimestamp-BB@0x10 : [ formatTimestamp-BB@0xe ]
+	5       (00000010) invoke-static        Ljava/lang/System;->currentTimeMillis()J
+	6       (00000016) move-result-wide     v2
+	7       (00000018) const/4              v4, 2
+	8       (0000001a) const/4              v5, 1
+	9       (0000001c) move-wide            v0, v6
+	10      (0000001e) invoke-static/range  v0 ... v5, Landroid/text/format/DateUtils;->formatSameDayTime(J J I I)Ljava/lang/CharSequence;
+	11      (00000024) move-result-object   v0
+	12      (00000026) goto                 -c
+

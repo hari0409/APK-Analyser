@@ -1,0 +1,15 @@
+# Lcom/afwsamples/testdpc/policy/MeteredDataRestrictionInfoAdapter;->isComponentEnabled(Landroid/content/pm/ResolveInfo;)Z [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:android.content.pm.ResolveInfo
+#
+# - return:boolean
+
+isComponentEnabled-BB@0x0 : 
+	0       (00000000) iget-object          v0, v2, Lcom/afwsamples/testdpc/policy/MeteredDataRestrictionInfoAdapter;->mRestrictedPkgs Ljava/util/List;
+	1       (00000004) iget-object          v1, v3, Landroid/content/pm/ResolveInfo;->resolvePackageName Ljava/lang/String;
+	2       (00000008) invoke-interface     v0, v1, Ljava/util/List;->contains(Ljava/lang/Object;)Z
+	3       (0000000e) move-result          v0
+	4       (00000010) return               v0
+

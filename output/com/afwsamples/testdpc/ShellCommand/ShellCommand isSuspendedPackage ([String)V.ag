@@ -1,0 +1,54 @@
+# Lcom/afwsamples/testdpc/ShellCommand;->isSuspendedPackage([Ljava/lang/String;)V [access_flags=private]
+#
+# Parameters:
+# - local registers: v0...v12
+# - v13:java.lang.String[]
+#
+# - return:void
+
+isSuspendedPackage-BB@0x0 : [ isSuspendedPackage-BB@0x8 ]
+	0       (00000000) const/4              v11, 1
+	1       (00000002) const/4              v4, 0
+	2       (00000004) array-length         v5, v13
+	3       (00000006) move                 v3, v4
+
+isSuspendedPackage-BB@0x8 : [ isSuspendedPackage-BB@0xc isSuspendedPackage-BB@0x64 ]
+	4       (00000008) if-ge                v3, v5, +2e
+
+isSuspendedPackage-BB@0xc : [ isSuspendedPackage-BB@0x10 ]
+	5       (0000000c) aget-object          v1, v13, v3
+
+isSuspendedPackage-BB@0x10 : [ isSuspendedPackage-BB@0x44 ]
+	6       (00000010) iget-object          v6, v12, Lcom/afwsamples/testdpc/ShellCommand;->mDevicePolicyManagerGateway Lcom/afwsamples/testdpc/DevicePolicyManagerGateway;
+	7       (00000014) invoke-interface     v6, v1, Lcom/afwsamples/testdpc/DevicePolicyManagerGateway;->isPackageSuspended(Ljava/lang/String;)Z
+	8       (0000001a) move-result          v2
+	9       (0000001c) iget-object          v6, v12, Lcom/afwsamples/testdpc/ShellCommand;->mWriter Ljava/io/PrintWriter;
+	10      (00000020) const-string         v7, '%s: %s\n'
+	11      (00000024) const/4              v8, 2
+	12      (00000026) new-array            v8, v8, [Ljava/lang/Object;
+	13      (0000002a) const/4              v9, 0
+	14      (0000002c) aput-object          v1, v8, v9
+	15      (00000030) const/4              v9, 1
+	16      (00000032) invoke-static        v2, Lcom/afwsamples/testdpc/ShellCommand;->suspendedToString(Z)Ljava/lang/String;
+	17      (00000038) move-result-object   v10
+	18      (0000003a) aput-object          v10, v8, v9
+	19      (0000003e) invoke-virtual       v6, v7, v8, Ljava/io/PrintWriter;->printf(Ljava/lang/String; [Ljava/lang/Object;)Ljava/io/PrintWriter;
+	10:43
+	(Landroid/content/pm/PackageManager$NameNotFoundException; -> 4a isSuspendedPackage-BB@0x4a)
+
+isSuspendedPackage-BB@0x44 : [ isSuspendedPackage-BB@0x8 ]
+	20      (00000044) add-int/lit8         v3, v3, 1
+	21      (00000048) goto                 -20
+
+isSuspendedPackage-BB@0x4a : [ isSuspendedPackage-BB@0x44 ]
+	22      (0000004a) move-exception       v0
+	23      (0000004c) iget-object          v6, v12, Lcom/afwsamples/testdpc/ShellCommand;->mWriter Ljava/io/PrintWriter;
+	24      (00000050) const-string         v7, 'Invalid package name: %s\n'
+	25      (00000054) new-array            v8, v11, [Ljava/lang/Object;
+	26      (00000058) aput-object          v1, v8, v4
+	27      (0000005c) invoke-virtual       v6, v7, v8, Ljava/io/PrintWriter;->printf(Ljava/lang/String; [Ljava/lang/Object;)Ljava/io/PrintWriter;
+	28      (00000062) goto                 -f
+
+isSuspendedPackage-BB@0x64 : 
+	29      (00000064) return-void          
+

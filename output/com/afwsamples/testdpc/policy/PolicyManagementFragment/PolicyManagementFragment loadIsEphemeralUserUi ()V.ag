@@ -1,0 +1,34 @@
+# Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->loadIsEphemeralUserUi()V [access_flags=private]
+#
+# Parameters:
+# local registers: v0...v3
+#
+# - return:void
+
+loadIsEphemeralUserUi-BB@0x0 : [ loadIsEphemeralUserUi-BB@0x10 loadIsEphemeralUserUi-BB@0x34 ]
+	0       (00000000) iget-object          v1, v3, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->mEphemeralUserPreference Landroidx/preference/Preference;
+	1       (00000004) invoke-virtual       v1, Landroidx/preference/Preference;->isEnabled()Z
+	2       (0000000a) move-result          v1
+	3       (0000000c) if-eqz               v1, +14
+
+loadIsEphemeralUserUi-BB@0x10 : [ loadIsEphemeralUserUi-BB@0x28 loadIsEphemeralUserUi-BB@0x36 ]
+	4       (00000010) iget-object          v1, v3, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->mDevicePolicyManager Landroid/app/admin/DevicePolicyManager;
+	5       (00000014) iget-object          v2, v3, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->mAdminComponentName Landroid/content/ComponentName;
+	6       (00000018) invoke-virtual       v1, v2, Landroid/app/admin/DevicePolicyManager;->isEphemeralUser(Landroid/content/ComponentName;)Z
+	7       (0000001e) move-result          v0
+	8       (00000020) iget-object          v2, v3, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->mEphemeralUserPreference Landroidx/preference/Preference;
+	9       (00000024) if-eqz               v0, +9
+
+loadIsEphemeralUserUi-BB@0x28 : [ loadIsEphemeralUserUi-BB@0x2e ]
+	10      (00000028) const                v1, 2131690404 # [1.9009850660299357e+38]
+
+loadIsEphemeralUserUi-BB@0x2e : [ loadIsEphemeralUserUi-BB@0x34 ]
+	11      (0000002e) invoke-virtual       v2, v1, Landroidx/preference/Preference;->setSummary(I)V
+
+loadIsEphemeralUserUi-BB@0x34 : 
+	12      (00000034) return-void          
+
+loadIsEphemeralUserUi-BB@0x36 : [ loadIsEphemeralUserUi-BB@0x2e ]
+	13      (00000036) const                v1, 2131689977 # [1.900898460140928e+38]
+	14      (0000003c) goto                 -7
+

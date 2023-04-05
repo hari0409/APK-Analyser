@@ -1,0 +1,26 @@
+# Landroidx/appcompat/widget/ListPopupWindow;->isConfirmKey(I)Z [access_flags=private static]
+#
+# Parameters:
+# - local registers: v0...v0
+# - v1:int
+#
+# - return:boolean
+
+isConfirmKey-BB@0x0 : [ isConfirmKey-BB@0x8 isConfirmKey-BB@0x10 ]
+	0       (00000000) const/16             v0, 66
+	1       (00000004) if-eq                v1, v0, +6
+
+isConfirmKey-BB@0x8 : [ isConfirmKey-BB@0x10 isConfirmKey-BB@0x14 ]
+	2       (00000008) const/16             v0, 23
+	3       (0000000c) if-ne                v1, v0, +4
+
+isConfirmKey-BB@0x10 : [ isConfirmKey-BB@0x12 ]
+	4       (00000010) const/4              v0, 1
+
+isConfirmKey-BB@0x12 : 
+	5       (00000012) return               v0
+
+isConfirmKey-BB@0x14 : [ isConfirmKey-BB@0x12 ]
+	6       (00000014) const/4              v0, 0
+	7       (00000016) goto                 -2
+

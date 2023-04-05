@@ -1,0 +1,25 @@
+# Landroidx/multidex/MultiDex;->getApplicationInfo(Landroid/content/Context;)Landroid/content/pm/ApplicationInfo; [access_flags=private static]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:android.content.Context
+#
+# - return:android.content.pm.ApplicationInfo
+
+getApplicationInfo-BB@0x0 : [ getApplicationInfo-BB@0x8 ]
+	0       (00000000) invoke-virtual       v3, Landroid/content/Context;->getApplicationInfo()Landroid/content/pm/ApplicationInfo;
+	1       (00000006) move-result-object   v1
+	0:5
+	(Ljava/lang/RuntimeException; -> a getApplicationInfo-BB@0xa)
+
+getApplicationInfo-BB@0x8 : 
+	2       (00000008) return-object        v1
+
+getApplicationInfo-BB@0xa : [ getApplicationInfo-BB@0x8 ]
+	3       (0000000a) move-exception       v0
+	4       (0000000c) const-string         v1, 'MultiDex'
+	5       (00000010) const-string         v2, 'Failure while trying to obtain ApplicationInfo from Context. Must be running in test mode. Skip patching.'
+	6       (00000014) invoke-static        v1, v2, v0, Landroid/util/Log;->w(Ljava/lang/String; Ljava/lang/String; Ljava/lang/Throwable;)I
+	7       (0000001a) const/4              v1, 0
+	8       (0000001c) goto                 -a
+

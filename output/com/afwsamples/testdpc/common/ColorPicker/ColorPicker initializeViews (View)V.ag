@@ -1,0 +1,63 @@
+# Lcom/afwsamples/testdpc/common/ColorPicker;->initializeViews(Landroid/view/View;)V [access_flags=private]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:android.view.View
+#
+# - return:void
+
+initializeViews-BB@0x0 : 
+	0       (00000000) const                v0, 2131296708 # [1.8211340307167433e+38]
+	1       (00000006) invoke-virtual       v2, v0, Landroid/view/View;->findViewById(I)Landroid/view/View;
+	2       (0000000c) move-result-object   v0
+	3       (0000000e) iput-object          v0, v1, Lcom/afwsamples/testdpc/common/ColorPicker;->mTitleHeader Landroid/view/View;
+	4       (00000012) const                v0, 2131296565 # [1.82110502687101e+38]
+	5       (00000018) invoke-virtual       v2, v0, Landroid/view/View;->findViewById(I)Landroid/view/View;
+	6       (0000001e) move-result-object   v0
+	7       (00000020) check-cast           v0, Landroid/widget/SeekBar;
+	8       (00000024) iput-object          v0, v1, Lcom/afwsamples/testdpc/common/ColorPicker;->mRedBar Landroid/widget/SeekBar;
+	9       (00000028) const                v0, 2131296448 # [1.8210812964517738e+38]
+	10      (0000002e) invoke-virtual       v2, v0, Landroid/view/View;->findViewById(I)Landroid/view/View;
+	11      (00000034) move-result-object   v0
+	12      (00000036) check-cast           v0, Landroid/widget/SeekBar;
+	13      (0000003a) iput-object          v0, v1, Lcom/afwsamples/testdpc/common/ColorPicker;->mGreenBar Landroid/widget/SeekBar;
+	14      (0000003e) const                v0, 2131296338 # [1.8210589858012097e+38]
+	15      (00000044) invoke-virtual       v2, v0, Landroid/view/View;->findViewById(I)Landroid/view/View;
+	16      (0000004a) move-result-object   v0
+	17      (0000004c) check-cast           v0, Landroid/widget/SeekBar;
+	18      (00000050) iput-object          v0, v1, Lcom/afwsamples/testdpc/common/ColorPicker;->mBlueBar Landroid/widget/SeekBar;
+	19      (00000054) const                v0, 2131296566 # [1.821105229695106e+38]
+	20      (0000005a) invoke-virtual       v2, v0, Landroid/view/View;->findViewById(I)Landroid/view/View;
+	21      (00000060) move-result-object   v0
+	22      (00000062) check-cast           v0, Landroid/widget/TextView;
+	23      (00000066) iput-object          v0, v1, Lcom/afwsamples/testdpc/common/ColorPicker;->mRedBarValue Landroid/widget/TextView;
+	24      (0000006a) const                v0, 2131296449 # [1.8210814992758698e+38]
+	25      (00000070) invoke-virtual       v2, v0, Landroid/view/View;->findViewById(I)Landroid/view/View;
+	26      (00000076) move-result-object   v0
+	27      (00000078) check-cast           v0, Landroid/widget/TextView;
+	28      (0000007c) iput-object          v0, v1, Lcom/afwsamples/testdpc/common/ColorPicker;->mGreenBarValue Landroid/widget/TextView;
+	29      (00000080) const                v0, 2131296339 # [1.8210591886253058e+38]
+	30      (00000086) invoke-virtual       v2, v0, Landroid/view/View;->findViewById(I)Landroid/view/View;
+	31      (0000008c) move-result-object   v0
+	32      (0000008e) check-cast           v0, Landroid/widget/TextView;
+	33      (00000092) iput-object          v0, v1, Lcom/afwsamples/testdpc/common/ColorPicker;->mBlueBarValue Landroid/widget/TextView;
+	34      (00000096) iget-object          v0, v1, Lcom/afwsamples/testdpc/common/ColorPicker;->mRedBar Landroid/widget/SeekBar;
+	35      (0000009a) invoke-virtual       v0, v1, Landroid/widget/SeekBar;->setOnSeekBarChangeListener(Landroid/widget/SeekBar$OnSeekBarChangeListener;)V
+	36      (000000a0) iget-object          v0, v1, Lcom/afwsamples/testdpc/common/ColorPicker;->mGreenBar Landroid/widget/SeekBar;
+	37      (000000a4) invoke-virtual       v0, v1, Landroid/widget/SeekBar;->setOnSeekBarChangeListener(Landroid/widget/SeekBar$OnSeekBarChangeListener;)V
+	38      (000000aa) iget-object          v0, v1, Lcom/afwsamples/testdpc/common/ColorPicker;->mBlueBar Landroid/widget/SeekBar;
+	39      (000000ae) invoke-virtual       v0, v1, Landroid/widget/SeekBar;->setOnSeekBarChangeListener(Landroid/widget/SeekBar$OnSeekBarChangeListener;)V
+	40      (000000b4) const                v0, 2131296372 # [1.821065881820475e+38]
+	41      (000000ba) invoke-virtual       v2, v0, Landroid/view/View;->findViewById(I)Landroid/view/View;
+	42      (000000c0) move-result-object   v0
+	43      (000000c2) check-cast           v0, Landroid/widget/EditText;
+	44      (000000c6) iput-object          v0, v1, Lcom/afwsamples/testdpc/common/ColorPicker;->mColorValue Landroid/widget/EditText;
+	45      (000000ca) const                v0, 2131296370 # [1.821065476172283e+38]
+	46      (000000d0) invoke-virtual       v2, v0, Landroid/view/View;->findViewById(I)Landroid/view/View;
+	47      (000000d6) move-result-object   v0
+	48      (000000d8) check-cast           v0, Landroid/widget/Button;
+	49      (000000dc) iput-object          v0, v1, Lcom/afwsamples/testdpc/common/ColorPicker;->mPreviewButton Landroid/widget/Button;
+	50      (000000e0) iget-object          v0, v1, Lcom/afwsamples/testdpc/common/ColorPicker;->mPreviewButton Landroid/widget/Button;
+	51      (000000e4) invoke-virtual       v0, v1, Landroid/widget/Button;->setOnClickListener(Landroid/view/View$OnClickListener;)V
+	52      (000000ea) return-void          
+

@@ -1,0 +1,15 @@
+# Landroidx/appcompat/app/ActionBarDrawerToggle$ToolbarCompatDelegate;->setActionBarUpIndicator(Landroid/graphics/drawable/Drawable; I)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:android.graphics.drawable.Drawable
+# - v3:int
+#
+# - return:void
+
+setActionBarUpIndicator-BB@0x0 : 
+	0       (00000000) iget-object          v0, v1, Landroidx/appcompat/app/ActionBarDrawerToggle$ToolbarCompatDelegate;->mToolbar Landroidx/appcompat/widget/Toolbar;
+	1       (00000004) invoke-virtual       v0, v2, Landroidx/appcompat/widget/Toolbar;->setNavigationIcon(Landroid/graphics/drawable/Drawable;)V
+	2       (0000000a) invoke-virtual       v1, v3, Landroidx/appcompat/app/ActionBarDrawerToggle$ToolbarCompatDelegate;->setActionBarDescription(I)V
+	3       (00000010) return-void          
+

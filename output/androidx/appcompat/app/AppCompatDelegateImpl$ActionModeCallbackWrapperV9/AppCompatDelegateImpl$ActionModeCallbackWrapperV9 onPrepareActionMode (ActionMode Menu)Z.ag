@@ -1,0 +1,15 @@
+# Landroidx/appcompat/app/AppCompatDelegateImpl$ActionModeCallbackWrapperV9;->onPrepareActionMode(Landroidx/appcompat/view/ActionMode; Landroid/view/Menu;)Z [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:androidx.appcompat.view.ActionMode
+# - v3:android.view.Menu
+#
+# - return:boolean
+
+onPrepareActionMode-BB@0x0 : 
+	0       (00000000) iget-object          v0, v1, Landroidx/appcompat/app/AppCompatDelegateImpl$ActionModeCallbackWrapperV9;->mWrapped Landroidx/appcompat/view/ActionMode$Callback;
+	1       (00000004) invoke-interface     v0, v2, v3, Landroidx/appcompat/view/ActionMode$Callback;->onPrepareActionMode(Landroidx/appcompat/view/ActionMode; Landroid/view/Menu;)Z
+	2       (0000000a) move-result          v0
+	3       (0000000c) return               v0
+

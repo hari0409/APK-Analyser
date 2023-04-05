@@ -1,0 +1,20 @@
+# Landroidx/appcompat/widget/MenuPopupWindow;->onItemHoverExit(Landroidx/appcompat/view/menu/MenuBuilder; Landroid/view/MenuItem;)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:androidx.appcompat.view.menu.MenuBuilder
+# - v3:android.view.MenuItem
+#
+# - return:void
+
+onItemHoverExit-BB@0x0 : [ onItemHoverExit-BB@0x8 onItemHoverExit-BB@0x12 ]
+	0       (00000000) iget-object          v0, v1, Landroidx/appcompat/widget/MenuPopupWindow;->mHoverListener Landroidx/appcompat/widget/MenuItemHoverListener;
+	1       (00000004) if-eqz               v0, +7
+
+onItemHoverExit-BB@0x8 : [ onItemHoverExit-BB@0x12 ]
+	2       (00000008) iget-object          v0, v1, Landroidx/appcompat/widget/MenuPopupWindow;->mHoverListener Landroidx/appcompat/widget/MenuItemHoverListener;
+	3       (0000000c) invoke-interface     v0, v2, v3, Landroidx/appcompat/widget/MenuItemHoverListener;->onItemHoverExit(Landroidx/appcompat/view/menu/MenuBuilder; Landroid/view/MenuItem;)V
+
+onItemHoverExit-BB@0x12 : 
+	4       (00000012) return-void          
+

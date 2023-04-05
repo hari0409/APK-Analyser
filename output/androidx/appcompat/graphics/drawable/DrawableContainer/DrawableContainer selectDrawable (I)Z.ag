@@ -1,0 +1,133 @@
+# Landroidx/appcompat/graphics/drawable/DrawableContainer;->selectDrawable(I)Z [access_flags=]
+#
+# Parameters:
+# - local registers: v0...v12
+# - v13:int
+#
+# - return:boolean
+
+selectDrawable-BB@0x0 : [ selectDrawable-BB@0x14 selectDrawable-BB@0x16 ]
+	0       (00000000) const/4              v11, 0
+	1       (00000002) const/4              v4, 1
+	2       (00000004) const/4              v10, -1
+	3       (00000006) const-wide/16        v8, 0 # [0.0]
+	4       (0000000a) const/4              v1, 0
+	5       (0000000c) iget                 v5, v12, Landroidx/appcompat/graphics/drawable/DrawableContainer;->mCurIndex I
+	6       (00000010) if-ne                v13, v5, +3
+
+selectDrawable-BB@0x14 : 
+	7       (00000014) return               v1
+
+selectDrawable-BB@0x16 : [ selectDrawable-BB@0x2a selectDrawable-BB@0xfa ]
+	8       (00000016) invoke-static        Landroid/os/SystemClock;->uptimeMillis()J
+	9       (0000001c) move-result-wide     v2
+	10      (0000001e) iget-object          v5, v12, Landroidx/appcompat/graphics/drawable/DrawableContainer;->mDrawableContainerState Landroidx/appcompat/graphics/drawable/DrawableContainer$DrawableContainerState;
+	11      (00000022) iget                 v5, v5, Landroidx/appcompat/graphics/drawable/DrawableContainer$DrawableContainerState;->mExitFadeDuration I
+	12      (00000026) if-lez               v5, +6a
+
+selectDrawable-BB@0x2a : [ selectDrawable-BB@0x32 selectDrawable-BB@0x3c ]
+	13      (0000002a) iget-object          v5, v12, Landroidx/appcompat/graphics/drawable/DrawableContainer;->mLastDrawable Landroid/graphics/drawable/Drawable;
+	14      (0000002e) if-eqz               v5, +7
+
+selectDrawable-BB@0x32 : [ selectDrawable-BB@0x3c ]
+	15      (00000032) iget-object          v5, v12, Landroidx/appcompat/graphics/drawable/DrawableContainer;->mLastDrawable Landroid/graphics/drawable/Drawable;
+	16      (00000036) invoke-virtual       v5, v1, v1, Landroid/graphics/drawable/Drawable;->setVisible(Z Z)Z
+
+selectDrawable-BB@0x3c : [ selectDrawable-BB@0x44 selectDrawable-BB@0xec ]
+	17      (0000003c) iget-object          v1, v12, Landroidx/appcompat/graphics/drawable/DrawableContainer;->mCurrDrawable Landroid/graphics/drawable/Drawable;
+	18      (00000040) if-eqz               v1, +56
+
+selectDrawable-BB@0x44 : [ selectDrawable-BB@0x64 ]
+	19      (00000044) iget-object          v1, v12, Landroidx/appcompat/graphics/drawable/DrawableContainer;->mCurrDrawable Landroid/graphics/drawable/Drawable;
+	20      (00000048) iput-object          v1, v12, Landroidx/appcompat/graphics/drawable/DrawableContainer;->mLastDrawable Landroid/graphics/drawable/Drawable;
+	21      (0000004c) iget                 v1, v12, Landroidx/appcompat/graphics/drawable/DrawableContainer;->mCurIndex I
+	22      (00000050) iput                 v1, v12, Landroidx/appcompat/graphics/drawable/DrawableContainer;->mLastIndex I
+	23      (00000054) iget-object          v1, v12, Landroidx/appcompat/graphics/drawable/DrawableContainer;->mDrawableContainerState Landroidx/appcompat/graphics/drawable/DrawableContainer$DrawableContainerState;
+	24      (00000058) iget                 v1, v1, Landroidx/appcompat/graphics/drawable/DrawableContainer$DrawableContainerState;->mExitFadeDuration I
+	25      (0000005c) int-to-long          v6, v1
+	26      (0000005e) add-long/2addr       v6, v2
+	27      (00000060) iput-wide            v6, v12, Landroidx/appcompat/graphics/drawable/DrawableContainer;->mExitAnimationEnd J
+
+selectDrawable-BB@0x64 : [ selectDrawable-BB@0x68 selectDrawable-BB@0x10e ]
+	28      (00000064) if-ltz               v13, +55
+
+selectDrawable-BB@0x68 : [ selectDrawable-BB@0x74 selectDrawable-BB@0x10e ]
+	29      (00000068) iget-object          v1, v12, Landroidx/appcompat/graphics/drawable/DrawableContainer;->mDrawableContainerState Landroidx/appcompat/graphics/drawable/DrawableContainer$DrawableContainerState;
+	30      (0000006c) iget                 v1, v1, Landroidx/appcompat/graphics/drawable/DrawableContainer$DrawableContainerState;->mNumChildren I
+	31      (00000070) if-ge                v13, v1, +4f
+
+selectDrawable-BB@0x74 : [ selectDrawable-BB@0x8c selectDrawable-BB@0xae ]
+	32      (00000074) iget-object          v1, v12, Landroidx/appcompat/graphics/drawable/DrawableContainer;->mDrawableContainerState Landroidx/appcompat/graphics/drawable/DrawableContainer$DrawableContainerState;
+	33      (00000078) invoke-virtual       v1, v13, Landroidx/appcompat/graphics/drawable/DrawableContainer$DrawableContainerState;->getChild(I)Landroid/graphics/drawable/Drawable;
+	34      (0000007e) move-result-object   v0
+	35      (00000080) iput-object          v0, v12, Landroidx/appcompat/graphics/drawable/DrawableContainer;->mCurrDrawable Landroid/graphics/drawable/Drawable;
+	36      (00000084) iput                 v13, v12, Landroidx/appcompat/graphics/drawable/DrawableContainer;->mCurIndex I
+	37      (00000088) if-eqz               v0, +13
+
+selectDrawable-BB@0x8c : [ selectDrawable-BB@0x98 selectDrawable-BB@0xa8 ]
+	38      (0000008c) iget-object          v1, v12, Landroidx/appcompat/graphics/drawable/DrawableContainer;->mDrawableContainerState Landroidx/appcompat/graphics/drawable/DrawableContainer$DrawableContainerState;
+	39      (00000090) iget                 v1, v1, Landroidx/appcompat/graphics/drawable/DrawableContainer$DrawableContainerState;->mEnterFadeDuration I
+	40      (00000094) if-lez               v1, +a
+
+selectDrawable-BB@0x98 : [ selectDrawable-BB@0xa8 ]
+	41      (00000098) iget-object          v1, v12, Landroidx/appcompat/graphics/drawable/DrawableContainer;->mDrawableContainerState Landroidx/appcompat/graphics/drawable/DrawableContainer$DrawableContainerState;
+	42      (0000009c) iget                 v1, v1, Landroidx/appcompat/graphics/drawable/DrawableContainer$DrawableContainerState;->mEnterFadeDuration I
+	43      (000000a0) int-to-long          v6, v1
+	44      (000000a2) add-long/2addr       v6, v2
+	45      (000000a4) iput-wide            v6, v12, Landroidx/appcompat/graphics/drawable/DrawableContainer;->mEnterAnimationEnd J
+
+selectDrawable-BB@0xa8 : [ selectDrawable-BB@0xae ]
+	46      (000000a8) invoke-direct        v12, v0, Landroidx/appcompat/graphics/drawable/DrawableContainer;->initializeDrawableForDisplay(Landroid/graphics/drawable/Drawable;)V
+
+selectDrawable-BB@0xae : [ selectDrawable-BB@0xba selectDrawable-BB@0xc6 ]
+	47      (000000ae) iget-wide            v6, v12, Landroidx/appcompat/graphics/drawable/DrawableContainer;->mEnterAnimationEnd J
+	48      (000000b2) cmp-long             v1, v6, v8
+	49      (000000b6) if-nez               v1, +8
+
+selectDrawable-BB@0xba : [ selectDrawable-BB@0xc6 selectDrawable-BB@0xe2 ]
+	50      (000000ba) iget-wide            v6, v12, Landroidx/appcompat/graphics/drawable/DrawableContainer;->mExitAnimationEnd J
+	51      (000000be) cmp-long             v1, v6, v8
+	52      (000000c2) if-eqz               v1, +10
+
+selectDrawable-BB@0xc6 : [ selectDrawable-BB@0xce selectDrawable-BB@0x118 ]
+	53      (000000c6) iget-object          v1, v12, Landroidx/appcompat/graphics/drawable/DrawableContainer;->mAnimationRunnable Ljava/lang/Runnable;
+	54      (000000ca) if-nez               v1, +27
+
+selectDrawable-BB@0xce : [ selectDrawable-BB@0xdc ]
+	55      (000000ce) new-instance         v1, Landroidx/appcompat/graphics/drawable/DrawableContainer$1;
+	56      (000000d2) invoke-direct        v1, v12, Landroidx/appcompat/graphics/drawable/DrawableContainer$1;-><init>(Landroidx/appcompat/graphics/drawable/DrawableContainer;)V
+	57      (000000d8) iput-object          v1, v12, Landroidx/appcompat/graphics/drawable/DrawableContainer;->mAnimationRunnable Ljava/lang/Runnable;
+
+selectDrawable-BB@0xdc : [ selectDrawable-BB@0xe2 ]
+	58      (000000dc) invoke-virtual       v12, v4, Landroidx/appcompat/graphics/drawable/DrawableContainer;->animate(Z)V
+
+selectDrawable-BB@0xe2 : [ selectDrawable-BB@0x14 ]
+	59      (000000e2) invoke-virtual       v12, Landroidx/appcompat/graphics/drawable/DrawableContainer;->invalidateSelf()V
+	60      (000000e8) move                 v1, v4
+	61      (000000ea) goto                 -6b
+
+selectDrawable-BB@0xec : [ selectDrawable-BB@0x64 ]
+	62      (000000ec) iput-object          v11, v12, Landroidx/appcompat/graphics/drawable/DrawableContainer;->mLastDrawable Landroid/graphics/drawable/Drawable;
+	63      (000000f0) iput                 v10, v12, Landroidx/appcompat/graphics/drawable/DrawableContainer;->mLastIndex I
+	64      (000000f4) iput-wide            v8, v12, Landroidx/appcompat/graphics/drawable/DrawableContainer;->mExitAnimationEnd J
+	65      (000000f8) goto                 -4a
+
+selectDrawable-BB@0xfa : [ selectDrawable-BB@0x102 selectDrawable-BB@0x64 ]
+	66      (000000fa) iget-object          v5, v12, Landroidx/appcompat/graphics/drawable/DrawableContainer;->mCurrDrawable Landroid/graphics/drawable/Drawable;
+	67      (000000fe) if-eqz               v5, -4d
+
+selectDrawable-BB@0x102 : [ selectDrawable-BB@0x64 ]
+	68      (00000102) iget-object          v5, v12, Landroidx/appcompat/graphics/drawable/DrawableContainer;->mCurrDrawable Landroid/graphics/drawable/Drawable;
+	69      (00000106) invoke-virtual       v5, v1, v1, Landroid/graphics/drawable/Drawable;->setVisible(Z Z)Z
+	70      (0000010c) goto                 -54
+
+selectDrawable-BB@0x10e : [ selectDrawable-BB@0xae ]
+	71      (0000010e) iput-object          v11, v12, Landroidx/appcompat/graphics/drawable/DrawableContainer;->mCurrDrawable Landroid/graphics/drawable/Drawable;
+	72      (00000112) iput                 v10, v12, Landroidx/appcompat/graphics/drawable/DrawableContainer;->mCurIndex I
+	73      (00000116) goto                 -34
+
+selectDrawable-BB@0x118 : [ selectDrawable-BB@0xdc ]
+	74      (00000118) iget-object          v1, v12, Landroidx/appcompat/graphics/drawable/DrawableContainer;->mAnimationRunnable Ljava/lang/Runnable;
+	75      (0000011c) invoke-virtual       v12, v1, Landroidx/appcompat/graphics/drawable/DrawableContainer;->unscheduleSelf(Ljava/lang/Runnable;)V
+	76      (00000122) goto                 -23
+

@@ -1,0 +1,13 @@
+# Landroidx/appcompat/widget/TooltipCompatHandler;->clearAnchorPos()V [access_flags=private]
+#
+# Parameters:
+# local registers: v0...v1
+#
+# - return:void
+
+clearAnchorPos-BB@0x0 : 
+	0       (00000000) const                v0, 2147483647 # [nan]
+	1       (00000006) iput                 v0, v1, Landroidx/appcompat/widget/TooltipCompatHandler;->mAnchorX I
+	2       (0000000a) iput                 v0, v1, Landroidx/appcompat/widget/TooltipCompatHandler;->mAnchorY I
+	3       (0000000e) return-void          
+

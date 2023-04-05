@@ -1,0 +1,50 @@
+# Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->showLockNowPrompt()V [access_flags=private]
+#
+# Parameters:
+# local registers: v0...v8
+#
+# - return:void
+
+showLockNowPrompt-BB@0x0 : 
+	0       (00000000) const/4              v7, 0
+	1       (00000002) invoke-virtual       v8, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->getActivity()Landroid/app/Activity;
+	2       (00000008) move-result-object   v4
+	3       (0000000a) invoke-virtual       v4, Landroid/app/Activity;->getLayoutInflater()Landroid/view/LayoutInflater;
+	4       (00000010) move-result-object   v2
+	5       (00000012) const                v4, 2131427391 # [1.8476396920590834e+38]
+	6       (00000018) invoke-virtual       v2, v4, v7, Landroid/view/LayoutInflater;->inflate(I Landroid/view/ViewGroup;)Landroid/view/View;
+	7       (0000001e) move-result-object   v0
+	8       (00000020) const                v4, 2131296492 # [1.8210902207119994e+38]
+	9       (00000026) invoke-virtual       v0, v4, Landroid/view/View;->findViewById(I)Landroid/view/View;
+	10      (0000002c) move-result-object   v3
+	11      (0000002e) check-cast           v3, Landroid/widget/CheckBox;
+	12      (00000032) const                v4, 2131296431 # [1.821077848442141e+38]
+	13      (00000038) invoke-virtual       v0, v4, Landroid/view/View;->findViewById(I)Landroid/view/View;
+	14      (0000003e) move-result-object   v1
+	15      (00000040) check-cast           v1, Landroid/widget/CheckBox;
+	16      (00000044) new-instance         v4, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment$$Lambda$24;
+	17      (00000048) invoke-direct        v4, v1, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment$$Lambda$24;-><init>(Landroid/widget/CheckBox;)V
+	18      (0000004e) invoke-virtual       v3, v4, Landroid/widget/CheckBox;->setOnCheckedChangeListener(Landroid/widget/CompoundButton$OnCheckedChangeListener;)V
+	19      (00000054) new-instance         v4, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment$$Lambda$25;
+	20      (00000058) invoke-direct        v4, v3, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment$$Lambda$25;-><init>(Landroid/widget/CheckBox;)V
+	21      (0000005e) invoke-virtual       v1, v4, Landroid/widget/CheckBox;->setOnCheckedChangeListener(Landroid/widget/CompoundButton$OnCheckedChangeListener;)V
+	22      (00000064) new-instance         v4, Landroid/app/AlertDialog$Builder;
+	23      (00000068) invoke-virtual       v8, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->getActivity()Landroid/app/Activity;
+	24      (0000006e) move-result-object   v5
+	25      (00000070) invoke-direct        v4, v5, Landroid/app/AlertDialog$Builder;-><init>(Landroid/content/Context;)V
+	26      (00000076) const                v5, 2131689904 # [1.9008836539819175e+38]
+	27      (0000007c) invoke-virtual       v4, v5, Landroid/app/AlertDialog$Builder;->setTitle(I)Landroid/app/AlertDialog$Builder;
+	28      (00000082) move-result-object   v4
+	29      (00000084) invoke-virtual       v4, v0, Landroid/app/AlertDialog$Builder;->setView(Landroid/view/View;)Landroid/app/AlertDialog$Builder;
+	30      (0000008a) move-result-object   v4
+	31      (0000008c) const                v5, 17039370 # [2.4244599011678966e-38]
+	32      (00000092) new-instance         v6, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment$$Lambda$26;
+	33      (00000096) invoke-direct        v6, v8, v1, v3, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment$$Lambda$26;-><init>(Lcom/afwsamples/testdpc/policy/PolicyManagementFragment; Landroid/widget/CheckBox; Landroid/widget/CheckBox;)V
+	34      (0000009c) invoke-virtual       v4, v5, v6, Landroid/app/AlertDialog$Builder;->setPositiveButton(I Landroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
+	35      (000000a2) move-result-object   v4
+	36      (000000a4) const/high16         v5, 260 # [2.424457098570968e-38]
+	37      (000000a8) invoke-virtual       v4, v5, v7, Landroid/app/AlertDialog$Builder;->setNegativeButton(I Landroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
+	38      (000000ae) move-result-object   v4
+	39      (000000b0) invoke-virtual       v4, Landroid/app/AlertDialog$Builder;->show()Landroid/app/AlertDialog;
+	40      (000000b6) return-void          
+

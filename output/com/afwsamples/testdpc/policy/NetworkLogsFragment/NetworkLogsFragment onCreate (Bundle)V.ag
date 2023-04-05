@@ -1,0 +1,22 @@
+# Lcom/afwsamples/testdpc/policy/NetworkLogsFragment;->onCreate(Landroid/os/Bundle;)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v5
+# - v6:android.os.Bundle
+#
+# - return:void
+
+onCreate-BB@0x0 : 
+	0       (00000000) invoke-super         v5, v6, Landroid/app/ListFragment;->onCreate(Landroid/os/Bundle;)V
+	1       (00000006) new-instance         v0, Landroid/widget/ArrayAdapter;
+	2       (0000000a) invoke-virtual       v5, Lcom/afwsamples/testdpc/policy/NetworkLogsFragment;->getActivity()Landroid/app/Activity;
+	3       (00000010) move-result-object   v1
+	4       (00000012) const                v2, 17367043 # [2.516293435508038e-38]
+	5       (00000018) const                v3, 16908308 # [2.387728505301629e-38]
+	6       (0000001e) iget-object          v4, v5, Lcom/afwsamples/testdpc/policy/NetworkLogsFragment;->mLogs Ljava/util/List;
+	7       (00000022) invoke-direct        v0, v1, v2, v3, v4, Landroid/widget/ArrayAdapter;-><init>(Landroid/content/Context; I I Ljava/util/List;)V
+	8       (00000028) iput-object          v0, v5, Lcom/afwsamples/testdpc/policy/NetworkLogsFragment;->mAdapter Landroid/widget/ArrayAdapter;
+	9       (0000002c) iget-object          v0, v5, Lcom/afwsamples/testdpc/policy/NetworkLogsFragment;->mAdapter Landroid/widget/ArrayAdapter;
+	10      (00000030) invoke-virtual       v5, v0, Lcom/afwsamples/testdpc/policy/NetworkLogsFragment;->setListAdapter(Landroid/widget/ListAdapter;)V
+	11      (00000036) return-void          
+

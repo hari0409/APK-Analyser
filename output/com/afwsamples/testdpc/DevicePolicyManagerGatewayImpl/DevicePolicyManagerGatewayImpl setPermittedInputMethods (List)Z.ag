@@ -1,0 +1,41 @@
+# Lcom/afwsamples/testdpc/DevicePolicyManagerGatewayImpl;->setPermittedInputMethods(Ljava/util/List;)Z [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v4
+# - v5:java.util.List
+#
+# - return:boolean
+
+setPermittedInputMethods-BB@0x0 : [ setPermittedInputMethods-BB@0x4 setPermittedInputMethods-BB@0x60 ]
+	0       (00000000) if-eqz               v5, +30
+
+setPermittedInputMethods-BB@0x4 : [ setPermittedInputMethods-BB@0x10 ]
+	1       (00000004) const-string         v2, ','
+	2       (00000008) invoke-static        v2, v5, Ljava/lang/String;->join(Ljava/lang/CharSequence; Ljava/lang/Iterable;)Ljava/lang/String;
+	3       (0000000e) move-result-object   v0
+
+setPermittedInputMethods-BB@0x10 : 
+	4       (00000010) new-instance         v2, Ljava/lang/StringBuilder;
+	5       (00000014) invoke-direct        v2, Ljava/lang/StringBuilder;-><init>()V
+	6       (0000001a) const-string         v3, 'setPermittedInputMethods('
+	7       (0000001e) invoke-virtual       v2, v3, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	8       (00000024) move-result-object   v2
+	9       (00000026) invoke-virtual       v2, v0, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	10      (0000002c) move-result-object   v2
+	11      (0000002e) const-string         v3, ')'
+	12      (00000032) invoke-virtual       v2, v3, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	13      (00000038) move-result-object   v2
+	14      (0000003a) invoke-virtual       v2, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+	15      (00000040) move-result-object   v1
+	16      (00000042) new-instance         v2, Lcom/afwsamples/testdpc/DevicePolicyManagerGatewayImpl$$Lambda$5;
+	17      (00000046) invoke-direct        v2, v1, Lcom/afwsamples/testdpc/DevicePolicyManagerGatewayImpl$$Lambda$5;-><init>(Ljava/lang/String;)V
+	18      (0000004c) new-instance         v3, Lcom/afwsamples/testdpc/DevicePolicyManagerGatewayImpl$$Lambda$6;
+	19      (00000050) invoke-direct        v3, v1, Lcom/afwsamples/testdpc/DevicePolicyManagerGatewayImpl$$Lambda$6;-><init>(Ljava/lang/String;)V
+	20      (00000056) invoke-virtual       v4, v5, v2, v3, Lcom/afwsamples/testdpc/DevicePolicyManagerGatewayImpl;->setPermittedInputMethods(Ljava/util/List; Ljava/util/function/Consumer; Ljava/util/function/Consumer;)Z
+	21      (0000005c) move-result          v2
+	22      (0000005e) return               v2
+
+setPermittedInputMethods-BB@0x60 : [ setPermittedInputMethods-BB@0x10 ]
+	23      (00000060) const-string         v0, ''
+	24      (00000064) goto                 -2a
+

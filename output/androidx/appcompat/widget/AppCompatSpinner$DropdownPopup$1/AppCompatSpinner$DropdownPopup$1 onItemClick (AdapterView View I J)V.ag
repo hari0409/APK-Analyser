@@ -1,0 +1,35 @@
+# Landroidx/appcompat/widget/AppCompatSpinner$DropdownPopup$1;->onItemClick(Landroid/widget/AdapterView; Landroid/view/View; I J)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v5
+# - v6:android.widget.AdapterView
+# - v7:android.view.View
+# - v8:int
+# - v9:long
+#
+# - return:void
+
+onItemClick-BB@0x0 : [ onItemClick-BB@0x22 onItemClick-BB@0x40 ]
+	0       (00000000) iget-object          v0, v4, Landroidx/appcompat/widget/AppCompatSpinner$DropdownPopup$1;->this$1 Landroidx/appcompat/widget/AppCompatSpinner$DropdownPopup;
+	1       (00000004) iget-object          v0, v0, Landroidx/appcompat/widget/AppCompatSpinner$DropdownPopup;->this$0 Landroidx/appcompat/widget/AppCompatSpinner;
+	2       (00000008) invoke-virtual       v0, v7, Landroidx/appcompat/widget/AppCompatSpinner;->setSelection(I)V
+	3       (0000000e) iget-object          v0, v4, Landroidx/appcompat/widget/AppCompatSpinner$DropdownPopup$1;->this$1 Landroidx/appcompat/widget/AppCompatSpinner$DropdownPopup;
+	4       (00000012) iget-object          v0, v0, Landroidx/appcompat/widget/AppCompatSpinner$DropdownPopup;->this$0 Landroidx/appcompat/widget/AppCompatSpinner;
+	5       (00000016) invoke-virtual       v0, Landroidx/appcompat/widget/AppCompatSpinner;->getOnItemClickListener()Landroid/widget/AdapterView$OnItemClickListener;
+	6       (0000001c) move-result-object   v0
+	7       (0000001e) if-eqz               v0, +11
+
+onItemClick-BB@0x22 : [ onItemClick-BB@0x40 ]
+	8       (00000022) iget-object          v0, v4, Landroidx/appcompat/widget/AppCompatSpinner$DropdownPopup$1;->this$1 Landroidx/appcompat/widget/AppCompatSpinner$DropdownPopup;
+	9       (00000026) iget-object          v0, v0, Landroidx/appcompat/widget/AppCompatSpinner$DropdownPopup;->this$0 Landroidx/appcompat/widget/AppCompatSpinner;
+	10      (0000002a) iget-object          v1, v4, Landroidx/appcompat/widget/AppCompatSpinner$DropdownPopup$1;->this$1 Landroidx/appcompat/widget/AppCompatSpinner$DropdownPopup;
+	11      (0000002e) iget-object          v1, v1, Landroidx/appcompat/widget/AppCompatSpinner$DropdownPopup;->mAdapter Landroid/widget/ListAdapter;
+	12      (00000032) invoke-interface     v1, v7, Landroid/widget/ListAdapter;->getItemId(I)J
+	13      (00000038) move-result-wide     v2
+	14      (0000003a) invoke-virtual       v0, v6, v7, v2, v3, Landroidx/appcompat/widget/AppCompatSpinner;->performItemClick(Landroid/view/View; I J)Z
+
+onItemClick-BB@0x40 : 
+	15      (00000040) iget-object          v0, v4, Landroidx/appcompat/widget/AppCompatSpinner$DropdownPopup$1;->this$1 Landroidx/appcompat/widget/AppCompatSpinner$DropdownPopup;
+	16      (00000044) invoke-virtual       v0, Landroidx/appcompat/widget/AppCompatSpinner$DropdownPopup;->dismiss()V
+	17      (0000004a) return-void          
+

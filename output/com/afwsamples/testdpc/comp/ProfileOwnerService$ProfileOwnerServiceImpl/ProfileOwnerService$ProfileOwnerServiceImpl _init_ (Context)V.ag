@@ -1,0 +1,21 @@
+# Lcom/afwsamples/testdpc/comp/ProfileOwnerService$ProfileOwnerServiceImpl;-><init>(Landroid/content/Context;)V [access_flags=public constructor]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:android.content.Context
+#
+# - return:void
+
+<init>-BB@0x0 : 
+	0       (00000000) invoke-direct        v1, Lcom/afwsamples/testdpc/comp/IProfileOwnerService$Stub;-><init>()V
+	1       (00000006) iput-object          v2, v1, Lcom/afwsamples/testdpc/comp/ProfileOwnerService$ProfileOwnerServiceImpl;->mContext Landroid/content/Context;
+	2       (0000000a) const-string         v0, 'device_policy'
+	3       (0000000e) invoke-virtual       v2, v0, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
+	4       (00000014) move-result-object   v0
+	5       (00000016) check-cast           v0, Landroid/app/admin/DevicePolicyManager;
+	6       (0000001a) iput-object          v0, v1, Lcom/afwsamples/testdpc/comp/ProfileOwnerService$ProfileOwnerServiceImpl;->mDpm Landroid/app/admin/DevicePolicyManager;
+	7       (0000001e) invoke-virtual       v2, Landroid/content/Context;->getPackageManager()Landroid/content/pm/PackageManager;
+	8       (00000024) move-result-object   v0
+	9       (00000026) iput-object          v0, v1, Lcom/afwsamples/testdpc/comp/ProfileOwnerService$ProfileOwnerServiceImpl;->mPm Landroid/content/pm/PackageManager;
+	10      (0000002a) return-void          
+

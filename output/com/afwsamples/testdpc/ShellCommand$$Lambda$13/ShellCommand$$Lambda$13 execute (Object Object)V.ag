@@ -1,0 +1,18 @@
+# Lcom/afwsamples/testdpc/ShellCommand$$Lambda$13;->execute(Ljava/lang/Object; Ljava/lang/Object;)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:java.lang.Object
+# - v4:java.lang.Object
+#
+# - return:void
+
+execute-BB@0x0 : 
+	0       (00000000) iget-object          v0, v2, Lcom/afwsamples/testdpc/ShellCommand$$Lambda$13;->arg$1 Lcom/afwsamples/testdpc/ShellCommand;
+	1       (00000004) check-cast           v3, Ljava/lang/String;
+	2       (00000008) check-cast           v4, Ljava/lang/Boolean;
+	3       (0000000c) invoke-virtual       v4, Ljava/lang/Boolean;->booleanValue()Z
+	4       (00000012) move-result          v1
+	5       (00000014) invoke-virtual       v0, v3, v1, Lcom/afwsamples/testdpc/ShellCommand;->bridge$lambda$10$ShellCommand(Ljava/lang/String; Z)V
+	6       (0000001a) return-void          
+

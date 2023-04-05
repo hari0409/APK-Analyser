@@ -1,0 +1,47 @@
+# Landroidx/appcompat/widget/ActionBarContainer;->verifyDrawable(Landroid/graphics/drawable/Drawable;)Z [access_flags=protected]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:android.graphics.drawable.Drawable
+#
+# - return:boolean
+
+verifyDrawable-BB@0x0 : [ verifyDrawable-BB@0x8 verifyDrawable-BB@0x10 ]
+	0       (00000000) iget-object          v0, v1, Landroidx/appcompat/widget/ActionBarContainer;->mBackground Landroid/graphics/drawable/Drawable;
+	1       (00000004) if-ne                v2, v0, +6
+
+verifyDrawable-BB@0x8 : [ verifyDrawable-BB@0x10 verifyDrawable-BB@0x3c ]
+	2       (00000008) iget-boolean         v0, v1, Landroidx/appcompat/widget/ActionBarContainer;->mIsSplit Z
+	3       (0000000c) if-eqz               v0, +18
+
+verifyDrawable-BB@0x10 : [ verifyDrawable-BB@0x18 verifyDrawable-BB@0x20 ]
+	4       (00000010) iget-object          v0, v1, Landroidx/appcompat/widget/ActionBarContainer;->mStackedBackground Landroid/graphics/drawable/Drawable;
+	5       (00000014) if-ne                v2, v0, +6
+
+verifyDrawable-BB@0x18 : [ verifyDrawable-BB@0x20 verifyDrawable-BB@0x3c ]
+	6       (00000018) iget-boolean         v0, v1, Landroidx/appcompat/widget/ActionBarContainer;->mIsStacked Z
+	7       (0000001c) if-nez               v0, +10
+
+verifyDrawable-BB@0x20 : [ verifyDrawable-BB@0x28 verifyDrawable-BB@0x30 ]
+	8       (00000020) iget-object          v0, v1, Landroidx/appcompat/widget/ActionBarContainer;->mSplitBackground Landroid/graphics/drawable/Drawable;
+	9       (00000024) if-ne                v2, v0, +6
+
+verifyDrawable-BB@0x28 : [ verifyDrawable-BB@0x30 verifyDrawable-BB@0x3c ]
+	10      (00000028) iget-boolean         v0, v1, Landroidx/appcompat/widget/ActionBarContainer;->mIsSplit Z
+	11      (0000002c) if-nez               v0, +8
+
+verifyDrawable-BB@0x30 : [ verifyDrawable-BB@0x3c verifyDrawable-BB@0x40 ]
+	12      (00000030) invoke-super         v1, v2, Landroid/widget/FrameLayout;->verifyDrawable(Landroid/graphics/drawable/Drawable;)Z
+	13      (00000036) move-result          v0
+	14      (00000038) if-eqz               v0, +4
+
+verifyDrawable-BB@0x3c : [ verifyDrawable-BB@0x3e ]
+	15      (0000003c) const/4              v0, 1
+
+verifyDrawable-BB@0x3e : 
+	16      (0000003e) return               v0
+
+verifyDrawable-BB@0x40 : [ verifyDrawable-BB@0x3e ]
+	17      (00000040) const/4              v0, 0
+	18      (00000042) goto                 -2
+

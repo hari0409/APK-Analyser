@@ -1,0 +1,25 @@
+# Lcom/afwsamples/testdpc/DevicePolicyManagerGatewayImpl;->setNetworkLogging(Z)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v5
+# - v6:boolean
+#
+# - return:void
+
+setNetworkLogging-BB@0x0 : 
+	0       (00000000) const-string         v1, 'setNetworkLogging(%b)'
+	1       (00000004) const/4              v2, 1
+	2       (00000006) new-array            v2, v2, [Ljava/lang/Object;
+	3       (0000000a) const/4              v3, 0
+	4       (0000000c) invoke-static        v6, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+	5       (00000012) move-result-object   v4
+	6       (00000014) aput-object          v4, v2, v3
+	7       (00000018) invoke-static        v1, v2, Ljava/lang/String;->format(Ljava/lang/String; [Ljava/lang/Object;)Ljava/lang/String;
+	8       (0000001e) move-result-object   v0
+	9       (00000020) new-instance         v1, Lcom/afwsamples/testdpc/DevicePolicyManagerGatewayImpl$$Lambda$3;
+	10      (00000024) invoke-direct        v1, v0, Lcom/afwsamples/testdpc/DevicePolicyManagerGatewayImpl$$Lambda$3;-><init>(Ljava/lang/String;)V
+	11      (0000002a) new-instance         v2, Lcom/afwsamples/testdpc/DevicePolicyManagerGatewayImpl$$Lambda$4;
+	12      (0000002e) invoke-direct        v2, v0, Lcom/afwsamples/testdpc/DevicePolicyManagerGatewayImpl$$Lambda$4;-><init>(Ljava/lang/String;)V
+	13      (00000034) invoke-virtual       v5, v6, v1, v2, Lcom/afwsamples/testdpc/DevicePolicyManagerGatewayImpl;->setNetworkLogging(Z Ljava/util/function/Consumer; Ljava/util/function/Consumer;)V
+	14      (0000003a) return-void          
+

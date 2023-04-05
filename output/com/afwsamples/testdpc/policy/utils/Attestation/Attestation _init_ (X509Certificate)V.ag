@@ -1,0 +1,62 @@
+# Lcom/afwsamples/testdpc/policy/utils/Attestation;-><init>(Ljava/security/cert/X509Certificate;)V [access_flags=public constructor]
+#
+# Parameters:
+# - local registers: v0...v3
+# - v4:java.security.cert.X509Certificate
+#
+# - return:void
+
+<init>-BB@0x0 : 
+	0       (00000000) invoke-direct        v3, Ljava/lang/Object;-><init>()V
+	1       (00000006) invoke-direct        v3, v4, Lcom/afwsamples/testdpc/policy/utils/Attestation;->getAttestationSequence(Ljava/security/cert/X509Certificate;)Lorg/bouncycastle/asn1/ASN1Sequence;
+	2       (0000000c) move-result-object   v0
+	3       (0000000e) const/4              v1, 0
+	4       (00000010) invoke-virtual       v0, v1, Lorg/bouncycastle/asn1/ASN1Sequence;->getObjectAt(I)Lorg/bouncycastle/asn1/ASN1Encodable;
+	5       (00000016) move-result-object   v1
+	6       (00000018) invoke-static        v1, Lcom/afwsamples/testdpc/policy/utils/Asn1Utils;->getIntegerFromAsn1(Lorg/bouncycastle/asn1/ASN1Encodable;)I
+	7       (0000001e) move-result          v1
+	8       (00000020) iput                 v1, v3, Lcom/afwsamples/testdpc/policy/utils/Attestation;->attestationVersion I
+	9       (00000024) const/4              v1, 1
+	10      (00000026) invoke-virtual       v0, v1, Lorg/bouncycastle/asn1/ASN1Sequence;->getObjectAt(I)Lorg/bouncycastle/asn1/ASN1Encodable;
+	11      (0000002c) move-result-object   v1
+	12      (0000002e) invoke-static        v1, Lcom/afwsamples/testdpc/policy/utils/Asn1Utils;->getIntegerFromAsn1(Lorg/bouncycastle/asn1/ASN1Encodable;)I
+	13      (00000034) move-result          v1
+	14      (00000036) iput                 v1, v3, Lcom/afwsamples/testdpc/policy/utils/Attestation;->attestationSecurityLevel I
+	15      (0000003a) const/4              v1, 2
+	16      (0000003c) invoke-virtual       v0, v1, Lorg/bouncycastle/asn1/ASN1Sequence;->getObjectAt(I)Lorg/bouncycastle/asn1/ASN1Encodable;
+	17      (00000042) move-result-object   v1
+	18      (00000044) invoke-static        v1, Lcom/afwsamples/testdpc/policy/utils/Asn1Utils;->getIntegerFromAsn1(Lorg/bouncycastle/asn1/ASN1Encodable;)I
+	19      (0000004a) move-result          v1
+	20      (0000004c) iput                 v1, v3, Lcom/afwsamples/testdpc/policy/utils/Attestation;->keymasterVersion I
+	21      (00000050) const/4              v1, 3
+	22      (00000052) invoke-virtual       v0, v1, Lorg/bouncycastle/asn1/ASN1Sequence;->getObjectAt(I)Lorg/bouncycastle/asn1/ASN1Encodable;
+	23      (00000058) move-result-object   v1
+	24      (0000005a) invoke-static        v1, Lcom/afwsamples/testdpc/policy/utils/Asn1Utils;->getIntegerFromAsn1(Lorg/bouncycastle/asn1/ASN1Encodable;)I
+	25      (00000060) move-result          v1
+	26      (00000062) iput                 v1, v3, Lcom/afwsamples/testdpc/policy/utils/Attestation;->keymasterSecurityLevel I
+	27      (00000066) const/4              v1, 4
+	28      (00000068) invoke-virtual       v0, v1, Lorg/bouncycastle/asn1/ASN1Sequence;->getObjectAt(I)Lorg/bouncycastle/asn1/ASN1Encodable;
+	29      (0000006e) move-result-object   v1
+	30      (00000070) invoke-static        v1, Lcom/afwsamples/testdpc/policy/utils/Asn1Utils;->getByteArrayFromAsn1(Lorg/bouncycastle/asn1/ASN1Encodable;)[B
+	31      (00000076) move-result-object   v1
+	32      (00000078) iput-object          v1, v3, Lcom/afwsamples/testdpc/policy/utils/Attestation;->attestationChallenge [B
+	33      (0000007c) const/4              v1, 5
+	34      (0000007e) invoke-virtual       v0, v1, Lorg/bouncycastle/asn1/ASN1Sequence;->getObjectAt(I)Lorg/bouncycastle/asn1/ASN1Encodable;
+	35      (00000084) move-result-object   v1
+	36      (00000086) invoke-static        v1, Lcom/afwsamples/testdpc/policy/utils/Asn1Utils;->getByteArrayFromAsn1(Lorg/bouncycastle/asn1/ASN1Encodable;)[B
+	37      (0000008c) move-result-object   v1
+	38      (0000008e) iput-object          v1, v3, Lcom/afwsamples/testdpc/policy/utils/Attestation;->uniqueId [B
+	39      (00000092) new-instance         v1, Lcom/afwsamples/testdpc/policy/utils/AuthorizationList;
+	40      (00000096) const/4              v2, 6
+	41      (00000098) invoke-virtual       v0, v2, Lorg/bouncycastle/asn1/ASN1Sequence;->getObjectAt(I)Lorg/bouncycastle/asn1/ASN1Encodable;
+	42      (0000009e) move-result-object   v2
+	43      (000000a0) invoke-direct        v1, v2, Lcom/afwsamples/testdpc/policy/utils/AuthorizationList;-><init>(Lorg/bouncycastle/asn1/ASN1Encodable;)V
+	44      (000000a6) iput-object          v1, v3, Lcom/afwsamples/testdpc/policy/utils/Attestation;->softwareEnforced Lcom/afwsamples/testdpc/policy/utils/AuthorizationList;
+	45      (000000aa) new-instance         v1, Lcom/afwsamples/testdpc/policy/utils/AuthorizationList;
+	46      (000000ae) const/4              v2, 7
+	47      (000000b0) invoke-virtual       v0, v2, Lorg/bouncycastle/asn1/ASN1Sequence;->getObjectAt(I)Lorg/bouncycastle/asn1/ASN1Encodable;
+	48      (000000b6) move-result-object   v2
+	49      (000000b8) invoke-direct        v1, v2, Lcom/afwsamples/testdpc/policy/utils/AuthorizationList;-><init>(Lorg/bouncycastle/asn1/ASN1Encodable;)V
+	50      (000000be) iput-object          v1, v3, Lcom/afwsamples/testdpc/policy/utils/Attestation;->teeEnforced Lcom/afwsamples/testdpc/policy/utils/AuthorizationList;
+	51      (000000c2) return-void          
+

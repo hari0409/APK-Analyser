@@ -1,0 +1,32 @@
+# Lcom/afwsamples/testdpc/cosu/CosuConfig;->initiateDownloadAndInstall(Landroid/os/Handler;)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v4
+# - v5:android.os.Handler
+#
+# - return:void
+
+initiateDownloadAndInstall-BB@0x0 : [ initiateDownloadAndInstall-BB@0xc ]
+	0       (00000000) iget-object          v1, v4, Lcom/afwsamples/testdpc/cosu/CosuConfig;->mDownloadApps Ljava/util/Set;
+	1       (00000004) invoke-interface     v1, Ljava/util/Set;->iterator()Ljava/util/Iterator;
+	2       (0000000a) move-result-object   v1
+
+initiateDownloadAndInstall-BB@0xc : [ initiateDownloadAndInstall-BB@0x18 initiateDownloadAndInstall-BB@0x3a ]
+	3       (0000000c) invoke-interface     v1, Ljava/util/Iterator;->hasNext()Z
+	4       (00000012) move-result          v2
+	5       (00000014) if-eqz               v2, +13
+
+initiateDownloadAndInstall-BB@0x18 : [ initiateDownloadAndInstall-BB@0xc ]
+	6       (00000018) invoke-interface     v1, Ljava/util/Iterator;->next()Ljava/lang/Object;
+	7       (0000001e) move-result-object   v0
+	8       (00000020) check-cast           v0, Lcom/afwsamples/testdpc/cosu/CosuConfig$DownloadAppInfo;
+	9       (00000024) iget-object          v2, v4, Lcom/afwsamples/testdpc/cosu/CosuConfig;->mDownloadManager Landroid/app/DownloadManager;
+	10      (00000028) iget-object          v3, v0, Lcom/afwsamples/testdpc/cosu/CosuConfig$DownloadAppInfo;->downloadLocation Ljava/lang/String;
+	11      (0000002c) invoke-static        v2, v5, v3, Lcom/afwsamples/testdpc/cosu/CosuUtils;->startDownload(Landroid/app/DownloadManager; Landroid/os/Handler; Ljava/lang/String;)Ljava/lang/Long;
+	12      (00000032) move-result-object   v2
+	13      (00000034) iput-object          v2, v0, Lcom/afwsamples/testdpc/cosu/CosuConfig$DownloadAppInfo;->downloadId Ljava/lang/Long;
+	14      (00000038) goto                 -16
+
+initiateDownloadAndInstall-BB@0x3a : 
+	15      (0000003a) return-void          
+

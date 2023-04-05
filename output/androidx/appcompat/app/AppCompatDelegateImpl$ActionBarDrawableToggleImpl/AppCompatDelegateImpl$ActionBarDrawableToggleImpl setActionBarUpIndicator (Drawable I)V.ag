@@ -1,0 +1,22 @@
+# Landroidx/appcompat/app/AppCompatDelegateImpl$ActionBarDrawableToggleImpl;->setActionBarUpIndicator(Landroid/graphics/drawable/Drawable; I)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:android.graphics.drawable.Drawable
+# - v4:int
+#
+# - return:void
+
+setActionBarUpIndicator-BB@0x0 : [ setActionBarUpIndicator-BB@0x10 setActionBarUpIndicator-BB@0x1c ]
+	0       (00000000) iget-object          v1, v2, Landroidx/appcompat/app/AppCompatDelegateImpl$ActionBarDrawableToggleImpl;->this$0 Landroidx/appcompat/app/AppCompatDelegateImpl;
+	1       (00000004) invoke-virtual       v1, Landroidx/appcompat/app/AppCompatDelegateImpl;->getSupportActionBar()Landroidx/appcompat/app/ActionBar;
+	2       (0000000a) move-result-object   v0
+	3       (0000000c) if-eqz               v0, +8
+
+setActionBarUpIndicator-BB@0x10 : [ setActionBarUpIndicator-BB@0x1c ]
+	4       (00000010) invoke-virtual       v0, v3, Landroidx/appcompat/app/ActionBar;->setHomeAsUpIndicator(Landroid/graphics/drawable/Drawable;)V
+	5       (00000016) invoke-virtual       v0, v4, Landroidx/appcompat/app/ActionBar;->setHomeActionContentDescription(I)V
+
+setActionBarUpIndicator-BB@0x1c : 
+	6       (0000001c) return-void          
+

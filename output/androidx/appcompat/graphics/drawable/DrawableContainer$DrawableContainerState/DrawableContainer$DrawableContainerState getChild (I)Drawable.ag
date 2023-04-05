@@ -1,0 +1,57 @@
+# Landroidx/appcompat/graphics/drawable/DrawableContainer$DrawableContainerState;->getChild(I)Landroid/graphics/drawable/Drawable; [access_flags=public final]
+#
+# Parameters:
+# - local registers: v0...v6
+# - v7:int
+#
+# - return:android.graphics.drawable.Drawable
+
+getChild-BB@0x0 : [ getChild-BB@0xe getChild-BB@0x10 ]
+	0       (00000000) const/4              v4, 0
+	1       (00000002) iget-object          v5, v6, Landroidx/appcompat/graphics/drawable/DrawableContainer$DrawableContainerState;->mDrawables [Landroid/graphics/drawable/Drawable;
+	2       (00000006) aget-object          v3, v5, v7
+	3       (0000000a) if-eqz               v3, +3
+
+getChild-BB@0xe : 
+	4       (0000000e) return-object        v3
+
+getChild-BB@0x10 : [ getChild-BB@0x18 getChild-BB@0x76 ]
+	5       (00000010) iget-object          v5, v6, Landroidx/appcompat/graphics/drawable/DrawableContainer$DrawableContainerState;->mDrawableFutures Landroid/util/SparseArray;
+	6       (00000014) if-eqz               v5, +31
+
+getChild-BB@0x18 : [ getChild-BB@0x28 getChild-BB@0x76 ]
+	7       (00000018) iget-object          v5, v6, Landroidx/appcompat/graphics/drawable/DrawableContainer$DrawableContainerState;->mDrawableFutures Landroid/util/SparseArray;
+	8       (0000001c) invoke-virtual       v5, v7, Landroid/util/SparseArray;->indexOfKey(I)I
+	9       (00000022) move-result          v1
+	10      (00000024) if-ltz               v1, +29
+
+getChild-BB@0x28 : [ getChild-BB@0x6e getChild-BB@0x72 ]
+	11      (00000028) iget-object          v5, v6, Landroidx/appcompat/graphics/drawable/DrawableContainer$DrawableContainerState;->mDrawableFutures Landroid/util/SparseArray;
+	12      (0000002c) invoke-virtual       v5, v1, Landroid/util/SparseArray;->valueAt(I)Ljava/lang/Object;
+	13      (00000032) move-result-object   v0
+	14      (00000034) check-cast           v0, Landroid/graphics/drawable/Drawable$ConstantState;
+	15      (00000038) iget-object          v5, v6, Landroidx/appcompat/graphics/drawable/DrawableContainer$DrawableContainerState;->mSourceRes Landroid/content/res/Resources;
+	16      (0000003c) invoke-virtual       v0, v5, Landroid/graphics/drawable/Drawable$ConstantState;->newDrawable(Landroid/content/res/Resources;)Landroid/graphics/drawable/Drawable;
+	17      (00000042) move-result-object   v5
+	18      (00000044) invoke-direct        v6, v5, Landroidx/appcompat/graphics/drawable/DrawableContainer$DrawableContainerState;->prepareDrawable(Landroid/graphics/drawable/Drawable;)Landroid/graphics/drawable/Drawable;
+	19      (0000004a) move-result-object   v2
+	20      (0000004c) iget-object          v5, v6, Landroidx/appcompat/graphics/drawable/DrawableContainer$DrawableContainerState;->mDrawables [Landroid/graphics/drawable/Drawable;
+	21      (00000050) aput-object          v2, v5, v7
+	22      (00000054) iget-object          v5, v6, Landroidx/appcompat/graphics/drawable/DrawableContainer$DrawableContainerState;->mDrawableFutures Landroid/util/SparseArray;
+	23      (00000058) invoke-virtual       v5, v1, Landroid/util/SparseArray;->removeAt(I)V
+	24      (0000005e) iget-object          v5, v6, Landroidx/appcompat/graphics/drawable/DrawableContainer$DrawableContainerState;->mDrawableFutures Landroid/util/SparseArray;
+	25      (00000062) invoke-virtual       v5, Landroid/util/SparseArray;->size()I
+	26      (00000068) move-result          v5
+	27      (0000006a) if-nez               v5, +4
+
+getChild-BB@0x6e : [ getChild-BB@0x72 ]
+	28      (0000006e) iput-object          v4, v6, Landroidx/appcompat/graphics/drawable/DrawableContainer$DrawableContainerState;->mDrawableFutures Landroid/util/SparseArray;
+
+getChild-BB@0x72 : [ getChild-BB@0xe ]
+	29      (00000072) move-object          v3, v2
+	30      (00000074) goto                 -33
+
+getChild-BB@0x76 : [ getChild-BB@0xe ]
+	31      (00000076) move-object          v3, v4
+	32      (00000078) goto                 -35
+

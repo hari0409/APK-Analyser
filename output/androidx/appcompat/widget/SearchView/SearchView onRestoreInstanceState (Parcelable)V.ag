@@ -1,0 +1,29 @@
+# Landroidx/appcompat/widget/SearchView;->onRestoreInstanceState(Landroid/os/Parcelable;)V [access_flags=protected]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:android.os.Parcelable
+#
+# - return:void
+
+onRestoreInstanceState-BB@0x0 : [ onRestoreInstanceState-BB@0x8 onRestoreInstanceState-BB@0x10 ]
+	0       (00000000) instance-of          v1, v3, Landroidx/appcompat/widget/SearchView$SavedState;
+	1       (00000004) if-nez               v1, +6
+
+onRestoreInstanceState-BB@0x8 : [ onRestoreInstanceState-BB@0xe ]
+	2       (00000008) invoke-super         v2, v3, Landroidx/appcompat/widget/LinearLayoutCompat;->onRestoreInstanceState(Landroid/os/Parcelable;)V
+
+onRestoreInstanceState-BB@0xe : 
+	3       (0000000e) return-void          
+
+onRestoreInstanceState-BB@0x10 : [ onRestoreInstanceState-BB@0xe ]
+	4       (00000010) move-object          v0, v3
+	5       (00000012) check-cast           v0, Landroidx/appcompat/widget/SearchView$SavedState;
+	6       (00000016) invoke-virtual       v0, Landroidx/appcompat/widget/SearchView$SavedState;->getSuperState()Landroid/os/Parcelable;
+	7       (0000001c) move-result-object   v1
+	8       (0000001e) invoke-super         v2, v1, Landroidx/appcompat/widget/LinearLayoutCompat;->onRestoreInstanceState(Landroid/os/Parcelable;)V
+	9       (00000024) iget-boolean         v1, v0, Landroidx/appcompat/widget/SearchView$SavedState;->isIconified Z
+	10      (00000028) invoke-direct        v2, v1, Landroidx/appcompat/widget/SearchView;->updateViewsVisibility(Z)V
+	11      (0000002e) invoke-virtual       v2, Landroidx/appcompat/widget/SearchView;->requestLayout()V
+	12      (00000034) goto                 -13
+

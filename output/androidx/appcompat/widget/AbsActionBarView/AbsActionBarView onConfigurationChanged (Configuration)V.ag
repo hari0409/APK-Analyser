@@ -1,0 +1,33 @@
+# Landroidx/appcompat/widget/AbsActionBarView;->onConfigurationChanged(Landroid/content/res/Configuration;)V [access_flags=protected]
+#
+# Parameters:
+# - local registers: v0...v6
+# - v7:android.content.res.Configuration
+#
+# - return:void
+
+onConfigurationChanged-BB@0x0 : [ onConfigurationChanged-BB@0x42 onConfigurationChanged-BB@0x4c ]
+	0       (00000000) const/4              v5, 0
+	1       (00000002) invoke-super         v6, v7, Landroid/view/ViewGroup;->onConfigurationChanged(Landroid/content/res/Configuration;)V
+	2       (00000008) invoke-virtual       v6, Landroidx/appcompat/widget/AbsActionBarView;->getContext()Landroid/content/Context;
+	3       (0000000e) move-result-object   v1
+	4       (00000010) const/4              v2, 0
+	5       (00000012) sget-object          v3, Landroidx/appcompat/R$styleable;->ActionBar [I
+	6       (00000016) sget                 v4, Landroidx/appcompat/R$attr;->actionBarStyle I
+	7       (0000001a) invoke-virtual       v1, v2, v3, v4, v5, Landroid/content/Context;->obtainStyledAttributes(Landroid/util/AttributeSet; [I I I)Landroid/content/res/TypedArray;
+	8       (00000020) move-result-object   v0
+	9       (00000022) sget                 v1, Landroidx/appcompat/R$styleable;->ActionBar_height I
+	10      (00000026) invoke-virtual       v0, v1, v5, Landroid/content/res/TypedArray;->getLayoutDimension(I I)I
+	11      (0000002c) move-result          v1
+	12      (0000002e) invoke-virtual       v6, v1, Landroidx/appcompat/widget/AbsActionBarView;->setContentHeight(I)V
+	13      (00000034) invoke-virtual       v0, Landroid/content/res/TypedArray;->recycle()V
+	14      (0000003a) iget-object          v1, v6, Landroidx/appcompat/widget/AbsActionBarView;->mActionMenuPresenter Landroidx/appcompat/widget/ActionMenuPresenter;
+	15      (0000003e) if-eqz               v1, +7
+
+onConfigurationChanged-BB@0x42 : [ onConfigurationChanged-BB@0x4c ]
+	16      (00000042) iget-object          v1, v6, Landroidx/appcompat/widget/AbsActionBarView;->mActionMenuPresenter Landroidx/appcompat/widget/ActionMenuPresenter;
+	17      (00000046) invoke-virtual       v1, v7, Landroidx/appcompat/widget/ActionMenuPresenter;->onConfigurationChanged(Landroid/content/res/Configuration;)V
+
+onConfigurationChanged-BB@0x4c : 
+	18      (0000004c) return-void          
+

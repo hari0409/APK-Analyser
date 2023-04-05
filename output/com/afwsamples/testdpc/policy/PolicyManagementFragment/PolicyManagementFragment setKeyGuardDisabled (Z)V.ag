@@ -1,0 +1,39 @@
+# Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->setKeyGuardDisabled(Z)V [access_flags=private]
+#
+# Parameters:
+# - local registers: v0...v4
+# - v5:boolean
+#
+# - return:void
+
+setKeyGuardDisabled-BB@0x0 : [ setKeyGuardDisabled-BB@0x34 setKeyGuardDisabled-BB@0x48 ]
+	0       (00000000) const/4              v3, 0
+	1       (00000002) iget-object          v0, v4, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->mDevicePolicyManagerGateway Lcom/afwsamples/testdpc/DevicePolicyManagerGateway;
+	2       (00000006) new-instance         v1, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment$$Lambda$31;
+	3       (0000000a) invoke-direct        v1, v4, v5, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment$$Lambda$31;-><init>(Lcom/afwsamples/testdpc/policy/PolicyManagementFragment; Z)V
+	4       (00000010) new-instance         v2, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment$$Lambda$32;
+	5       (00000014) invoke-direct        v2, v4, v5, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment$$Lambda$32;-><init>(Lcom/afwsamples/testdpc/policy/PolicyManagementFragment; Z)V
+	6       (0000001a) invoke-interface     v0, v5, v1, v2, Lcom/afwsamples/testdpc/DevicePolicyManagerGateway;->setKeyguardDisabled(Z Ljava/util/function/Consumer; Ljava/util/function/Consumer;)V
+	7       (00000020) iget-object          v0, v4, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->mDevicePolicyManager Landroid/app/admin/DevicePolicyManager;
+	8       (00000024) iget-object          v1, v4, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->mAdminComponentName Landroid/content/ComponentName;
+	9       (00000028) invoke-virtual       v0, v1, v5, Landroid/app/admin/DevicePolicyManager;->setKeyguardDisabled(Landroid/content/ComponentName; Z)Z
+	10      (0000002e) move-result          v0
+	11      (00000030) if-nez               v0, +c
+
+setKeyGuardDisabled-BB@0x34 : [ setKeyGuardDisabled-BB@0x38 setKeyGuardDisabled-BB@0x4a ]
+	12      (00000034) if-eqz               v5, +b
+
+setKeyGuardDisabled-BB@0x38 : [ setKeyGuardDisabled-BB@0x48 ]
+	13      (00000038) const                v0, 2131690326 # [1.900969245750445e+38]
+	14      (0000003e) new-array            v1, v3, [Ljava/lang/Object;
+	15      (00000042) invoke-direct        v4, v0, v1, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->showToast(I [Ljava/lang/Object;)V
+
+setKeyGuardDisabled-BB@0x48 : 
+	16      (00000048) return-void          
+
+setKeyGuardDisabled-BB@0x4a : [ setKeyGuardDisabled-BB@0x48 ]
+	17      (0000004a) const                v0, 2131690327 # [1.900969448574541e+38]
+	18      (00000050) new-array            v1, v3, [Ljava/lang/Object;
+	19      (00000054) invoke-direct        v4, v0, v1, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->showToast(I [Ljava/lang/Object;)V
+	20      (0000005a) goto                 -9
+

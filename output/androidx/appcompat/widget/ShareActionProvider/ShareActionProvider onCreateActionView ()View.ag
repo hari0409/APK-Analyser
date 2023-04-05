@@ -1,0 +1,43 @@
+# Landroidx/appcompat/widget/ShareActionProvider;->onCreateActionView()Landroid/view/View; [access_flags=public]
+#
+# Parameters:
+# local registers: v0...v7
+#
+# - return:android.view.View
+
+onCreateActionView-BB@0x0 : [ onCreateActionView-BB@0x1a onCreateActionView-BB@0x30 ]
+	0       (00000000) new-instance         v0, Landroidx/appcompat/widget/ActivityChooserView;
+	1       (00000004) iget-object          v4, v7, Landroidx/appcompat/widget/ShareActionProvider;->mContext Landroid/content/Context;
+	2       (00000008) invoke-direct        v0, v4, Landroidx/appcompat/widget/ActivityChooserView;-><init>(Landroid/content/Context;)V
+	3       (0000000e) invoke-virtual       v0, Landroidx/appcompat/widget/ActivityChooserView;->isInEditMode()Z
+	4       (00000014) move-result          v4
+	5       (00000016) if-nez               v4, +d
+
+onCreateActionView-BB@0x1a : [ onCreateActionView-BB@0x30 ]
+	6       (0000001a) iget-object          v4, v7, Landroidx/appcompat/widget/ShareActionProvider;->mContext Landroid/content/Context;
+	7       (0000001e) iget-object          v5, v7, Landroidx/appcompat/widget/ShareActionProvider;->mShareHistoryFileName Ljava/lang/String;
+	8       (00000022) invoke-static        v4, v5, Landroidx/appcompat/widget/ActivityChooserModel;->get(Landroid/content/Context; Ljava/lang/String;)Landroidx/appcompat/widget/ActivityChooserModel;
+	9       (00000028) move-result-object   v1
+	10      (0000002a) invoke-virtual       v0, v1, Landroidx/appcompat/widget/ActivityChooserView;->setActivityChooserModel(Landroidx/appcompat/widget/ActivityChooserModel;)V
+
+onCreateActionView-BB@0x30 : 
+	11      (00000030) new-instance         v3, Landroid/util/TypedValue;
+	12      (00000034) invoke-direct        v3, Landroid/util/TypedValue;-><init>()V
+	13      (0000003a) iget-object          v4, v7, Landroidx/appcompat/widget/ShareActionProvider;->mContext Landroid/content/Context;
+	14      (0000003e) invoke-virtual       v4, Landroid/content/Context;->getTheme()Landroid/content/res/Resources$Theme;
+	15      (00000044) move-result-object   v4
+	16      (00000046) sget                 v5, Landroidx/appcompat/R$attr;->actionModeShareDrawable I
+	17      (0000004a) const/4              v6, 1
+	18      (0000004c) invoke-virtual       v4, v5, v3, v6, Landroid/content/res/Resources$Theme;->resolveAttribute(I Landroid/util/TypedValue; Z)Z
+	19      (00000052) iget-object          v4, v7, Landroidx/appcompat/widget/ShareActionProvider;->mContext Landroid/content/Context;
+	20      (00000056) iget                 v5, v3, Landroid/util/TypedValue;->resourceId I
+	21      (0000005a) invoke-static        v4, v5, Landroidx/appcompat/content/res/AppCompatResources;->getDrawable(Landroid/content/Context; I)Landroid/graphics/drawable/Drawable;
+	22      (00000060) move-result-object   v2
+	23      (00000062) invoke-virtual       v0, v2, Landroidx/appcompat/widget/ActivityChooserView;->setExpandActivityOverflowButtonDrawable(Landroid/graphics/drawable/Drawable;)V
+	24      (00000068) invoke-virtual       v0, v7, Landroidx/appcompat/widget/ActivityChooserView;->setProvider(Landroidx/core/view/ActionProvider;)V
+	25      (0000006e) sget                 v4, Landroidx/appcompat/R$string;->abc_shareactionprovider_share_with_application I
+	26      (00000072) invoke-virtual       v0, v4, Landroidx/appcompat/widget/ActivityChooserView;->setDefaultActionButtonContentDescription(I)V
+	27      (00000078) sget                 v4, Landroidx/appcompat/R$string;->abc_shareactionprovider_share_with I
+	28      (0000007c) invoke-virtual       v0, v4, Landroidx/appcompat/widget/ActivityChooserView;->setExpandActivityOverflowButtonContentDescription(I)V
+	29      (00000082) return-object        v0
+

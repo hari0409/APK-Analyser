@@ -1,0 +1,19 @@
+# Landroidx/multidex/MultiDex;-><clinit>()V [access_flags=static constructor]
+#
+# Parameters:
+# local registers: v0...v0
+#
+# - return:void
+
+<clinit>-BB@0x0 : 
+	0       (00000000) new-instance         v0, Ljava/util/HashSet;
+	1       (00000004) invoke-direct        v0, Ljava/util/HashSet;-><init>()V
+	2       (0000000a) sput-object          v0, Landroidx/multidex/MultiDex;->installedApk Ljava/util/Set;
+	3       (0000000e) const-string         v0, 'java.vm.version'
+	4       (00000012) invoke-static        v0, Ljava/lang/System;->getProperty(Ljava/lang/String;)Ljava/lang/String;
+	5       (00000018) move-result-object   v0
+	6       (0000001a) invoke-static        v0, Landroidx/multidex/MultiDex;->isVMMultidexCapable(Ljava/lang/String;)Z
+	7       (00000020) move-result          v0
+	8       (00000022) sput-boolean         v0, Landroidx/multidex/MultiDex;->IS_VM_MULTIDEX_CAPABLE Z
+	9       (00000026) return-void          
+

@@ -1,0 +1,29 @@
+# Landroidx/appcompat/widget/AppCompatSpinner$DropdownPopup;->isVisibleToUser(Landroid/view/View;)Z [access_flags=]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:android.view.View
+#
+# - return:boolean
+
+isVisibleToUser-BB@0x0 : [ isVisibleToUser-BB@0xc isVisibleToUser-BB@0x20 ]
+	0       (00000000) invoke-static        v2, Landroidx/core/view/ViewCompat;->isAttachedToWindow(Landroid/view/View;)Z
+	1       (00000006) move-result          v0
+	2       (00000008) if-eqz               v0, +c
+
+isVisibleToUser-BB@0xc : [ isVisibleToUser-BB@0x1c isVisibleToUser-BB@0x20 ]
+	3       (0000000c) iget-object          v0, v1, Landroidx/appcompat/widget/AppCompatSpinner$DropdownPopup;->mVisibleRect Landroid/graphics/Rect;
+	4       (00000010) invoke-virtual       v2, v0, Landroid/view/View;->getGlobalVisibleRect(Landroid/graphics/Rect;)Z
+	5       (00000016) move-result          v0
+	6       (00000018) if-eqz               v0, +4
+
+isVisibleToUser-BB@0x1c : [ isVisibleToUser-BB@0x1e ]
+	7       (0000001c) const/4              v0, 1
+
+isVisibleToUser-BB@0x1e : 
+	8       (0000001e) return               v0
+
+isVisibleToUser-BB@0x20 : [ isVisibleToUser-BB@0x1e ]
+	9       (00000020) const/4              v0, 0
+	10      (00000022) goto                 -2
+

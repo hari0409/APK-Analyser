@@ -1,0 +1,29 @@
+# Landroidx/appcompat/graphics/drawable/DrawableContainer;->setColorFilter(Landroid/graphics/ColorFilter;)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:android.graphics.ColorFilter
+#
+# - return:void
+
+setColorFilter-BB@0x0 : [ setColorFilter-BB@0x16 setColorFilter-BB@0x30 ]
+	0       (00000000) iget-object          v0, v2, Landroidx/appcompat/graphics/drawable/DrawableContainer;->mDrawableContainerState Landroidx/appcompat/graphics/drawable/DrawableContainer$DrawableContainerState;
+	1       (00000004) const/4              v1, 1
+	2       (00000006) iput-boolean         v1, v0, Landroidx/appcompat/graphics/drawable/DrawableContainer$DrawableContainerState;->mHasColorFilter Z
+	3       (0000000a) iget-object          v0, v2, Landroidx/appcompat/graphics/drawable/DrawableContainer;->mDrawableContainerState Landroidx/appcompat/graphics/drawable/DrawableContainer$DrawableContainerState;
+	4       (0000000e) iget-object          v0, v0, Landroidx/appcompat/graphics/drawable/DrawableContainer$DrawableContainerState;->mColorFilter Landroid/graphics/ColorFilter;
+	5       (00000012) if-eq                v0, v3, +f
+
+setColorFilter-BB@0x16 : [ setColorFilter-BB@0x26 setColorFilter-BB@0x30 ]
+	6       (00000016) iget-object          v0, v2, Landroidx/appcompat/graphics/drawable/DrawableContainer;->mDrawableContainerState Landroidx/appcompat/graphics/drawable/DrawableContainer$DrawableContainerState;
+	7       (0000001a) iput-object          v3, v0, Landroidx/appcompat/graphics/drawable/DrawableContainer$DrawableContainerState;->mColorFilter Landroid/graphics/ColorFilter;
+	8       (0000001e) iget-object          v0, v2, Landroidx/appcompat/graphics/drawable/DrawableContainer;->mCurrDrawable Landroid/graphics/drawable/Drawable;
+	9       (00000022) if-eqz               v0, +7
+
+setColorFilter-BB@0x26 : [ setColorFilter-BB@0x30 ]
+	10      (00000026) iget-object          v0, v2, Landroidx/appcompat/graphics/drawable/DrawableContainer;->mCurrDrawable Landroid/graphics/drawable/Drawable;
+	11      (0000002a) invoke-virtual       v0, v3, Landroid/graphics/drawable/Drawable;->setColorFilter(Landroid/graphics/ColorFilter;)V
+
+setColorFilter-BB@0x30 : 
+	12      (00000030) return-void          
+

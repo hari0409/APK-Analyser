@@ -1,0 +1,40 @@
+# Landroidx/appcompat/view/menu/MenuItemImpl;->collapseActionView()Z [access_flags=public]
+#
+# Parameters:
+# local registers: v0...v2
+#
+# - return:boolean
+
+collapseActionView-BB@0x0 : [ collapseActionView-BB@0xe collapseActionView-BB@0x10 ]
+	0       (00000000) const/4              v0, 0
+	1       (00000002) iget                 v1, v2, Landroidx/appcompat/view/menu/MenuItemImpl;->mShowAsAction I
+	2       (00000006) and-int/lit8         v1, v1, 8
+	3       (0000000a) if-nez               v1, +3
+
+collapseActionView-BB@0xe : 
+	4       (0000000e) return               v0
+
+collapseActionView-BB@0x10 : [ collapseActionView-BB@0x18 collapseActionView-BB@0x1c ]
+	5       (00000010) iget-object          v1, v2, Landroidx/appcompat/view/menu/MenuItemImpl;->mActionView Landroid/view/View;
+	6       (00000014) if-nez               v1, +4
+
+collapseActionView-BB@0x18 : [ collapseActionView-BB@0xe ]
+	7       (00000018) const/4              v0, 1
+	8       (0000001a) goto                 -6
+
+collapseActionView-BB@0x1c : [ collapseActionView-BB@0x24 collapseActionView-BB@0x34 ]
+	9       (0000001c) iget-object          v1, v2, Landroidx/appcompat/view/menu/MenuItemImpl;->mOnActionExpandListener Landroid/view/MenuItem$OnActionExpandListener;
+	10      (00000020) if-eqz               v1, +a
+
+collapseActionView-BB@0x24 : [ collapseActionView-BB@0x34 collapseActionView-BB@0xe ]
+	11      (00000024) iget-object          v1, v2, Landroidx/appcompat/view/menu/MenuItemImpl;->mOnActionExpandListener Landroid/view/MenuItem$OnActionExpandListener;
+	12      (00000028) invoke-interface     v1, v2, Landroid/view/MenuItem$OnActionExpandListener;->onMenuItemActionCollapse(Landroid/view/MenuItem;)Z
+	13      (0000002e) move-result          v1
+	14      (00000030) if-eqz               v1, -11
+
+collapseActionView-BB@0x34 : [ collapseActionView-BB@0xe ]
+	15      (00000034) iget-object          v0, v2, Landroidx/appcompat/view/menu/MenuItemImpl;->mMenu Landroidx/appcompat/view/menu/MenuBuilder;
+	16      (00000038) invoke-virtual       v0, v2, Landroidx/appcompat/view/menu/MenuBuilder;->collapseItemActionView(Landroidx/appcompat/view/menu/MenuItemImpl;)Z
+	17      (0000003e) move-result          v0
+	18      (00000040) goto                 -19
+

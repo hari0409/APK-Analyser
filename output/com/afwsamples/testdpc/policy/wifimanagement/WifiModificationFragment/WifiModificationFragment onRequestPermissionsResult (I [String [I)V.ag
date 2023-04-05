@@ -1,0 +1,27 @@
+# Lcom/afwsamples/testdpc/policy/wifimanagement/WifiModificationFragment;->onRequestPermissionsResult(I [Ljava/lang/String; [I)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:int
+# - v3:java.lang.String[]
+# - v4:int[]
+#
+# - return:void
+
+onRequestPermissionsResult-BB@0x0 : [ onRequestPermissionsResult-BB@0xa onRequestPermissionsResult-BB@0x1c ]
+	0       (00000000) const/4              v0, 0
+	1       (00000002) aget                 v0, v4, v0
+	2       (00000006) if-eqz               v0, +b
+
+onRequestPermissionsResult-BB@0xa : [ onRequestPermissionsResult-BB@0x14 ]
+	3       (0000000a) const-string         v0, 'Location permission denied, network list unavailable.'
+	4       (0000000e) invoke-direct        v1, v0, Lcom/afwsamples/testdpc/policy/wifimanagement/WifiModificationFragment;->showToast(Ljava/lang/String;)V
+
+onRequestPermissionsResult-BB@0x14 : 
+	5       (00000014) invoke-super         v1, v2, v3, v4, Landroid/app/Fragment;->onRequestPermissionsResult(I [Ljava/lang/String; [I)V
+	6       (0000001a) return-void          
+
+onRequestPermissionsResult-BB@0x1c : [ onRequestPermissionsResult-BB@0x14 ]
+	7       (0000001c) invoke-direct        v1, Lcom/afwsamples/testdpc/policy/wifimanagement/WifiModificationFragment;->updateConfigsList()V
+	8       (00000022) goto                 -7
+

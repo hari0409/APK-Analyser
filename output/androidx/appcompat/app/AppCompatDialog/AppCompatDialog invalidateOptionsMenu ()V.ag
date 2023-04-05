@@ -1,0 +1,13 @@
+# Landroidx/appcompat/app/AppCompatDialog;->invalidateOptionsMenu()V [access_flags=public]
+#
+# Parameters:
+# local registers: v0...v1
+#
+# - return:void
+
+invalidateOptionsMenu-BB@0x0 : 
+	0       (00000000) invoke-virtual       v1, Landroidx/appcompat/app/AppCompatDialog;->getDelegate()Landroidx/appcompat/app/AppCompatDelegate;
+	1       (00000006) move-result-object   v0
+	2       (00000008) invoke-virtual       v0, Landroidx/appcompat/app/AppCompatDelegate;->invalidateOptionsMenu()V
+	3       (0000000e) return-void          
+

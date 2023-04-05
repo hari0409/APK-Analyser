@@ -1,0 +1,13 @@
+# Lcom/afwsamples/testdpc/BootReceiver$$Lambda$0;->onServiceConnected(Ljava/lang/Object;)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v0
+# - v1:java.lang.Object
+#
+# - return:void
+
+onServiceConnected-BB@0x0 : 
+	0       (00000000) check-cast           v1, Lcom/afwsamples/testdpc/comp/IDeviceOwnerService;
+	1       (00000004) invoke-static        v1, Lcom/afwsamples/testdpc/BootReceiver;->lambda$onReceive$97$BootReceiver(Lcom/afwsamples/testdpc/comp/IDeviceOwnerService;)V
+	2       (0000000a) return-void          
+

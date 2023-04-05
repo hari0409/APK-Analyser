@@ -1,0 +1,35 @@
+# Landroidx/appcompat/view/ViewPropertyAnimatorCompatSet$1;->onAnimationEnd(Landroid/view/View;)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:android.view.View
+#
+# - return:void
+
+onAnimationEnd-BB@0x0 : [ onAnimationEnd-BB@0x20 onAnimationEnd-BB@0x42 ]
+	0       (00000000) iget                 v0, v2, Landroidx/appcompat/view/ViewPropertyAnimatorCompatSet$1;->mProxyEndCount I
+	1       (00000004) add-int/lit8         v0, v0, 1
+	2       (00000008) iput                 v0, v2, Landroidx/appcompat/view/ViewPropertyAnimatorCompatSet$1;->mProxyEndCount I
+	3       (0000000c) iget-object          v1, v2, Landroidx/appcompat/view/ViewPropertyAnimatorCompatSet$1;->this$0 Landroidx/appcompat/view/ViewPropertyAnimatorCompatSet;
+	4       (00000010) iget-object          v1, v1, Landroidx/appcompat/view/ViewPropertyAnimatorCompatSet;->mAnimators Ljava/util/ArrayList;
+	5       (00000014) invoke-virtual       v1, Ljava/util/ArrayList;->size()I
+	6       (0000001a) move-result          v1
+	7       (0000001c) if-ne                v0, v1, +13
+
+onAnimationEnd-BB@0x20 : [ onAnimationEnd-BB@0x2c onAnimationEnd-BB@0x3c ]
+	8       (00000020) iget-object          v0, v2, Landroidx/appcompat/view/ViewPropertyAnimatorCompatSet$1;->this$0 Landroidx/appcompat/view/ViewPropertyAnimatorCompatSet;
+	9       (00000024) iget-object          v0, v0, Landroidx/appcompat/view/ViewPropertyAnimatorCompatSet;->mListener Landroidx/core/view/ViewPropertyAnimatorListener;
+	10      (00000028) if-eqz               v0, +a
+
+onAnimationEnd-BB@0x2c : [ onAnimationEnd-BB@0x3c ]
+	11      (0000002c) iget-object          v0, v2, Landroidx/appcompat/view/ViewPropertyAnimatorCompatSet$1;->this$0 Landroidx/appcompat/view/ViewPropertyAnimatorCompatSet;
+	12      (00000030) iget-object          v0, v0, Landroidx/appcompat/view/ViewPropertyAnimatorCompatSet;->mListener Landroidx/core/view/ViewPropertyAnimatorListener;
+	13      (00000034) const/4              v1, 0
+	14      (00000036) invoke-interface     v0, v1, Landroidx/core/view/ViewPropertyAnimatorListener;->onAnimationEnd(Landroid/view/View;)V
+
+onAnimationEnd-BB@0x3c : [ onAnimationEnd-BB@0x42 ]
+	15      (0000003c) invoke-virtual       v2, Landroidx/appcompat/view/ViewPropertyAnimatorCompatSet$1;->onEnd()V
+
+onAnimationEnd-BB@0x42 : 
+	16      (00000042) return-void          
+

@@ -1,0 +1,17 @@
+# Lcom/afwsamples/testdpc/common/Util;->isDeviceOwner(Landroid/content/Context;)Z [access_flags=public static]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:android.content.Context
+#
+# - return:boolean
+
+isDeviceOwner-BB@0x0 : 
+	0       (00000000) invoke-static        v2, Lcom/afwsamples/testdpc/common/Util;->getDevicePolicyManager(Landroid/content/Context;)Landroid/app/admin/DevicePolicyManager;
+	1       (00000006) move-result-object   v0
+	2       (00000008) invoke-virtual       v2, Landroid/content/Context;->getPackageName()Ljava/lang/String;
+	3       (0000000e) move-result-object   v1
+	4       (00000010) invoke-virtual       v0, v1, Landroid/app/admin/DevicePolicyManager;->isDeviceOwnerApp(Ljava/lang/String;)Z
+	5       (00000016) move-result          v1
+	6       (00000018) return               v1
+

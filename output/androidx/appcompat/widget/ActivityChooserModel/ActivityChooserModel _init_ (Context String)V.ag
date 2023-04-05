@@ -1,0 +1,63 @@
+# Landroidx/appcompat/widget/ActivityChooserModel;-><init>(Landroid/content/Context; Ljava/lang/String;)V [access_flags=private constructor]
+#
+# Parameters:
+# - local registers: v0...v3
+# - v4:android.content.Context
+# - v5:java.lang.String
+#
+# - return:void
+
+<init>-BB@0x0 : [ <init>-BB@0x72 <init>-BB@0xae ]
+	0       (00000000) const/4              v2, 1
+	1       (00000002) const/4              v1, 0
+	2       (00000004) invoke-direct        v3, Landroid/database/DataSetObservable;-><init>()V
+	3       (0000000a) new-instance         v0, Ljava/lang/Object;
+	4       (0000000e) invoke-direct        v0, Ljava/lang/Object;-><init>()V
+	5       (00000014) iput-object          v0, v3, Landroidx/appcompat/widget/ActivityChooserModel;->mInstanceLock Ljava/lang/Object;
+	6       (00000018) new-instance         v0, Ljava/util/ArrayList;
+	7       (0000001c) invoke-direct        v0, Ljava/util/ArrayList;-><init>()V
+	8       (00000022) iput-object          v0, v3, Landroidx/appcompat/widget/ActivityChooserModel;->mActivities Ljava/util/List;
+	9       (00000026) new-instance         v0, Ljava/util/ArrayList;
+	10      (0000002a) invoke-direct        v0, Ljava/util/ArrayList;-><init>()V
+	11      (00000030) iput-object          v0, v3, Landroidx/appcompat/widget/ActivityChooserModel;->mHistoricalRecords Ljava/util/List;
+	12      (00000034) new-instance         v0, Landroidx/appcompat/widget/ActivityChooserModel$DefaultSorter;
+	13      (00000038) invoke-direct        v0, Landroidx/appcompat/widget/ActivityChooserModel$DefaultSorter;-><init>()V
+	14      (0000003e) iput-object          v0, v3, Landroidx/appcompat/widget/ActivityChooserModel;->mActivitySorter Landroidx/appcompat/widget/ActivityChooserModel$ActivitySorter;
+	15      (00000042) const/16             v0, 50
+	16      (00000046) iput                 v0, v3, Landroidx/appcompat/widget/ActivityChooserModel;->mHistoryMaxSize I
+	17      (0000004a) iput-boolean         v2, v3, Landroidx/appcompat/widget/ActivityChooserModel;->mCanReadHistoricalData Z
+	18      (0000004e) iput-boolean         v1, v3, Landroidx/appcompat/widget/ActivityChooserModel;->mReadShareHistoryCalled Z
+	19      (00000052) iput-boolean         v2, v3, Landroidx/appcompat/widget/ActivityChooserModel;->mHistoricalRecordsChanged Z
+	20      (00000056) iput-boolean         v1, v3, Landroidx/appcompat/widget/ActivityChooserModel;->mReloadActivities Z
+	21      (0000005a) invoke-virtual       v4, Landroid/content/Context;->getApplicationContext()Landroid/content/Context;
+	22      (00000060) move-result-object   v0
+	23      (00000062) iput-object          v0, v3, Landroidx/appcompat/widget/ActivityChooserModel;->mContext Landroid/content/Context;
+	24      (00000066) invoke-static        v5, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
+	25      (0000006c) move-result          v0
+	26      (0000006e) if-nez               v0, +20
+
+<init>-BB@0x72 : [ <init>-BB@0x82 <init>-BB@0xae ]
+	27      (00000072) const-string         v0, '.xml'
+	28      (00000076) invoke-virtual       v5, v0, Ljava/lang/String;->endsWith(Ljava/lang/String;)Z
+	29      (0000007c) move-result          v0
+	30      (0000007e) if-nez               v0, +18
+
+<init>-BB@0x82 : [ <init>-BB@0xac ]
+	31      (00000082) new-instance         v0, Ljava/lang/StringBuilder;
+	32      (00000086) invoke-direct        v0, Ljava/lang/StringBuilder;-><init>()V
+	33      (0000008c) invoke-virtual       v0, v5, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	34      (00000092) move-result-object   v0
+	35      (00000094) const-string         v1, '.xml'
+	36      (00000098) invoke-virtual       v0, v1, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	37      (0000009e) move-result-object   v0
+	38      (000000a0) invoke-virtual       v0, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+	39      (000000a6) move-result-object   v0
+	40      (000000a8) iput-object          v0, v3, Landroidx/appcompat/widget/ActivityChooserModel;->mHistoryFileName Ljava/lang/String;
+
+<init>-BB@0xac : 
+	41      (000000ac) return-void          
+
+<init>-BB@0xae : [ <init>-BB@0xac ]
+	42      (000000ae) iput-object          v5, v3, Landroidx/appcompat/widget/ActivityChooserModel;->mHistoryFileName Ljava/lang/String;
+	43      (000000b2) goto                 -3
+

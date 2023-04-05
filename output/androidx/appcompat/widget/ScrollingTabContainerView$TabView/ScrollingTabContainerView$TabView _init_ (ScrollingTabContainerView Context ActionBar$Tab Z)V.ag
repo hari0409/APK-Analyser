@@ -1,0 +1,48 @@
+# Landroidx/appcompat/widget/ScrollingTabContainerView$TabView;-><init>(Landroidx/appcompat/widget/ScrollingTabContainerView; Landroid/content/Context; Landroidx/appcompat/app/ActionBar$Tab; Z)V [access_flags=public constructor]
+#
+# Parameters:
+# - local registers: v0...v5
+# - v6:androidx.appcompat.widget.ScrollingTabContainerView
+# - v7:android.content.Context
+# - v8:androidx.appcompat.app.ActionBar$Tab
+# - v9:boolean
+#
+# - return:void
+
+<init>-BB@0x0 : [ <init>-BB@0x46 <init>-BB@0x54 ]
+	0       (00000000) const/4              v4, 0
+	1       (00000002) const/4              v3, 0
+	2       (00000004) iput-object          v6, v5, Landroidx/appcompat/widget/ScrollingTabContainerView$TabView;->this$0 Landroidx/appcompat/widget/ScrollingTabContainerView;
+	3       (00000008) sget                 v1, Landroidx/appcompat/R$attr;->actionBarTabStyle I
+	4       (0000000c) invoke-direct        v5, v7, v4, v1, Landroid/widget/LinearLayout;-><init>(Landroid/content/Context; Landroid/util/AttributeSet; I)V
+	5       (00000012) const/4              v1, 1
+	6       (00000014) new-array            v1, v1, [I
+	7       (00000018) const                v2, 16842964 # [2.3694152159310606e-38]
+	8       (0000001e) aput                 v2, v1, v3
+	9       (00000022) iput-object          v1, v5, Landroidx/appcompat/widget/ScrollingTabContainerView$TabView;->BG_ATTRS [I
+	10      (00000026) iput-object          v8, v5, Landroidx/appcompat/widget/ScrollingTabContainerView$TabView;->mTab Landroidx/appcompat/app/ActionBar$Tab;
+	11      (0000002a) iget-object          v1, v5, Landroidx/appcompat/widget/ScrollingTabContainerView$TabView;->BG_ATTRS [I
+	12      (0000002e) sget                 v2, Landroidx/appcompat/R$attr;->actionBarTabStyle I
+	13      (00000032) invoke-static        v7, v4, v1, v2, v3, Landroidx/appcompat/widget/TintTypedArray;->obtainStyledAttributes(Landroid/content/Context; Landroid/util/AttributeSet; [I I I)Landroidx/appcompat/widget/TintTypedArray;
+	14      (00000038) move-result-object   v0
+	15      (0000003a) invoke-virtual       v0, v3, Landroidx/appcompat/widget/TintTypedArray;->hasValue(I)Z
+	16      (00000040) move-result          v1
+	17      (00000042) if-eqz               v1, +9
+
+<init>-BB@0x46 : [ <init>-BB@0x54 ]
+	18      (00000046) invoke-virtual       v0, v3, Landroidx/appcompat/widget/TintTypedArray;->getDrawable(I)Landroid/graphics/drawable/Drawable;
+	19      (0000004c) move-result-object   v1
+	20      (0000004e) invoke-virtual       v5, v1, Landroidx/appcompat/widget/ScrollingTabContainerView$TabView;->setBackgroundDrawable(Landroid/graphics/drawable/Drawable;)V
+
+<init>-BB@0x54 : [ <init>-BB@0x5e <init>-BB@0x6a ]
+	21      (00000054) invoke-virtual       v0, Landroidx/appcompat/widget/TintTypedArray;->recycle()V
+	22      (0000005a) if-eqz               v9, +8
+
+<init>-BB@0x5e : [ <init>-BB@0x6a ]
+	23      (0000005e) const                v1, 8388627 # [1.1754970132893697e-38]
+	24      (00000064) invoke-virtual       v5, v1, Landroidx/appcompat/widget/ScrollingTabContainerView$TabView;->setGravity(I)V
+
+<init>-BB@0x6a : 
+	25      (0000006a) invoke-virtual       v5, Landroidx/appcompat/widget/ScrollingTabContainerView$TabView;->update()V
+	26      (00000070) return-void          
+

@@ -1,0 +1,17 @@
+# Lcom/afwsamples/testdpc/policy/ManageAffiliationIdsFragment;->onCreate(Landroid/os/Bundle;)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:android.os.Bundle
+#
+# - return:void
+
+onCreate-BB@0x0 : 
+	0       (00000000) invoke-super         v2, v3, Lcom/afwsamples/testdpc/policy/BaseStringItemsFragment;->onCreate(Landroid/os/Bundle;)V
+	1       (00000006) new-instance         v0, Lcom/afwsamples/testdpc/DevicePolicyManagerGatewayImpl;
+	2       (0000000a) invoke-virtual       v2, Lcom/afwsamples/testdpc/policy/ManageAffiliationIdsFragment;->getActivity()Landroid/app/Activity;
+	3       (00000010) move-result-object   v1
+	4       (00000012) invoke-direct        v0, v1, Lcom/afwsamples/testdpc/DevicePolicyManagerGatewayImpl;-><init>(Landroid/content/Context;)V
+	5       (00000018) iput-object          v0, v2, Lcom/afwsamples/testdpc/policy/ManageAffiliationIdsFragment;->mDevicePolicyManagerGateway Lcom/afwsamples/testdpc/DevicePolicyManagerGateway;
+	6       (0000001c) return-void          
+

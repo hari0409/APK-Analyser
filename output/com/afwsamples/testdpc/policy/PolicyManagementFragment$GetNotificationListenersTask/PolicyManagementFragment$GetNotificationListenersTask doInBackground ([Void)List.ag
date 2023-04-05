@@ -1,0 +1,20 @@
+# Lcom/afwsamples/testdpc/policy/PolicyManagementFragment$GetNotificationListenersTask;->doInBackground([Ljava/lang/Void;)Ljava/util/List; [access_flags=protected varargs]
+#
+# Parameters:
+# - local registers: v0...v3
+# - v4:java.lang.Void[]
+#
+# - return:java.util.List
+
+doInBackground-BB@0x0 : 
+	0       (00000000) iget-object          v0, v3, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment$GetNotificationListenersTask;->this$0 Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;
+	1       (00000004) invoke-static        v0, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->access$2000(Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;)Landroid/content/pm/PackageManager;
+	2       (0000000a) move-result-object   v0
+	3       (0000000c) new-instance         v1, Landroid/content/Intent;
+	4       (00000010) const-string         v2, 'android.service.notification.NotificationListenerService'
+	5       (00000014) invoke-direct        v1, v2, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
+	6       (0000001a) const/16             v2, 8320
+	7       (0000001e) invoke-virtual       v0, v1, v2, Landroid/content/pm/PackageManager;->queryIntentServices(Landroid/content/Intent; I)Ljava/util/List;
+	8       (00000024) move-result-object   v0
+	9       (00000026) return-object        v0
+

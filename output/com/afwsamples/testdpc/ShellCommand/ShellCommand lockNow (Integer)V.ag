@@ -1,0 +1,50 @@
+# Lcom/afwsamples/testdpc/ShellCommand;->lockNow(Ljava/lang/Integer;)V [access_flags=private]
+#
+# Parameters:
+# - local registers: v0...v4
+# - v5:java.lang.Integer
+#
+# - return:void
+
+lockNow-BB@0x0 : [ lockNow-BB@0x4 lockNow-BB@0x32 ]
+	0       (00000000) if-nez               v5, +19
+
+lockNow-BB@0x4 : [ lockNow-BB@0x30 ]
+	1       (00000004) const-string         v0, 'TestDPCShellCommand'
+	2       (00000008) const-string         v1, 'lockNow()'
+	3       (0000000c) invoke-static        v0, v1, Landroid/util/Log;->i(Ljava/lang/String; Ljava/lang/String;)I
+	4       (00000012) iget-object          v0, v4, Lcom/afwsamples/testdpc/ShellCommand;->mDevicePolicyManagerGateway Lcom/afwsamples/testdpc/DevicePolicyManagerGateway;
+	5       (00000016) new-instance         v1, Lcom/afwsamples/testdpc/ShellCommand$$Lambda$75;
+	6       (0000001a) invoke-direct        v1, v4, Lcom/afwsamples/testdpc/ShellCommand$$Lambda$75;-><init>(Lcom/afwsamples/testdpc/ShellCommand;)V
+	7       (00000020) new-instance         v2, Lcom/afwsamples/testdpc/ShellCommand$$Lambda$76;
+	8       (00000024) invoke-direct        v2, v4, Lcom/afwsamples/testdpc/ShellCommand$$Lambda$76;-><init>(Lcom/afwsamples/testdpc/ShellCommand;)V
+	9       (0000002a) invoke-interface     v0, v1, v2, Lcom/afwsamples/testdpc/DevicePolicyManagerGateway;->lockNow(Ljava/util/function/Consumer; Ljava/util/function/Consumer;)V
+
+lockNow-BB@0x30 : 
+	10      (00000030) return-void          
+
+lockNow-BB@0x32 : [ lockNow-BB@0x30 ]
+	11      (00000032) const-string         v0, 'TestDPCShellCommand'
+	12      (00000036) new-instance         v1, Ljava/lang/StringBuilder;
+	13      (0000003a) invoke-direct        v1, Ljava/lang/StringBuilder;-><init>()V
+	14      (00000040) const-string         v2, 'lockNow('
+	15      (00000044) invoke-virtual       v1, v2, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	16      (0000004a) move-result-object   v1
+	17      (0000004c) invoke-virtual       v1, v5, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+	18      (00000052) move-result-object   v1
+	19      (00000054) const-string         v2, ')'
+	20      (00000058) invoke-virtual       v1, v2, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	21      (0000005e) move-result-object   v1
+	22      (00000060) invoke-virtual       v1, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+	23      (00000066) move-result-object   v1
+	24      (00000068) invoke-static        v0, v1, Landroid/util/Log;->i(Ljava/lang/String; Ljava/lang/String;)I
+	25      (0000006e) iget-object          v0, v4, Lcom/afwsamples/testdpc/ShellCommand;->mDevicePolicyManagerGateway Lcom/afwsamples/testdpc/DevicePolicyManagerGateway;
+	26      (00000072) invoke-virtual       v5, Ljava/lang/Integer;->intValue()I
+	27      (00000078) move-result          v1
+	28      (0000007a) new-instance         v2, Lcom/afwsamples/testdpc/ShellCommand$$Lambda$77;
+	29      (0000007e) invoke-direct        v2, v4, Lcom/afwsamples/testdpc/ShellCommand$$Lambda$77;-><init>(Lcom/afwsamples/testdpc/ShellCommand;)V
+	30      (00000084) new-instance         v3, Lcom/afwsamples/testdpc/ShellCommand$$Lambda$78;
+	31      (00000088) invoke-direct        v3, v4, Lcom/afwsamples/testdpc/ShellCommand$$Lambda$78;-><init>(Lcom/afwsamples/testdpc/ShellCommand;)V
+	32      (0000008e) invoke-interface     v0, v1, v2, v3, Lcom/afwsamples/testdpc/DevicePolicyManagerGateway;->lockNow(I Ljava/util/function/Consumer; Ljava/util/function/Consumer;)V
+	33      (00000094) goto                 -32
+

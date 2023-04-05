@@ -1,0 +1,21 @@
+# Lcom/afwsamples/testdpc/policy/AvailableComponentsInfoArrayAdapter;-><init>(Landroid/content/Context; Ljava/util/List; Ljava/util/List;)V [access_flags=public constructor]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:android.content.Context
+# - v3:java.util.List
+# - v4:java.util.List
+#
+# - return:void
+
+<init>-BB@0x0 : 
+	0       (00000000) const                v0, 2131296534 # [1.821098739324033e+38]
+	1       (00000006) invoke-direct        v1, v2, v0, v3, Lcom/afwsamples/testdpc/common/ToggleComponentsArrayAdapter;-><init>(Landroid/content/Context; I Ljava/util/List;)V
+	2       (0000000c) const/4              v0, 0
+	3       (0000000e) iput-object          v0, v1, Lcom/afwsamples/testdpc/policy/AvailableComponentsInfoArrayAdapter;->mPermittedPackageNames Ljava/util/List;
+	4       (00000012) iput-object          v4, v1, Lcom/afwsamples/testdpc/policy/AvailableComponentsInfoArrayAdapter;->mPermittedPackageNames Ljava/util/List;
+	5       (00000016) invoke-direct        v1, Lcom/afwsamples/testdpc/policy/AvailableComponentsInfoArrayAdapter;->createIsComponentEnabledList()Ljava/util/List;
+	6       (0000001c) move-result-object   v0
+	7       (0000001e) invoke-virtual       v1, v0, Lcom/afwsamples/testdpc/policy/AvailableComponentsInfoArrayAdapter;->setIsComponentEnabledList(Ljava/util/List;)V
+	8       (00000024) return-void          
+

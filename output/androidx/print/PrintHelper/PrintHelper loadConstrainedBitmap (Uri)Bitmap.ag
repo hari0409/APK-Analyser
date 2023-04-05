@@ -1,0 +1,131 @@
+# Landroidx/print/PrintHelper;->loadConstrainedBitmap(Landroid/net/Uri;)Landroid/graphics/Bitmap; [access_flags=]
+#
+# Parameters:
+# - local registers: v0...v9
+# - v10:android.net.Uri
+#
+# - return:android.graphics.Bitmap
+
+loadConstrainedBitmap-BB@0x0 : [ loadConstrainedBitmap-BB@0x8 loadConstrainedBitmap-BB@0x10 ]
+	0       (00000000) const/4              v8, 1
+	1       (00000002) const/4              v6, 0
+	2       (00000004) if-eqz               v10, +6
+
+loadConstrainedBitmap-BB@0x8 : [ loadConstrainedBitmap-BB@0x10 loadConstrainedBitmap-BB@0x20 ]
+	3       (00000008) iget-object          v7, v9, Landroidx/print/PrintHelper;->mContext Landroid/content/Context;
+	4       (0000000c) if-nez               v7, +a
+
+loadConstrainedBitmap-BB@0x10 : 
+	5       (00000010) new-instance         v6, Ljava/lang/IllegalArgumentException;
+	6       (00000014) const-string         v7, 'bad argument to getScaledBitmap'
+	7       (00000018) invoke-direct        v6, v7, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+	8       (0000001e) throw                v6
+
+loadConstrainedBitmap-BB@0x20 : [ loadConstrainedBitmap-BB@0x40 loadConstrainedBitmap-BB@0x44 ]
+	9       (00000020) new-instance         v3, Landroid/graphics/BitmapFactory$Options;
+	10      (00000024) invoke-direct        v3, Landroid/graphics/BitmapFactory$Options;-><init>()V
+	11      (0000002a) iput-boolean         v8, v3, Landroid/graphics/BitmapFactory$Options;->inJustDecodeBounds Z
+	12      (0000002e) invoke-direct        v9, v10, v3, Landroidx/print/PrintHelper;->loadBitmap(Landroid/net/Uri; Landroid/graphics/BitmapFactory$Options;)Landroid/graphics/Bitmap;
+	13      (00000034) iget                 v5, v3, Landroid/graphics/BitmapFactory$Options;->outWidth I
+	14      (00000038) iget                 v1, v3, Landroid/graphics/BitmapFactory$Options;->outHeight I
+	15      (0000003c) if-lez               v5, +4
+
+loadConstrainedBitmap-BB@0x40 : [ loadConstrainedBitmap-BB@0x44 loadConstrainedBitmap-BB@0x46 ]
+	16      (00000040) if-gtz               v1, +3
+
+loadConstrainedBitmap-BB@0x44 : 
+	17      (00000044) return-object        v6
+
+loadConstrainedBitmap-BB@0x46 : [ loadConstrainedBitmap-BB@0x50 ]
+	18      (00000046) invoke-static        v5, v1, Ljava/lang/Math;->max(I I)I
+	19      (0000004c) move-result          v2
+	20      (0000004e) const/4              v4, 1
+
+loadConstrainedBitmap-BB@0x50 : [ loadConstrainedBitmap-BB@0x58 loadConstrainedBitmap-BB@0x62 ]
+	21      (00000050) const/16             v7, 3500
+	22      (00000054) if-le                v2, v7, +7
+
+loadConstrainedBitmap-BB@0x58 : [ loadConstrainedBitmap-BB@0x50 ]
+	23      (00000058) ushr-int/lit8        v2, v2, 1
+	24      (0000005c) shl-int/lit8         v4, v4, 1
+	25      (00000060) goto                 -8
+
+loadConstrainedBitmap-BB@0x62 : [ loadConstrainedBitmap-BB@0x66 loadConstrainedBitmap-BB@0x44 ]
+	26      (00000062) if-lez               v4, -f
+
+loadConstrainedBitmap-BB@0x66 : [ loadConstrainedBitmap-BB@0x74 loadConstrainedBitmap-BB@0x44 ]
+	27      (00000066) invoke-static        v5, v1, Ljava/lang/Math;->min(I I)I
+	28      (0000006c) move-result          v7
+	29      (0000006e) div-int/2addr        v7, v4
+	30      (00000070) if-lez               v7, -16
+
+loadConstrainedBitmap-BB@0x74 : [ loadConstrainedBitmap-BB@0x7a ]
+	31      (00000074) iget-object          v7, v9, Landroidx/print/PrintHelper;->mLock Ljava/lang/Object;
+	32      (00000078) monitor-enter        v7
+
+loadConstrainedBitmap-BB@0x7a : [ loadConstrainedBitmap-BB@0xa0 ]
+	33      (0000007a) new-instance         v6, Landroid/graphics/BitmapFactory$Options;
+	34      (0000007e) invoke-direct        v6, Landroid/graphics/BitmapFactory$Options;-><init>()V
+	35      (00000084) iput-object          v6, v9, Landroidx/print/PrintHelper;->mDecodeOptions Landroid/graphics/BitmapFactory$Options;
+	36      (00000088) iget-object          v6, v9, Landroidx/print/PrintHelper;->mDecodeOptions Landroid/graphics/BitmapFactory$Options;
+	37      (0000008c) const/4              v8, 1
+	38      (0000008e) iput-boolean         v8, v6, Landroid/graphics/BitmapFactory$Options;->inMutable Z
+	39      (00000092) iget-object          v6, v9, Landroidx/print/PrintHelper;->mDecodeOptions Landroid/graphics/BitmapFactory$Options;
+	40      (00000096) iput                 v4, v6, Landroid/graphics/BitmapFactory$Options;->inSampleSize I
+	41      (0000009a) iget-object          v0, v9, Landroidx/print/PrintHelper;->mDecodeOptions Landroid/graphics/BitmapFactory$Options;
+	42      (0000009e) monitor-exit         v7
+	7a:9f
+	(Ljava/lang/Throwable; -> be loadConstrainedBitmap-BB@0xbe)
+
+loadConstrainedBitmap-BB@0xa0 : [ loadConstrainedBitmap-BB@0xb0 ]
+	43      (000000a0) invoke-direct        v9, v10, v0, Landroidx/print/PrintHelper;->loadBitmap(Landroid/net/Uri; Landroid/graphics/BitmapFactory$Options;)Landroid/graphics/Bitmap;
+	44      (000000a6) move-result-object   v6
+	45      (000000a8) iget-object          v7, v9, Landroidx/print/PrintHelper;->mLock Ljava/lang/Object;
+	46      (000000ac) monitor-enter        v7
+	47      (000000ae) const/4              v8, 0
+	a0:a5
+	(Ljava/lang/Throwable; -> c4 loadConstrainedBitmap-BB@0xc4)
+
+loadConstrainedBitmap-BB@0xb0 : [ loadConstrainedBitmap-BB@0x44 ]
+	48      (000000b0) iput-object          v8, v9, Landroidx/print/PrintHelper;->mDecodeOptions Landroid/graphics/BitmapFactory$Options;
+	49      (000000b4) monitor-exit         v7
+	50      (000000b6) goto                 -39
+	b0:bb
+	(Ljava/lang/Throwable; -> b8 loadConstrainedBitmap-BB@0xb8)
+
+loadConstrainedBitmap-BB@0xb8 : 
+	51      (000000b8) move-exception       v6
+	52      (000000ba) monitor-exit         v7
+	53      (000000bc) throw                v6
+
+loadConstrainedBitmap-BB@0xbe : [ loadConstrainedBitmap-BB@0xc0 ]
+	54      (000000be) move-exception       v6
+
+loadConstrainedBitmap-BB@0xc0 : 
+	55      (000000c0) monitor-exit         v7
+	56      (000000c2) throw                v6
+	c0:c1
+	(Ljava/lang/Throwable; -> be loadConstrainedBitmap-BB@0xbe)
+
+loadConstrainedBitmap-BB@0xc4 : [ loadConstrainedBitmap-BB@0xce ]
+	57      (000000c4) move-exception       v6
+	58      (000000c6) iget-object          v7, v9, Landroidx/print/PrintHelper;->mLock Ljava/lang/Object;
+	59      (000000ca) monitor-enter        v7
+	60      (000000cc) const/4              v8, 0
+
+loadConstrainedBitmap-BB@0xce : 
+	61      (000000ce) iput-object          v8, v9, Landroidx/print/PrintHelper;->mDecodeOptions Landroid/graphics/BitmapFactory$Options;
+	62      (000000d2) monitor-exit         v7
+	63      (000000d4) throw                v6
+	ce:d3
+	(Ljava/lang/Throwable; -> d6 loadConstrainedBitmap-BB@0xd6)
+
+loadConstrainedBitmap-BB@0xd6 : [ loadConstrainedBitmap-BB@0xd8 ]
+	64      (000000d6) move-exception       v6
+
+loadConstrainedBitmap-BB@0xd8 : 
+	65      (000000d8) monitor-exit         v7
+	66      (000000da) throw                v6
+	d8:d9
+	(Ljava/lang/Throwable; -> d6 loadConstrainedBitmap-BB@0xd6)
+

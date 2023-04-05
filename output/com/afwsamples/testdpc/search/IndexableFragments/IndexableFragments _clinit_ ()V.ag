@@ -1,0 +1,53 @@
+# Lcom/afwsamples/testdpc/search/IndexableFragments;-><clinit>()V [access_flags=static constructor]
+#
+# Parameters:
+# local registers: v0...v3
+#
+# - return:void
+
+<clinit>-BB@0x0 : 
+	0       (00000000) new-instance         v0, Ljava/util/ArrayList;
+	1       (00000004) invoke-direct        v0, Ljava/util/ArrayList;-><init>()V
+	2       (0000000a) sput-object          v0, Lcom/afwsamples/testdpc/search/IndexableFragments;->sIndexableFragments Ljava/util/List;
+	3       (0000000e) sget-object          v0, Lcom/afwsamples/testdpc/search/IndexableFragments;->sIndexableFragments Ljava/util/List;
+	4       (00000012) new-instance         v1, Lcom/afwsamples/testdpc/search/XmlIndexableFragment;
+	5       (00000016) const-class          v2, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;
+	6       (0000001a) const                v3, 2131886083 # [1.9406734823182653e+38]
+	7       (00000020) invoke-direct        v1, v2, v3, Lcom/afwsamples/testdpc/search/XmlIndexableFragment;-><init>(Ljava/lang/Class; I)V
+	8       (00000026) invoke-interface     v0, v1, Ljava/util/List;->add(Ljava/lang/Object;)Z
+	9       (0000002c) sget-object          v0, Lcom/afwsamples/testdpc/search/IndexableFragments;->sIndexableFragments Ljava/util/List;
+	10      (00000030) new-instance         v1, Lcom/afwsamples/testdpc/search/XmlIndexableFragment;
+	11      (00000034) const-class          v2, Lcom/afwsamples/testdpc/profilepolicy/ProfilePolicyManagementFragment;
+	12      (00000038) const                v3, 2131886089 # [1.9406746992628415e+38]
+	13      (0000003e) invoke-direct        v1, v2, v3, Lcom/afwsamples/testdpc/search/XmlIndexableFragment;-><init>(Ljava/lang/Class; I)V
+	14      (00000044) invoke-interface     v0, v1, Ljava/util/List;->add(Ljava/lang/Object;)Z
+	15      (0000004a) sget-object          v0, Lcom/afwsamples/testdpc/search/IndexableFragments;->sIndexableFragments Ljava/util/List;
+	16      (0000004e) new-instance         v1, Lcom/afwsamples/testdpc/search/XmlIndexableFragment;
+	17      (00000052) const-class          v2, Lcom/afwsamples/testdpc/policy/keyguard/LockScreenPolicyFragment;
+	18      (00000056) const                v3, 2131886085 # [1.9406738879664574e+38]
+	19      (0000005c) invoke-direct        v1, v2, v3, Lcom/afwsamples/testdpc/search/XmlIndexableFragment;-><init>(Ljava/lang/Class; I)V
+	20      (00000062) invoke-interface     v0, v1, Ljava/util/List;->add(Ljava/lang/Object;)Z
+	21      (00000068) sget-object          v0, Lcom/afwsamples/testdpc/search/IndexableFragments;->sIndexableFragments Ljava/util/List;
+	22      (0000006c) new-instance         v1, Lcom/afwsamples/testdpc/search/XmlIndexableFragment;
+	23      (00000070) const-class          v2, Lcom/afwsamples/testdpc/policy/keyguard/PasswordConstraintsFragment;
+	24      (00000074) const                v3, 2131886088 # [1.9406744964387455e+38]
+	25      (0000007a) invoke-direct        v1, v2, v3, Lcom/afwsamples/testdpc/search/XmlIndexableFragment;-><init>(Ljava/lang/Class; I)V
+	26      (00000080) invoke-interface     v0, v1, Ljava/util/List;->add(Ljava/lang/Object;)Z
+	27      (00000086) sget-object          v0, Lcom/afwsamples/testdpc/search/IndexableFragments;->sIndexableFragments Ljava/util/List;
+	28      (0000008a) new-instance         v1, Lcom/afwsamples/testdpc/search/XmlIndexableFragment;
+	29      (0000008e) const-class          v2, Lcom/afwsamples/testdpc/comp/BindDeviceAdminFragment;
+	30      (00000092) const/high16         v3, 32530 # [1.940672873845977e+38]
+	31      (00000096) invoke-direct        v1, v2, v3, Lcom/afwsamples/testdpc/search/XmlIndexableFragment;-><init>(Ljava/lang/Class; I)V
+	32      (0000009c) invoke-interface     v0, v1, Ljava/util/List;->add(Ljava/lang/Object;)Z
+	33      (000000a2) sget-object          v0, Lcom/afwsamples/testdpc/search/IndexableFragments;->sIndexableFragments Ljava/util/List;
+	34      (000000a6) new-instance         v1, Lcom/afwsamples/testdpc/search/UserRestrictionIndexableFragment;
+	35      (000000aa) invoke-direct        v1, Lcom/afwsamples/testdpc/search/UserRestrictionIndexableFragment;-><init>()V
+	36      (000000b0) invoke-interface     v0, v1, Ljava/util/List;->add(Ljava/lang/Object;)Z
+	37      (000000b6) sget-object          v0, Lcom/afwsamples/testdpc/search/IndexableFragments;->sIndexableFragments Ljava/util/List;
+	38      (000000ba) new-instance         v1, Lcom/afwsamples/testdpc/search/XmlIndexableFragment;
+	39      (000000be) const-class          v2, Lcom/afwsamples/testdpc/policy/OverrideApnFragment;
+	40      (000000c2) const                v3, 2131886087 # [1.9406742936146494e+38]
+	41      (000000c8) invoke-direct        v1, v2, v3, Lcom/afwsamples/testdpc/search/XmlIndexableFragment;-><init>(Ljava/lang/Class; I)V
+	42      (000000ce) invoke-interface     v0, v1, Ljava/util/List;->add(Ljava/lang/Object;)Z
+	43      (000000d4) return-void          
+

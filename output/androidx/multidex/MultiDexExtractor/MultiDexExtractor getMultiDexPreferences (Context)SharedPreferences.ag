@@ -1,0 +1,26 @@
+# Landroidx/multidex/MultiDexExtractor;->getMultiDexPreferences(Landroid/content/Context;)Landroid/content/SharedPreferences; [access_flags=private static]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:android.content.Context
+#
+# - return:android.content.SharedPreferences
+
+getMultiDexPreferences-BB@0x0 : [ getMultiDexPreferences-BB@0x10 getMultiDexPreferences-BB@0x1c ]
+	0       (00000000) const-string         v1, 'multidex.version'
+	1       (00000004) sget                 v0, Landroid/os/Build$VERSION;->SDK_INT I
+	2       (00000008) const/16             v2, 11
+	3       (0000000c) if-ge                v0, v2, +8
+
+getMultiDexPreferences-BB@0x10 : [ getMultiDexPreferences-BB@0x12 ]
+	4       (00000010) const/4              v0, 0
+
+getMultiDexPreferences-BB@0x12 : 
+	5       (00000012) invoke-virtual       v3, v1, v0, Landroid/content/Context;->getSharedPreferences(Ljava/lang/String; I)Landroid/content/SharedPreferences;
+	6       (00000018) move-result-object   v0
+	7       (0000001a) return-object        v0
+
+getMultiDexPreferences-BB@0x1c : [ getMultiDexPreferences-BB@0x12 ]
+	8       (0000001c) const/4              v0, 4
+	9       (0000001e) goto                 -6
+

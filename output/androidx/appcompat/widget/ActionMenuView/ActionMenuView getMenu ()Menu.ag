@@ -1,0 +1,52 @@
+# Landroidx/appcompat/widget/ActionMenuView;->getMenu()Landroid/view/Menu; [access_flags=public]
+#
+# Parameters:
+# local registers: v0...v4
+#
+# - return:android.view.Menu
+
+getMenu-BB@0x0 : [ getMenu-BB@0x8 getMenu-BB@0x7e ]
+	0       (00000000) iget-object          v1, v4, Landroidx/appcompat/widget/ActionMenuView;->mMenu Landroidx/appcompat/view/menu/MenuBuilder;
+	1       (00000004) if-nez               v1, +3d
+
+getMenu-BB@0x8 : [ getMenu-BB@0x58 getMenu-BB@0x84 ]
+	2       (00000008) invoke-virtual       v4, Landroidx/appcompat/widget/ActionMenuView;->getContext()Landroid/content/Context;
+	3       (0000000e) move-result-object   v0
+	4       (00000010) new-instance         v1, Landroidx/appcompat/view/menu/MenuBuilder;
+	5       (00000014) invoke-direct        v1, v0, Landroidx/appcompat/view/menu/MenuBuilder;-><init>(Landroid/content/Context;)V
+	6       (0000001a) iput-object          v1, v4, Landroidx/appcompat/widget/ActionMenuView;->mMenu Landroidx/appcompat/view/menu/MenuBuilder;
+	7       (0000001e) iget-object          v1, v4, Landroidx/appcompat/widget/ActionMenuView;->mMenu Landroidx/appcompat/view/menu/MenuBuilder;
+	8       (00000022) new-instance         v2, Landroidx/appcompat/widget/ActionMenuView$MenuBuilderCallback;
+	9       (00000026) invoke-direct        v2, v4, Landroidx/appcompat/widget/ActionMenuView$MenuBuilderCallback;-><init>(Landroidx/appcompat/widget/ActionMenuView;)V
+	10      (0000002c) invoke-virtual       v1, v2, Landroidx/appcompat/view/menu/MenuBuilder;->setCallback(Landroidx/appcompat/view/menu/MenuBuilder$Callback;)V
+	11      (00000032) new-instance         v1, Landroidx/appcompat/widget/ActionMenuPresenter;
+	12      (00000036) invoke-direct        v1, v0, Landroidx/appcompat/widget/ActionMenuPresenter;-><init>(Landroid/content/Context;)V
+	13      (0000003c) iput-object          v1, v4, Landroidx/appcompat/widget/ActionMenuView;->mPresenter Landroidx/appcompat/widget/ActionMenuPresenter;
+	14      (00000040) iget-object          v1, v4, Landroidx/appcompat/widget/ActionMenuView;->mPresenter Landroidx/appcompat/widget/ActionMenuPresenter;
+	15      (00000044) const/4              v2, 1
+	16      (00000046) invoke-virtual       v1, v2, Landroidx/appcompat/widget/ActionMenuPresenter;->setReserveOverflow(Z)V
+	17      (0000004c) iget-object          v2, v4, Landroidx/appcompat/widget/ActionMenuView;->mPresenter Landroidx/appcompat/widget/ActionMenuPresenter;
+	18      (00000050) iget-object          v1, v4, Landroidx/appcompat/widget/ActionMenuView;->mActionMenuPresenterCallback Landroidx/appcompat/view/menu/MenuPresenter$Callback;
+	19      (00000054) if-eqz               v1, +18
+
+getMenu-BB@0x58 : [ getMenu-BB@0x5c ]
+	20      (00000058) iget-object          v1, v4, Landroidx/appcompat/widget/ActionMenuView;->mActionMenuPresenterCallback Landroidx/appcompat/view/menu/MenuPresenter$Callback;
+
+getMenu-BB@0x5c : [ getMenu-BB@0x7e ]
+	21      (0000005c) invoke-virtual       v2, v1, Landroidx/appcompat/widget/ActionMenuPresenter;->setCallback(Landroidx/appcompat/view/menu/MenuPresenter$Callback;)V
+	22      (00000062) iget-object          v1, v4, Landroidx/appcompat/widget/ActionMenuView;->mMenu Landroidx/appcompat/view/menu/MenuBuilder;
+	23      (00000066) iget-object          v2, v4, Landroidx/appcompat/widget/ActionMenuView;->mPresenter Landroidx/appcompat/widget/ActionMenuPresenter;
+	24      (0000006a) iget-object          v3, v4, Landroidx/appcompat/widget/ActionMenuView;->mPopupContext Landroid/content/Context;
+	25      (0000006e) invoke-virtual       v1, v2, v3, Landroidx/appcompat/view/menu/MenuBuilder;->addMenuPresenter(Landroidx/appcompat/view/menu/MenuPresenter; Landroid/content/Context;)V
+	26      (00000074) iget-object          v1, v4, Landroidx/appcompat/widget/ActionMenuView;->mPresenter Landroidx/appcompat/widget/ActionMenuPresenter;
+	27      (00000078) invoke-virtual       v1, v4, Landroidx/appcompat/widget/ActionMenuPresenter;->setMenuView(Landroidx/appcompat/widget/ActionMenuView;)V
+
+getMenu-BB@0x7e : 
+	28      (0000007e) iget-object          v1, v4, Landroidx/appcompat/widget/ActionMenuView;->mMenu Landroidx/appcompat/view/menu/MenuBuilder;
+	29      (00000082) return-object        v1
+
+getMenu-BB@0x84 : [ getMenu-BB@0x5c ]
+	30      (00000084) new-instance         v1, Landroidx/appcompat/widget/ActionMenuView$ActionMenuPresenterCallback;
+	31      (00000088) invoke-direct        v1, Landroidx/appcompat/widget/ActionMenuView$ActionMenuPresenterCallback;-><init>()V
+	32      (0000008e) goto                 -19
+

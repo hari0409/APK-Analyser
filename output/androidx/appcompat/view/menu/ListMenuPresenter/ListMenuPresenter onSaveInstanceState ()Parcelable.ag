@@ -1,0 +1,23 @@
+# Landroidx/appcompat/view/menu/ListMenuPresenter;->onSaveInstanceState()Landroid/os/Parcelable; [access_flags=public]
+#
+# Parameters:
+# local registers: v0...v2
+#
+# - return:android.os.Parcelable
+
+onSaveInstanceState-BB@0x0 : [ onSaveInstanceState-BB@0x8 onSaveInstanceState-BB@0xc ]
+	0       (00000000) iget-object          v1, v2, Landroidx/appcompat/view/menu/ListMenuPresenter;->mMenuView Landroidx/appcompat/view/menu/ExpandedMenuView;
+	1       (00000004) if-nez               v1, +4
+
+onSaveInstanceState-BB@0x8 : [ onSaveInstanceState-BB@0xa ]
+	2       (00000008) const/4              v0, 0
+
+onSaveInstanceState-BB@0xa : 
+	3       (0000000a) return-object        v0
+
+onSaveInstanceState-BB@0xc : [ onSaveInstanceState-BB@0xa ]
+	4       (0000000c) new-instance         v0, Landroid/os/Bundle;
+	5       (00000010) invoke-direct        v0, Landroid/os/Bundle;-><init>()V
+	6       (00000016) invoke-virtual       v2, v0, Landroidx/appcompat/view/menu/ListMenuPresenter;->saveHierarchyState(Landroid/os/Bundle;)V
+	7       (0000001c) goto                 -9
+

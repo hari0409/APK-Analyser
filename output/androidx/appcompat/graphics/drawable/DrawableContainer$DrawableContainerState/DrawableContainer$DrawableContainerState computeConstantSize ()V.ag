@@ -1,0 +1,68 @@
+# Landroidx/appcompat/graphics/drawable/DrawableContainer$DrawableContainerState;->computeConstantSize()V [access_flags=protected]
+#
+# Parameters:
+# local registers: v0...v6
+#
+# - return:void
+
+computeConstantSize-BB@0x0 : [ computeConstantSize-BB@0x2a ]
+	0       (00000000) const/4              v5, 1
+	1       (00000002) iput-boolean         v5, v6, Landroidx/appcompat/graphics/drawable/DrawableContainer$DrawableContainerState;->mCheckedConstantSize Z
+	2       (00000006) invoke-direct        v6, Landroidx/appcompat/graphics/drawable/DrawableContainer$DrawableContainerState;->createAllFutures()V
+	3       (0000000c) iget                 v0, v6, Landroidx/appcompat/graphics/drawable/DrawableContainer$DrawableContainerState;->mNumChildren I
+	4       (00000010) iget-object          v2, v6, Landroidx/appcompat/graphics/drawable/DrawableContainer$DrawableContainerState;->mDrawables [Landroid/graphics/drawable/Drawable;
+	5       (00000014) const/4              v5, -1
+	6       (00000016) iput                 v5, v6, Landroidx/appcompat/graphics/drawable/DrawableContainer$DrawableContainerState;->mConstantHeight I
+	7       (0000001a) iput                 v5, v6, Landroidx/appcompat/graphics/drawable/DrawableContainer$DrawableContainerState;->mConstantWidth I
+	8       (0000001e) const/4              v5, 0
+	9       (00000020) iput                 v5, v6, Landroidx/appcompat/graphics/drawable/DrawableContainer$DrawableContainerState;->mConstantMinimumHeight I
+	10      (00000024) iput                 v5, v6, Landroidx/appcompat/graphics/drawable/DrawableContainer$DrawableContainerState;->mConstantMinimumWidth I
+	11      (00000028) const/4              v3, 0
+
+computeConstantSize-BB@0x2a : [ computeConstantSize-BB@0x2e computeConstantSize-BB@0x88 ]
+	12      (0000002a) if-ge                v3, v0, +2f
+
+computeConstantSize-BB@0x2e : [ computeConstantSize-BB@0x42 computeConstantSize-BB@0x46 ]
+	13      (0000002e) aget-object          v1, v2, v3
+	14      (00000032) invoke-virtual       v1, Landroid/graphics/drawable/Drawable;->getIntrinsicWidth()I
+	15      (00000038) move-result          v4
+	16      (0000003a) iget                 v5, v6, Landroidx/appcompat/graphics/drawable/DrawableContainer$DrawableContainerState;->mConstantWidth I
+	17      (0000003e) if-le                v4, v5, +4
+
+computeConstantSize-BB@0x42 : [ computeConstantSize-BB@0x46 ]
+	18      (00000042) iput                 v4, v6, Landroidx/appcompat/graphics/drawable/DrawableContainer$DrawableContainerState;->mConstantWidth I
+
+computeConstantSize-BB@0x46 : [ computeConstantSize-BB@0x56 computeConstantSize-BB@0x5a ]
+	19      (00000046) invoke-virtual       v1, Landroid/graphics/drawable/Drawable;->getIntrinsicHeight()I
+	20      (0000004c) move-result          v4
+	21      (0000004e) iget                 v5, v6, Landroidx/appcompat/graphics/drawable/DrawableContainer$DrawableContainerState;->mConstantHeight I
+	22      (00000052) if-le                v4, v5, +4
+
+computeConstantSize-BB@0x56 : [ computeConstantSize-BB@0x5a ]
+	23      (00000056) iput                 v4, v6, Landroidx/appcompat/graphics/drawable/DrawableContainer$DrawableContainerState;->mConstantHeight I
+
+computeConstantSize-BB@0x5a : [ computeConstantSize-BB@0x6a computeConstantSize-BB@0x6e ]
+	24      (0000005a) invoke-virtual       v1, Landroid/graphics/drawable/Drawable;->getMinimumWidth()I
+	25      (00000060) move-result          v4
+	26      (00000062) iget                 v5, v6, Landroidx/appcompat/graphics/drawable/DrawableContainer$DrawableContainerState;->mConstantMinimumWidth I
+	27      (00000066) if-le                v4, v5, +4
+
+computeConstantSize-BB@0x6a : [ computeConstantSize-BB@0x6e ]
+	28      (0000006a) iput                 v4, v6, Landroidx/appcompat/graphics/drawable/DrawableContainer$DrawableContainerState;->mConstantMinimumWidth I
+
+computeConstantSize-BB@0x6e : [ computeConstantSize-BB@0x7e computeConstantSize-BB@0x82 ]
+	29      (0000006e) invoke-virtual       v1, Landroid/graphics/drawable/Drawable;->getMinimumHeight()I
+	30      (00000074) move-result          v4
+	31      (00000076) iget                 v5, v6, Landroidx/appcompat/graphics/drawable/DrawableContainer$DrawableContainerState;->mConstantMinimumHeight I
+	32      (0000007a) if-le                v4, v5, +4
+
+computeConstantSize-BB@0x7e : [ computeConstantSize-BB@0x82 ]
+	33      (0000007e) iput                 v4, v6, Landroidx/appcompat/graphics/drawable/DrawableContainer$DrawableContainerState;->mConstantMinimumHeight I
+
+computeConstantSize-BB@0x82 : [ computeConstantSize-BB@0x2a ]
+	34      (00000082) add-int/lit8         v3, v3, 1
+	35      (00000086) goto                 -2e
+
+computeConstantSize-BB@0x88 : 
+	36      (00000088) return-void          
+

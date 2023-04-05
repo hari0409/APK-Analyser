@@ -1,0 +1,23 @@
+# Landroidx/appcompat/app/ToolbarActionBar;->isShowing()Z [access_flags=public]
+#
+# Parameters:
+# local registers: v0...v1
+#
+# - return:boolean
+
+isShowing-BB@0x0 : [ isShowing-BB@0x10 isShowing-BB@0x14 ]
+	0       (00000000) iget-object          v0, v1, Landroidx/appcompat/app/ToolbarActionBar;->mDecorToolbar Landroidx/appcompat/widget/DecorToolbar;
+	1       (00000004) invoke-interface     v0, Landroidx/appcompat/widget/DecorToolbar;->getVisibility()I
+	2       (0000000a) move-result          v0
+	3       (0000000c) if-nez               v0, +4
+
+isShowing-BB@0x10 : [ isShowing-BB@0x12 ]
+	4       (00000010) const/4              v0, 1
+
+isShowing-BB@0x12 : 
+	5       (00000012) return               v0
+
+isShowing-BB@0x14 : [ isShowing-BB@0x12 ]
+	6       (00000014) const/4              v0, 0
+	7       (00000016) goto                 -2
+

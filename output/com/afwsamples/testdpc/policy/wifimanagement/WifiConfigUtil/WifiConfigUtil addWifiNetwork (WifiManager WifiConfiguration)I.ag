@@ -1,0 +1,35 @@
+# Lcom/afwsamples/testdpc/policy/wifimanagement/WifiConfigUtil;->addWifiNetwork(Landroid/net/wifi/WifiManager; Landroid/net/wifi/WifiConfiguration;)I [access_flags=private static]
+#
+# Parameters:
+# - local registers: v0...v3
+# - v4:android.net.wifi.WifiManager
+# - v5:android.net.wifi.WifiConfiguration
+#
+# - return:int
+
+addWifiNetwork-BB@0x0 : [ addWifiNetwork-BB@0xe addWifiNetwork-BB@0x12 ]
+	0       (00000000) const/4              v1, -1
+	1       (00000002) invoke-virtual       v4, v5, Landroid/net/wifi/WifiManager;->addNetwork(Landroid/net/wifi/WifiConfiguration;)I
+	2       (00000008) move-result          v0
+	3       (0000000a) if-ne                v0, v1, +4
+
+addWifiNetwork-BB@0xe : [ addWifiNetwork-BB@0x10 ]
+	4       (0000000e) move                 v0, v1
+
+addWifiNetwork-BB@0x10 : 
+	5       (00000010) return               v0
+
+addWifiNetwork-BB@0x12 : [ addWifiNetwork-BB@0x1e addWifiNetwork-BB@0x10 ]
+	6       (00000012) sget                 v2, Landroid/os/Build$VERSION;->SDK_INT I
+	7       (00000016) const/16             v3, 26
+	8       (0000001a) if-ge                v2, v3, -5
+
+addWifiNetwork-BB@0x1e : [ addWifiNetwork-BB@0x2a addWifiNetwork-BB@0x10 ]
+	9       (0000001e) invoke-static        v4, v0, Lcom/afwsamples/testdpc/policy/wifimanagement/WifiConfigUtil;->saveAddedWifiConfiguration(Landroid/net/wifi/WifiManager; I)Z
+	10      (00000024) move-result          v2
+	11      (00000026) if-nez               v2, -b
+
+addWifiNetwork-BB@0x2a : [ addWifiNetwork-BB@0x10 ]
+	12      (0000002a) move                 v0, v1
+	13      (0000002c) goto                 -e
+

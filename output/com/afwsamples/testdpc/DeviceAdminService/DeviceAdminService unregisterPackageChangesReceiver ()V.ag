@@ -1,0 +1,22 @@
+# Lcom/afwsamples/testdpc/DeviceAdminService;->unregisterPackageChangesReceiver()V [access_flags=private]
+#
+# Parameters:
+# local registers: v0...v2
+#
+# - return:void
+
+unregisterPackageChangesReceiver-BB@0x0 : [ unregisterPackageChangesReceiver-BB@0x8 unregisterPackageChangesReceiver-BB@0x20 ]
+	0       (00000000) iget-object          v0, v2, Lcom/afwsamples/testdpc/DeviceAdminService;->mPackageChangedReceiver Landroid/content/BroadcastReceiver;
+	1       (00000004) if-eqz               v0, +e
+
+unregisterPackageChangesReceiver-BB@0x8 : [ unregisterPackageChangesReceiver-BB@0x20 ]
+	2       (00000008) invoke-virtual       v2, Lcom/afwsamples/testdpc/DeviceAdminService;->getApplicationContext()Landroid/content/Context;
+	3       (0000000e) move-result-object   v0
+	4       (00000010) iget-object          v1, v2, Lcom/afwsamples/testdpc/DeviceAdminService;->mPackageChangedReceiver Landroid/content/BroadcastReceiver;
+	5       (00000014) invoke-virtual       v0, v1, Landroid/content/Context;->unregisterReceiver(Landroid/content/BroadcastReceiver;)V
+	6       (0000001a) const/4              v0, 0
+	7       (0000001c) iput-object          v0, v2, Lcom/afwsamples/testdpc/DeviceAdminService;->mPackageChangedReceiver Landroid/content/BroadcastReceiver;
+
+unregisterPackageChangesReceiver-BB@0x20 : 
+	8       (00000020) return-void          
+

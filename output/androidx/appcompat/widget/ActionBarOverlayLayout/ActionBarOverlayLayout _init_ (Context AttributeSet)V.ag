@@ -1,0 +1,49 @@
+# Landroidx/appcompat/widget/ActionBarOverlayLayout;-><init>(Landroid/content/Context; Landroid/util/AttributeSet;)V [access_flags=public constructor]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:android.content.Context
+# - v3:android.util.AttributeSet
+#
+# - return:void
+
+<init>-BB@0x0 : 
+	0       (00000000) invoke-direct        v1, v2, v3, Landroid/view/ViewGroup;-><init>(Landroid/content/Context; Landroid/util/AttributeSet;)V
+	1       (00000006) const/4              v0, 0
+	2       (00000008) iput                 v0, v1, Landroidx/appcompat/widget/ActionBarOverlayLayout;->mWindowVisibility I
+	3       (0000000c) new-instance         v0, Landroid/graphics/Rect;
+	4       (00000010) invoke-direct        v0, Landroid/graphics/Rect;-><init>()V
+	5       (00000016) iput-object          v0, v1, Landroidx/appcompat/widget/ActionBarOverlayLayout;->mBaseContentInsets Landroid/graphics/Rect;
+	6       (0000001a) new-instance         v0, Landroid/graphics/Rect;
+	7       (0000001e) invoke-direct        v0, Landroid/graphics/Rect;-><init>()V
+	8       (00000024) iput-object          v0, v1, Landroidx/appcompat/widget/ActionBarOverlayLayout;->mLastBaseContentInsets Landroid/graphics/Rect;
+	9       (00000028) new-instance         v0, Landroid/graphics/Rect;
+	10      (0000002c) invoke-direct        v0, Landroid/graphics/Rect;-><init>()V
+	11      (00000032) iput-object          v0, v1, Landroidx/appcompat/widget/ActionBarOverlayLayout;->mContentInsets Landroid/graphics/Rect;
+	12      (00000036) new-instance         v0, Landroid/graphics/Rect;
+	13      (0000003a) invoke-direct        v0, Landroid/graphics/Rect;-><init>()V
+	14      (00000040) iput-object          v0, v1, Landroidx/appcompat/widget/ActionBarOverlayLayout;->mBaseInnerInsets Landroid/graphics/Rect;
+	15      (00000044) new-instance         v0, Landroid/graphics/Rect;
+	16      (00000048) invoke-direct        v0, Landroid/graphics/Rect;-><init>()V
+	17      (0000004e) iput-object          v0, v1, Landroidx/appcompat/widget/ActionBarOverlayLayout;->mLastBaseInnerInsets Landroid/graphics/Rect;
+	18      (00000052) new-instance         v0, Landroid/graphics/Rect;
+	19      (00000056) invoke-direct        v0, Landroid/graphics/Rect;-><init>()V
+	20      (0000005c) iput-object          v0, v1, Landroidx/appcompat/widget/ActionBarOverlayLayout;->mInnerInsets Landroid/graphics/Rect;
+	21      (00000060) new-instance         v0, Landroid/graphics/Rect;
+	22      (00000064) invoke-direct        v0, Landroid/graphics/Rect;-><init>()V
+	23      (0000006a) iput-object          v0, v1, Landroidx/appcompat/widget/ActionBarOverlayLayout;->mLastInnerInsets Landroid/graphics/Rect;
+	24      (0000006e) new-instance         v0, Landroidx/appcompat/widget/ActionBarOverlayLayout$1;
+	25      (00000072) invoke-direct        v0, v1, Landroidx/appcompat/widget/ActionBarOverlayLayout$1;-><init>(Landroidx/appcompat/widget/ActionBarOverlayLayout;)V
+	26      (00000078) iput-object          v0, v1, Landroidx/appcompat/widget/ActionBarOverlayLayout;->mTopAnimatorListener Landroid/animation/AnimatorListenerAdapter;
+	27      (0000007c) new-instance         v0, Landroidx/appcompat/widget/ActionBarOverlayLayout$2;
+	28      (00000080) invoke-direct        v0, v1, Landroidx/appcompat/widget/ActionBarOverlayLayout$2;-><init>(Landroidx/appcompat/widget/ActionBarOverlayLayout;)V
+	29      (00000086) iput-object          v0, v1, Landroidx/appcompat/widget/ActionBarOverlayLayout;->mRemoveActionBarHideOffset Ljava/lang/Runnable;
+	30      (0000008a) new-instance         v0, Landroidx/appcompat/widget/ActionBarOverlayLayout$3;
+	31      (0000008e) invoke-direct        v0, v1, Landroidx/appcompat/widget/ActionBarOverlayLayout$3;-><init>(Landroidx/appcompat/widget/ActionBarOverlayLayout;)V
+	32      (00000094) iput-object          v0, v1, Landroidx/appcompat/widget/ActionBarOverlayLayout;->mAddActionBarHideOffset Ljava/lang/Runnable;
+	33      (00000098) invoke-direct        v1, v2, Landroidx/appcompat/widget/ActionBarOverlayLayout;->init(Landroid/content/Context;)V
+	34      (0000009e) new-instance         v0, Landroidx/core/view/NestedScrollingParentHelper;
+	35      (000000a2) invoke-direct        v0, v1, Landroidx/core/view/NestedScrollingParentHelper;-><init>(Landroid/view/ViewGroup;)V
+	36      (000000a8) iput-object          v0, v1, Landroidx/appcompat/widget/ActionBarOverlayLayout;->mParentHelper Landroidx/core/view/NestedScrollingParentHelper;
+	37      (000000ac) return-void          
+

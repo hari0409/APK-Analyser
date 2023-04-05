@@ -1,0 +1,60 @@
+# Lcom/afwsamples/testdpc/policy/PolicyManagementFragment$14;->onClick(Landroid/content/DialogInterface; I)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v5
+# - v6:android.content.DialogInterface
+# - v7:int
+#
+# - return:void
+
+onClick-BB@0x0 : [ onClick-BB@0x20 onClick-BB@0x84 ]
+	0       (00000000) iget-object          v2, v5, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment$14;->val$userNameEditText Landroid/widget/EditText;
+	1       (00000004) invoke-virtual       v2, Landroid/widget/EditText;->getText()Landroid/text/Editable;
+	2       (0000000a) move-result-object   v2
+	3       (0000000c) invoke-virtual       v2, Ljava/lang/Object;->toString()Ljava/lang/String;
+	4       (00000012) move-result-object   v1
+	5       (00000014) invoke-static        v1, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
+	6       (0000001a) move-result          v2
+	7       (0000001c) if-nez               v2, +34
+
+onClick-BB@0x20 : [ onClick-BB@0x32 onClick-BB@0x36 ]
+	8       (00000020) const/4              v0, 0
+	9       (00000022) iget-object          v2, v5, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment$14;->val$skipSetupWizardCheckBox Landroid/widget/CheckBox;
+	10      (00000026) invoke-virtual       v2, Landroid/widget/CheckBox;->isChecked()Z
+	11      (0000002c) move-result          v2
+	12      (0000002e) if-eqz               v2, +4
+
+onClick-BB@0x32 : [ onClick-BB@0x36 ]
+	13      (00000032) or-int/lit8          v0, v0, 1
+
+onClick-BB@0x36 : [ onClick-BB@0x46 onClick-BB@0x4a ]
+	14      (00000036) iget-object          v2, v5, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment$14;->val$makeUserEphemeralCheckBox Landroid/widget/CheckBox;
+	15      (0000003a) invoke-virtual       v2, Landroid/widget/CheckBox;->isChecked()Z
+	16      (00000040) move-result          v2
+	17      (00000042) if-eqz               v2, +4
+
+onClick-BB@0x46 : [ onClick-BB@0x4a ]
+	18      (00000046) or-int/lit8          v0, v0, 2
+
+onClick-BB@0x4a : [ onClick-BB@0x5a onClick-BB@0x5e ]
+	19      (0000004a) iget-object          v2, v5, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment$14;->val$leaveAllSystemAppsEnabled Landroid/widget/CheckBox;
+	20      (0000004e) invoke-virtual       v2, Landroid/widget/CheckBox;->isChecked()Z
+	21      (00000054) move-result          v2
+	22      (00000056) if-eqz               v2, +4
+
+onClick-BB@0x5a : [ onClick-BB@0x5e ]
+	23      (0000005a) or-int/lit8          v0, v0, 16
+
+onClick-BB@0x5e : [ onClick-BB@0x84 ]
+	24      (0000005e) iget-object          v2, v5, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment$14;->this$0 Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;
+	25      (00000062) invoke-static        v2, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->access$300(Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;)Lcom/afwsamples/testdpc/DevicePolicyManagerGateway;
+	26      (00000068) move-result-object   v2
+	27      (0000006a) new-instance         v3, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment$14$$Lambda$0;
+	28      (0000006e) invoke-direct        v3, v5, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment$14$$Lambda$0;-><init>(Lcom/afwsamples/testdpc/policy/PolicyManagementFragment$14;)V
+	29      (00000074) new-instance         v4, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment$14$$Lambda$1;
+	30      (00000078) invoke-direct        v4, v5, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment$14$$Lambda$1;-><init>(Lcom/afwsamples/testdpc/policy/PolicyManagementFragment$14;)V
+	31      (0000007e) invoke-interface     v2, v1, v0, v3, v4, Lcom/afwsamples/testdpc/DevicePolicyManagerGateway;->createAndManageUser(Ljava/lang/String; I Ljava/util/function/Consumer; Ljava/util/function/Consumer;)V
+
+onClick-BB@0x84 : 
+	32      (00000084) return-void          
+

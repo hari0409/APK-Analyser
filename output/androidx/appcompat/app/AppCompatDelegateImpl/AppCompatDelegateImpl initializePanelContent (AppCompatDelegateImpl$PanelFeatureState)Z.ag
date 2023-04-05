@@ -1,0 +1,51 @@
+# Landroidx/appcompat/app/AppCompatDelegateImpl;->initializePanelContent(Landroidx/appcompat/app/AppCompatDelegateImpl$PanelFeatureState;)Z [access_flags=private]
+#
+# Parameters:
+# - local registers: v0...v4
+# - v5:androidx.appcompat.app.AppCompatDelegateImpl$PanelFeatureState
+#
+# - return:boolean
+
+initializePanelContent-BB@0x0 : [ initializePanelContent-BB@0xc initializePanelContent-BB@0x16 ]
+	0       (00000000) const/4              v1, 1
+	1       (00000002) const/4              v2, 0
+	2       (00000004) iget-object          v3, v5, Landroidx/appcompat/app/AppCompatDelegateImpl$PanelFeatureState;->createdPanelView Landroid/view/View;
+	3       (00000008) if-eqz               v3, +7
+
+initializePanelContent-BB@0xc : [ initializePanelContent-BB@0x14 ]
+	4       (0000000c) iget-object          v2, v5, Landroidx/appcompat/app/AppCompatDelegateImpl$PanelFeatureState;->createdPanelView Landroid/view/View;
+	5       (00000010) iput-object          v2, v5, Landroidx/appcompat/app/AppCompatDelegateImpl$PanelFeatureState;->shownPanelView Landroid/view/View;
+
+initializePanelContent-BB@0x14 : 
+	6       (00000014) return               v1
+
+initializePanelContent-BB@0x16 : [ initializePanelContent-BB@0x1e initializePanelContent-BB@0x22 ]
+	7       (00000016) iget-object          v3, v5, Landroidx/appcompat/app/AppCompatDelegateImpl$PanelFeatureState;->menu Landroidx/appcompat/view/menu/MenuBuilder;
+	8       (0000001a) if-nez               v3, +4
+
+initializePanelContent-BB@0x1e : [ initializePanelContent-BB@0x14 ]
+	9       (0000001e) move                 v1, v2
+	10      (00000020) goto                 -6
+
+initializePanelContent-BB@0x22 : [ initializePanelContent-BB@0x2a initializePanelContent-BB@0x38 ]
+	11      (00000022) iget-object          v3, v4, Landroidx/appcompat/app/AppCompatDelegateImpl;->mPanelMenuPresenterCallback Landroidx/appcompat/app/AppCompatDelegateImpl$PanelMenuPresenterCallback;
+	12      (00000026) if-nez               v3, +9
+
+initializePanelContent-BB@0x2a : [ initializePanelContent-BB@0x38 ]
+	13      (0000002a) new-instance         v3, Landroidx/appcompat/app/AppCompatDelegateImpl$PanelMenuPresenterCallback;
+	14      (0000002e) invoke-direct        v3, v4, Landroidx/appcompat/app/AppCompatDelegateImpl$PanelMenuPresenterCallback;-><init>(Landroidx/appcompat/app/AppCompatDelegateImpl;)V
+	15      (00000034) iput-object          v3, v4, Landroidx/appcompat/app/AppCompatDelegateImpl;->mPanelMenuPresenterCallback Landroidx/appcompat/app/AppCompatDelegateImpl$PanelMenuPresenterCallback;
+
+initializePanelContent-BB@0x38 : [ initializePanelContent-BB@0x54 initializePanelContent-BB@0x14 ]
+	16      (00000038) iget-object          v3, v4, Landroidx/appcompat/app/AppCompatDelegateImpl;->mPanelMenuPresenterCallback Landroidx/appcompat/app/AppCompatDelegateImpl$PanelMenuPresenterCallback;
+	17      (0000003c) invoke-virtual       v5, v3, Landroidx/appcompat/app/AppCompatDelegateImpl$PanelFeatureState;->getListMenuView(Landroidx/appcompat/view/menu/MenuPresenter$Callback;)Landroidx/appcompat/view/menu/MenuView;
+	18      (00000042) move-result-object   v0
+	19      (00000044) check-cast           v0, Landroid/view/View;
+	20      (00000048) iput-object          v0, v5, Landroidx/appcompat/app/AppCompatDelegateImpl$PanelFeatureState;->shownPanelView Landroid/view/View;
+	21      (0000004c) iget-object          v3, v5, Landroidx/appcompat/app/AppCompatDelegateImpl$PanelFeatureState;->shownPanelView Landroid/view/View;
+	22      (00000050) if-nez               v3, -1e
+
+initializePanelContent-BB@0x54 : [ initializePanelContent-BB@0x14 ]
+	23      (00000054) move                 v1, v2
+	24      (00000056) goto                 -21
+

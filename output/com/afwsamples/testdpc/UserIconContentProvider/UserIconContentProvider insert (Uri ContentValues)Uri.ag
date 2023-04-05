@@ -1,0 +1,83 @@
+# Lcom/afwsamples/testdpc/UserIconContentProvider;->insert(Landroid/net/Uri; Landroid/content/ContentValues;)Landroid/net/Uri; [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v6
+# - v7:android.net.Uri
+# - v8:android.content.ContentValues
+#
+# - return:android.net.Uri
+
+insert-BB@0x0 : [ insert-BB@0x5e insert-BB@0x9e ]
+	0       (00000000) const/4              v2, 0
+	1       (00000002) const-string         v0, ''
+	2       (00000006) invoke-direct        v6, v7, Lcom/afwsamples/testdpc/UserIconContentProvider;->getFileForUri(Landroid/net/Uri;)Ljava/io/File;
+	3       (0000000c) move-result-object   v1
+	4       (0000000e) sget-object          v3, Lcom/afwsamples/testdpc/UserIconContentProvider;->TAG Ljava/lang/String;
+	5       (00000012) new-instance         v4, Ljava/lang/StringBuilder;
+	6       (00000016) invoke-direct        v4, Ljava/lang/StringBuilder;-><init>()V
+	7       (0000001c) const-string         v5, 'insert(): uri='
+	8       (00000020) invoke-virtual       v4, v5, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	9       (00000026) move-result-object   v4
+	10      (00000028) invoke-virtual       v4, v7, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+	11      (0000002e) move-result-object   v4
+	12      (00000030) const-string         v5, ', file='
+	13      (00000034) invoke-virtual       v4, v5, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	14      (0000003a) move-result-object   v4
+	15      (0000003c) invoke-virtual       v4, v1, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+	16      (00000042) move-result-object   v4
+	17      (00000044) invoke-virtual       v4, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+	18      (0000004a) move-result-object   v4
+	19      (0000004c) invoke-static        v3, v4, Landroid/util/Log;->v(Ljava/lang/String; Ljava/lang/String;)I
+	20      (00000052) invoke-virtual       v1, Ljava/io/File;->exists()Z
+	21      (00000058) move-result          v3
+	22      (0000005a) if-nez               v3, +22
+
+insert-BB@0x5e : [ insert-BB@0x9c ]
+	23      (0000005e) sget-object          v3, Lcom/afwsamples/testdpc/UserIconContentProvider;->TAG Ljava/lang/String;
+	24      (00000062) new-instance         v4, Ljava/lang/StringBuilder;
+	25      (00000066) invoke-direct        v4, Ljava/lang/StringBuilder;-><init>()V
+	26      (0000006c) const-string         v5, "Insert - File from uri: '"
+	27      (00000070) invoke-virtual       v4, v5, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	28      (00000076) move-result-object   v4
+	29      (00000078) invoke-virtual       v4, v7, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+	30      (0000007e) move-result-object   v4
+	31      (00000080) const-string         v5, "' doesn't exist"
+	32      (00000084) invoke-virtual       v4, v5, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	33      (0000008a) move-result-object   v4
+	34      (0000008c) invoke-virtual       v4, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+	35      (00000092) move-result-object   v4
+	36      (00000094) invoke-static        v3, v4, Landroid/util/Log;->e(Ljava/lang/String; Ljava/lang/String;)I
+	37      (0000009a) move-object          v7, v2
+
+insert-BB@0x9c : 
+	38      (0000009c) return-object        v7
+
+insert-BB@0x9e : [ insert-BB@0xae insert-BB@0xee ]
+	39      (0000009e) iget-object          v3, v6, Lcom/afwsamples/testdpc/UserIconContentProvider;->mFileTracker Ljava/util/Map;
+	40      (000000a2) invoke-interface     v3, v7, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
+	41      (000000a8) move-result-object   v3
+	42      (000000aa) if-eqz               v3, +22
+
+insert-BB@0xae : [ insert-BB@0x9c ]
+	43      (000000ae) sget-object          v3, Lcom/afwsamples/testdpc/UserIconContentProvider;->TAG Ljava/lang/String;
+	44      (000000b2) new-instance         v4, Ljava/lang/StringBuilder;
+	45      (000000b6) invoke-direct        v4, Ljava/lang/StringBuilder;-><init>()V
+	46      (000000bc) const-string         v5, "Insert - File from uri: '"
+	47      (000000c0) invoke-virtual       v4, v5, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	48      (000000c6) move-result-object   v4
+	49      (000000c8) invoke-virtual       v4, v7, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+	50      (000000ce) move-result-object   v4
+	51      (000000d0) const-string         v5, "' already exists, ignoring"
+	52      (000000d4) invoke-virtual       v4, v5, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	53      (000000da) move-result-object   v4
+	54      (000000dc) invoke-virtual       v4, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+	55      (000000e2) move-result-object   v4
+	56      (000000e4) invoke-static        v3, v4, Landroid/util/Log;->e(Ljava/lang/String; Ljava/lang/String;)I
+	57      (000000ea) move-object          v7, v2
+	58      (000000ec) goto                 -28
+
+insert-BB@0xee : [ insert-BB@0x9c ]
+	59      (000000ee) iget-object          v2, v6, Lcom/afwsamples/testdpc/UserIconContentProvider;->mFileTracker Ljava/util/Map;
+	60      (000000f2) invoke-interface     v2, v7, v8, Ljava/util/Map;->put(Ljava/lang/Object; Ljava/lang/Object;)Ljava/lang/Object;
+	61      (000000f8) goto                 -2e
+

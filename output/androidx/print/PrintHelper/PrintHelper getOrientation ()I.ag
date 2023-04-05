@@ -1,0 +1,26 @@
+# Landroidx/print/PrintHelper;->getOrientation()I [access_flags=public]
+#
+# Parameters:
+# local registers: v0...v2
+#
+# - return:int
+
+getOrientation-BB@0x0 : [ getOrientation-BB@0xc getOrientation-BB@0x18 ]
+	0       (00000000) sget                 v0, Landroid/os/Build$VERSION;->SDK_INT I
+	1       (00000004) const/16             v1, 19
+	2       (00000008) if-lt                v0, v1, +8
+
+getOrientation-BB@0xc : [ getOrientation-BB@0x14 getOrientation-BB@0x18 ]
+	3       (0000000c) iget                 v0, v2, Landroidx/print/PrintHelper;->mOrientation I
+	4       (00000010) if-nez               v0, +4
+
+getOrientation-BB@0x14 : [ getOrientation-BB@0x16 ]
+	5       (00000014) const/4              v0, 1
+
+getOrientation-BB@0x16 : 
+	6       (00000016) return               v0
+
+getOrientation-BB@0x18 : [ getOrientation-BB@0x16 ]
+	7       (00000018) iget                 v0, v2, Landroidx/print/PrintHelper;->mOrientation I
+	8       (0000001c) goto                 -3
+

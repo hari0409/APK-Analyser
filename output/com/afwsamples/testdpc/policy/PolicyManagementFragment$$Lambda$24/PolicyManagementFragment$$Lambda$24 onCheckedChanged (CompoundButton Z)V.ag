@@ -1,0 +1,14 @@
+# Lcom/afwsamples/testdpc/policy/PolicyManagementFragment$$Lambda$24;->onCheckedChanged(Landroid/widget/CompoundButton; Z)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:android.widget.CompoundButton
+# - v3:boolean
+#
+# - return:void
+
+onCheckedChanged-BB@0x0 : 
+	0       (00000000) iget-object          v0, v1, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment$$Lambda$24;->arg$1 Landroid/widget/CheckBox;
+	1       (00000004) invoke-static        v0, v2, v3, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->lambda$showLockNowPrompt$110$PolicyManagementFragment(Landroid/widget/CheckBox; Landroid/widget/CompoundButton; Z)V
+	2       (0000000a) return-void          
+

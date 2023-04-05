@@ -1,0 +1,35 @@
+# Lcom/afwsamples/testdpc/common/BaseManageComponentFragment;->onClick(Landroid/view/View;)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:android.view.View
+#
+# - return:void
+
+onClick-BB@0x0 : [ D:onClick-BB@0xe 2131296304:onClick-BB@0x20 2131296491:onClick-BB@0x28 2131296570:onClick-BB@0x10 2131296577:onClick-BB@0x18 ]
+	0       (00000000) invoke-virtual       v2, Landroid/view/View;->getId()I
+	1       (00000006) move-result          v0
+	2       (00000008) sparse-switch        v0, +14 (0x30)
+
+onClick-BB@0xe : 
+	3       (0000000e) return-void          
+
+onClick-BB@0x10 : [ onClick-BB@0xe ]
+	4       (00000010) invoke-virtual       v1, Lcom/afwsamples/testdpc/common/BaseManageComponentFragment;->resetConfig()V
+	5       (00000016) goto                 -4
+
+onClick-BB@0x18 : [ onClick-BB@0xe ]
+	6       (00000018) invoke-virtual       v1, Lcom/afwsamples/testdpc/common/BaseManageComponentFragment;->saveConfig()V
+	7       (0000001e) goto                 -8
+
+onClick-BB@0x20 : [ onClick-BB@0xe ]
+	8       (00000020) invoke-virtual       v1, Lcom/afwsamples/testdpc/common/BaseManageComponentFragment;->addNewRow()V
+	9       (00000026) goto                 -c
+
+onClick-BB@0x28 : [ onClick-BB@0xe ]
+	10      (00000028) invoke-virtual       v1, Lcom/afwsamples/testdpc/common/BaseManageComponentFragment;->loadDefault()V
+	11      (0000002e) goto                 -10
+
+onClick-BB@0x30 : 
+	12      (00000030) sparse-switch-payload 7f090030 7f0900eb 7f09013a 7f090141
+

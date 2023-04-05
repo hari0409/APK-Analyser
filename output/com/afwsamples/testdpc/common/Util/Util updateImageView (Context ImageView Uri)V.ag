@@ -1,0 +1,67 @@
+# Lcom/afwsamples/testdpc/common/Util;->updateImageView(Landroid/content/Context; Landroid/widget/ImageView; Landroid/net/Uri;)V [access_flags=public static]
+#
+# Parameters:
+# - local registers: v0...v11
+# - v12:android.content.Context
+# - v13:android.widget.ImageView
+# - v14:android.net.Uri
+#
+# - return:void
+
+updateImageView-BB@0x0 : [ updateImageView-BB@0x4 ]
+	0       (00000000) const/4              v11, 1
+	1       (00000002) const/4              v10, 0
+
+updateImageView-BB@0x4 : [ updateImageView-BB@0x58 updateImageView-BB@0x5c ]
+	2       (00000004) invoke-virtual       v12, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
+	3       (0000000a) move-result-object   v8
+	4       (0000000c) invoke-virtual       v8, v14, Landroid/content/ContentResolver;->openInputStream(Landroid/net/Uri;)Ljava/io/InputStream;
+	5       (00000012) move-result-object   v2
+	6       (00000014) new-instance         v0, Landroid/graphics/BitmapFactory$Options;
+	7       (00000018) invoke-direct        v0, Landroid/graphics/BitmapFactory$Options;-><init>()V
+	8       (0000001e) const/4              v8, 1
+	9       (00000020) iput-boolean         v8, v0, Landroid/graphics/BitmapFactory$Options;->inJustDecodeBounds Z
+	10      (00000024) const/4              v8, 0
+	11      (00000026) invoke-static        v2, v8, v0, Landroid/graphics/BitmapFactory;->decodeStream(Ljava/io/InputStream; Landroid/graphics/Rect; Landroid/graphics/BitmapFactory$Options;)Landroid/graphics/Bitmap;
+	12      (0000002c) iget                 v7, v0, Landroid/graphics/BitmapFactory$Options;->outWidth I
+	13      (00000030) iget                 v6, v0, Landroid/graphics/BitmapFactory$Options;->outHeight I
+	14      (00000034) invoke-virtual       v13, Landroid/widget/ImageView;->getMaxWidth()I
+	15      (0000003a) move-result          v4
+	16      (0000003c) invoke-virtual       v13, Landroid/widget/ImageView;->getMaxHeight()I
+	17      (00000042) move-result          v3
+	18      (00000044) div-int              v8, v7, v4
+	19      (00000048) div-int              v9, v6, v3
+	20      (0000004c) invoke-static        v8, v9, Ljava/lang/Math;->max(I I)I
+	21      (00000052) move-result          v5
+	22      (00000054) if-le                v5, v11, +4
+	4:81
+	(Ljava/io/FileNotFoundException; -> 84 updateImageView-BB@0x84)
+
+updateImageView-BB@0x58 : [ updateImageView-BB@0x5c ]
+	23      (00000058) iput                 v5, v0, Landroid/graphics/BitmapFactory$Options;->inSampleSize I
+	4:81
+	(Ljava/io/FileNotFoundException; -> 84 updateImageView-BB@0x84)
+
+updateImageView-BB@0x5c : [ updateImageView-BB@0x82 ]
+	24      (0000005c) const/4              v8, 0
+	25      (0000005e) iput-boolean         v8, v0, Landroid/graphics/BitmapFactory$Options;->inJustDecodeBounds Z
+	26      (00000062) invoke-virtual       v12, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
+	27      (00000068) move-result-object   v8
+	28      (0000006a) invoke-virtual       v8, v14, Landroid/content/ContentResolver;->openInputStream(Landroid/net/Uri;)Ljava/io/InputStream;
+	29      (00000070) move-result-object   v2
+	30      (00000072) const/4              v8, 0
+	31      (00000074) invoke-static        v2, v8, v0, Landroid/graphics/BitmapFactory;->decodeStream(Ljava/io/InputStream; Landroid/graphics/Rect; Landroid/graphics/BitmapFactory$Options;)Landroid/graphics/Bitmap;
+	32      (0000007a) move-result-object   v8
+	33      (0000007c) invoke-virtual       v13, v8, Landroid/widget/ImageView;->setImageBitmap(Landroid/graphics/Bitmap;)V
+	4:81
+	(Ljava/io/FileNotFoundException; -> 84 updateImageView-BB@0x84)
+
+updateImageView-BB@0x82 : 
+	34      (00000082) return-void          
+
+updateImageView-BB@0x84 : [ updateImageView-BB@0x82 ]
+	35      (00000084) move-exception       v1
+	36      (00000086) const                v8, 2131689809 # [1.900864385692794e+38]
+	37      (0000008c) invoke-static        v12, v8, v10, Landroid/widget/Toast;->makeText(Landroid/content/Context; I I)Landroid/widget/Toast;
+	38      (00000092) goto                 -8
+

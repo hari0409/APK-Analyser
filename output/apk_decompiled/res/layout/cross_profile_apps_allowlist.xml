@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView android:layout_width="fill_parent" android:layout_height="fill_parent" android:fadeScrollbars="false"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:orientation="vertical" android:paddingLeft="@dimen/activity_horizontal_margin" android:paddingRight="@dimen/activity_horizontal_margin" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <TextView android:textSize="20.0sp" android:paddingTop="@dimen/content_padding_between_text" android:paddingBottom="@dimen/content_padding_between_text" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/cross_profile_apps_enabled_title" />
+        <TextView android:textSize="16.0sp" android:id="@id/cross_profile_app_list" android:paddingBottom="@dimen/content_padding_bottom" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+        <EditText android:id="@id/cross_profile_app_allowlist_input" android:layout_width="wrap_content" android:layout_height="wrap_content" android:hint="@string/cross_profile_apps_example_text" android:singleLine="false" />
+        <LinearLayout android:gravity="center" android:orientation="horizontal" android:paddingBottom="@dimen/content_padding_between_text" android:layout_width="wrap_content" android:layout_height="wrap_content">
+            <Button android:id="@id/cross_profile_app_allowlist_add_button" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="10.0dip" android:text="@string/cross_profile_apps_add_button_text" />
+            <Button android:id="@id/cross_profile_app_allowlist_remove_button" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="10.0dip" android:text="@string/cross_profile_apps_remove_button_text" />
+        </LinearLayout>
+        <Button android:id="@id/cross_profile_app_allowlist_reset_button" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/cross_profile_apps_reset_button_text" />
+    </LinearLayout>
+</ScrollView>

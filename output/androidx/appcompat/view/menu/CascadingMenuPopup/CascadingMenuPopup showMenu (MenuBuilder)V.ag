@@ -1,0 +1,345 @@
+# Landroidx/appcompat/view/menu/CascadingMenuPopup;->showMenu(Landroidx/appcompat/view/menu/MenuBuilder;)V [access_flags=private]
+#
+# Parameters:
+# - local registers: v0...v24
+# - v25:androidx.appcompat.view.menu.MenuBuilder
+#
+# - return:void
+
+showMenu-BB@0x0 : [ showMenu-BB@0x46 showMenu-BB@0x2d2 ]
+	0       (00000000) move-object/from16   v0, v24
+	1       (00000004) iget-object          v0, v0, Landroidx/appcompat/view/menu/CascadingMenuPopup;->mContext Landroid/content/Context;
+	2       (00000008) move-object/from16   v21, v0
+	3       (0000000c) invoke-static/range  v21, Landroid/view/LayoutInflater;->from(Landroid/content/Context;)Landroid/view/LayoutInflater;
+	4       (00000012) move-result-object   v6
+	5       (00000014) new-instance         v3, Landroidx/appcompat/view/menu/MenuAdapter;
+	6       (00000018) move-object/from16   v0, v24
+	7       (0000001c) iget-boolean         v0, v0, Landroidx/appcompat/view/menu/CascadingMenuPopup;->mOverflowOnly Z
+	8       (00000020) move/from16          v21, v0
+	9       (00000024) sget                 v22, Landroidx/appcompat/view/menu/CascadingMenuPopup;->ITEM_LAYOUT I
+	10      (00000028) move-object/from16   v0, v25
+	11      (0000002c) move/from16          v1, v21
+	12      (00000030) move/from16          v2, v22
+	13      (00000034) invoke-direct        v3, v0, v6, v1, v2, Landroidx/appcompat/view/menu/MenuAdapter;-><init>(Landroidx/appcompat/view/menu/MenuBuilder; Landroid/view/LayoutInflater; Z I)V
+	14      (0000003a) invoke-virtual/range v24, Landroidx/appcompat/view/menu/CascadingMenuPopup;->isShowing()Z
+	15      (00000040) move-result          v21
+	16      (00000042) if-nez               v21, +148
+
+showMenu-BB@0x46 : [ showMenu-BB@0x56 showMenu-BB@0x2d2 ]
+	17      (00000046) move-object/from16   v0, v24
+	18      (0000004a) iget-boolean         v0, v0, Landroidx/appcompat/view/menu/CascadingMenuPopup;->mForceShowIcon Z
+	19      (0000004e) move/from16          v21, v0
+	20      (00000052) if-eqz               v21, +140
+
+showMenu-BB@0x56 : [ showMenu-BB@0x64 ]
+	21      (00000056) const/16             v21, 1
+	22      (0000005a) move/from16          v0, v21
+	23      (0000005e) invoke-virtual       v3, v0, Landroidx/appcompat/view/menu/MenuAdapter;->setForceShowIcon(Z)V
+
+showMenu-BB@0x64 : [ showMenu-BB@0xe2 showMenu-BB@0x2f4 ]
+	24      (00000064) const/16             v21, 0
+	25      (00000068) move-object/from16   v0, v24
+	26      (0000006c) iget-object          v0, v0, Landroidx/appcompat/view/menu/CascadingMenuPopup;->mContext Landroid/content/Context;
+	27      (00000070) move-object/from16   v22, v0
+	28      (00000074) move-object/from16   v0, v24
+	29      (00000078) iget                 v0, v0, Landroidx/appcompat/view/menu/CascadingMenuPopup;->mMenuMaxWidth I
+	30      (0000007c) move/from16          v23, v0
+	31      (00000080) move-object/from16   v0, v21
+	32      (00000084) move-object/from16   v1, v22
+	33      (00000088) move/from16          v2, v23
+	34      (0000008c) invoke-static        v3, v0, v1, v2, Landroidx/appcompat/view/menu/CascadingMenuPopup;->measureIndividualMenuWidth(Landroid/widget/ListAdapter; Landroid/view/ViewGroup; Landroid/content/Context; I)I
+	35      (00000092) move-result          v9
+	36      (00000094) invoke-direct/range  v24, Landroidx/appcompat/view/menu/CascadingMenuPopup;->createPopupWindow()Landroidx/appcompat/widget/MenuPopupWindow;
+	37      (0000009a) move-result-object   v16
+	38      (0000009c) move-object/from16   v0, v16
+	39      (000000a0) invoke-virtual       v0, v3, Landroidx/appcompat/widget/MenuPopupWindow;->setAdapter(Landroid/widget/ListAdapter;)V
+	40      (000000a6) move-object/from16   v0, v16
+	41      (000000aa) invoke-virtual       v0, v9, Landroidx/appcompat/widget/MenuPopupWindow;->setContentWidth(I)V
+	42      (000000b0) move-object/from16   v0, v24
+	43      (000000b4) iget                 v0, v0, Landroidx/appcompat/view/menu/CascadingMenuPopup;->mDropDownGravity I
+	44      (000000b8) move/from16          v21, v0
+	45      (000000bc) move-object/from16   v0, v16
+	46      (000000c0) move/from16          v1, v21
+	47      (000000c4) invoke-virtual       v0, v1, Landroidx/appcompat/widget/MenuPopupWindow;->setDropDownGravity(I)V
+	48      (000000ca) move-object/from16   v0, v24
+	49      (000000ce) iget-object          v0, v0, Landroidx/appcompat/view/menu/CascadingMenuPopup;->mShowingMenus Ljava/util/List;
+	50      (000000d2) move-object/from16   v21, v0
+	51      (000000d6) invoke-interface/range v21, Ljava/util/List;->size()I
+	52      (000000dc) move-result          v21
+	53      (000000de) if-lez               v21, +10b
+
+showMenu-BB@0xe2 : [ showMenu-BB@0x122 ]
+	54      (000000e2) move-object/from16   v0, v24
+	55      (000000e6) iget-object          v0, v0, Landroidx/appcompat/view/menu/CascadingMenuPopup;->mShowingMenus Ljava/util/List;
+	56      (000000ea) move-object/from16   v21, v0
+	57      (000000ee) move-object/from16   v0, v24
+	58      (000000f2) iget-object          v0, v0, Landroidx/appcompat/view/menu/CascadingMenuPopup;->mShowingMenus Ljava/util/List;
+	59      (000000f6) move-object/from16   v22, v0
+	60      (000000fa) invoke-interface/range v22, Ljava/util/List;->size()I
+	61      (00000100) move-result          v22
+	62      (00000102) add-int/lit8         v22, v22, -1
+	63      (00000106) invoke-interface/range v21 ... v22, Ljava/util/List;->get(I)Ljava/lang/Object;
+	64      (0000010c) move-result-object   v11
+	65      (0000010e) check-cast           v11, Landroidx/appcompat/view/menu/CascadingMenuPopup$CascadingMenuInfo;
+	66      (00000112) move-object/from16   v0, v24
+	67      (00000116) move-object/from16   v1, v25
+	68      (0000011a) invoke-direct        v0, v11, v1, Landroidx/appcompat/view/menu/CascadingMenuPopup;->findParentViewForSubmenu(Landroidx/appcompat/view/menu/CascadingMenuPopup$CascadingMenuInfo; Landroidx/appcompat/view/menu/MenuBuilder;)Landroid/view/View;
+	69      (00000120) move-result-object   v14
+
+showMenu-BB@0x122 : [ showMenu-BB@0x126 showMenu-BB@0x3ec ]
+	70      (00000122) if-eqz               v14, +165
+
+showMenu-BB@0x126 : [ showMenu-BB@0x162 showMenu-BB@0x2fc ]
+	71      (00000126) const/16             v21, 0
+	72      (0000012a) move-object/from16   v0, v16
+	73      (0000012e) move/from16          v1, v21
+	74      (00000132) invoke-virtual       v0, v1, Landroidx/appcompat/widget/MenuPopupWindow;->setTouchModal(Z)V
+	75      (00000138) const/16             v21, 0
+	76      (0000013c) move-object/from16   v0, v16
+	77      (00000140) move-object/from16   v1, v21
+	78      (00000144) invoke-virtual       v0, v1, Landroidx/appcompat/widget/MenuPopupWindow;->setEnterTransition(Ljava/lang/Object;)V
+	79      (0000014a) move-object/from16   v0, v24
+	80      (0000014e) invoke-direct        v0, v9, Landroidx/appcompat/view/menu/CascadingMenuPopup;->getNextMenuPosition(I)I
+	81      (00000154) move-result          v10
+	82      (00000156) const/16             v21, 1
+	83      (0000015a) move/from16          v0, v21
+	84      (0000015e) if-ne                v10, v0, +cf
+
+showMenu-BB@0x162 : [ showMenu-BB@0x166 ]
+	85      (00000162) const/16             v17, 1
+
+showMenu-BB@0x166 : [ showMenu-BB@0x182 showMenu-BB@0x304 ]
+	86      (00000166) move-object/from16   v0, v24
+	87      (0000016a) iput                 v10, v0, Landroidx/appcompat/view/menu/CascadingMenuPopup;->mLastPosition I
+	88      (0000016e) sget                 v21, Landroid/os/Build$VERSION;->SDK_INT I
+	89      (00000172) const/16             v22, 26
+	90      (00000176) move/from16          v0, v21
+	91      (0000017a) move/from16          v1, v22
+	92      (0000017e) if-lt                v0, v1, +c3
+
+showMenu-BB@0x182 : [ showMenu-BB@0x190 ]
+	93      (00000182) move-object/from16   v0, v16
+	94      (00000186) invoke-virtual       v0, v14, Landroidx/appcompat/widget/MenuPopupWindow;->setAnchorView(Landroid/view/View;)V
+	95      (0000018c) const/4              v12, 0
+	96      (0000018e) const/4              v13, 0
+
+showMenu-BB@0x190 : [ showMenu-BB@0x1b0 showMenu-BB@0x3d0 ]
+	97      (00000190) move-object/from16   v0, v24
+	98      (00000194) iget                 v0, v0, Landroidx/appcompat/view/menu/CascadingMenuPopup;->mDropDownGravity I
+	99      (00000198) move/from16          v21, v0
+	100     (0000019c) and-int/lit8         v21, v21, 5
+	101     (000001a0) const/16             v22, 5
+	102     (000001a4) move/from16          v0, v21
+	103     (000001a8) move/from16          v1, v22
+	104     (000001ac) if-ne                v0, v1, +112
+
+showMenu-BB@0x1b0 : [ showMenu-BB@0x1b4 showMenu-BB@0x3c0 ]
+	105     (000001b0) if-eqz               v17, +108
+
+showMenu-BB@0x1b4 : [ showMenu-BB@0x1b8 ]
+	106     (000001b4) add-int              v20, v12, v9
+
+showMenu-BB@0x1b8 : [ showMenu-BB@0x1e2 ]
+	107     (000001b8) move-object/from16   v0, v16
+	108     (000001bc) move/from16          v1, v20
+	109     (000001c0) invoke-virtual       v0, v1, Landroidx/appcompat/widget/MenuPopupWindow;->setHorizontalOffset(I)V
+	110     (000001c6) const/16             v21, 1
+	111     (000001ca) move-object/from16   v0, v16
+	112     (000001ce) move/from16          v1, v21
+	113     (000001d2) invoke-virtual       v0, v1, Landroidx/appcompat/widget/MenuPopupWindow;->setOverlapAnchor(Z)V
+	114     (000001d8) move-object/from16   v0, v16
+	115     (000001dc) invoke-virtual       v0, v13, Landroidx/appcompat/widget/MenuPopupWindow;->setVerticalOffset(I)V
+
+showMenu-BB@0x1e2 : [ showMenu-BB@0x236 showMenu-BB@0x2d0 ]
+	116     (000001e2) new-instance         v8, Landroidx/appcompat/view/menu/CascadingMenuPopup$CascadingMenuInfo;
+	117     (000001e6) move-object/from16   v0, v24
+	118     (000001ea) iget                 v0, v0, Landroidx/appcompat/view/menu/CascadingMenuPopup;->mLastPosition I
+	119     (000001ee) move/from16          v21, v0
+	120     (000001f2) move-object/from16   v0, v16
+	121     (000001f6) move-object/from16   v1, v25
+	122     (000001fa) move/from16          v2, v21
+	123     (000001fe) invoke-direct        v8, v0, v1, v2, Landroidx/appcompat/view/menu/CascadingMenuPopup$CascadingMenuInfo;-><init>(Landroidx/appcompat/widget/MenuPopupWindow; Landroidx/appcompat/view/menu/MenuBuilder; I)V
+	124     (00000204) move-object/from16   v0, v24
+	125     (00000208) iget-object          v0, v0, Landroidx/appcompat/view/menu/CascadingMenuPopup;->mShowingMenus Ljava/util/List;
+	126     (0000020c) move-object/from16   v21, v0
+	127     (00000210) move-object/from16   v0, v21
+	128     (00000214) invoke-interface     v0, v8, Ljava/util/List;->add(Ljava/lang/Object;)Z
+	129     (0000021a) invoke-virtual/range v16, Landroidx/appcompat/widget/MenuPopupWindow;->show()V
+	130     (00000220) invoke-virtual/range v16, Landroidx/appcompat/widget/MenuPopupWindow;->getListView()Landroid/widget/ListView;
+	131     (00000226) move-result-object   v7
+	132     (00000228) move-object/from16   v0, v24
+	133     (0000022c) invoke-virtual       v7, v0, Landroid/widget/ListView;->setOnKeyListener(Landroid/view/View$OnKeyListener;)V
+	134     (00000232) if-nez               v11, +4f
+
+showMenu-BB@0x236 : [ showMenu-BB@0x246 showMenu-BB@0x2d0 ]
+	135     (00000236) move-object/from16   v0, v24
+	136     (0000023a) iget-boolean         v0, v0, Landroidx/appcompat/view/menu/CascadingMenuPopup;->mShowTitle Z
+	137     (0000023e) move/from16          v21, v0
+	138     (00000242) if-eqz               v21, +47
+
+showMenu-BB@0x246 : [ showMenu-BB@0x252 showMenu-BB@0x2d0 ]
+	139     (00000246) invoke-virtual/range v25, Landroidx/appcompat/view/menu/MenuBuilder;->getHeaderTitle()Ljava/lang/CharSequence;
+	140     (0000024c) move-result-object   v21
+	141     (0000024e) if-eqz               v21, +41
+
+showMenu-BB@0x252 : [ showMenu-BB@0x2d0 ]
+	142     (00000252) sget                 v21, Landroidx/appcompat/R$layout;->abc_popup_menu_header_item_layout I
+	143     (00000256) const/16             v22, 0
+	144     (0000025a) move/from16          v0, v21
+	145     (0000025e) move/from16          v1, v22
+	146     (00000262) invoke-virtual       v6, v0, v7, v1, Landroid/view/LayoutInflater;->inflate(I Landroid/view/ViewGroup; Z)Landroid/view/View;
+	147     (00000268) move-result-object   v18
+	148     (0000026a) check-cast           v18, Landroid/widget/FrameLayout;
+	149     (0000026e) const                v21, 16908310 # [2.3877290658210145e-38]
+	150     (00000274) move-object/from16   v0, v18
+	151     (00000278) move/from16          v1, v21
+	152     (0000027c) invoke-virtual       v0, v1, Landroid/widget/FrameLayout;->findViewById(I)Landroid/view/View;
+	153     (00000282) move-result-object   v19
+	154     (00000284) check-cast           v19, Landroid/widget/TextView;
+	155     (00000288) const/16             v21, 0
+	156     (0000028c) move-object/from16   v0, v18
+	157     (00000290) move/from16          v1, v21
+	158     (00000294) invoke-virtual       v0, v1, Landroid/widget/FrameLayout;->setEnabled(Z)V
+	159     (0000029a) invoke-virtual/range v25, Landroidx/appcompat/view/menu/MenuBuilder;->getHeaderTitle()Ljava/lang/CharSequence;
+	160     (000002a0) move-result-object   v21
+	161     (000002a2) move-object/from16   v0, v19
+	162     (000002a6) move-object/from16   v1, v21
+	163     (000002aa) invoke-virtual       v0, v1, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+	164     (000002b0) const/16             v21, 0
+	165     (000002b4) const/16             v22, 0
+	166     (000002b8) move-object/from16   v0, v18
+	167     (000002bc) move-object/from16   v1, v21
+	168     (000002c0) move/from16          v2, v22
+	169     (000002c4) invoke-virtual       v7, v0, v1, v2, Landroid/widget/ListView;->addHeaderView(Landroid/view/View; Ljava/lang/Object; Z)V
+	170     (000002ca) invoke-virtual/range v16, Landroidx/appcompat/widget/MenuPopupWindow;->show()V
+
+showMenu-BB@0x2d0 : 
+	171     (000002d0) return-void          
+
+showMenu-BB@0x2d2 : [ showMenu-BB@0x2de showMenu-BB@0x64 ]
+	172     (000002d2) invoke-virtual/range v24, Landroidx/appcompat/view/menu/CascadingMenuPopup;->isShowing()Z
+	173     (000002d8) move-result          v21
+	174     (000002da) if-eqz               v21, -13b
+
+showMenu-BB@0x2de : [ showMenu-BB@0x64 ]
+	175     (000002de) invoke-static/range  v25, Landroidx/appcompat/view/menu/MenuPopup;->shouldPreserveIconSpacing(Landroidx/appcompat/view/menu/MenuBuilder;)Z
+	176     (000002e4) move-result          v21
+	177     (000002e6) move/from16          v0, v21
+	178     (000002ea) invoke-virtual       v3, v0, Landroidx/appcompat/view/menu/MenuAdapter;->setForceShowIcon(Z)V
+	179     (000002f0) goto/16              -146
+
+showMenu-BB@0x2f4 : [ showMenu-BB@0x122 ]
+	180     (000002f4) const/4              v11, 0
+	181     (000002f6) const/4              v14, 0
+	182     (000002f8) goto/16              -eb
+
+showMenu-BB@0x2fc : [ showMenu-BB@0x166 ]
+	183     (000002fc) const/16             v17, 0
+	184     (00000300) goto/16              -cd
+
+showMenu-BB@0x304 : [ showMenu-BB@0x358 showMenu-BB@0x394 ]
+	185     (00000304) const/16             v21, 2
+	186     (00000308) move/from16          v0, v21
+	187     (0000030c) new-array            v4, v0, [I
+	188     (00000310) move-object/from16   v0, v24
+	189     (00000314) iget-object          v0, v0, Landroidx/appcompat/view/menu/CascadingMenuPopup;->mAnchorView Landroid/view/View;
+	190     (00000318) move-object/from16   v21, v0
+	191     (0000031c) move-object/from16   v0, v21
+	192     (00000320) invoke-virtual       v0, v4, Landroid/view/View;->getLocationOnScreen([I)V
+	193     (00000326) const/16             v21, 2
+	194     (0000032a) move/from16          v0, v21
+	195     (0000032e) new-array            v15, v0, [I
+	196     (00000332) invoke-virtual       v14, v15, Landroid/view/View;->getLocationOnScreen([I)V
+	197     (00000338) move-object/from16   v0, v24
+	198     (0000033c) iget                 v0, v0, Landroidx/appcompat/view/menu/CascadingMenuPopup;->mDropDownGravity I
+	199     (00000340) move/from16          v21, v0
+	200     (00000344) and-int/lit8         v21, v21, 7
+	201     (00000348) const/16             v22, 5
+	202     (0000034c) move/from16          v0, v21
+	203     (00000350) move/from16          v1, v22
+	204     (00000354) if-ne                v0, v1, +20
+
+showMenu-BB@0x358 : [ showMenu-BB@0x394 ]
+	205     (00000358) const/16             v21, 0
+	206     (0000035c) aget                 v22, v4, v21
+	207     (00000360) move-object/from16   v0, v24
+	208     (00000364) iget-object          v0, v0, Landroidx/appcompat/view/menu/CascadingMenuPopup;->mAnchorView Landroid/view/View;
+	209     (00000368) move-object/from16   v23, v0
+	210     (0000036c) invoke-virtual/range v23, Landroid/view/View;->getWidth()I
+	211     (00000372) move-result          v23
+	212     (00000374) add-int              v22, v22, v23
+	213     (00000378) aput                 v22, v4, v21
+	214     (0000037c) const/16             v21, 0
+	215     (00000380) aget                 v22, v15, v21
+	216     (00000384) invoke-virtual       v14, Landroid/view/View;->getWidth()I
+	217     (0000038a) move-result          v23
+	218     (0000038c) add-int              v22, v22, v23
+	219     (00000390) aput                 v22, v15, v21
+
+showMenu-BB@0x394 : [ showMenu-BB@0x190 ]
+	220     (00000394) const/16             v21, 0
+	221     (00000398) aget                 v21, v15, v21
+	222     (0000039c) const/16             v22, 0
+	223     (000003a0) aget                 v22, v4, v22
+	224     (000003a4) sub-int              v12, v21, v22
+	225     (000003a8) const/16             v21, 1
+	226     (000003ac) aget                 v21, v15, v21
+	227     (000003b0) const/16             v22, 1
+	228     (000003b4) aget                 v22, v4, v22
+	229     (000003b8) sub-int              v13, v21, v22
+	230     (000003bc) goto/16              -116
+
+showMenu-BB@0x3c0 : [ showMenu-BB@0x1b8 ]
+	231     (000003c0) invoke-virtual       v14, Landroid/view/View;->getWidth()I
+	232     (000003c6) move-result          v21
+	233     (000003c8) sub-int              v20, v12, v21
+	234     (000003cc) goto/16              -10a
+
+showMenu-BB@0x3d0 : [ showMenu-BB@0x3d4 showMenu-BB@0x3e4 ]
+	235     (000003d0) if-eqz               v17, +a
+
+showMenu-BB@0x3d4 : [ showMenu-BB@0x1b8 ]
+	236     (000003d4) invoke-virtual       v14, Landroid/view/View;->getWidth()I
+	237     (000003da) move-result          v21
+	238     (000003dc) add-int              v20, v12, v21
+	239     (000003e0) goto/16              -114
+
+showMenu-BB@0x3e4 : [ showMenu-BB@0x1b8 ]
+	240     (000003e4) sub-int              v20, v12, v9
+	241     (000003e8) goto/16              -118
+
+showMenu-BB@0x3ec : [ showMenu-BB@0x3fc showMenu-BB@0x416 ]
+	242     (000003ec) move-object/from16   v0, v24
+	243     (000003f0) iget-boolean         v0, v0, Landroidx/appcompat/view/menu/CascadingMenuPopup;->mHasXOffset Z
+	244     (000003f4) move/from16          v21, v0
+	245     (000003f8) if-eqz               v21, +f
+
+showMenu-BB@0x3fc : [ showMenu-BB@0x416 ]
+	246     (000003fc) move-object/from16   v0, v24
+	247     (00000400) iget                 v0, v0, Landroidx/appcompat/view/menu/CascadingMenuPopup;->mXOffset I
+	248     (00000404) move/from16          v21, v0
+	249     (00000408) move-object/from16   v0, v16
+	250     (0000040c) move/from16          v1, v21
+	251     (00000410) invoke-virtual       v0, v1, Landroidx/appcompat/widget/MenuPopupWindow;->setHorizontalOffset(I)V
+
+showMenu-BB@0x416 : [ showMenu-BB@0x426 showMenu-BB@0x440 ]
+	252     (00000416) move-object/from16   v0, v24
+	253     (0000041a) iget-boolean         v0, v0, Landroidx/appcompat/view/menu/CascadingMenuPopup;->mHasYOffset Z
+	254     (0000041e) move/from16          v21, v0
+	255     (00000422) if-eqz               v21, +f
+
+showMenu-BB@0x426 : [ showMenu-BB@0x440 ]
+	256     (00000426) move-object/from16   v0, v24
+	257     (0000042a) iget                 v0, v0, Landroidx/appcompat/view/menu/CascadingMenuPopup;->mYOffset I
+	258     (0000042e) move/from16          v21, v0
+	259     (00000432) move-object/from16   v0, v16
+	260     (00000436) move/from16          v1, v21
+	261     (0000043a) invoke-virtual       v0, v1, Landroidx/appcompat/widget/MenuPopupWindow;->setVerticalOffset(I)V
+
+showMenu-BB@0x440 : [ showMenu-BB@0x1e2 ]
+	262     (00000440) invoke-virtual/range v24, Landroidx/appcompat/view/menu/CascadingMenuPopup;->getEpicenterBounds()Landroid/graphics/Rect;
+	263     (00000446) move-result-object   v5
+	264     (00000448) move-object/from16   v0, v16
+	265     (0000044c) invoke-virtual       v0, v5, Landroidx/appcompat/widget/MenuPopupWindow;->setEpicenterBounds(Landroid/graphics/Rect;)V
+	266     (00000452) goto/16              -138
+

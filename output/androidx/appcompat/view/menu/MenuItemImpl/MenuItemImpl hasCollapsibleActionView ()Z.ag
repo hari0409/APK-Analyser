@@ -1,0 +1,37 @@
+# Landroidx/appcompat/view/menu/MenuItemImpl;->hasCollapsibleActionView()Z [access_flags=public]
+#
+# Parameters:
+# local registers: v0...v2
+#
+# - return:boolean
+
+hasCollapsibleActionView-BB@0x0 : [ hasCollapsibleActionView-BB@0xe hasCollapsibleActionView-BB@0x38 ]
+	0       (00000000) const/4              v0, 0
+	1       (00000002) iget                 v1, v2, Landroidx/appcompat/view/menu/MenuItemImpl;->mShowAsAction I
+	2       (00000006) and-int/lit8         v1, v1, 8
+	3       (0000000a) if-eqz               v1, +17
+
+hasCollapsibleActionView-BB@0xe : [ hasCollapsibleActionView-BB@0x16 hasCollapsibleActionView-BB@0x2e ]
+	4       (0000000e) iget-object          v1, v2, Landroidx/appcompat/view/menu/MenuItemImpl;->mActionView Landroid/view/View;
+	5       (00000012) if-nez               v1, +e
+
+hasCollapsibleActionView-BB@0x16 : [ hasCollapsibleActionView-BB@0x1e hasCollapsibleActionView-BB@0x2e ]
+	6       (00000016) iget-object          v1, v2, Landroidx/appcompat/view/menu/MenuItemImpl;->mActionProvider Landroidx/core/view/ActionProvider;
+	7       (0000001a) if-eqz               v1, +a
+
+hasCollapsibleActionView-BB@0x1e : [ hasCollapsibleActionView-BB@0x2e ]
+	8       (0000001e) iget-object          v1, v2, Landroidx/appcompat/view/menu/MenuItemImpl;->mActionProvider Landroidx/core/view/ActionProvider;
+	9       (00000022) invoke-virtual       v1, v2, Landroidx/core/view/ActionProvider;->onCreateActionView(Landroid/view/MenuItem;)Landroid/view/View;
+	10      (00000028) move-result-object   v1
+	11      (0000002a) iput-object          v1, v2, Landroidx/appcompat/view/menu/MenuItemImpl;->mActionView Landroid/view/View;
+
+hasCollapsibleActionView-BB@0x2e : [ hasCollapsibleActionView-BB@0x36 hasCollapsibleActionView-BB@0x38 ]
+	12      (0000002e) iget-object          v1, v2, Landroidx/appcompat/view/menu/MenuItemImpl;->mActionView Landroid/view/View;
+	13      (00000032) if-eqz               v1, +3
+
+hasCollapsibleActionView-BB@0x36 : [ hasCollapsibleActionView-BB@0x38 ]
+	14      (00000036) const/4              v0, 1
+
+hasCollapsibleActionView-BB@0x38 : 
+	15      (00000038) return               v0
+

@@ -1,0 +1,82 @@
+# Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->showPendingSystemUpdate()V [access_flags=private]
+#
+# Parameters:
+# local registers: v0...v11
+#
+# - return:void
+
+showPendingSystemUpdate-BB@0x0 : [ showPendingSystemUpdate-BB@0x18 showPendingSystemUpdate-BB@0x2e ]
+	0       (00000000) const/4              v8, 2
+	1       (00000002) const/4              v10, 1
+	2       (00000004) iget-object          v6, v11, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->mDevicePolicyManager Landroid/app/admin/DevicePolicyManager;
+	3       (00000008) iget-object          v7, v11, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->mAdminComponentName Landroid/content/ComponentName;
+	4       (0000000c) invoke-virtual       v6, v7, Landroid/app/admin/DevicePolicyManager;->getPendingSystemUpdate(Landroid/content/ComponentName;)Landroid/app/admin/SystemUpdateInfo;
+	5       (00000012) move-result-object   v3
+	6       (00000014) if-nez               v3, +d
+
+showPendingSystemUpdate-BB@0x18 : [ showPendingSystemUpdate-BB@0x2c ]
+	7       (00000018) const                v6, 2131690346 # [1.9009733022323656e+38]
+	8       (0000001e) invoke-virtual       v11, v6, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->getString(I)Ljava/lang/String;
+	9       (00000024) move-result-object   v6
+	10      (00000026) invoke-direct        v11, v6, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->showToast(Ljava/lang/String;)V
+
+showPendingSystemUpdate-BB@0x2c : 
+	11      (0000002c) return-void          
+
+showPendingSystemUpdate-BB@0x2e : [ showPendingSystemUpdate-BB@0x5c showPendingSystemUpdate-BB@0xc6 ]
+	12      (0000002e) invoke-virtual       v3, Landroid/app/admin/SystemUpdateInfo;->getReceivedTime()J
+	13      (00000034) move-result-wide     v4
+	14      (00000036) invoke-static        Ljava/text/DateFormat;->getDateTimeInstance()Ljava/text/DateFormat;
+	15      (0000003c) move-result-object   v6
+	16      (0000003e) new-instance         v7, Ljava/util/Date;
+	17      (00000042) invoke-direct        v7, v4, v5, Ljava/util/Date;-><init>(J)V
+	18      (00000048) invoke-virtual       v6, v7, Ljava/text/DateFormat;->format(Ljava/util/Date;)Ljava/lang/String;
+	19      (0000004e) move-result-object   v0
+	20      (00000050) invoke-virtual       v3, Landroid/app/admin/SystemUpdateInfo;->getSecurityPatchState()I
+	21      (00000056) move-result          v1
+	22      (00000058) if-ne                v1, v10, +37
+
+showPendingSystemUpdate-BB@0x5c : [ showPendingSystemUpdate-BB@0x6a ]
+	23      (0000005c) const                v6, 2131690348 # [1.9009737078805577e+38]
+	24      (00000062) invoke-virtual       v11, v6, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->getString(I)Ljava/lang/String;
+	25      (00000068) move-result-object   v2
+
+showPendingSystemUpdate-BB@0x6a : [ showPendingSystemUpdate-BB@0x2c ]
+	26      (0000006a) new-instance         v6, Landroid/app/AlertDialog$Builder;
+	27      (0000006e) invoke-virtual       v11, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->getActivity()Landroid/app/Activity;
+	28      (00000074) move-result-object   v7
+	29      (00000076) invoke-direct        v6, v7, Landroid/app/AlertDialog$Builder;-><init>(Landroid/content/Context;)V
+	30      (0000007c) const                v7, 2131690351 # [1.9009743163528458e+38]
+	31      (00000082) invoke-virtual       v6, v7, Landroid/app/AlertDialog$Builder;->setTitle(I)Landroid/app/AlertDialog$Builder;
+	32      (00000088) move-result-object   v6
+	33      (0000008a) const                v7, 2131690347 # [1.9009735050564617e+38]
+	34      (00000090) new-array            v8, v8, [Ljava/lang/Object;
+	35      (00000094) const/4              v9, 0
+	36      (00000096) aput-object          v0, v8, v9
+	37      (0000009a) aput-object          v2, v8, v10
+	38      (0000009e) invoke-virtual       v11, v7, v8, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->getString(I [Ljava/lang/Object;)Ljava/lang/String;
+	39      (000000a4) move-result-object   v7
+	40      (000000a6) invoke-virtual       v6, v7, Landroid/app/AlertDialog$Builder;->setMessage(Ljava/lang/CharSequence;)Landroid/app/AlertDialog$Builder;
+	41      (000000ac) move-result-object   v6
+	42      (000000ae) const                v7, 17039370 # [2.4244599011678966e-38]
+	43      (000000b4) const/4              v8, 0
+	44      (000000b6) invoke-virtual       v6, v7, v8, Landroid/app/AlertDialog$Builder;->setPositiveButton(I Landroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
+	45      (000000bc) move-result-object   v6
+	46      (000000be) invoke-virtual       v6, Landroid/app/AlertDialog$Builder;->show()Landroid/app/AlertDialog;
+	47      (000000c4) goto                 -4c
+
+showPendingSystemUpdate-BB@0xc6 : [ showPendingSystemUpdate-BB@0xca showPendingSystemUpdate-BB@0xda ]
+	48      (000000c6) if-ne                v1, v8, +a
+
+showPendingSystemUpdate-BB@0xca : [ showPendingSystemUpdate-BB@0x6a ]
+	49      (000000ca) const                v6, 2131690349 # [1.9009739107046537e+38]
+	50      (000000d0) invoke-virtual       v11, v6, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->getString(I)Ljava/lang/String;
+	51      (000000d6) move-result-object   v2
+	52      (000000d8) goto                 -37
+
+showPendingSystemUpdate-BB@0xda : [ showPendingSystemUpdate-BB@0x6a ]
+	53      (000000da) const                v6, 2131690350 # [1.9009741135287498e+38]
+	54      (000000e0) invoke-virtual       v11, v6, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->getString(I)Ljava/lang/String;
+	55      (000000e6) move-result-object   v2
+	56      (000000e8) goto                 -3f
+

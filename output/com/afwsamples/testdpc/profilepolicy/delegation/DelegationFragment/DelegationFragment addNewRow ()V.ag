@@ -1,0 +1,10 @@
+# Lcom/afwsamples/testdpc/profilepolicy/delegation/DelegationFragment;->addNewRow()V [access_flags=protected]
+#
+# Parameters:
+# local registers: v0...v0
+#
+# - return:void
+
+addNewRow-BB@0x0 : 
+	0       (00000000) return-void          
+

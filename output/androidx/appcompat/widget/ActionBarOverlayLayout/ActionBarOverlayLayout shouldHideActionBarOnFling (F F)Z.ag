@@ -1,0 +1,34 @@
+# Landroidx/appcompat/widget/ActionBarOverlayLayout;->shouldHideActionBarOnFling(F F)Z [access_flags=private]
+#
+# Parameters:
+# - local registers: v0...v10
+# - v11:float
+# - v12:float
+#
+# - return:boolean
+
+shouldHideActionBarOnFling-BB@0x0 : [ shouldHideActionBarOnFling-BB@0x3c shouldHideActionBarOnFling-BB@0x3e ]
+	0       (00000000) const/4              v1, 0
+	1       (00000002) iget-object          v0, v10, Landroidx/appcompat/widget/ActionBarOverlayLayout;->mFlingEstimator Landroid/widget/OverScroller;
+	2       (00000006) float-to-int         v4, v12
+	3       (00000008) const/high16         v7, -32768 # [-0.0]
+	4       (0000000c) const                v8, 2147483647 # [nan]
+	5       (00000012) move                 v2, v1
+	6       (00000014) move                 v3, v1
+	7       (00000016) move                 v5, v1
+	8       (00000018) move                 v6, v1
+	9       (0000001a) invoke-virtual/range v0 ... v8, Landroid/widget/OverScroller;->fling(I I I I I I I I)V
+	10      (00000020) iget-object          v0, v10, Landroidx/appcompat/widget/ActionBarOverlayLayout;->mFlingEstimator Landroid/widget/OverScroller;
+	11      (00000024) invoke-virtual       v0, Landroid/widget/OverScroller;->getFinalY()I
+	12      (0000002a) move-result          v9
+	13      (0000002c) iget-object          v0, v10, Landroidx/appcompat/widget/ActionBarOverlayLayout;->mActionBarTop Landroidx/appcompat/widget/ActionBarContainer;
+	14      (00000030) invoke-virtual       v0, Landroidx/appcompat/widget/ActionBarContainer;->getHeight()I
+	15      (00000036) move-result          v0
+	16      (00000038) if-le                v9, v0, +3
+
+shouldHideActionBarOnFling-BB@0x3c : [ shouldHideActionBarOnFling-BB@0x3e ]
+	17      (0000003c) const/4              v1, 1
+
+shouldHideActionBarOnFling-BB@0x3e : 
+	18      (0000003e) return               v1
+

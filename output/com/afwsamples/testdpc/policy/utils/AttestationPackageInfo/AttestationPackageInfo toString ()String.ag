@@ -1,0 +1,34 @@
+# Lcom/afwsamples/testdpc/policy/utils/AttestationPackageInfo;->toString()Ljava/lang/String; [access_flags=public]
+#
+# Parameters:
+# local registers: v0...v4
+#
+# - return:java.lang.String
+
+toString-BB@0x0 : 
+	0       (00000000) new-instance         v0, Ljava/lang/StringBuilder;
+	1       (00000004) invoke-direct        v0, Ljava/lang/StringBuilder;-><init>()V
+	2       (0000000a) const-string         v1, 'Package name: '
+	3       (0000000e) invoke-virtual       v0, v1, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	4       (00000014) move-result-object   v0
+	5       (00000016) invoke-virtual       v4, Lcom/afwsamples/testdpc/policy/utils/AttestationPackageInfo;->getPackageName()Ljava/lang/String;
+	6       (0000001c) move-result-object   v1
+	7       (0000001e) invoke-virtual       v0, v1, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	8       (00000024) move-result-object   v0
+	9       (00000026) new-instance         v1, Ljava/lang/StringBuilder;
+	10      (0000002a) invoke-direct        v1, Ljava/lang/StringBuilder;-><init>()V
+	11      (00000030) const-string         v2, '\nVersion: '
+	12      (00000034) invoke-virtual       v1, v2, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	13      (0000003a) move-result-object   v1
+	14      (0000003c) invoke-virtual       v4, Lcom/afwsamples/testdpc/policy/utils/AttestationPackageInfo;->getVersion()J
+	15      (00000042) move-result-wide     v2
+	16      (00000044) invoke-virtual       v1, v2, v3, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+	17      (0000004a) move-result-object   v1
+	18      (0000004c) invoke-virtual       v1, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+	19      (00000052) move-result-object   v1
+	20      (00000054) invoke-virtual       v0, v1, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	21      (0000005a) move-result-object   v0
+	22      (0000005c) invoke-virtual       v0, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+	23      (00000062) move-result-object   v0
+	24      (00000064) return-object        v0
+

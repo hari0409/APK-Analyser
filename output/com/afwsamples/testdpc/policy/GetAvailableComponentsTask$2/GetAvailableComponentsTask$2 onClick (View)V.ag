@@ -1,0 +1,25 @@
+# Lcom/afwsamples/testdpc/policy/GetAvailableComponentsTask$2;->onClick(Landroid/view/View;)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:android.view.View
+#
+# - return:void
+
+onClick-BB@0x0 : [ onClick-BB@0x10 onClick-BB@0x1a ]
+	0       (00000000) iget-object          v1, v2, Lcom/afwsamples/testdpc/policy/GetAvailableComponentsTask$2;->val$availableComponentsInfoArrayAdapter Lcom/afwsamples/testdpc/policy/AvailableComponentsInfoArrayAdapter;
+	1       (00000004) invoke-virtual       v1, Lcom/afwsamples/testdpc/policy/AvailableComponentsInfoArrayAdapter;->getSelectedComponents()Ljava/util/ArrayList;
+	2       (0000000a) move-result-object   v0
+	3       (0000000c) if-eqz               v0, +7
+
+onClick-BB@0x10 : [ onClick-BB@0x1a ]
+	4       (00000010) iget-object          v1, v2, Lcom/afwsamples/testdpc/policy/GetAvailableComponentsTask$2;->this$0 Lcom/afwsamples/testdpc/policy/GetAvailableComponentsTask;
+	5       (00000014) invoke-virtual       v1, v0, Lcom/afwsamples/testdpc/policy/GetAvailableComponentsTask;->setPermittedComponentsList(Ljava/util/List;)V
+
+onClick-BB@0x1a : 
+	6       (0000001a) iget-object          v1, v2, Lcom/afwsamples/testdpc/policy/GetAvailableComponentsTask$2;->this$0 Lcom/afwsamples/testdpc/policy/GetAvailableComponentsTask;
+	7       (0000001e) invoke-static        v1, Lcom/afwsamples/testdpc/policy/GetAvailableComponentsTask;->access$000(Lcom/afwsamples/testdpc/policy/GetAvailableComponentsTask;)Landroid/app/AlertDialog;
+	8       (00000024) move-result-object   v1
+	9       (00000026) invoke-virtual       v1, Landroid/app/AlertDialog;->dismiss()V
+	10      (0000002c) return-void          
+

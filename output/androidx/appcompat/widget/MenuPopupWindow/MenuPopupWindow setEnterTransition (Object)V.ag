@@ -1,0 +1,21 @@
+# Landroidx/appcompat/widget/MenuPopupWindow;->setEnterTransition(Ljava/lang/Object;)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:java.lang.Object
+#
+# - return:void
+
+setEnterTransition-BB@0x0 : [ setEnterTransition-BB@0xc setEnterTransition-BB@0x1a ]
+	0       (00000000) sget                 v0, Landroid/os/Build$VERSION;->SDK_INT I
+	1       (00000004) const/16             v1, 23
+	2       (00000008) if-lt                v0, v1, +9
+
+setEnterTransition-BB@0xc : [ setEnterTransition-BB@0x1a ]
+	3       (0000000c) iget-object          v0, v2, Landroidx/appcompat/widget/MenuPopupWindow;->mPopup Landroid/widget/PopupWindow;
+	4       (00000010) check-cast           v3, Landroid/transition/Transition;
+	5       (00000014) invoke-virtual       v0, v3, Landroid/widget/PopupWindow;->setEnterTransition(Landroid/transition/Transition;)V
+
+setEnterTransition-BB@0x1a : 
+	6       (0000001a) return-void          
+

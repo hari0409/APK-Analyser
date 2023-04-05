@@ -1,0 +1,126 @@
+# Landroidx/appcompat/widget/ActivityChooserView$ActivityChooserViewAdapter;->getView(I Landroid/view/View; Landroid/view/ViewGroup;)Landroid/view/View; [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v11
+# - v12:int
+# - v13:android.view.View
+# - v14:android.view.ViewGroup
+#
+# - return:android.view.View
+
+getView-BB@0x0 : [ D:getView-BB@0x12 0:getView-BB@0x88 1:getView-BB@0x1e ]
+	0       (00000000) const/4              v10, 1
+	1       (00000002) const/4              v9, 0
+	2       (00000004) invoke-virtual       v11, v12, Landroidx/appcompat/widget/ActivityChooserView$ActivityChooserViewAdapter;->getItemViewType(I)I
+	3       (0000000a) move-result          v4
+	4       (0000000c) packed-switch        v4, +9a (0x140)
+
+getView-BB@0x12 : 
+	5       (00000012) new-instance         v7, Ljava/lang/IllegalArgumentException;
+	6       (00000016) invoke-direct        v7, Ljava/lang/IllegalArgumentException;-><init>()V
+	7       (0000001c) throw                v7
+
+getView-BB@0x1e : [ getView-BB@0x22 getView-BB@0x2e ]
+	8       (0000001e) if-eqz               v13, +8
+
+getView-BB@0x22 : [ getView-BB@0x2e getView-BB@0x82 ]
+	9       (00000022) invoke-virtual       v13, Landroid/view/View;->getId()I
+	10      (00000028) move-result          v7
+	11      (0000002a) if-eq                v7, v10, +2c
+
+getView-BB@0x2e : [ getView-BB@0x82 ]
+	12      (0000002e) iget-object          v7, v11, Landroidx/appcompat/widget/ActivityChooserView$ActivityChooserViewAdapter;->this$0 Landroidx/appcompat/widget/ActivityChooserView;
+	13      (00000032) invoke-virtual       v7, Landroidx/appcompat/widget/ActivityChooserView;->getContext()Landroid/content/Context;
+	14      (00000038) move-result-object   v7
+	15      (0000003a) invoke-static        v7, Landroid/view/LayoutInflater;->from(Landroid/content/Context;)Landroid/view/LayoutInflater;
+	16      (00000040) move-result-object   v7
+	17      (00000042) sget                 v8, Landroidx/appcompat/R$layout;->abc_activity_chooser_view_list_item I
+	18      (00000046) invoke-virtual       v7, v8, v14, v9, Landroid/view/LayoutInflater;->inflate(I Landroid/view/ViewGroup; Z)Landroid/view/View;
+	19      (0000004c) move-result-object   v13
+	20      (0000004e) invoke-virtual       v13, v10, Landroid/view/View;->setId(I)V
+	21      (00000054) sget                 v7, Landroidx/appcompat/R$id;->title I
+	22      (00000058) invoke-virtual       v13, v7, Landroid/view/View;->findViewById(I)Landroid/view/View;
+	23      (0000005e) move-result-object   v6
+	24      (00000060) check-cast           v6, Landroid/widget/TextView;
+	25      (00000064) iget-object          v7, v11, Landroidx/appcompat/widget/ActivityChooserView$ActivityChooserViewAdapter;->this$0 Landroidx/appcompat/widget/ActivityChooserView;
+	26      (00000068) invoke-virtual       v7, Landroidx/appcompat/widget/ActivityChooserView;->getContext()Landroid/content/Context;
+	27      (0000006e) move-result-object   v7
+	28      (00000070) sget                 v8, Landroidx/appcompat/R$string;->abc_activity_chooser_view_see_all I
+	29      (00000074) invoke-virtual       v7, v8, Landroid/content/Context;->getString(I)Ljava/lang/String;
+	30      (0000007a) move-result-object   v7
+	31      (0000007c) invoke-virtual       v6, v7, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+
+getView-BB@0x82 : [ getView-BB@0x86 ]
+	32      (00000082) move-object          v1, v13
+	33      (00000084) move-object          v2, v13
+
+getView-BB@0x86 : 
+	34      (00000086) return-object        v2
+
+getView-BB@0x88 : [ getView-BB@0x8c getView-BB@0x9c ]
+	35      (00000088) if-eqz               v13, +a
+
+getView-BB@0x8c : [ getView-BB@0x9c getView-BB@0xbc ]
+	36      (0000008c) invoke-virtual       v13, Landroid/view/View;->getId()I
+	37      (00000092) move-result          v7
+	38      (00000094) sget                 v8, Landroidx/appcompat/R$id;->list_item I
+	39      (00000098) if-eq                v7, v8, +12
+
+getView-BB@0x9c : [ getView-BB@0xbc ]
+	40      (0000009c) iget-object          v7, v11, Landroidx/appcompat/widget/ActivityChooserView$ActivityChooserViewAdapter;->this$0 Landroidx/appcompat/widget/ActivityChooserView;
+	41      (000000a0) invoke-virtual       v7, Landroidx/appcompat/widget/ActivityChooserView;->getContext()Landroid/content/Context;
+	42      (000000a6) move-result-object   v7
+	43      (000000a8) invoke-static        v7, Landroid/view/LayoutInflater;->from(Landroid/content/Context;)Landroid/view/LayoutInflater;
+	44      (000000ae) move-result-object   v7
+	45      (000000b0) sget                 v8, Landroidx/appcompat/R$layout;->abc_activity_chooser_view_list_item I
+	46      (000000b4) invoke-virtual       v7, v8, v14, v9, Landroid/view/LayoutInflater;->inflate(I Landroid/view/ViewGroup; Z)Landroid/view/View;
+	47      (000000ba) move-result-object   v13
+
+getView-BB@0xbc : [ getView-BB@0x120 getView-BB@0x138 ]
+	48      (000000bc) iget-object          v7, v11, Landroidx/appcompat/widget/ActivityChooserView$ActivityChooserViewAdapter;->this$0 Landroidx/appcompat/widget/ActivityChooserView;
+	49      (000000c0) invoke-virtual       v7, Landroidx/appcompat/widget/ActivityChooserView;->getContext()Landroid/content/Context;
+	50      (000000c6) move-result-object   v7
+	51      (000000c8) invoke-virtual       v7, Landroid/content/Context;->getPackageManager()Landroid/content/pm/PackageManager;
+	52      (000000ce) move-result-object   v5
+	53      (000000d0) sget                 v7, Landroidx/appcompat/R$id;->icon I
+	54      (000000d4) invoke-virtual       v13, v7, Landroid/view/View;->findViewById(I)Landroid/view/View;
+	55      (000000da) move-result-object   v3
+	56      (000000dc) check-cast           v3, Landroid/widget/ImageView;
+	57      (000000e0) invoke-virtual       v11, v12, Landroidx/appcompat/widget/ActivityChooserView$ActivityChooserViewAdapter;->getItem(I)Ljava/lang/Object;
+	58      (000000e6) move-result-object   v0
+	59      (000000e8) check-cast           v0, Landroid/content/pm/ResolveInfo;
+	60      (000000ec) invoke-virtual       v0, v5, Landroid/content/pm/ResolveInfo;->loadIcon(Landroid/content/pm/PackageManager;)Landroid/graphics/drawable/Drawable;
+	61      (000000f2) move-result-object   v7
+	62      (000000f4) invoke-virtual       v3, v7, Landroid/widget/ImageView;->setImageDrawable(Landroid/graphics/drawable/Drawable;)V
+	63      (000000fa) sget                 v7, Landroidx/appcompat/R$id;->title I
+	64      (000000fe) invoke-virtual       v13, v7, Landroid/view/View;->findViewById(I)Landroid/view/View;
+	65      (00000104) move-result-object   v6
+	66      (00000106) check-cast           v6, Landroid/widget/TextView;
+	67      (0000010a) invoke-virtual       v0, v5, Landroid/content/pm/ResolveInfo;->loadLabel(Landroid/content/pm/PackageManager;)Ljava/lang/CharSequence;
+	68      (00000110) move-result-object   v7
+	69      (00000112) invoke-virtual       v6, v7, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+	70      (00000118) iget-boolean         v7, v11, Landroidx/appcompat/widget/ActivityChooserView$ActivityChooserViewAdapter;->mShowDefaultActivity Z
+	71      (0000011c) if-eqz               v7, +e
+
+getView-BB@0x120 : [ getView-BB@0x124 getView-BB@0x138 ]
+	72      (00000120) if-nez               v12, +c
+
+getView-BB@0x124 : [ getView-BB@0x12c getView-BB@0x138 ]
+	73      (00000124) iget-boolean         v7, v11, Landroidx/appcompat/widget/ActivityChooserView$ActivityChooserViewAdapter;->mHighlightDefaultActivity Z
+	74      (00000128) if-eqz               v7, +8
+
+getView-BB@0x12c : [ getView-BB@0x132 ]
+	75      (0000012c) invoke-virtual       v13, v10, Landroid/view/View;->setActivated(Z)V
+
+getView-BB@0x132 : [ getView-BB@0x86 ]
+	76      (00000132) move-object          v1, v13
+	77      (00000134) move-object          v2, v13
+	78      (00000136) goto                 -58
+
+getView-BB@0x138 : [ getView-BB@0x132 ]
+	79      (00000138) invoke-virtual       v13, v9, Landroid/view/View;->setActivated(Z)V
+	80      (0000013e) goto                 -6
+
+getView-BB@0x140 : 
+	81      (00000140) packed-switch-payload 0 1
+

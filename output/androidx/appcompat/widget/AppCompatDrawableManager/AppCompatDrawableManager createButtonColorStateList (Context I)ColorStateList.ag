@@ -1,0 +1,44 @@
+# Landroidx/appcompat/widget/AppCompatDrawableManager;->createButtonColorStateList(Landroid/content/Context; I)Landroid/content/res/ColorStateList; [access_flags=private]
+#
+# Parameters:
+# - local registers: v0...v6
+# - v7:android.content.Context
+# - v8:int
+#
+# - return:android.content.res.ColorStateList
+
+createButtonColorStateList-BB@0x0 : 
+	0       (00000000) const/4              v5, 4
+	1       (00000002) new-array            v4, v5, [[I
+	2       (00000006) new-array            v1, v5, [I
+	3       (0000000a) const/4              v3, 0
+	4       (0000000c) sget                 v5, Landroidx/appcompat/R$attr;->colorControlHighlight I
+	5       (00000010) invoke-static        v7, v5, Landroidx/appcompat/widget/ThemeUtils;->getThemeAttrColor(Landroid/content/Context; I)I
+	6       (00000016) move-result          v0
+	7       (00000018) sget                 v5, Landroidx/appcompat/R$attr;->colorButtonNormal I
+	8       (0000001c) invoke-static        v7, v5, Landroidx/appcompat/widget/ThemeUtils;->getDisabledThemeAttrColor(Landroid/content/Context; I)I
+	9       (00000022) move-result          v2
+	10      (00000024) sget-object          v5, Landroidx/appcompat/widget/ThemeUtils;->DISABLED_STATE_SET [I
+	11      (00000028) aput-object          v5, v4, v3
+	12      (0000002c) aput                 v2, v1, v3
+	13      (00000030) add-int/lit8         v3, v3, 1
+	14      (00000034) sget-object          v5, Landroidx/appcompat/widget/ThemeUtils;->PRESSED_STATE_SET [I
+	15      (00000038) aput-object          v5, v4, v3
+	16      (0000003c) invoke-static        v0, v8, Landroidx/core/graphics/ColorUtils;->compositeColors(I I)I
+	17      (00000042) move-result          v5
+	18      (00000044) aput                 v5, v1, v3
+	19      (00000048) add-int/lit8         v3, v3, 1
+	20      (0000004c) sget-object          v5, Landroidx/appcompat/widget/ThemeUtils;->FOCUSED_STATE_SET [I
+	21      (00000050) aput-object          v5, v4, v3
+	22      (00000054) invoke-static        v0, v8, Landroidx/core/graphics/ColorUtils;->compositeColors(I I)I
+	23      (0000005a) move-result          v5
+	24      (0000005c) aput                 v5, v1, v3
+	25      (00000060) add-int/lit8         v3, v3, 1
+	26      (00000064) sget-object          v5, Landroidx/appcompat/widget/ThemeUtils;->EMPTY_STATE_SET [I
+	27      (00000068) aput-object          v5, v4, v3
+	28      (0000006c) aput                 v8, v1, v3
+	29      (00000070) add-int/lit8         v3, v3, 1
+	30      (00000074) new-instance         v5, Landroid/content/res/ColorStateList;
+	31      (00000078) invoke-direct        v5, v4, v1, Landroid/content/res/ColorStateList;-><init>([[I [I)V
+	32      (0000007e) return-object        v5
+

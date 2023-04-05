@@ -1,0 +1,16 @@
+# Lcom/afwsamples/testdpc/policy/PolicyManagementFragment$28$$Lambda$1;->accept(Ljava/lang/Object;)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v3
+# - v4:java.lang.Object
+#
+# - return:void
+
+accept-BB@0x0 : 
+	0       (00000000) iget-object          v0, v3, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment$28$$Lambda$1;->arg$1 Lcom/afwsamples/testdpc/policy/PolicyManagementFragment$28;
+	1       (00000004) iget                 v1, v3, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment$28$$Lambda$1;->arg$2 I
+	2       (00000008) iget-object          v2, v3, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment$28$$Lambda$1;->arg$3 Ljava/lang/String;
+	3       (0000000c) check-cast           v4, Ljava/lang/Exception;
+	4       (00000010) invoke-virtual       v0, v1, v2, v4, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment$28;->lambda$onClick$154$PolicyManagementFragment$28(I Ljava/lang/String; Ljava/lang/Exception;)V
+	5       (00000016) return-void          
+

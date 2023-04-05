@@ -1,0 +1,18 @@
+# Landroidx/appcompat/widget/ToolbarWidgetWrapper;->setWindowTitle(Ljava/lang/CharSequence;)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:java.lang.CharSequence
+#
+# - return:void
+
+setWindowTitle-BB@0x0 : [ setWindowTitle-BB@0x8 setWindowTitle-BB@0xe ]
+	0       (00000000) iget-boolean         v0, v1, Landroidx/appcompat/widget/ToolbarWidgetWrapper;->mTitleSet Z
+	1       (00000004) if-nez               v0, +5
+
+setWindowTitle-BB@0x8 : [ setWindowTitle-BB@0xe ]
+	2       (00000008) invoke-direct        v1, v2, Landroidx/appcompat/widget/ToolbarWidgetWrapper;->setTitleInt(Ljava/lang/CharSequence;)V
+
+setWindowTitle-BB@0xe : 
+	3       (0000000e) return-void          
+

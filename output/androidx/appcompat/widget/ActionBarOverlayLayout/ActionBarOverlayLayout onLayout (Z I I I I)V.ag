@@ -1,0 +1,63 @@
+# Landroidx/appcompat/widget/ActionBarOverlayLayout;->onLayout(Z I I I I)V [access_flags=protected]
+#
+# Parameters:
+# - local registers: v0...v14
+# - v15:boolean
+# - v16:int
+# - v17:int
+# - v18:int
+# - v19:int
+#
+# - return:void
+
+onLayout-BB@0x0 : [ onLayout-BB@0x3a ]
+	0       (00000000) invoke-virtual       v14, Landroidx/appcompat/widget/ActionBarOverlayLayout;->getChildCount()I
+	1       (00000006) move-result          v3
+	2       (00000008) invoke-virtual       v14, Landroidx/appcompat/widget/ActionBarOverlayLayout;->getPaddingLeft()I
+	3       (0000000e) move-result          v8
+	4       (00000010) sub-int              v12, v18, v16
+	5       (00000014) invoke-virtual       v14, Landroidx/appcompat/widget/ActionBarOverlayLayout;->getPaddingRight()I
+	6       (0000001a) move-result          v13
+	7       (0000001c) sub-int              v9, v12, v13
+	8       (00000020) invoke-virtual       v14, Landroidx/appcompat/widget/ActionBarOverlayLayout;->getPaddingTop()I
+	9       (00000026) move-result          v10
+	10      (00000028) sub-int              v12, v19, v17
+	11      (0000002c) invoke-virtual       v14, Landroidx/appcompat/widget/ActionBarOverlayLayout;->getPaddingBottom()I
+	12      (00000032) move-result          v13
+	13      (00000034) sub-int              v7, v12, v13
+	14      (00000038) const/4              v5, 0
+
+onLayout-BB@0x3a : [ onLayout-BB@0x3e onLayout-BB@0x96 ]
+	15      (0000003a) if-ge                v5, v3, +2e
+
+onLayout-BB@0x3e : [ onLayout-BB@0x56 onLayout-BB@0x90 ]
+	16      (0000003e) invoke-virtual       v14, v5, Landroidx/appcompat/widget/ActionBarOverlayLayout;->getChildAt(I)Landroid/view/View;
+	17      (00000044) move-result-object   v0
+	18      (00000046) invoke-virtual       v0, Landroid/view/View;->getVisibility()I
+	19      (0000004c) move-result          v12
+	20      (0000004e) const/16             v13, 8
+	21      (00000052) if-eq                v12, v13, +1f
+
+onLayout-BB@0x56 : [ onLayout-BB@0x90 ]
+	22      (00000056) invoke-virtual       v0, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
+	23      (0000005c) move-result-object   v6
+	24      (0000005e) check-cast           v6, Landroidx/appcompat/widget/ActionBarOverlayLayout$LayoutParams;
+	25      (00000062) invoke-virtual       v0, Landroid/view/View;->getMeasuredWidth()I
+	26      (00000068) move-result          v11
+	27      (0000006a) invoke-virtual       v0, Landroid/view/View;->getMeasuredHeight()I
+	28      (00000070) move-result          v4
+	29      (00000072) iget                 v12, v6, Landroidx/appcompat/widget/ActionBarOverlayLayout$LayoutParams;->leftMargin I
+	30      (00000076) add-int              v1, v8, v12
+	31      (0000007a) iget                 v12, v6, Landroidx/appcompat/widget/ActionBarOverlayLayout$LayoutParams;->topMargin I
+	32      (0000007e) add-int              v2, v10, v12
+	33      (00000082) add-int              v12, v1, v11
+	34      (00000086) add-int              v13, v2, v4
+	35      (0000008a) invoke-virtual       v0, v1, v2, v12, v13, Landroid/view/View;->layout(I I I I)V
+
+onLayout-BB@0x90 : [ onLayout-BB@0x3a ]
+	36      (00000090) add-int/lit8         v5, v5, 1
+	37      (00000094) goto                 -2d
+
+onLayout-BB@0x96 : 
+	38      (00000096) return-void          
+

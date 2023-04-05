@@ -1,0 +1,30 @@
+# Landroidx/appcompat/widget/Toolbar;->setContentInsetEndWithActions(I)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:int
+#
+# - return:void
+
+setContentInsetEndWithActions-BB@0x0 : [ setContentInsetEndWithActions-BB@0x4 setContentInsetEndWithActions-BB@0x8 ]
+	0       (00000000) if-gez               v2, +4
+
+setContentInsetEndWithActions-BB@0x4 : [ setContentInsetEndWithActions-BB@0x8 ]
+	1       (00000004) const/high16         v2, -32768 # [-0.0]
+
+setContentInsetEndWithActions-BB@0x8 : [ setContentInsetEndWithActions-BB@0x10 setContentInsetEndWithActions-BB@0x26 ]
+	2       (00000008) iget                 v0, v1, Landroidx/appcompat/widget/Toolbar;->mContentInsetEndWithActions I
+	3       (0000000c) if-eq                v2, v0, +d
+
+setContentInsetEndWithActions-BB@0x10 : [ setContentInsetEndWithActions-BB@0x20 setContentInsetEndWithActions-BB@0x26 ]
+	4       (00000010) iput                 v2, v1, Landroidx/appcompat/widget/Toolbar;->mContentInsetEndWithActions I
+	5       (00000014) invoke-virtual       v1, Landroidx/appcompat/widget/Toolbar;->getNavigationIcon()Landroid/graphics/drawable/Drawable;
+	6       (0000001a) move-result-object   v0
+	7       (0000001c) if-eqz               v0, +5
+
+setContentInsetEndWithActions-BB@0x20 : [ setContentInsetEndWithActions-BB@0x26 ]
+	8       (00000020) invoke-virtual       v1, Landroidx/appcompat/widget/Toolbar;->requestLayout()V
+
+setContentInsetEndWithActions-BB@0x26 : 
+	9       (00000026) return-void          
+

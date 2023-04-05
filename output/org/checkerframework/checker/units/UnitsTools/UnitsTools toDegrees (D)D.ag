@@ -1,0 +1,13 @@
+# Lorg/checkerframework/checker/units/UnitsTools;->toDegrees(D)D [access_flags=public static]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:double
+#
+# - return:double
+
+toDegrees-BB@0x0 : 
+	0       (00000000) invoke-static        v2, v3, Ljava/lang/Math;->toDegrees(D)D
+	1       (00000006) move-result-wide     v0
+	2       (00000008) return-wide          v0
+

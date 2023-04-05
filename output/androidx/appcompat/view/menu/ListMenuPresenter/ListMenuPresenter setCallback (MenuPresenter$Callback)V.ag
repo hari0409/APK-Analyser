@@ -1,0 +1,12 @@
+# Landroidx/appcompat/view/menu/ListMenuPresenter;->setCallback(Landroidx/appcompat/view/menu/MenuPresenter$Callback;)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v0
+# - v1:androidx.appcompat.view.menu.MenuPresenter$Callback
+#
+# - return:void
+
+setCallback-BB@0x0 : 
+	0       (00000000) iput-object          v1, v0, Landroidx/appcompat/view/menu/ListMenuPresenter;->mCallback Landroidx/appcompat/view/menu/MenuPresenter$Callback;
+	1       (00000004) return-void          
+

@@ -1,0 +1,32 @@
+# Lcom/afwsamples/testdpc/common/keyvaluepair/KeyValueBundleArrayFragment;->onActivityResult(I I Landroid/content/Intent;)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v3
+# - v4:int
+# - v5:int
+# - v6:android.content.Intent
+#
+# - return:void
+
+onActivityResult-BB@0x0 : [ onActivityResult-BB@0x6 onActivityResult-BB@0x8 ]
+	0       (00000000) const/4              v2, -1
+	1       (00000002) if-eq                v5, v2, +3
+
+onActivityResult-BB@0x6 : 
+	2       (00000006) return-void          
+
+onActivityResult-BB@0x8 : [ onActivityResult-BB@0xe onActivityResult-BB@0x6 ]
+	3       (00000008) const/4              v2, 1
+	4       (0000000a) if-ne                v4, v2, -2
+
+onActivityResult-BB@0xe : [ onActivityResult-BB@0x6 ]
+	5       (0000000e) const-string         v2, 'value'
+	6       (00000012) invoke-virtual       v6, v2, Landroid/content/Intent;->getBundleExtra(Ljava/lang/String;)Landroid/os/Bundle;
+	7       (00000018) move-result-object   v1
+	8       (0000001a) iget-object          v2, v3, Lcom/afwsamples/testdpc/common/keyvaluepair/KeyValueBundleArrayFragment;->mBundleList Ljava/util/List;
+	9       (0000001e) invoke-interface     v2, v1, Ljava/util/List;->indexOf(Ljava/lang/Object;)I
+	10      (00000024) move-result          v0
+	11      (00000026) iget-object          v2, v3, Lcom/afwsamples/testdpc/common/keyvaluepair/KeyValueBundleArrayFragment;->mAdapter Lcom/afwsamples/testdpc/common/keyvaluepair/KeyValueBundleArrayFragment$BundleEditDeleteArrayAdapter;
+	12      (0000002a) invoke-virtual       v2, v0, v1, Lcom/afwsamples/testdpc/common/keyvaluepair/KeyValueBundleArrayFragment$BundleEditDeleteArrayAdapter;->set(I Ljava/lang/Object;)V
+	13      (00000030) goto                 -15
+

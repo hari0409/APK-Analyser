@@ -1,0 +1,17 @@
+# Lcom/afwsamples/testdpc/DeviceAdminReceiver;->onNetworkLogsAvailable(Landroid/content/Context; Landroid/content/Intent; J I)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:android.content.Context
+# - v4:android.content.Intent
+# - v5:long
+# - v6:int
+#
+# - return:void
+
+onNetworkLogsAvailable-BB@0x0 : 
+	0       (00000000) invoke-static        v2, Lcom/afwsamples/testdpc/DeviceAdminReceiver;->getComponentName(Landroid/content/Context;)Landroid/content/ComponentName;
+	1       (00000006) move-result-object   v0
+	2       (00000008) invoke-static        v2, v0, v4, v5, v6, Lcom/afwsamples/testdpc/CommonReceiverOperations;->onNetworkLogsAvailable(Landroid/content/Context; Landroid/content/ComponentName; J I)V
+	3       (0000000e) return-void          
+

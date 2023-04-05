@@ -1,0 +1,29 @@
+# Landroidx/appcompat/view/menu/MenuBuilder;->dispatchMenuItemSelected(Landroidx/appcompat/view/menu/MenuBuilder; Landroid/view/MenuItem;)Z [access_flags=]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:androidx.appcompat.view.menu.MenuBuilder
+# - v3:android.view.MenuItem
+#
+# - return:boolean
+
+dispatchMenuItemSelected-BB@0x0 : [ dispatchMenuItemSelected-BB@0x8 dispatchMenuItemSelected-BB@0x1c ]
+	0       (00000000) iget-object          v0, v1, Landroidx/appcompat/view/menu/MenuBuilder;->mCallback Landroidx/appcompat/view/menu/MenuBuilder$Callback;
+	1       (00000004) if-eqz               v0, +c
+
+dispatchMenuItemSelected-BB@0x8 : [ dispatchMenuItemSelected-BB@0x18 dispatchMenuItemSelected-BB@0x1c ]
+	2       (00000008) iget-object          v0, v1, Landroidx/appcompat/view/menu/MenuBuilder;->mCallback Landroidx/appcompat/view/menu/MenuBuilder$Callback;
+	3       (0000000c) invoke-interface     v0, v2, v3, Landroidx/appcompat/view/menu/MenuBuilder$Callback;->onMenuItemSelected(Landroidx/appcompat/view/menu/MenuBuilder; Landroid/view/MenuItem;)Z
+	4       (00000012) move-result          v0
+	5       (00000014) if-eqz               v0, +4
+
+dispatchMenuItemSelected-BB@0x18 : [ dispatchMenuItemSelected-BB@0x1a ]
+	6       (00000018) const/4              v0, 1
+
+dispatchMenuItemSelected-BB@0x1a : 
+	7       (0000001a) return               v0
+
+dispatchMenuItemSelected-BB@0x1c : [ dispatchMenuItemSelected-BB@0x1a ]
+	8       (0000001c) const/4              v0, 0
+	9       (0000001e) goto                 -2
+

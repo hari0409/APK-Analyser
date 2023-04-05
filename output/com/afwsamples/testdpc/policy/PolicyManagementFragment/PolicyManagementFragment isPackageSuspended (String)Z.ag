@@ -1,0 +1,26 @@
+# Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->isPackageSuspended(Ljava/lang/String;)Z [access_flags=private]
+#
+# Parameters:
+# - local registers: v0...v3
+# - v4:java.lang.String
+#
+# - return:boolean
+
+isPackageSuspended-BB@0x0 : [ isPackageSuspended-BB@0xc ]
+	0       (00000000) iget-object          v1, v3, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->mDevicePolicyManagerGateway Lcom/afwsamples/testdpc/DevicePolicyManagerGateway;
+	1       (00000004) invoke-interface     v1, v4, Lcom/afwsamples/testdpc/DevicePolicyManagerGateway;->isPackageSuspended(Ljava/lang/String;)Z
+	2       (0000000a) move-result          v1
+	0:9
+	(Landroid/content/pm/PackageManager$NameNotFoundException; -> e isPackageSuspended-BB@0xe)
+
+isPackageSuspended-BB@0xc : 
+	3       (0000000c) return               v1
+
+isPackageSuspended-BB@0xe : [ isPackageSuspended-BB@0xc ]
+	4       (0000000e) move-exception       v0
+	5       (00000010) const-string         v1, 'PolicyManagement'
+	6       (00000014) const-string         v2, 'Unable check if package is suspended'
+	7       (00000018) invoke-static        v1, v2, v0, Landroid/util/Log;->e(Ljava/lang/String; Ljava/lang/String; Ljava/lang/Throwable;)I
+	8       (0000001e) const/4              v1, 0
+	9       (00000020) goto                 -a
+

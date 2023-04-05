@@ -1,0 +1,39 @@
+# Lcom/afwsamples/testdpc/policy/utils/AttestationPackageInfo;->compareTo(Lcom/afwsamples/testdpc/policy/utils/AttestationPackageInfo;)I [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v8
+# - v9:com.afwsamples.testdpc.policy.utils.AttestationPackageInfo
+#
+# - return:int
+
+compareTo-BB@0x0 : [ compareTo-BB@0x14 compareTo-BB@0x1a ]
+	0       (00000000) iget-object          v3, v8, Lcom/afwsamples/testdpc/policy/utils/AttestationPackageInfo;->packageName Ljava/lang/String;
+	1       (00000004) iget-object          v4, v9, Lcom/afwsamples/testdpc/policy/utils/AttestationPackageInfo;->packageName Ljava/lang/String;
+	2       (00000008) invoke-virtual       v3, v4, Ljava/lang/String;->compareTo(Ljava/lang/String;)I
+	3       (0000000e) move-result          v0
+	4       (00000010) if-eqz               v0, +5
+
+compareTo-BB@0x14 : [ compareTo-BB@0x18 ]
+	5       (00000014) move                 v1, v0
+	6       (00000016) move                 v2, v0
+
+compareTo-BB@0x18 : 
+	7       (00000018) return               v2
+
+compareTo-BB@0x1a : [ compareTo-BB@0x2e compareTo-BB@0x34 ]
+	8       (0000001a) iget-wide            v4, v8, Lcom/afwsamples/testdpc/policy/utils/AttestationPackageInfo;->version J
+	9       (0000001e) iget-wide            v6, v9, Lcom/afwsamples/testdpc/policy/utils/AttestationPackageInfo;->version J
+	10      (00000022) invoke-static        v4, v5, v6, v7, Ljava/lang/Long;->compare(J J)I
+	11      (00000028) move-result          v0
+	12      (0000002a) if-eqz               v0, +5
+
+compareTo-BB@0x2e : [ compareTo-BB@0x18 ]
+	13      (0000002e) move                 v1, v0
+	14      (00000030) move                 v2, v0
+	15      (00000032) goto                 -d
+
+compareTo-BB@0x34 : [ compareTo-BB@0x18 ]
+	16      (00000034) move                 v1, v0
+	17      (00000036) move                 v2, v0
+	18      (00000038) goto                 -10
+

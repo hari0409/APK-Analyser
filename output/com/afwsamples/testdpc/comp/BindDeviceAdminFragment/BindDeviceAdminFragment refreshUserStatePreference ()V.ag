@@ -1,0 +1,54 @@
+# Lcom/afwsamples/testdpc/comp/BindDeviceAdminFragment;->refreshUserStatePreference()V [access_flags=private]
+#
+# Parameters:
+# local registers: v0...v3
+#
+# - return:void
+
+refreshUserStatePreference-BB@0x0 : [ refreshUserStatePreference-BB@0x8 refreshUserStatePreference-BB@0x2a ]
+	0       (00000000) iget-object          v1, v3, Lcom/afwsamples/testdpc/comp/BindDeviceAdminFragment;->mProfileOwnerUser Landroid/os/UserHandle;
+	1       (00000004) if-nez               v1, +13
+
+refreshUserStatePreference-BB@0x8 : [ refreshUserStatePreference-BB@0xe ]
+	2       (00000008) const                v0, 2131690129 # [1.9009292894035257e+38]
+
+refreshUserStatePreference-BB@0xe : 
+	3       (0000000e) const-string         v1, 'po_user_status'
+	4       (00000012) invoke-virtual       v3, v1, Lcom/afwsamples/testdpc/comp/BindDeviceAdminFragment;->findPreference(Ljava/lang/CharSequence;)Landroidx/preference/Preference;
+	5       (00000018) move-result-object   v1
+	6       (0000001a) invoke-virtual       v3, v0, Lcom/afwsamples/testdpc/comp/BindDeviceAdminFragment;->getString(I)Ljava/lang/String;
+	7       (00000020) move-result-object   v2
+	8       (00000022) invoke-virtual       v1, v2, Landroidx/preference/Preference;->setSummary(Ljava/lang/CharSequence;)V
+	9       (00000028) return-void          
+
+refreshUserStatePreference-BB@0x2a : [ refreshUserStatePreference-BB@0x36 refreshUserStatePreference-BB@0x3e ]
+	10      (0000002a) invoke-direct        v3, Lcom/afwsamples/testdpc/comp/BindDeviceAdminFragment;->isManagedProfileOwner()Z
+	11      (00000030) move-result          v1
+	12      (00000032) if-nez               v1, +6
+
+refreshUserStatePreference-BB@0x36 : [ refreshUserStatePreference-BB@0xe ]
+	13      (00000036) const                v0, 2131690073 # [1.9009179312541476e+38]
+	14      (0000003c) goto                 -17
+
+refreshUserStatePreference-BB@0x3e : [ refreshUserStatePreference-BB@0x4a refreshUserStatePreference-BB@0x52 ]
+	15      (0000003e) invoke-direct        v3, Lcom/afwsamples/testdpc/comp/BindDeviceAdminFragment;->isManagedProfileUnlocked()Z
+	16      (00000044) move-result          v1
+	17      (00000046) if-eqz               v1, +6
+
+refreshUserStatePreference-BB@0x4a : [ refreshUserStatePreference-BB@0xe ]
+	18      (0000004a) const                v0, 2131689934 # [1.9008897387047986e+38]
+	19      (00000050) goto                 -21
+
+refreshUserStatePreference-BB@0x52 : [ refreshUserStatePreference-BB@0x5e refreshUserStatePreference-BB@0x66 ]
+	20      (00000052) invoke-direct        v3, Lcom/afwsamples/testdpc/comp/BindDeviceAdminFragment;->isManagedProfileRunning()Z
+	21      (00000058) move-result          v1
+	22      (0000005a) if-eqz               v1, +6
+
+refreshUserStatePreference-BB@0x5e : [ refreshUserStatePreference-BB@0xe ]
+	23      (0000005e) const                v0, 2131689931 # [1.9008891302325105e+38]
+	24      (00000064) goto                 -2b
+
+refreshUserStatePreference-BB@0x66 : [ refreshUserStatePreference-BB@0xe ]
+	25      (00000066) const                v0, 2131689929 # [1.9008887245843184e+38]
+	26      (0000006c) goto                 -2f
+

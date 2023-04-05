@@ -1,0 +1,48 @@
+# Landroidx/appcompat/app/AppCompatActivity;->onSupportNavigateUp()Z [access_flags=public]
+#
+# Parameters:
+# local registers: v0...v4
+#
+# - return:boolean
+
+onSupportNavigateUp-BB@0x0 : [ onSupportNavigateUp-BB@0xc onSupportNavigateUp-BB@0x4e ]
+	0       (00000000) invoke-virtual       v4, Landroidx/appcompat/app/AppCompatActivity;->getSupportParentActivityIntent()Landroid/content/Intent;
+	1       (00000006) move-result-object   v2
+	2       (00000008) if-eqz               v2, +23
+
+onSupportNavigateUp-BB@0xc : [ onSupportNavigateUp-BB@0x18 onSupportNavigateUp-BB@0x46 ]
+	3       (0000000c) invoke-virtual       v4, v2, Landroidx/appcompat/app/AppCompatActivity;->supportShouldUpRecreateTask(Landroid/content/Intent;)Z
+	4       (00000012) move-result          v3
+	5       (00000014) if-eqz               v3, +19
+
+onSupportNavigateUp-BB@0x18 : [ onSupportNavigateUp-BB@0x32 ]
+	6       (00000018) invoke-static        v4, Landroidx/core/app/TaskStackBuilder;->create(Landroid/content/Context;)Landroidx/core/app/TaskStackBuilder;
+	7       (0000001e) move-result-object   v0
+	8       (00000020) invoke-virtual       v4, v0, Landroidx/appcompat/app/AppCompatActivity;->onCreateSupportNavigateUpTaskStack(Landroidx/core/app/TaskStackBuilder;)V
+	9       (00000026) invoke-virtual       v4, v0, Landroidx/appcompat/app/AppCompatActivity;->onPrepareSupportNavigateUpTaskStack(Landroidx/core/app/TaskStackBuilder;)V
+	10      (0000002c) invoke-virtual       v0, Landroidx/core/app/TaskStackBuilder;->startActivities()V
+
+onSupportNavigateUp-BB@0x32 : [ onSupportNavigateUp-BB@0x38 ]
+	11      (00000032) invoke-static        v4, Landroidx/core/app/ActivityCompat;->finishAffinity(Landroid/app/Activity;)V
+	32:37
+	(Ljava/lang/IllegalStateException; -> 3c onSupportNavigateUp-BB@0x3c)
+
+onSupportNavigateUp-BB@0x38 : [ onSupportNavigateUp-BB@0x3a ]
+	12      (00000038) const/4              v3, 1
+
+onSupportNavigateUp-BB@0x3a : 
+	13      (0000003a) return               v3
+
+onSupportNavigateUp-BB@0x3c : [ onSupportNavigateUp-BB@0x38 ]
+	14      (0000003c) move-exception       v1
+	15      (0000003e) invoke-virtual       v4, Landroidx/appcompat/app/AppCompatActivity;->finish()V
+	16      (00000044) goto                 -6
+
+onSupportNavigateUp-BB@0x46 : [ onSupportNavigateUp-BB@0x38 ]
+	17      (00000046) invoke-virtual       v4, v2, Landroidx/appcompat/app/AppCompatActivity;->supportNavigateUpTo(Landroid/content/Intent;)V
+	18      (0000004c) goto                 -a
+
+onSupportNavigateUp-BB@0x4e : [ onSupportNavigateUp-BB@0x3a ]
+	19      (0000004e) const/4              v3, 0
+	20      (00000050) goto                 -b
+

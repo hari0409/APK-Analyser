@@ -1,0 +1,43 @@
+# Landroidx/appcompat/app/AppCompatDelegateImpl$AutoNightModeManager;->setup()V [access_flags=]
+#
+# Parameters:
+# local registers: v0...v3
+#
+# - return:void
+
+setup-BB@0x0 : [ setup-BB@0xe setup-BB@0x1c ]
+	0       (00000000) invoke-virtual       v3, Landroidx/appcompat/app/AppCompatDelegateImpl$AutoNightModeManager;->cleanup()V
+	1       (00000006) iget-object          v0, v3, Landroidx/appcompat/app/AppCompatDelegateImpl$AutoNightModeManager;->mAutoTimeChangeReceiver Landroid/content/BroadcastReceiver;
+	2       (0000000a) if-nez               v0, +9
+
+setup-BB@0xe : [ setup-BB@0x1c ]
+	3       (0000000e) new-instance         v0, Landroidx/appcompat/app/AppCompatDelegateImpl$AutoNightModeManager$1;
+	4       (00000012) invoke-direct        v0, v3, Landroidx/appcompat/app/AppCompatDelegateImpl$AutoNightModeManager$1;-><init>(Landroidx/appcompat/app/AppCompatDelegateImpl$AutoNightModeManager;)V
+	5       (00000018) iput-object          v0, v3, Landroidx/appcompat/app/AppCompatDelegateImpl$AutoNightModeManager;->mAutoTimeChangeReceiver Landroid/content/BroadcastReceiver;
+
+setup-BB@0x1c : [ setup-BB@0x24 setup-BB@0x5c ]
+	6       (0000001c) iget-object          v0, v3, Landroidx/appcompat/app/AppCompatDelegateImpl$AutoNightModeManager;->mAutoTimeChangeReceiverFilter Landroid/content/IntentFilter;
+	7       (00000020) if-nez               v0, +1e
+
+setup-BB@0x24 : [ setup-BB@0x5c ]
+	8       (00000024) new-instance         v0, Landroid/content/IntentFilter;
+	9       (00000028) invoke-direct        v0, Landroid/content/IntentFilter;-><init>()V
+	10      (0000002e) iput-object          v0, v3, Landroidx/appcompat/app/AppCompatDelegateImpl$AutoNightModeManager;->mAutoTimeChangeReceiverFilter Landroid/content/IntentFilter;
+	11      (00000032) iget-object          v0, v3, Landroidx/appcompat/app/AppCompatDelegateImpl$AutoNightModeManager;->mAutoTimeChangeReceiverFilter Landroid/content/IntentFilter;
+	12      (00000036) const-string         v1, 'android.intent.action.TIME_SET'
+	13      (0000003a) invoke-virtual       v0, v1, Landroid/content/IntentFilter;->addAction(Ljava/lang/String;)V
+	14      (00000040) iget-object          v0, v3, Landroidx/appcompat/app/AppCompatDelegateImpl$AutoNightModeManager;->mAutoTimeChangeReceiverFilter Landroid/content/IntentFilter;
+	15      (00000044) const-string         v1, 'android.intent.action.TIMEZONE_CHANGED'
+	16      (00000048) invoke-virtual       v0, v1, Landroid/content/IntentFilter;->addAction(Ljava/lang/String;)V
+	17      (0000004e) iget-object          v0, v3, Landroidx/appcompat/app/AppCompatDelegateImpl$AutoNightModeManager;->mAutoTimeChangeReceiverFilter Landroid/content/IntentFilter;
+	18      (00000052) const-string         v1, 'android.intent.action.TIME_TICK'
+	19      (00000056) invoke-virtual       v0, v1, Landroid/content/IntentFilter;->addAction(Ljava/lang/String;)V
+
+setup-BB@0x5c : 
+	20      (0000005c) iget-object          v0, v3, Landroidx/appcompat/app/AppCompatDelegateImpl$AutoNightModeManager;->this$0 Landroidx/appcompat/app/AppCompatDelegateImpl;
+	21      (00000060) iget-object          v0, v0, Landroidx/appcompat/app/AppCompatDelegateImpl;->mContext Landroid/content/Context;
+	22      (00000064) iget-object          v1, v3, Landroidx/appcompat/app/AppCompatDelegateImpl$AutoNightModeManager;->mAutoTimeChangeReceiver Landroid/content/BroadcastReceiver;
+	23      (00000068) iget-object          v2, v3, Landroidx/appcompat/app/AppCompatDelegateImpl$AutoNightModeManager;->mAutoTimeChangeReceiverFilter Landroid/content/IntentFilter;
+	24      (0000006c) invoke-virtual       v0, v1, v2, Landroid/content/Context;->registerReceiver(Landroid/content/BroadcastReceiver; Landroid/content/IntentFilter;)Landroid/content/Intent;
+	25      (00000072) return-void          
+

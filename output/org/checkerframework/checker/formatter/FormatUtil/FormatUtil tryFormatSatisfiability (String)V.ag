@@ -1,0 +1,14 @@
+# Lorg/checkerframework/checker/formatter/FormatUtil;->tryFormatSatisfiability(Ljava/lang/String;)V [access_flags=public static]
+#
+# Parameters:
+# - local registers: v0...v0
+# - v1:java.lang.String
+#
+# - return:void
+
+tryFormatSatisfiability-BB@0x0 : 
+	0       (00000000) const/4              v0, 0
+	1       (00000002) check-cast           v0, [Ljava/lang/Object;
+	2       (00000006) invoke-static        v1, v0, Ljava/lang/String;->format(Ljava/lang/String; [Ljava/lang/Object;)Ljava/lang/String;
+	3       (0000000c) return-void          
+

@@ -1,0 +1,12 @@
+# Landroidx/appcompat/graphics/drawable/DrawableContainer$DrawableContainerState;->setConstantSize(Z)V [access_flags=public final]
+#
+# Parameters:
+# - local registers: v0...v0
+# - v1:boolean
+#
+# - return:void
+
+setConstantSize-BB@0x0 : 
+	0       (00000000) iput-boolean         v1, v0, Landroidx/appcompat/graphics/drawable/DrawableContainer$DrawableContainerState;->mConstantSize Z
+	1       (00000004) return-void          
+

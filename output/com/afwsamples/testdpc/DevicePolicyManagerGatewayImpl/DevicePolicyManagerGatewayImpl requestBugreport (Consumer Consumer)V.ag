@@ -1,0 +1,48 @@
+# Lcom/afwsamples/testdpc/DevicePolicyManagerGatewayImpl;->requestBugreport(Ljava/util/function/Consumer; Ljava/util/function/Consumer;)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v5
+# - v6:java.util.function.Consumer
+# - v7:java.util.function.Consumer
+#
+# - return:void
+
+requestBugreport-BB@0x0 : [ requestBugreport-BB@0xe ]
+	0       (00000000) sget-object          v2, Lcom/afwsamples/testdpc/DevicePolicyManagerGatewayImpl;->TAG Ljava/lang/String;
+	1       (00000004) const-string         v3, 'requestBugreport('
+	2       (00000008) invoke-static        v2, v3, Landroid/util/Log;->d(Ljava/lang/String; Ljava/lang/String;)I
+
+requestBugreport-BB@0xe : [ requestBugreport-BB@0x22 requestBugreport-BB@0x2c ]
+	3       (0000000e) iget-object          v2, v5, Lcom/afwsamples/testdpc/DevicePolicyManagerGatewayImpl;->mDevicePolicyManager Landroid/app/admin/DevicePolicyManager;
+	4       (00000012) iget-object          v3, v5, Lcom/afwsamples/testdpc/DevicePolicyManagerGatewayImpl;->mAdminComponentName Landroid/content/ComponentName;
+	5       (00000016) invoke-virtual       v2, v3, Landroid/app/admin/DevicePolicyManager;->requestBugreport(Landroid/content/ComponentName;)Z
+	6       (0000001c) move-result          v1
+	7       (0000001e) if-eqz               v1, +7
+	e:45
+	(Ljava/lang/Exception; -> 48 requestBugreport-BB@0x48)
+
+requestBugreport-BB@0x22 : [ requestBugreport-BB@0x2a ]
+	8       (00000022) const/4              v2, 0
+	9       (00000024) invoke-interface     v6, v2, Ljava/util/function/Consumer;->accept(Ljava/lang/Object;)V
+	e:45
+	(Ljava/lang/Exception; -> 48 requestBugreport-BB@0x48)
+
+requestBugreport-BB@0x2a : 
+	10      (0000002a) return-void          
+	e:45
+	(Ljava/lang/Exception; -> 48 requestBugreport-BB@0x48)
+
+requestBugreport-BB@0x2c : [ requestBugreport-BB@0x2a ]
+	11      (0000002c) new-instance         v2, Lcom/afwsamples/testdpc/DevicePolicyManagerGateway$FailedOperationException;
+	12      (00000030) const-string         v3, 'requestBugreport()'
+	13      (00000034) const/4              v4, 0
+	14      (00000036) new-array            v4, v4, [Ljava/lang/Object;
+	15      (0000003a) invoke-direct        v2, v3, v4, Lcom/afwsamples/testdpc/DevicePolicyManagerGateway$FailedOperationException;-><init>(Ljava/lang/String; [Ljava/lang/Object;)V
+	16      (00000040) invoke-interface     v7, v2, Ljava/util/function/Consumer;->accept(Ljava/lang/Object;)V
+	17      (00000046) goto                 -e
+
+requestBugreport-BB@0x48 : [ requestBugreport-BB@0x2a ]
+	18      (00000048) move-exception       v0
+	19      (0000004a) invoke-interface     v7, v0, Ljava/util/function/Consumer;->accept(Ljava/lang/Object;)V
+	20      (00000050) goto                 -13
+

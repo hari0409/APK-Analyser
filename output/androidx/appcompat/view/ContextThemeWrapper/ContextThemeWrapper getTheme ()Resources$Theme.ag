@@ -1,0 +1,30 @@
+# Landroidx/appcompat/view/ContextThemeWrapper;->getTheme()Landroid/content/res/Resources$Theme; [access_flags=public]
+#
+# Parameters:
+# local registers: v0...v1
+#
+# - return:android.content.res.Resources$Theme
+
+getTheme-BB@0x0 : [ getTheme-BB@0x8 getTheme-BB@0xe ]
+	0       (00000000) iget-object          v0, v1, Landroidx/appcompat/view/ContextThemeWrapper;->mTheme Landroid/content/res/Resources$Theme;
+	1       (00000004) if-eqz               v0, +5
+
+getTheme-BB@0x8 : [ getTheme-BB@0xc ]
+	2       (00000008) iget-object          v0, v1, Landroidx/appcompat/view/ContextThemeWrapper;->mTheme Landroid/content/res/Resources$Theme;
+
+getTheme-BB@0xc : 
+	3       (0000000c) return-object        v0
+
+getTheme-BB@0xe : [ getTheme-BB@0x16 getTheme-BB@0x1e ]
+	4       (0000000e) iget                 v0, v1, Landroidx/appcompat/view/ContextThemeWrapper;->mThemeResource I
+	5       (00000012) if-nez               v0, +6
+
+getTheme-BB@0x16 : [ getTheme-BB@0x1e ]
+	6       (00000016) sget                 v0, Landroidx/appcompat/R$style;->Theme_AppCompat_Light I
+	7       (0000001a) iput                 v0, v1, Landroidx/appcompat/view/ContextThemeWrapper;->mThemeResource I
+
+getTheme-BB@0x1e : [ getTheme-BB@0xc ]
+	8       (0000001e) invoke-direct        v1, Landroidx/appcompat/view/ContextThemeWrapper;->initializeTheme()V
+	9       (00000024) iget-object          v0, v1, Landroidx/appcompat/view/ContextThemeWrapper;->mTheme Landroid/content/res/Resources$Theme;
+	10      (00000028) goto                 -e
+

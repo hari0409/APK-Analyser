@@ -1,0 +1,31 @@
+# Lcom/afwsamples/testdpc/common/Util;->showFileViewer(Landroidx/preference/PreferenceFragment; I)V [access_flags=public static]
+#
+# Parameters:
+# - local registers: v0...v3
+# - v4:androidx.preference.PreferenceFragment
+# - v5:int
+#
+# - return:void
+
+showFileViewer-BB@0x0 : [ showFileViewer-BB@0x18 ]
+	0       (00000000) new-instance         v0, Landroid/content/Intent;
+	1       (00000004) const-string         v2, 'android.intent.action.GET_CONTENT'
+	2       (00000008) invoke-direct        v0, v2, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
+	3       (0000000e) const-string         v2, '*/*'
+	4       (00000012) invoke-virtual       v0, v2, Landroid/content/Intent;->setTypeAndNormalize(Ljava/lang/String;)Landroid/content/Intent;
+
+showFileViewer-BB@0x18 : [ showFileViewer-BB@0x1e ]
+	5       (00000018) invoke-virtual       v4, v0, v5, Landroidx/preference/PreferenceFragment;->startActivityForResult(Landroid/content/Intent; I)V
+	18:1d
+	(Landroid/content/ActivityNotFoundException; -> 20 showFileViewer-BB@0x20)
+
+showFileViewer-BB@0x1e : 
+	6       (0000001e) return-void          
+
+showFileViewer-BB@0x20 : [ showFileViewer-BB@0x1e ]
+	7       (00000020) move-exception       v1
+	8       (00000022) const-string         v2, 'Util'
+	9       (00000026) const-string         v3, 'showFileViewer: '
+	10      (0000002a) invoke-static        v2, v3, v1, Landroid/util/Log;->e(Ljava/lang/String; Ljava/lang/String; Ljava/lang/Throwable;)I
+	11      (00000030) goto                 -9
+

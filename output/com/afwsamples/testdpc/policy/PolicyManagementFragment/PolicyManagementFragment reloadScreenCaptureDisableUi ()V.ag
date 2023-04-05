@@ -1,0 +1,16 @@
+# Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->reloadScreenCaptureDisableUi()V [access_flags=private]
+#
+# Parameters:
+# local registers: v0...v3
+#
+# - return:void
+
+reloadScreenCaptureDisableUi-BB@0x0 : 
+	0       (00000000) iget-object          v1, v3, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->mDevicePolicyManager Landroid/app/admin/DevicePolicyManager;
+	1       (00000004) iget-object          v2, v3, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->mAdminComponentName Landroid/content/ComponentName;
+	2       (00000008) invoke-virtual       v1, v2, Landroid/app/admin/DevicePolicyManager;->getScreenCaptureDisabled(Landroid/content/ComponentName;)Z
+	3       (0000000e) move-result          v0
+	4       (00000010) iget-object          v1, v3, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->mDisableScreenCaptureSwitchPreference Landroidx/preference/SwitchPreference;
+	5       (00000014) invoke-virtual       v1, v0, Landroidx/preference/SwitchPreference;->setChecked(Z)V
+	6       (0000001a) return-void          
+

@@ -1,0 +1,33 @@
+# Lcom/afwsamples/testdpc/ShellCommand;->setUserControlDisabledPackages([Ljava/lang/String;)V [access_flags=private]
+#
+# Parameters:
+# - local registers: v0...v4
+# - v5:java.lang.String[]
+#
+# - return:void
+
+setUserControlDisabledPackages-BB@0x0 : 
+	0       (00000000) invoke-static        v5, Ljava/util/Arrays;->asList([Ljava/lang/Object;)Ljava/util/List;
+	1       (00000006) move-result-object   v0
+	2       (00000008) const-string         v1, 'TestDPCShellCommand'
+	3       (0000000c) new-instance         v2, Ljava/lang/StringBuilder;
+	4       (00000010) invoke-direct        v2, Ljava/lang/StringBuilder;-><init>()V
+	5       (00000016) const-string         v3, 'setUserControlDisabledPackages('
+	6       (0000001a) invoke-virtual       v2, v3, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	7       (00000020) move-result-object   v2
+	8       (00000022) invoke-virtual       v2, v0, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+	9       (00000028) move-result-object   v2
+	10      (0000002a) const-string         v3, ')'
+	11      (0000002e) invoke-virtual       v2, v3, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	12      (00000034) move-result-object   v2
+	13      (00000036) invoke-virtual       v2, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+	14      (0000003c) move-result-object   v2
+	15      (0000003e) invoke-static        v1, v2, Landroid/util/Log;->i(Ljava/lang/String; Ljava/lang/String;)I
+	16      (00000044) iget-object          v1, v4, Lcom/afwsamples/testdpc/ShellCommand;->mDevicePolicyManagerGateway Lcom/afwsamples/testdpc/DevicePolicyManagerGateway;
+	17      (00000048) new-instance         v2, Lcom/afwsamples/testdpc/ShellCommand$$Lambda$89;
+	18      (0000004c) invoke-direct        v2, v4, v0, Lcom/afwsamples/testdpc/ShellCommand$$Lambda$89;-><init>(Lcom/afwsamples/testdpc/ShellCommand; Ljava/util/List;)V
+	19      (00000052) new-instance         v3, Lcom/afwsamples/testdpc/ShellCommand$$Lambda$90;
+	20      (00000056) invoke-direct        v3, v4, v0, Lcom/afwsamples/testdpc/ShellCommand$$Lambda$90;-><init>(Lcom/afwsamples/testdpc/ShellCommand; Ljava/util/List;)V
+	21      (0000005c) invoke-interface     v1, v0, v2, v3, Lcom/afwsamples/testdpc/DevicePolicyManagerGateway;->setUserControlDisabledPackages(Ljava/util/List; Ljava/util/function/Consumer; Ljava/util/function/Consumer;)V
+	22      (00000062) return-void          
+

@@ -1,0 +1,26 @@
+# Landroidx/appcompat/widget/ButtonBarLayout;-><init>(Landroid/content/Context; Landroid/util/AttributeSet;)V [access_flags=public constructor]
+#
+# Parameters:
+# - local registers: v0...v3
+# - v4:android.content.Context
+# - v5:android.util.AttributeSet
+#
+# - return:void
+
+<init>-BB@0x0 : 
+	0       (00000000) invoke-direct        v3, v4, v5, Landroid/widget/LinearLayout;-><init>(Landroid/content/Context; Landroid/util/AttributeSet;)V
+	1       (00000006) const/4              v1, -1
+	2       (00000008) iput                 v1, v3, Landroidx/appcompat/widget/ButtonBarLayout;->mLastWidthSize I
+	3       (0000000c) const/4              v1, 0
+	4       (0000000e) iput                 v1, v3, Landroidx/appcompat/widget/ButtonBarLayout;->mMinimumHeight I
+	5       (00000012) sget-object          v1, Landroidx/appcompat/R$styleable;->ButtonBarLayout [I
+	6       (00000016) invoke-virtual       v4, v5, v1, Landroid/content/Context;->obtainStyledAttributes(Landroid/util/AttributeSet; [I)Landroid/content/res/TypedArray;
+	7       (0000001c) move-result-object   v0
+	8       (0000001e) sget                 v1, Landroidx/appcompat/R$styleable;->ButtonBarLayout_allowStacking I
+	9       (00000022) const/4              v2, 1
+	10      (00000024) invoke-virtual       v0, v1, v2, Landroid/content/res/TypedArray;->getBoolean(I Z)Z
+	11      (0000002a) move-result          v1
+	12      (0000002c) iput-boolean         v1, v3, Landroidx/appcompat/widget/ButtonBarLayout;->mAllowStacking Z
+	13      (00000030) invoke-virtual       v0, Landroid/content/res/TypedArray;->recycle()V
+	14      (00000036) return-void          
+

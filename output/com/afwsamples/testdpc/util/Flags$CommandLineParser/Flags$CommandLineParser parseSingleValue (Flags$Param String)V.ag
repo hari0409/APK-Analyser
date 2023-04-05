@@ -1,0 +1,17 @@
+# Lcom/afwsamples/testdpc/util/Flags$CommandLineParser;->parseSingleValue(Lcom/afwsamples/testdpc/util/Flags$Param; Ljava/lang/String;)V [access_flags=private]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:com.afwsamples.testdpc.util.Flags$Param
+# - v4:java.lang.String
+#
+# - return:void
+
+parseSingleValue-BB@0x0 : 
+	0       (00000000) iget-object          v0, v2, Lcom/afwsamples/testdpc/util/Flags$CommandLineParser;->parsedParams Ljava/util/Map;
+	1       (00000004) iget-object          v1, v2, Lcom/afwsamples/testdpc/util/Flags$CommandLineParser;->typeParser Lcom/afwsamples/testdpc/util/Flags$TypeParser;
+	2       (00000008) invoke-static        v1, v3, v4, Lcom/afwsamples/testdpc/util/Flags$TypeParser;->access$1800(Lcom/afwsamples/testdpc/util/Flags$TypeParser; Lcom/afwsamples/testdpc/util/Flags$Param; Ljava/lang/String;)Ljava/lang/Object;
+	3       (0000000e) move-result-object   v1
+	4       (00000010) invoke-interface     v0, v3, v1, Ljava/util/Map;->put(Ljava/lang/Object; Ljava/lang/Object;)Ljava/lang/Object;
+	5       (00000016) return-void          
+

@@ -1,0 +1,37 @@
+# Landroidx/appcompat/widget/AppCompatTextViewAutoSizeHelper;->setupAutoSizeUniformPresetSizes(Landroid/content/res/TypedArray;)V [access_flags=private]
+#
+# Parameters:
+# - local registers: v0...v4
+# - v5:android.content.res.TypedArray
+#
+# - return:void
+
+setupAutoSizeUniformPresetSizes-BB@0x0 : [ setupAutoSizeUniformPresetSizes-BB@0x10 setupAutoSizeUniformPresetSizes-BB@0x3c ]
+	0       (00000000) invoke-virtual       v5, Landroid/content/res/TypedArray;->length()I
+	1       (00000006) move-result          v2
+	2       (00000008) new-array            v1, v2, [I
+	3       (0000000c) if-lez               v2, +18
+
+setupAutoSizeUniformPresetSizes-BB@0x10 : [ setupAutoSizeUniformPresetSizes-BB@0x12 ]
+	4       (00000010) const/4              v0, 0
+
+setupAutoSizeUniformPresetSizes-BB@0x12 : [ setupAutoSizeUniformPresetSizes-BB@0x16 setupAutoSizeUniformPresetSizes-BB@0x2a ]
+	5       (00000012) if-ge                v0, v2, +c
+
+setupAutoSizeUniformPresetSizes-BB@0x16 : [ setupAutoSizeUniformPresetSizes-BB@0x12 ]
+	6       (00000016) const/4              v3, -1
+	7       (00000018) invoke-virtual       v5, v0, v3, Landroid/content/res/TypedArray;->getDimensionPixelSize(I I)I
+	8       (0000001e) move-result          v3
+	9       (00000020) aput                 v3, v1, v0
+	10      (00000024) add-int/lit8         v0, v0, 1
+	11      (00000028) goto                 -b
+
+setupAutoSizeUniformPresetSizes-BB@0x2a : [ setupAutoSizeUniformPresetSizes-BB@0x3c ]
+	12      (0000002a) invoke-direct        v4, v1, Landroidx/appcompat/widget/AppCompatTextViewAutoSizeHelper;->cleanupAutoSizePresetSizes([I)[I
+	13      (00000030) move-result-object   v3
+	14      (00000032) iput-object          v3, v4, Landroidx/appcompat/widget/AppCompatTextViewAutoSizeHelper;->mAutoSizeTextSizesInPx [I
+	15      (00000036) invoke-direct        v4, Landroidx/appcompat/widget/AppCompatTextViewAutoSizeHelper;->setupAutoSizeUniformPresetSizesConfiguration()Z
+
+setupAutoSizeUniformPresetSizes-BB@0x3c : 
+	16      (0000003c) return-void          
+

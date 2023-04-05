@@ -1,0 +1,20 @@
+# Landroidx/appcompat/view/menu/BaseMenuPresenter;-><init>(Landroid/content/Context; I I)V [access_flags=public constructor]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:android.content.Context
+# - v3:int
+# - v4:int
+#
+# - return:void
+
+<init>-BB@0x0 : 
+	0       (00000000) invoke-direct        v1, Ljava/lang/Object;-><init>()V
+	1       (00000006) iput-object          v2, v1, Landroidx/appcompat/view/menu/BaseMenuPresenter;->mSystemContext Landroid/content/Context;
+	2       (0000000a) invoke-static        v2, Landroid/view/LayoutInflater;->from(Landroid/content/Context;)Landroid/view/LayoutInflater;
+	3       (00000010) move-result-object   v0
+	4       (00000012) iput-object          v0, v1, Landroidx/appcompat/view/menu/BaseMenuPresenter;->mSystemInflater Landroid/view/LayoutInflater;
+	5       (00000016) iput                 v3, v1, Landroidx/appcompat/view/menu/BaseMenuPresenter;->mMenuLayoutRes I
+	6       (0000001a) iput                 v4, v1, Landroidx/appcompat/view/menu/BaseMenuPresenter;->mItemLayoutRes I
+	7       (0000001e) return-void          
+

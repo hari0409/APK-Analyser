@@ -1,0 +1,42 @@
+# Landroidx/appcompat/widget/AbsActionBarView;-><init>(Landroid/content/Context; Landroid/util/AttributeSet; I)V [access_flags=constructor]
+#
+# Parameters:
+# - local registers: v0...v4
+# - v5:android.content.Context
+# - v6:android.util.AttributeSet
+# - v7:int
+#
+# - return:void
+
+<init>-BB@0x0 : [ <init>-BB@0x38 <init>-BB@0x54 ]
+	0       (00000000) invoke-direct        v4, v5, v6, v7, Landroid/view/ViewGroup;-><init>(Landroid/content/Context; Landroid/util/AttributeSet; I)V
+	1       (00000006) new-instance         v1, Landroidx/appcompat/widget/AbsActionBarView$VisibilityAnimListener;
+	2       (0000000a) invoke-direct        v1, v4, Landroidx/appcompat/widget/AbsActionBarView$VisibilityAnimListener;-><init>(Landroidx/appcompat/widget/AbsActionBarView;)V
+	3       (00000010) iput-object          v1, v4, Landroidx/appcompat/widget/AbsActionBarView;->mVisAnimListener Landroidx/appcompat/widget/AbsActionBarView$VisibilityAnimListener;
+	4       (00000014) new-instance         v0, Landroid/util/TypedValue;
+	5       (00000018) invoke-direct        v0, Landroid/util/TypedValue;-><init>()V
+	6       (0000001e) invoke-virtual       v5, Landroid/content/Context;->getTheme()Landroid/content/res/Resources$Theme;
+	7       (00000024) move-result-object   v1
+	8       (00000026) sget                 v2, Landroidx/appcompat/R$attr;->actionBarPopupTheme I
+	9       (0000002a) const/4              v3, 1
+	10      (0000002c) invoke-virtual       v1, v2, v0, v3, Landroid/content/res/Resources$Theme;->resolveAttribute(I Landroid/util/TypedValue; Z)Z
+	11      (00000032) move-result          v1
+	12      (00000034) if-eqz               v1, +10
+
+<init>-BB@0x38 : [ <init>-BB@0x40 <init>-BB@0x54 ]
+	13      (00000038) iget                 v1, v0, Landroid/util/TypedValue;->resourceId I
+	14      (0000003c) if-eqz               v1, +c
+
+<init>-BB@0x40 : [ <init>-BB@0x52 ]
+	15      (00000040) new-instance         v1, Landroid/view/ContextThemeWrapper;
+	16      (00000044) iget                 v2, v0, Landroid/util/TypedValue;->resourceId I
+	17      (00000048) invoke-direct        v1, v5, v2, Landroid/view/ContextThemeWrapper;-><init>(Landroid/content/Context; I)V
+	18      (0000004e) iput-object          v1, v4, Landroidx/appcompat/widget/AbsActionBarView;->mPopupContext Landroid/content/Context;
+
+<init>-BB@0x52 : 
+	19      (00000052) return-void          
+
+<init>-BB@0x54 : [ <init>-BB@0x52 ]
+	20      (00000054) iput-object          v5, v4, Landroidx/appcompat/widget/AbsActionBarView;->mPopupContext Landroid/content/Context;
+	21      (00000058) goto                 -3
+

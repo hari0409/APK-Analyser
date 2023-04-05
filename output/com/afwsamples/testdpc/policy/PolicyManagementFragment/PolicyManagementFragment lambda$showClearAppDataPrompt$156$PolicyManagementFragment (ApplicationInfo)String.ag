@@ -1,0 +1,12 @@
+# Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->lambda$showClearAppDataPrompt$156$PolicyManagementFragment(Landroid/content/pm/ApplicationInfo;)Ljava/lang/String; [access_flags=static final synthetic]
+#
+# Parameters:
+# - local registers: v0...v0
+# - v1:android.content.pm.ApplicationInfo
+#
+# - return:java.lang.String
+
+lambda$showClearAppDataPrompt$156$PolicyManagementFragment-BB@0x0 : 
+	0       (00000000) iget-object          v0, v1, Landroid/content/pm/ApplicationInfo;->packageName Ljava/lang/String;
+	1       (00000004) return-object        v0
+

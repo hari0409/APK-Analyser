@@ -1,0 +1,25 @@
+# Lcom/afwsamples/testdpc/search/PolicySearchFragment;->onCreate(Landroid/os/Bundle;)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:android.os.Bundle
+#
+# - return:void
+
+onCreate-BB@0x0 : 
+	0       (00000000) invoke-super         v1, v2, Landroid/app/Fragment;->onCreate(Landroid/os/Bundle;)V
+	1       (00000006) const/4              v0, 1
+	2       (00000008) invoke-virtual       v1, v0, Lcom/afwsamples/testdpc/search/PolicySearchFragment;->setHasOptionsMenu(Z)V
+	3       (0000000e) invoke-virtual       v1, Lcom/afwsamples/testdpc/search/PolicySearchFragment;->getActivity()Landroid/app/Activity;
+	4       (00000014) move-result-object   v0
+	5       (00000016) invoke-static        v0, Lcom/afwsamples/testdpc/search/PreferenceIndexSqliteOpenHelper;->getInstance(Landroid/content/Context;)Lcom/afwsamples/testdpc/search/PreferenceIndexSqliteOpenHelper;
+	6       (0000001c) move-result-object   v0
+	7       (0000001e) iput-object          v0, v1, Lcom/afwsamples/testdpc/search/PolicySearchFragment;->mSqliteOpenHelper Lcom/afwsamples/testdpc/search/PreferenceIndexSqliteOpenHelper;
+	8       (00000022) new-instance         v0, Lcom/afwsamples/testdpc/search/SearchItemAdapter;
+	9       (00000026) invoke-direct        v0, v1, Lcom/afwsamples/testdpc/search/SearchItemAdapter;-><init>(Lcom/afwsamples/testdpc/search/SearchItemAdapter$OnItemClickListener;)V
+	10      (0000002c) iput-object          v0, v1, Lcom/afwsamples/testdpc/search/PolicySearchFragment;->mAdapter Lcom/afwsamples/testdpc/search/SearchItemAdapter;
+	11      (00000030) invoke-direct        v1, Lcom/afwsamples/testdpc/search/PolicySearchFragment;->getAvailableFragments()Ljava/util/List;
+	12      (00000036) move-result-object   v0
+	13      (00000038) iput-object          v0, v1, Lcom/afwsamples/testdpc/search/PolicySearchFragment;->mAvailableFragments Ljava/util/List;
+	14      (0000003c) return-void          
+

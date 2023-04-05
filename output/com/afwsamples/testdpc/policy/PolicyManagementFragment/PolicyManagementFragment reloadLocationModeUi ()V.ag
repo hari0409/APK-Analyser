@@ -1,0 +1,28 @@
+# Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->reloadLocationModeUi()V [access_flags=private]
+#
+# Parameters:
+# local registers: v0...v4
+#
+# - return:void
+
+reloadLocationModeUi-BB@0x0 : [ reloadLocationModeUi-BB@0x2e reloadLocationModeUi-BB@0x30 ]
+	0       (00000000) const/4              v1, 0
+	1       (00000002) invoke-virtual       v4, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->getActivity()Landroid/app/Activity;
+	2       (00000008) move-result-object   v2
+	3       (0000000a) invoke-virtual       v2, Landroid/app/Activity;->getContentResolver()Landroid/content/ContentResolver;
+	4       (00000010) move-result-object   v2
+	5       (00000012) const-string         v3, 'location_mode'
+	6       (00000016) invoke-static        v2, v3, Landroid/provider/Settings$System;->getString(Landroid/content/ContentResolver; Ljava/lang/String;)Ljava/lang/String;
+	7       (0000001c) move-result-object   v0
+	8       (0000001e) iget-object          v2, v4, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->mSetLocationModePreference Lcom/afwsamples/testdpc/common/preference/DpcSwitchPreference;
+	9       (00000022) invoke-static        v0, v1, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->parseInt(Ljava/lang/String; I)I
+	10      (00000028) move-result          v3
+	11      (0000002a) if-eqz               v3, +3
+
+reloadLocationModeUi-BB@0x2e : [ reloadLocationModeUi-BB@0x30 ]
+	12      (0000002e) const/4              v1, 1
+
+reloadLocationModeUi-BB@0x30 : 
+	13      (00000030) invoke-virtual       v2, v1, Lcom/afwsamples/testdpc/common/preference/DpcSwitchPreference;->setChecked(Z)V
+	14      (00000036) return-void          
+

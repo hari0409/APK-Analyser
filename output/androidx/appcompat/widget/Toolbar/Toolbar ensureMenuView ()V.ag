@@ -1,0 +1,43 @@
+# Landroidx/appcompat/widget/Toolbar;->ensureMenuView()V [access_flags=private]
+#
+# Parameters:
+# local registers: v0...v4
+#
+# - return:void
+
+ensureMenuView-BB@0x0 : [ ensureMenuView-BB@0x8 ensureMenuView-BB@0x7e ]
+	0       (00000000) iget-object          v1, v4, Landroidx/appcompat/widget/Toolbar;->mMenuView Landroidx/appcompat/widget/ActionMenuView;
+	1       (00000004) if-nez               v1, +3d
+
+ensureMenuView-BB@0x8 : [ ensureMenuView-BB@0x7e ]
+	2       (00000008) new-instance         v1, Landroidx/appcompat/widget/ActionMenuView;
+	3       (0000000c) invoke-virtual       v4, Landroidx/appcompat/widget/Toolbar;->getContext()Landroid/content/Context;
+	4       (00000012) move-result-object   v2
+	5       (00000014) invoke-direct        v1, v2, Landroidx/appcompat/widget/ActionMenuView;-><init>(Landroid/content/Context;)V
+	6       (0000001a) iput-object          v1, v4, Landroidx/appcompat/widget/Toolbar;->mMenuView Landroidx/appcompat/widget/ActionMenuView;
+	7       (0000001e) iget-object          v1, v4, Landroidx/appcompat/widget/Toolbar;->mMenuView Landroidx/appcompat/widget/ActionMenuView;
+	8       (00000022) iget                 v2, v4, Landroidx/appcompat/widget/Toolbar;->mPopupTheme I
+	9       (00000026) invoke-virtual       v1, v2, Landroidx/appcompat/widget/ActionMenuView;->setPopupTheme(I)V
+	10      (0000002c) iget-object          v1, v4, Landroidx/appcompat/widget/Toolbar;->mMenuView Landroidx/appcompat/widget/ActionMenuView;
+	11      (00000030) iget-object          v2, v4, Landroidx/appcompat/widget/Toolbar;->mMenuViewItemClickListener Landroidx/appcompat/widget/ActionMenuView$OnMenuItemClickListener;
+	12      (00000034) invoke-virtual       v1, v2, Landroidx/appcompat/widget/ActionMenuView;->setOnMenuItemClickListener(Landroidx/appcompat/widget/ActionMenuView$OnMenuItemClickListener;)V
+	13      (0000003a) iget-object          v1, v4, Landroidx/appcompat/widget/Toolbar;->mMenuView Landroidx/appcompat/widget/ActionMenuView;
+	14      (0000003e) iget-object          v2, v4, Landroidx/appcompat/widget/Toolbar;->mActionMenuPresenterCallback Landroidx/appcompat/view/menu/MenuPresenter$Callback;
+	15      (00000042) iget-object          v3, v4, Landroidx/appcompat/widget/Toolbar;->mMenuBuilderCallback Landroidx/appcompat/view/menu/MenuBuilder$Callback;
+	16      (00000046) invoke-virtual       v1, v2, v3, Landroidx/appcompat/widget/ActionMenuView;->setMenuCallbacks(Landroidx/appcompat/view/menu/MenuPresenter$Callback; Landroidx/appcompat/view/menu/MenuBuilder$Callback;)V
+	17      (0000004c) invoke-virtual       v4, Landroidx/appcompat/widget/Toolbar;->generateDefaultLayoutParams()Landroidx/appcompat/widget/Toolbar$LayoutParams;
+	18      (00000052) move-result-object   v0
+	19      (00000054) const                v1, 8388613 # [1.1754950514715197e-38]
+	20      (0000005a) iget                 v2, v4, Landroidx/appcompat/widget/Toolbar;->mButtonGravity I
+	21      (0000005e) and-int/lit8         v2, v2, 112
+	22      (00000062) or-int/2addr         v1, v2
+	23      (00000064) iput                 v1, v0, Landroidx/appcompat/widget/Toolbar$LayoutParams;->gravity I
+	24      (00000068) iget-object          v1, v4, Landroidx/appcompat/widget/Toolbar;->mMenuView Landroidx/appcompat/widget/ActionMenuView;
+	25      (0000006c) invoke-virtual       v1, v0, Landroidx/appcompat/widget/ActionMenuView;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
+	26      (00000072) iget-object          v1, v4, Landroidx/appcompat/widget/Toolbar;->mMenuView Landroidx/appcompat/widget/ActionMenuView;
+	27      (00000076) const/4              v2, 0
+	28      (00000078) invoke-direct        v4, v1, v2, Landroidx/appcompat/widget/Toolbar;->addSystemView(Landroid/view/View; Z)V
+
+ensureMenuView-BB@0x7e : 
+	29      (0000007e) return-void          
+

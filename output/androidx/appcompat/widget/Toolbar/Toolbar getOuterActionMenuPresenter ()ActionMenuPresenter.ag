@@ -1,0 +1,11 @@
+# Landroidx/appcompat/widget/Toolbar;->getOuterActionMenuPresenter()Landroidx/appcompat/widget/ActionMenuPresenter; [access_flags=]
+#
+# Parameters:
+# local registers: v0...v1
+#
+# - return:androidx.appcompat.widget.ActionMenuPresenter
+
+getOuterActionMenuPresenter-BB@0x0 : 
+	0       (00000000) iget-object          v0, v1, Landroidx/appcompat/widget/Toolbar;->mOuterActionMenuPresenter Landroidx/appcompat/widget/ActionMenuPresenter;
+	1       (00000004) return-object        v0
+

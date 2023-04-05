@@ -1,0 +1,53 @@
+# Lcom/afwsamples/testdpc/policy/GetAvailableComponentsTask;->onPostExecute(Ljava/util/List;)V [access_flags=protected]
+#
+# Parameters:
+# - local registers: v0...v6
+# - v7:java.util.List
+#
+# - return:void
+
+onPostExecute-BB@0x0 : [ onPostExecute-BB@0x8 onPostExecute-BB@0x18 ]
+	0       (00000000) iget-object          v4, v6, Lcom/afwsamples/testdpc/policy/GetAvailableComponentsTask;->mActivity Landroid/app/Activity;
+	1       (00000004) if-eqz               v4, +a
+
+onPostExecute-BB@0x8 : [ onPostExecute-BB@0x18 onPostExecute-BB@0x1a ]
+	2       (00000008) iget-object          v4, v6, Lcom/afwsamples/testdpc/policy/GetAvailableComponentsTask;->mActivity Landroid/app/Activity;
+	3       (0000000c) invoke-virtual       v4, Landroid/app/Activity;->isFinishing()Z
+	4       (00000012) move-result          v4
+	5       (00000014) if-eqz               v4, +3
+
+onPostExecute-BB@0x18 : 
+	6       (00000018) return-void          
+
+onPostExecute-BB@0x1a : [ onPostExecute-BB@0x18 ]
+	7       (0000001a) invoke-virtual       v6, v7, Lcom/afwsamples/testdpc/policy/GetAvailableComponentsTask;->getResolveInfoListFromAvailableComponents(Ljava/util/List;)Ljava/util/List;
+	8       (00000020) move-result-object   v1
+	9       (00000022) iget-object          v4, v6, Lcom/afwsamples/testdpc/policy/GetAvailableComponentsTask;->mActivity Landroid/app/Activity;
+	10      (00000026) invoke-virtual       v4, Landroid/app/Activity;->getPackageManager()Landroid/content/pm/PackageManager;
+	11      (0000002c) move-result-object   v2
+	12      (0000002e) new-instance         v4, Landroid/content/pm/ResolveInfo$DisplayNameComparator;
+	13      (00000032) invoke-direct        v4, v2, Landroid/content/pm/ResolveInfo$DisplayNameComparator;-><init>(Landroid/content/pm/PackageManager;)V
+	14      (00000038) invoke-static        v1, v4, Ljava/util/Collections;->sort(Ljava/util/List; Ljava/util/Comparator;)V
+	15      (0000003e) invoke-virtual       v6, Lcom/afwsamples/testdpc/policy/GetAvailableComponentsTask;->getPermittedComponentsList()Ljava/util/List;
+	16      (00000044) move-result-object   v3
+	17      (00000046) new-instance         v0, Lcom/afwsamples/testdpc/policy/AvailableComponentsInfoArrayAdapter;
+	18      (0000004a) iget-object          v4, v6, Lcom/afwsamples/testdpc/policy/GetAvailableComponentsTask;->mActivity Landroid/app/Activity;
+	19      (0000004e) invoke-direct        v0, v4, v1, v3, Lcom/afwsamples/testdpc/policy/AvailableComponentsInfoArrayAdapter;-><init>(Landroid/content/Context; Ljava/util/List; Ljava/util/List;)V
+	20      (00000054) iget-object          v4, v6, Lcom/afwsamples/testdpc/policy/GetAvailableComponentsTask;->mListView Landroid/widget/ListView;
+	21      (00000058) invoke-virtual       v4, v0, Landroid/widget/ListView;->setAdapter(Landroid/widget/ListAdapter;)V
+	22      (0000005e) iget-object          v4, v6, Lcom/afwsamples/testdpc/policy/GetAvailableComponentsTask;->mListView Landroid/widget/ListView;
+	23      (00000062) new-instance         v5, Lcom/afwsamples/testdpc/policy/GetAvailableComponentsTask$1;
+	24      (00000066) invoke-direct        v5, v6, v0, Lcom/afwsamples/testdpc/policy/GetAvailableComponentsTask$1;-><init>(Lcom/afwsamples/testdpc/policy/GetAvailableComponentsTask; Lcom/afwsamples/testdpc/policy/AvailableComponentsInfoArrayAdapter;)V
+	25      (0000006c) invoke-virtual       v4, v5, Landroid/widget/ListView;->setOnItemClickListener(Landroid/widget/AdapterView$OnItemClickListener;)V
+	26      (00000072) const/4              v4, 0
+	27      (00000074) invoke-direct        v6, v4, Lcom/afwsamples/testdpc/policy/GetAvailableComponentsTask;->showProgressBar(Z)V
+	28      (0000007a) iget-object          v4, v6, Lcom/afwsamples/testdpc/policy/GetAvailableComponentsTask;->mPositiveButton Landroid/widget/Button;
+	29      (0000007e) new-instance         v5, Lcom/afwsamples/testdpc/policy/GetAvailableComponentsTask$2;
+	30      (00000082) invoke-direct        v5, v6, v0, Lcom/afwsamples/testdpc/policy/GetAvailableComponentsTask$2;-><init>(Lcom/afwsamples/testdpc/policy/GetAvailableComponentsTask; Lcom/afwsamples/testdpc/policy/AvailableComponentsInfoArrayAdapter;)V
+	31      (00000088) invoke-virtual       v4, v5, Landroid/widget/Button;->setOnClickListener(Landroid/view/View$OnClickListener;)V
+	32      (0000008e) iget-object          v4, v6, Lcom/afwsamples/testdpc/policy/GetAvailableComponentsTask;->mNeutralButton Landroid/widget/Button;
+	33      (00000092) new-instance         v5, Lcom/afwsamples/testdpc/policy/GetAvailableComponentsTask$3;
+	34      (00000096) invoke-direct        v5, v6, Lcom/afwsamples/testdpc/policy/GetAvailableComponentsTask$3;-><init>(Lcom/afwsamples/testdpc/policy/GetAvailableComponentsTask;)V
+	35      (0000009c) invoke-virtual       v4, v5, Landroid/widget/Button;->setOnClickListener(Landroid/view/View$OnClickListener;)V
+	36      (000000a2) goto                 -45
+

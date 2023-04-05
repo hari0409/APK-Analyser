@@ -1,0 +1,38 @@
+# Landroidx/appcompat/view/menu/ActionMenuItemView$ActionMenuItemForwardingListener;->onForwardingStarted()Z [access_flags=protected]
+#
+# Parameters:
+# local registers: v0...v4
+#
+# - return:boolean
+
+onForwardingStarted-BB@0x0 : [ onForwardingStarted-BB@0xe onForwardingStarted-BB@0x44 ]
+	0       (00000000) const/4              v1, 0
+	1       (00000002) iget-object          v2, v4, Landroidx/appcompat/view/menu/ActionMenuItemView$ActionMenuItemForwardingListener;->this$0 Landroidx/appcompat/view/menu/ActionMenuItemView;
+	2       (00000006) iget-object          v2, v2, Landroidx/appcompat/view/menu/ActionMenuItemView;->mItemInvoker Landroidx/appcompat/view/menu/MenuBuilder$ItemInvoker;
+	3       (0000000a) if-eqz               v2, +1d
+
+onForwardingStarted-BB@0xe : [ onForwardingStarted-BB@0x2a onForwardingStarted-BB@0x44 ]
+	4       (0000000e) iget-object          v2, v4, Landroidx/appcompat/view/menu/ActionMenuItemView$ActionMenuItemForwardingListener;->this$0 Landroidx/appcompat/view/menu/ActionMenuItemView;
+	5       (00000012) iget-object          v2, v2, Landroidx/appcompat/view/menu/ActionMenuItemView;->mItemInvoker Landroidx/appcompat/view/menu/MenuBuilder$ItemInvoker;
+	6       (00000016) iget-object          v3, v4, Landroidx/appcompat/view/menu/ActionMenuItemView$ActionMenuItemForwardingListener;->this$0 Landroidx/appcompat/view/menu/ActionMenuItemView;
+	7       (0000001a) iget-object          v3, v3, Landroidx/appcompat/view/menu/ActionMenuItemView;->mItemData Landroidx/appcompat/view/menu/MenuItemImpl;
+	8       (0000001e) invoke-interface     v2, v3, Landroidx/appcompat/view/menu/MenuBuilder$ItemInvoker;->invokeItem(Landroidx/appcompat/view/menu/MenuItemImpl;)Z
+	9       (00000024) move-result          v2
+	10      (00000026) if-eqz               v2, +f
+
+onForwardingStarted-BB@0x2a : [ onForwardingStarted-BB@0x36 onForwardingStarted-BB@0x44 ]
+	11      (0000002a) invoke-virtual       v4, Landroidx/appcompat/view/menu/ActionMenuItemView$ActionMenuItemForwardingListener;->getPopup()Landroidx/appcompat/view/menu/ShowableListMenu;
+	12      (00000030) move-result-object   v0
+	13      (00000032) if-eqz               v0, +9
+
+onForwardingStarted-BB@0x36 : [ onForwardingStarted-BB@0x42 onForwardingStarted-BB@0x44 ]
+	14      (00000036) invoke-interface     v0, Landroidx/appcompat/view/menu/ShowableListMenu;->isShowing()Z
+	15      (0000003c) move-result          v2
+	16      (0000003e) if-eqz               v2, +3
+
+onForwardingStarted-BB@0x42 : [ onForwardingStarted-BB@0x44 ]
+	17      (00000042) const/4              v1, 1
+
+onForwardingStarted-BB@0x44 : 
+	18      (00000044) return               v1
+

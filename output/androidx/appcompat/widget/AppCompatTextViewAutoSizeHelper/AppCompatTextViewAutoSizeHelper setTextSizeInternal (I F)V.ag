@@ -1,0 +1,31 @@
+# Landroidx/appcompat/widget/AppCompatTextViewAutoSizeHelper;->setTextSizeInternal(I F)V [access_flags=]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:int
+# - v4:float
+#
+# - return:void
+
+setTextSizeInternal-BB@0x0 : [ setTextSizeInternal-BB@0x8 setTextSizeInternal-BB@0x28 ]
+	0       (00000000) iget-object          v1, v2, Landroidx/appcompat/widget/AppCompatTextViewAutoSizeHelper;->mContext Landroid/content/Context;
+	1       (00000004) if-nez               v1, +12
+
+setTextSizeInternal-BB@0x8 : [ setTextSizeInternal-BB@0x10 ]
+	2       (00000008) invoke-static        Landroid/content/res/Resources;->getSystem()Landroid/content/res/Resources;
+	3       (0000000e) move-result-object   v0
+
+setTextSizeInternal-BB@0x10 : 
+	4       (00000010) invoke-virtual       v0, Landroid/content/res/Resources;->getDisplayMetrics()Landroid/util/DisplayMetrics;
+	5       (00000016) move-result-object   v1
+	6       (00000018) invoke-static        v3, v4, v1, Landroid/util/TypedValue;->applyDimension(I F Landroid/util/DisplayMetrics;)F
+	7       (0000001e) move-result          v1
+	8       (00000020) invoke-direct        v2, v1, Landroidx/appcompat/widget/AppCompatTextViewAutoSizeHelper;->setRawTextSize(F)V
+	9       (00000026) return-void          
+
+setTextSizeInternal-BB@0x28 : [ setTextSizeInternal-BB@0x10 ]
+	10      (00000028) iget-object          v1, v2, Landroidx/appcompat/widget/AppCompatTextViewAutoSizeHelper;->mContext Landroid/content/Context;
+	11      (0000002c) invoke-virtual       v1, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
+	12      (00000032) move-result-object   v0
+	13      (00000034) goto                 -12
+

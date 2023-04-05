@@ -1,0 +1,32 @@
+# Landroidx/appcompat/widget/ActionBarContainer;->isCollapsed(Landroid/view/View;)Z [access_flags=private]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:android.view.View
+#
+# - return:boolean
+
+isCollapsed-BB@0x0 : [ isCollapsed-BB@0x4 isCollapsed-BB@0x20 ]
+	0       (00000000) if-eqz               v3, +10
+
+isCollapsed-BB@0x4 : [ isCollapsed-BB@0x14 isCollapsed-BB@0x20 ]
+	1       (00000004) invoke-virtual       v3, Landroid/view/View;->getVisibility()I
+	2       (0000000a) move-result          v0
+	3       (0000000c) const/16             v1, 8
+	4       (00000010) if-eq                v0, v1, +8
+
+isCollapsed-BB@0x14 : [ isCollapsed-BB@0x20 isCollapsed-BB@0x24 ]
+	5       (00000014) invoke-virtual       v3, Landroid/view/View;->getMeasuredHeight()I
+	6       (0000001a) move-result          v0
+	7       (0000001c) if-nez               v0, +4
+
+isCollapsed-BB@0x20 : [ isCollapsed-BB@0x22 ]
+	8       (00000020) const/4              v0, 1
+
+isCollapsed-BB@0x22 : 
+	9       (00000022) return               v0
+
+isCollapsed-BB@0x24 : [ isCollapsed-BB@0x22 ]
+	10      (00000024) const/4              v0, 0
+	11      (00000026) goto                 -2
+

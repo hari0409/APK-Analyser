@@ -1,0 +1,16 @@
+# Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->lambda$null$136$PolicyManagementFragment(Ljava/lang/Integer;)V [access_flags=final synthetic]
+#
+# Parameters:
+# - local registers: v0...v3
+# - v4:java.lang.Integer
+#
+# - return:void
+
+lambda$null$136$PolicyManagementFragment-BB@0x0 : 
+	0       (00000000) const-string         v0, 'startUserInBackground'
+	1       (00000004) const                v1, 2131690366 # [1.9009773587142863e+38]
+	2       (0000000a) const/4              v2, 0
+	3       (0000000c) new-array            v2, v2, [Ljava/lang/Object;
+	4       (00000010) invoke-direct        v3, v0, v1, v2, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->onSuccessShowToast(Ljava/lang/String; I [Ljava/lang/Object;)V
+	5       (00000016) return-void          
+

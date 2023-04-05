@@ -1,0 +1,34 @@
+# Landroidx/appcompat/widget/TooltipCompatHandler;-><init>(Landroid/view/View; Ljava/lang/CharSequence;)V [access_flags=private constructor]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:android.view.View
+# - v3:java.lang.CharSequence
+#
+# - return:void
+
+<init>-BB@0x0 : 
+	0       (00000000) invoke-direct        v1, Ljava/lang/Object;-><init>()V
+	1       (00000006) new-instance         v0, Landroidx/appcompat/widget/TooltipCompatHandler$1;
+	2       (0000000a) invoke-direct        v0, v1, Landroidx/appcompat/widget/TooltipCompatHandler$1;-><init>(Landroidx/appcompat/widget/TooltipCompatHandler;)V
+	3       (00000010) iput-object          v0, v1, Landroidx/appcompat/widget/TooltipCompatHandler;->mShowRunnable Ljava/lang/Runnable;
+	4       (00000014) new-instance         v0, Landroidx/appcompat/widget/TooltipCompatHandler$2;
+	5       (00000018) invoke-direct        v0, v1, Landroidx/appcompat/widget/TooltipCompatHandler$2;-><init>(Landroidx/appcompat/widget/TooltipCompatHandler;)V
+	6       (0000001e) iput-object          v0, v1, Landroidx/appcompat/widget/TooltipCompatHandler;->mHideRunnable Ljava/lang/Runnable;
+	7       (00000022) iput-object          v2, v1, Landroidx/appcompat/widget/TooltipCompatHandler;->mAnchor Landroid/view/View;
+	8       (00000026) iput-object          v3, v1, Landroidx/appcompat/widget/TooltipCompatHandler;->mTooltipText Ljava/lang/CharSequence;
+	9       (0000002a) iget-object          v0, v1, Landroidx/appcompat/widget/TooltipCompatHandler;->mAnchor Landroid/view/View;
+	10      (0000002e) invoke-virtual       v0, Landroid/view/View;->getContext()Landroid/content/Context;
+	11      (00000034) move-result-object   v0
+	12      (00000036) invoke-static        v0, Landroid/view/ViewConfiguration;->get(Landroid/content/Context;)Landroid/view/ViewConfiguration;
+	13      (0000003c) move-result-object   v0
+	14      (0000003e) invoke-static        v0, Landroidx/core/view/ViewConfigurationCompat;->getScaledHoverSlop(Landroid/view/ViewConfiguration;)I
+	15      (00000044) move-result          v0
+	16      (00000046) iput                 v0, v1, Landroidx/appcompat/widget/TooltipCompatHandler;->mHoverSlop I
+	17      (0000004a) invoke-direct        v1, Landroidx/appcompat/widget/TooltipCompatHandler;->clearAnchorPos()V
+	18      (00000050) iget-object          v0, v1, Landroidx/appcompat/widget/TooltipCompatHandler;->mAnchor Landroid/view/View;
+	19      (00000054) invoke-virtual       v0, v1, Landroid/view/View;->setOnLongClickListener(Landroid/view/View$OnLongClickListener;)V
+	20      (0000005a) iget-object          v0, v1, Landroidx/appcompat/widget/TooltipCompatHandler;->mAnchor Landroid/view/View;
+	21      (0000005e) invoke-virtual       v0, v1, Landroid/view/View;->setOnHoverListener(Landroid/view/View$OnHoverListener;)V
+	22      (00000064) return-void          
+

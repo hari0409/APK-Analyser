@@ -1,0 +1,26 @@
+# Lcom/afwsamples/testdpc/common/ToggleComponentsArrayAdapter;->isSystemApp(Landroid/content/pm/ApplicationInfo;)Z [access_flags=protected]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:android.content.pm.ApplicationInfo
+#
+# - return:boolean
+
+isSystemApp-BB@0x0 : [ isSystemApp-BB@0x4 isSystemApp-BB@0x14 ]
+	0       (00000000) if-eqz               v2, +a
+
+isSystemApp-BB@0x4 : [ isSystemApp-BB@0x10 isSystemApp-BB@0x14 ]
+	1       (00000004) iget                 v0, v2, Landroid/content/pm/ApplicationInfo;->flags I
+	2       (00000008) and-int/lit8         v0, v0, 1
+	3       (0000000c) if-eqz               v0, +4
+
+isSystemApp-BB@0x10 : [ isSystemApp-BB@0x12 ]
+	4       (00000010) const/4              v0, 1
+
+isSystemApp-BB@0x12 : 
+	5       (00000012) return               v0
+
+isSystemApp-BB@0x14 : [ isSystemApp-BB@0x12 ]
+	6       (00000014) const/4              v0, 0
+	7       (00000016) goto                 -2
+

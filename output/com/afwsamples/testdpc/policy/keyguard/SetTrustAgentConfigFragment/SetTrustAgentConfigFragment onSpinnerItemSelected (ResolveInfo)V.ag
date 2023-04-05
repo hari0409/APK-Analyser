@@ -1,0 +1,51 @@
+# Lcom/afwsamples/testdpc/policy/keyguard/SetTrustAgentConfigFragment;->onSpinnerItemSelected(Landroid/content/pm/ResolveInfo;)V [access_flags=protected]
+#
+# Parameters:
+# - local registers: v0...v5
+# - v6:android.content.pm.ResolveInfo
+#
+# - return:void
+
+onSpinnerItemSelected-BB@0x0 : [ onSpinnerItemSelected-BB@0x24 onSpinnerItemSelected-BB@0x30 ]
+	0       (00000000) iput-object          v6, v5, Lcom/afwsamples/testdpc/policy/keyguard/SetTrustAgentConfigFragment;->mResolveInfo Landroid/content/pm/ResolveInfo;
+	1       (00000004) invoke-direct        v5, v6, Lcom/afwsamples/testdpc/policy/keyguard/SetTrustAgentConfigFragment;->getComponentName(Landroid/content/pm/ResolveInfo;)Landroid/content/ComponentName;
+	2       (0000000a) move-result-object   v1
+	3       (0000000c) invoke-direct        v5, Lcom/afwsamples/testdpc/policy/keyguard/SetTrustAgentConfigFragment;->getAdmin()Landroid/content/ComponentName;
+	4       (00000012) move-result-object   v0
+	5       (00000014) iget-object          v3, v5, Lcom/afwsamples/testdpc/policy/keyguard/SetTrustAgentConfigFragment;->mDevicePolicyManager Landroid/app/admin/DevicePolicyManager;
+	6       (00000018) invoke-virtual       v3, v0, v1, Landroid/app/admin/DevicePolicyManager;->getTrustAgentConfiguration(Landroid/content/ComponentName; Landroid/content/ComponentName;)Ljava/util/List;
+	7       (0000001e) move-result-object   v2
+	8       (00000020) if-eqz               v2, +8
+
+onSpinnerItemSelected-BB@0x24 : [ onSpinnerItemSelected-BB@0x30 onSpinnerItemSelected-BB@0x72 ]
+	9       (00000024) invoke-interface     v2, Ljava/util/List;->size()I
+	10      (0000002a) move-result          v3
+	11      (0000002c) if-nez               v3, +23
+
+onSpinnerItemSelected-BB@0x30 : [ onSpinnerItemSelected-BB@0x3e ]
+	12      (00000030) new-instance         v3, Landroid/os/PersistableBundle;
+	13      (00000034) invoke-direct        v3, Landroid/os/PersistableBundle;-><init>()V
+	14      (0000003a) iput-object          v3, v5, Lcom/afwsamples/testdpc/policy/keyguard/SetTrustAgentConfigFragment;->mBundle Landroid/os/PersistableBundle;
+
+onSpinnerItemSelected-BB@0x3e : 
+	15      (0000003e) new-instance         v3, Landroid/os/PersistableBundle;
+	16      (00000042) iget-object          v4, v5, Lcom/afwsamples/testdpc/policy/keyguard/SetTrustAgentConfigFragment;->mBundle Landroid/os/PersistableBundle;
+	17      (00000046) invoke-direct        v3, v4, Landroid/os/PersistableBundle;-><init>(Landroid/os/PersistableBundle;)V
+	18      (0000004c) iput-object          v3, v5, Lcom/afwsamples/testdpc/policy/keyguard/SetTrustAgentConfigFragment;->mInitialBundle Landroid/os/PersistableBundle;
+	19      (00000050) iget-object          v3, v5, Lcom/afwsamples/testdpc/policy/keyguard/SetTrustAgentConfigFragment;->mAdapter Lcom/afwsamples/testdpc/common/EditDeleteArrayAdapter;
+	20      (00000054) invoke-virtual       v3, Lcom/afwsamples/testdpc/common/EditDeleteArrayAdapter;->clear()V
+	21      (0000005a) iget-object          v3, v5, Lcom/afwsamples/testdpc/policy/keyguard/SetTrustAgentConfigFragment;->mAdapter Lcom/afwsamples/testdpc/common/EditDeleteArrayAdapter;
+	22      (0000005e) iget-object          v4, v5, Lcom/afwsamples/testdpc/policy/keyguard/SetTrustAgentConfigFragment;->mBundle Landroid/os/PersistableBundle;
+	23      (00000062) invoke-virtual       v4, Landroid/os/PersistableBundle;->keySet()Ljava/util/Set;
+	24      (00000068) move-result-object   v4
+	25      (0000006a) invoke-virtual       v3, v4, Lcom/afwsamples/testdpc/common/EditDeleteArrayAdapter;->addAll(Ljava/util/Collection;)V
+	26      (00000070) return-void          
+
+onSpinnerItemSelected-BB@0x72 : [ onSpinnerItemSelected-BB@0x3e ]
+	27      (00000072) const/4              v3, 0
+	28      (00000074) invoke-interface     v2, v3, Ljava/util/List;->get(I)Ljava/lang/Object;
+	29      (0000007a) move-result-object   v3
+	30      (0000007c) check-cast           v3, Landroid/os/PersistableBundle;
+	31      (00000080) iput-object          v3, v5, Lcom/afwsamples/testdpc/policy/keyguard/SetTrustAgentConfigFragment;->mBundle Landroid/os/PersistableBundle;
+	32      (00000084) goto                 -23
+

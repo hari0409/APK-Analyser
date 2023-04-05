@@ -1,0 +1,61 @@
+# Landroidx/appcompat/view/menu/MenuBuilder;->dispatchSubMenuSelected(Landroidx/appcompat/view/menu/SubMenuBuilder; Landroidx/appcompat/view/menu/MenuPresenter;)Z [access_flags=private]
+#
+# Parameters:
+# - local registers: v0...v5
+# - v6:androidx.appcompat.view.menu.SubMenuBuilder
+# - v7:androidx.appcompat.view.menu.MenuPresenter
+#
+# - return:boolean
+
+dispatchSubMenuSelected-BB@0x0 : [ dispatchSubMenuSelected-BB@0x10 dispatchSubMenuSelected-BB@0x14 ]
+	0       (00000000) iget-object          v3, v5, Landroidx/appcompat/view/menu/MenuBuilder;->mPresenters Ljava/util/concurrent/CopyOnWriteArrayList;
+	1       (00000004) invoke-virtual       v3, Ljava/util/concurrent/CopyOnWriteArrayList;->isEmpty()Z
+	2       (0000000a) move-result          v3
+	3       (0000000c) if-eqz               v3, +4
+
+dispatchSubMenuSelected-BB@0x10 : [ dispatchSubMenuSelected-BB@0x12 ]
+	4       (00000010) const/4              v2, 0
+
+dispatchSubMenuSelected-BB@0x12 : 
+	5       (00000012) return               v2
+
+dispatchSubMenuSelected-BB@0x14 : [ dispatchSubMenuSelected-BB@0x1a dispatchSubMenuSelected-BB@0x22 ]
+	6       (00000014) const/4              v2, 0
+	7       (00000016) if-eqz               v7, +6
+
+dispatchSubMenuSelected-BB@0x1a : [ dispatchSubMenuSelected-BB@0x22 ]
+	8       (0000001a) invoke-interface     v7, v6, Landroidx/appcompat/view/menu/MenuPresenter;->onSubMenuSelected(Landroidx/appcompat/view/menu/SubMenuBuilder;)Z
+	9       (00000020) move-result          v2
+
+dispatchSubMenuSelected-BB@0x22 : [ dispatchSubMenuSelected-BB@0x2e ]
+	10      (00000022) iget-object          v3, v5, Landroidx/appcompat/view/menu/MenuBuilder;->mPresenters Ljava/util/concurrent/CopyOnWriteArrayList;
+	11      (00000026) invoke-virtual       v3, Ljava/util/concurrent/CopyOnWriteArrayList;->iterator()Ljava/util/Iterator;
+	12      (0000002c) move-result-object   v3
+
+dispatchSubMenuSelected-BB@0x2e : [ dispatchSubMenuSelected-BB@0x3a dispatchSubMenuSelected-BB@0x12 ]
+	13      (0000002e) invoke-interface     v3, Ljava/util/Iterator;->hasNext()Z
+	14      (00000034) move-result          v4
+	15      (00000036) if-eqz               v4, -12
+
+dispatchSubMenuSelected-BB@0x3a : [ dispatchSubMenuSelected-BB@0x56 dispatchSubMenuSelected-BB@0x62 ]
+	16      (0000003a) invoke-interface     v3, Ljava/util/Iterator;->next()Ljava/lang/Object;
+	17      (00000040) move-result-object   v1
+	18      (00000042) check-cast           v1, Ljava/lang/ref/WeakReference;
+	19      (00000046) invoke-virtual       v1, Ljava/lang/ref/WeakReference;->get()Ljava/lang/Object;
+	20      (0000004c) move-result-object   v0
+	21      (0000004e) check-cast           v0, Landroidx/appcompat/view/menu/MenuPresenter;
+	22      (00000052) if-nez               v0, +8
+
+dispatchSubMenuSelected-BB@0x56 : [ dispatchSubMenuSelected-BB@0x2e ]
+	23      (00000056) iget-object          v4, v5, Landroidx/appcompat/view/menu/MenuBuilder;->mPresenters Ljava/util/concurrent/CopyOnWriteArrayList;
+	24      (0000005a) invoke-virtual       v4, v1, Ljava/util/concurrent/CopyOnWriteArrayList;->remove(Ljava/lang/Object;)Z
+	25      (00000060) goto                 -19
+
+dispatchSubMenuSelected-BB@0x62 : [ dispatchSubMenuSelected-BB@0x66 dispatchSubMenuSelected-BB@0x2e ]
+	26      (00000062) if-nez               v2, -1a
+
+dispatchSubMenuSelected-BB@0x66 : [ dispatchSubMenuSelected-BB@0x2e ]
+	27      (00000066) invoke-interface     v0, v6, Landroidx/appcompat/view/menu/MenuPresenter;->onSubMenuSelected(Landroidx/appcompat/view/menu/SubMenuBuilder;)Z
+	28      (0000006c) move-result          v2
+	29      (0000006e) goto                 -20
+

@@ -1,0 +1,12 @@
+# Landroidx/appcompat/widget/SearchView;->setAppSearchData(Landroid/os/Bundle;)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v0
+# - v1:android.os.Bundle
+#
+# - return:void
+
+setAppSearchData-BB@0x0 : 
+	0       (00000000) iput-object          v1, v0, Landroidx/appcompat/widget/SearchView;->mAppSearchData Landroid/os/Bundle;
+	1       (00000004) return-void          
+

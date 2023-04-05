@@ -1,0 +1,23 @@
+# Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->reloadEnableUsbDataSignalingUi()V [access_flags=private]
+#
+# Parameters:
+# local registers: v0...v2
+#
+# - return:void
+
+reloadEnableUsbDataSignalingUi-BB@0x0 : [ reloadEnableUsbDataSignalingUi-BB@0x10 reloadEnableUsbDataSignalingUi-BB@0x26 ]
+	0       (00000000) iget-object          v1, v2, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->mEnableUsbDataSignalingPreference Lcom/afwsamples/testdpc/common/preference/DpcSwitchPreference;
+	1       (00000004) invoke-virtual       v1, Lcom/afwsamples/testdpc/common/preference/DpcSwitchPreference;->isEnabled()Z
+	2       (0000000a) move-result          v1
+	3       (0000000c) if-eqz               v1, +d
+
+reloadEnableUsbDataSignalingUi-BB@0x10 : [ reloadEnableUsbDataSignalingUi-BB@0x26 ]
+	4       (00000010) iget-object          v1, v2, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->mDevicePolicyManager Landroid/app/admin/DevicePolicyManager;
+	5       (00000014) invoke-virtual       v1, Landroid/app/admin/DevicePolicyManager;->isUsbDataSignalingEnabled()Z
+	6       (0000001a) move-result          v0
+	7       (0000001c) iget-object          v1, v2, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->mEnableUsbDataSignalingPreference Lcom/afwsamples/testdpc/common/preference/DpcSwitchPreference;
+	8       (00000020) invoke-virtual       v1, v0, Lcom/afwsamples/testdpc/common/preference/DpcSwitchPreference;->setChecked(Z)V
+
+reloadEnableUsbDataSignalingUi-BB@0x26 : 
+	9       (00000026) return-void          
+

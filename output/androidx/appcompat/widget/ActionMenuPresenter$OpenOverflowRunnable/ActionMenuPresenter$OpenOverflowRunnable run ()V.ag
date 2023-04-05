@@ -1,0 +1,48 @@
+# Landroidx/appcompat/widget/ActionMenuPresenter$OpenOverflowRunnable;->run()V [access_flags=public]
+#
+# Parameters:
+# local registers: v0...v3
+#
+# - return:void
+
+run-BB@0x0 : [ run-BB@0x10 run-BB@0x22 ]
+	0       (00000000) iget-object          v1, v3, Landroidx/appcompat/widget/ActionMenuPresenter$OpenOverflowRunnable;->this$0 Landroidx/appcompat/widget/ActionMenuPresenter;
+	1       (00000004) invoke-static        v1, Landroidx/appcompat/widget/ActionMenuPresenter;->access$300(Landroidx/appcompat/widget/ActionMenuPresenter;)Landroidx/appcompat/view/menu/MenuBuilder;
+	2       (0000000a) move-result-object   v1
+	3       (0000000c) if-eqz               v1, +b
+
+run-BB@0x10 : [ run-BB@0x22 ]
+	4       (00000010) iget-object          v1, v3, Landroidx/appcompat/widget/ActionMenuPresenter$OpenOverflowRunnable;->this$0 Landroidx/appcompat/widget/ActionMenuPresenter;
+	5       (00000014) invoke-static        v1, Landroidx/appcompat/widget/ActionMenuPresenter;->access$400(Landroidx/appcompat/widget/ActionMenuPresenter;)Landroidx/appcompat/view/menu/MenuBuilder;
+	6       (0000001a) move-result-object   v1
+	7       (0000001c) invoke-virtual       v1, Landroidx/appcompat/view/menu/MenuBuilder;->changeMenuMode()V
+
+run-BB@0x22 : [ run-BB@0x36 run-BB@0x5e ]
+	8       (00000022) iget-object          v1, v3, Landroidx/appcompat/widget/ActionMenuPresenter$OpenOverflowRunnable;->this$0 Landroidx/appcompat/widget/ActionMenuPresenter;
+	9       (00000026) invoke-static        v1, Landroidx/appcompat/widget/ActionMenuPresenter;->access$500(Landroidx/appcompat/widget/ActionMenuPresenter;)Landroidx/appcompat/view/menu/MenuView;
+	10      (0000002c) move-result-object   v0
+	11      (0000002e) check-cast           v0, Landroid/view/View;
+	12      (00000032) if-eqz               v0, +16
+
+run-BB@0x36 : [ run-BB@0x42 run-BB@0x5e ]
+	13      (00000036) invoke-virtual       v0, Landroid/view/View;->getWindowToken()Landroid/os/IBinder;
+	14      (0000003c) move-result-object   v1
+	15      (0000003e) if-eqz               v1, +10
+
+run-BB@0x42 : [ run-BB@0x52 run-BB@0x5e ]
+	16      (00000042) iget-object          v1, v3, Landroidx/appcompat/widget/ActionMenuPresenter$OpenOverflowRunnable;->mPopup Landroidx/appcompat/widget/ActionMenuPresenter$OverflowPopup;
+	17      (00000046) invoke-virtual       v1, Landroidx/appcompat/widget/ActionMenuPresenter$OverflowPopup;->tryShow()Z
+	18      (0000004c) move-result          v1
+	19      (0000004e) if-eqz               v1, +8
+
+run-BB@0x52 : [ run-BB@0x5e ]
+	20      (00000052) iget-object          v1, v3, Landroidx/appcompat/widget/ActionMenuPresenter$OpenOverflowRunnable;->this$0 Landroidx/appcompat/widget/ActionMenuPresenter;
+	21      (00000056) iget-object          v2, v3, Landroidx/appcompat/widget/ActionMenuPresenter$OpenOverflowRunnable;->mPopup Landroidx/appcompat/widget/ActionMenuPresenter$OverflowPopup;
+	22      (0000005a) iput-object          v2, v1, Landroidx/appcompat/widget/ActionMenuPresenter;->mOverflowPopup Landroidx/appcompat/widget/ActionMenuPresenter$OverflowPopup;
+
+run-BB@0x5e : 
+	23      (0000005e) iget-object          v1, v3, Landroidx/appcompat/widget/ActionMenuPresenter$OpenOverflowRunnable;->this$0 Landroidx/appcompat/widget/ActionMenuPresenter;
+	24      (00000062) const/4              v2, 0
+	25      (00000064) iput-object          v2, v1, Landroidx/appcompat/widget/ActionMenuPresenter;->mPostedOpenRunnable Landroidx/appcompat/widget/ActionMenuPresenter$OpenOverflowRunnable;
+	26      (00000068) return-void          
+

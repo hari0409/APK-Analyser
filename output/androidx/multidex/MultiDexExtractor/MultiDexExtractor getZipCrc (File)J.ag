@@ -1,0 +1,22 @@
+# Landroidx/multidex/MultiDexExtractor;->getZipCrc(Ljava/io/File;)J [access_flags=private static]
+#
+# Parameters:
+# - local registers: v0...v3
+# - v4:java.io.File
+#
+# - return:long
+
+getZipCrc-BB@0x0 : [ getZipCrc-BB@0x14 getZipCrc-BB@0x1a ]
+	0       (00000000) invoke-static        v4, Landroidx/multidex/ZipUtil;->getZipCrc(Ljava/io/File;)J
+	1       (00000006) move-result-wide     v0
+	2       (00000008) const-wide/16        v2, -1 # [-1.0]
+	3       (0000000c) cmp-long             v2, v0, v2
+	4       (00000010) if-nez               v2, +5
+
+getZipCrc-BB@0x14 : [ getZipCrc-BB@0x1a ]
+	5       (00000014) const-wide/16        v2, 1 # [1.0]
+	6       (00000018) sub-long/2addr       v0, v2
+
+getZipCrc-BB@0x1a : 
+	7       (0000001a) return-wide          v0
+

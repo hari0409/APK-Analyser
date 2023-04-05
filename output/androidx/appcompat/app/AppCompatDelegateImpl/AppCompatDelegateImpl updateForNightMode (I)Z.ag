@@ -1,0 +1,67 @@
+# Landroidx/appcompat/app/AppCompatDelegateImpl;->updateForNightMode(I)Z [access_flags=private]
+#
+# Parameters:
+# - local registers: v0...v9
+# - v10:int
+#
+# - return:boolean
+
+updateForNightMode-BB@0x0 : [ updateForNightMode-BB@0x22 updateForNightMode-BB@0x48 ]
+	0       (00000000) iget-object          v7, v9, Landroidx/appcompat/app/AppCompatDelegateImpl;->mContext Landroid/content/Context;
+	1       (00000004) invoke-virtual       v7, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
+	2       (0000000a) move-result-object   v6
+	3       (0000000c) invoke-virtual       v6, Landroid/content/res/Resources;->getConfiguration()Landroid/content/res/Configuration;
+	4       (00000012) move-result-object   v1
+	5       (00000014) iget                 v7, v1, Landroid/content/res/Configuration;->uiMode I
+	6       (00000018) and-int/lit8         v3, v7, 48
+	7       (0000001c) const/4              v7, 2
+	8       (0000001e) if-ne                v10, v7, +15
+
+updateForNightMode-BB@0x22 : [ updateForNightMode-BB@0x26 ]
+	9       (00000022) const/16             v5, 32
+
+updateForNightMode-BB@0x26 : [ updateForNightMode-BB@0x2a updateForNightMode-BB@0x88 ]
+	10      (00000026) if-eq                v3, v5, +31
+
+updateForNightMode-BB@0x2a : [ updateForNightMode-BB@0x36 updateForNightMode-BB@0x4e ]
+	11      (0000002a) invoke-direct        v9, Landroidx/appcompat/app/AppCompatDelegateImpl;->shouldRecreateOnNightModeChange()Z
+	12      (00000030) move-result          v7
+	13      (00000032) if-eqz               v7, +e
+
+updateForNightMode-BB@0x36 : [ updateForNightMode-BB@0x44 ]
+	14      (00000036) iget-object          v0, v9, Landroidx/appcompat/app/AppCompatDelegateImpl;->mContext Landroid/content/Context;
+	15      (0000003a) check-cast           v0, Landroid/app/Activity;
+	16      (0000003e) invoke-virtual       v0, Landroid/app/Activity;->recreate()V
+
+updateForNightMode-BB@0x44 : [ updateForNightMode-BB@0x46 ]
+	17      (00000044) const/4              v7, 1
+
+updateForNightMode-BB@0x46 : 
+	18      (00000046) return               v7
+
+updateForNightMode-BB@0x48 : [ updateForNightMode-BB@0x26 ]
+	19      (00000048) const/16             v5, 16
+	20      (0000004c) goto                 -13
+
+updateForNightMode-BB@0x4e : [ updateForNightMode-BB@0x80 updateForNightMode-BB@0x44 ]
+	21      (0000004e) new-instance         v2, Landroid/content/res/Configuration;
+	22      (00000052) invoke-direct        v2, v1, Landroid/content/res/Configuration;-><init>(Landroid/content/res/Configuration;)V
+	23      (00000058) invoke-virtual       v6, Landroid/content/res/Resources;->getDisplayMetrics()Landroid/util/DisplayMetrics;
+	24      (0000005e) move-result-object   v4
+	25      (00000060) iget                 v7, v2, Landroid/content/res/Configuration;->uiMode I
+	26      (00000064) and-int/lit8         v7, v7, -49
+	27      (00000068) or-int/2addr         v7, v5
+	28      (0000006a) iput                 v7, v2, Landroid/content/res/Configuration;->uiMode I
+	29      (0000006e) invoke-virtual       v6, v2, v4, Landroid/content/res/Resources;->updateConfiguration(Landroid/content/res/Configuration; Landroid/util/DisplayMetrics;)V
+	30      (00000074) sget                 v7, Landroid/os/Build$VERSION;->SDK_INT I
+	31      (00000078) const/16             v8, 26
+	32      (0000007c) if-ge                v7, v8, -1c
+
+updateForNightMode-BB@0x80 : [ updateForNightMode-BB@0x44 ]
+	33      (00000080) invoke-static        v6, Landroidx/appcompat/app/ResourcesFlusher;->flush(Landroid/content/res/Resources;)V
+	34      (00000086) goto                 -21
+
+updateForNightMode-BB@0x88 : [ updateForNightMode-BB@0x46 ]
+	35      (00000088) const/4              v7, 0
+	36      (0000008a) goto                 -22
+

@@ -1,0 +1,24 @@
+# Lcom/afwsamples/testdpc/common/keyvaluepair/KeyValuePairDialogFragment;->configureTypeSpinner()V [access_flags=private]
+#
+# Parameters:
+# local registers: v0...v4
+#
+# - return:void
+
+configureTypeSpinner-BB@0x0 : 
+	0       (00000000) new-instance         v0, Lcom/afwsamples/testdpc/common/keyvaluepair/KeyValuePairDialogFragment$2;
+	1       (00000004) invoke-virtual       v4, Lcom/afwsamples/testdpc/common/keyvaluepair/KeyValuePairDialogFragment;->getActivity()Landroid/app/Activity;
+	2       (0000000a) move-result-object   v1
+	3       (0000000c) const                v2, 17367048 # [2.516294836806502e-38]
+	4       (00000012) sget-object          v3, Lcom/afwsamples/testdpc/common/keyvaluepair/KeyValuePairDialogFragment;->TYPE_DISPLAY_STRING_ARRAY [Ljava/lang/String;
+	5       (00000016) invoke-direct        v0, v4, v1, v2, v3, Lcom/afwsamples/testdpc/common/keyvaluepair/KeyValuePairDialogFragment$2;-><init>(Lcom/afwsamples/testdpc/common/keyvaluepair/KeyValuePairDialogFragment; Landroid/content/Context; I [Ljava/lang/String;)V
+	6       (0000001c) const                v1, 17367049 # [2.516295117066195e-38]
+	7       (00000022) invoke-virtual       v0, v1, Landroid/widget/ArrayAdapter;->setDropDownViewResource(I)V
+	8       (00000028) iget-object          v1, v4, Lcom/afwsamples/testdpc/common/keyvaluepair/KeyValuePairDialogFragment;->mTypeSpinner Landroid/widget/Spinner;
+	9       (0000002c) invoke-virtual       v1, v0, Landroid/widget/Spinner;->setAdapter(Landroid/widget/SpinnerAdapter;)V
+	10      (00000032) iget-object          v1, v4, Lcom/afwsamples/testdpc/common/keyvaluepair/KeyValuePairDialogFragment;->mTypeSpinner Landroid/widget/Spinner;
+	11      (00000036) new-instance         v2, Lcom/afwsamples/testdpc/common/keyvaluepair/KeyValuePairDialogFragment$3;
+	12      (0000003a) invoke-direct        v2, v4, Lcom/afwsamples/testdpc/common/keyvaluepair/KeyValuePairDialogFragment$3;-><init>(Lcom/afwsamples/testdpc/common/keyvaluepair/KeyValuePairDialogFragment;)V
+	13      (00000040) invoke-virtual       v1, v2, Landroid/widget/Spinner;->setOnItemSelectedListener(Landroid/widget/AdapterView$OnItemSelectedListener;)V
+	14      (00000046) return-void          
+

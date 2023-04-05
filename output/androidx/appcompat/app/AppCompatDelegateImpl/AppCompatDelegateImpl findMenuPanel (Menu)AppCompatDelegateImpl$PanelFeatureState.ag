@@ -1,0 +1,44 @@
+# Landroidx/appcompat/app/AppCompatDelegateImpl;->findMenuPanel(Landroid/view/Menu;)Landroidx/appcompat/app/AppCompatDelegateImpl$PanelFeatureState; [access_flags=]
+#
+# Parameters:
+# - local registers: v0...v5
+# - v6:android.view.Menu
+#
+# - return:androidx.appcompat.app.AppCompatDelegateImpl$PanelFeatureState
+
+findMenuPanel-BB@0x0 : [ findMenuPanel-BB@0x8 findMenuPanel-BB@0x22 ]
+	0       (00000000) iget-object          v3, v5, Landroidx/appcompat/app/AppCompatDelegateImpl;->mPanels [Landroidx/appcompat/app/AppCompatDelegateImpl$PanelFeatureState;
+	1       (00000004) if-eqz               v3, +f
+
+findMenuPanel-BB@0x8 : [ findMenuPanel-BB@0xa ]
+	2       (00000008) array-length         v0, v3
+
+findMenuPanel-BB@0xa : [ findMenuPanel-BB@0xc ]
+	3       (0000000a) const/4              v1, 0
+
+findMenuPanel-BB@0xc : [ findMenuPanel-BB@0x10 findMenuPanel-BB@0x2c ]
+	4       (0000000c) if-ge                v1, v0, +10
+
+findMenuPanel-BB@0x10 : [ findMenuPanel-BB@0x18 findMenuPanel-BB@0x26 ]
+	5       (00000010) aget-object          v2, v3, v1
+	6       (00000014) if-eqz               v2, +9
+
+findMenuPanel-BB@0x18 : [ findMenuPanel-BB@0x20 findMenuPanel-BB@0x26 ]
+	7       (00000018) iget-object          v4, v2, Landroidx/appcompat/app/AppCompatDelegateImpl$PanelFeatureState;->menu Landroidx/appcompat/view/menu/MenuBuilder;
+	8       (0000001c) if-ne                v4, v6, +5
+
+findMenuPanel-BB@0x20 : 
+	9       (00000020) return-object        v2
+
+findMenuPanel-BB@0x22 : [ findMenuPanel-BB@0xa ]
+	10      (00000022) const/4              v0, 0
+	11      (00000024) goto                 -d
+
+findMenuPanel-BB@0x26 : [ findMenuPanel-BB@0xc ]
+	12      (00000026) add-int/lit8         v1, v1, 1
+	13      (0000002a) goto                 -f
+
+findMenuPanel-BB@0x2c : [ findMenuPanel-BB@0x20 ]
+	14      (0000002c) const/4              v2, 0
+	15      (0000002e) goto                 -7
+

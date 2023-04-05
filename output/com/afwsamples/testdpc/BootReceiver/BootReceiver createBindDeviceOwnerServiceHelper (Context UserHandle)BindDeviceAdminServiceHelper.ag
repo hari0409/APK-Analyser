@@ -1,0 +1,16 @@
+# Lcom/afwsamples/testdpc/BootReceiver;->createBindDeviceOwnerServiceHelper(Landroid/content/Context; Landroid/os/UserHandle;)Lcom/afwsamples/testdpc/comp/BindDeviceAdminServiceHelper; [access_flags=private]
+#
+# Parameters:
+# - local registers: v0...v3
+# - v4:android.content.Context
+# - v5:android.os.UserHandle
+#
+# - return:com.afwsamples.testdpc.comp.BindDeviceAdminServiceHelper
+
+createBindDeviceOwnerServiceHelper-BB@0x0 : 
+	0       (00000000) new-instance         v0, Lcom/afwsamples/testdpc/comp/BindDeviceAdminServiceHelper;
+	1       (00000004) const-class          v1, Lcom/afwsamples/testdpc/comp/DeviceOwnerService;
+	2       (00000008) sget-object          v2, Lcom/afwsamples/testdpc/BootReceiver$$Lambda$1;->$instance Lcom/afwsamples/testdpc/comp/ServiceInterfaceConverter;
+	3       (0000000c) invoke-direct        v0, v4, v1, v2, v5, Lcom/afwsamples/testdpc/comp/BindDeviceAdminServiceHelper;-><init>(Landroid/content/Context; Ljava/lang/Class; Lcom/afwsamples/testdpc/comp/ServiceInterfaceConverter; Landroid/os/UserHandle;)V
+	4       (00000012) return-object        v0
+

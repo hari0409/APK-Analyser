@@ -1,0 +1,16 @@
+# Lcom/afwsamples/testdpc/PolicyManagementActivity;->onCreateOptionsMenu(Landroid/view/Menu;)Z [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:android.view.Menu
+#
+# - return:boolean
+
+onCreateOptionsMenu-BB@0x0 : 
+	0       (00000000) invoke-virtual       v2, Lcom/afwsamples/testdpc/PolicyManagementActivity;->getMenuInflater()Landroid/view/MenuInflater;
+	1       (00000006) move-result-object   v0
+	2       (00000008) const/high16         v1, 32524 # [1.8609191940988822e+38]
+	3       (0000000c) invoke-virtual       v0, v1, v3, Landroid/view/MenuInflater;->inflate(I Landroid/view/Menu;)V
+	4       (00000012) const/4              v0, 1
+	5       (00000014) return               v0
+

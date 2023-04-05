@@ -1,0 +1,22 @@
+# Lcom/afwsamples/testdpc/CrossProfileAppsAllowlistFragment;->setOnClickListeners()V [access_flags=private]
+#
+# Parameters:
+# local registers: v0...v2
+#
+# - return:void
+
+setOnClickListeners-BB@0x0 : 
+	0       (00000000) iget-object          v0, v2, Lcom/afwsamples/testdpc/CrossProfileAppsAllowlistFragment;->mResetButton Landroid/widget/Button;
+	1       (00000004) new-instance         v1, Lcom/afwsamples/testdpc/CrossProfileAppsAllowlistFragment$$Lambda$0;
+	2       (00000008) invoke-direct        v1, v2, Lcom/afwsamples/testdpc/CrossProfileAppsAllowlistFragment$$Lambda$0;-><init>(Lcom/afwsamples/testdpc/CrossProfileAppsAllowlistFragment;)V
+	3       (0000000e) invoke-virtual       v0, v1, Landroid/widget/Button;->setOnClickListener(Landroid/view/View$OnClickListener;)V
+	4       (00000014) iget-object          v0, v2, Lcom/afwsamples/testdpc/CrossProfileAppsAllowlistFragment;->mAddButton Landroid/widget/Button;
+	5       (00000018) new-instance         v1, Lcom/afwsamples/testdpc/CrossProfileAppsAllowlistFragment$$Lambda$1;
+	6       (0000001c) invoke-direct        v1, v2, Lcom/afwsamples/testdpc/CrossProfileAppsAllowlistFragment$$Lambda$1;-><init>(Lcom/afwsamples/testdpc/CrossProfileAppsAllowlistFragment;)V
+	7       (00000022) invoke-virtual       v0, v1, Landroid/widget/Button;->setOnClickListener(Landroid/view/View$OnClickListener;)V
+	8       (00000028) iget-object          v0, v2, Lcom/afwsamples/testdpc/CrossProfileAppsAllowlistFragment;->mRemoveButton Landroid/widget/Button;
+	9       (0000002c) new-instance         v1, Lcom/afwsamples/testdpc/CrossProfileAppsAllowlistFragment$$Lambda$2;
+	10      (00000030) invoke-direct        v1, v2, Lcom/afwsamples/testdpc/CrossProfileAppsAllowlistFragment$$Lambda$2;-><init>(Lcom/afwsamples/testdpc/CrossProfileAppsAllowlistFragment;)V
+	11      (00000036) invoke-virtual       v0, v1, Landroid/widget/Button;->setOnClickListener(Landroid/view/View$OnClickListener;)V
+	12      (0000003c) return-void          
+

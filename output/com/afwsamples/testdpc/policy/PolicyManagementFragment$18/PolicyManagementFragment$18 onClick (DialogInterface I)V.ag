@@ -1,0 +1,45 @@
+# Lcom/afwsamples/testdpc/policy/PolicyManagementFragment$18;->onClick(Landroid/content/DialogInterface; I)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v3
+# - v4:android.content.DialogInterface
+# - v5:int
+#
+# - return:void
+
+onClick-BB@0x0 : [ onClick-BB@0x20 onClick-BB@0x24 ]
+	0       (00000000) iget-object          v2, v3, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment$18;->val$editText Landroid/widget/EditText;
+	1       (00000004) invoke-virtual       v2, Landroid/widget/EditText;->getText()Landroid/text/Editable;
+	2       (0000000a) move-result-object   v2
+	3       (0000000c) invoke-virtual       v2, Ljava/lang/Object;->toString()Ljava/lang/String;
+	4       (00000012) move-result-object   v1
+	5       (00000014) invoke-static        v1, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
+	6       (0000001a) move-result          v2
+	7       (0000001c) if-eqz               v2, +4
+
+onClick-BB@0x20 : [ onClick-BB@0x24 ]
+	8       (00000020) const-string         v1, 'com.android.chrome#client.badssl.com:443#testAlias\ncom.android.chrome#prod.idrix.eu/secure#testAlias\nde.blinkt.openvpn#192.168.0.1#vpnAlias'
+
+onClick-BB@0x24 : 
+	9       (00000024) iget-object          v2, v3, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment$18;->this$0 Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;
+	10      (00000028) invoke-static        v2, v1, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->access$1100(Lcom/afwsamples/testdpc/policy/PolicyManagementFragment; Ljava/lang/String;)V
+	11      (0000002e) iget-object          v2, v3, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment$18;->this$0 Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;
+	12      (00000032) invoke-virtual       v2, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->getActivity()Landroid/app/Activity;
+	13      (00000038) move-result-object   v2
+	14      (0000003a) invoke-static        v2, Landroidx/preference/PreferenceManager;->getDefaultSharedPreferences(Landroid/content/Context;)Landroid/content/SharedPreferences;
+	15      (00000040) move-result-object   v2
+	16      (00000042) invoke-interface     v2, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
+	17      (00000048) move-result-object   v0
+	18      (0000004a) const-string         v2, 'appUriPolicy'
+	19      (0000004e) invoke-interface     v0, v2, v1, Landroid/content/SharedPreferences$Editor;->putString(Ljava/lang/String; Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
+	20      (00000054) invoke-interface     v0, Landroid/content/SharedPreferences$Editor;->commit()Z
+	21      (0000005a) invoke-interface     v4, Landroid/content/DialogInterface;->dismiss()V
+	22      (00000060) return-void          
+	24:59
+	(Ljava/lang/Throwable; -> 62 onClick-BB@0x62)
+
+onClick-BB@0x62 : 
+	23      (00000062) move-exception       v2
+	24      (00000064) invoke-interface     v4, Landroid/content/DialogInterface;->dismiss()V
+	25      (0000006a) throw                v2
+

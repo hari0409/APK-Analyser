@@ -1,0 +1,52 @@
+# Landroidx/recyclerview/R$styleable;-><clinit>()V [access_flags=static constructor]
+#
+# Parameters:
+# local registers: v0...v1
+#
+# - return:void
+
+<clinit>-BB@0x0 : 
+	0       (00000000) const/4              v1, 2
+	1       (00000002) const/4              v0, 3
+	2       (00000004) new-array            v0, v0, [I
+	3       (00000008) fill-array-data      v0, +40 (0x88)
+	4       (0000000e) sput-object          v0, Landroidx/recyclerview/R$styleable;->ColorStateListItem [I
+	5       (00000012) new-array            v0, v1, [I
+	6       (00000016) fill-array-data      v0, +43 (0x9c)
+	7       (0000001c) sput-object          v0, Landroidx/recyclerview/R$styleable;->CoordinatorLayout [I
+	8       (00000020) const/4              v0, 7
+	9       (00000022) new-array            v0, v0, [I
+	10      (00000026) fill-array-data      v0, +43 (0xac)
+	11      (0000002c) sput-object          v0, Landroidx/recyclerview/R$styleable;->CoordinatorLayout_Layout [I
+	12      (00000030) const/4              v0, 6
+	13      (00000032) new-array            v0, v0, [I
+	14      (00000036) fill-array-data      v0, +4d (0xd0)
+	15      (0000003c) sput-object          v0, Landroidx/recyclerview/R$styleable;->FontFamily [I
+	16      (00000040) const/16             v0, 10
+	17      (00000044) new-array            v0, v0, [I
+	18      (00000048) fill-array-data      v0, +54 (0xf0)
+	19      (0000004e) sput-object          v0, Landroidx/recyclerview/R$styleable;->FontFamilyFont [I
+	20      (00000052) const/16             v0, 12
+	21      (00000056) new-array            v0, v0, [I
+	22      (0000005a) fill-array-data      v0, +63 (0x120)
+	23      (00000060) sput-object          v0, Landroidx/recyclerview/R$styleable;->GradientColor [I
+	24      (00000064) new-array            v0, v1, [I
+	25      (00000068) fill-array-data      v0, +78 (0x158)
+	26      (0000006e) sput-object          v0, Landroidx/recyclerview/R$styleable;->GradientColorItem [I
+	27      (00000072) const/16             v0, 11
+	28      (00000076) new-array            v0, v0, [I
+	29      (0000007a) fill-array-data      v0, +77 (0x168)
+	30      (00000080) sput-object          v0, Landroidx/recyclerview/R$styleable;->RecyclerView [I
+	31      (00000084) return-void          
+
+<clinit>-BB@0x86 : 
+	32      (00000086) nop                  
+	33      (00000088) fill-array-data-payload bytearray(b'\xa5\x01\x01\x01\x1f\x03\x01\x01,\x00\x04\x7f') | \xa5\x01\x01\x01\x1f\x03\x01\x01\x2c\x00\x04\x7f
+	34      (0000009c) fill-array-data-payload bytearray(b'\xb2\x00\x04\x7fJ\x01\x04\x7f') | \xb2\x00\x04\x7f\x4a\x01\x04\x7f
+	35      (000000ac) fill-array-data-payload bytearray(b'\xb3\x00\x01\x01\xb6\x00\x04\x7f\xb7\x00\x04\x7f\xb8\x00\x04\x7f\xe2\x00\x04\x7f\xeb\x00\x04\x7f\xec\x00\x04\x7f') | \xb3\x00\x01\x01\xb6\x00\x04\x7f\xb7\x00\x04\x7f\xb8\x00\x04\x7f\xe2\x00\x04\x7f\xeb\x00\x04\x7f\xec\x00\x04\x7f
+	36      (000000d0) fill-array-data-payload bytearray(b'\x95\x00\x04\x7f\x96\x00\x04\x7f\x97\x00\x04\x7f\x98\x00\x04\x7f\x99\x00\x04\x7f\x9a\x00\x04\x7f') | \x95\x00\x04\x7f\x96\x00\x04\x7f\x97\x00\x04\x7f\x98\x00\x04\x7f\x99\x00\x04\x7f\x9a\x00\x04\x7f
+	37      (000000f0) fill-array-data-payload bytearray(b'2\x05\x01\x013\x05\x01\x01?\x05\x01\x01o\x05\x01\x01p\x05\x01\x01\x93\x00\x04\x7f\x9b\x00\x04\x7f\x9c\x00\x04\x7f\x9d\x00\x04\x7f\xb2\x01\x04\x7f') | \x32\x05\x01\x01\x33\x05\x01\x01\x3f\x05\x01\x01\x6f\x05\x01\x01\x70\x05\x01\x01\x93\x00\x04\x7f\x9b\x00\x04\x7f\x9c\x00\x04\x7f\x9d\x00\x04\x7f\xb2\x01\x04\x7f
+	38      (00000120) fill-array-data-payload bytearray(b'\x9d\x01\x01\x01\x9e\x01\x01\x01\xa1\x01\x01\x01\xa2\x01\x01\x01\xa3\x01\x01\x01\xa4\x01\x01\x01\x01\x02\x01\x01\x0b\x02\x01\x01\x10\x05\x01\x01\x11\x05\x01\x01\x12\x05\x01\x01\x13\x05\x01\x01') | \x9d\x01\x01\x01\x9e\x01\x01\x01\xa1\x01\x01\x01\xa2\x01\x01\x01\xa3\x01\x01\x01\xa4\x01\x01\x01\x01\x02\x01\x01\x0b\x02\x01\x01\x10\x05\x01\x01\x11\x05\x01\x01\x12\x05\x01\x01\x13\x05\x01\x01
+	39      (00000158) fill-array-data-payload bytearray(b'\xa5\x01\x01\x01\x14\x05\x01\x01') | \xa5\x01\x01\x01\x14\x05\x01\x01
+	40      (00000168) fill-array-data-payload bytearray(b'\xc4\x00\x01\x01\xf1\x00\x01\x01\x8d\x00\x04\x7f\x8e\x00\x04\x7f\x8f\x00\x04\x7f\x90\x00\x04\x7f\x91\x00\x04\x7f\xb5\x00\x04\x7f.\x01\x04\x7fA\x01\x04\x7fG\x01\x04\x7f') | \xc4\x00\x01\x01\xf1\x00\x01\x01\x8d\x00\x04\x7f\x8e\x00\x04\x7f\x8f\x00\x04\x7f\x90\x00\x04\x7f\x91\x00\x04\x7f\xb5\x00\x04\x7f\x2e\x01\x04\x7f\x41\x01\x04\x7f\x47\x01\x04\x7f
+

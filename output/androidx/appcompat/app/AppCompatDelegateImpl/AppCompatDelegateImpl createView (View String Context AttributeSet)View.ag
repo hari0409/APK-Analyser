@@ -1,0 +1,122 @@
+# Landroidx/appcompat/app/AppCompatDelegateImpl;->createView(Landroid/view/View; Ljava/lang/String; Landroid/content/Context; Landroid/util/AttributeSet;)Landroid/view/View; [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v14
+# - v15:android.view.View
+# - v16:java.lang.String
+# - v17:android.content.Context
+# - v18:android.util.AttributeSet
+#
+# - return:android.view.View
+
+createView-BB@0x0 : [ createView-BB@0x8 createView-BB@0x4e ]
+	0       (00000000) iget-object          v1, v14, Landroidx/appcompat/app/AppCompatDelegateImpl;->mAppCompatViewInflater Landroidx/appcompat/app/AppCompatViewInflater;
+	1       (00000004) if-nez               v1, +25
+
+createView-BB@0x8 : [ createView-BB@0x28 createView-BB@0x40 ]
+	2       (00000008) iget-object          v1, v14, Landroidx/appcompat/app/AppCompatDelegateImpl;->mContext Landroid/content/Context;
+	3       (0000000c) sget-object          v2, Landroidx/appcompat/R$styleable;->AppCompatTheme [I
+	4       (00000010) invoke-virtual       v1, v2, Landroid/content/Context;->obtainStyledAttributes([I)Landroid/content/res/TypedArray;
+	5       (00000016) move-result-object   v10
+	6       (00000018) sget                 v1, Landroidx/appcompat/R$styleable;->AppCompatTheme_viewInflaterClass I
+	7       (0000001c) invoke-virtual       v10, v1, Landroid/content/res/TypedArray;->getString(I)Ljava/lang/String;
+	8       (00000022) move-result-object   v13
+	9       (00000024) if-eqz               v13, +e
+
+createView-BB@0x28 : [ createView-BB@0x40 createView-BB@0xa6 ]
+	10      (00000028) const-class          v1, Landroidx/appcompat/app/AppCompatViewInflater;
+	11      (0000002c) invoke-virtual       v1, Ljava/lang/Class;->getName()Ljava/lang/String;
+	12      (00000032) move-result-object   v1
+	13      (00000034) invoke-virtual       v1, v13, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+	14      (0000003a) move-result          v1
+	15      (0000003c) if-eqz               v1, +35
+
+createView-BB@0x40 : [ createView-BB@0x4e ]
+	16      (00000040) new-instance         v1, Landroidx/appcompat/app/AppCompatViewInflater;
+	17      (00000044) invoke-direct        v1, Landroidx/appcompat/app/AppCompatViewInflater;-><init>()V
+	18      (0000004a) iput-object          v1, v14, Landroidx/appcompat/app/AppCompatDelegateImpl;->mAppCompatViewInflater Landroidx/appcompat/app/AppCompatViewInflater;
+
+createView-BB@0x4e : [ createView-BB@0x58 createView-BB@0x7c ]
+	19      (0000004e) const/4              v6, 0
+	20      (00000050) sget-boolean         v1, Landroidx/appcompat/app/AppCompatDelegateImpl;->IS_PRE_LOLLIPOP Z
+	21      (00000054) if-eqz               v1, +14
+
+createView-BB@0x58 : [ createView-BB@0x64 createView-BB@0x126 ]
+	22      (00000058) move-object/from16   v0, v18
+	23      (0000005c) instance-of          v1, v0, Lorg/xmlpull/v1/XmlPullParser;
+	24      (00000060) if-eqz               v1, +63
+
+createView-BB@0x64 : [ createView-BB@0x7a createView-BB@0x122 ]
+	25      (00000064) move-object/from16   v1, v18
+	26      (00000068) check-cast           v1, Lorg/xmlpull/v1/XmlPullParser;
+	27      (0000006c) invoke-interface     v1, Lorg/xmlpull/v1/XmlPullParser;->getDepth()I
+	28      (00000072) move-result          v1
+	29      (00000074) const/4              v2, 1
+	30      (00000076) if-le                v1, v2, +56
+
+createView-BB@0x7a : [ createView-BB@0x7c ]
+	31      (0000007a) const/4              v6, 1
+
+createView-BB@0x7c : 
+	32      (0000007c) iget-object          v1, v14, Landroidx/appcompat/app/AppCompatDelegateImpl;->mAppCompatViewInflater Landroidx/appcompat/app/AppCompatViewInflater;
+	33      (00000080) sget-boolean         v7, Landroidx/appcompat/app/AppCompatDelegateImpl;->IS_PRE_LOLLIPOP Z
+	34      (00000084) const/4              v8, 1
+	35      (00000086) invoke-static        Landroidx/appcompat/widget/VectorEnabledTintResources;->shouldBeUsed()Z
+	36      (0000008c) move-result          v9
+	37      (0000008e) move-object          v2, v15
+	38      (00000090) move-object/from16   v3, v16
+	39      (00000094) move-object/from16   v4, v17
+	40      (00000098) move-object/from16   v5, v18
+	41      (0000009c) invoke-virtual/range v1 ... v9, Landroidx/appcompat/app/AppCompatViewInflater;->createView(Landroid/view/View; Ljava/lang/String; Landroid/content/Context; Landroid/util/AttributeSet; Z Z Z Z)Landroid/view/View;
+	42      (000000a2) move-result-object   v1
+	43      (000000a4) return-object        v1
+
+createView-BB@0xa6 : [ createView-BB@0x4e ]
+	44      (000000a6) invoke-static        v13, Ljava/lang/Class;->forName(Ljava/lang/String;)Ljava/lang/Class;
+	45      (000000ac) move-result-object   v12
+	46      (000000ae) const/4              v1, 0
+	47      (000000b0) new-array            v1, v1, [Ljava/lang/Class;
+	48      (000000b4) invoke-virtual       v12, v1, Ljava/lang/Class;->getDeclaredConstructor([Ljava/lang/Class;)Ljava/lang/reflect/Constructor;
+	49      (000000ba) move-result-object   v1
+	50      (000000bc) const/4              v2, 0
+	51      (000000be) new-array            v2, v2, [Ljava/lang/Object;
+	52      (000000c2) invoke-virtual       v1, v2, Ljava/lang/reflect/Constructor;->newInstance([Ljava/lang/Object;)Ljava/lang/Object;
+	53      (000000c8) move-result-object   v1
+	54      (000000ca) check-cast           v1, Landroidx/appcompat/app/AppCompatViewInflater;
+	55      (000000ce) iput-object          v1, v14, Landroidx/appcompat/app/AppCompatDelegateImpl;->mAppCompatViewInflater Landroidx/appcompat/app/AppCompatViewInflater;
+	56      (000000d2) goto                 -42
+	a6:d1
+	(Ljava/lang/Throwable; -> d4 createView-BB@0xd4)
+
+createView-BB@0xd4 : [ createView-BB@0x4e ]
+	57      (000000d4) move-exception       v11
+	58      (000000d6) const-string         v1, 'AppCompatDelegate'
+	59      (000000da) new-instance         v2, Ljava/lang/StringBuilder;
+	60      (000000de) invoke-direct        v2, Ljava/lang/StringBuilder;-><init>()V
+	61      (000000e4) const-string         v3, 'Failed to instantiate custom view inflater '
+	62      (000000e8) invoke-virtual       v2, v3, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	63      (000000ee) move-result-object   v2
+	64      (000000f0) invoke-virtual       v2, v13, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	65      (000000f6) move-result-object   v2
+	66      (000000f8) const-string         v3, '. Falling back to default.'
+	67      (000000fc) invoke-virtual       v2, v3, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	68      (00000102) move-result-object   v2
+	69      (00000104) invoke-virtual       v2, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+	70      (0000010a) move-result-object   v2
+	71      (0000010c) invoke-static        v1, v2, v11, Landroid/util/Log;->i(Ljava/lang/String; Ljava/lang/String; Ljava/lang/Throwable;)I
+	72      (00000112) new-instance         v1, Landroidx/appcompat/app/AppCompatViewInflater;
+	73      (00000116) invoke-direct        v1, Landroidx/appcompat/app/AppCompatViewInflater;-><init>()V
+	74      (0000011c) iput-object          v1, v14, Landroidx/appcompat/app/AppCompatDelegateImpl;->mAppCompatViewInflater Landroidx/appcompat/app/AppCompatViewInflater;
+	75      (00000120) goto                 -69
+
+createView-BB@0x122 : [ createView-BB@0x7c ]
+	76      (00000122) const/4              v6, 0
+	77      (00000124) goto                 -54
+
+createView-BB@0x126 : [ createView-BB@0x7c ]
+	78      (00000126) move-object          v1, v15
+	79      (00000128) check-cast           v1, Landroid/view/ViewParent;
+	80      (0000012c) invoke-direct        v14, v1, Landroidx/appcompat/app/AppCompatDelegateImpl;->shouldInheritContext(Landroid/view/ViewParent;)Z
+	81      (00000132) move-result          v6
+	82      (00000134) goto                 -5c
+

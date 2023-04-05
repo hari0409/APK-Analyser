@@ -1,0 +1,36 @@
+# Landroidx/appcompat/widget/DropDownListView;->clearPressedItem()V [access_flags=private]
+#
+# Parameters:
+# local registers: v0...v4
+#
+# - return:void
+
+clearPressedItem-BB@0x0 : [ clearPressedItem-BB@0x2c clearPressedItem-BB@0x32 ]
+	0       (00000000) const/4              v3, 0
+	1       (00000002) iput-boolean         v3, v4, Landroidx/appcompat/widget/DropDownListView;->mDrawsInPressedState Z
+	2       (00000006) invoke-virtual       v4, v3, Landroidx/appcompat/widget/DropDownListView;->setPressed(Z)V
+	3       (0000000c) invoke-virtual       v4, Landroidx/appcompat/widget/DropDownListView;->drawableStateChanged()V
+	4       (00000012) iget                 v1, v4, Landroidx/appcompat/widget/DropDownListView;->mMotionPosition I
+	5       (00000016) invoke-virtual       v4, Landroidx/appcompat/widget/DropDownListView;->getFirstVisiblePosition()I
+	6       (0000001c) move-result          v2
+	7       (0000001e) sub-int/2addr        v1, v2
+	8       (00000020) invoke-virtual       v4, v1, Landroidx/appcompat/widget/DropDownListView;->getChildAt(I)Landroid/view/View;
+	9       (00000026) move-result-object   v0
+	10      (00000028) if-eqz               v0, +5
+
+clearPressedItem-BB@0x2c : [ clearPressedItem-BB@0x32 ]
+	11      (0000002c) invoke-virtual       v0, v3, Landroid/view/View;->setPressed(Z)V
+
+clearPressedItem-BB@0x32 : [ clearPressedItem-BB@0x3a clearPressedItem-BB@0x4a ]
+	12      (00000032) iget-object          v1, v4, Landroidx/appcompat/widget/DropDownListView;->mClickAnimation Landroidx/core/view/ViewPropertyAnimatorCompat;
+	13      (00000036) if-eqz               v1, +a
+
+clearPressedItem-BB@0x3a : [ clearPressedItem-BB@0x4a ]
+	14      (0000003a) iget-object          v1, v4, Landroidx/appcompat/widget/DropDownListView;->mClickAnimation Landroidx/core/view/ViewPropertyAnimatorCompat;
+	15      (0000003e) invoke-virtual       v1, Landroidx/core/view/ViewPropertyAnimatorCompat;->cancel()V
+	16      (00000044) const/4              v1, 0
+	17      (00000046) iput-object          v1, v4, Landroidx/appcompat/widget/DropDownListView;->mClickAnimation Landroidx/core/view/ViewPropertyAnimatorCompat;
+
+clearPressedItem-BB@0x4a : 
+	18      (0000004a) return-void          
+

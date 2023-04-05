@@ -1,0 +1,82 @@
+# Lcom/afwsamples/testdpc/common/keyvaluepair/KeyValuePairDialogFragment;->newInstance(I Z Ljava/lang/String; Ljava/lang/Object; [I Ljava/lang/String;)Lcom/afwsamples/testdpc/common/keyvaluepair/KeyValuePairDialogFragment; [access_flags=public static]
+#
+# Parameters:
+# - local registers: v0...v3
+# - v4:int
+# - v5:boolean
+# - v6:java.lang.String
+# - v7:java.lang.Object
+# - v8:int[]
+# - v9:java.lang.String
+#
+# - return:com.afwsamples.testdpc.common.keyvaluepair.KeyValuePairDialogFragment
+
+newInstance-BB@0x0 : [ newInstance-BB@0x36 newInstance-BB@0x3c ]
+	0       (00000000) new-instance         v1, Lcom/afwsamples/testdpc/common/keyvaluepair/KeyValuePairDialogFragment;
+	1       (00000004) invoke-direct        v1, Lcom/afwsamples/testdpc/common/keyvaluepair/KeyValuePairDialogFragment;-><init>()V
+	2       (0000000a) new-instance         v0, Landroid/os/Bundle;
+	3       (0000000e) invoke-direct        v0, Landroid/os/Bundle;-><init>()V
+	4       (00000014) const-string         v2, 'dialog_type'
+	5       (00000018) invoke-virtual       v0, v2, v4, Landroid/os/Bundle;->putInt(Ljava/lang/String; I)V
+	6       (0000001e) const-string         v2, 'can_edit_key'
+	7       (00000022) invoke-virtual       v0, v2, v5, Landroid/os/Bundle;->putBoolean(Ljava/lang/String; Z)V
+	8       (00000028) const-string         v2, 'key'
+	9       (0000002c) invoke-virtual       v0, v2, v6, Landroid/os/Bundle;->putString(Ljava/lang/String; Ljava/lang/String;)V
+	10      (00000032) if-eqz               v7, +5
+
+newInstance-BB@0x36 : [ D:newInstance-BB@0x3c 0:newInstance-BB@0x58 1:newInstance-BB@0x70 2:newInstance-BB@0x88 3:newInstance-BB@0x98 4:newInstance-BB@0xac 5:newInstance-BB@0xbc ]
+	11      (00000036) packed-switch        v4, +4d (0xd0)
+
+newInstance-BB@0x3c : 
+	12      (0000003c) const-string         v2, 'supported_type'
+	13      (00000040) invoke-virtual       v0, v2, v8, Landroid/os/Bundle;->putIntArray(Ljava/lang/String; [I)V
+	14      (00000046) const-string         v2, 'app_name'
+	15      (0000004a) invoke-virtual       v0, v2, v9, Landroid/os/Bundle;->putString(Ljava/lang/String; Ljava/lang/String;)V
+	16      (00000050) invoke-virtual       v1, v0, Lcom/afwsamples/testdpc/common/keyvaluepair/KeyValuePairDialogFragment;->setArguments(Landroid/os/Bundle;)V
+	17      (00000056) return-object        v1
+
+newInstance-BB@0x58 : [ newInstance-BB@0x3c ]
+	18      (00000058) const-string         v2, 'initial_value'
+	19      (0000005c) check-cast           v7, Ljava/lang/Boolean;
+	20      (00000060) invoke-virtual       v7, Ljava/lang/Boolean;->booleanValue()Z
+	21      (00000066) move-result          v3
+	22      (00000068) invoke-virtual       v0, v2, v3, Landroid/os/Bundle;->putBoolean(Ljava/lang/String; Z)V
+	23      (0000006e) goto                 -19
+
+newInstance-BB@0x70 : [ newInstance-BB@0x3c ]
+	24      (00000070) const-string         v2, 'initial_value'
+	25      (00000074) check-cast           v7, Ljava/lang/Integer;
+	26      (00000078) invoke-virtual       v7, Ljava/lang/Integer;->intValue()I
+	27      (0000007e) move-result          v3
+	28      (00000080) invoke-virtual       v0, v2, v3, Landroid/os/Bundle;->putInt(Ljava/lang/String; I)V
+	29      (00000086) goto                 -25
+
+newInstance-BB@0x88 : [ newInstance-BB@0x3c ]
+	30      (00000088) const-string         v2, 'initial_value'
+	31      (0000008c) check-cast           v7, Ljava/lang/String;
+	32      (00000090) invoke-virtual       v0, v2, v7, Landroid/os/Bundle;->putString(Ljava/lang/String; Ljava/lang/String;)V
+	33      (00000096) goto                 -2d
+
+newInstance-BB@0x98 : [ newInstance-BB@0x3c ]
+	34      (00000098) const-string         v2, 'initial_value'
+	35      (0000009c) check-cast           v7, [Ljava/lang/String;
+	36      (000000a0) check-cast           v7, [Ljava/lang/String;
+	37      (000000a4) invoke-virtual       v0, v2, v7, Landroid/os/Bundle;->putStringArray(Ljava/lang/String; [Ljava/lang/String;)V
+	38      (000000aa) goto                 -37
+
+newInstance-BB@0xac : [ newInstance-BB@0x3c ]
+	39      (000000ac) const-string         v2, 'initial_value'
+	40      (000000b0) check-cast           v7, Landroid/os/Bundle;
+	41      (000000b4) invoke-virtual       v0, v2, v7, Landroid/os/Bundle;->putBundle(Ljava/lang/String; Landroid/os/Bundle;)V
+	42      (000000ba) goto                 -3f
+
+newInstance-BB@0xbc : [ newInstance-BB@0x3c ]
+	43      (000000bc) const-string         v2, 'initial_value'
+	44      (000000c0) check-cast           v7, [Landroid/os/Bundle;
+	45      (000000c4) check-cast           v7, [Landroid/os/Bundle;
+	46      (000000c8) invoke-virtual       v0, v2, v7, Landroid/os/Bundle;->putParcelableArray(Ljava/lang/String; [Landroid/os/Parcelable;)V
+	47      (000000ce) goto                 -49
+
+newInstance-BB@0xd0 : 
+	48      (000000d0) packed-switch-payload 0 1 2 3 4 5
+

@@ -1,0 +1,28 @@
+# Lcom/afwsamples/testdpc/comp/ProfileOwnerService$ProfileOwnerServiceImpl;->isLauncherIconHidden()Z [access_flags=public]
+#
+# Parameters:
+# local registers: v0...v4
+#
+# - return:boolean
+
+isLauncherIconHidden-BB@0x0 : [ isLauncherIconHidden-BB@0x24 isLauncherIconHidden-BB@0x28 ]
+	0       (00000000) iget-object          v0, v4, Lcom/afwsamples/testdpc/comp/ProfileOwnerService$ProfileOwnerServiceImpl;->mPm Landroid/content/pm/PackageManager;
+	1       (00000004) new-instance         v1, Landroid/content/ComponentName;
+	2       (00000008) iget-object          v2, v4, Lcom/afwsamples/testdpc/comp/ProfileOwnerService$ProfileOwnerServiceImpl;->mContext Landroid/content/Context;
+	3       (0000000c) const-class          v3, Lcom/afwsamples/testdpc/PolicyManagementActivity;
+	4       (00000010) invoke-direct        v1, v2, v3, Landroid/content/ComponentName;-><init>(Landroid/content/Context; Ljava/lang/Class;)V
+	5       (00000016) invoke-virtual       v0, v1, Landroid/content/pm/PackageManager;->getComponentEnabledSetting(Landroid/content/ComponentName;)I
+	6       (0000001c) move-result          v0
+	7       (0000001e) const/4              v1, 2
+	8       (00000020) if-ne                v0, v1, +4
+
+isLauncherIconHidden-BB@0x24 : [ isLauncherIconHidden-BB@0x26 ]
+	9       (00000024) const/4              v0, 1
+
+isLauncherIconHidden-BB@0x26 : 
+	10      (00000026) return               v0
+
+isLauncherIconHidden-BB@0x28 : [ isLauncherIconHidden-BB@0x26 ]
+	11      (00000028) const/4              v0, 0
+	12      (0000002a) goto                 -2
+

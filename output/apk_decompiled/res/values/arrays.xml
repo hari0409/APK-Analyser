@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="apn_auth_type_choices">
+        <item>Not specified</item>
+        <item>NONE</item>
+        <item>PAP</item>
+        <item>CHAP</item>
+        <item>PAP or CHAP</item>
+    </string-array>
+    <string-array name="apn_carrier_enabled_choices">
+        <item>Disabled</item>
+        <item>Enabled</item>
+    </string-array>
+    <string-array name="apn_mvno_type_choices">
+        <item>Not specified</item>
+        <item>SPN</item>
+        <item>IMSI</item>
+        <item>GID</item>
+        <item>ICCID</item>
+    </string-array>
+    <string-array name="apn_protocol_choices">
+        <item>Not specified</item>
+        <item>IP</item>
+        <item>IPV6</item>
+        <item>IPV4V6</item>
+        <item>PPP</item>
+    </string-array>
+    <string-array name="factory_reset_protection_policy_enabled_choices">
+        <item>Disabled</item>
+        <item>Enabled</item>
+    </string-array>
+    <string-array name="network_stats_queries_array">
+        <item>Select query type</item>
+        <item>Query summary for device</item>
+        <item>Query summary for user</item>
+        <item>Query summary of apps</item>
+        <item>Query histories of apps</item>
+    </string-array>
+    <string-array name="wifi_security_choices">
+        <item>None</item>
+        <item>WEP</item>
+        <item>WPA/WPA2</item>
+    </string-array>
+</resources>

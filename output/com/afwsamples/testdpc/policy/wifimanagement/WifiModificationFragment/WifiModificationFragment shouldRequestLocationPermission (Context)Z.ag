@@ -1,0 +1,31 @@
+# Lcom/afwsamples/testdpc/policy/wifimanagement/WifiModificationFragment;->shouldRequestLocationPermission(Landroid/content/Context;)Z [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v3
+# - v4:android.content.Context
+#
+# - return:boolean
+
+shouldRequestLocationPermission-BB@0x0 : [ shouldRequestLocationPermission-BB@0xe shouldRequestLocationPermission-BB@0x10 ]
+	0       (00000000) const/4              v0, 0
+	1       (00000002) sget                 v1, Lcom/afwsamples/testdpc/common/Util;->SDK_INT I
+	2       (00000006) const/16             v2, 23
+	3       (0000000a) if-ge                v1, v2, +3
+
+shouldRequestLocationPermission-BB@0xe : 
+	4       (0000000e) return               v0
+
+shouldRequestLocationPermission-BB@0x10 : [ shouldRequestLocationPermission-BB@0x18 shouldRequestLocationPermission-BB@0xe ]
+	5       (00000010) iget-boolean         v1, v3, Lcom/afwsamples/testdpc/policy/wifimanagement/WifiModificationFragment;->mShowOwnedNetworksOnly Z
+	6       (00000014) if-nez               v1, -3
+
+shouldRequestLocationPermission-BB@0x18 : [ shouldRequestLocationPermission-BB@0x28 shouldRequestLocationPermission-BB@0xe ]
+	7       (00000018) const-string         v1, 'android.permission.ACCESS_FINE_LOCATION'
+	8       (0000001c) invoke-static        v4, v1, Landroidx/core/content/ContextCompat;->checkSelfPermission(Landroid/content/Context; Ljava/lang/String;)I
+	9       (00000022) move-result          v1
+	10      (00000024) if-eqz               v1, -b
+
+shouldRequestLocationPermission-BB@0x28 : [ shouldRequestLocationPermission-BB@0xe ]
+	11      (00000028) const/4              v0, 1
+	12      (0000002a) goto                 -e
+

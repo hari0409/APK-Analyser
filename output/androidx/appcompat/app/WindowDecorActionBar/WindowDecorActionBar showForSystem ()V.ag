@@ -1,0 +1,20 @@
+# Landroidx/appcompat/app/WindowDecorActionBar;->showForSystem()V [access_flags=public]
+#
+# Parameters:
+# local registers: v0...v1
+#
+# - return:void
+
+showForSystem-BB@0x0 : [ showForSystem-BB@0x8 showForSystem-BB@0x16 ]
+	0       (00000000) iget-boolean         v0, v1, Landroidx/appcompat/app/WindowDecorActionBar;->mHiddenBySystem Z
+	1       (00000004) if-eqz               v0, +9
+
+showForSystem-BB@0x8 : [ showForSystem-BB@0x16 ]
+	2       (00000008) const/4              v0, 0
+	3       (0000000a) iput-boolean         v0, v1, Landroidx/appcompat/app/WindowDecorActionBar;->mHiddenBySystem Z
+	4       (0000000e) const/4              v0, 1
+	5       (00000010) invoke-direct        v1, v0, Landroidx/appcompat/app/WindowDecorActionBar;->updateVisibility(Z)V
+
+showForSystem-BB@0x16 : 
+	6       (00000016) return-void          
+

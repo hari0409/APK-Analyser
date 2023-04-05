@@ -1,0 +1,32 @@
+# Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->setOrganizationId(Ljava/lang/String;)V [access_flags=private]
+#
+# Parameters:
+# - local registers: v0...v5
+# - v6:java.lang.String
+#
+# - return:void
+
+setOrganizationId-BB@0x0 : [ setOrganizationId-BB@0x1a ]
+	0       (00000000) iget-object          v1, v5, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->mDevicePolicyManager Landroid/app/admin/DevicePolicyManager;
+	1       (00000004) const-string         v2, 'setOrganizationId'
+	2       (00000008) const/4              v3, 1
+	3       (0000000a) new-array            v3, v3, [Ljava/lang/Object;
+	4       (0000000e) const/4              v4, 0
+	5       (00000010) aput-object          v6, v3, v4
+	6       (00000014) invoke-static        v1, v2, v3, Lcom/afwsamples/testdpc/common/ReflectionUtil;->invoke(Ljava/lang/Object; Ljava/lang/String; [Ljava/lang/Object;)Ljava/lang/Object;
+	0:19
+	(Lcom/afwsamples/testdpc/common/ReflectionUtil$ReflectionIsTemporaryException; -> 22 setOrganizationId-BB@0x22)
+
+setOrganizationId-BB@0x1a : 
+	7       (0000001a) invoke-direct        v5, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->loadEnrollmentSpecificId()V
+	8       (00000020) return-void          
+
+setOrganizationId-BB@0x22 : [ setOrganizationId-BB@0x1a ]
+	9       (00000022) move-exception       v0
+	10      (00000024) const-string         v1, 'PolicyManagement'
+	11      (00000028) const-string         v2, 'Error invoking setOrganizationId'
+	12      (0000002c) invoke-static        v1, v2, v0, Landroid/util/Log;->e(Ljava/lang/String; Ljava/lang/String; Ljava/lang/Throwable;)I
+	13      (00000032) const-string         v1, 'Error setting organization ID'
+	14      (00000036) invoke-direct        v5, v1, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->showToast(Ljava/lang/String;)V
+	15      (0000003c) goto                 -11
+

@@ -1,0 +1,48 @@
+# Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->showCaCertificateList()V [access_flags=private]
+#
+# Parameters:
+# local registers: v0...v2
+#
+# - return:void
+
+showCaCertificateList-BB@0x0 : [ showCaCertificateList-BB@0xc showCaCertificateList-BB@0x20 ]
+	0       (00000000) invoke-virtual       v2, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->getActivity()Landroid/app/Activity;
+	1       (00000006) move-result-object   v0
+	2       (00000008) if-eqz               v0, +c
+
+showCaCertificateList-BB@0xc : [ showCaCertificateList-BB@0x20 showCaCertificateList-BB@0x22 ]
+	3       (0000000c) invoke-virtual       v2, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->getActivity()Landroid/app/Activity;
+	4       (00000012) move-result-object   v0
+	5       (00000014) invoke-virtual       v0, Landroid/app/Activity;->isFinishing()Z
+	6       (0000001a) move-result          v0
+	7       (0000001c) if-eqz               v0, +3
+
+showCaCertificateList-BB@0x20 : 
+	8       (00000020) return-void          
+
+showCaCertificateList-BB@0x22 : [ showCaCertificateList-BB@0x2a showCaCertificateList-BB@0x46 ]
+	9       (00000022) iget-object          v0, v2, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->mShowCaCertificateListTask Lcom/afwsamples/testdpc/policy/PolicyManagementFragment$ShowCaCertificateListTask;
+	10      (00000026) if-eqz               v0, +10
+
+showCaCertificateList-BB@0x2a : [ showCaCertificateList-BB@0x3a showCaCertificateList-BB@0x46 ]
+	11      (0000002a) iget-object          v0, v2, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->mShowCaCertificateListTask Lcom/afwsamples/testdpc/policy/PolicyManagementFragment$ShowCaCertificateListTask;
+	12      (0000002e) invoke-virtual       v0, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment$ShowCaCertificateListTask;->isCancelled()Z
+	13      (00000034) move-result          v0
+	14      (00000036) if-nez               v0, +8
+
+showCaCertificateList-BB@0x3a : [ showCaCertificateList-BB@0x46 ]
+	15      (0000003a) iget-object          v0, v2, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->mShowCaCertificateListTask Lcom/afwsamples/testdpc/policy/PolicyManagementFragment$ShowCaCertificateListTask;
+	16      (0000003e) const/4              v1, 1
+	17      (00000040) invoke-virtual       v0, v1, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment$ShowCaCertificateListTask;->cancel(Z)Z
+
+showCaCertificateList-BB@0x46 : [ showCaCertificateList-BB@0x20 ]
+	18      (00000046) new-instance         v0, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment$ShowCaCertificateListTask;
+	19      (0000004a) const/4              v1, 0
+	20      (0000004c) invoke-direct        v0, v2, v1, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment$ShowCaCertificateListTask;-><init>(Lcom/afwsamples/testdpc/policy/PolicyManagementFragment; Lcom/afwsamples/testdpc/policy/PolicyManagementFragment$1;)V
+	21      (00000052) iput-object          v0, v2, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->mShowCaCertificateListTask Lcom/afwsamples/testdpc/policy/PolicyManagementFragment$ShowCaCertificateListTask;
+	22      (00000056) iget-object          v0, v2, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->mShowCaCertificateListTask Lcom/afwsamples/testdpc/policy/PolicyManagementFragment$ShowCaCertificateListTask;
+	23      (0000005a) const/4              v1, 0
+	24      (0000005c) new-array            v1, v1, [Ljava/lang/Void;
+	25      (00000060) invoke-virtual       v0, v1, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment$ShowCaCertificateListTask;->execute([Ljava/lang/Object;)Landroid/os/AsyncTask;
+	26      (00000066) goto                 -23
+

@@ -1,0 +1,19 @@
+# Landroidx/appcompat/widget/TintTypedArray;->obtainStyledAttributes(Landroid/content/Context; Landroid/util/AttributeSet; [I I I)Landroidx/appcompat/widget/TintTypedArray; [access_flags=public static]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:android.content.Context
+# - v3:android.util.AttributeSet
+# - v4:int[]
+# - v5:int
+# - v6:int
+#
+# - return:androidx.appcompat.widget.TintTypedArray
+
+obtainStyledAttributes-BB@0x0 : 
+	0       (00000000) new-instance         v0, Landroidx/appcompat/widget/TintTypedArray;
+	1       (00000004) invoke-virtual       v2, v3, v4, v5, v6, Landroid/content/Context;->obtainStyledAttributes(Landroid/util/AttributeSet; [I I I)Landroid/content/res/TypedArray;
+	2       (0000000a) move-result-object   v1
+	3       (0000000c) invoke-direct        v0, v2, v1, Landroidx/appcompat/widget/TintTypedArray;-><init>(Landroid/content/Context; Landroid/content/res/TypedArray;)V
+	4       (00000012) return-object        v0
+

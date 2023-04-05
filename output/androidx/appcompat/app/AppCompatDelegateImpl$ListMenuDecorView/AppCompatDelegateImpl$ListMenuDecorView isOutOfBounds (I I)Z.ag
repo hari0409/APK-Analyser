@@ -1,0 +1,38 @@
+# Landroidx/appcompat/app/AppCompatDelegateImpl$ListMenuDecorView;->isOutOfBounds(I I)Z [access_flags=private]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:int
+# - v3:int
+#
+# - return:boolean
+
+isOutOfBounds-BB@0x0 : [ isOutOfBounds-BB@0x6 isOutOfBounds-BB@0x2a ]
+	0       (00000000) const/4              v0, -5
+	1       (00000002) if-lt                v2, v0, +14
+
+isOutOfBounds-BB@0x6 : [ isOutOfBounds-BB@0xa isOutOfBounds-BB@0x2a ]
+	2       (00000006) if-lt                v3, v0, +12
+
+isOutOfBounds-BB@0xa : [ isOutOfBounds-BB@0x1a isOutOfBounds-BB@0x2a ]
+	3       (0000000a) invoke-virtual       v1, Landroidx/appcompat/app/AppCompatDelegateImpl$ListMenuDecorView;->getWidth()I
+	4       (00000010) move-result          v0
+	5       (00000012) add-int/lit8         v0, v0, 5
+	6       (00000016) if-gt                v2, v0, +a
+
+isOutOfBounds-BB@0x1a : [ isOutOfBounds-BB@0x2a isOutOfBounds-BB@0x2e ]
+	7       (0000001a) invoke-virtual       v1, Landroidx/appcompat/app/AppCompatDelegateImpl$ListMenuDecorView;->getHeight()I
+	8       (00000020) move-result          v0
+	9       (00000022) add-int/lit8         v0, v0, 5
+	10      (00000026) if-le                v3, v0, +4
+
+isOutOfBounds-BB@0x2a : [ isOutOfBounds-BB@0x2c ]
+	11      (0000002a) const/4              v0, 1
+
+isOutOfBounds-BB@0x2c : 
+	12      (0000002c) return               v0
+
+isOutOfBounds-BB@0x2e : [ isOutOfBounds-BB@0x2c ]
+	13      (0000002e) const/4              v0, 0
+	14      (00000030) goto                 -2
+

@@ -1,0 +1,28 @@
+# Landroidx/appcompat/view/ActionBarPolicy;->showsOverflowMenuButton()Z [access_flags=public]
+#
+# Parameters:
+# local registers: v0...v3
+#
+# - return:boolean
+
+showsOverflowMenuButton-BB@0x0 : [ showsOverflowMenuButton-BB@0xe showsOverflowMenuButton-BB@0x10 ]
+	0       (00000000) const/4              v0, 1
+	1       (00000002) sget                 v1, Landroid/os/Build$VERSION;->SDK_INT I
+	2       (00000006) const/16             v2, 19
+	3       (0000000a) if-lt                v1, v2, +3
+
+showsOverflowMenuButton-BB@0xe : 
+	4       (0000000e) return               v0
+
+showsOverflowMenuButton-BB@0x10 : [ showsOverflowMenuButton-BB@0x28 showsOverflowMenuButton-BB@0xe ]
+	5       (00000010) iget-object          v1, v3, Landroidx/appcompat/view/ActionBarPolicy;->mContext Landroid/content/Context;
+	6       (00000014) invoke-static        v1, Landroid/view/ViewConfiguration;->get(Landroid/content/Context;)Landroid/view/ViewConfiguration;
+	7       (0000001a) move-result-object   v1
+	8       (0000001c) invoke-virtual       v1, Landroid/view/ViewConfiguration;->hasPermanentMenuKey()Z
+	9       (00000022) move-result          v1
+	10      (00000024) if-eqz               v1, -b
+
+showsOverflowMenuButton-BB@0x28 : [ showsOverflowMenuButton-BB@0xe ]
+	11      (00000028) const/4              v0, 0
+	12      (0000002a) goto                 -e
+

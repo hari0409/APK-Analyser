@@ -1,0 +1,24 @@
+# Landroidx/appcompat/view/menu/CascadingMenuPopup;->setGravity(I)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:int
+#
+# - return:void
+
+setGravity-BB@0x0 : [ setGravity-BB@0x8 setGravity-BB@0x24 ]
+	0       (00000000) iget                 v0, v1, Landroidx/appcompat/view/menu/CascadingMenuPopup;->mRawDropDownGravity I
+	1       (00000004) if-eq                v0, v2, +10
+
+setGravity-BB@0x8 : [ setGravity-BB@0x24 ]
+	2       (00000008) iput                 v2, v1, Landroidx/appcompat/view/menu/CascadingMenuPopup;->mRawDropDownGravity I
+	3       (0000000c) iget-object          v0, v1, Landroidx/appcompat/view/menu/CascadingMenuPopup;->mAnchorView Landroid/view/View;
+	4       (00000010) invoke-static        v0, Landroidx/core/view/ViewCompat;->getLayoutDirection(Landroid/view/View;)I
+	5       (00000016) move-result          v0
+	6       (00000018) invoke-static        v2, v0, Landroidx/core/view/GravityCompat;->getAbsoluteGravity(I I)I
+	7       (0000001e) move-result          v0
+	8       (00000020) iput                 v0, v1, Landroidx/appcompat/view/menu/CascadingMenuPopup;->mDropDownGravity I
+
+setGravity-BB@0x24 : 
+	9       (00000024) return-void          
+

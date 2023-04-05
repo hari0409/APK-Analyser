@@ -1,0 +1,22 @@
+# Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->lambda$onCreatePreferences$99$PolicyManagementFragment()I [access_flags=final synthetic]
+#
+# Parameters:
+# local registers: v0...v1
+#
+# - return:int
+
+lambda$onCreatePreferences$99$PolicyManagementFragment-BB@0x0 : [ lambda$onCreatePreferences$99$PolicyManagementFragment-BB@0xc lambda$onCreatePreferences$99$PolicyManagementFragment-BB@0x10 ]
+	0       (00000000) invoke-direct        v1, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->isNetworkLoggingEnabled()Z
+	1       (00000006) move-result          v0
+	2       (00000008) if-eqz               v0, +4
+
+lambda$onCreatePreferences$99$PolicyManagementFragment-BB@0xc : [ lambda$onCreatePreferences$99$PolicyManagementFragment-BB@0xe ]
+	3       (0000000c) const/4              v0, 0
+
+lambda$onCreatePreferences$99$PolicyManagementFragment-BB@0xe : 
+	4       (0000000e) return               v0
+
+lambda$onCreatePreferences$99$PolicyManagementFragment-BB@0x10 : [ lambda$onCreatePreferences$99$PolicyManagementFragment-BB@0xe ]
+	5       (00000010) const                v0, 2131690138 # [1.90093111482039e+38]
+	6       (00000016) goto                 -4
+

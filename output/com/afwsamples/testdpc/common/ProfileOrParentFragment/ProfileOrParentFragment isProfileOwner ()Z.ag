@@ -1,0 +1,11 @@
+# Lcom/afwsamples/testdpc/common/ProfileOrParentFragment;->isProfileOwner()Z [access_flags=protected]
+#
+# Parameters:
+# local registers: v0...v1
+#
+# - return:boolean
+
+isProfileOwner-BB@0x0 : 
+	0       (00000000) iget-boolean         v0, v1, Lcom/afwsamples/testdpc/common/ProfileOrParentFragment;->mProfileOwner Z
+	1       (00000004) return               v0
+

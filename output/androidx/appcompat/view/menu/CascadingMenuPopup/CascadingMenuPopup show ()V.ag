@@ -1,0 +1,69 @@
+# Landroidx/appcompat/view/menu/CascadingMenuPopup;->show()V [access_flags=public]
+#
+# Parameters:
+# local registers: v0...v4
+#
+# - return:void
+
+show-BB@0x0 : [ show-BB@0xc show-BB@0xe ]
+	0       (00000000) invoke-virtual       v4, Landroidx/appcompat/view/menu/CascadingMenuPopup;->isShowing()Z
+	1       (00000006) move-result          v2
+	2       (00000008) if-eqz               v2, +3
+
+show-BB@0xc : 
+	3       (0000000c) return-void          
+
+show-BB@0xe : [ show-BB@0x1a ]
+	4       (0000000e) iget-object          v2, v4, Landroidx/appcompat/view/menu/CascadingMenuPopup;->mPendingMenus Ljava/util/List;
+	5       (00000012) invoke-interface     v2, Ljava/util/List;->iterator()Ljava/util/Iterator;
+	6       (00000018) move-result-object   v2
+
+show-BB@0x1a : [ show-BB@0x26 show-BB@0x3a ]
+	7       (0000001a) invoke-interface     v2, Ljava/util/Iterator;->hasNext()Z
+	8       (00000020) move-result          v3
+	9       (00000022) if-eqz               v3, +c
+
+show-BB@0x26 : [ show-BB@0x1a ]
+	10      (00000026) invoke-interface     v2, Ljava/util/Iterator;->next()Ljava/lang/Object;
+	11      (0000002c) move-result-object   v1
+	12      (0000002e) check-cast           v1, Landroidx/appcompat/view/menu/MenuBuilder;
+	13      (00000032) invoke-direct        v4, v1, Landroidx/appcompat/view/menu/CascadingMenuPopup;->showMenu(Landroidx/appcompat/view/menu/MenuBuilder;)V
+	14      (00000038) goto                 -f
+
+show-BB@0x3a : [ show-BB@0x54 show-BB@0xc ]
+	15      (0000003a) iget-object          v2, v4, Landroidx/appcompat/view/menu/CascadingMenuPopup;->mPendingMenus Ljava/util/List;
+	16      (0000003e) invoke-interface     v2, Ljava/util/List;->clear()V
+	17      (00000044) iget-object          v2, v4, Landroidx/appcompat/view/menu/CascadingMenuPopup;->mAnchorView Landroid/view/View;
+	18      (00000048) iput-object          v2, v4, Landroidx/appcompat/view/menu/CascadingMenuPopup;->mShownAnchorView Landroid/view/View;
+	19      (0000004c) iget-object          v2, v4, Landroidx/appcompat/view/menu/CascadingMenuPopup;->mShownAnchorView Landroid/view/View;
+	20      (00000050) if-eqz               v2, -22
+
+show-BB@0x54 : [ show-BB@0x5c show-BB@0x90 ]
+	21      (00000054) iget-object          v2, v4, Landroidx/appcompat/view/menu/CascadingMenuPopup;->mTreeObserver Landroid/view/ViewTreeObserver;
+	22      (00000058) if-nez               v2, +1c
+
+show-BB@0x5c : [ show-BB@0x5e ]
+	23      (0000005c) const/4              v0, 1
+
+show-BB@0x5e : [ show-BB@0x72 show-BB@0x80 ]
+	24      (0000005e) iget-object          v2, v4, Landroidx/appcompat/view/menu/CascadingMenuPopup;->mShownAnchorView Landroid/view/View;
+	25      (00000062) invoke-virtual       v2, Landroid/view/View;->getViewTreeObserver()Landroid/view/ViewTreeObserver;
+	26      (00000068) move-result-object   v2
+	27      (0000006a) iput-object          v2, v4, Landroidx/appcompat/view/menu/CascadingMenuPopup;->mTreeObserver Landroid/view/ViewTreeObserver;
+	28      (0000006e) if-eqz               v0, +9
+
+show-BB@0x72 : [ show-BB@0x80 ]
+	29      (00000072) iget-object          v2, v4, Landroidx/appcompat/view/menu/CascadingMenuPopup;->mTreeObserver Landroid/view/ViewTreeObserver;
+	30      (00000076) iget-object          v3, v4, Landroidx/appcompat/view/menu/CascadingMenuPopup;->mGlobalLayoutListener Landroid/view/ViewTreeObserver$OnGlobalLayoutListener;
+	31      (0000007a) invoke-virtual       v2, v3, Landroid/view/ViewTreeObserver;->addOnGlobalLayoutListener(Landroid/view/ViewTreeObserver$OnGlobalLayoutListener;)V
+
+show-BB@0x80 : [ show-BB@0xc ]
+	32      (00000080) iget-object          v2, v4, Landroidx/appcompat/view/menu/CascadingMenuPopup;->mShownAnchorView Landroid/view/View;
+	33      (00000084) iget-object          v3, v4, Landroidx/appcompat/view/menu/CascadingMenuPopup;->mAttachStateChangeListener Landroid/view/View$OnAttachStateChangeListener;
+	34      (00000088) invoke-virtual       v2, v3, Landroid/view/View;->addOnAttachStateChangeListener(Landroid/view/View$OnAttachStateChangeListener;)V
+	35      (0000008e) goto                 -41
+
+show-BB@0x90 : [ show-BB@0x5e ]
+	36      (00000090) const/4              v0, 0
+	37      (00000092) goto                 -1a
+

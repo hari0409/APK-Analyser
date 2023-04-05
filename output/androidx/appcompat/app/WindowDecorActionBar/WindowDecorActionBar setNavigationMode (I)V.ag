@@ -1,0 +1,98 @@
+# Landroidx/appcompat/app/WindowDecorActionBar;->setNavigationMode(I)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v7
+# - v8:int
+#
+# - return:void
+
+setNavigationMode-BB@0x0 : [ D:setNavigationMode-BB@0x1a 2:setNavigationMode-BB@0x78 ]
+	0       (00000000) const/4              v6, 2
+	1       (00000002) const/4              v2, 1
+	2       (00000004) const/4              v5, -1
+	3       (00000006) const/4              v3, 0
+	4       (00000008) iget-object          v1, v7, Landroidx/appcompat/app/WindowDecorActionBar;->mDecorToolbar Landroidx/appcompat/widget/DecorToolbar;
+	5       (0000000c) invoke-interface     v1, Landroidx/appcompat/widget/DecorToolbar;->getNavigationMode()I
+	6       (00000012) move-result          v0
+	7       (00000014) packed-switch        v0, +5c (0xcc)
+
+setNavigationMode-BB@0x1a : [ setNavigationMode-BB@0x1e setNavigationMode-BB@0x38 ]
+	8       (0000001a) if-eq                v0, v8, +f
+
+setNavigationMode-BB@0x1e : [ setNavigationMode-BB@0x26 setNavigationMode-BB@0x38 ]
+	9       (0000001e) iget-boolean         v1, v7, Landroidx/appcompat/app/WindowDecorActionBar;->mHasEmbeddedTabs Z
+	10      (00000022) if-nez               v1, +b
+
+setNavigationMode-BB@0x26 : [ setNavigationMode-BB@0x2e setNavigationMode-BB@0x38 ]
+	11      (00000026) iget-object          v1, v7, Landroidx/appcompat/app/WindowDecorActionBar;->mOverlayLayout Landroidx/appcompat/widget/ActionBarOverlayLayout;
+	12      (0000002a) if-eqz               v1, +7
+
+setNavigationMode-BB@0x2e : [ setNavigationMode-BB@0x38 ]
+	13      (0000002e) iget-object          v1, v7, Landroidx/appcompat/app/WindowDecorActionBar;->mOverlayLayout Landroidx/appcompat/widget/ActionBarOverlayLayout;
+	14      (00000032) invoke-static        v1, Landroidx/core/view/ViewCompat;->requestApplyInsets(Landroid/view/View;)V
+
+setNavigationMode-BB@0x38 : [ D:setNavigationMode-BB@0x48 2:setNavigationMode-BB@0x9c ]
+	15      (00000038) iget-object          v1, v7, Landroidx/appcompat/app/WindowDecorActionBar;->mDecorToolbar Landroidx/appcompat/widget/DecorToolbar;
+	16      (0000003c) invoke-interface     v1, v8, Landroidx/appcompat/widget/DecorToolbar;->setNavigationMode(I)V
+	17      (00000042) packed-switch        v8, +4b (0xd8)
+
+setNavigationMode-BB@0x48 : [ setNavigationMode-BB@0x50 setNavigationMode-BB@0xc4 ]
+	18      (00000048) iget-object          v4, v7, Landroidx/appcompat/app/WindowDecorActionBar;->mDecorToolbar Landroidx/appcompat/widget/DecorToolbar;
+	19      (0000004c) if-ne                v8, v6, +3c
+
+setNavigationMode-BB@0x50 : [ setNavigationMode-BB@0x58 setNavigationMode-BB@0xc4 ]
+	20      (00000050) iget-boolean         v1, v7, Landroidx/appcompat/app/WindowDecorActionBar;->mHasEmbeddedTabs Z
+	21      (00000054) if-nez               v1, +38
+
+setNavigationMode-BB@0x58 : [ setNavigationMode-BB@0x5a ]
+	22      (00000058) move                 v1, v2
+
+setNavigationMode-BB@0x5a : [ setNavigationMode-BB@0x68 setNavigationMode-BB@0xc8 ]
+	23      (0000005a) invoke-interface     v4, v1, Landroidx/appcompat/widget/DecorToolbar;->setCollapsible(Z)V
+	24      (00000060) iget-object          v1, v7, Landroidx/appcompat/app/WindowDecorActionBar;->mOverlayLayout Landroidx/appcompat/widget/ActionBarOverlayLayout;
+	25      (00000064) if-ne                v8, v6, +32
+
+setNavigationMode-BB@0x68 : [ setNavigationMode-BB@0x70 setNavigationMode-BB@0xc8 ]
+	26      (00000068) iget-boolean         v4, v7, Landroidx/appcompat/app/WindowDecorActionBar;->mHasEmbeddedTabs Z
+	27      (0000006c) if-nez               v4, +2e
+
+setNavigationMode-BB@0x70 : 
+	28      (00000070) invoke-virtual       v1, v2, Landroidx/appcompat/widget/ActionBarOverlayLayout;->setHasNonEmbeddedTabs(Z)V
+	29      (00000076) return-void          
+
+setNavigationMode-BB@0x78 : [ setNavigationMode-BB@0x1a ]
+	30      (00000078) invoke-virtual       v7, Landroidx/appcompat/app/WindowDecorActionBar;->getSelectedNavigationIndex()I
+	31      (0000007e) move-result          v1
+	32      (00000080) iput                 v1, v7, Landroidx/appcompat/app/WindowDecorActionBar;->mSavedTabPosition I
+	33      (00000084) const/4              v1, 0
+	34      (00000086) invoke-virtual       v7, v1, Landroidx/appcompat/app/WindowDecorActionBar;->selectTab(Landroidx/appcompat/app/ActionBar$Tab;)V
+	35      (0000008c) iget-object          v1, v7, Landroidx/appcompat/app/WindowDecorActionBar;->mTabScrollView Landroidx/appcompat/widget/ScrollingTabContainerView;
+	36      (00000090) const/16             v4, 8
+	37      (00000094) invoke-virtual       v1, v4, Landroidx/appcompat/widget/ScrollingTabContainerView;->setVisibility(I)V
+	38      (0000009a) goto                 -40
+
+setNavigationMode-BB@0x9c : [ setNavigationMode-BB@0xb4 setNavigationMode-BB@0x48 ]
+	39      (0000009c) invoke-direct        v7, Landroidx/appcompat/app/WindowDecorActionBar;->ensureTabsExist()V
+	40      (000000a2) iget-object          v1, v7, Landroidx/appcompat/app/WindowDecorActionBar;->mTabScrollView Landroidx/appcompat/widget/ScrollingTabContainerView;
+	41      (000000a6) invoke-virtual       v1, v3, Landroidx/appcompat/widget/ScrollingTabContainerView;->setVisibility(I)V
+	42      (000000ac) iget                 v1, v7, Landroidx/appcompat/app/WindowDecorActionBar;->mSavedTabPosition I
+	43      (000000b0) if-eq                v1, v5, -34
+
+setNavigationMode-BB@0xb4 : [ setNavigationMode-BB@0x48 ]
+	44      (000000b4) iget                 v1, v7, Landroidx/appcompat/app/WindowDecorActionBar;->mSavedTabPosition I
+	45      (000000b8) invoke-virtual       v7, v1, Landroidx/appcompat/app/WindowDecorActionBar;->setSelectedNavigationItem(I)V
+	46      (000000be) iput                 v5, v7, Landroidx/appcompat/app/WindowDecorActionBar;->mSavedTabPosition I
+	47      (000000c2) goto                 -3d
+
+setNavigationMode-BB@0xc4 : [ setNavigationMode-BB@0x5a ]
+	48      (000000c4) move                 v1, v3
+	49      (000000c6) goto                 -36
+
+setNavigationMode-BB@0xc8 : [ setNavigationMode-BB@0x70 ]
+	50      (000000c8) move                 v2, v3
+	51      (000000ca) goto                 -2d
+
+setNavigationMode-BB@0xcc : 
+	52      (000000cc) packed-switch-payload 2
+	53      (000000d8) packed-switch-payload 2
+

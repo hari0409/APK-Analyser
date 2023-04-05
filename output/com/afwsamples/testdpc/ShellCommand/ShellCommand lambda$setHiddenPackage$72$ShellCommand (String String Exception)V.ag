@@ -1,0 +1,21 @@
+# Lcom/afwsamples/testdpc/ShellCommand;->lambda$setHiddenPackage$72$ShellCommand(Ljava/lang/String; Ljava/lang/String; Ljava/lang/Exception;)V [access_flags=final synthetic]
+#
+# Parameters:
+# - local registers: v0...v3
+# - v4:java.lang.String
+# - v5:java.lang.String
+# - v6:java.lang.Exception
+#
+# - return:void
+
+lambda$setHiddenPackage$72$ShellCommand-BB@0x0 : 
+	0       (00000000) const-string         v0, 'Error settings %s as %s'
+	1       (00000004) const/4              v1, 2
+	2       (00000006) new-array            v1, v1, [Ljava/lang/Object;
+	3       (0000000a) const/4              v2, 0
+	4       (0000000c) aput-object          v4, v1, v2
+	5       (00000010) const/4              v2, 1
+	6       (00000012) aput-object          v5, v1, v2
+	7       (00000016) invoke-direct        v3, v6, v0, v1, Lcom/afwsamples/testdpc/ShellCommand;->onError(Ljava/lang/Exception; Ljava/lang/String; [Ljava/lang/Object;)V
+	8       (0000001c) return-void          
+

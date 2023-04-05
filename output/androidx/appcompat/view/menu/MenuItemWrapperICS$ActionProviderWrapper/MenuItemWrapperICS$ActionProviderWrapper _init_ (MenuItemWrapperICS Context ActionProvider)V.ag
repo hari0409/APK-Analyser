@@ -1,0 +1,16 @@
+# Landroidx/appcompat/view/menu/MenuItemWrapperICS$ActionProviderWrapper;-><init>(Landroidx/appcompat/view/menu/MenuItemWrapperICS; Landroid/content/Context; Landroid/view/ActionProvider;)V [access_flags=public constructor]
+#
+# Parameters:
+# - local registers: v0...v0
+# - v1:androidx.appcompat.view.menu.MenuItemWrapperICS
+# - v2:android.content.Context
+# - v3:android.view.ActionProvider
+#
+# - return:void
+
+<init>-BB@0x0 : 
+	0       (00000000) iput-object          v1, v0, Landroidx/appcompat/view/menu/MenuItemWrapperICS$ActionProviderWrapper;->this$0 Landroidx/appcompat/view/menu/MenuItemWrapperICS;
+	1       (00000004) invoke-direct        v0, v2, Landroidx/core/view/ActionProvider;-><init>(Landroid/content/Context;)V
+	2       (0000000a) iput-object          v3, v0, Landroidx/appcompat/view/menu/MenuItemWrapperICS$ActionProviderWrapper;->mInner Landroid/view/ActionProvider;
+	3       (0000000e) return-void          
+

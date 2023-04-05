@@ -1,0 +1,24 @@
+# Landroidx/appcompat/widget/ForwardingListener;->onForwardingStarted()Z [access_flags=protected]
+#
+# Parameters:
+# local registers: v0...v2
+#
+# - return:boolean
+
+onForwardingStarted-BB@0x0 : [ onForwardingStarted-BB@0xc onForwardingStarted-BB@0x1e ]
+	0       (00000000) invoke-virtual       v2, Landroidx/appcompat/widget/ForwardingListener;->getPopup()Landroidx/appcompat/view/menu/ShowableListMenu;
+	1       (00000006) move-result-object   v0
+	2       (00000008) if-eqz               v0, +b
+
+onForwardingStarted-BB@0xc : [ onForwardingStarted-BB@0x18 onForwardingStarted-BB@0x1e ]
+	3       (0000000c) invoke-interface     v0, Landroidx/appcompat/view/menu/ShowableListMenu;->isShowing()Z
+	4       (00000012) move-result          v1
+	5       (00000014) if-nez               v1, +5
+
+onForwardingStarted-BB@0x18 : [ onForwardingStarted-BB@0x1e ]
+	6       (00000018) invoke-interface     v0, Landroidx/appcompat/view/menu/ShowableListMenu;->show()V
+
+onForwardingStarted-BB@0x1e : 
+	7       (0000001e) const/4              v1, 1
+	8       (00000020) return               v1
+

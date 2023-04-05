@@ -1,0 +1,29 @@
+# Landroidx/appcompat/app/AppCompatDelegateImpl$AppCompatWindowCallback;->startAsSupportActionMode(Landroid/view/ActionMode$Callback;)Landroid/view/ActionMode; [access_flags=final]
+#
+# Parameters:
+# - local registers: v0...v3
+# - v4:android.view.ActionMode$Callback
+#
+# - return:android.view.ActionMode
+
+startAsSupportActionMode-BB@0x0 : [ startAsSupportActionMode-BB@0x22 startAsSupportActionMode-BB@0x2c ]
+	0       (00000000) new-instance         v0, Landroidx/appcompat/view/SupportActionModeWrapper$CallbackWrapper;
+	1       (00000004) iget-object          v2, v3, Landroidx/appcompat/app/AppCompatDelegateImpl$AppCompatWindowCallback;->this$0 Landroidx/appcompat/app/AppCompatDelegateImpl;
+	2       (00000008) iget-object          v2, v2, Landroidx/appcompat/app/AppCompatDelegateImpl;->mContext Landroid/content/Context;
+	3       (0000000c) invoke-direct        v0, v2, v4, Landroidx/appcompat/view/SupportActionModeWrapper$CallbackWrapper;-><init>(Landroid/content/Context; Landroid/view/ActionMode$Callback;)V
+	4       (00000012) iget-object          v2, v3, Landroidx/appcompat/app/AppCompatDelegateImpl$AppCompatWindowCallback;->this$0 Landroidx/appcompat/app/AppCompatDelegateImpl;
+	5       (00000016) invoke-virtual       v2, v0, Landroidx/appcompat/app/AppCompatDelegateImpl;->startSupportActionMode(Landroidx/appcompat/view/ActionMode$Callback;)Landroidx/appcompat/view/ActionMode;
+	6       (0000001c) move-result-object   v1
+	7       (0000001e) if-eqz               v1, +7
+
+startAsSupportActionMode-BB@0x22 : [ startAsSupportActionMode-BB@0x2a ]
+	8       (00000022) invoke-virtual       v0, v1, Landroidx/appcompat/view/SupportActionModeWrapper$CallbackWrapper;->getActionModeWrapper(Landroidx/appcompat/view/ActionMode;)Landroid/view/ActionMode;
+	9       (00000028) move-result-object   v2
+
+startAsSupportActionMode-BB@0x2a : 
+	10      (0000002a) return-object        v2
+
+startAsSupportActionMode-BB@0x2c : [ startAsSupportActionMode-BB@0x2a ]
+	11      (0000002c) const/4              v2, 0
+	12      (0000002e) goto                 -2
+

@@ -1,0 +1,19 @@
+# Landroidx/appcompat/view/menu/MenuItemWrapperJB$ActionProviderWrapperJB;->onActionProviderVisibilityChanged(Z)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:boolean
+#
+# - return:void
+
+onActionProviderVisibilityChanged-BB@0x0 : [ onActionProviderVisibilityChanged-BB@0x8 onActionProviderVisibilityChanged-BB@0x12 ]
+	0       (00000000) iget-object          v0, v1, Landroidx/appcompat/view/menu/MenuItemWrapperJB$ActionProviderWrapperJB;->mListener Landroidx/core/view/ActionProvider$VisibilityListener;
+	1       (00000004) if-eqz               v0, +7
+
+onActionProviderVisibilityChanged-BB@0x8 : [ onActionProviderVisibilityChanged-BB@0x12 ]
+	2       (00000008) iget-object          v0, v1, Landroidx/appcompat/view/menu/MenuItemWrapperJB$ActionProviderWrapperJB;->mListener Landroidx/core/view/ActionProvider$VisibilityListener;
+	3       (0000000c) invoke-interface     v0, v2, Landroidx/core/view/ActionProvider$VisibilityListener;->onActionProviderVisibilityChanged(Z)V
+
+onActionProviderVisibilityChanged-BB@0x12 : 
+	4       (00000012) return-void          
+

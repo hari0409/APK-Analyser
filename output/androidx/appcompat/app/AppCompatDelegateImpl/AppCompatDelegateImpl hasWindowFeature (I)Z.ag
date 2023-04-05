@@ -1,0 +1,60 @@
+# Landroidx/appcompat/app/AppCompatDelegateImpl;->hasWindowFeature(I)Z [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:int
+#
+# - return:boolean
+
+hasWindowFeature-BB@0x0 : [ D:hasWindowFeature-BB@0x10 1:hasWindowFeature-BB@0x46 2:hasWindowFeature-BB@0x3a 5:hasWindowFeature-BB@0x40 10:hasWindowFeature-BB@0x34 108:hasWindowFeature-BB@0x28 109:hasWindowFeature-BB@0x2e ]
+	0       (00000000) const/4              v0, 0
+	1       (00000002) invoke-direct        v2, v3, Landroidx/appcompat/app/AppCompatDelegateImpl;->sanitizeWindowFeatureId(I)I
+	2       (00000008) move-result          v1
+	3       (0000000a) sparse-switch        v1, +23 (0x50)
+
+hasWindowFeature-BB@0x10 : [ hasWindowFeature-BB@0x14 hasWindowFeature-BB@0x24 ]
+	4       (00000010) if-nez               v0, +a
+
+hasWindowFeature-BB@0x14 : [ hasWindowFeature-BB@0x24 hasWindowFeature-BB@0x4c ]
+	5       (00000014) iget-object          v1, v2, Landroidx/appcompat/app/AppCompatDelegateImpl;->mWindow Landroid/view/Window;
+	6       (00000018) invoke-virtual       v1, v3, Landroid/view/Window;->hasFeature(I)Z
+	7       (0000001e) move-result          v1
+	8       (00000020) if-eqz               v1, +16
+
+hasWindowFeature-BB@0x24 : [ hasWindowFeature-BB@0x26 ]
+	9       (00000024) const/4              v1, 1
+
+hasWindowFeature-BB@0x26 : 
+	10      (00000026) return               v1
+
+hasWindowFeature-BB@0x28 : [ hasWindowFeature-BB@0x10 ]
+	11      (00000028) iget-boolean         v0, v2, Landroidx/appcompat/app/AppCompatDelegateImpl;->mHasActionBar Z
+	12      (0000002c) goto                 -e
+
+hasWindowFeature-BB@0x2e : [ hasWindowFeature-BB@0x10 ]
+	13      (0000002e) iget-boolean         v0, v2, Landroidx/appcompat/app/AppCompatDelegateImpl;->mOverlayActionBar Z
+	14      (00000032) goto                 -11
+
+hasWindowFeature-BB@0x34 : [ hasWindowFeature-BB@0x10 ]
+	15      (00000034) iget-boolean         v0, v2, Landroidx/appcompat/app/AppCompatDelegateImpl;->mOverlayActionMode Z
+	16      (00000038) goto                 -14
+
+hasWindowFeature-BB@0x3a : [ hasWindowFeature-BB@0x10 ]
+	17      (0000003a) iget-boolean         v0, v2, Landroidx/appcompat/app/AppCompatDelegateImpl;->mFeatureProgress Z
+	18      (0000003e) goto                 -17
+
+hasWindowFeature-BB@0x40 : [ hasWindowFeature-BB@0x10 ]
+	19      (00000040) iget-boolean         v0, v2, Landroidx/appcompat/app/AppCompatDelegateImpl;->mFeatureIndeterminateProgress Z
+	20      (00000044) goto                 -1a
+
+hasWindowFeature-BB@0x46 : [ hasWindowFeature-BB@0x10 ]
+	21      (00000046) iget-boolean         v0, v2, Landroidx/appcompat/app/AppCompatDelegateImpl;->mWindowNoTitle Z
+	22      (0000004a) goto                 -1d
+
+hasWindowFeature-BB@0x4c : [ hasWindowFeature-BB@0x26 ]
+	23      (0000004c) const/4              v1, 0
+	24      (0000004e) goto                 -14
+
+hasWindowFeature-BB@0x50 : 
+	25      (00000050) sparse-switch-payload 1 2 5 a 6c 6d
+

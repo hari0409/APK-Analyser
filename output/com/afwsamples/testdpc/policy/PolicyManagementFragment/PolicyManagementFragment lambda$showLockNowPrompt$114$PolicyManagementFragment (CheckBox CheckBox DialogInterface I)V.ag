@@ -1,0 +1,46 @@
+# Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->lambda$showLockNowPrompt$114$PolicyManagementFragment(Landroid/widget/CheckBox; Landroid/widget/CheckBox; Landroid/content/DialogInterface; I)V [access_flags=final synthetic]
+#
+# Parameters:
+# - local registers: v0...v4
+# - v5:android.widget.CheckBox
+# - v6:android.widget.CheckBox
+# - v7:android.content.DialogInterface
+# - v8:int
+#
+# - return:void
+
+lambda$showLockNowPrompt$114$PolicyManagementFragment-BB@0x0 : [ lambda$showLockNowPrompt$114$PolicyManagementFragment-BB@0xc lambda$showLockNowPrompt$114$PolicyManagementFragment-BB@0x46 ]
+	0       (00000000) invoke-virtual       v5, Landroid/widget/CheckBox;->isChecked()Z
+	1       (00000006) move-result          v2
+	2       (00000008) if-eqz               v2, +1f
+
+lambda$showLockNowPrompt$114$PolicyManagementFragment-BB@0xc : [ lambda$showLockNowPrompt$114$PolicyManagementFragment-BB@0xe ]
+	3       (0000000c) const/4              v0, 1
+
+lambda$showLockNowPrompt$114$PolicyManagementFragment-BB@0xe : [ lambda$showLockNowPrompt$114$PolicyManagementFragment-BB@0x1a lambda$showLockNowPrompt$114$PolicyManagementFragment-BB@0x4a ]
+	4       (0000000e) invoke-virtual       v6, Landroid/widget/CheckBox;->isChecked()Z
+	5       (00000014) move-result          v2
+	6       (00000016) if-eqz               v2, +1a
+
+lambda$showLockNowPrompt$114$PolicyManagementFragment-BB@0x1a : [ lambda$showLockNowPrompt$114$PolicyManagementFragment-BB@0x2a ]
+	7       (0000001a) invoke-virtual       v4, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->getActivity()Landroid/app/Activity;
+	8       (00000020) move-result-object   v2
+	9       (00000022) invoke-static        v2, Lcom/afwsamples/testdpc/DevicePolicyManagerGatewayImpl;->forParentProfile(Landroid/content/Context;)Lcom/afwsamples/testdpc/DevicePolicyManagerGatewayImpl;
+	10      (00000028) move-result-object   v1
+
+lambda$showLockNowPrompt$114$PolicyManagementFragment-BB@0x2a : 
+	11      (0000002a) new-instance         v2, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment$$Lambda$81;
+	12      (0000002e) invoke-direct        v2, v4, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment$$Lambda$81;-><init>(Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;)V
+	13      (00000034) new-instance         v3, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment$$Lambda$82;
+	14      (00000038) invoke-direct        v3, v4, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment$$Lambda$82;-><init>(Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;)V
+	15      (0000003e) invoke-interface     v1, v0, v2, v3, Lcom/afwsamples/testdpc/DevicePolicyManagerGateway;->lockNow(I Ljava/util/function/Consumer; Ljava/util/function/Consumer;)V
+	16      (00000044) return-void          
+
+lambda$showLockNowPrompt$114$PolicyManagementFragment-BB@0x46 : [ lambda$showLockNowPrompt$114$PolicyManagementFragment-BB@0xe ]
+	17      (00000046) const/4              v0, 0
+	18      (00000048) goto                 -1d
+
+lambda$showLockNowPrompt$114$PolicyManagementFragment-BB@0x4a : [ lambda$showLockNowPrompt$114$PolicyManagementFragment-BB@0x2a ]
+	19      (0000004a) iget-object          v1, v4, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->mDevicePolicyManagerGateway Lcom/afwsamples/testdpc/DevicePolicyManagerGateway;
+	20      (0000004e) goto                 -12
+

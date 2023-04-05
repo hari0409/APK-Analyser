@@ -1,0 +1,12 @@
+# Lcom/afwsamples/testdpc/cosu/EnableCosuActivity;->access$600(Lcom/afwsamples/testdpc/cosu/EnableCosuActivity;)Landroid/os/Handler; [access_flags=static synthetic]
+#
+# Parameters:
+# - local registers: v0...v0
+# - v1:com.afwsamples.testdpc.cosu.EnableCosuActivity
+#
+# - return:android.os.Handler
+
+access$600-BB@0x0 : 
+	0       (00000000) iget-object          v0, v1, Lcom/afwsamples/testdpc/cosu/EnableCosuActivity;->mHandler Landroid/os/Handler;
+	1       (00000004) return-object        v0
+

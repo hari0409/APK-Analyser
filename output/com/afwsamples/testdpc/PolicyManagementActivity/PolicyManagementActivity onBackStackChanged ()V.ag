@@ -1,0 +1,27 @@
+# Lcom/afwsamples/testdpc/PolicyManagementActivity;->onBackStackChanged()V [access_flags=public]
+#
+# Parameters:
+# local registers: v0...v2
+#
+# - return:void
+
+onBackStackChanged-BB@0x0 : [ onBackStackChanged-BB@0x1c onBackStackChanged-BB@0x26 ]
+	0       (00000000) invoke-virtual       v2, Lcom/afwsamples/testdpc/PolicyManagementActivity;->getActionBar()Landroid/app/ActionBar;
+	1       (00000006) move-result-object   v1
+	2       (00000008) invoke-virtual       v2, Lcom/afwsamples/testdpc/PolicyManagementActivity;->getFragmentManager()Landroid/app/FragmentManager;
+	3       (0000000e) move-result-object   v0
+	4       (00000010) invoke-virtual       v0, Landroid/app/FragmentManager;->getBackStackEntryCount()I
+	5       (00000016) move-result          v0
+	6       (00000018) if-lez               v0, +7
+
+onBackStackChanged-BB@0x1c : [ onBackStackChanged-BB@0x1e ]
+	7       (0000001c) const/4              v0, 1
+
+onBackStackChanged-BB@0x1e : 
+	8       (0000001e) invoke-virtual       v1, v0, Landroid/app/ActionBar;->setDisplayHomeAsUpEnabled(Z)V
+	9       (00000024) return-void          
+
+onBackStackChanged-BB@0x26 : [ onBackStackChanged-BB@0x1e ]
+	10      (00000026) const/4              v0, 0
+	11      (00000028) goto                 -5
+

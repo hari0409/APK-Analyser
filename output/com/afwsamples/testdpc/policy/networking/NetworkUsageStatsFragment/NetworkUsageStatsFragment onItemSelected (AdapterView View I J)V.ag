@@ -1,0 +1,412 @@
+# Lcom/afwsamples/testdpc/policy/networking/NetworkUsageStatsFragment;->onItemSelected(Landroid/widget/AdapterView; Landroid/view/View; I J)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v15
+# - v16:android.widget.AdapterView
+# - v17:android.view.View
+# - v18:int
+# - v19:long
+#
+# - return:void
+
+onItemSelected-BB@0x0 : [ D:onItemSelected-BB@0x42 1:onItemSelected-BB@0x4e 2:onItemSelected-BB@0x12e 3:onItemSelected-BB@0x20e 4:onItemSelected-BB@0x2a8 ]
+	0       (00000000) const/4              v11, 0
+	1       (00000002) const/4              v0, 0
+	2       (00000004) iget-object          v1, v14, Lcom/afwsamples/testdpc/policy/networking/NetworkUsageStatsFragment;->mDataUsageSummary Landroid/widget/TextView;
+	3       (00000008) const/16             v2, 8
+	4       (0000000c) invoke-virtual       v1, v2, Landroid/widget/TextView;->setVisibility(I)V
+	5       (00000012) iget-object          v1, v14, Lcom/afwsamples/testdpc/policy/networking/NetworkUsageStatsFragment;->mDataUsageList Landroid/widget/ListView;
+	6       (00000016) const/16             v2, 8
+	7       (0000001a) invoke-virtual       v1, v2, Landroid/widget/ListView;->setVisibility(I)V
+	8       (00000020) iget-object          v1, v14, Lcom/afwsamples/testdpc/policy/networking/NetworkUsageStatsFragment;->mAppHistoryList Landroid/widget/ListView;
+	9       (00000024) const/16             v2, 8
+	10      (00000028) invoke-virtual       v1, v2, Landroid/widget/ListView;->setVisibility(I)V
+	11      (0000002e) iget-object          v1, v14, Lcom/afwsamples/testdpc/policy/networking/NetworkUsageStatsFragment;->mExplanation Landroid/widget/TextView;
+	12      (00000032) const-string         v2, ''
+	13      (00000036) invoke-virtual       v1, v2, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+	14      (0000003c) packed-switch        v17, +1a8 (0x38c)
+
+onItemSelected-BB@0x42 : [ onItemSelected-BB@0x46 onItemSelected-BB@0x4c ]
+	15      (00000042) if-eqz               v11, +5
+
+onItemSelected-BB@0x46 : [ onItemSelected-BB@0x4c ]
+	16      (00000046) invoke-virtual       v11, Landroid/app/usage/NetworkStats;->close()V
+
+onItemSelected-BB@0x4c : 
+	17      (0000004c) return-void          
+
+onItemSelected-BB@0x4e : [ onItemSelected-BB@0x42 ]
+	18      (0000004e) iget-object          v1, v14, Lcom/afwsamples/testdpc/policy/networking/NetworkUsageStatsFragment;->mNetstatsManager Landroid/app/usage/NetworkStatsManager;
+	19      (00000052) const/4              v2, 1
+	20      (00000054) const-string         v3, ''
+	21      (00000058) iget-object          v4, v14, Lcom/afwsamples/testdpc/policy/networking/NetworkUsageStatsFragment;->mStartDate Ljava/util/Date;
+	22      (0000005c) invoke-virtual       v4, Ljava/util/Date;->getTime()J
+	23      (00000062) move-result-wide     v4
+	24      (00000064) iget-object          v6, v14, Lcom/afwsamples/testdpc/policy/networking/NetworkUsageStatsFragment;->mEndDate Ljava/util/Date;
+	25      (00000068) invoke-virtual       v6, Ljava/util/Date;->getTime()J
+	26      (0000006e) move-result-wide     v6
+	27      (00000070) invoke-virtual/range v1 ... v7, Landroid/app/usage/NetworkStatsManager;->querySummaryForDevice(I Ljava/lang/String; J J)Landroid/app/usage/NetworkStats$Bucket;
+	28      (00000076) move-result-object   v0
+	29      (00000078) iget-object          v1, v14, Lcom/afwsamples/testdpc/policy/networking/NetworkUsageStatsFragment;->mExplanation Landroid/widget/TextView;
+	30      (0000007c) const                v2, 2131689957 # [1.9008944036590074e+38]
+	31      (00000082) invoke-virtual       v1, v2, Landroid/widget/TextView;->setText(I)V
+	32      (00000088) iget-object          v1, v14, Lcom/afwsamples/testdpc/policy/networking/NetworkUsageStatsFragment;->mDataUsageSummary Landroid/widget/TextView;
+	33      (0000008c) const                v2, 2131689956 # [1.9008942008349114e+38]
+	34      (00000092) const/4              v3, 4
+	35      (00000094) new-array            v3, v3, [Ljava/lang/Object;
+	36      (00000098) const/4              v4, 0
+	37      (0000009a) invoke-virtual       v0, Landroid/app/usage/NetworkStats$Bucket;->getRxBytes()J
+	38      (000000a0) move-result-wide     v6
+	39      (000000a2) invoke-direct        v14, v6, v7, Lcom/afwsamples/testdpc/policy/networking/NetworkUsageStatsFragment;->formatSize(J)Ljava/lang/String;
+	40      (000000a8) move-result-object   v5
+	41      (000000aa) aput-object          v5, v3, v4
+	42      (000000ae) const/4              v4, 1
+	43      (000000b0) invoke-virtual       v0, Landroid/app/usage/NetworkStats$Bucket;->getRxPackets()J
+	44      (000000b6) move-result-wide     v6
+	45      (000000b8) invoke-static        v6, v7, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+	46      (000000be) move-result-object   v5
+	47      (000000c0) aput-object          v5, v3, v4
+	48      (000000c4) const/4              v4, 2
+	49      (000000c6) invoke-virtual       v0, Landroid/app/usage/NetworkStats$Bucket;->getTxBytes()J
+	50      (000000cc) move-result-wide     v6
+	51      (000000ce) invoke-direct        v14, v6, v7, Lcom/afwsamples/testdpc/policy/networking/NetworkUsageStatsFragment;->formatSize(J)Ljava/lang/String;
+	52      (000000d4) move-result-object   v5
+	53      (000000d6) aput-object          v5, v3, v4
+	54      (000000da) const/4              v4, 3
+	55      (000000dc) invoke-virtual       v0, Landroid/app/usage/NetworkStats$Bucket;->getTxPackets()J
+	56      (000000e2) move-result-wide     v6
+	57      (000000e4) invoke-static        v6, v7, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+	58      (000000ea) move-result-object   v5
+	59      (000000ec) aput-object          v5, v3, v4
+	60      (000000f0) invoke-virtual       v14, v2, v3, Lcom/afwsamples/testdpc/policy/networking/NetworkUsageStatsFragment;->getString(I [Ljava/lang/Object;)Ljava/lang/String;
+	61      (000000f6) move-result-object   v2
+	62      (000000f8) invoke-virtual       v1, v2, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+	63      (000000fe) iget-object          v1, v14, Lcom/afwsamples/testdpc/policy/networking/NetworkUsageStatsFragment;->mDataUsageSummary Landroid/widget/TextView;
+	64      (00000102) const/4              v2, 0
+	65      (00000104) invoke-virtual       v1, v2, Landroid/widget/TextView;->setVisibility(I)V
+	66      (0000010a) goto                 -64
+	4e:109
+	(Ljava/lang/Throwable; -> 360 onItemSelected-BB@0x360)
+	(Ljava/lang/SecurityException; -> 10c onItemSelected-BB@0x10c)
+	(Landroid/os/RemoteException; -> 1ee onItemSelected-BB@0x1ee)
+	(Ljava/lang/NumberFormatException; -> 2a2 onItemSelected-BB@0x2a2)
+
+onItemSelected-BB@0x10c : [ onItemSelected-BB@0x10e ]
+	67      (0000010c) move-exception       v9
+
+onItemSelected-BB@0x10e : [ onItemSelected-BB@0x114 ]
+	68      (0000010e) const                v1, 2131689965 # [1.9008960262517757e+38]
+
+onItemSelected-BB@0x114 : [ onItemSelected-BB@0x126 onItemSelected-BB@0x4c ]
+	69      (00000114) invoke-virtual       v14, v1, Lcom/afwsamples/testdpc/policy/networking/NetworkUsageStatsFragment;->getString(I)Ljava/lang/String;
+	70      (0000011a) move-result-object   v1
+	71      (0000011c) invoke-direct        v14, v1, Lcom/afwsamples/testdpc/policy/networking/NetworkUsageStatsFragment;->showErrorDialog(Ljava/lang/CharSequence;)V
+	72      (00000122) if-eqz               v11, -6b
+	114:121
+	(Ljava/lang/Throwable; -> 360 onItemSelected-BB@0x360)
+
+onItemSelected-BB@0x126 : [ onItemSelected-BB@0x4c ]
+	73      (00000126) invoke-virtual       v11, Landroid/app/usage/NetworkStats;->close()V
+	74      (0000012c) goto                 -70
+
+onItemSelected-BB@0x12e : [ onItemSelected-BB@0x42 ]
+	75      (0000012e) iget-object          v1, v14, Lcom/afwsamples/testdpc/policy/networking/NetworkUsageStatsFragment;->mNetstatsManager Landroid/app/usage/NetworkStatsManager;
+	76      (00000132) const/4              v2, 1
+	77      (00000134) const-string         v3, ''
+	78      (00000138) iget-object          v4, v14, Lcom/afwsamples/testdpc/policy/networking/NetworkUsageStatsFragment;->mStartDate Ljava/util/Date;
+	79      (0000013c) invoke-virtual       v4, Ljava/util/Date;->getTime()J
+	80      (00000142) move-result-wide     v4
+	81      (00000144) iget-object          v6, v14, Lcom/afwsamples/testdpc/policy/networking/NetworkUsageStatsFragment;->mEndDate Ljava/util/Date;
+	82      (00000148) invoke-virtual       v6, Ljava/util/Date;->getTime()J
+	83      (0000014e) move-result-wide     v6
+	84      (00000150) invoke-virtual/range v1 ... v7, Landroid/app/usage/NetworkStatsManager;->querySummaryForUser(I Ljava/lang/String; J J)Landroid/app/usage/NetworkStats$Bucket;
+	85      (00000156) move-result-object   v0
+	86      (00000158) iget-object          v1, v14, Lcom/afwsamples/testdpc/policy/networking/NetworkUsageStatsFragment;->mExplanation Landroid/widget/TextView;
+	87      (0000015c) const                v2, 2131689963 # [1.9008956206035836e+38]
+	88      (00000162) invoke-virtual       v1, v2, Landroid/widget/TextView;->setText(I)V
+	89      (00000168) iget-object          v1, v14, Lcom/afwsamples/testdpc/policy/networking/NetworkUsageStatsFragment;->mDataUsageSummary Landroid/widget/TextView;
+	90      (0000016c) const                v2, 2131689962 # [1.9008954177794876e+38]
+	91      (00000172) const/4              v3, 4
+	92      (00000174) new-array            v3, v3, [Ljava/lang/Object;
+	93      (00000178) const/4              v4, 0
+	94      (0000017a) invoke-virtual       v0, Landroid/app/usage/NetworkStats$Bucket;->getRxBytes()J
+	95      (00000180) move-result-wide     v6
+	96      (00000182) invoke-direct        v14, v6, v7, Lcom/afwsamples/testdpc/policy/networking/NetworkUsageStatsFragment;->formatSize(J)Ljava/lang/String;
+	97      (00000188) move-result-object   v5
+	98      (0000018a) aput-object          v5, v3, v4
+	99      (0000018e) const/4              v4, 1
+	100     (00000190) invoke-virtual       v0, Landroid/app/usage/NetworkStats$Bucket;->getRxPackets()J
+	101     (00000196) move-result-wide     v6
+	102     (00000198) invoke-static        v6, v7, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+	103     (0000019e) move-result-object   v5
+	104     (000001a0) aput-object          v5, v3, v4
+	105     (000001a4) const/4              v4, 2
+	106     (000001a6) invoke-virtual       v0, Landroid/app/usage/NetworkStats$Bucket;->getTxBytes()J
+	107     (000001ac) move-result-wide     v6
+	108     (000001ae) invoke-direct        v14, v6, v7, Lcom/afwsamples/testdpc/policy/networking/NetworkUsageStatsFragment;->formatSize(J)Ljava/lang/String;
+	109     (000001b4) move-result-object   v5
+	110     (000001b6) aput-object          v5, v3, v4
+	111     (000001ba) const/4              v4, 3
+	112     (000001bc) invoke-virtual       v0, Landroid/app/usage/NetworkStats$Bucket;->getTxPackets()J
+	113     (000001c2) move-result-wide     v6
+	114     (000001c4) invoke-static        v6, v7, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+	115     (000001ca) move-result-object   v5
+	116     (000001cc) aput-object          v5, v3, v4
+	117     (000001d0) invoke-virtual       v14, v2, v3, Lcom/afwsamples/testdpc/policy/networking/NetworkUsageStatsFragment;->getString(I [Ljava/lang/Object;)Ljava/lang/String;
+	118     (000001d6) move-result-object   v2
+	119     (000001d8) invoke-virtual       v1, v2, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+	120     (000001de) iget-object          v1, v14, Lcom/afwsamples/testdpc/policy/networking/NetworkUsageStatsFragment;->mDataUsageSummary Landroid/widget/TextView;
+	121     (000001e2) const/4              v2, 0
+	122     (000001e4) invoke-virtual       v1, v2, Landroid/widget/TextView;->setVisibility(I)V
+	123     (000001ea) goto/16              -d4
+	12e:1e9
+	(Ljava/lang/Throwable; -> 360 onItemSelected-BB@0x360)
+	(Ljava/lang/SecurityException; -> 10c onItemSelected-BB@0x10c)
+	(Landroid/os/RemoteException; -> 1ee onItemSelected-BB@0x1ee)
+	(Ljava/lang/NumberFormatException; -> 2a2 onItemSelected-BB@0x2a2)
+
+onItemSelected-BB@0x1ee : [ onItemSelected-BB@0x1f0 ]
+	124     (000001ee) move-exception       v1
+
+onItemSelected-BB@0x1f0 : [ onItemSelected-BB@0x1f2 ]
+	125     (000001f0) move-object          v9, v1
+
+onItemSelected-BB@0x1f2 : [ onItemSelected-BB@0x204 onItemSelected-BB@0x4c ]
+	126     (000001f2) invoke-virtual       v9, Ljava/lang/Exception;->toString()Ljava/lang/String;
+	127     (000001f8) move-result-object   v1
+	128     (000001fa) invoke-direct        v14, v1, Lcom/afwsamples/testdpc/policy/networking/NetworkUsageStatsFragment;->showErrorDialog(Ljava/lang/CharSequence;)V
+	129     (00000200) if-eqz               v11, -da
+	1f2:1ff
+	(Ljava/lang/Throwable; -> 360 onItemSelected-BB@0x360)
+
+onItemSelected-BB@0x204 : [ onItemSelected-BB@0x4c ]
+	130     (00000204) invoke-virtual       v11, Landroid/app/usage/NetworkStats;->close()V
+	131     (0000020a) goto/16              -df
+
+onItemSelected-BB@0x20e : [ onItemSelected-BB@0x246 onItemSelected-BB@0x288 ]
+	132     (0000020e) iget-object          v1, v14, Lcom/afwsamples/testdpc/policy/networking/NetworkUsageStatsFragment;->mNetstatsManager Landroid/app/usage/NetworkStatsManager;
+	133     (00000212) const/4              v2, 1
+	134     (00000214) const-string         v3, ''
+	135     (00000218) iget-object          v4, v14, Lcom/afwsamples/testdpc/policy/networking/NetworkUsageStatsFragment;->mStartDate Ljava/util/Date;
+	136     (0000021c) invoke-virtual       v4, Ljava/util/Date;->getTime()J
+	137     (00000222) move-result-wide     v4
+	138     (00000224) iget-object          v6, v14, Lcom/afwsamples/testdpc/policy/networking/NetworkUsageStatsFragment;->mEndDate Ljava/util/Date;
+	139     (00000228) invoke-virtual       v6, Ljava/util/Date;->getTime()J
+	140     (0000022e) move-result-wide     v6
+	141     (00000230) invoke-virtual/range v1 ... v7, Landroid/app/usage/NetworkStatsManager;->querySummary(I Ljava/lang/String; J J)Landroid/app/usage/NetworkStats;
+	142     (00000236) move-result-object   v11
+	143     (00000238) iget-object          v1, v14, Lcom/afwsamples/testdpc/policy/networking/NetworkUsageStatsFragment;->mListData Ljava/util/List;
+	144     (0000023c) invoke-interface     v1, Ljava/util/List;->clear()V
+	145     (00000242) if-eqz               v11, +23
+	20e:241
+	(Ljava/lang/Throwable; -> 360 onItemSelected-BB@0x360)
+	(Ljava/lang/SecurityException; -> 10c onItemSelected-BB@0x10c)
+	(Landroid/os/RemoteException; -> 1ee onItemSelected-BB@0x1ee)
+	(Ljava/lang/NumberFormatException; -> 2a2 onItemSelected-BB@0x2a2)
+
+onItemSelected-BB@0x246 : [ onItemSelected-BB@0x248 ]
+	146     (00000246) move-object          v8, v0
+
+onItemSelected-BB@0x248 : [ onItemSelected-BB@0x254 onItemSelected-BB@0x286 ]
+	147     (00000248) invoke-virtual       v11, Landroid/app/usage/NetworkStats;->hasNextBucket()Z
+	148     (0000024e) move-result          v1
+	149     (00000250) if-eqz               v1, +1b
+	248:25d
+	(Ljava/lang/Throwable; -> 36e onItemSelected-BB@0x36e)
+	(Ljava/lang/SecurityException; -> 382 onItemSelected-BB@0x382)
+	(Landroid/os/RemoteException; -> 374 onItemSelected-BB@0x374)
+	(Ljava/lang/NumberFormatException; -> 37c onItemSelected-BB@0x37c)
+
+onItemSelected-BB@0x254 : [ onItemSelected-BB@0x25e ]
+	150     (00000254) new-instance         v0, Landroid/app/usage/NetworkStats$Bucket;
+	151     (00000258) invoke-direct        v0, Landroid/app/usage/NetworkStats$Bucket;-><init>()V
+	248:25d
+	(Ljava/lang/Throwable; -> 36e onItemSelected-BB@0x36e)
+	(Ljava/lang/SecurityException; -> 382 onItemSelected-BB@0x382)
+	(Landroid/os/RemoteException; -> 374 onItemSelected-BB@0x374)
+	(Ljava/lang/NumberFormatException; -> 37c onItemSelected-BB@0x37c)
+
+onItemSelected-BB@0x25e : [ onItemSelected-BB@0x248 ]
+	152     (0000025e) invoke-virtual       v11, v0, Landroid/app/usage/NetworkStats;->getNextBucket(Landroid/app/usage/NetworkStats$Bucket;)Z
+	153     (00000264) iget-object          v1, v14, Lcom/afwsamples/testdpc/policy/networking/NetworkUsageStatsFragment;->mListData Ljava/util/List;
+	154     (00000268) const/4              v2, 1
+	155     (0000026a) new-array            v2, v2, [Landroid/app/usage/NetworkStats$Bucket;
+	156     (0000026e) const/4              v3, 0
+	157     (00000270) aput-object          v0, v2, v3
+	158     (00000274) invoke-static        v2, Ljava/util/Arrays;->asList([Ljava/lang/Object;)Ljava/util/List;
+	159     (0000027a) move-result-object   v2
+	160     (0000027c) invoke-interface     v1, v2, Ljava/util/List;->add(Ljava/lang/Object;)Z
+	161     (00000282) move-object          v8, v0
+	162     (00000284) goto                 -1e
+	25e:2e5
+	(Ljava/lang/Throwable; -> 360 onItemSelected-BB@0x360)
+	(Ljava/lang/SecurityException; -> 10c onItemSelected-BB@0x10c)
+	(Landroid/os/RemoteException; -> 1ee onItemSelected-BB@0x1ee)
+	(Ljava/lang/NumberFormatException; -> 2a2 onItemSelected-BB@0x2a2)
+
+onItemSelected-BB@0x286 : [ onItemSelected-BB@0x288 ]
+	163     (00000286) move-object          v0, v8
+	25e:2e5
+	(Ljava/lang/Throwable; -> 360 onItemSelected-BB@0x360)
+	(Ljava/lang/SecurityException; -> 10c onItemSelected-BB@0x10c)
+	(Landroid/os/RemoteException; -> 1ee onItemSelected-BB@0x1ee)
+	(Ljava/lang/NumberFormatException; -> 2a2 onItemSelected-BB@0x2a2)
+
+onItemSelected-BB@0x288 : [ onItemSelected-BB@0x42 ]
+	164     (00000288) iget-object          v1, v14, Lcom/afwsamples/testdpc/policy/networking/NetworkUsageStatsFragment;->mListAdapter Landroid/widget/ArrayAdapter;
+	165     (0000028c) invoke-virtual       v1, Landroid/widget/ArrayAdapter;->notifyDataSetChanged()V
+	166     (00000292) iget-object          v1, v14, Lcom/afwsamples/testdpc/policy/networking/NetworkUsageStatsFragment;->mDataUsageList Landroid/widget/ListView;
+	167     (00000296) const/4              v2, 0
+	168     (00000298) invoke-virtual       v1, v2, Landroid/widget/ListView;->setVisibility(I)V
+	169     (0000029e) goto/16              -12e
+	25e:2e5
+	(Ljava/lang/Throwable; -> 360 onItemSelected-BB@0x360)
+	(Ljava/lang/SecurityException; -> 10c onItemSelected-BB@0x10c)
+	(Landroid/os/RemoteException; -> 1ee onItemSelected-BB@0x1ee)
+	(Ljava/lang/NumberFormatException; -> 2a2 onItemSelected-BB@0x2a2)
+
+onItemSelected-BB@0x2a2 : [ onItemSelected-BB@0x2a4 ]
+	170     (000002a2) move-exception       v1
+	25e:2e5
+	(Ljava/lang/Throwable; -> 360 onItemSelected-BB@0x360)
+	(Ljava/lang/SecurityException; -> 10c onItemSelected-BB@0x10c)
+	(Landroid/os/RemoteException; -> 1ee onItemSelected-BB@0x1ee)
+	(Ljava/lang/NumberFormatException; -> 2a2 onItemSelected-BB@0x2a2)
+
+onItemSelected-BB@0x2a4 : [ onItemSelected-BB@0x1f2 ]
+	171     (000002a4) move-object          v9, v1
+	172     (000002a6) goto                 -5a
+	25e:2e5
+	(Ljava/lang/Throwable; -> 360 onItemSelected-BB@0x360)
+	(Ljava/lang/SecurityException; -> 10c onItemSelected-BB@0x10c)
+	(Landroid/os/RemoteException; -> 1ee onItemSelected-BB@0x1ee)
+	(Ljava/lang/NumberFormatException; -> 2a2 onItemSelected-BB@0x2a2)
+
+onItemSelected-BB@0x2a8 : [ onItemSelected-BB@0x2ea onItemSelected-BB@0x346 ]
+	173     (000002a8) iget-object          v1, v14, Lcom/afwsamples/testdpc/policy/networking/NetworkUsageStatsFragment;->mNetstatsManager Landroid/app/usage/NetworkStatsManager;
+	174     (000002ac) const/4              v2, 1
+	175     (000002ae) const-string         v3, ''
+	176     (000002b2) iget-object          v4, v14, Lcom/afwsamples/testdpc/policy/networking/NetworkUsageStatsFragment;->mStartDate Ljava/util/Date;
+	177     (000002b6) invoke-virtual       v4, Ljava/util/Date;->getTime()J
+	178     (000002bc) move-result-wide     v4
+	179     (000002be) iget-object          v6, v14, Lcom/afwsamples/testdpc/policy/networking/NetworkUsageStatsFragment;->mEndDate Ljava/util/Date;
+	180     (000002c2) invoke-virtual       v6, Ljava/util/Date;->getTime()J
+	181     (000002c8) move-result-wide     v6
+	182     (000002ca) invoke-virtual/range v1 ... v7, Landroid/app/usage/NetworkStatsManager;->queryDetails(I Ljava/lang/String; J J)Landroid/app/usage/NetworkStats;
+	183     (000002d0) move-result-object   v11
+	184     (000002d2) iget-object          v1, v14, Lcom/afwsamples/testdpc/policy/networking/NetworkUsageStatsFragment;->mListData Ljava/util/List;
+	185     (000002d6) invoke-interface     v1, Ljava/util/List;->clear()V
+	186     (000002dc) new-instance         v13, Landroid/util/SparseArray;
+	187     (000002e0) invoke-direct        v13, Landroid/util/SparseArray;-><init>()V
+	188     (000002e6) if-eqz               v11, +30
+
+onItemSelected-BB@0x2ea : [ onItemSelected-BB@0x2ec ]
+	189     (000002ea) move-object          v8, v0
+
+onItemSelected-BB@0x2ec : [ onItemSelected-BB@0x2f8 onItemSelected-BB@0x344 ]
+	190     (000002ec) invoke-virtual       v11, Landroid/app/usage/NetworkStats;->hasNextBucket()Z
+	191     (000002f2) move-result          v1
+	192     (000002f4) if-eqz               v1, +28
+	2ec:301
+	(Ljava/lang/Throwable; -> 36e onItemSelected-BB@0x36e)
+	(Ljava/lang/SecurityException; -> 382 onItemSelected-BB@0x382)
+	(Landroid/os/RemoteException; -> 374 onItemSelected-BB@0x374)
+	(Ljava/lang/NumberFormatException; -> 37c onItemSelected-BB@0x37c)
+
+onItemSelected-BB@0x2f8 : [ onItemSelected-BB@0x302 ]
+	193     (000002f8) new-instance         v0, Landroid/app/usage/NetworkStats$Bucket;
+	194     (000002fc) invoke-direct        v0, Landroid/app/usage/NetworkStats$Bucket;-><init>()V
+	2ec:301
+	(Ljava/lang/Throwable; -> 36e onItemSelected-BB@0x36e)
+	(Ljava/lang/SecurityException; -> 382 onItemSelected-BB@0x382)
+	(Landroid/os/RemoteException; -> 374 onItemSelected-BB@0x374)
+	(Ljava/lang/NumberFormatException; -> 37c onItemSelected-BB@0x37c)
+
+onItemSelected-BB@0x302 : [ onItemSelected-BB@0x320 onItemSelected-BB@0x33a ]
+	195     (00000302) invoke-virtual       v11, v0, Landroid/app/usage/NetworkStats;->getNextBucket(Landroid/app/usage/NetworkStats$Bucket;)Z
+	196     (00000308) invoke-virtual       v0, Landroid/app/usage/NetworkStats$Bucket;->getUid()I
+	197     (0000030e) move-result          v12
+	198     (00000310) invoke-virtual       v13, v12, Landroid/util/SparseArray;->get(I)Ljava/lang/Object;
+	199     (00000316) move-result-object   v10
+	200     (00000318) check-cast           v10, Ljava/util/List;
+	201     (0000031c) if-nez               v10, +f
+	302:35b
+	(Ljava/lang/Throwable; -> 360 onItemSelected-BB@0x360)
+	(Ljava/lang/SecurityException; -> 10c onItemSelected-BB@0x10c)
+	(Landroid/os/RemoteException; -> 1ee onItemSelected-BB@0x1ee)
+	(Ljava/lang/NumberFormatException; -> 2a2 onItemSelected-BB@0x2a2)
+
+onItemSelected-BB@0x320 : [ onItemSelected-BB@0x33a ]
+	202     (00000320) new-instance         v10, Ljava/util/ArrayList;
+	203     (00000324) invoke-direct        v10, Ljava/util/ArrayList;-><init>()V
+	204     (0000032a) iget-object          v1, v14, Lcom/afwsamples/testdpc/policy/networking/NetworkUsageStatsFragment;->mListData Ljava/util/List;
+	205     (0000032e) invoke-interface     v1, v10, Ljava/util/List;->add(Ljava/lang/Object;)Z
+	206     (00000334) invoke-virtual       v13, v12, v10, Landroid/util/SparseArray;->put(I Ljava/lang/Object;)V
+	302:35b
+	(Ljava/lang/Throwable; -> 360 onItemSelected-BB@0x360)
+	(Ljava/lang/SecurityException; -> 10c onItemSelected-BB@0x10c)
+	(Landroid/os/RemoteException; -> 1ee onItemSelected-BB@0x1ee)
+	(Ljava/lang/NumberFormatException; -> 2a2 onItemSelected-BB@0x2a2)
+
+onItemSelected-BB@0x33a : [ onItemSelected-BB@0x2ec ]
+	207     (0000033a) invoke-interface     v10, v0, Ljava/util/List;->add(Ljava/lang/Object;)Z
+	208     (00000340) move-object          v8, v0
+	209     (00000342) goto                 -2b
+	302:35b
+	(Ljava/lang/Throwable; -> 360 onItemSelected-BB@0x360)
+	(Ljava/lang/SecurityException; -> 10c onItemSelected-BB@0x10c)
+	(Landroid/os/RemoteException; -> 1ee onItemSelected-BB@0x1ee)
+	(Ljava/lang/NumberFormatException; -> 2a2 onItemSelected-BB@0x2a2)
+
+onItemSelected-BB@0x344 : [ onItemSelected-BB@0x346 ]
+	210     (00000344) move-object          v0, v8
+	302:35b
+	(Ljava/lang/Throwable; -> 360 onItemSelected-BB@0x360)
+	(Ljava/lang/SecurityException; -> 10c onItemSelected-BB@0x10c)
+	(Landroid/os/RemoteException; -> 1ee onItemSelected-BB@0x1ee)
+	(Ljava/lang/NumberFormatException; -> 2a2 onItemSelected-BB@0x2a2)
+
+onItemSelected-BB@0x346 : [ onItemSelected-BB@0x42 ]
+	211     (00000346) iget-object          v1, v14, Lcom/afwsamples/testdpc/policy/networking/NetworkUsageStatsFragment;->mListAdapter Landroid/widget/ArrayAdapter;
+	212     (0000034a) invoke-virtual       v1, Landroid/widget/ArrayAdapter;->notifyDataSetChanged()V
+	213     (00000350) iget-object          v1, v14, Lcom/afwsamples/testdpc/policy/networking/NetworkUsageStatsFragment;->mDataUsageList Landroid/widget/ListView;
+	214     (00000354) const/4              v2, 0
+	215     (00000356) invoke-virtual       v1, v2, Landroid/widget/ListView;->setVisibility(I)V
+	216     (0000035c) goto/16              -18d
+
+onItemSelected-BB@0x360 : [ onItemSelected-BB@0x362 ]
+	217     (00000360) move-exception       v1
+
+onItemSelected-BB@0x362 : [ onItemSelected-BB@0x366 onItemSelected-BB@0x36c ]
+	218     (00000362) if-eqz               v11, +5
+
+onItemSelected-BB@0x366 : [ onItemSelected-BB@0x36c ]
+	219     (00000366) invoke-virtual       v11, Landroid/app/usage/NetworkStats;->close()V
+
+onItemSelected-BB@0x36c : 
+	220     (0000036c) throw                v1
+
+onItemSelected-BB@0x36e : [ onItemSelected-BB@0x362 ]
+	221     (0000036e) move-exception       v1
+	222     (00000370) move-object          v0, v8
+	223     (00000372) goto                 -8
+
+onItemSelected-BB@0x374 : [ onItemSelected-BB@0x1f0 ]
+	224     (00000374) move-exception       v1
+	225     (00000376) move-object          v0, v8
+	226     (00000378) goto/16              -c4
+
+onItemSelected-BB@0x37c : [ onItemSelected-BB@0x2a4 ]
+	227     (0000037c) move-exception       v1
+	228     (0000037e) move-object          v0, v8
+	229     (00000380) goto                 -6e
+
+onItemSelected-BB@0x382 : [ onItemSelected-BB@0x10e ]
+	230     (00000382) move-exception       v9
+	231     (00000384) move-object          v0, v8
+	232     (00000386) goto/16              -13c
+
+onItemSelected-BB@0x38a : 
+	233     (0000038a) nop                  
+	234     (0000038c) packed-switch-payload 1 2 3 4
+

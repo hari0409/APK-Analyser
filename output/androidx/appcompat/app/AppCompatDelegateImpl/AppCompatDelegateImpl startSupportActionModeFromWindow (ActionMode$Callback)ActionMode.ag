@@ -1,0 +1,267 @@
+# Landroidx/appcompat/app/AppCompatDelegateImpl;->startSupportActionModeFromWindow(Landroidx/appcompat/view/ActionMode$Callback;)Landroidx/appcompat/view/ActionMode; [access_flags=]
+#
+# Parameters:
+# - local registers: v0...v11
+# - v12:androidx.appcompat.view.ActionMode$Callback
+#
+# - return:androidx.appcompat.view.ActionMode
+
+startSupportActionModeFromWindow-BB@0x0 : [ startSupportActionModeFromWindow-BB@0xe startSupportActionModeFromWindow-BB@0x18 ]
+	0       (00000000) invoke-virtual       v11, Landroidx/appcompat/app/AppCompatDelegateImpl;->endOnGoingFadeAnimation()V
+	1       (00000006) iget-object          v8, v11, Landroidx/appcompat/app/AppCompatDelegateImpl;->mActionMode Landroidx/appcompat/view/ActionMode;
+	2       (0000000a) if-eqz               v8, +7
+
+startSupportActionModeFromWindow-BB@0xe : [ startSupportActionModeFromWindow-BB@0x18 ]
+	3       (0000000e) iget-object          v8, v11, Landroidx/appcompat/app/AppCompatDelegateImpl;->mActionMode Landroidx/appcompat/view/ActionMode;
+	4       (00000012) invoke-virtual       v8, Landroidx/appcompat/view/ActionMode;->finish()V
+
+startSupportActionModeFromWindow-BB@0x18 : [ startSupportActionModeFromWindow-BB@0x20 startSupportActionModeFromWindow-BB@0x2c ]
+	5       (00000018) instance-of          v8, v12, Landroidx/appcompat/app/AppCompatDelegateImpl$ActionModeCallbackWrapperV9;
+	6       (0000001c) if-nez               v8, +8
+
+startSupportActionModeFromWindow-BB@0x20 : [ startSupportActionModeFromWindow-BB@0x2c ]
+	7       (00000020) new-instance         v3, Landroidx/appcompat/app/AppCompatDelegateImpl$ActionModeCallbackWrapperV9;
+	8       (00000024) invoke-direct        v3, v11, v12, Landroidx/appcompat/app/AppCompatDelegateImpl$ActionModeCallbackWrapperV9;-><init>(Landroidx/appcompat/app/AppCompatDelegateImpl; Landroidx/appcompat/view/ActionMode$Callback;)V
+	9       (0000002a) move-object          v12, v3
+
+startSupportActionModeFromWindow-BB@0x2c : [ startSupportActionModeFromWindow-BB@0x36 startSupportActionModeFromWindow-BB@0x4a ]
+	10      (0000002c) const/4              v5, 0
+	11      (0000002e) iget-object          v8, v11, Landroidx/appcompat/app/AppCompatDelegateImpl;->mAppCompatCallback Landroidx/appcompat/app/AppCompatCallback;
+	12      (00000032) if-eqz               v8, +c
+
+startSupportActionModeFromWindow-BB@0x36 : [ startSupportActionModeFromWindow-BB@0x3e startSupportActionModeFromWindow-BB@0x4a ]
+	13      (00000036) iget-boolean         v8, v11, Landroidx/appcompat/app/AppCompatDelegateImpl;->mIsDestroyed Z
+	14      (0000003a) if-nez               v8, +8
+
+startSupportActionModeFromWindow-BB@0x3e : [ startSupportActionModeFromWindow-BB@0x4a ]
+	15      (0000003e) iget-object          v8, v11, Landroidx/appcompat/app/AppCompatDelegateImpl;->mAppCompatCallback Landroidx/appcompat/app/AppCompatCallback;
+	16      (00000042) invoke-interface     v8, v12, Landroidx/appcompat/app/AppCompatCallback;->onWindowStartingSupportActionMode(Landroidx/appcompat/view/ActionMode$Callback;)Landroidx/appcompat/view/ActionMode;
+	17      (00000048) move-result-object   v5
+	3e:47
+	(Ljava/lang/AbstractMethodError; -> 30a startSupportActionModeFromWindow-BB@0x30a)
+
+startSupportActionModeFromWindow-BB@0x4a : [ startSupportActionModeFromWindow-BB@0x4e startSupportActionModeFromWindow-BB@0x76 ]
+	18      (0000004a) if-eqz               v5, +16
+
+startSupportActionModeFromWindow-BB@0x4e : [ startSupportActionModeFromWindow-BB@0x52 ]
+	19      (0000004e) iput-object          v5, v11, Landroidx/appcompat/app/AppCompatDelegateImpl;->mActionMode Landroidx/appcompat/view/ActionMode;
+
+startSupportActionModeFromWindow-BB@0x52 : [ startSupportActionModeFromWindow-BB@0x5a startSupportActionModeFromWindow-BB@0x70 ]
+	20      (00000052) iget-object          v8, v11, Landroidx/appcompat/app/AppCompatDelegateImpl;->mActionMode Landroidx/appcompat/view/ActionMode;
+	21      (00000056) if-eqz               v8, +d
+
+startSupportActionModeFromWindow-BB@0x5a : [ startSupportActionModeFromWindow-BB@0x62 startSupportActionModeFromWindow-BB@0x70 ]
+	22      (0000005a) iget-object          v8, v11, Landroidx/appcompat/app/AppCompatDelegateImpl;->mAppCompatCallback Landroidx/appcompat/app/AppCompatCallback;
+	23      (0000005e) if-eqz               v8, +9
+
+startSupportActionModeFromWindow-BB@0x62 : [ startSupportActionModeFromWindow-BB@0x70 ]
+	24      (00000062) iget-object          v8, v11, Landroidx/appcompat/app/AppCompatDelegateImpl;->mAppCompatCallback Landroidx/appcompat/app/AppCompatCallback;
+	25      (00000066) iget-object          v9, v11, Landroidx/appcompat/app/AppCompatDelegateImpl;->mActionMode Landroidx/appcompat/view/ActionMode;
+	26      (0000006a) invoke-interface     v8, v9, Landroidx/appcompat/app/AppCompatCallback;->onSupportActionModeStarted(Landroidx/appcompat/view/ActionMode;)V
+
+startSupportActionModeFromWindow-BB@0x70 : 
+	27      (00000070) iget-object          v8, v11, Landroidx/appcompat/app/AppCompatDelegateImpl;->mActionMode Landroidx/appcompat/view/ActionMode;
+	28      (00000074) return-object        v8
+
+startSupportActionModeFromWindow-BB@0x76 : [ startSupportActionModeFromWindow-BB@0x7e startSupportActionModeFromWindow-BB@0x190 ]
+	29      (00000076) iget-object          v8, v11, Landroidx/appcompat/app/AppCompatDelegateImpl;->mActionModeView Landroidx/appcompat/widget/ActionBarContextView;
+	30      (0000007a) if-nez               v8, +8b
+
+startSupportActionModeFromWindow-BB@0x7e : [ startSupportActionModeFromWindow-BB@0x86 startSupportActionModeFromWindow-BB@0x266 ]
+	31      (0000007e) iget-boolean         v8, v11, Landroidx/appcompat/app/AppCompatDelegateImpl;->mIsFloating Z
+	32      (00000082) if-eqz               v8, +f2
+
+startSupportActionModeFromWindow-BB@0x86 : [ startSupportActionModeFromWindow-BB@0xb0 startSupportActionModeFromWindow-BB@0x25e ]
+	33      (00000086) new-instance         v6, Landroid/util/TypedValue;
+	34      (0000008a) invoke-direct        v6, Landroid/util/TypedValue;-><init>()V
+	35      (00000090) iget-object          v8, v11, Landroidx/appcompat/app/AppCompatDelegateImpl;->mContext Landroid/content/Context;
+	36      (00000094) invoke-virtual       v8, Landroid/content/Context;->getTheme()Landroid/content/res/Resources$Theme;
+	37      (0000009a) move-result-object   v2
+	38      (0000009c) sget                 v8, Landroidx/appcompat/R$attr;->actionBarTheme I
+	39      (000000a0) const/4              v9, 1
+	40      (000000a2) invoke-virtual       v2, v8, v6, v9, Landroid/content/res/Resources$Theme;->resolveAttribute(I Landroid/util/TypedValue; Z)Z
+	41      (000000a8) iget                 v8, v6, Landroid/util/TypedValue;->resourceId I
+	42      (000000ac) if-eqz               v8, +d9
+
+startSupportActionModeFromWindow-BB@0xb0 : [ startSupportActionModeFromWindow-BB@0xf4 ]
+	43      (000000b0) iget-object          v8, v11, Landroidx/appcompat/app/AppCompatDelegateImpl;->mContext Landroid/content/Context;
+	44      (000000b4) invoke-virtual       v8, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
+	45      (000000ba) move-result-object   v8
+	46      (000000bc) invoke-virtual       v8, Landroid/content/res/Resources;->newTheme()Landroid/content/res/Resources$Theme;
+	47      (000000c2) move-result-object   v1
+	48      (000000c4) invoke-virtual       v1, v2, Landroid/content/res/Resources$Theme;->setTo(Landroid/content/res/Resources$Theme;)V
+	49      (000000ca) iget                 v8, v6, Landroid/util/TypedValue;->resourceId I
+	50      (000000ce) const/4              v9, 1
+	51      (000000d0) invoke-virtual       v1, v8, v9, Landroid/content/res/Resources$Theme;->applyStyle(I Z)V
+	52      (000000d6) new-instance         v0, Landroidx/appcompat/view/ContextThemeWrapper;
+	53      (000000da) iget-object          v8, v11, Landroidx/appcompat/app/AppCompatDelegateImpl;->mContext Landroid/content/Context;
+	54      (000000de) const/4              v9, 0
+	55      (000000e0) invoke-direct        v0, v8, v9, Landroidx/appcompat/view/ContextThemeWrapper;-><init>(Landroid/content/Context; I)V
+	56      (000000e6) invoke-virtual       v0, Landroid/content/Context;->getTheme()Landroid/content/res/Resources$Theme;
+	57      (000000ec) move-result-object   v8
+	58      (000000ee) invoke-virtual       v8, v1, Landroid/content/res/Resources$Theme;->setTo(Landroid/content/res/Resources$Theme;)V
+
+startSupportActionModeFromWindow-BB@0xf4 : [ startSupportActionModeFromWindow-BB@0x190 ]
+	59      (000000f4) new-instance         v8, Landroidx/appcompat/widget/ActionBarContextView;
+	60      (000000f8) invoke-direct        v8, v0, Landroidx/appcompat/widget/ActionBarContextView;-><init>(Landroid/content/Context;)V
+	61      (000000fe) iput-object          v8, v11, Landroidx/appcompat/app/AppCompatDelegateImpl;->mActionModeView Landroidx/appcompat/widget/ActionBarContextView;
+	62      (00000102) new-instance         v8, Landroid/widget/PopupWindow;
+	63      (00000106) const/4              v9, 0
+	64      (00000108) sget                 v10, Landroidx/appcompat/R$attr;->actionModePopupWindowStyle I
+	65      (0000010c) invoke-direct        v8, v0, v9, v10, Landroid/widget/PopupWindow;-><init>(Landroid/content/Context; Landroid/util/AttributeSet; I)V
+	66      (00000112) iput-object          v8, v11, Landroidx/appcompat/app/AppCompatDelegateImpl;->mActionModePopup Landroid/widget/PopupWindow;
+	67      (00000116) iget-object          v8, v11, Landroidx/appcompat/app/AppCompatDelegateImpl;->mActionModePopup Landroid/widget/PopupWindow;
+	68      (0000011a) const/4              v9, 2
+	69      (0000011c) invoke-static        v8, v9, Landroidx/core/widget/PopupWindowCompat;->setWindowLayoutType(Landroid/widget/PopupWindow; I)V
+	70      (00000122) iget-object          v8, v11, Landroidx/appcompat/app/AppCompatDelegateImpl;->mActionModePopup Landroid/widget/PopupWindow;
+	71      (00000126) iget-object          v9, v11, Landroidx/appcompat/app/AppCompatDelegateImpl;->mActionModeView Landroidx/appcompat/widget/ActionBarContextView;
+	72      (0000012a) invoke-virtual       v8, v9, Landroid/widget/PopupWindow;->setContentView(Landroid/view/View;)V
+	73      (00000130) iget-object          v8, v11, Landroidx/appcompat/app/AppCompatDelegateImpl;->mActionModePopup Landroid/widget/PopupWindow;
+	74      (00000134) const/4              v9, -1
+	75      (00000136) invoke-virtual       v8, v9, Landroid/widget/PopupWindow;->setWidth(I)V
+	76      (0000013c) invoke-virtual       v0, Landroid/content/Context;->getTheme()Landroid/content/res/Resources$Theme;
+	77      (00000142) move-result-object   v8
+	78      (00000144) sget                 v9, Landroidx/appcompat/R$attr;->actionBarSize I
+	79      (00000148) const/4              v10, 1
+	80      (0000014a) invoke-virtual       v8, v9, v6, v10, Landroid/content/res/Resources$Theme;->resolveAttribute(I Landroid/util/TypedValue; Z)Z
+	81      (00000150) iget                 v8, v6, Landroid/util/TypedValue;->data I
+	82      (00000154) invoke-virtual       v0, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
+	83      (0000015a) move-result-object   v9
+	84      (0000015c) invoke-virtual       v9, Landroid/content/res/Resources;->getDisplayMetrics()Landroid/util/DisplayMetrics;
+	85      (00000162) move-result-object   v9
+	86      (00000164) invoke-static        v8, v9, Landroid/util/TypedValue;->complexToDimensionPixelSize(I Landroid/util/DisplayMetrics;)I
+	87      (0000016a) move-result          v4
+	88      (0000016c) iget-object          v8, v11, Landroidx/appcompat/app/AppCompatDelegateImpl;->mActionModeView Landroidx/appcompat/widget/ActionBarContextView;
+	89      (00000170) invoke-virtual       v8, v4, Landroidx/appcompat/widget/ActionBarContextView;->setContentHeight(I)V
+	90      (00000176) iget-object          v8, v11, Landroidx/appcompat/app/AppCompatDelegateImpl;->mActionModePopup Landroid/widget/PopupWindow;
+	91      (0000017a) const/4              v9, -2
+	92      (0000017c) invoke-virtual       v8, v9, Landroid/widget/PopupWindow;->setHeight(I)V
+	93      (00000182) new-instance         v8, Landroidx/appcompat/app/AppCompatDelegateImpl$6;
+	94      (00000186) invoke-direct        v8, v11, Landroidx/appcompat/app/AppCompatDelegateImpl$6;-><init>(Landroidx/appcompat/app/AppCompatDelegateImpl;)V
+	95      (0000018c) iput-object          v8, v11, Landroidx/appcompat/app/AppCompatDelegateImpl;->mShowActionModePopup Ljava/lang/Runnable;
+
+startSupportActionModeFromWindow-BB@0x190 : [ startSupportActionModeFromWindow-BB@0x198 startSupportActionModeFromWindow-BB@0x52 ]
+	96      (00000190) iget-object          v8, v11, Landroidx/appcompat/app/AppCompatDelegateImpl;->mActionModeView Landroidx/appcompat/widget/ActionBarContextView;
+	97      (00000194) if-eqz               v8, -a1
+
+startSupportActionModeFromWindow-BB@0x198 : [ startSupportActionModeFromWindow-BB@0x1c4 startSupportActionModeFromWindow-BB@0x2a8 ]
+	98      (00000198) invoke-virtual       v11, Landroidx/appcompat/app/AppCompatDelegateImpl;->endOnGoingFadeAnimation()V
+	99      (0000019e) iget-object          v8, v11, Landroidx/appcompat/app/AppCompatDelegateImpl;->mActionModeView Landroidx/appcompat/widget/ActionBarContextView;
+	100     (000001a2) invoke-virtual       v8, Landroidx/appcompat/widget/ActionBarContextView;->killMode()V
+	101     (000001a8) new-instance         v5, Landroidx/appcompat/view/StandaloneActionMode;
+	102     (000001ac) iget-object          v8, v11, Landroidx/appcompat/app/AppCompatDelegateImpl;->mActionModeView Landroidx/appcompat/widget/ActionBarContextView;
+	103     (000001b0) invoke-virtual       v8, Landroidx/appcompat/widget/ActionBarContextView;->getContext()Landroid/content/Context;
+	104     (000001b6) move-result-object   v9
+	105     (000001b8) iget-object          v10, v11, Landroidx/appcompat/app/AppCompatDelegateImpl;->mActionModeView Landroidx/appcompat/widget/ActionBarContextView;
+	106     (000001bc) iget-object          v8, v11, Landroidx/appcompat/app/AppCompatDelegateImpl;->mActionModePopup Landroid/widget/PopupWindow;
+	107     (000001c0) if-nez               v8, +74
+
+startSupportActionModeFromWindow-BB@0x1c4 : [ startSupportActionModeFromWindow-BB@0x1c6 ]
+	108     (000001c4) const/4              v8, 1
+
+startSupportActionModeFromWindow-BB@0x1c6 : [ startSupportActionModeFromWindow-BB@0x1e0 startSupportActionModeFromWindow-BB@0x300 ]
+	109     (000001c6) invoke-direct        v5, v9, v10, v12, v8, Landroidx/appcompat/view/StandaloneActionMode;-><init>(Landroid/content/Context; Landroidx/appcompat/widget/ActionBarContextView; Landroidx/appcompat/view/ActionMode$Callback; Z)V
+	110     (000001cc) invoke-virtual       v5, Landroidx/appcompat/view/ActionMode;->getMenu()Landroid/view/Menu;
+	111     (000001d2) move-result-object   v8
+	112     (000001d4) invoke-interface     v12, v5, v8, Landroidx/appcompat/view/ActionMode$Callback;->onCreateActionMode(Landroidx/appcompat/view/ActionMode; Landroid/view/Menu;)Z
+	113     (000001da) move-result          v8
+	114     (000001dc) if-eqz               v8, +92
+
+startSupportActionModeFromWindow-BB@0x1e0 : [ startSupportActionModeFromWindow-BB@0x200 startSupportActionModeFromWindow-BB@0x2ac ]
+	115     (000001e0) invoke-virtual       v5, Landroidx/appcompat/view/ActionMode;->invalidate()V
+	116     (000001e6) iget-object          v8, v11, Landroidx/appcompat/app/AppCompatDelegateImpl;->mActionModeView Landroidx/appcompat/widget/ActionBarContextView;
+	117     (000001ea) invoke-virtual       v8, v5, Landroidx/appcompat/widget/ActionBarContextView;->initForMode(Landroidx/appcompat/view/ActionMode;)V
+	118     (000001f0) iput-object          v5, v11, Landroidx/appcompat/app/AppCompatDelegateImpl;->mActionMode Landroidx/appcompat/view/ActionMode;
+	119     (000001f4) invoke-virtual       v11, Landroidx/appcompat/app/AppCompatDelegateImpl;->shouldAnimateActionModeView()Z
+	120     (000001fa) move-result          v8
+	121     (000001fc) if-eqz               v8, +58
+
+startSupportActionModeFromWindow-BB@0x200 : [ startSupportActionModeFromWindow-BB@0x23c ]
+	122     (00000200) iget-object          v8, v11, Landroidx/appcompat/app/AppCompatDelegateImpl;->mActionModeView Landroidx/appcompat/widget/ActionBarContextView;
+	123     (00000204) const/4              v9, 0
+	124     (00000206) invoke-virtual       v8, v9, Landroidx/appcompat/widget/ActionBarContextView;->setAlpha(F)V
+	125     (0000020c) iget-object          v8, v11, Landroidx/appcompat/app/AppCompatDelegateImpl;->mActionModeView Landroidx/appcompat/widget/ActionBarContextView;
+	126     (00000210) invoke-static        v8, Landroidx/core/view/ViewCompat;->animate(Landroid/view/View;)Landroidx/core/view/ViewPropertyAnimatorCompat;
+	127     (00000216) move-result-object   v8
+	128     (00000218) const/high16         v9, 16256 # [1.0]
+	129     (0000021c) invoke-virtual       v8, v9, Landroidx/core/view/ViewPropertyAnimatorCompat;->alpha(F)Landroidx/core/view/ViewPropertyAnimatorCompat;
+	130     (00000222) move-result-object   v8
+	131     (00000224) iput-object          v8, v11, Landroidx/appcompat/app/AppCompatDelegateImpl;->mFadeAnim Landroidx/core/view/ViewPropertyAnimatorCompat;
+	132     (00000228) iget-object          v8, v11, Landroidx/appcompat/app/AppCompatDelegateImpl;->mFadeAnim Landroidx/core/view/ViewPropertyAnimatorCompat;
+	133     (0000022c) new-instance         v9, Landroidx/appcompat/app/AppCompatDelegateImpl$7;
+	134     (00000230) invoke-direct        v9, v11, Landroidx/appcompat/app/AppCompatDelegateImpl$7;-><init>(Landroidx/appcompat/app/AppCompatDelegateImpl;)V
+	135     (00000236) invoke-virtual       v8, v9, Landroidx/core/view/ViewPropertyAnimatorCompat;->setListener(Landroidx/core/view/ViewPropertyAnimatorListener;)Landroidx/core/view/ViewPropertyAnimatorCompat;
+
+startSupportActionModeFromWindow-BB@0x23c : [ startSupportActionModeFromWindow-BB@0x244 startSupportActionModeFromWindow-BB@0x52 ]
+	136     (0000023c) iget-object          v8, v11, Landroidx/appcompat/app/AppCompatDelegateImpl;->mActionModePopup Landroid/widget/PopupWindow;
+	137     (00000240) if-eqz               v8, -f7
+
+startSupportActionModeFromWindow-BB@0x244 : [ startSupportActionModeFromWindow-BB@0x52 ]
+	138     (00000244) iget-object          v8, v11, Landroidx/appcompat/app/AppCompatDelegateImpl;->mWindow Landroid/view/Window;
+	139     (00000248) invoke-virtual       v8, Landroid/view/Window;->getDecorView()Landroid/view/View;
+	140     (0000024e) move-result-object   v8
+	141     (00000250) iget-object          v9, v11, Landroidx/appcompat/app/AppCompatDelegateImpl;->mShowActionModePopup Ljava/lang/Runnable;
+	142     (00000254) invoke-virtual       v8, v9, Landroid/view/View;->post(Ljava/lang/Runnable;)Z
+	143     (0000025a) goto/16              -104
+
+startSupportActionModeFromWindow-BB@0x25e : [ startSupportActionModeFromWindow-BB@0xf4 ]
+	144     (0000025e) iget-object          v0, v11, Landroidx/appcompat/app/AppCompatDelegateImpl;->mContext Landroid/content/Context;
+	145     (00000262) goto/16              -b7
+
+startSupportActionModeFromWindow-BB@0x266 : [ startSupportActionModeFromWindow-BB@0x27e startSupportActionModeFromWindow-BB@0x190 ]
+	146     (00000266) iget-object          v8, v11, Landroidx/appcompat/app/AppCompatDelegateImpl;->mSubDecor Landroid/view/ViewGroup;
+	147     (0000026a) sget                 v9, Landroidx/appcompat/R$id;->action_mode_bar_stub I
+	148     (0000026e) invoke-virtual       v8, v9, Landroid/view/ViewGroup;->findViewById(I)Landroid/view/View;
+	149     (00000274) move-result-object   v7
+	150     (00000276) check-cast           v7, Landroidx/appcompat/widget/ViewStubCompat;
+	151     (0000027a) if-eqz               v7, -75
+
+startSupportActionModeFromWindow-BB@0x27e : [ startSupportActionModeFromWindow-BB@0x190 ]
+	152     (0000027e) invoke-virtual       v11, Landroidx/appcompat/app/AppCompatDelegateImpl;->getActionBarThemedContext()Landroid/content/Context;
+	153     (00000284) move-result-object   v8
+	154     (00000286) invoke-static        v8, Landroid/view/LayoutInflater;->from(Landroid/content/Context;)Landroid/view/LayoutInflater;
+	155     (0000028c) move-result-object   v8
+	156     (0000028e) invoke-virtual       v7, v8, Landroidx/appcompat/widget/ViewStubCompat;->setLayoutInflater(Landroid/view/LayoutInflater;)V
+	157     (00000294) invoke-virtual       v7, Landroidx/appcompat/widget/ViewStubCompat;->inflate()Landroid/view/View;
+	158     (0000029a) move-result-object   v8
+	159     (0000029c) check-cast           v8, Landroidx/appcompat/widget/ActionBarContextView;
+	160     (000002a0) iput-object          v8, v11, Landroidx/appcompat/app/AppCompatDelegateImpl;->mActionModeView Landroidx/appcompat/widget/ActionBarContextView;
+	161     (000002a4) goto/16              -8a
+
+startSupportActionModeFromWindow-BB@0x2a8 : [ startSupportActionModeFromWindow-BB@0x1c6 ]
+	162     (000002a8) const/4              v8, 0
+	163     (000002aa) goto                 -72
+
+startSupportActionModeFromWindow-BB@0x2ac : [ startSupportActionModeFromWindow-BB@0x2e8 startSupportActionModeFromWindow-BB@0x23c ]
+	164     (000002ac) iget-object          v8, v11, Landroidx/appcompat/app/AppCompatDelegateImpl;->mActionModeView Landroidx/appcompat/widget/ActionBarContextView;
+	165     (000002b0) const/high16         v9, 16256 # [1.0]
+	166     (000002b4) invoke-virtual       v8, v9, Landroidx/appcompat/widget/ActionBarContextView;->setAlpha(F)V
+	167     (000002ba) iget-object          v8, v11, Landroidx/appcompat/app/AppCompatDelegateImpl;->mActionModeView Landroidx/appcompat/widget/ActionBarContextView;
+	168     (000002be) const/4              v9, 0
+	169     (000002c0) invoke-virtual       v8, v9, Landroidx/appcompat/widget/ActionBarContextView;->setVisibility(I)V
+	170     (000002c6) iget-object          v8, v11, Landroidx/appcompat/app/AppCompatDelegateImpl;->mActionModeView Landroidx/appcompat/widget/ActionBarContextView;
+	171     (000002ca) const/16             v9, 32
+	172     (000002ce) invoke-virtual       v8, v9, Landroidx/appcompat/widget/ActionBarContextView;->sendAccessibilityEvent(I)V
+	173     (000002d4) iget-object          v8, v11, Landroidx/appcompat/app/AppCompatDelegateImpl;->mActionModeView Landroidx/appcompat/widget/ActionBarContextView;
+	174     (000002d8) invoke-virtual       v8, Landroidx/appcompat/widget/ActionBarContextView;->getParent()Landroid/view/ViewParent;
+	175     (000002de) move-result-object   v8
+	176     (000002e0) instance-of          v8, v8, Landroid/view/View;
+	177     (000002e4) if-eqz               v8, -54
+
+startSupportActionModeFromWindow-BB@0x2e8 : [ startSupportActionModeFromWindow-BB@0x23c ]
+	178     (000002e8) iget-object          v8, v11, Landroidx/appcompat/app/AppCompatDelegateImpl;->mActionModeView Landroidx/appcompat/widget/ActionBarContextView;
+	179     (000002ec) invoke-virtual       v8, Landroidx/appcompat/widget/ActionBarContextView;->getParent()Landroid/view/ViewParent;
+	180     (000002f2) move-result-object   v8
+	181     (000002f4) check-cast           v8, Landroid/view/View;
+	182     (000002f8) invoke-static        v8, Landroidx/core/view/ViewCompat;->requestApplyInsets(Landroid/view/View;)V
+	183     (000002fe) goto                 -61
+
+startSupportActionModeFromWindow-BB@0x300 : [ startSupportActionModeFromWindow-BB@0x52 ]
+	184     (00000300) const/4              v8, 0
+	185     (00000302) iput-object          v8, v11, Landroidx/appcompat/app/AppCompatDelegateImpl;->mActionMode Landroidx/appcompat/view/ActionMode;
+	186     (00000306) goto/16              -15a
+
+startSupportActionModeFromWindow-BB@0x30a : [ startSupportActionModeFromWindow-BB@0x4a ]
+	187     (0000030a) move-exception       v8
+	188     (0000030c) goto/16              -161
+

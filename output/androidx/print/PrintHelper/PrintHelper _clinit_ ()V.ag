@@ -1,0 +1,39 @@
+# Landroidx/print/PrintHelper;-><clinit>()V [access_flags=static constructor]
+#
+# Parameters:
+# local registers: v0...v4
+#
+# - return:void
+
+<clinit>-BB@0x0 : [ <clinit>-BB@0x14 <clinit>-BB@0x1c ]
+	0       (00000000) const/16             v4, 23
+	1       (00000004) const/4              v2, 1
+	2       (00000006) const/4              v1, 0
+	3       (00000008) sget                 v0, Landroid/os/Build$VERSION;->SDK_INT I
+	4       (0000000c) const/16             v3, 20
+	5       (00000010) if-lt                v0, v3, +6
+
+<clinit>-BB@0x14 : [ <clinit>-BB@0x1c <clinit>-BB@0x30 ]
+	6       (00000014) sget                 v0, Landroid/os/Build$VERSION;->SDK_INT I
+	7       (00000018) if-le                v0, v4, +c
+
+<clinit>-BB@0x1c : [ <clinit>-BB@0x1e ]
+	8       (0000001c) move                 v0, v2
+
+<clinit>-BB@0x1e : [ <clinit>-BB@0x2a <clinit>-BB@0x34 ]
+	9       (0000001e) sput-boolean         v0, Landroidx/print/PrintHelper;->PRINT_ACTIVITY_RESPECTS_ORIENTATION Z
+	10      (00000022) sget                 v0, Landroid/os/Build$VERSION;->SDK_INT I
+	11      (00000026) if-eq                v0, v4, +7
+
+<clinit>-BB@0x2a : 
+	12      (0000002a) sput-boolean         v2, Landroidx/print/PrintHelper;->IS_MIN_MARGINS_HANDLING_CORRECT Z
+	13      (0000002e) return-void          
+
+<clinit>-BB@0x30 : [ <clinit>-BB@0x1e ]
+	14      (00000030) move                 v0, v1
+	15      (00000032) goto                 -a
+
+<clinit>-BB@0x34 : [ <clinit>-BB@0x2a ]
+	16      (00000034) move                 v2, v1
+	17      (00000036) goto                 -6
+

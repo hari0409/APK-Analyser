@@ -1,0 +1,50 @@
+# Lcom/afwsamples/testdpc/policy/keyguard/LockScreenPolicyFragment;->updateAggregates()V [access_flags=private]
+#
+# Parameters:
+# local registers: v0...v8
+#
+# - return:void
+
+updateAggregates-BB@0x0 : [ updateAggregates-BB@0x22 updateAggregates-BB@0x74 ]
+	0       (00000000) const/4              v4, 0
+	1       (00000002) invoke-virtual       v8, Lcom/afwsamples/testdpc/policy/keyguard/LockScreenPolicyFragment;->getDpm()Landroid/app/admin/DevicePolicyManager;
+	2       (00000008) move-result-object   v1
+	3       (0000000a) invoke-virtual       v1, v4, Landroid/app/admin/DevicePolicyManager;->getMaximumFailedPasswordsForWipe(Landroid/content/ComponentName;)I
+	4       (00000010) move-result          v0
+	5       (00000012) const-string         v1, 'key_max_fails_before_wipe_aggregate'
+	6       (00000016) invoke-virtual       v8, v1, Lcom/afwsamples/testdpc/policy/keyguard/LockScreenPolicyFragment;->findPreference(Ljava/lang/CharSequence;)Landroidx/preference/Preference;
+	7       (0000001c) move-result-object   v5
+	8       (0000001e) if-eqz               v0, +2b
+
+updateAggregates-BB@0x22 : [ updateAggregates-BB@0x2a ]
+	9       (00000022) invoke-static        v0, Ljava/lang/Integer;->toString(I)Ljava/lang/String;
+	10      (00000028) move-result-object   v1
+
+updateAggregates-BB@0x2a : [ updateAggregates-BB@0x58 updateAggregates-BB@0x6c ]
+	11      (0000002a) invoke-virtual       v5, v1, Landroidx/preference/Preference;->setSummary(Ljava/lang/CharSequence;)V
+	12      (00000030) invoke-virtual       v8, Lcom/afwsamples/testdpc/policy/keyguard/LockScreenPolicyFragment;->getDpm()Landroid/app/admin/DevicePolicyManager;
+	13      (00000036) move-result-object   v1
+	14      (00000038) invoke-virtual       v1, v4, Landroid/app/admin/DevicePolicyManager;->getMaximumTimeToLock(Landroid/content/ComponentName;)J
+	15      (0000003e) move-result-wide     v2
+	16      (00000040) const-string         v1, 'key_max_time_screen_lock_aggregate'
+	17      (00000044) invoke-virtual       v8, v1, Lcom/afwsamples/testdpc/policy/keyguard/LockScreenPolicyFragment;->findPreference(Ljava/lang/CharSequence;)Landroidx/preference/Preference;
+	18      (0000004a) move-result-object   v1
+	19      (0000004c) const-wide/16        v6, 0 # [0.0]
+	20      (00000050) cmp-long             v5, v2, v6
+	21      (00000054) if-eqz               v5, +c
+
+updateAggregates-BB@0x58 : [ updateAggregates-BB@0x6c ]
+	22      (00000058) sget-object          v4, Ljava/util/concurrent/TimeUnit;->MILLISECONDS Ljava/util/concurrent/TimeUnit;
+	23      (0000005c) invoke-virtual       v4, v2, v3, Ljava/util/concurrent/TimeUnit;->toSeconds(J)J
+	24      (00000062) move-result-wide     v4
+	25      (00000064) invoke-static        v4, v5, Ljava/lang/Long;->toString(J)Ljava/lang/String;
+	26      (0000006a) move-result-object   v4
+
+updateAggregates-BB@0x6c : 
+	27      (0000006c) invoke-virtual       v1, v4, Landroidx/preference/Preference;->setSummary(Ljava/lang/CharSequence;)V
+	28      (00000072) return-void          
+
+updateAggregates-BB@0x74 : [ updateAggregates-BB@0x2a ]
+	29      (00000074) move-object          v1, v4
+	30      (00000076) goto                 -26
+

@@ -1,0 +1,42 @@
+# Lcom/afwsamples/testdpc/policy/keyguard/LockScreenPolicyFragment;->onPreferenceClick(Landroidx/preference/Preference;)Z [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v4
+# - v5:androidx.preference.Preference
+#
+# - return:boolean
+
+onPreferenceClick-BB@0x0 : [ D:onPreferenceClick-BB@0x1a -645293792:onPreferenceClick-BB@0x22 ]
+	0       (00000000) const/4              v0, 0
+	1       (00000002) invoke-virtual       v5, Landroidx/preference/Preference;->getKey()Ljava/lang/String;
+	2       (00000008) move-result-object   v2
+	3       (0000000a) const/4              v1, -1
+	4       (0000000c) invoke-virtual       v2, Ljava/lang/String;->hashCode()I
+	5       (00000012) move-result          v3
+	6       (00000014) packed-switch        v3, +16 (0x40)
+
+onPreferenceClick-BB@0x1a : [ D:onPreferenceClick-BB@0x20 0:onPreferenceClick-BB@0x36 ]
+	7       (0000001a) packed-switch        v1, +19 (0x4c)
+
+onPreferenceClick-BB@0x20 : 
+	8       (00000020) return               v0
+
+onPreferenceClick-BB@0x22 : [ onPreferenceClick-BB@0x32 onPreferenceClick-BB@0x1a ]
+	9       (00000022) const-string         v3, 'key_set_trust_agent_config'
+	10      (00000026) invoke-virtual       v2, v3, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+	11      (0000002c) move-result          v2
+	12      (0000002e) if-eqz               v2, -a
+
+onPreferenceClick-BB@0x32 : [ onPreferenceClick-BB@0x1a ]
+	13      (00000032) move                 v1, v0
+	14      (00000034) goto                 -d
+
+onPreferenceClick-BB@0x36 : [ onPreferenceClick-BB@0x20 ]
+	15      (00000036) invoke-direct        v4, Lcom/afwsamples/testdpc/policy/keyguard/LockScreenPolicyFragment;->showSetTrustAgentFragment()V
+	16      (0000003c) const/4              v0, 1
+	17      (0000003e) goto                 -f
+
+onPreferenceClick-BB@0x40 : 
+	18      (00000040) packed-switch-payload -267666e0
+	19      (0000004c) packed-switch-payload 0
+

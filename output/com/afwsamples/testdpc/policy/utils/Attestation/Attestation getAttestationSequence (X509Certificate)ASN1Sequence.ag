@@ -1,0 +1,29 @@
+# Lcom/afwsamples/testdpc/policy/utils/Attestation;->getAttestationSequence(Ljava/security/cert/X509Certificate;)Lorg/bouncycastle/asn1/ASN1Sequence; [access_flags=private]
+#
+# Parameters:
+# - local registers: v0...v3
+# - v4:java.security.cert.X509Certificate
+#
+# - return:org.bouncycastle.asn1.ASN1Sequence
+
+getAttestationSequence-BB@0x0 : [ getAttestationSequence-BB@0x10 getAttestationSequence-BB@0x16 ]
+	0       (00000000) const-string         v1, '1.3.6.1.4.1.11129.2.1.17'
+	1       (00000004) invoke-virtual       v4, v1, Ljava/security/cert/X509Certificate;->getExtensionValue(Ljava/lang/String;)[B
+	2       (0000000a) move-result-object   v0
+	3       (0000000c) if-eqz               v0, +5
+
+getAttestationSequence-BB@0x10 : [ getAttestationSequence-BB@0x16 getAttestationSequence-BB@0x26 ]
+	4       (00000010) array-length         v1, v0
+	5       (00000012) if-nez               v1, +a
+
+getAttestationSequence-BB@0x16 : 
+	6       (00000016) new-instance         v1, Ljava/security/cert/CertificateParsingException;
+	7       (0000001a) const-string         v2, 'Did not find extension with OID 1.3.6.1.4.1.11129.2.1.17'
+	8       (0000001e) invoke-direct        v1, v2, Ljava/security/cert/CertificateParsingException;-><init>(Ljava/lang/String;)V
+	9       (00000024) throw                v1
+
+getAttestationSequence-BB@0x26 : 
+	10      (00000026) invoke-static        v0, Lcom/afwsamples/testdpc/policy/utils/Asn1Utils;->getAsn1SequenceFromBytes([B)Lorg/bouncycastle/asn1/ASN1Sequence;
+	11      (0000002c) move-result-object   v1
+	12      (0000002e) return-object        v1
+

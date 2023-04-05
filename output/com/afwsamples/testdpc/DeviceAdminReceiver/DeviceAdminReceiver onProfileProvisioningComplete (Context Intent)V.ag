@@ -1,0 +1,41 @@
+# Lcom/afwsamples/testdpc/DeviceAdminReceiver;->onProfileProvisioningComplete(Landroid/content/Context; Landroid/content/Intent;)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v4
+# - v5:android.content.Context
+# - v6:android.content.Intent
+#
+# - return:void
+
+onProfileProvisioningComplete-BB@0x0 : [ onProfileProvisioningComplete-BB@0xc onProfileProvisioningComplete-BB@0xe ]
+	0       (00000000) sget                 v2, Lcom/afwsamples/testdpc/common/Util;->SDK_INT I
+	1       (00000004) const/16             v3, 26
+	2       (00000008) if-lt                v2, v3, +3
+
+onProfileProvisioningComplete-BB@0xc : 
+	3       (0000000c) return-void          
+
+onProfileProvisioningComplete-BB@0xe : [ onProfileProvisioningComplete-BB@0x24 onProfileProvisioningComplete-BB@0xc ]
+	4       (0000000e) new-instance         v1, Lcom/afwsamples/testdpc/provision/PostProvisioningTask;
+	5       (00000012) invoke-direct        v1, v5, Lcom/afwsamples/testdpc/provision/PostProvisioningTask;-><init>(Landroid/content/Context;)V
+	6       (00000018) invoke-virtual       v1, v6, Lcom/afwsamples/testdpc/provision/PostProvisioningTask;->performPostProvisioningOperations(Landroid/content/Intent;)Z
+	7       (0000001e) move-result          v2
+	8       (00000020) if-eqz               v2, -a
+
+onProfileProvisioningComplete-BB@0x24 : [ onProfileProvisioningComplete-BB@0x30 onProfileProvisioningComplete-BB@0x38 ]
+	9       (00000024) invoke-virtual       v1, v6, Lcom/afwsamples/testdpc/provision/PostProvisioningTask;->getPostProvisioningLaunchIntent(Landroid/content/Intent;)Landroid/content/Intent;
+	10      (0000002a) move-result-object   v0
+	11      (0000002c) if-eqz               v0, +6
+
+onProfileProvisioningComplete-BB@0x30 : [ onProfileProvisioningComplete-BB@0xc ]
+	12      (00000030) invoke-virtual       v5, v0, Landroid/content/Context;->startActivity(Landroid/content/Intent;)V
+	13      (00000036) goto                 -15
+
+onProfileProvisioningComplete-BB@0x38 : [ onProfileProvisioningComplete-BB@0xc ]
+	14      (00000038) const-string         v2, 'DeviceAdminReceiver'
+	15      (0000003c) const-string         v3, 'DeviceAdminReceiver.onProvisioningComplete() invoked, but ownership not assigned'
+	16      (00000040) invoke-static        v2, v3, Landroid/util/Log;->e(Ljava/lang/String; Ljava/lang/String;)I
+	17      (00000046) const                v2, 2131689694 # [1.9008410609217498e+38]
+	18      (0000004c) invoke-direct        v4, v5, v2, Lcom/afwsamples/testdpc/DeviceAdminReceiver;->showToast(Landroid/content/Context; I)V
+	19      (00000052) goto                 -23
+

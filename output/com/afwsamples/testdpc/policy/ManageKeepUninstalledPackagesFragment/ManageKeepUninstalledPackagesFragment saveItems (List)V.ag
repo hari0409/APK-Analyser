@@ -1,0 +1,14 @@
+# Lcom/afwsamples/testdpc/policy/ManageKeepUninstalledPackagesFragment;->saveItems(Ljava/util/List;)V [access_flags=protected]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:java.util.List
+#
+# - return:void
+
+saveItems-BB@0x0 : 
+	0       (00000000) iget-object          v0, v2, Lcom/afwsamples/testdpc/policy/ManageKeepUninstalledPackagesFragment;->mDevicePolicyManager Landroid/app/admin/DevicePolicyManager;
+	1       (00000004) iget-object          v1, v2, Lcom/afwsamples/testdpc/policy/ManageKeepUninstalledPackagesFragment;->mAdminComponent Landroid/content/ComponentName;
+	2       (00000008) invoke-virtual       v0, v1, v3, Landroid/app/admin/DevicePolicyManager;->setKeepUninstalledPackages(Landroid/content/ComponentName; Ljava/util/List;)V
+	3       (0000000e) return-void          
+

@@ -1,0 +1,50 @@
+# Lcom/afwsamples/testdpc/policy/BaseStringItemsFragment;->onEditButtonClick(Ljava/lang/String;)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v6
+# - v7:java.lang.String
+#
+# - return:void
+
+onEditButtonClick-BB@0x0 : [ onEditButtonClick-BB@0x36 onEditButtonClick-BB@0x3c ]
+	0       (00000000) const/4              v5, 0
+	1       (00000002) invoke-virtual       v6, Lcom/afwsamples/testdpc/policy/BaseStringItemsFragment;->getActivity()Landroid/app/Activity;
+	2       (00000008) move-result-object   v3
+	3       (0000000a) invoke-static        v3, Landroid/view/LayoutInflater;->from(Landroid/content/Context;)Landroid/view/LayoutInflater;
+	4       (00000010) move-result-object   v3
+	5       (00000012) const                v4, 2131427446 # [1.8476508473843654e+38]
+	6       (00000018) invoke-virtual       v3, v4, v5, Landroid/view/LayoutInflater;->inflate(I Landroid/view/ViewGroup;)Landroid/view/View;
+	7       (0000001e) move-result-object   v2
+	8       (00000020) const                v3, 2131296472 # [1.8210861642300786e+38]
+	9       (00000026) invoke-virtual       v2, v3, Landroid/view/View;->findViewById(I)Landroid/view/View;
+	10      (0000002c) move-result-object   v1
+	11      (0000002e) check-cast           v1, Landroid/widget/EditText;
+	12      (00000032) if-eqz               v7, +5
+
+onEditButtonClick-BB@0x36 : [ onEditButtonClick-BB@0x3c ]
+	13      (00000036) invoke-virtual       v1, v7, Landroid/widget/EditText;->setText(Ljava/lang/CharSequence;)V
+
+onEditButtonClick-BB@0x3c : 
+	14      (0000003c) new-instance         v3, Landroid/app/AlertDialog$Builder;
+	15      (00000040) invoke-virtual       v6, Lcom/afwsamples/testdpc/policy/BaseStringItemsFragment;->getActivity()Landroid/app/Activity;
+	16      (00000046) move-result-object   v4
+	17      (00000048) invoke-direct        v3, v4, Landroid/app/AlertDialog$Builder;-><init>(Landroid/content/Context;)V
+	18      (0000004e) iget                 v4, v6, Lcom/afwsamples/testdpc/policy/BaseStringItemsFragment;->mDialogTitleResId I
+	19      (00000052) invoke-virtual       v3, v4, Landroid/app/AlertDialog$Builder;->setTitle(I)Landroid/app/AlertDialog$Builder;
+	20      (00000058) move-result-object   v3
+	21      (0000005a) invoke-virtual       v3, v2, Landroid/app/AlertDialog$Builder;->setView(Landroid/view/View;)Landroid/app/AlertDialog$Builder;
+	22      (00000060) move-result-object   v3
+	23      (00000062) const                v4, 17039370 # [2.4244599011678966e-38]
+	24      (00000068) invoke-virtual       v3, v4, v5, Landroid/app/AlertDialog$Builder;->setPositiveButton(I Landroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
+	25      (0000006e) move-result-object   v3
+	26      (00000070) const/high16         v4, 260 # [2.424457098570968e-38]
+	27      (00000074) invoke-virtual       v3, v4, v5, Landroid/app/AlertDialog$Builder;->setNegativeButton(I Landroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
+	28      (0000007a) move-result-object   v3
+	29      (0000007c) invoke-virtual       v3, Landroid/app/AlertDialog$Builder;->create()Landroid/app/AlertDialog;
+	30      (00000082) move-result-object   v0
+	31      (00000084) new-instance         v3, Lcom/afwsamples/testdpc/policy/BaseStringItemsFragment$$Lambda$0;
+	32      (00000088) invoke-direct        v3, v6, v0, v1, v7, Lcom/afwsamples/testdpc/policy/BaseStringItemsFragment$$Lambda$0;-><init>(Lcom/afwsamples/testdpc/policy/BaseStringItemsFragment; Landroid/app/AlertDialog; Landroid/widget/EditText; Ljava/lang/String;)V
+	33      (0000008e) invoke-virtual       v0, v3, Landroid/app/AlertDialog;->setOnShowListener(Landroid/content/DialogInterface$OnShowListener;)V
+	34      (00000094) invoke-virtual       v0, Landroid/app/AlertDialog;->show()V
+	35      (0000009a) return-void          
+

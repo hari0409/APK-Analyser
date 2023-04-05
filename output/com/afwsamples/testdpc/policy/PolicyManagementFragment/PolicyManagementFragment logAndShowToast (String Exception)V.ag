@@ -1,0 +1,28 @@
+# Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->logAndShowToast(Ljava/lang/String; Ljava/lang/Exception;)V [access_flags=private]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:java.lang.String
+# - v4:java.lang.Exception
+#
+# - return:void
+
+logAndShowToast-BB@0x0 : 
+	0       (00000000) const-string         v0, 'PolicyManagement'
+	1       (00000004) invoke-static        v0, v3, v4, Landroid/util/Log;->e(Ljava/lang/String; Ljava/lang/String; Ljava/lang/Throwable;)I
+	2       (0000000a) new-instance         v0, Ljava/lang/StringBuilder;
+	3       (0000000e) invoke-direct        v0, Ljava/lang/StringBuilder;-><init>()V
+	4       (00000014) invoke-virtual       v0, v3, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	5       (0000001a) move-result-object   v0
+	6       (0000001c) const-string         v1, ': '
+	7       (00000020) invoke-virtual       v0, v1, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	8       (00000026) move-result-object   v0
+	9       (00000028) invoke-virtual       v4, Ljava/lang/Exception;->getMessage()Ljava/lang/String;
+	10      (0000002e) move-result-object   v1
+	11      (00000030) invoke-virtual       v0, v1, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	12      (00000036) move-result-object   v0
+	13      (00000038) invoke-virtual       v0, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+	14      (0000003e) move-result-object   v0
+	15      (00000040) invoke-direct        v2, v0, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->showToast(Ljava/lang/String;)V
+	16      (00000046) return-void          
+

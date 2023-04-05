@@ -1,0 +1,15 @@
+# Landroidx/appcompat/widget/ActionMenuPresenter;->dismissPopupMenus()Z [access_flags=public]
+#
+# Parameters:
+# local registers: v0...v2
+#
+# - return:boolean
+
+dismissPopupMenus-BB@0x0 : 
+	0       (00000000) invoke-virtual       v2, Landroidx/appcompat/widget/ActionMenuPresenter;->hideOverflowMenu()Z
+	1       (00000006) move-result          v0
+	2       (00000008) invoke-virtual       v2, Landroidx/appcompat/widget/ActionMenuPresenter;->hideSubMenus()Z
+	3       (0000000e) move-result          v1
+	4       (00000010) or-int/2addr         v0, v1
+	5       (00000012) return               v0
+

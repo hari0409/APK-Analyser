@@ -1,0 +1,13 @@
+# Landroidx/appcompat/widget/ActivityChooserView$5;-><init>(Landroidx/appcompat/widget/ActivityChooserView;)V [access_flags=constructor]
+#
+# Parameters:
+# - local registers: v0...v0
+# - v1:androidx.appcompat.widget.ActivityChooserView
+#
+# - return:void
+
+<init>-BB@0x0 : 
+	0       (00000000) iput-object          v1, v0, Landroidx/appcompat/widget/ActivityChooserView$5;->this$0 Landroidx/appcompat/widget/ActivityChooserView;
+	1       (00000004) invoke-direct        v0, Landroid/database/DataSetObserver;-><init>()V
+	2       (0000000a) return-void          
+

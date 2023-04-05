@@ -1,0 +1,58 @@
+# Landroidx/print/PrintHelper;->printBitmap(Ljava/lang/String; Landroid/graphics/Bitmap; Landroidx/print/PrintHelper$OnPrintFinishCallback;)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v9
+# - v10:java.lang.String
+# - v11:android.graphics.Bitmap
+# - v12:androidx.print.PrintHelper$OnPrintFinishCallback
+#
+# - return:void
+
+printBitmap-BB@0x0 : [ printBitmap-BB@0xc printBitmap-BB@0x10 ]
+	0       (00000000) sget                 v0, Landroid/os/Build$VERSION;->SDK_INT I
+	1       (00000004) const/16             v1, 19
+	2       (00000008) if-lt                v0, v1, +4
+
+printBitmap-BB@0xc : [ printBitmap-BB@0x10 printBitmap-BB@0x12 ]
+	3       (0000000c) if-nez               v11, +3
+
+printBitmap-BB@0x10 : 
+	4       (00000010) return-void          
+
+printBitmap-BB@0x12 : [ printBitmap-BB@0x32 printBitmap-BB@0x7a ]
+	5       (00000012) iget-object          v0, v9, Landroidx/print/PrintHelper;->mContext Landroid/content/Context;
+	6       (00000016) const-string         v1, 'print'
+	7       (0000001a) invoke-virtual       v0, v1, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
+	8       (00000020) move-result-object   v8
+	9       (00000022) check-cast           v8, Landroid/print/PrintManager;
+	10      (00000026) invoke-static        v11, Landroidx/print/PrintHelper;->isPortrait(Landroid/graphics/Bitmap;)Z
+	11      (0000002c) move-result          v0
+	12      (0000002e) if-eqz               v0, +26
+
+printBitmap-BB@0x32 : [ printBitmap-BB@0x36 ]
+	13      (00000032) sget-object          v7, Landroid/print/PrintAttributes$MediaSize;->UNKNOWN_PORTRAIT Landroid/print/PrintAttributes$MediaSize;
+
+printBitmap-BB@0x36 : [ printBitmap-BB@0x10 ]
+	14      (00000036) new-instance         v0, Landroid/print/PrintAttributes$Builder;
+	15      (0000003a) invoke-direct        v0, Landroid/print/PrintAttributes$Builder;-><init>()V
+	16      (00000040) invoke-virtual       v0, v7, Landroid/print/PrintAttributes$Builder;->setMediaSize(Landroid/print/PrintAttributes$MediaSize;)Landroid/print/PrintAttributes$Builder;
+	17      (00000046) move-result-object   v0
+	18      (00000048) iget                 v1, v9, Landroidx/print/PrintHelper;->mColorMode I
+	19      (0000004c) invoke-virtual       v0, v1, Landroid/print/PrintAttributes$Builder;->setColorMode(I)Landroid/print/PrintAttributes$Builder;
+	20      (00000052) move-result-object   v0
+	21      (00000054) invoke-virtual       v0, Landroid/print/PrintAttributes$Builder;->build()Landroid/print/PrintAttributes;
+	22      (0000005a) move-result-object   v6
+	23      (0000005c) new-instance         v0, Landroidx/print/PrintHelper$PrintBitmapAdapter;
+	24      (00000060) iget                 v3, v9, Landroidx/print/PrintHelper;->mScaleMode I
+	25      (00000064) move-object          v1, v9
+	26      (00000066) move-object          v2, v10
+	27      (00000068) move-object          v4, v11
+	28      (0000006a) move-object          v5, v12
+	29      (0000006c) invoke-direct/range  v0 ... v5, Landroidx/print/PrintHelper$PrintBitmapAdapter;-><init>(Landroidx/print/PrintHelper; Ljava/lang/String; I Landroid/graphics/Bitmap; Landroidx/print/PrintHelper$OnPrintFinishCallback;)V
+	30      (00000072) invoke-virtual       v8, v10, v0, v6, Landroid/print/PrintManager;->print(Ljava/lang/String; Landroid/print/PrintDocumentAdapter; Landroid/print/PrintAttributes;)Landroid/print/PrintJob;
+	31      (00000078) goto                 -34
+
+printBitmap-BB@0x7a : [ printBitmap-BB@0x36 ]
+	32      (0000007a) sget-object          v7, Landroid/print/PrintAttributes$MediaSize;->UNKNOWN_LANDSCAPE Landroid/print/PrintAttributes$MediaSize;
+	33      (0000007e) goto                 -24
+

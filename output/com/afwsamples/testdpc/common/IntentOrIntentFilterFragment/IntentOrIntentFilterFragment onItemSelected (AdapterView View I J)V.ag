@@ -1,0 +1,78 @@
+# Lcom/afwsamples/testdpc/common/IntentOrIntentFilterFragment;->onItemSelected(Landroid/widget/AdapterView; Landroid/view/View; I J)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v3
+# - v4:android.widget.AdapterView
+# - v5:android.view.View
+# - v6:int
+# - v7:long
+#
+# - return:void
+
+onItemSelected-BB@0x0 : [ D:onItemSelected-BB@0xe 2131296487:onItemSelected-BB@0x10 2131296488:onItemSelected-BB@0x36 2131296489:onItemSelected-BB@0x5c 2131296490:onItemSelected-BB@0x82 ]
+	0       (00000000) invoke-virtual       v3, Landroid/widget/AdapterView;->getId()I
+	1       (00000006) move-result          v0
+	2       (00000008) packed-switch        v0, +50 (0xa8)
+
+onItemSelected-BB@0xe : 
+	3       (0000000e) return-void          
+
+onItemSelected-BB@0x10 : [ onItemSelected-BB@0x1e onItemSelected-BB@0xe ]
+	4       (00000010) sget-object          v0, Lcom/afwsamples/testdpc/common/IntentOrIntentFilterFragment;->ACTIONS_LIST [Ljava/lang/String;
+	5       (00000014) array-length         v0, v0
+	6       (00000016) add-int/lit8         v0, v0, -1
+	7       (0000001a) if-ne                v5, v0, -6
+
+onItemSelected-BB@0x1e : [ onItemSelected-BB@0xe ]
+	8       (0000001e) const                v0, 2131689517 # [1.9008051610567513e+38]
+	9       (00000024) invoke-virtual       v2, v0, Lcom/afwsamples/testdpc/common/IntentOrIntentFilterFragment;->getString(I)Ljava/lang/String;
+	10      (0000002a) move-result-object   v0
+	11      (0000002c) const/4              v1, 0
+	12      (0000002e) invoke-direct        v2, v0, v1, Lcom/afwsamples/testdpc/common/IntentOrIntentFilterFragment;->showCustomInputDialog(Ljava/lang/String; I)V
+	13      (00000034) goto                 -13
+
+onItemSelected-BB@0x36 : [ onItemSelected-BB@0x44 onItemSelected-BB@0xe ]
+	14      (00000036) sget-object          v0, Lcom/afwsamples/testdpc/common/IntentOrIntentFilterFragment;->CATEGORIES_LIST [Ljava/lang/String;
+	15      (0000003a) array-length         v0, v0
+	16      (0000003c) add-int/lit8         v0, v0, -1
+	17      (00000040) if-ne                v5, v0, -19
+
+onItemSelected-BB@0x44 : [ onItemSelected-BB@0xe ]
+	18      (00000044) const                v0, 2131689606 # [1.9008232124012986e+38]
+	19      (0000004a) invoke-virtual       v2, v0, Lcom/afwsamples/testdpc/common/IntentOrIntentFilterFragment;->getString(I)Ljava/lang/String;
+	20      (00000050) move-result-object   v0
+	21      (00000052) const/4              v1, 1
+	22      (00000054) invoke-direct        v2, v0, v1, Lcom/afwsamples/testdpc/common/IntentOrIntentFilterFragment;->showCustomInputDialog(Ljava/lang/String; I)V
+	23      (0000005a) goto                 -26
+
+onItemSelected-BB@0x5c : [ onItemSelected-BB@0x6a onItemSelected-BB@0xe ]
+	24      (0000005c) sget-object          v0, Lcom/afwsamples/testdpc/common/IntentOrIntentFilterFragment;->DATA_SCHEMES_LIST [Ljava/lang/String;
+	25      (00000060) array-length         v0, v0
+	26      (00000062) add-int/lit8         v0, v0, -1
+	27      (00000066) if-ne                v5, v0, -2c
+
+onItemSelected-BB@0x6a : [ onItemSelected-BB@0xe ]
+	28      (0000006a) const                v0, 2131689669 # [1.900835990319349e+38]
+	29      (00000070) invoke-virtual       v2, v0, Lcom/afwsamples/testdpc/common/IntentOrIntentFilterFragment;->getString(I)Ljava/lang/String;
+	30      (00000076) move-result-object   v0
+	31      (00000078) const/4              v1, 2
+	32      (0000007a) invoke-direct        v2, v0, v1, Lcom/afwsamples/testdpc/common/IntentOrIntentFilterFragment;->showCustomInputDialog(Ljava/lang/String; I)V
+	33      (00000080) goto                 -39
+
+onItemSelected-BB@0x82 : [ onItemSelected-BB@0x90 onItemSelected-BB@0xe ]
+	34      (00000082) sget-object          v0, Lcom/afwsamples/testdpc/common/IntentOrIntentFilterFragment;->DATA_TYPES_LIST [Ljava/lang/String;
+	35      (00000086) array-length         v0, v0
+	36      (00000088) add-int/lit8         v0, v0, -1
+	37      (0000008c) if-ne                v5, v0, -3f
+
+onItemSelected-BB@0x90 : [ onItemSelected-BB@0xe ]
+	38      (00000090) const                v0, 2131689670 # [1.900836193143445e+38]
+	39      (00000096) invoke-virtual       v2, v0, Lcom/afwsamples/testdpc/common/IntentOrIntentFilterFragment;->getString(I)Ljava/lang/String;
+	40      (0000009c) move-result-object   v0
+	41      (0000009e) const/4              v1, 3
+	42      (000000a0) invoke-direct        v2, v0, v1, Lcom/afwsamples/testdpc/common/IntentOrIntentFilterFragment;->showCustomInputDialog(Ljava/lang/String; I)V
+	43      (000000a6) goto                 -4c
+
+onItemSelected-BB@0xa8 : 
+	44      (000000a8) packed-switch-payload 7f0900e7 7f0900e8 7f0900e9 7f0900ea
+

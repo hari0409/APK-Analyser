@@ -1,0 +1,25 @@
+# Lcom/afwsamples/testdpc/profilepolicy/ProfilePolicyManagementFragment;->reloadBluetoothContactSharing()V [access_flags=private]
+#
+# Parameters:
+# local registers: v0...v3
+#
+# - return:void
+
+reloadBluetoothContactSharing-BB@0x0 : [ reloadBluetoothContactSharing-BB@0x10 reloadBluetoothContactSharing-BB@0x12 ]
+	0       (00000000) iget-object          v1, v3, Lcom/afwsamples/testdpc/profilepolicy/ProfilePolicyManagementFragment;->mDisableBluetoothContactSharingSwitchPreference Landroidx/preference/SwitchPreference;
+	1       (00000004) invoke-virtual       v1, Landroidx/preference/SwitchPreference;->isEnabled()Z
+	2       (0000000a) move-result          v1
+	3       (0000000c) if-nez               v1, +3
+
+reloadBluetoothContactSharing-BB@0x10 : 
+	4       (00000010) return-void          
+
+reloadBluetoothContactSharing-BB@0x12 : [ reloadBluetoothContactSharing-BB@0x10 ]
+	5       (00000012) iget-object          v1, v3, Lcom/afwsamples/testdpc/profilepolicy/ProfilePolicyManagementFragment;->mDevicePolicyManager Landroid/app/admin/DevicePolicyManager;
+	6       (00000016) iget-object          v2, v3, Lcom/afwsamples/testdpc/profilepolicy/ProfilePolicyManagementFragment;->mAdminComponentName Landroid/content/ComponentName;
+	7       (0000001a) invoke-virtual       v1, v2, Landroid/app/admin/DevicePolicyManager;->getBluetoothContactSharingDisabled(Landroid/content/ComponentName;)Z
+	8       (00000020) move-result          v0
+	9       (00000022) iget-object          v1, v3, Lcom/afwsamples/testdpc/profilepolicy/ProfilePolicyManagementFragment;->mDisableBluetoothContactSharingSwitchPreference Landroidx/preference/SwitchPreference;
+	10      (00000026) invoke-virtual       v1, v0, Landroidx/preference/SwitchPreference;->setChecked(Z)V
+	11      (0000002c) goto                 -e
+

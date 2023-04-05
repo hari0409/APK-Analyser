@@ -1,0 +1,23 @@
+# Landroidx/appcompat/widget/Toolbar;->getNavigationIcon()Landroid/graphics/drawable/Drawable; [access_flags=public]
+#
+# Parameters:
+# local registers: v0...v1
+#
+# - return:android.graphics.drawable.Drawable
+
+getNavigationIcon-BB@0x0 : [ getNavigationIcon-BB@0x8 getNavigationIcon-BB@0x16 ]
+	0       (00000000) iget-object          v0, v1, Landroidx/appcompat/widget/Toolbar;->mNavButtonView Landroid/widget/ImageButton;
+	1       (00000004) if-eqz               v0, +9
+
+getNavigationIcon-BB@0x8 : [ getNavigationIcon-BB@0x14 ]
+	2       (00000008) iget-object          v0, v1, Landroidx/appcompat/widget/Toolbar;->mNavButtonView Landroid/widget/ImageButton;
+	3       (0000000c) invoke-virtual       v0, Landroid/widget/ImageButton;->getDrawable()Landroid/graphics/drawable/Drawable;
+	4       (00000012) move-result-object   v0
+
+getNavigationIcon-BB@0x14 : 
+	5       (00000014) return-object        v0
+
+getNavigationIcon-BB@0x16 : [ getNavigationIcon-BB@0x14 ]
+	6       (00000016) const/4              v0, 0
+	7       (00000018) goto                 -2
+

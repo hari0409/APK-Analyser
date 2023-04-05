@@ -1,0 +1,28 @@
+# Landroidx/appcompat/graphics/drawable/DrawableContainer;->setAutoMirrored(Z)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:boolean
+#
+# - return:void
+
+setAutoMirrored-BB@0x0 : [ setAutoMirrored-BB@0xc setAutoMirrored-BB@0x2e ]
+	0       (00000000) iget-object          v0, v2, Landroidx/appcompat/graphics/drawable/DrawableContainer;->mDrawableContainerState Landroidx/appcompat/graphics/drawable/DrawableContainer$DrawableContainerState;
+	1       (00000004) iget-boolean         v0, v0, Landroidx/appcompat/graphics/drawable/DrawableContainer$DrawableContainerState;->mAutoMirrored Z
+	2       (00000008) if-eq                v0, v3, +13
+
+setAutoMirrored-BB@0xc : [ setAutoMirrored-BB@0x1c setAutoMirrored-BB@0x2e ]
+	3       (0000000c) iget-object          v0, v2, Landroidx/appcompat/graphics/drawable/DrawableContainer;->mDrawableContainerState Landroidx/appcompat/graphics/drawable/DrawableContainer$DrawableContainerState;
+	4       (00000010) iput-boolean         v3, v0, Landroidx/appcompat/graphics/drawable/DrawableContainer$DrawableContainerState;->mAutoMirrored Z
+	5       (00000014) iget-object          v0, v2, Landroidx/appcompat/graphics/drawable/DrawableContainer;->mCurrDrawable Landroid/graphics/drawable/Drawable;
+	6       (00000018) if-eqz               v0, +b
+
+setAutoMirrored-BB@0x1c : [ setAutoMirrored-BB@0x2e ]
+	7       (0000001c) iget-object          v0, v2, Landroidx/appcompat/graphics/drawable/DrawableContainer;->mCurrDrawable Landroid/graphics/drawable/Drawable;
+	8       (00000020) iget-object          v1, v2, Landroidx/appcompat/graphics/drawable/DrawableContainer;->mDrawableContainerState Landroidx/appcompat/graphics/drawable/DrawableContainer$DrawableContainerState;
+	9       (00000024) iget-boolean         v1, v1, Landroidx/appcompat/graphics/drawable/DrawableContainer$DrawableContainerState;->mAutoMirrored Z
+	10      (00000028) invoke-static        v0, v1, Landroidx/core/graphics/drawable/DrawableCompat;->setAutoMirrored(Landroid/graphics/drawable/Drawable; Z)V
+
+setAutoMirrored-BB@0x2e : 
+	11      (0000002e) return-void          
+

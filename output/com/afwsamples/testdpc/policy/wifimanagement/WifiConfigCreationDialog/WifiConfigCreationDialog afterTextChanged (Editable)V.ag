@@ -1,0 +1,33 @@
+# Lcom/afwsamples/testdpc/policy/wifimanagement/WifiConfigCreationDialog;->afterTextChanged(Landroid/text/Editable;)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:android.text.Editable
+#
+# - return:void
+
+afterTextChanged-BB@0x0 : [ afterTextChanged-BB@0x10 afterTextChanged-BB@0x22 ]
+	0       (00000000) iget-object          v0, v1, Lcom/afwsamples/testdpc/policy/wifimanagement/WifiConfigCreationDialog;->mPasswordText Landroid/widget/EditText;
+	1       (00000004) invoke-virtual       v0, Landroid/widget/EditText;->getEditableText()Landroid/text/Editable;
+	2       (0000000a) move-result-object   v0
+	3       (0000000c) if-ne                v0, v2, +b
+
+afterTextChanged-BB@0x10 : [ afterTextChanged-BB@0x1c afterTextChanged-BB@0x2a ]
+	4       (00000010) invoke-interface     v2, Landroid/text/Editable;->length()I
+	5       (00000016) move-result          v0
+	6       (00000018) if-lez               v0, +9
+
+afterTextChanged-BB@0x1c : [ afterTextChanged-BB@0x1e ]
+	7       (0000001c) const/4              v0, 1
+
+afterTextChanged-BB@0x1e : [ afterTextChanged-BB@0x22 ]
+	8       (0000001e) iput-boolean         v0, v1, Lcom/afwsamples/testdpc/policy/wifimanagement/WifiConfigCreationDialog;->mPasswordDirty Z
+
+afterTextChanged-BB@0x22 : 
+	9       (00000022) invoke-direct        v1, Lcom/afwsamples/testdpc/policy/wifimanagement/WifiConfigCreationDialog;->enableSaveButtonIfAppropriate()V
+	10      (00000028) return-void          
+
+afterTextChanged-BB@0x2a : [ afterTextChanged-BB@0x1e ]
+	11      (0000002a) const/4              v0, 0
+	12      (0000002c) goto                 -7
+

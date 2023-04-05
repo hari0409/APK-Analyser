@@ -1,0 +1,11 @@
+# Lcom/afwsamples/testdpc/policy/utils/Attestation;->getKeymasterSecurityLevel()I [access_flags=public]
+#
+# Parameters:
+# local registers: v0...v1
+#
+# - return:int
+
+getKeymasterSecurityLevel-BB@0x0 : 
+	0       (00000000) iget                 v0, v1, Lcom/afwsamples/testdpc/policy/utils/Attestation;->keymasterSecurityLevel I
+	1       (00000004) return               v0
+

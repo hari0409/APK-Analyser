@@ -1,0 +1,69 @@
+# Lcom/afwsamples/testdpc/profilepolicy/delegation/DelegationFragment;->saveConfig()V [access_flags=protected]
+#
+# Parameters:
+# local registers: v0...v6
+#
+# - return:void
+
+saveConfig-BB@0x0 : [ saveConfig-BB@0xa saveConfig-BB@0x3e ]
+	0       (00000000) const/4              v5, 0
+	1       (00000002) iget-boolean         v3, v6, Lcom/afwsamples/testdpc/profilepolicy/delegation/DelegationFragment;->mIsDeviceOrProfileOwner Z
+	2       (00000006) if-nez               v3, +1c
+
+saveConfig-BB@0xa : [ saveConfig-BB@0x3c ]
+	3       (0000000a) invoke-virtual       v6, Lcom/afwsamples/testdpc/profilepolicy/delegation/DelegationFragment;->getActivity()Landroid/app/Activity;
+	4       (00000010) move-result-object   v3
+	5       (00000012) const                v4, 2131689678 # [1.9008378157362132e+38]
+	6       (00000018) invoke-virtual       v6, v4, Lcom/afwsamples/testdpc/profilepolicy/delegation/DelegationFragment;->getString(I)Ljava/lang/String;
+	7       (0000001e) move-result-object   v4
+	8       (00000020) invoke-static        v3, v4, v5, Landroid/widget/Toast;->makeText(Landroid/content/Context; Ljava/lang/CharSequence; I)Landroid/widget/Toast;
+	9       (00000026) move-result-object   v3
+	10      (00000028) invoke-virtual       v3, Landroid/widget/Toast;->show()V
+	11      (0000002e) sget-object          v3, Lcom/afwsamples/testdpc/profilepolicy/delegation/DelegationFragment;->TAG Ljava/lang/String;
+	12      (00000032) const-string         v4, 'Only PO/DO can modify delegations'
+	13      (00000036) invoke-static        v3, v4, Landroid/util/Log;->i(Ljava/lang/String; Ljava/lang/String;)I
+
+saveConfig-BB@0x3c : 
+	14      (0000003c) return-void          
+
+saveConfig-BB@0x3e : [ saveConfig-BB@0x3c ]
+	15      (0000003e) iget-object          v3, v6, Lcom/afwsamples/testdpc/profilepolicy/delegation/DelegationFragment;->mManagedAppsSpinner Landroid/widget/Spinner;
+	16      (00000042) invoke-virtual       v3, Landroid/widget/Spinner;->getSelectedItem()Ljava/lang/Object;
+	17      (00000048) move-result-object   v0
+	18      (0000004a) check-cast           v0, Landroid/content/pm/ApplicationInfo;
+	19      (0000004e) iget-object          v1, v0, Landroid/content/pm/ApplicationInfo;->packageName Ljava/lang/String;
+	20      (00000052) invoke-direct        v6, Lcom/afwsamples/testdpc/profilepolicy/delegation/DelegationFragment;->readScopesFromUi()Ljava/util/List;
+	21      (00000058) move-result-object   v2
+	22      (0000005a) iget-object          v3, v6, Lcom/afwsamples/testdpc/profilepolicy/delegation/DelegationFragment;->mDpm Landroid/app/admin/DevicePolicyManager;
+	23      (0000005e) invoke-virtual       v6, Lcom/afwsamples/testdpc/profilepolicy/delegation/DelegationFragment;->getActivity()Landroid/app/Activity;
+	24      (00000064) move-result-object   v4
+	25      (00000066) invoke-static        v4, Lcom/afwsamples/testdpc/DeviceAdminReceiver;->getComponentName(Landroid/content/Context;)Landroid/content/ComponentName;
+	26      (0000006c) move-result-object   v4
+	27      (0000006e) invoke-virtual       v3, v4, v1, v2, Landroid/app/admin/DevicePolicyManager;->setDelegatedScopes(Landroid/content/ComponentName; Ljava/lang/String; Ljava/util/List;)V
+	28      (00000074) invoke-virtual       v6, Lcom/afwsamples/testdpc/profilepolicy/delegation/DelegationFragment;->getActivity()Landroid/app/Activity;
+	29      (0000007a) move-result-object   v3
+	30      (0000007c) const                v4, 2131689691 # [1.9008404524494617e+38]
+	31      (00000082) invoke-virtual       v6, v4, Lcom/afwsamples/testdpc/profilepolicy/delegation/DelegationFragment;->getString(I)Ljava/lang/String;
+	32      (00000088) move-result-object   v4
+	33      (0000008a) invoke-static        v3, v4, v5, Landroid/widget/Toast;->makeText(Landroid/content/Context; Ljava/lang/CharSequence; I)Landroid/widget/Toast;
+	34      (00000090) move-result-object   v3
+	35      (00000092) invoke-virtual       v3, Landroid/widget/Toast;->show()V
+	36      (00000098) sget-object          v3, Lcom/afwsamples/testdpc/profilepolicy/delegation/DelegationFragment;->TAG Ljava/lang/String;
+	37      (0000009c) new-instance         v4, Ljava/lang/StringBuilder;
+	38      (000000a0) invoke-direct        v4, Ljava/lang/StringBuilder;-><init>()V
+	39      (000000a6) invoke-interface     v2, Ljava/util/List;->toArray()[Ljava/lang/Object;
+	40      (000000ac) move-result-object   v5
+	41      (000000ae) invoke-static        v5, Ljava/util/Arrays;->toString([Ljava/lang/Object;)Ljava/lang/String;
+	42      (000000b4) move-result-object   v5
+	43      (000000b6) invoke-virtual       v4, v5, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	44      (000000bc) move-result-object   v4
+	45      (000000be) const-string         v5, ' | '
+	46      (000000c2) invoke-virtual       v4, v5, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	47      (000000c8) move-result-object   v4
+	48      (000000ca) invoke-virtual       v4, v1, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	49      (000000d0) move-result-object   v4
+	50      (000000d2) invoke-virtual       v4, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+	51      (000000d8) move-result-object   v4
+	52      (000000da) invoke-static        v3, v4, Landroid/util/Log;->i(Ljava/lang/String; Ljava/lang/String;)I
+	53      (000000e0) goto                 -52
+

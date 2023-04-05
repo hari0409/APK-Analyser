@@ -1,0 +1,21 @@
+# Landroidx/appcompat/app/AppCompatDelegateImpl;->initializePanelDecor(Landroidx/appcompat/app/AppCompatDelegateImpl$PanelFeatureState;)Z [access_flags=private]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:androidx.appcompat.app.AppCompatDelegateImpl$PanelFeatureState
+#
+# - return:boolean
+
+initializePanelDecor-BB@0x0 : 
+	0       (00000000) invoke-virtual       v2, Landroidx/appcompat/app/AppCompatDelegateImpl;->getActionBarThemedContext()Landroid/content/Context;
+	1       (00000006) move-result-object   v0
+	2       (00000008) invoke-virtual       v3, v0, Landroidx/appcompat/app/AppCompatDelegateImpl$PanelFeatureState;->setStyle(Landroid/content/Context;)V
+	3       (0000000e) new-instance         v0, Landroidx/appcompat/app/AppCompatDelegateImpl$ListMenuDecorView;
+	4       (00000012) iget-object          v1, v3, Landroidx/appcompat/app/AppCompatDelegateImpl$PanelFeatureState;->listPresenterContext Landroid/content/Context;
+	5       (00000016) invoke-direct        v0, v2, v1, Landroidx/appcompat/app/AppCompatDelegateImpl$ListMenuDecorView;-><init>(Landroidx/appcompat/app/AppCompatDelegateImpl; Landroid/content/Context;)V
+	6       (0000001c) iput-object          v0, v3, Landroidx/appcompat/app/AppCompatDelegateImpl$PanelFeatureState;->decorView Landroid/view/ViewGroup;
+	7       (00000020) const/16             v0, 81
+	8       (00000024) iput                 v0, v3, Landroidx/appcompat/app/AppCompatDelegateImpl$PanelFeatureState;->gravity I
+	9       (00000028) const/4              v0, 1
+	10      (0000002a) return               v0
+

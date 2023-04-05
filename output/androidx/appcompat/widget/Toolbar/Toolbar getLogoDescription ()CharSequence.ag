@@ -1,0 +1,23 @@
+# Landroidx/appcompat/widget/Toolbar;->getLogoDescription()Ljava/lang/CharSequence; [access_flags=public]
+#
+# Parameters:
+# local registers: v0...v1
+#
+# - return:java.lang.CharSequence
+
+getLogoDescription-BB@0x0 : [ getLogoDescription-BB@0x8 getLogoDescription-BB@0x16 ]
+	0       (00000000) iget-object          v0, v1, Landroidx/appcompat/widget/Toolbar;->mLogoView Landroid/widget/ImageView;
+	1       (00000004) if-eqz               v0, +9
+
+getLogoDescription-BB@0x8 : [ getLogoDescription-BB@0x14 ]
+	2       (00000008) iget-object          v0, v1, Landroidx/appcompat/widget/Toolbar;->mLogoView Landroid/widget/ImageView;
+	3       (0000000c) invoke-virtual       v0, Landroid/widget/ImageView;->getContentDescription()Ljava/lang/CharSequence;
+	4       (00000012) move-result-object   v0
+
+getLogoDescription-BB@0x14 : 
+	5       (00000014) return-object        v0
+
+getLogoDescription-BB@0x16 : [ getLogoDescription-BB@0x14 ]
+	6       (00000016) const/4              v0, 0
+	7       (00000018) goto                 -2
+

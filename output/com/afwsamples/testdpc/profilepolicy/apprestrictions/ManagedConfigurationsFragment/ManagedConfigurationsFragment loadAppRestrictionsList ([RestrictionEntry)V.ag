@@ -1,0 +1,22 @@
+# Lcom/afwsamples/testdpc/profilepolicy/apprestrictions/ManagedConfigurationsFragment;->loadAppRestrictionsList([Landroid/content/RestrictionEntry;)V [access_flags=protected]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:android.content.RestrictionEntry[]
+#
+# - return:void
+
+loadAppRestrictionsList-BB@0x0 : [ loadAppRestrictionsList-BB@0x4 loadAppRestrictionsList-BB@0x20 ]
+	0       (00000000) if-eqz               v3, +10
+
+loadAppRestrictionsList-BB@0x4 : [ loadAppRestrictionsList-BB@0x20 ]
+	1       (00000004) iget-object          v0, v2, Lcom/afwsamples/testdpc/profilepolicy/apprestrictions/ManagedConfigurationsFragment;->mAppRestrictionsArrayAdapter Lcom/afwsamples/testdpc/common/EditDeleteArrayAdapter;
+	2       (00000008) invoke-virtual       v0, Lcom/afwsamples/testdpc/common/EditDeleteArrayAdapter;->clear()V
+	3       (0000000e) iget-object          v0, v2, Lcom/afwsamples/testdpc/profilepolicy/apprestrictions/ManagedConfigurationsFragment;->mAppRestrictionsArrayAdapter Lcom/afwsamples/testdpc/common/EditDeleteArrayAdapter;
+	4       (00000012) invoke-static        v3, Ljava/util/Arrays;->asList([Ljava/lang/Object;)Ljava/util/List;
+	5       (00000018) move-result-object   v1
+	6       (0000001a) invoke-virtual       v0, v1, Lcom/afwsamples/testdpc/common/EditDeleteArrayAdapter;->addAll(Ljava/util/Collection;)V
+
+loadAppRestrictionsList-BB@0x20 : 
+	7       (00000020) return-void          
+

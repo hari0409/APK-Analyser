@@ -1,0 +1,13 @@
+# Landroidx/appcompat/app/AlertDialog$Builder;->setIcon(Landroid/graphics/drawable/Drawable;)Landroidx/appcompat/app/AlertDialog$Builder; [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:android.graphics.drawable.Drawable
+#
+# - return:androidx.appcompat.app.AlertDialog$Builder
+
+setIcon-BB@0x0 : 
+	0       (00000000) iget-object          v0, v1, Landroidx/appcompat/app/AlertDialog$Builder;->P Landroidx/appcompat/app/AlertController$AlertParams;
+	1       (00000004) iput-object          v2, v0, Landroidx/appcompat/app/AlertController$AlertParams;->mIcon Landroid/graphics/drawable/Drawable;
+	2       (00000008) return-object        v1
+

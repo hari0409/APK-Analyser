@@ -1,0 +1,52 @@
+# Landroidx/appcompat/widget/ActionBarBackgroundDrawable;->draw(Landroid/graphics/Canvas;)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:android.graphics.Canvas
+#
+# - return:void
+
+draw-BB@0x0 : [ draw-BB@0xc draw-BB@0x28 ]
+	0       (00000000) iget-object          v0, v1, Landroidx/appcompat/widget/ActionBarBackgroundDrawable;->mContainer Landroidx/appcompat/widget/ActionBarContainer;
+	1       (00000004) iget-boolean         v0, v0, Landroidx/appcompat/widget/ActionBarContainer;->mIsSplit Z
+	2       (00000008) if-eqz               v0, +10
+
+draw-BB@0xc : [ draw-BB@0x18 draw-BB@0x26 ]
+	3       (0000000c) iget-object          v0, v1, Landroidx/appcompat/widget/ActionBarBackgroundDrawable;->mContainer Landroidx/appcompat/widget/ActionBarContainer;
+	4       (00000010) iget-object          v0, v0, Landroidx/appcompat/widget/ActionBarContainer;->mSplitBackground Landroid/graphics/drawable/Drawable;
+	5       (00000014) if-eqz               v0, +9
+
+draw-BB@0x18 : [ draw-BB@0x26 ]
+	6       (00000018) iget-object          v0, v1, Landroidx/appcompat/widget/ActionBarBackgroundDrawable;->mContainer Landroidx/appcompat/widget/ActionBarContainer;
+	7       (0000001c) iget-object          v0, v0, Landroidx/appcompat/widget/ActionBarContainer;->mSplitBackground Landroid/graphics/drawable/Drawable;
+	8       (00000020) invoke-virtual       v0, v2, Landroid/graphics/drawable/Drawable;->draw(Landroid/graphics/Canvas;)V
+
+draw-BB@0x26 : 
+	9       (00000026) return-void          
+
+draw-BB@0x28 : [ draw-BB@0x34 draw-BB@0x42 ]
+	10      (00000028) iget-object          v0, v1, Landroidx/appcompat/widget/ActionBarBackgroundDrawable;->mContainer Landroidx/appcompat/widget/ActionBarContainer;
+	11      (0000002c) iget-object          v0, v0, Landroidx/appcompat/widget/ActionBarContainer;->mBackground Landroid/graphics/drawable/Drawable;
+	12      (00000030) if-eqz               v0, +9
+
+draw-BB@0x34 : [ draw-BB@0x42 ]
+	13      (00000034) iget-object          v0, v1, Landroidx/appcompat/widget/ActionBarBackgroundDrawable;->mContainer Landroidx/appcompat/widget/ActionBarContainer;
+	14      (00000038) iget-object          v0, v0, Landroidx/appcompat/widget/ActionBarContainer;->mBackground Landroid/graphics/drawable/Drawable;
+	15      (0000003c) invoke-virtual       v0, v2, Landroid/graphics/drawable/Drawable;->draw(Landroid/graphics/Canvas;)V
+
+draw-BB@0x42 : [ draw-BB@0x4e draw-BB@0x26 ]
+	16      (00000042) iget-object          v0, v1, Landroidx/appcompat/widget/ActionBarBackgroundDrawable;->mContainer Landroidx/appcompat/widget/ActionBarContainer;
+	17      (00000046) iget-object          v0, v0, Landroidx/appcompat/widget/ActionBarContainer;->mStackedBackground Landroid/graphics/drawable/Drawable;
+	18      (0000004a) if-eqz               v0, -12
+
+draw-BB@0x4e : [ draw-BB@0x5a draw-BB@0x26 ]
+	19      (0000004e) iget-object          v0, v1, Landroidx/appcompat/widget/ActionBarBackgroundDrawable;->mContainer Landroidx/appcompat/widget/ActionBarContainer;
+	20      (00000052) iget-boolean         v0, v0, Landroidx/appcompat/widget/ActionBarContainer;->mIsStacked Z
+	21      (00000056) if-eqz               v0, -18
+
+draw-BB@0x5a : [ draw-BB@0x26 ]
+	22      (0000005a) iget-object          v0, v1, Landroidx/appcompat/widget/ActionBarBackgroundDrawable;->mContainer Landroidx/appcompat/widget/ActionBarContainer;
+	23      (0000005e) iget-object          v0, v0, Landroidx/appcompat/widget/ActionBarContainer;->mStackedBackground Landroid/graphics/drawable/Drawable;
+	24      (00000062) invoke-virtual       v0, v2, Landroid/graphics/drawable/Drawable;->draw(Landroid/graphics/Canvas;)V
+	25      (00000068) goto                 -21
+

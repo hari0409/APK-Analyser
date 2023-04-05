@@ -1,0 +1,21 @@
+# Landroidx/appcompat/view/menu/MenuBuilder;->setShortcutsVisible(Z)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:boolean
+#
+# - return:void
+
+setShortcutsVisible-BB@0x0 : [ setShortcutsVisible-BB@0x8 setShortcutsVisible-BB@0xa ]
+	0       (00000000) iget-boolean         v0, v1, Landroidx/appcompat/view/menu/MenuBuilder;->mShortcutsVisible Z
+	1       (00000004) if-ne                v0, v2, +3
+
+setShortcutsVisible-BB@0x8 : 
+	2       (00000008) return-void          
+
+setShortcutsVisible-BB@0xa : [ setShortcutsVisible-BB@0x8 ]
+	3       (0000000a) invoke-direct        v1, v2, Landroidx/appcompat/view/menu/MenuBuilder;->setShortcutsVisibleInner(Z)V
+	4       (00000010) const/4              v0, 0
+	5       (00000012) invoke-virtual       v1, v0, Landroidx/appcompat/view/menu/MenuBuilder;->onItemsChanged(Z)V
+	6       (00000018) goto                 -8
+

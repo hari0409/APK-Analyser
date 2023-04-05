@@ -1,0 +1,14 @@
+# Lcom/afwsamples/testdpc/provision/GetProvisioningModeActivity;->finishWithIntent(Landroid/content/Intent;)V [access_flags=private]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:android.content.Intent
+#
+# - return:void
+
+finishWithIntent-BB@0x0 : 
+	0       (00000000) const/4              v0, -1
+	1       (00000002) invoke-virtual       v1, v0, v2, Lcom/afwsamples/testdpc/provision/GetProvisioningModeActivity;->setResult(I Landroid/content/Intent;)V
+	2       (00000008) invoke-virtual       v1, Lcom/afwsamples/testdpc/provision/GetProvisioningModeActivity;->finish()V
+	3       (0000000e) return-void          
+

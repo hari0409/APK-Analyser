@@ -1,0 +1,95 @@
+# Lcom/afwsamples/testdpc/common/keyvaluepair/KeyValuePairDialogFragment;->onCreateDialog(Landroid/os/Bundle;)Landroid/app/Dialog; [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v5
+# - v6:android.os.Bundle
+#
+# - return:android.app.Dialog
+
+onCreateDialog-BB@0x0 : 
+	0       (00000000) invoke-virtual       v5, Lcom/afwsamples/testdpc/common/keyvaluepair/KeyValuePairDialogFragment;->getActivity()Landroid/app/Activity;
+	1       (00000006) move-result-object   v2
+	2       (00000008) invoke-static        v2, Landroid/view/LayoutInflater;->from(Landroid/content/Context;)Landroid/view/LayoutInflater;
+	3       (0000000e) move-result-object   v0
+	4       (00000010) const                v2, 2131427364 # [1.8476342158084904e+38]
+	5       (00000016) const/4              v3, 0
+	6       (00000018) invoke-virtual       v0, v2, v3, Landroid/view/LayoutInflater;->inflate(I Landroid/view/ViewGroup;)Landroid/view/View;
+	7       (0000001e) move-result-object   v1
+	8       (00000020) const                v2, 2131296478 # [1.821087381174655e+38]
+	9       (00000026) invoke-virtual       v1, v2, Landroid/view/View;->findViewById(I)Landroid/view/View;
+	10      (0000002c) move-result-object   v2
+	11      (0000002e) check-cast           v2, Landroid/widget/EditText;
+	12      (00000032) iput-object          v2, v5, Lcom/afwsamples/testdpc/common/keyvaluepair/KeyValuePairDialogFragment;->mKeyView Landroid/widget/EditText;
+	13      (00000036) const                v2, 2131296723 # [1.8211370730781838e+38]
+	14      (0000003c) invoke-virtual       v1, v2, Landroid/view/View;->findViewById(I)Landroid/view/View;
+	15      (00000042) move-result-object   v2
+	16      (00000044) check-cast           v2, Landroid/widget/Switch;
+	17      (00000048) iput-object          v2, v5, Lcom/afwsamples/testdpc/common/keyvaluepair/KeyValuePairDialogFragment;->mBoolView Landroid/widget/Switch;
+	18      (0000004c) const                v2, 2131296724 # [1.82113727590228e+38]
+	19      (00000052) invoke-virtual       v1, v2, Landroid/view/View;->findViewById(I)Landroid/view/View;
+	20      (00000058) move-result-object   v2
+	21      (0000005a) check-cast           v2, Landroid/widget/EditText;
+	22      (0000005e) iput-object          v2, v5, Lcom/afwsamples/testdpc/common/keyvaluepair/KeyValuePairDialogFragment;->mIntView Landroid/widget/EditText;
+	23      (00000062) const                v2, 2131296727 # [1.821137884374568e+38]
+	24      (00000068) invoke-virtual       v1, v2, Landroid/view/View;->findViewById(I)Landroid/view/View;
+	25      (0000006e) move-result-object   v2
+	26      (00000070) check-cast           v2, Landroid/widget/EditText;
+	27      (00000074) iput-object          v2, v5, Lcom/afwsamples/testdpc/common/keyvaluepair/KeyValuePairDialogFragment;->mStringView Landroid/widget/EditText;
+	28      (00000078) const                v2, 2131296725 # [1.821137478726376e+38]
+	29      (0000007e) invoke-virtual       v1, v2, Landroid/view/View;->findViewById(I)Landroid/view/View;
+	30      (00000084) move-result-object   v2
+	31      (00000086) iput-object          v2, v5, Lcom/afwsamples/testdpc/common/keyvaluepair/KeyValuePairDialogFragment;->mStringArrayContainer Landroid/view/View;
+	32      (0000008a) const                v2, 2131296726 # [1.821137681550472e+38]
+	33      (00000090) invoke-virtual       v1, v2, Landroid/view/View;->findViewById(I)Landroid/view/View;
+	34      (00000096) move-result-object   v2
+	35      (00000098) check-cast           v2, Landroidx/recyclerview/widget/RecyclerView;
+	36      (0000009c) iput-object          v2, v5, Lcom/afwsamples/testdpc/common/keyvaluepair/KeyValuePairDialogFragment;->mStringArrayList Landroidx/recyclerview/widget/RecyclerView;
+	37      (000000a0) const                v2, 2131296374 # [1.821066287468667e+38]
+	38      (000000a6) invoke-virtual       v1, v2, Landroid/view/View;->findViewById(I)Landroid/view/View;
+	39      (000000ac) move-result-object   v2
+	40      (000000ae) check-cast           v2, Landroid/widget/Button;
+	41      (000000b2) iput-object          v2, v5, Lcom/afwsamples/testdpc/common/keyvaluepair/KeyValuePairDialogFragment;->mConfigureBundle Landroid/widget/Button;
+	42      (000000b6) const                v2, 2131296375 # [1.821066490292763e+38]
+	43      (000000bc) invoke-virtual       v1, v2, Landroid/view/View;->findViewById(I)Landroid/view/View;
+	44      (000000c2) move-result-object   v2
+	45      (000000c4) check-cast           v2, Landroid/widget/Button;
+	46      (000000c8) iput-object          v2, v5, Lcom/afwsamples/testdpc/common/keyvaluepair/KeyValuePairDialogFragment;->mConfigureBundleArray Landroid/widget/Button;
+	47      (000000cc) const/4              v2, 6
+	48      (000000ce) new-array            v2, v2, [Landroid/view/View;
+	49      (000000d2) const/4              v3, 0
+	50      (000000d4) iget-object          v4, v5, Lcom/afwsamples/testdpc/common/keyvaluepair/KeyValuePairDialogFragment;->mBoolView Landroid/widget/Switch;
+	51      (000000d8) aput-object          v4, v2, v3
+	52      (000000dc) const/4              v3, 1
+	53      (000000de) iget-object          v4, v5, Lcom/afwsamples/testdpc/common/keyvaluepair/KeyValuePairDialogFragment;->mIntView Landroid/widget/EditText;
+	54      (000000e2) aput-object          v4, v2, v3
+	55      (000000e6) const/4              v3, 2
+	56      (000000e8) iget-object          v4, v5, Lcom/afwsamples/testdpc/common/keyvaluepair/KeyValuePairDialogFragment;->mStringView Landroid/widget/EditText;
+	57      (000000ec) aput-object          v4, v2, v3
+	58      (000000f0) const/4              v3, 3
+	59      (000000f2) iget-object          v4, v5, Lcom/afwsamples/testdpc/common/keyvaluepair/KeyValuePairDialogFragment;->mStringArrayContainer Landroid/view/View;
+	60      (000000f6) aput-object          v4, v2, v3
+	61      (000000fa) const/4              v3, 4
+	62      (000000fc) iget-object          v4, v5, Lcom/afwsamples/testdpc/common/keyvaluepair/KeyValuePairDialogFragment;->mConfigureBundle Landroid/widget/Button;
+	63      (00000100) aput-object          v4, v2, v3
+	64      (00000104) const/4              v3, 5
+	65      (00000106) iget-object          v4, v5, Lcom/afwsamples/testdpc/common/keyvaluepair/KeyValuePairDialogFragment;->mConfigureBundleArray Landroid/widget/Button;
+	66      (0000010a) aput-object          v4, v2, v3
+	67      (0000010e) iput-object          v2, v5, Lcom/afwsamples/testdpc/common/keyvaluepair/KeyValuePairDialogFragment;->mValueViews [Landroid/view/View;
+	68      (00000112) const                v2, 2131296714 # [1.8211352476613195e+38]
+	69      (00000118) invoke-virtual       v1, v2, Landroid/view/View;->findViewById(I)Landroid/view/View;
+	70      (0000011e) move-result-object   v2
+	71      (00000120) check-cast           v2, Landroid/widget/Spinner;
+	72      (00000124) iput-object          v2, v5, Lcom/afwsamples/testdpc/common/keyvaluepair/KeyValuePairDialogFragment;->mTypeSpinner Landroid/widget/Spinner;
+	73      (00000128) iget-object          v2, v5, Lcom/afwsamples/testdpc/common/keyvaluepair/KeyValuePairDialogFragment;->mConfigureBundle Landroid/widget/Button;
+	74      (0000012c) iget-object          v3, v5, Lcom/afwsamples/testdpc/common/keyvaluepair/KeyValuePairDialogFragment;->bundleButtonOnClickListener Lcom/afwsamples/testdpc/common/keyvaluepair/KeyValuePairDialogFragment$BundleButtonOnClickListener;
+	75      (00000130) invoke-virtual       v2, v3, Landroid/widget/Button;->setOnClickListener(Landroid/view/View$OnClickListener;)V
+	76      (00000136) iget-object          v2, v5, Lcom/afwsamples/testdpc/common/keyvaluepair/KeyValuePairDialogFragment;->mConfigureBundleArray Landroid/widget/Button;
+	77      (0000013a) iget-object          v3, v5, Lcom/afwsamples/testdpc/common/keyvaluepair/KeyValuePairDialogFragment;->bundleArrayButtonOnClickListener Lcom/afwsamples/testdpc/common/keyvaluepair/KeyValuePairDialogFragment$BundleArrayButtonOnClickListener;
+	78      (0000013e) invoke-virtual       v2, v3, Landroid/widget/Button;->setOnClickListener(Landroid/view/View$OnClickListener;)V
+	79      (00000144) invoke-direct        v5, Lcom/afwsamples/testdpc/common/keyvaluepair/KeyValuePairDialogFragment;->configureStringUi()V
+	80      (0000014a) invoke-direct        v5, Lcom/afwsamples/testdpc/common/keyvaluepair/KeyValuePairDialogFragment;->configureTypeSpinner()V
+	81      (00000150) invoke-direct        v5, Lcom/afwsamples/testdpc/common/keyvaluepair/KeyValuePairDialogFragment;->configureUsingArguments()V
+	82      (00000156) invoke-direct        v5, v1, Lcom/afwsamples/testdpc/common/keyvaluepair/KeyValuePairDialogFragment;->createAlertDialog(Landroid/view/View;)Landroid/app/AlertDialog;
+	83      (0000015c) move-result-object   v2
+	84      (0000015e) return-object        v2
+

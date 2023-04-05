@@ -1,0 +1,48 @@
+# Lcom/afwsamples/testdpc/policy/networking/AlwaysOnVpnFragment;->setAlwaysOnVpnPackageQPlus(Ljava/lang/String;)V [access_flags=private]
+#
+# Parameters:
+# - local registers: v0...v4
+# - v5:java.lang.String
+#
+# - return:void
+
+setAlwaysOnVpnPackageQPlus-BB@0x0 : [ setAlwaysOnVpnPackageQPlus-BB@0x10 setAlwaysOnVpnPackageQPlus-BB@0x76 ]
+	0       (00000000) iget-object          v2, v4, Lcom/afwsamples/testdpc/policy/networking/AlwaysOnVpnFragment;->mLockdown Landroid/widget/CheckBox;
+	1       (00000004) invoke-virtual       v2, Landroid/widget/CheckBox;->isChecked()Z
+	2       (0000000a) move-result          v0
+	3       (0000000c) if-eqz               v0, +35
+
+setAlwaysOnVpnPackageQPlus-BB@0x10 : [ setAlwaysOnVpnPackageQPlus-BB@0x66 ]
+	4       (00000010) iget-object          v2, v4, Lcom/afwsamples/testdpc/policy/networking/AlwaysOnVpnFragment;->mExemptedPackages Landroid/widget/EditText;
+	5       (00000014) invoke-virtual       v2, Landroid/widget/EditText;->getText()Landroid/text/Editable;
+	6       (0000001a) move-result-object   v2
+	7       (0000001c) invoke-virtual       v2, Ljava/lang/Object;->toString()Ljava/lang/String;
+	8       (00000022) move-result-object   v2
+	9       (00000024) const-string         v3, ','
+	10      (00000028) invoke-virtual       v2, v3, Ljava/lang/String;->split(Ljava/lang/String;)[Ljava/lang/String;
+	11      (0000002e) move-result-object   v2
+	12      (00000030) invoke-static        v2, Ljava/util/Arrays;->stream([Ljava/lang/Object;)Ljava/util/stream/Stream;
+	13      (00000036) move-result-object   v2
+	14      (00000038) sget-object          v3, Lcom/afwsamples/testdpc/policy/networking/AlwaysOnVpnFragment$$Lambda$1;->$instance Ljava/util/function/Function;
+	15      (0000003c) invoke-interface     v2, v3, Ljava/util/stream/Stream;->map(Ljava/util/function/Function;)Ljava/util/stream/Stream;
+	16      (00000042) move-result-object   v2
+	17      (00000044) sget-object          v3, Lcom/afwsamples/testdpc/policy/networking/AlwaysOnVpnFragment$$Lambda$2;->$instance Ljava/util/function/Predicate;
+	18      (00000048) invoke-interface     v2, v3, Ljava/util/stream/Stream;->filter(Ljava/util/function/Predicate;)Ljava/util/stream/Stream;
+	19      (0000004e) move-result-object   v2
+	20      (00000050) invoke-static        Ljava/util/stream/Collectors;->toSet()Ljava/util/stream/Collector;
+	21      (00000056) move-result-object   v3
+	22      (00000058) invoke-interface     v2, v3, Ljava/util/stream/Stream;->collect(Ljava/util/stream/Collector;)Ljava/lang/Object;
+	23      (0000005e) move-result-object   v2
+	24      (00000060) check-cast           v2, Ljava/util/Set;
+	25      (00000064) move-object          v1, v2
+
+setAlwaysOnVpnPackageQPlus-BB@0x66 : 
+	26      (00000066) iget-object          v2, v4, Lcom/afwsamples/testdpc/policy/networking/AlwaysOnVpnFragment;->mDpm Landroid/app/admin/DevicePolicyManager;
+	27      (0000006a) iget-object          v3, v4, Lcom/afwsamples/testdpc/policy/networking/AlwaysOnVpnFragment;->mWho Landroid/content/ComponentName;
+	28      (0000006e) invoke-virtual       v2, v3, v5, v0, v1, Landroid/app/admin/DevicePolicyManager;->setAlwaysOnVpnPackage(Landroid/content/ComponentName; Ljava/lang/String; Z Ljava/util/Set;)V
+	29      (00000074) return-void          
+
+setAlwaysOnVpnPackageQPlus-BB@0x76 : [ setAlwaysOnVpnPackageQPlus-BB@0x66 ]
+	30      (00000076) const/4              v1, 0
+	31      (00000078) goto                 -9
+

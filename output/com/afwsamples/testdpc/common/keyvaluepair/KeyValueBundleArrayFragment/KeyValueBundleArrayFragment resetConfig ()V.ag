@@ -1,0 +1,15 @@
+# Lcom/afwsamples/testdpc/common/keyvaluepair/KeyValueBundleArrayFragment;->resetConfig()V [access_flags=protected]
+#
+# Parameters:
+# local registers: v0...v2
+#
+# - return:void
+
+resetConfig-BB@0x0 : 
+	0       (00000000) iget-object          v0, v2, Lcom/afwsamples/testdpc/common/keyvaluepair/KeyValueBundleArrayFragment;->mAdapter Lcom/afwsamples/testdpc/common/keyvaluepair/KeyValueBundleArrayFragment$BundleEditDeleteArrayAdapter;
+	1       (00000004) invoke-virtual       v0, Lcom/afwsamples/testdpc/common/keyvaluepair/KeyValueBundleArrayFragment$BundleEditDeleteArrayAdapter;->clear()V
+	2       (0000000a) iget-object          v0, v2, Lcom/afwsamples/testdpc/common/keyvaluepair/KeyValueBundleArrayFragment;->mAdapter Lcom/afwsamples/testdpc/common/keyvaluepair/KeyValueBundleArrayFragment$BundleEditDeleteArrayAdapter;
+	3       (0000000e) iget-object          v1, v2, Lcom/afwsamples/testdpc/common/keyvaluepair/KeyValueBundleArrayFragment;->mInitialBundleList Ljava/util/List;
+	4       (00000012) invoke-virtual       v0, v1, Lcom/afwsamples/testdpc/common/keyvaluepair/KeyValueBundleArrayFragment$BundleEditDeleteArrayAdapter;->addAll(Ljava/util/Collection;)V
+	5       (00000018) return-void          
+

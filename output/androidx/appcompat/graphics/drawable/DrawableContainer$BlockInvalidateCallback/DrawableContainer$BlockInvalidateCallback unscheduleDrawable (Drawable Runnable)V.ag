@@ -1,0 +1,20 @@
+# Landroidx/appcompat/graphics/drawable/DrawableContainer$BlockInvalidateCallback;->unscheduleDrawable(Landroid/graphics/drawable/Drawable; Ljava/lang/Runnable;)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:android.graphics.drawable.Drawable
+# - v3:java.lang.Runnable
+#
+# - return:void
+
+unscheduleDrawable-BB@0x0 : [ unscheduleDrawable-BB@0x8 unscheduleDrawable-BB@0x12 ]
+	0       (00000000) iget-object          v0, v1, Landroidx/appcompat/graphics/drawable/DrawableContainer$BlockInvalidateCallback;->mCallback Landroid/graphics/drawable/Drawable$Callback;
+	1       (00000004) if-eqz               v0, +7
+
+unscheduleDrawable-BB@0x8 : [ unscheduleDrawable-BB@0x12 ]
+	2       (00000008) iget-object          v0, v1, Landroidx/appcompat/graphics/drawable/DrawableContainer$BlockInvalidateCallback;->mCallback Landroid/graphics/drawable/Drawable$Callback;
+	3       (0000000c) invoke-interface     v0, v2, v3, Landroid/graphics/drawable/Drawable$Callback;->unscheduleDrawable(Landroid/graphics/drawable/Drawable; Ljava/lang/Runnable;)V
+
+unscheduleDrawable-BB@0x12 : 
+	4       (00000012) return-void          
+

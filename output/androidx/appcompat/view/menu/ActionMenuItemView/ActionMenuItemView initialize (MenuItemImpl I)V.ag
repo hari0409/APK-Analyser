@@ -1,0 +1,52 @@
+# Landroidx/appcompat/view/menu/ActionMenuItemView;->initialize(Landroidx/appcompat/view/menu/MenuItemImpl; I)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:androidx.appcompat.view.menu.MenuItemImpl
+# - v3:int
+#
+# - return:void
+
+initialize-BB@0x0 : [ initialize-BB@0x3a initialize-BB@0x74 ]
+	0       (00000000) iput-object          v2, v1, Landroidx/appcompat/view/menu/ActionMenuItemView;->mItemData Landroidx/appcompat/view/menu/MenuItemImpl;
+	1       (00000004) invoke-virtual       v2, Landroidx/appcompat/view/menu/MenuItemImpl;->getIcon()Landroid/graphics/drawable/Drawable;
+	2       (0000000a) move-result-object   v0
+	3       (0000000c) invoke-virtual       v1, v0, Landroidx/appcompat/view/menu/ActionMenuItemView;->setIcon(Landroid/graphics/drawable/Drawable;)V
+	4       (00000012) invoke-virtual       v2, v1, Landroidx/appcompat/view/menu/MenuItemImpl;->getTitleForItemView(Landroidx/appcompat/view/menu/MenuView$ItemView;)Ljava/lang/CharSequence;
+	5       (00000018) move-result-object   v0
+	6       (0000001a) invoke-virtual       v1, v0, Landroidx/appcompat/view/menu/ActionMenuItemView;->setTitle(Ljava/lang/CharSequence;)V
+	7       (00000020) invoke-virtual       v2, Landroidx/appcompat/view/menu/MenuItemImpl;->getItemId()I
+	8       (00000026) move-result          v0
+	9       (00000028) invoke-virtual       v1, v0, Landroidx/appcompat/view/menu/ActionMenuItemView;->setId(I)V
+	10      (0000002e) invoke-virtual       v2, Landroidx/appcompat/view/menu/MenuItemImpl;->isVisible()Z
+	11      (00000034) move-result          v0
+	12      (00000036) if-eqz               v0, +1f
+
+initialize-BB@0x3a : [ initialize-BB@0x3c ]
+	13      (0000003a) const/4              v0, 0
+
+initialize-BB@0x3c : [ initialize-BB@0x5c initialize-BB@0x72 ]
+	14      (0000003c) invoke-virtual       v1, v0, Landroidx/appcompat/view/menu/ActionMenuItemView;->setVisibility(I)V
+	15      (00000042) invoke-virtual       v2, Landroidx/appcompat/view/menu/MenuItemImpl;->isEnabled()Z
+	16      (00000048) move-result          v0
+	17      (0000004a) invoke-virtual       v1, v0, Landroidx/appcompat/view/menu/ActionMenuItemView;->setEnabled(Z)V
+	18      (00000050) invoke-virtual       v2, Landroidx/appcompat/view/menu/MenuItemImpl;->hasSubMenu()Z
+	19      (00000056) move-result          v0
+	20      (00000058) if-eqz               v0, +d
+
+initialize-BB@0x5c : [ initialize-BB@0x64 initialize-BB@0x72 ]
+	21      (0000005c) iget-object          v0, v1, Landroidx/appcompat/view/menu/ActionMenuItemView;->mForwardingListener Landroidx/appcompat/widget/ForwardingListener;
+	22      (00000060) if-nez               v0, +9
+
+initialize-BB@0x64 : [ initialize-BB@0x72 ]
+	23      (00000064) new-instance         v0, Landroidx/appcompat/view/menu/ActionMenuItemView$ActionMenuItemForwardingListener;
+	24      (00000068) invoke-direct        v0, v1, Landroidx/appcompat/view/menu/ActionMenuItemView$ActionMenuItemForwardingListener;-><init>(Landroidx/appcompat/view/menu/ActionMenuItemView;)V
+	25      (0000006e) iput-object          v0, v1, Landroidx/appcompat/view/menu/ActionMenuItemView;->mForwardingListener Landroidx/appcompat/widget/ForwardingListener;
+
+initialize-BB@0x72 : 
+	26      (00000072) return-void          
+
+initialize-BB@0x74 : [ initialize-BB@0x3c ]
+	27      (00000074) const/16             v0, 8
+	28      (00000078) goto                 -1e
+

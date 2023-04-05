@@ -1,0 +1,63 @@
+# Lcom/afwsamples/testdpc/provision/PostProvisioningTask;->getRuntimePermissions(Landroid/content/pm/PackageManager; Ljava/lang/String;)Ljava/util/List; [access_flags=private]
+#
+# Parameters:
+# - local registers: v0...v8
+# - v9:android.content.pm.PackageManager
+# - v10:java.lang.String
+#
+# - return:java.util.List
+
+getRuntimePermissions-BB@0x0 : [ getRuntimePermissions-BB@0xe ]
+	0       (00000000) new-instance         v2, Ljava/util/ArrayList;
+	1       (00000004) invoke-direct        v2, Ljava/util/ArrayList;-><init>()V
+	2       (0000000a) const/16             v4, 4096
+
+getRuntimePermissions-BB@0xe : [ getRuntimePermissions-BB@0x1a getRuntimePermissions-BB@0x7c ]
+	3       (0000000e) invoke-virtual       v9, v10, v4, Landroid/content/pm/PackageManager;->getPackageInfo(Ljava/lang/String; I)Landroid/content/pm/PackageInfo;
+	4       (00000014) move-result-object   v1
+	5       (00000016) if-eqz               v1, +33
+	e:13
+	(Landroid/content/pm/PackageManager$NameNotFoundException; -> 4a getRuntimePermissions-BB@0x4a)
+
+getRuntimePermissions-BB@0x1a : [ getRuntimePermissions-BB@0x22 getRuntimePermissions-BB@0x7c ]
+	6       (0000001a) iget-object          v4, v1, Landroid/content/pm/PackageInfo;->requestedPermissions [Ljava/lang/String;
+	7       (0000001e) if-eqz               v4, +2f
+
+getRuntimePermissions-BB@0x22 : [ getRuntimePermissions-BB@0x2a ]
+	8       (00000022) iget-object          v5, v1, Landroid/content/pm/PackageInfo;->requestedPermissions [Ljava/lang/String;
+	9       (00000026) array-length         v6, v5
+	10      (00000028) const/4              v4, 0
+
+getRuntimePermissions-BB@0x2a : [ getRuntimePermissions-BB@0x2e getRuntimePermissions-BB@0x7c ]
+	11      (0000002a) if-ge                v4, v6, +29
+
+getRuntimePermissions-BB@0x2e : [ getRuntimePermissions-BB@0x3e getRuntimePermissions-BB@0x44 ]
+	12      (0000002e) aget-object          v3, v5, v4
+	13      (00000032) invoke-direct        v8, v9, v3, Lcom/afwsamples/testdpc/provision/PostProvisioningTask;->isRuntimePermission(Landroid/content/pm/PackageManager; Ljava/lang/String;)Z
+	14      (00000038) move-result          v7
+	15      (0000003a) if-eqz               v7, +5
+
+getRuntimePermissions-BB@0x3e : [ getRuntimePermissions-BB@0x44 ]
+	16      (0000003e) invoke-interface     v2, v3, Ljava/util/List;->add(Ljava/lang/Object;)Z
+
+getRuntimePermissions-BB@0x44 : [ getRuntimePermissions-BB@0x2a ]
+	17      (00000044) add-int/lit8         v4, v4, 1
+	18      (00000048) goto                 -f
+
+getRuntimePermissions-BB@0x4a : [ getRuntimePermissions-BB@0x7c ]
+	19      (0000004a) move-exception       v0
+	20      (0000004c) const-string         v4, 'PostProvisioningTask'
+	21      (00000050) new-instance         v5, Ljava/lang/StringBuilder;
+	22      (00000054) invoke-direct        v5, Ljava/lang/StringBuilder;-><init>()V
+	23      (0000005a) const-string         v6, 'Could not retrieve info about the package: '
+	24      (0000005e) invoke-virtual       v5, v6, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	25      (00000064) move-result-object   v5
+	26      (00000066) invoke-virtual       v5, v10, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	27      (0000006c) move-result-object   v5
+	28      (0000006e) invoke-virtual       v5, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+	29      (00000074) move-result-object   v5
+	30      (00000076) invoke-static        v4, v5, v0, Landroid/util/Log;->e(Ljava/lang/String; Ljava/lang/String; Ljava/lang/Throwable;)I
+
+getRuntimePermissions-BB@0x7c : 
+	31      (0000007c) return-object        v2
+

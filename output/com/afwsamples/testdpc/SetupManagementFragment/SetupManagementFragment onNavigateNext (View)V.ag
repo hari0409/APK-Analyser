@@ -1,0 +1,29 @@
+# Lcom/afwsamples/testdpc/SetupManagementFragment;->onNavigateNext(Landroid/view/View;)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:android.view.View
+#
+# - return:void
+
+onNavigateNext-BB@0x0 : [ onNavigateNext-BB@0x16 onNavigateNext-BB@0x24 ]
+	0       (00000000) iget-object          v0, v2, Lcom/afwsamples/testdpc/SetupManagementFragment;->mSetupOptions Landroid/widget/RadioGroup;
+	1       (00000004) invoke-virtual       v0, Landroid/widget/RadioGroup;->getCheckedRadioButtonId()I
+	2       (0000000a) move-result          v0
+	3       (0000000c) const                v1, 2131296616 # [1.821115370899908e+38]
+	4       (00000012) if-ne                v0, v1, +9
+
+onNavigateNext-BB@0x16 : [ onNavigateNext-BB@0x22 ]
+	5       (00000016) const-string         v0, 'android.app.action.PROVISION_MANAGED_PROFILE'
+	6       (0000001a) const/4              v1, 1
+	7       (0000001c) invoke-direct        v2, v0, v1, Lcom/afwsamples/testdpc/SetupManagementFragment;->maybeLaunchProvisioning(Ljava/lang/String; I)V
+
+onNavigateNext-BB@0x22 : 
+	8       (00000022) return-void          
+
+onNavigateNext-BB@0x24 : [ onNavigateNext-BB@0x22 ]
+	9       (00000024) const-string         v0, 'android.app.action.PROVISION_MANAGED_DEVICE'
+	10      (00000028) const/4              v1, 2
+	11      (0000002a) invoke-direct        v2, v0, v1, Lcom/afwsamples/testdpc/SetupManagementFragment;->maybeLaunchProvisioning(Ljava/lang/String; I)V
+	12      (00000030) goto                 -7
+

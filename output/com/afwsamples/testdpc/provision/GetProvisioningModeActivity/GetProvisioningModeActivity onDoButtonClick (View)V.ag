@@ -1,0 +1,17 @@
+# Lcom/afwsamples/testdpc/provision/GetProvisioningModeActivity;->onDoButtonClick(Landroid/view/View;)V [access_flags=private]
+#
+# Parameters:
+# - local registers: v0...v3
+# - v4:android.view.View
+#
+# - return:void
+
+onDoButtonClick-BB@0x0 : 
+	0       (00000000) new-instance         v0, Landroid/content/Intent;
+	1       (00000004) invoke-direct        v0, Landroid/content/Intent;-><init>()V
+	2       (0000000a) const-string         v1, 'android.app.extra.PROVISIONING_MODE'
+	3       (0000000e) const/4              v2, 1
+	4       (00000010) invoke-virtual       v0, v1, v2, Landroid/content/Intent;->putExtra(Ljava/lang/String; I)Landroid/content/Intent;
+	5       (00000016) invoke-direct        v3, v0, Lcom/afwsamples/testdpc/provision/GetProvisioningModeActivity;->finishWithIntent(Landroid/content/Intent;)V
+	6       (0000001c) return-void          
+

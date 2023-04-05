@@ -1,0 +1,48 @@
+# Lcom/afwsamples/testdpc/search/BaseIndexableFragment;->isAvailable(Landroid/content/Context;)Z [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v5
+# - v6:android.content.Context
+#
+# - return:boolean
+
+isAvailable-BB@0x0 : [ isAvailable-BB@0x20 ]
+	0       (00000000) iget-object          v3, v5, Lcom/afwsamples/testdpc/search/BaseIndexableFragment;->fragmentName Ljava/lang/String;
+	1       (00000004) invoke-static        v3, Ljava/lang/Class;->forName(Ljava/lang/String;)Ljava/lang/Class;
+	2       (0000000a) move-result-object   v0
+	3       (0000000c) invoke-virtual       v0, Ljava/lang/Class;->newInstance()Ljava/lang/Object;
+	4       (00000012) move-result-object   v2
+	5       (00000014) check-cast           v2, Lcom/afwsamples/testdpc/common/BaseSearchablePolicyPreferenceFragment;
+	6       (00000018) invoke-virtual       v2, v6, Lcom/afwsamples/testdpc/common/BaseSearchablePolicyPreferenceFragment;->isAvailable(Landroid/content/Context;)Z
+	7       (0000001e) move-result          v3
+	0:1d
+	(Ljava/lang/ClassNotFoundException; -> 22 isAvailable-BB@0x22)
+	(Ljava/lang/InstantiationException; -> 36 isAvailable-BB@0x36)
+	(Ljava/lang/IllegalStateException; -> 3e isAvailable-BB@0x3e)
+	(Ljava/lang/IllegalAccessException; -> 3a isAvailable-BB@0x3a)
+
+isAvailable-BB@0x20 : 
+	8       (00000020) return               v3
+
+isAvailable-BB@0x22 : [ isAvailable-BB@0x24 ]
+	9       (00000022) move-exception       v1
+
+isAvailable-BB@0x24 : [ isAvailable-BB@0x20 ]
+	10      (00000024) const-string         v3, 'BaseIndexableFragment'
+	11      (00000028) const-string         v4, 'isAvailable error'
+	12      (0000002c) invoke-static        v3, v4, v1, Landroid/util/Log;->e(Ljava/lang/String; Ljava/lang/String; Ljava/lang/Throwable;)I
+	13      (00000032) const/4              v3, 0
+	14      (00000034) goto                 -a
+
+isAvailable-BB@0x36 : [ isAvailable-BB@0x24 ]
+	15      (00000036) move-exception       v1
+	16      (00000038) goto                 -a
+
+isAvailable-BB@0x3a : [ isAvailable-BB@0x24 ]
+	17      (0000003a) move-exception       v1
+	18      (0000003c) goto                 -c
+
+isAvailable-BB@0x3e : [ isAvailable-BB@0x24 ]
+	19      (0000003e) move-exception       v1
+	20      (00000040) goto                 -e
+

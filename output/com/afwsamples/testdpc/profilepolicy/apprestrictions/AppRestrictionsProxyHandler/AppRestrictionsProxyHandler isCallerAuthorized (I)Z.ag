@@ -1,0 +1,182 @@
+# Lcom/afwsamples/testdpc/profilepolicy/apprestrictions/AppRestrictionsProxyHandler;->isCallerAuthorized(I)Z [access_flags=private]
+#
+# Parameters:
+# - local registers: v0...v16
+# - v17:int
+#
+# - return:boolean
+
+isCallerAuthorized-BB@0x0 : [ isCallerAuthorized-BB@0x14 isCallerAuthorized-BB@0x26 ]
+	0       (00000000) move-object/from16   v0, v16
+	1       (00000004) iget-object          v12, v0, Lcom/afwsamples/testdpc/profilepolicy/apprestrictions/AppRestrictionsProxyHandler;->mContext Landroid/content/Context;
+	2       (00000008) invoke-static        v12, Lcom/afwsamples/testdpc/profilepolicy/apprestrictions/AppRestrictionsProxyHandler;->getApplicationRestrictionsManagingPackage(Landroid/content/Context;)Ljava/lang/String;
+	3       (0000000e) move-result-object   v1
+	4       (00000010) if-nez               v1, +b
+
+isCallerAuthorized-BB@0x14 : [ isCallerAuthorized-BB@0x24 ]
+	5       (00000014) const-string         v12, 'AppRestrictionsProxy'
+	6       (00000018) const-string         v13, 'There is no app restrictions managing package'
+	7       (0000001c) invoke-static        v12, v13, Landroid/util/Log;->e(Ljava/lang/String; Ljava/lang/String;)I
+	8       (00000022) const/4              v12, 0
+
+isCallerAuthorized-BB@0x24 : 
+	9       (00000024) return               v12
+
+isCallerAuthorized-BB@0x26 : [ isCallerAuthorized-BB@0x4e isCallerAuthorized-BB@0x60 ]
+	10      (00000026) move-object/from16   v0, v16
+	11      (0000002a) iget-object          v12, v0, Lcom/afwsamples/testdpc/profilepolicy/apprestrictions/AppRestrictionsProxyHandler;->mContext Landroid/content/Context;
+	12      (0000002e) invoke-virtual       v12, Landroid/content/Context;->getPackageManager()Landroid/content/pm/PackageManager;
+	13      (00000034) move-result-object   v9
+	14      (00000036) move/from16          v0, v17
+	15      (0000003a) invoke-virtual       v9, v0, Landroid/content/pm/PackageManager;->getNameForUid(I)Ljava/lang/String;
+	16      (00000040) move-result-object   v2
+	17      (00000042) invoke-virtual       v1, v2, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+	18      (00000048) move-result          v12
+	19      (0000004a) if-nez               v12, +b
+
+isCallerAuthorized-BB@0x4e : [ isCallerAuthorized-BB@0x24 ]
+	20      (0000004e) const-string         v12, 'AppRestrictionsProxy'
+	21      (00000052) const-string         v13, 'Caller is not app restrictions managing package'
+	22      (00000056) invoke-static        v12, v13, Landroid/util/Log;->e(Ljava/lang/String; Ljava/lang/String;)I
+	23      (0000005c) const/4              v12, 0
+	24      (0000005e) goto                 -1d
+
+isCallerAuthorized-BB@0x60 : [ isCallerAuthorized-BB@0x82 isCallerAuthorized-BB@0x92 ]
+	25      (00000060) move-object/from16   v0, v16
+	26      (00000064) iget-object          v12, v0, Lcom/afwsamples/testdpc/profilepolicy/apprestrictions/AppRestrictionsProxyHandler;->mContext Landroid/content/Context;
+	27      (00000068) invoke-static        v12, Landroid/preference/PreferenceManager;->getDefaultSharedPreferences(Landroid/content/Context;)Landroid/content/SharedPreferences;
+	28      (0000006e) move-result-object   v12
+	29      (00000070) const-string         v13, 'application_restrictions_managing_package_signatures'
+	30      (00000074) const/4              v14, 0
+	31      (00000076) invoke-interface     v12, v13, v14, Landroid/content/SharedPreferences;->getStringSet(Ljava/lang/String; Ljava/util/Set;)Ljava/util/Set;
+	32      (0000007c) move-result-object   v11
+	33      (0000007e) if-nez               v11, +a
+
+isCallerAuthorized-BB@0x82 : 
+	34      (00000082) new-instance         v12, Ljava/lang/IllegalStateException;
+	35      (00000086) const-string         v13, 'App restrictions managing package signatures have not been stored.'
+	36      (0000008a) invoke-direct        v12, v13, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+	37      (00000090) throw                v12
+
+isCallerAuthorized-BB@0x92 : [ isCallerAuthorized-BB@0x96 ]
+	38      (00000092) const/16             v12, 64
+
+isCallerAuthorized-BB@0x96 : [ isCallerAuthorized-BB@0xa2 isCallerAuthorized-BB@0xee ]
+	39      (00000096) invoke-virtual       v9, v2, v12, Landroid/content/pm/PackageManager;->getPackageInfo(Ljava/lang/String; I)Landroid/content/pm/PackageInfo;
+	40      (0000009c) move-result-object   v8
+	41      (0000009e) if-nez               v8, +28
+	96:df
+	(Landroid/content/pm/PackageManager$NameNotFoundException; -> e0 isCallerAuthorized-BB@0xe0)
+
+isCallerAuthorized-BB@0xa2 : 
+	42      (000000a2) new-instance         v12, Ljava/lang/IllegalArgumentException;
+	43      (000000a6) new-instance         v13, Ljava/lang/StringBuilder;
+	44      (000000aa) invoke-direct        v13, Ljava/lang/StringBuilder;-><init>()V
+	45      (000000b0) const-string         v14, 'Package info could not be retrieved for package '
+	46      (000000b4) invoke-virtual       v13, v14, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	47      (000000ba) move-result-object   v13
+	48      (000000bc) invoke-virtual       v13, v2, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	49      (000000c2) move-result-object   v13
+	50      (000000c4) const-string         v14, '.'
+	51      (000000c8) invoke-virtual       v13, v14, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	52      (000000ce) move-result-object   v13
+	53      (000000d0) invoke-virtual       v13, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+	54      (000000d6) move-result-object   v13
+	55      (000000d8) invoke-direct        v12, v13, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+	56      (000000de) throw                v12
+	96:df
+	(Landroid/content/pm/PackageManager$NameNotFoundException; -> e0 isCallerAuthorized-BB@0xe0)
+
+isCallerAuthorized-BB@0xe0 : 
+	57      (000000e0) move-exception       v5
+	58      (000000e2) new-instance         v12, Ljava/lang/IllegalArgumentException;
+	59      (000000e6) invoke-direct        v12, v5, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/Throwable;)V
+	60      (000000ec) throw                v12
+
+isCallerAuthorized-BB@0xee : [ isCallerAuthorized-BB@0xf6 isCallerAuthorized-BB@0x134 ]
+	61      (000000ee) iget-object          v3, v8, Landroid/content/pm/PackageInfo;->signatures [Landroid/content/pm/Signature;
+	62      (000000f2) if-nez               v3, +21
+	ee:133
+	(Landroid/content/pm/PackageManager$NameNotFoundException; -> e0 isCallerAuthorized-BB@0xe0)
+
+isCallerAuthorized-BB@0xf6 : 
+	63      (000000f6) new-instance         v12, Ljava/lang/IllegalArgumentException;
+	64      (000000fa) new-instance         v13, Ljava/lang/StringBuilder;
+	65      (000000fe) invoke-direct        v13, Ljava/lang/StringBuilder;-><init>()V
+	66      (00000104) const-string         v14, 'Package info did not contain signatures for package '
+	67      (00000108) invoke-virtual       v13, v14, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	68      (0000010e) move-result-object   v13
+	69      (00000110) invoke-virtual       v13, v2, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	70      (00000116) move-result-object   v13
+	71      (00000118) const-string         v14, '.'
+	72      (0000011c) invoke-virtual       v13, v14, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	73      (00000122) move-result-object   v13
+	74      (00000124) invoke-virtual       v13, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+	75      (0000012a) move-result-object   v13
+	76      (0000012c) invoke-direct        v12, v13, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+	77      (00000132) throw                v12
+	ee:133
+	(Landroid/content/pm/PackageManager$NameNotFoundException; -> e0 isCallerAuthorized-BB@0xe0)
+
+isCallerAuthorized-BB@0x134 : [ isCallerAuthorized-BB@0x14e ]
+	78      (00000134) new-instance         v7, Ljava/util/ArrayList;
+	79      (00000138) invoke-interface     v11, Ljava/util/Set;->size()I
+	80      (0000013e) move-result          v12
+	81      (00000140) invoke-direct        v7, v12, Ljava/util/ArrayList;-><init>(I)V
+	82      (00000146) invoke-interface     v11, Ljava/util/Set;->iterator()Ljava/util/Iterator;
+	83      (0000014c) move-result-object   v12
+
+isCallerAuthorized-BB@0x14e : [ isCallerAuthorized-BB@0x15a isCallerAuthorized-BB@0x178 ]
+	84      (0000014e) invoke-interface     v12, Ljava/util/Iterator;->hasNext()Z
+	85      (00000154) move-result          v13
+	86      (00000156) if-eqz               v13, +11
+
+isCallerAuthorized-BB@0x15a : [ isCallerAuthorized-BB@0x14e ]
+	87      (0000015a) invoke-interface     v12, Ljava/util/Iterator;->next()Ljava/lang/Object;
+	88      (00000160) move-result-object   v10
+	89      (00000162) check-cast           v10, Ljava/lang/String;
+	90      (00000166) new-instance         v13, Landroid/content/pm/Signature;
+	91      (0000016a) invoke-direct        v13, v10, Landroid/content/pm/Signature;-><init>(Ljava/lang/String;)V
+	92      (00000170) invoke-interface     v7, v13, Ljava/util/List;->add(Ljava/lang/Object;)Z
+	93      (00000176) goto                 -14
+
+isCallerAuthorized-BB@0x178 : [ isCallerAuthorized-BB@0x17c ]
+	94      (00000178) array-length         v13, v3
+	95      (0000017a) const/4              v12, 0
+
+isCallerAuthorized-BB@0x17c : [ isCallerAuthorized-BB@0x180 isCallerAuthorized-BB@0x1bc ]
+	96      (0000017c) if-ge                v12, v13, +20
+
+isCallerAuthorized-BB@0x180 : [ isCallerAuthorized-BB@0x18c ]
+	97      (00000180) aget-object          v4, v3, v12
+	98      (00000184) invoke-interface     v7, Ljava/util/List;->iterator()Ljava/util/Iterator;
+	99      (0000018a) move-result-object   v14
+
+isCallerAuthorized-BB@0x18c : [ isCallerAuthorized-BB@0x198 isCallerAuthorized-BB@0x1b6 ]
+	100     (0000018c) invoke-interface     v14, Ljava/util/Iterator;->hasNext()Z
+	101     (00000192) move-result          v15
+	102     (00000194) if-eqz               v15, +11
+
+isCallerAuthorized-BB@0x198 : [ isCallerAuthorized-BB@0x1b0 isCallerAuthorized-BB@0x18c ]
+	103     (00000198) invoke-interface     v14, Ljava/util/Iterator;->next()Ljava/lang/Object;
+	104     (0000019e) move-result-object   v6
+	105     (000001a0) check-cast           v6, Landroid/content/pm/Signature;
+	106     (000001a4) invoke-virtual       v6, v4, Landroid/content/pm/Signature;->equals(Ljava/lang/Object;)Z
+	107     (000001aa) move-result          v15
+	108     (000001ac) if-eqz               v15, -10
+
+isCallerAuthorized-BB@0x1b0 : [ isCallerAuthorized-BB@0x24 ]
+	109     (000001b0) const/4              v12, 1
+	110     (000001b2) goto/16              -c7
+
+isCallerAuthorized-BB@0x1b6 : [ isCallerAuthorized-BB@0x17c ]
+	111     (000001b6) add-int/lit8         v12, v12, 1
+	112     (000001ba) goto                 -1f
+
+isCallerAuthorized-BB@0x1bc : [ isCallerAuthorized-BB@0x24 ]
+	113     (000001bc) const-string         v12, 'AppRestrictionsProxy'
+	114     (000001c0) const-string         v13, "Calling package signature doesn't match"
+	115     (000001c4) invoke-static        v12, v13, Landroid/util/Log;->e(Ljava/lang/String; Ljava/lang/String;)I
+	116     (000001ca) const/4              v12, 0
+	117     (000001cc) goto/16              -d4
+

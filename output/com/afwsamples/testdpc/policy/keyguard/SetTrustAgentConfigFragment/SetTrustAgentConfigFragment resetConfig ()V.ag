@@ -1,0 +1,21 @@
+# Lcom/afwsamples/testdpc/policy/keyguard/SetTrustAgentConfigFragment;->resetConfig()V [access_flags=protected]
+#
+# Parameters:
+# local registers: v0...v2
+#
+# - return:void
+
+resetConfig-BB@0x0 : 
+	0       (00000000) new-instance         v0, Landroid/os/PersistableBundle;
+	1       (00000004) iget-object          v1, v2, Lcom/afwsamples/testdpc/policy/keyguard/SetTrustAgentConfigFragment;->mInitialBundle Landroid/os/PersistableBundle;
+	2       (00000008) invoke-direct        v0, v1, Landroid/os/PersistableBundle;-><init>(Landroid/os/PersistableBundle;)V
+	3       (0000000e) iput-object          v0, v2, Lcom/afwsamples/testdpc/policy/keyguard/SetTrustAgentConfigFragment;->mBundle Landroid/os/PersistableBundle;
+	4       (00000012) iget-object          v0, v2, Lcom/afwsamples/testdpc/policy/keyguard/SetTrustAgentConfigFragment;->mAdapter Lcom/afwsamples/testdpc/common/EditDeleteArrayAdapter;
+	5       (00000016) invoke-virtual       v0, Lcom/afwsamples/testdpc/common/EditDeleteArrayAdapter;->clear()V
+	6       (0000001c) iget-object          v0, v2, Lcom/afwsamples/testdpc/policy/keyguard/SetTrustAgentConfigFragment;->mAdapter Lcom/afwsamples/testdpc/common/EditDeleteArrayAdapter;
+	7       (00000020) iget-object          v1, v2, Lcom/afwsamples/testdpc/policy/keyguard/SetTrustAgentConfigFragment;->mBundle Landroid/os/PersistableBundle;
+	8       (00000024) invoke-virtual       v1, Landroid/os/PersistableBundle;->keySet()Ljava/util/Set;
+	9       (0000002a) move-result-object   v1
+	10      (0000002c) invoke-virtual       v0, v1, Lcom/afwsamples/testdpc/common/EditDeleteArrayAdapter;->addAll(Ljava/util/Collection;)V
+	11      (00000032) return-void          
+

@@ -1,0 +1,21 @@
+# Landroidx/appcompat/widget/ToolbarWidgetWrapper$2;->onAnimationEnd(Landroid/view/View;)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:android.view.View
+#
+# - return:void
+
+onAnimationEnd-BB@0x0 : [ onAnimationEnd-BB@0x8 onAnimationEnd-BB@0x1a ]
+	0       (00000000) iget-boolean         v0, v2, Landroidx/appcompat/widget/ToolbarWidgetWrapper$2;->mCanceled Z
+	1       (00000004) if-nez               v0, +b
+
+onAnimationEnd-BB@0x8 : [ onAnimationEnd-BB@0x1a ]
+	2       (00000008) iget-object          v0, v2, Landroidx/appcompat/widget/ToolbarWidgetWrapper$2;->this$0 Landroidx/appcompat/widget/ToolbarWidgetWrapper;
+	3       (0000000c) iget-object          v0, v0, Landroidx/appcompat/widget/ToolbarWidgetWrapper;->mToolbar Landroidx/appcompat/widget/Toolbar;
+	4       (00000010) iget                 v1, v2, Landroidx/appcompat/widget/ToolbarWidgetWrapper$2;->val$visibility I
+	5       (00000014) invoke-virtual       v0, v1, Landroidx/appcompat/widget/Toolbar;->setVisibility(I)V
+
+onAnimationEnd-BB@0x1a : 
+	6       (0000001a) return-void          
+

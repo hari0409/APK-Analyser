@@ -1,0 +1,18 @@
+# Lcom/afwsamples/testdpc/cosu/CosuConfig;->getKioskApps()[Ljava/lang/String; [access_flags=public]
+#
+# Parameters:
+# local registers: v0...v2
+#
+# - return:java.lang.String[]
+
+getKioskApps-BB@0x0 : 
+	0       (00000000) iget-object          v0, v2, Lcom/afwsamples/testdpc/cosu/CosuConfig;->mKioskApps Ljava/util/Set;
+	1       (00000004) iget-object          v1, v2, Lcom/afwsamples/testdpc/cosu/CosuConfig;->mKioskApps Ljava/util/Set;
+	2       (00000008) invoke-interface     v1, Ljava/util/Set;->size()I
+	3       (0000000e) move-result          v1
+	4       (00000010) new-array            v1, v1, [Ljava/lang/String;
+	5       (00000014) invoke-interface     v0, v1, Ljava/util/Set;->toArray([Ljava/lang/Object;)[Ljava/lang/Object;
+	6       (0000001a) move-result-object   v0
+	7       (0000001c) check-cast           v0, [Ljava/lang/String;
+	8       (00000020) return-object        v0
+

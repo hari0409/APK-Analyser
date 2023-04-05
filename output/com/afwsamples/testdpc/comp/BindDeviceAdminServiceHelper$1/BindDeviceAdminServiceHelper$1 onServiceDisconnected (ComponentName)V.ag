@@ -1,0 +1,18 @@
+# Lcom/afwsamples/testdpc/comp/BindDeviceAdminServiceHelper$1;->onServiceDisconnected(Landroid/content/ComponentName;)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:android.content.ComponentName
+#
+# - return:void
+
+onServiceDisconnected-BB@0x0 : 
+	0       (00000000) const-string         v0, 'BindDeviceAdminService'
+	1       (00000004) const-string         v1, 'onServiceDisconnected() called'
+	2       (00000008) invoke-static        v0, v1, Landroid/util/Log;->e(Ljava/lang/String; Ljava/lang/String;)I
+	3       (0000000e) iget-object          v0, v2, Lcom/afwsamples/testdpc/comp/BindDeviceAdminServiceHelper$1;->this$0 Lcom/afwsamples/testdpc/comp/BindDeviceAdminServiceHelper;
+	4       (00000012) invoke-static        v0, Lcom/afwsamples/testdpc/comp/BindDeviceAdminServiceHelper;->access$100(Lcom/afwsamples/testdpc/comp/BindDeviceAdminServiceHelper;)Landroid/content/Context;
+	5       (00000018) move-result-object   v0
+	6       (0000001a) invoke-virtual       v0, v2, Landroid/content/Context;->unbindService(Landroid/content/ServiceConnection;)V
+	7       (00000020) return-void          
+

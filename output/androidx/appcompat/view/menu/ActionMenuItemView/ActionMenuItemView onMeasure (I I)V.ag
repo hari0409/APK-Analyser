@@ -1,0 +1,92 @@
+# Landroidx/appcompat/view/menu/ActionMenuItemView;->onMeasure(I I)V [access_flags=protected]
+#
+# Parameters:
+# - local registers: v0...v12
+# - v13:int
+# - v14:int
+#
+# - return:void
+
+onMeasure-BB@0x0 : [ onMeasure-BB@0x10 onMeasure-BB@0x3a ]
+	0       (00000000) const/high16         v11, 16384 # [2.0]
+	1       (00000004) invoke-virtual       v12, Landroidx/appcompat/view/menu/ActionMenuItemView;->hasText()Z
+	2       (0000000a) move-result          v3
+	3       (0000000c) if-eqz               v3, +17
+
+onMeasure-BB@0x10 : [ onMeasure-BB@0x18 onMeasure-BB@0x3a ]
+	4       (00000010) iget                 v7, v12, Landroidx/appcompat/view/menu/ActionMenuItemView;->mSavedPaddingLeft I
+	5       (00000014) if-ltz               v7, +13
+
+onMeasure-BB@0x18 : [ onMeasure-BB@0x3a ]
+	6       (00000018) iget                 v7, v12, Landroidx/appcompat/view/menu/ActionMenuItemView;->mSavedPaddingLeft I
+	7       (0000001c) invoke-virtual       v12, Landroidx/appcompat/view/menu/ActionMenuItemView;->getPaddingTop()I
+	8       (00000022) move-result          v8
+	9       (00000024) invoke-virtual       v12, Landroidx/appcompat/view/menu/ActionMenuItemView;->getPaddingRight()I
+	10      (0000002a) move-result          v9
+	11      (0000002c) invoke-virtual       v12, Landroidx/appcompat/view/menu/ActionMenuItemView;->getPaddingBottom()I
+	12      (00000032) move-result          v10
+	13      (00000034) invoke-super         v12, v7, v8, v9, v10, Landroidx/appcompat/widget/AppCompatTextView;->setPadding(I I I I)V
+
+onMeasure-BB@0x3a : [ onMeasure-BB@0x60 onMeasure-BB@0xda ]
+	14      (0000003a) invoke-super         v12, v13, v14, Landroidx/appcompat/widget/AppCompatTextView;->onMeasure(I I)V
+	15      (00000040) invoke-static        v13, Landroid/view/View$MeasureSpec;->getMode(I)I
+	16      (00000046) move-result          v5
+	17      (00000048) invoke-static        v13, Landroid/view/View$MeasureSpec;->getSize(I)I
+	18      (0000004e) move-result          v6
+	19      (00000050) invoke-virtual       v12, Landroidx/appcompat/view/menu/ActionMenuItemView;->getMeasuredWidth()I
+	20      (00000056) move-result          v1
+	21      (00000058) const/high16         v7, -32768 # [-0.0]
+	22      (0000005c) if-ne                v5, v7, +3f
+
+onMeasure-BB@0x60 : [ onMeasure-BB@0x6c ]
+	23      (00000060) iget                 v7, v12, Landroidx/appcompat/view/menu/ActionMenuItemView;->mMinWidth I
+	24      (00000064) invoke-static        v6, v7, Ljava/lang/Math;->min(I I)I
+	25      (0000006a) move-result          v2
+
+onMeasure-BB@0x6c : [ onMeasure-BB@0x70 onMeasure-BB@0x8a ]
+	26      (0000006c) if-eq                v5, v11, +f
+
+onMeasure-BB@0x70 : [ onMeasure-BB@0x78 onMeasure-BB@0x8a ]
+	27      (00000070) iget                 v7, v12, Landroidx/appcompat/view/menu/ActionMenuItemView;->mMinWidth I
+	28      (00000074) if-lez               v7, +b
+
+onMeasure-BB@0x78 : [ onMeasure-BB@0x7c onMeasure-BB@0x8a ]
+	29      (00000078) if-ge                v1, v2, +9
+
+onMeasure-BB@0x7c : [ onMeasure-BB@0x8a ]
+	30      (0000007c) invoke-static        v2, v11, Landroid/view/View$MeasureSpec;->makeMeasureSpec(I I)I
+	31      (00000082) move-result          v7
+	32      (00000084) invoke-super         v12, v7, v14, Landroidx/appcompat/widget/AppCompatTextView;->onMeasure(I I)V
+
+onMeasure-BB@0x8a : [ onMeasure-BB@0x8e onMeasure-BB@0xd8 ]
+	33      (0000008a) if-nez               v3, +27
+
+onMeasure-BB@0x8e : [ onMeasure-BB@0x96 onMeasure-BB@0xd8 ]
+	34      (0000008e) iget-object          v7, v12, Landroidx/appcompat/view/menu/ActionMenuItemView;->mIcon Landroid/graphics/drawable/Drawable;
+	35      (00000092) if-eqz               v7, +23
+
+onMeasure-BB@0x96 : [ onMeasure-BB@0xd8 ]
+	36      (00000096) invoke-virtual       v12, Landroidx/appcompat/view/menu/ActionMenuItemView;->getMeasuredWidth()I
+	37      (0000009c) move-result          v4
+	38      (0000009e) iget-object          v7, v12, Landroidx/appcompat/view/menu/ActionMenuItemView;->mIcon Landroid/graphics/drawable/Drawable;
+	39      (000000a2) invoke-virtual       v7, Landroid/graphics/drawable/Drawable;->getBounds()Landroid/graphics/Rect;
+	40      (000000a8) move-result-object   v7
+	41      (000000aa) invoke-virtual       v7, Landroid/graphics/Rect;->width()I
+	42      (000000b0) move-result          v0
+	43      (000000b2) sub-int              v7, v4, v0
+	44      (000000b6) div-int/lit8         v7, v7, 2
+	45      (000000ba) invoke-virtual       v12, Landroidx/appcompat/view/menu/ActionMenuItemView;->getPaddingTop()I
+	46      (000000c0) move-result          v8
+	47      (000000c2) invoke-virtual       v12, Landroidx/appcompat/view/menu/ActionMenuItemView;->getPaddingRight()I
+	48      (000000c8) move-result          v9
+	49      (000000ca) invoke-virtual       v12, Landroidx/appcompat/view/menu/ActionMenuItemView;->getPaddingBottom()I
+	50      (000000d0) move-result          v10
+	51      (000000d2) invoke-super         v12, v7, v8, v9, v10, Landroidx/appcompat/widget/AppCompatTextView;->setPadding(I I I I)V
+
+onMeasure-BB@0xd8 : 
+	52      (000000d8) return-void          
+
+onMeasure-BB@0xda : [ onMeasure-BB@0x6c ]
+	53      (000000da) iget                 v2, v12, Landroidx/appcompat/view/menu/ActionMenuItemView;->mMinWidth I
+	54      (000000de) goto                 -39
+

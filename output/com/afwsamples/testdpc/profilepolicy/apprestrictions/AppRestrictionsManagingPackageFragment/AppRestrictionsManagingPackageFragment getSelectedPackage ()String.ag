@@ -1,0 +1,24 @@
+# Lcom/afwsamples/testdpc/profilepolicy/apprestrictions/AppRestrictionsManagingPackageFragment;->getSelectedPackage()Ljava/lang/String; [access_flags=protected]
+#
+# Parameters:
+# local registers: v0...v2
+#
+# - return:java.lang.String
+
+getSelectedPackage-BB@0x0 : [ getSelectedPackage-BB@0xc getSelectedPackage-BB@0x16 ]
+	0       (00000000) sget                 v0, Lcom/afwsamples/testdpc/common/Util;->SDK_INT I
+	1       (00000004) const/16             v1, 24
+	2       (00000008) if-lt                v0, v1, +7
+
+getSelectedPackage-BB@0xc : [ getSelectedPackage-BB@0x14 ]
+	3       (0000000c) invoke-direct        v2, Lcom/afwsamples/testdpc/profilepolicy/apprestrictions/AppRestrictionsManagingPackageFragment;->getApplicationRestrictionsManagingPackage()Ljava/lang/String;
+	4       (00000012) move-result-object   v0
+
+getSelectedPackage-BB@0x14 : 
+	5       (00000014) return-object        v0
+
+getSelectedPackage-BB@0x16 : [ getSelectedPackage-BB@0x14 ]
+	6       (00000016) invoke-direct        v2, Lcom/afwsamples/testdpc/profilepolicy/apprestrictions/AppRestrictionsManagingPackageFragment;->getApplicationRestrictionsManagingPackageWithProxy()Ljava/lang/String;
+	7       (0000001c) move-result-object   v0
+	8       (0000001e) goto                 -5
+

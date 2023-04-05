@@ -1,0 +1,65 @@
+# Lcom/afwsamples/testdpc/profilepolicy/delegation/DelegationFragment;->readScopesFromDpm(Ljava/lang/String;)V [access_flags=private]
+#
+# Parameters:
+# - local registers: v0...v5
+# - v6:java.lang.String
+#
+# - return:void
+
+readScopesFromDpm-BB@0x0 : [ readScopesFromDpm-BB@0xc readScopesFromDpm-BB@0xa2 ]
+	0       (00000000) iget-object          v3, v5, Lcom/afwsamples/testdpc/profilepolicy/delegation/DelegationFragment;->mDpm Landroid/app/admin/DevicePolicyManager;
+	1       (00000004) iget-boolean         v2, v5, Lcom/afwsamples/testdpc/profilepolicy/delegation/DelegationFragment;->mIsDeviceOrProfileOwner Z
+	2       (00000008) if-eqz               v2, +4d
+
+readScopesFromDpm-BB@0xc : [ readScopesFromDpm-BB@0x1c ]
+	3       (0000000c) invoke-virtual       v5, Lcom/afwsamples/testdpc/profilepolicy/delegation/DelegationFragment;->getActivity()Landroid/app/Activity;
+	4       (00000012) move-result-object   v2
+	5       (00000014) invoke-static        v2, Lcom/afwsamples/testdpc/DeviceAdminReceiver;->getComponentName(Landroid/content/Context;)Landroid/content/ComponentName;
+	6       (0000001a) move-result-object   v2
+
+readScopesFromDpm-BB@0x1c : [ readScopesFromDpm-BB@0x78 ]
+	7       (0000001c) invoke-virtual       v3, v2, v6, Landroid/app/admin/DevicePolicyManager;->getDelegatedScopes(Landroid/content/ComponentName; Ljava/lang/String;)Ljava/util/List;
+	8       (00000022) move-result-object   v1
+	9       (00000024) sget-object          v2, Lcom/afwsamples/testdpc/profilepolicy/delegation/DelegationFragment;->TAG Ljava/lang/String;
+	10      (00000028) new-instance         v3, Ljava/lang/StringBuilder;
+	11      (0000002c) invoke-direct        v3, Ljava/lang/StringBuilder;-><init>()V
+	12      (00000032) invoke-virtual       v3, v6, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	13      (00000038) move-result-object   v3
+	14      (0000003a) const-string         v4, ' | '
+	15      (0000003e) invoke-virtual       v3, v4, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	16      (00000044) move-result-object   v3
+	17      (00000046) invoke-interface     v1, Ljava/util/List;->toArray()[Ljava/lang/Object;
+	18      (0000004c) move-result-object   v4
+	19      (0000004e) invoke-static        v4, Ljava/util/Arrays;->toString([Ljava/lang/Object;)Ljava/lang/String;
+	20      (00000054) move-result-object   v4
+	21      (00000056) invoke-virtual       v3, v4, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	22      (0000005c) move-result-object   v3
+	23      (0000005e) invoke-virtual       v3, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+	24      (00000064) move-result-object   v3
+	25      (00000066) invoke-static        v2, v3, Landroid/util/Log;->i(Ljava/lang/String; Ljava/lang/String;)I
+	26      (0000006c) iget-object          v2, v5, Lcom/afwsamples/testdpc/profilepolicy/delegation/DelegationFragment;->mDelegations Ljava/util/List;
+	27      (00000070) invoke-interface     v2, Ljava/util/List;->iterator()Ljava/util/Iterator;
+	28      (00000076) move-result-object   v2
+
+readScopesFromDpm-BB@0x78 : [ readScopesFromDpm-BB@0x84 readScopesFromDpm-BB@0xa6 ]
+	29      (00000078) invoke-interface     v2, Ljava/util/Iterator;->hasNext()Z
+	30      (0000007e) move-result          v3
+	31      (00000080) if-eqz               v3, +13
+
+readScopesFromDpm-BB@0x84 : [ readScopesFromDpm-BB@0x78 ]
+	32      (00000084) invoke-interface     v2, Ljava/util/Iterator;->next()Ljava/lang/Object;
+	33      (0000008a) move-result-object   v0
+	34      (0000008c) check-cast           v0, Lcom/afwsamples/testdpc/profilepolicy/delegation/DelegationFragment$DelegationScope;
+	35      (00000090) iget-object          v3, v0, Lcom/afwsamples/testdpc/profilepolicy/delegation/DelegationFragment$DelegationScope;->scope Ljava/lang/String;
+	36      (00000094) invoke-interface     v1, v3, Ljava/util/List;->contains(Ljava/lang/Object;)Z
+	37      (0000009a) move-result          v3
+	38      (0000009c) iput-boolean         v3, v0, Lcom/afwsamples/testdpc/profilepolicy/delegation/DelegationFragment$DelegationScope;->granted Z
+	39      (000000a0) goto                 -14
+
+readScopesFromDpm-BB@0xa2 : [ readScopesFromDpm-BB@0x1c ]
+	40      (000000a2) const/4              v2, 0
+	41      (000000a4) goto                 -44
+
+readScopesFromDpm-BB@0xa6 : 
+	42      (000000a6) return-void          
+

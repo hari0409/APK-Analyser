@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:custom="http://schemas.android.com/apk/res-auto">
+    <LinearLayout android:orientation="vertical" android:id="@id/dpc_login" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <TextView android:textAppearance="@style/TextAppearance.AppCompat.Large" android:textSize="@dimen/selection_title_text_size" android:gravity="center_horizontal" android:id="@id/selection_title" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/selection_title_top_margin" android:text="@string/selector_title" android:textAlignment="center" style="@style/SelectionTitle" />
+        <LinearLayout android:orientation="horizontal" android:id="@id/do_option" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/constraint_layout_margin" android:layout_marginTop="@dimen/selection_content_padding" android:layout_marginRight="@dimen/constraint_layout_margin" android:layout_marginBottom="@dimen/selection_content_padding" android:paddingStart="@dimen/selection_guideline_padding" android:paddingEnd="@dimen/selection_guideline_padding">
+            <ImageView android:id="@id/do_selection_image" android:layout_width="0.0dip" android:layout_height="wrap_content" android:src="@drawable/managed_device_setup" android:scaleType="fitCenter" android:layout_weight="0.368" />
+            <LinearLayout android:orientation="vertical" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_weight="0.632">
+                <TextView android:id="@id/do_selection_detailed_title" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/do_selection_subtitle" style="@style/SelectionTitle" />
+                <TextView android:id="@id/do_selection_detailed_text" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/do_selection_detailed_text" style="@style/SelectionDesc" />
+                <Button android:id="@id/do_selection_button" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/do_selection_button_text" style="@style/SelectionButton" />
+            </LinearLayout>
+        </LinearLayout>
+        <RelativeLayout android:id="@id/divider" android:paddingTop="@dimen/selection_middle_padding" android:paddingBottom="@dimen/selection_middle_padding" android:layout_width="fill_parent" android:layout_height="wrap_content" custom:layout_constraintBottom_toTopOf="parent" custom:layout_constraintEnd_toEndOf="parent" custom:layout_constraintStart_toStartOf="parent" custom:layout_constraintTop_toBottomOf="parent">
+            <TextView android:id="@id/breakText" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/selection_divider_margin_horizontal" android:layout_marginRight="@dimen/selection_divider_margin_horizontal" android:text="@string/selection_divider_text" android:layout_centerInParent="true" />
+            <View android:background="?android:listDivider" android:layout_width="fill_parent" android:layout_height="@dimen/text_divider_height" android:layout_centerVertical="true" android:layout_toStartOf="@id/breakText" />
+            <View android:background="?android:listDivider" android:layout_width="fill_parent" android:layout_height="@dimen/text_divider_height" android:layout_centerVertical="true" android:layout_toEndOf="@id/breakText" />
+        </RelativeLayout>
+        <LinearLayout android:orientation="horizontal" android:id="@id/po_option" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/constraint_layout_margin" android:layout_marginTop="@dimen/selection_content_padding" android:layout_marginRight="@dimen/constraint_layout_margin" android:layout_marginBottom="@dimen/selection_content_padding" android:paddingStart="@dimen/selection_guideline_padding" android:paddingEnd="@dimen/selection_guideline_padding">
+            <ImageView android:id="@id/po_selection_image" android:layout_width="0.0dip" android:layout_height="wrap_content" android:src="@drawable/managed_profile_setup" android:scaleType="fitCenter" android:layout_weight="0.368" />
+            <LinearLayout android:orientation="vertical" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_weight="0.632">
+                <TextView android:id="@id/po_selection_detailed_title" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/po_selection_subtitle" style="@style/SelectionTitle" />
+                <TextView android:id="@id/po_selection_detailed_text" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/po_selection_detailed_text" style="@style/SelectionDesc" />
+                <Button android:id="@id/po_selection_button" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/po_selection_button_text" style="@style/SelectionButton" />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>

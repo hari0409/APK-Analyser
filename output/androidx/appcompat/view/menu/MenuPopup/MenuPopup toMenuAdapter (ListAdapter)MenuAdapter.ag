@@ -1,0 +1,26 @@
+# Landroidx/appcompat/view/menu/MenuPopup;->toMenuAdapter(Landroid/widget/ListAdapter;)Landroidx/appcompat/view/menu/MenuAdapter; [access_flags=protected static]
+#
+# Parameters:
+# - local registers: v0...v0
+# - v1:android.widget.ListAdapter
+#
+# - return:androidx.appcompat.view.menu.MenuAdapter
+
+toMenuAdapter-BB@0x0 : [ toMenuAdapter-BB@0x8 toMenuAdapter-BB@0x1a ]
+	0       (00000000) instance-of          v0, v1, Landroid/widget/HeaderViewListAdapter;
+	1       (00000004) if-eqz               v0, +b
+
+toMenuAdapter-BB@0x8 : [ toMenuAdapter-BB@0x18 ]
+	2       (00000008) check-cast           v1, Landroid/widget/HeaderViewListAdapter;
+	3       (0000000c) invoke-virtual       v1, Landroid/widget/HeaderViewListAdapter;->getWrappedAdapter()Landroid/widget/ListAdapter;
+	4       (00000012) move-result-object   v0
+	5       (00000014) check-cast           v0, Landroidx/appcompat/view/menu/MenuAdapter;
+
+toMenuAdapter-BB@0x18 : 
+	6       (00000018) return-object        v0
+
+toMenuAdapter-BB@0x1a : [ toMenuAdapter-BB@0x18 ]
+	7       (0000001a) check-cast           v1, Landroidx/appcompat/view/menu/MenuAdapter;
+	8       (0000001e) move-object          v0, v1
+	9       (00000020) goto                 -4
+

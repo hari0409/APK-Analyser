@@ -1,0 +1,11 @@
+# Lorg/checkerframework/checker/formatter/FormatUtil$Conversion;->index()I [access_flags=]
+#
+# Parameters:
+# local registers: v0...v1
+#
+# - return:int
+
+index-BB@0x0 : 
+	0       (00000000) iget                 v0, v1, Lorg/checkerframework/checker/formatter/FormatUtil$Conversion;->index I
+	1       (00000004) return               v0
+

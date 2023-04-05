@@ -1,0 +1,23 @@
+# Landroidx/appcompat/widget/SearchView$SearchAutoComplete;->onCreateInputConnection(Landroid/view/inputmethod/EditorInfo;)Landroid/view/inputmethod/InputConnection; [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:android.view.inputmethod.EditorInfo
+#
+# - return:android.view.inputmethod.InputConnection
+
+onCreateInputConnection-BB@0x0 : [ onCreateInputConnection-BB@0x10 onCreateInputConnection-BB@0x24 ]
+	0       (00000000) invoke-super         v2, v3, Landroidx/appcompat/widget/AppCompatAutoCompleteTextView;->onCreateInputConnection(Landroid/view/inputmethod/EditorInfo;)Landroid/view/inputmethod/InputConnection;
+	1       (00000006) move-result-object   v0
+	2       (00000008) iget-boolean         v1, v2, Landroidx/appcompat/widget/SearchView$SearchAutoComplete;->mHasPendingShowSoftInputRequest Z
+	3       (0000000c) if-eqz               v1, +c
+
+onCreateInputConnection-BB@0x10 : [ onCreateInputConnection-BB@0x24 ]
+	4       (00000010) iget-object          v1, v2, Landroidx/appcompat/widget/SearchView$SearchAutoComplete;->mRunShowSoftInputIfNecessary Ljava/lang/Runnable;
+	5       (00000014) invoke-virtual       v2, v1, Landroidx/appcompat/widget/SearchView$SearchAutoComplete;->removeCallbacks(Ljava/lang/Runnable;)Z
+	6       (0000001a) iget-object          v1, v2, Landroidx/appcompat/widget/SearchView$SearchAutoComplete;->mRunShowSoftInputIfNecessary Ljava/lang/Runnable;
+	7       (0000001e) invoke-virtual       v2, v1, Landroidx/appcompat/widget/SearchView$SearchAutoComplete;->post(Ljava/lang/Runnable;)Z
+
+onCreateInputConnection-BB@0x24 : 
+	8       (00000024) return-object        v0
+

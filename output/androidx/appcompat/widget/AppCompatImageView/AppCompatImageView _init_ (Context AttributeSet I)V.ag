@@ -1,0 +1,26 @@
+# Landroidx/appcompat/widget/AppCompatImageView;-><init>(Landroid/content/Context; Landroid/util/AttributeSet; I)V [access_flags=public constructor]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:android.content.Context
+# - v3:android.util.AttributeSet
+# - v4:int
+#
+# - return:void
+
+<init>-BB@0x0 : 
+	0       (00000000) invoke-static        v2, Landroidx/appcompat/widget/TintContextWrapper;->wrap(Landroid/content/Context;)Landroid/content/Context;
+	1       (00000006) move-result-object   v0
+	2       (00000008) invoke-direct        v1, v0, v3, v4, Landroid/widget/ImageView;-><init>(Landroid/content/Context; Landroid/util/AttributeSet; I)V
+	3       (0000000e) new-instance         v0, Landroidx/appcompat/widget/AppCompatBackgroundHelper;
+	4       (00000012) invoke-direct        v0, v1, Landroidx/appcompat/widget/AppCompatBackgroundHelper;-><init>(Landroid/view/View;)V
+	5       (00000018) iput-object          v0, v1, Landroidx/appcompat/widget/AppCompatImageView;->mBackgroundTintHelper Landroidx/appcompat/widget/AppCompatBackgroundHelper;
+	6       (0000001c) iget-object          v0, v1, Landroidx/appcompat/widget/AppCompatImageView;->mBackgroundTintHelper Landroidx/appcompat/widget/AppCompatBackgroundHelper;
+	7       (00000020) invoke-virtual       v0, v3, v4, Landroidx/appcompat/widget/AppCompatBackgroundHelper;->loadFromAttributes(Landroid/util/AttributeSet; I)V
+	8       (00000026) new-instance         v0, Landroidx/appcompat/widget/AppCompatImageHelper;
+	9       (0000002a) invoke-direct        v0, v1, Landroidx/appcompat/widget/AppCompatImageHelper;-><init>(Landroid/widget/ImageView;)V
+	10      (00000030) iput-object          v0, v1, Landroidx/appcompat/widget/AppCompatImageView;->mImageHelper Landroidx/appcompat/widget/AppCompatImageHelper;
+	11      (00000034) iget-object          v0, v1, Landroidx/appcompat/widget/AppCompatImageView;->mImageHelper Landroidx/appcompat/widget/AppCompatImageHelper;
+	12      (00000038) invoke-virtual       v0, v3, v4, Landroidx/appcompat/widget/AppCompatImageHelper;->loadFromAttributes(Landroid/util/AttributeSet; I)V
+	13      (0000003e) return-void          
+

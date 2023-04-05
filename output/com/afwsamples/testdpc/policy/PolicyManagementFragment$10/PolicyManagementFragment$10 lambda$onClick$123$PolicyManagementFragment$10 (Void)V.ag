@@ -1,0 +1,14 @@
+# Lcom/afwsamples/testdpc/policy/PolicyManagementFragment$10;->lambda$onClick$123$PolicyManagementFragment$10(Ljava/lang/Void;)V [access_flags=final synthetic]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:java.lang.Void
+#
+# - return:void
+
+lambda$onClick$123$PolicyManagementFragment$10-BB@0x0 : 
+	0       (00000000) iget-object          v0, v2, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment$10;->this$0 Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;
+	1       (00000004) const-string         v1, 'wipeData'
+	2       (00000008) invoke-static        v0, v1, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->access$600(Lcom/afwsamples/testdpc/policy/PolicyManagementFragment; Ljava/lang/String;)V
+	3       (0000000e) return-void          
+

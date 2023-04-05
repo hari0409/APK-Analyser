@@ -1,0 +1,28 @@
+# Landroidx/appcompat/view/menu/ActionMenuItemView;->needsDividerBefore()Z [access_flags=public]
+#
+# Parameters:
+# local registers: v0...v1
+#
+# - return:boolean
+
+needsDividerBefore-BB@0x0 : [ needsDividerBefore-BB@0xc needsDividerBefore-BB@0x20 ]
+	0       (00000000) invoke-virtual       v1, Landroidx/appcompat/view/menu/ActionMenuItemView;->hasText()Z
+	1       (00000006) move-result          v0
+	2       (00000008) if-eqz               v0, +c
+
+needsDividerBefore-BB@0xc : [ needsDividerBefore-BB@0x1c needsDividerBefore-BB@0x20 ]
+	3       (0000000c) iget-object          v0, v1, Landroidx/appcompat/view/menu/ActionMenuItemView;->mItemData Landroidx/appcompat/view/menu/MenuItemImpl;
+	4       (00000010) invoke-virtual       v0, Landroidx/appcompat/view/menu/MenuItemImpl;->getIcon()Landroid/graphics/drawable/Drawable;
+	5       (00000016) move-result-object   v0
+	6       (00000018) if-nez               v0, +4
+
+needsDividerBefore-BB@0x1c : [ needsDividerBefore-BB@0x1e ]
+	7       (0000001c) const/4              v0, 1
+
+needsDividerBefore-BB@0x1e : 
+	8       (0000001e) return               v0
+
+needsDividerBefore-BB@0x20 : [ needsDividerBefore-BB@0x1e ]
+	9       (00000020) const/4              v0, 0
+	10      (00000022) goto                 -2
+

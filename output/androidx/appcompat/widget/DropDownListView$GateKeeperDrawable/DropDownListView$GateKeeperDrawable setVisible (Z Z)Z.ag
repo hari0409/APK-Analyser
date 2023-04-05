@@ -1,0 +1,24 @@
+# Landroidx/appcompat/widget/DropDownListView$GateKeeperDrawable;->setVisible(Z Z)Z [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:boolean
+# - v3:boolean
+#
+# - return:boolean
+
+setVisible-BB@0x0 : [ setVisible-BB@0x8 setVisible-BB@0x12 ]
+	0       (00000000) iget-boolean         v0, v1, Landroidx/appcompat/widget/DropDownListView$GateKeeperDrawable;->mEnabled Z
+	1       (00000004) if-eqz               v0, +7
+
+setVisible-BB@0x8 : [ setVisible-BB@0x10 ]
+	2       (00000008) invoke-super         v1, v2, v3, Landroidx/appcompat/graphics/drawable/DrawableWrapper;->setVisible(Z Z)Z
+	3       (0000000e) move-result          v0
+
+setVisible-BB@0x10 : 
+	4       (00000010) return               v0
+
+setVisible-BB@0x12 : [ setVisible-BB@0x10 ]
+	5       (00000012) const/4              v0, 0
+	6       (00000014) goto                 -2
+

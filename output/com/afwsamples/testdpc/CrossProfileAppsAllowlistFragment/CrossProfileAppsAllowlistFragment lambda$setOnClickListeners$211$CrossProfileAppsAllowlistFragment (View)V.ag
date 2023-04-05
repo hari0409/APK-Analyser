@@ -1,0 +1,21 @@
+# Lcom/afwsamples/testdpc/CrossProfileAppsAllowlistFragment;->lambda$setOnClickListeners$211$CrossProfileAppsAllowlistFragment(Landroid/view/View;)V [access_flags=final synthetic]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:android.view.View
+#
+# - return:void
+
+lambda$setOnClickListeners$211$CrossProfileAppsAllowlistFragment-BB@0x0 : 
+	0       (00000000) iget-object          v0, v1, Lcom/afwsamples/testdpc/CrossProfileAppsAllowlistFragment;->mAppNameEditText Landroid/widget/EditText;
+	1       (00000004) invoke-virtual       v0, Landroid/widget/EditText;->getText()Landroid/text/Editable;
+	2       (0000000a) move-result-object   v0
+	3       (0000000c) invoke-virtual       v0, Ljava/lang/Object;->toString()Ljava/lang/String;
+	4       (00000012) move-result-object   v0
+	5       (00000014) invoke-virtual       v0, Ljava/lang/String;->toLowerCase()Ljava/lang/String;
+	6       (0000001a) move-result-object   v0
+	7       (0000001c) invoke-virtual       v0, Ljava/lang/String;->trim()Ljava/lang/String;
+	8       (00000022) move-result-object   v0
+	9       (00000024) invoke-direct        v1, v0, Lcom/afwsamples/testdpc/CrossProfileAppsAllowlistFragment;->removeApp(Ljava/lang/String;)V
+	10      (0000002a) return-void          
+

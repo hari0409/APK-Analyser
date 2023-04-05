@@ -1,0 +1,25 @@
+# Landroidx/appcompat/app/WindowDecorActionBar$ActionModeImpl;-><init>(Landroidx/appcompat/app/WindowDecorActionBar; Landroid/content/Context; Landroidx/appcompat/view/ActionMode$Callback;)V [access_flags=public constructor]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:androidx.appcompat.app.WindowDecorActionBar
+# - v4:android.content.Context
+# - v5:androidx.appcompat.view.ActionMode$Callback
+#
+# - return:void
+
+<init>-BB@0x0 : 
+	0       (00000000) iput-object          v3, v2, Landroidx/appcompat/app/WindowDecorActionBar$ActionModeImpl;->this$0 Landroidx/appcompat/app/WindowDecorActionBar;
+	1       (00000004) invoke-direct        v2, Landroidx/appcompat/view/ActionMode;-><init>()V
+	2       (0000000a) iput-object          v4, v2, Landroidx/appcompat/app/WindowDecorActionBar$ActionModeImpl;->mActionModeContext Landroid/content/Context;
+	3       (0000000e) iput-object          v5, v2, Landroidx/appcompat/app/WindowDecorActionBar$ActionModeImpl;->mCallback Landroidx/appcompat/view/ActionMode$Callback;
+	4       (00000012) new-instance         v0, Landroidx/appcompat/view/menu/MenuBuilder;
+	5       (00000016) invoke-direct        v0, v4, Landroidx/appcompat/view/menu/MenuBuilder;-><init>(Landroid/content/Context;)V
+	6       (0000001c) const/4              v1, 1
+	7       (0000001e) invoke-virtual       v0, v1, Landroidx/appcompat/view/menu/MenuBuilder;->setDefaultShowAsAction(I)Landroidx/appcompat/view/menu/MenuBuilder;
+	8       (00000024) move-result-object   v0
+	9       (00000026) iput-object          v0, v2, Landroidx/appcompat/app/WindowDecorActionBar$ActionModeImpl;->mMenu Landroidx/appcompat/view/menu/MenuBuilder;
+	10      (0000002a) iget-object          v0, v2, Landroidx/appcompat/app/WindowDecorActionBar$ActionModeImpl;->mMenu Landroidx/appcompat/view/menu/MenuBuilder;
+	11      (0000002e) invoke-virtual       v0, v2, Landroidx/appcompat/view/menu/MenuBuilder;->setCallback(Landroidx/appcompat/view/menu/MenuBuilder$Callback;)V
+	12      (00000034) return-void          
+

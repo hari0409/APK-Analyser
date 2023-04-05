@@ -1,0 +1,76 @@
+# Landroidx/appcompat/widget/SearchView$6;->onKey(Landroid/view/View; I Landroid/view/KeyEvent;)Z [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v5
+# - v6:android.view.View
+# - v7:int
+# - v8:android.view.KeyEvent
+#
+# - return:boolean
+
+onKey-BB@0x0 : [ onKey-BB@0x10 onKey-BB@0x12 ]
+	0       (00000000) const/4              v1, 1
+	1       (00000002) const/4              v0, 0
+	2       (00000004) iget-object          v2, v5, Landroidx/appcompat/widget/SearchView$6;->this$0 Landroidx/appcompat/widget/SearchView;
+	3       (00000008) iget-object          v2, v2, Landroidx/appcompat/widget/SearchView;->mSearchable Landroid/app/SearchableInfo;
+	4       (0000000c) if-nez               v2, +3
+
+onKey-BB@0x10 : 
+	5       (00000010) return               v0
+
+onKey-BB@0x12 : [ onKey-BB@0x26 onKey-BB@0x4a ]
+	6       (00000012) iget-object          v2, v5, Landroidx/appcompat/widget/SearchView$6;->this$0 Landroidx/appcompat/widget/SearchView;
+	7       (00000016) iget-object          v2, v2, Landroidx/appcompat/widget/SearchView;->mSearchSrcTextView Landroidx/appcompat/widget/SearchView$SearchAutoComplete;
+	8       (0000001a) invoke-virtual       v2, Landroidx/appcompat/widget/SearchView$SearchAutoComplete;->isPopupShowing()Z
+	9       (00000020) move-result          v2
+	10      (00000022) if-eqz               v2, +14
+
+onKey-BB@0x26 : [ onKey-BB@0x3c onKey-BB@0x4a ]
+	11      (00000026) iget-object          v2, v5, Landroidx/appcompat/widget/SearchView$6;->this$0 Landroidx/appcompat/widget/SearchView;
+	12      (0000002a) iget-object          v2, v2, Landroidx/appcompat/widget/SearchView;->mSearchSrcTextView Landroidx/appcompat/widget/SearchView$SearchAutoComplete;
+	13      (0000002e) invoke-virtual       v2, Landroidx/appcompat/widget/SearchView$SearchAutoComplete;->getListSelection()I
+	14      (00000034) move-result          v2
+	15      (00000036) const/4              v3, -1
+	16      (00000038) if-eq                v2, v3, +9
+
+onKey-BB@0x3c : [ onKey-BB@0x10 ]
+	17      (0000003c) iget-object          v0, v5, Landroidx/appcompat/widget/SearchView$6;->this$0 Landroidx/appcompat/widget/SearchView;
+	18      (00000040) invoke-virtual       v0, v6, v7, v8, Landroidx/appcompat/widget/SearchView;->onSuggestionsKey(Landroid/view/View; I Landroid/view/KeyEvent;)Z
+	19      (00000046) move-result          v0
+	20      (00000048) goto                 -1c
+
+onKey-BB@0x4a : [ onKey-BB@0x5e onKey-BB@0x10 ]
+	21      (0000004a) iget-object          v2, v5, Landroidx/appcompat/widget/SearchView$6;->this$0 Landroidx/appcompat/widget/SearchView;
+	22      (0000004e) iget-object          v2, v2, Landroidx/appcompat/widget/SearchView;->mSearchSrcTextView Landroidx/appcompat/widget/SearchView$SearchAutoComplete;
+	23      (00000052) invoke-virtual       v2, Landroidx/appcompat/widget/SearchView$SearchAutoComplete;->isEmpty()Z
+	24      (00000058) move-result          v2
+	25      (0000005a) if-nez               v2, -25
+
+onKey-BB@0x5e : [ onKey-BB@0x6a onKey-BB@0x10 ]
+	26      (0000005e) invoke-virtual       v8, Landroid/view/KeyEvent;->hasNoModifiers()Z
+	27      (00000064) move-result          v2
+	28      (00000066) if-eqz               v2, -2b
+
+onKey-BB@0x6a : [ onKey-BB@0x76 onKey-BB@0x10 ]
+	29      (0000006a) invoke-virtual       v8, Landroid/view/KeyEvent;->getAction()I
+	30      (00000070) move-result          v2
+	31      (00000072) if-ne                v2, v1, -31
+
+onKey-BB@0x76 : [ onKey-BB@0x7e onKey-BB@0x10 ]
+	32      (00000076) const/16             v2, 66
+	33      (0000007a) if-ne                v7, v2, -35
+
+onKey-BB@0x7e : [ onKey-BB@0x10 ]
+	34      (0000007e) invoke-virtual       v6, Landroid/view/View;->cancelLongPress()V
+	35      (00000084) iget-object          v2, v5, Landroidx/appcompat/widget/SearchView$6;->this$0 Landroidx/appcompat/widget/SearchView;
+	36      (00000088) const/4              v3, 0
+	37      (0000008a) iget-object          v4, v5, Landroidx/appcompat/widget/SearchView$6;->this$0 Landroidx/appcompat/widget/SearchView;
+	38      (0000008e) iget-object          v4, v4, Landroidx/appcompat/widget/SearchView;->mSearchSrcTextView Landroidx/appcompat/widget/SearchView$SearchAutoComplete;
+	39      (00000092) invoke-virtual       v4, Landroidx/appcompat/widget/SearchView$SearchAutoComplete;->getText()Landroid/text/Editable;
+	40      (00000098) move-result-object   v4
+	41      (0000009a) invoke-virtual       v4, Ljava/lang/Object;->toString()Ljava/lang/String;
+	42      (000000a0) move-result-object   v4
+	43      (000000a2) invoke-virtual       v2, v0, v3, v4, Landroidx/appcompat/widget/SearchView;->launchQuerySearch(I Ljava/lang/String; Ljava/lang/String;)V
+	44      (000000a8) move                 v0, v1
+	45      (000000aa) goto                 -4d
+

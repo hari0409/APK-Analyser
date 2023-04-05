@@ -1,0 +1,25 @@
+# Landroidx/appcompat/app/AppCompatDialog;-><init>(Landroid/content/Context; I)V [access_flags=public constructor]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:android.content.Context
+# - v4:int
+#
+# - return:void
+
+<init>-BB@0x0 : 
+	0       (00000000) invoke-static        v3, v4, Landroidx/appcompat/app/AppCompatDialog;->getThemeResId(Landroid/content/Context; I)I
+	1       (00000006) move-result          v0
+	2       (00000008) invoke-direct        v2, v3, v0, Landroid/app/Dialog;-><init>(Landroid/content/Context; I)V
+	3       (0000000e) new-instance         v0, Landroidx/appcompat/app/AppCompatDialog$1;
+	4       (00000012) invoke-direct        v0, v2, Landroidx/appcompat/app/AppCompatDialog$1;-><init>(Landroidx/appcompat/app/AppCompatDialog;)V
+	5       (00000018) iput-object          v0, v2, Landroidx/appcompat/app/AppCompatDialog;->mKeyDispatcher Landroidx/core/view/KeyEventDispatcher$Component;
+	6       (0000001c) invoke-virtual       v2, Landroidx/appcompat/app/AppCompatDialog;->getDelegate()Landroidx/appcompat/app/AppCompatDelegate;
+	7       (00000022) move-result-object   v0
+	8       (00000024) const/4              v1, 0
+	9       (00000026) invoke-virtual       v0, v1, Landroidx/appcompat/app/AppCompatDelegate;->onCreate(Landroid/os/Bundle;)V
+	10      (0000002c) invoke-virtual       v2, Landroidx/appcompat/app/AppCompatDialog;->getDelegate()Landroidx/appcompat/app/AppCompatDelegate;
+	11      (00000032) move-result-object   v0
+	12      (00000034) invoke-virtual       v0, Landroidx/appcompat/app/AppCompatDelegate;->applyDayNight()Z
+	13      (0000003a) return-void          
+

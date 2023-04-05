@@ -1,0 +1,15 @@
+# Landroidx/appcompat/app/AppCompatDelegateImpl;->closePanel(I)V [access_flags=]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:int
+#
+# - return:void
+
+closePanel-BB@0x0 : 
+	0       (00000000) const/4              v1, 1
+	1       (00000002) invoke-virtual       v2, v3, v1, Landroidx/appcompat/app/AppCompatDelegateImpl;->getPanelState(I Z)Landroidx/appcompat/app/AppCompatDelegateImpl$PanelFeatureState;
+	2       (00000008) move-result-object   v0
+	3       (0000000a) invoke-virtual       v2, v0, v1, Landroidx/appcompat/app/AppCompatDelegateImpl;->closePanel(Landroidx/appcompat/app/AppCompatDelegateImpl$PanelFeatureState; Z)V
+	4       (00000010) return-void          
+

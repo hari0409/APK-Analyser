@@ -1,0 +1,21 @@
+# Lcom/afwsamples/testdpc/common/ColorPicker;->onSaveInstanceState(Landroid/os/Bundle;)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:android.os.Bundle
+#
+# - return:void
+
+onSaveInstanceState-BB@0x0 : 
+	0       (00000000) const-string         v0, 'init_color'
+	1       (00000004) iget                 v1, v2, Lcom/afwsamples/testdpc/common/ColorPicker;->mCurrentColor I
+	2       (00000008) invoke-virtual       v3, v0, v1, Landroid/os/Bundle;->putInt(Ljava/lang/String; I)V
+	3       (0000000e) const-string         v0, 'listener_fragment_tag'
+	4       (00000012) iget-object          v1, v2, Lcom/afwsamples/testdpc/common/ColorPicker;->mListenerTag Ljava/lang/String;
+	5       (00000016) invoke-virtual       v3, v0, v1, Landroid/os/Bundle;->putString(Ljava/lang/String; Ljava/lang/String;)V
+	6       (0000001c) const-string         v0, 'id'
+	7       (00000020) iget-object          v1, v2, Lcom/afwsamples/testdpc/common/ColorPicker;->mId Ljava/lang/String;
+	8       (00000024) invoke-virtual       v3, v0, v1, Landroid/os/Bundle;->putString(Ljava/lang/String; Ljava/lang/String;)V
+	9       (0000002a) invoke-super         v2, v3, Landroid/app/DialogFragment;->onSaveInstanceState(Landroid/os/Bundle;)V
+	10      (00000030) return-void          
+

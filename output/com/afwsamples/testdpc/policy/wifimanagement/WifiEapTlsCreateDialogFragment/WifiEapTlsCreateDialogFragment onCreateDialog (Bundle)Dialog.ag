@@ -1,0 +1,100 @@
+# Lcom/afwsamples/testdpc/policy/wifimanagement/WifiEapTlsCreateDialogFragment;->onCreateDialog(Landroid/os/Bundle;)Landroid/app/Dialog; [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v9
+# - v10:android.os.Bundle
+#
+# - return:android.app.Dialog
+
+onCreateDialog-BB@0x0 : [ onCreateDialog-BB@0x86 onCreateDialog-BB@0x168 ]
+	0       (00000000) const/4              v8, 0
+	1       (00000002) invoke-virtual       v9, Lcom/afwsamples/testdpc/policy/wifimanagement/WifiEapTlsCreateDialogFragment;->getActivity()Landroid/app/Activity;
+	2       (00000008) move-result-object   v4
+	3       (0000000a) invoke-static        v4, Landroid/view/LayoutInflater;->from(Landroid/content/Context;)Landroid/view/LayoutInflater;
+	4       (00000010) move-result-object   v1
+	5       (00000012) const                v4, 2131427376 # [1.847636649697643e+38]
+	6       (00000018) invoke-virtual       v1, v4, v8, Landroid/view/LayoutInflater;->inflate(I Landroid/view/ViewGroup;)Landroid/view/View;
+	7       (0000001e) move-result-object   v2
+	8       (00000020) const                v4, 2131296463 # [1.8210843388132143e+38]
+	9       (00000026) invoke-virtual       v2, v4, Landroid/view/View;->findViewById(I)Landroid/view/View;
+	10      (0000002c) move-result-object   v4
+	11      (0000002e) new-instance         v5, Lcom/afwsamples/testdpc/policy/wifimanagement/WifiEapTlsCreateDialogFragment$ImportButtonOnClickListener;
+	12      (00000032) const/4              v6, 1
+	13      (00000034) const-string         v7, 'application/x-x509-ca-cert'
+	14      (00000038) invoke-direct        v5, v9, v6, v7, Lcom/afwsamples/testdpc/policy/wifimanagement/WifiEapTlsCreateDialogFragment$ImportButtonOnClickListener;-><init>(Lcom/afwsamples/testdpc/policy/wifimanagement/WifiEapTlsCreateDialogFragment; I Ljava/lang/String;)V
+	15      (0000003e) invoke-virtual       v4, v5, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
+	16      (00000044) const                v4, 2131296464 # [1.8210845416373103e+38]
+	17      (0000004a) invoke-virtual       v2, v4, Landroid/view/View;->findViewById(I)Landroid/view/View;
+	18      (00000050) move-result-object   v4
+	19      (00000052) new-instance         v5, Lcom/afwsamples/testdpc/policy/wifimanagement/WifiEapTlsCreateDialogFragment$ImportButtonOnClickListener;
+	20      (00000056) const/4              v6, 2
+	21      (00000058) const-string         v7, 'application/x-pkcs12'
+	22      (0000005c) invoke-direct        v5, v9, v6, v7, Lcom/afwsamples/testdpc/policy/wifimanagement/WifiEapTlsCreateDialogFragment$ImportButtonOnClickListener;-><init>(Lcom/afwsamples/testdpc/policy/wifimanagement/WifiEapTlsCreateDialogFragment; I Ljava/lang/String;)V
+	23      (00000062) invoke-virtual       v4, v5, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
+	24      (00000068) const                v4, 2131296601 # [1.8211123285384673e+38]
+	25      (0000006e) invoke-virtual       v2, v4, Landroid/view/View;->findViewById(I)Landroid/view/View;
+	26      (00000074) move-result-object   v3
+	27      (00000076) check-cast           v3, Landroid/widget/Button;
+	28      (0000007a) sget                 v4, Lcom/afwsamples/testdpc/common/Util;->SDK_INT I
+	29      (0000007e) const/16             v5, 31
+	30      (00000082) if-lt                v4, v5, +73
+
+onCreateDialog-BB@0x86 : [ onCreateDialog-BB@0x96 ]
+	31      (00000086) new-instance         v4, Lcom/afwsamples/testdpc/policy/wifimanagement/WifiEapTlsCreateDialogFragment$$Lambda$0;
+	32      (0000008a) invoke-direct        v4, v9, Lcom/afwsamples/testdpc/policy/wifimanagement/WifiEapTlsCreateDialogFragment$$Lambda$0;-><init>(Lcom/afwsamples/testdpc/policy/wifimanagement/WifiEapTlsCreateDialogFragment;)V
+	33      (00000090) invoke-virtual       v3, v4, Landroid/widget/Button;->setOnClickListener(Landroid/view/View$OnClickListener;)V
+
+onCreateDialog-BB@0x96 : 
+	34      (00000096) const                v4, 2131296602 # [1.8211125313625634e+38]
+	35      (0000009c) invoke-virtual       v2, v4, Landroid/view/View;->findViewById(I)Landroid/view/View;
+	36      (000000a2) move-result-object   v4
+	37      (000000a4) check-cast           v4, Landroid/widget/TextView;
+	38      (000000a8) iput-object          v4, v9, Lcom/afwsamples/testdpc/policy/wifimanagement/WifiEapTlsCreateDialogFragment;->mCaCertTextView Landroid/widget/TextView;
+	39      (000000ac) const                v4, 2131296610 # [1.8211141539553317e+38]
+	40      (000000b2) invoke-virtual       v2, v4, Landroid/view/View;->findViewById(I)Landroid/view/View;
+	41      (000000b8) move-result-object   v4
+	42      (000000ba) check-cast           v4, Landroid/widget/TextView;
+	43      (000000be) iput-object          v4, v9, Lcom/afwsamples/testdpc/policy/wifimanagement/WifiEapTlsCreateDialogFragment;->mUserCertTextView Landroid/widget/TextView;
+	44      (000000c2) const                v4, 2131296635 # [1.8211192245577326e+38]
+	45      (000000c8) invoke-virtual       v2, v4, Landroid/view/View;->findViewById(I)Landroid/view/View;
+	46      (000000ce) move-result-object   v4
+	47      (000000d0) check-cast           v4, Landroid/widget/EditText;
+	48      (000000d4) iput-object          v4, v9, Lcom/afwsamples/testdpc/policy/wifimanagement/WifiEapTlsCreateDialogFragment;->mSsidEditText Landroid/widget/EditText;
+	49      (000000d8) const                v4, 2131296731 # [1.821138695670952e+38]
+	50      (000000de) invoke-virtual       v2, v4, Landroid/view/View;->findViewById(I)Landroid/view/View;
+	51      (000000e4) move-result-object   v4
+	52      (000000e6) check-cast           v4, Landroid/widget/EditText;
+	53      (000000ea) iput-object          v4, v9, Lcom/afwsamples/testdpc/policy/wifimanagement/WifiEapTlsCreateDialogFragment;->mCertPasswordEditText Landroid/widget/EditText;
+	54      (000000ee) const                v4, 2131296732 # [1.821138898495048e+38]
+	55      (000000f4) invoke-virtual       v2, v4, Landroid/view/View;->findViewById(I)Landroid/view/View;
+	56      (000000fa) move-result-object   v4
+	57      (000000fc) check-cast           v4, Landroid/widget/EditText;
+	58      (00000100) iput-object          v4, v9, Lcom/afwsamples/testdpc/policy/wifimanagement/WifiEapTlsCreateDialogFragment;->mIdentityEditText Landroid/widget/EditText;
+	59      (00000104) invoke-direct        v9, Lcom/afwsamples/testdpc/policy/wifimanagement/WifiEapTlsCreateDialogFragment;->populateUi()V
+	60      (0000010a) new-instance         v4, Landroid/app/AlertDialog$Builder;
+	61      (0000010e) invoke-virtual       v9, Lcom/afwsamples/testdpc/policy/wifimanagement/WifiEapTlsCreateDialogFragment;->getActivity()Landroid/app/Activity;
+	62      (00000114) move-result-object   v5
+	63      (00000116) invoke-direct        v4, v5, Landroid/app/AlertDialog$Builder;-><init>(Landroid/content/Context;)V
+	64      (0000011c) const                v5, 2131689641 # [1.90083031124466e+38]
+	65      (00000122) invoke-virtual       v4, v5, Landroid/app/AlertDialog$Builder;->setTitle(I)Landroid/app/AlertDialog$Builder;
+	66      (00000128) move-result-object   v4
+	67      (0000012a) invoke-virtual       v4, v2, Landroid/app/AlertDialog$Builder;->setView(Landroid/view/View;)Landroid/app/AlertDialog$Builder;
+	68      (00000130) move-result-object   v4
+	69      (00000132) const                v5, 2131690389 # [1.900982023668495e+38]
+	70      (00000138) invoke-virtual       v4, v5, v8, Landroid/app/AlertDialog$Builder;->setPositiveButton(I Landroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
+	71      (0000013e) move-result-object   v4
+	72      (00000140) const                v5, 2131690376 # [1.9009793869552467e+38]
+	73      (00000146) invoke-virtual       v4, v5, v8, Landroid/app/AlertDialog$Builder;->setNegativeButton(I Landroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
+	74      (0000014c) move-result-object   v4
+	75      (0000014e) invoke-virtual       v4, Landroid/app/AlertDialog$Builder;->create()Landroid/app/AlertDialog;
+	76      (00000154) move-result-object   v0
+	77      (00000156) new-instance         v4, Lcom/afwsamples/testdpc/policy/wifimanagement/WifiEapTlsCreateDialogFragment$1;
+	78      (0000015a) invoke-direct        v4, v9, v0, Lcom/afwsamples/testdpc/policy/wifimanagement/WifiEapTlsCreateDialogFragment$1;-><init>(Lcom/afwsamples/testdpc/policy/wifimanagement/WifiEapTlsCreateDialogFragment; Landroid/app/AlertDialog;)V
+	79      (00000160) invoke-virtual       v0, v4, Landroid/app/AlertDialog;->setOnShowListener(Landroid/content/DialogInterface$OnShowListener;)V
+	80      (00000166) return-object        v0
+
+onCreateDialog-BB@0x168 : [ onCreateDialog-BB@0x96 ]
+	81      (00000168) const/16             v4, 8
+	82      (0000016c) invoke-virtual       v3, v4, Landroid/widget/Button;->setVisibility(I)V
+	83      (00000172) goto                 -6e
+

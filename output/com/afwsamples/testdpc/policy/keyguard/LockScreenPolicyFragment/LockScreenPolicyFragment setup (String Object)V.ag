@@ -1,0 +1,86 @@
+# Lcom/afwsamples/testdpc/policy/keyguard/LockScreenPolicyFragment;->setup(Ljava/lang/String; Ljava/lang/Object;)V [access_flags=private]
+#
+# Parameters:
+# - local registers: v0...v5
+# - v6:java.lang.String
+# - v7:java.lang.Object
+#
+# - return:void
+
+setup-BB@0x0 : [ setup-BB@0x2a setup-BB@0x44 ]
+	0       (00000000) invoke-virtual       v5, v6, Lcom/afwsamples/testdpc/policy/keyguard/LockScreenPolicyFragment;->findPreference(Ljava/lang/CharSequence;)Landroidx/preference/Preference;
+	1       (00000006) move-result-object   v1
+	2       (00000008) move-object          v0, v1
+	3       (0000000a) check-cast           v0, Lcom/afwsamples/testdpc/common/preference/DpcPreferenceBase;
+	4       (0000000e) new-instance         v3, Lcom/afwsamples/testdpc/policy/keyguard/LockScreenPolicyFragment$$Lambda$4;
+	5       (00000012) invoke-direct        v3, v5, v6, Lcom/afwsamples/testdpc/policy/keyguard/LockScreenPolicyFragment$$Lambda$4;-><init>(Lcom/afwsamples/testdpc/policy/keyguard/LockScreenPolicyFragment; Ljava/lang/String;)V
+	6       (00000018) invoke-interface     v0, v3, Lcom/afwsamples/testdpc/common/preference/DpcPreferenceBase;->setCustomConstraint(Lcom/afwsamples/testdpc/common/preference/CustomConstraint;)V
+	7       (0000001e) sget                 v3, Lcom/afwsamples/testdpc/common/Util;->SDK_INT I
+	8       (00000022) const/16             v4, 24
+	9       (00000026) if-ge                v3, v4, +f
+
+setup-BB@0x2a : [ setup-BB@0x3a setup-BB@0x44 ]
+	10      (0000002a) const-string         v3, 'key_set_trust_agent_config'
+	11      (0000002e) invoke-virtual       v6, v3, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+	12      (00000034) move-result          v3
+	13      (00000036) if-eqz               v3, +7
+
+setup-BB@0x3a : [ setup-BB@0x42 ]
+	14      (0000003a) const/4              v3, 2
+	15      (0000003c) invoke-interface     v0, v3, Lcom/afwsamples/testdpc/common/preference/DpcPreferenceBase;->setAdminConstraint(I)V
+
+setup-BB@0x42 : 
+	16      (00000042) return-void          
+
+setup-BB@0x44 : [ setup-BB@0x4c setup-BB@0x96 ]
+	17      (00000044) instance-of          v3, v1, Landroidx/preference/EditTextPreference;
+	18      (00000048) if-eqz               v3, +27
+
+setup-BB@0x4c : [ setup-BB@0x50 setup-BB@0x92 ]
+	19      (0000004c) if-eqz               v7, +23
+
+setup-BB@0x50 : [ setup-BB@0x58 ]
+	20      (00000050) invoke-virtual       v7, Ljava/lang/Object;->toString()Ljava/lang/String;
+	21      (00000056) move-result-object   v2
+
+setup-BB@0x58 : [ setup-BB@0x60 setup-BB@0x72 ]
+	22      (00000058) instance-of          v3, v7, Ljava/lang/Number;
+	23      (0000005c) if-eqz               v3, +b
+
+setup-BB@0x60 : [ setup-BB@0x70 setup-BB@0x72 ]
+	24      (00000060) const-string         v3, '0'
+	25      (00000064) invoke-virtual       v3, v2, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+	26      (0000006a) move-result          v3
+	27      (0000006c) if-eqz               v3, +3
+
+setup-BB@0x70 : [ setup-BB@0x72 ]
+	28      (00000070) const/4              v2, 0
+
+setup-BB@0x72 : [ setup-BB@0x84 ]
+	29      (00000072) move-object          v3, v1
+	30      (00000074) check-cast           v3, Landroidx/preference/EditTextPreference;
+	31      (00000078) invoke-virtual       v3, v2, Landroidx/preference/EditTextPreference;->setText(Ljava/lang/String;)V
+	32      (0000007e) invoke-virtual       v1, v2, Landroidx/preference/Preference;->setSummary(Ljava/lang/CharSequence;)V
+
+setup-BB@0x84 : [ setup-BB@0x42 ]
+	33      (00000084) invoke-virtual       v1, v5, Landroidx/preference/Preference;->setOnPreferenceChangeListener(Landroidx/preference/Preference$OnPreferenceChangeListener;)V
+	34      (0000008a) invoke-virtual       v1, v5, Landroidx/preference/Preference;->setOnPreferenceClickListener(Landroidx/preference/Preference$OnPreferenceClickListener;)V
+	35      (00000090) goto                 -27
+
+setup-BB@0x92 : [ setup-BB@0x58 ]
+	36      (00000092) const/4              v2, 0
+	37      (00000094) goto                 -1e
+
+setup-BB@0x96 : [ setup-BB@0x9e setup-BB@0x84 ]
+	38      (00000096) instance-of          v3, v1, Landroidx/preference/TwoStatePreference;
+	39      (0000009a) if-eqz               v3, -b
+
+setup-BB@0x9e : [ setup-BB@0x84 ]
+	40      (0000009e) move-object          v3, v1
+	41      (000000a0) check-cast           v3, Landroidx/preference/TwoStatePreference;
+	42      (000000a4) check-cast           v7, Ljava/lang/Boolean;
+	43      (000000a8) invoke-virtual       v7, Ljava/lang/Boolean;->booleanValue()Z
+	44      (000000ae) move-result          v4
+	45      (000000b0) invoke-virtual       v3, v4, Landroidx/preference/TwoStatePreference;->setChecked(Z)V
+	46      (000000b6) goto                 -19
+

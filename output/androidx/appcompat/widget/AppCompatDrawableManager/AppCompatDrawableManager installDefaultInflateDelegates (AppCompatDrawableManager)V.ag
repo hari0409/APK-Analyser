@@ -1,0 +1,30 @@
+# Landroidx/appcompat/widget/AppCompatDrawableManager;->installDefaultInflateDelegates(Landroidx/appcompat/widget/AppCompatDrawableManager;)V [access_flags=private static]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:androidx.appcompat.widget.AppCompatDrawableManager
+#
+# - return:void
+
+installDefaultInflateDelegates-BB@0x0 : [ installDefaultInflateDelegates-BB@0xc installDefaultInflateDelegates-BB@0x48 ]
+	0       (00000000) sget                 v0, Landroid/os/Build$VERSION;->SDK_INT I
+	1       (00000004) const/16             v1, 24
+	2       (00000008) if-ge                v0, v1, +20
+
+installDefaultInflateDelegates-BB@0xc : [ installDefaultInflateDelegates-BB@0x48 ]
+	3       (0000000c) const-string         v0, 'vector'
+	4       (00000010) new-instance         v1, Landroidx/appcompat/widget/AppCompatDrawableManager$VdcInflateDelegate;
+	5       (00000014) invoke-direct        v1, Landroidx/appcompat/widget/AppCompatDrawableManager$VdcInflateDelegate;-><init>()V
+	6       (0000001a) invoke-direct        v2, v0, v1, Landroidx/appcompat/widget/AppCompatDrawableManager;->addDelegate(Ljava/lang/String; Landroidx/appcompat/widget/AppCompatDrawableManager$InflateDelegate;)V
+	7       (00000020) const-string         v0, 'animated-vector'
+	8       (00000024) new-instance         v1, Landroidx/appcompat/widget/AppCompatDrawableManager$AvdcInflateDelegate;
+	9       (00000028) invoke-direct        v1, Landroidx/appcompat/widget/AppCompatDrawableManager$AvdcInflateDelegate;-><init>()V
+	10      (0000002e) invoke-direct        v2, v0, v1, Landroidx/appcompat/widget/AppCompatDrawableManager;->addDelegate(Ljava/lang/String; Landroidx/appcompat/widget/AppCompatDrawableManager$InflateDelegate;)V
+	11      (00000034) const-string         v0, 'animated-selector'
+	12      (00000038) new-instance         v1, Landroidx/appcompat/widget/AppCompatDrawableManager$AsldcInflateDelegate;
+	13      (0000003c) invoke-direct        v1, Landroidx/appcompat/widget/AppCompatDrawableManager$AsldcInflateDelegate;-><init>()V
+	14      (00000042) invoke-direct        v2, v0, v1, Landroidx/appcompat/widget/AppCompatDrawableManager;->addDelegate(Ljava/lang/String; Landroidx/appcompat/widget/AppCompatDrawableManager$InflateDelegate;)V
+
+installDefaultInflateDelegates-BB@0x48 : 
+	15      (00000048) return-void          
+

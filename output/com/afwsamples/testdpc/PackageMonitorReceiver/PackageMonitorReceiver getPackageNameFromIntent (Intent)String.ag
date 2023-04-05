@@ -1,0 +1,26 @@
+# Lcom/afwsamples/testdpc/PackageMonitorReceiver;->getPackageNameFromIntent(Landroid/content/Intent;)Ljava/lang/String; [access_flags=private]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:android.content.Intent
+#
+# - return:java.lang.String
+
+getPackageNameFromIntent-BB@0x0 : [ getPackageNameFromIntent-BB@0xc getPackageNameFromIntent-BB@0x10 ]
+	0       (00000000) invoke-virtual       v2, Landroid/content/Intent;->getData()Landroid/net/Uri;
+	1       (00000006) move-result-object   v0
+	2       (00000008) if-nez               v0, +4
+
+getPackageNameFromIntent-BB@0xc : [ getPackageNameFromIntent-BB@0xe ]
+	3       (0000000c) const/4              v0, 0
+
+getPackageNameFromIntent-BB@0xe : 
+	4       (0000000e) return-object        v0
+
+getPackageNameFromIntent-BB@0x10 : [ getPackageNameFromIntent-BB@0xe ]
+	5       (00000010) invoke-virtual       v2, Landroid/content/Intent;->getData()Landroid/net/Uri;
+	6       (00000016) move-result-object   v0
+	7       (00000018) invoke-virtual       v0, Landroid/net/Uri;->getSchemeSpecificPart()Ljava/lang/String;
+	8       (0000001e) move-result-object   v0
+	9       (00000020) goto                 -9
+

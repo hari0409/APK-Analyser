@@ -1,0 +1,59 @@
+# Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->chooseAccount()V [access_flags=private]
+#
+# Parameters:
+# local registers: v0...v4
+#
+# - return:void
+
+chooseAccount-BB@0x0 : [ chooseAccount-BB@0xc chooseAccount-BB@0x20 ]
+	0       (00000000) invoke-virtual       v4, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->getActivity()Landroid/app/Activity;
+	1       (00000006) move-result-object   v2
+	2       (00000008) if-eqz               v2, +c
+
+chooseAccount-BB@0xc : [ chooseAccount-BB@0x20 chooseAccount-BB@0x22 ]
+	3       (0000000c) invoke-virtual       v4, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->getActivity()Landroid/app/Activity;
+	4       (00000012) move-result-object   v2
+	5       (00000014) invoke-virtual       v2, Landroid/app/Activity;->isFinishing()Z
+	6       (0000001a) move-result          v2
+	7       (0000001c) if-eqz               v2, +3
+
+chooseAccount-BB@0x20 : 
+	8       (00000020) return-void          
+
+chooseAccount-BB@0x22 : [ chooseAccount-BB@0x42 chooseAccount-BB@0x56 ]
+	9       (00000022) iget-object          v2, v4, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->mAccountManager Landroid/accounts/AccountManager;
+	10      (00000026) invoke-virtual       v2, Landroid/accounts/AccountManager;->getAccounts()[Landroid/accounts/Account;
+	11      (0000002c) move-result-object   v2
+	12      (0000002e) invoke-static        v2, Ljava/util/Arrays;->asList([Ljava/lang/Object;)Ljava/util/List;
+	13      (00000034) move-result-object   v1
+	14      (00000036) invoke-interface     v1, Ljava/util/List;->isEmpty()Z
+	15      (0000003c) move-result          v2
+	16      (0000003e) if-eqz               v2, +c
+
+chooseAccount-BB@0x42 : [ chooseAccount-BB@0x20 ]
+	17      (00000042) const                v2, 2131689978 # [1.900898662965024e+38]
+	18      (00000048) const/4              v3, 0
+	19      (0000004a) new-array            v3, v3, [Ljava/lang/Object;
+	20      (0000004e) invoke-direct        v4, v2, v3, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->showToast(I [Ljava/lang/Object;)V
+	21      (00000054) goto                 -1a
+
+chooseAccount-BB@0x56 : [ chooseAccount-BB@0x20 ]
+	22      (00000056) new-instance         v0, Lcom/afwsamples/testdpc/common/AccountArrayAdapter;
+	23      (0000005a) invoke-virtual       v4, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->getActivity()Landroid/app/Activity;
+	24      (00000060) move-result-object   v2
+	25      (00000062) const                v3, 2131296274 # [1.8210460050590634e+38]
+	26      (00000068) invoke-direct        v0, v2, v3, v1, Lcom/afwsamples/testdpc/common/AccountArrayAdapter;-><init>(Landroid/content/Context; I Ljava/util/List;)V
+	27      (0000006e) new-instance         v2, Landroid/app/AlertDialog$Builder;
+	28      (00000072) invoke-virtual       v4, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->getActivity()Landroid/app/Activity;
+	29      (00000078) move-result-object   v3
+	30      (0000007a) invoke-direct        v2, v3, Landroid/app/AlertDialog$Builder;-><init>(Landroid/content/Context;)V
+	31      (00000080) const                v3, 2131690104 # [1.9009242188011248e+38]
+	32      (00000086) invoke-virtual       v2, v3, Landroid/app/AlertDialog$Builder;->setTitle(I)Landroid/app/AlertDialog$Builder;
+	33      (0000008c) move-result-object   v2
+	34      (0000008e) new-instance         v3, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment$$Lambda$65;
+	35      (00000092) invoke-direct        v3, v4, v1, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment$$Lambda$65;-><init>(Lcom/afwsamples/testdpc/policy/PolicyManagementFragment; Ljava/util/List;)V
+	36      (00000098) invoke-virtual       v2, v0, v3, Landroid/app/AlertDialog$Builder;->setAdapter(Landroid/widget/ListAdapter; Landroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
+	37      (0000009e) move-result-object   v2
+	38      (000000a0) invoke-virtual       v2, Landroid/app/AlertDialog$Builder;->show()Landroid/app/AlertDialog;
+	39      (000000a6) goto                 -43
+

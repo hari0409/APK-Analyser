@@ -1,0 +1,26 @@
+# Landroidx/appcompat/graphics/drawable/AnimatedStateListDrawableCompat;->jumpToCurrentState()V [access_flags=public]
+#
+# Parameters:
+# local registers: v0...v2
+#
+# - return:void
+
+jumpToCurrentState-BB@0x0 : [ jumpToCurrentState-BB@0x10 jumpToCurrentState-BB@0x32 ]
+	0       (00000000) const/4              v1, -1
+	1       (00000002) invoke-super         v2, Landroidx/appcompat/graphics/drawable/StateListDrawable;->jumpToCurrentState()V
+	2       (00000008) iget-object          v0, v2, Landroidx/appcompat/graphics/drawable/AnimatedStateListDrawableCompat;->mTransition Landroidx/appcompat/graphics/drawable/AnimatedStateListDrawableCompat$Transition;
+	3       (0000000c) if-eqz               v0, +13
+
+jumpToCurrentState-BB@0x10 : [ jumpToCurrentState-BB@0x32 ]
+	4       (00000010) iget-object          v0, v2, Landroidx/appcompat/graphics/drawable/AnimatedStateListDrawableCompat;->mTransition Landroidx/appcompat/graphics/drawable/AnimatedStateListDrawableCompat$Transition;
+	5       (00000014) invoke-virtual       v0, Landroidx/appcompat/graphics/drawable/AnimatedStateListDrawableCompat$Transition;->stop()V
+	6       (0000001a) const/4              v0, 0
+	7       (0000001c) iput-object          v0, v2, Landroidx/appcompat/graphics/drawable/AnimatedStateListDrawableCompat;->mTransition Landroidx/appcompat/graphics/drawable/AnimatedStateListDrawableCompat$Transition;
+	8       (00000020) iget                 v0, v2, Landroidx/appcompat/graphics/drawable/AnimatedStateListDrawableCompat;->mTransitionToIndex I
+	9       (00000024) invoke-virtual       v2, v0, Landroidx/appcompat/graphics/drawable/AnimatedStateListDrawableCompat;->selectDrawable(I)Z
+	10      (0000002a) iput                 v1, v2, Landroidx/appcompat/graphics/drawable/AnimatedStateListDrawableCompat;->mTransitionToIndex I
+	11      (0000002e) iput                 v1, v2, Landroidx/appcompat/graphics/drawable/AnimatedStateListDrawableCompat;->mTransitionFromIndex I
+
+jumpToCurrentState-BB@0x32 : 
+	12      (00000032) return-void          
+

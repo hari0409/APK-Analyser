@@ -1,0 +1,24 @@
+# Landroidx/appcompat/widget/ListPopupWindow;->isInputMethodNotNeeded()Z [access_flags=public]
+#
+# Parameters:
+# local registers: v0...v2
+#
+# - return:boolean
+
+isInputMethodNotNeeded-BB@0x0 : [ isInputMethodNotNeeded-BB@0x12 isInputMethodNotNeeded-BB@0x16 ]
+	0       (00000000) iget-object          v0, v2, Landroidx/appcompat/widget/ListPopupWindow;->mPopup Landroid/widget/PopupWindow;
+	1       (00000004) invoke-virtual       v0, Landroid/widget/PopupWindow;->getInputMethodMode()I
+	2       (0000000a) move-result          v0
+	3       (0000000c) const/4              v1, 2
+	4       (0000000e) if-ne                v0, v1, +4
+
+isInputMethodNotNeeded-BB@0x12 : [ isInputMethodNotNeeded-BB@0x14 ]
+	5       (00000012) const/4              v0, 1
+
+isInputMethodNotNeeded-BB@0x14 : 
+	6       (00000014) return               v0
+
+isInputMethodNotNeeded-BB@0x16 : [ isInputMethodNotNeeded-BB@0x14 ]
+	7       (00000016) const/4              v0, 0
+	8       (00000018) goto                 -2
+

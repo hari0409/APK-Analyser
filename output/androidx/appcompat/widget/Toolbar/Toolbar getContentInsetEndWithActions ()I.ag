@@ -1,0 +1,23 @@
+# Landroidx/appcompat/widget/Toolbar;->getContentInsetEndWithActions()I [access_flags=public]
+#
+# Parameters:
+# local registers: v0...v2
+#
+# - return:int
+
+getContentInsetEndWithActions-BB@0x0 : [ getContentInsetEndWithActions-BB@0xc getContentInsetEndWithActions-BB@0x12 ]
+	0       (00000000) iget                 v0, v2, Landroidx/appcompat/widget/Toolbar;->mContentInsetEndWithActions I
+	1       (00000004) const/high16         v1, -32768 # [-0.0]
+	2       (00000008) if-eq                v0, v1, +5
+
+getContentInsetEndWithActions-BB@0xc : [ getContentInsetEndWithActions-BB@0x10 ]
+	3       (0000000c) iget                 v0, v2, Landroidx/appcompat/widget/Toolbar;->mContentInsetEndWithActions I
+
+getContentInsetEndWithActions-BB@0x10 : 
+	4       (00000010) return               v0
+
+getContentInsetEndWithActions-BB@0x12 : [ getContentInsetEndWithActions-BB@0x10 ]
+	5       (00000012) invoke-virtual       v2, Landroidx/appcompat/widget/Toolbar;->getContentInsetEnd()I
+	6       (00000018) move-result          v0
+	7       (0000001a) goto                 -5
+

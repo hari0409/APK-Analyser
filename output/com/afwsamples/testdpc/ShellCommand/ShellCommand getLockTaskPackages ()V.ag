@@ -1,0 +1,29 @@
+# Lcom/afwsamples/testdpc/ShellCommand;->getLockTaskPackages()V [access_flags=private]
+#
+# Parameters:
+# local registers: v0...v3
+#
+# - return:void
+
+getLockTaskPackages-BB@0x0 : [ getLockTaskPackages-BB@0x12 getLockTaskPackages-BB@0x22 ]
+	0       (00000000) iget-object          v1, v3, Lcom/afwsamples/testdpc/ShellCommand;->mDevicePolicyManagerGateway Lcom/afwsamples/testdpc/DevicePolicyManagerGateway;
+	1       (00000004) invoke-interface     v1, Lcom/afwsamples/testdpc/DevicePolicyManagerGateway;->getLockTaskPackages()[Ljava/lang/String;
+	2       (0000000a) move-result-object   v0
+	3       (0000000c) array-length         v1, v0
+	4       (0000000e) if-nez               v1, +a
+
+getLockTaskPackages-BB@0x12 : [ getLockTaskPackages-BB@0x20 ]
+	5       (00000012) iget-object          v1, v3, Lcom/afwsamples/testdpc/ShellCommand;->mWriter Ljava/io/PrintWriter;
+	6       (00000016) const-string         v2, 'no lock task packages'
+	7       (0000001a) invoke-virtual       v1, v2, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
+
+getLockTaskPackages-BB@0x20 : 
+	8       (00000020) return-void          
+
+getLockTaskPackages-BB@0x22 : [ getLockTaskPackages-BB@0x20 ]
+	9       (00000022) iget-object          v1, v3, Lcom/afwsamples/testdpc/ShellCommand;->mWriter Ljava/io/PrintWriter;
+	10      (00000026) invoke-static        v0, Ljava/util/Arrays;->toString([Ljava/lang/Object;)Ljava/lang/String;
+	11      (0000002c) move-result-object   v2
+	12      (0000002e) invoke-virtual       v1, v2, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
+	13      (00000034) goto                 -a
+

@@ -1,0 +1,49 @@
+# Landroidx/appcompat/widget/AppCompatDrawableManager;->onDrawableLoadedFromResources(Landroid/content/Context; Landroidx/appcompat/widget/VectorEnabledTintResources; I)Landroid/graphics/drawable/Drawable; [access_flags=synchronized]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:android.content.Context
+# - v4:androidx.appcompat.widget.VectorEnabledTintResources
+# - v5:int
+#
+# - return:android.graphics.drawable.Drawable
+
+onDrawableLoadedFromResources-BB@0x0 : [ onDrawableLoadedFromResources-BB@0x2 ]
+	0       (00000000) monitor-enter        v2
+
+onDrawableLoadedFromResources-BB@0x2 : [ onDrawableLoadedFromResources-BB@0xe onDrawableLoadedFromResources-BB@0x16 ]
+	1       (00000002) invoke-direct        v2, v3, v5, Landroidx/appcompat/widget/AppCompatDrawableManager;->loadDrawableFromDelegates(Landroid/content/Context; I)Landroid/graphics/drawable/Drawable;
+	2       (00000008) move-result-object   v0
+	3       (0000000a) if-nez               v0, +6
+	2:21
+	(Ljava/lang/Throwable; -> 2c onDrawableLoadedFromResources-BB@0x2c)
+
+onDrawableLoadedFromResources-BB@0xe : [ onDrawableLoadedFromResources-BB@0x16 ]
+	4       (0000000e) invoke-virtual       v4, v5, Landroidx/appcompat/widget/VectorEnabledTintResources;->superGetDrawable(I)Landroid/graphics/drawable/Drawable;
+	5       (00000014) move-result-object   v0
+	2:21
+	(Ljava/lang/Throwable; -> 2c onDrawableLoadedFromResources-BB@0x2c)
+
+onDrawableLoadedFromResources-BB@0x16 : [ onDrawableLoadedFromResources-BB@0x1a onDrawableLoadedFromResources-BB@0x28 ]
+	6       (00000016) if-eqz               v0, +9
+	2:21
+	(Ljava/lang/Throwable; -> 2c onDrawableLoadedFromResources-BB@0x2c)
+
+onDrawableLoadedFromResources-BB@0x1a : [ onDrawableLoadedFromResources-BB@0x24 ]
+	7       (0000001a) const/4              v1, 0
+	8       (0000001c) invoke-direct        v2, v3, v5, v1, v0, Landroidx/appcompat/widget/AppCompatDrawableManager;->tintDrawable(Landroid/content/Context; I Z Landroid/graphics/drawable/Drawable;)Landroid/graphics/drawable/Drawable;
+	9       (00000022) move-result-object   v1
+
+onDrawableLoadedFromResources-BB@0x24 : 
+	10      (00000024) monitor-exit         v2
+	11      (00000026) return-object        v1
+
+onDrawableLoadedFromResources-BB@0x28 : [ onDrawableLoadedFromResources-BB@0x24 ]
+	12      (00000028) const/4              v1, 0
+	13      (0000002a) goto                 -3
+
+onDrawableLoadedFromResources-BB@0x2c : 
+	14      (0000002c) move-exception       v1
+	15      (0000002e) monitor-exit         v2
+	16      (00000030) throw                v1
+

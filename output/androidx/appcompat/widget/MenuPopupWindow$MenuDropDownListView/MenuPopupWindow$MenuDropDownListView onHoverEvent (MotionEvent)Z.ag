@@ -1,0 +1,91 @@
+# Landroidx/appcompat/widget/MenuPopupWindow$MenuDropDownListView;->onHoverEvent(Landroid/view/MotionEvent;)Z [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v11
+# - v12:android.view.MotionEvent
+#
+# - return:boolean
+
+onHoverEvent-BB@0x0 : [ onHoverEvent-BB@0x8 onHoverEvent-BB@0xb2 ]
+	0       (00000000) iget-object          v9, v11, Landroidx/appcompat/widget/MenuPopupWindow$MenuDropDownListView;->mHoverListener Landroidx/appcompat/widget/MenuItemHoverListener;
+	1       (00000004) if-eqz               v9, +57
+
+onHoverEvent-BB@0x8 : [ onHoverEvent-BB@0x18 onHoverEvent-BB@0xbc ]
+	2       (00000008) invoke-virtual       v11, Landroidx/appcompat/widget/MenuPopupWindow$MenuDropDownListView;->getAdapter()Landroid/widget/ListAdapter;
+	3       (0000000e) move-result-object   v0
+	4       (00000010) instance-of          v9, v0, Landroid/widget/HeaderViewListAdapter;
+	5       (00000014) if-eqz               v9, +54
+
+onHoverEvent-BB@0x18 : [ onHoverEvent-BB@0x32 ]
+	6       (00000018) move-object          v1, v0
+	7       (0000001a) check-cast           v1, Landroid/widget/HeaderViewListAdapter;
+	8       (0000001e) invoke-virtual       v1, Landroid/widget/HeaderViewListAdapter;->getHeadersCount()I
+	9       (00000024) move-result          v2
+	10      (00000026) invoke-virtual       v1, Landroid/widget/HeaderViewListAdapter;->getWrappedAdapter()Landroid/widget/ListAdapter;
+	11      (0000002c) move-result-object   v5
+	12      (0000002e) check-cast           v5, Landroidx/appcompat/view/menu/MenuAdapter;
+
+onHoverEvent-BB@0x32 : [ onHoverEvent-BB@0x44 onHoverEvent-BB@0x82 ]
+	13      (00000032) const/4              v6, 0
+	14      (00000034) invoke-virtual       v12, Landroid/view/MotionEvent;->getAction()I
+	15      (0000003a) move-result          v9
+	16      (0000003c) const/16             v10, 10
+	17      (00000040) if-eq                v9, v10, +21
+
+onHoverEvent-BB@0x44 : [ onHoverEvent-BB@0x66 onHoverEvent-BB@0x82 ]
+	18      (00000044) invoke-virtual       v12, Landroid/view/MotionEvent;->getX()F
+	19      (0000004a) move-result          v9
+	20      (0000004c) float-to-int         v9, v9
+	21      (0000004e) invoke-virtual       v12, Landroid/view/MotionEvent;->getY()F
+	22      (00000054) move-result          v10
+	23      (00000056) float-to-int         v10, v10
+	24      (00000058) invoke-virtual       v11, v9, v10, Landroidx/appcompat/widget/MenuPopupWindow$MenuDropDownListView;->pointToPosition(I I)I
+	25      (0000005e) move-result          v8
+	26      (00000060) const/4              v9, -1
+	27      (00000062) if-eq                v8, v9, +10
+
+onHoverEvent-BB@0x66 : [ onHoverEvent-BB@0x6e onHoverEvent-BB@0x82 ]
+	28      (00000066) sub-int              v3, v8, v2
+	29      (0000006a) if-ltz               v3, +c
+
+onHoverEvent-BB@0x6e : [ onHoverEvent-BB@0x7a onHoverEvent-BB@0x82 ]
+	30      (0000006e) invoke-virtual       v5, Landroidx/appcompat/view/menu/MenuAdapter;->getCount()I
+	31      (00000074) move-result          v9
+	32      (00000076) if-ge                v3, v9, +6
+
+onHoverEvent-BB@0x7a : [ onHoverEvent-BB@0x82 ]
+	33      (0000007a) invoke-virtual       v5, v3, Landroidx/appcompat/view/menu/MenuAdapter;->getItem(I)Landroidx/appcompat/view/menu/MenuItemImpl;
+	34      (00000080) move-result-object   v6
+
+onHoverEvent-BB@0x82 : [ onHoverEvent-BB@0x8a onHoverEvent-BB@0xb2 ]
+	35      (00000082) iget-object          v7, v11, Landroidx/appcompat/widget/MenuPopupWindow$MenuDropDownListView;->mHoveredMenuItem Landroid/view/MenuItem;
+	36      (00000086) if-eq                v7, v6, +16
+
+onHoverEvent-BB@0x8a : [ onHoverEvent-BB@0x96 onHoverEvent-BB@0xa0 ]
+	37      (0000008a) invoke-virtual       v5, Landroidx/appcompat/view/menu/MenuAdapter;->getAdapterMenu()Landroidx/appcompat/view/menu/MenuBuilder;
+	38      (00000090) move-result-object   v4
+	39      (00000092) if-eqz               v7, +7
+
+onHoverEvent-BB@0x96 : [ onHoverEvent-BB@0xa0 ]
+	40      (00000096) iget-object          v9, v11, Landroidx/appcompat/widget/MenuPopupWindow$MenuDropDownListView;->mHoverListener Landroidx/appcompat/widget/MenuItemHoverListener;
+	41      (0000009a) invoke-interface     v9, v4, v7, Landroidx/appcompat/widget/MenuItemHoverListener;->onItemHoverExit(Landroidx/appcompat/view/menu/MenuBuilder; Landroid/view/MenuItem;)V
+
+onHoverEvent-BB@0xa0 : [ onHoverEvent-BB@0xa8 onHoverEvent-BB@0xb2 ]
+	42      (000000a0) iput-object          v6, v11, Landroidx/appcompat/widget/MenuPopupWindow$MenuDropDownListView;->mHoveredMenuItem Landroid/view/MenuItem;
+	43      (000000a4) if-eqz               v6, +7
+
+onHoverEvent-BB@0xa8 : [ onHoverEvent-BB@0xb2 ]
+	44      (000000a8) iget-object          v9, v11, Landroidx/appcompat/widget/MenuPopupWindow$MenuDropDownListView;->mHoverListener Landroidx/appcompat/widget/MenuItemHoverListener;
+	45      (000000ac) invoke-interface     v9, v4, v6, Landroidx/appcompat/widget/MenuItemHoverListener;->onItemHoverEnter(Landroidx/appcompat/view/menu/MenuBuilder; Landroid/view/MenuItem;)V
+
+onHoverEvent-BB@0xb2 : 
+	46      (000000b2) invoke-super         v11, v12, Landroidx/appcompat/widget/DropDownListView;->onHoverEvent(Landroid/view/MotionEvent;)Z
+	47      (000000b8) move-result          v9
+	48      (000000ba) return               v9
+
+onHoverEvent-BB@0xbc : [ onHoverEvent-BB@0x32 ]
+	49      (000000bc) const/4              v2, 0
+	50      (000000be) move-object          v5, v0
+	51      (000000c0) check-cast           v5, Landroidx/appcompat/view/menu/MenuAdapter;
+	52      (000000c4) goto                 -49
+

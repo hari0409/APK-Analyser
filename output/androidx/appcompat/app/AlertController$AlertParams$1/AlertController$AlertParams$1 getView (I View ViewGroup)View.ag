@@ -1,0 +1,31 @@
+# Landroidx/appcompat/app/AlertController$AlertParams$1;->getView(I Landroid/view/View; Landroid/view/ViewGroup;)Landroid/view/View; [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v4
+# - v5:int
+# - v6:android.view.View
+# - v7:android.view.ViewGroup
+#
+# - return:android.view.View
+
+getView-BB@0x0 : [ getView-BB@0x14 getView-BB@0x30 ]
+	0       (00000000) invoke-super         v4, v5, v6, v7, Landroid/widget/ArrayAdapter;->getView(I Landroid/view/View; Landroid/view/ViewGroup;)Landroid/view/View;
+	1       (00000006) move-result-object   v1
+	2       (00000008) iget-object          v2, v4, Landroidx/appcompat/app/AlertController$AlertParams$1;->this$0 Landroidx/appcompat/app/AlertController$AlertParams;
+	3       (0000000c) iget-object          v2, v2, Landroidx/appcompat/app/AlertController$AlertParams;->mCheckedItems [Z
+	4       (00000010) if-eqz               v2, +10
+
+getView-BB@0x14 : [ getView-BB@0x24 getView-BB@0x30 ]
+	5       (00000014) iget-object          v2, v4, Landroidx/appcompat/app/AlertController$AlertParams$1;->this$0 Landroidx/appcompat/app/AlertController$AlertParams;
+	6       (00000018) iget-object          v2, v2, Landroidx/appcompat/app/AlertController$AlertParams;->mCheckedItems [Z
+	7       (0000001c) aget-boolean         v0, v2, v5
+	8       (00000020) if-eqz               v0, +8
+
+getView-BB@0x24 : [ getView-BB@0x30 ]
+	9       (00000024) iget-object          v2, v4, Landroidx/appcompat/app/AlertController$AlertParams$1;->val$listView Landroidx/appcompat/app/AlertController$RecycleListView;
+	10      (00000028) const/4              v3, 1
+	11      (0000002a) invoke-virtual       v2, v5, v3, Landroidx/appcompat/app/AlertController$RecycleListView;->setItemChecked(I Z)V
+
+getView-BB@0x30 : 
+	12      (00000030) return-object        v1
+

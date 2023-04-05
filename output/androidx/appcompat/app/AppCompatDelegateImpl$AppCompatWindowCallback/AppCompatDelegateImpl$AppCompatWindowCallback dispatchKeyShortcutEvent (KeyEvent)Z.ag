@@ -1,0 +1,31 @@
+# Landroidx/appcompat/app/AppCompatDelegateImpl$AppCompatWindowCallback;->dispatchKeyShortcutEvent(Landroid/view/KeyEvent;)Z [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:android.view.KeyEvent
+#
+# - return:boolean
+
+dispatchKeyShortcutEvent-BB@0x0 : [ dispatchKeyShortcutEvent-BB@0xc dispatchKeyShortcutEvent-BB@0x24 ]
+	0       (00000000) invoke-super         v2, v3, Landroidx/appcompat/view/WindowCallbackWrapper;->dispatchKeyShortcutEvent(Landroid/view/KeyEvent;)Z
+	1       (00000006) move-result          v0
+	2       (00000008) if-nez               v0, +e
+
+dispatchKeyShortcutEvent-BB@0xc : [ dispatchKeyShortcutEvent-BB@0x24 dispatchKeyShortcutEvent-BB@0x28 ]
+	3       (0000000c) iget-object          v0, v2, Landroidx/appcompat/app/AppCompatDelegateImpl$AppCompatWindowCallback;->this$0 Landroidx/appcompat/app/AppCompatDelegateImpl;
+	4       (00000010) invoke-virtual       v3, Landroid/view/KeyEvent;->getKeyCode()I
+	5       (00000016) move-result          v1
+	6       (00000018) invoke-virtual       v0, v1, v3, Landroidx/appcompat/app/AppCompatDelegateImpl;->onKeyShortcut(I Landroid/view/KeyEvent;)Z
+	7       (0000001e) move-result          v0
+	8       (00000020) if-eqz               v0, +4
+
+dispatchKeyShortcutEvent-BB@0x24 : [ dispatchKeyShortcutEvent-BB@0x26 ]
+	9       (00000024) const/4              v0, 1
+
+dispatchKeyShortcutEvent-BB@0x26 : 
+	10      (00000026) return               v0
+
+dispatchKeyShortcutEvent-BB@0x28 : [ dispatchKeyShortcutEvent-BB@0x26 ]
+	11      (00000028) const/4              v0, 0
+	12      (0000002a) goto                 -2
+

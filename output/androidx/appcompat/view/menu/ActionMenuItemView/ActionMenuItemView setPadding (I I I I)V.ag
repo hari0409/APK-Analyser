@@ -1,0 +1,16 @@
+# Landroidx/appcompat/view/menu/ActionMenuItemView;->setPadding(I I I I)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v0
+# - v1:int
+# - v2:int
+# - v3:int
+# - v4:int
+#
+# - return:void
+
+setPadding-BB@0x0 : 
+	0       (00000000) iput                 v1, v0, Landroidx/appcompat/view/menu/ActionMenuItemView;->mSavedPaddingLeft I
+	1       (00000004) invoke-super         v0, v1, v2, v3, v4, Landroidx/appcompat/widget/AppCompatTextView;->setPadding(I I I I)V
+	2       (0000000a) return-void          
+

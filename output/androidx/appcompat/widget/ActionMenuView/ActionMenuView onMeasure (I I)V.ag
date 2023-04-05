@@ -1,0 +1,88 @@
+# Landroidx/appcompat/widget/ActionMenuView;->onMeasure(I I)V [access_flags=protected]
+#
+# Parameters:
+# - local registers: v0...v10
+# - v11:int
+# - v12:int
+#
+# - return:void
+
+onMeasure-BB@0x0 : [ onMeasure-BB@0x18 onMeasure-BB@0x74 ]
+	0       (00000000) const/4              v7, 1
+	1       (00000002) const/4              v8, 0
+	2       (00000004) iget-boolean         v4, v10, Landroidx/appcompat/widget/ActionMenuView;->mFormatItems Z
+	3       (00000008) invoke-static        v11, Landroid/view/View$MeasureSpec;->getMode(I)I
+	4       (0000000e) move-result          v6
+	5       (00000010) const/high16         v9, 16384 # [2.0]
+	6       (00000014) if-ne                v6, v9, +30
+
+onMeasure-BB@0x18 : [ onMeasure-BB@0x1a ]
+	7       (00000018) move                 v6, v7
+
+onMeasure-BB@0x1a : [ onMeasure-BB@0x26 onMeasure-BB@0x2a ]
+	8       (0000001a) iput-boolean         v6, v10, Landroidx/appcompat/widget/ActionMenuView;->mFormatItems Z
+	9       (0000001e) iget-boolean         v6, v10, Landroidx/appcompat/widget/ActionMenuView;->mFormatItems Z
+	10      (00000022) if-eq                v4, v6, +4
+
+onMeasure-BB@0x26 : [ onMeasure-BB@0x2a ]
+	11      (00000026) iput                 v8, v10, Landroidx/appcompat/widget/ActionMenuView;->mFormatItemsWidth I
+
+onMeasure-BB@0x2a : [ onMeasure-BB@0x3a onMeasure-BB@0x58 ]
+	12      (0000002a) invoke-static        v11, Landroid/view/View$MeasureSpec;->getSize(I)I
+	13      (00000030) move-result          v5
+	14      (00000032) iget-boolean         v6, v10, Landroidx/appcompat/widget/ActionMenuView;->mFormatItems Z
+	15      (00000036) if-eqz               v6, +11
+
+onMeasure-BB@0x3a : [ onMeasure-BB@0x42 onMeasure-BB@0x58 ]
+	16      (0000003a) iget-object          v6, v10, Landroidx/appcompat/widget/ActionMenuView;->mMenu Landroidx/appcompat/view/menu/MenuBuilder;
+	17      (0000003e) if-eqz               v6, +d
+
+onMeasure-BB@0x42 : [ onMeasure-BB@0x4a onMeasure-BB@0x58 ]
+	18      (00000042) iget                 v6, v10, Landroidx/appcompat/widget/ActionMenuView;->mFormatItemsWidth I
+	19      (00000046) if-eq                v5, v6, +9
+
+onMeasure-BB@0x4a : [ onMeasure-BB@0x58 ]
+	20      (0000004a) iput                 v5, v10, Landroidx/appcompat/widget/ActionMenuView;->mFormatItemsWidth I
+	21      (0000004e) iget-object          v6, v10, Landroidx/appcompat/widget/ActionMenuView;->mMenu Landroidx/appcompat/view/menu/MenuBuilder;
+	22      (00000052) invoke-virtual       v6, v7, Landroidx/appcompat/view/menu/MenuBuilder;->onItemsChanged(Z)V
+
+onMeasure-BB@0x58 : [ onMeasure-BB@0x68 onMeasure-BB@0x78 ]
+	23      (00000058) invoke-virtual       v10, Landroidx/appcompat/widget/ActionMenuView;->getChildCount()I
+	24      (0000005e) move-result          v1
+	25      (00000060) iget-boolean         v6, v10, Landroidx/appcompat/widget/ActionMenuView;->mFormatItems Z
+	26      (00000064) if-eqz               v6, +a
+
+onMeasure-BB@0x68 : [ onMeasure-BB@0x6c onMeasure-BB@0x78 ]
+	27      (00000068) if-lez               v1, +8
+
+onMeasure-BB@0x6c : [ onMeasure-BB@0x72 ]
+	28      (0000006c) invoke-direct        v10, v11, v12, Landroidx/appcompat/widget/ActionMenuView;->onMeasureExactFormat(I I)V
+
+onMeasure-BB@0x72 : 
+	29      (00000072) return-void          
+
+onMeasure-BB@0x74 : [ onMeasure-BB@0x1a ]
+	30      (00000074) move                 v6, v8
+	31      (00000076) goto                 -2e
+
+onMeasure-BB@0x78 : [ onMeasure-BB@0x7a ]
+	32      (00000078) const/4              v2, 0
+
+onMeasure-BB@0x7a : [ onMeasure-BB@0x7e onMeasure-BB@0xa0 ]
+	33      (0000007a) if-ge                v2, v1, +13
+
+onMeasure-BB@0x7e : [ onMeasure-BB@0x7a ]
+	34      (0000007e) invoke-virtual       v10, v2, Landroidx/appcompat/widget/ActionMenuView;->getChildAt(I)Landroid/view/View;
+	35      (00000084) move-result-object   v0
+	36      (00000086) invoke-virtual       v0, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
+	37      (0000008c) move-result-object   v3
+	38      (0000008e) check-cast           v3, Landroidx/appcompat/widget/ActionMenuView$LayoutParams;
+	39      (00000092) iput                 v8, v3, Landroidx/appcompat/widget/ActionMenuView$LayoutParams;->rightMargin I
+	40      (00000096) iput                 v8, v3, Landroidx/appcompat/widget/ActionMenuView$LayoutParams;->leftMargin I
+	41      (0000009a) add-int/lit8         v2, v2, 1
+	42      (0000009e) goto                 -12
+
+onMeasure-BB@0xa0 : [ onMeasure-BB@0x72 ]
+	43      (000000a0) invoke-super         v10, v11, v12, Landroidx/appcompat/widget/LinearLayoutCompat;->onMeasure(I I)V
+	44      (000000a6) goto                 -1a
+

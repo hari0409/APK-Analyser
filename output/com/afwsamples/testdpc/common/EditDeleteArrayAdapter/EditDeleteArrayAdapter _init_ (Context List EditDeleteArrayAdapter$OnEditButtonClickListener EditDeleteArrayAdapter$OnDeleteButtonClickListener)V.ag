@@ -1,0 +1,19 @@
+# Lcom/afwsamples/testdpc/common/EditDeleteArrayAdapter;-><init>(Landroid/content/Context; Ljava/util/List; Lcom/afwsamples/testdpc/common/EditDeleteArrayAdapter$OnEditButtonClickListener; Lcom/afwsamples/testdpc/common/EditDeleteArrayAdapter$OnDeleteButtonClickListener;)V [access_flags=public constructor]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:android.content.Context
+# - v3:java.util.List
+# - v4:com.afwsamples.testdpc.common.EditDeleteArrayAdapter$OnEditButtonClickListener
+# - v5:com.afwsamples.testdpc.common.EditDeleteArrayAdapter$OnDeleteButtonClickListener
+#
+# - return:void
+
+<init>-BB@0x0 : 
+	0       (00000000) const/4              v0, 0
+	1       (00000002) invoke-direct        v1, v2, v0, v3, Landroid/widget/ArrayAdapter;-><init>(Landroid/content/Context; I Ljava/util/List;)V
+	2       (00000008) iput-object          v3, v1, Lcom/afwsamples/testdpc/common/EditDeleteArrayAdapter;->mEntries Ljava/util/List;
+	3       (0000000c) iput-object          v4, v1, Lcom/afwsamples/testdpc/common/EditDeleteArrayAdapter;->mOnEditButtonClickListener Lcom/afwsamples/testdpc/common/EditDeleteArrayAdapter$OnEditButtonClickListener;
+	4       (00000010) iput-object          v5, v1, Lcom/afwsamples/testdpc/common/EditDeleteArrayAdapter;->mOnDeleteButtonClickListener Lcom/afwsamples/testdpc/common/EditDeleteArrayAdapter$OnDeleteButtonClickListener;
+	5       (00000014) return-void          
+

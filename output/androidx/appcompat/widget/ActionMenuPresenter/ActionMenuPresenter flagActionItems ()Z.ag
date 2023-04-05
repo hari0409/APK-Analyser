@@ -1,0 +1,425 @@
+# Landroidx/appcompat/widget/ActionMenuPresenter;->flagActionItems()Z [access_flags=public]
+#
+# Parameters:
+# local registers: v0...v29
+#
+# - return:boolean
+
+flagActionItems-BB@0x0 : [ flagActionItems-BB@0x10 flagActionItems-BB@0xbc ]
+	0       (00000000) move-object/from16   v0, v29
+	1       (00000004) iget-object          v0, v0, Landroidx/appcompat/widget/ActionMenuPresenter;->mMenu Landroidx/appcompat/view/menu/MenuBuilder;
+	2       (00000008) move-object/from16   v27, v0
+	3       (0000000c) if-eqz               v27, +58
+
+flagActionItems-BB@0x10 : [ flagActionItems-BB@0x2c ]
+	4       (00000010) move-object/from16   v0, v29
+	5       (00000014) iget-object          v0, v0, Landroidx/appcompat/widget/ActionMenuPresenter;->mMenu Landroidx/appcompat/view/menu/MenuBuilder;
+	6       (00000018) move-object/from16   v27, v0
+	7       (0000001c) invoke-virtual/range v27, Landroidx/appcompat/view/menu/MenuBuilder;->getVisibleItems()Ljava/util/ArrayList;
+	8       (00000022) move-result-object   v25
+	9       (00000024) invoke-virtual/range v25, Ljava/util/ArrayList;->size()I
+	10      (0000002a) move-result          v15
+
+flagActionItems-BB@0x2c : [ flagActionItems-BB@0x72 ]
+	11      (0000002c) move-object/from16   v0, v29
+	12      (00000030) iget                 v0, v0, Landroidx/appcompat/widget/ActionMenuPresenter;->mMaxItems I
+	13      (00000034) move/from16          v17, v0
+	14      (00000038) move-object/from16   v0, v29
+	15      (0000003c) iget                 v0, v0, Landroidx/appcompat/widget/ActionMenuPresenter;->mActionItemWidthLimit I
+	16      (00000040) move/from16          v26, v0
+	17      (00000044) const/16             v27, 0
+	18      (00000048) const/16             v28, 0
+	19      (0000004c) invoke-static/range  v27 ... v28, Landroid/view/View$MeasureSpec;->makeMeasureSpec(I I)I
+	20      (00000052) move-result          v20
+	21      (00000054) move-object/from16   v0, v29
+	22      (00000058) iget-object          v0, v0, Landroidx/appcompat/widget/ActionMenuPresenter;->mMenuView Landroidx/appcompat/view/menu/MenuView;
+	23      (0000005c) move-object/from16   v19, v0
+	24      (00000060) check-cast           v19, Landroid/view/ViewGroup;
+	25      (00000064) const/16             v22, 0
+	26      (00000068) const/16             v21, 0
+	27      (0000006c) const/4              v8, 0
+	28      (0000006e) const/4              v10, 0
+	29      (00000070) const/4              v11, 0
+
+flagActionItems-BB@0x72 : [ flagActionItems-BB@0x76 flagActionItems-BB@0xda ]
+	30      (00000072) if-ge                v11, v15, +34
+
+flagActionItems-BB@0x76 : [ flagActionItems-BB@0x92 flagActionItems-BB@0xc4 ]
+	31      (00000076) move-object/from16   v0, v25
+	32      (0000007a) invoke-virtual       v0, v11, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+	33      (00000080) move-result-object   v14
+	34      (00000082) check-cast           v14, Landroidx/appcompat/view/menu/MenuItemImpl;
+	35      (00000086) invoke-virtual       v14, Landroidx/appcompat/view/menu/MenuItemImpl;->requiresActionButton()Z
+	36      (0000008c) move-result          v27
+	37      (0000008e) if-eqz               v27, +1b
+
+flagActionItems-BB@0x92 : [ flagActionItems-BB@0x96 ]
+	38      (00000092) add-int/lit8         v22, v22, 1
+
+flagActionItems-BB@0x96 : [ flagActionItems-BB@0xa6 flagActionItems-BB@0xb6 ]
+	39      (00000096) move-object/from16   v0, v29
+	40      (0000009a) iget-boolean         v0, v0, Landroidx/appcompat/widget/ActionMenuPresenter;->mExpandedActionViewsExclusive Z
+	41      (0000009e) move/from16          v27, v0
+	42      (000000a2) if-eqz               v27, +a
+
+flagActionItems-BB@0xa6 : [ flagActionItems-BB@0xb2 flagActionItems-BB@0xb6 ]
+	43      (000000a6) invoke-virtual       v14, Landroidx/appcompat/view/menu/MenuItemImpl;->isActionViewExpanded()Z
+	44      (000000ac) move-result          v27
+	45      (000000ae) if-eqz               v27, +4
+
+flagActionItems-BB@0xb2 : [ flagActionItems-BB@0xb6 ]
+	46      (000000b2) const/16             v17, 0
+
+flagActionItems-BB@0xb6 : [ flagActionItems-BB@0x72 ]
+	47      (000000b6) add-int/lit8         v11, v11, 1
+	48      (000000ba) goto                 -24
+
+flagActionItems-BB@0xbc : [ flagActionItems-BB@0x2c ]
+	49      (000000bc) const/16             v25, 0
+	50      (000000c0) const/4              v15, 0
+	51      (000000c2) goto                 -4b
+
+flagActionItems-BB@0xc4 : [ flagActionItems-BB@0xd0 flagActionItems-BB@0xd6 ]
+	52      (000000c4) invoke-virtual       v14, Landroidx/appcompat/view/menu/MenuItemImpl;->requestsActionButton()Z
+	53      (000000ca) move-result          v27
+	54      (000000cc) if-eqz               v27, +5
+
+flagActionItems-BB@0xd0 : [ flagActionItems-BB@0x96 ]
+	55      (000000d0) add-int/lit8         v21, v21, 1
+	56      (000000d4) goto                 -1f
+
+flagActionItems-BB@0xd6 : [ flagActionItems-BB@0x96 ]
+	57      (000000d6) const/4              v10, 1
+	58      (000000d8) goto                 -21
+
+flagActionItems-BB@0xda : [ flagActionItems-BB@0xea flagActionItems-BB@0x102 ]
+	59      (000000da) move-object/from16   v0, v29
+	60      (000000de) iget-boolean         v0, v0, Landroidx/appcompat/widget/ActionMenuPresenter;->mReserveOverflow Z
+	61      (000000e2) move/from16          v27, v0
+	62      (000000e6) if-eqz               v27, +e
+
+flagActionItems-BB@0xea : [ flagActionItems-BB@0xee flagActionItems-BB@0xfe ]
+	63      (000000ea) if-nez               v10, +a
+
+flagActionItems-BB@0xee : [ flagActionItems-BB@0xfe flagActionItems-BB@0x102 ]
+	64      (000000ee) add-int              v27, v22, v21
+	65      (000000f2) move/from16          v0, v27
+	66      (000000f6) move/from16          v1, v17
+	67      (000000fa) if-le                v0, v1, +4
+
+flagActionItems-BB@0xfe : [ flagActionItems-BB@0x102 ]
+	68      (000000fe) add-int/lit8         v17, v17, -1
+
+flagActionItems-BB@0x102 : [ flagActionItems-BB@0x12c flagActionItems-BB@0x160 ]
+	69      (00000102) sub-int              v17, v17, v22
+	70      (00000106) move-object/from16   v0, v29
+	71      (0000010a) iget-object          v0, v0, Landroidx/appcompat/widget/ActionMenuPresenter;->mActionButtonGroups Landroid/util/SparseBooleanArray;
+	72      (0000010e) move-object/from16   v23, v0
+	73      (00000112) invoke-virtual/range v23, Landroid/util/SparseBooleanArray;->clear()V
+	74      (00000118) const/4              v4, 0
+	75      (0000011a) const/4              v7, 0
+	76      (0000011c) move-object/from16   v0, v29
+	77      (00000120) iget-boolean         v0, v0, Landroidx/appcompat/widget/ActionMenuPresenter;->mStrictWidthLimit Z
+	78      (00000124) move/from16          v27, v0
+	79      (00000128) if-eqz               v27, +1c
+
+flagActionItems-BB@0x12c : [ flagActionItems-BB@0x160 ]
+	80      (0000012c) move-object/from16   v0, v29
+	81      (00000130) iget                 v0, v0, Landroidx/appcompat/widget/ActionMenuPresenter;->mMinCellSize I
+	82      (00000134) move/from16          v27, v0
+	83      (00000138) div-int              v7, v26, v27
+	84      (0000013c) move-object/from16   v0, v29
+	85      (00000140) iget                 v0, v0, Landroidx/appcompat/widget/ActionMenuPresenter;->mMinCellSize I
+	86      (00000144) move/from16          v27, v0
+	87      (00000148) rem-int              v5, v26, v27
+	88      (0000014c) move-object/from16   v0, v29
+	89      (00000150) iget                 v0, v0, Landroidx/appcompat/widget/ActionMenuPresenter;->mMinCellSize I
+	90      (00000154) move/from16          v27, v0
+	91      (00000158) div-int              v28, v5, v7
+	92      (0000015c) add-int              v4, v27, v28
+
+flagActionItems-BB@0x160 : [ flagActionItems-BB@0x162 ]
+	93      (00000160) const/4              v11, 0
+
+flagActionItems-BB@0x162 : [ flagActionItems-BB@0x166 flagActionItems-BB@0x404 ]
+	94      (00000162) if-ge                v11, v15, +151
+
+flagActionItems-BB@0x166 : [ flagActionItems-BB@0x182 flagActionItems-BB@0x244 ]
+	95      (00000166) move-object/from16   v0, v25
+	96      (0000016a) invoke-virtual       v0, v11, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+	97      (00000170) move-result-object   v14
+	98      (00000172) check-cast           v14, Landroidx/appcompat/view/menu/MenuItemImpl;
+	99      (00000176) invoke-virtual       v14, Landroidx/appcompat/view/menu/MenuItemImpl;->requiresActionButton()Z
+	100     (0000017c) move-result          v27
+	101     (0000017e) if-eqz               v27, +63
+
+flagActionItems-BB@0x182 : [ flagActionItems-BB@0x1b2 flagActionItems-BB@0x1be ]
+	102     (00000182) move-object/from16   v0, v29
+	103     (00000186) iget-object          v0, v0, Landroidx/appcompat/widget/ActionMenuPresenter;->mScrapActionButtonView Landroid/view/View;
+	104     (0000018a) move-object/from16   v27, v0
+	105     (0000018e) move-object/from16   v0, v29
+	106     (00000192) move-object/from16   v1, v27
+	107     (00000196) move-object/from16   v2, v19
+	108     (0000019a) invoke-virtual       v0, v14, v1, v2, Landroidx/appcompat/widget/ActionMenuPresenter;->getItemView(Landroidx/appcompat/view/menu/MenuItemImpl; Landroid/view/View; Landroid/view/ViewGroup;)Landroid/view/View;
+	109     (000001a0) move-result-object   v24
+	110     (000001a2) move-object/from16   v0, v29
+	111     (000001a6) iget-object          v0, v0, Landroidx/appcompat/widget/ActionMenuPresenter;->mScrapActionButtonView Landroid/view/View;
+	112     (000001aa) move-object/from16   v27, v0
+	113     (000001ae) if-nez               v27, +8
+
+flagActionItems-BB@0x1b2 : [ flagActionItems-BB@0x1be ]
+	114     (000001b2) move-object/from16   v0, v24
+	115     (000001b6) move-object/from16   v1, v29
+	116     (000001ba) iput-object          v0, v1, Landroidx/appcompat/widget/ActionMenuPresenter;->mScrapActionButtonView Landroid/view/View;
+
+flagActionItems-BB@0x1be : [ flagActionItems-BB@0x1ce flagActionItems-BB@0x230 ]
+	117     (000001be) move-object/from16   v0, v29
+	118     (000001c2) iget-boolean         v0, v0, Landroidx/appcompat/widget/ActionMenuPresenter;->mStrictWidthLimit Z
+	119     (000001c6) move/from16          v27, v0
+	120     (000001ca) if-eqz               v27, +33
+
+flagActionItems-BB@0x1ce : [ flagActionItems-BB@0x1ea ]
+	121     (000001ce) const/16             v27, 0
+	122     (000001d2) move-object/from16   v0, v24
+	123     (000001d6) move/from16          v1, v20
+	124     (000001da) move/from16          v2, v27
+	125     (000001de) invoke-static        v0, v4, v7, v1, v2, Landroidx/appcompat/widget/ActionMenuView;->measureChildForCells(Landroid/view/View; I I I I)I
+	126     (000001e4) move-result          v27
+	127     (000001e6) sub-int              v7, v7, v27
+
+flagActionItems-BB@0x1ea : [ flagActionItems-BB@0x1fa flagActionItems-BB@0x1fe ]
+	128     (000001ea) invoke-virtual/range v24, Landroid/view/View;->getMeasuredWidth()I
+	129     (000001f0) move-result          v18
+	130     (000001f2) sub-int              v26, v26, v18
+	131     (000001f6) if-nez               v8, +4
+
+flagActionItems-BB@0x1fa : [ flagActionItems-BB@0x1fe ]
+	132     (000001fa) move/from16          v8, v18
+
+flagActionItems-BB@0x1fe : [ flagActionItems-BB@0x20a flagActionItems-BB@0x21c ]
+	133     (000001fe) invoke-virtual       v14, Landroidx/appcompat/view/menu/MenuItemImpl;->getGroupId()I
+	134     (00000204) move-result          v9
+	135     (00000206) if-eqz               v9, +b
+
+flagActionItems-BB@0x20a : [ flagActionItems-BB@0x21c ]
+	136     (0000020a) const/16             v27, 1
+	137     (0000020e) move-object/from16   v0, v23
+	138     (00000212) move/from16          v1, v27
+	139     (00000216) invoke-virtual       v0, v9, v1, Landroid/util/SparseBooleanArray;->put(I Z)V
+
+flagActionItems-BB@0x21c : [ flagActionItems-BB@0x22a ]
+	140     (0000021c) const/16             v27, 1
+	141     (00000220) move/from16          v0, v27
+	142     (00000224) invoke-virtual       v14, v0, Landroidx/appcompat/view/menu/MenuItemImpl;->setIsActionButton(Z)V
+
+flagActionItems-BB@0x22a : [ flagActionItems-BB@0x162 ]
+	143     (0000022a) add-int/lit8         v11, v11, 1
+	144     (0000022e) goto                 -66
+
+flagActionItems-BB@0x230 : [ flagActionItems-BB@0x1ea ]
+	145     (00000230) move-object/from16   v0, v24
+	146     (00000234) move/from16          v1, v20
+	147     (00000238) move/from16          v2, v20
+	148     (0000023c) invoke-virtual       v0, v1, v2, Landroid/view/View;->measure(I I)V
+	149     (00000242) goto                 -2c
+
+flagActionItems-BB@0x244 : [ flagActionItems-BB@0x250 flagActionItems-BB@0x3f2 ]
+	150     (00000244) invoke-virtual       v14, Landroidx/appcompat/view/menu/MenuItemImpl;->requestsActionButton()Z
+	151     (0000024a) move-result          v27
+	152     (0000024c) if-eqz               v27, +d3
+
+flagActionItems-BB@0x250 : [ flagActionItems-BB@0x268 flagActionItems-BB@0x26c ]
+	153     (00000250) invoke-virtual       v14, Landroidx/appcompat/view/menu/MenuItemImpl;->getGroupId()I
+	154     (00000256) move-result          v9
+	155     (00000258) move-object/from16   v0, v23
+	156     (0000025c) invoke-virtual       v0, v9, Landroid/util/SparseBooleanArray;->get(I)Z
+	157     (00000262) move-result          v12
+	158     (00000264) if-gtz               v17, +4
+
+flagActionItems-BB@0x268 : [ flagActionItems-BB@0x26c flagActionItems-BB@0x352 ]
+	159     (00000268) if-eqz               v12, +75
+
+flagActionItems-BB@0x26c : [ flagActionItems-BB@0x270 flagActionItems-BB@0x352 ]
+	160     (0000026c) if-lez               v26, +73
+
+flagActionItems-BB@0x270 : [ flagActionItems-BB@0x280 flagActionItems-BB@0x284 ]
+	161     (00000270) move-object/from16   v0, v29
+	162     (00000274) iget-boolean         v0, v0, Landroidx/appcompat/widget/ActionMenuPresenter;->mStrictWidthLimit Z
+	163     (00000278) move/from16          v27, v0
+	164     (0000027c) if-eqz               v27, +4
+
+flagActionItems-BB@0x280 : [ flagActionItems-BB@0x284 flagActionItems-BB@0x352 ]
+	165     (00000280) if-lez               v7, +69
+
+flagActionItems-BB@0x284 : [ flagActionItems-BB@0x286 ]
+	166     (00000284) const/4              v13, 1
+
+flagActionItems-BB@0x286 : [ flagActionItems-BB@0x28a flagActionItems-BB@0x326 ]
+	167     (00000286) if-eqz               v13, +50
+
+flagActionItems-BB@0x28a : [ flagActionItems-BB@0x2ba flagActionItems-BB@0x2c6 ]
+	168     (0000028a) move-object/from16   v0, v29
+	169     (0000028e) iget-object          v0, v0, Landroidx/appcompat/widget/ActionMenuPresenter;->mScrapActionButtonView Landroid/view/View;
+	170     (00000292) move-object/from16   v27, v0
+	171     (00000296) move-object/from16   v0, v29
+	172     (0000029a) move-object/from16   v1, v27
+	173     (0000029e) move-object/from16   v2, v19
+	174     (000002a2) invoke-virtual       v0, v14, v1, v2, Landroidx/appcompat/widget/ActionMenuPresenter;->getItemView(Landroidx/appcompat/view/menu/MenuItemImpl; Landroid/view/View; Landroid/view/ViewGroup;)Landroid/view/View;
+	175     (000002a8) move-result-object   v24
+	176     (000002aa) move-object/from16   v0, v29
+	177     (000002ae) iget-object          v0, v0, Landroidx/appcompat/widget/ActionMenuPresenter;->mScrapActionButtonView Landroid/view/View;
+	178     (000002b2) move-object/from16   v27, v0
+	179     (000002b6) if-nez               v27, +8
+
+flagActionItems-BB@0x2ba : [ flagActionItems-BB@0x2c6 ]
+	180     (000002ba) move-object/from16   v0, v24
+	181     (000002be) move-object/from16   v1, v29
+	182     (000002c2) iput-object          v0, v1, Landroidx/appcompat/widget/ActionMenuPresenter;->mScrapActionButtonView Landroid/view/View;
+
+flagActionItems-BB@0x2c6 : [ flagActionItems-BB@0x2d6 flagActionItems-BB@0x356 ]
+	183     (000002c6) move-object/from16   v0, v29
+	184     (000002ca) iget-boolean         v0, v0, Landroidx/appcompat/widget/ActionMenuPresenter;->mStrictWidthLimit Z
+	185     (000002ce) move/from16          v27, v0
+	186     (000002d2) if-eqz               v27, +42
+
+flagActionItems-BB@0x2d6 : [ flagActionItems-BB@0x2f4 flagActionItems-BB@0x2f6 ]
+	187     (000002d6) const/16             v27, 0
+	188     (000002da) move-object/from16   v0, v24
+	189     (000002de) move/from16          v1, v20
+	190     (000002e2) move/from16          v2, v27
+	191     (000002e6) invoke-static        v0, v4, v7, v1, v2, Landroidx/appcompat/widget/ActionMenuView;->measureChildForCells(Landroid/view/View; I I I I)I
+	192     (000002ec) move-result          v6
+	193     (000002ee) sub-int/2addr        v7, v6
+	194     (000002f0) if-nez               v6, +3
+
+flagActionItems-BB@0x2f4 : [ flagActionItems-BB@0x2f6 ]
+	195     (000002f4) const/4              v13, 0
+
+flagActionItems-BB@0x2f6 : [ flagActionItems-BB@0x306 flagActionItems-BB@0x30a ]
+	196     (000002f6) invoke-virtual/range v24, Landroid/view/View;->getMeasuredWidth()I
+	197     (000002fc) move-result          v18
+	198     (000002fe) sub-int              v26, v26, v18
+	199     (00000302) if-nez               v8, +4
+
+flagActionItems-BB@0x306 : [ flagActionItems-BB@0x30a ]
+	200     (00000306) move/from16          v8, v18
+
+flagActionItems-BB@0x30a : [ flagActionItems-BB@0x31a flagActionItems-BB@0x370 ]
+	201     (0000030a) move-object/from16   v0, v29
+	202     (0000030e) iget-boolean         v0, v0, Landroidx/appcompat/widget/ActionMenuPresenter;->mStrictWidthLimit Z
+	203     (00000312) move/from16          v27, v0
+	204     (00000316) if-eqz               v27, +2d
+
+flagActionItems-BB@0x31a : [ flagActionItems-BB@0x31e flagActionItems-BB@0x36a ]
+	205     (0000031a) if-ltz               v26, +28
+
+flagActionItems-BB@0x31e : [ flagActionItems-BB@0x322 ]
+	206     (0000031e) const/16             v27, 1
+
+flagActionItems-BB@0x322 : [ flagActionItems-BB@0x326 ]
+	207     (00000322) and-int              v13, v13, v27
+
+flagActionItems-BB@0x326 : [ flagActionItems-BB@0x32a flagActionItems-BB@0x388 ]
+	208     (00000326) if-eqz               v13, +31
+
+flagActionItems-BB@0x32a : [ flagActionItems-BB@0x32e flagActionItems-BB@0x388 ]
+	209     (0000032a) if-eqz               v9, +2f
+
+flagActionItems-BB@0x32e : [ flagActionItems-BB@0x340 ]
+	210     (0000032e) const/16             v27, 1
+	211     (00000332) move-object/from16   v0, v23
+	212     (00000336) move/from16          v1, v27
+	213     (0000033a) invoke-virtual       v0, v9, v1, Landroid/util/SparseBooleanArray;->put(I Z)V
+
+flagActionItems-BB@0x340 : [ flagActionItems-BB@0x344 flagActionItems-BB@0x348 ]
+	214     (00000340) if-eqz               v13, +4
+
+flagActionItems-BB@0x344 : [ flagActionItems-BB@0x348 ]
+	215     (00000344) add-int/lit8         v17, v17, -1
+
+flagActionItems-BB@0x348 : [ flagActionItems-BB@0x22a ]
+	216     (00000348) invoke-virtual       v14, v13, Landroidx/appcompat/view/menu/MenuItemImpl;->setIsActionButton(Z)V
+	217     (0000034e) goto/16              -92
+
+flagActionItems-BB@0x352 : [ flagActionItems-BB@0x286 ]
+	218     (00000352) const/4              v13, 0
+	219     (00000354) goto                 -67
+
+flagActionItems-BB@0x356 : [ flagActionItems-BB@0x2f6 ]
+	220     (00000356) move-object/from16   v0, v24
+	221     (0000035a) move/from16          v1, v20
+	222     (0000035e) move/from16          v2, v20
+	223     (00000362) invoke-virtual       v0, v1, v2, Landroid/view/View;->measure(I I)V
+	224     (00000368) goto                 -39
+
+flagActionItems-BB@0x36a : [ flagActionItems-BB@0x322 ]
+	225     (0000036a) const/16             v27, 0
+	226     (0000036e) goto                 -26
+
+flagActionItems-BB@0x370 : [ flagActionItems-BB@0x378 flagActionItems-BB@0x382 ]
+	227     (00000370) add-int              v27, v26, v8
+	228     (00000374) if-lez               v27, +7
+
+flagActionItems-BB@0x378 : [ flagActionItems-BB@0x37c ]
+	229     (00000378) const/16             v27, 1
+
+flagActionItems-BB@0x37c : [ flagActionItems-BB@0x326 ]
+	230     (0000037c) and-int              v13, v13, v27
+	231     (00000380) goto                 -2d
+
+flagActionItems-BB@0x382 : [ flagActionItems-BB@0x37c ]
+	232     (00000382) const/16             v27, 0
+	233     (00000386) goto                 -5
+
+flagActionItems-BB@0x388 : [ flagActionItems-BB@0x38c flagActionItems-BB@0x340 ]
+	234     (00000388) if-eqz               v12, -24
+
+flagActionItems-BB@0x38c : [ flagActionItems-BB@0x3a2 ]
+	235     (0000038c) const/16             v27, 0
+	236     (00000390) move-object/from16   v0, v23
+	237     (00000394) move/from16          v1, v27
+	238     (00000398) invoke-virtual       v0, v9, v1, Landroid/util/SparseBooleanArray;->put(I Z)V
+	239     (0000039e) const/16             v16, 0
+
+flagActionItems-BB@0x3a2 : [ flagActionItems-BB@0x3aa flagActionItems-BB@0x340 ]
+	240     (000003a2) move/from16          v0, v16
+	241     (000003a6) if-ge                v0, v11, -33
+
+flagActionItems-BB@0x3aa : [ flagActionItems-BB@0x3ce flagActionItems-BB@0x3ec ]
+	242     (000003aa) move-object/from16   v0, v25
+	243     (000003ae) move/from16          v1, v16
+	244     (000003b2) invoke-virtual       v0, v1, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+	245     (000003b8) move-result-object   v3
+	246     (000003ba) check-cast           v3, Landroidx/appcompat/view/menu/MenuItemImpl;
+	247     (000003be) invoke-virtual       v3, Landroidx/appcompat/view/menu/MenuItemImpl;->getGroupId()I
+	248     (000003c4) move-result          v27
+	249     (000003c6) move/from16          v0, v27
+	250     (000003ca) if-ne                v0, v9, +11
+
+flagActionItems-BB@0x3ce : [ flagActionItems-BB@0x3da flagActionItems-BB@0x3de ]
+	251     (000003ce) invoke-virtual       v3, Landroidx/appcompat/view/menu/MenuItemImpl;->isActionButton()Z
+	252     (000003d4) move-result          v27
+	253     (000003d6) if-eqz               v27, +4
+
+flagActionItems-BB@0x3da : [ flagActionItems-BB@0x3de ]
+	254     (000003da) add-int/lit8         v17, v17, 1
+
+flagActionItems-BB@0x3de : [ flagActionItems-BB@0x3ec ]
+	255     (000003de) const/16             v27, 0
+	256     (000003e2) move/from16          v0, v27
+	257     (000003e6) invoke-virtual       v3, v0, Landroidx/appcompat/view/menu/MenuItemImpl;->setIsActionButton(Z)V
+
+flagActionItems-BB@0x3ec : [ flagActionItems-BB@0x3a2 ]
+	258     (000003ec) add-int/lit8         v16, v16, 1
+	259     (000003f0) goto                 -27
+
+flagActionItems-BB@0x3f2 : [ flagActionItems-BB@0x22a ]
+	260     (000003f2) const/16             v27, 0
+	261     (000003f6) move/from16          v0, v27
+	262     (000003fa) invoke-virtual       v14, v0, Landroidx/appcompat/view/menu/MenuItemImpl;->setIsActionButton(Z)V
+	263     (00000400) goto/16              -eb
+
+flagActionItems-BB@0x404 : 
+	264     (00000404) const/16             v27, 1
+	265     (00000408) return               v27
+

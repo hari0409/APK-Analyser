@@ -1,0 +1,69 @@
+# Lcom/afwsamples/testdpc/ShellCommand;->dumpState()V [access_flags=private]
+#
+# Parameters:
+# local registers: v0...v6
+#
+# - return:void
+
+dumpState-BB@0x0 : [ dumpState-BB@0x8e dumpState-BB@0xe2 ]
+	0       (00000000) const/4              v5, 1
+	1       (00000002) const/4              v4, 0
+	2       (00000004) iget-object          v0, v6, Lcom/afwsamples/testdpc/ShellCommand;->mWriter Ljava/io/PrintWriter;
+	3       (00000008) const-string         v1, 'isDeviceOwner: %b\n'
+	4       (0000000c) new-array            v2, v5, [Ljava/lang/Object;
+	5       (00000010) iget-object          v3, v6, Lcom/afwsamples/testdpc/ShellCommand;->mDevicePolicyManagerGateway Lcom/afwsamples/testdpc/DevicePolicyManagerGateway;
+	6       (00000014) invoke-interface     v3, Lcom/afwsamples/testdpc/DevicePolicyManagerGateway;->isDeviceOwnerApp()Z
+	7       (0000001a) move-result          v3
+	8       (0000001c) invoke-static        v3, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+	9       (00000022) move-result-object   v3
+	10      (00000024) aput-object          v3, v2, v4
+	11      (00000028) invoke-virtual       v0, v1, v2, Ljava/io/PrintWriter;->printf(Ljava/lang/String; [Ljava/lang/Object;)Ljava/io/PrintWriter;
+	12      (0000002e) iget-object          v0, v6, Lcom/afwsamples/testdpc/ShellCommand;->mWriter Ljava/io/PrintWriter;
+	13      (00000032) const-string         v1, 'isProfileOwner: %b\n'
+	14      (00000036) new-array            v2, v5, [Ljava/lang/Object;
+	15      (0000003a) iget-object          v3, v6, Lcom/afwsamples/testdpc/ShellCommand;->mDevicePolicyManagerGateway Lcom/afwsamples/testdpc/DevicePolicyManagerGateway;
+	16      (0000003e) invoke-interface     v3, Lcom/afwsamples/testdpc/DevicePolicyManagerGateway;->isProfileOwnerApp()Z
+	17      (00000044) move-result          v3
+	18      (00000046) invoke-static        v3, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+	19      (0000004c) move-result-object   v3
+	20      (0000004e) aput-object          v3, v2, v4
+	21      (00000052) invoke-virtual       v0, v1, v2, Ljava/io/PrintWriter;->printf(Ljava/lang/String; [Ljava/lang/Object;)Ljava/io/PrintWriter;
+	22      (00000058) iget-object          v0, v6, Lcom/afwsamples/testdpc/ShellCommand;->mWriter Ljava/io/PrintWriter;
+	23      (0000005c) const-string         v1, 'isOrganizationOwnedDeviceWithManagedProfile: %b\n'
+	24      (00000060) new-array            v2, v5, [Ljava/lang/Object;
+	25      (00000064) iget-object          v3, v6, Lcom/afwsamples/testdpc/ShellCommand;->mDevicePolicyManagerGateway Lcom/afwsamples/testdpc/DevicePolicyManagerGateway;
+	26      (00000068) invoke-interface     v3, Lcom/afwsamples/testdpc/DevicePolicyManagerGateway;->isOrganizationOwnedDeviceWithManagedProfile()Z
+	27      (0000006e) move-result          v3
+	28      (00000070) invoke-static        v3, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+	29      (00000076) move-result-object   v3
+	30      (00000078) aput-object          v3, v2, v4
+	31      (0000007c) invoke-virtual       v0, v1, v2, Ljava/io/PrintWriter;->printf(Ljava/lang/String; [Ljava/lang/Object;)Ljava/io/PrintWriter;
+	32      (00000082) invoke-static        Lcom/afwsamples/testdpc/common/Util;->isAtLeastS()Z
+	33      (00000088) move-result          v0
+	34      (0000008a) if-eqz               v0, +2c
+
+dumpState-BB@0x8e : [ dumpState-BB@0xe2 ]
+	35      (0000008e) iget-object          v0, v6, Lcom/afwsamples/testdpc/ShellCommand;->mWriter Ljava/io/PrintWriter;
+	36      (00000092) const-string         v1, 'isHeadlessSystemUserMode: %b\n'
+	37      (00000096) new-array            v2, v5, [Ljava/lang/Object;
+	38      (0000009a) iget-object          v3, v6, Lcom/afwsamples/testdpc/ShellCommand;->mDevicePolicyManagerGateway Lcom/afwsamples/testdpc/DevicePolicyManagerGateway;
+	39      (0000009e) invoke-interface     v3, Lcom/afwsamples/testdpc/DevicePolicyManagerGateway;->isHeadlessSystemUserMode()Z
+	40      (000000a4) move-result          v3
+	41      (000000a6) invoke-static        v3, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+	42      (000000ac) move-result-object   v3
+	43      (000000ae) aput-object          v3, v2, v4
+	44      (000000b2) invoke-virtual       v0, v1, v2, Ljava/io/PrintWriter;->printf(Ljava/lang/String; [Ljava/lang/Object;)Ljava/io/PrintWriter;
+	45      (000000b8) iget-object          v0, v6, Lcom/afwsamples/testdpc/ShellCommand;->mWriter Ljava/io/PrintWriter;
+	46      (000000bc) const-string         v1, 'isUserForeground: %b\n'
+	47      (000000c0) new-array            v2, v5, [Ljava/lang/Object;
+	48      (000000c4) iget-object          v3, v6, Lcom/afwsamples/testdpc/ShellCommand;->mDevicePolicyManagerGateway Lcom/afwsamples/testdpc/DevicePolicyManagerGateway;
+	49      (000000c8) invoke-interface     v3, Lcom/afwsamples/testdpc/DevicePolicyManagerGateway;->isUserForeground()Z
+	50      (000000ce) move-result          v3
+	51      (000000d0) invoke-static        v3, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+	52      (000000d6) move-result-object   v3
+	53      (000000d8) aput-object          v3, v2, v4
+	54      (000000dc) invoke-virtual       v0, v1, v2, Ljava/io/PrintWriter;->printf(Ljava/lang/String; [Ljava/lang/Object;)Ljava/io/PrintWriter;
+
+dumpState-BB@0xe2 : 
+	55      (000000e2) return-void          
+

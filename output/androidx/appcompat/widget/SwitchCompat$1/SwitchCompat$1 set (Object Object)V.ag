@@ -1,0 +1,15 @@
+# Landroidx/appcompat/widget/SwitchCompat$1;->set(Ljava/lang/Object; Ljava/lang/Object;)V [access_flags=public bridge synthetic]
+#
+# Parameters:
+# - local registers: v0...v0
+# - v1:java.lang.Object
+# - v2:java.lang.Object
+#
+# - return:void
+
+set-BB@0x0 : 
+	0       (00000000) check-cast           v1, Landroidx/appcompat/widget/SwitchCompat;
+	1       (00000004) check-cast           v2, Ljava/lang/Float;
+	2       (00000008) invoke-virtual       v0, v1, v2, Landroidx/appcompat/widget/SwitchCompat$1;->set(Landroidx/appcompat/widget/SwitchCompat; Ljava/lang/Float;)V
+	3       (0000000e) return-void          
+

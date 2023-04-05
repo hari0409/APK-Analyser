@@ -1,0 +1,23 @@
+# Lcom/afwsamples/testdpc/policy/PolicyManagementFragment$GetInputMethodsTask;-><init>(Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;)V [access_flags=public constructor]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:com.afwsamples.testdpc.policy.PolicyManagementFragment
+#
+# - return:void
+
+<init>-BB@0x0 : 
+	0       (00000000) iput-object          v3, v2, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment$GetInputMethodsTask;->this$0 Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;
+	1       (00000004) invoke-virtual       v3, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->getActivity()Landroid/app/Activity;
+	2       (0000000a) move-result-object   v0
+	3       (0000000c) const                v1, 2131690204 # [1.9009445012107284e+38]
+	4       (00000012) invoke-direct        v2, v0, v1, Lcom/afwsamples/testdpc/policy/GetAvailableComponentsTask;-><init>(Landroid/app/Activity; I)V
+	5       (00000018) invoke-virtual       v3, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->getActivity()Landroid/app/Activity;
+	6       (0000001e) move-result-object   v0
+	7       (00000020) const-string         v1, 'input_method'
+	8       (00000024) invoke-virtual       v0, v1, Landroid/app/Activity;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
+	9       (0000002a) move-result-object   v0
+	10      (0000002c) check-cast           v0, Landroid/view/inputmethod/InputMethodManager;
+	11      (00000030) iput-object          v0, v2, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment$GetInputMethodsTask;->mInputMethodManager Landroid/view/inputmethod/InputMethodManager;
+	12      (00000034) return-void          
+

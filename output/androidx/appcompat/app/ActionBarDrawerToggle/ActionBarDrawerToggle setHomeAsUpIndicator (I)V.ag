@@ -1,0 +1,23 @@
+# Landroidx/appcompat/app/ActionBarDrawerToggle;->setHomeAsUpIndicator(I)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:int
+#
+# - return:void
+
+setHomeAsUpIndicator-BB@0x0 : [ setHomeAsUpIndicator-BB@0x6 setHomeAsUpIndicator-BB@0x1a ]
+	0       (00000000) const/4              v0, 0
+	1       (00000002) if-eqz               v3, +c
+
+setHomeAsUpIndicator-BB@0x6 : [ setHomeAsUpIndicator-BB@0x1a ]
+	2       (00000006) iget-object          v1, v2, Landroidx/appcompat/app/ActionBarDrawerToggle;->mDrawerLayout Landroidx/drawerlayout/widget/DrawerLayout;
+	3       (0000000a) invoke-virtual       v1, Landroidx/drawerlayout/widget/DrawerLayout;->getResources()Landroid/content/res/Resources;
+	4       (00000010) move-result-object   v1
+	5       (00000012) invoke-virtual       v1, v3, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;
+	6       (00000018) move-result-object   v0
+
+setHomeAsUpIndicator-BB@0x1a : 
+	7       (0000001a) invoke-virtual       v2, v0, Landroidx/appcompat/app/ActionBarDrawerToggle;->setHomeAsUpIndicator(Landroid/graphics/drawable/Drawable;)V
+	8       (00000020) return-void          
+

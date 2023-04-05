@@ -1,0 +1,14 @@
+# Landroidx/appcompat/widget/ActionBarOverlayLayout;->setWindowCallback(Landroid/view/Window$Callback;)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:android.view.Window$Callback
+#
+# - return:void
+
+setWindowCallback-BB@0x0 : 
+	0       (00000000) invoke-virtual       v1, Landroidx/appcompat/widget/ActionBarOverlayLayout;->pullChildren()V
+	1       (00000006) iget-object          v0, v1, Landroidx/appcompat/widget/ActionBarOverlayLayout;->mDecorToolbar Landroidx/appcompat/widget/DecorToolbar;
+	2       (0000000a) invoke-interface     v0, v2, Landroidx/appcompat/widget/DecorToolbar;->setWindowCallback(Landroid/view/Window$Callback;)V
+	3       (00000010) return-void          
+

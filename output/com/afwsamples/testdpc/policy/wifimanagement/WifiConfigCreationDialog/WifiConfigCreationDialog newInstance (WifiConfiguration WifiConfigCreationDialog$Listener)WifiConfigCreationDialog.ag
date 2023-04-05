@@ -1,0 +1,34 @@
+# Lcom/afwsamples/testdpc/policy/wifimanagement/WifiConfigCreationDialog;->newInstance(Landroid/net/wifi/WifiConfiguration; Lcom/afwsamples/testdpc/policy/wifimanagement/WifiConfigCreationDialog$Listener;)Lcom/afwsamples/testdpc/policy/wifimanagement/WifiConfigCreationDialog; [access_flags=public static]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:android.net.wifi.WifiConfiguration
+# - v4:com.afwsamples.testdpc.policy.wifimanagement.WifiConfigCreationDialog$Listener
+#
+# - return:com.afwsamples.testdpc.policy.wifimanagement.WifiConfigCreationDialog
+
+newInstance-BB@0x0 : [ newInstance-BB@0x24 newInstance-BB@0x3a ]
+	0       (00000000) const/4              v1, 1
+	1       (00000002) new-instance         v0, Lcom/afwsamples/testdpc/policy/wifimanagement/WifiConfigCreationDialog;
+	2       (00000006) invoke-direct        v0, Lcom/afwsamples/testdpc/policy/wifimanagement/WifiConfigCreationDialog;-><init>()V
+	3       (0000000c) iput-object          v3, v0, Lcom/afwsamples/testdpc/policy/wifimanagement/WifiConfigCreationDialog;->mOldConfig Landroid/net/wifi/WifiConfiguration;
+	4       (00000010) iput-object          v4, v0, Lcom/afwsamples/testdpc/policy/wifimanagement/WifiConfigCreationDialog;->mListener Lcom/afwsamples/testdpc/policy/wifimanagement/WifiConfigCreationDialog$Listener;
+	5       (00000014) iget-object          v2, v3, Landroid/net/wifi/WifiConfiguration;->allowedKeyManagement Ljava/util/BitSet;
+	6       (00000018) invoke-virtual       v2, v1, Ljava/util/BitSet;->get(I)Z
+	7       (0000001e) move-result          v2
+	8       (00000020) if-nez               v2, +d
+
+newInstance-BB@0x24 : [ newInstance-BB@0x34 newInstance-BB@0x3a ]
+	9       (00000024) iget-object          v2, v3, Landroid/net/wifi/WifiConfiguration;->allowedAuthAlgorithms Ljava/util/BitSet;
+	10      (00000028) invoke-virtual       v2, v1, Ljava/util/BitSet;->get(I)Z
+	11      (0000002e) move-result          v2
+	12      (00000030) if-nez               v2, +5
+
+newInstance-BB@0x34 : 
+	13      (00000034) iput-boolean         v1, v0, Lcom/afwsamples/testdpc/policy/wifimanagement/WifiConfigCreationDialog;->mPasswordDirty Z
+	14      (00000038) return-object        v0
+
+newInstance-BB@0x3a : [ newInstance-BB@0x34 ]
+	15      (0000003a) const/4              v1, 0
+	16      (0000003c) goto                 -4
+

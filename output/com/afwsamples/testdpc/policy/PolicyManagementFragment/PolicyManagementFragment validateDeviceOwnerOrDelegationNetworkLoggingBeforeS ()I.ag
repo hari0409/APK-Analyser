@@ -1,0 +1,32 @@
+# Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->validateDeviceOwnerOrDelegationNetworkLoggingBeforeS()I [access_flags=private]
+#
+# Parameters:
+# local registers: v0...v2
+#
+# - return:int
+
+validateDeviceOwnerOrDelegationNetworkLoggingBeforeS-BB@0x0 : [ validateDeviceOwnerOrDelegationNetworkLoggingBeforeS-BB@0xc validateDeviceOwnerOrDelegationNetworkLoggingBeforeS-BB@0x2c ]
+	0       (00000000) sget                 v0, Lcom/afwsamples/testdpc/common/Util;->SDK_INT I
+	1       (00000004) const/16             v1, 31
+	2       (00000008) if-ge                v0, v1, +12
+
+validateDeviceOwnerOrDelegationNetworkLoggingBeforeS-BB@0xc : [ validateDeviceOwnerOrDelegationNetworkLoggingBeforeS-BB@0x18 validateDeviceOwnerOrDelegationNetworkLoggingBeforeS-BB@0x24 ]
+	3       (0000000c) invoke-direct        v2, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->isDeviceOwner()Z
+	4       (00000012) move-result          v0
+	5       (00000014) if-nez               v0, +8
+
+validateDeviceOwnerOrDelegationNetworkLoggingBeforeS-BB@0x18 : [ validateDeviceOwnerOrDelegationNetworkLoggingBeforeS-BB@0x24 validateDeviceOwnerOrDelegationNetworkLoggingBeforeS-BB@0x2c ]
+	6       (00000018) invoke-direct        v2, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->hasNetworkLoggingDelegation()Z
+	7       (0000001e) move-result          v0
+	8       (00000020) if-eqz               v0, +6
+
+validateDeviceOwnerOrDelegationNetworkLoggingBeforeS-BB@0x24 : [ validateDeviceOwnerOrDelegationNetworkLoggingBeforeS-BB@0x2a ]
+	9       (00000024) const                v0, 2131690136 # [1.900930709172198e+38]
+
+validateDeviceOwnerOrDelegationNetworkLoggingBeforeS-BB@0x2a : 
+	10      (0000002a) return               v0
+
+validateDeviceOwnerOrDelegationNetworkLoggingBeforeS-BB@0x2c : [ validateDeviceOwnerOrDelegationNetworkLoggingBeforeS-BB@0x2a ]
+	11      (0000002c) const/4              v0, 0
+	12      (0000002e) goto                 -2
+

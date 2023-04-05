@@ -1,0 +1,49 @@
+# Landroidx/appcompat/widget/SearchView;->requestFocus(I Landroid/graphics/Rect;)Z [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v3
+# - v4:int
+# - v5:android.graphics.Rect
+#
+# - return:boolean
+
+requestFocus-BB@0x0 : [ requestFocus-BB@0xa requestFocus-BB@0xe ]
+	0       (00000000) const/4              v1, 0
+	1       (00000002) iget-boolean         v2, v3, Landroidx/appcompat/widget/SearchView;->mClearingFocus Z
+	2       (00000006) if-eqz               v2, +4
+
+requestFocus-BB@0xa : [ requestFocus-BB@0xc ]
+	3       (0000000a) move                 v0, v1
+
+requestFocus-BB@0xc : 
+	4       (0000000c) return               v0
+
+requestFocus-BB@0xe : [ requestFocus-BB@0x1a requestFocus-BB@0x1e ]
+	5       (0000000e) invoke-virtual       v3, Landroidx/appcompat/widget/SearchView;->isFocusable()Z
+	6       (00000014) move-result          v2
+	7       (00000016) if-nez               v2, +4
+
+requestFocus-BB@0x1a : [ requestFocus-BB@0xc ]
+	8       (0000001a) move                 v0, v1
+	9       (0000001c) goto                 -8
+
+requestFocus-BB@0x1e : [ requestFocus-BB@0x2a requestFocus-BB@0x42 ]
+	10      (0000001e) invoke-virtual       v3, Landroidx/appcompat/widget/SearchView;->isIconified()Z
+	11      (00000024) move-result          v2
+	12      (00000026) if-nez               v2, +e
+
+requestFocus-BB@0x2a : [ requestFocus-BB@0x3a requestFocus-BB@0xc ]
+	13      (0000002a) iget-object          v2, v3, Landroidx/appcompat/widget/SearchView;->mSearchSrcTextView Landroidx/appcompat/widget/SearchView$SearchAutoComplete;
+	14      (0000002e) invoke-virtual       v2, v4, v5, Landroidx/appcompat/widget/SearchView$SearchAutoComplete;->requestFocus(I Landroid/graphics/Rect;)Z
+	15      (00000034) move-result          v0
+	16      (00000036) if-eqz               v0, -15
+
+requestFocus-BB@0x3a : [ requestFocus-BB@0xc ]
+	17      (0000003a) invoke-direct        v3, v1, Landroidx/appcompat/widget/SearchView;->updateViewsVisibility(Z)V
+	18      (00000040) goto                 -1a
+
+requestFocus-BB@0x42 : [ requestFocus-BB@0xc ]
+	19      (00000042) invoke-super         v3, v4, v5, Landroidx/appcompat/widget/LinearLayoutCompat;->requestFocus(I Landroid/graphics/Rect;)Z
+	20      (00000048) move-result          v0
+	21      (0000004a) goto                 -1f
+

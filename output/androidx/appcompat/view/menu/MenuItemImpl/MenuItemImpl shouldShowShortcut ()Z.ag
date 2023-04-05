@@ -1,0 +1,28 @@
+# Landroidx/appcompat/view/menu/MenuItemImpl;->shouldShowShortcut()Z [access_flags=]
+#
+# Parameters:
+# local registers: v0...v1
+#
+# - return:boolean
+
+shouldShowShortcut-BB@0x0 : [ shouldShowShortcut-BB@0x10 shouldShowShortcut-BB@0x20 ]
+	0       (00000000) iget-object          v0, v1, Landroidx/appcompat/view/menu/MenuItemImpl;->mMenu Landroidx/appcompat/view/menu/MenuBuilder;
+	1       (00000004) invoke-virtual       v0, Landroidx/appcompat/view/menu/MenuBuilder;->isShortcutsVisible()Z
+	2       (0000000a) move-result          v0
+	3       (0000000c) if-eqz               v0, +a
+
+shouldShowShortcut-BB@0x10 : [ shouldShowShortcut-BB@0x1c shouldShowShortcut-BB@0x20 ]
+	4       (00000010) invoke-virtual       v1, Landroidx/appcompat/view/menu/MenuItemImpl;->getShortcut()C
+	5       (00000016) move-result          v0
+	6       (00000018) if-eqz               v0, +4
+
+shouldShowShortcut-BB@0x1c : [ shouldShowShortcut-BB@0x1e ]
+	7       (0000001c) const/4              v0, 1
+
+shouldShowShortcut-BB@0x1e : 
+	8       (0000001e) return               v0
+
+shouldShowShortcut-BB@0x20 : [ shouldShowShortcut-BB@0x1e ]
+	9       (00000020) const/4              v0, 0
+	10      (00000022) goto                 -2
+

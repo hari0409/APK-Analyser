@@ -1,0 +1,29 @@
+# Lcom/afwsamples/testdpc/search/PolicySearchFragment$1;->onQueryTextChange(Ljava/lang/String;)Z [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:java.lang.String
+#
+# - return:boolean
+
+onQueryTextChange-BB@0x0 : [ onQueryTextChange-BB@0x4 onQueryTextChange-BB@0x20 ]
+	0       (00000000) if-eqz               v3, +10
+
+onQueryTextChange-BB@0x4 : [ onQueryTextChange-BB@0x12 onQueryTextChange-BB@0x20 ]
+	1       (00000004) invoke-virtual       v3, Ljava/lang/String;->length()I
+	2       (0000000a) move-result          v0
+	3       (0000000c) const/4              v1, 3
+	4       (0000000e) if-lt                v0, v1, +9
+
+onQueryTextChange-BB@0x12 : [ onQueryTextChange-BB@0x1e ]
+	5       (00000012) iget-object          v0, v2, Lcom/afwsamples/testdpc/search/PolicySearchFragment$1;->this$0 Lcom/afwsamples/testdpc/search/PolicySearchFragment;
+	6       (00000016) invoke-static        v0, v3, Lcom/afwsamples/testdpc/search/PolicySearchFragment;->access$000(Lcom/afwsamples/testdpc/search/PolicySearchFragment; Ljava/lang/String;)V
+	7       (0000001c) const/4              v0, 1
+
+onQueryTextChange-BB@0x1e : 
+	8       (0000001e) return               v0
+
+onQueryTextChange-BB@0x20 : [ onQueryTextChange-BB@0x1e ]
+	9       (00000020) const/4              v0, 0
+	10      (00000022) goto                 -2
+

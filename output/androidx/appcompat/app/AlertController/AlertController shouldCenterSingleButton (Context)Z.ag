@@ -1,0 +1,26 @@
+# Landroidx/appcompat/app/AlertController;->shouldCenterSingleButton(Landroid/content/Context;)Z [access_flags=private static]
+#
+# Parameters:
+# - local registers: v0...v3
+# - v4:android.content.Context
+#
+# - return:boolean
+
+shouldCenterSingleButton-BB@0x0 : [ shouldCenterSingleButton-BB@0x26 shouldCenterSingleButton-BB@0x28 ]
+	0       (00000000) const/4              v1, 1
+	1       (00000002) new-instance         v0, Landroid/util/TypedValue;
+	2       (00000006) invoke-direct        v0, Landroid/util/TypedValue;-><init>()V
+	3       (0000000c) invoke-virtual       v4, Landroid/content/Context;->getTheme()Landroid/content/res/Resources$Theme;
+	4       (00000012) move-result-object   v2
+	5       (00000014) sget                 v3, Landroidx/appcompat/R$attr;->alertDialogCenterButtons I
+	6       (00000018) invoke-virtual       v2, v3, v0, v1, Landroid/content/res/Resources$Theme;->resolveAttribute(I Landroid/util/TypedValue; Z)Z
+	7       (0000001e) iget                 v2, v0, Landroid/util/TypedValue;->data I
+	8       (00000022) if-eqz               v2, +3
+
+shouldCenterSingleButton-BB@0x26 : 
+	9       (00000026) return               v1
+
+shouldCenterSingleButton-BB@0x28 : [ shouldCenterSingleButton-BB@0x26 ]
+	10      (00000028) const/4              v1, 0
+	11      (0000002a) goto                 -2
+

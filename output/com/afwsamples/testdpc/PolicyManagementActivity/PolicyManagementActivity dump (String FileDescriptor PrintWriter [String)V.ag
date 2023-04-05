@@ -1,0 +1,112 @@
+# Lcom/afwsamples/testdpc/PolicyManagementActivity;->dump(Ljava/lang/String; Ljava/io/FileDescriptor; Ljava/io/PrintWriter; [Ljava/lang/String;)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v5
+# - v6:java.lang.String
+# - v7:java.io.FileDescriptor
+# - v8:java.io.PrintWriter
+# - v9:java.lang.String[]
+#
+# - return:void
+
+dump-BB@0x0 : [ dump-BB@0x8 dump-BB@0xc4 ]
+	0       (00000000) const/4              v2, 0
+	1       (00000002) const/4              v3, 1
+	2       (00000004) if-eqz               v9, +60
+
+dump-BB@0x8 : [ dump-BB@0xe dump-BB@0xc4 ]
+	3       (00000008) array-length         v1, v9
+	4       (0000000a) if-lez               v1, +5d
+
+dump-BB@0xe : [ dump-BB@0x22 dump-BB@0xc4 ]
+	5       (0000000e) aget-object          v1, v9, v2
+	6       (00000012) const-string         v4, 'lock-task-mode'
+	7       (00000016) invoke-virtual       v1, v4, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+	8       (0000001c) move-result          v1
+	9       (0000001e) if-eqz               v1, +53
+
+dump-BB@0x22 : [ dump-BB@0x28 dump-BB@0x56 ]
+	10      (00000022) array-length         v1, v9
+	11      (00000024) if-ne                v1, v3, +19
+
+dump-BB@0x28 : [ dump-BB@0x2c ]
+	12      (00000028) const-string         v0, 'status'
+
+dump-BB@0x2c : [ D:dump-BB@0x3c -892481550:dump-BB@0x84 3540994:dump-BB@0x70 109757538:dump-BB@0x5c ]
+	13      (0000002c) const/4              v1, -1
+	14      (0000002e) invoke-virtual       v0, Ljava/lang/String;->hashCode()I
+	15      (00000034) move-result          v4
+	16      (00000036) sparse-switch        v4, +51 (0xd8)
+
+dump-BB@0x3c : [ D:dump-BB@0x42 0:dump-BB@0x98 1:dump-BB@0xaa 2:dump-BB@0xbc ]
+	17      (0000003c) packed-switch        v1, +5c (0xf4)
+
+dump-BB@0x42 : [ dump-BB@0x54 ]
+	18      (00000042) const-string         v1, 'Invalid lock-task mode action: %s\n'
+	19      (00000046) new-array            v3, v3, [Ljava/lang/Object;
+	20      (0000004a) aput-object          v0, v3, v2
+	21      (0000004e) invoke-virtual       v8, v1, v3, Ljava/io/PrintWriter;->printf(Ljava/lang/String; [Ljava/lang/Object;)Ljava/io/PrintWriter;
+
+dump-BB@0x54 : 
+	22      (00000054) return-void          
+
+dump-BB@0x56 : [ dump-BB@0x2c ]
+	23      (00000056) aget-object          v0, v9, v3
+	24      (0000005a) goto                 -17
+
+dump-BB@0x5c : [ dump-BB@0x6c dump-BB@0x3c ]
+	25      (0000005c) const-string         v4, 'start'
+	26      (00000060) invoke-virtual       v0, v4, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+	27      (00000066) move-result          v4
+	28      (00000068) if-eqz               v4, -16
+
+dump-BB@0x6c : [ dump-BB@0x3c ]
+	29      (0000006c) move                 v1, v2
+	30      (0000006e) goto                 -19
+
+dump-BB@0x70 : [ dump-BB@0x80 dump-BB@0x3c ]
+	31      (00000070) const-string         v4, 'stop'
+	32      (00000074) invoke-virtual       v0, v4, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+	33      (0000007a) move-result          v4
+	34      (0000007c) if-eqz               v4, -20
+
+dump-BB@0x80 : [ dump-BB@0x3c ]
+	35      (00000080) move                 v1, v3
+	36      (00000082) goto                 -23
+
+dump-BB@0x84 : [ dump-BB@0x94 dump-BB@0x3c ]
+	37      (00000084) const-string         v4, 'status'
+	38      (00000088) invoke-virtual       v0, v4, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+	39      (0000008e) move-result          v4
+	40      (00000090) if-eqz               v4, -2a
+
+dump-BB@0x94 : [ dump-BB@0x3c ]
+	41      (00000094) const/4              v1, 2
+	42      (00000096) goto                 -2d
+
+dump-BB@0x98 : [ dump-BB@0x54 ]
+	43      (00000098) const-string         v1, 'Starting lock-task mode'
+	44      (0000009c) invoke-virtual       v8, v1, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
+	45      (000000a2) invoke-direct        v5, Lcom/afwsamples/testdpc/PolicyManagementActivity;->startLockTaskMode()V
+	46      (000000a8) goto                 -2a
+
+dump-BB@0xaa : [ dump-BB@0x54 ]
+	47      (000000aa) const-string         v1, 'Stopping lock-task mode'
+	48      (000000ae) invoke-virtual       v8, v1, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
+	49      (000000b4) invoke-direct        v5, Lcom/afwsamples/testdpc/PolicyManagementActivity;->stopLockTaskMode()V
+	50      (000000ba) goto                 -33
+
+dump-BB@0xbc : [ dump-BB@0x54 ]
+	51      (000000bc) invoke-direct        v5, v8, Lcom/afwsamples/testdpc/PolicyManagementActivity;->dumpLockModeStatus(Ljava/io/PrintWriter;)V
+	52      (000000c2) goto                 -37
+
+dump-BB@0xc4 : [ dump-BB@0x54 ]
+	53      (000000c4) invoke-virtual       v8, v6, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
+	54      (000000ca) invoke-direct        v5, v8, Lcom/afwsamples/testdpc/PolicyManagementActivity;->dumpLockModeStatus(Ljava/io/PrintWriter;)V
+	55      (000000d0) invoke-super         v5, v6, v7, v8, v9, Lcom/afwsamples/testdpc/common/DumpableActivity;->dump(Ljava/lang/String; Ljava/io/FileDescriptor; Ljava/io/PrintWriter; [Ljava/lang/String;)V
+	56      (000000d6) goto                 -41
+
+dump-BB@0xd8 : 
+	57      (000000d8) sparse-switch-payload -3532300e 360802 68ac462
+	58      (000000f4) packed-switch-payload 0 1 2
+

@@ -1,0 +1,20 @@
+# Landroidx/appcompat/view/menu/MenuItemImpl;->isCheckable()Z [access_flags=public]
+#
+# Parameters:
+# local registers: v0...v2
+#
+# - return:boolean
+
+isCheckable-BB@0x0 : [ isCheckable-BB@0xe isCheckable-BB@0x10 ]
+	0       (00000000) const/4              v0, 1
+	1       (00000002) iget                 v1, v2, Landroidx/appcompat/view/menu/MenuItemImpl;->mFlags I
+	2       (00000006) and-int/lit8         v1, v1, 1
+	3       (0000000a) if-ne                v1, v0, +3
+
+isCheckable-BB@0xe : 
+	4       (0000000e) return               v0
+
+isCheckable-BB@0x10 : [ isCheckable-BB@0xe ]
+	5       (00000010) const/4              v0, 0
+	6       (00000012) goto                 -2
+

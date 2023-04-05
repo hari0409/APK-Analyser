@@ -1,0 +1,37 @@
+# Lcom/afwsamples/testdpc/policy/locktask/KioskModeActivity;->onStart()V [access_flags=protected]
+#
+# Parameters:
+# local registers: v0...v3
+#
+# - return:void
+
+onStart-BB@0x0 : [ onStart-BB@0x22 onStart-BB@0x36 ]
+	0       (00000000) invoke-super         v3, Landroid/app/Activity;->onStart()V
+	1       (00000006) const-string         v1, 'activity'
+	2       (0000000a) invoke-virtual       v3, v1, Lcom/afwsamples/testdpc/policy/locktask/KioskModeActivity;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
+	3       (00000010) move-result-object   v0
+	4       (00000012) check-cast           v0, Landroid/app/ActivityManager;
+	5       (00000016) sget                 v1, Lcom/afwsamples/testdpc/common/Util;->SDK_INT I
+	6       (0000001a) const/16             v2, 23
+	7       (0000001e) if-ge                v1, v2, +c
+
+onStart-BB@0x22 : [ onStart-BB@0x2e onStart-BB@0x34 ]
+	8       (00000022) invoke-virtual       v0, Landroid/app/ActivityManager;->isInLockTaskMode()Z
+	9       (00000028) move-result          v1
+	10      (0000002a) if-nez               v1, +5
+
+onStart-BB@0x2e : [ onStart-BB@0x34 ]
+	11      (0000002e) invoke-virtual       v3, Lcom/afwsamples/testdpc/policy/locktask/KioskModeActivity;->startLockTask()V
+
+onStart-BB@0x34 : 
+	12      (00000034) return-void          
+
+onStart-BB@0x36 : [ onStart-BB@0x42 onStart-BB@0x34 ]
+	13      (00000036) invoke-virtual       v0, Landroid/app/ActivityManager;->getLockTaskModeState()I
+	14      (0000003c) move-result          v1
+	15      (0000003e) if-nez               v1, -5
+
+onStart-BB@0x42 : [ onStart-BB@0x34 ]
+	16      (00000042) invoke-virtual       v3, Lcom/afwsamples/testdpc/policy/locktask/KioskModeActivity;->startLockTask()V
+	17      (00000048) goto                 -a
+

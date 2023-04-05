@@ -1,0 +1,55 @@
+# Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->updateStayOnWhilePluggedInPreference()V [access_flags=private]
+#
+# Parameters:
+# local registers: v0...v6
+#
+# - return:void
+
+updateStayOnWhilePluggedInPreference-BB@0x0 : [ updateStayOnWhilePluggedInPreference-BB@0x12 updateStayOnWhilePluggedInPreference-BB@0x14 ]
+	0       (00000000) const/4              v2, 0
+	1       (00000002) iget-object          v3, v6, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->mStayOnWhilePluggedInSwitchPreference Landroidx/preference/SwitchPreference;
+	2       (00000006) invoke-virtual       v3, Landroidx/preference/SwitchPreference;->isEnabled()Z
+	3       (0000000c) move-result          v3
+	4       (0000000e) if-nez               v3, +3
+
+updateStayOnWhilePluggedInPreference-BB@0x12 : 
+	5       (00000012) return-void          
+
+updateStayOnWhilePluggedInPreference-BB@0x14 : [ updateStayOnWhilePluggedInPreference-BB@0x3a updateStayOnWhilePluggedInPreference-BB@0x62 ]
+	6       (00000014) const/4              v0, 0
+	7       (00000016) invoke-virtual       v6, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->getActivity()Landroid/app/Activity;
+	8       (0000001c) move-result-object   v3
+	9       (0000001e) invoke-virtual       v3, Landroid/app/Activity;->getContentResolver()Landroid/content/ContentResolver;
+	10      (00000024) move-result-object   v3
+	11      (00000026) const-string         v4, 'stay_on_while_plugged_in'
+	12      (0000002a) invoke-static        v3, v4, v2, Landroid/provider/Settings$Global;->getInt(Landroid/content/ContentResolver; Ljava/lang/String; I)I
+	13      (00000030) move-result          v1
+	14      (00000032) and-int/lit8         v3, v1, 7
+	15      (00000036) if-eqz               v3, +16
+
+updateStayOnWhilePluggedInPreference-BB@0x3a : [ updateStayOnWhilePluggedInPreference-BB@0x3c ]
+	16      (0000003a) const/4              v0, 1
+
+updateStayOnWhilePluggedInPreference-BB@0x3c : [ updateStayOnWhilePluggedInPreference-BB@0x4c updateStayOnWhilePluggedInPreference-BB@0x66 ]
+	17      (0000003c) iget-object          v3, v6, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->mDevicePolicyManager Landroid/app/admin/DevicePolicyManager;
+	18      (00000040) iget-object          v4, v6, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->mAdminComponentName Landroid/content/ComponentName;
+	19      (00000044) const-string         v5, 'stay_on_while_plugged_in'
+	20      (00000048) if-eqz               v0, +f
+
+updateStayOnWhilePluggedInPreference-BB@0x4c : [ updateStayOnWhilePluggedInPreference-BB@0x50 ]
+	21      (0000004c) sget-object          v2, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->BATTERY_PLUGGED_ANY Ljava/lang/String;
+
+updateStayOnWhilePluggedInPreference-BB@0x50 : [ updateStayOnWhilePluggedInPreference-BB@0x12 ]
+	22      (00000050) invoke-virtual       v3, v4, v5, v2, Landroid/app/admin/DevicePolicyManager;->setGlobalSetting(Landroid/content/ComponentName; Ljava/lang/String; Ljava/lang/String;)V
+	23      (00000056) iget-object          v2, v6, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->mStayOnWhilePluggedInSwitchPreference Landroidx/preference/SwitchPreference;
+	24      (0000005a) invoke-virtual       v2, v0, Landroidx/preference/SwitchPreference;->setChecked(Z)V
+	25      (00000060) goto                 -27
+
+updateStayOnWhilePluggedInPreference-BB@0x62 : [ updateStayOnWhilePluggedInPreference-BB@0x3c ]
+	26      (00000062) move                 v0, v2
+	27      (00000064) goto                 -14
+
+updateStayOnWhilePluggedInPreference-BB@0x66 : [ updateStayOnWhilePluggedInPreference-BB@0x50 ]
+	28      (00000066) sget-object          v2, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->DONT_STAY_ON Ljava/lang/String;
+	29      (0000006a) goto                 -d
+

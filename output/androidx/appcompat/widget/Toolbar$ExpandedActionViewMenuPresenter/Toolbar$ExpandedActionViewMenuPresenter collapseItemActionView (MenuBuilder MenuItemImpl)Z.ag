@@ -1,0 +1,43 @@
+# Landroidx/appcompat/widget/Toolbar$ExpandedActionViewMenuPresenter;->collapseItemActionView(Landroidx/appcompat/view/menu/MenuBuilder; Landroidx/appcompat/view/menu/MenuItemImpl;)Z [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v3
+# - v4:androidx.appcompat.view.menu.MenuBuilder
+# - v5:androidx.appcompat.view.menu.MenuItemImpl
+#
+# - return:boolean
+
+collapseItemActionView-BB@0x0 : [ collapseItemActionView-BB@0x12 collapseItemActionView-BB@0x24 ]
+	0       (00000000) const/4              v2, 0
+	1       (00000002) iget-object          v0, v3, Landroidx/appcompat/widget/Toolbar$ExpandedActionViewMenuPresenter;->this$0 Landroidx/appcompat/widget/Toolbar;
+	2       (00000006) iget-object          v0, v0, Landroidx/appcompat/widget/Toolbar;->mExpandedActionView Landroid/view/View;
+	3       (0000000a) instance-of          v0, v0, Landroidx/appcompat/view/CollapsibleActionView;
+	4       (0000000e) if-eqz               v0, +b
+
+collapseItemActionView-BB@0x12 : [ collapseItemActionView-BB@0x24 ]
+	5       (00000012) iget-object          v0, v3, Landroidx/appcompat/widget/Toolbar$ExpandedActionViewMenuPresenter;->this$0 Landroidx/appcompat/widget/Toolbar;
+	6       (00000016) iget-object          v0, v0, Landroidx/appcompat/widget/Toolbar;->mExpandedActionView Landroid/view/View;
+	7       (0000001a) check-cast           v0, Landroidx/appcompat/view/CollapsibleActionView;
+	8       (0000001e) invoke-interface     v0, Landroidx/appcompat/view/CollapsibleActionView;->onActionViewCollapsed()V
+
+collapseItemActionView-BB@0x24 : 
+	9       (00000024) iget-object          v0, v3, Landroidx/appcompat/widget/Toolbar$ExpandedActionViewMenuPresenter;->this$0 Landroidx/appcompat/widget/Toolbar;
+	10      (00000028) iget-object          v1, v3, Landroidx/appcompat/widget/Toolbar$ExpandedActionViewMenuPresenter;->this$0 Landroidx/appcompat/widget/Toolbar;
+	11      (0000002c) iget-object          v1, v1, Landroidx/appcompat/widget/Toolbar;->mExpandedActionView Landroid/view/View;
+	12      (00000030) invoke-virtual       v0, v1, Landroidx/appcompat/widget/Toolbar;->removeView(Landroid/view/View;)V
+	13      (00000036) iget-object          v0, v3, Landroidx/appcompat/widget/Toolbar$ExpandedActionViewMenuPresenter;->this$0 Landroidx/appcompat/widget/Toolbar;
+	14      (0000003a) iget-object          v1, v3, Landroidx/appcompat/widget/Toolbar$ExpandedActionViewMenuPresenter;->this$0 Landroidx/appcompat/widget/Toolbar;
+	15      (0000003e) iget-object          v1, v1, Landroidx/appcompat/widget/Toolbar;->mCollapseButtonView Landroid/widget/ImageButton;
+	16      (00000042) invoke-virtual       v0, v1, Landroidx/appcompat/widget/Toolbar;->removeView(Landroid/view/View;)V
+	17      (00000048) iget-object          v0, v3, Landroidx/appcompat/widget/Toolbar$ExpandedActionViewMenuPresenter;->this$0 Landroidx/appcompat/widget/Toolbar;
+	18      (0000004c) iput-object          v2, v0, Landroidx/appcompat/widget/Toolbar;->mExpandedActionView Landroid/view/View;
+	19      (00000050) iget-object          v0, v3, Landroidx/appcompat/widget/Toolbar$ExpandedActionViewMenuPresenter;->this$0 Landroidx/appcompat/widget/Toolbar;
+	20      (00000054) invoke-virtual       v0, Landroidx/appcompat/widget/Toolbar;->addChildrenForExpandedActionView()V
+	21      (0000005a) iput-object          v2, v3, Landroidx/appcompat/widget/Toolbar$ExpandedActionViewMenuPresenter;->mCurrentExpandedItem Landroidx/appcompat/view/menu/MenuItemImpl;
+	22      (0000005e) iget-object          v0, v3, Landroidx/appcompat/widget/Toolbar$ExpandedActionViewMenuPresenter;->this$0 Landroidx/appcompat/widget/Toolbar;
+	23      (00000062) invoke-virtual       v0, Landroidx/appcompat/widget/Toolbar;->requestLayout()V
+	24      (00000068) const/4              v0, 0
+	25      (0000006a) invoke-virtual       v5, v0, Landroidx/appcompat/view/menu/MenuItemImpl;->setActionViewExpanded(Z)V
+	26      (00000070) const/4              v0, 1
+	27      (00000072) return               v0
+

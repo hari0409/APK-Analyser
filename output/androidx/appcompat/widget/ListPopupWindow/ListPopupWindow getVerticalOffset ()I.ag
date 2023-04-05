@@ -1,0 +1,21 @@
+# Landroidx/appcompat/widget/ListPopupWindow;->getVerticalOffset()I [access_flags=public]
+#
+# Parameters:
+# local registers: v0...v1
+#
+# - return:int
+
+getVerticalOffset-BB@0x0 : [ getVerticalOffset-BB@0x8 getVerticalOffset-BB@0xc ]
+	0       (00000000) iget-boolean         v0, v1, Landroidx/appcompat/widget/ListPopupWindow;->mDropDownVerticalOffsetSet Z
+	1       (00000004) if-nez               v0, +4
+
+getVerticalOffset-BB@0x8 : [ getVerticalOffset-BB@0xa ]
+	2       (00000008) const/4              v0, 0
+
+getVerticalOffset-BB@0xa : 
+	3       (0000000a) return               v0
+
+getVerticalOffset-BB@0xc : [ getVerticalOffset-BB@0xa ]
+	4       (0000000c) iget                 v0, v1, Landroidx/appcompat/widget/ListPopupWindow;->mDropDownVerticalOffset I
+	5       (00000010) goto                 -3
+

@@ -1,0 +1,56 @@
+# Lcom/afwsamples/testdpc/policy/utils/Asn1Utils;->getIntegersFromAsn1Set(Lorg/bouncycastle/asn1/ASN1Encodable;)Ljava/util/Set; [access_flags=public static]
+#
+# Parameters:
+# - local registers: v0...v4
+# - v5:org.bouncycastle.asn1.ASN1Encodable
+#
+# - return:java.util.Set
+
+getIntegersFromAsn1Set-BB@0x0 : [ getIntegersFromAsn1Set-BB@0x8 getIntegersFromAsn1Set-BB@0x4a ]
+	0       (00000000) instance-of          v2, v5, Lorg/bouncycastle/asn1/ASN1Set;
+	1       (00000004) if-nez               v2, +23
+
+getIntegersFromAsn1Set-BB@0x8 : 
+	2       (00000008) new-instance         v2, Ljava/security/cert/CertificateParsingException;
+	3       (0000000c) new-instance         v3, Ljava/lang/StringBuilder;
+	4       (00000010) invoke-direct        v3, Ljava/lang/StringBuilder;-><init>()V
+	5       (00000016) const-string         v4, 'Expected set, found '
+	6       (0000001a) invoke-virtual       v3, v4, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	7       (00000020) move-result-object   v3
+	8       (00000022) invoke-virtual       v5, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+	9       (00000028) move-result-object   v4
+	10      (0000002a) invoke-virtual       v4, Ljava/lang/Class;->getName()Ljava/lang/String;
+	11      (00000030) move-result-object   v4
+	12      (00000032) invoke-virtual       v3, v4, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	13      (00000038) move-result-object   v3
+	14      (0000003a) invoke-virtual       v3, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+	15      (00000040) move-result-object   v3
+	16      (00000042) invoke-direct        v2, v3, Ljava/security/cert/CertificateParsingException;-><init>(Ljava/lang/String;)V
+	17      (00000048) throw                v2
+
+getIntegersFromAsn1Set-BB@0x4a : [ getIntegersFromAsn1Set-BB@0x60 ]
+	18      (0000004a) new-instance         v1, Ljava/util/HashSet;
+	19      (0000004e) invoke-direct        v1, Ljava/util/HashSet;-><init>()V
+	20      (00000054) check-cast           v5, Lorg/bouncycastle/asn1/ASN1Set;
+	21      (00000058) invoke-virtual       v5, Lorg/bouncycastle/asn1/ASN1Set;->getObjects()Ljava/util/Enumeration;
+	22      (0000005e) move-result-object   v0
+
+getIntegersFromAsn1Set-BB@0x60 : [ getIntegersFromAsn1Set-BB@0x6c getIntegersFromAsn1Set-BB@0x90 ]
+	23      (00000060) invoke-interface     v0, Ljava/util/Enumeration;->hasMoreElements()Z
+	24      (00000066) move-result          v2
+	25      (00000068) if-eqz               v2, +14
+
+getIntegersFromAsn1Set-BB@0x6c : [ getIntegersFromAsn1Set-BB@0x60 ]
+	26      (0000006c) invoke-interface     v0, Ljava/util/Enumeration;->nextElement()Ljava/lang/Object;
+	27      (00000072) move-result-object   v2
+	28      (00000074) check-cast           v2, Lorg/bouncycastle/asn1/ASN1Integer;
+	29      (00000078) invoke-static        v2, Lcom/afwsamples/testdpc/policy/utils/Asn1Utils;->getIntegerFromAsn1(Lorg/bouncycastle/asn1/ASN1Encodable;)I
+	30      (0000007e) move-result          v2
+	31      (00000080) invoke-static        v2, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+	32      (00000086) move-result-object   v2
+	33      (00000088) invoke-virtual       v1, v2, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
+	34      (0000008e) goto                 -17
+
+getIntegersFromAsn1Set-BB@0x90 : 
+	35      (00000090) return-object        v1
+

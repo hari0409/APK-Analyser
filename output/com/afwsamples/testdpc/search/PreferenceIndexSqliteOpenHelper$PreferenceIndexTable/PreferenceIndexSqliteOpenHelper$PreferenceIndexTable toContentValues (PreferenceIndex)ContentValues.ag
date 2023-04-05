@@ -1,0 +1,22 @@
+# Lcom/afwsamples/testdpc/search/PreferenceIndexSqliteOpenHelper$PreferenceIndexTable;->toContentValues(Lcom/afwsamples/testdpc/search/PreferenceIndex;)Landroid/content/ContentValues; [access_flags=static]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:com.afwsamples.testdpc.search.PreferenceIndex
+#
+# - return:android.content.ContentValues
+
+toContentValues-BB@0x0 : 
+	0       (00000000) new-instance         v0, Landroid/content/ContentValues;
+	1       (00000004) invoke-direct        v0, Landroid/content/ContentValues;-><init>()V
+	2       (0000000a) const-string         v1, 'key'
+	3       (0000000e) iget-object          v2, v3, Lcom/afwsamples/testdpc/search/PreferenceIndex;->key Ljava/lang/String;
+	4       (00000012) invoke-virtual       v0, v1, v2, Landroid/content/ContentValues;->put(Ljava/lang/String; Ljava/lang/String;)V
+	5       (00000018) const-string         v1, 'title'
+	6       (0000001c) iget-object          v2, v3, Lcom/afwsamples/testdpc/search/PreferenceIndex;->title Ljava/lang/String;
+	7       (00000020) invoke-virtual       v0, v1, v2, Landroid/content/ContentValues;->put(Ljava/lang/String; Ljava/lang/String;)V
+	8       (00000026) const-string         v1, 'fragment_class'
+	9       (0000002a) iget-object          v2, v3, Lcom/afwsamples/testdpc/search/PreferenceIndex;->fragmentClass Ljava/lang/String;
+	10      (0000002e) invoke-virtual       v0, v1, v2, Landroid/content/ContentValues;->put(Ljava/lang/String; Ljava/lang/String;)V
+	11      (00000034) return-object        v0
+

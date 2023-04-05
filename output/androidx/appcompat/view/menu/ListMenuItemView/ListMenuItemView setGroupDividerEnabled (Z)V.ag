@@ -1,0 +1,33 @@
+# Landroidx/appcompat/view/menu/ListMenuItemView;->setGroupDividerEnabled(Z)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:boolean
+#
+# - return:void
+
+setGroupDividerEnabled-BB@0x0 : [ setGroupDividerEnabled-BB@0x8 setGroupDividerEnabled-BB@0x20 ]
+	0       (00000000) iget-object          v0, v2, Landroidx/appcompat/view/menu/ListMenuItemView;->mGroupDivider Landroid/widget/ImageView;
+	1       (00000004) if-eqz               v0, +e
+
+setGroupDividerEnabled-BB@0x8 : [ setGroupDividerEnabled-BB@0x14 setGroupDividerEnabled-BB@0x22 ]
+	2       (00000008) iget-object          v1, v2, Landroidx/appcompat/view/menu/ListMenuItemView;->mGroupDivider Landroid/widget/ImageView;
+	3       (0000000c) iget-boolean         v0, v2, Landroidx/appcompat/view/menu/ListMenuItemView;->mHasListDivider Z
+	4       (00000010) if-nez               v0, +9
+
+setGroupDividerEnabled-BB@0x14 : [ setGroupDividerEnabled-BB@0x18 setGroupDividerEnabled-BB@0x22 ]
+	5       (00000014) if-eqz               v3, +7
+
+setGroupDividerEnabled-BB@0x18 : [ setGroupDividerEnabled-BB@0x1a ]
+	6       (00000018) const/4              v0, 0
+
+setGroupDividerEnabled-BB@0x1a : [ setGroupDividerEnabled-BB@0x20 ]
+	7       (0000001a) invoke-virtual       v1, v0, Landroid/widget/ImageView;->setVisibility(I)V
+
+setGroupDividerEnabled-BB@0x20 : 
+	8       (00000020) return-void          
+
+setGroupDividerEnabled-BB@0x22 : [ setGroupDividerEnabled-BB@0x1a ]
+	9       (00000022) const/16             v0, 8
+	10      (00000026) goto                 -6
+

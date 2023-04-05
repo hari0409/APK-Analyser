@@ -1,0 +1,91 @@
+# Lcom/afwsamples/testdpc/comp/IProfileOwnerService$Stub;->onTransact(I Landroid/os/Parcel; Landroid/os/Parcel; I)Z [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v6
+# - v7:int
+# - v8:android.os.Parcel
+# - v9:android.os.Parcel
+# - v10:int
+#
+# - return:boolean
+
+onTransact-BB@0x0 : [ D:onTransact-BB@0xe 1:onTransact-BB@0x20 2:onTransact-BB@0x40 3:onTransact-BB@0x62 1598968902:onTransact-BB@0x18 ]
+	0       (00000000) const/4              v4, 0
+	1       (00000002) const/4              v3, 1
+	2       (00000004) const-string         v2, 'com.afwsamples.testdpc.comp.IProfileOwnerService'
+	3       (00000008) sparse-switch        v7, +4e (0xa4)
+
+onTransact-BB@0xe : [ onTransact-BB@0x16 ]
+	4       (0000000e) invoke-super         v6, v7, v8, v9, v10, Landroid/os/Binder;->onTransact(I Landroid/os/Parcel; Landroid/os/Parcel; I)Z
+	5       (00000014) move-result          v3
+
+onTransact-BB@0x16 : 
+	6       (00000016) return               v3
+
+onTransact-BB@0x18 : [ onTransact-BB@0x16 ]
+	7       (00000018) invoke-virtual       v9, v2, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
+	8       (0000001e) goto                 -4
+
+onTransact-BB@0x20 : [ onTransact-BB@0x32 onTransact-BB@0x3c ]
+	9       (00000020) invoke-virtual       v8, v2, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+	10      (00000026) invoke-virtual       v8, Landroid/os/Parcel;->readInt()I
+	11      (0000002c) move-result          v5
+	12      (0000002e) if-eqz               v5, +7
+
+onTransact-BB@0x32 : [ onTransact-BB@0x34 ]
+	13      (00000032) move                 v0, v3
+
+onTransact-BB@0x34 : [ onTransact-BB@0x16 ]
+	14      (00000034) invoke-virtual       v6, v0, Lcom/afwsamples/testdpc/comp/IProfileOwnerService$Stub;->setLauncherIconHidden(Z)V
+	15      (0000003a) goto                 -12
+
+onTransact-BB@0x3c : [ onTransact-BB@0x34 ]
+	16      (0000003c) move                 v0, v4
+	17      (0000003e) goto                 -5
+
+onTransact-BB@0x40 : [ onTransact-BB@0x58 onTransact-BB@0x5a ]
+	18      (00000040) invoke-virtual       v8, v2, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+	19      (00000046) invoke-virtual       v6, Lcom/afwsamples/testdpc/comp/IProfileOwnerService$Stub;->isLauncherIconHidden()Z
+	20      (0000004c) move-result          v1
+	21      (0000004e) invoke-virtual       v9, Landroid/os/Parcel;->writeNoException()V
+	22      (00000054) if-eqz               v1, +3
+
+onTransact-BB@0x58 : [ onTransact-BB@0x5a ]
+	23      (00000058) move                 v4, v3
+
+onTransact-BB@0x5a : [ onTransact-BB@0x16 ]
+	24      (0000005a) invoke-virtual       v9, v4, Landroid/os/Parcel;->writeInt(I)V
+	25      (00000060) goto                 -25
+
+onTransact-BB@0x62 : [ onTransact-BB@0x74 onTransact-BB@0xa0 ]
+	26      (00000062) invoke-virtual       v8, v2, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+	27      (00000068) invoke-virtual       v8, Landroid/os/Parcel;->readInt()I
+	28      (0000006e) move-result          v5
+	29      (00000070) if-eqz               v5, +18
+
+onTransact-BB@0x74 : [ onTransact-BB@0x84 ]
+	30      (00000074) sget-object          v5, Landroid/content/res/AssetFileDescriptor;->CREATOR Landroid/os/Parcelable$Creator;
+	31      (00000078) invoke-interface     v5, v8, Landroid/os/Parcelable$Creator;->createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
+	32      (0000007e) move-result-object   v0
+	33      (00000080) check-cast           v0, Landroid/content/res/AssetFileDescriptor;
+
+onTransact-BB@0x84 : [ onTransact-BB@0x96 onTransact-BB@0x98 ]
+	34      (00000084) invoke-virtual       v6, v0, Lcom/afwsamples/testdpc/comp/IProfileOwnerService$Stub;->installCaCertificate(Landroid/content/res/AssetFileDescriptor;)Z
+	35      (0000008a) move-result          v1
+	36      (0000008c) invoke-virtual       v9, Landroid/os/Parcel;->writeNoException()V
+	37      (00000092) if-eqz               v1, +3
+
+onTransact-BB@0x96 : [ onTransact-BB@0x98 ]
+	38      (00000096) move                 v4, v3
+
+onTransact-BB@0x98 : [ onTransact-BB@0x16 ]
+	39      (00000098) invoke-virtual       v9, v4, Landroid/os/Parcel;->writeInt(I)V
+	40      (0000009e) goto                 -44
+
+onTransact-BB@0xa0 : [ onTransact-BB@0x84 ]
+	41      (000000a0) const/4              v0, 0
+	42      (000000a2) goto                 -f
+
+onTransact-BB@0xa4 : 
+	43      (000000a4) sparse-switch-payload 1 2 3 5f4e5446
+

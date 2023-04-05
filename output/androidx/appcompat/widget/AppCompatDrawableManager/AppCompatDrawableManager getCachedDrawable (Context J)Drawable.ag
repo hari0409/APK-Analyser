@@ -1,0 +1,60 @@
+# Landroidx/appcompat/widget/AppCompatDrawableManager;->getCachedDrawable(Landroid/content/Context; J)Landroid/graphics/drawable/Drawable; [access_flags=private synchronized]
+#
+# Parameters:
+# - local registers: v0...v7
+# - v8:android.content.Context
+# - v9:long
+#
+# - return:android.graphics.drawable.Drawable
+
+getCachedDrawable-BB@0x0 : [ getCachedDrawable-BB@0x4 ]
+	0       (00000000) const/4              v3, 0
+	1       (00000002) monitor-enter        v6
+
+getCachedDrawable-BB@0x4 : [ getCachedDrawable-BB@0x18 getCachedDrawable-BB@0x1c ]
+	2       (00000004) iget-object          v4, v6, Landroidx/appcompat/widget/AppCompatDrawableManager;->mDrawableCaches Ljava/util/WeakHashMap;
+	3       (00000008) invoke-virtual       v4, v7, Ljava/util/WeakHashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
+	4       (0000000e) move-result-object   v0
+	5       (00000010) check-cast           v0, Landroidx/collection/LongSparseArray;
+	6       (00000014) if-nez               v0, +4
+	4:13
+	(Ljava/lang/Throwable; -> 56 getCachedDrawable-BB@0x56)
+
+getCachedDrawable-BB@0x18 : 
+	7       (00000018) monitor-exit         v6
+	8       (0000001a) return-object        v3
+
+getCachedDrawable-BB@0x1c : [ getCachedDrawable-BB@0x2c getCachedDrawable-BB@0x18 ]
+	9       (0000001c) invoke-virtual       v0, v8, v9, Landroidx/collection/LongSparseArray;->get(J)Ljava/lang/Object;
+	10      (00000022) move-result-object   v2
+	11      (00000024) check-cast           v2, Ljava/lang/ref/WeakReference;
+	12      (00000028) if-eqz               v2, -8
+	1c:53
+	(Ljava/lang/Throwable; -> 56 getCachedDrawable-BB@0x56)
+
+getCachedDrawable-BB@0x2c : [ getCachedDrawable-BB@0x3c getCachedDrawable-BB@0x4e ]
+	13      (0000002c) invoke-virtual       v2, Ljava/lang/ref/WeakReference;->get()Ljava/lang/Object;
+	14      (00000032) move-result-object   v1
+	15      (00000034) check-cast           v1, Landroid/graphics/drawable/Drawable$ConstantState;
+	16      (00000038) if-eqz               v1, +b
+	1c:53
+	(Ljava/lang/Throwable; -> 56 getCachedDrawable-BB@0x56)
+
+getCachedDrawable-BB@0x3c : [ getCachedDrawable-BB@0x18 ]
+	17      (0000003c) invoke-virtual       v7, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
+	18      (00000042) move-result-object   v3
+	19      (00000044) invoke-virtual       v1, v3, Landroid/graphics/drawable/Drawable$ConstantState;->newDrawable(Landroid/content/res/Resources;)Landroid/graphics/drawable/Drawable;
+	20      (0000004a) move-result-object   v3
+	21      (0000004c) goto                 -1a
+	1c:53
+	(Ljava/lang/Throwable; -> 56 getCachedDrawable-BB@0x56)
+
+getCachedDrawable-BB@0x4e : [ getCachedDrawable-BB@0x18 ]
+	22      (0000004e) invoke-virtual       v0, v8, v9, Landroidx/collection/LongSparseArray;->delete(J)V
+	23      (00000054) goto                 -1e
+
+getCachedDrawable-BB@0x56 : 
+	24      (00000056) move-exception       v3
+	25      (00000058) monitor-exit         v6
+	26      (0000005a) throw                v3
+

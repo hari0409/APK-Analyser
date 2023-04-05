@@ -1,0 +1,28 @@
+# Lcom/afwsamples/testdpc/policy/utils/Asn1Utils;->getByteArrayFromAsn1(Lorg/bouncycastle/asn1/ASN1Encodable;)[B [access_flags=public static]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:org.bouncycastle.asn1.ASN1Encodable
+#
+# - return:byte[]
+
+getByteArrayFromAsn1-BB@0x0 : [ getByteArrayFromAsn1-BB@0x4 getByteArrayFromAsn1-BB@0xc ]
+	0       (00000000) if-eqz               v3, +6
+
+getByteArrayFromAsn1-BB@0x4 : [ getByteArrayFromAsn1-BB@0xc getByteArrayFromAsn1-BB@0x1c ]
+	1       (00000004) instance-of          v1, v3, Lorg/bouncycastle/asn1/DEROctetString;
+	2       (00000008) if-nez               v1, +a
+
+getByteArrayFromAsn1-BB@0xc : 
+	3       (0000000c) new-instance         v1, Ljava/security/cert/CertificateParsingException;
+	4       (00000010) const-string         v2, 'Expected DEROctetString'
+	5       (00000014) invoke-direct        v1, v2, Ljava/security/cert/CertificateParsingException;-><init>(Ljava/lang/String;)V
+	6       (0000001a) throw                v1
+
+getByteArrayFromAsn1-BB@0x1c : 
+	7       (0000001c) move-object          v0, v3
+	8       (0000001e) check-cast           v0, Lorg/bouncycastle/asn1/ASN1OctetString;
+	9       (00000022) invoke-virtual       v0, Lorg/bouncycastle/asn1/ASN1OctetString;->getOctets()[B
+	10      (00000028) move-result-object   v1
+	11      (0000002a) return-object        v1
+

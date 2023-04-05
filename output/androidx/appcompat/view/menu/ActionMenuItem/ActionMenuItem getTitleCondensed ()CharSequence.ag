@@ -1,0 +1,21 @@
+# Landroidx/appcompat/view/menu/ActionMenuItem;->getTitleCondensed()Ljava/lang/CharSequence; [access_flags=public]
+#
+# Parameters:
+# local registers: v0...v1
+#
+# - return:java.lang.CharSequence
+
+getTitleCondensed-BB@0x0 : [ getTitleCondensed-BB@0x8 getTitleCondensed-BB@0xe ]
+	0       (00000000) iget-object          v0, v1, Landroidx/appcompat/view/menu/ActionMenuItem;->mTitleCondensed Ljava/lang/CharSequence;
+	1       (00000004) if-eqz               v0, +5
+
+getTitleCondensed-BB@0x8 : [ getTitleCondensed-BB@0xc ]
+	2       (00000008) iget-object          v0, v1, Landroidx/appcompat/view/menu/ActionMenuItem;->mTitleCondensed Ljava/lang/CharSequence;
+
+getTitleCondensed-BB@0xc : 
+	3       (0000000c) return-object        v0
+
+getTitleCondensed-BB@0xe : [ getTitleCondensed-BB@0xc ]
+	4       (0000000e) iget-object          v0, v1, Landroidx/appcompat/view/menu/ActionMenuItem;->mTitle Ljava/lang/CharSequence;
+	5       (00000012) goto                 -3
+

@@ -1,0 +1,29 @@
+# Lcom/afwsamples/testdpc/common/keyvaluepair/KeyValuePairDialogFragment;->setSupportedType([I)V [access_flags=private]
+#
+# Parameters:
+# - local registers: v0...v5
+# - v6:int[]
+#
+# - return:void
+
+setSupportedType-BB@0x0 : [ setSupportedType-BB@0xe ]
+	0       (00000000) new-instance         v1, Ljava/util/HashSet;
+	1       (00000004) invoke-direct        v1, Ljava/util/HashSet;-><init>()V
+	2       (0000000a) array-length         v3, v6
+	3       (0000000c) const/4              v2, 0
+
+setSupportedType-BB@0xe : [ setSupportedType-BB@0x12 setSupportedType-BB@0x2a ]
+	4       (0000000e) if-ge                v2, v3, +e
+
+setSupportedType-BB@0x12 : [ setSupportedType-BB@0xe ]
+	5       (00000012) aget                 v4, v6, v2
+	6       (00000016) invoke-static        v4, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+	7       (0000001c) move-result-object   v0
+	8       (0000001e) invoke-interface     v1, v0, Ljava/util/Set;->add(Ljava/lang/Object;)Z
+	9       (00000024) add-int/lit8         v2, v2, 1
+	10      (00000028) goto                 -d
+
+setSupportedType-BB@0x2a : 
+	11      (0000002a) iput-object          v1, v5, Lcom/afwsamples/testdpc/common/keyvaluepair/KeyValuePairDialogFragment;->mSupportedTypes Ljava/util/Set;
+	12      (0000002e) return-void          
+

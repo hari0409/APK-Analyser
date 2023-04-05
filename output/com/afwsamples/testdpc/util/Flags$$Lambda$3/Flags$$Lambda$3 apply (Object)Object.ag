@@ -1,0 +1,16 @@
+# Lcom/afwsamples/testdpc/util/Flags$$Lambda$3;->apply(Ljava/lang/Object;)Ljava/lang/Object; [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:java.lang.Object
+#
+# - return:java.lang.Object
+
+apply-BB@0x0 : 
+	0       (00000000) check-cast           v2, Ljava/lang/String;
+	1       (00000004) invoke-static        v2, Ljava/lang/Float;->parseFloat(Ljava/lang/String;)F
+	2       (0000000a) move-result          v0
+	3       (0000000c) invoke-static        v0, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
+	4       (00000012) move-result-object   v0
+	5       (00000014) return-object        v0
+

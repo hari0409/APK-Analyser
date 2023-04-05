@@ -1,0 +1,80 @@
+# Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->showSetMeteredDataPrompt()V [access_flags=private]
+#
+# Parameters:
+# local registers: v0...v10
+#
+# - return:void
+
+showSetMeteredDataPrompt-BB@0x0 : [ showSetMeteredDataPrompt-BB@0xc showSetMeteredDataPrompt-BB@0x18 ]
+	0       (00000000) invoke-virtual       v10, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->getActivity()Landroid/app/Activity;
+	1       (00000006) move-result-object   v0
+	2       (00000008) if-eqz               v0, +8
+
+showSetMeteredDataPrompt-BB@0xc : [ showSetMeteredDataPrompt-BB@0x18 showSetMeteredDataPrompt-BB@0x1a ]
+	3       (0000000c) invoke-virtual       v0, Landroid/app/Activity;->isFinishing()Z
+	4       (00000012) move-result          v7
+	5       (00000014) if-eqz               v7, +3
+
+showSetMeteredDataPrompt-BB@0x18 : 
+	6       (00000018) return-void          
+
+showSetMeteredDataPrompt-BB@0x1a : [ showSetMeteredDataPrompt-BB@0x4e ]
+	7       (0000001a) iget-object          v7, v10, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->mPackageManager Landroid/content/pm/PackageManager;
+	8       (0000001e) const/4              v8, 0
+	9       (00000020) invoke-virtual       v7, v8, Landroid/content/pm/PackageManager;->getInstalledApplications(I)Ljava/util/List;
+	10      (00000026) move-result-object   v2
+	11      (00000028) new-instance         v6, Ljava/util/ArrayList;
+	12      (0000002c) invoke-direct        v6, Ljava/util/ArrayList;-><init>()V
+	13      (00000032) new-instance         v7, Landroid/content/pm/ApplicationInfo$DisplayNameComparator;
+	14      (00000036) iget-object          v8, v10, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->mPackageManager Landroid/content/pm/PackageManager;
+	15      (0000003a) invoke-direct        v7, v8, Landroid/content/pm/ApplicationInfo$DisplayNameComparator;-><init>(Landroid/content/pm/PackageManager;)V
+	16      (00000040) invoke-static        v2, v7, Ljava/util/Collections;->sort(Ljava/util/List; Ljava/util/Comparator;)V
+	17      (00000046) invoke-interface     v2, Ljava/util/List;->iterator()Ljava/util/Iterator;
+	18      (0000004c) move-result-object   v7
+
+showSetMeteredDataPrompt-BB@0x4e : [ showSetMeteredDataPrompt-BB@0x5a showSetMeteredDataPrompt-BB@0x80 ]
+	19      (0000004e) invoke-interface     v7, Ljava/util/Iterator;->hasNext()Z
+	20      (00000054) move-result          v8
+	21      (00000056) if-eqz               v8, +15
+
+showSetMeteredDataPrompt-BB@0x5a : [ showSetMeteredDataPrompt-BB@0x4e ]
+	22      (0000005a) invoke-interface     v7, Ljava/util/Iterator;->next()Ljava/lang/Object;
+	23      (00000060) move-result-object   v1
+	24      (00000062) check-cast           v1, Landroid/content/pm/ApplicationInfo;
+	25      (00000066) new-instance         v5, Landroid/content/pm/ResolveInfo;
+	26      (0000006a) invoke-direct        v5, Landroid/content/pm/ResolveInfo;-><init>()V
+	27      (00000070) iget-object          v8, v1, Landroid/content/pm/ApplicationInfo;->packageName Ljava/lang/String;
+	28      (00000074) iput-object          v8, v5, Landroid/content/pm/ResolveInfo;->resolvePackageName Ljava/lang/String;
+	29      (00000078) invoke-interface     v6, v5, Ljava/util/List;->add(Ljava/lang/Object;)Z
+	30      (0000007e) goto                 -18
+
+showSetMeteredDataPrompt-BB@0x80 : [ showSetMeteredDataPrompt-BB@0x18 ]
+	31      (00000080) new-instance         v4, Lcom/afwsamples/testdpc/policy/MeteredDataRestrictionInfoAdapter;
+	32      (00000084) invoke-virtual       v10, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->getActivity()Landroid/app/Activity;
+	33      (0000008a) move-result-object   v7
+	34      (0000008c) invoke-direct        v10, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->getMeteredDataRestrictedPkgs()Ljava/util/List;
+	35      (00000092) move-result-object   v8
+	36      (00000094) invoke-direct        v4, v7, v6, v8, Lcom/afwsamples/testdpc/policy/MeteredDataRestrictionInfoAdapter;-><init>(Landroid/content/Context; Ljava/util/List; Ljava/util/List;)V
+	37      (0000009a) new-instance         v3, Landroid/widget/ListView;
+	38      (0000009e) invoke-direct        v3, v0, Landroid/widget/ListView;-><init>(Landroid/content/Context;)V
+	39      (000000a4) invoke-virtual       v3, v4, Landroid/widget/ListView;->setAdapter(Landroid/widget/ListAdapter;)V
+	40      (000000aa) new-instance         v7, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment$$Lambda$49;
+	41      (000000ae) invoke-direct        v7, v4, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment$$Lambda$49;-><init>(Lcom/afwsamples/testdpc/policy/MeteredDataRestrictionInfoAdapter;)V
+	42      (000000b4) invoke-virtual       v3, v7, Landroid/widget/ListView;->setOnItemClickListener(Landroid/widget/AdapterView$OnItemClickListener;)V
+	43      (000000ba) new-instance         v7, Landroid/app/AlertDialog$Builder;
+	44      (000000be) invoke-direct        v7, v0, Landroid/app/AlertDialog$Builder;-><init>(Landroid/content/Context;)V
+	45      (000000c4) const                v8, 2131689943 # [1.900891564121663e+38]
+	46      (000000ca) invoke-virtual       v7, v8, Landroid/app/AlertDialog$Builder;->setTitle(I)Landroid/app/AlertDialog$Builder;
+	47      (000000d0) move-result-object   v7
+	48      (000000d2) invoke-virtual       v7, v3, Landroid/app/AlertDialog$Builder;->setView(Landroid/view/View;)Landroid/app/AlertDialog$Builder;
+	49      (000000d8) move-result-object   v7
+	50      (000000da) const                v8, 2131690352 # [1.900974519176942e+38]
+	51      (000000e0) invoke-virtual       v7, v8, v4, Landroid/app/AlertDialog$Builder;->setPositiveButton(I Landroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
+	52      (000000e6) move-result-object   v7
+	53      (000000e8) const                v8, 2131689631 # [1.9008282830036995e+38]
+	54      (000000ee) const/4              v9, 0
+	55      (000000f0) invoke-virtual       v7, v8, v9, Landroid/app/AlertDialog$Builder;->setNegativeButton(I Landroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
+	56      (000000f6) move-result-object   v7
+	57      (000000f8) invoke-virtual       v7, Landroid/app/AlertDialog$Builder;->show()Landroid/app/AlertDialog;
+	58      (000000fe) goto                 -73
+

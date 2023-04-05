@@ -1,0 +1,72 @@
+# Lcom/afwsamples/testdpc/common/keyvaluepair/KeyValuePairDialogFragment;->populateInitialValue(Ljava/lang/Object;)V [access_flags=private]
+#
+# Parameters:
+# - local registers: v0...v3
+# - v4:java.lang.Object
+#
+# - return:void
+
+populateInitialValue-BB@0x0 : [ populateInitialValue-BB@0x4 populateInitialValue-BB@0x6 ]
+	0       (00000000) if-nez               v4, +3
+
+populateInitialValue-BB@0x4 : 
+	1       (00000004) return-void          
+
+populateInitialValue-BB@0x6 : [ D:populateInitialValue-BB@0x10 0:populateInitialValue-BB@0x12 1:populateInitialValue-BB@0x2a 2:populateInitialValue-BB@0x4a 3:populateInitialValue-BB@0x5a 4:populateInitialValue-BB@0x80 5:populateInitialValue-BB@0x90 ]
+	2       (00000006) iget                 v0, v3, Lcom/afwsamples/testdpc/common/keyvaluepair/KeyValuePairDialogFragment;->mDialogType I
+	3       (0000000a) packed-switch        v0, +4d (0xa4)
+
+populateInitialValue-BB@0x10 : [ populateInitialValue-BB@0x4 ]
+	4       (00000010) goto                 -6
+
+populateInitialValue-BB@0x12 : [ populateInitialValue-BB@0x4 ]
+	5       (00000012) iget-object          v0, v3, Lcom/afwsamples/testdpc/common/keyvaluepair/KeyValuePairDialogFragment;->mBoolView Landroid/widget/Switch;
+	6       (00000016) check-cast           v4, Ljava/lang/Boolean;
+	7       (0000001a) invoke-virtual       v4, Ljava/lang/Boolean;->booleanValue()Z
+	8       (00000020) move-result          v1
+	9       (00000022) invoke-virtual       v0, v1, Landroid/widget/Switch;->setChecked(Z)V
+	10      (00000028) goto                 -12
+
+populateInitialValue-BB@0x2a : [ populateInitialValue-BB@0x4 ]
+	11      (0000002a) iget-object          v0, v3, Lcom/afwsamples/testdpc/common/keyvaluepair/KeyValuePairDialogFragment;->mIntView Landroid/widget/EditText;
+	12      (0000002e) check-cast           v4, Ljava/lang/Integer;
+	13      (00000032) invoke-virtual       v4, Ljava/lang/Integer;->intValue()I
+	14      (00000038) move-result          v1
+	15      (0000003a) invoke-static        v1, Ljava/lang/String;->valueOf(I)Ljava/lang/String;
+	16      (00000040) move-result-object   v1
+	17      (00000042) invoke-virtual       v0, v1, Landroid/widget/EditText;->setText(Ljava/lang/CharSequence;)V
+	18      (00000048) goto                 -22
+
+populateInitialValue-BB@0x4a : [ populateInitialValue-BB@0x4 ]
+	19      (0000004a) iget-object          v0, v3, Lcom/afwsamples/testdpc/common/keyvaluepair/KeyValuePairDialogFragment;->mStringView Landroid/widget/EditText;
+	20      (0000004e) check-cast           v4, Ljava/lang/String;
+	21      (00000052) invoke-virtual       v0, v4, Landroid/widget/EditText;->setText(Ljava/lang/CharSequence;)V
+	22      (00000058) goto                 -2a
+
+populateInitialValue-BB@0x5a : [ populateInitialValue-BB@0x4 ]
+	23      (0000005a) iget-object          v0, v3, Lcom/afwsamples/testdpc/common/keyvaluepair/KeyValuePairDialogFragment;->mStringArrayAdapter Lcom/afwsamples/testdpc/common/StringArrayTypeInputAdapter;
+	24      (0000005e) new-instance         v1, Ljava/util/ArrayList;
+	25      (00000062) check-cast           v4, [Ljava/lang/String;
+	26      (00000066) check-cast           v4, [Ljava/lang/String;
+	27      (0000006a) invoke-static        v4, Ljava/util/Arrays;->asList([Ljava/lang/Object;)Ljava/util/List;
+	28      (00000070) move-result-object   v2
+	29      (00000072) invoke-direct        v1, v2, Ljava/util/ArrayList;-><init>(Ljava/util/Collection;)V
+	30      (00000078) invoke-virtual       v0, v1, Lcom/afwsamples/testdpc/common/StringArrayTypeInputAdapter;->setStringList(Ljava/util/List;)V
+	31      (0000007e) goto                 -3d
+
+populateInitialValue-BB@0x80 : [ populateInitialValue-BB@0x4 ]
+	32      (00000080) iget-object          v0, v3, Lcom/afwsamples/testdpc/common/keyvaluepair/KeyValuePairDialogFragment;->bundleButtonOnClickListener Lcom/afwsamples/testdpc/common/keyvaluepair/KeyValuePairDialogFragment$BundleButtonOnClickListener;
+	33      (00000084) check-cast           v4, Landroid/os/Bundle;
+	34      (00000088) invoke-virtual       v0, v4, Lcom/afwsamples/testdpc/common/keyvaluepair/KeyValuePairDialogFragment$BundleButtonOnClickListener;->setBundle(Landroid/os/Bundle;)V
+	35      (0000008e) goto                 -45
+
+populateInitialValue-BB@0x90 : [ populateInitialValue-BB@0x4 ]
+	36      (00000090) iget-object          v0, v3, Lcom/afwsamples/testdpc/common/keyvaluepair/KeyValuePairDialogFragment;->bundleArrayButtonOnClickListener Lcom/afwsamples/testdpc/common/keyvaluepair/KeyValuePairDialogFragment$BundleArrayButtonOnClickListener;
+	37      (00000094) check-cast           v4, [Landroid/os/Bundle;
+	38      (00000098) check-cast           v4, [Landroid/os/Bundle;
+	39      (0000009c) invoke-virtual       v0, v4, Lcom/afwsamples/testdpc/common/keyvaluepair/KeyValuePairDialogFragment$BundleArrayButtonOnClickListener;->setBundleArray([Landroid/os/Bundle;)V
+	40      (000000a2) goto                 -4f
+
+populateInitialValue-BB@0xa4 : 
+	41      (000000a4) packed-switch-payload 0 1 2 3 4 5
+

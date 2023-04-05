@@ -1,0 +1,24 @@
+# Lafu/org/checkerframework/checker/nullness/NullnessUtils;->castNonNull(Ljava/lang/Object;)Ljava/lang/Object; [access_flags=public static]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:java.lang.Object
+#
+# - return:java.lang.Object
+
+castNonNull-BB@0x0 : [ castNonNull-BB@0x8 castNonNull-BB@0x1c ]
+	0       (00000000) sget-boolean         v0, Lafu/org/checkerframework/checker/nullness/NullnessUtils;->$assertionsDisabled Z
+	1       (00000004) if-nez               v0, +c
+
+castNonNull-BB@0x8 : [ castNonNull-BB@0xc castNonNull-BB@0x1c ]
+	2       (00000008) if-nez               v2, +a
+
+castNonNull-BB@0xc : 
+	3       (0000000c) new-instance         v0, Ljava/lang/AssertionError;
+	4       (00000010) const-string         v1, 'Misuse of castNonNull: called with a null argument'
+	5       (00000014) invoke-direct        v0, v1, Ljava/lang/AssertionError;-><init>(Ljava/lang/Object;)V
+	6       (0000001a) throw                v0
+
+castNonNull-BB@0x1c : 
+	7       (0000001c) return-object        v2
+

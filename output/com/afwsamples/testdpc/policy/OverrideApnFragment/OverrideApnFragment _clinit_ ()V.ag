@@ -1,0 +1,12 @@
+# Lcom/afwsamples/testdpc/policy/OverrideApnFragment;-><clinit>()V [access_flags=static constructor]
+#
+# Parameters:
+# local registers: v0...v0
+#
+# - return:void
+
+<clinit>-BB@0x0 : 
+	0       (00000000) const-string         v0, 'OverrideApnFragment'
+	1       (00000004) sput-object          v0, Lcom/afwsamples/testdpc/policy/OverrideApnFragment;->LOG_TAG Ljava/lang/String;
+	2       (00000008) return-void          
+

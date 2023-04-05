@@ -1,0 +1,45 @@
+# Landroidx/appcompat/view/menu/CascadingMenuPopup$3$1;->run()V [access_flags=public]
+#
+# Parameters:
+# local registers: v0...v3
+#
+# - return:void
+
+run-BB@0x0 : [ run-BB@0xa run-BB@0x32 ]
+	0       (00000000) const/4              v2, 0
+	1       (00000002) iget-object          v0, v3, Landroidx/appcompat/view/menu/CascadingMenuPopup$3$1;->val$nextInfo Landroidx/appcompat/view/menu/CascadingMenuPopup$CascadingMenuInfo;
+	2       (00000006) if-eqz               v0, +16
+
+run-BB@0xa : [ run-BB@0x32 ]
+	3       (0000000a) iget-object          v0, v3, Landroidx/appcompat/view/menu/CascadingMenuPopup$3$1;->this$1 Landroidx/appcompat/view/menu/CascadingMenuPopup$3;
+	4       (0000000e) iget-object          v0, v0, Landroidx/appcompat/view/menu/CascadingMenuPopup$3;->this$0 Landroidx/appcompat/view/menu/CascadingMenuPopup;
+	5       (00000012) const/4              v1, 1
+	6       (00000014) iput-boolean         v1, v0, Landroidx/appcompat/view/menu/CascadingMenuPopup;->mShouldCloseImmediately Z
+	7       (00000018) iget-object          v0, v3, Landroidx/appcompat/view/menu/CascadingMenuPopup$3$1;->val$nextInfo Landroidx/appcompat/view/menu/CascadingMenuPopup$CascadingMenuInfo;
+	8       (0000001c) iget-object          v0, v0, Landroidx/appcompat/view/menu/CascadingMenuPopup$CascadingMenuInfo;->menu Landroidx/appcompat/view/menu/MenuBuilder;
+	9       (00000020) invoke-virtual       v0, v2, Landroidx/appcompat/view/menu/MenuBuilder;->close(Z)V
+	10      (00000026) iget-object          v0, v3, Landroidx/appcompat/view/menu/CascadingMenuPopup$3$1;->this$1 Landroidx/appcompat/view/menu/CascadingMenuPopup$3;
+	11      (0000002a) iget-object          v0, v0, Landroidx/appcompat/view/menu/CascadingMenuPopup$3;->this$0 Landroidx/appcompat/view/menu/CascadingMenuPopup;
+	12      (0000002e) iput-boolean         v2, v0, Landroidx/appcompat/view/menu/CascadingMenuPopup;->mShouldCloseImmediately Z
+
+run-BB@0x32 : [ run-BB@0x42 run-BB@0x62 ]
+	13      (00000032) iget-object          v0, v3, Landroidx/appcompat/view/menu/CascadingMenuPopup$3$1;->val$item Landroid/view/MenuItem;
+	14      (00000036) invoke-interface     v0, Landroid/view/MenuItem;->isEnabled()Z
+	15      (0000003c) move-result          v0
+	16      (0000003e) if-eqz               v0, +12
+
+run-BB@0x42 : [ run-BB@0x52 run-BB@0x62 ]
+	17      (00000042) iget-object          v0, v3, Landroidx/appcompat/view/menu/CascadingMenuPopup$3$1;->val$item Landroid/view/MenuItem;
+	18      (00000046) invoke-interface     v0, Landroid/view/MenuItem;->hasSubMenu()Z
+	19      (0000004c) move-result          v0
+	20      (0000004e) if-eqz               v0, +a
+
+run-BB@0x52 : [ run-BB@0x62 ]
+	21      (00000052) iget-object          v0, v3, Landroidx/appcompat/view/menu/CascadingMenuPopup$3$1;->val$menu Landroidx/appcompat/view/menu/MenuBuilder;
+	22      (00000056) iget-object          v1, v3, Landroidx/appcompat/view/menu/CascadingMenuPopup$3$1;->val$item Landroid/view/MenuItem;
+	23      (0000005a) const/4              v2, 4
+	24      (0000005c) invoke-virtual       v0, v1, v2, Landroidx/appcompat/view/menu/MenuBuilder;->performItemAction(Landroid/view/MenuItem; I)Z
+
+run-BB@0x62 : 
+	25      (00000062) return-void          
+

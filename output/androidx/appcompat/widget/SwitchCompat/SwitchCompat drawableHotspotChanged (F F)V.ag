@@ -1,0 +1,36 @@
+# Landroidx/appcompat/widget/SwitchCompat;->drawableHotspotChanged(F F)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:float
+# - v4:float
+#
+# - return:void
+
+drawableHotspotChanged-BB@0x0 : [ drawableHotspotChanged-BB@0xc drawableHotspotChanged-BB@0x12 ]
+	0       (00000000) sget                 v0, Landroid/os/Build$VERSION;->SDK_INT I
+	1       (00000004) const/16             v1, 21
+	2       (00000008) if-lt                v0, v1, +5
+
+drawableHotspotChanged-BB@0xc : [ drawableHotspotChanged-BB@0x12 ]
+	3       (0000000c) invoke-super         v2, v3, v4, Landroid/widget/CompoundButton;->drawableHotspotChanged(F F)V
+
+drawableHotspotChanged-BB@0x12 : [ drawableHotspotChanged-BB@0x1a drawableHotspotChanged-BB@0x24 ]
+	4       (00000012) iget-object          v0, v2, Landroidx/appcompat/widget/SwitchCompat;->mThumbDrawable Landroid/graphics/drawable/Drawable;
+	5       (00000016) if-eqz               v0, +7
+
+drawableHotspotChanged-BB@0x1a : [ drawableHotspotChanged-BB@0x24 ]
+	6       (0000001a) iget-object          v0, v2, Landroidx/appcompat/widget/SwitchCompat;->mThumbDrawable Landroid/graphics/drawable/Drawable;
+	7       (0000001e) invoke-static        v0, v3, v4, Landroidx/core/graphics/drawable/DrawableCompat;->setHotspot(Landroid/graphics/drawable/Drawable; F F)V
+
+drawableHotspotChanged-BB@0x24 : [ drawableHotspotChanged-BB@0x2c drawableHotspotChanged-BB@0x36 ]
+	8       (00000024) iget-object          v0, v2, Landroidx/appcompat/widget/SwitchCompat;->mTrackDrawable Landroid/graphics/drawable/Drawable;
+	9       (00000028) if-eqz               v0, +7
+
+drawableHotspotChanged-BB@0x2c : [ drawableHotspotChanged-BB@0x36 ]
+	10      (0000002c) iget-object          v0, v2, Landroidx/appcompat/widget/SwitchCompat;->mTrackDrawable Landroid/graphics/drawable/Drawable;
+	11      (00000030) invoke-static        v0, v3, v4, Landroidx/core/graphics/drawable/DrawableCompat;->setHotspot(Landroid/graphics/drawable/Drawable; F F)V
+
+drawableHotspotChanged-BB@0x36 : 
+	12      (00000036) return-void          
+

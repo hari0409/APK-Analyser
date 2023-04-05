@@ -1,0 +1,159 @@
+# Landroidx/appcompat/widget/ActionMenuPresenter;->updateMenuView(Z)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v11
+# - v12:boolean
+#
+# - return:void
+
+updateMenuView-BB@0x0 : [ updateMenuView-BB@0x20 updateMenuView-BB@0x5e ]
+	0       (00000000) const/4              v9, 1
+	1       (00000002) const/4              v10, 0
+	2       (00000004) invoke-super         v11, v12, Landroidx/appcompat/view/menu/BaseMenuPresenter;->updateMenuView(Z)V
+	3       (0000000a) iget-object          v8, v11, Landroidx/appcompat/widget/ActionMenuPresenter;->mMenuView Landroidx/appcompat/view/menu/MenuView;
+	4       (0000000e) check-cast           v8, Landroid/view/View;
+	5       (00000012) invoke-virtual       v8, Landroid/view/View;->requestLayout()V
+	6       (00000018) iget-object          v8, v11, Landroidx/appcompat/widget/ActionMenuPresenter;->mMenu Landroidx/appcompat/view/menu/MenuBuilder;
+	7       (0000001c) if-eqz               v8, +21
+
+updateMenuView-BB@0x20 : [ updateMenuView-BB@0x36 ]
+	8       (00000020) iget-object          v8, v11, Landroidx/appcompat/widget/ActionMenuPresenter;->mMenu Landroidx/appcompat/view/menu/MenuBuilder;
+	9       (00000024) invoke-virtual       v8, Landroidx/appcompat/view/menu/MenuBuilder;->getActionItems()Ljava/util/ArrayList;
+	10      (0000002a) move-result-object   v0
+	11      (0000002c) invoke-virtual       v0, Ljava/util/ArrayList;->size()I
+	12      (00000032) move-result          v1
+	13      (00000034) const/4              v3, 0
+
+updateMenuView-BB@0x36 : [ updateMenuView-BB@0x3a updateMenuView-BB@0x5e ]
+	14      (00000036) if-ge                v3, v1, +14
+
+updateMenuView-BB@0x3a : [ updateMenuView-BB@0x52 updateMenuView-BB@0x58 ]
+	15      (0000003a) invoke-virtual       v0, v3, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+	16      (00000040) move-result-object   v8
+	17      (00000042) check-cast           v8, Landroidx/appcompat/view/menu/MenuItemImpl;
+	18      (00000046) invoke-virtual       v8, Landroidx/appcompat/view/menu/MenuItemImpl;->getSupportActionProvider()Landroidx/core/view/ActionProvider;
+	19      (0000004c) move-result-object   v7
+	20      (0000004e) if-eqz               v7, +5
+
+updateMenuView-BB@0x52 : [ updateMenuView-BB@0x58 ]
+	21      (00000052) invoke-virtual       v7, v11, Landroidx/core/view/ActionProvider;->setSubUiVisibilityListener(Landroidx/core/view/ActionProvider$SubUiVisibilityListener;)V
+
+updateMenuView-BB@0x58 : [ updateMenuView-BB@0x36 ]
+	22      (00000058) add-int/lit8         v3, v3, 1
+	23      (0000005c) goto                 -13
+
+updateMenuView-BB@0x5e : [ updateMenuView-BB@0x66 updateMenuView-BB@0x118 ]
+	24      (0000005e) iget-object          v8, v11, Landroidx/appcompat/widget/ActionMenuPresenter;->mMenu Landroidx/appcompat/view/menu/MenuBuilder;
+	25      (00000062) if-eqz               v8, +5b
+
+updateMenuView-BB@0x66 : [ updateMenuView-BB@0x72 ]
+	26      (00000066) iget-object          v8, v11, Landroidx/appcompat/widget/ActionMenuPresenter;->mMenu Landroidx/appcompat/view/menu/MenuBuilder;
+	27      (0000006a) invoke-virtual       v8, Landroidx/appcompat/view/menu/MenuBuilder;->getNonActionItems()Ljava/util/ArrayList;
+	28      (00000070) move-result-object   v5
+
+updateMenuView-BB@0x72 : [ updateMenuView-BB@0x7c updateMenuView-BB@0xa6 ]
+	29      (00000072) const/4              v2, 0
+	30      (00000074) iget-boolean         v8, v11, Landroidx/appcompat/widget/ActionMenuPresenter;->mReserveOverflow Z
+	31      (00000078) if-eqz               v8, +17
+
+updateMenuView-BB@0x7c : [ updateMenuView-BB@0x80 updateMenuView-BB@0xa6 ]
+	32      (0000007c) if-eqz               v5, +15
+
+updateMenuView-BB@0x80 : [ updateMenuView-BB@0x8c updateMenuView-BB@0x120 ]
+	33      (00000080) invoke-virtual       v5, Ljava/util/ArrayList;->size()I
+	34      (00000086) move-result          v1
+	35      (00000088) if-ne                v1, v9, +4c
+
+updateMenuView-BB@0x8c : [ updateMenuView-BB@0xa4 updateMenuView-BB@0x11c ]
+	36      (0000008c) invoke-virtual       v5, v10, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+	37      (00000092) move-result-object   v8
+	38      (00000094) check-cast           v8, Landroidx/appcompat/view/menu/MenuItemImpl;
+	39      (00000098) invoke-virtual       v8, Landroidx/appcompat/view/menu/MenuItemImpl;->isActionViewExpanded()Z
+	40      (0000009e) move-result          v8
+	41      (000000a0) if-nez               v8, +3e
+
+updateMenuView-BB@0xa4 : [ updateMenuView-BB@0xa6 ]
+	42      (000000a4) move                 v2, v9
+
+updateMenuView-BB@0xa6 : [ updateMenuView-BB@0xaa updateMenuView-BB@0x12c ]
+	43      (000000a6) if-eqz               v2, +43
+
+updateMenuView-BB@0xaa : [ updateMenuView-BB@0xb2 updateMenuView-BB@0xc4 ]
+	44      (000000aa) iget-object          v8, v11, Landroidx/appcompat/widget/ActionMenuPresenter;->mOverflowButton Landroidx/appcompat/widget/ActionMenuPresenter$OverflowMenuButton;
+	45      (000000ae) if-nez               v8, +b
+
+updateMenuView-BB@0xb2 : [ updateMenuView-BB@0xc4 ]
+	46      (000000b2) new-instance         v8, Landroidx/appcompat/widget/ActionMenuPresenter$OverflowMenuButton;
+	47      (000000b6) iget-object          v9, v11, Landroidx/appcompat/widget/ActionMenuPresenter;->mSystemContext Landroid/content/Context;
+	48      (000000ba) invoke-direct        v8, v11, v9, Landroidx/appcompat/widget/ActionMenuPresenter$OverflowMenuButton;-><init>(Landroidx/appcompat/widget/ActionMenuPresenter; Landroid/content/Context;)V
+	49      (000000c0) iput-object          v8, v11, Landroidx/appcompat/widget/ActionMenuPresenter;->mOverflowButton Landroidx/appcompat/widget/ActionMenuPresenter$OverflowMenuButton;
+
+updateMenuView-BB@0xc4 : [ updateMenuView-BB@0xdc updateMenuView-BB@0x104 ]
+	50      (000000c4) iget-object          v8, v11, Landroidx/appcompat/widget/ActionMenuPresenter;->mOverflowButton Landroidx/appcompat/widget/ActionMenuPresenter$OverflowMenuButton;
+	51      (000000c8) invoke-virtual       v8, Landroidx/appcompat/widget/ActionMenuPresenter$OverflowMenuButton;->getParent()Landroid/view/ViewParent;
+	52      (000000ce) move-result-object   v6
+	53      (000000d0) check-cast           v6, Landroid/view/ViewGroup;
+	54      (000000d4) iget-object          v8, v11, Landroidx/appcompat/widget/ActionMenuPresenter;->mMenuView Landroidx/appcompat/view/menu/MenuView;
+	55      (000000d8) if-eq                v6, v8, +16
+
+updateMenuView-BB@0xdc : [ updateMenuView-BB@0xe0 updateMenuView-BB@0xea ]
+	56      (000000dc) if-eqz               v6, +7
+
+updateMenuView-BB@0xe0 : [ updateMenuView-BB@0xea ]
+	57      (000000e0) iget-object          v8, v11, Landroidx/appcompat/widget/ActionMenuPresenter;->mOverflowButton Landroidx/appcompat/widget/ActionMenuPresenter$OverflowMenuButton;
+	58      (000000e4) invoke-virtual       v6, v8, Landroid/view/ViewGroup;->removeView(Landroid/view/View;)V
+
+updateMenuView-BB@0xea : [ updateMenuView-BB@0x104 ]
+	59      (000000ea) iget-object          v4, v11, Landroidx/appcompat/widget/ActionMenuPresenter;->mMenuView Landroidx/appcompat/view/menu/MenuView;
+	60      (000000ee) check-cast           v4, Landroidx/appcompat/widget/ActionMenuView;
+	61      (000000f2) iget-object          v8, v11, Landroidx/appcompat/widget/ActionMenuPresenter;->mOverflowButton Landroidx/appcompat/widget/ActionMenuPresenter$OverflowMenuButton;
+	62      (000000f6) invoke-virtual       v4, Landroidx/appcompat/widget/ActionMenuView;->generateOverflowButtonLayoutParams()Landroidx/appcompat/widget/ActionMenuView$LayoutParams;
+	63      (000000fc) move-result-object   v9
+	64      (000000fe) invoke-virtual       v4, v8, v9, Landroidx/appcompat/widget/ActionMenuView;->addView(Landroid/view/View; Landroid/view/ViewGroup$LayoutParams;)V
+
+updateMenuView-BB@0x104 : 
+	65      (00000104) iget-object          v8, v11, Landroidx/appcompat/widget/ActionMenuPresenter;->mMenuView Landroidx/appcompat/view/menu/MenuView;
+	66      (00000108) check-cast           v8, Landroidx/appcompat/widget/ActionMenuView;
+	67      (0000010c) iget-boolean         v9, v11, Landroidx/appcompat/widget/ActionMenuPresenter;->mReserveOverflow Z
+	68      (00000110) invoke-virtual       v8, v9, Landroidx/appcompat/widget/ActionMenuView;->setOverflowReserved(Z)V
+	69      (00000116) return-void          
+
+updateMenuView-BB@0x118 : [ updateMenuView-BB@0x72 ]
+	70      (00000118) const/4              v5, 0
+	71      (0000011a) goto                 -54
+
+updateMenuView-BB@0x11c : [ updateMenuView-BB@0xa6 ]
+	72      (0000011c) move                 v2, v10
+	73      (0000011e) goto                 -3c
+
+updateMenuView-BB@0x120 : [ updateMenuView-BB@0x124 updateMenuView-BB@0x128 ]
+	74      (00000120) if-lez               v1, +4
+
+updateMenuView-BB@0x124 : [ updateMenuView-BB@0x126 ]
+	75      (00000124) move                 v2, v9
+
+updateMenuView-BB@0x126 : [ updateMenuView-BB@0xa6 ]
+	76      (00000126) goto                 -40
+
+updateMenuView-BB@0x128 : [ updateMenuView-BB@0x126 ]
+	77      (00000128) move                 v2, v10
+	78      (0000012a) goto                 -2
+
+updateMenuView-BB@0x12c : [ updateMenuView-BB@0x134 updateMenuView-BB@0x104 ]
+	79      (0000012c) iget-object          v8, v11, Landroidx/appcompat/widget/ActionMenuPresenter;->mOverflowButton Landroidx/appcompat/widget/ActionMenuPresenter$OverflowMenuButton;
+	80      (00000130) if-eqz               v8, -16
+
+updateMenuView-BB@0x134 : [ updateMenuView-BB@0x148 updateMenuView-BB@0x104 ]
+	81      (00000134) iget-object          v8, v11, Landroidx/appcompat/widget/ActionMenuPresenter;->mOverflowButton Landroidx/appcompat/widget/ActionMenuPresenter$OverflowMenuButton;
+	82      (00000138) invoke-virtual       v8, Landroidx/appcompat/widget/ActionMenuPresenter$OverflowMenuButton;->getParent()Landroid/view/ViewParent;
+	83      (0000013e) move-result-object   v8
+	84      (00000140) iget-object          v9, v11, Landroidx/appcompat/widget/ActionMenuPresenter;->mMenuView Landroidx/appcompat/view/menu/MenuView;
+	85      (00000144) if-ne                v8, v9, -20
+
+updateMenuView-BB@0x148 : [ updateMenuView-BB@0x104 ]
+	86      (00000148) iget-object          v8, v11, Landroidx/appcompat/widget/ActionMenuPresenter;->mMenuView Landroidx/appcompat/view/menu/MenuView;
+	87      (0000014c) check-cast           v8, Landroid/view/ViewGroup;
+	88      (00000150) iget-object          v9, v11, Landroidx/appcompat/widget/ActionMenuPresenter;->mOverflowButton Landroidx/appcompat/widget/ActionMenuPresenter$OverflowMenuButton;
+	89      (00000154) invoke-virtual       v8, v9, Landroid/view/ViewGroup;->removeView(Landroid/view/View;)V
+	90      (0000015a) goto                 -2b
+

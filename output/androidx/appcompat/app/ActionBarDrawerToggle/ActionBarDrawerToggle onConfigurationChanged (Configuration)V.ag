@@ -1,0 +1,21 @@
+# Landroidx/appcompat/app/ActionBarDrawerToggle;->onConfigurationChanged(Landroid/content/res/Configuration;)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:android.content.res.Configuration
+#
+# - return:void
+
+onConfigurationChanged-BB@0x0 : [ onConfigurationChanged-BB@0x8 onConfigurationChanged-BB@0x14 ]
+	0       (00000000) iget-boolean         v0, v1, Landroidx/appcompat/app/ActionBarDrawerToggle;->mHasCustomUpIndicator Z
+	1       (00000004) if-nez               v0, +8
+
+onConfigurationChanged-BB@0x8 : [ onConfigurationChanged-BB@0x14 ]
+	2       (00000008) invoke-virtual       v1, Landroidx/appcompat/app/ActionBarDrawerToggle;->getThemeUpIndicator()Landroid/graphics/drawable/Drawable;
+	3       (0000000e) move-result-object   v0
+	4       (00000010) iput-object          v0, v1, Landroidx/appcompat/app/ActionBarDrawerToggle;->mHomeAsUpIndicator Landroid/graphics/drawable/Drawable;
+
+onConfigurationChanged-BB@0x14 : 
+	5       (00000014) invoke-virtual       v1, Landroidx/appcompat/app/ActionBarDrawerToggle;->syncState()V
+	6       (0000001a) return-void          
+

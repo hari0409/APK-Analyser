@@ -1,0 +1,42 @@
+# Landroidx/appcompat/widget/AbsActionBarView;->positionChild(Landroid/view/View; I I I Z)I [access_flags=protected]
+#
+# Parameters:
+# - local registers: v0...v5
+# - v6:android.view.View
+# - v7:int
+# - v8:int
+# - v9:int
+# - v10:boolean
+#
+# - return:int
+
+positionChild-BB@0x0 : [ positionChild-BB@0x20 positionChild-BB@0x36 ]
+	0       (00000000) invoke-virtual       v6, Landroid/view/View;->getMeasuredWidth()I
+	1       (00000006) move-result          v2
+	2       (00000008) invoke-virtual       v6, Landroid/view/View;->getMeasuredHeight()I
+	3       (0000000e) move-result          v0
+	4       (00000010) sub-int              v3, v9, v0
+	5       (00000014) div-int/lit8         v3, v3, 2
+	6       (00000018) add-int              v1, v8, v3
+	7       (0000001c) if-eqz               v10, +d
+
+positionChild-BB@0x20 : [ positionChild-BB@0x2e ]
+	8       (00000020) sub-int              v3, v7, v2
+	9       (00000024) add-int              v4, v1, v0
+	10      (00000028) invoke-virtual       v6, v3, v1, v7, v4, Landroid/view/View;->layout(I I I I)V
+
+positionChild-BB@0x2e : [ positionChild-BB@0x32 positionChild-BB@0x34 ]
+	11      (0000002e) if-eqz               v10, +3
+
+positionChild-BB@0x32 : [ positionChild-BB@0x34 ]
+	12      (00000032) neg-int              v2, v2
+
+positionChild-BB@0x34 : 
+	13      (00000034) return               v2
+
+positionChild-BB@0x36 : [ positionChild-BB@0x2e ]
+	14      (00000036) add-int              v3, v7, v2
+	15      (0000003a) add-int              v4, v1, v0
+	16      (0000003e) invoke-virtual       v6, v7, v1, v3, v4, Landroid/view/View;->layout(I I I I)V
+	17      (00000044) goto                 -b
+

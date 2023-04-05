@@ -1,0 +1,15 @@
+# Lcom/afwsamples/testdpc/common/BaseSearchablePolicyPreferenceFragment;->onSaveInstanceState(Landroid/os/Bundle;)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:android.os.Bundle
+#
+# - return:void
+
+onSaveInstanceState-BB@0x0 : 
+	0       (00000000) invoke-super         v2, v3, Landroidx/preference/PreferenceFragment;->onSaveInstanceState(Landroid/os/Bundle;)V
+	1       (00000006) const-string         v0, 'preference_highlighted'
+	2       (0000000a) iget-boolean         v1, v2, Lcom/afwsamples/testdpc/common/BaseSearchablePolicyPreferenceFragment;->mPreferenceHighlighted Z
+	3       (0000000e) invoke-virtual       v3, v0, v1, Landroid/os/Bundle;->putBoolean(Ljava/lang/String; Z)V
+	4       (00000014) return-void          
+

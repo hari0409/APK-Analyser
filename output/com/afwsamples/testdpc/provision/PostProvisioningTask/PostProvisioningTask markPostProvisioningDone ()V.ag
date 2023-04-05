@@ -1,0 +1,18 @@
+# Lcom/afwsamples/testdpc/provision/PostProvisioningTask;->markPostProvisioningDone()V [access_flags=private]
+#
+# Parameters:
+# local registers: v0...v3
+#
+# - return:void
+
+markPostProvisioningDone-BB@0x0 : 
+	0       (00000000) iget-object          v0, v3, Lcom/afwsamples/testdpc/provision/PostProvisioningTask;->mSharedPrefs Landroid/content/SharedPreferences;
+	1       (00000004) invoke-interface     v0, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
+	2       (0000000a) move-result-object   v0
+	3       (0000000c) const-string         v1, 'key_post_prov_done'
+	4       (00000010) const/4              v2, 1
+	5       (00000012) invoke-interface     v0, v1, v2, Landroid/content/SharedPreferences$Editor;->putBoolean(Ljava/lang/String; Z)Landroid/content/SharedPreferences$Editor;
+	6       (00000018) move-result-object   v0
+	7       (0000001a) invoke-interface     v0, Landroid/content/SharedPreferences$Editor;->commit()Z
+	8       (00000020) return-void          
+

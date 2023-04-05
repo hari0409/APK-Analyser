@@ -1,0 +1,33 @@
+# Lcom/afwsamples/testdpc/DevicePolicyManagerGatewayImpl;->clearDeviceOwnerApp(Ljava/util/function/Consumer; Ljava/util/function/Consumer;)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v3
+# - v4:java.util.function.Consumer
+# - v5:java.util.function.Consumer
+#
+# - return:void
+
+clearDeviceOwnerApp-BB@0x0 : [ clearDeviceOwnerApp-BB@0xe ]
+	0       (00000000) sget-object          v1, Lcom/afwsamples/testdpc/DevicePolicyManagerGatewayImpl;->TAG Ljava/lang/String;
+	1       (00000004) const-string         v2, 'clearDeviceOwnerApp()'
+	2       (00000008) invoke-static        v1, v2, Landroid/util/Log;->d(Ljava/lang/String; Ljava/lang/String;)I
+
+clearDeviceOwnerApp-BB@0xe : [ clearDeviceOwnerApp-BB@0x2c ]
+	3       (0000000e) iget-object          v1, v3, Lcom/afwsamples/testdpc/DevicePolicyManagerGatewayImpl;->mDevicePolicyManager Landroid/app/admin/DevicePolicyManager;
+	4       (00000012) iget-object          v2, v3, Lcom/afwsamples/testdpc/DevicePolicyManagerGatewayImpl;->mAdminComponentName Landroid/content/ComponentName;
+	5       (00000016) invoke-virtual       v2, Landroid/content/ComponentName;->getPackageName()Ljava/lang/String;
+	6       (0000001c) move-result-object   v2
+	7       (0000001e) invoke-virtual       v1, v2, Landroid/app/admin/DevicePolicyManager;->clearDeviceOwnerApp(Ljava/lang/String;)V
+	8       (00000024) const/4              v1, 0
+	9       (00000026) invoke-interface     v4, v1, Ljava/util/function/Consumer;->accept(Ljava/lang/Object;)V
+	e:2b
+	(Ljava/lang/Exception; -> 2e clearDeviceOwnerApp-BB@0x2e)
+
+clearDeviceOwnerApp-BB@0x2c : 
+	10      (0000002c) return-void          
+
+clearDeviceOwnerApp-BB@0x2e : [ clearDeviceOwnerApp-BB@0x2c ]
+	11      (0000002e) move-exception       v0
+	12      (00000030) invoke-interface     v5, v0, Ljava/util/function/Consumer;->accept(Ljava/lang/Object;)V
+	13      (00000036) goto                 -5
+

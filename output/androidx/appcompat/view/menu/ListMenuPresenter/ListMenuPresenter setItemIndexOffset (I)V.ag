@@ -1,0 +1,20 @@
+# Landroidx/appcompat/view/menu/ListMenuPresenter;->setItemIndexOffset(I)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:int
+#
+# - return:void
+
+setItemIndexOffset-BB@0x0 : [ setItemIndexOffset-BB@0xc setItemIndexOffset-BB@0x14 ]
+	0       (00000000) iput                 v2, v1, Landroidx/appcompat/view/menu/ListMenuPresenter;->mItemIndexOffset I
+	1       (00000004) iget-object          v0, v1, Landroidx/appcompat/view/menu/ListMenuPresenter;->mMenuView Landroidx/appcompat/view/menu/ExpandedMenuView;
+	2       (00000008) if-eqz               v0, +6
+
+setItemIndexOffset-BB@0xc : [ setItemIndexOffset-BB@0x14 ]
+	3       (0000000c) const/4              v0, 0
+	4       (0000000e) invoke-virtual       v1, v0, Landroidx/appcompat/view/menu/ListMenuPresenter;->updateMenuView(Z)V
+
+setItemIndexOffset-BB@0x14 : 
+	5       (00000014) return-void          
+

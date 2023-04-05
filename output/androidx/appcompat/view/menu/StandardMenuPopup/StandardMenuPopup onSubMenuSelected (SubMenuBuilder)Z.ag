@@ -1,0 +1,79 @@
+# Landroidx/appcompat/view/menu/StandardMenuPopup;->onSubMenuSelected(Landroidx/appcompat/view/menu/SubMenuBuilder;)Z [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v11
+# - v12:androidx.appcompat.view.menu.SubMenuBuilder
+#
+# - return:boolean
+
+onSubMenuSelected-BB@0x0 : [ onSubMenuSelected-BB@0xe onSubMenuSelected-BB@0xca ]
+	0       (00000000) const/4              v10, 0
+	1       (00000002) invoke-virtual       v12, Landroidx/appcompat/view/menu/SubMenuBuilder;->hasVisibleItems()Z
+	2       (00000008) move-result          v1
+	3       (0000000a) if-eqz               v1, +60
+
+onSubMenuSelected-BB@0xe : [ onSubMenuSelected-BB@0x9a onSubMenuSelected-BB@0xa8 ]
+	4       (0000000e) new-instance         v0, Landroidx/appcompat/view/menu/MenuPopupHelper;
+	5       (00000012) iget-object          v1, v11, Landroidx/appcompat/view/menu/StandardMenuPopup;->mContext Landroid/content/Context;
+	6       (00000016) iget-object          v3, v11, Landroidx/appcompat/view/menu/StandardMenuPopup;->mShownAnchorView Landroid/view/View;
+	7       (0000001a) iget-boolean         v4, v11, Landroidx/appcompat/view/menu/StandardMenuPopup;->mOverflowOnly Z
+	8       (0000001e) iget                 v5, v11, Landroidx/appcompat/view/menu/StandardMenuPopup;->mPopupStyleAttr I
+	9       (00000022) iget                 v6, v11, Landroidx/appcompat/view/menu/StandardMenuPopup;->mPopupStyleRes I
+	10      (00000026) move-object          v2, v12
+	11      (00000028) invoke-direct/range  v0 ... v6, Landroidx/appcompat/view/menu/MenuPopupHelper;-><init>(Landroid/content/Context; Landroidx/appcompat/view/menu/MenuBuilder; Landroid/view/View; Z I I)V
+	12      (0000002e) iget-object          v1, v11, Landroidx/appcompat/view/menu/StandardMenuPopup;->mPresenterCallback Landroidx/appcompat/view/menu/MenuPresenter$Callback;
+	13      (00000032) invoke-virtual       v0, v1, Landroidx/appcompat/view/menu/MenuPopupHelper;->setPresenterCallback(Landroidx/appcompat/view/menu/MenuPresenter$Callback;)V
+	14      (00000038) invoke-static        v12, Landroidx/appcompat/view/menu/MenuPopup;->shouldPreserveIconSpacing(Landroidx/appcompat/view/menu/MenuBuilder;)Z
+	15      (0000003e) move-result          v1
+	16      (00000040) invoke-virtual       v0, v1, Landroidx/appcompat/view/menu/MenuPopupHelper;->setForceShowIcon(Z)V
+	17      (00000046) iget-object          v1, v11, Landroidx/appcompat/view/menu/StandardMenuPopup;->mOnDismissListener Landroid/widget/PopupWindow$OnDismissListener;
+	18      (0000004a) invoke-virtual       v0, v1, Landroidx/appcompat/view/menu/MenuPopupHelper;->setOnDismissListener(Landroid/widget/PopupWindow$OnDismissListener;)V
+	19      (00000050) const/4              v1, 0
+	20      (00000052) iput-object          v1, v11, Landroidx/appcompat/view/menu/StandardMenuPopup;->mOnDismissListener Landroid/widget/PopupWindow$OnDismissListener;
+	21      (00000056) iget-object          v1, v11, Landroidx/appcompat/view/menu/StandardMenuPopup;->mMenu Landroidx/appcompat/view/menu/MenuBuilder;
+	22      (0000005a) invoke-virtual       v1, v10, Landroidx/appcompat/view/menu/MenuBuilder;->close(Z)V
+	23      (00000060) iget-object          v1, v11, Landroidx/appcompat/view/menu/StandardMenuPopup;->mPopup Landroidx/appcompat/widget/MenuPopupWindow;
+	24      (00000064) invoke-virtual       v1, Landroidx/appcompat/widget/MenuPopupWindow;->getHorizontalOffset()I
+	25      (0000006a) move-result          v8
+	26      (0000006c) iget-object          v1, v11, Landroidx/appcompat/view/menu/StandardMenuPopup;->mPopup Landroidx/appcompat/widget/MenuPopupWindow;
+	27      (00000070) invoke-virtual       v1, Landroidx/appcompat/widget/MenuPopupWindow;->getVerticalOffset()I
+	28      (00000076) move-result          v9
+	29      (00000078) iget                 v1, v11, Landroidx/appcompat/view/menu/StandardMenuPopup;->mDropDownGravity I
+	30      (0000007c) iget-object          v2, v11, Landroidx/appcompat/view/menu/StandardMenuPopup;->mAnchorView Landroid/view/View;
+	31      (00000080) invoke-static        v2, Landroidx/core/view/ViewCompat;->getLayoutDirection(Landroid/view/View;)I
+	32      (00000086) move-result          v2
+	33      (00000088) invoke-static        v1, v2, Landroid/view/Gravity;->getAbsoluteGravity(I I)I
+	34      (0000008e) move-result          v1
+	35      (00000090) and-int/lit8         v7, v1, 7
+	36      (00000094) const/4              v1, 5
+	37      (00000096) if-ne                v7, v1, +9
+
+onSubMenuSelected-BB@0x9a : [ onSubMenuSelected-BB@0xa8 ]
+	38      (0000009a) iget-object          v1, v11, Landroidx/appcompat/view/menu/StandardMenuPopup;->mAnchorView Landroid/view/View;
+	39      (0000009e) invoke-virtual       v1, Landroid/view/View;->getWidth()I
+	40      (000000a4) move-result          v1
+	41      (000000a6) add-int/2addr        v8, v1
+
+onSubMenuSelected-BB@0xa8 : [ onSubMenuSelected-BB@0xb4 onSubMenuSelected-BB@0xca ]
+	42      (000000a8) invoke-virtual       v0, v8, v9, Landroidx/appcompat/view/menu/MenuPopupHelper;->tryShow(I I)Z
+	43      (000000ae) move-result          v1
+	44      (000000b0) if-eqz               v1, +d
+
+onSubMenuSelected-BB@0xb4 : [ onSubMenuSelected-BB@0xbc onSubMenuSelected-BB@0xc6 ]
+	45      (000000b4) iget-object          v1, v11, Landroidx/appcompat/view/menu/StandardMenuPopup;->mPresenterCallback Landroidx/appcompat/view/menu/MenuPresenter$Callback;
+	46      (000000b8) if-eqz               v1, +7
+
+onSubMenuSelected-BB@0xbc : [ onSubMenuSelected-BB@0xc6 ]
+	47      (000000bc) iget-object          v1, v11, Landroidx/appcompat/view/menu/StandardMenuPopup;->mPresenterCallback Landroidx/appcompat/view/menu/MenuPresenter$Callback;
+	48      (000000c0) invoke-interface     v1, v12, Landroidx/appcompat/view/menu/MenuPresenter$Callback;->onOpenSubMenu(Landroidx/appcompat/view/menu/MenuBuilder;)Z
+
+onSubMenuSelected-BB@0xc6 : [ onSubMenuSelected-BB@0xc8 ]
+	49      (000000c6) const/4              v1, 1
+
+onSubMenuSelected-BB@0xc8 : 
+	50      (000000c8) return               v1
+
+onSubMenuSelected-BB@0xca : [ onSubMenuSelected-BB@0xc8 ]
+	51      (000000ca) move                 v1, v10
+	52      (000000cc) goto                 -2
+

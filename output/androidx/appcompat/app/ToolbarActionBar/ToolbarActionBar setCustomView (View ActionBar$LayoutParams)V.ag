@@ -1,0 +1,20 @@
+# Landroidx/appcompat/app/ToolbarActionBar;->setCustomView(Landroid/view/View; Landroidx/appcompat/app/ActionBar$LayoutParams;)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:android.view.View
+# - v3:androidx.appcompat.app.ActionBar$LayoutParams
+#
+# - return:void
+
+setCustomView-BB@0x0 : [ setCustomView-BB@0x4 setCustomView-BB@0xa ]
+	0       (00000000) if-eqz               v2, +5
+
+setCustomView-BB@0x4 : [ setCustomView-BB@0xa ]
+	1       (00000004) invoke-virtual       v2, v3, Landroid/view/View;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
+
+setCustomView-BB@0xa : 
+	2       (0000000a) iget-object          v0, v1, Landroidx/appcompat/app/ToolbarActionBar;->mDecorToolbar Landroidx/appcompat/widget/DecorToolbar;
+	3       (0000000e) invoke-interface     v0, v2, Landroidx/appcompat/widget/DecorToolbar;->setCustomView(Landroid/view/View;)V
+	4       (00000014) return-void          
+

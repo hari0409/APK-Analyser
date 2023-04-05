@@ -1,0 +1,29 @@
+# Landroidx/appcompat/widget/AppCompatImageHelper;->hasOverlappingRendering()Z [access_flags=]
+#
+# Parameters:
+# local registers: v0...v3
+#
+# - return:boolean
+
+hasOverlappingRendering-BB@0x0 : [ hasOverlappingRendering-BB@0x18 hasOverlappingRendering-BB@0x24 ]
+	0       (00000000) iget-object          v1, v3, Landroidx/appcompat/widget/AppCompatImageHelper;->mView Landroid/widget/ImageView;
+	1       (00000004) invoke-virtual       v1, Landroid/widget/ImageView;->getBackground()Landroid/graphics/drawable/Drawable;
+	2       (0000000a) move-result-object   v0
+	3       (0000000c) sget                 v1, Landroid/os/Build$VERSION;->SDK_INT I
+	4       (00000010) const/16             v2, 21
+	5       (00000014) if-lt                v1, v2, +8
+
+hasOverlappingRendering-BB@0x18 : [ hasOverlappingRendering-BB@0x20 hasOverlappingRendering-BB@0x24 ]
+	6       (00000018) instance-of          v1, v0, Landroid/graphics/drawable/RippleDrawable;
+	7       (0000001c) if-eqz               v1, +4
+
+hasOverlappingRendering-BB@0x20 : [ hasOverlappingRendering-BB@0x22 ]
+	8       (00000020) const/4              v1, 0
+
+hasOverlappingRendering-BB@0x22 : 
+	9       (00000022) return               v1
+
+hasOverlappingRendering-BB@0x24 : [ hasOverlappingRendering-BB@0x22 ]
+	10      (00000024) const/4              v1, 1
+	11      (00000026) goto                 -2
+

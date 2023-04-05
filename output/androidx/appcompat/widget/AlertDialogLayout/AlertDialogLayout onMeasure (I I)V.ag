@@ -1,0 +1,20 @@
+# Landroidx/appcompat/widget/AlertDialogLayout;->onMeasure(I I)V [access_flags=protected]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:int
+# - v3:int
+#
+# - return:void
+
+onMeasure-BB@0x0 : [ onMeasure-BB@0xc onMeasure-BB@0x12 ]
+	0       (00000000) invoke-direct        v1, v2, v3, Landroidx/appcompat/widget/AlertDialogLayout;->tryOnMeasure(I I)Z
+	1       (00000006) move-result          v0
+	2       (00000008) if-nez               v0, +5
+
+onMeasure-BB@0xc : [ onMeasure-BB@0x12 ]
+	3       (0000000c) invoke-super         v1, v2, v3, Landroidx/appcompat/widget/LinearLayoutCompat;->onMeasure(I I)V
+
+onMeasure-BB@0x12 : 
+	4       (00000012) return-void          
+

@@ -1,0 +1,21 @@
+# Landroidx/appcompat/view/SupportMenuInflater;->getRealOwner()Ljava/lang/Object; [access_flags=]
+#
+# Parameters:
+# local registers: v0...v1
+#
+# - return:java.lang.Object
+
+getRealOwner-BB@0x0 : [ getRealOwner-BB@0x8 getRealOwner-BB@0x18 ]
+	0       (00000000) iget-object          v0, v1, Landroidx/appcompat/view/SupportMenuInflater;->mRealOwner Ljava/lang/Object;
+	1       (00000004) if-nez               v0, +a
+
+getRealOwner-BB@0x8 : [ getRealOwner-BB@0x18 ]
+	2       (00000008) iget-object          v0, v1, Landroidx/appcompat/view/SupportMenuInflater;->mContext Landroid/content/Context;
+	3       (0000000c) invoke-direct        v1, v0, Landroidx/appcompat/view/SupportMenuInflater;->findRealOwner(Ljava/lang/Object;)Ljava/lang/Object;
+	4       (00000012) move-result-object   v0
+	5       (00000014) iput-object          v0, v1, Landroidx/appcompat/view/SupportMenuInflater;->mRealOwner Ljava/lang/Object;
+
+getRealOwner-BB@0x18 : 
+	6       (00000018) iget-object          v0, v1, Landroidx/appcompat/view/SupportMenuInflater;->mRealOwner Ljava/lang/Object;
+	7       (0000001c) return-object        v0
+

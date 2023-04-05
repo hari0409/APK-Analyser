@@ -1,0 +1,72 @@
+# Landroidx/appcompat/widget/ActionBarOverlayLayout;->applyInsets(Landroid/view/View; Landroid/graphics/Rect; Z Z Z Z)Z [access_flags=private]
+#
+# Parameters:
+# - local registers: v0...v4
+# - v5:android.view.View
+# - v6:android.graphics.Rect
+# - v7:boolean
+# - v8:boolean
+# - v9:boolean
+# - v10:boolean
+#
+# - return:boolean
+
+applyInsets-BB@0x0 : [ applyInsets-BB@0x12 applyInsets-BB@0x28 ]
+	0       (00000000) const/4              v0, 0
+	1       (00000002) invoke-virtual       v5, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
+	2       (00000008) move-result-object   v1
+	3       (0000000a) check-cast           v1, Landroidx/appcompat/widget/ActionBarOverlayLayout$LayoutParams;
+	4       (0000000e) if-eqz               v7, +d
+
+applyInsets-BB@0x12 : [ applyInsets-BB@0x1e applyInsets-BB@0x28 ]
+	5       (00000012) iget                 v2, v1, Landroidx/appcompat/widget/ActionBarOverlayLayout$LayoutParams;->leftMargin I
+	6       (00000016) iget                 v3, v6, Landroid/graphics/Rect;->left I
+	7       (0000001a) if-eq                v2, v3, +7
+
+applyInsets-BB@0x1e : [ applyInsets-BB@0x28 ]
+	8       (0000001e) const/4              v0, 1
+	9       (00000020) iget                 v2, v6, Landroid/graphics/Rect;->left I
+	10      (00000024) iput                 v2, v1, Landroidx/appcompat/widget/ActionBarOverlayLayout$LayoutParams;->leftMargin I
+
+applyInsets-BB@0x28 : [ applyInsets-BB@0x2c applyInsets-BB@0x42 ]
+	11      (00000028) if-eqz               v8, +d
+
+applyInsets-BB@0x2c : [ applyInsets-BB@0x38 applyInsets-BB@0x42 ]
+	12      (0000002c) iget                 v2, v1, Landroidx/appcompat/widget/ActionBarOverlayLayout$LayoutParams;->topMargin I
+	13      (00000030) iget                 v3, v6, Landroid/graphics/Rect;->top I
+	14      (00000034) if-eq                v2, v3, +7
+
+applyInsets-BB@0x38 : [ applyInsets-BB@0x42 ]
+	15      (00000038) const/4              v0, 1
+	16      (0000003a) iget                 v2, v6, Landroid/graphics/Rect;->top I
+	17      (0000003e) iput                 v2, v1, Landroidx/appcompat/widget/ActionBarOverlayLayout$LayoutParams;->topMargin I
+
+applyInsets-BB@0x42 : [ applyInsets-BB@0x46 applyInsets-BB@0x5c ]
+	18      (00000042) if-eqz               v10, +d
+
+applyInsets-BB@0x46 : [ applyInsets-BB@0x52 applyInsets-BB@0x5c ]
+	19      (00000046) iget                 v2, v1, Landroidx/appcompat/widget/ActionBarOverlayLayout$LayoutParams;->rightMargin I
+	20      (0000004a) iget                 v3, v6, Landroid/graphics/Rect;->right I
+	21      (0000004e) if-eq                v2, v3, +7
+
+applyInsets-BB@0x52 : [ applyInsets-BB@0x5c ]
+	22      (00000052) const/4              v0, 1
+	23      (00000054) iget                 v2, v6, Landroid/graphics/Rect;->right I
+	24      (00000058) iput                 v2, v1, Landroidx/appcompat/widget/ActionBarOverlayLayout$LayoutParams;->rightMargin I
+
+applyInsets-BB@0x5c : [ applyInsets-BB@0x60 applyInsets-BB@0x76 ]
+	25      (0000005c) if-eqz               v9, +d
+
+applyInsets-BB@0x60 : [ applyInsets-BB@0x6c applyInsets-BB@0x76 ]
+	26      (00000060) iget                 v2, v1, Landroidx/appcompat/widget/ActionBarOverlayLayout$LayoutParams;->bottomMargin I
+	27      (00000064) iget                 v3, v6, Landroid/graphics/Rect;->bottom I
+	28      (00000068) if-eq                v2, v3, +7
+
+applyInsets-BB@0x6c : [ applyInsets-BB@0x76 ]
+	29      (0000006c) const/4              v0, 1
+	30      (0000006e) iget                 v2, v6, Landroid/graphics/Rect;->bottom I
+	31      (00000072) iput                 v2, v1, Landroidx/appcompat/widget/ActionBarOverlayLayout$LayoutParams;->bottomMargin I
+
+applyInsets-BB@0x76 : 
+	32      (00000076) return               v0
+

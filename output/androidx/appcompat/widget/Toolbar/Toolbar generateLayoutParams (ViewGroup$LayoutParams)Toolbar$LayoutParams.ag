@@ -1,0 +1,45 @@
+# Landroidx/appcompat/widget/Toolbar;->generateLayoutParams(Landroid/view/ViewGroup$LayoutParams;)Landroidx/appcompat/widget/Toolbar$LayoutParams; [access_flags=protected]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:android.view.ViewGroup$LayoutParams
+#
+# - return:androidx.appcompat.widget.Toolbar$LayoutParams
+
+generateLayoutParams-BB@0x0 : [ generateLayoutParams-BB@0x8 generateLayoutParams-BB@0x18 ]
+	0       (00000000) instance-of          v0, v2, Landroidx/appcompat/widget/Toolbar$LayoutParams;
+	1       (00000004) if-eqz               v0, +a
+
+generateLayoutParams-BB@0x8 : [ generateLayoutParams-BB@0x16 ]
+	2       (00000008) new-instance         v0, Landroidx/appcompat/widget/Toolbar$LayoutParams;
+	3       (0000000c) check-cast           v2, Landroidx/appcompat/widget/Toolbar$LayoutParams;
+	4       (00000010) invoke-direct        v0, v2, Landroidx/appcompat/widget/Toolbar$LayoutParams;-><init>(Landroidx/appcompat/widget/Toolbar$LayoutParams;)V
+
+generateLayoutParams-BB@0x16 : 
+	5       (00000016) return-object        v0
+
+generateLayoutParams-BB@0x18 : [ generateLayoutParams-BB@0x20 generateLayoutParams-BB@0x30 ]
+	6       (00000018) instance-of          v0, v2, Landroidx/appcompat/app/ActionBar$LayoutParams;
+	7       (0000001c) if-eqz               v0, +a
+
+generateLayoutParams-BB@0x20 : [ generateLayoutParams-BB@0x16 ]
+	8       (00000020) new-instance         v0, Landroidx/appcompat/widget/Toolbar$LayoutParams;
+	9       (00000024) check-cast           v2, Landroidx/appcompat/app/ActionBar$LayoutParams;
+	10      (00000028) invoke-direct        v0, v2, Landroidx/appcompat/widget/Toolbar$LayoutParams;-><init>(Landroidx/appcompat/app/ActionBar$LayoutParams;)V
+	11      (0000002e) goto                 -c
+
+generateLayoutParams-BB@0x30 : [ generateLayoutParams-BB@0x38 generateLayoutParams-BB@0x48 ]
+	12      (00000030) instance-of          v0, v2, Landroid/view/ViewGroup$MarginLayoutParams;
+	13      (00000034) if-eqz               v0, +a
+
+generateLayoutParams-BB@0x38 : [ generateLayoutParams-BB@0x16 ]
+	14      (00000038) new-instance         v0, Landroidx/appcompat/widget/Toolbar$LayoutParams;
+	15      (0000003c) check-cast           v2, Landroid/view/ViewGroup$MarginLayoutParams;
+	16      (00000040) invoke-direct        v0, v2, Landroidx/appcompat/widget/Toolbar$LayoutParams;-><init>(Landroid/view/ViewGroup$MarginLayoutParams;)V
+	17      (00000046) goto                 -18
+
+generateLayoutParams-BB@0x48 : [ generateLayoutParams-BB@0x16 ]
+	18      (00000048) new-instance         v0, Landroidx/appcompat/widget/Toolbar$LayoutParams;
+	19      (0000004c) invoke-direct        v0, v2, Landroidx/appcompat/widget/Toolbar$LayoutParams;-><init>(Landroid/view/ViewGroup$LayoutParams;)V
+	20      (00000052) goto                 -1e
+

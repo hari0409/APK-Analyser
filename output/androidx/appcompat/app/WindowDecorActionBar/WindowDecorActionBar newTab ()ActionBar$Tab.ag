@@ -1,0 +1,12 @@
+# Landroidx/appcompat/app/WindowDecorActionBar;->newTab()Landroidx/appcompat/app/ActionBar$Tab; [access_flags=public]
+#
+# Parameters:
+# local registers: v0...v1
+#
+# - return:androidx.appcompat.app.ActionBar$Tab
+
+newTab-BB@0x0 : 
+	0       (00000000) new-instance         v0, Landroidx/appcompat/app/WindowDecorActionBar$TabImpl;
+	1       (00000004) invoke-direct        v0, v1, Landroidx/appcompat/app/WindowDecorActionBar$TabImpl;-><init>(Landroidx/appcompat/app/WindowDecorActionBar;)V
+	2       (0000000a) return-object        v0
+

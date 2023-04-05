@@ -1,0 +1,12 @@
+# Lcom/afwsamples/testdpc/ShellCommand;->bridge$lambda$38$ShellCommand([Ljava/lang/String;)V [access_flags=final bridge synthetic]
+#
+# Parameters:
+# - local registers: v0...v0
+# - v1:java.lang.String[]
+#
+# - return:void
+
+bridge$lambda$38$ShellCommand-BB@0x0 : 
+	0       (00000000) invoke-direct        v0, v1, Lcom/afwsamples/testdpc/ShellCommand;->isLockTaskPermitted([Ljava/lang/String;)V
+	1       (00000006) return-void          
+

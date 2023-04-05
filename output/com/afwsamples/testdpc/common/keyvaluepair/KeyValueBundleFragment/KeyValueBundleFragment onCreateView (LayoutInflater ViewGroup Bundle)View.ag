@@ -1,0 +1,35 @@
+# Lcom/afwsamples/testdpc/common/keyvaluepair/KeyValueBundleFragment;->onCreateView(Landroid/view/LayoutInflater; Landroid/view/ViewGroup; Landroid/os/Bundle;)Landroid/view/View; [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v7
+# - v8:android.view.LayoutInflater
+# - v9:android.view.ViewGroup
+# - v10:android.os.Bundle
+#
+# - return:android.view.View
+
+onCreateView-BB@0x0 : 
+	0       (00000000) const/4              v6, 0
+	1       (00000002) invoke-super         v7, v8, v9, v10, Lcom/afwsamples/testdpc/common/ManageAppFragment;->onCreateView(Landroid/view/LayoutInflater; Landroid/view/ViewGroup; Landroid/os/Bundle;)Landroid/view/View;
+	2       (00000008) move-result-object   v0
+	3       (0000000a) iget-object          v1, v7, Lcom/afwsamples/testdpc/common/keyvaluepair/KeyValueBundleFragment;->mManagedAppsSpinner Landroid/widget/Spinner;
+	4       (0000000e) const/16             v2, 8
+	5       (00000012) invoke-virtual       v1, v2, Landroid/widget/Spinner;->setVisibility(I)V
+	6       (00000018) iget-object          v1, v7, Lcom/afwsamples/testdpc/common/keyvaluepair/KeyValueBundleFragment;->mHeaderView Landroid/widget/TextView;
+	7       (0000001c) invoke-virtual       v1, v6, Landroid/widget/TextView;->setVisibility(I)V
+	8       (00000022) iget-object          v1, v7, Lcom/afwsamples/testdpc/common/keyvaluepair/KeyValueBundleFragment;->mHeaderView Landroid/widget/TextView;
+	9       (00000026) invoke-virtual       v7, Lcom/afwsamples/testdpc/common/keyvaluepair/KeyValueBundleFragment;->getActivity()Landroid/app/Activity;
+	10      (0000002c) move-result-object   v2
+	11      (0000002e) const                v3, 2131689575 # [1.9008169248543215e+38]
+	12      (00000034) const/4              v4, 2
+	13      (00000036) new-array            v4, v4, [Ljava/lang/Object;
+	14      (0000003a) iget-object          v5, v7, Lcom/afwsamples/testdpc/common/keyvaluepair/KeyValueBundleFragment;->mAppName Ljava/lang/String;
+	15      (0000003e) aput-object          v5, v4, v6
+	16      (00000042) const/4              v5, 1
+	17      (00000044) iget-object          v6, v7, Lcom/afwsamples/testdpc/common/keyvaluepair/KeyValueBundleFragment;->mKey Ljava/lang/String;
+	18      (00000048) aput-object          v6, v4, v5
+	19      (0000004c) invoke-virtual       v2, v3, v4, Landroid/app/Activity;->getString(I [Ljava/lang/Object;)Ljava/lang/String;
+	20      (00000052) move-result-object   v2
+	21      (00000054) invoke-virtual       v1, v2, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+	22      (0000005a) return-object        v0
+

@@ -1,0 +1,77 @@
+# Landroidx/appcompat/widget/Toolbar;->setMenu(Landroidx/appcompat/view/menu/MenuBuilder; Landroidx/appcompat/widget/ActionMenuPresenter;)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v5
+# - v6:androidx.appcompat.view.menu.MenuBuilder
+# - v7:androidx.appcompat.widget.ActionMenuPresenter
+#
+# - return:void
+
+setMenu-BB@0x0 : [ setMenu-BB@0x8 setMenu-BB@0x12 ]
+	0       (00000000) const/4              v4, 0
+	1       (00000002) const/4              v3, 1
+	2       (00000004) if-nez               v6, +7
+
+setMenu-BB@0x8 : [ setMenu-BB@0x10 setMenu-BB@0x12 ]
+	3       (00000008) iget-object          v1, v5, Landroidx/appcompat/widget/Toolbar;->mMenuView Landroidx/appcompat/widget/ActionMenuView;
+	4       (0000000c) if-nez               v1, +3
+
+setMenu-BB@0x10 : 
+	5       (00000010) return-void          
+
+setMenu-BB@0x12 : [ setMenu-BB@0x28 setMenu-BB@0x10 ]
+	6       (00000012) invoke-direct        v5, Landroidx/appcompat/widget/Toolbar;->ensureMenuView()V
+	7       (00000018) iget-object          v1, v5, Landroidx/appcompat/widget/Toolbar;->mMenuView Landroidx/appcompat/widget/ActionMenuView;
+	8       (0000001c) invoke-virtual       v1, Landroidx/appcompat/widget/ActionMenuView;->peekMenu()Landroidx/appcompat/view/menu/MenuBuilder;
+	9       (00000022) move-result-object   v0
+	10      (00000024) if-eq                v0, v6, -a
+
+setMenu-BB@0x28 : [ setMenu-BB@0x2c setMenu-BB@0x40 ]
+	11      (00000028) if-eqz               v0, +c
+
+setMenu-BB@0x2c : [ setMenu-BB@0x40 ]
+	12      (0000002c) iget-object          v1, v5, Landroidx/appcompat/widget/Toolbar;->mOuterActionMenuPresenter Landroidx/appcompat/widget/ActionMenuPresenter;
+	13      (00000030) invoke-virtual       v0, v1, Landroidx/appcompat/view/menu/MenuBuilder;->removeMenuPresenter(Landroidx/appcompat/view/menu/MenuPresenter;)V
+	14      (00000036) iget-object          v1, v5, Landroidx/appcompat/widget/Toolbar;->mExpandedMenuPresenter Landroidx/appcompat/widget/Toolbar$ExpandedActionViewMenuPresenter;
+	15      (0000003a) invoke-virtual       v0, v1, Landroidx/appcompat/view/menu/MenuBuilder;->removeMenuPresenter(Landroidx/appcompat/view/menu/MenuPresenter;)V
+
+setMenu-BB@0x40 : [ setMenu-BB@0x48 setMenu-BB@0x56 ]
+	16      (00000040) iget-object          v1, v5, Landroidx/appcompat/widget/Toolbar;->mExpandedMenuPresenter Landroidx/appcompat/widget/Toolbar$ExpandedActionViewMenuPresenter;
+	17      (00000044) if-nez               v1, +9
+
+setMenu-BB@0x48 : [ setMenu-BB@0x56 ]
+	18      (00000048) new-instance         v1, Landroidx/appcompat/widget/Toolbar$ExpandedActionViewMenuPresenter;
+	19      (0000004c) invoke-direct        v1, v5, Landroidx/appcompat/widget/Toolbar$ExpandedActionViewMenuPresenter;-><init>(Landroidx/appcompat/widget/Toolbar;)V
+	20      (00000052) iput-object          v1, v5, Landroidx/appcompat/widget/Toolbar;->mExpandedMenuPresenter Landroidx/appcompat/widget/Toolbar$ExpandedActionViewMenuPresenter;
+
+setMenu-BB@0x56 : [ setMenu-BB@0x60 setMenu-BB@0x96 ]
+	21      (00000056) invoke-virtual       v7, v3, Landroidx/appcompat/widget/ActionMenuPresenter;->setExpandedActionViewsExclusive(Z)V
+	22      (0000005c) if-eqz               v6, +1d
+
+setMenu-BB@0x60 : [ setMenu-BB@0x78 ]
+	23      (00000060) iget-object          v1, v5, Landroidx/appcompat/widget/Toolbar;->mPopupContext Landroid/content/Context;
+	24      (00000064) invoke-virtual       v6, v7, v1, Landroidx/appcompat/view/menu/MenuBuilder;->addMenuPresenter(Landroidx/appcompat/view/menu/MenuPresenter; Landroid/content/Context;)V
+	25      (0000006a) iget-object          v1, v5, Landroidx/appcompat/widget/Toolbar;->mExpandedMenuPresenter Landroidx/appcompat/widget/Toolbar$ExpandedActionViewMenuPresenter;
+	26      (0000006e) iget-object          v2, v5, Landroidx/appcompat/widget/Toolbar;->mPopupContext Landroid/content/Context;
+	27      (00000072) invoke-virtual       v6, v1, v2, Landroidx/appcompat/view/menu/MenuBuilder;->addMenuPresenter(Landroidx/appcompat/view/menu/MenuPresenter; Landroid/content/Context;)V
+
+setMenu-BB@0x78 : [ setMenu-BB@0x10 ]
+	28      (00000078) iget-object          v1, v5, Landroidx/appcompat/widget/Toolbar;->mMenuView Landroidx/appcompat/widget/ActionMenuView;
+	29      (0000007c) iget                 v2, v5, Landroidx/appcompat/widget/Toolbar;->mPopupTheme I
+	30      (00000080) invoke-virtual       v1, v2, Landroidx/appcompat/widget/ActionMenuView;->setPopupTheme(I)V
+	31      (00000086) iget-object          v1, v5, Landroidx/appcompat/widget/Toolbar;->mMenuView Landroidx/appcompat/widget/ActionMenuView;
+	32      (0000008a) invoke-virtual       v1, v7, Landroidx/appcompat/widget/ActionMenuView;->setPresenter(Landroidx/appcompat/widget/ActionMenuPresenter;)V
+	33      (00000090) iput-object          v7, v5, Landroidx/appcompat/widget/Toolbar;->mOuterActionMenuPresenter Landroidx/appcompat/widget/ActionMenuPresenter;
+	34      (00000094) goto                 -42
+
+setMenu-BB@0x96 : [ setMenu-BB@0x78 ]
+	35      (00000096) iget-object          v1, v5, Landroidx/appcompat/widget/Toolbar;->mPopupContext Landroid/content/Context;
+	36      (0000009a) invoke-virtual       v7, v1, v4, Landroidx/appcompat/widget/ActionMenuPresenter;->initForMenu(Landroid/content/Context; Landroidx/appcompat/view/menu/MenuBuilder;)V
+	37      (000000a0) iget-object          v1, v5, Landroidx/appcompat/widget/Toolbar;->mExpandedMenuPresenter Landroidx/appcompat/widget/Toolbar$ExpandedActionViewMenuPresenter;
+	38      (000000a4) iget-object          v2, v5, Landroidx/appcompat/widget/Toolbar;->mPopupContext Landroid/content/Context;
+	39      (000000a8) invoke-virtual       v1, v2, v4, Landroidx/appcompat/widget/Toolbar$ExpandedActionViewMenuPresenter;->initForMenu(Landroid/content/Context; Landroidx/appcompat/view/menu/MenuBuilder;)V
+	40      (000000ae) invoke-virtual       v7, v3, Landroidx/appcompat/widget/ActionMenuPresenter;->updateMenuView(Z)V
+	41      (000000b4) iget-object          v1, v5, Landroidx/appcompat/widget/Toolbar;->mExpandedMenuPresenter Landroidx/appcompat/widget/Toolbar$ExpandedActionViewMenuPresenter;
+	42      (000000b8) invoke-virtual       v1, v3, Landroidx/appcompat/widget/Toolbar$ExpandedActionViewMenuPresenter;->updateMenuView(Z)V
+	43      (000000be) goto                 -23
+

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:testdpc="http://schemas.android.com/apk/res-auto">
+    <PreferenceCategory android:title="@string/organization_info">
+        <com.afwsamples.testdpc.common.preference.DpcPreference android:title="@string/set_organization_color" android:key="set_organization_color" testdpc:minSdkVersion="N" />
+        <com.afwsamples.testdpc.common.preference.DpcEditTextPreference android:title="@string/set_organization_name" android:key="set_profile_organization_name" testdpc:minSdkVersion="N" />
+    </PreferenceCategory>
+    <PreferenceCategory android:title="@string/cross_profile_intents">
+        <com.afwsamples.testdpc.common.preference.DpcPreference android:title="@string/add_cross_profile_intents_title" android:key="add_cross_profile_intent_filter" testdpc:minSdkVersion="L" />
+        <com.afwsamples.testdpc.common.preference.DpcPreference android:title="@string/clear_cross_profile_intents" android:key="clear_cross_profile_intent_filters" testdpc:minSdkVersion="L" />
+    </PreferenceCategory>
+    <PreferenceCategory android:title="@string/cross_profile_widget_providers_title">
+        <com.afwsamples.testdpc.common.preference.DpcPreference android:title="@string/add_cross_profile_app_widget_providers" android:key="add_cross_profile_app_widgets" testdpc:minSdkVersion="L" />
+        <com.afwsamples.testdpc.common.preference.DpcPreference android:title="@string/remove_cross_profile_app_widget_providers" android:key="remove_cross_profile_app_widgets" testdpc:minSdkVersion="L" />
+    </PreferenceCategory>
+    <PreferenceCategory android:title="@string/policies_title">
+        <com.afwsamples.testdpc.common.preference.DpcSwitchPreference android:title="@string/disable_bluetooth_contact_sharing" android:key="disable_bluetooth_contact_sharing" testdpc:minSdkVersion="M" />
+        <com.afwsamples.testdpc.common.preference.DpcSwitchPreference android:title="@string/disable_cross_profile_caller_id" android:key="disable_cross_profile_caller_id" testdpc:minSdkVersion="L" />
+        <com.afwsamples.testdpc.common.preference.DpcSwitchPreference android:title="@string/disable_cross_profile_contacts_search" android:key="disable_cross_profile_contacts_search" testdpc:minSdkVersion="N" />
+    </PreferenceCategory>
+    <PreferenceCategory android:title="@string/profile_management_title">
+        <com.afwsamples.testdpc.common.preference.DpcPreference android:title="@string/remove_managed_profile" android:key="remove_profile" testdpc:minSdkVersion="L" />
+    </PreferenceCategory>
+</PreferenceScreen>

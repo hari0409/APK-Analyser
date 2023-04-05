@@ -1,0 +1,22 @@
+# Landroidx/appcompat/widget/SuggestionsAdapter;->onClick(Landroid/view/View;)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:android.view.View
+#
+# - return:void
+
+onClick-BB@0x0 : [ onClick-BB@0x10 onClick-BB@0x1e ]
+	0       (00000000) invoke-virtual       v3, Landroid/view/View;->getTag()Ljava/lang/Object;
+	1       (00000006) move-result-object   v0
+	2       (00000008) instance-of          v1, v0, Ljava/lang/CharSequence;
+	3       (0000000c) if-eqz               v1, +9
+
+onClick-BB@0x10 : [ onClick-BB@0x1e ]
+	4       (00000010) iget-object          v1, v2, Landroidx/appcompat/widget/SuggestionsAdapter;->mSearchView Landroidx/appcompat/widget/SearchView;
+	5       (00000014) check-cast           v0, Ljava/lang/CharSequence;
+	6       (00000018) invoke-virtual       v1, v0, Landroidx/appcompat/widget/SearchView;->onQueryRefine(Ljava/lang/CharSequence;)V
+
+onClick-BB@0x1e : 
+	7       (0000001e) return-void          
+

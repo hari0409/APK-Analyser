@@ -1,0 +1,55 @@
+# Lcom/afwsamples/testdpc/ShellCommand;->printCollection(Ljava/lang/String; Ljava/util/Collection;)V [access_flags=private]
+#
+# Parameters:
+# - local registers: v0...v7
+# - v8:java.lang.String
+# - v9:java.util.Collection
+#
+# - return:void
+
+printCollection-BB@0x0 : [ printCollection-BB@0x10 printCollection-BB@0x28 ]
+	0       (00000000) const/4              v5, 0
+	1       (00000002) const/4              v6, 1
+	2       (00000004) invoke-interface     v9, Ljava/util/Collection;->isEmpty()Z
+	3       (0000000a) move-result          v1
+	4       (0000000c) if-eqz               v1, +e
+
+printCollection-BB@0x10 : [ printCollection-BB@0x26 ]
+	5       (00000010) iget-object          v1, v7, Lcom/afwsamples/testdpc/ShellCommand;->mWriter Ljava/io/PrintWriter;
+	6       (00000014) const-string         v2, 'No %ss\n'
+	7       (00000018) new-array            v3, v6, [Ljava/lang/Object;
+	8       (0000001c) aput-object          v8, v3, v5
+	9       (00000020) invoke-virtual       v1, v2, v3, Ljava/io/PrintWriter;->printf(Ljava/lang/String; [Ljava/lang/Object;)Ljava/io/PrintWriter;
+
+printCollection-BB@0x26 : 
+	10      (00000026) return-void          
+
+printCollection-BB@0x28 : [ printCollection-BB@0x54 printCollection-BB@0x74 ]
+	11      (00000028) invoke-interface     v9, Ljava/util/Collection;->size()I
+	12      (0000002e) move-result          v0
+	13      (00000030) iget-object          v2, v7, Lcom/afwsamples/testdpc/ShellCommand;->mWriter Ljava/io/PrintWriter;
+	14      (00000034) const-string         v3, '%d %s%s:\n'
+	15      (00000038) const/4              v1, 3
+	16      (0000003a) new-array            v4, v1, [Ljava/lang/Object;
+	17      (0000003e) invoke-static        v0, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+	18      (00000044) move-result-object   v1
+	19      (00000046) aput-object          v1, v4, v5
+	20      (0000004a) aput-object          v8, v4, v6
+	21      (0000004e) const/4              v5, 2
+	22      (00000050) if-ne                v0, v6, +12
+
+printCollection-BB@0x54 : [ printCollection-BB@0x58 ]
+	23      (00000054) const-string         v1, ''
+
+printCollection-BB@0x58 : [ printCollection-BB@0x26 ]
+	24      (00000058) aput-object          v1, v4, v5
+	25      (0000005c) invoke-virtual       v2, v3, v4, Ljava/io/PrintWriter;->printf(Ljava/lang/String; [Ljava/lang/Object;)Ljava/io/PrintWriter;
+	26      (00000062) new-instance         v1, Lcom/afwsamples/testdpc/ShellCommand$$Lambda$131;
+	27      (00000066) invoke-direct        v1, v7, Lcom/afwsamples/testdpc/ShellCommand$$Lambda$131;-><init>(Lcom/afwsamples/testdpc/ShellCommand;)V
+	28      (0000006c) invoke-interface     v9, v1, Ljava/util/Collection;->forEach(Ljava/util/function/Consumer;)V
+	29      (00000072) goto                 -26
+
+printCollection-BB@0x74 : [ printCollection-BB@0x58 ]
+	30      (00000074) const-string         v1, 's'
+	31      (00000078) goto                 -10
+

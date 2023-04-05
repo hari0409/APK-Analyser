@@ -1,0 +1,20 @@
+# Lcom/afwsamples/testdpc/DeviceAdminReceiver;->onUserAdded(Landroid/content/Context; Landroid/content/Intent; Landroid/os/UserHandle;)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v6
+# - v7:android.content.Context
+# - v8:android.content.Intent
+# - v9:android.os.UserHandle
+#
+# - return:void
+
+onUserAdded-BB@0x0 : 
+	0       (00000000) const                v3, 2131690004 # [1.900903936391521e+38]
+	1       (00000006) const                v4, 2131690003 # [1.900903733567425e+38]
+	2       (0000000c) const/4              v5, 3
+	3       (0000000e) move-object          v0, v6
+	4       (00000010) move-object          v1, v7
+	5       (00000012) move-object          v2, v9
+	6       (00000014) invoke-direct/range  v0 ... v5, Lcom/afwsamples/testdpc/DeviceAdminReceiver;->handleUserAction(Landroid/content/Context; Landroid/os/UserHandle; I I I)V
+	7       (0000001a) return-void          
+

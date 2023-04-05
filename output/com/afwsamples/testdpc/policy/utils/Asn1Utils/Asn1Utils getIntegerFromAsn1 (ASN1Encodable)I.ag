@@ -1,0 +1,55 @@
+# Lcom/afwsamples/testdpc/policy/utils/Asn1Utils;->getIntegerFromAsn1(Lorg/bouncycastle/asn1/ASN1Encodable;)I [access_flags=public static]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:org.bouncycastle.asn1.ASN1Encodable
+#
+# - return:int
+
+getIntegerFromAsn1-BB@0x0 : [ getIntegerFromAsn1-BB@0x8 getIntegerFromAsn1-BB@0x1e ]
+	0       (00000000) instance-of          v0, v3, Lorg/bouncycastle/asn1/ASN1Integer;
+	1       (00000004) if-eqz               v0, +d
+
+getIntegerFromAsn1-BB@0x8 : [ getIntegerFromAsn1-BB@0x1c ]
+	2       (00000008) check-cast           v3, Lorg/bouncycastle/asn1/ASN1Integer;
+	3       (0000000c) invoke-virtual       v3, Lorg/bouncycastle/asn1/ASN1Integer;->getValue()Ljava/math/BigInteger;
+	4       (00000012) move-result-object   v0
+	5       (00000014) invoke-static        v0, Lcom/afwsamples/testdpc/policy/utils/Asn1Utils;->bigIntegerToInt(Ljava/math/BigInteger;)I
+	6       (0000001a) move-result          v0
+
+getIntegerFromAsn1-BB@0x1c : 
+	7       (0000001c) return               v0
+
+getIntegerFromAsn1-BB@0x1e : [ getIntegerFromAsn1-BB@0x26 getIntegerFromAsn1-BB@0x3c ]
+	8       (0000001e) instance-of          v0, v3, Lorg/bouncycastle/asn1/ASN1Enumerated;
+	9       (00000022) if-eqz               v0, +d
+
+getIntegerFromAsn1-BB@0x26 : [ getIntegerFromAsn1-BB@0x1c ]
+	10      (00000026) check-cast           v3, Lorg/bouncycastle/asn1/ASN1Enumerated;
+	11      (0000002a) invoke-virtual       v3, Lorg/bouncycastle/asn1/ASN1Enumerated;->getValue()Ljava/math/BigInteger;
+	12      (00000030) move-result-object   v0
+	13      (00000032) invoke-static        v0, Lcom/afwsamples/testdpc/policy/utils/Asn1Utils;->bigIntegerToInt(Ljava/math/BigInteger;)I
+	14      (00000038) move-result          v0
+	15      (0000003a) goto                 -f
+
+getIntegerFromAsn1-BB@0x3c : 
+	16      (0000003c) new-instance         v0, Ljava/security/cert/CertificateParsingException;
+	17      (00000040) new-instance         v1, Ljava/lang/StringBuilder;
+	18      (00000044) invoke-direct        v1, Ljava/lang/StringBuilder;-><init>()V
+	19      (0000004a) const-string         v2, 'Integer value expected, '
+	20      (0000004e) invoke-virtual       v1, v2, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	21      (00000054) move-result-object   v1
+	22      (00000056) invoke-virtual       v3, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+	23      (0000005c) move-result-object   v2
+	24      (0000005e) invoke-virtual       v2, Ljava/lang/Class;->getName()Ljava/lang/String;
+	25      (00000064) move-result-object   v2
+	26      (00000066) invoke-virtual       v1, v2, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	27      (0000006c) move-result-object   v1
+	28      (0000006e) const-string         v2, ' found.'
+	29      (00000072) invoke-virtual       v1, v2, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	30      (00000078) move-result-object   v1
+	31      (0000007a) invoke-virtual       v1, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+	32      (00000080) move-result-object   v1
+	33      (00000082) invoke-direct        v0, v1, Ljava/security/cert/CertificateParsingException;-><init>(Ljava/lang/String;)V
+	34      (00000088) throw                v0
+

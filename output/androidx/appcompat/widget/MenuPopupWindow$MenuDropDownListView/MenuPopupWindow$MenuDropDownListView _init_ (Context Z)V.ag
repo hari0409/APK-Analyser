@@ -1,0 +1,39 @@
+# Landroidx/appcompat/widget/MenuPopupWindow$MenuDropDownListView;-><init>(Landroid/content/Context; Z)V [access_flags=public constructor]
+#
+# Parameters:
+# - local registers: v0...v6
+# - v7:android.content.Context
+# - v8:boolean
+#
+# - return:void
+
+<init>-BB@0x0 : [ <init>-BB@0x2a <init>-BB@0x42 ]
+	0       (00000000) const/16             v5, 22
+	1       (00000004) const/16             v4, 21
+	2       (00000008) invoke-direct        v6, v7, v8, Landroidx/appcompat/widget/DropDownListView;-><init>(Landroid/content/Context; Z)V
+	3       (0000000e) invoke-virtual       v7, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
+	4       (00000014) move-result-object   v1
+	5       (00000016) invoke-virtual       v1, Landroid/content/res/Resources;->getConfiguration()Landroid/content/res/Configuration;
+	6       (0000001c) move-result-object   v0
+	7       (0000001e) sget                 v2, Landroid/os/Build$VERSION;->SDK_INT I
+	8       (00000022) const/16             v3, 17
+	9       (00000026) if-lt                v2, v3, +e
+
+<init>-BB@0x2a : [ <init>-BB@0x38 <init>-BB@0x42 ]
+	10      (0000002a) const/4              v2, 1
+	11      (0000002c) invoke-virtual       v0, Landroid/content/res/Configuration;->getLayoutDirection()I
+	12      (00000032) move-result          v3
+	13      (00000034) if-ne                v2, v3, +7
+
+<init>-BB@0x38 : [ <init>-BB@0x40 ]
+	14      (00000038) iput                 v4, v6, Landroidx/appcompat/widget/MenuPopupWindow$MenuDropDownListView;->mAdvanceKey I
+	15      (0000003c) iput                 v5, v6, Landroidx/appcompat/widget/MenuPopupWindow$MenuDropDownListView;->mRetreatKey I
+
+<init>-BB@0x40 : 
+	16      (00000040) return-void          
+
+<init>-BB@0x42 : [ <init>-BB@0x40 ]
+	17      (00000042) iput                 v5, v6, Landroidx/appcompat/widget/MenuPopupWindow$MenuDropDownListView;->mAdvanceKey I
+	18      (00000046) iput                 v4, v6, Landroidx/appcompat/widget/MenuPopupWindow$MenuDropDownListView;->mRetreatKey I
+	19      (0000004a) goto                 -5
+

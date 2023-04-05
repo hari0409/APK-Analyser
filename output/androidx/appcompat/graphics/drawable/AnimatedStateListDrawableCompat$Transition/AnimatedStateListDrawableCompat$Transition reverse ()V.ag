@@ -1,0 +1,10 @@
+# Landroidx/appcompat/graphics/drawable/AnimatedStateListDrawableCompat$Transition;->reverse()V [access_flags=public]
+#
+# Parameters:
+# local registers: v0...v0
+#
+# - return:void
+
+reverse-BB@0x0 : 
+	0       (00000000) return-void          
+

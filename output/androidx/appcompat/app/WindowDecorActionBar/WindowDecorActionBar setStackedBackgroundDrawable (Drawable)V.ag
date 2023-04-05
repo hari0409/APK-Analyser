@@ -1,0 +1,13 @@
+# Landroidx/appcompat/app/WindowDecorActionBar;->setStackedBackgroundDrawable(Landroid/graphics/drawable/Drawable;)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:android.graphics.drawable.Drawable
+#
+# - return:void
+
+setStackedBackgroundDrawable-BB@0x0 : 
+	0       (00000000) iget-object          v0, v1, Landroidx/appcompat/app/WindowDecorActionBar;->mContainerView Landroidx/appcompat/widget/ActionBarContainer;
+	1       (00000004) invoke-virtual       v0, v2, Landroidx/appcompat/widget/ActionBarContainer;->setStackedBackground(Landroid/graphics/drawable/Drawable;)V
+	2       (0000000a) return-void          
+

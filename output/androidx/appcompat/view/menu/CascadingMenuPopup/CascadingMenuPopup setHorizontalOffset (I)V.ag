@@ -1,0 +1,14 @@
+# Landroidx/appcompat/view/menu/CascadingMenuPopup;->setHorizontalOffset(I)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:int
+#
+# - return:void
+
+setHorizontalOffset-BB@0x0 : 
+	0       (00000000) const/4              v0, 1
+	1       (00000002) iput-boolean         v0, v1, Landroidx/appcompat/view/menu/CascadingMenuPopup;->mHasXOffset Z
+	2       (00000006) iput                 v2, v1, Landroidx/appcompat/view/menu/CascadingMenuPopup;->mXOffset I
+	3       (0000000a) return-void          
+

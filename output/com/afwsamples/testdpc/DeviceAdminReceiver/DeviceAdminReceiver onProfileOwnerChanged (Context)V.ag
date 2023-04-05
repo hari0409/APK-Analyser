@@ -1,0 +1,19 @@
+# Lcom/afwsamples/testdpc/DeviceAdminReceiver;->onProfileOwnerChanged(Landroid/content/Context;)V [access_flags=private]
+#
+# Parameters:
+# - local registers: v0...v3
+# - v4:android.content.Context
+#
+# - return:void
+
+onProfileOwnerChanged-BB@0x0 : 
+	0       (00000000) const                v2, 2131690321 # [1.9009682316299647e+38]
+	1       (00000006) const-string         v0, 'DeviceAdminReceiver'
+	2       (0000000a) const-string         v1, 'onProfileOwnerChanged'
+	3       (0000000e) invoke-static        v0, v1, Landroid/util/Log;->i(Ljava/lang/String; Ljava/lang/String;)I
+	4       (00000014) invoke-virtual       v4, v2, Landroid/content/Context;->getString(I)Ljava/lang/String;
+	5       (0000001a) move-result-object   v0
+	6       (0000001c) const/16             v1, 8
+	7       (00000020) invoke-static        v4, v2, v0, v1, Lcom/afwsamples/testdpc/common/NotificationUtil;->showNotification(Landroid/content/Context; I Ljava/lang/String; I)V
+	8       (00000026) return-void          
+

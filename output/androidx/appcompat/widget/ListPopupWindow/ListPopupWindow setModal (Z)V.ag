@@ -1,0 +1,14 @@
+# Landroidx/appcompat/widget/ListPopupWindow;->setModal(Z)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:boolean
+#
+# - return:void
+
+setModal-BB@0x0 : 
+	0       (00000000) iput-boolean         v2, v1, Landroidx/appcompat/widget/ListPopupWindow;->mModal Z
+	1       (00000004) iget-object          v0, v1, Landroidx/appcompat/widget/ListPopupWindow;->mPopup Landroid/widget/PopupWindow;
+	2       (00000008) invoke-virtual       v0, v2, Landroid/widget/PopupWindow;->setFocusable(Z)V
+	3       (0000000e) return-void          
+

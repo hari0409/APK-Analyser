@@ -1,0 +1,14 @@
+# Landroidx/appcompat/app/AppCompatViewInflater;-><init>()V [access_flags=public constructor]
+#
+# Parameters:
+# local registers: v0...v1
+#
+# - return:void
+
+<init>-BB@0x0 : 
+	0       (00000000) invoke-direct        v1, Ljava/lang/Object;-><init>()V
+	1       (00000006) const/4              v0, 2
+	2       (00000008) new-array            v0, v0, [Ljava/lang/Object;
+	3       (0000000c) iput-object          v0, v1, Landroidx/appcompat/app/AppCompatViewInflater;->mConstructorArgs [Ljava/lang/Object;
+	4       (00000010) return-void          
+

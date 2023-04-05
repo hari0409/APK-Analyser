@@ -1,0 +1,286 @@
+# Landroidx/appcompat/widget/ToolbarWidgetWrapper;-><init>(Landroidx/appcompat/widget/Toolbar; Z I I)V [access_flags=public constructor]
+#
+# Parameters:
+# - local registers: v0...v20
+# - v21:androidx.appcompat.widget.Toolbar
+# - v22:boolean
+# - v23:int
+# - v24:int
+#
+# - return:void
+
+<init>-BB@0x0 : [ <init>-BB@0x52 <init>-BB@0x35c ]
+	0       (00000000) invoke-direct/range  v20, Ljava/lang/Object;-><init>()V
+	1       (00000006) const/4              v15, 0
+	2       (00000008) move-object/from16   v0, v20
+	3       (0000000c) iput                 v15, v0, Landroidx/appcompat/widget/ToolbarWidgetWrapper;->mNavigationMode I
+	4       (00000010) const/4              v15, 0
+	5       (00000012) move-object/from16   v0, v20
+	6       (00000016) iput                 v15, v0, Landroidx/appcompat/widget/ToolbarWidgetWrapper;->mDefaultNavigationContentDescription I
+	7       (0000001a) move-object/from16   v0, v21
+	8       (0000001e) move-object/from16   v1, v20
+	9       (00000022) iput-object          v0, v1, Landroidx/appcompat/widget/ToolbarWidgetWrapper;->mToolbar Landroidx/appcompat/widget/Toolbar;
+	10      (00000026) invoke-virtual/range v21, Landroidx/appcompat/widget/Toolbar;->getTitle()Ljava/lang/CharSequence;
+	11      (0000002c) move-result-object   v15
+	12      (0000002e) move-object/from16   v0, v20
+	13      (00000032) iput-object          v15, v0, Landroidx/appcompat/widget/ToolbarWidgetWrapper;->mTitle Ljava/lang/CharSequence;
+	14      (00000036) invoke-virtual/range v21, Landroidx/appcompat/widget/Toolbar;->getSubtitle()Ljava/lang/CharSequence;
+	15      (0000003c) move-result-object   v15
+	16      (0000003e) move-object/from16   v0, v20
+	17      (00000042) iput-object          v15, v0, Landroidx/appcompat/widget/ToolbarWidgetWrapper;->mSubtitle Ljava/lang/CharSequence;
+	18      (00000046) move-object/from16   v0, v20
+	19      (0000004a) iget-object          v15, v0, Landroidx/appcompat/widget/ToolbarWidgetWrapper;->mTitle Ljava/lang/CharSequence;
+	20      (0000004e) if-eqz               v15, +187
+
+<init>-BB@0x52 : [ <init>-BB@0x54 ]
+	21      (00000052) const/4              v15, 1
+
+<init>-BB@0x54 : [ <init>-BB@0xa4 <init>-BB@0x362 ]
+	22      (00000054) move-object/from16   v0, v20
+	23      (00000058) iput-boolean         v15, v0, Landroidx/appcompat/widget/ToolbarWidgetWrapper;->mTitleSet Z
+	24      (0000005c) invoke-virtual/range v21, Landroidx/appcompat/widget/Toolbar;->getNavigationIcon()Landroid/graphics/drawable/Drawable;
+	25      (00000062) move-result-object   v15
+	26      (00000064) move-object/from16   v0, v20
+	27      (00000068) iput-object          v15, v0, Landroidx/appcompat/widget/ToolbarWidgetWrapper;->mNavIcon Landroid/graphics/drawable/Drawable;
+	28      (0000006c) invoke-virtual/range v21, Landroidx/appcompat/widget/Toolbar;->getContext()Landroid/content/Context;
+	29      (00000072) move-result-object   v15
+	30      (00000074) const/16             v16, 0
+	31      (00000078) sget-object          v17, Landroidx/appcompat/R$styleable;->ActionBar [I
+	32      (0000007c) sget                 v18, Landroidx/appcompat/R$attr;->actionBarStyle I
+	33      (00000080) const/16             v19, 0
+	34      (00000084) invoke-static/range  v15 ... v19, Landroidx/appcompat/widget/TintTypedArray;->obtainStyledAttributes(Landroid/content/Context; Landroid/util/AttributeSet; [I I I)Landroidx/appcompat/widget/TintTypedArray;
+	35      (0000008a) move-result-object   v2
+	36      (0000008c) sget                 v15, Landroidx/appcompat/R$styleable;->ActionBar_homeAsUpIndicator I
+	37      (00000090) invoke-virtual       v2, v15, Landroidx/appcompat/widget/TintTypedArray;->getDrawable(I)Landroid/graphics/drawable/Drawable;
+	38      (00000096) move-result-object   v15
+	39      (00000098) move-object/from16   v0, v20
+	40      (0000009c) iput-object          v15, v0, Landroidx/appcompat/widget/ToolbarWidgetWrapper;->mDefaultNavigationIcon Landroid/graphics/drawable/Drawable;
+	41      (000000a0) if-eqz               v22, +161
+
+<init>-BB@0xa4 : [ <init>-BB@0xbc <init>-BB@0xc6 ]
+	42      (000000a4) sget                 v15, Landroidx/appcompat/R$styleable;->ActionBar_title I
+	43      (000000a8) invoke-virtual       v2, v15, Landroidx/appcompat/widget/TintTypedArray;->getText(I)Ljava/lang/CharSequence;
+	44      (000000ae) move-result-object   v13
+	45      (000000b0) invoke-static        v13, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
+	46      (000000b6) move-result          v15
+	47      (000000b8) if-nez               v15, +7
+
+<init>-BB@0xbc : [ <init>-BB@0xc6 ]
+	48      (000000bc) move-object/from16   v0, v20
+	49      (000000c0) invoke-virtual       v0, v13, Landroidx/appcompat/widget/ToolbarWidgetWrapper;->setTitle(Ljava/lang/CharSequence;)V
+
+<init>-BB@0xc6 : [ <init>-BB@0xde <init>-BB@0xe8 ]
+	50      (000000c6) sget                 v15, Landroidx/appcompat/R$styleable;->ActionBar_subtitle I
+	51      (000000ca) invoke-virtual       v2, v15, Landroidx/appcompat/widget/TintTypedArray;->getText(I)Ljava/lang/CharSequence;
+	52      (000000d0) move-result-object   v11
+	53      (000000d2) invoke-static        v11, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
+	54      (000000d8) move-result          v15
+	55      (000000da) if-nez               v15, +7
+
+<init>-BB@0xde : [ <init>-BB@0xe8 ]
+	56      (000000de) move-object/from16   v0, v20
+	57      (000000e2) invoke-virtual       v0, v11, Landroidx/appcompat/widget/ToolbarWidgetWrapper;->setSubtitle(Ljava/lang/CharSequence;)V
+
+<init>-BB@0xe8 : [ <init>-BB@0xf8 <init>-BB@0x102 ]
+	58      (000000e8) sget                 v15, Landroidx/appcompat/R$styleable;->ActionBar_logo I
+	59      (000000ec) invoke-virtual       v2, v15, Landroidx/appcompat/widget/TintTypedArray;->getDrawable(I)Landroid/graphics/drawable/Drawable;
+	60      (000000f2) move-result-object   v8
+	61      (000000f4) if-eqz               v8, +7
+
+<init>-BB@0xf8 : [ <init>-BB@0x102 ]
+	62      (000000f8) move-object/from16   v0, v20
+	63      (000000fc) invoke-virtual       v0, v8, Landroidx/appcompat/widget/ToolbarWidgetWrapper;->setLogo(Landroid/graphics/drawable/Drawable;)V
+
+<init>-BB@0x102 : [ <init>-BB@0x112 <init>-BB@0x11c ]
+	64      (00000102) sget                 v15, Landroidx/appcompat/R$styleable;->ActionBar_icon I
+	65      (00000106) invoke-virtual       v2, v15, Landroidx/appcompat/widget/TintTypedArray;->getDrawable(I)Landroid/graphics/drawable/Drawable;
+	66      (0000010c) move-result-object   v7
+	67      (0000010e) if-eqz               v7, +7
+
+<init>-BB@0x112 : [ <init>-BB@0x11c ]
+	68      (00000112) move-object/from16   v0, v20
+	69      (00000116) invoke-virtual       v0, v7, Landroidx/appcompat/widget/ToolbarWidgetWrapper;->setIcon(Landroid/graphics/drawable/Drawable;)V
+
+<init>-BB@0x11c : [ <init>-BB@0x128 <init>-BB@0x146 ]
+	70      (0000011c) move-object/from16   v0, v20
+	71      (00000120) iget-object          v15, v0, Landroidx/appcompat/widget/ToolbarWidgetWrapper;->mNavIcon Landroid/graphics/drawable/Drawable;
+	72      (00000124) if-nez               v15, +11
+
+<init>-BB@0x128 : [ <init>-BB@0x134 <init>-BB@0x146 ]
+	73      (00000128) move-object/from16   v0, v20
+	74      (0000012c) iget-object          v15, v0, Landroidx/appcompat/widget/ToolbarWidgetWrapper;->mDefaultNavigationIcon Landroid/graphics/drawable/Drawable;
+	75      (00000130) if-eqz               v15, +b
+
+<init>-BB@0x134 : [ <init>-BB@0x146 ]
+	76      (00000134) move-object/from16   v0, v20
+	77      (00000138) iget-object          v15, v0, Landroidx/appcompat/widget/ToolbarWidgetWrapper;->mDefaultNavigationIcon Landroid/graphics/drawable/Drawable;
+	78      (0000013c) move-object/from16   v0, v20
+	79      (00000140) invoke-virtual       v0, v15, Landroidx/appcompat/widget/ToolbarWidgetWrapper;->setNavigationIcon(Landroid/graphics/drawable/Drawable;)V
+
+<init>-BB@0x146 : [ <init>-BB@0x17c <init>-BB@0x1d4 ]
+	80      (00000146) sget                 v15, Landroidx/appcompat/R$styleable;->ActionBar_displayOptions I
+	81      (0000014a) const/16             v16, 0
+	82      (0000014e) move/from16          v0, v16
+	83      (00000152) invoke-virtual       v2, v15, v0, Landroidx/appcompat/widget/TintTypedArray;->getInt(I I)I
+	84      (00000158) move-result          v15
+	85      (0000015a) move-object/from16   v0, v20
+	86      (0000015e) invoke-virtual       v0, v15, Landroidx/appcompat/widget/ToolbarWidgetWrapper;->setDisplayOptions(I)V
+	87      (00000164) sget                 v15, Landroidx/appcompat/R$styleable;->ActionBar_customNavigationLayout I
+	88      (00000168) const/16             v16, 0
+	89      (0000016c) move/from16          v0, v16
+	90      (00000170) invoke-virtual       v2, v15, v0, Landroidx/appcompat/widget/TintTypedArray;->getResourceId(I I)I
+	91      (00000176) move-result          v5
+	92      (00000178) if-eqz               v5, +2e
+
+<init>-BB@0x17c : [ <init>-BB@0x1d4 ]
+	93      (0000017c) move-object/from16   v0, v20
+	94      (00000180) iget-object          v15, v0, Landroidx/appcompat/widget/ToolbarWidgetWrapper;->mToolbar Landroidx/appcompat/widget/Toolbar;
+	95      (00000184) invoke-virtual       v15, Landroidx/appcompat/widget/Toolbar;->getContext()Landroid/content/Context;
+	96      (0000018a) move-result-object   v15
+	97      (0000018c) invoke-static        v15, Landroid/view/LayoutInflater;->from(Landroid/content/Context;)Landroid/view/LayoutInflater;
+	98      (00000192) move-result-object   v15
+	99      (00000194) move-object/from16   v0, v20
+	100     (00000198) iget-object          v0, v0, Landroidx/appcompat/widget/ToolbarWidgetWrapper;->mToolbar Landroidx/appcompat/widget/Toolbar;
+	101     (0000019c) move-object/from16   v16, v0
+	102     (000001a0) const/16             v17, 0
+	103     (000001a4) move-object/from16   v0, v16
+	104     (000001a8) move/from16          v1, v17
+	105     (000001ac) invoke-virtual       v15, v5, v0, v1, Landroid/view/LayoutInflater;->inflate(I Landroid/view/ViewGroup; Z)Landroid/view/View;
+	106     (000001b2) move-result-object   v15
+	107     (000001b4) move-object/from16   v0, v20
+	108     (000001b8) invoke-virtual       v0, v15, Landroidx/appcompat/widget/ToolbarWidgetWrapper;->setCustomView(Landroid/view/View;)V
+	109     (000001be) move-object/from16   v0, v20
+	110     (000001c2) iget                 v15, v0, Landroidx/appcompat/widget/ToolbarWidgetWrapper;->mDisplayOpts I
+	111     (000001c6) or-int/lit8          v15, v15, 16
+	112     (000001ca) move-object/from16   v0, v20
+	113     (000001ce) invoke-virtual       v0, v15, Landroidx/appcompat/widget/ToolbarWidgetWrapper;->setDisplayOptions(I)V
+
+<init>-BB@0x1d4 : [ <init>-BB@0x1ec <init>-BB@0x20e ]
+	114     (000001d4) sget                 v15, Landroidx/appcompat/R$styleable;->ActionBar_height I
+	115     (000001d8) const/16             v16, 0
+	116     (000001dc) move/from16          v0, v16
+	117     (000001e0) invoke-virtual       v2, v15, v0, Landroidx/appcompat/widget/TintTypedArray;->getLayoutDimension(I I)I
+	118     (000001e6) move-result          v6
+	119     (000001e8) if-lez               v6, +13
+
+<init>-BB@0x1ec : [ <init>-BB@0x20e ]
+	120     (000001ec) move-object/from16   v0, v20
+	121     (000001f0) iget-object          v15, v0, Landroidx/appcompat/widget/ToolbarWidgetWrapper;->mToolbar Landroidx/appcompat/widget/Toolbar;
+	122     (000001f4) invoke-virtual       v15, Landroidx/appcompat/widget/Toolbar;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
+	123     (000001fa) move-result-object   v9
+	124     (000001fc) iput                 v6, v9, Landroid/view/ViewGroup$LayoutParams;->height I
+	125     (00000200) move-object/from16   v0, v20
+	126     (00000204) iget-object          v15, v0, Landroidx/appcompat/widget/ToolbarWidgetWrapper;->mToolbar Landroidx/appcompat/widget/Toolbar;
+	127     (00000208) invoke-virtual       v15, v9, Landroidx/appcompat/widget/Toolbar;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
+
+<init>-BB@0x20e : [ <init>-BB@0x23a <init>-BB@0x23e ]
+	128     (0000020e) sget                 v15, Landroidx/appcompat/R$styleable;->ActionBar_contentInsetStart I
+	129     (00000212) const/16             v16, -1
+	130     (00000216) move/from16          v0, v16
+	131     (0000021a) invoke-virtual       v2, v15, v0, Landroidx/appcompat/widget/TintTypedArray;->getDimensionPixelOffset(I I)I
+	132     (00000220) move-result          v4
+	133     (00000222) sget                 v15, Landroidx/appcompat/R$styleable;->ActionBar_contentInsetEnd I
+	134     (00000226) const/16             v16, -1
+	135     (0000022a) move/from16          v0, v16
+	136     (0000022e) invoke-virtual       v2, v15, v0, Landroidx/appcompat/widget/TintTypedArray;->getDimensionPixelOffset(I I)I
+	137     (00000234) move-result          v3
+	138     (00000236) if-gez               v4, +4
+
+<init>-BB@0x23a : [ <init>-BB@0x23e <init>-BB@0x26c ]
+	139     (0000023a) if-ltz               v3, +19
+
+<init>-BB@0x23e : [ <init>-BB@0x26c ]
+	140     (0000023e) move-object/from16   v0, v20
+	141     (00000242) iget-object          v15, v0, Landroidx/appcompat/widget/ToolbarWidgetWrapper;->mToolbar Landroidx/appcompat/widget/Toolbar;
+	142     (00000246) const/16             v16, 0
+	143     (0000024a) move/from16          v0, v16
+	144     (0000024e) invoke-static        v4, v0, Ljava/lang/Math;->max(I I)I
+	145     (00000254) move-result          v16
+	146     (00000256) const/16             v17, 0
+	147     (0000025a) move/from16          v0, v17
+	148     (0000025e) invoke-static        v3, v0, Ljava/lang/Math;->max(I I)I
+	149     (00000264) move-result          v17
+	150     (00000266) invoke-virtual/range v15 ... v17, Landroidx/appcompat/widget/Toolbar;->setContentInsetsRelative(I I)V
+
+<init>-BB@0x26c : [ <init>-BB@0x284 <init>-BB@0x2aa ]
+	151     (0000026c) sget                 v15, Landroidx/appcompat/R$styleable;->ActionBar_titleTextStyle I
+	152     (00000270) const/16             v16, 0
+	153     (00000274) move/from16          v0, v16
+	154     (00000278) invoke-virtual       v2, v15, v0, Landroidx/appcompat/widget/TintTypedArray;->getResourceId(I I)I
+	155     (0000027e) move-result          v14
+	156     (00000280) if-eqz               v14, +15
+
+<init>-BB@0x284 : [ <init>-BB@0x2aa ]
+	157     (00000284) move-object/from16   v0, v20
+	158     (00000288) iget-object          v15, v0, Landroidx/appcompat/widget/ToolbarWidgetWrapper;->mToolbar Landroidx/appcompat/widget/Toolbar;
+	159     (0000028c) move-object/from16   v0, v20
+	160     (00000290) iget-object          v0, v0, Landroidx/appcompat/widget/ToolbarWidgetWrapper;->mToolbar Landroidx/appcompat/widget/Toolbar;
+	161     (00000294) move-object/from16   v16, v0
+	162     (00000298) invoke-virtual/range v16, Landroidx/appcompat/widget/Toolbar;->getContext()Landroid/content/Context;
+	163     (0000029e) move-result-object   v16
+	164     (000002a0) move-object/from16   v0, v16
+	165     (000002a4) invoke-virtual       v15, v0, v14, Landroidx/appcompat/widget/Toolbar;->setTitleTextAppearance(Landroid/content/Context; I)V
+
+<init>-BB@0x2aa : [ <init>-BB@0x2c2 <init>-BB@0x2e8 ]
+	166     (000002aa) sget                 v15, Landroidx/appcompat/R$styleable;->ActionBar_subtitleTextStyle I
+	167     (000002ae) const/16             v16, 0
+	168     (000002b2) move/from16          v0, v16
+	169     (000002b6) invoke-virtual       v2, v15, v0, Landroidx/appcompat/widget/TintTypedArray;->getResourceId(I I)I
+	170     (000002bc) move-result          v12
+	171     (000002be) if-eqz               v12, +15
+
+<init>-BB@0x2c2 : [ <init>-BB@0x2e8 ]
+	172     (000002c2) move-object/from16   v0, v20
+	173     (000002c6) iget-object          v15, v0, Landroidx/appcompat/widget/ToolbarWidgetWrapper;->mToolbar Landroidx/appcompat/widget/Toolbar;
+	174     (000002ca) move-object/from16   v0, v20
+	175     (000002ce) iget-object          v0, v0, Landroidx/appcompat/widget/ToolbarWidgetWrapper;->mToolbar Landroidx/appcompat/widget/Toolbar;
+	176     (000002d2) move-object/from16   v16, v0
+	177     (000002d6) invoke-virtual/range v16, Landroidx/appcompat/widget/Toolbar;->getContext()Landroid/content/Context;
+	178     (000002dc) move-result-object   v16
+	179     (000002de) move-object/from16   v0, v16
+	180     (000002e2) invoke-virtual       v15, v0, v12, Landroidx/appcompat/widget/Toolbar;->setSubtitleTextAppearance(Landroid/content/Context; I)V
+
+<init>-BB@0x2e8 : [ <init>-BB@0x300 <init>-BB@0x30e ]
+	181     (000002e8) sget                 v15, Landroidx/appcompat/R$styleable;->ActionBar_popupTheme I
+	182     (000002ec) const/16             v16, 0
+	183     (000002f0) move/from16          v0, v16
+	184     (000002f4) invoke-virtual       v2, v15, v0, Landroidx/appcompat/widget/TintTypedArray;->getResourceId(I I)I
+	185     (000002fa) move-result          v10
+	186     (000002fc) if-eqz               v10, +9
+
+<init>-BB@0x300 : [ <init>-BB@0x30e ]
+	187     (00000300) move-object/from16   v0, v20
+	188     (00000304) iget-object          v15, v0, Landroidx/appcompat/widget/ToolbarWidgetWrapper;->mToolbar Landroidx/appcompat/widget/Toolbar;
+	189     (00000308) invoke-virtual       v15, v10, Landroidx/appcompat/widget/Toolbar;->setPopupTheme(I)V
+
+<init>-BB@0x30e : 
+	190     (0000030e) invoke-virtual       v2, Landroidx/appcompat/widget/TintTypedArray;->recycle()V
+	191     (00000314) move-object/from16   v0, v20
+	192     (00000318) move/from16          v1, v23
+	193     (0000031c) invoke-virtual       v0, v1, Landroidx/appcompat/widget/ToolbarWidgetWrapper;->setDefaultNavigationContentDescription(I)V
+	194     (00000322) move-object/from16   v0, v20
+	195     (00000326) iget-object          v15, v0, Landroidx/appcompat/widget/ToolbarWidgetWrapper;->mToolbar Landroidx/appcompat/widget/Toolbar;
+	196     (0000032a) invoke-virtual       v15, Landroidx/appcompat/widget/Toolbar;->getNavigationContentDescription()Ljava/lang/CharSequence;
+	197     (00000330) move-result-object   v15
+	198     (00000332) move-object/from16   v0, v20
+	199     (00000336) iput-object          v15, v0, Landroidx/appcompat/widget/ToolbarWidgetWrapper;->mHomeDescription Ljava/lang/CharSequence;
+	200     (0000033a) move-object/from16   v0, v20
+	201     (0000033e) iget-object          v15, v0, Landroidx/appcompat/widget/ToolbarWidgetWrapper;->mToolbar Landroidx/appcompat/widget/Toolbar;
+	202     (00000342) new-instance         v16, Landroidx/appcompat/widget/ToolbarWidgetWrapper$1;
+	203     (00000346) move-object/from16   v0, v16
+	204     (0000034a) move-object/from16   v1, v20
+	205     (0000034e) invoke-direct        v0, v1, Landroidx/appcompat/widget/ToolbarWidgetWrapper$1;-><init>(Landroidx/appcompat/widget/ToolbarWidgetWrapper;)V
+	206     (00000354) invoke-virtual/range v15 ... v16, Landroidx/appcompat/widget/Toolbar;->setNavigationOnClickListener(Landroid/view/View$OnClickListener;)V
+	207     (0000035a) return-void          
+
+<init>-BB@0x35c : [ <init>-BB@0x54 ]
+	208     (0000035c) const/4              v15, 0
+	209     (0000035e) goto/16              -185
+
+<init>-BB@0x362 : [ <init>-BB@0x30e ]
+	210     (00000362) invoke-direct/range  v20, Landroidx/appcompat/widget/ToolbarWidgetWrapper;->detectDisplayOptions()I
+	211     (00000368) move-result          v15
+	212     (0000036a) move-object/from16   v0, v20
+	213     (0000036e) iput                 v15, v0, Landroidx/appcompat/widget/ToolbarWidgetWrapper;->mDisplayOpts I
+	214     (00000372) goto                 -32
+

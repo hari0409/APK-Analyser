@@ -1,0 +1,55 @@
+# Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->showToast(Ljava/lang/String; I)V [access_flags=private]
+#
+# Parameters:
+# - local registers: v0...v4
+# - v5:java.lang.String
+# - v6:int
+#
+# - return:void
+
+showToast-BB@0x0 : [ showToast-BB@0xc showToast-BB@0x18 ]
+	0       (00000000) invoke-virtual       v4, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->getActivity()Landroid/app/Activity;
+	1       (00000006) move-result-object   v0
+	2       (00000008) if-eqz               v0, +8
+
+showToast-BB@0xc : [ showToast-BB@0x18 showToast-BB@0x56 ]
+	3       (0000000c) invoke-virtual       v0, Landroid/app/Activity;->isFinishing()Z
+	4       (00000012) move-result          v1
+	5       (00000014) if-eqz               v1, +21
+
+showToast-BB@0x18 : [ showToast-BB@0x54 ]
+	6       (00000018) const-string         v1, 'PolicyManagement'
+	7       (0000001c) new-instance         v2, Ljava/lang/StringBuilder;
+	8       (00000020) invoke-direct        v2, Ljava/lang/StringBuilder;-><init>()V
+	9       (00000026) const-string         v3, "Not toasting '"
+	10      (0000002a) invoke-virtual       v2, v3, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	11      (00000030) move-result-object   v2
+	12      (00000032) invoke-virtual       v2, v5, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	13      (00000038) move-result-object   v2
+	14      (0000003a) const-string         v3, "' as activity is finishing or finished"
+	15      (0000003e) invoke-virtual       v2, v3, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	16      (00000044) move-result-object   v2
+	17      (00000046) invoke-virtual       v2, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+	18      (0000004c) move-result-object   v2
+	19      (0000004e) invoke-static        v1, v2, Landroid/util/Log;->w(Ljava/lang/String; Ljava/lang/String;)I
+
+showToast-BB@0x54 : 
+	20      (00000054) return-void          
+
+showToast-BB@0x56 : [ showToast-BB@0x54 ]
+	21      (00000056) const-string         v1, 'PolicyManagement'
+	22      (0000005a) new-instance         v2, Ljava/lang/StringBuilder;
+	23      (0000005e) invoke-direct        v2, Ljava/lang/StringBuilder;-><init>()V
+	24      (00000064) const-string         v3, 'Showing toast: '
+	25      (00000068) invoke-virtual       v2, v3, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	26      (0000006e) move-result-object   v2
+	27      (00000070) invoke-virtual       v2, v5, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	28      (00000076) move-result-object   v2
+	29      (00000078) invoke-virtual       v2, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+	30      (0000007e) move-result-object   v2
+	31      (00000080) invoke-static        v1, v2, Landroid/util/Log;->d(Ljava/lang/String; Ljava/lang/String;)I
+	32      (00000086) invoke-static        v0, v5, v6, Landroid/widget/Toast;->makeText(Landroid/content/Context; Ljava/lang/CharSequence; I)Landroid/widget/Toast;
+	33      (0000008c) move-result-object   v1
+	34      (0000008e) invoke-virtual       v1, Landroid/widget/Toast;->show()V
+	35      (00000094) goto                 -20
+

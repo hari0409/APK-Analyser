@@ -1,0 +1,22 @@
+# Landroidx/appcompat/widget/Toolbar;->getChildVerticalGravity(I)I [access_flags=private]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:int
+#
+# - return:int
+
+getChildVerticalGravity-BB@0x0 : [ D:getChildVerticalGravity-BB@0xa 16:getChildVerticalGravity-BB@0x12 48:getChildVerticalGravity-BB@0x12 80:getChildVerticalGravity-BB@0x12 ]
+	0       (00000000) and-int/lit8         v0, v3, 112
+	1       (00000004) sparse-switch        v0, +8 (0x14)
+
+getChildVerticalGravity-BB@0xa : [ getChildVerticalGravity-BB@0x12 ]
+	2       (0000000a) iget                 v1, v2, Landroidx/appcompat/widget/Toolbar;->mGravity I
+	3       (0000000e) and-int/lit8         v0, v1, 112
+
+getChildVerticalGravity-BB@0x12 : 
+	4       (00000012) return               v0
+
+getChildVerticalGravity-BB@0x14 : 
+	5       (00000014) sparse-switch-payload 10 30 50
+

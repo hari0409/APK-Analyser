@@ -1,0 +1,18 @@
+# Lcom/afwsamples/testdpc/policy/keyguard/SetTrustAgentConfigFragment;->newInstance(I)Lcom/afwsamples/testdpc/policy/keyguard/SetTrustAgentConfigFragment; [access_flags=public static]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:int
+#
+# - return:com.afwsamples.testdpc.policy.keyguard.SetTrustAgentConfigFragment
+
+newInstance-BB@0x0 : 
+	0       (00000000) new-instance         v0, Landroid/os/Bundle;
+	1       (00000004) invoke-direct        v0, Landroid/os/Bundle;-><init>()V
+	2       (0000000a) const-string         v2, 'type'
+	3       (0000000e) invoke-virtual       v0, v2, v3, Landroid/os/Bundle;->putInt(Ljava/lang/String; I)V
+	4       (00000014) new-instance         v1, Lcom/afwsamples/testdpc/policy/keyguard/SetTrustAgentConfigFragment;
+	5       (00000018) invoke-direct        v1, Lcom/afwsamples/testdpc/policy/keyguard/SetTrustAgentConfigFragment;-><init>()V
+	6       (0000001e) invoke-virtual       v1, v0, Lcom/afwsamples/testdpc/policy/keyguard/SetTrustAgentConfigFragment;->setArguments(Landroid/os/Bundle;)V
+	7       (00000024) return-object        v1
+

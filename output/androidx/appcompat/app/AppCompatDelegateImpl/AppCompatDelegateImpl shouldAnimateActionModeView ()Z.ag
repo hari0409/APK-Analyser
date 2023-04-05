@@ -1,0 +1,31 @@
+# Landroidx/appcompat/app/AppCompatDelegateImpl;->shouldAnimateActionModeView()Z [access_flags=final]
+#
+# Parameters:
+# local registers: v0...v1
+#
+# - return:boolean
+
+shouldAnimateActionModeView-BB@0x0 : [ shouldAnimateActionModeView-BB@0x8 shouldAnimateActionModeView-BB@0x24 ]
+	0       (00000000) iget-boolean         v0, v1, Landroidx/appcompat/app/AppCompatDelegateImpl;->mSubDecorInstalled Z
+	1       (00000004) if-eqz               v0, +10
+
+shouldAnimateActionModeView-BB@0x8 : [ shouldAnimateActionModeView-BB@0x10 shouldAnimateActionModeView-BB@0x24 ]
+	2       (00000008) iget-object          v0, v1, Landroidx/appcompat/app/AppCompatDelegateImpl;->mSubDecor Landroid/view/ViewGroup;
+	3       (0000000c) if-eqz               v0, +c
+
+shouldAnimateActionModeView-BB@0x10 : [ shouldAnimateActionModeView-BB@0x20 shouldAnimateActionModeView-BB@0x24 ]
+	4       (00000010) iget-object          v0, v1, Landroidx/appcompat/app/AppCompatDelegateImpl;->mSubDecor Landroid/view/ViewGroup;
+	5       (00000014) invoke-static        v0, Landroidx/core/view/ViewCompat;->isLaidOut(Landroid/view/View;)Z
+	6       (0000001a) move-result          v0
+	7       (0000001c) if-eqz               v0, +4
+
+shouldAnimateActionModeView-BB@0x20 : [ shouldAnimateActionModeView-BB@0x22 ]
+	8       (00000020) const/4              v0, 1
+
+shouldAnimateActionModeView-BB@0x22 : 
+	9       (00000022) return               v0
+
+shouldAnimateActionModeView-BB@0x24 : [ shouldAnimateActionModeView-BB@0x22 ]
+	10      (00000024) const/4              v0, 0
+	11      (00000026) goto                 -2
+

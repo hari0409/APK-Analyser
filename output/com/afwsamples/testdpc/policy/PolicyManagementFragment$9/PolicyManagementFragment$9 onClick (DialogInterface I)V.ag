@@ -1,0 +1,99 @@
+# Lcom/afwsamples/testdpc/policy/PolicyManagementFragment$9;->onClick(Landroid/content/DialogInterface; I)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v7
+# - v8:android.content.DialogInterface
+# - v9:int
+#
+# - return:void
+
+onClick-BB@0x0 : [ onClick-BB@0x22 onClick-BB@0x24 ]
+	0       (00000000) const/4              v5, 0
+	1       (00000002) iget-object          v4, v7, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment$9;->val$passwordView Landroid/widget/EditText;
+	2       (00000006) invoke-virtual       v4, Landroid/widget/EditText;->getText()Landroid/text/Editable;
+	3       (0000000c) move-result-object   v4
+	4       (0000000e) invoke-virtual       v4, Ljava/lang/Object;->toString()Ljava/lang/String;
+	5       (00000014) move-result-object   v3
+	6       (00000016) invoke-static        v3, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
+	7       (0000001c) move-result          v4
+	8       (0000001e) if-eqz               v4, +3
+
+onClick-BB@0x22 : [ onClick-BB@0x24 ]
+	9       (00000022) const/4              v3, 0
+
+onClick-BB@0x24 : [ onClick-BB@0x36 onClick-BB@0x7e ]
+	10      (00000024) const/4              v1, 0
+	11      (00000026) iget-object          v4, v7, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment$9;->val$requireEntry Landroid/widget/CheckBox;
+	12      (0000002a) invoke-virtual       v4, Landroid/widget/CheckBox;->isChecked()Z
+	13      (00000030) move-result          v4
+	14      (00000032) if-eqz               v4, +26
+
+onClick-BB@0x36 : [ onClick-BB@0x38 ]
+	15      (00000036) const/4              v4, 1
+
+onClick-BB@0x38 : [ onClick-BB@0x4a onClick-BB@0x82 ]
+	16      (00000038) or-int/2addr         v1, v4
+	17      (0000003a) iget-object          v4, v7, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment$9;->val$dontRequireOnBoot Landroid/widget/CheckBox;
+	18      (0000003e) invoke-virtual       v4, Landroid/widget/CheckBox;->isChecked()Z
+	19      (00000044) move-result          v4
+	20      (00000046) if-eqz               v4, +1e
+
+onClick-BB@0x4a : [ onClick-BB@0x4c ]
+	21      (0000004a) const/4              v4, 2
+
+onClick-BB@0x4c : [ onClick-BB@0x50 ]
+	22      (0000004c) or-int/2addr         v1, v4
+	23      (0000004e) const/4              v2, 0
+
+onClick-BB@0x50 : [ onClick-BB@0x64 ]
+	24      (00000050) iget-object          v4, v7, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment$9;->this$0 Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;
+	25      (00000054) invoke-static        v4, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->access$400(Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;)Landroid/app/admin/DevicePolicyManager;
+	26      (0000005a) move-result-object   v4
+	27      (0000005c) invoke-virtual       v4, v3, v1, Landroid/app/admin/DevicePolicyManager;->resetPassword(Ljava/lang/String; I)Z
+	28      (00000062) move-result          v2
+	50:61
+	(Ljava/lang/IllegalArgumentException; -> a0 onClick-BB@0xa0)
+	(Ljava/lang/IllegalStateException; -> 86 onClick-BB@0x86)
+	(Ljava/lang/SecurityException; -> a4 onClick-BB@0xa4)
+
+onClick-BB@0x64 : [ onClick-BB@0x6c onClick-BB@0x98 ]
+	29      (00000064) iget-object          v6, v7, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment$9;->this$0 Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;
+	30      (00000068) if-eqz               v2, +18
+
+onClick-BB@0x6c : [ onClick-BB@0x72 ]
+	31      (0000006c) const                v4, 2131690058 # [1.900914888892707e+38]
+
+onClick-BB@0x72 : 
+	32      (00000072) new-array            v5, v5, [Ljava/lang/Object;
+	33      (00000076) invoke-static        v6, v4, v5, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->access$200(Lcom/afwsamples/testdpc/policy/PolicyManagementFragment; I [Ljava/lang/Object;)V
+	34      (0000007c) return-void          
+
+onClick-BB@0x7e : [ onClick-BB@0x38 ]
+	35      (0000007e) move                 v4, v5
+	36      (00000080) goto                 -24
+
+onClick-BB@0x82 : [ onClick-BB@0x4c ]
+	37      (00000082) move                 v4, v5
+	38      (00000084) goto                 -1c
+
+onClick-BB@0x86 : [ onClick-BB@0x88 ]
+	39      (00000086) move-exception       v0
+
+onClick-BB@0x88 : [ onClick-BB@0x64 ]
+	40      (00000088) const-string         v4, 'PolicyManagement'
+	41      (0000008c) const-string         v6, 'Failed to reset password'
+	42      (00000090) invoke-static        v4, v6, v0, Landroid/util/Log;->w(Ljava/lang/String; Ljava/lang/String; Ljava/lang/Throwable;)I
+	43      (00000096) goto                 -19
+
+onClick-BB@0x98 : [ onClick-BB@0x72 ]
+	44      (00000098) const                v4, 2131690057 # [1.900914686068611e+38]
+	45      (0000009e) goto                 -16
+
+onClick-BB@0xa0 : [ onClick-BB@0x88 ]
+	46      (000000a0) move-exception       v0
+	47      (000000a2) goto                 -d
+
+onClick-BB@0xa4 : [ onClick-BB@0x88 ]
+	48      (000000a4) move-exception       v0
+	49      (000000a6) goto                 -f
+

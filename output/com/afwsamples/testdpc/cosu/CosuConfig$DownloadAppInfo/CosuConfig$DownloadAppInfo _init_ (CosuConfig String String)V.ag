@@ -1,0 +1,20 @@
+# Lcom/afwsamples/testdpc/cosu/CosuConfig$DownloadAppInfo;-><init>(Lcom/afwsamples/testdpc/cosu/CosuConfig; Ljava/lang/String; Ljava/lang/String;)V [access_flags=public constructor]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:com.afwsamples.testdpc.cosu.CosuConfig
+# - v3:java.lang.String
+# - v4:java.lang.String
+#
+# - return:void
+
+<init>-BB@0x0 : 
+	0       (00000000) const/4              v0, 0
+	1       (00000002) iput-object          v2, v1, Lcom/afwsamples/testdpc/cosu/CosuConfig$DownloadAppInfo;->this$0 Lcom/afwsamples/testdpc/cosu/CosuConfig;
+	2       (00000006) invoke-direct        v1, Ljava/lang/Object;-><init>()V
+	3       (0000000c) iput-object          v3, v1, Lcom/afwsamples/testdpc/cosu/CosuConfig$DownloadAppInfo;->packageName Ljava/lang/String;
+	4       (00000010) iput-object          v4, v1, Lcom/afwsamples/testdpc/cosu/CosuConfig$DownloadAppInfo;->downloadLocation Ljava/lang/String;
+	5       (00000014) iput-boolean         v0, v1, Lcom/afwsamples/testdpc/cosu/CosuConfig$DownloadAppInfo;->downloadCompleted Z
+	6       (00000018) iput-boolean         v0, v1, Lcom/afwsamples/testdpc/cosu/CosuConfig$DownloadAppInfo;->installCompleted Z
+	7       (0000001c) return-void          
+

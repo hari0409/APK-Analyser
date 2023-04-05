@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:testdpc="http://schemas.android.com/apk/res-auto">
+    <item android:drawable="@drawable/arrow_down" testdpc:state_expanded="false" />
+    <item testdpc:state_expanded="true">
+        <rotate android:drawable="@drawable/arrow_down" android:fromDegrees="180.0" android:toDegrees="0.0" android:pivotX="50.0%" android:pivotY="50.0%" />
+    </item>
+</selector>

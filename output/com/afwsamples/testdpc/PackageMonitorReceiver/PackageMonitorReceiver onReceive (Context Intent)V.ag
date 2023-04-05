@@ -1,0 +1,77 @@
+# Lcom/afwsamples/testdpc/PackageMonitorReceiver;->onReceive(Landroid/content/Context; Landroid/content/Intent;)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v8
+# - v9:android.content.Context
+# - v10:android.content.Intent
+#
+# - return:void
+
+onReceive-BB@0x0 : [ onReceive-BB@0x18 onReceive-BB@0x2a ]
+	0       (00000000) invoke-virtual       v10, Landroid/content/Intent;->getAction()Ljava/lang/String;
+	1       (00000006) move-result-object   v0
+	2       (00000008) const-string         v6, 'android.intent.action.PACKAGE_ADDED'
+	3       (0000000c) invoke-virtual       v6, v0, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+	4       (00000012) move-result          v6
+	5       (00000014) if-nez               v6, +b
+
+onReceive-BB@0x18 : [ onReceive-BB@0x28 onReceive-BB@0x2a ]
+	6       (00000018) const-string         v6, 'android.intent.action.PACKAGE_REMOVED'
+	7       (0000001c) invoke-virtual       v6, v0, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+	8       (00000022) move-result          v6
+	9       (00000024) if-nez               v6, +3
+
+onReceive-BB@0x28 : 
+	10      (00000028) return-void          
+
+onReceive-BB@0x2a : [ onReceive-BB@0x3e onReceive-BB@0x28 ]
+	11      (0000002a) invoke-direct        v8, v10, Lcom/afwsamples/testdpc/PackageMonitorReceiver;->getPackageNameFromIntent(Landroid/content/Intent;)Ljava/lang/String;
+	12      (00000030) move-result-object   v4
+	13      (00000032) invoke-static        v4, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
+	14      (00000038) move-result          v6
+	15      (0000003a) if-nez               v6, -9
+
+onReceive-BB@0x3e : [ onReceive-BB@0x50 onReceive-BB@0x28 ]
+	16      (0000003e) const-string         v6, 'android.intent.extra.REPLACING'
+	17      (00000042) const/4              v7, 0
+	18      (00000044) invoke-virtual       v10, v6, v7, Landroid/content/Intent;->getBooleanExtra(Ljava/lang/String; Z)Z
+	19      (0000004a) move-result          v5
+	20      (0000004c) if-nez               v5, -12
+
+onReceive-BB@0x50 : [ onReceive-BB@0x28 ]
+	21      (00000050) invoke-direct        v8, v9, v4, v0, Lcom/afwsamples/testdpc/PackageMonitorReceiver;->buildNotificationText(Landroid/content/Context; Ljava/lang/String; Ljava/lang/String;)Ljava/lang/String;
+	22      (00000056) move-result-object   v2
+	23      (00000058) invoke-static        v9, Lcom/afwsamples/testdpc/common/NotificationUtil;->getNotificationBuilder(Landroid/content/Context;)Landroidx/core/app/NotificationCompat$Builder;
+	24      (0000005e) move-result-object   v6
+	25      (00000060) const                v7, 2131230834 # [1.8077731962144338e+38]
+	26      (00000066) invoke-virtual       v6, v7, Landroidx/core/app/NotificationCompat$Builder;->setSmallIcon(I)Landroidx/core/app/NotificationCompat$Builder;
+	27      (0000006c) move-result-object   v6
+	28      (0000006e) const                v7, 2131690019 # [1.9009069787529617e+38]
+	29      (00000074) invoke-virtual       v9, v7, Landroid/content/Context;->getString(I)Ljava/lang/String;
+	30      (0000007a) move-result-object   v7
+	31      (0000007c) invoke-virtual       v6, v7, Landroidx/core/app/NotificationCompat$Builder;->setContentTitle(Ljava/lang/CharSequence;)Landroidx/core/app/NotificationCompat$Builder;
+	32      (00000082) move-result-object   v6
+	33      (00000084) invoke-virtual       v6, v2, Landroidx/core/app/NotificationCompat$Builder;->setContentText(Ljava/lang/CharSequence;)Landroidx/core/app/NotificationCompat$Builder;
+	34      (0000008a) move-result-object   v6
+	35      (0000008c) new-instance         v7, Landroidx/core/app/NotificationCompat$BigTextStyle;
+	36      (00000090) invoke-direct        v7, Landroidx/core/app/NotificationCompat$BigTextStyle;-><init>()V
+	37      (00000096) invoke-virtual       v7, v2, Landroidx/core/app/NotificationCompat$BigTextStyle;->bigText(Ljava/lang/CharSequence;)Landroidx/core/app/NotificationCompat$BigTextStyle;
+	38      (0000009c) move-result-object   v7
+	39      (0000009e) invoke-virtual       v6, v7, Landroidx/core/app/NotificationCompat$Builder;->setStyle(Landroidx/core/app/NotificationCompat$Style;)Landroidx/core/app/NotificationCompat$Builder;
+	40      (000000a4) move-result-object   v6
+	41      (000000a6) const/4              v7, 4
+	42      (000000a8) invoke-virtual       v6, v7, Landroidx/core/app/NotificationCompat$Builder;->setDefaults(I)Landroidx/core/app/NotificationCompat$Builder;
+	43      (000000ae) move-result-object   v6
+	44      (000000b0) const/4              v7, 1
+	45      (000000b2) invoke-virtual       v6, v7, Landroidx/core/app/NotificationCompat$Builder;->setOnlyAlertOnce(Z)Landroidx/core/app/NotificationCompat$Builder;
+	46      (000000b8) move-result-object   v6
+	47      (000000ba) invoke-virtual       v6, Landroidx/core/app/NotificationCompat$Builder;->build()Landroid/app/Notification;
+	48      (000000c0) move-result-object   v1
+	49      (000000c2) const-string         v6, 'notification'
+	50      (000000c6) invoke-virtual       v9, v6, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
+	51      (000000cc) move-result-object   v3
+	52      (000000ce) check-cast           v3, Landroid/app/NotificationManager;
+	53      (000000d2) const                v6, 34857 # [4.884506057097015e-41]
+	54      (000000d8) invoke-virtual       v3, v6, v1, Landroid/app/NotificationManager;->notify(I Landroid/app/Notification;)V
+	55      (000000de) goto                 -5b
+

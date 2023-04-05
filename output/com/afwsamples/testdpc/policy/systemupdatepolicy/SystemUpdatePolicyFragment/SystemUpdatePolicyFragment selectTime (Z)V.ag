@@ -1,0 +1,31 @@
+# Lcom/afwsamples/testdpc/policy/systemupdatepolicy/SystemUpdatePolicyFragment;->selectTime(Z)V [access_flags=private]
+#
+# Parameters:
+# - local registers: v0...v7
+# - v8:boolean
+#
+# - return:void
+
+selectTime-BB@0x0 : [ selectTime-BB@0x4 selectTime-BB@0x36 ]
+	0       (00000000) if-eqz               v8, +1b
+
+selectTime-BB@0x4 : [ selectTime-BB@0x8 ]
+	1       (00000004) iget                 v6, v7, Lcom/afwsamples/testdpc/policy/systemupdatepolicy/SystemUpdatePolicyFragment;->mMaintenanceStart I
+
+selectTime-BB@0x8 : 
+	2       (00000008) new-instance         v0, Landroid/app/TimePickerDialog;
+	3       (0000000c) invoke-virtual       v7, Lcom/afwsamples/testdpc/policy/systemupdatepolicy/SystemUpdatePolicyFragment;->getActivity()Landroid/app/Activity;
+	4       (00000012) move-result-object   v1
+	5       (00000014) new-instance         v2, Lcom/afwsamples/testdpc/policy/systemupdatepolicy/SystemUpdatePolicyFragment$$Lambda$0;
+	6       (00000018) invoke-direct        v2, v7, v8, Lcom/afwsamples/testdpc/policy/systemupdatepolicy/SystemUpdatePolicyFragment$$Lambda$0;-><init>(Lcom/afwsamples/testdpc/policy/systemupdatepolicy/SystemUpdatePolicyFragment; Z)V
+	7       (0000001e) div-int/lit8         v3, v6, 60
+	8       (00000022) rem-int/lit8         v4, v6, 60
+	9       (00000026) const/4              v5, 1
+	10      (00000028) invoke-direct/range  v0 ... v5, Landroid/app/TimePickerDialog;-><init>(Landroid/content/Context; Landroid/app/TimePickerDialog$OnTimeSetListener; I I Z)V
+	11      (0000002e) invoke-virtual       v0, Landroid/app/TimePickerDialog;->show()V
+	12      (00000034) return-void          
+
+selectTime-BB@0x36 : [ selectTime-BB@0x8 ]
+	13      (00000036) iget                 v6, v7, Lcom/afwsamples/testdpc/policy/systemupdatepolicy/SystemUpdatePolicyFragment;->mMaintenanceEnd I
+	14      (0000003a) goto                 -19
+

@@ -1,0 +1,16 @@
+# Lcom/afwsamples/testdpc/policy/NetworkLogsFragment$$Lambda$1;->compare(Ljava/lang/Object; Ljava/lang/Object;)I [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:java.lang.Object
+# - v3:java.lang.Object
+#
+# - return:int
+
+compare-BB@0x0 : 
+	0       (00000000) check-cast           v2, Ljava/io/File;
+	1       (00000004) check-cast           v3, Ljava/io/File;
+	2       (00000008) invoke-static        v2, v3, Lcom/afwsamples/testdpc/policy/NetworkLogsFragment;->lambda$findLastBatch$197$NetworkLogsFragment(Ljava/io/File; Ljava/io/File;)I
+	3       (0000000e) move-result          v0
+	4       (00000010) return               v0
+

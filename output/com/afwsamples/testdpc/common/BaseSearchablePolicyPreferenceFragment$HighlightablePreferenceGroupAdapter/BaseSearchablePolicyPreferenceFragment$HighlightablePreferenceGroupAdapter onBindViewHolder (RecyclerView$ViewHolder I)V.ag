@@ -1,0 +1,14 @@
+# Lcom/afwsamples/testdpc/common/BaseSearchablePolicyPreferenceFragment$HighlightablePreferenceGroupAdapter;->onBindViewHolder(Landroidx/recyclerview/widget/RecyclerView$ViewHolder; I)V [access_flags=public bridge synthetic]
+#
+# Parameters:
+# - local registers: v0...v0
+# - v1:androidx.recyclerview.widget.RecyclerView$ViewHolder
+# - v2:int
+#
+# - return:void
+
+onBindViewHolder-BB@0x0 : 
+	0       (00000000) check-cast           v1, Landroidx/preference/PreferenceViewHolder;
+	1       (00000004) invoke-virtual       v0, v1, v2, Lcom/afwsamples/testdpc/common/BaseSearchablePolicyPreferenceFragment$HighlightablePreferenceGroupAdapter;->onBindViewHolder(Landroidx/preference/PreferenceViewHolder; I)V
+	2       (0000000a) return-void          
+

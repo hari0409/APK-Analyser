@@ -1,0 +1,28 @@
+# Landroidx/appcompat/widget/LinearLayoutCompat$LayoutParams;-><init>(Landroid/content/Context; Landroid/util/AttributeSet;)V [access_flags=public constructor]
+#
+# Parameters:
+# - local registers: v0...v4
+# - v5:android.content.Context
+# - v6:android.util.AttributeSet
+#
+# - return:void
+
+<init>-BB@0x0 : 
+	0       (00000000) const/4              v3, -1
+	1       (00000002) invoke-direct        v4, v5, v6, Landroid/view/ViewGroup$MarginLayoutParams;-><init>(Landroid/content/Context; Landroid/util/AttributeSet;)V
+	2       (00000008) iput                 v3, v4, Landroidx/appcompat/widget/LinearLayoutCompat$LayoutParams;->gravity I
+	3       (0000000c) sget-object          v1, Landroidx/appcompat/R$styleable;->LinearLayoutCompat_Layout [I
+	4       (00000010) invoke-virtual       v5, v6, v1, Landroid/content/Context;->obtainStyledAttributes(Landroid/util/AttributeSet; [I)Landroid/content/res/TypedArray;
+	5       (00000016) move-result-object   v0
+	6       (00000018) sget                 v1, Landroidx/appcompat/R$styleable;->LinearLayoutCompat_Layout_android_layout_weight I
+	7       (0000001c) const/4              v2, 0
+	8       (0000001e) invoke-virtual       v0, v1, v2, Landroid/content/res/TypedArray;->getFloat(I F)F
+	9       (00000024) move-result          v1
+	10      (00000026) iput                 v1, v4, Landroidx/appcompat/widget/LinearLayoutCompat$LayoutParams;->weight F
+	11      (0000002a) sget                 v1, Landroidx/appcompat/R$styleable;->LinearLayoutCompat_Layout_android_layout_gravity I
+	12      (0000002e) invoke-virtual       v0, v1, v3, Landroid/content/res/TypedArray;->getInt(I I)I
+	13      (00000034) move-result          v1
+	14      (00000036) iput                 v1, v4, Landroidx/appcompat/widget/LinearLayoutCompat$LayoutParams;->gravity I
+	15      (0000003a) invoke-virtual       v0, Landroid/content/res/TypedArray;->recycle()V
+	16      (00000040) return-void          
+

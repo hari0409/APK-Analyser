@@ -1,0 +1,39 @@
+# Landroidx/appcompat/widget/TintTypedArray;->getFont(I I Landroidx/core/content/res/ResourcesCompat$FontCallback;)Landroid/graphics/Typeface; [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v3
+# - v4:int
+# - v5:int
+# - v6:androidx.core.content.res.ResourcesCompat$FontCallback
+#
+# - return:android.graphics.Typeface
+
+getFont-BB@0x0 : [ getFont-BB@0x12 getFont-BB@0x16 ]
+	0       (00000000) iget-object          v1, v3, Landroidx/appcompat/widget/TintTypedArray;->mWrapped Landroid/content/res/TypedArray;
+	1       (00000004) const/4              v2, 0
+	2       (00000006) invoke-virtual       v1, v4, v2, Landroid/content/res/TypedArray;->getResourceId(I I)I
+	3       (0000000c) move-result          v0
+	4       (0000000e) if-nez               v0, +4
+
+getFont-BB@0x12 : [ getFont-BB@0x14 ]
+	5       (00000012) const/4              v1, 0
+
+getFont-BB@0x14 : 
+	6       (00000014) return-object        v1
+
+getFont-BB@0x16 : [ getFont-BB@0x1e getFont-BB@0x2c ]
+	7       (00000016) iget-object          v1, v3, Landroidx/appcompat/widget/TintTypedArray;->mTypedValue Landroid/util/TypedValue;
+	8       (0000001a) if-nez               v1, +9
+
+getFont-BB@0x1e : [ getFont-BB@0x2c ]
+	9       (0000001e) new-instance         v1, Landroid/util/TypedValue;
+	10      (00000022) invoke-direct        v1, Landroid/util/TypedValue;-><init>()V
+	11      (00000028) iput-object          v1, v3, Landroidx/appcompat/widget/TintTypedArray;->mTypedValue Landroid/util/TypedValue;
+
+getFont-BB@0x2c : [ getFont-BB@0x14 ]
+	12      (0000002c) iget-object          v1, v3, Landroidx/appcompat/widget/TintTypedArray;->mContext Landroid/content/Context;
+	13      (00000030) iget-object          v2, v3, Landroidx/appcompat/widget/TintTypedArray;->mTypedValue Landroid/util/TypedValue;
+	14      (00000034) invoke-static        v1, v0, v2, v5, v6, Landroidx/core/content/res/ResourcesCompat;->getFont(Landroid/content/Context; I Landroid/util/TypedValue; I Landroidx/core/content/res/ResourcesCompat$FontCallback;)Landroid/graphics/Typeface;
+	15      (0000003a) move-result-object   v1
+	16      (0000003c) goto                 -14
+

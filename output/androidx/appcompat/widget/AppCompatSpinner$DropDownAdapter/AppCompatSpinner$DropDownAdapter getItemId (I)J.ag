@@ -1,0 +1,24 @@
+# Landroidx/appcompat/widget/AppCompatSpinner$DropDownAdapter;->getItemId(I)J [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:int
+#
+# - return:long
+
+getItemId-BB@0x0 : [ getItemId-BB@0x8 getItemId-BB@0xe ]
+	0       (00000000) iget-object          v0, v2, Landroidx/appcompat/widget/AppCompatSpinner$DropDownAdapter;->mAdapter Landroid/widget/SpinnerAdapter;
+	1       (00000004) if-nez               v0, +5
+
+getItemId-BB@0x8 : [ getItemId-BB@0xc ]
+	2       (00000008) const-wide/16        v0, -1 # [-1.0]
+
+getItemId-BB@0xc : 
+	3       (0000000c) return-wide          v0
+
+getItemId-BB@0xe : [ getItemId-BB@0xc ]
+	4       (0000000e) iget-object          v0, v2, Landroidx/appcompat/widget/AppCompatSpinner$DropDownAdapter;->mAdapter Landroid/widget/SpinnerAdapter;
+	5       (00000012) invoke-interface     v0, v3, Landroid/widget/SpinnerAdapter;->getItemId(I)J
+	6       (00000018) move-result-wide     v0
+	7       (0000001a) goto                 -7
+

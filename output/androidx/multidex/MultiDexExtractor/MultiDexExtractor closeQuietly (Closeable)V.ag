@@ -1,0 +1,23 @@
+# Landroidx/multidex/MultiDexExtractor;->closeQuietly(Ljava/io/Closeable;)V [access_flags=private static]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:java.io.Closeable
+#
+# - return:void
+
+closeQuietly-BB@0x0 : [ closeQuietly-BB@0x6 ]
+	0       (00000000) invoke-interface     v3, Ljava/io/Closeable;->close()V
+	0:5
+	(Ljava/io/IOException; -> 8 closeQuietly-BB@0x8)
+
+closeQuietly-BB@0x6 : 
+	1       (00000006) return-void          
+
+closeQuietly-BB@0x8 : [ closeQuietly-BB@0x6 ]
+	2       (00000008) move-exception       v0
+	3       (0000000a) const-string         v1, 'MultiDex'
+	4       (0000000e) const-string         v2, 'Failed to close resource'
+	5       (00000012) invoke-static        v1, v2, v0, Landroid/util/Log;->w(Ljava/lang/String; Ljava/lang/String; Ljava/lang/Throwable;)I
+	6       (00000018) goto                 -9
+

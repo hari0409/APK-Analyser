@@ -1,0 +1,129 @@
+# Lcom/afwsamples/testdpc/CommonReceiverOperations;->onNetworkLogsAvailable(Landroid/content/Context; Landroid/content/ComponentName; J I)V [access_flags=public static]
+#
+# Parameters:
+# - local registers: v0...v10
+# - v11:android.content.Context
+# - v12:android.content.ComponentName
+# - v13:long
+# - v14:int
+#
+# - return:void
+
+onNetworkLogsAvailable-BB@0x0 : [ onNetworkLogsAvailable-BB@0x5a ]
+	0       (00000000) const/4              v9, 1
+	1       (00000002) const/4              v8, 0
+	2       (00000004) const-string         v5, 'AdminReceiver'
+	3       (00000008) new-instance         v6, Ljava/lang/StringBuilder;
+	4       (0000000c) invoke-direct        v6, Ljava/lang/StringBuilder;-><init>()V
+	5       (00000012) const-string         v7, 'onNetworkLogsAvailable(), batchToken: '
+	6       (00000016) invoke-virtual       v6, v7, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	7       (0000001c) move-result-object   v6
+	8       (0000001e) invoke-virtual       v6, v12, v13, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+	9       (00000024) move-result-object   v6
+	10      (00000026) const-string         v7, ', event count: '
+	11      (0000002a) invoke-virtual       v6, v7, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	12      (00000030) move-result-object   v6
+	13      (00000032) invoke-virtual       v6, v14, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+	14      (00000038) move-result-object   v6
+	15      (0000003a) invoke-virtual       v6, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+	16      (00000040) move-result-object   v6
+	17      (00000042) invoke-static        v5, v6, Landroid/util/Log;->i(Ljava/lang/String; Ljava/lang/String;)I
+	18      (00000048) const-string         v5, 'device_policy'
+	19      (0000004c) invoke-virtual       v10, v5, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
+	20      (00000052) move-result-object   v0
+	21      (00000054) check-cast           v0, Landroid/app/admin/DevicePolicyManager;
+	22      (00000058) const/4              v3, 0
+
+onNetworkLogsAvailable-BB@0x5a : [ onNetworkLogsAvailable-BB@0x62 ]
+	23      (0000005a) invoke-virtual       v0, v11, v12, v13, Landroid/app/admin/DevicePolicyManager;->retrieveNetworkLogs(Landroid/content/ComponentName; J)Ljava/util/List;
+	24      (00000060) move-result-object   v3
+	5a:5f
+	(Ljava/lang/SecurityException; -> bc onNetworkLogsAvailable-BB@0xbc)
+
+onNetworkLogsAvailable-BB@0x62 : [ onNetworkLogsAvailable-BB@0x66 onNetworkLogsAvailable-BB@0xf0 ]
+	25      (00000062) if-nez               v3, +47
+
+onNetworkLogsAvailable-BB@0x66 : [ onNetworkLogsAvailable-BB@0xba ]
+	26      (00000066) const-string         v5, 'AdminReceiver'
+	27      (0000006a) new-instance         v6, Ljava/lang/StringBuilder;
+	28      (0000006e) invoke-direct        v6, Ljava/lang/StringBuilder;-><init>()V
+	29      (00000074) const-string         v7, 'Failed to retrieve network logs batch with batchToken: '
+	30      (00000078) invoke-virtual       v6, v7, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	31      (0000007e) move-result-object   v6
+	32      (00000080) invoke-virtual       v6, v12, v13, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+	33      (00000086) move-result-object   v6
+	34      (00000088) invoke-virtual       v6, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+	35      (0000008e) move-result-object   v6
+	36      (00000090) invoke-static        v5, v6, Landroid/util/Log;->e(Ljava/lang/String; Ljava/lang/String;)I
+	37      (00000096) const                v5, 2131690001 # [1.900903327919233e+38]
+	38      (0000009c) new-array            v6, v9, [Ljava/lang/Object;
+	39      (000000a0) invoke-static        v12, v13, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+	40      (000000a6) move-result-object   v7
+	41      (000000a8) aput-object          v7, v6, v8
+	42      (000000ac) invoke-virtual       v10, v5, v6, Landroid/content/Context;->getString(I [Ljava/lang/Object;)Ljava/lang/String;
+	43      (000000b2) move-result-object   v5
+	44      (000000b4) invoke-static        v10, v5, Lcom/afwsamples/testdpc/CommonReceiverOperations;->showToast(Landroid/content/Context; Ljava/lang/String;)V
+
+onNetworkLogsAvailable-BB@0xba : 
+	45      (000000ba) return-void          
+
+onNetworkLogsAvailable-BB@0xbc : [ onNetworkLogsAvailable-BB@0x62 ]
+	46      (000000bc) move-exception       v1
+	47      (000000be) const-string         v5, 'AdminReceiver'
+	48      (000000c2) new-instance         v6, Ljava/lang/StringBuilder;
+	49      (000000c6) invoke-direct        v6, Ljava/lang/StringBuilder;-><init>()V
+	50      (000000cc) const-string         v7, 'Exception while retrieving network logs batch with batchToken: '
+	51      (000000d0) invoke-virtual       v6, v7, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	52      (000000d6) move-result-object   v6
+	53      (000000d8) invoke-virtual       v6, v12, v13, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+	54      (000000de) move-result-object   v6
+	55      (000000e0) invoke-virtual       v6, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+	56      (000000e6) move-result-object   v6
+	57      (000000e8) invoke-static        v5, v6, v1, Landroid/util/Log;->e(Ljava/lang/String; Ljava/lang/String; Ljava/lang/Throwable;)I
+	58      (000000ee) goto                 -46
+
+onNetworkLogsAvailable-BB@0xf0 : [ onNetworkLogsAvailable-BB@0x12a onNetworkLogsAvailable-BB@0x15a ]
+	59      (000000f0) const                v5, 2131690000 # [1.900903125095137e+38]
+	60      (000000f6) new-array            v6, v9, [Ljava/lang/Object;
+	61      (000000fa) invoke-static        v12, v13, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+	62      (00000100) move-result-object   v7
+	63      (00000102) aput-object          v7, v6, v8
+	64      (00000106) invoke-virtual       v10, v5, v6, Landroid/content/Context;->getString(I [Ljava/lang/Object;)Ljava/lang/String;
+	65      (0000010c) move-result-object   v5
+	66      (0000010e) invoke-static        v10, v5, Lcom/afwsamples/testdpc/CommonReceiverOperations;->showToast(Landroid/content/Context; Ljava/lang/String;)V
+	67      (00000114) new-instance         v4, Ljava/util/ArrayList;
+	68      (00000118) invoke-direct        v4, Ljava/util/ArrayList;-><init>()V
+	69      (0000011e) sget                 v5, Lcom/afwsamples/testdpc/common/Util;->SDK_INT I
+	70      (00000122) const/16             v6, 28
+	71      (00000126) if-lt                v5, v6, +1a
+
+onNetworkLogsAvailable-BB@0x12a : [ onNetworkLogsAvailable-BB@0x132 ]
+	72      (0000012a) invoke-interface     v3, Ljava/util/List;->iterator()Ljava/util/Iterator;
+	73      (00000130) move-result-object   v5
+
+onNetworkLogsAvailable-BB@0x132 : [ onNetworkLogsAvailable-BB@0x13e onNetworkLogsAvailable-BB@0x16a ]
+	74      (00000132) invoke-interface     v5, Ljava/util/Iterator;->hasNext()Z
+	75      (00000138) move-result          v6
+	76      (0000013a) if-eqz               v6, +18
+
+onNetworkLogsAvailable-BB@0x13e : [ onNetworkLogsAvailable-BB@0x132 ]
+	77      (0000013e) invoke-interface     v5, Ljava/util/Iterator;->next()Ljava/lang/Object;
+	78      (00000144) move-result-object   v2
+	79      (00000146) check-cast           v2, Landroid/app/admin/NetworkEvent;
+	80      (0000014a) invoke-virtual       v2, Ljava/lang/Object;->toString()Ljava/lang/String;
+	81      (00000150) move-result-object   v6
+	82      (00000152) invoke-virtual       v4, v6, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+	83      (00000158) goto                 -13
+
+onNetworkLogsAvailable-BB@0x15a : [ onNetworkLogsAvailable-BB@0x16a ]
+	84      (0000015a) new-instance         v5, Lcom/afwsamples/testdpc/CommonReceiverOperations$$Lambda$0;
+	85      (0000015e) invoke-direct        v5, v4, Lcom/afwsamples/testdpc/CommonReceiverOperations$$Lambda$0;-><init>(Ljava/util/ArrayList;)V
+	86      (00000164) invoke-interface     v3, v5, Ljava/util/List;->forEach(Ljava/util/function/Consumer;)V
+
+onNetworkLogsAvailable-BB@0x16a : [ onNetworkLogsAvailable-BB@0xba ]
+	87      (0000016a) new-instance         v5, Lcom/afwsamples/testdpc/CommonReceiverOperations$EventSavingTask;
+	88      (0000016e) invoke-direct        v5, v10, v12, v13, v4, Lcom/afwsamples/testdpc/CommonReceiverOperations$EventSavingTask;-><init>(Landroid/content/Context; J Ljava/util/ArrayList;)V
+	89      (00000174) new-array            v6, v8, [Ljava/lang/Void;
+	90      (00000178) invoke-virtual       v5, v6, Lcom/afwsamples/testdpc/CommonReceiverOperations$EventSavingTask;->execute([Ljava/lang/Object;)Landroid/os/AsyncTask;
+	91      (0000017e) goto                 -62
+

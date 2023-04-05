@@ -1,0 +1,70 @@
+# Lcom/afwsamples/testdpc/policy/locktask/KioskModeActivity;->setDefaultKioskPolicies(Z)V [access_flags=private]
+#
+# Parameters:
+# - local registers: v0...v7
+# - v8:boolean
+#
+# - return:void
+
+setDefaultKioskPolicies-BB@0x0 : [ setDefaultKioskPolicies-BB@0x6 setDefaultKioskPolicies-BB@0x9c ]
+	0       (00000000) const/4              v6, 0
+	1       (00000002) if-eqz               v8, +4d
+
+setDefaultKioskPolicies-BB@0x6 : [ setDefaultKioskPolicies-BB@0x3e ]
+	2       (00000006) invoke-direct        v7, Lcom/afwsamples/testdpc/policy/locktask/KioskModeActivity;->saveCurrentConfiguration()V
+	3       (0000000c) const-string         v2, 'no_safe_boot'
+	4       (00000010) invoke-direct        v7, v2, v8, Lcom/afwsamples/testdpc/policy/locktask/KioskModeActivity;->setUserRestriction(Ljava/lang/String; Z)V
+	5       (00000016) const-string         v2, 'no_factory_reset'
+	6       (0000001a) invoke-direct        v7, v2, v8, Lcom/afwsamples/testdpc/policy/locktask/KioskModeActivity;->setUserRestriction(Ljava/lang/String; Z)V
+	7       (00000020) const-string         v2, 'no_add_user'
+	8       (00000024) invoke-direct        v7, v2, v8, Lcom/afwsamples/testdpc/policy/locktask/KioskModeActivity;->setUserRestriction(Ljava/lang/String; Z)V
+	9       (0000002a) const-string         v2, 'no_physical_media'
+	10      (0000002e) invoke-direct        v7, v2, v8, Lcom/afwsamples/testdpc/policy/locktask/KioskModeActivity;->setUserRestriction(Ljava/lang/String; Z)V
+	11      (00000034) const-string         v2, 'no_adjust_volume'
+	12      (00000038) invoke-direct        v7, v2, v8, Lcom/afwsamples/testdpc/policy/locktask/KioskModeActivity;->setUserRestriction(Ljava/lang/String; Z)V
+
+setDefaultKioskPolicies-BB@0x3e : [ setDefaultKioskPolicies-BB@0x4a setDefaultKioskPolicies-BB@0xa4 ]
+	13      (0000003e) iget-object          v3, v7, Lcom/afwsamples/testdpc/policy/locktask/KioskModeActivity;->mDevicePolicyManager Landroid/app/admin/DevicePolicyManager;
+	14      (00000042) iget-object          v4, v7, Lcom/afwsamples/testdpc/policy/locktask/KioskModeActivity;->mAdminComponentName Landroid/content/ComponentName;
+	15      (00000046) if-eqz               v8, +2f
+
+setDefaultKioskPolicies-BB@0x4a : [ setDefaultKioskPolicies-BB@0x5e ]
+	16      (0000004a) iget-object          v2, v7, Lcom/afwsamples/testdpc/policy/locktask/KioskModeActivity;->mKioskPackages Ljava/util/ArrayList;
+	17      (0000004e) new-array            v5, v6, [Ljava/lang/String;
+	18      (00000052) invoke-virtual       v2, v5, Ljava/util/ArrayList;->toArray([Ljava/lang/Object;)[Ljava/lang/Object;
+	19      (00000058) move-result-object   v2
+	20      (0000005a) check-cast           v2, [Ljava/lang/String;
+
+setDefaultKioskPolicies-BB@0x5e : [ setDefaultKioskPolicies-BB@0x7c setDefaultKioskPolicies-BB@0xaa ]
+	21      (0000005e) invoke-virtual       v3, v4, v2, Landroid/app/admin/DevicePolicyManager;->setLockTaskPackages(Landroid/content/ComponentName; [Ljava/lang/String;)V
+	22      (00000064) const-string         v2, 'kiosk_preference_file'
+	23      (00000068) invoke-virtual       v7, v2, v6, Lcom/afwsamples/testdpc/policy/locktask/KioskModeActivity;->getSharedPreferences(Ljava/lang/String; I)Landroid/content/SharedPreferences;
+	24      (0000006e) move-result-object   v1
+	25      (00000070) invoke-interface     v1, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
+	26      (00000076) move-result-object   v0
+	27      (00000078) if-eqz               v8, +19
+
+setDefaultKioskPolicies-BB@0x7c : [ setDefaultKioskPolicies-BB@0x94 ]
+	28      (0000007c) const-string         v2, 'kiosk_apps'
+	29      (00000080) new-instance         v3, Ljava/util/HashSet;
+	30      (00000084) iget-object          v4, v7, Lcom/afwsamples/testdpc/policy/locktask/KioskModeActivity;->mKioskPackages Ljava/util/ArrayList;
+	31      (00000088) invoke-direct        v3, v4, Ljava/util/HashSet;-><init>(Ljava/util/Collection;)V
+	32      (0000008e) invoke-interface     v0, v2, v3, Landroid/content/SharedPreferences$Editor;->putStringSet(Ljava/lang/String; Ljava/util/Set;)Landroid/content/SharedPreferences$Editor;
+
+setDefaultKioskPolicies-BB@0x94 : 
+	33      (00000094) invoke-interface     v0, Landroid/content/SharedPreferences$Editor;->commit()Z
+	34      (0000009a) return-void          
+
+setDefaultKioskPolicies-BB@0x9c : [ setDefaultKioskPolicies-BB@0x3e ]
+	35      (0000009c) invoke-direct        v7, Lcom/afwsamples/testdpc/policy/locktask/KioskModeActivity;->restorePreviousConfiguration()V
+	36      (000000a2) goto                 -32
+
+setDefaultKioskPolicies-BB@0xa4 : [ setDefaultKioskPolicies-BB@0x5e ]
+	37      (000000a4) new-array            v2, v6, [Ljava/lang/String;
+	38      (000000a8) goto                 -25
+
+setDefaultKioskPolicies-BB@0xaa : [ setDefaultKioskPolicies-BB@0x94 ]
+	39      (000000aa) const-string         v2, 'kiosk_apps'
+	40      (000000ae) invoke-interface     v0, v2, Landroid/content/SharedPreferences$Editor;->remove(Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
+	41      (000000b4) goto                 -10
+

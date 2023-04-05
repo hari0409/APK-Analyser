@@ -1,0 +1,37 @@
+# Lcom/afwsamples/testdpc/SetupManagementFragment;->specifyKeepAccountMigrated(Landroid/content/Intent;)V [access_flags=private]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:android.content.Intent
+#
+# - return:void
+
+specifyKeepAccountMigrated-BB@0x0 : [ specifyKeepAccountMigrated-BB@0xc specifyKeepAccountMigrated-BB@0x4a ]
+	0       (00000000) sget                 v0, Lcom/afwsamples/testdpc/common/Util;->SDK_INT I
+	1       (00000004) const/16             v1, 26
+	2       (00000008) if-lt                v0, v1, +21
+
+specifyKeepAccountMigrated-BB@0xc : [ specifyKeepAccountMigrated-BB@0x24 specifyKeepAccountMigrated-BB@0x4a ]
+	3       (0000000c) const-string         v0, 'android.app.action.PROVISION_MANAGED_PROFILE'
+	4       (00000010) invoke-virtual       v3, Landroid/content/Intent;->getAction()Ljava/lang/String;
+	5       (00000016) move-result-object   v1
+	6       (00000018) invoke-virtual       v0, v1, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+	7       (0000001e) move-result          v0
+	8       (00000020) if-eqz               v0, +15
+
+specifyKeepAccountMigrated-BB@0x24 : [ specifyKeepAccountMigrated-BB@0x34 specifyKeepAccountMigrated-BB@0x4a ]
+	9       (00000024) iget-object          v0, v2, Lcom/afwsamples/testdpc/SetupManagementFragment;->mKeepAccountMigrated Landroid/widget/CheckBox;
+	10      (00000028) invoke-virtual       v0, Landroid/widget/CheckBox;->getVisibility()I
+	11      (0000002e) move-result          v0
+	12      (00000030) if-nez               v0, +d
+
+specifyKeepAccountMigrated-BB@0x34 : [ specifyKeepAccountMigrated-BB@0x4a ]
+	13      (00000034) const-string         v0, 'android.app.extra.PROVISIONING_KEEP_ACCOUNT_ON_MIGRATION'
+	14      (00000038) iget-object          v1, v2, Lcom/afwsamples/testdpc/SetupManagementFragment;->mKeepAccountMigrated Landroid/widget/CheckBox;
+	15      (0000003c) invoke-virtual       v1, Landroid/widget/CheckBox;->isChecked()Z
+	16      (00000042) move-result          v1
+	17      (00000044) invoke-virtual       v3, v0, v1, Landroid/content/Intent;->putExtra(Ljava/lang/String; Z)Landroid/content/Intent;
+
+specifyKeepAccountMigrated-BB@0x4a : 
+	18      (0000004a) return-void          
+

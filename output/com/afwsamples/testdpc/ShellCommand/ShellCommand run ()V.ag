@@ -1,0 +1,764 @@
+# Lcom/afwsamples/testdpc/ShellCommand;->run()V [access_flags=public]
+#
+# Parameters:
+# local registers: v0...v8
+#
+# - return:void
+
+run-BB@0x0 : [ run-BB@0xb98 run-BB@0xc60 ]
+	0       (00000000) new-instance         v1, Lcom/afwsamples/testdpc/util/Flags;
+	1       (00000004) iget-object          v2, v8, Lcom/afwsamples/testdpc/ShellCommand;->mWriter Ljava/io/PrintWriter;
+	2       (00000008) invoke-direct        v1, v2, Lcom/afwsamples/testdpc/util/Flags;-><init>(Ljava/io/PrintWriter;)V
+	3       (0000000e) const-class          v2, Landroid/os/UserHandle;
+	4       (00000012) new-instance         v3, Lcom/afwsamples/testdpc/ShellCommand$$Lambda$0;
+	5       (00000016) invoke-direct        v3, v8, Lcom/afwsamples/testdpc/ShellCommand$$Lambda$0;-><init>(Lcom/afwsamples/testdpc/ShellCommand;)V
+	6       (0000001c) invoke-virtual       v1, v2, v3, Lcom/afwsamples/testdpc/util/Flags;->registerCustomParser(Ljava/lang/Class; Lcom/afwsamples/testdpc/util/Flags$BiFunction;)V
+	7       (00000022) const-class          v2, Ljava/io/File;
+	8       (00000026) new-instance         v3, Lcom/afwsamples/testdpc/ShellCommand$$Lambda$1;
+	9       (0000002a) invoke-direct        v3, v8, Lcom/afwsamples/testdpc/ShellCommand$$Lambda$1;-><init>(Lcom/afwsamples/testdpc/ShellCommand;)V
+	10      (00000030) invoke-virtual       v1, v2, v3, Lcom/afwsamples/testdpc/util/Flags;->registerCustomParser(Ljava/lang/Class; Lcom/afwsamples/testdpc/util/Flags$BiFunction;)V
+	11      (00000036) const-class          v2, Lcom/afwsamples/testdpc/ShellCommand$KeyValue;
+	12      (0000003a) sget-object          v3, Lcom/afwsamples/testdpc/ShellCommand$$Lambda$2;->$instance Lcom/afwsamples/testdpc/util/Flags$BiFunction;
+	13      (0000003e) invoke-virtual       v1, v2, v3, Lcom/afwsamples/testdpc/util/Flags;->registerCustomParser(Ljava/lang/Class; Lcom/afwsamples/testdpc/util/Flags$BiFunction;)V
+	14      (00000044) const-string         v2, 'dump'
+	15      (00000048) new-instance         v3, Lcom/afwsamples/testdpc/ShellCommand$$Lambda$3;
+	16      (0000004c) invoke-direct        v3, v8, Lcom/afwsamples/testdpc/ShellCommand$$Lambda$3;-><init>(Lcom/afwsamples/testdpc/ShellCommand;)V
+	17      (00000052) invoke-static        v2, v3, Lcom/afwsamples/testdpc/util/Flags;->command(Ljava/lang/String; Lcom/afwsamples/testdpc/util/Flags$CommandCallback0Params;)Lcom/afwsamples/testdpc/util/Flags$RegisteredCommand$Builder;
+	18      (00000058) move-result-object   v2
+	19      (0000005a) const-string         v3, 'Dump internal state.'
+	20      (0000005e) invoke-virtual       v2, v3, Lcom/afwsamples/testdpc/util/Flags$RegisteredCommand$Builder;->setDescription(Ljava/lang/String;)Lcom/afwsamples/testdpc/util/Flags$RegisteredCommand$Builder;
+	21      (00000064) move-result-object   v2
+	22      (00000066) invoke-virtual       v1, v2, Lcom/afwsamples/testdpc/util/Flags;->addCommand(Lcom/afwsamples/testdpc/util/Flags$RegisteredCommand$Builder;)V
+	23      (0000006c) const-string         v2, 'create-user'
+	24      (00000070) new-instance         v3, Lcom/afwsamples/testdpc/ShellCommand$$Lambda$4;
+	25      (00000074) invoke-direct        v3, v8, Lcom/afwsamples/testdpc/ShellCommand$$Lambda$4;-><init>(Lcom/afwsamples/testdpc/ShellCommand;)V
+	26      (0000007a) const-class          v4, Ljava/lang/String;
+	27      (0000007e) const-string         v5, 'name'
+	28      (00000082) invoke-static        v4, v5, Lcom/afwsamples/testdpc/util/Flags;->ordinalParam(Ljava/lang/Class; Ljava/lang/String;)Lcom/afwsamples/testdpc/util/Flags$OrdinalParam;
+	29      (00000088) move-result-object   v4
+	30      (0000008a) sget-object          v5, Ljava/lang/Integer;->TYPE Ljava/lang/Class;
+	31      (0000008e) const-string         v6, 'flags'
+	32      (00000092) invoke-static        v5, v6, Lcom/afwsamples/testdpc/util/Flags;->namedParam(Ljava/lang/Class; Ljava/lang/String;)Lcom/afwsamples/testdpc/util/Flags$NamedParam;
+	33      (00000098) move-result-object   v5
+	34      (0000009a) invoke-static        v5, Lcom/afwsamples/testdpc/util/Flags;->optional(Lcom/afwsamples/testdpc/util/Flags$NamedParam;)Lcom/afwsamples/testdpc/util/Flags$OptionalParam;
+	35      (000000a0) move-result-object   v5
+	36      (000000a2) invoke-static        v2, v3, v4, v5, Lcom/afwsamples/testdpc/util/Flags;->command(Ljava/lang/String; Lcom/afwsamples/testdpc/util/Flags$CommandCallback2Params; Lcom/afwsamples/testdpc/util/Flags$Param; Lcom/afwsamples/testdpc/util/Flags$Param;)Lcom/afwsamples/testdpc/util/Flags$RegisteredCommand$Builder;
+	37      (000000a8) move-result-object   v2
+	38      (000000aa) const-string         v3, 'Create a user with the optional flags and name.'
+	39      (000000ae) invoke-virtual       v2, v3, Lcom/afwsamples/testdpc/util/Flags$RegisteredCommand$Builder;->setDescription(Ljava/lang/String;)Lcom/afwsamples/testdpc/util/Flags$RegisteredCommand$Builder;
+	40      (000000b4) move-result-object   v2
+	41      (000000b6) invoke-virtual       v1, v2, Lcom/afwsamples/testdpc/util/Flags;->addCommand(Lcom/afwsamples/testdpc/util/Flags$RegisteredCommand$Builder;)V
+	42      (000000bc) const-string         v2, 'set-user-icon'
+	43      (000000c0) new-instance         v3, Lcom/afwsamples/testdpc/ShellCommand$$Lambda$5;
+	44      (000000c4) invoke-direct        v3, v8, Lcom/afwsamples/testdpc/ShellCommand$$Lambda$5;-><init>(Lcom/afwsamples/testdpc/ShellCommand;)V
+	45      (000000ca) const-class          v4, Ljava/io/File;
+	46      (000000ce) const-string         v5, 'file'
+	47      (000000d2) invoke-static        v4, v5, Lcom/afwsamples/testdpc/util/Flags;->ordinalParam(Ljava/lang/Class; Ljava/lang/String;)Lcom/afwsamples/testdpc/util/Flags$OrdinalParam;
+	48      (000000d8) move-result-object   v4
+	49      (000000da) invoke-static        v2, v3, v4, Lcom/afwsamples/testdpc/util/Flags;->command(Ljava/lang/String; Lcom/afwsamples/testdpc/util/Flags$CommandCallback1Params; Lcom/afwsamples/testdpc/util/Flags$Param;)Lcom/afwsamples/testdpc/util/Flags$RegisteredCommand$Builder;
+	50      (000000e0) move-result-object   v2
+	51      (000000e2) const-string         v3, "Set the user icon using the bitmap located at the given file, which must be located in the user's `UserIcons` directory. For user 0, you can use `adb push` to push a local file to that directory (/storage/emulated/0/Android/data/com.afwsamples.testdpc/files/Pictures/UserIcons), but for other users you need to switch to that user and use its content provider (for example, `adb shell content write --user 10 --uri content://com.afwsamples.testdpc.usericoncontentprovider/icon.png < /tmp/icon.png`)."
+	52      (000000e6) invoke-virtual       v2, v3, Lcom/afwsamples/testdpc/util/Flags$RegisteredCommand$Builder;->setDescription(Ljava/lang/String;)Lcom/afwsamples/testdpc/util/Flags$RegisteredCommand$Builder;
+	53      (000000ec) move-result-object   v2
+	54      (000000ee) invoke-virtual       v1, v2, Lcom/afwsamples/testdpc/util/Flags;->addCommand(Lcom/afwsamples/testdpc/util/Flags$RegisteredCommand$Builder;)V
+	55      (000000f4) const-string         v2, 'remove-user'
+	56      (000000f8) new-instance         v3, Lcom/afwsamples/testdpc/ShellCommand$$Lambda$6;
+	57      (000000fc) invoke-direct        v3, v8, Lcom/afwsamples/testdpc/ShellCommand$$Lambda$6;-><init>(Lcom/afwsamples/testdpc/ShellCommand;)V
+	58      (00000102) const-class          v4, Landroid/os/UserHandle;
+	59      (00000106) const-string         v5, 'user-serial-number'
+	60      (0000010a) invoke-static        v4, v5, Lcom/afwsamples/testdpc/util/Flags;->ordinalParam(Ljava/lang/Class; Ljava/lang/String;)Lcom/afwsamples/testdpc/util/Flags$OrdinalParam;
+	61      (00000110) move-result-object   v4
+	62      (00000112) invoke-static        v2, v3, v4, Lcom/afwsamples/testdpc/util/Flags;->command(Ljava/lang/String; Lcom/afwsamples/testdpc/util/Flags$CommandCallback1Params; Lcom/afwsamples/testdpc/util/Flags$Param;)Lcom/afwsamples/testdpc/util/Flags$RegisteredCommand$Builder;
+	63      (00000118) move-result-object   v2
+	64      (0000011a) const-string         v3, 'Remove the given user.'
+	65      (0000011e) invoke-virtual       v2, v3, Lcom/afwsamples/testdpc/util/Flags$RegisteredCommand$Builder;->setDescription(Ljava/lang/String;)Lcom/afwsamples/testdpc/util/Flags$RegisteredCommand$Builder;
+	66      (00000124) move-result-object   v2
+	67      (00000126) invoke-virtual       v1, v2, Lcom/afwsamples/testdpc/util/Flags;->addCommand(Lcom/afwsamples/testdpc/util/Flags$RegisteredCommand$Builder;)V
+	68      (0000012c) const-string         v2, 'switch-user'
+	69      (00000130) new-instance         v3, Lcom/afwsamples/testdpc/ShellCommand$$Lambda$7;
+	70      (00000134) invoke-direct        v3, v8, Lcom/afwsamples/testdpc/ShellCommand$$Lambda$7;-><init>(Lcom/afwsamples/testdpc/ShellCommand;)V
+	71      (0000013a) const-class          v4, Landroid/os/UserHandle;
+	72      (0000013e) const-string         v5, 'user-serial-number'
+	73      (00000142) invoke-static        v4, v5, Lcom/afwsamples/testdpc/util/Flags;->ordinalParam(Ljava/lang/Class; Ljava/lang/String;)Lcom/afwsamples/testdpc/util/Flags$OrdinalParam;
+	74      (00000148) move-result-object   v4
+	75      (0000014a) invoke-static        v2, v3, v4, Lcom/afwsamples/testdpc/util/Flags;->command(Ljava/lang/String; Lcom/afwsamples/testdpc/util/Flags$CommandCallback1Params; Lcom/afwsamples/testdpc/util/Flags$Param;)Lcom/afwsamples/testdpc/util/Flags$RegisteredCommand$Builder;
+	76      (00000150) move-result-object   v2
+	77      (00000152) const-string         v3, 'Switch the given user to foreground.'
+	78      (00000156) invoke-virtual       v2, v3, Lcom/afwsamples/testdpc/util/Flags$RegisteredCommand$Builder;->setDescription(Ljava/lang/String;)Lcom/afwsamples/testdpc/util/Flags$RegisteredCommand$Builder;
+	79      (0000015c) move-result-object   v2
+	80      (0000015e) invoke-virtual       v1, v2, Lcom/afwsamples/testdpc/util/Flags;->addCommand(Lcom/afwsamples/testdpc/util/Flags$RegisteredCommand$Builder;)V
+	81      (00000164) const-string         v2, 'start-user-in-background'
+	82      (00000168) new-instance         v3, Lcom/afwsamples/testdpc/ShellCommand$$Lambda$8;
+	83      (0000016c) invoke-direct        v3, v8, Lcom/afwsamples/testdpc/ShellCommand$$Lambda$8;-><init>(Lcom/afwsamples/testdpc/ShellCommand;)V
+	84      (00000172) const-class          v4, Landroid/os/UserHandle;
+	85      (00000176) const-string         v5, 'user-serial-number'
+	86      (0000017a) invoke-static        v4, v5, Lcom/afwsamples/testdpc/util/Flags;->ordinalParam(Ljava/lang/Class; Ljava/lang/String;)Lcom/afwsamples/testdpc/util/Flags$OrdinalParam;
+	87      (00000180) move-result-object   v4
+	88      (00000182) invoke-static        v2, v3, v4, Lcom/afwsamples/testdpc/util/Flags;->command(Ljava/lang/String; Lcom/afwsamples/testdpc/util/Flags$CommandCallback1Params; Lcom/afwsamples/testdpc/util/Flags$Param;)Lcom/afwsamples/testdpc/util/Flags$RegisteredCommand$Builder;
+	89      (00000188) move-result-object   v2
+	90      (0000018a) const-string         v3, 'Switch the given user to foreground.'
+	91      (0000018e) invoke-virtual       v2, v3, Lcom/afwsamples/testdpc/util/Flags$RegisteredCommand$Builder;->setDescription(Ljava/lang/String;)Lcom/afwsamples/testdpc/util/Flags$RegisteredCommand$Builder;
+	92      (00000194) move-result-object   v2
+	93      (00000196) invoke-virtual       v1, v2, Lcom/afwsamples/testdpc/util/Flags;->addCommand(Lcom/afwsamples/testdpc/util/Flags$RegisteredCommand$Builder;)V
+	94      (0000019c) const-string         v2, 'is-user-affiliated'
+	95      (000001a0) new-instance         v3, Lcom/afwsamples/testdpc/ShellCommand$$Lambda$9;
+	96      (000001a4) invoke-direct        v3, v8, Lcom/afwsamples/testdpc/ShellCommand$$Lambda$9;-><init>(Lcom/afwsamples/testdpc/ShellCommand;)V
+	97      (000001aa) invoke-static        v2, v3, Lcom/afwsamples/testdpc/util/Flags;->command(Ljava/lang/String; Lcom/afwsamples/testdpc/util/Flags$CommandCallback0Params;)Lcom/afwsamples/testdpc/util/Flags$RegisteredCommand$Builder;
+	98      (000001b0) move-result-object   v2
+	99      (000001b2) const-string         v3, 'Check if the user is affiliated with the device.'
+	100     (000001b6) invoke-virtual       v2, v3, Lcom/afwsamples/testdpc/util/Flags$RegisteredCommand$Builder;->setDescription(Ljava/lang/String;)Lcom/afwsamples/testdpc/util/Flags$RegisteredCommand$Builder;
+	101     (000001bc) move-result-object   v2
+	102     (000001be) invoke-virtual       v1, v2, Lcom/afwsamples/testdpc/util/Flags;->addCommand(Lcom/afwsamples/testdpc/util/Flags$RegisteredCommand$Builder;)V
+	103     (000001c4) const-string         v2, 'set-affiliation-ids'
+	104     (000001c8) new-instance         v3, Lcom/afwsamples/testdpc/ShellCommand$$Lambda$10;
+	105     (000001cc) invoke-direct        v3, v8, Lcom/afwsamples/testdpc/ShellCommand$$Lambda$10;-><init>(Lcom/afwsamples/testdpc/ShellCommand;)V
+	106     (000001d2) const-class          v4, Ljava/lang/String;
+	107     (000001d6) const-string         v5, 'ids'
+	108     (000001da) invoke-static        v4, v5, Lcom/afwsamples/testdpc/util/Flags;->ordinalParam(Ljava/lang/Class; Ljava/lang/String;)Lcom/afwsamples/testdpc/util/Flags$OrdinalParam;
+	109     (000001e0) move-result-object   v4
+	110     (000001e2) invoke-static        v4, Lcom/afwsamples/testdpc/util/Flags;->repeated(Lcom/afwsamples/testdpc/util/Flags$OrdinalParam;)Lcom/afwsamples/testdpc/util/Flags$RepeatedOrdinalParam;
+	111     (000001e8) move-result-object   v4
+	112     (000001ea) invoke-static        v2, v3, v4, Lcom/afwsamples/testdpc/util/Flags;->command(Ljava/lang/String; Lcom/afwsamples/testdpc/util/Flags$CommandCallback1Params; Lcom/afwsamples/testdpc/util/Flags$Param;)Lcom/afwsamples/testdpc/util/Flags$RegisteredCommand$Builder;
+	113     (000001f0) move-result-object   v2
+	114     (000001f2) const-string         v3, 'Set the user affiliation ids (or clear them if no ids are passed).'
+	115     (000001f6) invoke-virtual       v2, v3, Lcom/afwsamples/testdpc/util/Flags$RegisteredCommand$Builder;->setDescription(Ljava/lang/String;)Lcom/afwsamples/testdpc/util/Flags$RegisteredCommand$Builder;
+	116     (000001fc) move-result-object   v2
+	117     (000001fe) invoke-virtual       v1, v2, Lcom/afwsamples/testdpc/util/Flags;->addCommand(Lcom/afwsamples/testdpc/util/Flags$RegisteredCommand$Builder;)V
+	118     (00000204) const-string         v2, 'get-affiliation-ids'
+	119     (00000208) new-instance         v3, Lcom/afwsamples/testdpc/ShellCommand$$Lambda$11;
+	120     (0000020c) invoke-direct        v3, v8, Lcom/afwsamples/testdpc/ShellCommand$$Lambda$11;-><init>(Lcom/afwsamples/testdpc/ShellCommand;)V
+	121     (00000212) invoke-static        v2, v3, Lcom/afwsamples/testdpc/util/Flags;->command(Ljava/lang/String; Lcom/afwsamples/testdpc/util/Flags$CommandCallback0Params;)Lcom/afwsamples/testdpc/util/Flags$RegisteredCommand$Builder;
+	122     (00000218) move-result-object   v2
+	123     (0000021a) const-string         v3, 'Get the user affiliation ids.'
+	124     (0000021e) invoke-virtual       v2, v3, Lcom/afwsamples/testdpc/util/Flags$RegisteredCommand$Builder;->setDescription(Ljava/lang/String;)Lcom/afwsamples/testdpc/util/Flags$RegisteredCommand$Builder;
+	125     (00000224) move-result-object   v2
+	126     (00000226) invoke-virtual       v1, v2, Lcom/afwsamples/testdpc/util/Flags;->addCommand(Lcom/afwsamples/testdpc/util/Flags$RegisteredCommand$Builder;)V
+	127     (0000022c) const-string         v2, 'list-user-restrictions'
+	128     (00000230) new-instance         v3, Lcom/afwsamples/testdpc/ShellCommand$$Lambda$12;
+	129     (00000234) invoke-direct        v3, v8, Lcom/afwsamples/testdpc/ShellCommand$$Lambda$12;-><init>(Lcom/afwsamples/testdpc/ShellCommand;)V
+	130     (0000023a) invoke-static        v2, v3, Lcom/afwsamples/testdpc/util/Flags;->command(Ljava/lang/String; Lcom/afwsamples/testdpc/util/Flags$CommandCallback0Params;)Lcom/afwsamples/testdpc/util/Flags$RegisteredCommand$Builder;
+	131     (00000240) move-result-object   v2
+	132     (00000242) const-string         v3, 'List the user restrictions.'
+	133     (00000246) invoke-virtual       v2, v3, Lcom/afwsamples/testdpc/util/Flags$RegisteredCommand$Builder;->setDescription(Ljava/lang/String;)Lcom/afwsamples/testdpc/util/Flags$RegisteredCommand$Builder;
+	134     (0000024c) move-result-object   v2
+	135     (0000024e) invoke-virtual       v1, v2, Lcom/afwsamples/testdpc/util/Flags;->addCommand(Lcom/afwsamples/testdpc/util/Flags$RegisteredCommand$Builder;)V
+	136     (00000254) const-string         v2, 'set-user-restriction'
+	137     (00000258) new-instance         v3, Lcom/afwsamples/testdpc/ShellCommand$$Lambda$13;
+	138     (0000025c) invoke-direct        v3, v8, Lcom/afwsamples/testdpc/ShellCommand$$Lambda$13;-><init>(Lcom/afwsamples/testdpc/ShellCommand;)V
+	139     (00000262) const-class          v4, Ljava/lang/String;
+	140     (00000266) const-string         v5, 'restriction'
+	141     (0000026a) invoke-static        v4, v5, Lcom/afwsamples/testdpc/util/Flags;->ordinalParam(Ljava/lang/Class; Ljava/lang/String;)Lcom/afwsamples/testdpc/util/Flags$OrdinalParam;
+	142     (00000270) move-result-object   v4
+	143     (00000272) sget-object          v5, Ljava/lang/Boolean;->TYPE Ljava/lang/Class;
+	144     (00000276) const-string         v6, 'enabled'
+	145     (0000027a) invoke-static        v5, v6, Lcom/afwsamples/testdpc/util/Flags;->ordinalParam(Ljava/lang/Class; Ljava/lang/String;)Lcom/afwsamples/testdpc/util/Flags$OrdinalParam;
+	146     (00000280) move-result-object   v5
+	147     (00000282) invoke-static        v2, v3, v4, v5, Lcom/afwsamples/testdpc/util/Flags;->command(Ljava/lang/String; Lcom/afwsamples/testdpc/util/Flags$CommandCallback2Params; Lcom/afwsamples/testdpc/util/Flags$Param; Lcom/afwsamples/testdpc/util/Flags$Param;)Lcom/afwsamples/testdpc/util/Flags$RegisteredCommand$Builder;
+	148     (00000288) move-result-object   v2
+	149     (0000028a) const-string         v3, 'Set the given user restriction.'
+	150     (0000028e) invoke-virtual       v2, v3, Lcom/afwsamples/testdpc/util/Flags$RegisteredCommand$Builder;->setDescription(Ljava/lang/String;)Lcom/afwsamples/testdpc/util/Flags$RegisteredCommand$Builder;
+	151     (00000294) move-result-object   v2
+	152     (00000296) invoke-virtual       v1, v2, Lcom/afwsamples/testdpc/util/Flags;->addCommand(Lcom/afwsamples/testdpc/util/Flags$RegisteredCommand$Builder;)V
+	153     (0000029c) const-string         v2, 'lock-now'
+	154     (000002a0) new-instance         v3, Lcom/afwsamples/testdpc/ShellCommand$$Lambda$14;
+	155     (000002a4) invoke-direct        v3, v8, Lcom/afwsamples/testdpc/ShellCommand$$Lambda$14;-><init>(Lcom/afwsamples/testdpc/ShellCommand;)V
+	156     (000002aa) sget-object          v4, Ljava/lang/Integer;->TYPE Ljava/lang/Class;
+	157     (000002ae) const-string         v5, 'flags'
+	158     (000002b2) invoke-static        v4, v5, Lcom/afwsamples/testdpc/util/Flags;->namedParam(Ljava/lang/Class; Ljava/lang/String;)Lcom/afwsamples/testdpc/util/Flags$NamedParam;
+	159     (000002b8) move-result-object   v4
+	160     (000002ba) invoke-static        v4, Lcom/afwsamples/testdpc/util/Flags;->optional(Lcom/afwsamples/testdpc/util/Flags$NamedParam;)Lcom/afwsamples/testdpc/util/Flags$OptionalParam;
+	161     (000002c0) move-result-object   v4
+	162     (000002c2) invoke-static        v2, v3, v4, Lcom/afwsamples/testdpc/util/Flags;->command(Ljava/lang/String; Lcom/afwsamples/testdpc/util/Flags$CommandCallback1Params; Lcom/afwsamples/testdpc/util/Flags$Param;)Lcom/afwsamples/testdpc/util/Flags$RegisteredCommand$Builder;
+	163     (000002c8) move-result-object   v2
+	164     (000002ca) const-string         v3, 'Lock the device (now! :-).'
+	165     (000002ce) invoke-virtual       v2, v3, Lcom/afwsamples/testdpc/util/Flags$RegisteredCommand$Builder;->setDescription(Ljava/lang/String;)Lcom/afwsamples/testdpc/util/Flags$RegisteredCommand$Builder;
+	166     (000002d4) move-result-object   v2
+	167     (000002d6) invoke-virtual       v1, v2, Lcom/afwsamples/testdpc/util/Flags;->addCommand(Lcom/afwsamples/testdpc/util/Flags$RegisteredCommand$Builder;)V
+	168     (000002dc) const-string         v2, 'reboot'
+	169     (000002e0) new-instance         v3, Lcom/afwsamples/testdpc/ShellCommand$$Lambda$15;
+	170     (000002e4) invoke-direct        v3, v8, Lcom/afwsamples/testdpc/ShellCommand$$Lambda$15;-><init>(Lcom/afwsamples/testdpc/ShellCommand;)V
+	171     (000002ea) invoke-static        v2, v3, Lcom/afwsamples/testdpc/util/Flags;->command(Ljava/lang/String; Lcom/afwsamples/testdpc/util/Flags$CommandCallback0Params;)Lcom/afwsamples/testdpc/util/Flags$RegisteredCommand$Builder;
+	172     (000002f0) move-result-object   v2
+	173     (000002f2) const-string         v3, 'Reboot the device.'
+	174     (000002f6) invoke-virtual       v2, v3, Lcom/afwsamples/testdpc/util/Flags$RegisteredCommand$Builder;->setDescription(Ljava/lang/String;)Lcom/afwsamples/testdpc/util/Flags$RegisteredCommand$Builder;
+	175     (000002fc) move-result-object   v2
+	176     (000002fe) invoke-virtual       v1, v2, Lcom/afwsamples/testdpc/util/Flags;->addCommand(Lcom/afwsamples/testdpc/util/Flags$RegisteredCommand$Builder;)V
+	177     (00000304) const-string         v2, 'wipe-data'
+	178     (00000308) new-instance         v3, Lcom/afwsamples/testdpc/ShellCommand$$Lambda$16;
+	179     (0000030c) invoke-direct        v3, v8, Lcom/afwsamples/testdpc/ShellCommand$$Lambda$16;-><init>(Lcom/afwsamples/testdpc/ShellCommand;)V
+	180     (00000312) sget-object          v4, Ljava/lang/Integer;->TYPE Ljava/lang/Class;
+	181     (00000316) const-string         v5, 'flags'
+	182     (0000031a) invoke-static        v4, v5, Lcom/afwsamples/testdpc/util/Flags;->namedParam(Ljava/lang/Class; Ljava/lang/String;)Lcom/afwsamples/testdpc/util/Flags$NamedParam;
+	183     (00000320) move-result-object   v4
+	184     (00000322) invoke-static        v4, Lcom/afwsamples/testdpc/util/Flags;->optional(Lcom/afwsamples/testdpc/util/Flags$NamedParam;)Lcom/afwsamples/testdpc/util/Flags$OptionalParam;
+	185     (00000328) move-result-object   v4
+	186     (0000032a) invoke-static        v2, v3, v4, Lcom/afwsamples/testdpc/util/Flags;->command(Ljava/lang/String; Lcom/afwsamples/testdpc/util/Flags$CommandCallback1Params; Lcom/afwsamples/testdpc/util/Flags$Param;)Lcom/afwsamples/testdpc/util/Flags$RegisteredCommand$Builder;
+	187     (00000330) move-result-object   v2
+	188     (00000332) const-string         v3, 'Factory reset the device.'
+	189     (00000336) invoke-virtual       v2, v3, Lcom/afwsamples/testdpc/util/Flags$RegisteredCommand$Builder;->setDescription(Ljava/lang/String;)Lcom/afwsamples/testdpc/util/Flags$RegisteredCommand$Builder;
+	190     (0000033c) move-result-object   v2
+	191     (0000033e) invoke-virtual       v1, v2, Lcom/afwsamples/testdpc/util/Flags;->addCommand(Lcom/afwsamples/testdpc/util/Flags$RegisteredCommand$Builder;)V
+	192     (00000344) const-string         v2, 'request-bugreport'
+	193     (00000348) new-instance         v3, Lcom/afwsamples/testdpc/ShellCommand$$Lambda$17;
+	194     (0000034c) invoke-direct        v3, v8, Lcom/afwsamples/testdpc/ShellCommand$$Lambda$17;-><init>(Lcom/afwsamples/testdpc/ShellCommand;)V
+	195     (00000352) invoke-static        v2, v3, Lcom/afwsamples/testdpc/util/Flags;->command(Ljava/lang/String; Lcom/afwsamples/testdpc/util/Flags$CommandCallback0Params;)Lcom/afwsamples/testdpc/util/Flags$RegisteredCommand$Builder;
+	196     (00000358) move-result-object   v2
+	197     (0000035a) const-string         v3, 'Request a bug report.'
+	198     (0000035e) invoke-virtual       v2, v3, Lcom/afwsamples/testdpc/util/Flags$RegisteredCommand$Builder;->setDescription(Ljava/lang/String;)Lcom/afwsamples/testdpc/util/Flags$RegisteredCommand$Builder;
+	199     (00000364) move-result-object   v2
+	200     (00000366) invoke-virtual       v1, v2, Lcom/afwsamples/testdpc/util/Flags;->addCommand(Lcom/afwsamples/testdpc/util/Flags$RegisteredCommand$Builder;)V
+	201     (0000036c) const-string         v2, 'set-network-logging'
+	202     (00000370) new-instance         v3, Lcom/afwsamples/testdpc/ShellCommand$$Lambda$18;
+	203     (00000374) invoke-direct        v3, v8, Lcom/afwsamples/testdpc/ShellCommand$$Lambda$18;-><init>(Lcom/afwsamples/testdpc/ShellCommand;)V
+	204     (0000037a) sget-object          v4, Ljava/lang/Boolean;->TYPE Ljava/lang/Class;
+	205     (0000037e) const-string         v5, 'enabled'
+	206     (00000382) invoke-static        v4, v5, Lcom/afwsamples/testdpc/util/Flags;->ordinalParam(Ljava/lang/Class; Ljava/lang/String;)Lcom/afwsamples/testdpc/util/Flags$OrdinalParam;
+	207     (00000388) move-result-object   v4
+	208     (0000038a) invoke-static        v2, v3, v4, Lcom/afwsamples/testdpc/util/Flags;->command(Ljava/lang/String; Lcom/afwsamples/testdpc/util/Flags$CommandCallback1Params; Lcom/afwsamples/testdpc/util/Flags$Param;)Lcom/afwsamples/testdpc/util/Flags$RegisteredCommand$Builder;
+	209     (00000390) move-result-object   v2
+	210     (00000392) const-string         v3, 'Enable / disable network logging.'
+	211     (00000396) invoke-virtual       v2, v3, Lcom/afwsamples/testdpc/util/Flags$RegisteredCommand$Builder;->setDescription(Ljava/lang/String;)Lcom/afwsamples/testdpc/util/Flags$RegisteredCommand$Builder;
+	212     (0000039c) move-result-object   v2
+	213     (0000039e) invoke-virtual       v1, v2, Lcom/afwsamples/testdpc/util/Flags;->addCommand(Lcom/afwsamples/testdpc/util/Flags$RegisteredCommand$Builder;)V
+	214     (000003a4) const-string         v2, 'clear-organization-name'
+	215     (000003a8) new-instance         v3, Lcom/afwsamples/testdpc/ShellCommand$$Lambda$19;
+	216     (000003ac) invoke-direct        v3, v8, Lcom/afwsamples/testdpc/ShellCommand$$Lambda$19;-><init>(Lcom/afwsamples/testdpc/ShellCommand;)V
+	217     (000003b2) invoke-static        v2, v3, Lcom/afwsamples/testdpc/util/Flags;->command(Ljava/lang/String; Lcom/afwsamples/testdpc/util/Flags$CommandCallback0Params;)Lcom/afwsamples/testdpc/util/Flags$RegisteredCommand$Builder;
+	218     (000003b8) move-result-object   v2
+	219     (000003ba) const-string         v3, 'Clear the organisation name.'
+	220     (000003be) invoke-virtual       v2, v3, Lcom/afwsamples/testdpc/util/Flags$RegisteredCommand$Builder;->setDescription(Ljava/lang/String;)Lcom/afwsamples/testdpc/util/Flags$RegisteredCommand$Builder;
+	221     (000003c4) move-result-object   v2
+	222     (000003c6) invoke-virtual       v1, v2, Lcom/afwsamples/testdpc/util/Flags;->addCommand(Lcom/afwsamples/testdpc/util/Flags$RegisteredCommand$Builder;)V
+	223     (000003cc) const-string         v2, 'set-organization-name'
+	224     (000003d0) new-instance         v3, Lcom/afwsamples/testdpc/ShellCommand$$Lambda$20;
+	225     (000003d4) invoke-direct        v3, v8, Lcom/afwsamples/testdpc/ShellCommand$$Lambda$20;-><init>(Lcom/afwsamples/testdpc/ShellCommand;)V
+	226     (000003da) const-class          v4, Ljava/lang/String;
+	227     (000003de) const-string         v5, 'name'
+	228     (000003e2) invoke-static        v4, v5, Lcom/afwsamples/testdpc/util/Flags;->ordinalParam(Ljava/lang/Class; Ljava/lang/String;)Lcom/afwsamples/testdpc/util/Flags$OrdinalParam;
+	229     (000003e8) move-result-object   v4
+	230     (000003ea) invoke-static        v2, v3, v4, Lcom/afwsamples/testdpc/util/Flags;->command(Ljava/lang/String; Lcom/afwsamples/testdpc/util/Flags$CommandCallback1Params; Lcom/afwsamples/testdpc/util/Flags$Param;)Lcom/afwsamples/testdpc/util/Flags$RegisteredCommand$Builder;
+	231     (000003f0) move-result-object   v2
+	232     (000003f2) const-string         v3, 'Set the organisation name.'
+	233     (000003f6) invoke-virtual       v2, v3, Lcom/afwsamples/testdpc/util/Flags$RegisteredCommand$Builder;->setDescription(Ljava/lang/String;)Lcom/afwsamples/testdpc/util/Flags$RegisteredCommand$Builder;
+	234     (000003fc) move-result-object   v2
+	235     (000003fe) invoke-virtual       v1, v2, Lcom/afwsamples/testdpc/util/Flags;->addCommand(Lcom/afwsamples/testdpc/util/Flags$RegisteredCommand$Builder;)V
+	236     (00000404) const-string         v2, 'get-organization-name'
+	237     (00000408) new-instance         v3, Lcom/afwsamples/testdpc/ShellCommand$$Lambda$21;
+	238     (0000040c) invoke-direct        v3, v8, Lcom/afwsamples/testdpc/ShellCommand$$Lambda$21;-><init>(Lcom/afwsamples/testdpc/ShellCommand;)V
+	239     (00000412) invoke-static        v2, v3, Lcom/afwsamples/testdpc/util/Flags;->command(Ljava/lang/String; Lcom/afwsamples/testdpc/util/Flags$CommandCallback0Params;)Lcom/afwsamples/testdpc/util/Flags$RegisteredCommand$Builder;
+	240     (00000418) move-result-object   v2
+	241     (0000041a) const-string         v3, 'Get the organization name.'
+	242     (0000041e) invoke-virtual       v2, v3, Lcom/afwsamples/testdpc/util/Flags$RegisteredCommand$Builder;->setDescription(Ljava/lang/String;)Lcom/afwsamples/testdpc/util/Flags$RegisteredCommand$Builder;
+	243     (00000424) move-result-object   v2
+	244     (00000426) invoke-virtual       v1, v2, Lcom/afwsamples/testdpc/util/Flags;->addCommand(Lcom/afwsamples/testdpc/util/Flags$RegisteredCommand$Builder;)V
+	245     (0000042c) const-string         v2, 'set-user-control-disabled-packages'
+	246     (00000430) new-instance         v3, Lcom/afwsamples/testdpc/ShellCommand$$Lambda$22;
+	247     (00000434) invoke-direct        v3, v8, Lcom/afwsamples/testdpc/ShellCommand$$Lambda$22;-><init>(Lcom/afwsamples/testdpc/ShellCommand;)V
+	248     (0000043a) const-class          v4, Ljava/lang/String;
+	249     (0000043e) const-string         v5, 'packages'
+	250     (00000442) invoke-static        v4, v5, Lcom/afwsamples/testdpc/util/Flags;->ordinalParam(Ljava/lang/Class; Ljava/lang/String;)Lcom/afwsamples/testdpc/util/Flags$OrdinalParam;
+	251     (00000448) move-result-object   v4
+	252     (0000044a) invoke-static        v4, Lcom/afwsamples/testdpc/util/Flags;->repeated(Lcom/afwsamples/testdpc/util/Flags$OrdinalParam;)Lcom/afwsamples/testdpc/util/Flags$RepeatedOrdinalParam;
+	253     (00000450) move-result-object   v4
+	254     (00000452) invoke-static        v2, v3, v4, Lcom/afwsamples/testdpc/util/Flags;->command(Ljava/lang/String; Lcom/afwsamples/testdpc/util/Flags$CommandCallback1Params; Lcom/afwsamples/testdpc/util/Flags$Param;)Lcom/afwsamples/testdpc/util/Flags$RegisteredCommand$Builder;
+	255     (00000458) move-result-object   v2
+	256     (0000045a) const-string         v3, 'Set the packages that the user cannot force stop or clear data for. Provide an empty list to reset.'
+	257     (0000045e) invoke-virtual       v2, v3, Lcom/afwsamples/testdpc/util/Flags$RegisteredCommand$Builder;->setDescription(Ljava/lang/String;)Lcom/afwsamples/testdpc/util/Flags$RegisteredCommand$Builder;
+	258     (00000464) move-result-object   v2
+	259     (00000466) invoke-virtual       v1, v2, Lcom/afwsamples/testdpc/util/Flags;->addCommand(Lcom/afwsamples/testdpc/util/Flags$RegisteredCommand$Builder;)V
+	260     (0000046c) const-string         v2, 'get-user-control-disabled-packages'
+	261     (00000470) new-instance         v3, Lcom/afwsamples/testdpc/ShellCommand$$Lambda$23;
+	262     (00000474) invoke-direct        v3, v8, Lcom/afwsamples/testdpc/ShellCommand$$Lambda$23;-><init>(Lcom/afwsamples/testdpc/ShellCommand;)V
+	263     (0000047a) invoke-static        v2, v3, Lcom/afwsamples/testdpc/util/Flags;->command(Ljava/lang/String; Lcom/afwsamples/testdpc/util/Flags$CommandCallback0Params;)Lcom/afwsamples/testdpc/util/Flags$RegisteredCommand$Builder;
+	264     (00000480) move-result-object   v2
+	265     (00000482) const-string         v3, 'Get the packages that the user cannot force stop or clear data for.'
+	266     (00000486) invoke-virtual       v2, v3, Lcom/afwsamples/testdpc/util/Flags$RegisteredCommand$Builder;->setDescription(Ljava/lang/String;)Lcom/afwsamples/testdpc/util/Flags$RegisteredCommand$Builder;
+	267     (0000048c) move-result-object   v2
+	268     (0000048e) invoke-virtual       v1, v2, Lcom/afwsamples/testdpc/util/Flags;->addCommand(Lcom/afwsamples/testdpc/util/Flags$RegisteredCommand$Builder;)V
+	269     (00000494) const-string         v2, 'remove-active-admin'
+	270     (00000498) new-instance         v3, Lcom/afwsamples/testdpc/ShellCommand$$Lambda$24;
+	271     (0000049c) invoke-direct        v3, v8, Lcom/afwsamples/testdpc/ShellCommand$$Lambda$24;-><init>(Lcom/afwsamples/testdpc/ShellCommand;)V
+	272     (000004a2) invoke-static        v2, v3, Lcom/afwsamples/testdpc/util/Flags;->command(Ljava/lang/String; Lcom/afwsamples/testdpc/util/Flags$CommandCallback0Params;)Lcom/afwsamples/testdpc/util/Flags$RegisteredCommand$Builder;
+	273     (000004a8) move-result-object   v2
+	274     (000004aa) const-string         v3, 'Remove TestDPC as an active admin.'
+	275     (000004ae) invoke-virtual       v2, v3, Lcom/afwsamples/testdpc/util/Flags$RegisteredCommand$Builder;->setDescription(Ljava/lang/String;)Lcom/afwsamples/testdpc/util/Flags$RegisteredCommand$Builder;
+	276     (000004b4) move-result-object   v2
+	277     (000004b6) invoke-virtual       v1, v2, Lcom/afwsamples/testdpc/util/Flags;->addCommand(Lcom/afwsamples/testdpc/util/Flags$RegisteredCommand$Builder;)V
+	278     (000004bc) const-string         v2, 'clear-device-owner'
+	279     (000004c0) new-instance         v3, Lcom/afwsamples/testdpc/ShellCommand$$Lambda$25;
+	280     (000004c4) invoke-direct        v3, v8, Lcom/afwsamples/testdpc/ShellCommand$$Lambda$25;-><init>(Lcom/afwsamples/testdpc/ShellCommand;)V
+	281     (000004ca) invoke-static        v2, v3, Lcom/afwsamples/testdpc/util/Flags;->command(Ljava/lang/String; Lcom/afwsamples/testdpc/util/Flags$CommandCallback0Params;)Lcom/afwsamples/testdpc/util/Flags$RegisteredCommand$Builder;
+	282     (000004d0) move-result-object   v2
+	283     (000004d2) const-string         v3, 'Clear TestDPC as device owner.'
+	284     (000004d6) invoke-virtual       v2, v3, Lcom/afwsamples/testdpc/util/Flags$RegisteredCommand$Builder;->setDescription(Ljava/lang/String;)Lcom/afwsamples/testdpc/util/Flags$RegisteredCommand$Builder;
+	285     (000004dc) move-result-object   v2
+	286     (000004de) invoke-virtual       v1, v2, Lcom/afwsamples/testdpc/util/Flags;->addCommand(Lcom/afwsamples/testdpc/util/Flags$RegisteredCommand$Builder;)V
+	287     (000004e4) const-string         v2, 'clear-profile-owner'
+	288     (000004e8) new-instance         v3, Lcom/afwsamples/testdpc/ShellCommand$$Lambda$26;
+	289     (000004ec) invoke-direct        v3, v8, Lcom/afwsamples/testdpc/ShellCommand$$Lambda$26;-><init>(Lcom/afwsamples/testdpc/ShellCommand;)V
+	290     (000004f2) invoke-static        v2, v3, Lcom/afwsamples/testdpc/util/Flags;->command(Ljava/lang/String; Lcom/afwsamples/testdpc/util/Flags$CommandCallback0Params;)Lcom/afwsamples/testdpc/util/Flags$RegisteredCommand$Builder;
+	291     (000004f8) move-result-object   v2
+	292     (000004fa) const-string         v3, 'Clear TestDPC as profile owner.'
+	293     (000004fe) invoke-virtual       v2, v3, Lcom/afwsamples/testdpc/util/Flags$RegisteredCommand$Builder;->setDescription(Ljava/lang/String;)Lcom/afwsamples/testdpc/util/Flags$RegisteredCommand$Builder;
+	294     (00000504) move-result-object   v2
+	295     (00000506) invoke-virtual       v1, v2, Lcom/afwsamples/testdpc/util/Flags;->addCommand(Lcom/afwsamples/testdpc/util/Flags$RegisteredCommand$Builder;)V
+	296     (0000050c) const-string         v2, 'set-password-quality'
+	297     (00000510) new-instance         v3, Lcom/afwsamples/testdpc/ShellCommand$$Lambda$27;
+	298     (00000514) invoke-direct        v3, v8, Lcom/afwsamples/testdpc/ShellCommand$$Lambda$27;-><init>(Lcom/afwsamples/testdpc/ShellCommand;)V
+	299     (0000051a) sget-object          v4, Ljava/lang/Integer;->TYPE Ljava/lang/Class;
+	300     (0000051e) const-string         v5, 'quality'
+	301     (00000522) invoke-static        v4, v5, Lcom/afwsamples/testdpc/util/Flags;->ordinalParam(Ljava/lang/Class; Ljava/lang/String;)Lcom/afwsamples/testdpc/util/Flags$OrdinalParam;
+	302     (00000528) move-result-object   v4
+	303     (0000052a) invoke-static        v2, v3, v4, Lcom/afwsamples/testdpc/util/Flags;->command(Ljava/lang/String; Lcom/afwsamples/testdpc/util/Flags$CommandCallback1Params; Lcom/afwsamples/testdpc/util/Flags$Param;)Lcom/afwsamples/testdpc/util/Flags$RegisteredCommand$Builder;
+	304     (00000530) move-result-object   v2
+	305     (00000532) const-string         v3, 'Set the password quality.'
+	306     (00000536) invoke-virtual       v2, v3, Lcom/afwsamples/testdpc/util/Flags$RegisteredCommand$Builder;->setDescription(Ljava/lang/String;)Lcom/afwsamples/testdpc/util/Flags$RegisteredCommand$Builder;
+	307     (0000053c) move-result-object   v2
+	308     (0000053e) invoke-virtual       v1, v2, Lcom/afwsamples/testdpc/util/Flags;->addCommand(Lcom/afwsamples/testdpc/util/Flags$RegisteredCommand$Builder;)V
+	309     (00000544) const-string         v2, 'get-password-quality'
+	310     (00000548) new-instance         v3, Lcom/afwsamples/testdpc/ShellCommand$$Lambda$28;
+	311     (0000054c) invoke-direct        v3, v8, Lcom/afwsamples/testdpc/ShellCommand$$Lambda$28;-><init>(Lcom/afwsamples/testdpc/ShellCommand;)V
+	312     (00000552) invoke-static        v2, v3, Lcom/afwsamples/testdpc/util/Flags;->command(Ljava/lang/String; Lcom/afwsamples/testdpc/util/Flags$CommandCallback0Params;)Lcom/afwsamples/testdpc/util/Flags$RegisteredCommand$Builder;
+	313     (00000558) move-result-object   v2
+	314     (0000055a) const-string         v3, 'Get the password quality.'
+	315     (0000055e) invoke-virtual       v2, v3, Lcom/afwsamples/testdpc/util/Flags$RegisteredCommand$Builder;->setDescription(Ljava/lang/String;)Lcom/afwsamples/testdpc/util/Flags$RegisteredCommand$Builder;
+	316     (00000564) move-result-object   v2
+	317     (00000566) invoke-virtual       v1, v2, Lcom/afwsamples/testdpc/util/Flags;->addCommand(Lcom/afwsamples/testdpc/util/Flags$RegisteredCommand$Builder;)V
+	318     (0000056c) const-string         v2, 'set-required-password-complexity'
+	319     (00000570) new-instance         v3, Lcom/afwsamples/testdpc/ShellCommand$$Lambda$29;
+	320     (00000574) invoke-direct        v3, v8, Lcom/afwsamples/testdpc/ShellCommand$$Lambda$29;-><init>(Lcom/afwsamples/testdpc/ShellCommand;)V
+	321     (0000057a) sget-object          v4, Ljava/lang/Integer;->TYPE Ljava/lang/Class;
+	322     (0000057e) const-string         v5, 'complexity'
+	323     (00000582) invoke-static        v4, v5, Lcom/afwsamples/testdpc/util/Flags;->ordinalParam(Ljava/lang/Class; Ljava/lang/String;)Lcom/afwsamples/testdpc/util/Flags$OrdinalParam;
+	324     (00000588) move-result-object   v4
+	325     (0000058a) invoke-static        v2, v3, v4, Lcom/afwsamples/testdpc/util/Flags;->command(Ljava/lang/String; Lcom/afwsamples/testdpc/util/Flags$CommandCallback1Params; Lcom/afwsamples/testdpc/util/Flags$Param;)Lcom/afwsamples/testdpc/util/Flags$RegisteredCommand$Builder;
+	326     (00000590) move-result-object   v2
+	327     (00000592) const-string         v3, 'Set the required password complexity.'
+	328     (00000596) invoke-virtual       v2, v3, Lcom/afwsamples/testdpc/util/Flags$RegisteredCommand$Builder;->setDescription(Ljava/lang/String;)Lcom/afwsamples/testdpc/util/Flags$RegisteredCommand$Builder;
+	329     (0000059c) move-result-object   v2
+	330     (0000059e) invoke-virtual       v1, v2, Lcom/afwsamples/testdpc/util/Flags;->addCommand(Lcom/afwsamples/testdpc/util/Flags$RegisteredCommand$Builder;)V
+	331     (000005a4) const-string         v2, 'get-required-password-complexity'
+	332     (000005a8) new-instance         v3, Lcom/afwsamples/testdpc/ShellCommand$$Lambda$30;
+	333     (000005ac) invoke-direct        v3, v8, Lcom/afwsamples/testdpc/ShellCommand$$Lambda$30;-><init>(Lcom/afwsamples/testdpc/ShellCommand;)V
+	334     (000005b2) invoke-static        v2, v3, Lcom/afwsamples/testdpc/util/Flags;->command(Ljava/lang/String; Lcom/afwsamples/testdpc/util/Flags$CommandCallback0Params;)Lcom/afwsamples/testdpc/util/Flags$RegisteredCommand$Builder;
+	335     (000005b8) move-result-object   v2
+	336     (000005ba) const-string         v3, 'Get required the password complexity.'
+	337     (000005be) invoke-virtual       v2, v3, Lcom/afwsamples/testdpc/util/Flags$RegisteredCommand$Builder;->setDescription(Ljava/lang/String;)Lcom/afwsamples/testdpc/util/Flags$RegisteredCommand$Builder;
+	338     (000005c4) move-result-object   v2
+	339     (000005c6) invoke-virtual       v1, v2, Lcom/afwsamples/testdpc/util/Flags;->addCommand(Lcom/afwsamples/testdpc/util/Flags$RegisteredCommand$Builder;)V
+	340     (000005cc) const-string         v2, 'transfer-ownership'
+	341     (000005d0) new-instance         v3, Lcom/afwsamples/testdpc/ShellCommand$$Lambda$31;
+	342     (000005d4) invoke-direct        v3, v8, Lcom/afwsamples/testdpc/ShellCommand$$Lambda$31;-><init>(Lcom/afwsamples/testdpc/ShellCommand;)V
+	343     (000005da) const-class          v4, Ljava/lang/String;
+	344     (000005de) const-string         v5, 'admin'
+	345     (000005e2) invoke-static        v4, v5, Lcom/afwsamples/testdpc/util/Flags;->ordinalParam(Ljava/lang/Class; Ljava/lang/String;)Lcom/afwsamples/testdpc/util/Flags$OrdinalParam;
+	346     (000005e8) move-result-object   v4
+	347     (000005ea) invoke-static        v2, v3, v4, Lcom/afwsamples/testdpc/util/Flags;->command(Ljava/lang/String; Lcom/afwsamples/testdpc/util/Flags$CommandCallback1Params; Lcom/afwsamples/testdpc/util/Flags$Param;)Lcom/afwsamples/testdpc/util/Flags$RegisteredCommand$Builder;
+	348     (000005f0) move-result-object   v2
+	349     (000005f2) const-string         v3, 'Transfer ownership to the given admin.'
+	350     (000005f6) invoke-virtual       v2, v3, Lcom/afwsamples/testdpc/util/Flags$RegisteredCommand$Builder;->setDescription(Ljava/lang/String;)Lcom/afwsamples/testdpc/util/Flags$RegisteredCommand$Builder;
+	351     (000005fc) move-result-object   v2
+	352     (000005fe) invoke-virtual       v1, v2, Lcom/afwsamples/testdpc/util/Flags;->addCommand(Lcom/afwsamples/testdpc/util/Flags$RegisteredCommand$Builder;)V
+	353     (00000604) const-string         v2, 'set-suspended-packages'
+	354     (00000608) new-instance         v3, Lcom/afwsamples/testdpc/ShellCommand$$Lambda$32;
+	355     (0000060c) invoke-direct        v3, v8, Lcom/afwsamples/testdpc/ShellCommand$$Lambda$32;-><init>(Lcom/afwsamples/testdpc/ShellCommand;)V
+	356     (00000612) sget-object          v4, Ljava/lang/Boolean;->TYPE Ljava/lang/Class;
+	357     (00000616) const-string         v5, 'suspended'
+	358     (0000061a) invoke-static        v4, v5, Lcom/afwsamples/testdpc/util/Flags;->ordinalParam(Ljava/lang/Class; Ljava/lang/String;)Lcom/afwsamples/testdpc/util/Flags$OrdinalParam;
+	359     (00000620) move-result-object   v4
+	360     (00000622) const-class          v5, Ljava/lang/String;
+	361     (00000626) const-string         v6, 'packageNames'
+	362     (0000062a) invoke-static        v5, v6, Lcom/afwsamples/testdpc/util/Flags;->ordinalParam(Ljava/lang/Class; Ljava/lang/String;)Lcom/afwsamples/testdpc/util/Flags$OrdinalParam;
+	363     (00000630) move-result-object   v5
+	364     (00000632) invoke-static        v5, Lcom/afwsamples/testdpc/util/Flags;->repeated(Lcom/afwsamples/testdpc/util/Flags$OrdinalParam;)Lcom/afwsamples/testdpc/util/Flags$RepeatedOrdinalParam;
+	365     (00000638) move-result-object   v5
+	366     (0000063a) invoke-static        v2, v3, v4, v5, Lcom/afwsamples/testdpc/util/Flags;->command(Ljava/lang/String; Lcom/afwsamples/testdpc/util/Flags$CommandCallback2Params; Lcom/afwsamples/testdpc/util/Flags$Param; Lcom/afwsamples/testdpc/util/Flags$Param;)Lcom/afwsamples/testdpc/util/Flags$RegisteredCommand$Builder;
+	367     (00000640) move-result-object   v2
+	368     (00000642) const-string         v3, 'Suspend / unsuspend the given packages.'
+	369     (00000646) invoke-virtual       v2, v3, Lcom/afwsamples/testdpc/util/Flags$RegisteredCommand$Builder;->setDescription(Ljava/lang/String;)Lcom/afwsamples/testdpc/util/Flags$RegisteredCommand$Builder;
+	370     (0000064c) move-result-object   v2
+	371     (0000064e) invoke-virtual       v1, v2, Lcom/afwsamples/testdpc/util/Flags;->addCommand(Lcom/afwsamples/testdpc/util/Flags$RegisteredCommand$Builder;)V
+	372     (00000654) const-string         v2, 'is-suspended-packages'
+	373     (00000658) new-instance         v3, Lcom/afwsamples/testdpc/ShellCommand$$Lambda$33;
+	374     (0000065c) invoke-direct        v3, v8, Lcom/afwsamples/testdpc/ShellCommand$$Lambda$33;-><init>(Lcom/afwsamples/testdpc/ShellCommand;)V
+	375     (00000662) const-class          v4, Ljava/lang/String;
+	376     (00000666) const-string         v5, 'packageNames'
+	377     (0000066a) invoke-static        v4, v5, Lcom/afwsamples/testdpc/util/Flags;->ordinalParam(Ljava/lang/Class; Ljava/lang/String;)Lcom/afwsamples/testdpc/util/Flags$OrdinalParam;
+	378     (00000670) move-result-object   v4
+	379     (00000672) invoke-static        v4, Lcom/afwsamples/testdpc/util/Flags;->repeated(Lcom/afwsamples/testdpc/util/Flags$OrdinalParam;)Lcom/afwsamples/testdpc/util/Flags$RepeatedOrdinalParam;
+	380     (00000678) move-result-object   v4
+	381     (0000067a) invoke-static        v2, v3, v4, Lcom/afwsamples/testdpc/util/Flags;->command(Ljava/lang/String; Lcom/afwsamples/testdpc/util/Flags$CommandCallback1Params; Lcom/afwsamples/testdpc/util/Flags$Param;)Lcom/afwsamples/testdpc/util/Flags$RegisteredCommand$Builder;
+	382     (00000680) move-result-object   v2
+	383     (00000682) const-string         v3, 'Check if the given packages are suspended.'
+	384     (00000686) invoke-virtual       v2, v3, Lcom/afwsamples/testdpc/util/Flags$RegisteredCommand$Builder;->setDescription(Ljava/lang/String;)Lcom/afwsamples/testdpc/util/Flags$RegisteredCommand$Builder;
+	385     (0000068c) move-result-object   v2
+	386     (0000068e) invoke-virtual       v1, v2, Lcom/afwsamples/testdpc/util/Flags;->addCommand(Lcom/afwsamples/testdpc/util/Flags$RegisteredCommand$Builder;)V
+	387     (00000694) const-string         v2, 'set-personal-apps-suspended'
+	388     (00000698) new-instance         v3, Lcom/afwsamples/testdpc/ShellCommand$$Lambda$34;
+	389     (0000069c) invoke-direct        v3, v8, Lcom/afwsamples/testdpc/ShellCommand$$Lambda$34;-><init>(Lcom/afwsamples/testdpc/ShellCommand;)V
+	390     (000006a2) sget-object          v4, Ljava/lang/Boolean;->TYPE Ljava/lang/Class;
+	391     (000006a6) const-string         v5, 'suspended'
+	392     (000006aa) invoke-static        v4, v5, Lcom/afwsamples/testdpc/util/Flags;->ordinalParam(Ljava/lang/Class; Ljava/lang/String;)Lcom/afwsamples/testdpc/util/Flags$OrdinalParam;
+	393     (000006b0) move-result-object   v4
+	394     (000006b2) invoke-static        v2, v3, v4, Lcom/afwsamples/testdpc/util/Flags;->command(Ljava/lang/String; Lcom/afwsamples/testdpc/util/Flags$CommandCallback1Params; Lcom/afwsamples/testdpc/util/Flags$Param;)Lcom/afwsamples/testdpc/util/Flags$RegisteredCommand$Builder;
+	395     (000006b8) move-result-object   v2
+	396     (000006ba) const-string         v3, 'Suspend / unsuspend personal apps.'
+	397     (000006be) invoke-virtual       v2, v3, Lcom/afwsamples/testdpc/util/Flags$RegisteredCommand$Builder;->setDescription(Ljava/lang/String;)Lcom/afwsamples/testdpc/util/Flags$RegisteredCommand$Builder;
+	398     (000006c4) move-result-object   v2
+	399     (000006c6) invoke-virtual       v1, v2, Lcom/afwsamples/testdpc/util/Flags;->addCommand(Lcom/afwsamples/testdpc/util/Flags$RegisteredCommand$Builder;)V
+	400     (000006cc) const-string         v2, 'enable-system-app'
+	401     (000006d0) new-instance         v3, Lcom/afwsamples/testdpc/ShellCommand$$Lambda$35;
+	402     (000006d4) invoke-direct        v3, v8, Lcom/afwsamples/testdpc/ShellCommand$$Lambda$35;-><init>(Lcom/afwsamples/testdpc/ShellCommand;)V
+	403     (000006da) const-class          v4, Ljava/lang/String;
+	404     (000006de) const-string         v5, 'packageName'
+	405     (000006e2) invoke-static        v4, v5, Lcom/afwsamples/testdpc/util/Flags;->ordinalParam(Ljava/lang/Class; Ljava/lang/String;)Lcom/afwsamples/testdpc/util/Flags$OrdinalParam;
+	406     (000006e8) move-result-object   v4
+	407     (000006ea) invoke-static        v2, v3, v4, Lcom/afwsamples/testdpc/util/Flags;->command(Ljava/lang/String; Lcom/afwsamples/testdpc/util/Flags$CommandCallback1Params; Lcom/afwsamples/testdpc/util/Flags$Param;)Lcom/afwsamples/testdpc/util/Flags$RegisteredCommand$Builder;
+	408     (000006f0) move-result-object   v2
+	409     (000006f2) const-string         v3, 'Enable the given system app.'
+	410     (000006f6) invoke-virtual       v2, v3, Lcom/afwsamples/testdpc/util/Flags$RegisteredCommand$Builder;->setDescription(Ljava/lang/String;)Lcom/afwsamples/testdpc/util/Flags$RegisteredCommand$Builder;
+	411     (000006fc) move-result-object   v2
+	412     (000006fe) invoke-virtual       v1, v2, Lcom/afwsamples/testdpc/util/Flags;->addCommand(Lcom/afwsamples/testdpc/util/Flags$RegisteredCommand$Builder;)V
+	413     (00000704) const-string         v2, 'list-disabled-system-apps'
+	414     (00000708) new-instance         v3, Lcom/afwsamples/testdpc/ShellCommand$$Lambda$36;
+	415     (0000070c) invoke-direct        v3, v8, Lcom/afwsamples/testdpc/ShellCommand$$Lambda$36;-><init>(Lcom/afwsamples/testdpc/ShellCommand;)V
+	416     (00000712) invoke-static        v2, v3, Lcom/afwsamples/testdpc/util/Flags;->command(Ljava/lang/String; Lcom/afwsamples/testdpc/util/Flags$CommandCallback0Params;)Lcom/afwsamples/testdpc/util/Flags$RegisteredCommand$Builder;
+	417     (00000718) move-result-object   v2
+	418     (0000071a) const-string         v3, 'List the disabled system apps.'
+	419     (0000071e) invoke-virtual       v2, v3, Lcom/afwsamples/testdpc/util/Flags$RegisteredCommand$Builder;->setDescription(Ljava/lang/String;)Lcom/afwsamples/testdpc/util/Flags$RegisteredCommand$Builder;
+	420     (00000724) move-result-object   v2
+	421     (00000726) invoke-virtual       v1, v2, Lcom/afwsamples/testdpc/util/Flags;->addCommand(Lcom/afwsamples/testdpc/util/Flags$RegisteredCommand$Builder;)V
+	422     (0000072c) const-string         v2, 'get-personal-apps-suspended-reasons'
+	423     (00000730) new-instance         v3, Lcom/afwsamples/testdpc/ShellCommand$$Lambda$37;
+	424     (00000734) invoke-direct        v3, v8, Lcom/afwsamples/testdpc/ShellCommand$$Lambda$37;-><init>(Lcom/afwsamples/testdpc/ShellCommand;)V
+	425     (0000073a) invoke-static        v2, v3, Lcom/afwsamples/testdpc/util/Flags;->command(Ljava/lang/String; Lcom/afwsamples/testdpc/util/Flags$CommandCallback0Params;)Lcom/afwsamples/testdpc/util/Flags$RegisteredCommand$Builder;
+	426     (00000740) move-result-object   v2
+	427     (00000742) const-string         v3, 'Get the reasons for suspending personal apps.'
+	428     (00000746) invoke-virtual       v2, v3, Lcom/afwsamples/testdpc/util/Flags$RegisteredCommand$Builder;->setDescription(Ljava/lang/String;)Lcom/afwsamples/testdpc/util/Flags$RegisteredCommand$Builder;
+	429     (0000074c) move-result-object   v2
+	430     (0000074e) invoke-virtual       v1, v2, Lcom/afwsamples/testdpc/util/Flags;->addCommand(Lcom/afwsamples/testdpc/util/Flags$RegisteredCommand$Builder;)V
+	431     (00000754) const-string         v2, 'set-hidden-package'
+	432     (00000758) new-instance         v3, Lcom/afwsamples/testdpc/ShellCommand$$Lambda$38;
+	433     (0000075c) invoke-direct        v3, v8, Lcom/afwsamples/testdpc/ShellCommand$$Lambda$38;-><init>(Lcom/afwsamples/testdpc/ShellCommand;)V
+	434     (00000762) const-class          v4, Ljava/lang/String;
+	435     (00000766) const-string         v5, 'package'
+	436     (0000076a) invoke-static        v4, v5, Lcom/afwsamples/testdpc/util/Flags;->ordinalParam(Ljava/lang/Class; Ljava/lang/String;)Lcom/afwsamples/testdpc/util/Flags$OrdinalParam;
+	437     (00000770) move-result-object   v4
+	438     (00000772) sget-object          v5, Ljava/lang/Boolean;->TYPE Ljava/lang/Class;
+	439     (00000776) const-string         v6, 'hidden'
+	440     (0000077a) invoke-static        v5, v6, Lcom/afwsamples/testdpc/util/Flags;->ordinalParam(Ljava/lang/Class; Ljava/lang/String;)Lcom/afwsamples/testdpc/util/Flags$OrdinalParam;
+	441     (00000780) move-result-object   v5
+	442     (00000782) invoke-static        v2, v3, v4, v5, Lcom/afwsamples/testdpc/util/Flags;->command(Ljava/lang/String; Lcom/afwsamples/testdpc/util/Flags$CommandCallback2Params; Lcom/afwsamples/testdpc/util/Flags$Param; Lcom/afwsamples/testdpc/util/Flags$Param;)Lcom/afwsamples/testdpc/util/Flags$RegisteredCommand$Builder;
+	443     (00000788) move-result-object   v2
+	444     (0000078a) const-string         v3, 'Hide / unhide the given package.'
+	445     (0000078e) invoke-virtual       v2, v3, Lcom/afwsamples/testdpc/util/Flags$RegisteredCommand$Builder;->setDescription(Ljava/lang/String;)Lcom/afwsamples/testdpc/util/Flags$RegisteredCommand$Builder;
+	446     (00000794) move-result-object   v2
+	447     (00000796) invoke-virtual       v1, v2, Lcom/afwsamples/testdpc/util/Flags;->addCommand(Lcom/afwsamples/testdpc/util/Flags$RegisteredCommand$Builder;)V
+	448     (0000079c) const-string         v2, 'is-hidden-package'
+	449     (000007a0) new-instance         v3, Lcom/afwsamples/testdpc/ShellCommand$$Lambda$39;
+	450     (000007a4) invoke-direct        v3, v8, Lcom/afwsamples/testdpc/ShellCommand$$Lambda$39;-><init>(Lcom/afwsamples/testdpc/ShellCommand;)V
+	451     (000007aa) const-class          v4, Ljava/lang/String;
+	452     (000007ae) const-string         v5, 'package'
+	453     (000007b2) invoke-static        v4, v5, Lcom/afwsamples/testdpc/util/Flags;->ordinalParam(Ljava/lang/Class; Ljava/lang/String;)Lcom/afwsamples/testdpc/util/Flags$OrdinalParam;
+	454     (000007b8) move-result-object   v4
+	455     (000007ba) invoke-static        v2, v3, v4, Lcom/afwsamples/testdpc/util/Flags;->command(Ljava/lang/String; Lcom/afwsamples/testdpc/util/Flags$CommandCallback1Params; Lcom/afwsamples/testdpc/util/Flags$Param;)Lcom/afwsamples/testdpc/util/Flags$RegisteredCommand$Builder;
+	456     (000007c0) move-result-object   v2
+	457     (000007c2) const-string         v3, 'Check if the given package is hidden.'
+	458     (000007c6) invoke-virtual       v2, v3, Lcom/afwsamples/testdpc/util/Flags$RegisteredCommand$Builder;->setDescription(Ljava/lang/String;)Lcom/afwsamples/testdpc/util/Flags$RegisteredCommand$Builder;
+	459     (000007cc) move-result-object   v2
+	460     (000007ce) invoke-virtual       v1, v2, Lcom/afwsamples/testdpc/util/Flags;->addCommand(Lcom/afwsamples/testdpc/util/Flags$RegisteredCommand$Builder;)V
+	461     (000007d4) const-string         v2, 'set-lock-task-packages'
+	462     (000007d8) new-instance         v3, Lcom/afwsamples/testdpc/ShellCommand$$Lambda$40;
+	463     (000007dc) invoke-direct        v3, v8, Lcom/afwsamples/testdpc/ShellCommand$$Lambda$40;-><init>(Lcom/afwsamples/testdpc/ShellCommand;)V
+	464     (000007e2) const-class          v4, Ljava/lang/String;
+	465     (000007e6) const-string         v5, 'packages'
+	466     (000007ea) invoke-static        v4, v5, Lcom/afwsamples/testdpc/util/Flags;->ordinalParam(Ljava/lang/Class; Ljava/lang/String;)Lcom/afwsamples/testdpc/util/Flags$OrdinalParam;
+	467     (000007f0) move-result-object   v4
+	468     (000007f2) invoke-static        v4, Lcom/afwsamples/testdpc/util/Flags;->repeated(Lcom/afwsamples/testdpc/util/Flags$OrdinalParam;)Lcom/afwsamples/testdpc/util/Flags$RepeatedOrdinalParam;
+	469     (000007f8) move-result-object   v4
+	470     (000007fa) invoke-static        v2, v3, v4, Lcom/afwsamples/testdpc/util/Flags;->command(Ljava/lang/String; Lcom/afwsamples/testdpc/util/Flags$CommandCallback1Params; Lcom/afwsamples/testdpc/util/Flags$Param;)Lcom/afwsamples/testdpc/util/Flags$RegisteredCommand$Builder;
+	471     (00000800) move-result-object   v2
+	472     (00000802) const-string         v3, 'Set the packages allowed to have tasks locked.'
+	473     (00000806) invoke-virtual       v2, v3, Lcom/afwsamples/testdpc/util/Flags$RegisteredCommand$Builder;->setDescription(Ljava/lang/String;)Lcom/afwsamples/testdpc/util/Flags$RegisteredCommand$Builder;
+	474     (0000080c) move-result-object   v2
+	475     (0000080e) invoke-virtual       v1, v2, Lcom/afwsamples/testdpc/util/Flags;->addCommand(Lcom/afwsamples/testdpc/util/Flags$RegisteredCommand$Builder;)V
+	476     (00000814) const-string         v2, 'get-lock-task-packages'
+	477     (00000818) new-instance         v3, Lcom/afwsamples/testdpc/ShellCommand$$Lambda$41;
+	478     (0000081c) invoke-direct        v3, v8, Lcom/afwsamples/testdpc/ShellCommand$$Lambda$41;-><init>(Lcom/afwsamples/testdpc/ShellCommand;)V
+	479     (00000822) invoke-static        v2, v3, Lcom/afwsamples/testdpc/util/Flags;->command(Ljava/lang/String; Lcom/afwsamples/testdpc/util/Flags$CommandCallback0Params;)Lcom/afwsamples/testdpc/util/Flags$RegisteredCommand$Builder;
+	480     (00000828) move-result-object   v2
+	481     (0000082a) const-string         v3, 'Get the packages allowed to have tasks locked.'
+	482     (0000082e) invoke-virtual       v2, v3, Lcom/afwsamples/testdpc/util/Flags$RegisteredCommand$Builder;->setDescription(Ljava/lang/String;)Lcom/afwsamples/testdpc/util/Flags$RegisteredCommand$Builder;
+	483     (00000834) move-result-object   v2
+	484     (00000836) invoke-virtual       v1, v2, Lcom/afwsamples/testdpc/util/Flags;->addCommand(Lcom/afwsamples/testdpc/util/Flags$RegisteredCommand$Builder;)V
+	485     (0000083c) const-string         v2, 'is-lock-task-permitted'
+	486     (00000840) new-instance         v3, Lcom/afwsamples/testdpc/ShellCommand$$Lambda$42;
+	487     (00000844) invoke-direct        v3, v8, Lcom/afwsamples/testdpc/ShellCommand$$Lambda$42;-><init>(Lcom/afwsamples/testdpc/ShellCommand;)V
+	488     (0000084a) const-class          v4, Ljava/lang/String;
+	489     (0000084e) const-string         v5, 'packages'
+	490     (00000852) invoke-static        v4, v5, Lcom/afwsamples/testdpc/util/Flags;->ordinalParam(Ljava/lang/Class; Ljava/lang/String;)Lcom/afwsamples/testdpc/util/Flags$OrdinalParam;
+	491     (00000858) move-result-object   v4
+	492     (0000085a) invoke-static        v4, Lcom/afwsamples/testdpc/util/Flags;->repeated(Lcom/afwsamples/testdpc/util/Flags$OrdinalParam;)Lcom/afwsamples/testdpc/util/Flags$RepeatedOrdinalParam;
+	493     (00000860) move-result-object   v4
+	494     (00000862) invoke-static        v2, v3, v4, Lcom/afwsamples/testdpc/util/Flags;->command(Ljava/lang/String; Lcom/afwsamples/testdpc/util/Flags$CommandCallback1Params; Lcom/afwsamples/testdpc/util/Flags$Param;)Lcom/afwsamples/testdpc/util/Flags$RegisteredCommand$Builder;
+	495     (00000868) move-result-object   v2
+	496     (0000086a) const-string         v3, 'Check if the given packages are allowed to have tasks locked.'
+	497     (0000086e) invoke-virtual       v2, v3, Lcom/afwsamples/testdpc/util/Flags$RegisteredCommand$Builder;->setDescription(Ljava/lang/String;)Lcom/afwsamples/testdpc/util/Flags$RegisteredCommand$Builder;
+	498     (00000874) move-result-object   v2
+	499     (00000876) invoke-virtual       v1, v2, Lcom/afwsamples/testdpc/util/Flags;->addCommand(Lcom/afwsamples/testdpc/util/Flags$RegisteredCommand$Builder;)V
+	500     (0000087c) const-string         v2, 'set-lock-task-features'
+	501     (00000880) new-instance         v3, Lcom/afwsamples/testdpc/ShellCommand$$Lambda$43;
+	502     (00000884) invoke-direct        v3, v8, Lcom/afwsamples/testdpc/ShellCommand$$Lambda$43;-><init>(Lcom/afwsamples/testdpc/ShellCommand;)V
+	503     (0000088a) sget-object          v4, Ljava/lang/Integer;->TYPE Ljava/lang/Class;
+	504     (0000088e) const-string         v5, 'flags'
+	505     (00000892) invoke-static        v4, v5, Lcom/afwsamples/testdpc/util/Flags;->ordinalParam(Ljava/lang/Class; Ljava/lang/String;)Lcom/afwsamples/testdpc/util/Flags$OrdinalParam;
+	506     (00000898) move-result-object   v4
+	507     (0000089a) invoke-static        v2, v3, v4, Lcom/afwsamples/testdpc/util/Flags;->command(Ljava/lang/String; Lcom/afwsamples/testdpc/util/Flags$CommandCallback1Params; Lcom/afwsamples/testdpc/util/Flags$Param;)Lcom/afwsamples/testdpc/util/Flags$RegisteredCommand$Builder;
+	508     (000008a0) move-result-object   v2
+	509     (000008a2) const-string         v3, 'Set the lock task features.'
+	510     (000008a6) invoke-virtual       v2, v3, Lcom/afwsamples/testdpc/util/Flags$RegisteredCommand$Builder;->setDescription(Ljava/lang/String;)Lcom/afwsamples/testdpc/util/Flags$RegisteredCommand$Builder;
+	511     (000008ac) move-result-object   v2
+	512     (000008ae) invoke-virtual       v1, v2, Lcom/afwsamples/testdpc/util/Flags;->addCommand(Lcom/afwsamples/testdpc/util/Flags$RegisteredCommand$Builder;)V
+	513     (000008b4) const-string         v2, 'get-lock-task-features'
+	514     (000008b8) new-instance         v3, Lcom/afwsamples/testdpc/ShellCommand$$Lambda$44;
+	515     (000008bc) invoke-direct        v3, v8, Lcom/afwsamples/testdpc/ShellCommand$$Lambda$44;-><init>(Lcom/afwsamples/testdpc/ShellCommand;)V
+	516     (000008c2) invoke-static        v2, v3, Lcom/afwsamples/testdpc/util/Flags;->command(Ljava/lang/String; Lcom/afwsamples/testdpc/util/Flags$CommandCallback0Params;)Lcom/afwsamples/testdpc/util/Flags$RegisteredCommand$Builder;
+	517     (000008c8) move-result-object   v2
+	518     (000008ca) const-string         v3, 'Get the lock task features.'
+	519     (000008ce) invoke-virtual       v2, v3, Lcom/afwsamples/testdpc/util/Flags$RegisteredCommand$Builder;->setDescription(Ljava/lang/String;)Lcom/afwsamples/testdpc/util/Flags$RegisteredCommand$Builder;
+	520     (000008d4) move-result-object   v2
+	521     (000008d6) invoke-virtual       v1, v2, Lcom/afwsamples/testdpc/util/Flags;->addCommand(Lcom/afwsamples/testdpc/util/Flags$RegisteredCommand$Builder;)V
+	522     (000008dc) const-string         v2, 'set-app-restrictions'
+	523     (000008e0) new-instance         v3, Lcom/afwsamples/testdpc/ShellCommand$$Lambda$45;
+	524     (000008e4) invoke-direct        v3, v8, Lcom/afwsamples/testdpc/ShellCommand$$Lambda$45;-><init>(Lcom/afwsamples/testdpc/ShellCommand;)V
+	525     (000008ea) const-class          v4, Ljava/lang/String;
+	526     (000008ee) const-string         v5, 'package'
+	527     (000008f2) invoke-static        v4, v5, Lcom/afwsamples/testdpc/util/Flags;->ordinalParam(Ljava/lang/Class; Ljava/lang/String;)Lcom/afwsamples/testdpc/util/Flags$OrdinalParam;
+	528     (000008f8) move-result-object   v4
+	529     (000008fa) const-class          v5, Lcom/afwsamples/testdpc/ShellCommand$KeyValue;
+	530     (000008fe) const-string         v6, 'restrictions'
+	531     (00000902) invoke-static        v5, v6, Lcom/afwsamples/testdpc/util/Flags;->ordinalParam(Ljava/lang/Class; Ljava/lang/String;)Lcom/afwsamples/testdpc/util/Flags$OrdinalParam;
+	532     (00000908) move-result-object   v5
+	533     (0000090a) invoke-static        v5, Lcom/afwsamples/testdpc/util/Flags;->repeated(Lcom/afwsamples/testdpc/util/Flags$OrdinalParam;)Lcom/afwsamples/testdpc/util/Flags$RepeatedOrdinalParam;
+	534     (00000910) move-result-object   v5
+	535     (00000912) invoke-static        v2, v3, v4, v5, Lcom/afwsamples/testdpc/util/Flags;->command(Ljava/lang/String; Lcom/afwsamples/testdpc/util/Flags$CommandCallback2Params; Lcom/afwsamples/testdpc/util/Flags$Param; Lcom/afwsamples/testdpc/util/Flags$Param;)Lcom/afwsamples/testdpc/util/Flags$RegisteredCommand$Builder;
+	536     (00000918) move-result-object   v2
+	537     (0000091a) const-string         v3, 'Set the application restrictions (provided as key=value strings) for the given app (or clear if no values provided).'
+	538     (0000091e) invoke-virtual       v2, v3, Lcom/afwsamples/testdpc/util/Flags$RegisteredCommand$Builder;->setDescription(Ljava/lang/String;)Lcom/afwsamples/testdpc/util/Flags$RegisteredCommand$Builder;
+	539     (00000924) move-result-object   v2
+	540     (00000926) invoke-virtual       v1, v2, Lcom/afwsamples/testdpc/util/Flags;->addCommand(Lcom/afwsamples/testdpc/util/Flags$RegisteredCommand$Builder;)V
+	541     (0000092c) const-string         v2, 'get-app-restrictions'
+	542     (00000930) new-instance         v3, Lcom/afwsamples/testdpc/ShellCommand$$Lambda$46;
+	543     (00000934) invoke-direct        v3, v8, Lcom/afwsamples/testdpc/ShellCommand$$Lambda$46;-><init>(Lcom/afwsamples/testdpc/ShellCommand;)V
+	544     (0000093a) const-class          v4, Ljava/lang/String;
+	545     (0000093e) const-string         v5, 'packages'
+	546     (00000942) invoke-static        v4, v5, Lcom/afwsamples/testdpc/util/Flags;->ordinalParam(Ljava/lang/Class; Ljava/lang/String;)Lcom/afwsamples/testdpc/util/Flags$OrdinalParam;
+	547     (00000948) move-result-object   v4
+	548     (0000094a) invoke-static        v4, Lcom/afwsamples/testdpc/util/Flags;->repeated(Lcom/afwsamples/testdpc/util/Flags$OrdinalParam;)Lcom/afwsamples/testdpc/util/Flags$RepeatedOrdinalParam;
+	549     (00000950) move-result-object   v4
+	550     (00000952) invoke-static        v2, v3, v4, Lcom/afwsamples/testdpc/util/Flags;->command(Ljava/lang/String; Lcom/afwsamples/testdpc/util/Flags$CommandCallback1Params; Lcom/afwsamples/testdpc/util/Flags$Param;)Lcom/afwsamples/testdpc/util/Flags$RegisteredCommand$Builder;
+	551     (00000958) move-result-object   v2
+	552     (0000095a) const-string         v3, 'Get the application restrictions for the given apps (or for TestDPC when empty, using UserManager).'
+	553     (0000095e) invoke-virtual       v2, v3, Lcom/afwsamples/testdpc/util/Flags$RegisteredCommand$Builder;->setDescription(Ljava/lang/String;)Lcom/afwsamples/testdpc/util/Flags$RegisteredCommand$Builder;
+	554     (00000964) move-result-object   v2
+	555     (00000966) invoke-virtual       v1, v2, Lcom/afwsamples/testdpc/util/Flags;->addCommand(Lcom/afwsamples/testdpc/util/Flags$RegisteredCommand$Builder;)V
+	556     (0000096c) const-string         v2, 'set-permission-grant-state'
+	557     (00000970) new-instance         v3, Lcom/afwsamples/testdpc/ShellCommand$$Lambda$47;
+	558     (00000974) invoke-direct        v3, v8, Lcom/afwsamples/testdpc/ShellCommand$$Lambda$47;-><init>(Lcom/afwsamples/testdpc/ShellCommand;)V
+	559     (0000097a) const-class          v4, Ljava/lang/String;
+	560     (0000097e) const-string         v5, 'package'
+	561     (00000982) invoke-static        v4, v5, Lcom/afwsamples/testdpc/util/Flags;->ordinalParam(Ljava/lang/Class; Ljava/lang/String;)Lcom/afwsamples/testdpc/util/Flags$OrdinalParam;
+	562     (00000988) move-result-object   v4
+	563     (0000098a) const-class          v5, Ljava/lang/String;
+	564     (0000098e) const-string         v6, 'permission'
+	565     (00000992) invoke-static        v5, v6, Lcom/afwsamples/testdpc/util/Flags;->ordinalParam(Ljava/lang/Class; Ljava/lang/String;)Lcom/afwsamples/testdpc/util/Flags$OrdinalParam;
+	566     (00000998) move-result-object   v5
+	567     (0000099a) sget-object          v6, Ljava/lang/Integer;->TYPE Ljava/lang/Class;
+	568     (0000099e) const-string         v7, 'state'
+	569     (000009a2) invoke-static        v6, v7, Lcom/afwsamples/testdpc/util/Flags;->ordinalParam(Ljava/lang/Class; Ljava/lang/String;)Lcom/afwsamples/testdpc/util/Flags$OrdinalParam;
+	570     (000009a8) move-result-object   v6
+	571     (000009aa) invoke-static        v2, v3, v4, v5, v6, Lcom/afwsamples/testdpc/util/Flags;->command(Ljava/lang/String; Lcom/afwsamples/testdpc/util/Flags$CommandCallback3Params; Lcom/afwsamples/testdpc/util/Flags$Param; Lcom/afwsamples/testdpc/util/Flags$Param; Lcom/afwsamples/testdpc/util/Flags$Param;)Lcom/afwsamples/testdpc/util/Flags$RegisteredCommand$Builder;
+	572     (000009b0) move-result-object   v2
+	573     (000009b2) const-string         v3, 'Set the grant state for the given package and permission.'
+	574     (000009b6) invoke-virtual       v2, v3, Lcom/afwsamples/testdpc/util/Flags$RegisteredCommand$Builder;->setDescription(Ljava/lang/String;)Lcom/afwsamples/testdpc/util/Flags$RegisteredCommand$Builder;
+	575     (000009bc) move-result-object   v2
+	576     (000009be) invoke-virtual       v1, v2, Lcom/afwsamples/testdpc/util/Flags;->addCommand(Lcom/afwsamples/testdpc/util/Flags$RegisteredCommand$Builder;)V
+	577     (000009c4) const-string         v2, 'get-permission-grant-state'
+	578     (000009c8) new-instance         v3, Lcom/afwsamples/testdpc/ShellCommand$$Lambda$48;
+	579     (000009cc) invoke-direct        v3, v8, Lcom/afwsamples/testdpc/ShellCommand$$Lambda$48;-><init>(Lcom/afwsamples/testdpc/ShellCommand;)V
+	580     (000009d2) const-class          v4, Ljava/lang/String;
+	581     (000009d6) const-string         v5, 'package'
+	582     (000009da) invoke-static        v4, v5, Lcom/afwsamples/testdpc/util/Flags;->ordinalParam(Ljava/lang/Class; Ljava/lang/String;)Lcom/afwsamples/testdpc/util/Flags$OrdinalParam;
+	583     (000009e0) move-result-object   v4
+	584     (000009e2) const-class          v5, Ljava/lang/String;
+	585     (000009e6) const-string         v6, 'permission'
+	586     (000009ea) invoke-static        v5, v6, Lcom/afwsamples/testdpc/util/Flags;->ordinalParam(Ljava/lang/Class; Ljava/lang/String;)Lcom/afwsamples/testdpc/util/Flags$OrdinalParam;
+	587     (000009f0) move-result-object   v5
+	588     (000009f2) invoke-static        v2, v3, v4, v5, Lcom/afwsamples/testdpc/util/Flags;->command(Ljava/lang/String; Lcom/afwsamples/testdpc/util/Flags$CommandCallback2Params; Lcom/afwsamples/testdpc/util/Flags$Param; Lcom/afwsamples/testdpc/util/Flags$Param;)Lcom/afwsamples/testdpc/util/Flags$RegisteredCommand$Builder;
+	589     (000009f8) move-result-object   v2
+	590     (000009fa) const-string         v3, 'Get the grant state for the given package and persmission.'
+	591     (000009fe) invoke-virtual       v2, v3, Lcom/afwsamples/testdpc/util/Flags$RegisteredCommand$Builder;->setDescription(Ljava/lang/String;)Lcom/afwsamples/testdpc/util/Flags$RegisteredCommand$Builder;
+	592     (00000a04) move-result-object   v2
+	593     (00000a06) invoke-virtual       v1, v2, Lcom/afwsamples/testdpc/util/Flags;->addCommand(Lcom/afwsamples/testdpc/util/Flags$RegisteredCommand$Builder;)V
+	594     (00000a0c) const-string         v2, 'set-location-enabled'
+	595     (00000a10) new-instance         v3, Lcom/afwsamples/testdpc/ShellCommand$$Lambda$49;
+	596     (00000a14) invoke-direct        v3, v8, Lcom/afwsamples/testdpc/ShellCommand$$Lambda$49;-><init>(Lcom/afwsamples/testdpc/ShellCommand;)V
+	597     (00000a1a) sget-object          v4, Ljava/lang/Boolean;->TYPE Ljava/lang/Class;
+	598     (00000a1e) const-string         v5, 'enabled'
+	599     (00000a22) invoke-static        v4, v5, Lcom/afwsamples/testdpc/util/Flags;->ordinalParam(Ljava/lang/Class; Ljava/lang/String;)Lcom/afwsamples/testdpc/util/Flags$OrdinalParam;
+	600     (00000a28) move-result-object   v4
+	601     (00000a2a) invoke-static        v2, v3, v4, Lcom/afwsamples/testdpc/util/Flags;->command(Ljava/lang/String; Lcom/afwsamples/testdpc/util/Flags$CommandCallback1Params; Lcom/afwsamples/testdpc/util/Flags$Param;)Lcom/afwsamples/testdpc/util/Flags$RegisteredCommand$Builder;
+	602     (00000a30) move-result-object   v2
+	603     (00000a32) const-string         v3, 'Set location enabled for the user.'
+	604     (00000a36) invoke-virtual       v2, v3, Lcom/afwsamples/testdpc/util/Flags$RegisteredCommand$Builder;->setDescription(Ljava/lang/String;)Lcom/afwsamples/testdpc/util/Flags$RegisteredCommand$Builder;
+	605     (00000a3c) move-result-object   v2
+	606     (00000a3e) invoke-virtual       v1, v2, Lcom/afwsamples/testdpc/util/Flags;->addCommand(Lcom/afwsamples/testdpc/util/Flags$RegisteredCommand$Builder;)V
+	607     (00000a44) const-string         v2, 'is-location-enabled'
+	608     (00000a48) new-instance         v3, Lcom/afwsamples/testdpc/ShellCommand$$Lambda$50;
+	609     (00000a4c) invoke-direct        v3, v8, Lcom/afwsamples/testdpc/ShellCommand$$Lambda$50;-><init>(Lcom/afwsamples/testdpc/ShellCommand;)V
+	610     (00000a52) invoke-static        v2, v3, Lcom/afwsamples/testdpc/util/Flags;->command(Ljava/lang/String; Lcom/afwsamples/testdpc/util/Flags$CommandCallback0Params;)Lcom/afwsamples/testdpc/util/Flags$RegisteredCommand$Builder;
+	611     (00000a58) move-result-object   v2
+	612     (00000a5a) const-string         v3, 'Get whether location is enabled for the user.'
+	613     (00000a5e) invoke-virtual       v2, v3, Lcom/afwsamples/testdpc/util/Flags$RegisteredCommand$Builder;->setDescription(Ljava/lang/String;)Lcom/afwsamples/testdpc/util/Flags$RegisteredCommand$Builder;
+	614     (00000a64) move-result-object   v2
+	615     (00000a66) invoke-virtual       v1, v2, Lcom/afwsamples/testdpc/util/Flags;->addCommand(Lcom/afwsamples/testdpc/util/Flags$RegisteredCommand$Builder;)V
+	616     (00000a6c) const-string         v2, 'clear-device-owner-lockscreen-info'
+	617     (00000a70) new-instance         v3, Lcom/afwsamples/testdpc/ShellCommand$$Lambda$51;
+	618     (00000a74) invoke-direct        v3, v8, Lcom/afwsamples/testdpc/ShellCommand$$Lambda$51;-><init>(Lcom/afwsamples/testdpc/ShellCommand;)V
+	619     (00000a7a) invoke-static        v2, v3, Lcom/afwsamples/testdpc/util/Flags;->command(Ljava/lang/String; Lcom/afwsamples/testdpc/util/Flags$CommandCallback0Params;)Lcom/afwsamples/testdpc/util/Flags$RegisteredCommand$Builder;
+	620     (00000a80) move-result-object   v2
+	621     (00000a82) const-string         v3, 'Clear the device owner lock screen info.'
+	622     (00000a86) invoke-virtual       v2, v3, Lcom/afwsamples/testdpc/util/Flags$RegisteredCommand$Builder;->setDescription(Ljava/lang/String;)Lcom/afwsamples/testdpc/util/Flags$RegisteredCommand$Builder;
+	623     (00000a8c) move-result-object   v2
+	624     (00000a8e) invoke-virtual       v1, v2, Lcom/afwsamples/testdpc/util/Flags;->addCommand(Lcom/afwsamples/testdpc/util/Flags$RegisteredCommand$Builder;)V
+	625     (00000a94) const-string         v2, 'set-device-owner-lockscreen-info'
+	626     (00000a98) new-instance         v3, Lcom/afwsamples/testdpc/ShellCommand$$Lambda$52;
+	627     (00000a9c) invoke-direct        v3, v8, Lcom/afwsamples/testdpc/ShellCommand$$Lambda$52;-><init>(Lcom/afwsamples/testdpc/ShellCommand;)V
+	628     (00000aa2) const-class          v4, Ljava/lang/String;
+	629     (00000aa6) const-string         v5, 'info'
+	630     (00000aaa) invoke-static        v4, v5, Lcom/afwsamples/testdpc/util/Flags;->ordinalParam(Ljava/lang/Class; Ljava/lang/String;)Lcom/afwsamples/testdpc/util/Flags$OrdinalParam;
+	631     (00000ab0) move-result-object   v4
+	632     (00000ab2) invoke-static        v2, v3, v4, Lcom/afwsamples/testdpc/util/Flags;->command(Ljava/lang/String; Lcom/afwsamples/testdpc/util/Flags$CommandCallback1Params; Lcom/afwsamples/testdpc/util/Flags$Param;)Lcom/afwsamples/testdpc/util/Flags$RegisteredCommand$Builder;
+	633     (00000ab8) move-result-object   v2
+	634     (00000aba) const-string         v3, 'Set the device owner lock screen info.'
+	635     (00000abe) invoke-virtual       v2, v3, Lcom/afwsamples/testdpc/util/Flags$RegisteredCommand$Builder;->setDescription(Ljava/lang/String;)Lcom/afwsamples/testdpc/util/Flags$RegisteredCommand$Builder;
+	636     (00000ac4) move-result-object   v2
+	637     (00000ac6) invoke-virtual       v1, v2, Lcom/afwsamples/testdpc/util/Flags;->addCommand(Lcom/afwsamples/testdpc/util/Flags$RegisteredCommand$Builder;)V
+	638     (00000acc) const-string         v2, 'get-device-owner-lockscreen-info'
+	639     (00000ad0) new-instance         v3, Lcom/afwsamples/testdpc/ShellCommand$$Lambda$53;
+	640     (00000ad4) invoke-direct        v3, v8, Lcom/afwsamples/testdpc/ShellCommand$$Lambda$53;-><init>(Lcom/afwsamples/testdpc/ShellCommand;)V
+	641     (00000ada) invoke-static        v2, v3, Lcom/afwsamples/testdpc/util/Flags;->command(Ljava/lang/String; Lcom/afwsamples/testdpc/util/Flags$CommandCallback0Params;)Lcom/afwsamples/testdpc/util/Flags$RegisteredCommand$Builder;
+	642     (00000ae0) move-result-object   v2
+	643     (00000ae2) const-string         v3, 'Get the device owner lock screen info.'
+	644     (00000ae6) invoke-virtual       v2, v3, Lcom/afwsamples/testdpc/util/Flags$RegisteredCommand$Builder;->setDescription(Ljava/lang/String;)Lcom/afwsamples/testdpc/util/Flags$RegisteredCommand$Builder;
+	645     (00000aec) move-result-object   v2
+	646     (00000aee) invoke-virtual       v1, v2, Lcom/afwsamples/testdpc/util/Flags;->addCommand(Lcom/afwsamples/testdpc/util/Flags$RegisteredCommand$Builder;)V
+	647     (00000af4) const-string         v2, 'set-keyguard-disabled'
+	648     (00000af8) new-instance         v3, Lcom/afwsamples/testdpc/ShellCommand$$Lambda$54;
+	649     (00000afc) invoke-direct        v3, v8, Lcom/afwsamples/testdpc/ShellCommand$$Lambda$54;-><init>(Lcom/afwsamples/testdpc/ShellCommand;)V
+	650     (00000b02) sget-object          v4, Ljava/lang/Boolean;->TYPE Ljava/lang/Class;
+	651     (00000b06) const-string         v5, 'disabled'
+	652     (00000b0a) invoke-static        v4, v5, Lcom/afwsamples/testdpc/util/Flags;->ordinalParam(Ljava/lang/Class; Ljava/lang/String;)Lcom/afwsamples/testdpc/util/Flags$OrdinalParam;
+	653     (00000b10) move-result-object   v4
+	654     (00000b12) invoke-static        v2, v3, v4, Lcom/afwsamples/testdpc/util/Flags;->command(Ljava/lang/String; Lcom/afwsamples/testdpc/util/Flags$CommandCallback1Params; Lcom/afwsamples/testdpc/util/Flags$Param;)Lcom/afwsamples/testdpc/util/Flags$RegisteredCommand$Builder;
+	655     (00000b18) move-result-object   v2
+	656     (00000b1a) const-string         v3, 'Set keyguard disabled.'
+	657     (00000b1e) invoke-virtual       v2, v3, Lcom/afwsamples/testdpc/util/Flags$RegisteredCommand$Builder;->setDescription(Ljava/lang/String;)Lcom/afwsamples/testdpc/util/Flags$RegisteredCommand$Builder;
+	658     (00000b24) move-result-object   v2
+	659     (00000b26) invoke-virtual       v1, v2, Lcom/afwsamples/testdpc/util/Flags;->addCommand(Lcom/afwsamples/testdpc/util/Flags$RegisteredCommand$Builder;)V
+	660     (00000b2c) const-string         v2, 'set-keyguard-disabled-features'
+	661     (00000b30) new-instance         v3, Lcom/afwsamples/testdpc/ShellCommand$$Lambda$55;
+	662     (00000b34) invoke-direct        v3, v8, Lcom/afwsamples/testdpc/ShellCommand$$Lambda$55;-><init>(Lcom/afwsamples/testdpc/ShellCommand;)V
+	663     (00000b3a) sget-object          v4, Ljava/lang/Integer;->TYPE Ljava/lang/Class;
+	664     (00000b3e) const-string         v5, 'flags'
+	665     (00000b42) invoke-static        v4, v5, Lcom/afwsamples/testdpc/util/Flags;->ordinalParam(Ljava/lang/Class; Ljava/lang/String;)Lcom/afwsamples/testdpc/util/Flags$OrdinalParam;
+	666     (00000b48) move-result-object   v4
+	667     (00000b4a) invoke-static        v2, v3, v4, Lcom/afwsamples/testdpc/util/Flags;->command(Ljava/lang/String; Lcom/afwsamples/testdpc/util/Flags$CommandCallback1Params; Lcom/afwsamples/testdpc/util/Flags$Param;)Lcom/afwsamples/testdpc/util/Flags$RegisteredCommand$Builder;
+	668     (00000b50) move-result-object   v2
+	669     (00000b52) const-string         v3, 'Set the keyguard disabled features.'
+	670     (00000b56) invoke-virtual       v2, v3, Lcom/afwsamples/testdpc/util/Flags$RegisteredCommand$Builder;->setDescription(Ljava/lang/String;)Lcom/afwsamples/testdpc/util/Flags$RegisteredCommand$Builder;
+	671     (00000b5c) move-result-object   v2
+	672     (00000b5e) invoke-virtual       v1, v2, Lcom/afwsamples/testdpc/util/Flags;->addCommand(Lcom/afwsamples/testdpc/util/Flags$RegisteredCommand$Builder;)V
+	673     (00000b64) const-string         v2, 'get-keyguard-disabled-features'
+	674     (00000b68) new-instance         v3, Lcom/afwsamples/testdpc/ShellCommand$$Lambda$56;
+	675     (00000b6c) invoke-direct        v3, v8, Lcom/afwsamples/testdpc/ShellCommand$$Lambda$56;-><init>(Lcom/afwsamples/testdpc/ShellCommand;)V
+	676     (00000b72) invoke-static        v2, v3, Lcom/afwsamples/testdpc/util/Flags;->command(Ljava/lang/String; Lcom/afwsamples/testdpc/util/Flags$CommandCallback0Params;)Lcom/afwsamples/testdpc/util/Flags$RegisteredCommand$Builder;
+	677     (00000b78) move-result-object   v2
+	678     (00000b7a) const-string         v3, 'Get the keyguard disabled features.'
+	679     (00000b7e) invoke-virtual       v2, v3, Lcom/afwsamples/testdpc/util/Flags$RegisteredCommand$Builder;->setDescription(Ljava/lang/String;)Lcom/afwsamples/testdpc/util/Flags$RegisteredCommand$Builder;
+	680     (00000b84) move-result-object   v2
+	681     (00000b86) invoke-virtual       v1, v2, Lcom/afwsamples/testdpc/util/Flags;->addCommand(Lcom/afwsamples/testdpc/util/Flags$RegisteredCommand$Builder;)V
+	682     (00000b8c) invoke-static        Lcom/afwsamples/testdpc/common/Util;->isAtLeastS()Z
+	683     (00000b92) move-result          v2
+	684     (00000b94) if-eqz               v2, +66
+
+run-BB@0xb98 : [ run-BB@0xc60 ]
+	685     (00000b98) const-string         v2, 'set-usb-data-signaling-enabled'
+	686     (00000b9c) new-instance         v3, Lcom/afwsamples/testdpc/ShellCommand$$Lambda$57;
+	687     (00000ba0) invoke-direct        v3, v8, Lcom/afwsamples/testdpc/ShellCommand$$Lambda$57;-><init>(Lcom/afwsamples/testdpc/ShellCommand;)V
+	688     (00000ba6) sget-object          v4, Ljava/lang/Boolean;->TYPE Ljava/lang/Class;
+	689     (00000baa) const-string         v5, 'enabled'
+	690     (00000bae) invoke-static        v4, v5, Lcom/afwsamples/testdpc/util/Flags;->ordinalParam(Ljava/lang/Class; Ljava/lang/String;)Lcom/afwsamples/testdpc/util/Flags$OrdinalParam;
+	691     (00000bb4) move-result-object   v4
+	692     (00000bb6) invoke-static        v2, v3, v4, Lcom/afwsamples/testdpc/util/Flags;->command(Ljava/lang/String; Lcom/afwsamples/testdpc/util/Flags$CommandCallback1Params; Lcom/afwsamples/testdpc/util/Flags$Param;)Lcom/afwsamples/testdpc/util/Flags$RegisteredCommand$Builder;
+	693     (00000bbc) move-result-object   v2
+	694     (00000bbe) const-string         v3, 'Enable / disable USB data signaling.'
+	695     (00000bc2) invoke-virtual       v2, v3, Lcom/afwsamples/testdpc/util/Flags$RegisteredCommand$Builder;->setDescription(Ljava/lang/String;)Lcom/afwsamples/testdpc/util/Flags$RegisteredCommand$Builder;
+	696     (00000bc8) move-result-object   v2
+	697     (00000bca) invoke-virtual       v1, v2, Lcom/afwsamples/testdpc/util/Flags;->addCommand(Lcom/afwsamples/testdpc/util/Flags$RegisteredCommand$Builder;)V
+	698     (00000bd0) const-string         v2, 'set-permitted-input-methods-parent'
+	699     (00000bd4) new-instance         v3, Lcom/afwsamples/testdpc/ShellCommand$$Lambda$58;
+	700     (00000bd8) invoke-direct        v3, v8, Lcom/afwsamples/testdpc/ShellCommand$$Lambda$58;-><init>(Lcom/afwsamples/testdpc/ShellCommand;)V
+	701     (00000bde) const-class          v4, Ljava/lang/String;
+	702     (00000be2) const-string         v5, 'methods'
+	703     (00000be6) invoke-static        v4, v5, Lcom/afwsamples/testdpc/util/Flags;->ordinalParam(Ljava/lang/Class; Ljava/lang/String;)Lcom/afwsamples/testdpc/util/Flags$OrdinalParam;
+	704     (00000bec) move-result-object   v4
+	705     (00000bee) invoke-static        v4, Lcom/afwsamples/testdpc/util/Flags;->repeated(Lcom/afwsamples/testdpc/util/Flags$OrdinalParam;)Lcom/afwsamples/testdpc/util/Flags$RepeatedOrdinalParam;
+	706     (00000bf4) move-result-object   v4
+	707     (00000bf6) invoke-static        v2, v3, v4, Lcom/afwsamples/testdpc/util/Flags;->command(Ljava/lang/String; Lcom/afwsamples/testdpc/util/Flags$CommandCallback1Params; Lcom/afwsamples/testdpc/util/Flags$Param;)Lcom/afwsamples/testdpc/util/Flags$RegisteredCommand$Builder;
+	708     (00000bfc) move-result-object   v2
+	709     (00000bfe) const-string         v3, "Set the permitted input methods in the parent's device admin."
+	710     (00000c02) invoke-virtual       v2, v3, Lcom/afwsamples/testdpc/util/Flags$RegisteredCommand$Builder;->setDescription(Ljava/lang/String;)Lcom/afwsamples/testdpc/util/Flags$RegisteredCommand$Builder;
+	711     (00000c08) move-result-object   v2
+	712     (00000c0a) invoke-virtual       v1, v2, Lcom/afwsamples/testdpc/util/Flags;->addCommand(Lcom/afwsamples/testdpc/util/Flags$RegisteredCommand$Builder;)V
+	713     (00000c10) const-string         v2, 'list-foreground-users'
+	714     (00000c14) new-instance         v3, Lcom/afwsamples/testdpc/ShellCommand$$Lambda$59;
+	715     (00000c18) invoke-direct        v3, v8, Lcom/afwsamples/testdpc/ShellCommand$$Lambda$59;-><init>(Lcom/afwsamples/testdpc/ShellCommand;)V
+	716     (00000c1e) invoke-static        v2, v3, Lcom/afwsamples/testdpc/util/Flags;->command(Ljava/lang/String; Lcom/afwsamples/testdpc/util/Flags$CommandCallback0Params;)Lcom/afwsamples/testdpc/util/Flags$RegisteredCommand$Builder;
+	717     (00000c24) move-result-object   v2
+	718     (00000c26) const-string         v3, 'List the users running in the foreground.'
+	719     (00000c2a) invoke-virtual       v2, v3, Lcom/afwsamples/testdpc/util/Flags$RegisteredCommand$Builder;->setDescription(Ljava/lang/String;)Lcom/afwsamples/testdpc/util/Flags$RegisteredCommand$Builder;
+	720     (00000c30) move-result-object   v2
+	721     (00000c32) invoke-virtual       v1, v2, Lcom/afwsamples/testdpc/util/Flags;->addCommand(Lcom/afwsamples/testdpc/util/Flags$RegisteredCommand$Builder;)V
+	722     (00000c38) const-string         v2, 'is-foreground-user'
+	723     (00000c3c) new-instance         v3, Lcom/afwsamples/testdpc/ShellCommand$$Lambda$60;
+	724     (00000c40) invoke-direct        v3, v8, Lcom/afwsamples/testdpc/ShellCommand$$Lambda$60;-><init>(Lcom/afwsamples/testdpc/ShellCommand;)V
+	725     (00000c46) invoke-static        v2, v3, Lcom/afwsamples/testdpc/util/Flags;->command(Ljava/lang/String; Lcom/afwsamples/testdpc/util/Flags$CommandCallback0Params;)Lcom/afwsamples/testdpc/util/Flags$RegisteredCommand$Builder;
+	726     (00000c4c) move-result-object   v2
+	727     (00000c4e) const-string         v3, 'Checks if the calling user is running in the foreground.'
+	728     (00000c52) invoke-virtual       v2, v3, Lcom/afwsamples/testdpc/util/Flags$RegisteredCommand$Builder;->setDescription(Ljava/lang/String;)Lcom/afwsamples/testdpc/util/Flags$RegisteredCommand$Builder;
+	729     (00000c58) move-result-object   v2
+	730     (00000c5a) invoke-virtual       v1, v2, Lcom/afwsamples/testdpc/util/Flags;->addCommand(Lcom/afwsamples/testdpc/util/Flags$RegisteredCommand$Builder;)V
+
+run-BB@0xc60 : [ run-BB@0xc6a ]
+	731     (00000c60) iget-object          v2, v8, Lcom/afwsamples/testdpc/ShellCommand;->mArgs [Ljava/lang/String;
+	732     (00000c64) invoke-virtual       v1, v2, Lcom/afwsamples/testdpc/util/Flags;->run([Ljava/lang/String;)V
+	c60:c69
+	(Ljava/lang/Exception; -> c6c run-BB@0xc6c)
+
+run-BB@0xc6a : 
+	733     (00000c6a) return-void          
+
+run-BB@0xc6c : [ run-BB@0xc6a ]
+	734     (00000c6c) move-exception       v0
+	735     (00000c6e) const-string         v2, 'error executing %s'
+	736     (00000c72) const/4              v3, 1
+	737     (00000c74) new-array            v3, v3, [Ljava/lang/Object;
+	738     (00000c78) const/4              v4, 0
+	739     (00000c7a) iget-object          v5, v8, Lcom/afwsamples/testdpc/ShellCommand;->mArgs [Ljava/lang/String;
+	740     (00000c7e) invoke-static        v5, Ljava/util/Arrays;->toString([Ljava/lang/Object;)Ljava/lang/String;
+	741     (00000c84) move-result-object   v5
+	742     (00000c86) aput-object          v5, v3, v4
+	743     (00000c8a) invoke-direct        v8, v0, v2, v3, Lcom/afwsamples/testdpc/ShellCommand;->onError(Ljava/lang/Exception; Ljava/lang/String; [Ljava/lang/Object;)V
+	744     (00000c90) goto                 -13
+

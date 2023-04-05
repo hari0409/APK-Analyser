@@ -1,0 +1,24 @@
+# Landroidx/appcompat/widget/ActionBarContainer;->startActionModeForChild(Landroid/view/View; Landroid/view/ActionMode$Callback; I)Landroid/view/ActionMode; [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:android.view.View
+# - v3:android.view.ActionMode$Callback
+# - v4:int
+#
+# - return:android.view.ActionMode
+
+startActionModeForChild-BB@0x0 : [ startActionModeForChild-BB@0x4 startActionModeForChild-BB@0xe ]
+	0       (00000000) if-eqz               v4, +7
+
+startActionModeForChild-BB@0x4 : [ startActionModeForChild-BB@0xc ]
+	1       (00000004) invoke-super         v1, v2, v3, v4, Landroid/widget/FrameLayout;->startActionModeForChild(Landroid/view/View; Landroid/view/ActionMode$Callback; I)Landroid/view/ActionMode;
+	2       (0000000a) move-result-object   v0
+
+startActionModeForChild-BB@0xc : 
+	3       (0000000c) return-object        v0
+
+startActionModeForChild-BB@0xe : [ startActionModeForChild-BB@0xc ]
+	4       (0000000e) const/4              v0, 0
+	5       (00000010) goto                 -2
+

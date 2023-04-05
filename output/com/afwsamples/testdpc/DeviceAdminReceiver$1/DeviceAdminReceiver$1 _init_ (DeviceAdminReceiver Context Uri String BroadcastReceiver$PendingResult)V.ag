@@ -1,0 +1,21 @@
+# Lcom/afwsamples/testdpc/DeviceAdminReceiver$1;-><init>(Lcom/afwsamples/testdpc/DeviceAdminReceiver; Landroid/content/Context; Landroid/net/Uri; Ljava/lang/String; Landroid/content/BroadcastReceiver$PendingResult;)V [access_flags=constructor]
+#
+# Parameters:
+# - local registers: v0...v0
+# - v1:com.afwsamples.testdpc.DeviceAdminReceiver
+# - v2:android.content.Context
+# - v3:android.net.Uri
+# - v4:java.lang.String
+# - v5:android.content.BroadcastReceiver$PendingResult
+#
+# - return:void
+
+<init>-BB@0x0 : 
+	0       (00000000) iput-object          v1, v0, Lcom/afwsamples/testdpc/DeviceAdminReceiver$1;->this$0 Lcom/afwsamples/testdpc/DeviceAdminReceiver;
+	1       (00000004) iput-object          v2, v0, Lcom/afwsamples/testdpc/DeviceAdminReceiver$1;->val$context Landroid/content/Context;
+	2       (00000008) iput-object          v3, v0, Lcom/afwsamples/testdpc/DeviceAdminReceiver$1;->val$bugreportUri Landroid/net/Uri;
+	3       (0000000c) iput-object          v4, v0, Lcom/afwsamples/testdpc/DeviceAdminReceiver$1;->val$bugreportFileHash Ljava/lang/String;
+	4       (00000010) iput-object          v5, v0, Lcom/afwsamples/testdpc/DeviceAdminReceiver$1;->val$result Landroid/content/BroadcastReceiver$PendingResult;
+	5       (00000014) invoke-direct        v0, Landroid/os/AsyncTask;-><init>()V
+	6       (0000001a) return-void          
+

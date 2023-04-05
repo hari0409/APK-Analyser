@@ -1,0 +1,27 @@
+# Lcom/afwsamples/testdpc/common/keyvaluepair/KeyValueBundleArrayFragment$BundleEditDeleteArrayAdapter;->getDisplayName(Landroid/os/Bundle;)Ljava/lang/String; [access_flags=protected]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:android.os.Bundle
+#
+# - return:java.lang.String
+
+getDisplayName-BB@0x0 : 
+	0       (00000000) new-instance         v0, Ljava/lang/StringBuilder;
+	1       (00000004) invoke-direct        v0, Ljava/lang/StringBuilder;-><init>()V
+	2       (0000000a) const-string         v1, 'Bundle #'
+	3       (0000000e) invoke-virtual       v0, v1, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	4       (00000014) move-result-object   v0
+	5       (00000016) iget-object          v1, v2, Lcom/afwsamples/testdpc/common/keyvaluepair/KeyValueBundleArrayFragment$BundleEditDeleteArrayAdapter;->this$0 Lcom/afwsamples/testdpc/common/keyvaluepair/KeyValueBundleArrayFragment;
+	6       (0000001a) invoke-static        v1, Lcom/afwsamples/testdpc/common/keyvaluepair/KeyValueBundleArrayFragment;->access$000(Lcom/afwsamples/testdpc/common/keyvaluepair/KeyValueBundleArrayFragment;)Ljava/util/List;
+	7       (00000020) move-result-object   v1
+	8       (00000022) invoke-interface     v1, v3, Ljava/util/List;->indexOf(Ljava/lang/Object;)I
+	9       (00000028) move-result          v1
+	10      (0000002a) invoke-virtual       v0, v1, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+	11      (00000030) move-result-object   v0
+	12      (00000032) invoke-virtual       v0, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+	13      (00000038) move-result-object   v0
+	14      (0000003a) invoke-static        v0, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+	15      (00000040) move-result-object   v0
+	16      (00000042) return-object        v0
+

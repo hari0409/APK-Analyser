@@ -1,0 +1,42 @@
+# Lcom/afwsamples/testdpc/policy/networking/AlwaysOnVpnFragment;->onCreateView(Landroid/view/LayoutInflater; Landroid/view/ViewGroup; Landroid/os/Bundle;)Landroid/view/View; [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v4
+# - v5:android.view.LayoutInflater
+# - v6:android.view.ViewGroup
+# - v7:android.os.Bundle
+#
+# - return:android.view.View
+
+onCreateView-BB@0x0 : [ onCreateView-BB@0x14 onCreateView-BB@0x70 ]
+	0       (00000000) invoke-super         v4, v5, v6, v7, Lcom/afwsamples/testdpc/common/SelectAppFragment;->onCreateView(Landroid/view/LayoutInflater; Landroid/view/ViewGroup; Landroid/os/Bundle;)Landroid/view/View;
+	1       (00000006) move-result-object   v1
+	2       (00000008) sget                 v2, Lcom/afwsamples/testdpc/common/Util;->SDK_INT I
+	3       (0000000c) const/16             v3, 29
+	4       (00000010) if-lt                v2, v3, +30
+
+onCreateView-BB@0x14 : [ onCreateView-BB@0x70 ]
+	5       (00000014) invoke-virtual       v4, v1, Lcom/afwsamples/testdpc/policy/networking/AlwaysOnVpnFragment;->getExtensionLayout(Landroid/view/View;)Landroid/view/ViewGroup;
+	6       (0000001a) move-result-object   v0
+	7       (0000001c) const/4              v2, 0
+	8       (0000001e) invoke-virtual       v0, v2, Landroid/view/ViewGroup;->setVisibility(I)V
+	9       (00000024) const                v2, 2131427392 # [1.8476398948831794e+38]
+	10      (0000002a) invoke-virtual       v5, v2, v0, Landroid/view/LayoutInflater;->inflate(I Landroid/view/ViewGroup;)Landroid/view/View;
+	11      (00000030) const                v2, 2131296425 # [1.821076631497565e+38]
+	12      (00000036) invoke-virtual       v1, v2, Landroid/view/View;->findViewById(I)Landroid/view/View;
+	13      (0000003c) move-result-object   v2
+	14      (0000003e) check-cast           v2, Landroid/widget/CheckBox;
+	15      (00000042) iput-object          v2, v4, Lcom/afwsamples/testdpc/policy/networking/AlwaysOnVpnFragment;->mLockdown Landroid/widget/CheckBox;
+	16      (00000046) const                v2, 2131296432 # [1.821078051266237e+38]
+	17      (0000004c) invoke-virtual       v1, v2, Landroid/view/View;->findViewById(I)Landroid/view/View;
+	18      (00000052) move-result-object   v2
+	19      (00000054) check-cast           v2, Landroid/widget/EditText;
+	20      (00000058) iput-object          v2, v4, Lcom/afwsamples/testdpc/policy/networking/AlwaysOnVpnFragment;->mExemptedPackages Landroid/widget/EditText;
+	21      (0000005c) iget-object          v2, v4, Lcom/afwsamples/testdpc/policy/networking/AlwaysOnVpnFragment;->mLockdown Landroid/widget/CheckBox;
+	22      (00000060) new-instance         v3, Lcom/afwsamples/testdpc/policy/networking/AlwaysOnVpnFragment$$Lambda$0;
+	23      (00000064) invoke-direct        v3, v4, Lcom/afwsamples/testdpc/policy/networking/AlwaysOnVpnFragment$$Lambda$0;-><init>(Lcom/afwsamples/testdpc/policy/networking/AlwaysOnVpnFragment;)V
+	24      (0000006a) invoke-virtual       v2, v3, Landroid/widget/CheckBox;->setOnCheckedChangeListener(Landroid/widget/CompoundButton$OnCheckedChangeListener;)V
+
+onCreateView-BB@0x70 : 
+	25      (00000070) return-object        v1
+

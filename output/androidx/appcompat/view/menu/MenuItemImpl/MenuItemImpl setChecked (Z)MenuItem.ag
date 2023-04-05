@@ -1,0 +1,24 @@
+# Landroidx/appcompat/view/menu/MenuItemImpl;->setChecked(Z)Landroid/view/MenuItem; [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:boolean
+#
+# - return:android.view.MenuItem
+
+setChecked-BB@0x0 : [ setChecked-BB@0xc setChecked-BB@0x18 ]
+	0       (00000000) iget                 v0, v1, Landroidx/appcompat/view/menu/MenuItemImpl;->mFlags I
+	1       (00000004) and-int/lit8         v0, v0, 4
+	2       (00000008) if-eqz               v0, +8
+
+setChecked-BB@0xc : [ setChecked-BB@0x16 ]
+	3       (0000000c) iget-object          v0, v1, Landroidx/appcompat/view/menu/MenuItemImpl;->mMenu Landroidx/appcompat/view/menu/MenuBuilder;
+	4       (00000010) invoke-virtual       v0, v1, Landroidx/appcompat/view/menu/MenuBuilder;->setExclusiveItemChecked(Landroid/view/MenuItem;)V
+
+setChecked-BB@0x16 : 
+	5       (00000016) return-object        v1
+
+setChecked-BB@0x18 : [ setChecked-BB@0x16 ]
+	6       (00000018) invoke-virtual       v1, v2, Landroidx/appcompat/view/menu/MenuItemImpl;->setCheckedInt(Z)V
+	7       (0000001e) goto                 -4
+

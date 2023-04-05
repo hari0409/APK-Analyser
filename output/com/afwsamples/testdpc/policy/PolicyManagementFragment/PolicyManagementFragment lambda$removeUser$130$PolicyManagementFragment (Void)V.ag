@@ -1,0 +1,16 @@
+# Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->lambda$removeUser$130$PolicyManagementFragment(Ljava/lang/Void;)V [access_flags=final synthetic]
+#
+# Parameters:
+# - local registers: v0...v3
+# - v4:java.lang.Void
+#
+# - return:void
+
+lambda$removeUser$130$PolicyManagementFragment-BB@0x0 : 
+	0       (00000000) const-string         v0, 'removeUser()'
+	1       (00000004) const                v1, 2131690358 # [1.900975736121518e+38]
+	2       (0000000a) const/4              v2, 0
+	3       (0000000c) new-array            v2, v2, [Ljava/lang/Object;
+	4       (00000010) invoke-direct        v3, v0, v1, v2, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->onSuccessShowToast(Ljava/lang/String; I [Ljava/lang/Object;)V
+	5       (00000016) return-void          
+

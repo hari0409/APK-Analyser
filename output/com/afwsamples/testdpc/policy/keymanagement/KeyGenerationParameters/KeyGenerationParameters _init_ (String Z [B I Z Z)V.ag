@@ -1,0 +1,23 @@
+# Lcom/afwsamples/testdpc/policy/keymanagement/KeyGenerationParameters;-><init>(Ljava/lang/String; Z [B I Z Z)V [access_flags=public constructor]
+#
+# Parameters:
+# - local registers: v0...v0
+# - v1:java.lang.String
+# - v2:boolean
+# - v3:byte[]
+# - v4:int
+# - v5:boolean
+# - v6:boolean
+#
+# - return:void
+
+<init>-BB@0x0 : 
+	0       (00000000) invoke-direct        v0, Ljava/lang/Object;-><init>()V
+	1       (00000006) iput-object          v1, v0, Lcom/afwsamples/testdpc/policy/keymanagement/KeyGenerationParameters;->alias Ljava/lang/String;
+	2       (0000000a) iput-boolean         v2, v0, Lcom/afwsamples/testdpc/policy/keymanagement/KeyGenerationParameters;->isUserSelectable Z
+	3       (0000000e) iput-object          v3, v0, Lcom/afwsamples/testdpc/policy/keymanagement/KeyGenerationParameters;->attestationChallenge [B
+	4       (00000012) iput                 v4, v0, Lcom/afwsamples/testdpc/policy/keymanagement/KeyGenerationParameters;->idAttestationFlags I
+	5       (00000016) iput-boolean         v5, v0, Lcom/afwsamples/testdpc/policy/keymanagement/KeyGenerationParameters;->useStrongBox Z
+	6       (0000001a) iput-boolean         v6, v0, Lcom/afwsamples/testdpc/policy/keymanagement/KeyGenerationParameters;->generateEcKey Z
+	7       (0000001e) return-void          
+

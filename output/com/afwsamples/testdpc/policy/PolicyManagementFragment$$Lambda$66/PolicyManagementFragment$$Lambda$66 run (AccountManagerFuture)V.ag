@@ -1,0 +1,14 @@
+# Lcom/afwsamples/testdpc/policy/PolicyManagementFragment$$Lambda$66;->run(Landroid/accounts/AccountManagerFuture;)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:android.accounts.AccountManagerFuture
+#
+# - return:void
+
+run-BB@0x0 : 
+	0       (00000000) iget-object          v0, v2, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment$$Lambda$66;->arg$1 Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;
+	1       (00000004) iget-object          v1, v2, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment$$Lambda$66;->arg$2 Landroid/accounts/Account;
+	2       (00000008) invoke-virtual       v0, v1, v3, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->lambda$removeAccount$172$PolicyManagementFragment(Landroid/accounts/Account; Landroid/accounts/AccountManagerFuture;)V
+	3       (0000000e) return-void          
+

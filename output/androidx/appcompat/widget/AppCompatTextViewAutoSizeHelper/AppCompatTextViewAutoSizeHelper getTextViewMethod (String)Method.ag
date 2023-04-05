@@ -1,0 +1,57 @@
+# Landroidx/appcompat/widget/AppCompatTextViewAutoSizeHelper;->getTextViewMethod(Ljava/lang/String;)Ljava/lang/reflect/Method; [access_flags=private]
+#
+# Parameters:
+# - local registers: v0...v5
+# - v6:java.lang.String
+#
+# - return:java.lang.reflect.Method
+
+getTextViewMethod-BB@0x0 : [ getTextViewMethod-BB@0x14 getTextViewMethod-BB@0x3c ]
+	0       (00000000) sget-object          v2, Landroidx/appcompat/widget/AppCompatTextViewAutoSizeHelper;->sTextViewMethodByNameCache Ljava/util/concurrent/ConcurrentHashMap;
+	1       (00000004) invoke-virtual       v2, v6, Ljava/util/concurrent/ConcurrentHashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
+	2       (0000000a) move-result-object   v1
+	3       (0000000c) check-cast           v1, Ljava/lang/reflect/Method;
+	4       (00000010) if-nez               v1, +16
+	0:3b
+	(Ljava/lang/Exception; -> 3e getTextViewMethod-BB@0x3e)
+
+getTextViewMethod-BB@0x14 : [ getTextViewMethod-BB@0x2a getTextViewMethod-BB@0x3c ]
+	5       (00000014) const-class          v2, Landroid/widget/TextView;
+	6       (00000018) const/4              v3, 0
+	7       (0000001a) new-array            v3, v3, [Ljava/lang/Class;
+	8       (0000001e) invoke-virtual       v2, v6, v3, Ljava/lang/Class;->getDeclaredMethod(Ljava/lang/String; [Ljava/lang/Class;)Ljava/lang/reflect/Method;
+	9       (00000024) move-result-object   v1
+	10      (00000026) if-eqz               v1, +b
+	0:3b
+	(Ljava/lang/Exception; -> 3e getTextViewMethod-BB@0x3e)
+
+getTextViewMethod-BB@0x2a : [ getTextViewMethod-BB@0x3c ]
+	11      (0000002a) const/4              v2, 1
+	12      (0000002c) invoke-virtual       v1, v2, Ljava/lang/reflect/Method;->setAccessible(Z)V
+	13      (00000032) sget-object          v2, Landroidx/appcompat/widget/AppCompatTextViewAutoSizeHelper;->sTextViewMethodByNameCache Ljava/util/concurrent/ConcurrentHashMap;
+	14      (00000036) invoke-virtual       v2, v6, v1, Ljava/util/concurrent/ConcurrentHashMap;->put(Ljava/lang/Object; Ljava/lang/Object;)Ljava/lang/Object;
+	0:3b
+	(Ljava/lang/Exception; -> 3e getTextViewMethod-BB@0x3e)
+
+getTextViewMethod-BB@0x3c : 
+	15      (0000003c) return-object        v1
+
+getTextViewMethod-BB@0x3e : [ getTextViewMethod-BB@0x3c ]
+	16      (0000003e) move-exception       v0
+	17      (00000040) const-string         v2, 'ACTVAutoSizeHelper'
+	18      (00000044) new-instance         v3, Ljava/lang/StringBuilder;
+	19      (00000048) invoke-direct        v3, Ljava/lang/StringBuilder;-><init>()V
+	20      (0000004e) const-string         v4, 'Failed to retrieve TextView#'
+	21      (00000052) invoke-virtual       v3, v4, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	22      (00000058) move-result-object   v3
+	23      (0000005a) invoke-virtual       v3, v6, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	24      (00000060) move-result-object   v3
+	25      (00000062) const-string         v4, '() method'
+	26      (00000066) invoke-virtual       v3, v4, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	27      (0000006c) move-result-object   v3
+	28      (0000006e) invoke-virtual       v3, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+	29      (00000074) move-result-object   v3
+	30      (00000076) invoke-static        v2, v3, v0, Landroid/util/Log;->w(Ljava/lang/String; Ljava/lang/String; Ljava/lang/Throwable;)I
+	31      (0000007c) const/4              v1, 0
+	32      (0000007e) goto                 -21
+

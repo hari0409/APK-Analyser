@@ -1,0 +1,48 @@
+# Landroidx/appcompat/widget/AbsActionBarView;->onHoverEvent(Landroid/view/MotionEvent;)Z [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v6
+# - v7:android.view.MotionEvent
+#
+# - return:boolean
+
+onHoverEvent-BB@0x0 : [ onHoverEvent-BB@0x14 onHoverEvent-BB@0x18 ]
+	0       (00000000) const/16             v5, 9
+	1       (00000004) const/4              v4, 1
+	2       (00000006) const/4              v3, 0
+	3       (00000008) invoke-virtual       v7, Landroid/view/MotionEvent;->getActionMasked()I
+	4       (0000000e) move-result          v0
+	5       (00000010) if-ne                v0, v5, +4
+
+onHoverEvent-BB@0x14 : [ onHoverEvent-BB@0x18 ]
+	6       (00000014) iput-boolean         v3, v6, Landroidx/appcompat/widget/AbsActionBarView;->mEatingHover Z
+
+onHoverEvent-BB@0x18 : [ onHoverEvent-BB@0x20 onHoverEvent-BB@0x34 ]
+	7       (00000018) iget-boolean         v2, v6, Landroidx/appcompat/widget/AbsActionBarView;->mEatingHover Z
+	8       (0000001c) if-nez               v2, +c
+
+onHoverEvent-BB@0x20 : [ onHoverEvent-BB@0x2c onHoverEvent-BB@0x34 ]
+	9       (00000020) invoke-super         v6, v7, Landroid/view/ViewGroup;->onHoverEvent(Landroid/view/MotionEvent;)Z
+	10      (00000026) move-result          v1
+	11      (00000028) if-ne                v0, v5, +6
+
+onHoverEvent-BB@0x2c : [ onHoverEvent-BB@0x30 onHoverEvent-BB@0x34 ]
+	12      (0000002c) if-nez               v1, +4
+
+onHoverEvent-BB@0x30 : [ onHoverEvent-BB@0x34 ]
+	13      (00000030) iput-boolean         v4, v6, Landroidx/appcompat/widget/AbsActionBarView;->mEatingHover Z
+
+onHoverEvent-BB@0x34 : [ onHoverEvent-BB@0x3c onHoverEvent-BB@0x42 ]
+	14      (00000034) const/16             v2, 10
+	15      (00000038) if-eq                v0, v2, +5
+
+onHoverEvent-BB@0x3c : [ onHoverEvent-BB@0x42 onHoverEvent-BB@0x46 ]
+	16      (0000003c) const/4              v2, 3
+	17      (0000003e) if-ne                v0, v2, +4
+
+onHoverEvent-BB@0x42 : [ onHoverEvent-BB@0x46 ]
+	18      (00000042) iput-boolean         v3, v6, Landroidx/appcompat/widget/AbsActionBarView;->mEatingHover Z
+
+onHoverEvent-BB@0x46 : 
+	19      (00000046) return               v4
+

@@ -1,0 +1,31 @@
+# Landroidx/appcompat/widget/AppCompatSpinner;->getPopupContext()Landroid/content/Context; [access_flags=public]
+#
+# Parameters:
+# local registers: v0...v2
+#
+# - return:android.content.Context
+
+getPopupContext-BB@0x0 : [ getPopupContext-BB@0x8 getPopupContext-BB@0xe ]
+	0       (00000000) iget-object          v0, v2, Landroidx/appcompat/widget/AppCompatSpinner;->mPopup Landroidx/appcompat/widget/AppCompatSpinner$DropdownPopup;
+	1       (00000004) if-eqz               v0, +5
+
+getPopupContext-BB@0x8 : [ getPopupContext-BB@0xc ]
+	2       (00000008) iget-object          v0, v2, Landroidx/appcompat/widget/AppCompatSpinner;->mPopupContext Landroid/content/Context;
+
+getPopupContext-BB@0xc : 
+	3       (0000000c) return-object        v0
+
+getPopupContext-BB@0xe : [ getPopupContext-BB@0x1a getPopupContext-BB@0x24 ]
+	4       (0000000e) sget                 v0, Landroid/os/Build$VERSION;->SDK_INT I
+	5       (00000012) const/16             v1, 23
+	6       (00000016) if-lt                v0, v1, +7
+
+getPopupContext-BB@0x1a : [ getPopupContext-BB@0xc ]
+	7       (0000001a) invoke-super         v2, Landroid/widget/Spinner;->getPopupContext()Landroid/content/Context;
+	8       (00000020) move-result-object   v0
+	9       (00000022) goto                 -b
+
+getPopupContext-BB@0x24 : [ getPopupContext-BB@0xc ]
+	10      (00000024) const/4              v0, 0
+	11      (00000026) goto                 -d
+

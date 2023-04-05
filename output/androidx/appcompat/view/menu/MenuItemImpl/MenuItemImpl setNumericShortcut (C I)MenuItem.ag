@@ -1,0 +1,30 @@
+# Landroidx/appcompat/view/menu/MenuItemImpl;->setNumericShortcut(C I)Landroid/view/MenuItem; [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:char
+# - v4:int
+#
+# - return:android.view.MenuItem
+
+setNumericShortcut-BB@0x0 : [ setNumericShortcut-BB@0x8 setNumericShortcut-BB@0x12 ]
+	0       (00000000) iget-char            v0, v2, Landroidx/appcompat/view/menu/MenuItemImpl;->mShortcutNumericChar C
+	1       (00000004) if-ne                v0, v3, +7
+
+setNumericShortcut-BB@0x8 : [ setNumericShortcut-BB@0x10 setNumericShortcut-BB@0x12 ]
+	2       (00000008) iget                 v0, v2, Landroidx/appcompat/view/menu/MenuItemImpl;->mShortcutNumericModifiers I
+	3       (0000000c) if-ne                v0, v4, +3
+
+setNumericShortcut-BB@0x10 : 
+	4       (00000010) return-object        v2
+
+setNumericShortcut-BB@0x12 : [ setNumericShortcut-BB@0x10 ]
+	5       (00000012) iput-char            v3, v2, Landroidx/appcompat/view/menu/MenuItemImpl;->mShortcutNumericChar C
+	6       (00000016) invoke-static        v4, Landroid/view/KeyEvent;->normalizeMetaState(I)I
+	7       (0000001c) move-result          v0
+	8       (0000001e) iput                 v0, v2, Landroidx/appcompat/view/menu/MenuItemImpl;->mShortcutNumericModifiers I
+	9       (00000022) iget-object          v0, v2, Landroidx/appcompat/view/menu/MenuItemImpl;->mMenu Landroidx/appcompat/view/menu/MenuBuilder;
+	10      (00000026) const/4              v1, 0
+	11      (00000028) invoke-virtual       v0, v1, Landroidx/appcompat/view/menu/MenuBuilder;->onItemsChanged(Z)V
+	12      (0000002e) goto                 -f
+

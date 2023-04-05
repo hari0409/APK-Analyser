@@ -1,0 +1,362 @@
+# Landroidx/appcompat/widget/ListPopupWindow;->buildDropDown()I [access_flags=private]
+#
+# Parameters:
+# local registers: v0...v25
+#
+# - return:int
+
+buildDropDown-BB@0x0 : [ buildDropDown-BB@0x10 buildDropDown-BB@0x2e2 ]
+	0       (00000000) const/16             v19, 0
+	1       (00000004) move-object/from16   v0, v25
+	2       (00000008) iget-object          v2, v0, Landroidx/appcompat/widget/ListPopupWindow;->mDropDownList Landroidx/appcompat/widget/DropDownListView;
+	3       (0000000c) if-nez               v2, +16b
+
+buildDropDown-BB@0x10 : [ buildDropDown-BB@0x3a buildDropDown-BB@0x2b0 ]
+	4       (00000010) move-object/from16   v0, v25
+	5       (00000014) iget-object          v9, v0, Landroidx/appcompat/widget/ListPopupWindow;->mContext Landroid/content/Context;
+	6       (00000018) new-instance         v2, Landroidx/appcompat/widget/ListPopupWindow$2;
+	7       (0000001c) move-object/from16   v0, v25
+	8       (00000020) invoke-direct        v2, v0, Landroidx/appcompat/widget/ListPopupWindow$2;-><init>(Landroidx/appcompat/widget/ListPopupWindow;)V
+	9       (00000026) move-object/from16   v0, v25
+	10      (0000002a) iput-object          v2, v0, Landroidx/appcompat/widget/ListPopupWindow;->mShowDropDownRunnable Ljava/lang/Runnable;
+	11      (0000002e) move-object/from16   v0, v25
+	12      (00000032) iget-boolean         v2, v0, Landroidx/appcompat/widget/ListPopupWindow;->mModal Z
+	13      (00000036) if-nez               v2, +13d
+
+buildDropDown-BB@0x3a : [ buildDropDown-BB@0x3c ]
+	14      (0000003a) const/4              v2, 1
+
+buildDropDown-BB@0x3c : [ buildDropDown-BB@0x5c buildDropDown-BB@0x72 ]
+	15      (0000003c) move-object/from16   v0, v25
+	16      (00000040) invoke-virtual       v0, v9, v2, Landroidx/appcompat/widget/ListPopupWindow;->createDropDownListView(Landroid/content/Context; Z)Landroidx/appcompat/widget/DropDownListView;
+	17      (00000046) move-result-object   v2
+	18      (00000048) move-object/from16   v0, v25
+	19      (0000004c) iput-object          v2, v0, Landroidx/appcompat/widget/ListPopupWindow;->mDropDownList Landroidx/appcompat/widget/DropDownListView;
+	20      (00000050) move-object/from16   v0, v25
+	21      (00000054) iget-object          v2, v0, Landroidx/appcompat/widget/ListPopupWindow;->mDropDownListHighlight Landroid/graphics/drawable/Drawable;
+	22      (00000058) if-eqz               v2, +d
+
+buildDropDown-BB@0x5c : [ buildDropDown-BB@0x72 ]
+	23      (0000005c) move-object/from16   v0, v25
+	24      (00000060) iget-object          v2, v0, Landroidx/appcompat/widget/ListPopupWindow;->mDropDownList Landroidx/appcompat/widget/DropDownListView;
+	25      (00000064) move-object/from16   v0, v25
+	26      (00000068) iget-object          v4, v0, Landroidx/appcompat/widget/ListPopupWindow;->mDropDownListHighlight Landroid/graphics/drawable/Drawable;
+	27      (0000006c) invoke-virtual       v2, v4, Landroidx/appcompat/widget/DropDownListView;->setSelector(Landroid/graphics/drawable/Drawable;)V
+
+buildDropDown-BB@0x72 : [ buildDropDown-BB@0xfc buildDropDown-BB@0x112 ]
+	28      (00000072) move-object/from16   v0, v25
+	29      (00000076) iget-object          v2, v0, Landroidx/appcompat/widget/ListPopupWindow;->mDropDownList Landroidx/appcompat/widget/DropDownListView;
+	30      (0000007a) move-object/from16   v0, v25
+	31      (0000007e) iget-object          v4, v0, Landroidx/appcompat/widget/ListPopupWindow;->mAdapter Landroid/widget/ListAdapter;
+	32      (00000082) invoke-virtual       v2, v4, Landroidx/appcompat/widget/DropDownListView;->setAdapter(Landroid/widget/ListAdapter;)V
+	33      (00000088) move-object/from16   v0, v25
+	34      (0000008c) iget-object          v2, v0, Landroidx/appcompat/widget/ListPopupWindow;->mDropDownList Landroidx/appcompat/widget/DropDownListView;
+	35      (00000090) move-object/from16   v0, v25
+	36      (00000094) iget-object          v4, v0, Landroidx/appcompat/widget/ListPopupWindow;->mItemClickListener Landroid/widget/AdapterView$OnItemClickListener;
+	37      (00000098) invoke-virtual       v2, v4, Landroidx/appcompat/widget/DropDownListView;->setOnItemClickListener(Landroid/widget/AdapterView$OnItemClickListener;)V
+	38      (0000009e) move-object/from16   v0, v25
+	39      (000000a2) iget-object          v2, v0, Landroidx/appcompat/widget/ListPopupWindow;->mDropDownList Landroidx/appcompat/widget/DropDownListView;
+	40      (000000a6) const/4              v4, 1
+	41      (000000a8) invoke-virtual       v2, v4, Landroidx/appcompat/widget/DropDownListView;->setFocusable(Z)V
+	42      (000000ae) move-object/from16   v0, v25
+	43      (000000b2) iget-object          v2, v0, Landroidx/appcompat/widget/ListPopupWindow;->mDropDownList Landroidx/appcompat/widget/DropDownListView;
+	44      (000000b6) const/4              v4, 1
+	45      (000000b8) invoke-virtual       v2, v4, Landroidx/appcompat/widget/DropDownListView;->setFocusableInTouchMode(Z)V
+	46      (000000be) move-object/from16   v0, v25
+	47      (000000c2) iget-object          v2, v0, Landroidx/appcompat/widget/ListPopupWindow;->mDropDownList Landroidx/appcompat/widget/DropDownListView;
+	48      (000000c6) new-instance         v4, Landroidx/appcompat/widget/ListPopupWindow$3;
+	49      (000000ca) move-object/from16   v0, v25
+	50      (000000ce) invoke-direct        v4, v0, Landroidx/appcompat/widget/ListPopupWindow$3;-><init>(Landroidx/appcompat/widget/ListPopupWindow;)V
+	51      (000000d4) invoke-virtual       v2, v4, Landroidx/appcompat/widget/DropDownListView;->setOnItemSelectedListener(Landroid/widget/AdapterView$OnItemSelectedListener;)V
+	52      (000000da) move-object/from16   v0, v25
+	53      (000000de) iget-object          v2, v0, Landroidx/appcompat/widget/ListPopupWindow;->mDropDownList Landroidx/appcompat/widget/DropDownListView;
+	54      (000000e2) move-object/from16   v0, v25
+	55      (000000e6) iget-object          v4, v0, Landroidx/appcompat/widget/ListPopupWindow;->mScrollListener Landroidx/appcompat/widget/ListPopupWindow$PopupScrollListener;
+	56      (000000ea) invoke-virtual       v2, v4, Landroidx/appcompat/widget/DropDownListView;->setOnScrollListener(Landroid/widget/AbsListView$OnScrollListener;)V
+	57      (000000f0) move-object/from16   v0, v25
+	58      (000000f4) iget-object          v2, v0, Landroidx/appcompat/widget/ListPopupWindow;->mItemSelectedListener Landroid/widget/AdapterView$OnItemSelectedListener;
+	59      (000000f8) if-eqz               v2, +d
+
+buildDropDown-BB@0xfc : [ buildDropDown-BB@0x112 ]
+	60      (000000fc) move-object/from16   v0, v25
+	61      (00000100) iget-object          v2, v0, Landroidx/appcompat/widget/ListPopupWindow;->mDropDownList Landroidx/appcompat/widget/DropDownListView;
+	62      (00000104) move-object/from16   v0, v25
+	63      (00000108) iget-object          v4, v0, Landroidx/appcompat/widget/ListPopupWindow;->mItemSelectedListener Landroid/widget/AdapterView$OnItemSelectedListener;
+	64      (0000010c) invoke-virtual       v2, v4, Landroidx/appcompat/widget/DropDownListView;->setOnItemSelectedListener(Landroid/widget/AdapterView$OnItemSelectedListener;)V
+
+buildDropDown-BB@0x112 : [ buildDropDown-BB@0x126 buildDropDown-BB@0x1ee ]
+	65      (00000112) move-object/from16   v0, v25
+	66      (00000116) iget-object          v10, v0, Landroidx/appcompat/widget/ListPopupWindow;->mDropDownList Landroidx/appcompat/widget/DropDownListView;
+	67      (0000011a) move-object/from16   v0, v25
+	68      (0000011e) iget-object          v14, v0, Landroidx/appcompat/widget/ListPopupWindow;->mPromptView Landroid/view/View;
+	69      (00000122) if-eqz               v14, +66
+
+buildDropDown-BB@0x126 : [ D:buildDropDown-BB@0x158 0:buildDropDown-BB@0x2c6 1:buildDropDown-BB@0x2b6 ]
+	70      (00000126) new-instance         v12, Landroid/widget/LinearLayout;
+	71      (0000012a) invoke-direct        v12, v9, Landroid/widget/LinearLayout;-><init>(Landroid/content/Context;)V
+	72      (00000130) const/4              v2, 1
+	73      (00000132) invoke-virtual       v12, v2, Landroid/widget/LinearLayout;->setOrientation(I)V
+	74      (00000138) new-instance         v13, Landroid/widget/LinearLayout$LayoutParams;
+	75      (0000013c) const/4              v2, -1
+	76      (0000013e) const/4              v4, 0
+	77      (00000140) const/high16         v5, 16256 # [1.0]
+	78      (00000144) invoke-direct        v13, v2, v4, v5, Landroid/widget/LinearLayout$LayoutParams;-><init>(I I F)V
+	79      (0000014a) move-object/from16   v0, v25
+	80      (0000014e) iget                 v2, v0, Landroidx/appcompat/widget/ListPopupWindow;->mPromptPosition I
+	81      (00000152) packed-switch        v2, +179 (0x444)
+
+buildDropDown-BB@0x158 : [ buildDropDown-BB@0x190 ]
+	82      (00000158) const-string         v2, 'ListPopupWindow'
+	83      (0000015c) new-instance         v4, Ljava/lang/StringBuilder;
+	84      (00000160) invoke-direct        v4, Ljava/lang/StringBuilder;-><init>()V
+	85      (00000166) const-string         v5, 'Invalid hint position '
+	86      (0000016a) invoke-virtual       v4, v5, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	87      (00000170) move-result-object   v4
+	88      (00000172) move-object/from16   v0, v25
+	89      (00000176) iget                 v5, v0, Landroidx/appcompat/widget/ListPopupWindow;->mPromptPosition I
+	90      (0000017a) invoke-virtual       v4, v5, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+	91      (00000180) move-result-object   v4
+	92      (00000182) invoke-virtual       v4, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+	93      (00000188) move-result-object   v4
+	94      (0000018a) invoke-static        v2, v4, Landroid/util/Log;->e(Ljava/lang/String; Ljava/lang/String;)I
+
+buildDropDown-BB@0x190 : [ buildDropDown-BB@0x19c buildDropDown-BB@0x2d6 ]
+	95      (00000190) move-object/from16   v0, v25
+	96      (00000194) iget                 v2, v0, Landroidx/appcompat/widget/ListPopupWindow;->mDropDownWidth I
+	97      (00000198) if-ltz               v2, +9f
+
+buildDropDown-BB@0x19c : [ buildDropDown-BB@0x1ac ]
+	98      (0000019c) const/high16         v22, -32768 # [-0.0]
+	99      (000001a0) move-object/from16   v0, v25
+	100     (000001a4) iget                 v0, v0, Landroidx/appcompat/widget/ListPopupWindow;->mDropDownWidth I
+	101     (000001a8) move/from16          v23, v0
+
+buildDropDown-BB@0x1ac : [ buildDropDown-BB@0x1ee ]
+	102     (000001ac) move/from16          v0, v23
+	103     (000001b0) move/from16          v1, v22
+	104     (000001b4) invoke-static        v0, v1, Landroid/view/View$MeasureSpec;->makeMeasureSpec(I I)I
+	105     (000001ba) move-result          v24
+	106     (000001bc) const/4              v11, 0
+	107     (000001be) const/4              v2, 0
+	108     (000001c0) move/from16          v0, v24
+	109     (000001c4) invoke-virtual       v14, v0, v2, Landroid/view/View;->measure(I I)V
+	110     (000001ca) invoke-virtual       v14, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
+	111     (000001d0) move-result-object   v13
+	112     (000001d2) check-cast           v13, Landroid/widget/LinearLayout$LayoutParams;
+	113     (000001d6) invoke-virtual       v14, Landroid/view/View;->getMeasuredHeight()I
+	114     (000001dc) move-result          v2
+	115     (000001de) iget                 v4, v13, Landroid/widget/LinearLayout$LayoutParams;->topMargin I
+	116     (000001e2) add-int/2addr        v2, v4
+	117     (000001e4) iget                 v4, v13, Landroid/widget/LinearLayout$LayoutParams;->bottomMargin I
+	118     (000001e8) add-int              v19, v2, v4
+	119     (000001ec) move-object          v10, v12
+
+buildDropDown-BB@0x1ee : [ buildDropDown-BB@0x1fc ]
+	120     (000001ee) move-object/from16   v0, v25
+	121     (000001f2) iget-object          v2, v0, Landroidx/appcompat/widget/ListPopupWindow;->mPopup Landroid/widget/PopupWindow;
+	122     (000001f6) invoke-virtual       v2, v10, Landroid/widget/PopupWindow;->setContentView(Landroid/view/View;)V
+
+buildDropDown-BB@0x1fc : [ buildDropDown-BB@0x210 buildDropDown-BB@0x32c ]
+	123     (000001fc) move-object/from16   v0, v25
+	124     (00000200) iget-object          v2, v0, Landroidx/appcompat/widget/ListPopupWindow;->mPopup Landroid/widget/PopupWindow;
+	125     (00000204) invoke-virtual       v2, Landroid/widget/PopupWindow;->getBackground()Landroid/graphics/drawable/Drawable;
+	126     (0000020a) move-result-object   v8
+	127     (0000020c) if-eqz               v8, +90
+
+buildDropDown-BB@0x210 : [ buildDropDown-BB@0x246 buildDropDown-BB@0x25c ]
+	128     (00000210) move-object/from16   v0, v25
+	129     (00000214) iget-object          v2, v0, Landroidx/appcompat/widget/ListPopupWindow;->mTempRect Landroid/graphics/Rect;
+	130     (00000218) invoke-virtual       v8, v2, Landroid/graphics/drawable/Drawable;->getPadding(Landroid/graphics/Rect;)Z
+	131     (0000021e) move-object/from16   v0, v25
+	132     (00000222) iget-object          v2, v0, Landroidx/appcompat/widget/ListPopupWindow;->mTempRect Landroid/graphics/Rect;
+	133     (00000226) iget                 v2, v2, Landroid/graphics/Rect;->top I
+	134     (0000022a) move-object/from16   v0, v25
+	135     (0000022e) iget-object          v4, v0, Landroidx/appcompat/widget/ListPopupWindow;->mTempRect Landroid/graphics/Rect;
+	136     (00000232) iget                 v4, v4, Landroid/graphics/Rect;->bottom I
+	137     (00000236) add-int              v20, v2, v4
+	138     (0000023a) move-object/from16   v0, v25
+	139     (0000023e) iget-boolean         v2, v0, Landroidx/appcompat/widget/ListPopupWindow;->mDropDownVerticalOffsetSet Z
+	140     (00000242) if-nez               v2, +d
+
+buildDropDown-BB@0x246 : [ buildDropDown-BB@0x25c ]
+	141     (00000246) move-object/from16   v0, v25
+	142     (0000024a) iget-object          v2, v0, Landroidx/appcompat/widget/ListPopupWindow;->mTempRect Landroid/graphics/Rect;
+	143     (0000024e) iget                 v2, v2, Landroid/graphics/Rect;->top I
+	144     (00000252) neg-int              v2, v2
+	145     (00000254) move-object/from16   v0, v25
+	146     (00000258) iput                 v2, v0, Landroidx/appcompat/widget/ListPopupWindow;->mDropDownVerticalOffset I
+
+buildDropDown-BB@0x25c : [ buildDropDown-BB@0x272 buildDropDown-BB@0x340 ]
+	147     (0000025c) move-object/from16   v0, v25
+	148     (00000260) iget-object          v2, v0, Landroidx/appcompat/widget/ListPopupWindow;->mPopup Landroid/widget/PopupWindow;
+	149     (00000264) invoke-virtual       v2, Landroid/widget/PopupWindow;->getInputMethodMode()I
+	150     (0000026a) move-result          v2
+	151     (0000026c) const/4              v4, 2
+	152     (0000026e) if-ne                v2, v4, +69
+
+buildDropDown-BB@0x272 : [ buildDropDown-BB@0x274 ]
+	153     (00000272) const/4              v15, 1
+
+buildDropDown-BB@0x274 : [ buildDropDown-BB@0x29c buildDropDown-BB@0x2aa ]
+	154     (00000274) invoke-virtual/range v25, Landroidx/appcompat/widget/ListPopupWindow;->getAnchorView()Landroid/view/View;
+	155     (0000027a) move-result-object   v2
+	156     (0000027c) move-object/from16   v0, v25
+	157     (00000280) iget                 v4, v0, Landroidx/appcompat/widget/ListPopupWindow;->mDropDownVerticalOffset I
+	158     (00000284) move-object/from16   v0, v25
+	159     (00000288) invoke-direct        v0, v2, v4, v15, Landroidx/appcompat/widget/ListPopupWindow;->getMaxAvailableHeight(Landroid/view/View; I Z)I
+	160     (0000028e) move-result          v18
+	161     (00000290) move-object/from16   v0, v25
+	162     (00000294) iget-boolean         v2, v0, Landroidx/appcompat/widget/ListPopupWindow;->mDropDownAlwaysVisible Z
+	163     (00000298) if-nez               v2, +9
+
+buildDropDown-BB@0x29c : [ buildDropDown-BB@0x2aa buildDropDown-BB@0x344 ]
+	164     (0000029c) move-object/from16   v0, v25
+	165     (000002a0) iget                 v2, v0, Landroidx/appcompat/widget/ListPopupWindow;->mDropDownHeight I
+	166     (000002a4) const/4              v4, -1
+	167     (000002a6) if-ne                v2, v4, +4f
+
+buildDropDown-BB@0x2aa : [ buildDropDown-BB@0x2ae ]
+	168     (000002aa) add-int              v2, v18, v20
+
+buildDropDown-BB@0x2ae : 
+	169     (000002ae) return               v2
+
+buildDropDown-BB@0x2b0 : [ buildDropDown-BB@0x3c ]
+	170     (000002b0) const/4              v2, 0
+	171     (000002b2) goto/16              -13b
+
+buildDropDown-BB@0x2b6 : [ buildDropDown-BB@0x190 ]
+	172     (000002b6) invoke-virtual       v12, v10, v13, Landroid/widget/LinearLayout;->addView(Landroid/view/View; Landroid/view/ViewGroup$LayoutParams;)V
+	173     (000002bc) invoke-virtual       v12, v14, Landroid/widget/LinearLayout;->addView(Landroid/view/View;)V
+	174     (000002c2) goto/16              -99
+
+buildDropDown-BB@0x2c6 : [ buildDropDown-BB@0x190 ]
+	175     (000002c6) invoke-virtual       v12, v14, Landroid/widget/LinearLayout;->addView(Landroid/view/View;)V
+	176     (000002cc) invoke-virtual       v12, v10, v13, Landroid/widget/LinearLayout;->addView(Landroid/view/View; Landroid/view/ViewGroup$LayoutParams;)V
+	177     (000002d2) goto/16              -a1
+
+buildDropDown-BB@0x2d6 : [ buildDropDown-BB@0x1ac ]
+	178     (000002d6) const/16             v22, 0
+	179     (000002da) const/16             v23, 0
+	180     (000002de) goto/16              -99
+
+buildDropDown-BB@0x2e2 : [ buildDropDown-BB@0x306 buildDropDown-BB@0x1fc ]
+	181     (000002e2) move-object/from16   v0, v25
+	182     (000002e6) iget-object          v2, v0, Landroidx/appcompat/widget/ListPopupWindow;->mPopup Landroid/widget/PopupWindow;
+	183     (000002ea) invoke-virtual       v2, Landroid/widget/PopupWindow;->getContentView()Landroid/view/View;
+	184     (000002f0) move-result-object   v10
+	185     (000002f2) check-cast           v10, Landroid/view/ViewGroup;
+	186     (000002f6) move-object/from16   v0, v25
+	187     (000002fa) iget-object          v0, v0, Landroidx/appcompat/widget/ListPopupWindow;->mPromptView Landroid/view/View;
+	188     (000002fe) move-object/from16   v21, v0
+	189     (00000302) if-eqz               v21, -83
+
+buildDropDown-BB@0x306 : [ buildDropDown-BB@0x1fc ]
+	190     (00000306) invoke-virtual/range v21, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
+	191     (0000030c) move-result-object   v13
+	192     (0000030e) check-cast           v13, Landroid/widget/LinearLayout$LayoutParams;
+	193     (00000312) invoke-virtual/range v21, Landroid/view/View;->getMeasuredHeight()I
+	194     (00000318) move-result          v2
+	195     (0000031a) iget                 v4, v13, Landroid/widget/LinearLayout$LayoutParams;->topMargin I
+	196     (0000031e) add-int/2addr        v2, v4
+	197     (00000320) iget                 v4, v13, Landroid/widget/LinearLayout$LayoutParams;->bottomMargin I
+	198     (00000324) add-int              v19, v2, v4
+	199     (00000328) goto/16              -96
+
+buildDropDown-BB@0x32c : [ buildDropDown-BB@0x25c ]
+	200     (0000032c) move-object/from16   v0, v25
+	201     (00000330) iget-object          v2, v0, Landroidx/appcompat/widget/ListPopupWindow;->mTempRect Landroid/graphics/Rect;
+	202     (00000334) invoke-virtual       v2, Landroid/graphics/Rect;->setEmpty()V
+	203     (0000033a) const/16             v20, 0
+	204     (0000033e) goto                 -71
+
+buildDropDown-BB@0x340 : [ buildDropDown-BB@0x274 ]
+	205     (00000340) const/4              v15, 0
+	206     (00000342) goto                 -67
+
+buildDropDown-BB@0x344 : [ D:buildDropDown-BB@0x352 -2:buildDropDown-BB@0x3b8 -1:buildDropDown-BB@0x3fe ]
+	207     (00000344) move-object/from16   v0, v25
+	208     (00000348) iget                 v2, v0, Landroidx/appcompat/widget/ListPopupWindow;->mDropDownWidth I
+	209     (0000034c) packed-switch        v2, +84 (0x454)
+
+buildDropDown-BB@0x352 : [ buildDropDown-BB@0x366 ]
+	210     (00000352) move-object/from16   v0, v25
+	211     (00000356) iget                 v2, v0, Landroidx/appcompat/widget/ListPopupWindow;->mDropDownWidth I
+	212     (0000035a) const/high16         v4, 16384 # [2.0]
+	213     (0000035e) invoke-static        v2, v4, Landroid/view/View$MeasureSpec;->makeMeasureSpec(I I)I
+	214     (00000364) move-result          v3
+
+buildDropDown-BB@0x366 : [ buildDropDown-BB@0x384 buildDropDown-BB@0x3b0 ]
+	215     (00000366) move-object/from16   v0, v25
+	216     (0000036a) iget-object          v2, v0, Landroidx/appcompat/widget/ListPopupWindow;->mDropDownList Landroidx/appcompat/widget/DropDownListView;
+	217     (0000036e) const/4              v4, 0
+	218     (00000370) const/4              v5, -1
+	219     (00000372) sub-int              v6, v18, v19
+	220     (00000376) const/4              v7, -1
+	221     (00000378) invoke-virtual/range v2 ... v7, Landroidx/appcompat/widget/DropDownListView;->measureHeightOfChildrenCompat(I I I I I)I
+	222     (0000037e) move-result          v16
+	223     (00000380) if-lez               v16, +18
+
+buildDropDown-BB@0x384 : [ buildDropDown-BB@0x3b0 ]
+	224     (00000384) move-object/from16   v0, v25
+	225     (00000388) iget-object          v2, v0, Landroidx/appcompat/widget/ListPopupWindow;->mDropDownList Landroidx/appcompat/widget/DropDownListView;
+	226     (0000038c) invoke-virtual       v2, Landroidx/appcompat/widget/DropDownListView;->getPaddingTop()I
+	227     (00000392) move-result          v2
+	228     (00000394) move-object/from16   v0, v25
+	229     (00000398) iget-object          v4, v0, Landroidx/appcompat/widget/ListPopupWindow;->mDropDownList Landroidx/appcompat/widget/DropDownListView;
+	230     (0000039c) invoke-virtual       v4, Landroidx/appcompat/widget/DropDownListView;->getPaddingBottom()I
+	231     (000003a2) move-result          v4
+	232     (000003a4) add-int              v17, v2, v4
+	233     (000003a8) add-int              v2, v20, v17
+	234     (000003ac) add-int              v19, v19, v2
+
+buildDropDown-BB@0x3b0 : [ buildDropDown-BB@0x2ae ]
+	235     (000003b0) add-int              v2, v16, v19
+	236     (000003b4) goto/16              -83
+
+buildDropDown-BB@0x3b8 : [ buildDropDown-BB@0x366 ]
+	237     (000003b8) move-object/from16   v0, v25
+	238     (000003bc) iget-object          v2, v0, Landroidx/appcompat/widget/ListPopupWindow;->mContext Landroid/content/Context;
+	239     (000003c0) invoke-virtual       v2, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
+	240     (000003c6) move-result-object   v2
+	241     (000003c8) invoke-virtual       v2, Landroid/content/res/Resources;->getDisplayMetrics()Landroid/util/DisplayMetrics;
+	242     (000003ce) move-result-object   v2
+	243     (000003d0) iget                 v2, v2, Landroid/util/DisplayMetrics;->widthPixels I
+	244     (000003d4) move-object/from16   v0, v25
+	245     (000003d8) iget-object          v4, v0, Landroidx/appcompat/widget/ListPopupWindow;->mTempRect Landroid/graphics/Rect;
+	246     (000003dc) iget                 v4, v4, Landroid/graphics/Rect;->left I
+	247     (000003e0) move-object/from16   v0, v25
+	248     (000003e4) iget-object          v5, v0, Landroidx/appcompat/widget/ListPopupWindow;->mTempRect Landroid/graphics/Rect;
+	249     (000003e8) iget                 v5, v5, Landroid/graphics/Rect;->right I
+	250     (000003ec) add-int/2addr        v4, v5
+	251     (000003ee) sub-int/2addr        v2, v4
+	252     (000003f0) const/high16         v4, -32768 # [-0.0]
+	253     (000003f4) invoke-static        v2, v4, Landroid/view/View$MeasureSpec;->makeMeasureSpec(I I)I
+	254     (000003fa) move-result          v3
+	255     (000003fc) goto                 -4b
+
+buildDropDown-BB@0x3fe : [ buildDropDown-BB@0x366 ]
+	256     (000003fe) move-object/from16   v0, v25
+	257     (00000402) iget-object          v2, v0, Landroidx/appcompat/widget/ListPopupWindow;->mContext Landroid/content/Context;
+	258     (00000406) invoke-virtual       v2, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
+	259     (0000040c) move-result-object   v2
+	260     (0000040e) invoke-virtual       v2, Landroid/content/res/Resources;->getDisplayMetrics()Landroid/util/DisplayMetrics;
+	261     (00000414) move-result-object   v2
+	262     (00000416) iget                 v2, v2, Landroid/util/DisplayMetrics;->widthPixels I
+	263     (0000041a) move-object/from16   v0, v25
+	264     (0000041e) iget-object          v4, v0, Landroidx/appcompat/widget/ListPopupWindow;->mTempRect Landroid/graphics/Rect;
+	265     (00000422) iget                 v4, v4, Landroid/graphics/Rect;->left I
+	266     (00000426) move-object/from16   v0, v25
+	267     (0000042a) iget-object          v5, v0, Landroidx/appcompat/widget/ListPopupWindow;->mTempRect Landroid/graphics/Rect;
+	268     (0000042e) iget                 v5, v5, Landroid/graphics/Rect;->right I
+	269     (00000432) add-int/2addr        v4, v5
+	270     (00000434) sub-int/2addr        v2, v4
+	271     (00000436) const/high16         v4, 16384 # [2.0]
+	272     (0000043a) invoke-static        v2, v4, Landroid/view/View$MeasureSpec;->makeMeasureSpec(I I)I
+	273     (00000440) move-result          v3
+	274     (00000442) goto                 -6e
+
+buildDropDown-BB@0x444 : 
+	275     (00000444) packed-switch-payload 0 1
+	276     (00000454) packed-switch-payload -2 -1
+

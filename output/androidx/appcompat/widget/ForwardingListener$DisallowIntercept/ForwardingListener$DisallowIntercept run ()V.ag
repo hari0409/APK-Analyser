@@ -1,0 +1,21 @@
+# Landroidx/appcompat/widget/ForwardingListener$DisallowIntercept;->run()V [access_flags=public]
+#
+# Parameters:
+# local registers: v0...v2
+#
+# - return:void
+
+run-BB@0x0 : [ run-BB@0x14 run-BB@0x1c ]
+	0       (00000000) iget-object          v1, v2, Landroidx/appcompat/widget/ForwardingListener$DisallowIntercept;->this$0 Landroidx/appcompat/widget/ForwardingListener;
+	1       (00000004) iget-object          v1, v1, Landroidx/appcompat/widget/ForwardingListener;->mSrc Landroid/view/View;
+	2       (00000008) invoke-virtual       v1, Landroid/view/View;->getParent()Landroid/view/ViewParent;
+	3       (0000000e) move-result-object   v0
+	4       (00000010) if-eqz               v0, +6
+
+run-BB@0x14 : [ run-BB@0x1c ]
+	5       (00000014) const/4              v1, 1
+	6       (00000016) invoke-interface     v0, v1, Landroid/view/ViewParent;->requestDisallowInterceptTouchEvent(Z)V
+
+run-BB@0x1c : 
+	7       (0000001c) return-void          
+

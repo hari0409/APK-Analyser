@@ -1,0 +1,26 @@
+# Landroidx/appcompat/widget/AppCompatImageHelper;->setSupportImageTintList(Landroid/content/res/ColorStateList;)V [access_flags=]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:android.content.res.ColorStateList
+#
+# - return:void
+
+setSupportImageTintList-BB@0x0 : [ setSupportImageTintList-BB@0x8 setSupportImageTintList-BB@0x16 ]
+	0       (00000000) iget-object          v0, v2, Landroidx/appcompat/widget/AppCompatImageHelper;->mImageTint Landroidx/appcompat/widget/TintInfo;
+	1       (00000004) if-nez               v0, +9
+
+setSupportImageTintList-BB@0x8 : [ setSupportImageTintList-BB@0x16 ]
+	2       (00000008) new-instance         v0, Landroidx/appcompat/widget/TintInfo;
+	3       (0000000c) invoke-direct        v0, Landroidx/appcompat/widget/TintInfo;-><init>()V
+	4       (00000012) iput-object          v0, v2, Landroidx/appcompat/widget/AppCompatImageHelper;->mImageTint Landroidx/appcompat/widget/TintInfo;
+
+setSupportImageTintList-BB@0x16 : 
+	5       (00000016) iget-object          v0, v2, Landroidx/appcompat/widget/AppCompatImageHelper;->mImageTint Landroidx/appcompat/widget/TintInfo;
+	6       (0000001a) iput-object          v3, v0, Landroidx/appcompat/widget/TintInfo;->mTintList Landroid/content/res/ColorStateList;
+	7       (0000001e) iget-object          v0, v2, Landroidx/appcompat/widget/AppCompatImageHelper;->mImageTint Landroidx/appcompat/widget/TintInfo;
+	8       (00000022) const/4              v1, 1
+	9       (00000024) iput-boolean         v1, v0, Landroidx/appcompat/widget/TintInfo;->mHasTintList Z
+	10      (00000028) invoke-virtual       v2, Landroidx/appcompat/widget/AppCompatImageHelper;->applySupportImageTint()V
+	11      (0000002e) return-void          
+

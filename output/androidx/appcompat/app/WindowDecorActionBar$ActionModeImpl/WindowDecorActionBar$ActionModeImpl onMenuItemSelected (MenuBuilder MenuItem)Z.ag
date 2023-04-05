@@ -1,0 +1,25 @@
+# Landroidx/appcompat/app/WindowDecorActionBar$ActionModeImpl;->onMenuItemSelected(Landroidx/appcompat/view/menu/MenuBuilder; Landroid/view/MenuItem;)Z [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:androidx.appcompat.view.menu.MenuBuilder
+# - v3:android.view.MenuItem
+#
+# - return:boolean
+
+onMenuItemSelected-BB@0x0 : [ onMenuItemSelected-BB@0x8 onMenuItemSelected-BB@0x16 ]
+	0       (00000000) iget-object          v0, v1, Landroidx/appcompat/app/WindowDecorActionBar$ActionModeImpl;->mCallback Landroidx/appcompat/view/ActionMode$Callback;
+	1       (00000004) if-eqz               v0, +9
+
+onMenuItemSelected-BB@0x8 : [ onMenuItemSelected-BB@0x14 ]
+	2       (00000008) iget-object          v0, v1, Landroidx/appcompat/app/WindowDecorActionBar$ActionModeImpl;->mCallback Landroidx/appcompat/view/ActionMode$Callback;
+	3       (0000000c) invoke-interface     v0, v1, v3, Landroidx/appcompat/view/ActionMode$Callback;->onActionItemClicked(Landroidx/appcompat/view/ActionMode; Landroid/view/MenuItem;)Z
+	4       (00000012) move-result          v0
+
+onMenuItemSelected-BB@0x14 : 
+	5       (00000014) return               v0
+
+onMenuItemSelected-BB@0x16 : [ onMenuItemSelected-BB@0x14 ]
+	6       (00000016) const/4              v0, 0
+	7       (00000018) goto                 -2
+

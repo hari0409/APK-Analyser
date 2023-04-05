@@ -1,0 +1,62 @@
+# Landroidx/appcompat/view/menu/MenuBuilder;->dispatchRestoreInstanceState(Landroid/os/Bundle;)V [access_flags=private]
+#
+# Parameters:
+# - local registers: v0...v7
+# - v8:android.os.Bundle
+#
+# - return:void
+
+dispatchRestoreInstanceState-BB@0x0 : [ dispatchRestoreInstanceState-BB@0x10 dispatchRestoreInstanceState-BB@0x20 ]
+	0       (00000000) const-string         v5, 'android:menu:presenters'
+	1       (00000004) invoke-virtual       v8, v5, Landroid/os/Bundle;->getSparseParcelableArray(Ljava/lang/String;)Landroid/util/SparseArray;
+	2       (0000000a) move-result-object   v3
+	3       (0000000c) if-eqz               v3, +a
+
+dispatchRestoreInstanceState-BB@0x10 : [ dispatchRestoreInstanceState-BB@0x20 dispatchRestoreInstanceState-BB@0x22 ]
+	4       (00000010) iget-object          v5, v7, Landroidx/appcompat/view/menu/MenuBuilder;->mPresenters Ljava/util/concurrent/CopyOnWriteArrayList;
+	5       (00000014) invoke-virtual       v5, Ljava/util/concurrent/CopyOnWriteArrayList;->isEmpty()Z
+	6       (0000001a) move-result          v5
+	7       (0000001c) if-eqz               v5, +3
+
+dispatchRestoreInstanceState-BB@0x20 : 
+	8       (00000020) return-void          
+
+dispatchRestoreInstanceState-BB@0x22 : [ dispatchRestoreInstanceState-BB@0x2e ]
+	9       (00000022) iget-object          v5, v7, Landroidx/appcompat/view/menu/MenuBuilder;->mPresenters Ljava/util/concurrent/CopyOnWriteArrayList;
+	10      (00000026) invoke-virtual       v5, Ljava/util/concurrent/CopyOnWriteArrayList;->iterator()Ljava/util/Iterator;
+	11      (0000002c) move-result-object   v5
+
+dispatchRestoreInstanceState-BB@0x2e : [ dispatchRestoreInstanceState-BB@0x3a dispatchRestoreInstanceState-BB@0x20 ]
+	12      (0000002e) invoke-interface     v5, Ljava/util/Iterator;->hasNext()Z
+	13      (00000034) move-result          v6
+	14      (00000036) if-eqz               v6, -b
+
+dispatchRestoreInstanceState-BB@0x3a : [ dispatchRestoreInstanceState-BB@0x56 dispatchRestoreInstanceState-BB@0x62 ]
+	15      (0000003a) invoke-interface     v5, Ljava/util/Iterator;->next()Ljava/lang/Object;
+	16      (00000040) move-result-object   v4
+	17      (00000042) check-cast           v4, Ljava/lang/ref/WeakReference;
+	18      (00000046) invoke-virtual       v4, Ljava/lang/ref/WeakReference;->get()Ljava/lang/Object;
+	19      (0000004c) move-result-object   v2
+	20      (0000004e) check-cast           v2, Landroidx/appcompat/view/menu/MenuPresenter;
+	21      (00000052) if-nez               v2, +8
+
+dispatchRestoreInstanceState-BB@0x56 : [ dispatchRestoreInstanceState-BB@0x2e ]
+	22      (00000056) iget-object          v6, v7, Landroidx/appcompat/view/menu/MenuBuilder;->mPresenters Ljava/util/concurrent/CopyOnWriteArrayList;
+	23      (0000005a) invoke-virtual       v6, v4, Ljava/util/concurrent/CopyOnWriteArrayList;->remove(Ljava/lang/Object;)Z
+	24      (00000060) goto                 -19
+
+dispatchRestoreInstanceState-BB@0x62 : [ dispatchRestoreInstanceState-BB@0x6e dispatchRestoreInstanceState-BB@0x2e ]
+	25      (00000062) invoke-interface     v2, Landroidx/appcompat/view/menu/MenuPresenter;->getId()I
+	26      (00000068) move-result          v0
+	27      (0000006a) if-lez               v0, -1e
+
+dispatchRestoreInstanceState-BB@0x6e : [ dispatchRestoreInstanceState-BB@0x7e dispatchRestoreInstanceState-BB@0x2e ]
+	28      (0000006e) invoke-virtual       v3, v0, Landroid/util/SparseArray;->get(I)Ljava/lang/Object;
+	29      (00000074) move-result-object   v1
+	30      (00000076) check-cast           v1, Landroid/os/Parcelable;
+	31      (0000007a) if-eqz               v1, -26
+
+dispatchRestoreInstanceState-BB@0x7e : [ dispatchRestoreInstanceState-BB@0x2e ]
+	32      (0000007e) invoke-interface     v2, v1, Landroidx/appcompat/view/menu/MenuPresenter;->onRestoreInstanceState(Landroid/os/Parcelable;)V
+	33      (00000084) goto                 -2b
+

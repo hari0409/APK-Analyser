@@ -1,0 +1,29 @@
+# Lcom/afwsamples/testdpc/policy/networking/NetworkUsageStatsFragment;->onClick(Landroid/view/View;)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:android.view.View
+#
+# - return:void
+
+onClick-BB@0x0 : [ D:onClick-BB@0xe 2131296427:onClick-BB@0x1c 2131296638:onClick-BB@0x10 ]
+	0       (00000000) invoke-virtual       v2, Landroid/view/View;->getId()I
+	1       (00000006) move-result          v0
+	2       (00000008) sparse-switch        v0, +10 (0x28)
+
+onClick-BB@0xe : 
+	3       (0000000e) return-void          
+
+onClick-BB@0x10 : [ onClick-BB@0xe ]
+	4       (00000010) iget-object          v0, v1, Lcom/afwsamples/testdpc/policy/networking/NetworkUsageStatsFragment;->mStartDate Ljava/util/Date;
+	5       (00000014) invoke-direct        v1, v0, Lcom/afwsamples/testdpc/policy/networking/NetworkUsageStatsFragment;->pickDate(Ljava/util/Date;)V
+	6       (0000001a) goto                 -6
+
+onClick-BB@0x1c : [ onClick-BB@0xe ]
+	7       (0000001c) iget-object          v0, v1, Lcom/afwsamples/testdpc/policy/networking/NetworkUsageStatsFragment;->mEndDate Ljava/util/Date;
+	8       (00000020) invoke-direct        v1, v0, Lcom/afwsamples/testdpc/policy/networking/NetworkUsageStatsFragment;->pickDate(Ljava/util/Date;)V
+	9       (00000026) goto                 -c
+
+onClick-BB@0x28 : 
+	10      (00000028) sparse-switch-payload 7f0900ab 7f09017e
+

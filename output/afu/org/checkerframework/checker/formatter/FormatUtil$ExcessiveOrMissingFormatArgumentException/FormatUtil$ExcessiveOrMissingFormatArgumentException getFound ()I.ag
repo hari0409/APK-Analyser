@@ -1,0 +1,11 @@
+# Lafu/org/checkerframework/checker/formatter/FormatUtil$ExcessiveOrMissingFormatArgumentException;->getFound()I [access_flags=public]
+#
+# Parameters:
+# local registers: v0...v1
+#
+# - return:int
+
+getFound-BB@0x0 : 
+	0       (00000000) iget                 v0, v1, Lafu/org/checkerframework/checker/formatter/FormatUtil$ExcessiveOrMissingFormatArgumentException;->found I
+	1       (00000004) return               v0
+

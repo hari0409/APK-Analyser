@@ -1,0 +1,39 @@
+# Landroidx/print/PrintHelper$PrintUriAdapter;->onFinish()V [access_flags=public]
+#
+# Parameters:
+# local registers: v0...v2
+#
+# - return:void
+
+onFinish-BB@0x0 : [ onFinish-BB@0x14 onFinish-BB@0x20 ]
+	0       (00000000) invoke-super         v2, Landroid/print/PrintDocumentAdapter;->onFinish()V
+	1       (00000006) invoke-virtual       v2, Landroidx/print/PrintHelper$PrintUriAdapter;->cancelLoad()V
+	2       (0000000c) iget-object          v0, v2, Landroidx/print/PrintHelper$PrintUriAdapter;->mLoadBitmap Landroid/os/AsyncTask;
+	3       (00000010) if-eqz               v0, +8
+
+onFinish-BB@0x14 : [ onFinish-BB@0x20 ]
+	4       (00000014) iget-object          v0, v2, Landroidx/print/PrintHelper$PrintUriAdapter;->mLoadBitmap Landroid/os/AsyncTask;
+	5       (00000018) const/4              v1, 1
+	6       (0000001a) invoke-virtual       v0, v1, Landroid/os/AsyncTask;->cancel(Z)Z
+
+onFinish-BB@0x20 : [ onFinish-BB@0x28 onFinish-BB@0x32 ]
+	7       (00000020) iget-object          v0, v2, Landroidx/print/PrintHelper$PrintUriAdapter;->mCallback Landroidx/print/PrintHelper$OnPrintFinishCallback;
+	8       (00000024) if-eqz               v0, +7
+
+onFinish-BB@0x28 : [ onFinish-BB@0x32 ]
+	9       (00000028) iget-object          v0, v2, Landroidx/print/PrintHelper$PrintUriAdapter;->mCallback Landroidx/print/PrintHelper$OnPrintFinishCallback;
+	10      (0000002c) invoke-interface     v0, Landroidx/print/PrintHelper$OnPrintFinishCallback;->onFinish()V
+
+onFinish-BB@0x32 : [ onFinish-BB@0x3a onFinish-BB@0x4a ]
+	11      (00000032) iget-object          v0, v2, Landroidx/print/PrintHelper$PrintUriAdapter;->mBitmap Landroid/graphics/Bitmap;
+	12      (00000036) if-eqz               v0, +a
+
+onFinish-BB@0x3a : [ onFinish-BB@0x4a ]
+	13      (0000003a) iget-object          v0, v2, Landroidx/print/PrintHelper$PrintUriAdapter;->mBitmap Landroid/graphics/Bitmap;
+	14      (0000003e) invoke-virtual       v0, Landroid/graphics/Bitmap;->recycle()V
+	15      (00000044) const/4              v0, 0
+	16      (00000046) iput-object          v0, v2, Landroidx/print/PrintHelper$PrintUriAdapter;->mBitmap Landroid/graphics/Bitmap;
+
+onFinish-BB@0x4a : 
+	17      (0000004a) return-void          
+

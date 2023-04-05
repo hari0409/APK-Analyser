@@ -1,0 +1,33 @@
+# Lcom/afwsamples/testdpc/common/preference/DpcPreferenceHelper;->getCurrentUser()I [access_flags=private]
+#
+# Parameters:
+# local registers: v0...v1
+#
+# - return:int
+
+getCurrentUser-BB@0x0 : [ getCurrentUser-BB@0x10 getCurrentUser-BB@0x14 ]
+	0       (00000000) iget-object          v0, v1, Lcom/afwsamples/testdpc/common/preference/DpcPreferenceHelper;->mContext Landroid/content/Context;
+	1       (00000004) invoke-static        v0, Lcom/afwsamples/testdpc/common/Util;->isPrimaryUser(Landroid/content/Context;)Z
+	2       (0000000a) move-result          v0
+	3       (0000000c) if-eqz               v0, +4
+
+getCurrentUser-BB@0x10 : [ getCurrentUser-BB@0x12 ]
+	4       (00000010) const/4              v0, 1
+
+getCurrentUser-BB@0x12 : 
+	5       (00000012) return               v0
+
+getCurrentUser-BB@0x14 : [ getCurrentUser-BB@0x24 getCurrentUser-BB@0x28 ]
+	6       (00000014) iget-object          v0, v1, Lcom/afwsamples/testdpc/common/preference/DpcPreferenceHelper;->mContext Landroid/content/Context;
+	7       (00000018) invoke-static        v0, Lcom/afwsamples/testdpc/common/Util;->isManagedProfileOwner(Landroid/content/Context;)Z
+	8       (0000001e) move-result          v0
+	9       (00000020) if-eqz               v0, +4
+
+getCurrentUser-BB@0x24 : [ getCurrentUser-BB@0x12 ]
+	10      (00000024) const/4              v0, 4
+	11      (00000026) goto                 -a
+
+getCurrentUser-BB@0x28 : [ getCurrentUser-BB@0x12 ]
+	12      (00000028) const/4              v0, 2
+	13      (0000002a) goto                 -c
+

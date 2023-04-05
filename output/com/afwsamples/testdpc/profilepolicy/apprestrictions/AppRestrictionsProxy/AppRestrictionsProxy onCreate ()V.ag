@@ -1,0 +1,17 @@
+# Lcom/afwsamples/testdpc/profilepolicy/apprestrictions/AppRestrictionsProxy;->onCreate()V [access_flags=public]
+#
+# Parameters:
+# local registers: v0...v3
+#
+# - return:void
+
+onCreate-BB@0x0 : 
+	0       (00000000) new-instance         v0, Landroid/os/Messenger;
+	1       (00000004) new-instance         v1, Lcom/afwsamples/testdpc/profilepolicy/apprestrictions/AppRestrictionsProxyHandler;
+	2       (00000008) invoke-static        v3, Lcom/afwsamples/testdpc/DeviceAdminReceiver;->getComponentName(Landroid/content/Context;)Landroid/content/ComponentName;
+	3       (0000000e) move-result-object   v2
+	4       (00000010) invoke-direct        v1, v3, v2, Lcom/afwsamples/testdpc/profilepolicy/apprestrictions/AppRestrictionsProxyHandler;-><init>(Landroid/content/Context; Landroid/content/ComponentName;)V
+	5       (00000016) invoke-direct        v0, v1, Landroid/os/Messenger;-><init>(Landroid/os/Handler;)V
+	6       (0000001c) iput-object          v0, v3, Lcom/afwsamples/testdpc/profilepolicy/apprestrictions/AppRestrictionsProxy;->mMessenger Landroid/os/Messenger;
+	7       (00000020) return-void          
+

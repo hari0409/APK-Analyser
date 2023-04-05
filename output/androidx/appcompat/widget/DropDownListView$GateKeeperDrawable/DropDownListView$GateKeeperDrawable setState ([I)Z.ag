@@ -1,0 +1,23 @@
+# Landroidx/appcompat/widget/DropDownListView$GateKeeperDrawable;->setState([I)Z [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:int[]
+#
+# - return:boolean
+
+setState-BB@0x0 : [ setState-BB@0x8 setState-BB@0x12 ]
+	0       (00000000) iget-boolean         v0, v1, Landroidx/appcompat/widget/DropDownListView$GateKeeperDrawable;->mEnabled Z
+	1       (00000004) if-eqz               v0, +7
+
+setState-BB@0x8 : [ setState-BB@0x10 ]
+	2       (00000008) invoke-super         v1, v2, Landroidx/appcompat/graphics/drawable/DrawableWrapper;->setState([I)Z
+	3       (0000000e) move-result          v0
+
+setState-BB@0x10 : 
+	4       (00000010) return               v0
+
+setState-BB@0x12 : [ setState-BB@0x10 ]
+	5       (00000012) const/4              v0, 0
+	6       (00000014) goto                 -2
+

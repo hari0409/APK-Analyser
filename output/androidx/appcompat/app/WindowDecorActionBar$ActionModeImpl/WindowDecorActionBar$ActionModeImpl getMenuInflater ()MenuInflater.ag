@@ -1,0 +1,13 @@
+# Landroidx/appcompat/app/WindowDecorActionBar$ActionModeImpl;->getMenuInflater()Landroid/view/MenuInflater; [access_flags=public]
+#
+# Parameters:
+# local registers: v0...v2
+#
+# - return:android.view.MenuInflater
+
+getMenuInflater-BB@0x0 : 
+	0       (00000000) new-instance         v0, Landroidx/appcompat/view/SupportMenuInflater;
+	1       (00000004) iget-object          v1, v2, Landroidx/appcompat/app/WindowDecorActionBar$ActionModeImpl;->mActionModeContext Landroid/content/Context;
+	2       (00000008) invoke-direct        v0, v1, Landroidx/appcompat/view/SupportMenuInflater;-><init>(Landroid/content/Context;)V
+	3       (0000000e) return-object        v0
+

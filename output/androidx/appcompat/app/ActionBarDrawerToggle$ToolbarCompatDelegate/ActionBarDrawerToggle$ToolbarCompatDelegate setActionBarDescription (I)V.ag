@@ -1,0 +1,24 @@
+# Landroidx/appcompat/app/ActionBarDrawerToggle$ToolbarCompatDelegate;->setActionBarDescription(I)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:int
+#
+# - return:void
+
+setActionBarDescription-BB@0x0 : [ setActionBarDescription-BB@0x4 setActionBarDescription-BB@0x14 ]
+	0       (00000000) if-nez               v3, +a
+
+setActionBarDescription-BB@0x4 : [ setActionBarDescription-BB@0x12 ]
+	1       (00000004) iget-object          v0, v2, Landroidx/appcompat/app/ActionBarDrawerToggle$ToolbarCompatDelegate;->mToolbar Landroidx/appcompat/widget/Toolbar;
+	2       (00000008) iget-object          v1, v2, Landroidx/appcompat/app/ActionBarDrawerToggle$ToolbarCompatDelegate;->mDefaultContentDescription Ljava/lang/CharSequence;
+	3       (0000000c) invoke-virtual       v0, v1, Landroidx/appcompat/widget/Toolbar;->setNavigationContentDescription(Ljava/lang/CharSequence;)V
+
+setActionBarDescription-BB@0x12 : 
+	4       (00000012) return-void          
+
+setActionBarDescription-BB@0x14 : [ setActionBarDescription-BB@0x12 ]
+	5       (00000014) iget-object          v0, v2, Landroidx/appcompat/app/ActionBarDrawerToggle$ToolbarCompatDelegate;->mToolbar Landroidx/appcompat/widget/Toolbar;
+	6       (00000018) invoke-virtual       v0, v3, Landroidx/appcompat/widget/Toolbar;->setNavigationContentDescription(I)V
+	7       (0000001e) goto                 -6
+

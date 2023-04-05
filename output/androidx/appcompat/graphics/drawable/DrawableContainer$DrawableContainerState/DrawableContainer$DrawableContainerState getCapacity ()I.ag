@@ -1,0 +1,12 @@
+# Landroidx/appcompat/graphics/drawable/DrawableContainer$DrawableContainerState;->getCapacity()I [access_flags=final]
+#
+# Parameters:
+# local registers: v0...v1
+#
+# - return:int
+
+getCapacity-BB@0x0 : 
+	0       (00000000) iget-object          v0, v1, Landroidx/appcompat/graphics/drawable/DrawableContainer$DrawableContainerState;->mDrawables [Landroid/graphics/drawable/Drawable;
+	1       (00000004) array-length         v0, v0
+	2       (00000006) return               v0
+

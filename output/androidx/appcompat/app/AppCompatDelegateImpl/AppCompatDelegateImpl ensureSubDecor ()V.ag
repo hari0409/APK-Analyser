@@ -1,0 +1,75 @@
+# Landroidx/appcompat/app/AppCompatDelegateImpl;->ensureSubDecor()V [access_flags=private]
+#
+# Parameters:
+# local registers: v0...v4
+#
+# - return:void
+
+ensureSubDecor-BB@0x0 : [ ensureSubDecor-BB@0xa ensureSubDecor-BB@0x78 ]
+	0       (00000000) const/4              v3, 0
+	1       (00000002) iget-boolean         v2, v4, Landroidx/appcompat/app/AppCompatDelegateImpl;->mSubDecorInstalled Z
+	2       (00000006) if-nez               v2, +39
+
+ensureSubDecor-BB@0xa : [ ensureSubDecor-BB@0x2a ensureSubDecor-BB@0x3c ]
+	3       (0000000a) invoke-direct        v4, Landroidx/appcompat/app/AppCompatDelegateImpl;->createSubDecor()Landroid/view/ViewGroup;
+	4       (00000010) move-result-object   v2
+	5       (00000012) iput-object          v2, v4, Landroidx/appcompat/app/AppCompatDelegateImpl;->mSubDecor Landroid/view/ViewGroup;
+	6       (00000016) invoke-virtual       v4, Landroidx/appcompat/app/AppCompatDelegateImpl;->getTitle()Ljava/lang/CharSequence;
+	7       (0000001c) move-result-object   v1
+	8       (0000001e) invoke-static        v1, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
+	9       (00000024) move-result          v2
+	10      (00000026) if-nez               v2, +b
+
+ensureSubDecor-BB@0x2a : [ ensureSubDecor-BB@0x32 ensureSubDecor-BB@0x7a ]
+	11      (0000002a) iget-object          v2, v4, Landroidx/appcompat/app/AppCompatDelegateImpl;->mDecorContentParent Landroidx/appcompat/widget/DecorContentParent;
+	12      (0000002e) if-eqz               v2, +26
+
+ensureSubDecor-BB@0x32 : [ ensureSubDecor-BB@0x3c ]
+	13      (00000032) iget-object          v2, v4, Landroidx/appcompat/app/AppCompatDelegateImpl;->mDecorContentParent Landroidx/appcompat/widget/DecorContentParent;
+	14      (00000036) invoke-interface     v2, v1, Landroidx/appcompat/widget/DecorContentParent;->setWindowTitle(Ljava/lang/CharSequence;)V
+
+ensureSubDecor-BB@0x3c : [ ensureSubDecor-BB@0x62 ensureSubDecor-BB@0x78 ]
+	15      (0000003c) invoke-direct        v4, Landroidx/appcompat/app/AppCompatDelegateImpl;->applyFixedSizeWindow()V
+	16      (00000042) iget-object          v2, v4, Landroidx/appcompat/app/AppCompatDelegateImpl;->mSubDecor Landroid/view/ViewGroup;
+	17      (00000046) invoke-virtual       v4, v2, Landroidx/appcompat/app/AppCompatDelegateImpl;->onSubDecorInstalled(Landroid/view/ViewGroup;)V
+	18      (0000004c) const/4              v2, 1
+	19      (0000004e) iput-boolean         v2, v4, Landroidx/appcompat/app/AppCompatDelegateImpl;->mSubDecorInstalled Z
+	20      (00000052) invoke-virtual       v4, v3, v3, Landroidx/appcompat/app/AppCompatDelegateImpl;->getPanelState(I Z)Landroidx/appcompat/app/AppCompatDelegateImpl$PanelFeatureState;
+	21      (00000058) move-result-object   v0
+	22      (0000005a) iget-boolean         v2, v4, Landroidx/appcompat/app/AppCompatDelegateImpl;->mIsDestroyed Z
+	23      (0000005e) if-nez               v2, +d
+
+ensureSubDecor-BB@0x62 : [ ensureSubDecor-BB@0x66 ensureSubDecor-BB@0x6e ]
+	24      (00000062) if-eqz               v0, +6
+
+ensureSubDecor-BB@0x66 : [ ensureSubDecor-BB@0x6e ensureSubDecor-BB@0x78 ]
+	25      (00000066) iget-object          v2, v0, Landroidx/appcompat/app/AppCompatDelegateImpl$PanelFeatureState;->menu Landroidx/appcompat/view/menu/MenuBuilder;
+	26      (0000006a) if-nez               v2, +7
+
+ensureSubDecor-BB@0x6e : [ ensureSubDecor-BB@0x78 ]
+	27      (0000006e) const/16             v2, 108
+	28      (00000072) invoke-direct        v4, v2, Landroidx/appcompat/app/AppCompatDelegateImpl;->invalidatePanelMenu(I)V
+
+ensureSubDecor-BB@0x78 : 
+	29      (00000078) return-void          
+
+ensureSubDecor-BB@0x7a : [ ensureSubDecor-BB@0x86 ensureSubDecor-BB@0x96 ]
+	30      (0000007a) invoke-virtual       v4, Landroidx/appcompat/app/AppCompatDelegateImpl;->peekSupportActionBar()Landroidx/appcompat/app/ActionBar;
+	31      (00000080) move-result-object   v2
+	32      (00000082) if-eqz               v2, +a
+
+ensureSubDecor-BB@0x86 : [ ensureSubDecor-BB@0x3c ]
+	33      (00000086) invoke-virtual       v4, Landroidx/appcompat/app/AppCompatDelegateImpl;->peekSupportActionBar()Landroidx/appcompat/app/ActionBar;
+	34      (0000008c) move-result-object   v2
+	35      (0000008e) invoke-virtual       v2, v1, Landroidx/appcompat/app/ActionBar;->setWindowTitle(Ljava/lang/CharSequence;)V
+	36      (00000094) goto                 -2c
+
+ensureSubDecor-BB@0x96 : [ ensureSubDecor-BB@0x9e ensureSubDecor-BB@0x3c ]
+	37      (00000096) iget-object          v2, v4, Landroidx/appcompat/app/AppCompatDelegateImpl;->mTitleView Landroid/widget/TextView;
+	38      (0000009a) if-eqz               v2, -2f
+
+ensureSubDecor-BB@0x9e : [ ensureSubDecor-BB@0x3c ]
+	39      (0000009e) iget-object          v2, v4, Landroidx/appcompat/app/AppCompatDelegateImpl;->mTitleView Landroid/widget/TextView;
+	40      (000000a2) invoke-virtual       v2, v1, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+	41      (000000a8) goto                 -36
+

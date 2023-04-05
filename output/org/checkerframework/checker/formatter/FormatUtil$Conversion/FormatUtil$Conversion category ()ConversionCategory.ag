@@ -1,0 +1,11 @@
+# Lorg/checkerframework/checker/formatter/FormatUtil$Conversion;->category()Lorg/checkerframework/checker/formatter/qual/ConversionCategory; [access_flags=]
+#
+# Parameters:
+# local registers: v0...v1
+#
+# - return:org.checkerframework.checker.formatter.qual.ConversionCategory
+
+category-BB@0x0 : 
+	0       (00000000) iget-object          v0, v1, Lorg/checkerframework/checker/formatter/FormatUtil$Conversion;->cath Lorg/checkerframework/checker/formatter/qual/ConversionCategory;
+	1       (00000004) return-object        v0
+

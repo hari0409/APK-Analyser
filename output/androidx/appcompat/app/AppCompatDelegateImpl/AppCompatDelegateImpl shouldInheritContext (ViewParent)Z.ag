@@ -1,0 +1,53 @@
+# Landroidx/appcompat/app/AppCompatDelegateImpl;->shouldInheritContext(Landroid/view/ViewParent;)Z [access_flags=private]
+#
+# Parameters:
+# - local registers: v0...v3
+# - v4:android.view.ViewParent
+#
+# - return:boolean
+
+shouldInheritContext-BB@0x0 : [ shouldInheritContext-BB@0x6 shouldInheritContext-BB@0xa ]
+	0       (00000000) const/4              v2, 0
+	1       (00000002) if-nez               v4, +4
+
+shouldInheritContext-BB@0x6 : [ shouldInheritContext-BB@0x8 ]
+	2       (00000006) move                 v1, v2
+
+shouldInheritContext-BB@0x8 : 
+	3       (00000008) return               v1
+
+shouldInheritContext-BB@0xa : [ shouldInheritContext-BB@0x16 ]
+	4       (0000000a) iget-object          v1, v3, Landroidx/appcompat/app/AppCompatDelegateImpl;->mWindow Landroid/view/Window;
+	5       (0000000e) invoke-virtual       v1, Landroid/view/Window;->getDecorView()Landroid/view/View;
+	6       (00000014) move-result-object   v0
+
+shouldInheritContext-BB@0x16 : [ shouldInheritContext-BB@0x1a shouldInheritContext-BB@0x1e ]
+	7       (00000016) if-nez               v4, +4
+
+shouldInheritContext-BB@0x1a : [ shouldInheritContext-BB@0x8 ]
+	8       (0000001a) const/4              v1, 1
+	9       (0000001c) goto                 -a
+
+shouldInheritContext-BB@0x1e : [ shouldInheritContext-BB@0x22 shouldInheritContext-BB@0x3c ]
+	10      (0000001e) if-eq                v4, v0, +f
+
+shouldInheritContext-BB@0x22 : [ shouldInheritContext-BB@0x2a shouldInheritContext-BB@0x3c ]
+	11      (00000022) instance-of          v1, v4, Landroid/view/View;
+	12      (00000026) if-eqz               v1, +b
+
+shouldInheritContext-BB@0x2a : [ shouldInheritContext-BB@0x3c shouldInheritContext-BB@0x40 ]
+	13      (0000002a) move-object          v1, v4
+	14      (0000002c) check-cast           v1, Landroid/view/View;
+	15      (00000030) invoke-static        v1, Landroidx/core/view/ViewCompat;->isAttachedToWindow(Landroid/view/View;)Z
+	16      (00000036) move-result          v1
+	17      (00000038) if-eqz               v1, +4
+
+shouldInheritContext-BB@0x3c : [ shouldInheritContext-BB@0x8 ]
+	18      (0000003c) move                 v1, v2
+	19      (0000003e) goto                 -1b
+
+shouldInheritContext-BB@0x40 : [ shouldInheritContext-BB@0x16 ]
+	20      (00000040) invoke-interface     v4, Landroid/view/ViewParent;->getParent()Landroid/view/ViewParent;
+	21      (00000046) move-result-object   v4
+	22      (00000048) goto                 -19
+

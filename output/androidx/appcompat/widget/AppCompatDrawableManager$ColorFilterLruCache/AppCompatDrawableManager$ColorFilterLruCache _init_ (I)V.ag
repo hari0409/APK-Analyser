@@ -1,0 +1,12 @@
+# Landroidx/appcompat/widget/AppCompatDrawableManager$ColorFilterLruCache;-><init>(I)V [access_flags=public constructor]
+#
+# Parameters:
+# - local registers: v0...v0
+# - v1:int
+#
+# - return:void
+
+<init>-BB@0x0 : 
+	0       (00000000) invoke-direct        v0, v1, Landroidx/collection/LruCache;-><init>(I)V
+	1       (00000006) return-void          
+

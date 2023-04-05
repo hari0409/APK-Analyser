@@ -1,0 +1,15 @@
+# Landroidx/appcompat/view/ViewPropertyAnimatorCompatSet$1;->onEnd()V [access_flags=]
+#
+# Parameters:
+# local registers: v0...v1
+#
+# - return:void
+
+onEnd-BB@0x0 : 
+	0       (00000000) const/4              v0, 0
+	1       (00000002) iput                 v0, v1, Landroidx/appcompat/view/ViewPropertyAnimatorCompatSet$1;->mProxyEndCount I
+	2       (00000006) iput-boolean         v0, v1, Landroidx/appcompat/view/ViewPropertyAnimatorCompatSet$1;->mProxyStarted Z
+	3       (0000000a) iget-object          v0, v1, Landroidx/appcompat/view/ViewPropertyAnimatorCompatSet$1;->this$0 Landroidx/appcompat/view/ViewPropertyAnimatorCompatSet;
+	4       (0000000e) invoke-virtual       v0, Landroidx/appcompat/view/ViewPropertyAnimatorCompatSet;->onAnimationsEnded()V
+	5       (00000014) return-void          
+

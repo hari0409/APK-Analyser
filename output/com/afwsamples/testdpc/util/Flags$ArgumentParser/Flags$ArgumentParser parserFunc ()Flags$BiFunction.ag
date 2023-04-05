@@ -1,0 +1,11 @@
+# Lcom/afwsamples/testdpc/util/Flags$ArgumentParser;->parserFunc()Lcom/afwsamples/testdpc/util/Flags$BiFunction; [access_flags=private]
+#
+# Parameters:
+# local registers: v0...v1
+#
+# - return:com.afwsamples.testdpc.util.Flags$BiFunction
+
+parserFunc-BB@0x0 : 
+	0       (00000000) iget-object          v0, v1, Lcom/afwsamples/testdpc/util/Flags$ArgumentParser;->parserFunc Lcom/afwsamples/testdpc/util/Flags$BiFunction;
+	1       (00000004) return-object        v0
+

@@ -1,0 +1,45 @@
+# Landroidx/appcompat/graphics/drawable/DrawableContainer$DrawableContainerState;->createAllFutures()V [access_flags=private]
+#
+# Parameters:
+# local registers: v0...v6
+#
+# - return:void
+
+createAllFutures-BB@0x0 : [ createAllFutures-BB@0x8 createAllFutures-BB@0x5e ]
+	0       (00000000) iget-object          v4, v6, Landroidx/appcompat/graphics/drawable/DrawableContainer$DrawableContainerState;->mDrawableFutures Landroid/util/SparseArray;
+	1       (00000004) if-eqz               v4, +2d
+
+createAllFutures-BB@0x8 : [ createAllFutures-BB@0x16 ]
+	2       (00000008) iget-object          v4, v6, Landroidx/appcompat/graphics/drawable/DrawableContainer$DrawableContainerState;->mDrawableFutures Landroid/util/SparseArray;
+	3       (0000000c) invoke-virtual       v4, Landroid/util/SparseArray;->size()I
+	4       (00000012) move-result          v1
+	5       (00000014) const/4              v3, 0
+
+createAllFutures-BB@0x16 : [ createAllFutures-BB@0x1a createAllFutures-BB@0x58 ]
+	6       (00000016) if-ge                v3, v1, +21
+
+createAllFutures-BB@0x1a : [ createAllFutures-BB@0x16 ]
+	7       (0000001a) iget-object          v4, v6, Landroidx/appcompat/graphics/drawable/DrawableContainer$DrawableContainerState;->mDrawableFutures Landroid/util/SparseArray;
+	8       (0000001e) invoke-virtual       v4, v3, Landroid/util/SparseArray;->keyAt(I)I
+	9       (00000024) move-result          v2
+	10      (00000026) iget-object          v4, v6, Landroidx/appcompat/graphics/drawable/DrawableContainer$DrawableContainerState;->mDrawableFutures Landroid/util/SparseArray;
+	11      (0000002a) invoke-virtual       v4, v3, Landroid/util/SparseArray;->valueAt(I)Ljava/lang/Object;
+	12      (00000030) move-result-object   v0
+	13      (00000032) check-cast           v0, Landroid/graphics/drawable/Drawable$ConstantState;
+	14      (00000036) iget-object          v4, v6, Landroidx/appcompat/graphics/drawable/DrawableContainer$DrawableContainerState;->mDrawables [Landroid/graphics/drawable/Drawable;
+	15      (0000003a) iget-object          v5, v6, Landroidx/appcompat/graphics/drawable/DrawableContainer$DrawableContainerState;->mSourceRes Landroid/content/res/Resources;
+	16      (0000003e) invoke-virtual       v0, v5, Landroid/graphics/drawable/Drawable$ConstantState;->newDrawable(Landroid/content/res/Resources;)Landroid/graphics/drawable/Drawable;
+	17      (00000044) move-result-object   v5
+	18      (00000046) invoke-direct        v6, v5, Landroidx/appcompat/graphics/drawable/DrawableContainer$DrawableContainerState;->prepareDrawable(Landroid/graphics/drawable/Drawable;)Landroid/graphics/drawable/Drawable;
+	19      (0000004c) move-result-object   v5
+	20      (0000004e) aput-object          v5, v4, v2
+	21      (00000052) add-int/lit8         v3, v3, 1
+	22      (00000056) goto                 -20
+
+createAllFutures-BB@0x58 : [ createAllFutures-BB@0x5e ]
+	23      (00000058) const/4              v4, 0
+	24      (0000005a) iput-object          v4, v6, Landroidx/appcompat/graphics/drawable/DrawableContainer$DrawableContainerState;->mDrawableFutures Landroid/util/SparseArray;
+
+createAllFutures-BB@0x5e : 
+	25      (0000005e) return-void          
+

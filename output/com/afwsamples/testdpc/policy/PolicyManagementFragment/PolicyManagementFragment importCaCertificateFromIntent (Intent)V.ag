@@ -1,0 +1,72 @@
+# Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->importCaCertificateFromIntent(Landroid/content/Intent;)V [access_flags=private]
+#
+# Parameters:
+# - local registers: v0...v7
+# - v8:android.content.Intent
+#
+# - return:void
+
+importCaCertificateFromIntent-BB@0x0 : [ importCaCertificateFromIntent-BB@0xc importCaCertificateFromIntent-BB@0x20 ]
+	0       (00000000) invoke-virtual       v7, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->getActivity()Landroid/app/Activity;
+	1       (00000006) move-result-object   v5
+	2       (00000008) if-eqz               v5, +c
+
+importCaCertificateFromIntent-BB@0xc : [ importCaCertificateFromIntent-BB@0x20 importCaCertificateFromIntent-BB@0x22 ]
+	3       (0000000c) invoke-virtual       v7, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->getActivity()Landroid/app/Activity;
+	4       (00000012) move-result-object   v5
+	5       (00000014) invoke-virtual       v5, Landroid/app/Activity;->isFinishing()Z
+	6       (0000001a) move-result          v5
+	7       (0000001c) if-eqz               v5, +3
+
+importCaCertificateFromIntent-BB@0x20 : 
+	8       (00000020) return-void          
+
+importCaCertificateFromIntent-BB@0x22 : [ importCaCertificateFromIntent-BB@0x28 importCaCertificateFromIntent-BB@0x20 ]
+	9       (00000022) const/4              v2, 0
+	10      (00000024) if-eqz               v8, -2
+
+importCaCertificateFromIntent-BB@0x28 : [ importCaCertificateFromIntent-BB@0x34 importCaCertificateFromIntent-BB@0x20 ]
+	11      (00000028) invoke-virtual       v8, Landroid/content/Intent;->getData()Landroid/net/Uri;
+	12      (0000002e) move-result-object   v2
+	13      (00000030) if-eqz               v2, -8
+
+importCaCertificateFromIntent-BB@0x34 : [ importCaCertificateFromIntent-BB@0x46 ]
+	14      (00000034) invoke-virtual       v7, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->getActivity()Landroid/app/Activity;
+	15      (0000003a) move-result-object   v5
+	16      (0000003c) invoke-virtual       v5, Landroid/app/Activity;->getContentResolver()Landroid/content/ContentResolver;
+	17      (00000042) move-result-object   v1
+	18      (00000044) const/4              v4, 0
+
+importCaCertificateFromIntent-BB@0x46 : [ importCaCertificateFromIntent-BB@0x5e ]
+	19      (00000046) invoke-virtual       v1, v2, Landroid/content/ContentResolver;->openInputStream(Landroid/net/Uri;)Ljava/io/InputStream;
+	20      (0000004c) move-result-object   v0
+	21      (0000004e) iget-object          v5, v7, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->mDevicePolicyManager Landroid/app/admin/DevicePolicyManager;
+	22      (00000052) iget-object          v6, v7, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->mAdminComponentName Landroid/content/ComponentName;
+	23      (00000056) invoke-static        v0, v5, v6, Lcom/afwsamples/testdpc/common/Util;->installCaCertificate(Ljava/io/InputStream; Landroid/app/admin/DevicePolicyManager; Landroid/content/ComponentName;)Z
+	24      (0000005c) move-result          v4
+	46:5b
+	(Ljava/io/FileNotFoundException; -> 76 importCaCertificateFromIntent-BB@0x76)
+
+importCaCertificateFromIntent-BB@0x5e : [ importCaCertificateFromIntent-BB@0x62 importCaCertificateFromIntent-BB@0x88 ]
+	25      (0000005e) if-eqz               v4, +15
+
+importCaCertificateFromIntent-BB@0x62 : [ importCaCertificateFromIntent-BB@0x68 ]
+	26      (00000062) const                v5, 2131689858 # [1.9008743240734998e+38]
+
+importCaCertificateFromIntent-BB@0x68 : [ importCaCertificateFromIntent-BB@0x20 ]
+	27      (00000068) const/4              v6, 0
+	28      (0000006a) new-array            v6, v6, [Ljava/lang/Object;
+	29      (0000006e) invoke-direct        v7, v5, v6, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->showToast(I [Ljava/lang/Object;)V
+	30      (00000074) goto                 -2a
+
+importCaCertificateFromIntent-BB@0x76 : [ importCaCertificateFromIntent-BB@0x5e ]
+	31      (00000076) move-exception       v3
+	32      (00000078) const-string         v5, 'PolicyManagement'
+	33      (0000007c) const-string         v6, 'importCaCertificateFromIntent: '
+	34      (00000080) invoke-static        v5, v6, v3, Landroid/util/Log;->e(Ljava/lang/String; Ljava/lang/String; Ljava/lang/Throwable;)I
+	35      (00000086) goto                 -14
+
+importCaCertificateFromIntent-BB@0x88 : [ importCaCertificateFromIntent-BB@0x68 ]
+	36      (00000088) const                v5, 2131689857 # [1.9008741212494038e+38]
+	37      (0000008e) goto                 -13
+

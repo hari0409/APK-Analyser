@@ -1,0 +1,13 @@
+# Landroidx/appcompat/widget/AppCompatSpinner;->setAdapter(Landroid/widget/Adapter;)V [access_flags=public bridge synthetic]
+#
+# Parameters:
+# - local registers: v0...v0
+# - v1:android.widget.Adapter
+#
+# - return:void
+
+setAdapter-BB@0x0 : 
+	0       (00000000) check-cast           v1, Landroid/widget/SpinnerAdapter;
+	1       (00000004) invoke-virtual       v0, v1, Landroidx/appcompat/widget/AppCompatSpinner;->setAdapter(Landroid/widget/SpinnerAdapter;)V
+	2       (0000000a) return-void          
+

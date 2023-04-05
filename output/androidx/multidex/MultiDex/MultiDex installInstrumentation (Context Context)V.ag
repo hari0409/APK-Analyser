@@ -1,0 +1,147 @@
+# Landroidx/multidex/MultiDex;->installInstrumentation(Landroid/content/Context; Landroid/content/Context;)V [access_flags=public static]
+#
+# Parameters:
+# - local registers: v0...v13
+# - v14:android.content.Context
+# - v15:android.content.Context
+#
+# - return:void
+
+installInstrumentation-BB@0x0 : [ installInstrumentation-BB@0x18 installInstrumentation-BB@0x28 ]
+	0       (00000000) const/4              v5, 4
+	1       (00000002) const-string         v0, 'MultiDex'
+	2       (00000006) const-string         v1, 'Installing instrumentation'
+	3       (0000000a) invoke-static        v0, v1, Landroid/util/Log;->i(Ljava/lang/String; Ljava/lang/String;)I
+	4       (00000010) sget-boolean         v0, Landroidx/multidex/MultiDex;->IS_VM_MULTIDEX_CAPABLE Z
+	5       (00000014) if-eqz               v0, +a
+
+installInstrumentation-BB@0x18 : [ installInstrumentation-BB@0x26 ]
+	6       (00000018) const-string         v0, 'MultiDex'
+	7       (0000001c) const-string         v1, 'VM has multidex support, MultiDex support library is disabled.'
+	8       (00000020) invoke-static        v0, v1, Landroid/util/Log;->i(Ljava/lang/String; Ljava/lang/String;)I
+
+installInstrumentation-BB@0x26 : 
+	9       (00000026) return-void          
+
+installInstrumentation-BB@0x28 : [ installInstrumentation-BB@0x30 installInstrumentation-BB@0x86 ]
+	10      (00000028) sget                 v0, Landroid/os/Build$VERSION;->SDK_INT I
+	11      (0000002c) if-ge                v0, v5, +2d
+
+installInstrumentation-BB@0x30 : 
+	12      (00000030) new-instance         v0, Ljava/lang/RuntimeException;
+	13      (00000034) new-instance         v1, Ljava/lang/StringBuilder;
+	14      (00000038) invoke-direct        v1, Ljava/lang/StringBuilder;-><init>()V
+	15      (0000003e) const-string         v3, 'MultiDex installation failed. SDK '
+	16      (00000042) invoke-virtual       v1, v3, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	17      (00000048) move-result-object   v1
+	18      (0000004a) sget                 v3, Landroid/os/Build$VERSION;->SDK_INT I
+	19      (0000004e) invoke-virtual       v1, v3, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+	20      (00000054) move-result-object   v1
+	21      (00000056) const-string         v3, ' is unsupported. Min SDK version is '
+	22      (0000005a) invoke-virtual       v1, v3, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	23      (00000060) move-result-object   v1
+	24      (00000062) invoke-virtual       v1, v5, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+	25      (00000068) move-result-object   v1
+	26      (0000006a) const-string         v3, '.'
+	27      (0000006e) invoke-virtual       v1, v3, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	28      (00000074) move-result-object   v1
+	29      (00000076) invoke-virtual       v1, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+	30      (0000007c) move-result-object   v1
+	31      (0000007e) invoke-direct        v0, v1, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;)V
+	32      (00000084) throw                v0
+
+installInstrumentation-BB@0x86 : [ installInstrumentation-BB@0x92 installInstrumentation-BB@0xf8 ]
+	33      (00000086) invoke-static        v14, Landroidx/multidex/MultiDex;->getApplicationInfo(Landroid/content/Context;)Landroid/content/pm/ApplicationInfo;
+	34      (0000008c) move-result-object   v13
+	35      (0000008e) if-nez               v13, +35
+	86:9f
+	(Ljava/lang/Exception; -> a2 installInstrumentation-BB@0xa2)
+
+installInstrumentation-BB@0x92 : [ installInstrumentation-BB@0x26 ]
+	36      (00000092) const-string         v0, 'MultiDex'
+	37      (00000096) const-string         v1, 'No ApplicationInfo available for instrumentation, i.e. running on a test Context: MultiDex support library is disabled.'
+	38      (0000009a) invoke-static        v0, v1, Landroid/util/Log;->i(Ljava/lang/String; Ljava/lang/String;)I
+	39      (000000a0) goto                 -3d
+
+installInstrumentation-BB@0xa2 : 
+	40      (000000a2) move-exception       v12
+	41      (000000a4) const-string         v0, 'MultiDex'
+	42      (000000a8) const-string         v1, 'MultiDex installation failure'
+	43      (000000ac) invoke-static        v0, v1, v12, Landroid/util/Log;->e(Ljava/lang/String; Ljava/lang/String; Ljava/lang/Throwable;)I
+	44      (000000b2) new-instance         v0, Ljava/lang/RuntimeException;
+	45      (000000b6) new-instance         v1, Ljava/lang/StringBuilder;
+	46      (000000ba) invoke-direct        v1, Ljava/lang/StringBuilder;-><init>()V
+	47      (000000c0) const-string         v3, 'MultiDex installation failed ('
+	48      (000000c4) invoke-virtual       v1, v3, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	49      (000000ca) move-result-object   v1
+	50      (000000cc) invoke-virtual       v12, Ljava/lang/Exception;->getMessage()Ljava/lang/String;
+	51      (000000d2) move-result-object   v3
+	52      (000000d4) invoke-virtual       v1, v3, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	53      (000000da) move-result-object   v1
+	54      (000000dc) const-string         v3, ').'
+	55      (000000e0) invoke-virtual       v1, v3, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	56      (000000e6) move-result-object   v1
+	57      (000000e8) invoke-virtual       v1, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+	58      (000000ee) move-result-object   v1
+	59      (000000f0) invoke-direct        v0, v1, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;)V
+	60      (000000f6) throw                v0
+
+installInstrumentation-BB@0xf8 : [ installInstrumentation-BB@0x104 installInstrumentation-BB@0x114 ]
+	61      (000000f8) invoke-static        v15, Landroidx/multidex/MultiDex;->getApplicationInfo(Landroid/content/Context;)Landroid/content/pm/ApplicationInfo;
+	62      (000000fe) move-result-object   v11
+	63      (00000100) if-nez               v11, +a
+	f8:1af
+	(Ljava/lang/Exception; -> a2 installInstrumentation-BB@0xa2)
+
+installInstrumentation-BB@0x104 : [ installInstrumentation-BB@0x26 ]
+	64      (00000104) const-string         v0, 'MultiDex'
+	65      (00000108) const-string         v1, 'No ApplicationInfo available, i.e. running on a test Context: MultiDex support library is disabled.'
+	66      (0000010c) invoke-static        v0, v1, Landroid/util/Log;->i(Ljava/lang/String; Ljava/lang/String;)I
+	67      (00000112) goto                 -76
+	f8:1af
+	(Ljava/lang/Exception; -> a2 installInstrumentation-BB@0xa2)
+
+installInstrumentation-BB@0x114 : [ installInstrumentation-BB@0x26 ]
+	68      (00000114) new-instance         v0, Ljava/lang/StringBuilder;
+	69      (00000118) invoke-direct        v0, Ljava/lang/StringBuilder;-><init>()V
+	70      (0000011e) invoke-virtual       v14, Landroid/content/Context;->getPackageName()Ljava/lang/String;
+	71      (00000124) move-result-object   v1
+	72      (00000126) invoke-virtual       v0, v1, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	73      (0000012c) move-result-object   v0
+	74      (0000012e) const-string         v1, '.'
+	75      (00000132) invoke-virtual       v0, v1, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	76      (00000138) move-result-object   v0
+	77      (0000013a) invoke-virtual       v0, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+	78      (00000140) move-result-object   v4
+	79      (00000142) new-instance         v2, Ljava/io/File;
+	80      (00000146) iget-object          v0, v11, Landroid/content/pm/ApplicationInfo;->dataDir Ljava/lang/String;
+	81      (0000014a) invoke-direct        v2, v0, Ljava/io/File;-><init>(Ljava/lang/String;)V
+	82      (00000150) new-instance         v1, Ljava/io/File;
+	83      (00000154) iget-object          v0, v13, Landroid/content/pm/ApplicationInfo;->sourceDir Ljava/lang/String;
+	84      (00000158) invoke-direct        v1, v0, Ljava/io/File;-><init>(Ljava/lang/String;)V
+	85      (0000015e) new-instance         v0, Ljava/lang/StringBuilder;
+	86      (00000162) invoke-direct        v0, Ljava/lang/StringBuilder;-><init>()V
+	87      (00000168) invoke-virtual       v0, v4, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	88      (0000016e) move-result-object   v0
+	89      (00000170) const-string         v3, 'secondary-dexes'
+	90      (00000174) invoke-virtual       v0, v3, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	91      (0000017a) move-result-object   v0
+	92      (0000017c) invoke-virtual       v0, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+	93      (00000182) move-result-object   v3
+	94      (00000184) const/4              v5, 0
+	95      (00000186) move-object          v0, v15
+	96      (00000188) invoke-static/range  v0 ... v5, Landroidx/multidex/MultiDex;->doInstallation(Landroid/content/Context; Ljava/io/File; Ljava/io/File; Ljava/lang/String; Ljava/lang/String; Z)V
+	97      (0000018e) new-instance         v6, Ljava/io/File;
+	98      (00000192) iget-object          v0, v11, Landroid/content/pm/ApplicationInfo;->sourceDir Ljava/lang/String;
+	99      (00000196) invoke-direct        v6, v0, Ljava/io/File;-><init>(Ljava/lang/String;)V
+	100     (0000019c) const-string         v8, 'secondary-dexes'
+	101     (000001a0) const-string         v9, ''
+	102     (000001a4) const/4              v10, 0
+	103     (000001a6) move-object          v5, v15
+	104     (000001a8) move-object          v7, v2
+	105     (000001aa) invoke-static/range  v5 ... v10, Landroidx/multidex/MultiDex;->doInstallation(Landroid/content/Context; Ljava/io/File; Ljava/io/File; Ljava/lang/String; Ljava/lang/String; Z)V
+	106     (000001b0) const-string         v0, 'MultiDex'
+	107     (000001b4) const-string         v1, 'Installation done'
+	108     (000001b8) invoke-static        v0, v1, Landroid/util/Log;->i(Ljava/lang/String; Ljava/lang/String;)I
+	109     (000001be) goto/16              -cc
+

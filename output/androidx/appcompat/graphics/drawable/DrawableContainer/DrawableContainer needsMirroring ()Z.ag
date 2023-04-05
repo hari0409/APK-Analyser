@@ -1,0 +1,25 @@
+# Landroidx/appcompat/graphics/drawable/DrawableContainer;->needsMirroring()Z [access_flags=private]
+#
+# Parameters:
+# local registers: v0...v2
+#
+# - return:boolean
+
+needsMirroring-BB@0x0 : [ needsMirroring-BB@0xe needsMirroring-BB@0x1c ]
+	0       (00000000) const/4              v0, 1
+	1       (00000002) invoke-virtual       v2, Landroidx/appcompat/graphics/drawable/DrawableContainer;->isAutoMirrored()Z
+	2       (00000008) move-result          v1
+	3       (0000000a) if-eqz               v1, +9
+
+needsMirroring-BB@0xe : [ needsMirroring-BB@0x1a needsMirroring-BB@0x1c ]
+	4       (0000000e) invoke-virtual       v2, Landroidx/appcompat/graphics/drawable/DrawableContainer;->getLayoutDirection()I
+	5       (00000014) move-result          v1
+	6       (00000016) if-ne                v1, v0, +3
+
+needsMirroring-BB@0x1a : 
+	7       (0000001a) return               v0
+
+needsMirroring-BB@0x1c : [ needsMirroring-BB@0x1a ]
+	8       (0000001c) const/4              v0, 0
+	9       (0000001e) goto                 -2
+

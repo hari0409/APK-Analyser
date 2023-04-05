@@ -1,0 +1,15 @@
+# Lcom/afwsamples/testdpc/ShellCommand$$Lambda$90;->accept(Ljava/lang/Object;)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:java.lang.Object
+#
+# - return:void
+
+accept-BB@0x0 : 
+	0       (00000000) iget-object          v0, v2, Lcom/afwsamples/testdpc/ShellCommand$$Lambda$90;->arg$1 Lcom/afwsamples/testdpc/ShellCommand;
+	1       (00000004) iget-object          v1, v2, Lcom/afwsamples/testdpc/ShellCommand$$Lambda$90;->arg$2 Ljava/util/List;
+	2       (00000008) check-cast           v3, Ljava/lang/Exception;
+	3       (0000000c) invoke-virtual       v0, v1, v3, Lcom/afwsamples/testdpc/ShellCommand;->lambda$setUserControlDisabledPackages$53$ShellCommand(Ljava/util/List; Ljava/lang/Exception;)V
+	4       (00000012) return-void          
+

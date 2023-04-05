@@ -1,0 +1,47 @@
+# Landroidx/appcompat/widget/ActionBarContainer;->setVisibility(I)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v3
+# - v4:int
+#
+# - return:void
+
+setVisibility-BB@0x0 : [ setVisibility-BB@0xc setVisibility-BB@0x46 ]
+	0       (00000000) const/4              v1, 0
+	1       (00000002) invoke-super         v3, v4, Landroid/widget/FrameLayout;->setVisibility(I)V
+	2       (00000008) if-nez               v4, +1f
+
+setVisibility-BB@0xc : [ setVisibility-BB@0xe ]
+	3       (0000000c) const/4              v0, 1
+
+setVisibility-BB@0xe : [ setVisibility-BB@0x16 setVisibility-BB@0x20 ]
+	4       (0000000e) iget-object          v2, v3, Landroidx/appcompat/widget/ActionBarContainer;->mBackground Landroid/graphics/drawable/Drawable;
+	5       (00000012) if-eqz               v2, +7
+
+setVisibility-BB@0x16 : [ setVisibility-BB@0x20 ]
+	6       (00000016) iget-object          v2, v3, Landroidx/appcompat/widget/ActionBarContainer;->mBackground Landroid/graphics/drawable/Drawable;
+	7       (0000001a) invoke-virtual       v2, v0, v1, Landroid/graphics/drawable/Drawable;->setVisible(Z Z)Z
+
+setVisibility-BB@0x20 : [ setVisibility-BB@0x28 setVisibility-BB@0x32 ]
+	8       (00000020) iget-object          v2, v3, Landroidx/appcompat/widget/ActionBarContainer;->mStackedBackground Landroid/graphics/drawable/Drawable;
+	9       (00000024) if-eqz               v2, +7
+
+setVisibility-BB@0x28 : [ setVisibility-BB@0x32 ]
+	10      (00000028) iget-object          v2, v3, Landroidx/appcompat/widget/ActionBarContainer;->mStackedBackground Landroid/graphics/drawable/Drawable;
+	11      (0000002c) invoke-virtual       v2, v0, v1, Landroid/graphics/drawable/Drawable;->setVisible(Z Z)Z
+
+setVisibility-BB@0x32 : [ setVisibility-BB@0x3a setVisibility-BB@0x44 ]
+	12      (00000032) iget-object          v2, v3, Landroidx/appcompat/widget/ActionBarContainer;->mSplitBackground Landroid/graphics/drawable/Drawable;
+	13      (00000036) if-eqz               v2, +7
+
+setVisibility-BB@0x3a : [ setVisibility-BB@0x44 ]
+	14      (0000003a) iget-object          v2, v3, Landroidx/appcompat/widget/ActionBarContainer;->mSplitBackground Landroid/graphics/drawable/Drawable;
+	15      (0000003e) invoke-virtual       v2, v0, v1, Landroid/graphics/drawable/Drawable;->setVisible(Z Z)Z
+
+setVisibility-BB@0x44 : 
+	16      (00000044) return-void          
+
+setVisibility-BB@0x46 : [ setVisibility-BB@0xe ]
+	17      (00000046) move                 v0, v1
+	18      (00000048) goto                 -1d
+

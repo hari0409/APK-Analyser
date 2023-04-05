@@ -1,0 +1,43 @@
+# Lcom/afwsamples/testdpc/profilepolicy/addsystemapps/EnableSystemAppsByIntentFragment;->showCustomActionInputDialog()V [access_flags=private]
+#
+# Parameters:
+# local registers: v0...v6
+#
+# - return:void
+
+showCustomActionInputDialog-BB@0x0 : 
+	0       (00000000) invoke-virtual       v6, Lcom/afwsamples/testdpc/profilepolicy/addsystemapps/EnableSystemAppsByIntentFragment;->getActivity()Landroid/app/Activity;
+	1       (00000006) move-result-object   v4
+	2       (00000008) invoke-static        v4, Landroid/view/LayoutInflater;->from(Landroid/content/Context;)Landroid/view/LayoutInflater;
+	3       (0000000e) move-result-object   v3
+	4       (00000010) const                v4, 2131427446 # [1.8476508473843654e+38]
+	5       (00000016) const/4              v5, 0
+	6       (00000018) invoke-virtual       v3, v4, v5, Landroid/view/LayoutInflater;->inflate(I Landroid/view/ViewGroup;)Landroid/view/View;
+	7       (0000001e) move-result-object   v1
+	8       (00000020) const                v4, 2131296472 # [1.8210861642300786e+38]
+	9       (00000026) invoke-virtual       v1, v4, Landroid/view/View;->findViewById(I)Landroid/view/View;
+	10      (0000002c) move-result-object   v0
+	11      (0000002e) check-cast           v0, Landroid/widget/EditText;
+	12      (00000032) new-instance         v2, Landroid/app/AlertDialog$Builder;
+	13      (00000036) invoke-virtual       v6, Lcom/afwsamples/testdpc/profilepolicy/addsystemapps/EnableSystemAppsByIntentFragment;->getActivity()Landroid/app/Activity;
+	14      (0000003c) move-result-object   v4
+	15      (0000003e) invoke-direct        v2, v4, Landroid/app/AlertDialog$Builder;-><init>(Landroid/content/Context;)V
+	16      (00000044) invoke-virtual       v2, v1, Landroid/app/AlertDialog$Builder;->setView(Landroid/view/View;)Landroid/app/AlertDialog$Builder;
+	17      (0000004a) const                v4, 2131689517 # [1.9008051610567513e+38]
+	18      (00000050) invoke-virtual       v6, v4, Lcom/afwsamples/testdpc/profilepolicy/addsystemapps/EnableSystemAppsByIntentFragment;->getString(I)Ljava/lang/String;
+	19      (00000056) move-result-object   v4
+	20      (00000058) invoke-virtual       v2, v4, Landroid/app/AlertDialog$Builder;->setTitle(Ljava/lang/CharSequence;)Landroid/app/AlertDialog$Builder;
+	21      (0000005e) new-instance         v4, Lcom/afwsamples/testdpc/profilepolicy/addsystemapps/EnableSystemAppsByIntentFragment$1;
+	22      (00000062) invoke-direct        v4, v6, Lcom/afwsamples/testdpc/profilepolicy/addsystemapps/EnableSystemAppsByIntentFragment$1;-><init>(Lcom/afwsamples/testdpc/profilepolicy/addsystemapps/EnableSystemAppsByIntentFragment;)V
+	23      (00000068) invoke-virtual       v2, v4, Landroid/app/AlertDialog$Builder;->setOnCancelListener(Landroid/content/DialogInterface$OnCancelListener;)Landroid/app/AlertDialog$Builder;
+	24      (0000006e) const                v4, 2131689519 # [1.9008055667049434e+38]
+	25      (00000074) new-instance         v5, Lcom/afwsamples/testdpc/profilepolicy/addsystemapps/EnableSystemAppsByIntentFragment$2;
+	26      (00000078) invoke-direct        v5, v6, v0, Lcom/afwsamples/testdpc/profilepolicy/addsystemapps/EnableSystemAppsByIntentFragment$2;-><init>(Lcom/afwsamples/testdpc/profilepolicy/addsystemapps/EnableSystemAppsByIntentFragment; Landroid/widget/EditText;)V
+	27      (0000007e) invoke-virtual       v2, v4, v5, Landroid/app/AlertDialog$Builder;->setPositiveButton(I Landroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
+	28      (00000084) const/high16         v4, 260 # [2.424457098570968e-38]
+	29      (00000088) new-instance         v5, Lcom/afwsamples/testdpc/profilepolicy/addsystemapps/EnableSystemAppsByIntentFragment$3;
+	30      (0000008c) invoke-direct        v5, v6, Lcom/afwsamples/testdpc/profilepolicy/addsystemapps/EnableSystemAppsByIntentFragment$3;-><init>(Lcom/afwsamples/testdpc/profilepolicy/addsystemapps/EnableSystemAppsByIntentFragment;)V
+	31      (00000092) invoke-virtual       v2, v4, v5, Landroid/app/AlertDialog$Builder;->setNegativeButton(I Landroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
+	32      (00000098) invoke-virtual       v2, Landroid/app/AlertDialog$Builder;->show()Landroid/app/AlertDialog;
+	33      (0000009e) return-void          
+

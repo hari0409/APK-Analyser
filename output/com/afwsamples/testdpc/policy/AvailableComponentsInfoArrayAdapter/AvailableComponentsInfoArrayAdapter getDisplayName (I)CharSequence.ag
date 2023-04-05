@@ -1,0 +1,17 @@
+# Lcom/afwsamples/testdpc/policy/AvailableComponentsInfoArrayAdapter;->getDisplayName(I)Ljava/lang/CharSequence; [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:int
+#
+# - return:java.lang.CharSequence
+
+getDisplayName-BB@0x0 : 
+	0       (00000000) invoke-virtual       v2, v3, Lcom/afwsamples/testdpc/policy/AvailableComponentsInfoArrayAdapter;->getItem(I)Ljava/lang/Object;
+	1       (00000006) move-result-object   v0
+	2       (00000008) check-cast           v0, Landroid/content/pm/ResolveInfo;
+	3       (0000000c) iget-object          v1, v2, Lcom/afwsamples/testdpc/policy/AvailableComponentsInfoArrayAdapter;->mPackageManager Landroid/content/pm/PackageManager;
+	4       (00000010) invoke-virtual       v0, v1, Landroid/content/pm/ResolveInfo;->loadLabel(Landroid/content/pm/PackageManager;)Ljava/lang/CharSequence;
+	5       (00000016) move-result-object   v0
+	6       (00000018) return-object        v0
+

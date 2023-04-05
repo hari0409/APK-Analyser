@@ -1,0 +1,197 @@
+# Landroidx/appcompat/widget/AppCompatDrawableManager;->getTintList(Landroid/content/Context; I)Landroid/content/res/ColorStateList; [access_flags=synchronized]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:android.content.Context
+# - v4:int
+#
+# - return:android.content.res.ColorStateList
+
+getTintList-BB@0x0 : [ getTintList-BB@0x2 ]
+	0       (00000000) monitor-enter        v2
+
+getTintList-BB@0x2 : [ getTintList-BB@0xe getTintList-BB@0x2c ]
+	1       (00000002) invoke-direct        v2, v3, v4, Landroidx/appcompat/widget/AppCompatDrawableManager;->getTintListFromCache(Landroid/content/Context; I)Landroid/content/res/ColorStateList;
+	2       (00000008) move-result-object   v0
+	3       (0000000a) if-nez               v0, +11
+	2:2b
+	(Ljava/lang/Throwable; -> 11c getTintList-BB@0x11c)
+
+getTintList-BB@0xe : [ getTintList-BB@0x16 getTintList-BB@0x30 ]
+	4       (0000000e) sget                 v1, Landroidx/appcompat/R$drawable;->abc_edit_text_material I
+	5       (00000012) if-ne                v4, v1, +f
+	2:2b
+	(Ljava/lang/Throwable; -> 11c getTintList-BB@0x11c)
+
+getTintList-BB@0x16 : [ getTintList-BB@0x22 ]
+	6       (00000016) sget                 v1, Landroidx/appcompat/R$color;->abc_tint_edittext I
+	7       (0000001a) invoke-static        v3, v1, Landroidx/appcompat/content/res/AppCompatResources;->getColorStateList(Landroid/content/Context; I)Landroid/content/res/ColorStateList;
+	8       (00000020) move-result-object   v0
+	2:2b
+	(Ljava/lang/Throwable; -> 11c getTintList-BB@0x11c)
+
+getTintList-BB@0x22 : [ getTintList-BB@0x26 getTintList-BB@0x2c ]
+	9       (00000022) if-eqz               v0, +5
+	2:2b
+	(Ljava/lang/Throwable; -> 11c getTintList-BB@0x11c)
+
+getTintList-BB@0x26 : [ getTintList-BB@0x2c ]
+	10      (00000026) invoke-direct        v2, v3, v4, v0, Landroidx/appcompat/widget/AppCompatDrawableManager;->addTintListToCache(Landroid/content/Context; I Landroid/content/res/ColorStateList;)V
+	2:2b
+	(Ljava/lang/Throwable; -> 11c getTintList-BB@0x11c)
+
+getTintList-BB@0x2c : 
+	11      (0000002c) monitor-exit         v2
+	12      (0000002e) return-object        v0
+
+getTintList-BB@0x30 : [ getTintList-BB@0x38 getTintList-BB@0x46 ]
+	13      (00000030) sget                 v1, Landroidx/appcompat/R$drawable;->abc_switch_track_mtrl_alpha I
+	14      (00000034) if-ne                v4, v1, +9
+	30:117
+	(Ljava/lang/Throwable; -> 11c getTintList-BB@0x11c)
+
+getTintList-BB@0x38 : [ getTintList-BB@0x22 ]
+	15      (00000038) sget                 v1, Landroidx/appcompat/R$color;->abc_tint_switch_track I
+	16      (0000003c) invoke-static        v3, v1, Landroidx/appcompat/content/res/AppCompatResources;->getColorStateList(Landroid/content/Context; I)Landroid/content/res/ColorStateList;
+	17      (00000042) move-result-object   v0
+	18      (00000044) goto                 -11
+	30:117
+	(Ljava/lang/Throwable; -> 11c getTintList-BB@0x11c)
+
+getTintList-BB@0x46 : [ getTintList-BB@0x4e getTintList-BB@0x58 ]
+	19      (00000046) sget                 v1, Landroidx/appcompat/R$drawable;->abc_switch_thumb_material I
+	20      (0000004a) if-ne                v4, v1, +7
+	30:117
+	(Ljava/lang/Throwable; -> 11c getTintList-BB@0x11c)
+
+getTintList-BB@0x4e : [ getTintList-BB@0x22 ]
+	21      (0000004e) invoke-direct        v2, v3, Landroidx/appcompat/widget/AppCompatDrawableManager;->createSwitchThumbColorStateList(Landroid/content/Context;)Landroid/content/res/ColorStateList;
+	22      (00000054) move-result-object   v0
+	23      (00000056) goto                 -1a
+	30:117
+	(Ljava/lang/Throwable; -> 11c getTintList-BB@0x11c)
+
+getTintList-BB@0x58 : [ getTintList-BB@0x60 getTintList-BB@0x6a ]
+	24      (00000058) sget                 v1, Landroidx/appcompat/R$drawable;->abc_btn_default_mtrl_shape I
+	25      (0000005c) if-ne                v4, v1, +7
+	30:117
+	(Ljava/lang/Throwable; -> 11c getTintList-BB@0x11c)
+
+getTintList-BB@0x60 : [ getTintList-BB@0x22 ]
+	26      (00000060) invoke-direct        v2, v3, Landroidx/appcompat/widget/AppCompatDrawableManager;->createDefaultButtonColorStateList(Landroid/content/Context;)Landroid/content/res/ColorStateList;
+	27      (00000066) move-result-object   v0
+	28      (00000068) goto                 -23
+	30:117
+	(Ljava/lang/Throwable; -> 11c getTintList-BB@0x11c)
+
+getTintList-BB@0x6a : [ getTintList-BB@0x72 getTintList-BB@0x7c ]
+	29      (0000006a) sget                 v1, Landroidx/appcompat/R$drawable;->abc_btn_borderless_material I
+	30      (0000006e) if-ne                v4, v1, +7
+	30:117
+	(Ljava/lang/Throwable; -> 11c getTintList-BB@0x11c)
+
+getTintList-BB@0x72 : [ getTintList-BB@0x22 ]
+	31      (00000072) invoke-direct        v2, v3, Landroidx/appcompat/widget/AppCompatDrawableManager;->createBorderlessButtonColorStateList(Landroid/content/Context;)Landroid/content/res/ColorStateList;
+	32      (00000078) move-result-object   v0
+	33      (0000007a) goto                 -2c
+	30:117
+	(Ljava/lang/Throwable; -> 11c getTintList-BB@0x11c)
+
+getTintList-BB@0x7c : [ getTintList-BB@0x84 getTintList-BB@0x8e ]
+	34      (0000007c) sget                 v1, Landroidx/appcompat/R$drawable;->abc_btn_colored_material I
+	35      (00000080) if-ne                v4, v1, +7
+	30:117
+	(Ljava/lang/Throwable; -> 11c getTintList-BB@0x11c)
+
+getTintList-BB@0x84 : [ getTintList-BB@0x22 ]
+	36      (00000084) invoke-direct        v2, v3, Landroidx/appcompat/widget/AppCompatDrawableManager;->createColoredButtonColorStateList(Landroid/content/Context;)Landroid/content/res/ColorStateList;
+	37      (0000008a) move-result-object   v0
+	38      (0000008c) goto                 -35
+	30:117
+	(Ljava/lang/Throwable; -> 11c getTintList-BB@0x11c)
+
+getTintList-BB@0x8e : [ getTintList-BB@0x96 getTintList-BB@0x9e ]
+	39      (0000008e) sget                 v1, Landroidx/appcompat/R$drawable;->abc_spinner_mtrl_am_alpha I
+	40      (00000092) if-eq                v4, v1, +6
+	30:117
+	(Ljava/lang/Throwable; -> 11c getTintList-BB@0x11c)
+
+getTintList-BB@0x96 : [ getTintList-BB@0x9e getTintList-BB@0xac ]
+	41      (00000096) sget                 v1, Landroidx/appcompat/R$drawable;->abc_spinner_textfield_background_material I
+	42      (0000009a) if-ne                v4, v1, +9
+	30:117
+	(Ljava/lang/Throwable; -> 11c getTintList-BB@0x11c)
+
+getTintList-BB@0x9e : [ getTintList-BB@0x22 ]
+	43      (0000009e) sget                 v1, Landroidx/appcompat/R$color;->abc_tint_spinner I
+	44      (000000a2) invoke-static        v3, v1, Landroidx/appcompat/content/res/AppCompatResources;->getColorStateList(Landroid/content/Context; I)Landroid/content/res/ColorStateList;
+	45      (000000a8) move-result-object   v0
+	46      (000000aa) goto                 -44
+	30:117
+	(Ljava/lang/Throwable; -> 11c getTintList-BB@0x11c)
+
+getTintList-BB@0xac : [ getTintList-BB@0xbc getTintList-BB@0xca ]
+	47      (000000ac) sget-object          v1, Landroidx/appcompat/widget/AppCompatDrawableManager;->TINT_COLOR_CONTROL_NORMAL [I
+	48      (000000b0) invoke-static        v1, v4, Landroidx/appcompat/widget/AppCompatDrawableManager;->arrayContains([I I)Z
+	49      (000000b6) move-result          v1
+	50      (000000b8) if-eqz               v1, +9
+	30:117
+	(Ljava/lang/Throwable; -> 11c getTintList-BB@0x11c)
+
+getTintList-BB@0xbc : [ getTintList-BB@0x22 ]
+	51      (000000bc) sget                 v1, Landroidx/appcompat/R$attr;->colorControlNormal I
+	52      (000000c0) invoke-static        v3, v1, Landroidx/appcompat/widget/ThemeUtils;->getThemeAttrColorStateList(Landroid/content/Context; I)Landroid/content/res/ColorStateList;
+	53      (000000c6) move-result-object   v0
+	54      (000000c8) goto                 -53
+	30:117
+	(Ljava/lang/Throwable; -> 11c getTintList-BB@0x11c)
+
+getTintList-BB@0xca : [ getTintList-BB@0xda getTintList-BB@0xe8 ]
+	55      (000000ca) sget-object          v1, Landroidx/appcompat/widget/AppCompatDrawableManager;->TINT_COLOR_CONTROL_STATE_LIST [I
+	56      (000000ce) invoke-static        v1, v4, Landroidx/appcompat/widget/AppCompatDrawableManager;->arrayContains([I I)Z
+	57      (000000d4) move-result          v1
+	58      (000000d6) if-eqz               v1, +9
+	30:117
+	(Ljava/lang/Throwable; -> 11c getTintList-BB@0x11c)
+
+getTintList-BB@0xda : [ getTintList-BB@0x22 ]
+	59      (000000da) sget                 v1, Landroidx/appcompat/R$color;->abc_tint_default I
+	60      (000000de) invoke-static        v3, v1, Landroidx/appcompat/content/res/AppCompatResources;->getColorStateList(Landroid/content/Context; I)Landroid/content/res/ColorStateList;
+	61      (000000e4) move-result-object   v0
+	62      (000000e6) goto                 -62
+	30:117
+	(Ljava/lang/Throwable; -> 11c getTintList-BB@0x11c)
+
+getTintList-BB@0xe8 : [ getTintList-BB@0xf8 getTintList-BB@0x106 ]
+	63      (000000e8) sget-object          v1, Landroidx/appcompat/widget/AppCompatDrawableManager;->TINT_CHECKABLE_BUTTON_LIST [I
+	64      (000000ec) invoke-static        v1, v4, Landroidx/appcompat/widget/AppCompatDrawableManager;->arrayContains([I I)Z
+	65      (000000f2) move-result          v1
+	66      (000000f4) if-eqz               v1, +9
+	30:117
+	(Ljava/lang/Throwable; -> 11c getTintList-BB@0x11c)
+
+getTintList-BB@0xf8 : [ getTintList-BB@0x22 ]
+	67      (000000f8) sget                 v1, Landroidx/appcompat/R$color;->abc_tint_btn_checkable I
+	68      (000000fc) invoke-static        v3, v1, Landroidx/appcompat/content/res/AppCompatResources;->getColorStateList(Landroid/content/Context; I)Landroid/content/res/ColorStateList;
+	69      (00000102) move-result-object   v0
+	70      (00000104) goto                 -71
+	30:117
+	(Ljava/lang/Throwable; -> 11c getTintList-BB@0x11c)
+
+getTintList-BB@0x106 : [ getTintList-BB@0x10e getTintList-BB@0x22 ]
+	71      (00000106) sget                 v1, Landroidx/appcompat/R$drawable;->abc_seekbar_thumb_material I
+	72      (0000010a) if-ne                v4, v1, -74
+	30:117
+	(Ljava/lang/Throwable; -> 11c getTintList-BB@0x11c)
+
+getTintList-BB@0x10e : [ getTintList-BB@0x22 ]
+	73      (0000010e) sget                 v1, Landroidx/appcompat/R$color;->abc_tint_seek_thumb I
+	74      (00000112) invoke-static        v3, v1, Landroidx/appcompat/content/res/AppCompatResources;->getColorStateList(Landroid/content/Context; I)Landroid/content/res/ColorStateList;
+	75      (00000118) move-result-object   v0
+	76      (0000011a) goto                 -7c
+
+getTintList-BB@0x11c : 
+	77      (0000011c) move-exception       v1
+	78      (0000011e) monitor-exit         v2
+	79      (00000120) throw                v1
+

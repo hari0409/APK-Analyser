@@ -1,0 +1,21 @@
+# Lcom/afwsamples/testdpc/profilepolicy/delegation/DelegationFragment;->onSpinnerItemSelected(Landroid/content/pm/ApplicationInfo;)V [access_flags=protected]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:android.content.pm.ApplicationInfo
+#
+# - return:void
+
+onSpinnerItemSelected-BB@0x0 : [ onSpinnerItemSelected-BB@0x8 onSpinnerItemSelected-BB@0xa ]
+	0       (00000000) iget-object          v0, v3, Landroid/content/pm/ApplicationInfo;->packageName Ljava/lang/String;
+	1       (00000004) if-nez               v0, +3
+
+onSpinnerItemSelected-BB@0x8 : 
+	2       (00000008) return-void          
+
+onSpinnerItemSelected-BB@0xa : [ onSpinnerItemSelected-BB@0x8 ]
+	3       (0000000a) invoke-direct        v2, v0, Lcom/afwsamples/testdpc/profilepolicy/delegation/DelegationFragment;->readScopesFromDpm(Ljava/lang/String;)V
+	4       (00000010) iget-object          v1, v2, Lcom/afwsamples/testdpc/profilepolicy/delegation/DelegationFragment;->mAdapter Landroid/widget/BaseAdapter;
+	5       (00000014) invoke-virtual       v1, Landroid/widget/BaseAdapter;->notifyDataSetChanged()V
+	6       (0000001a) goto                 -9
+

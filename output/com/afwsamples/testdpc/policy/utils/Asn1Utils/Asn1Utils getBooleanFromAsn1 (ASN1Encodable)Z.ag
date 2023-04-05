@@ -1,0 +1,36 @@
+# Lcom/afwsamples/testdpc/policy/utils/Asn1Utils;->getBooleanFromAsn1(Lorg/bouncycastle/asn1/ASN1Encodable;)Z [access_flags=public static]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:org.bouncycastle.asn1.ASN1Encodable
+#
+# - return:boolean
+
+getBooleanFromAsn1-BB@0x0 : [ getBooleanFromAsn1-BB@0x8 getBooleanFromAsn1-BB@0x4a ]
+	0       (00000000) instance-of          v0, v3, Lorg/bouncycastle/asn1/ASN1Boolean;
+	1       (00000004) if-nez               v0, +23
+
+getBooleanFromAsn1-BB@0x8 : 
+	2       (00000008) new-instance         v0, Ljava/security/cert/CertificateParsingException;
+	3       (0000000c) new-instance         v1, Ljava/lang/StringBuilder;
+	4       (00000010) invoke-direct        v1, Ljava/lang/StringBuilder;-><init>()V
+	5       (00000016) const-string         v2, 'Expected boolean, found '
+	6       (0000001a) invoke-virtual       v1, v2, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	7       (00000020) move-result-object   v1
+	8       (00000022) invoke-virtual       v3, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+	9       (00000028) move-result-object   v2
+	10      (0000002a) invoke-virtual       v2, Ljava/lang/Class;->getName()Ljava/lang/String;
+	11      (00000030) move-result-object   v2
+	12      (00000032) invoke-virtual       v1, v2, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	13      (00000038) move-result-object   v1
+	14      (0000003a) invoke-virtual       v1, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+	15      (00000040) move-result-object   v1
+	16      (00000042) invoke-direct        v0, v1, Ljava/security/cert/CertificateParsingException;-><init>(Ljava/lang/String;)V
+	17      (00000048) throw                v0
+
+getBooleanFromAsn1-BB@0x4a : 
+	18      (0000004a) check-cast           v3, Lorg/bouncycastle/asn1/ASN1Boolean;
+	19      (0000004e) invoke-virtual       v3, Lorg/bouncycastle/asn1/ASN1Boolean;->isTrue()Z
+	20      (00000054) move-result          v0
+	21      (00000056) return               v0
+

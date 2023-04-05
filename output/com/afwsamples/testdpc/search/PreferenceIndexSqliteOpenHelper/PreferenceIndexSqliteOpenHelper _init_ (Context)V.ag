@@ -1,0 +1,22 @@
+# Lcom/afwsamples/testdpc/search/PreferenceIndexSqliteOpenHelper;-><init>(Landroid/content/Context;)V [access_flags=private constructor]
+#
+# Parameters:
+# - local registers: v0...v3
+# - v4:android.content.Context
+#
+# - return:void
+
+<init>-BB@0x0 : 
+	0       (00000000) const-string         v0, 'preference_index.db'
+	1       (00000004) const/4              v1, 0
+	2       (00000006) const/4              v2, 1
+	3       (00000008) invoke-direct        v3, v4, v0, v1, v2, Landroid/database/sqlite/SQLiteOpenHelper;-><init>(Landroid/content/Context; Ljava/lang/String; Landroid/database/sqlite/SQLiteDatabase$CursorFactory; I)V
+	4       (0000000e) invoke-virtual       v4, Landroid/content/Context;->getApplicationContext()Landroid/content/Context;
+	5       (00000014) move-result-object   v0
+	6       (00000016) iput-object          v0, v3, Lcom/afwsamples/testdpc/search/PreferenceIndexSqliteOpenHelper;->mContext Landroid/content/Context;
+	7       (0000001a) new-instance         v0, Lcom/afwsamples/testdpc/search/PreferenceIndexSqliteOpenHelper$SharedPreferencesHelper;
+	8       (0000001e) iget-object          v1, v3, Lcom/afwsamples/testdpc/search/PreferenceIndexSqliteOpenHelper;->mContext Landroid/content/Context;
+	9       (00000022) invoke-direct        v0, v1, Lcom/afwsamples/testdpc/search/PreferenceIndexSqliteOpenHelper$SharedPreferencesHelper;-><init>(Landroid/content/Context;)V
+	10      (00000028) iput-object          v0, v3, Lcom/afwsamples/testdpc/search/PreferenceIndexSqliteOpenHelper;->mSharedPreferencesHelper Lcom/afwsamples/testdpc/search/PreferenceIndexSqliteOpenHelper$SharedPreferencesHelper;
+	11      (0000002c) return-void          
+

@@ -1,0 +1,40 @@
+# Lcom/afwsamples/testdpc/common/BaseSearchablePolicyPreferenceFragment;->findListPositionFromKey(Landroidx/preference/PreferenceGroupAdapter; Ljava/lang/String;)I [access_flags=private]
+#
+# Parameters:
+# - local registers: v0...v5
+# - v6:androidx.preference.PreferenceGroupAdapter
+# - v7:java.lang.String
+#
+# - return:int
+
+findListPositionFromKey-BB@0x0 : [ findListPositionFromKey-BB@0xa ]
+	0       (00000000) invoke-virtual       v6, Landroidx/preference/PreferenceGroupAdapter;->getItemCount()I
+	1       (00000006) move-result          v0
+	2       (00000008) const/4              v1, 0
+
+findListPositionFromKey-BB@0xa : [ findListPositionFromKey-BB@0xe findListPositionFromKey-BB@0x36 ]
+	3       (0000000a) if-ge                v1, v0, +16
+
+findListPositionFromKey-BB@0xe : [ findListPositionFromKey-BB@0x22 findListPositionFromKey-BB@0x30 ]
+	4       (0000000e) invoke-virtual       v6, v1, Landroidx/preference/PreferenceGroupAdapter;->getItem(I)Landroidx/preference/Preference;
+	5       (00000014) move-result-object   v2
+	6       (00000016) invoke-virtual       v2, Landroidx/preference/Preference;->getKey()Ljava/lang/String;
+	7       (0000001c) move-result-object   v3
+	8       (0000001e) if-eqz               v3, +9
+
+findListPositionFromKey-BB@0x22 : [ findListPositionFromKey-BB@0x2e findListPositionFromKey-BB@0x30 ]
+	9       (00000022) invoke-virtual       v3, v7, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+	10      (00000028) move-result          v4
+	11      (0000002a) if-eqz               v4, +3
+
+findListPositionFromKey-BB@0x2e : 
+	12      (0000002e) return               v1
+
+findListPositionFromKey-BB@0x30 : [ findListPositionFromKey-BB@0xa ]
+	13      (00000030) add-int/lit8         v1, v1, 1
+	14      (00000034) goto                 -15
+
+findListPositionFromKey-BB@0x36 : [ findListPositionFromKey-BB@0x2e ]
+	15      (00000036) const/4              v1, -1
+	16      (00000038) goto                 -5
+

@@ -1,0 +1,101 @@
+# Landroidx/appcompat/graphics/drawable/DrawableContainer$DrawableContainerState;->getConstantPadding()Landroid/graphics/Rect; [access_flags=public final]
+#
+# Parameters:
+# local registers: v0...v8
+#
+# - return:android.graphics.Rect
+
+getConstantPadding-BB@0x0 : [ getConstantPadding-BB@0xa getConstantPadding-BB@0xe ]
+	0       (00000000) const/4              v7, 0
+	1       (00000002) iget-boolean         v5, v8, Landroidx/appcompat/graphics/drawable/DrawableContainer$DrawableContainerState;->mVariablePadding Z
+	2       (00000006) if-eqz               v5, +4
+
+getConstantPadding-BB@0xa : [ getConstantPadding-BB@0xc ]
+	3       (0000000a) const/4              v3, 0
+
+getConstantPadding-BB@0xc : 
+	4       (0000000c) return-object        v3
+
+getConstantPadding-BB@0xe : [ getConstantPadding-BB@0x16 getConstantPadding-BB@0x1e ]
+	5       (0000000e) iget-object          v5, v8, Landroidx/appcompat/graphics/drawable/DrawableContainer$DrawableContainerState;->mConstantPadding Landroid/graphics/Rect;
+	6       (00000012) if-nez               v5, +6
+
+getConstantPadding-BB@0x16 : [ getConstantPadding-BB@0x1e getConstantPadding-BB@0x24 ]
+	7       (00000016) iget-boolean         v5, v8, Landroidx/appcompat/graphics/drawable/DrawableContainer$DrawableContainerState;->mCheckedPadding Z
+	8       (0000001a) if-eqz               v5, +5
+
+getConstantPadding-BB@0x1e : [ getConstantPadding-BB@0xc ]
+	9       (0000001e) iget-object          v3, v8, Landroidx/appcompat/graphics/drawable/DrawableContainer$DrawableContainerState;->mConstantPadding Landroid/graphics/Rect;
+	10      (00000022) goto                 -b
+
+getConstantPadding-BB@0x24 : [ getConstantPadding-BB@0x40 ]
+	11      (00000024) invoke-direct        v8, Landroidx/appcompat/graphics/drawable/DrawableContainer$DrawableContainerState;->createAllFutures()V
+	12      (0000002a) const/4              v3, 0
+	13      (0000002c) new-instance         v4, Landroid/graphics/Rect;
+	14      (00000030) invoke-direct        v4, Landroid/graphics/Rect;-><init>()V
+	15      (00000036) iget                 v0, v8, Landroidx/appcompat/graphics/drawable/DrawableContainer$DrawableContainerState;->mNumChildren I
+	16      (0000003a) iget-object          v1, v8, Landroidx/appcompat/graphics/drawable/DrawableContainer$DrawableContainerState;->mDrawables [Landroid/graphics/drawable/Drawable;
+	17      (0000003e) const/4              v2, 0
+
+getConstantPadding-BB@0x40 : [ getConstantPadding-BB@0x44 getConstantPadding-BB@0xb8 ]
+	18      (00000040) if-ge                v2, v0, +3c
+
+getConstantPadding-BB@0x44 : [ getConstantPadding-BB@0x54 getConstantPadding-BB@0xb2 ]
+	19      (00000044) aget-object          v5, v1, v2
+	20      (00000048) invoke-virtual       v5, v4, Landroid/graphics/drawable/Drawable;->getPadding(Landroid/graphics/Rect;)Z
+	21      (0000004e) move-result          v5
+	22      (00000050) if-eqz               v5, +31
+
+getConstantPadding-BB@0x54 : [ getConstantPadding-BB@0x58 getConstantPadding-BB@0x62 ]
+	23      (00000054) if-nez               v3, +7
+
+getConstantPadding-BB@0x58 : [ getConstantPadding-BB@0x62 ]
+	24      (00000058) new-instance         v3, Landroid/graphics/Rect;
+	25      (0000005c) invoke-direct        v3, v7, v7, v7, v7, Landroid/graphics/Rect;-><init>(I I I I)V
+
+getConstantPadding-BB@0x62 : [ getConstantPadding-BB@0x6e getConstantPadding-BB@0x76 ]
+	26      (00000062) iget                 v5, v4, Landroid/graphics/Rect;->left I
+	27      (00000066) iget                 v6, v3, Landroid/graphics/Rect;->left I
+	28      (0000006a) if-le                v5, v6, +6
+
+getConstantPadding-BB@0x6e : [ getConstantPadding-BB@0x76 ]
+	29      (0000006e) iget                 v5, v4, Landroid/graphics/Rect;->left I
+	30      (00000072) iput                 v5, v3, Landroid/graphics/Rect;->left I
+
+getConstantPadding-BB@0x76 : [ getConstantPadding-BB@0x82 getConstantPadding-BB@0x8a ]
+	31      (00000076) iget                 v5, v4, Landroid/graphics/Rect;->top I
+	32      (0000007a) iget                 v6, v3, Landroid/graphics/Rect;->top I
+	33      (0000007e) if-le                v5, v6, +6
+
+getConstantPadding-BB@0x82 : [ getConstantPadding-BB@0x8a ]
+	34      (00000082) iget                 v5, v4, Landroid/graphics/Rect;->top I
+	35      (00000086) iput                 v5, v3, Landroid/graphics/Rect;->top I
+
+getConstantPadding-BB@0x8a : [ getConstantPadding-BB@0x96 getConstantPadding-BB@0x9e ]
+	36      (0000008a) iget                 v5, v4, Landroid/graphics/Rect;->right I
+	37      (0000008e) iget                 v6, v3, Landroid/graphics/Rect;->right I
+	38      (00000092) if-le                v5, v6, +6
+
+getConstantPadding-BB@0x96 : [ getConstantPadding-BB@0x9e ]
+	39      (00000096) iget                 v5, v4, Landroid/graphics/Rect;->right I
+	40      (0000009a) iput                 v5, v3, Landroid/graphics/Rect;->right I
+
+getConstantPadding-BB@0x9e : [ getConstantPadding-BB@0xaa getConstantPadding-BB@0xb2 ]
+	41      (0000009e) iget                 v5, v4, Landroid/graphics/Rect;->bottom I
+	42      (000000a2) iget                 v6, v3, Landroid/graphics/Rect;->bottom I
+	43      (000000a6) if-le                v5, v6, +6
+
+getConstantPadding-BB@0xaa : [ getConstantPadding-BB@0xb2 ]
+	44      (000000aa) iget                 v5, v4, Landroid/graphics/Rect;->bottom I
+	45      (000000ae) iput                 v5, v3, Landroid/graphics/Rect;->bottom I
+
+getConstantPadding-BB@0xb2 : [ getConstantPadding-BB@0x40 ]
+	46      (000000b2) add-int/lit8         v2, v2, 1
+	47      (000000b6) goto                 -3b
+
+getConstantPadding-BB@0xb8 : [ getConstantPadding-BB@0xc ]
+	48      (000000b8) const/4              v5, 1
+	49      (000000ba) iput-boolean         v5, v8, Landroidx/appcompat/graphics/drawable/DrawableContainer$DrawableContainerState;->mCheckedPadding Z
+	50      (000000be) iput-object          v3, v8, Landroidx/appcompat/graphics/drawable/DrawableContainer$DrawableContainerState;->mConstantPadding Landroid/graphics/Rect;
+	51      (000000c2) goto                 -5b
+

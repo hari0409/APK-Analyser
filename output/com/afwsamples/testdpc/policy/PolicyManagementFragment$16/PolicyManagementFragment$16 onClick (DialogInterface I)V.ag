@@ -1,0 +1,45 @@
+# Lcom/afwsamples/testdpc/policy/PolicyManagementFragment$16;->onClick(Landroid/content/DialogInterface; I)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v5
+# - v6:android.content.DialogInterface
+# - v7:int
+#
+# - return:void
+
+onClick-BB@0x0 : [ onClick-BB@0x22 onClick-BB@0x5c ]
+	0       (00000000) const/4              v4, 0
+	1       (00000002) iget-object          v1, v5, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment$16;->val$input Landroid/widget/EditText;
+	2       (00000006) invoke-virtual       v1, Landroid/widget/EditText;->getText()Landroid/text/Editable;
+	3       (0000000c) move-result-object   v1
+	4       (0000000e) invoke-virtual       v1, Ljava/lang/Object;->toString()Ljava/lang/String;
+	5       (00000014) move-result-object   v0
+	6       (00000016) invoke-static        v0, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
+	7       (0000001c) move-result          v1
+	8       (0000001e) if-nez               v1, +1f
+
+onClick-BB@0x22 : [ onClick-BB@0x5a ]
+	9       (00000022) iget-object          v1, v5, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment$16;->this$0 Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;
+	10      (00000026) invoke-static        v1, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->access$400(Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;)Landroid/app/admin/DevicePolicyManager;
+	11      (0000002c) move-result-object   v1
+	12      (0000002e) iget-object          v2, v5, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment$16;->this$0 Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;
+	13      (00000032) invoke-static        v2, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->access$700(Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;)Landroid/content/ComponentName;
+	14      (00000038) move-result-object   v2
+	15      (0000003a) invoke-virtual       v1, v2, v0, v4, Landroid/app/admin/DevicePolicyManager;->setUninstallBlocked(Landroid/content/ComponentName; Ljava/lang/String; Z)V
+	16      (00000040) iget-object          v1, v5, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment$16;->this$0 Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;
+	17      (00000044) const                v2, 2131690336 # [1.9009712739914052e+38]
+	18      (0000004a) const/4              v3, 1
+	19      (0000004c) new-array            v3, v3, [Ljava/lang/Object;
+	20      (00000050) aput-object          v0, v3, v4
+	21      (00000054) invoke-static        v1, v2, v3, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->access$200(Lcom/afwsamples/testdpc/policy/PolicyManagementFragment; I [Ljava/lang/Object;)V
+
+onClick-BB@0x5a : 
+	22      (0000005a) return-void          
+
+onClick-BB@0x5c : [ onClick-BB@0x5a ]
+	23      (0000005c) iget-object          v1, v5, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment$16;->this$0 Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;
+	24      (00000060) const                v2, 2131689590 # [1.900819967215762e+38]
+	25      (00000066) new-array            v3, v4, [Ljava/lang/Object;
+	26      (0000006a) invoke-static        v1, v2, v3, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->access$200(Lcom/afwsamples/testdpc/policy/PolicyManagementFragment; I [Ljava/lang/Object;)V
+	27      (00000070) goto                 -b
+

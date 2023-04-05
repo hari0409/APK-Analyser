@@ -1,0 +1,22 @@
+# Lcom/afwsamples/testdpc/common/PackageInstallationUtils;->createUninstallIntentSender(Landroid/content/Context; Ljava/lang/String;)Landroid/content/IntentSender; [access_flags=private static]
+#
+# Parameters:
+# - local registers: v0...v3
+# - v4:android.content.Context
+# - v5:java.lang.String
+#
+# - return:android.content.IntentSender
+
+createUninstallIntentSender-BB@0x0 : 
+	0       (00000000) const/4              v3, 0
+	1       (00000002) new-instance         v0, Landroid/content/Intent;
+	2       (00000006) const-string         v2, 'com.afwsamples.testdpc.UNINSTALL_COMPLETE'
+	3       (0000000a) invoke-direct        v0, v2, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
+	4       (00000010) const-string         v2, 'android.intent.extra.PACKAGE_NAME'
+	5       (00000014) invoke-virtual       v0, v2, v5, Landroid/content/Intent;->putExtra(Ljava/lang/String; Ljava/lang/String;)Landroid/content/Intent;
+	6       (0000001a) invoke-static        v4, v3, v0, v3, Landroid/app/PendingIntent;->getBroadcast(Landroid/content/Context; I Landroid/content/Intent; I)Landroid/app/PendingIntent;
+	7       (00000020) move-result-object   v1
+	8       (00000022) invoke-virtual       v1, Landroid/app/PendingIntent;->getIntentSender()Landroid/content/IntentSender;
+	9       (00000028) move-result-object   v2
+	10      (0000002a) return-object        v2
+

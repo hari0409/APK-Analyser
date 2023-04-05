@@ -1,0 +1,25 @@
+# Landroidx/appcompat/view/StandaloneActionMode;->setCustomView(Landroid/view/View;)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:android.view.View
+#
+# - return:void
+
+setCustomView-BB@0x0 : [ setCustomView-BB@0xe setCustomView-BB@0x1e ]
+	0       (00000000) iget-object          v0, v1, Landroidx/appcompat/view/StandaloneActionMode;->mContextView Landroidx/appcompat/widget/ActionBarContextView;
+	1       (00000004) invoke-virtual       v0, v2, Landroidx/appcompat/widget/ActionBarContextView;->setCustomView(Landroid/view/View;)V
+	2       (0000000a) if-eqz               v2, +a
+
+setCustomView-BB@0xe : [ setCustomView-BB@0x18 ]
+	3       (0000000e) new-instance         v0, Ljava/lang/ref/WeakReference;
+	4       (00000012) invoke-direct        v0, v2, Ljava/lang/ref/WeakReference;-><init>(Ljava/lang/Object;)V
+
+setCustomView-BB@0x18 : 
+	5       (00000018) iput-object          v0, v1, Landroidx/appcompat/view/StandaloneActionMode;->mCustomView Ljava/lang/ref/WeakReference;
+	6       (0000001c) return-void          
+
+setCustomView-BB@0x1e : [ setCustomView-BB@0x18 ]
+	7       (0000001e) const/4              v0, 0
+	8       (00000020) goto                 -4
+

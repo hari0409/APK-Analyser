@@ -1,0 +1,68 @@
+# Lcom/afwsamples/testdpc/common/MediaDisplayFragment;->onCreateView(Landroid/view/LayoutInflater; Landroid/view/ViewGroup; Landroid/os/Bundle;)Landroid/view/View; [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v8
+# - v9:android.view.LayoutInflater
+# - v10:android.view.ViewGroup
+# - v11:android.os.Bundle
+#
+# - return:android.view.View
+
+onCreateView-BB@0x0 : [ D:onCreateView-BB@0x1a 1:onCreateView-BB@0x3e 2:onCreateView-BB@0x62 ]
+	0       (00000000) const/4              v7, 0
+	1       (00000002) const                v6, 2131427384 # [1.847638272290411e+38]
+	2       (00000008) invoke-virtual       v9, v6, v10, v7, Landroid/view/LayoutInflater;->inflate(I Landroid/view/ViewGroup; Z)Landroid/view/View;
+	3       (0000000e) move-result-object   v5
+	4       (00000010) iget                 v6, v8, Lcom/afwsamples/testdpc/common/MediaDisplayFragment;->mDisplayRequest I
+	5       (00000014) packed-switch        v6, +64 (0xdc)
+
+onCreateView-BB@0x1a : 
+	6       (0000001a) const                v6, 2131296399 # [1.821071358071068e+38]
+	7       (00000020) invoke-virtual       v5, v6, Landroid/view/View;->findViewById(I)Landroid/view/View;
+	8       (00000026) move-result-object   v0
+	9       (00000028) check-cast           v0, Landroid/widget/Button;
+	10      (0000002c) new-instance         v6, Lcom/afwsamples/testdpc/common/MediaDisplayFragment$3;
+	11      (00000030) invoke-direct        v6, v8, Lcom/afwsamples/testdpc/common/MediaDisplayFragment$3;-><init>(Lcom/afwsamples/testdpc/common/MediaDisplayFragment;)V
+	12      (00000036) invoke-virtual       v0, v6, Landroid/widget/Button;->setOnClickListener(Landroid/view/View$OnClickListener;)V
+	13      (0000003c) return-object        v5
+
+onCreateView-BB@0x3e : [ onCreateView-BB@0x1a ]
+	14      (0000003e) const                v6, 2131296462 # [1.8210841359891183e+38]
+	15      (00000044) invoke-virtual       v5, v6, Landroid/view/View;->findViewById(I)Landroid/view/View;
+	16      (0000004a) move-result-object   v1
+	17      (0000004c) check-cast           v1, Landroid/widget/ImageView;
+	18      (00000050) iget-object          v6, v8, Lcom/afwsamples/testdpc/common/MediaDisplayFragment;->mMediaUri Landroid/net/Uri;
+	19      (00000054) invoke-virtual       v1, v6, Landroid/widget/ImageView;->setImageURI(Landroid/net/Uri;)V
+	20      (0000005a) invoke-virtual       v1, v7, Landroid/widget/ImageView;->setVisibility(I)V
+	21      (00000060) goto                 -23
+
+onCreateView-BB@0x62 : [ onCreateView-BB@0x1a ]
+	22      (00000062) const                v6, 2131296729 # [1.82113829002276e+38]
+	23      (00000068) invoke-virtual       v5, v6, Landroid/view/View;->findViewById(I)Landroid/view/View;
+	24      (0000006e) move-result-object   v4
+	25      (00000070) check-cast           v4, Landroid/widget/VideoView;
+	26      (00000074) iget-object          v6, v8, Lcom/afwsamples/testdpc/common/MediaDisplayFragment;->mMediaUri Landroid/net/Uri;
+	27      (00000078) invoke-virtual       v4, v6, Landroid/widget/VideoView;->setVideoURI(Landroid/net/Uri;)V
+	28      (0000007e) invoke-virtual       v4, v7, Landroid/widget/VideoView;->setVisibility(I)V
+	29      (00000084) invoke-virtual       v4, Landroid/widget/VideoView;->requestFocus()Z
+	30      (0000008a) const                v6, 2131296535 # [1.821098942148129e+38]
+	31      (00000090) invoke-virtual       v5, v6, Landroid/view/View;->findViewById(I)Landroid/view/View;
+	32      (00000096) move-result-object   v2
+	33      (00000098) check-cast           v2, Landroid/widget/Button;
+	34      (0000009c) invoke-virtual       v2, v7, Landroid/widget/Button;->setVisibility(I)V
+	35      (000000a2) new-instance         v6, Lcom/afwsamples/testdpc/common/MediaDisplayFragment$1;
+	36      (000000a6) invoke-direct        v6, v8, v4, Lcom/afwsamples/testdpc/common/MediaDisplayFragment$1;-><init>(Lcom/afwsamples/testdpc/common/MediaDisplayFragment; Landroid/widget/VideoView;)V
+	37      (000000ac) invoke-virtual       v2, v6, Landroid/widget/Button;->setOnClickListener(Landroid/view/View$OnClickListener;)V
+	38      (000000b2) const                v6, 2131296643 # [1.821120847150501e+38]
+	39      (000000b8) invoke-virtual       v5, v6, Landroid/view/View;->findViewById(I)Landroid/view/View;
+	40      (000000be) move-result-object   v3
+	41      (000000c0) check-cast           v3, Landroid/widget/Button;
+	42      (000000c4) invoke-virtual       v3, v7, Landroid/widget/Button;->setVisibility(I)V
+	43      (000000ca) new-instance         v6, Lcom/afwsamples/testdpc/common/MediaDisplayFragment$2;
+	44      (000000ce) invoke-direct        v6, v8, v4, Lcom/afwsamples/testdpc/common/MediaDisplayFragment$2;-><init>(Lcom/afwsamples/testdpc/common/MediaDisplayFragment; Landroid/widget/VideoView;)V
+	45      (000000d4) invoke-virtual       v3, v6, Landroid/widget/Button;->setOnClickListener(Landroid/view/View$OnClickListener;)V
+	46      (000000da) goto                 -60
+
+onCreateView-BB@0xdc : 
+	47      (000000dc) packed-switch-payload 1 2
+

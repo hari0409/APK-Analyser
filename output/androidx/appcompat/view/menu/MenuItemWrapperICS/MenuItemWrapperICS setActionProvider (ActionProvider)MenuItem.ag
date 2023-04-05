@@ -1,0 +1,25 @@
+# Landroidx/appcompat/view/menu/MenuItemWrapperICS;->setActionProvider(Landroid/view/ActionProvider;)Landroid/view/MenuItem; [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:android.view.ActionProvider
+#
+# - return:android.view.MenuItem
+
+setActionProvider-BB@0x0 : [ setActionProvider-BB@0xc setActionProvider-BB@0x1c ]
+	0       (00000000) iget-object          v0, v2, Landroidx/appcompat/view/menu/MenuItemWrapperICS;->mWrappedObject Ljava/lang/Object;
+	1       (00000004) check-cast           v0, Landroidx/core/internal/view/SupportMenuItem;
+	2       (00000008) if-eqz               v3, +a
+
+setActionProvider-BB@0xc : [ setActionProvider-BB@0x14 ]
+	3       (0000000c) invoke-virtual       v2, v3, Landroidx/appcompat/view/menu/MenuItemWrapperICS;->createActionProviderWrapper(Landroid/view/ActionProvider;)Landroidx/appcompat/view/menu/MenuItemWrapperICS$ActionProviderWrapper;
+	4       (00000012) move-result-object   v1
+
+setActionProvider-BB@0x14 : 
+	5       (00000014) invoke-interface     v0, v1, Landroidx/core/internal/view/SupportMenuItem;->setSupportActionProvider(Landroidx/core/view/ActionProvider;)Landroidx/core/internal/view/SupportMenuItem;
+	6       (0000001a) return-object        v2
+
+setActionProvider-BB@0x1c : [ setActionProvider-BB@0x14 ]
+	7       (0000001c) const/4              v1, 0
+	8       (0000001e) goto                 -5
+

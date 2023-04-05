@@ -1,0 +1,42 @@
+# Landroidx/appcompat/widget/DrawableUtils;->parseTintMode(I Landroid/graphics/PorterDuff$Mode;)Landroid/graphics/PorterDuff$Mode; [access_flags=public static]
+#
+# Parameters:
+# - local registers: v0...v-1
+# - v0:int
+# - v1:android.graphics.PorterDuff$Mode
+#
+# - return:android.graphics.PorterDuff$Mode
+
+parseTintMode-BB@0x0 : [ D:parseTintMode-BB@0x6 3:parseTintMode-BB@0x8 4:parseTintMode-BB@0x6 5:parseTintMode-BB@0xe 6:parseTintMode-BB@0x6 7:parseTintMode-BB@0x6 8:parseTintMode-BB@0x6 9:parseTintMode-BB@0x14 10:parseTintMode-BB@0x6 11:parseTintMode-BB@0x6 12:parseTintMode-BB@0x6 13:parseTintMode-BB@0x6 14:parseTintMode-BB@0x1a 15:parseTintMode-BB@0x20 16:parseTintMode-BB@0x26 ]
+	0       (00000000) packed-switch        v0, +16 (0x2c)
+
+parseTintMode-BB@0x6 : 
+	1       (00000006) return-object        v1
+
+parseTintMode-BB@0x8 : [ parseTintMode-BB@0x6 ]
+	2       (00000008) sget-object          v1, Landroid/graphics/PorterDuff$Mode;->SRC_OVER Landroid/graphics/PorterDuff$Mode;
+	3       (0000000c) goto                 -3
+
+parseTintMode-BB@0xe : [ parseTintMode-BB@0x6 ]
+	4       (0000000e) sget-object          v1, Landroid/graphics/PorterDuff$Mode;->SRC_IN Landroid/graphics/PorterDuff$Mode;
+	5       (00000012) goto                 -6
+
+parseTintMode-BB@0x14 : [ parseTintMode-BB@0x6 ]
+	6       (00000014) sget-object          v1, Landroid/graphics/PorterDuff$Mode;->SRC_ATOP Landroid/graphics/PorterDuff$Mode;
+	7       (00000018) goto                 -9
+
+parseTintMode-BB@0x1a : [ parseTintMode-BB@0x6 ]
+	8       (0000001a) sget-object          v1, Landroid/graphics/PorterDuff$Mode;->MULTIPLY Landroid/graphics/PorterDuff$Mode;
+	9       (0000001e) goto                 -c
+
+parseTintMode-BB@0x20 : [ parseTintMode-BB@0x6 ]
+	10      (00000020) sget-object          v1, Landroid/graphics/PorterDuff$Mode;->SCREEN Landroid/graphics/PorterDuff$Mode;
+	11      (00000024) goto                 -f
+
+parseTintMode-BB@0x26 : [ parseTintMode-BB@0x6 ]
+	12      (00000026) sget-object          v1, Landroid/graphics/PorterDuff$Mode;->ADD Landroid/graphics/PorterDuff$Mode;
+	13      (0000002a) goto                 -12
+
+parseTintMode-BB@0x2c : 
+	14      (0000002c) packed-switch-payload 3 4 5 6 7 8 9 a b c d e f 10
+

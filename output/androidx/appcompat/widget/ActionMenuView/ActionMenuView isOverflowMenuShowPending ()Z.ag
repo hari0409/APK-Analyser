@@ -1,0 +1,27 @@
+# Landroidx/appcompat/widget/ActionMenuView;->isOverflowMenuShowPending()Z [access_flags=public]
+#
+# Parameters:
+# local registers: v0...v1
+#
+# - return:boolean
+
+isOverflowMenuShowPending-BB@0x0 : [ isOverflowMenuShowPending-BB@0x8 isOverflowMenuShowPending-BB@0x1c ]
+	0       (00000000) iget-object          v0, v1, Landroidx/appcompat/widget/ActionMenuView;->mPresenter Landroidx/appcompat/widget/ActionMenuPresenter;
+	1       (00000004) if-eqz               v0, +c
+
+isOverflowMenuShowPending-BB@0x8 : [ isOverflowMenuShowPending-BB@0x18 isOverflowMenuShowPending-BB@0x1c ]
+	2       (00000008) iget-object          v0, v1, Landroidx/appcompat/widget/ActionMenuView;->mPresenter Landroidx/appcompat/widget/ActionMenuPresenter;
+	3       (0000000c) invoke-virtual       v0, Landroidx/appcompat/widget/ActionMenuPresenter;->isOverflowMenuShowPending()Z
+	4       (00000012) move-result          v0
+	5       (00000014) if-eqz               v0, +4
+
+isOverflowMenuShowPending-BB@0x18 : [ isOverflowMenuShowPending-BB@0x1a ]
+	6       (00000018) const/4              v0, 1
+
+isOverflowMenuShowPending-BB@0x1a : 
+	7       (0000001a) return               v0
+
+isOverflowMenuShowPending-BB@0x1c : [ isOverflowMenuShowPending-BB@0x1a ]
+	8       (0000001c) const/4              v0, 0
+	9       (0000001e) goto                 -2
+

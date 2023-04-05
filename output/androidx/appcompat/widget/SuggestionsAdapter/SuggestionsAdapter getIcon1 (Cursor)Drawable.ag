@@ -1,0 +1,32 @@
+# Landroidx/appcompat/widget/SuggestionsAdapter;->getIcon1(Landroid/database/Cursor;)Landroid/graphics/drawable/Drawable; [access_flags=private]
+#
+# Parameters:
+# - local registers: v0...v4
+# - v5:android.database.Cursor
+#
+# - return:android.graphics.drawable.Drawable
+
+getIcon1-BB@0x0 : [ getIcon1-BB@0xa getIcon1-BB@0xe ]
+	0       (00000000) iget                 v2, v4, Landroidx/appcompat/widget/SuggestionsAdapter;->mIconName1Col I
+	1       (00000004) const/4              v3, -1
+	2       (00000006) if-ne                v2, v3, +4
+
+getIcon1-BB@0xa : [ getIcon1-BB@0xc ]
+	3       (0000000a) const/4              v0, 0
+
+getIcon1-BB@0xc : 
+	4       (0000000c) return-object        v0
+
+getIcon1-BB@0xe : [ getIcon1-BB@0x26 getIcon1-BB@0xc ]
+	5       (0000000e) iget                 v2, v4, Landroidx/appcompat/widget/SuggestionsAdapter;->mIconName1Col I
+	6       (00000012) invoke-interface     v5, v2, Landroid/database/Cursor;->getString(I)Ljava/lang/String;
+	7       (00000018) move-result-object   v1
+	8       (0000001a) invoke-direct        v4, v1, Landroidx/appcompat/widget/SuggestionsAdapter;->getDrawableFromResourceValue(Ljava/lang/String;)Landroid/graphics/drawable/Drawable;
+	9       (00000020) move-result-object   v0
+	10      (00000022) if-nez               v0, -b
+
+getIcon1-BB@0x26 : [ getIcon1-BB@0xc ]
+	11      (00000026) invoke-direct        v4, v5, Landroidx/appcompat/widget/SuggestionsAdapter;->getDefaultIcon1(Landroid/database/Cursor;)Landroid/graphics/drawable/Drawable;
+	12      (0000002c) move-result-object   v0
+	13      (0000002e) goto                 -11
+

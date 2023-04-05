@@ -1,0 +1,20 @@
+# Lcom/afwsamples/testdpc/policy/BaseStringItemsFragment;->loadDefault()V [access_flags=protected]
+#
+# Parameters:
+# local registers: v0...v2
+#
+# - return:void
+
+loadDefault-BB@0x0 : 
+	0       (00000000) iget-object          v0, v2, Lcom/afwsamples/testdpc/policy/BaseStringItemsFragment;->mItemArrayAdapter Lcom/afwsamples/testdpc/common/EditDeleteArrayAdapter;
+	1       (00000004) invoke-virtual       v0, Lcom/afwsamples/testdpc/common/EditDeleteArrayAdapter;->clear()V
+	2       (0000000a) iget-object          v0, v2, Lcom/afwsamples/testdpc/policy/BaseStringItemsFragment;->mItemArrayAdapter Lcom/afwsamples/testdpc/common/EditDeleteArrayAdapter;
+	3       (0000000e) invoke-virtual       v2, Lcom/afwsamples/testdpc/policy/BaseStringItemsFragment;->loadItems()Ljava/util/Collection;
+	4       (00000014) move-result-object   v1
+	5       (00000016) invoke-virtual       v0, v1, Lcom/afwsamples/testdpc/common/EditDeleteArrayAdapter;->addAll(Ljava/util/Collection;)V
+	6       (0000001c) new-instance         v0, Ljava/util/ArrayList;
+	7       (00000020) iget-object          v1, v2, Lcom/afwsamples/testdpc/policy/BaseStringItemsFragment;->mItems Ljava/util/List;
+	8       (00000024) invoke-direct        v0, v1, Ljava/util/ArrayList;-><init>(Ljava/util/Collection;)V
+	9       (0000002a) iput-object          v0, v2, Lcom/afwsamples/testdpc/policy/BaseStringItemsFragment;->mLastItems Ljava/util/List;
+	10      (0000002e) return-void          
+

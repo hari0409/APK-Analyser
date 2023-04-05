@@ -1,0 +1,14 @@
+# Landroidx/appcompat/widget/ScrollingTabContainerView$TabAdapter;->getCount()I [access_flags=public]
+#
+# Parameters:
+# local registers: v0...v1
+#
+# - return:int
+
+getCount-BB@0x0 : 
+	0       (00000000) iget-object          v0, v1, Landroidx/appcompat/widget/ScrollingTabContainerView$TabAdapter;->this$0 Landroidx/appcompat/widget/ScrollingTabContainerView;
+	1       (00000004) iget-object          v0, v0, Landroidx/appcompat/widget/ScrollingTabContainerView;->mTabLayout Landroidx/appcompat/widget/LinearLayoutCompat;
+	2       (00000008) invoke-virtual       v0, Landroidx/appcompat/widget/LinearLayoutCompat;->getChildCount()I
+	3       (0000000e) move-result          v0
+	4       (00000010) return               v0
+

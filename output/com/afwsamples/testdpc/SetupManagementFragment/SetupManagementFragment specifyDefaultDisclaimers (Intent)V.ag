@@ -1,0 +1,54 @@
+# Lcom/afwsamples/testdpc/SetupManagementFragment;->specifyDefaultDisclaimers(Landroid/content/Intent;)V [access_flags=private]
+#
+# Parameters:
+# - local registers: v0...v5
+# - v6:android.content.Intent
+#
+# - return:void
+
+specifyDefaultDisclaimers-BB@0x0 : [ specifyDefaultDisclaimers-BB@0xc specifyDefaultDisclaimers-BB@0xaa ]
+	0       (00000000) sget                 v2, Lcom/afwsamples/testdpc/common/Util;->SDK_INT I
+	1       (00000004) const/16             v3, 26
+	2       (00000008) if-lt                v2, v3, +51
+
+specifyDefaultDisclaimers-BB@0xc : [ specifyDefaultDisclaimers-BB@0xaa ]
+	3       (0000000c) new-instance         v1, Landroid/os/Bundle;
+	4       (00000010) invoke-direct        v1, Landroid/os/Bundle;-><init>()V
+	5       (00000016) const-string         v2, 'android.app.extra.PROVISIONING_DISCLAIMER_HEADER'
+	6       (0000001a) const                v3, 2131689673 # [1.900836801615733e+38]
+	7       (00000020) invoke-virtual       v5, v3, Lcom/afwsamples/testdpc/SetupManagementFragment;->getString(I)Ljava/lang/String;
+	8       (00000026) move-result-object   v3
+	9       (00000028) invoke-virtual       v1, v2, v3, Landroid/os/Bundle;->putString(Ljava/lang/String; Ljava/lang/String;)V
+	10      (0000002e) const-string         v2, 'android.app.extra.PROVISIONING_DISCLAIMER_CONTENT'
+	11      (00000032) invoke-virtual       v5, Lcom/afwsamples/testdpc/SetupManagementFragment;->getActivity()Landroid/app/Activity;
+	12      (00000038) move-result-object   v3
+	13      (0000003a) const                v4, 2131623937 # [1.8875039568386766e+38]
+	14      (00000040) invoke-static        v3, v4, Lcom/afwsamples/testdpc/SetupManagementFragment;->resourceToUri(Landroid/content/Context; I)Landroid/net/Uri;
+	15      (00000046) move-result-object   v3
+	16      (00000048) invoke-virtual       v1, v2, v3, Landroid/os/Bundle;->putParcelable(Ljava/lang/String; Landroid/os/Parcelable;)V
+	17      (0000004e) new-instance         v0, Landroid/os/Bundle;
+	18      (00000052) invoke-direct        v0, Landroid/os/Bundle;-><init>()V
+	19      (00000058) const-string         v2, 'android.app.extra.PROVISIONING_DISCLAIMER_HEADER'
+	20      (0000005c) const                v3, 2131689672 # [1.900836598791637e+38]
+	21      (00000062) invoke-virtual       v5, v3, Lcom/afwsamples/testdpc/SetupManagementFragment;->getString(I)Ljava/lang/String;
+	22      (00000068) move-result-object   v3
+	23      (0000006a) invoke-virtual       v0, v2, v3, Landroid/os/Bundle;->putString(Ljava/lang/String; Ljava/lang/String;)V
+	24      (00000070) const-string         v2, 'android.app.extra.PROVISIONING_DISCLAIMER_CONTENT'
+	25      (00000074) invoke-virtual       v5, Lcom/afwsamples/testdpc/SetupManagementFragment;->getActivity()Landroid/app/Activity;
+	26      (0000007a) move-result-object   v3
+	27      (0000007c) const/high16         v4, 32526 # [1.8875037540145805e+38]
+	28      (00000080) invoke-static        v3, v4, Lcom/afwsamples/testdpc/SetupManagementFragment;->resourceToUri(Landroid/content/Context; I)Landroid/net/Uri;
+	29      (00000086) move-result-object   v3
+	30      (00000088) invoke-virtual       v0, v2, v3, Landroid/os/Bundle;->putParcelable(Ljava/lang/String; Landroid/os/Parcelable;)V
+	31      (0000008e) const-string         v2, 'android.app.extra.PROVISIONING_DISCLAIMERS'
+	32      (00000092) const/4              v3, 2
+	33      (00000094) new-array            v3, v3, [Landroid/os/Bundle;
+	34      (00000098) const/4              v4, 0
+	35      (0000009a) aput-object          v1, v3, v4
+	36      (0000009e) const/4              v4, 1
+	37      (000000a0) aput-object          v0, v3, v4
+	38      (000000a4) invoke-virtual       v6, v2, v3, Landroid/content/Intent;->putExtra(Ljava/lang/String; [Landroid/os/Parcelable;)Landroid/content/Intent;
+
+specifyDefaultDisclaimers-BB@0xaa : 
+	39      (000000aa) return-void          
+

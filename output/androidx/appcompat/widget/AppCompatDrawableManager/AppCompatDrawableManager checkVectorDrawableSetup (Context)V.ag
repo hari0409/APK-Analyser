@@ -1,0 +1,36 @@
+# Landroidx/appcompat/widget/AppCompatDrawableManager;->checkVectorDrawableSetup(Landroid/content/Context;)V [access_flags=private]
+#
+# Parameters:
+# - local registers: v0...v3
+# - v4:android.content.Context
+#
+# - return:void
+
+checkVectorDrawableSetup-BB@0x0 : [ checkVectorDrawableSetup-BB@0x8 checkVectorDrawableSetup-BB@0xa ]
+	0       (00000000) iget-boolean         v1, v3, Landroidx/appcompat/widget/AppCompatDrawableManager;->mHasCheckedVectorDrawableSetup Z
+	1       (00000004) if-eqz               v1, +3
+
+checkVectorDrawableSetup-BB@0x8 : 
+	2       (00000008) return-void          
+
+checkVectorDrawableSetup-BB@0xa : [ checkVectorDrawableSetup-BB@0x20 checkVectorDrawableSetup-BB@0x2c ]
+	3       (0000000a) const/4              v1, 1
+	4       (0000000c) iput-boolean         v1, v3, Landroidx/appcompat/widget/AppCompatDrawableManager;->mHasCheckedVectorDrawableSetup Z
+	5       (00000010) sget                 v1, Landroidx/appcompat/R$drawable;->abc_vector_test I
+	6       (00000014) invoke-virtual       v3, v4, v1, Landroidx/appcompat/widget/AppCompatDrawableManager;->getDrawable(Landroid/content/Context; I)Landroid/graphics/drawable/Drawable;
+	7       (0000001a) move-result-object   v0
+	8       (0000001c) if-eqz               v0, +8
+
+checkVectorDrawableSetup-BB@0x20 : [ checkVectorDrawableSetup-BB@0x2c checkVectorDrawableSetup-BB@0x8 ]
+	9       (00000020) invoke-static        v0, Landroidx/appcompat/widget/AppCompatDrawableManager;->isVectorDrawable(Landroid/graphics/drawable/Drawable;)Z
+	10      (00000026) move-result          v1
+	11      (00000028) if-nez               v1, -10
+
+checkVectorDrawableSetup-BB@0x2c : 
+	12      (0000002c) const/4              v1, 0
+	13      (0000002e) iput-boolean         v1, v3, Landroidx/appcompat/widget/AppCompatDrawableManager;->mHasCheckedVectorDrawableSetup Z
+	14      (00000032) new-instance         v1, Ljava/lang/IllegalStateException;
+	15      (00000036) const-string         v2, 'This app has been built with an incorrect configuration. Please configure your build for VectorDrawableCompat.'
+	16      (0000003a) invoke-direct        v1, v2, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+	17      (00000040) throw                v1
+

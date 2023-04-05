@@ -1,0 +1,12 @@
+# Landroidx/appcompat/app/AppCompatDelegateImpl$5;->onDetachedFromWindow()V [access_flags=public]
+#
+# Parameters:
+# local registers: v0...v1
+#
+# - return:void
+
+onDetachedFromWindow-BB@0x0 : 
+	0       (00000000) iget-object          v0, v1, Landroidx/appcompat/app/AppCompatDelegateImpl$5;->this$0 Landroidx/appcompat/app/AppCompatDelegateImpl;
+	1       (00000004) invoke-virtual       v0, Landroidx/appcompat/app/AppCompatDelegateImpl;->dismissPopups()V
+	2       (0000000a) return-void          
+

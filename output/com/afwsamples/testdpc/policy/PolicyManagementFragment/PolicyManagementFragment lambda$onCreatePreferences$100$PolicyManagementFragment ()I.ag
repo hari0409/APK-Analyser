@@ -1,0 +1,31 @@
+# Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->lambda$onCreatePreferences$100$PolicyManagementFragment()I [access_flags=final synthetic]
+#
+# Parameters:
+# local registers: v0...v2
+#
+# - return:int
+
+lambda$onCreatePreferences$100$PolicyManagementFragment-BB@0x0 : [ lambda$onCreatePreferences$100$PolicyManagementFragment-BB@0x14 lambda$onCreatePreferences$100$PolicyManagementFragment-BB@0x28 ]
+	0       (00000000) iget-object          v0, v2, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->mUserManager Landroid/os/UserManager;
+	1       (00000004) const-string         v1, 'no_install_unknown_sources'
+	2       (00000008) invoke-virtual       v0, v1, Landroid/os/UserManager;->hasUserRestriction(Ljava/lang/String;)Z
+	3       (0000000e) move-result          v0
+	4       (00000010) if-nez               v0, +c
+
+lambda$onCreatePreferences$100$PolicyManagementFragment-BB@0x14 : [ lambda$onCreatePreferences$100$PolicyManagementFragment-BB@0x28 lambda$onCreatePreferences$100$PolicyManagementFragment-BB@0x30 ]
+	5       (00000014) iget-object          v0, v2, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->mUserManager Landroid/os/UserManager;
+	6       (00000018) const-string         v1, 'no_install_unknown_sources_globally'
+	7       (0000001c) invoke-virtual       v0, v1, Landroid/os/UserManager;->hasUserRestriction(Ljava/lang/String;)Z
+	8       (00000022) move-result          v0
+	9       (00000024) if-eqz               v0, +6
+
+lambda$onCreatePreferences$100$PolicyManagementFragment-BB@0x28 : [ lambda$onCreatePreferences$100$PolicyManagementFragment-BB@0x2e ]
+	10      (00000028) const                v0, 2131690359 # [1.900975938945614e+38]
+
+lambda$onCreatePreferences$100$PolicyManagementFragment-BB@0x2e : 
+	11      (0000002e) return               v0
+
+lambda$onCreatePreferences$100$PolicyManagementFragment-BB@0x30 : [ lambda$onCreatePreferences$100$PolicyManagementFragment-BB@0x2e ]
+	12      (00000030) const/4              v0, 0
+	13      (00000032) goto                 -2
+

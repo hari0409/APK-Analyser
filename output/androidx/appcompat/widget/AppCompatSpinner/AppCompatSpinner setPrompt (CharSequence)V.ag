@@ -1,0 +1,23 @@
+# Landroidx/appcompat/widget/AppCompatSpinner;->setPrompt(Ljava/lang/CharSequence;)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:java.lang.CharSequence
+#
+# - return:void
+
+setPrompt-BB@0x0 : [ setPrompt-BB@0x8 setPrompt-BB@0x14 ]
+	0       (00000000) iget-object          v0, v1, Landroidx/appcompat/widget/AppCompatSpinner;->mPopup Landroidx/appcompat/widget/AppCompatSpinner$DropdownPopup;
+	1       (00000004) if-eqz               v0, +8
+
+setPrompt-BB@0x8 : [ setPrompt-BB@0x12 ]
+	2       (00000008) iget-object          v0, v1, Landroidx/appcompat/widget/AppCompatSpinner;->mPopup Landroidx/appcompat/widget/AppCompatSpinner$DropdownPopup;
+	3       (0000000c) invoke-virtual       v0, v2, Landroidx/appcompat/widget/AppCompatSpinner$DropdownPopup;->setPromptText(Ljava/lang/CharSequence;)V
+
+setPrompt-BB@0x12 : 
+	4       (00000012) return-void          
+
+setPrompt-BB@0x14 : [ setPrompt-BB@0x12 ]
+	5       (00000014) invoke-super         v1, v2, Landroid/widget/Spinner;->setPrompt(Ljava/lang/CharSequence;)V
+	6       (0000001a) goto                 -4
+

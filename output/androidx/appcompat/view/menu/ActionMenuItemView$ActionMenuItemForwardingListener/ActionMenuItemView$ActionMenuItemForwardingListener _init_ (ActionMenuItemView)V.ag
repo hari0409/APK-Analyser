@@ -1,0 +1,13 @@
+# Landroidx/appcompat/view/menu/ActionMenuItemView$ActionMenuItemForwardingListener;-><init>(Landroidx/appcompat/view/menu/ActionMenuItemView;)V [access_flags=public constructor]
+#
+# Parameters:
+# - local registers: v0...v0
+# - v1:androidx.appcompat.view.menu.ActionMenuItemView
+#
+# - return:void
+
+<init>-BB@0x0 : 
+	0       (00000000) iput-object          v1, v0, Landroidx/appcompat/view/menu/ActionMenuItemView$ActionMenuItemForwardingListener;->this$0 Landroidx/appcompat/view/menu/ActionMenuItemView;
+	1       (00000004) invoke-direct        v0, v1, Landroidx/appcompat/widget/ForwardingListener;-><init>(Landroid/view/View;)V
+	2       (0000000a) return-void          
+

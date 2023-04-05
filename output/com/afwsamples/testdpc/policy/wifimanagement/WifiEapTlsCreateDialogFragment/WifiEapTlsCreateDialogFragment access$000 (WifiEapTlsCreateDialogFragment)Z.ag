@@ -1,0 +1,13 @@
+# Lcom/afwsamples/testdpc/policy/wifimanagement/WifiEapTlsCreateDialogFragment;->access$000(Lcom/afwsamples/testdpc/policy/wifimanagement/WifiEapTlsCreateDialogFragment;)Z [access_flags=static synthetic]
+#
+# Parameters:
+# - local registers: v0...v0
+# - v1:com.afwsamples.testdpc.policy.wifimanagement.WifiEapTlsCreateDialogFragment
+#
+# - return:boolean
+
+access$000-BB@0x0 : 
+	0       (00000000) invoke-direct        v1, Lcom/afwsamples/testdpc/policy/wifimanagement/WifiEapTlsCreateDialogFragment;->extractInputDataAndSave()Z
+	1       (00000006) move-result          v0
+	2       (00000008) return               v0
+

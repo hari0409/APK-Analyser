@@ -1,0 +1,15 @@
+# Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->showToast(I [Ljava/lang/Object;)V [access_flags=private varargs]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:int
+# - v3:java.lang.Object[]
+#
+# - return:void
+
+showToast-BB@0x0 : 
+	0       (00000000) invoke-virtual       v1, v2, v3, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->getString(I [Ljava/lang/Object;)Ljava/lang/String;
+	1       (00000006) move-result-object   v0
+	2       (00000008) invoke-direct        v1, v0, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->showToast(Ljava/lang/String;)V
+	3       (0000000e) return-void          
+

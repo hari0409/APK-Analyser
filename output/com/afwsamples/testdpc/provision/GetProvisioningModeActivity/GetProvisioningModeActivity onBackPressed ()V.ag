@@ -1,0 +1,13 @@
+# Lcom/afwsamples/testdpc/provision/GetProvisioningModeActivity;->onBackPressed()V [access_flags=public]
+#
+# Parameters:
+# local registers: v0...v1
+#
+# - return:void
+
+onBackPressed-BB@0x0 : 
+	0       (00000000) const/4              v0, 0
+	1       (00000002) invoke-virtual       v1, v0, Lcom/afwsamples/testdpc/provision/GetProvisioningModeActivity;->setResult(I)V
+	2       (00000008) invoke-super         v1, Landroid/app/Activity;->onBackPressed()V
+	3       (0000000e) return-void          
+

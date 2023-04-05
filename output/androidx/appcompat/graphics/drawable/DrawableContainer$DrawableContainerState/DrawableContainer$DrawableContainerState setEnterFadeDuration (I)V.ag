@@ -1,0 +1,12 @@
+# Landroidx/appcompat/graphics/drawable/DrawableContainer$DrawableContainerState;->setEnterFadeDuration(I)V [access_flags=public final]
+#
+# Parameters:
+# - local registers: v0...v0
+# - v1:int
+#
+# - return:void
+
+setEnterFadeDuration-BB@0x0 : 
+	0       (00000000) iput                 v1, v0, Landroidx/appcompat/graphics/drawable/DrawableContainer$DrawableContainerState;->mEnterFadeDuration I
+	1       (00000004) return-void          
+

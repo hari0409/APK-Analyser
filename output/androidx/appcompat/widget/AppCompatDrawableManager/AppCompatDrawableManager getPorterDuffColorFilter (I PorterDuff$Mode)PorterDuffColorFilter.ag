@@ -1,0 +1,38 @@
+# Landroidx/appcompat/widget/AppCompatDrawableManager;->getPorterDuffColorFilter(I Landroid/graphics/PorterDuff$Mode;)Landroid/graphics/PorterDuffColorFilter; [access_flags=public static synchronized]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:int
+# - v4:android.graphics.PorterDuff$Mode
+#
+# - return:android.graphics.PorterDuffColorFilter
+
+getPorterDuffColorFilter-BB@0x0 : [ getPorterDuffColorFilter-BB@0x6 ]
+	0       (00000000) const-class          v2, Landroidx/appcompat/widget/AppCompatDrawableManager;
+	1       (00000004) monitor-enter        v2
+
+getPorterDuffColorFilter-BB@0x6 : [ getPorterDuffColorFilter-BB@0x16 getPorterDuffColorFilter-BB@0x2a ]
+	2       (00000006) sget-object          v1, Landroidx/appcompat/widget/AppCompatDrawableManager;->COLOR_FILTER_CACHE Landroidx/appcompat/widget/AppCompatDrawableManager$ColorFilterLruCache;
+	3       (0000000a) invoke-virtual       v1, v3, v4, Landroidx/appcompat/widget/AppCompatDrawableManager$ColorFilterLruCache;->get(I Landroid/graphics/PorterDuff$Mode;)Landroid/graphics/PorterDuffColorFilter;
+	4       (00000010) move-result-object   v0
+	5       (00000012) if-nez               v0, +c
+	6:29
+	(Ljava/lang/Throwable; -> 2e getPorterDuffColorFilter-BB@0x2e)
+
+getPorterDuffColorFilter-BB@0x16 : [ getPorterDuffColorFilter-BB@0x2a ]
+	6       (00000016) new-instance         v0, Landroid/graphics/PorterDuffColorFilter;
+	7       (0000001a) invoke-direct        v0, v3, v4, Landroid/graphics/PorterDuffColorFilter;-><init>(I Landroid/graphics/PorterDuff$Mode;)V
+	8       (00000020) sget-object          v1, Landroidx/appcompat/widget/AppCompatDrawableManager;->COLOR_FILTER_CACHE Landroidx/appcompat/widget/AppCompatDrawableManager$ColorFilterLruCache;
+	9       (00000024) invoke-virtual       v1, v3, v4, v0, Landroidx/appcompat/widget/AppCompatDrawableManager$ColorFilterLruCache;->put(I Landroid/graphics/PorterDuff$Mode; Landroid/graphics/PorterDuffColorFilter;)Landroid/graphics/PorterDuffColorFilter;
+	6:29
+	(Ljava/lang/Throwable; -> 2e getPorterDuffColorFilter-BB@0x2e)
+
+getPorterDuffColorFilter-BB@0x2a : 
+	10      (0000002a) monitor-exit         v2
+	11      (0000002c) return-object        v0
+
+getPorterDuffColorFilter-BB@0x2e : 
+	12      (0000002e) move-exception       v1
+	13      (00000030) monitor-exit         v2
+	14      (00000032) throw                v1
+

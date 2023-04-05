@@ -1,0 +1,32 @@
+# Lcom/afwsamples/testdpc/common/keyvaluepair/KeyValuePairDialogFragment;->createAlertDialog(Landroid/view/View;)Landroid/app/AlertDialog; [access_flags=private]
+#
+# Parameters:
+# - local registers: v0...v4
+# - v5:android.view.View
+#
+# - return:android.app.AlertDialog
+
+createAlertDialog-BB@0x0 : 
+	0       (00000000) const/4              v3, 0
+	1       (00000002) new-instance         v1, Landroid/app/AlertDialog$Builder;
+	2       (00000006) invoke-virtual       v4, Lcom/afwsamples/testdpc/common/keyvaluepair/KeyValuePairDialogFragment;->getActivity()Landroid/app/Activity;
+	3       (0000000c) move-result-object   v2
+	4       (0000000e) invoke-direct        v1, v2, Landroid/app/AlertDialog$Builder;-><init>(Landroid/content/Context;)V
+	5       (00000014) invoke-virtual       v1, v5, Landroid/app/AlertDialog$Builder;->setView(Landroid/view/View;)Landroid/app/AlertDialog$Builder;
+	6       (0000001a) move-result-object   v1
+	7       (0000001c) const/4              v2, 1
+	8       (0000001e) invoke-virtual       v1, v2, Landroid/app/AlertDialog$Builder;->setCancelable(Z)Landroid/app/AlertDialog$Builder;
+	9       (00000024) move-result-object   v1
+	10      (00000026) const                v2, 2131690163 # [1.900936185422791e+38]
+	11      (0000002c) invoke-virtual       v1, v2, v3, Landroid/app/AlertDialog$Builder;->setPositiveButton(I Landroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
+	12      (00000032) move-result-object   v1
+	13      (00000034) const                v2, 2131690162 # [1.900935982598695e+38]
+	14      (0000003a) invoke-virtual       v1, v2, v3, Landroid/app/AlertDialog$Builder;->setNegativeButton(I Landroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
+	15      (00000040) move-result-object   v1
+	16      (00000042) invoke-virtual       v1, Landroid/app/AlertDialog$Builder;->create()Landroid/app/AlertDialog;
+	17      (00000048) move-result-object   v0
+	18      (0000004a) new-instance         v1, Lcom/afwsamples/testdpc/common/keyvaluepair/KeyValuePairDialogFragment$1;
+	19      (0000004e) invoke-direct        v1, v4, v0, Lcom/afwsamples/testdpc/common/keyvaluepair/KeyValuePairDialogFragment$1;-><init>(Lcom/afwsamples/testdpc/common/keyvaluepair/KeyValuePairDialogFragment; Landroid/app/AlertDialog;)V
+	20      (00000054) invoke-virtual       v0, v1, Landroid/app/AlertDialog;->setOnShowListener(Landroid/content/DialogInterface$OnShowListener;)V
+	21      (0000005a) return-object        v0
+

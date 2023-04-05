@@ -1,0 +1,49 @@
+# Lcom/afwsamples/testdpc/policy/locktask/SetLockTaskFeaturesFragment;-><clinit>()V [access_flags=static constructor]
+#
+# Parameters:
+# local registers: v0...v2
+#
+# - return:void
+
+<clinit>-BB@0x0 : 
+	0       (00000000) new-instance         v0, Landroid/util/ArrayMap;
+	1       (00000004) invoke-direct        v0, Landroid/util/ArrayMap;-><init>()V
+	2       (0000000a) sput-object          v0, Lcom/afwsamples/testdpc/policy/locktask/SetLockTaskFeaturesFragment;->FEATURE_FLAGS Landroid/util/ArrayMap;
+	3       (0000000e) sget-object          v0, Lcom/afwsamples/testdpc/policy/locktask/SetLockTaskFeaturesFragment;->FEATURE_FLAGS Landroid/util/ArrayMap;
+	4       (00000012) const-string         v1, 'lock_task_feature_system_info'
+	5       (00000016) const/4              v2, 1
+	6       (00000018) invoke-static        v2, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+	7       (0000001e) move-result-object   v2
+	8       (00000020) invoke-virtual       v0, v1, v2, Landroid/util/ArrayMap;->put(Ljava/lang/Object; Ljava/lang/Object;)Ljava/lang/Object;
+	9       (00000026) sget-object          v0, Lcom/afwsamples/testdpc/policy/locktask/SetLockTaskFeaturesFragment;->FEATURE_FLAGS Landroid/util/ArrayMap;
+	10      (0000002a) const-string         v1, 'lock_task_feature_notifications'
+	11      (0000002e) const/4              v2, 2
+	12      (00000030) invoke-static        v2, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+	13      (00000036) move-result-object   v2
+	14      (00000038) invoke-virtual       v0, v1, v2, Landroid/util/ArrayMap;->put(Ljava/lang/Object; Ljava/lang/Object;)Ljava/lang/Object;
+	15      (0000003e) sget-object          v0, Lcom/afwsamples/testdpc/policy/locktask/SetLockTaskFeaturesFragment;->FEATURE_FLAGS Landroid/util/ArrayMap;
+	16      (00000042) const-string         v1, 'lock_task_feature_home'
+	17      (00000046) const/4              v2, 4
+	18      (00000048) invoke-static        v2, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+	19      (0000004e) move-result-object   v2
+	20      (00000050) invoke-virtual       v0, v1, v2, Landroid/util/ArrayMap;->put(Ljava/lang/Object; Ljava/lang/Object;)Ljava/lang/Object;
+	21      (00000056) sget-object          v0, Lcom/afwsamples/testdpc/policy/locktask/SetLockTaskFeaturesFragment;->FEATURE_FLAGS Landroid/util/ArrayMap;
+	22      (0000005a) const-string         v1, 'lock_task_feature_overview'
+	23      (0000005e) const/16             v2, 8
+	24      (00000062) invoke-static        v2, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+	25      (00000068) move-result-object   v2
+	26      (0000006a) invoke-virtual       v0, v1, v2, Landroid/util/ArrayMap;->put(Ljava/lang/Object; Ljava/lang/Object;)Ljava/lang/Object;
+	27      (00000070) sget-object          v0, Lcom/afwsamples/testdpc/policy/locktask/SetLockTaskFeaturesFragment;->FEATURE_FLAGS Landroid/util/ArrayMap;
+	28      (00000074) const-string         v1, 'lock_task_feature_global_actions'
+	29      (00000078) const/16             v2, 16
+	30      (0000007c) invoke-static        v2, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+	31      (00000082) move-result-object   v2
+	32      (00000084) invoke-virtual       v0, v1, v2, Landroid/util/ArrayMap;->put(Ljava/lang/Object; Ljava/lang/Object;)Ljava/lang/Object;
+	33      (0000008a) sget-object          v0, Lcom/afwsamples/testdpc/policy/locktask/SetLockTaskFeaturesFragment;->FEATURE_FLAGS Landroid/util/ArrayMap;
+	34      (0000008e) const-string         v1, 'lock_task_feature_keyguard'
+	35      (00000092) const/16             v2, 32
+	36      (00000096) invoke-static        v2, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+	37      (0000009c) move-result-object   v2
+	38      (0000009e) invoke-virtual       v0, v1, v2, Landroid/util/ArrayMap;->put(Ljava/lang/Object; Ljava/lang/Object;)Ljava/lang/Object;
+	39      (000000a4) return-void          
+

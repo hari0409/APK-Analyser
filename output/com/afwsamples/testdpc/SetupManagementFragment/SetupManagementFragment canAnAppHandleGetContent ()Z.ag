@@ -1,0 +1,28 @@
+# Lcom/afwsamples/testdpc/SetupManagementFragment;->canAnAppHandleGetContent()Z [access_flags=private]
+#
+# Parameters:
+# local registers: v0...v2
+#
+# - return:boolean
+
+canAnAppHandleGetContent-BB@0x0 : [ canAnAppHandleGetContent-BB@0x24 canAnAppHandleGetContent-BB@0x28 ]
+	0       (00000000) invoke-direct        v2, Lcom/afwsamples/testdpc/SetupManagementFragment;->getGetContentIntent()Landroid/content/Intent;
+	1       (00000006) move-result-object   v0
+	2       (00000008) invoke-virtual       v2, Lcom/afwsamples/testdpc/SetupManagementFragment;->getActivity()Landroid/app/Activity;
+	3       (0000000e) move-result-object   v1
+	4       (00000010) invoke-virtual       v1, Landroid/app/Activity;->getPackageManager()Landroid/content/pm/PackageManager;
+	5       (00000016) move-result-object   v1
+	6       (00000018) invoke-virtual       v0, v1, Landroid/content/Intent;->resolveActivity(Landroid/content/pm/PackageManager;)Landroid/content/ComponentName;
+	7       (0000001e) move-result-object   v0
+	8       (00000020) if-eqz               v0, +4
+
+canAnAppHandleGetContent-BB@0x24 : [ canAnAppHandleGetContent-BB@0x26 ]
+	9       (00000024) const/4              v0, 1
+
+canAnAppHandleGetContent-BB@0x26 : 
+	10      (00000026) return               v0
+
+canAnAppHandleGetContent-BB@0x28 : [ canAnAppHandleGetContent-BB@0x26 ]
+	11      (00000028) const/4              v0, 0
+	12      (0000002a) goto                 -2
+

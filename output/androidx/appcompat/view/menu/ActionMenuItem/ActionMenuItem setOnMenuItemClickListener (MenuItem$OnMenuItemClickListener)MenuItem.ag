@@ -1,0 +1,12 @@
+# Landroidx/appcompat/view/menu/ActionMenuItem;->setOnMenuItemClickListener(Landroid/view/MenuItem$OnMenuItemClickListener;)Landroid/view/MenuItem; [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v0
+# - v1:android.view.MenuItem$OnMenuItemClickListener
+#
+# - return:android.view.MenuItem
+
+setOnMenuItemClickListener-BB@0x0 : 
+	0       (00000000) iput-object          v1, v0, Landroidx/appcompat/view/menu/ActionMenuItem;->mClickListener Landroid/view/MenuItem$OnMenuItemClickListener;
+	1       (00000004) return-object        v0
+

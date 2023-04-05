@@ -1,0 +1,75 @@
+# Lcom/afwsamples/testdpc/policy/networking/PrivateDnsModeFragment;->onCreateView(Landroid/view/LayoutInflater; Landroid/view/ViewGroup; Landroid/os/Bundle;)Landroid/view/View; [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v4
+# - v5:android.view.LayoutInflater
+# - v6:android.view.ViewGroup
+# - v7:android.os.Bundle
+#
+# - return:android.view.View
+
+onCreateView-BB@0x0 : [ D:onCreateView-BB@0x54 1:onCreateView-BB@0xaa 2:onCreateView-BB@0xbc 3:onCreateView-BB@0xce ]
+	0       (00000000) const                v2, 2131427430 # [1.8476476021988288e+38]
+	1       (00000006) const/4              v3, 0
+	2       (00000008) invoke-virtual       v5, v2, v3, Landroid/view/LayoutInflater;->inflate(I Landroid/view/ViewGroup;)Landroid/view/View;
+	3       (0000000e) move-result-object   v1
+	4       (00000010) const                v2, 2131296544 # [1.8211007675649933e+38]
+	5       (00000016) invoke-virtual       v1, v2, Landroid/view/View;->findViewById(I)Landroid/view/View;
+	6       (0000001c) move-result-object   v2
+	7       (0000001e) check-cast           v2, Landroid/widget/Button;
+	8       (00000022) iput-object          v2, v4, Lcom/afwsamples/testdpc/policy/networking/PrivateDnsModeFragment;->mSetButton Landroid/widget/Button;
+	9       (00000026) iget-object          v2, v4, Lcom/afwsamples/testdpc/policy/networking/PrivateDnsModeFragment;->mSetButton Landroid/widget/Button;
+	10      (0000002a) invoke-virtual       v2, v4, Landroid/widget/Button;->setOnClickListener(Landroid/view/View$OnClickListener;)V
+	11      (00000030) const                v2, 2131296548 # [1.8211015788613774e+38]
+	12      (00000036) invoke-virtual       v1, v2, Landroid/view/View;->findViewById(I)Landroid/view/View;
+	13      (0000003c) move-result-object   v2
+	14      (0000003e) check-cast           v2, Landroid/widget/RadioGroup;
+	15      (00000042) iput-object          v2, v4, Lcom/afwsamples/testdpc/policy/networking/PrivateDnsModeFragment;->mPrivateDnsModeSelection Landroid/widget/RadioGroup;
+	16      (00000046) invoke-direct        v4, Lcom/afwsamples/testdpc/policy/networking/PrivateDnsModeFragment;->getPrivateDnsMode()I
+	17      (0000004c) move-result          v0
+	18      (0000004e) packed-switch        v0, +49 (0xe0)
+
+onCreateView-BB@0x54 : [ onCreateView-BB@0x64 ]
+	19      (00000054) iget-object          v2, v4, Lcom/afwsamples/testdpc/policy/networking/PrivateDnsModeFragment;->mPrivateDnsModeSelection Landroid/widget/RadioGroup;
+	20      (00000058) const                v3, 2131296550 # [1.8211019845095695e+38]
+	21      (0000005e) invoke-virtual       v2, v3, Landroid/widget/RadioGroup;->check(I)V
+
+onCreateView-BB@0x64 : 
+	22      (00000064) iget-object          v2, v4, Lcom/afwsamples/testdpc/policy/networking/PrivateDnsModeFragment;->mPrivateDnsModeSelection Landroid/widget/RadioGroup;
+	23      (00000068) invoke-virtual       v2, v4, Landroid/widget/RadioGroup;->setOnCheckedChangeListener(Landroid/widget/RadioGroup$OnCheckedChangeListener;)V
+	24      (0000006e) iget-object          v2, v4, Lcom/afwsamples/testdpc/policy/networking/PrivateDnsModeFragment;->mPrivateDnsModeSelection Landroid/widget/RadioGroup;
+	25      (00000072) invoke-virtual       v2, Landroid/widget/RadioGroup;->getCheckedRadioButtonId()I
+	26      (00000078) move-result          v2
+	27      (0000007a) invoke-direct        v4, v2, Lcom/afwsamples/testdpc/policy/networking/PrivateDnsModeFragment;->updateSelectedMode(I)V
+	28      (00000080) const                v2, 2131296551 # [1.8211021873336655e+38]
+	29      (00000086) invoke-virtual       v1, v2, Landroid/view/View;->findViewById(I)Landroid/view/View;
+	30      (0000008c) move-result-object   v2
+	31      (0000008e) check-cast           v2, Landroid/widget/EditText;
+	32      (00000092) iput-object          v2, v4, Lcom/afwsamples/testdpc/policy/networking/PrivateDnsModeFragment;->mCurrentResolver Landroid/widget/EditText;
+	33      (00000096) iget-object          v2, v4, Lcom/afwsamples/testdpc/policy/networking/PrivateDnsModeFragment;->mCurrentResolver Landroid/widget/EditText;
+	34      (0000009a) invoke-direct        v4, Lcom/afwsamples/testdpc/policy/networking/PrivateDnsModeFragment;->getPrivateDnsHost()Ljava/lang/String;
+	35      (000000a0) move-result-object   v3
+	36      (000000a2) invoke-virtual       v2, v3, Landroid/widget/EditText;->setText(Ljava/lang/CharSequence;)V
+	37      (000000a8) return-object        v1
+
+onCreateView-BB@0xaa : [ onCreateView-BB@0x64 ]
+	38      (000000aa) iget-object          v2, v4, Lcom/afwsamples/testdpc/policy/networking/PrivateDnsModeFragment;->mPrivateDnsModeSelection Landroid/widget/RadioGroup;
+	39      (000000ae) const                v3, 2131296547 # [1.8211013760372814e+38]
+	40      (000000b4) invoke-virtual       v2, v3, Landroid/widget/RadioGroup;->check(I)V
+	41      (000000ba) goto                 -2b
+
+onCreateView-BB@0xbc : [ onCreateView-BB@0x64 ]
+	42      (000000bc) iget-object          v2, v4, Lcom/afwsamples/testdpc/policy/networking/PrivateDnsModeFragment;->mPrivateDnsModeSelection Landroid/widget/RadioGroup;
+	43      (000000c0) const                v3, 2131296545 # [1.8211009703890893e+38]
+	44      (000000c6) invoke-virtual       v2, v3, Landroid/widget/RadioGroup;->check(I)V
+	45      (000000cc) goto                 -34
+
+onCreateView-BB@0xce : [ onCreateView-BB@0x64 ]
+	46      (000000ce) iget-object          v2, v4, Lcom/afwsamples/testdpc/policy/networking/PrivateDnsModeFragment;->mPrivateDnsModeSelection Landroid/widget/RadioGroup;
+	47      (000000d2) const                v3, 2131296549 # [1.8211017816854734e+38]
+	48      (000000d8) invoke-virtual       v2, v3, Landroid/widget/RadioGroup;->check(I)V
+	49      (000000de) goto                 -3d
+
+onCreateView-BB@0xe0 : 
+	50      (000000e0) packed-switch-payload 1 2 3
+

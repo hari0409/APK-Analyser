@@ -1,0 +1,25 @@
+# Landroidx/appcompat/view/ActionBarPolicy;->enableHomeButtonByDefault()Z [access_flags=public]
+#
+# Parameters:
+# local registers: v0...v2
+#
+# - return:boolean
+
+enableHomeButtonByDefault-BB@0x0 : [ enableHomeButtonByDefault-BB@0x18 enableHomeButtonByDefault-BB@0x1c ]
+	0       (00000000) iget-object          v0, v2, Landroidx/appcompat/view/ActionBarPolicy;->mContext Landroid/content/Context;
+	1       (00000004) invoke-virtual       v0, Landroid/content/Context;->getApplicationInfo()Landroid/content/pm/ApplicationInfo;
+	2       (0000000a) move-result-object   v0
+	3       (0000000c) iget                 v0, v0, Landroid/content/pm/ApplicationInfo;->targetSdkVersion I
+	4       (00000010) const/16             v1, 14
+	5       (00000014) if-ge                v0, v1, +4
+
+enableHomeButtonByDefault-BB@0x18 : [ enableHomeButtonByDefault-BB@0x1a ]
+	6       (00000018) const/4              v0, 1
+
+enableHomeButtonByDefault-BB@0x1a : 
+	7       (0000001a) return               v0
+
+enableHomeButtonByDefault-BB@0x1c : [ enableHomeButtonByDefault-BB@0x1a ]
+	8       (0000001c) const/4              v0, 0
+	9       (0000001e) goto                 -2
+

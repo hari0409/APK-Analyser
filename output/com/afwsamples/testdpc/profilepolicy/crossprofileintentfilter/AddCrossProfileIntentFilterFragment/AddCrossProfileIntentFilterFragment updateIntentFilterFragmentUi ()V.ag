@@ -1,0 +1,19 @@
+# Lcom/afwsamples/testdpc/profilepolicy/crossprofileintentfilter/AddCrossProfileIntentFilterFragment;->updateIntentFilterFragmentUi()V [access_flags=private]
+#
+# Parameters:
+# local registers: v0...v2
+#
+# - return:void
+
+updateIntentFilterFragmentUi-BB@0x0 : 
+	0       (00000000) const/4              v1, 1
+	1       (00000002) iget-object          v0, v2, Lcom/afwsamples/testdpc/profilepolicy/crossprofileintentfilter/AddCrossProfileIntentFilterFragment;->mAddActionButton Landroid/widget/Button;
+	2       (00000006) invoke-virtual       v0, v1, Landroid/widget/Button;->setEnabled(Z)V
+	3       (0000000c) iget-object          v0, v2, Lcom/afwsamples/testdpc/profilepolicy/crossprofileintentfilter/AddCrossProfileIntentFilterFragment;->mAddActionButton Landroid/widget/Button;
+	4       (00000010) invoke-virtual       v0, v1, Landroid/widget/Button;->setEnabled(Z)V
+	5       (00000016) iget-object          v0, v2, Lcom/afwsamples/testdpc/profilepolicy/crossprofileintentfilter/AddCrossProfileIntentFilterFragment;->mDataSchemesSpinner Landroid/widget/Spinner;
+	6       (0000001a) invoke-virtual       v0, v1, Landroid/widget/Spinner;->setEnabled(Z)V
+	7       (00000020) iget-object          v0, v2, Lcom/afwsamples/testdpc/profilepolicy/crossprofileintentfilter/AddCrossProfileIntentFilterFragment;->mAddDataSchemeAction Landroid/widget/Button;
+	8       (00000024) invoke-virtual       v0, v1, Landroid/widget/Button;->setEnabled(Z)V
+	9       (0000002a) return-void          
+

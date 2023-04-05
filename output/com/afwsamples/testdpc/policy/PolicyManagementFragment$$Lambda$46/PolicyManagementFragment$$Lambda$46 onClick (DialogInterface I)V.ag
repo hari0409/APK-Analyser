@@ -1,0 +1,15 @@
+# Lcom/afwsamples/testdpc/policy/PolicyManagementFragment$$Lambda$46;->onClick(Landroid/content/DialogInterface; I)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:android.content.DialogInterface
+# - v4:int
+#
+# - return:void
+
+onClick-BB@0x0 : 
+	0       (00000000) iget-object          v0, v2, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment$$Lambda$46;->arg$1 Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;
+	1       (00000004) iget-object          v1, v2, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment$$Lambda$46;->arg$2 Landroid/widget/EditText;
+	2       (00000008) invoke-virtual       v0, v1, v3, v4, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->lambda$showInstallExistingPackagePrompt$150$PolicyManagementFragment(Landroid/widget/EditText; Landroid/content/DialogInterface; I)V
+	3       (0000000e) return-void          
+

@@ -1,0 +1,30 @@
+# Lcom/afwsamples/testdpc/DevicePolicyManagerGatewayImpl;->lockNow(Ljava/util/function/Consumer; Ljava/util/function/Consumer;)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v3
+# - v4:java.util.function.Consumer
+# - v5:java.util.function.Consumer
+#
+# - return:void
+
+lockNow-BB@0x0 : [ lockNow-BB@0xe ]
+	0       (00000000) sget-object          v1, Lcom/afwsamples/testdpc/DevicePolicyManagerGatewayImpl;->TAG Ljava/lang/String;
+	1       (00000004) const-string         v2, 'lockNow()'
+	2       (00000008) invoke-static        v1, v2, Landroid/util/Log;->d(Ljava/lang/String; Ljava/lang/String;)I
+
+lockNow-BB@0xe : [ lockNow-BB@0x20 ]
+	3       (0000000e) iget-object          v1, v3, Lcom/afwsamples/testdpc/DevicePolicyManagerGatewayImpl;->mDevicePolicyManager Landroid/app/admin/DevicePolicyManager;
+	4       (00000012) invoke-virtual       v1, Landroid/app/admin/DevicePolicyManager;->lockNow()V
+	5       (00000018) const/4              v1, 0
+	6       (0000001a) invoke-interface     v4, v1, Ljava/util/function/Consumer;->accept(Ljava/lang/Object;)V
+	e:1f
+	(Ljava/lang/Exception; -> 22 lockNow-BB@0x22)
+
+lockNow-BB@0x20 : 
+	7       (00000020) return-void          
+
+lockNow-BB@0x22 : [ lockNow-BB@0x20 ]
+	8       (00000022) move-exception       v0
+	9       (00000024) invoke-interface     v5, v0, Ljava/util/function/Consumer;->accept(Ljava/lang/Object;)V
+	10      (0000002a) goto                 -5
+

@@ -1,0 +1,56 @@
+# Lcom/afwsamples/testdpc/cosu/CosuConfig;->readDownloadApps(Lorg/xmlpull/v1/XmlPullParser; Ljava/util/Set;)V [access_flags=private]
+#
+# Parameters:
+# - local registers: v0...v6
+# - v7:org.xmlpull.v1.XmlPullParser
+# - v8:java.util.Set
+#
+# - return:void
+
+readDownloadApps-BB@0x0 : [ readDownloadApps-BB@0x2 ]
+	0       (00000000) const/4              v5, 0
+
+readDownloadApps-BB@0x2 : [ readDownloadApps-BB@0x10 readDownloadApps-BB@0x6e ]
+	1       (00000002) invoke-interface     v7, Lorg/xmlpull/v1/XmlPullParser;->next()I
+	2       (00000008) move-result          v3
+	3       (0000000a) const/4              v4, 3
+	4       (0000000c) if-eq                v3, v4, +31
+
+readDownloadApps-BB@0x10 : [ readDownloadApps-BB@0x1e readDownloadApps-BB@0x2 ]
+	5       (00000010) invoke-interface     v7, Lorg/xmlpull/v1/XmlPullParser;->getEventType()I
+	6       (00000016) move-result          v3
+	7       (00000018) const/4              v4, 2
+	8       (0000001a) if-ne                v3, v4, -c
+
+readDownloadApps-BB@0x1e : [ readDownloadApps-BB@0x36 readDownloadApps-BB@0x2 ]
+	9       (0000001e) invoke-interface     v7, Lorg/xmlpull/v1/XmlPullParser;->getName()Ljava/lang/String;
+	10      (00000024) move-result-object   v1
+	11      (00000026) const-string         v3, 'app'
+	12      (0000002a) invoke-virtual       v3, v1, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+	13      (00000030) move-result          v3
+	14      (00000032) if-eqz               v3, -18
+
+readDownloadApps-BB@0x36 : [ readDownloadApps-BB@0x52 readDownloadApps-BB@0x66 ]
+	15      (00000036) const-string         v3, 'package-name'
+	16      (0000003a) invoke-interface     v7, v5, v3, Lorg/xmlpull/v1/XmlPullParser;->getAttributeValue(Ljava/lang/String; Ljava/lang/String;)Ljava/lang/String;
+	17      (00000040) move-result-object   v2
+	18      (00000042) const-string         v3, 'download-location'
+	19      (00000046) invoke-interface     v7, v5, v3, Lorg/xmlpull/v1/XmlPullParser;->getAttributeValue(Ljava/lang/String; Ljava/lang/String;)Ljava/lang/String;
+	20      (0000004c) move-result-object   v0
+	21      (0000004e) if-eqz               v2, +c
+
+readDownloadApps-BB@0x52 : [ readDownloadApps-BB@0x56 readDownloadApps-BB@0x66 ]
+	22      (00000052) if-eqz               v0, +a
+
+readDownloadApps-BB@0x56 : [ readDownloadApps-BB@0x66 ]
+	23      (00000056) new-instance         v3, Lcom/afwsamples/testdpc/cosu/CosuConfig$DownloadAppInfo;
+	24      (0000005a) invoke-direct        v3, v6, v2, v0, Lcom/afwsamples/testdpc/cosu/CosuConfig$DownloadAppInfo;-><init>(Lcom/afwsamples/testdpc/cosu/CosuConfig; Ljava/lang/String; Ljava/lang/String;)V
+	25      (00000060) invoke-interface     v8, v3, Ljava/util/Set;->add(Ljava/lang/Object;)Z
+
+readDownloadApps-BB@0x66 : [ readDownloadApps-BB@0x2 ]
+	26      (00000066) invoke-direct        v6, v7, Lcom/afwsamples/testdpc/cosu/CosuConfig;->skipCurrentTag(Lorg/xmlpull/v1/XmlPullParser;)V
+	27      (0000006c) goto                 -35
+
+readDownloadApps-BB@0x6e : 
+	28      (0000006e) return-void          
+

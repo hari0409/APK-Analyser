@@ -1,0 +1,12 @@
+# Landroidx/appcompat/view/menu/MenuItemImpl;->setMenuInfo(Landroid/view/ContextMenu$ContextMenuInfo;)V [access_flags=]
+#
+# Parameters:
+# - local registers: v0...v0
+# - v1:android.view.ContextMenu$ContextMenuInfo
+#
+# - return:void
+
+setMenuInfo-BB@0x0 : 
+	0       (00000000) iput-object          v1, v0, Landroidx/appcompat/view/menu/MenuItemImpl;->mMenuInfo Landroid/view/ContextMenu$ContextMenuInfo;
+	1       (00000004) return-void          
+

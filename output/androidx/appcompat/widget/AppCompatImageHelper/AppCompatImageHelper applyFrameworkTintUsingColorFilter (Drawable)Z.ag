@@ -1,0 +1,61 @@
+# Landroidx/appcompat/widget/AppCompatImageHelper;->applyFrameworkTintUsingColorFilter(Landroid/graphics/drawable/Drawable;)Z [access_flags=private]
+#
+# Parameters:
+# - local registers: v0...v5
+# - v6:android.graphics.drawable.Drawable
+#
+# - return:boolean
+
+applyFrameworkTintUsingColorFilter-BB@0x0 : [ applyFrameworkTintUsingColorFilter-BB@0xa applyFrameworkTintUsingColorFilter-BB@0x18 ]
+	0       (00000000) const/4              v3, 1
+	1       (00000002) iget-object          v4, v5, Landroidx/appcompat/widget/AppCompatImageHelper;->mTmpInfo Landroidx/appcompat/widget/TintInfo;
+	2       (00000006) if-nez               v4, +9
+
+applyFrameworkTintUsingColorFilter-BB@0xa : [ applyFrameworkTintUsingColorFilter-BB@0x18 ]
+	3       (0000000a) new-instance         v4, Landroidx/appcompat/widget/TintInfo;
+	4       (0000000e) invoke-direct        v4, Landroidx/appcompat/widget/TintInfo;-><init>()V
+	5       (00000014) iput-object          v4, v5, Landroidx/appcompat/widget/AppCompatImageHelper;->mTmpInfo Landroidx/appcompat/widget/TintInfo;
+
+applyFrameworkTintUsingColorFilter-BB@0x18 : [ applyFrameworkTintUsingColorFilter-BB@0x32 applyFrameworkTintUsingColorFilter-BB@0x3a ]
+	6       (00000018) iget-object          v0, v5, Landroidx/appcompat/widget/AppCompatImageHelper;->mTmpInfo Landroidx/appcompat/widget/TintInfo;
+	7       (0000001c) invoke-virtual       v0, Landroidx/appcompat/widget/TintInfo;->clear()V
+	8       (00000022) iget-object          v4, v5, Landroidx/appcompat/widget/AppCompatImageHelper;->mView Landroid/widget/ImageView;
+	9       (00000026) invoke-static        v4, Landroidx/core/widget/ImageViewCompat;->getImageTintList(Landroid/widget/ImageView;)Landroid/content/res/ColorStateList;
+	10      (0000002c) move-result-object   v2
+	11      (0000002e) if-eqz               v2, +6
+
+applyFrameworkTintUsingColorFilter-BB@0x32 : [ applyFrameworkTintUsingColorFilter-BB@0x3a ]
+	12      (00000032) iput-boolean         v3, v0, Landroidx/appcompat/widget/TintInfo;->mHasTintList Z
+	13      (00000036) iput-object          v2, v0, Landroidx/appcompat/widget/TintInfo;->mTintList Landroid/content/res/ColorStateList;
+
+applyFrameworkTintUsingColorFilter-BB@0x3a : [ applyFrameworkTintUsingColorFilter-BB@0x4a applyFrameworkTintUsingColorFilter-BB@0x52 ]
+	14      (0000003a) iget-object          v4, v5, Landroidx/appcompat/widget/AppCompatImageHelper;->mView Landroid/widget/ImageView;
+	15      (0000003e) invoke-static        v4, Landroidx/core/widget/ImageViewCompat;->getImageTintMode(Landroid/widget/ImageView;)Landroid/graphics/PorterDuff$Mode;
+	16      (00000044) move-result-object   v1
+	17      (00000046) if-eqz               v1, +6
+
+applyFrameworkTintUsingColorFilter-BB@0x4a : [ applyFrameworkTintUsingColorFilter-BB@0x52 ]
+	18      (0000004a) iput-boolean         v3, v0, Landroidx/appcompat/widget/TintInfo;->mHasTintMode Z
+	19      (0000004e) iput-object          v1, v0, Landroidx/appcompat/widget/TintInfo;->mTintMode Landroid/graphics/PorterDuff$Mode;
+
+applyFrameworkTintUsingColorFilter-BB@0x52 : [ applyFrameworkTintUsingColorFilter-BB@0x5a applyFrameworkTintUsingColorFilter-BB@0x62 ]
+	20      (00000052) iget-boolean         v4, v0, Landroidx/appcompat/widget/TintInfo;->mHasTintList Z
+	21      (00000056) if-nez               v4, +6
+
+applyFrameworkTintUsingColorFilter-BB@0x5a : [ applyFrameworkTintUsingColorFilter-BB@0x62 applyFrameworkTintUsingColorFilter-BB@0x76 ]
+	22      (0000005a) iget-boolean         v4, v0, Landroidx/appcompat/widget/TintInfo;->mHasTintMode Z
+	23      (0000005e) if-eqz               v4, +c
+
+applyFrameworkTintUsingColorFilter-BB@0x62 : [ applyFrameworkTintUsingColorFilter-BB@0x74 ]
+	24      (00000062) iget-object          v4, v5, Landroidx/appcompat/widget/AppCompatImageHelper;->mView Landroid/widget/ImageView;
+	25      (00000066) invoke-virtual       v4, Landroid/widget/ImageView;->getDrawableState()[I
+	26      (0000006c) move-result-object   v4
+	27      (0000006e) invoke-static        v6, v0, v4, Landroidx/appcompat/widget/AppCompatDrawableManager;->tintDrawable(Landroid/graphics/drawable/Drawable; Landroidx/appcompat/widget/TintInfo; [I)V
+
+applyFrameworkTintUsingColorFilter-BB@0x74 : 
+	28      (00000074) return               v3
+
+applyFrameworkTintUsingColorFilter-BB@0x76 : [ applyFrameworkTintUsingColorFilter-BB@0x74 ]
+	29      (00000076) const/4              v3, 0
+	30      (00000078) goto                 -2
+

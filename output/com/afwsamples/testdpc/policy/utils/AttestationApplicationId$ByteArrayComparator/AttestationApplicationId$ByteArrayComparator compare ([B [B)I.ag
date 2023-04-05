@@ -1,0 +1,51 @@
+# Lcom/afwsamples/testdpc/policy/utils/AttestationApplicationId$ByteArrayComparator;->compare([B [B)I [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v6
+# - v7:byte[]
+# - v8:byte[]
+#
+# - return:int
+
+compare-BB@0x0 : [ compare-BB@0x10 compare-BB@0x16 ]
+	0       (00000000) array-length         v4, v7
+	1       (00000002) array-length         v5, v8
+	2       (00000004) invoke-static        v4, v5, Ljava/lang/Integer;->compare(I I)I
+	3       (0000000a) move-result          v1
+	4       (0000000c) if-eqz               v1, +5
+
+compare-BB@0x10 : [ compare-BB@0x14 ]
+	5       (00000010) move                 v2, v1
+	6       (00000012) move                 v3, v1
+
+compare-BB@0x14 : 
+	7       (00000014) return               v3
+
+compare-BB@0x16 : [ compare-BB@0x18 ]
+	8       (00000016) const/4              v0, 0
+
+compare-BB@0x18 : [ compare-BB@0x1e compare-BB@0x3e ]
+	9       (00000018) array-length         v4, v7
+	10      (0000001a) if-ge                v0, v4, +12
+
+compare-BB@0x1e : [ compare-BB@0x32 compare-BB@0x38 ]
+	11      (0000001e) aget-byte            v4, v7, v0
+	12      (00000022) aget-byte            v5, v8, v0
+	13      (00000026) invoke-static        v4, v5, Ljava/lang/Byte;->compare(B B)I
+	14      (0000002c) move-result          v1
+	15      (0000002e) if-eqz               v1, +5
+
+compare-BB@0x32 : [ compare-BB@0x14 ]
+	16      (00000032) move                 v2, v1
+	17      (00000034) move                 v3, v1
+	18      (00000036) goto                 -11
+
+compare-BB@0x38 : [ compare-BB@0x18 ]
+	19      (00000038) add-int/lit8         v0, v0, 1
+	20      (0000003c) goto                 -12
+
+compare-BB@0x3e : [ compare-BB@0x14 ]
+	21      (0000003e) move                 v2, v1
+	22      (00000040) move                 v3, v1
+	23      (00000042) goto                 -17
+

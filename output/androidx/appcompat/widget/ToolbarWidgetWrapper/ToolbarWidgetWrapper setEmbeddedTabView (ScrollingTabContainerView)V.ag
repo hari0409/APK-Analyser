@@ -1,0 +1,53 @@
+# Landroidx/appcompat/widget/ToolbarWidgetWrapper;->setEmbeddedTabView(Landroidx/appcompat/widget/ScrollingTabContainerView;)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v5
+# - v6:androidx.appcompat.widget.ScrollingTabContainerView
+#
+# - return:void
+
+setEmbeddedTabView-BB@0x0 : [ setEmbeddedTabView-BB@0xa setEmbeddedTabView-BB@0x2c ]
+	0       (00000000) const/4              v4, -2
+	1       (00000002) iget-object          v1, v5, Landroidx/appcompat/widget/ToolbarWidgetWrapper;->mTabView Landroid/view/View;
+	2       (00000006) if-eqz               v1, +13
+
+setEmbeddedTabView-BB@0xa : [ setEmbeddedTabView-BB@0x1e setEmbeddedTabView-BB@0x2c ]
+	3       (0000000a) iget-object          v1, v5, Landroidx/appcompat/widget/ToolbarWidgetWrapper;->mTabView Landroid/view/View;
+	4       (0000000e) invoke-virtual       v1, Landroid/view/View;->getParent()Landroid/view/ViewParent;
+	5       (00000014) move-result-object   v1
+	6       (00000016) iget-object          v2, v5, Landroidx/appcompat/widget/ToolbarWidgetWrapper;->mToolbar Landroidx/appcompat/widget/Toolbar;
+	7       (0000001a) if-ne                v1, v2, +9
+
+setEmbeddedTabView-BB@0x1e : [ setEmbeddedTabView-BB@0x2c ]
+	8       (0000001e) iget-object          v1, v5, Landroidx/appcompat/widget/ToolbarWidgetWrapper;->mToolbar Landroidx/appcompat/widget/Toolbar;
+	9       (00000022) iget-object          v2, v5, Landroidx/appcompat/widget/ToolbarWidgetWrapper;->mTabView Landroid/view/View;
+	10      (00000026) invoke-virtual       v1, v2, Landroidx/appcompat/widget/Toolbar;->removeView(Landroid/view/View;)V
+
+setEmbeddedTabView-BB@0x2c : [ setEmbeddedTabView-BB@0x34 setEmbeddedTabView-BB@0x78 ]
+	11      (0000002c) iput-object          v6, v5, Landroidx/appcompat/widget/ToolbarWidgetWrapper;->mTabView Landroid/view/View;
+	12      (00000030) if-eqz               v6, +24
+
+setEmbeddedTabView-BB@0x34 : [ setEmbeddedTabView-BB@0x3e setEmbeddedTabView-BB@0x78 ]
+	13      (00000034) iget                 v1, v5, Landroidx/appcompat/widget/ToolbarWidgetWrapper;->mNavigationMode I
+	14      (00000038) const/4              v2, 2
+	15      (0000003a) if-ne                v1, v2, +1f
+
+setEmbeddedTabView-BB@0x3e : [ setEmbeddedTabView-BB@0x78 ]
+	16      (0000003e) iget-object          v1, v5, Landroidx/appcompat/widget/ToolbarWidgetWrapper;->mToolbar Landroidx/appcompat/widget/Toolbar;
+	17      (00000042) iget-object          v2, v5, Landroidx/appcompat/widget/ToolbarWidgetWrapper;->mTabView Landroid/view/View;
+	18      (00000046) const/4              v3, 0
+	19      (00000048) invoke-virtual       v1, v2, v3, Landroidx/appcompat/widget/Toolbar;->addView(Landroid/view/View; I)V
+	20      (0000004e) iget-object          v1, v5, Landroidx/appcompat/widget/ToolbarWidgetWrapper;->mTabView Landroid/view/View;
+	21      (00000052) invoke-virtual       v1, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
+	22      (00000058) move-result-object   v0
+	23      (0000005a) check-cast           v0, Landroidx/appcompat/widget/Toolbar$LayoutParams;
+	24      (0000005e) iput                 v4, v0, Landroidx/appcompat/widget/Toolbar$LayoutParams;->width I
+	25      (00000062) iput                 v4, v0, Landroidx/appcompat/widget/Toolbar$LayoutParams;->height I
+	26      (00000066) const                v1, 8388691 # [1.1755059815995414e-38]
+	27      (0000006c) iput                 v1, v0, Landroidx/appcompat/widget/Toolbar$LayoutParams;->gravity I
+	28      (00000070) const/4              v1, 1
+	29      (00000072) invoke-virtual       v6, v1, Landroidx/appcompat/widget/ScrollingTabContainerView;->setAllowCollapse(Z)V
+
+setEmbeddedTabView-BB@0x78 : 
+	30      (00000078) return-void          
+

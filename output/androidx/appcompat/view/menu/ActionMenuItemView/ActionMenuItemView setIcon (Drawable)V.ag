@@ -1,0 +1,54 @@
+# Landroidx/appcompat/view/menu/ActionMenuItemView;->setIcon(Landroid/graphics/drawable/Drawable;)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v7
+# - v8:android.graphics.drawable.Drawable
+#
+# - return:void
+
+setIcon-BB@0x0 : [ setIcon-BB@0xc setIcon-BB@0x5e ]
+	0       (00000000) const/4              v6, 0
+	1       (00000002) const/4              v5, 0
+	2       (00000004) iput-object          v8, v7, Landroidx/appcompat/view/menu/ActionMenuItemView;->mIcon Landroid/graphics/drawable/Drawable;
+	3       (00000008) if-eqz               v8, +2b
+
+setIcon-BB@0xc : [ setIcon-BB@0x24 setIcon-BB@0x3a ]
+	4       (0000000c) invoke-virtual       v8, Landroid/graphics/drawable/Drawable;->getIntrinsicWidth()I
+	5       (00000012) move-result          v2
+	6       (00000014) invoke-virtual       v8, Landroid/graphics/drawable/Drawable;->getIntrinsicHeight()I
+	7       (0000001a) move-result          v0
+	8       (0000001c) iget                 v3, v7, Landroidx/appcompat/view/menu/ActionMenuItemView;->mMaxIconSize I
+	9       (00000020) if-le                v2, v3, +d
+
+setIcon-BB@0x24 : [ setIcon-BB@0x3a ]
+	10      (00000024) iget                 v3, v7, Landroidx/appcompat/view/menu/ActionMenuItemView;->mMaxIconSize I
+	11      (00000028) int-to-float         v3, v3
+	12      (0000002a) int-to-float         v4, v2
+	13      (0000002c) div-float            v1, v3, v4
+	14      (00000030) iget                 v2, v7, Landroidx/appcompat/view/menu/ActionMenuItemView;->mMaxIconSize I
+	15      (00000034) int-to-float         v3, v0
+	16      (00000036) mul-float/2addr      v3, v1
+	17      (00000038) float-to-int         v0, v3
+
+setIcon-BB@0x3a : [ setIcon-BB@0x42 setIcon-BB@0x58 ]
+	18      (0000003a) iget                 v3, v7, Landroidx/appcompat/view/menu/ActionMenuItemView;->mMaxIconSize I
+	19      (0000003e) if-le                v0, v3, +d
+
+setIcon-BB@0x42 : [ setIcon-BB@0x58 ]
+	20      (00000042) iget                 v3, v7, Landroidx/appcompat/view/menu/ActionMenuItemView;->mMaxIconSize I
+	21      (00000046) int-to-float         v3, v3
+	22      (00000048) int-to-float         v4, v0
+	23      (0000004a) div-float            v1, v3, v4
+	24      (0000004e) iget                 v0, v7, Landroidx/appcompat/view/menu/ActionMenuItemView;->mMaxIconSize I
+	25      (00000052) int-to-float         v3, v2
+	26      (00000054) mul-float/2addr      v3, v1
+	27      (00000056) float-to-int         v2, v3
+
+setIcon-BB@0x58 : [ setIcon-BB@0x5e ]
+	28      (00000058) invoke-virtual       v8, v6, v6, v2, v0, Landroid/graphics/drawable/Drawable;->setBounds(I I I I)V
+
+setIcon-BB@0x5e : 
+	29      (0000005e) invoke-virtual       v7, v8, v5, v5, v5, Landroidx/appcompat/view/menu/ActionMenuItemView;->setCompoundDrawables(Landroid/graphics/drawable/Drawable; Landroid/graphics/drawable/Drawable; Landroid/graphics/drawable/Drawable; Landroid/graphics/drawable/Drawable;)V
+	30      (00000064) invoke-direct        v7, Landroidx/appcompat/view/menu/ActionMenuItemView;->updateTextButtonVisibility()V
+	31      (0000006a) return-void          
+

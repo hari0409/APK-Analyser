@@ -1,0 +1,13 @@
+# Lcom/afwsamples/testdpc/profilepolicy/ProfilePolicyManagementFragment;->isAvailable(Landroid/content/Context;)Z [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:android.content.Context
+#
+# - return:boolean
+
+isAvailable-BB@0x0 : 
+	0       (00000000) invoke-static        v2, Lcom/afwsamples/testdpc/common/Util;->isManagedProfileOwner(Landroid/content/Context;)Z
+	1       (00000006) move-result          v0
+	2       (00000008) return               v0
+

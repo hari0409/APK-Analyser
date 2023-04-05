@@ -1,0 +1,19 @@
+# Landroidx/appcompat/widget/ActionBarContainer;->onFinishInflate()V [access_flags=public]
+#
+# Parameters:
+# local registers: v0...v1
+#
+# - return:void
+
+onFinishInflate-BB@0x0 : 
+	0       (00000000) invoke-super         v1, Landroid/widget/FrameLayout;->onFinishInflate()V
+	1       (00000006) sget                 v0, Landroidx/appcompat/R$id;->action_bar I
+	2       (0000000a) invoke-virtual       v1, v0, Landroidx/appcompat/widget/ActionBarContainer;->findViewById(I)Landroid/view/View;
+	3       (00000010) move-result-object   v0
+	4       (00000012) iput-object          v0, v1, Landroidx/appcompat/widget/ActionBarContainer;->mActionBarView Landroid/view/View;
+	5       (00000016) sget                 v0, Landroidx/appcompat/R$id;->action_context_bar I
+	6       (0000001a) invoke-virtual       v1, v0, Landroidx/appcompat/widget/ActionBarContainer;->findViewById(I)Landroid/view/View;
+	7       (00000020) move-result-object   v0
+	8       (00000022) iput-object          v0, v1, Landroidx/appcompat/widget/ActionBarContainer;->mContextView Landroid/view/View;
+	9       (00000026) return-void          
+

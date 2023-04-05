@@ -1,0 +1,47 @@
+# Landroidx/appcompat/graphics/drawable/DrawableContainer$DrawableContainerState;->setLayoutDirection(I I)Z [access_flags=final]
+#
+# Parameters:
+# - local registers: v0...v7
+# - v8:int
+# - v9:int
+#
+# - return:boolean
+
+setLayoutDirection-BB@0x0 : [ setLayoutDirection-BB@0xc ]
+	0       (00000000) const/4              v0, 0
+	1       (00000002) iget                 v2, v7, Landroidx/appcompat/graphics/drawable/DrawableContainer$DrawableContainerState;->mNumChildren I
+	2       (00000006) iget-object          v3, v7, Landroidx/appcompat/graphics/drawable/DrawableContainer$DrawableContainerState;->mDrawables [Landroid/graphics/drawable/Drawable;
+	3       (0000000a) const/4              v4, 0
+
+setLayoutDirection-BB@0xc : [ setLayoutDirection-BB@0x10 setLayoutDirection-BB@0x3e ]
+	4       (0000000c) if-ge                v4, v2, +19
+
+setLayoutDirection-BB@0x10 : [ setLayoutDirection-BB@0x18 setLayoutDirection-BB@0x38 ]
+	5       (00000010) aget-object          v5, v3, v4
+	6       (00000014) if-eqz               v5, +12
+
+setLayoutDirection-BB@0x18 : [ setLayoutDirection-BB@0x26 setLayoutDirection-BB@0x32 ]
+	7       (00000018) const/4              v1, 0
+	8       (0000001a) sget                 v5, Landroid/os/Build$VERSION;->SDK_INT I
+	9       (0000001e) const/16             v6, 23
+	10      (00000022) if-lt                v5, v6, +8
+
+setLayoutDirection-BB@0x26 : [ setLayoutDirection-BB@0x32 ]
+	11      (00000026) aget-object          v5, v3, v4
+	12      (0000002a) invoke-virtual       v5, v8, Landroid/graphics/drawable/Drawable;->setLayoutDirection(I)Z
+	13      (00000030) move-result          v1
+
+setLayoutDirection-BB@0x32 : [ setLayoutDirection-BB@0x36 setLayoutDirection-BB@0x38 ]
+	14      (00000032) if-ne                v4, v9, +3
+
+setLayoutDirection-BB@0x36 : [ setLayoutDirection-BB@0x38 ]
+	15      (00000036) move                 v0, v1
+
+setLayoutDirection-BB@0x38 : [ setLayoutDirection-BB@0xc ]
+	16      (00000038) add-int/lit8         v4, v4, 1
+	17      (0000003c) goto                 -18
+
+setLayoutDirection-BB@0x3e : 
+	18      (0000003e) iput                 v8, v7, Landroidx/appcompat/graphics/drawable/DrawableContainer$DrawableContainerState;->mLayoutDirection I
+	19      (00000042) return               v0
+

@@ -1,0 +1,13 @@
+# Lcom/afwsamples/testdpc/policy/locktask/SetLockTaskFeaturesFragment;->getLockTaskFeatures()I [access_flags=private]
+#
+# Parameters:
+# local registers: v0...v1
+#
+# - return:int
+
+getLockTaskFeatures-BB@0x0 : 
+	0       (00000000) iget-object          v0, v1, Lcom/afwsamples/testdpc/policy/locktask/SetLockTaskFeaturesFragment;->mDpmGateway Lcom/afwsamples/testdpc/DevicePolicyManagerGateway;
+	1       (00000004) invoke-interface     v0, Lcom/afwsamples/testdpc/DevicePolicyManagerGateway;->getLockTaskFeatures()I
+	2       (0000000a) move-result          v0
+	3       (0000000c) return               v0
+

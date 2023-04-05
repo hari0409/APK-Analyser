@@ -1,0 +1,19 @@
+# Landroidx/appcompat/widget/ActionBarContextView;->setTitleOptional(Z)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:boolean
+#
+# - return:void
+
+setTitleOptional-BB@0x0 : [ setTitleOptional-BB@0x8 setTitleOptional-BB@0xe ]
+	0       (00000000) iget-boolean         v0, v1, Landroidx/appcompat/widget/ActionBarContextView;->mTitleOptional Z
+	1       (00000004) if-eq                v2, v0, +5
+
+setTitleOptional-BB@0x8 : [ setTitleOptional-BB@0xe ]
+	2       (00000008) invoke-virtual       v1, Landroidx/appcompat/widget/ActionBarContextView;->requestLayout()V
+
+setTitleOptional-BB@0xe : 
+	3       (0000000e) iput-boolean         v2, v1, Landroidx/appcompat/widget/ActionBarContextView;->mTitleOptional Z
+	4       (00000012) return-void          
+

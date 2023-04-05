@@ -1,0 +1,12 @@
+# Landroidx/appcompat/widget/ToolbarWidgetWrapper;->dismissPopupMenus()V [access_flags=public]
+#
+# Parameters:
+# local registers: v0...v1
+#
+# - return:void
+
+dismissPopupMenus-BB@0x0 : 
+	0       (00000000) iget-object          v0, v1, Landroidx/appcompat/widget/ToolbarWidgetWrapper;->mToolbar Landroidx/appcompat/widget/Toolbar;
+	1       (00000004) invoke-virtual       v0, Landroidx/appcompat/widget/Toolbar;->dismissPopupMenus()V
+	2       (0000000a) return-void          
+

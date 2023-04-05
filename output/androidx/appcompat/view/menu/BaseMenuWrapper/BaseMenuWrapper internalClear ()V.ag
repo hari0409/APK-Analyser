@@ -1,0 +1,26 @@
+# Landroidx/appcompat/view/menu/BaseMenuWrapper;->internalClear()V [access_flags=final]
+#
+# Parameters:
+# local registers: v0...v1
+#
+# - return:void
+
+internalClear-BB@0x0 : [ internalClear-BB@0x8 internalClear-BB@0x12 ]
+	0       (00000000) iget-object          v0, v1, Landroidx/appcompat/view/menu/BaseMenuWrapper;->mMenuItems Ljava/util/Map;
+	1       (00000004) if-eqz               v0, +7
+
+internalClear-BB@0x8 : [ internalClear-BB@0x12 ]
+	2       (00000008) iget-object          v0, v1, Landroidx/appcompat/view/menu/BaseMenuWrapper;->mMenuItems Ljava/util/Map;
+	3       (0000000c) invoke-interface     v0, Ljava/util/Map;->clear()V
+
+internalClear-BB@0x12 : [ internalClear-BB@0x1a internalClear-BB@0x24 ]
+	4       (00000012) iget-object          v0, v1, Landroidx/appcompat/view/menu/BaseMenuWrapper;->mSubMenus Ljava/util/Map;
+	5       (00000016) if-eqz               v0, +7
+
+internalClear-BB@0x1a : [ internalClear-BB@0x24 ]
+	6       (0000001a) iget-object          v0, v1, Landroidx/appcompat/view/menu/BaseMenuWrapper;->mSubMenus Ljava/util/Map;
+	7       (0000001e) invoke-interface     v0, Ljava/util/Map;->clear()V
+
+internalClear-BB@0x24 : 
+	8       (00000024) return-void          
+

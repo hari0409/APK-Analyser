@@ -1,0 +1,17 @@
+# Landroidx/appcompat/widget/ActionMenuPresenter$ActionButtonSubmenu;->onDismiss()V [access_flags=protected]
+#
+# Parameters:
+# local registers: v0...v2
+#
+# - return:void
+
+onDismiss-BB@0x0 : 
+	0       (00000000) iget-object          v0, v2, Landroidx/appcompat/widget/ActionMenuPresenter$ActionButtonSubmenu;->this$0 Landroidx/appcompat/widget/ActionMenuPresenter;
+	1       (00000004) const/4              v1, 0
+	2       (00000006) iput-object          v1, v0, Landroidx/appcompat/widget/ActionMenuPresenter;->mActionButtonPopup Landroidx/appcompat/widget/ActionMenuPresenter$ActionButtonSubmenu;
+	3       (0000000a) iget-object          v0, v2, Landroidx/appcompat/widget/ActionMenuPresenter$ActionButtonSubmenu;->this$0 Landroidx/appcompat/widget/ActionMenuPresenter;
+	4       (0000000e) const/4              v1, 0
+	5       (00000010) iput                 v1, v0, Landroidx/appcompat/widget/ActionMenuPresenter;->mOpenSubMenuId I
+	6       (00000014) invoke-super         v2, Landroidx/appcompat/view/menu/MenuPopupHelper;->onDismiss()V
+	7       (0000001a) return-void          
+

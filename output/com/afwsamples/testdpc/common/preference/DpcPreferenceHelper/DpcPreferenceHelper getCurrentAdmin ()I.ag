@@ -1,0 +1,61 @@
+# Lcom/afwsamples/testdpc/common/preference/DpcPreferenceHelper;->getCurrentAdmin()I [access_flags=private]
+#
+# Parameters:
+# local registers: v0...v6
+#
+# - return:int
+
+getCurrentAdmin-BB@0x0 : [ getCurrentAdmin-BB@0x2e getCurrentAdmin-BB@0x32 ]
+	0       (00000000) const/4              v3, 1
+	1       (00000002) iget-object          v4, v6, Lcom/afwsamples/testdpc/common/preference/DpcPreferenceHelper;->mContext Landroid/content/Context;
+	2       (00000006) const-string         v5, 'device_policy'
+	3       (0000000a) invoke-virtual       v4, v5, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
+	4       (00000010) move-result-object   v0
+	5       (00000012) check-cast           v0, Landroid/app/admin/DevicePolicyManager;
+	6       (00000016) iget-object          v4, v6, Lcom/afwsamples/testdpc/common/preference/DpcPreferenceHelper;->mContext Landroid/content/Context;
+	7       (0000001a) invoke-virtual       v4, Landroid/content/Context;->getPackageName()Ljava/lang/String;
+	8       (00000020) move-result-object   v2
+	9       (00000022) invoke-virtual       v0, v2, Landroid/app/admin/DevicePolicyManager;->isDeviceOwnerApp(Ljava/lang/String;)Z
+	10      (00000028) move-result          v4
+	11      (0000002a) if-eqz               v4, +4
+
+getCurrentAdmin-BB@0x2e : [ getCurrentAdmin-BB@0x30 ]
+	12      (0000002e) const/4              v3, 2
+
+getCurrentAdmin-BB@0x30 : 
+	13      (00000030) return               v3
+
+getCurrentAdmin-BB@0x32 : [ getCurrentAdmin-BB@0x3e getCurrentAdmin-BB@0x30 ]
+	14      (00000032) invoke-virtual       v0, v2, Landroid/app/admin/DevicePolicyManager;->isProfileOwnerApp(Ljava/lang/String;)Z
+	15      (00000038) move-result          v4
+	16      (0000003a) if-eqz               v4, -5
+
+getCurrentAdmin-BB@0x3e : [ getCurrentAdmin-BB@0x4a getCurrentAdmin-BB@0x70 ]
+	17      (0000003e) sget                 v4, Lcom/afwsamples/testdpc/common/Util;->SDK_INT I
+	18      (00000042) const/16             v5, 30
+	19      (00000046) if-lt                v4, v5, +15
+
+getCurrentAdmin-BB@0x4a : [ getCurrentAdmin-BB@0x56 getCurrentAdmin-BB@0x70 ]
+	20      (0000004a) invoke-virtual       v0, Landroid/app/admin/DevicePolicyManager;->isOrganizationOwnedDeviceWithManagedProfile()Z
+	21      (00000050) move-result          v4
+	22      (00000052) if-eqz               v4, +f
+
+getCurrentAdmin-BB@0x56 : [ getCurrentAdmin-BB@0x6a getCurrentAdmin-BB@0x74 ]
+	23      (00000056) invoke-static        v3, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+	24      (0000005c) move-result-object   v1
+	25      (0000005e) invoke-virtual       v1, Ljava/lang/Boolean;->booleanValue()Z
+	26      (00000064) move-result          v3
+	27      (00000066) if-eqz               v3, +7
+
+getCurrentAdmin-BB@0x6a : [ getCurrentAdmin-BB@0x30 ]
+	28      (0000006a) const/16             v3, 8
+	29      (0000006e) goto                 -1f
+
+getCurrentAdmin-BB@0x70 : [ getCurrentAdmin-BB@0x56 ]
+	30      (00000070) const/4              v3, 0
+	31      (00000072) goto                 -e
+
+getCurrentAdmin-BB@0x74 : [ getCurrentAdmin-BB@0x30 ]
+	32      (00000074) const/16             v3, 12
+	33      (00000078) goto                 -24
+

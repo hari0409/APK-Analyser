@@ -1,0 +1,28 @@
+# Landroidx/appcompat/widget/ActivityChooserView$ActivityChooserViewAdapter;->getItemViewType(I)I [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:int
+#
+# - return:int
+
+getItemViewType-BB@0x0 : [ getItemViewType-BB@0x8 getItemViewType-BB@0x1c ]
+	0       (00000000) iget-boolean         v0, v1, Landroidx/appcompat/widget/ActivityChooserView$ActivityChooserViewAdapter;->mShowFooterView Z
+	1       (00000004) if-eqz               v0, +c
+
+getItemViewType-BB@0x8 : [ getItemViewType-BB@0x18 getItemViewType-BB@0x1c ]
+	2       (00000008) invoke-virtual       v1, Landroidx/appcompat/widget/ActivityChooserView$ActivityChooserViewAdapter;->getCount()I
+	3       (0000000e) move-result          v0
+	4       (00000010) add-int/lit8         v0, v0, -1
+	5       (00000014) if-ne                v2, v0, +4
+
+getItemViewType-BB@0x18 : [ getItemViewType-BB@0x1a ]
+	6       (00000018) const/4              v0, 1
+
+getItemViewType-BB@0x1a : 
+	7       (0000001a) return               v0
+
+getItemViewType-BB@0x1c : [ getItemViewType-BB@0x1a ]
+	8       (0000001c) const/4              v0, 0
+	9       (0000001e) goto                 -2
+

@@ -1,0 +1,45 @@
+# Lafu/org/checkerframework/checker/formatter/FormatUtil;->parse(Ljava/lang/String;)[Lafu/org/checkerframework/checker/formatter/FormatUtil$Conversion; [access_flags=private static]
+#
+# Parameters:
+# - local registers: v0...v4
+# - v5:java.lang.String
+#
+# - return:afu.org.checkerframework.checker.formatter.FormatUtil$Conversion[]
+
+parse-BB@0x0 : [ parse-BB@0x16 ]
+	0       (00000000) new-instance         v1, Ljava/util/ArrayList;
+	1       (00000004) invoke-direct        v1, Ljava/util/ArrayList;-><init>()V
+	2       (0000000a) sget-object          v3, Lafu/org/checkerframework/checker/formatter/FormatUtil;->fsPattern Ljava/util/regex/Pattern;
+	3       (0000000e) invoke-virtual       v3, v5, Ljava/util/regex/Pattern;->matcher(Ljava/lang/CharSequence;)Ljava/util/regex/Matcher;
+	4       (00000014) move-result-object   v2
+
+parse-BB@0x16 : [ parse-BB@0x22 parse-BB@0x4a ]
+	5       (00000016) invoke-virtual       v2, Ljava/util/regex/Matcher;->find()Z
+	6       (0000001c) move-result          v3
+	7       (0000001e) if-eqz               v3, +16
+
+parse-BB@0x22 : [ D:parse-BB@0x30 37:parse-BB@0x16 110:parse-BB@0x16 ]
+	8       (00000022) invoke-static        v2, Lafu/org/checkerframework/checker/formatter/FormatUtil;->conversionCharFromFormat(Ljava/util/regex/Matcher;)C
+	9       (00000028) move-result          v0
+	10      (0000002a) sparse-switch        v0, +1d (0x64)
+
+parse-BB@0x30 : [ parse-BB@0x16 ]
+	11      (00000030) new-instance         v3, Lafu/org/checkerframework/checker/formatter/FormatUtil$Conversion;
+	12      (00000034) invoke-static        v2, Lafu/org/checkerframework/checker/formatter/FormatUtil;->indexFromFormat(Ljava/util/regex/Matcher;)I
+	13      (0000003a) move-result          v4
+	14      (0000003c) invoke-direct        v3, v0, v4, Lafu/org/checkerframework/checker/formatter/FormatUtil$Conversion;-><init>(C I)V
+	15      (00000042) invoke-virtual       v1, v3, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+	16      (00000048) goto                 -19
+
+parse-BB@0x4a : 
+	17      (0000004a) invoke-virtual       v1, Ljava/util/ArrayList;->size()I
+	18      (00000050) move-result          v3
+	19      (00000052) new-array            v3, v3, [Lafu/org/checkerframework/checker/formatter/FormatUtil$Conversion;
+	20      (00000056) invoke-virtual       v1, v3, Ljava/util/ArrayList;->toArray([Ljava/lang/Object;)[Ljava/lang/Object;
+	21      (0000005c) move-result-object   v3
+	22      (0000005e) check-cast           v3, [Lafu/org/checkerframework/checker/formatter/FormatUtil$Conversion;
+	23      (00000062) return-object        v3
+
+parse-BB@0x64 : 
+	24      (00000064) sparse-switch-payload 25 6e
+

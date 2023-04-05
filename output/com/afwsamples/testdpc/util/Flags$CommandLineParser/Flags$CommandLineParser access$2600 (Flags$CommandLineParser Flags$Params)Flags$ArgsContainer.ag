@@ -1,0 +1,14 @@
+# Lcom/afwsamples/testdpc/util/Flags$CommandLineParser;->access$2600(Lcom/afwsamples/testdpc/util/Flags$CommandLineParser; Lcom/afwsamples/testdpc/util/Flags$Params;)Lcom/afwsamples/testdpc/util/Flags$ArgsContainer; [access_flags=static synthetic]
+#
+# Parameters:
+# - local registers: v0...v0
+# - v1:com.afwsamples.testdpc.util.Flags$CommandLineParser
+# - v2:com.afwsamples.testdpc.util.Flags$Params
+#
+# - return:com.afwsamples.testdpc.util.Flags$ArgsContainer
+
+access$2600-BB@0x0 : 
+	0       (00000000) invoke-direct        v1, v2, Lcom/afwsamples/testdpc/util/Flags$CommandLineParser;->parse(Lcom/afwsamples/testdpc/util/Flags$Params;)Lcom/afwsamples/testdpc/util/Flags$ArgsContainer;
+	1       (00000006) move-result-object   v0
+	2       (00000008) return-object        v0
+

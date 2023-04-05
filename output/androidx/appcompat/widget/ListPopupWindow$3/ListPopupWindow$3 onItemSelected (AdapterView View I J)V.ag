@@ -1,0 +1,27 @@
+# Landroidx/appcompat/widget/ListPopupWindow$3;->onItemSelected(Landroid/widget/AdapterView; Landroid/view/View; I J)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v3
+# - v4:android.widget.AdapterView
+# - v5:android.view.View
+# - v6:int
+# - v7:long
+#
+# - return:void
+
+onItemSelected-BB@0x0 : [ onItemSelected-BB@0x6 onItemSelected-BB@0x1a ]
+	0       (00000000) const/4              v1, -1
+	1       (00000002) if-eq                v5, v1, +c
+
+onItemSelected-BB@0x6 : [ onItemSelected-BB@0x12 onItemSelected-BB@0x1a ]
+	2       (00000006) iget-object          v1, v2, Landroidx/appcompat/widget/ListPopupWindow$3;->this$0 Landroidx/appcompat/widget/ListPopupWindow;
+	3       (0000000a) iget-object          v0, v1, Landroidx/appcompat/widget/ListPopupWindow;->mDropDownList Landroidx/appcompat/widget/DropDownListView;
+	4       (0000000e) if-eqz               v0, +6
+
+onItemSelected-BB@0x12 : [ onItemSelected-BB@0x1a ]
+	5       (00000012) const/4              v1, 0
+	6       (00000014) invoke-virtual       v0, v1, Landroidx/appcompat/widget/DropDownListView;->setListSelectionHidden(Z)V
+
+onItemSelected-BB@0x1a : 
+	7       (0000001a) return-void          
+

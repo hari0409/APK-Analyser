@@ -1,0 +1,36 @@
+# Lcom/afwsamples/testdpc/common/Dumpable$$CC;->isQuietMode$$STATIC$$([Ljava/lang/String;)Z [access_flags=public static]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:java.lang.String[]
+#
+# - return:boolean
+
+isQuietMode$$STATIC$$-BB@0x0 : [ isQuietMode$$STATIC$$-BB@0x6 isQuietMode$$STATIC$$-BB@0x36 ]
+	0       (00000000) const/4              v0, 0
+	1       (00000002) if-eqz               v3, +1a
+
+isQuietMode$$STATIC$$-BB@0x6 : [ isQuietMode$$STATIC$$-BB@0xc isQuietMode$$STATIC$$-BB@0x36 ]
+	2       (00000006) array-length         v1, v3
+	3       (00000008) if-lez               v1, +17
+
+isQuietMode$$STATIC$$-BB@0xc : [ isQuietMode$$STATIC$$-BB@0x20 isQuietMode$$STATIC$$-BB@0x34 ]
+	4       (0000000c) aget-object          v1, v3, v0
+	5       (00000010) const-string         v2, '-q'
+	6       (00000014) invoke-virtual       v1, v2, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+	7       (0000001a) move-result          v1
+	8       (0000001c) if-nez               v1, +c
+
+isQuietMode$$STATIC$$-BB@0x20 : [ isQuietMode$$STATIC$$-BB@0x34 isQuietMode$$STATIC$$-BB@0x36 ]
+	9       (00000020) aget-object          v1, v3, v0
+	10      (00000024) const-string         v2, '--quiet'
+	11      (00000028) invoke-virtual       v1, v2, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+	12      (0000002e) move-result          v1
+	13      (00000030) if-eqz               v1, +3
+
+isQuietMode$$STATIC$$-BB@0x34 : [ isQuietMode$$STATIC$$-BB@0x36 ]
+	14      (00000034) const/4              v0, 1
+
+isQuietMode$$STATIC$$-BB@0x36 : 
+	15      (00000036) return               v0
+

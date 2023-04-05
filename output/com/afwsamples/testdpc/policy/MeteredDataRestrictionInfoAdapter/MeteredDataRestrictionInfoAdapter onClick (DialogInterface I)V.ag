@@ -1,0 +1,50 @@
+# Lcom/afwsamples/testdpc/policy/MeteredDataRestrictionInfoAdapter;->onClick(Landroid/content/DialogInterface; I)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v4
+# - v5:android.content.DialogInterface
+# - v6:int
+#
+# - return:void
+
+onClick-BB@0x0 : [ onClick-BB@0x6 onClick-BB@0x60 ]
+	0       (00000000) const/4              v3, -1
+	1       (00000002) if-ne                v6, v3, +2f
+
+onClick-BB@0x6 : [ onClick-BB@0x1e ]
+	2       (00000006) new-instance         v1, Ljava/util/ArrayList;
+	3       (0000000a) invoke-direct        v1, Ljava/util/ArrayList;-><init>()V
+	4       (00000010) iget-object          v3, v4, Lcom/afwsamples/testdpc/policy/MeteredDataRestrictionInfoAdapter;->mIsComponentCheckedList Ljava/util/List;
+	5       (00000014) invoke-interface     v3, Ljava/util/List;->size()I
+	6       (0000001a) move-result          v2
+	7       (0000001c) const/4              v0, 0
+
+onClick-BB@0x1e : [ onClick-BB@0x22 onClick-BB@0x5a ]
+	8       (0000001e) if-ge                v0, v2, +1e
+
+onClick-BB@0x22 : [ onClick-BB@0x3e onClick-BB@0x54 ]
+	9       (00000022) iget-object          v3, v4, Lcom/afwsamples/testdpc/policy/MeteredDataRestrictionInfoAdapter;->mIsComponentCheckedList Ljava/util/List;
+	10      (00000026) invoke-interface     v3, v0, Ljava/util/List;->get(I)Ljava/lang/Object;
+	11      (0000002c) move-result-object   v3
+	12      (0000002e) check-cast           v3, Ljava/lang/Boolean;
+	13      (00000032) invoke-virtual       v3, Ljava/lang/Boolean;->booleanValue()Z
+	14      (00000038) move-result          v3
+	15      (0000003a) if-eqz               v3, +d
+
+onClick-BB@0x3e : [ onClick-BB@0x54 ]
+	16      (0000003e) invoke-virtual       v4, v0, Lcom/afwsamples/testdpc/policy/MeteredDataRestrictionInfoAdapter;->getItem(I)Ljava/lang/Object;
+	17      (00000044) move-result-object   v3
+	18      (00000046) check-cast           v3, Landroid/content/pm/ResolveInfo;
+	19      (0000004a) iget-object          v3, v3, Landroid/content/pm/ResolveInfo;->resolvePackageName Ljava/lang/String;
+	20      (0000004e) invoke-interface     v1, v3, Ljava/util/List;->add(Ljava/lang/Object;)Z
+
+onClick-BB@0x54 : [ onClick-BB@0x1e ]
+	21      (00000054) add-int/lit8         v0, v0, 1
+	22      (00000058) goto                 -1d
+
+onClick-BB@0x5a : [ onClick-BB@0x60 ]
+	23      (0000005a) invoke-direct        v4, v1, Lcom/afwsamples/testdpc/policy/MeteredDataRestrictionInfoAdapter;->setMeteredDataRestrictedPkgs(Ljava/util/List;)V
+
+onClick-BB@0x60 : 
+	24      (00000060) return-void          
+

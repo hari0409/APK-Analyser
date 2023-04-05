@@ -1,0 +1,12 @@
+# Landroidx/appcompat/view/menu/MenuItemImpl;->setShowAsActionFlags(I)Landroidx/core/internal/view/SupportMenuItem; [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v0
+# - v1:int
+#
+# - return:androidx.core.internal.view.SupportMenuItem
+
+setShowAsActionFlags-BB@0x0 : 
+	0       (00000000) invoke-virtual       v0, v1, Landroidx/appcompat/view/menu/MenuItemImpl;->setShowAsAction(I)V
+	1       (00000006) return-object        v0
+

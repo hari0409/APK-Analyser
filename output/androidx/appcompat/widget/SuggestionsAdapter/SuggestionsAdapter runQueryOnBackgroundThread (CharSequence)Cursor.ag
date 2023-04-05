@@ -1,0 +1,64 @@
+# Landroidx/appcompat/widget/SuggestionsAdapter;->runQueryOnBackgroundThread(Ljava/lang/CharSequence;)Landroid/database/Cursor; [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v7
+# - v8:java.lang.CharSequence
+#
+# - return:android.database.Cursor
+
+runQueryOnBackgroundThread-BB@0x0 : [ runQueryOnBackgroundThread-BB@0x6 runQueryOnBackgroundThread-BB@0x30 ]
+	0       (00000000) const/4              v4, 0
+	1       (00000002) if-nez               v8, +17
+
+runQueryOnBackgroundThread-BB@0x6 : [ runQueryOnBackgroundThread-BB@0xa ]
+	2       (00000006) const-string         v3, ''
+
+runQueryOnBackgroundThread-BB@0xa : [ runQueryOnBackgroundThread-BB@0x1c runQueryOnBackgroundThread-BB@0x2c ]
+	3       (0000000a) const/4              v0, 0
+	4       (0000000c) iget-object          v5, v7, Landroidx/appcompat/widget/SuggestionsAdapter;->mSearchView Landroidx/appcompat/widget/SearchView;
+	5       (00000010) invoke-virtual       v5, Landroidx/appcompat/widget/SearchView;->getVisibility()I
+	6       (00000016) move-result          v5
+	7       (00000018) if-nez               v5, +a
+
+runQueryOnBackgroundThread-BB@0x1c : [ runQueryOnBackgroundThread-BB@0x2c runQueryOnBackgroundThread-BB@0x3a ]
+	8       (0000001c) iget-object          v5, v7, Landroidx/appcompat/widget/SuggestionsAdapter;->mSearchView Landroidx/appcompat/widget/SearchView;
+	9       (00000020) invoke-virtual       v5, Landroidx/appcompat/widget/SearchView;->getWindowVisibility()I
+	10      (00000026) move-result          v5
+	11      (00000028) if-eqz               v5, +9
+
+runQueryOnBackgroundThread-BB@0x2c : [ runQueryOnBackgroundThread-BB@0x2e ]
+	12      (0000002c) move-object          v1, v0
+
+runQueryOnBackgroundThread-BB@0x2e : 
+	13      (0000002e) return-object        v4
+
+runQueryOnBackgroundThread-BB@0x30 : [ runQueryOnBackgroundThread-BB@0xa ]
+	14      (00000030) invoke-interface     v8, Ljava/lang/CharSequence;->toString()Ljava/lang/String;
+	15      (00000036) move-result-object   v3
+	16      (00000038) goto                 -17
+
+runQueryOnBackgroundThread-BB@0x3a : [ runQueryOnBackgroundThread-BB@0x4e runQueryOnBackgroundThread-BB@0x6a ]
+	17      (0000003a) iget-object          v5, v7, Landroidx/appcompat/widget/SuggestionsAdapter;->mSearchable Landroid/app/SearchableInfo;
+	18      (0000003e) const/16             v6, 50
+	19      (00000042) invoke-virtual       v7, v5, v3, v6, Landroidx/appcompat/widget/SuggestionsAdapter;->getSearchManagerSuggestions(Landroid/app/SearchableInfo; Ljava/lang/String; I)Landroid/database/Cursor;
+	20      (00000048) move-result-object   v0
+	21      (0000004a) if-eqz               v0, +10
+	3a:53
+	(Ljava/lang/RuntimeException; -> 5a runQueryOnBackgroundThread-BB@0x5a)
+
+runQueryOnBackgroundThread-BB@0x4e : [ runQueryOnBackgroundThread-BB@0x2e ]
+	22      (0000004e) invoke-interface     v0, Landroid/database/Cursor;->getCount()I
+	23      (00000054) move-object          v1, v0
+	24      (00000056) move-object          v4, v0
+	25      (00000058) goto                 -15
+
+runQueryOnBackgroundThread-BB@0x5a : [ runQueryOnBackgroundThread-BB@0x6a ]
+	26      (0000005a) move-exception       v2
+	27      (0000005c) const-string         v5, 'SuggestionsAdapter'
+	28      (00000060) const-string         v6, 'Search suggestions query threw an exception.'
+	29      (00000064) invoke-static        v5, v6, v2, Landroid/util/Log;->w(Ljava/lang/String; Ljava/lang/String; Ljava/lang/Throwable;)I
+
+runQueryOnBackgroundThread-BB@0x6a : [ runQueryOnBackgroundThread-BB@0x2e ]
+	30      (0000006a) move-object          v1, v0
+	31      (0000006c) goto                 -1f
+

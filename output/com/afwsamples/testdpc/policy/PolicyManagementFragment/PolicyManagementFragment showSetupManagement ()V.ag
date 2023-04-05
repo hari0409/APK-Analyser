@@ -1,0 +1,18 @@
+# Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->showSetupManagement()V [access_flags=private]
+#
+# Parameters:
+# local registers: v0...v3
+#
+# - return:void
+
+showSetupManagement-BB@0x0 : 
+	0       (00000000) new-instance         v0, Landroid/content/Intent;
+	1       (00000004) invoke-virtual       v3, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->getActivity()Landroid/app/Activity;
+	2       (0000000a) move-result-object   v1
+	3       (0000000c) const-class          v2, Lcom/afwsamples/testdpc/SetupManagementActivity;
+	4       (00000010) invoke-direct        v0, v1, v2, Landroid/content/Intent;-><init>(Landroid/content/Context; Ljava/lang/Class;)V
+	5       (00000016) invoke-virtual       v3, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->getActivity()Landroid/app/Activity;
+	6       (0000001c) move-result-object   v1
+	7       (0000001e) invoke-virtual       v1, v0, Landroid/app/Activity;->startActivity(Landroid/content/Intent;)V
+	8       (00000024) return-void          
+

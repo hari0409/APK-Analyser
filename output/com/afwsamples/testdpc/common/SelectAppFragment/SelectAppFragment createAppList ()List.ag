@@ -1,0 +1,45 @@
+# Lcom/afwsamples/testdpc/common/SelectAppFragment;->createAppList()Ljava/util/List; [access_flags=protected]
+#
+# Parameters:
+# local registers: v0...v6
+#
+# - return:java.util.List
+
+createAppList-BB@0x0 : [ createAppList-BB@0x3c ]
+	0       (00000000) new-instance         v1, Ljava/util/ArrayList;
+	1       (00000004) invoke-direct        v1, Ljava/util/ArrayList;-><init>()V
+	2       (0000000a) invoke-virtual       v6, Lcom/afwsamples/testdpc/common/SelectAppFragment;->getActivity()Landroid/app/Activity;
+	3       (00000010) move-result-object   v4
+	4       (00000012) invoke-virtual       v4, Landroid/app/Activity;->getPackageManager()Landroid/content/pm/PackageManager;
+	5       (00000018) move-result-object   v3
+	6       (0000001a) const/4              v4, 0
+	7       (0000001c) invoke-virtual       v3, v4, Landroid/content/pm/PackageManager;->getInstalledApplications(I)Ljava/util/List;
+	8       (00000022) move-result-object   v0
+	9       (00000024) new-instance         v4, Landroid/content/pm/ApplicationInfo$DisplayNameComparator;
+	10      (00000028) invoke-direct        v4, v3, Landroid/content/pm/ApplicationInfo$DisplayNameComparator;-><init>(Landroid/content/pm/PackageManager;)V
+	11      (0000002e) invoke-static        v0, v4, Ljava/util/Collections;->sort(Ljava/util/List; Ljava/util/Comparator;)V
+	12      (00000034) invoke-interface     v0, Ljava/util/List;->iterator()Ljava/util/Iterator;
+	13      (0000003a) move-result-object   v4
+
+createAppList-BB@0x3c : [ createAppList-BB@0x48 createAppList-BB@0x70 ]
+	14      (0000003c) invoke-interface     v4, Ljava/util/Iterator;->hasNext()Z
+	15      (00000042) move-result          v5
+	16      (00000044) if-eqz               v5, +16
+
+createAppList-BB@0x48 : [ createAppList-BB@0x64 createAppList-BB@0x3c ]
+	17      (00000048) invoke-interface     v4, Ljava/util/Iterator;->next()Ljava/lang/Object;
+	18      (0000004e) move-result-object   v2
+	19      (00000050) check-cast           v2, Landroid/content/pm/ApplicationInfo;
+	20      (00000054) iget-object          v5, v2, Landroid/content/pm/ApplicationInfo;->packageName Ljava/lang/String;
+	21      (00000058) invoke-virtual       v3, v5, Landroid/content/pm/PackageManager;->getLaunchIntentForPackage(Ljava/lang/String;)Landroid/content/Intent;
+	22      (0000005e) move-result-object   v5
+	23      (00000060) if-eqz               v5, -12
+
+createAppList-BB@0x64 : [ createAppList-BB@0x3c ]
+	24      (00000064) iget-object          v5, v2, Landroid/content/pm/ApplicationInfo;->packageName Ljava/lang/String;
+	25      (00000068) invoke-interface     v1, v5, Ljava/util/List;->add(Ljava/lang/Object;)Z
+	26      (0000006e) goto                 -19
+
+createAppList-BB@0x70 : 
+	27      (00000070) return-object        v1
+

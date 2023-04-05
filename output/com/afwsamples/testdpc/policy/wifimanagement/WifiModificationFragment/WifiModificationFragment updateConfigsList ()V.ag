@@ -1,0 +1,36 @@
+# Lcom/afwsamples/testdpc/policy/wifimanagement/WifiModificationFragment;->updateConfigsList()V [access_flags=private]
+#
+# Parameters:
+# local registers: v0...v2
+#
+# - return:void
+
+updateConfigsList-BB@0x0 : [ updateConfigsList-BB@0x12 updateConfigsList-BB@0x38 ]
+	0       (00000000) iget-object          v1, v2, Lcom/afwsamples/testdpc/policy/wifimanagement/WifiModificationFragment;->mConfiguredNetworks Ljava/util/List;
+	1       (00000004) invoke-interface     v1, Ljava/util/List;->clear()V
+	2       (0000000a) iget-boolean         v1, v2, Lcom/afwsamples/testdpc/policy/wifimanagement/WifiModificationFragment;->mShowOwnedNetworksOnly Z
+	3       (0000000e) if-eqz               v1, +15
+
+updateConfigsList-BB@0x12 : [ updateConfigsList-BB@0x1e ]
+	4       (00000012) iget-object          v1, v2, Lcom/afwsamples/testdpc/policy/wifimanagement/WifiModificationFragment;->mWifiManager Landroid/net/wifi/WifiManager;
+	5       (00000016) invoke-virtual       v1, Landroid/net/wifi/WifiManager;->getCallerConfiguredNetworks()Ljava/util/List;
+	6       (0000001c) move-result-object   v0
+
+updateConfigsList-BB@0x1e : [ updateConfigsList-BB@0x22 updateConfigsList-BB@0x2c ]
+	7       (0000001e) if-eqz               v0, +7
+
+updateConfigsList-BB@0x22 : [ updateConfigsList-BB@0x2c ]
+	8       (00000022) iget-object          v1, v2, Lcom/afwsamples/testdpc/policy/wifimanagement/WifiModificationFragment;->mConfiguredNetworks Ljava/util/List;
+	9       (00000026) invoke-interface     v1, v0, Ljava/util/List;->addAll(Ljava/util/Collection;)Z
+
+updateConfigsList-BB@0x2c : 
+	10      (0000002c) iget-object          v1, v2, Lcom/afwsamples/testdpc/policy/wifimanagement/WifiModificationFragment;->mConfigsAdapter Lcom/afwsamples/testdpc/policy/wifimanagement/WifiModificationFragment$ConfigsAdapter;
+	11      (00000030) invoke-virtual       v1, Lcom/afwsamples/testdpc/policy/wifimanagement/WifiModificationFragment$ConfigsAdapter;->notifyDataSetChanged()V
+	12      (00000036) return-void          
+
+updateConfigsList-BB@0x38 : [ updateConfigsList-BB@0x1e ]
+	13      (00000038) iget-object          v1, v2, Lcom/afwsamples/testdpc/policy/wifimanagement/WifiModificationFragment;->mWifiManager Landroid/net/wifi/WifiManager;
+	14      (0000003c) invoke-virtual       v1, Landroid/net/wifi/WifiManager;->getConfiguredNetworks()Ljava/util/List;
+	15      (00000042) move-result-object   v0
+	16      (00000044) goto                 -13
+

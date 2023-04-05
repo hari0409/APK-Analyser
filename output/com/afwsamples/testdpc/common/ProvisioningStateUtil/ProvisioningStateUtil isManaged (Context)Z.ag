@@ -1,0 +1,49 @@
+# Lcom/afwsamples/testdpc/common/ProvisioningStateUtil;->isManaged(Landroid/content/Context;)Z [access_flags=public static]
+#
+# Parameters:
+# - local registers: v0...v6
+# - v7:android.content.Context
+#
+# - return:boolean
+
+isManaged-BB@0x0 : [ isManaged-BB@0x1e isManaged-BB@0x20 ]
+	0       (00000000) const/4              v4, 0
+	1       (00000002) const-string         v5, 'device_policy'
+	2       (00000006) invoke-virtual       v7, v5, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
+	3       (0000000c) move-result-object   v3
+	4       (0000000e) check-cast           v3, Landroid/app/admin/DevicePolicyManager;
+	5       (00000012) invoke-virtual       v3, Landroid/app/admin/DevicePolicyManager;->getActiveAdmins()Ljava/util/List;
+	6       (00000018) move-result-object   v2
+	7       (0000001a) if-nez               v2, +3
+
+isManaged-BB@0x1e : 
+	8       (0000001e) return               v4
+
+isManaged-BB@0x20 : [ isManaged-BB@0x28 ]
+	9       (00000020) invoke-interface     v2, Ljava/util/List;->iterator()Ljava/util/Iterator;
+	10      (00000026) move-result-object   v5
+
+isManaged-BB@0x28 : [ isManaged-BB@0x34 isManaged-BB@0x1e ]
+	11      (00000028) invoke-interface     v5, Ljava/util/Iterator;->hasNext()Z
+	12      (0000002e) move-result          v6
+	13      (00000030) if-eqz               v6, -9
+
+isManaged-BB@0x34 : [ isManaged-BB@0x54 isManaged-BB@0x60 ]
+	14      (00000034) invoke-interface     v5, Ljava/util/Iterator;->next()Ljava/lang/Object;
+	15      (0000003a) move-result-object   v0
+	16      (0000003c) check-cast           v0, Landroid/content/ComponentName;
+	17      (00000040) invoke-virtual       v0, Landroid/content/ComponentName;->getPackageName()Ljava/lang/String;
+	18      (00000046) move-result-object   v1
+	19      (00000048) invoke-virtual       v3, v1, Landroid/app/admin/DevicePolicyManager;->isDeviceOwnerApp(Ljava/lang/String;)Z
+	20      (0000004e) move-result          v6
+	21      (00000050) if-nez               v6, +8
+
+isManaged-BB@0x54 : [ isManaged-BB@0x60 isManaged-BB@0x28 ]
+	22      (00000054) invoke-virtual       v3, v1, Landroid/app/admin/DevicePolicyManager;->isProfileOwnerApp(Ljava/lang/String;)Z
+	23      (0000005a) move-result          v6
+	24      (0000005c) if-eqz               v6, -1a
+
+isManaged-BB@0x60 : [ isManaged-BB@0x1e ]
+	25      (00000060) const/4              v4, 1
+	26      (00000062) goto                 -22
+

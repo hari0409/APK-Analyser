@@ -1,0 +1,21 @@
+# Lcom/afwsamples/testdpc/SetupManagementFragment;->setProvisioningMethodsVisibility()Z [access_flags=private]
+#
+# Parameters:
+# local registers: v0...v3
+#
+# - return:boolean
+
+setProvisioningMethodsVisibility-BB@0x0 : 
+	0       (00000000) const/4              v0, 0
+	1       (00000002) const-string         v1, 'android.app.action.PROVISION_MANAGED_PROFILE'
+	2       (00000006) const                v2, 2131296616 # [1.821115370899908e+38]
+	3       (0000000c) invoke-direct        v3, v1, v2, Lcom/afwsamples/testdpc/SetupManagementFragment;->setVisibility(Ljava/lang/String; I)Z
+	4       (00000012) move-result          v1
+	5       (00000014) or-int/2addr         v0, v1
+	6       (00000016) const-string         v1, 'android.app.action.PROVISION_MANAGED_DEVICE'
+	7       (0000001a) const                v2, 2131296615 # [1.821115168075812e+38]
+	8       (00000020) invoke-direct        v3, v1, v2, Lcom/afwsamples/testdpc/SetupManagementFragment;->setVisibility(Ljava/lang/String; I)Z
+	9       (00000026) move-result          v1
+	10      (00000028) or-int/2addr         v0, v1
+	11      (0000002a) return               v0
+

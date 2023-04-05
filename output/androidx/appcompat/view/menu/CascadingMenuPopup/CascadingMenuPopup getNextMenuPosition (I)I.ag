@@ -1,0 +1,63 @@
+# Landroidx/appcompat/view/menu/CascadingMenuPopup;->getNextMenuPosition(I)I [access_flags=private]
+#
+# Parameters:
+# - local registers: v0...v9
+# - v10:int
+#
+# - return:int
+
+getNextMenuPosition-BB@0x0 : [ getNextMenuPosition-BB@0x54 getNextMenuPosition-BB@0x76 ]
+	0       (00000000) const/4              v7, 1
+	1       (00000002) const/4              v6, 0
+	2       (00000004) iget-object          v5, v9, Landroidx/appcompat/view/menu/CascadingMenuPopup;->mShowingMenus Ljava/util/List;
+	3       (00000008) iget-object          v8, v9, Landroidx/appcompat/view/menu/CascadingMenuPopup;->mShowingMenus Ljava/util/List;
+	4       (0000000c) invoke-interface     v8, Ljava/util/List;->size()I
+	5       (00000012) move-result          v8
+	6       (00000014) add-int/lit8         v8, v8, -1
+	7       (00000018) invoke-interface     v5, v8, Ljava/util/List;->get(I)Ljava/lang/Object;
+	8       (0000001e) move-result-object   v5
+	9       (00000020) check-cast           v5, Landroidx/appcompat/view/menu/CascadingMenuPopup$CascadingMenuInfo;
+	10      (00000024) invoke-virtual       v5, Landroidx/appcompat/view/menu/CascadingMenuPopup$CascadingMenuInfo;->getListView()Landroid/widget/ListView;
+	11      (0000002a) move-result-object   v1
+	12      (0000002c) const/4              v5, 2
+	13      (0000002e) new-array            v4, v5, [I
+	14      (00000032) invoke-virtual       v1, v4, Landroid/widget/ListView;->getLocationOnScreen([I)V
+	15      (00000038) new-instance         v0, Landroid/graphics/Rect;
+	16      (0000003c) invoke-direct        v0, Landroid/graphics/Rect;-><init>()V
+	17      (00000042) iget-object          v5, v9, Landroidx/appcompat/view/menu/CascadingMenuPopup;->mShownAnchorView Landroid/view/View;
+	18      (00000046) invoke-virtual       v5, v0, Landroid/view/View;->getWindowVisibleDisplayFrame(Landroid/graphics/Rect;)V
+	19      (0000004c) iget                 v5, v9, Landroidx/appcompat/view/menu/CascadingMenuPopup;->mLastPosition I
+	20      (00000050) if-ne                v5, v7, +13
+
+getNextMenuPosition-BB@0x54 : [ getNextMenuPosition-BB@0x6e getNextMenuPosition-BB@0x72 ]
+	21      (00000054) aget                 v5, v4, v6
+	22      (00000058) invoke-virtual       v1, Landroid/widget/ListView;->getWidth()I
+	23      (0000005e) move-result          v8
+	24      (00000060) add-int/2addr        v5, v8
+	25      (00000062) add-int              v3, v5, v10
+	26      (00000066) iget                 v5, v0, Landroid/graphics/Rect;->right I
+	27      (0000006a) if-le                v3, v5, +4
+
+getNextMenuPosition-BB@0x6e : [ getNextMenuPosition-BB@0x70 ]
+	28      (0000006e) move                 v5, v6
+
+getNextMenuPosition-BB@0x70 : 
+	29      (00000070) return               v5
+
+getNextMenuPosition-BB@0x72 : [ getNextMenuPosition-BB@0x70 ]
+	30      (00000072) move                 v5, v7
+	31      (00000074) goto                 -2
+
+getNextMenuPosition-BB@0x76 : [ getNextMenuPosition-BB@0x82 getNextMenuPosition-BB@0x86 ]
+	32      (00000076) aget                 v5, v4, v6
+	33      (0000007a) sub-int              v2, v5, v10
+	34      (0000007e) if-gez               v2, +4
+
+getNextMenuPosition-BB@0x82 : [ getNextMenuPosition-BB@0x70 ]
+	35      (00000082) move                 v5, v7
+	36      (00000084) goto                 -a
+
+getNextMenuPosition-BB@0x86 : [ getNextMenuPosition-BB@0x70 ]
+	37      (00000086) move                 v5, v6
+	38      (00000088) goto                 -c
+

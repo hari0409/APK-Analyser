@@ -1,0 +1,90 @@
+# Lcom/afwsamples/testdpc/profilepolicy/delegation/DelegationFragment;->onCreate(Landroid/os/Bundle;)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v8
+# - v9:android.os.Bundle
+#
+# - return:void
+
+onCreate-BB@0x0 : [ onCreate-BB@0x4a onCreate-BB@0x74 ]
+	0       (00000000) const/4              v5, 0
+	1       (00000002) const/4              v6, 1
+	2       (00000004) invoke-super         v8, v9, Lcom/afwsamples/testdpc/common/ManageAppFragment;->onCreate(Landroid/os/Bundle;)V
+	3       (0000000a) invoke-virtual       v8, Lcom/afwsamples/testdpc/profilepolicy/delegation/DelegationFragment;->getActivity()Landroid/app/Activity;
+	4       (00000010) move-result-object   v4
+	5       (00000012) const-string         v7, 'device_policy'
+	6       (00000016) invoke-virtual       v4, v7, Landroid/app/Activity;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
+	7       (0000001c) move-result-object   v4
+	8       (0000001e) check-cast           v4, Landroid/app/admin/DevicePolicyManager;
+	9       (00000022) iput-object          v4, v8, Lcom/afwsamples/testdpc/profilepolicy/delegation/DelegationFragment;->mDpm Landroid/app/admin/DevicePolicyManager;
+	10      (00000026) invoke-virtual       v8, Lcom/afwsamples/testdpc/profilepolicy/delegation/DelegationFragment;->getActivity()Landroid/app/Activity;
+	11      (0000002c) move-result-object   v4
+	12      (0000002e) invoke-virtual       v4, Landroid/app/Activity;->getPackageName()Ljava/lang/String;
+	13      (00000034) move-result-object   v4
+	14      (00000036) iput-object          v4, v8, Lcom/afwsamples/testdpc/profilepolicy/delegation/DelegationFragment;->mPackageName Ljava/lang/String;
+	15      (0000003a) iget-object          v4, v8, Lcom/afwsamples/testdpc/profilepolicy/delegation/DelegationFragment;->mPackageName Ljava/lang/String;
+	16      (0000003e) invoke-direct        v8, v4, Lcom/afwsamples/testdpc/profilepolicy/delegation/DelegationFragment;->isDelegatedApp(Ljava/lang/String;)Z
+	17      (00000044) move-result          v4
+	18      (00000046) if-eqz               v4, +17
+
+onCreate-BB@0x4a : [ onCreate-BB@0x56 ]
+	19      (0000004a) invoke-static        v6, Lcom/afwsamples/testdpc/profilepolicy/delegation/DelegationFragment$DelegationScope;->defaultDelegationScopes(Z)Ljava/util/List;
+	20      (00000050) move-result-object   v4
+	21      (00000052) iput-object          v4, v8, Lcom/afwsamples/testdpc/profilepolicy/delegation/DelegationFragment;->mDelegations Ljava/util/List;
+
+onCreate-BB@0x56 : 
+	22      (00000056) invoke-virtual       v8, Lcom/afwsamples/testdpc/profilepolicy/delegation/DelegationFragment;->getActivity()Landroid/app/Activity;
+	23      (0000005c) move-result-object   v4
+	24      (0000005e) invoke-virtual       v4, Landroid/app/Activity;->getActionBar()Landroid/app/ActionBar;
+	25      (00000064) move-result-object   v4
+	26      (00000066) const                v5, 2131689834 # [1.900869456295195e+38]
+	27      (0000006c) invoke-virtual       v4, v5, Landroid/app/ActionBar;->setTitle(I)V
+	28      (00000072) return-void          
+
+onCreate-BB@0x74 : [ onCreate-BB@0xb4 onCreate-BB@0xb8 ]
+	29      (00000074) invoke-virtual       v8, Lcom/afwsamples/testdpc/profilepolicy/delegation/DelegationFragment;->getActivity()Landroid/app/Activity;
+	30      (0000007a) move-result-object   v4
+	31      (0000007c) invoke-static        v4, Lcom/afwsamples/testdpc/DeviceAdminReceiver;->getComponentName(Landroid/content/Context;)Landroid/content/ComponentName;
+	32      (00000082) move-result-object   v3
+	33      (00000084) iget-object          v4, v8, Lcom/afwsamples/testdpc/profilepolicy/delegation/DelegationFragment;->mDpm Landroid/app/admin/DevicePolicyManager;
+	34      (00000088) iget-object          v7, v8, Lcom/afwsamples/testdpc/profilepolicy/delegation/DelegationFragment;->mPackageName Ljava/lang/String;
+	35      (0000008c) invoke-virtual       v4, v7, Landroid/app/admin/DevicePolicyManager;->isDeviceOwnerApp(Ljava/lang/String;)Z
+	36      (00000092) move-result          v0
+	37      (00000094) iget-object          v4, v8, Lcom/afwsamples/testdpc/profilepolicy/delegation/DelegationFragment;->mDpm Landroid/app/admin/DevicePolicyManager;
+	38      (00000098) iget-object          v7, v8, Lcom/afwsamples/testdpc/profilepolicy/delegation/DelegationFragment;->mPackageName Ljava/lang/String;
+	39      (0000009c) invoke-virtual       v4, v7, Landroid/app/admin/DevicePolicyManager;->isProfileOwnerApp(Ljava/lang/String;)Z
+	40      (000000a2) move-result          v2
+	41      (000000a4) iget-object          v4, v8, Lcom/afwsamples/testdpc/profilepolicy/delegation/DelegationFragment;->mDpm Landroid/app/admin/DevicePolicyManager;
+	42      (000000a8) invoke-virtual       v4, v3, Landroid/app/admin/DevicePolicyManager;->isManagedProfile(Landroid/content/ComponentName;)Z
+	43      (000000ae) move-result          v1
+	44      (000000b0) if-nez               v0, +4
+
+onCreate-BB@0xb4 : [ onCreate-BB@0xb8 onCreate-BB@0xda ]
+	45      (000000b4) if-eqz               v2, +13
+
+onCreate-BB@0xb8 : [ onCreate-BB@0xba ]
+	46      (000000b8) move                 v4, v6
+
+onCreate-BB@0xba : [ onCreate-BB@0xc2 onCreate-BB@0xca ]
+	47      (000000ba) iput-boolean         v4, v8, Lcom/afwsamples/testdpc/profilepolicy/delegation/DelegationFragment;->mIsDeviceOrProfileOwner Z
+	48      (000000be) if-nez               v0, +6
+
+onCreate-BB@0xc2 : [ onCreate-BB@0xc6 onCreate-BB@0xcc ]
+	49      (000000c2) if-eqz               v1, +5
+
+onCreate-BB@0xc6 : [ onCreate-BB@0xca onCreate-BB@0xcc ]
+	50      (000000c6) if-eqz               v2, +3
+
+onCreate-BB@0xca : [ onCreate-BB@0xcc ]
+	51      (000000ca) move                 v5, v6
+
+onCreate-BB@0xcc : [ onCreate-BB@0x56 ]
+	52      (000000cc) invoke-static        v5, Lcom/afwsamples/testdpc/profilepolicy/delegation/DelegationFragment$DelegationScope;->defaultDelegationScopes(Z)Ljava/util/List;
+	53      (000000d2) move-result-object   v4
+	54      (000000d4) iput-object          v4, v8, Lcom/afwsamples/testdpc/profilepolicy/delegation/DelegationFragment;->mDelegations Ljava/util/List;
+	55      (000000d8) goto                 -41
+
+onCreate-BB@0xda : [ onCreate-BB@0xba ]
+	56      (000000da) move                 v4, v5
+	57      (000000dc) goto                 -11
+

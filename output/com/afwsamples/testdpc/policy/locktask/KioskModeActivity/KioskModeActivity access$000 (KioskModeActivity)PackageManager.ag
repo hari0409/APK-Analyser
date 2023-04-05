@@ -1,0 +1,12 @@
+# Lcom/afwsamples/testdpc/policy/locktask/KioskModeActivity;->access$000(Lcom/afwsamples/testdpc/policy/locktask/KioskModeActivity;)Landroid/content/pm/PackageManager; [access_flags=static synthetic]
+#
+# Parameters:
+# - local registers: v0...v0
+# - v1:com.afwsamples.testdpc.policy.locktask.KioskModeActivity
+#
+# - return:android.content.pm.PackageManager
+
+access$000-BB@0x0 : 
+	0       (00000000) iget-object          v0, v1, Lcom/afwsamples/testdpc/policy/locktask/KioskModeActivity;->mPackageManager Landroid/content/pm/PackageManager;
+	1       (00000004) return-object        v0
+

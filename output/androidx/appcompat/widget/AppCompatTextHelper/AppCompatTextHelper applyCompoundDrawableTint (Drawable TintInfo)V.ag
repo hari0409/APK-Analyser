@@ -1,0 +1,24 @@
+# Landroidx/appcompat/widget/AppCompatTextHelper;->applyCompoundDrawableTint(Landroid/graphics/drawable/Drawable; Landroidx/appcompat/widget/TintInfo;)V [access_flags=private]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:android.graphics.drawable.Drawable
+# - v3:androidx.appcompat.widget.TintInfo
+#
+# - return:void
+
+applyCompoundDrawableTint-BB@0x0 : [ applyCompoundDrawableTint-BB@0x4 applyCompoundDrawableTint-BB@0x1a ]
+	0       (00000000) if-eqz               v2, +d
+
+applyCompoundDrawableTint-BB@0x4 : [ applyCompoundDrawableTint-BB@0x8 applyCompoundDrawableTint-BB@0x1a ]
+	1       (00000004) if-eqz               v3, +b
+
+applyCompoundDrawableTint-BB@0x8 : [ applyCompoundDrawableTint-BB@0x1a ]
+	2       (00000008) iget-object          v0, v1, Landroidx/appcompat/widget/AppCompatTextHelper;->mView Landroid/widget/TextView;
+	3       (0000000c) invoke-virtual       v0, Landroid/widget/TextView;->getDrawableState()[I
+	4       (00000012) move-result-object   v0
+	5       (00000014) invoke-static        v2, v3, v0, Landroidx/appcompat/widget/AppCompatDrawableManager;->tintDrawable(Landroid/graphics/drawable/Drawable; Landroidx/appcompat/widget/TintInfo; [I)V
+
+applyCompoundDrawableTint-BB@0x1a : 
+	6       (0000001a) return-void          
+

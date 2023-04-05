@@ -1,0 +1,84 @@
+# Landroidx/appcompat/view/menu/CascadingMenuPopup;->findParentViewForSubmenu(Landroidx/appcompat/view/menu/CascadingMenuPopup$CascadingMenuInfo; Landroidx/appcompat/view/menu/MenuBuilder;)Landroid/view/View; [access_flags=private]
+#
+# Parameters:
+# - local registers: v0...v12
+# - v13:androidx.appcompat.view.menu.CascadingMenuPopup$CascadingMenuInfo
+# - v14:androidx.appcompat.view.menu.MenuBuilder
+#
+# - return:android.view.View
+
+findParentViewForSubmenu-BB@0x0 : [ findParentViewForSubmenu-BB@0x12 findParentViewForSubmenu-BB@0x14 ]
+	0       (00000000) const/4              v10, 0
+	1       (00000002) iget-object          v11, v13, Landroidx/appcompat/view/menu/CascadingMenuPopup$CascadingMenuInfo;->menu Landroidx/appcompat/view/menu/MenuBuilder;
+	2       (00000006) invoke-direct        v12, v11, v14, Landroidx/appcompat/view/menu/CascadingMenuPopup;->findMenuItemForSubmenu(Landroidx/appcompat/view/menu/MenuBuilder; Landroidx/appcompat/view/menu/MenuBuilder;)Landroid/view/MenuItem;
+	3       (0000000c) move-result-object   v7
+	4       (0000000e) if-nez               v7, +3
+
+findParentViewForSubmenu-BB@0x12 : 
+	5       (00000012) return-object        v10
+
+findParentViewForSubmenu-BB@0x14 : [ findParentViewForSubmenu-BB@0x2c findParentViewForSubmenu-BB@0x92 ]
+	6       (00000014) invoke-virtual       v13, Landroidx/appcompat/view/menu/CascadingMenuPopup$CascadingMenuInfo;->getListView()Landroid/widget/ListView;
+	7       (0000001a) move-result-object   v5
+	8       (0000001c) invoke-virtual       v5, Landroid/widget/ListView;->getAdapter()Landroid/widget/ListAdapter;
+	9       (00000022) move-result-object   v4
+	10      (00000024) instance-of          v11, v4, Landroid/widget/HeaderViewListAdapter;
+	11      (00000028) if-eqz               v11, +35
+
+findParentViewForSubmenu-BB@0x2c : [ findParentViewForSubmenu-BB@0x46 ]
+	12      (0000002c) move-object          v1, v4
+	13      (0000002e) check-cast           v1, Landroid/widget/HeaderViewListAdapter;
+	14      (00000032) invoke-virtual       v1, Landroid/widget/HeaderViewListAdapter;->getHeadersCount()I
+	15      (00000038) move-result          v2
+	16      (0000003a) invoke-virtual       v1, Landroid/widget/HeaderViewListAdapter;->getWrappedAdapter()Landroid/widget/ListAdapter;
+	17      (00000040) move-result-object   v6
+	18      (00000042) check-cast           v6, Landroidx/appcompat/view/menu/MenuAdapter;
+
+findParentViewForSubmenu-BB@0x46 : [ findParentViewForSubmenu-BB@0x52 ]
+	19      (00000046) const/4              v8, -1
+	20      (00000048) const/4              v3, 0
+	21      (0000004a) invoke-virtual       v6, Landroidx/appcompat/view/menu/MenuAdapter;->getCount()I
+	22      (00000050) move-result          v0
+
+findParentViewForSubmenu-BB@0x52 : [ findParentViewForSubmenu-BB@0x56 findParentViewForSubmenu-BB@0x64 ]
+	23      (00000052) if-ge                v3, v0, +9
+
+findParentViewForSubmenu-BB@0x56 : [ findParentViewForSubmenu-BB@0x62 findParentViewForSubmenu-BB@0x9c ]
+	24      (00000056) invoke-virtual       v6, v3, Landroidx/appcompat/view/menu/MenuAdapter;->getItem(I)Landroidx/appcompat/view/menu/MenuItemImpl;
+	25      (0000005c) move-result-object   v11
+	26      (0000005e) if-ne                v7, v11, +1f
+
+findParentViewForSubmenu-BB@0x62 : [ findParentViewForSubmenu-BB@0x64 ]
+	27      (00000062) move                 v8, v3
+
+findParentViewForSubmenu-BB@0x64 : [ findParentViewForSubmenu-BB@0x6a findParentViewForSubmenu-BB@0x12 ]
+	28      (00000064) const/4              v11, -1
+	29      (00000066) if-eq                v8, v11, -2a
+
+findParentViewForSubmenu-BB@0x6a : [ findParentViewForSubmenu-BB@0x7c findParentViewForSubmenu-BB@0x12 ]
+	30      (0000006a) add-int/2addr        v8, v2
+	31      (0000006c) invoke-virtual       v5, Landroid/widget/ListView;->getFirstVisiblePosition()I
+	32      (00000072) move-result          v11
+	33      (00000074) sub-int              v9, v8, v11
+	34      (00000078) if-ltz               v9, -33
+
+findParentViewForSubmenu-BB@0x7c : [ findParentViewForSubmenu-BB@0x88 findParentViewForSubmenu-BB@0x12 ]
+	35      (0000007c) invoke-virtual       v5, Landroid/widget/ListView;->getChildCount()I
+	36      (00000082) move-result          v11
+	37      (00000084) if-ge                v9, v11, -39
+
+findParentViewForSubmenu-BB@0x88 : [ findParentViewForSubmenu-BB@0x12 ]
+	38      (00000088) invoke-virtual       v5, v9, Landroid/widget/ListView;->getChildAt(I)Landroid/view/View;
+	39      (0000008e) move-result-object   v10
+	40      (00000090) goto                 -3f
+
+findParentViewForSubmenu-BB@0x92 : [ findParentViewForSubmenu-BB@0x46 ]
+	41      (00000092) const/4              v2, 0
+	42      (00000094) move-object          v6, v4
+	43      (00000096) check-cast           v6, Landroidx/appcompat/view/menu/MenuAdapter;
+	44      (0000009a) goto                 -2a
+
+findParentViewForSubmenu-BB@0x9c : [ findParentViewForSubmenu-BB@0x52 ]
+	45      (0000009c) add-int/lit8         v3, v3, 1
+	46      (000000a0) goto                 -27
+

@@ -1,0 +1,45 @@
+# Landroidx/appcompat/app/AppCompatDelegateImpl$1;->uncaughtException(Ljava/lang/Thread; Ljava/lang/Throwable;)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v3
+# - v4:java.lang.Thread
+# - v5:java.lang.Throwable
+#
+# - return:void
+
+uncaughtException-BB@0x0 : [ uncaughtException-BB@0xc uncaughtException-BB@0x6c ]
+	0       (00000000) invoke-direct        v3, v5, Landroidx/appcompat/app/AppCompatDelegateImpl$1;->shouldWrapException(Ljava/lang/Throwable;)Z
+	1       (00000006) move-result          v1
+	2       (00000008) if-eqz               v1, +32
+
+uncaughtException-BB@0xc : [ uncaughtException-BB@0x6a ]
+	3       (0000000c) new-instance         v0, Landroid/content/res/Resources$NotFoundException;
+	4       (00000010) new-instance         v1, Ljava/lang/StringBuilder;
+	5       (00000014) invoke-direct        v1, Ljava/lang/StringBuilder;-><init>()V
+	6       (0000001a) invoke-virtual       v5, Ljava/lang/Throwable;->getMessage()Ljava/lang/String;
+	7       (00000020) move-result-object   v2
+	8       (00000022) invoke-virtual       v1, v2, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	9       (00000028) move-result-object   v1
+	10      (0000002a) const-string         v2, '. If the resource you are trying to use is a vector resource, you may be referencing it in an unsupported way. See AppCompatDelegate.setCompatVectorFromResourcesEnabled() for more info.'
+	11      (0000002e) invoke-virtual       v1, v2, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	12      (00000034) move-result-object   v1
+	13      (00000036) invoke-virtual       v1, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+	14      (0000003c) move-result-object   v1
+	15      (0000003e) invoke-direct        v0, v1, Landroid/content/res/Resources$NotFoundException;-><init>(Ljava/lang/String;)V
+	16      (00000044) invoke-virtual       v5, Ljava/lang/Throwable;->getCause()Ljava/lang/Throwable;
+	17      (0000004a) move-result-object   v1
+	18      (0000004c) invoke-virtual       v0, v1, Ljava/lang/Throwable;->initCause(Ljava/lang/Throwable;)Ljava/lang/Throwable;
+	19      (00000052) invoke-virtual       v5, Ljava/lang/Throwable;->getStackTrace()[Ljava/lang/StackTraceElement;
+	20      (00000058) move-result-object   v1
+	21      (0000005a) invoke-virtual       v0, v1, Ljava/lang/Throwable;->setStackTrace([Ljava/lang/StackTraceElement;)V
+	22      (00000060) iget-object          v1, v3, Landroidx/appcompat/app/AppCompatDelegateImpl$1;->val$defHandler Ljava/lang/Thread$UncaughtExceptionHandler;
+	23      (00000064) invoke-interface     v1, v4, v0, Ljava/lang/Thread$UncaughtExceptionHandler;->uncaughtException(Ljava/lang/Thread; Ljava/lang/Throwable;)V
+
+uncaughtException-BB@0x6a : 
+	24      (0000006a) return-void          
+
+uncaughtException-BB@0x6c : [ uncaughtException-BB@0x6a ]
+	25      (0000006c) iget-object          v1, v3, Landroidx/appcompat/app/AppCompatDelegateImpl$1;->val$defHandler Ljava/lang/Thread$UncaughtExceptionHandler;
+	26      (00000070) invoke-interface     v1, v4, v5, Ljava/lang/Thread$UncaughtExceptionHandler;->uncaughtException(Ljava/lang/Thread; Ljava/lang/Throwable;)V
+	27      (00000076) goto                 -6
+

@@ -1,0 +1,165 @@
+# Landroidx/multidex/MultiDex;->clearOldDexDir(Landroid/content/Context;)V [access_flags=private static]
+#
+# Parameters:
+# - local registers: v0...v9
+# - v10:android.content.Context
+#
+# - return:void
+
+clearOldDexDir-BB@0x0 : [ clearOldDexDir-BB@0x22 clearOldDexDir-BB@0xb6 ]
+	0       (00000000) new-instance         v0, Ljava/io/File;
+	1       (00000004) invoke-virtual       v10, Landroid/content/Context;->getFilesDir()Ljava/io/File;
+	2       (0000000a) move-result-object   v3
+	3       (0000000c) const-string         v4, 'secondary-dexes'
+	4       (00000010) invoke-direct        v0, v3, v4, Ljava/io/File;-><init>(Ljava/io/File; Ljava/lang/String;)V
+	5       (00000016) invoke-virtual       v0, Ljava/io/File;->isDirectory()Z
+	6       (0000001c) move-result          v3
+	7       (0000001e) if-eqz               v3, +4c
+
+clearOldDexDir-BB@0x22 : [ clearOldDexDir-BB@0x72 clearOldDexDir-BB@0xb8 ]
+	8       (00000022) const-string         v3, 'MultiDex'
+	9       (00000026) new-instance         v4, Ljava/lang/StringBuilder;
+	10      (0000002a) invoke-direct        v4, Ljava/lang/StringBuilder;-><init>()V
+	11      (00000030) const-string         v5, 'Clearing old secondary dex dir ('
+	12      (00000034) invoke-virtual       v4, v5, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	13      (0000003a) move-result-object   v4
+	14      (0000003c) invoke-virtual       v0, Ljava/io/File;->getPath()Ljava/lang/String;
+	15      (00000042) move-result-object   v5
+	16      (00000044) invoke-virtual       v4, v5, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	17      (0000004a) move-result-object   v4
+	18      (0000004c) const-string         v5, ').'
+	19      (00000050) invoke-virtual       v4, v5, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	20      (00000056) move-result-object   v4
+	21      (00000058) invoke-virtual       v4, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+	22      (0000005e) move-result-object   v4
+	23      (00000060) invoke-static        v3, v4, Landroid/util/Log;->i(Ljava/lang/String; Ljava/lang/String;)I
+	24      (00000066) invoke-virtual       v0, Ljava/io/File;->listFiles()[Ljava/io/File;
+	25      (0000006c) move-result-object   v1
+	26      (0000006e) if-nez               v1, +25
+
+clearOldDexDir-BB@0x72 : [ clearOldDexDir-BB@0xb6 ]
+	27      (00000072) const-string         v3, 'MultiDex'
+	28      (00000076) new-instance         v4, Ljava/lang/StringBuilder;
+	29      (0000007a) invoke-direct        v4, Ljava/lang/StringBuilder;-><init>()V
+	30      (00000080) const-string         v5, 'Failed to list secondary dex dir content ('
+	31      (00000084) invoke-virtual       v4, v5, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	32      (0000008a) move-result-object   v4
+	33      (0000008c) invoke-virtual       v0, Ljava/io/File;->getPath()Ljava/lang/String;
+	34      (00000092) move-result-object   v5
+	35      (00000094) invoke-virtual       v4, v5, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	36      (0000009a) move-result-object   v4
+	37      (0000009c) const-string         v5, ').'
+	38      (000000a0) invoke-virtual       v4, v5, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	39      (000000a6) move-result-object   v4
+	40      (000000a8) invoke-virtual       v4, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+	41      (000000ae) move-result-object   v4
+	42      (000000b0) invoke-static        v3, v4, Landroid/util/Log;->w(Ljava/lang/String; Ljava/lang/String;)I
+
+clearOldDexDir-BB@0xb6 : 
+	43      (000000b6) return-void          
+
+clearOldDexDir-BB@0xb8 : [ clearOldDexDir-BB@0xbc ]
+	44      (000000b8) array-length         v4, v1
+	45      (000000ba) const/4              v3, 0
+
+clearOldDexDir-BB@0xbc : [ clearOldDexDir-BB@0xc0 clearOldDexDir-BB@0x19c ]
+	46      (000000bc) if-ge                v3, v4, +70
+
+clearOldDexDir-BB@0xc0 : [ clearOldDexDir-BB@0x124 clearOldDexDir-BB@0x162 ]
+	47      (000000c0) aget-object          v2, v1, v3
+	48      (000000c4) const-string         v5, 'MultiDex'
+	49      (000000c8) new-instance         v6, Ljava/lang/StringBuilder;
+	50      (000000cc) invoke-direct        v6, Ljava/lang/StringBuilder;-><init>()V
+	51      (000000d2) const-string         v7, 'Trying to delete old file '
+	52      (000000d6) invoke-virtual       v6, v7, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	53      (000000dc) move-result-object   v6
+	54      (000000de) invoke-virtual       v2, Ljava/io/File;->getPath()Ljava/lang/String;
+	55      (000000e4) move-result-object   v7
+	56      (000000e6) invoke-virtual       v6, v7, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	57      (000000ec) move-result-object   v6
+	58      (000000ee) const-string         v7, ' of size '
+	59      (000000f2) invoke-virtual       v6, v7, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	60      (000000f8) move-result-object   v6
+	61      (000000fa) invoke-virtual       v2, Ljava/io/File;->length()J
+	62      (00000100) move-result-wide     v8
+	63      (00000102) invoke-virtual       v6, v8, v9, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+	64      (00000108) move-result-object   v6
+	65      (0000010a) invoke-virtual       v6, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+	66      (00000110) move-result-object   v6
+	67      (00000112) invoke-static        v5, v6, Landroid/util/Log;->i(Ljava/lang/String; Ljava/lang/String;)I
+	68      (00000118) invoke-virtual       v2, Ljava/io/File;->delete()Z
+	69      (0000011e) move-result          v5
+	70      (00000120) if-nez               v5, +21
+
+clearOldDexDir-BB@0x124 : [ clearOldDexDir-BB@0x15c ]
+	71      (00000124) const-string         v5, 'MultiDex'
+	72      (00000128) new-instance         v6, Ljava/lang/StringBuilder;
+	73      (0000012c) invoke-direct        v6, Ljava/lang/StringBuilder;-><init>()V
+	74      (00000132) const-string         v7, 'Failed to delete old file '
+	75      (00000136) invoke-virtual       v6, v7, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	76      (0000013c) move-result-object   v6
+	77      (0000013e) invoke-virtual       v2, Ljava/io/File;->getPath()Ljava/lang/String;
+	78      (00000144) move-result-object   v7
+	79      (00000146) invoke-virtual       v6, v7, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	80      (0000014c) move-result-object   v6
+	81      (0000014e) invoke-virtual       v6, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+	82      (00000154) move-result-object   v6
+	83      (00000156) invoke-static        v5, v6, Landroid/util/Log;->w(Ljava/lang/String; Ljava/lang/String;)I
+
+clearOldDexDir-BB@0x15c : [ clearOldDexDir-BB@0xbc ]
+	84      (0000015c) add-int/lit8         v3, v3, 1
+	85      (00000160) goto                 -52
+
+clearOldDexDir-BB@0x162 : [ clearOldDexDir-BB@0x15c ]
+	86      (00000162) const-string         v5, 'MultiDex'
+	87      (00000166) new-instance         v6, Ljava/lang/StringBuilder;
+	88      (0000016a) invoke-direct        v6, Ljava/lang/StringBuilder;-><init>()V
+	89      (00000170) const-string         v7, 'Deleted old file '
+	90      (00000174) invoke-virtual       v6, v7, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	91      (0000017a) move-result-object   v6
+	92      (0000017c) invoke-virtual       v2, Ljava/io/File;->getPath()Ljava/lang/String;
+	93      (00000182) move-result-object   v7
+	94      (00000184) invoke-virtual       v6, v7, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	95      (0000018a) move-result-object   v6
+	96      (0000018c) invoke-virtual       v6, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+	97      (00000192) move-result-object   v6
+	98      (00000194) invoke-static        v5, v6, Landroid/util/Log;->i(Ljava/lang/String; Ljava/lang/String;)I
+	99      (0000019a) goto                 -1f
+
+clearOldDexDir-BB@0x19c : [ clearOldDexDir-BB@0x1a8 clearOldDexDir-BB@0x1e4 ]
+	100     (0000019c) invoke-virtual       v0, Ljava/io/File;->delete()Z
+	101     (000001a2) move-result          v3
+	102     (000001a4) if-nez               v3, +20
+
+clearOldDexDir-BB@0x1a8 : [ clearOldDexDir-BB@0xb6 ]
+	103     (000001a8) const-string         v3, 'MultiDex'
+	104     (000001ac) new-instance         v4, Ljava/lang/StringBuilder;
+	105     (000001b0) invoke-direct        v4, Ljava/lang/StringBuilder;-><init>()V
+	106     (000001b6) const-string         v5, 'Failed to delete secondary dex dir '
+	107     (000001ba) invoke-virtual       v4, v5, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	108     (000001c0) move-result-object   v4
+	109     (000001c2) invoke-virtual       v0, Ljava/io/File;->getPath()Ljava/lang/String;
+	110     (000001c8) move-result-object   v5
+	111     (000001ca) invoke-virtual       v4, v5, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	112     (000001d0) move-result-object   v4
+	113     (000001d2) invoke-virtual       v4, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+	114     (000001d8) move-result-object   v4
+	115     (000001da) invoke-static        v3, v4, Landroid/util/Log;->w(Ljava/lang/String; Ljava/lang/String;)I
+	116     (000001e0) goto/16              -95
+
+clearOldDexDir-BB@0x1e4 : [ clearOldDexDir-BB@0xb6 ]
+	117     (000001e4) const-string         v3, 'MultiDex'
+	118     (000001e8) new-instance         v4, Ljava/lang/StringBuilder;
+	119     (000001ec) invoke-direct        v4, Ljava/lang/StringBuilder;-><init>()V
+	120     (000001f2) const-string         v5, 'Deleted old secondary dex dir '
+	121     (000001f6) invoke-virtual       v4, v5, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	122     (000001fc) move-result-object   v4
+	123     (000001fe) invoke-virtual       v0, Ljava/io/File;->getPath()Ljava/lang/String;
+	124     (00000204) move-result-object   v5
+	125     (00000206) invoke-virtual       v4, v5, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	126     (0000020c) move-result-object   v4
+	127     (0000020e) invoke-virtual       v4, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+	128     (00000214) move-result-object   v4
+	129     (00000216) invoke-static        v3, v4, Landroid/util/Log;->i(Ljava/lang/String; Ljava/lang/String;)I
+	130     (0000021c) goto/16              -b3
+

@@ -1,0 +1,19 @@
+# Landroidx/appcompat/widget/Toolbar;->ensureContentInsets()V [access_flags=private]
+#
+# Parameters:
+# local registers: v0...v1
+#
+# - return:void
+
+ensureContentInsets-BB@0x0 : [ ensureContentInsets-BB@0x8 ensureContentInsets-BB@0x16 ]
+	0       (00000000) iget-object          v0, v1, Landroidx/appcompat/widget/Toolbar;->mContentInsets Landroidx/appcompat/widget/RtlSpacingHelper;
+	1       (00000004) if-nez               v0, +9
+
+ensureContentInsets-BB@0x8 : [ ensureContentInsets-BB@0x16 ]
+	2       (00000008) new-instance         v0, Landroidx/appcompat/widget/RtlSpacingHelper;
+	3       (0000000c) invoke-direct        v0, Landroidx/appcompat/widget/RtlSpacingHelper;-><init>()V
+	4       (00000012) iput-object          v0, v1, Landroidx/appcompat/widget/Toolbar;->mContentInsets Landroidx/appcompat/widget/RtlSpacingHelper;
+
+ensureContentInsets-BB@0x16 : 
+	5       (00000016) return-void          
+

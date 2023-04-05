@@ -1,0 +1,12 @@
+# Landroidx/appcompat/widget/SearchView$SavedState;-><init>(Landroid/os/Parcelable;)V [access_flags=constructor]
+#
+# Parameters:
+# - local registers: v0...v0
+# - v1:android.os.Parcelable
+#
+# - return:void
+
+<init>-BB@0x0 : 
+	0       (00000000) invoke-direct        v0, v1, Landroidx/customview/view/AbsSavedState;-><init>(Landroid/os/Parcelable;)V
+	1       (00000006) return-void          
+

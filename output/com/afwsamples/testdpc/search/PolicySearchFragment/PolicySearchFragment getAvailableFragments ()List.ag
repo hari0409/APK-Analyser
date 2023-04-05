@@ -1,0 +1,38 @@
+# Lcom/afwsamples/testdpc/search/PolicySearchFragment;->getAvailableFragments()Ljava/util/List; [access_flags=private]
+#
+# Parameters:
+# local registers: v0...v5
+#
+# - return:java.util.List
+
+getAvailableFragments-BB@0x0 : [ getAvailableFragments-BB@0x1a ]
+	0       (00000000) invoke-static        Lcom/afwsamples/testdpc/search/IndexableFragments;->values()Ljava/util/List;
+	1       (00000006) move-result-object   v2
+	2       (00000008) new-instance         v0, Ljava/util/ArrayList;
+	3       (0000000c) invoke-direct        v0, Ljava/util/ArrayList;-><init>()V
+	4       (00000012) invoke-interface     v2, Ljava/util/List;->iterator()Ljava/util/Iterator;
+	5       (00000018) move-result-object   v3
+
+getAvailableFragments-BB@0x1a : [ getAvailableFragments-BB@0x26 getAvailableFragments-BB@0x52 ]
+	6       (0000001a) invoke-interface     v3, Ljava/util/Iterator;->hasNext()Z
+	7       (00000020) move-result          v4
+	8       (00000022) if-eqz               v4, +18
+
+getAvailableFragments-BB@0x26 : [ getAvailableFragments-BB@0x46 getAvailableFragments-BB@0x1a ]
+	9       (00000026) invoke-interface     v3, Ljava/util/Iterator;->next()Ljava/lang/Object;
+	10      (0000002c) move-result-object   v1
+	11      (0000002e) check-cast           v1, Lcom/afwsamples/testdpc/search/BaseIndexableFragment;
+	12      (00000032) invoke-virtual       v5, Lcom/afwsamples/testdpc/search/PolicySearchFragment;->getActivity()Landroid/app/Activity;
+	13      (00000038) move-result-object   v4
+	14      (0000003a) invoke-virtual       v1, v4, Lcom/afwsamples/testdpc/search/BaseIndexableFragment;->isAvailable(Landroid/content/Context;)Z
+	15      (00000040) move-result          v4
+	16      (00000042) if-eqz               v4, -14
+
+getAvailableFragments-BB@0x46 : [ getAvailableFragments-BB@0x1a ]
+	17      (00000046) iget-object          v4, v1, Lcom/afwsamples/testdpc/search/BaseIndexableFragment;->fragmentName Ljava/lang/String;
+	18      (0000004a) invoke-interface     v0, v4, Ljava/util/List;->add(Ljava/lang/Object;)Z
+	19      (00000050) goto                 -1b
+
+getAvailableFragments-BB@0x52 : 
+	20      (00000052) return-object        v0
+

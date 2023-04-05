@@ -1,0 +1,14 @@
+# Lcom/afwsamples/testdpc/DevicePolicyManagerGatewayImpl$$Lambda$8;->accept(Ljava/lang/Object;)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:java.lang.Object
+#
+# - return:void
+
+accept-BB@0x0 : 
+	0       (00000000) iget-object          v0, v1, Lcom/afwsamples/testdpc/DevicePolicyManagerGatewayImpl$$Lambda$8;->arg$1 Ljava/lang/String;
+	1       (00000004) check-cast           v2, Ljava/lang/Exception;
+	2       (00000008) invoke-static        v0, v2, Lcom/afwsamples/testdpc/DevicePolicyManagerGatewayImpl;->lambda$setUsbDataSignalingEnabled$15$DevicePolicyManagerGatewayImpl(Ljava/lang/String; Ljava/lang/Exception;)V
+	3       (0000000e) return-void          
+

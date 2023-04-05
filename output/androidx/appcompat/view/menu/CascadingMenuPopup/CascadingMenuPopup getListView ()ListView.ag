@@ -1,0 +1,32 @@
+# Landroidx/appcompat/view/menu/CascadingMenuPopup;->getListView()Landroid/widget/ListView; [access_flags=public]
+#
+# Parameters:
+# local registers: v0...v2
+#
+# - return:android.widget.ListView
+
+getListView-BB@0x0 : [ getListView-BB@0x10 getListView-BB@0x14 ]
+	0       (00000000) iget-object          v0, v2, Landroidx/appcompat/view/menu/CascadingMenuPopup;->mShowingMenus Ljava/util/List;
+	1       (00000004) invoke-interface     v0, Ljava/util/List;->isEmpty()Z
+	2       (0000000a) move-result          v0
+	3       (0000000c) if-eqz               v0, +4
+
+getListView-BB@0x10 : [ getListView-BB@0x12 ]
+	4       (00000010) const/4              v0, 0
+
+getListView-BB@0x12 : 
+	5       (00000012) return-object        v0
+
+getListView-BB@0x14 : [ getListView-BB@0x12 ]
+	6       (00000014) iget-object          v0, v2, Landroidx/appcompat/view/menu/CascadingMenuPopup;->mShowingMenus Ljava/util/List;
+	7       (00000018) iget-object          v1, v2, Landroidx/appcompat/view/menu/CascadingMenuPopup;->mShowingMenus Ljava/util/List;
+	8       (0000001c) invoke-interface     v1, Ljava/util/List;->size()I
+	9       (00000022) move-result          v1
+	10      (00000024) add-int/lit8         v1, v1, -1
+	11      (00000028) invoke-interface     v0, v1, Ljava/util/List;->get(I)Ljava/lang/Object;
+	12      (0000002e) move-result-object   v0
+	13      (00000030) check-cast           v0, Landroidx/appcompat/view/menu/CascadingMenuPopup$CascadingMenuInfo;
+	14      (00000034) invoke-virtual       v0, Landroidx/appcompat/view/menu/CascadingMenuPopup$CascadingMenuInfo;->getListView()Landroid/widget/ListView;
+	15      (0000003a) move-result-object   v0
+	16      (0000003c) goto                 -15
+

@@ -1,0 +1,161 @@
+# Landroidx/appcompat/widget/SwitchCompat;->onTouchEvent(Landroid/view/MotionEvent;)Z [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v12
+# - v13:android.view.MotionEvent
+#
+# - return:boolean
+
+onTouchEvent-BB@0x0 : [ D:onTouchEvent-BB@0x22 0:onTouchEvent-BB@0x2c 1:onTouchEvent-BB@0x144 2:onTouchEvent-BB@0x62 3:onTouchEvent-BB@0x144 ]
+	0       (00000000) const/4              v11, 2
+	1       (00000002) const/high16         v7, 16256 # [1.0]
+	2       (00000006) const/4              v10, 0
+	3       (00000008) const/4              v8, 1
+	4       (0000000a) iget-object          v9, v12, Landroidx/appcompat/widget/SwitchCompat;->mVelocityTracker Landroid/view/VelocityTracker;
+	5       (0000000e) invoke-virtual       v9, v13, Landroid/view/VelocityTracker;->addMovement(Landroid/view/MotionEvent;)V
+	6       (00000014) invoke-virtual       v13, Landroid/view/MotionEvent;->getActionMasked()I
+	7       (0000001a) move-result          v0
+	8       (0000001c) packed-switch        v0, +ac (0x174)
+
+onTouchEvent-BB@0x22 : [ onTouchEvent-BB@0x2a ]
+	9       (00000022) invoke-super         v12, v13, Landroid/widget/CompoundButton;->onTouchEvent(Landroid/view/MotionEvent;)Z
+	10      (00000028) move-result          v7
+
+onTouchEvent-BB@0x2a : 
+	11      (0000002a) return               v7
+
+onTouchEvent-BB@0x2c : [ onTouchEvent-BB@0x48 onTouchEvent-BB@0x22 ]
+	12      (0000002c) invoke-virtual       v13, Landroid/view/MotionEvent;->getX()F
+	13      (00000032) move-result          v5
+	14      (00000034) invoke-virtual       v13, Landroid/view/MotionEvent;->getY()F
+	15      (0000003a) move-result          v6
+	16      (0000003c) invoke-virtual       v12, Landroidx/appcompat/widget/SwitchCompat;->isEnabled()Z
+	17      (00000042) move-result          v7
+	18      (00000044) if-eqz               v7, -11
+
+onTouchEvent-BB@0x48 : [ onTouchEvent-BB@0x54 onTouchEvent-BB@0x22 ]
+	19      (00000048) invoke-direct        v12, v5, v6, Landroidx/appcompat/widget/SwitchCompat;->hitThumb(F F)Z
+	20      (0000004e) move-result          v7
+	21      (00000050) if-eqz               v7, -17
+
+onTouchEvent-BB@0x54 : [ onTouchEvent-BB@0x22 ]
+	22      (00000054) iput                 v8, v12, Landroidx/appcompat/widget/SwitchCompat;->mTouchMode I
+	23      (00000058) iput                 v5, v12, Landroidx/appcompat/widget/SwitchCompat;->mTouchX F
+	24      (0000005c) iput                 v6, v12, Landroidx/appcompat/widget/SwitchCompat;->mTouchY F
+	25      (00000060) goto                 -1f
+
+onTouchEvent-BB@0x62 : [ D:onTouchEvent-BB@0x6c 0:onTouchEvent-BB@0x22 1:onTouchEvent-BB@0x6e 2:onTouchEvent-BB@0xd8 ]
+	26      (00000062) iget                 v9, v12, Landroidx/appcompat/widget/SwitchCompat;->mTouchMode I
+	27      (00000066) packed-switch        v9, +93 (0x18c)
+
+onTouchEvent-BB@0x6c : [ onTouchEvent-BB@0x22 ]
+	28      (0000006c) goto                 -25
+
+onTouchEvent-BB@0x6e : [ onTouchEvent-BB@0x9c onTouchEvent-BB@0xba ]
+	29      (0000006e) invoke-virtual       v13, Landroid/view/MotionEvent;->getX()F
+	30      (00000074) move-result          v5
+	31      (00000076) invoke-virtual       v13, Landroid/view/MotionEvent;->getY()F
+	32      (0000007c) move-result          v6
+	33      (0000007e) iget                 v7, v12, Landroidx/appcompat/widget/SwitchCompat;->mTouchX F
+	34      (00000082) sub-float            v7, v5, v7
+	35      (00000086) invoke-static        v7, Ljava/lang/Math;->abs(F)F
+	36      (0000008c) move-result          v7
+	37      (0000008e) iget                 v9, v12, Landroidx/appcompat/widget/SwitchCompat;->mTouchSlop I
+	38      (00000092) int-to-float         v9, v9
+	39      (00000094) cmpl-float           v7, v7, v9
+	40      (00000098) if-gtz               v7, +11
+
+onTouchEvent-BB@0x9c : [ onTouchEvent-BB@0xba onTouchEvent-BB@0x22 ]
+	41      (0000009c) iget                 v7, v12, Landroidx/appcompat/widget/SwitchCompat;->mTouchY F
+	42      (000000a0) sub-float            v7, v6, v7
+	43      (000000a4) invoke-static        v7, Ljava/lang/Math;->abs(F)F
+	44      (000000aa) move-result          v7
+	45      (000000ac) iget                 v9, v12, Landroidx/appcompat/widget/SwitchCompat;->mTouchSlop I
+	46      (000000b0) int-to-float         v9, v9
+	47      (000000b2) cmpl-float           v7, v7, v9
+	48      (000000b6) if-lez               v7, -4a
+
+onTouchEvent-BB@0xba : [ onTouchEvent-BB@0x2a ]
+	49      (000000ba) iput                 v11, v12, Landroidx/appcompat/widget/SwitchCompat;->mTouchMode I
+	50      (000000be) invoke-virtual       v12, Landroidx/appcompat/widget/SwitchCompat;->getParent()Landroid/view/ViewParent;
+	51      (000000c4) move-result-object   v7
+	52      (000000c6) invoke-interface     v7, v8, Landroid/view/ViewParent;->requestDisallowInterceptTouchEvent(Z)V
+	53      (000000cc) iput                 v5, v12, Landroidx/appcompat/widget/SwitchCompat;->mTouchX F
+	54      (000000d0) iput                 v6, v12, Landroidx/appcompat/widget/SwitchCompat;->mTouchY F
+	55      (000000d4) move                 v7, v8
+	56      (000000d6) goto                 -56
+
+onTouchEvent-BB@0xd8 : [ onTouchEvent-BB@0xf4 onTouchEvent-BB@0x132 ]
+	57      (000000d8) invoke-virtual       v13, Landroid/view/MotionEvent;->getX()F
+	58      (000000de) move-result          v5
+	59      (000000e0) invoke-direct        v12, Landroidx/appcompat/widget/SwitchCompat;->getThumbScrollRange()I
+	60      (000000e6) move-result          v4
+	61      (000000e8) iget                 v9, v12, Landroidx/appcompat/widget/SwitchCompat;->mTouchX F
+	62      (000000ec) sub-float            v3, v5, v9
+	63      (000000f0) if-eqz               v4, +21
+
+onTouchEvent-BB@0xf4 : [ onTouchEvent-BB@0xfa ]
+	64      (000000f4) int-to-float         v9, v4
+	65      (000000f6) div-float            v1, v3, v9
+
+onTouchEvent-BB@0xfa : [ onTouchEvent-BB@0x106 onTouchEvent-BB@0x108 ]
+	66      (000000fa) invoke-static        v12, Landroidx/appcompat/widget/ViewUtils;->isLayoutRtl(Landroid/view/View;)Z
+	67      (00000100) move-result          v9
+	68      (00000102) if-eqz               v9, +3
+
+onTouchEvent-BB@0x106 : [ onTouchEvent-BB@0x108 ]
+	69      (00000106) neg-float            v1, v1
+
+onTouchEvent-BB@0x108 : [ onTouchEvent-BB@0x122 onTouchEvent-BB@0x12c ]
+	70      (00000108) iget                 v9, v12, Landroidx/appcompat/widget/SwitchCompat;->mThumbPosition F
+	71      (0000010c) add-float/2addr      v9, v1
+	72      (0000010e) invoke-static        v9, v10, v7, Landroidx/appcompat/widget/SwitchCompat;->constrain(F F F)F
+	73      (00000114) move-result          v2
+	74      (00000116) iget                 v7, v12, Landroidx/appcompat/widget/SwitchCompat;->mThumbPosition F
+	75      (0000011a) cmpl-float           v7, v2, v7
+	76      (0000011e) if-eqz               v7, +7
+
+onTouchEvent-BB@0x122 : [ onTouchEvent-BB@0x12c ]
+	77      (00000122) iput                 v5, v12, Landroidx/appcompat/widget/SwitchCompat;->mTouchX F
+	78      (00000126) invoke-virtual       v12, v2, Landroidx/appcompat/widget/SwitchCompat;->setThumbPosition(F)V
+
+onTouchEvent-BB@0x12c : [ onTouchEvent-BB@0x2a ]
+	79      (0000012c) move                 v7, v8
+	80      (0000012e) goto/16              -82
+
+onTouchEvent-BB@0x132 : [ onTouchEvent-BB@0x13a onTouchEvent-BB@0x13e ]
+	81      (00000132) cmpl-float           v9, v3, v10
+	82      (00000136) if-lez               v9, +4
+
+onTouchEvent-BB@0x13a : [ onTouchEvent-BB@0x13c ]
+	83      (0000013a) move                 v1, v7
+
+onTouchEvent-BB@0x13c : [ onTouchEvent-BB@0xfa ]
+	84      (0000013c) goto                 -21
+
+onTouchEvent-BB@0x13e : [ onTouchEvent-BB@0x13c ]
+	85      (0000013e) const/high16         v1, -16512 # [-1.0]
+	86      (00000142) goto                 -3
+
+onTouchEvent-BB@0x144 : [ onTouchEvent-BB@0x14c onTouchEvent-BB@0x15e ]
+	87      (00000144) iget                 v7, v12, Landroidx/appcompat/widget/SwitchCompat;->mTouchMode I
+	88      (00000148) if-ne                v7, v11, +b
+
+onTouchEvent-BB@0x14c : [ onTouchEvent-BB@0x2a ]
+	89      (0000014c) invoke-direct        v12, v13, Landroidx/appcompat/widget/SwitchCompat;->stopDrag(Landroid/view/MotionEvent;)V
+	90      (00000152) invoke-super         v12, v13, Landroid/widget/CompoundButton;->onTouchEvent(Landroid/view/MotionEvent;)Z
+	91      (00000158) move                 v7, v8
+	92      (0000015a) goto/16              -98
+
+onTouchEvent-BB@0x15e : [ onTouchEvent-BB@0x22 ]
+	93      (0000015e) const/4              v7, 0
+	94      (00000160) iput                 v7, v12, Landroidx/appcompat/widget/SwitchCompat;->mTouchMode I
+	95      (00000164) iget-object          v7, v12, Landroidx/appcompat/widget/SwitchCompat;->mVelocityTracker Landroid/view/VelocityTracker;
+	96      (00000168) invoke-virtual       v7, Landroid/view/VelocityTracker;->clear()V
+	97      (0000016e) goto/16              -a6
+
+onTouchEvent-BB@0x172 : 
+	98      (00000172) nop                  
+	99      (00000174) packed-switch-payload 0 1 2 3
+	100     (0000018c) packed-switch-payload 0 1 2
+

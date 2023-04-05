@@ -1,0 +1,29 @@
+# Lcom/afwsamples/testdpc/common/RestrictionManagerCompat;->convertRestrictionsToBundle(Ljava/util/List;)Landroid/os/Bundle; [access_flags=public static]
+#
+# Parameters:
+# - local registers: v0...v3
+# - v4:java.util.List
+#
+# - return:android.os.Bundle
+
+convertRestrictionsToBundle-BB@0x0 : [ convertRestrictionsToBundle-BB@0x12 ]
+	0       (00000000) new-instance         v0, Landroid/os/Bundle;
+	1       (00000004) invoke-direct        v0, Landroid/os/Bundle;-><init>()V
+	2       (0000000a) invoke-interface     v4, Ljava/util/List;->iterator()Ljava/util/Iterator;
+	3       (00000010) move-result-object   v2
+
+convertRestrictionsToBundle-BB@0x12 : [ convertRestrictionsToBundle-BB@0x1e convertRestrictionsToBundle-BB@0x32 ]
+	4       (00000012) invoke-interface     v2, Ljava/util/Iterator;->hasNext()Z
+	5       (00000018) move-result          v3
+	6       (0000001a) if-eqz               v3, +c
+
+convertRestrictionsToBundle-BB@0x1e : [ convertRestrictionsToBundle-BB@0x12 ]
+	7       (0000001e) invoke-interface     v2, Ljava/util/Iterator;->next()Ljava/lang/Object;
+	8       (00000024) move-result-object   v1
+	9       (00000026) check-cast           v1, Landroid/content/RestrictionEntry;
+	10      (0000002a) invoke-static        v0, v1, Lcom/afwsamples/testdpc/common/RestrictionManagerCompat;->addRestrictionToBundle(Landroid/os/Bundle; Landroid/content/RestrictionEntry;)Landroid/os/Bundle;
+	11      (00000030) goto                 -f
+
+convertRestrictionsToBundle-BB@0x32 : 
+	12      (00000032) return-object        v0
+

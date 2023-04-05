@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="0.0dip" android:layout_weight="1.0" android:paddingStart="8.0dip" android:paddingEnd="8.0dip">
+        <TextView android:textSize="14.0sp" android:textColor="?android:colorAccent" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/factory_reset_protection_policy_accounts" android:textAlignment="viewStart" android:paddingStart="8.0dip" android:paddingEnd="8.0dip" style="?android:listSeparatorTextViewStyle" />
+        <ListView android:id="@id/frp_accounts" android:paddingTop="4.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+        <Button android:id="@id/add_account_button" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/add_account" android:layout_marginEnd="5.0dip" />
+        <TextView android:textSize="14.0sp" android:textColor="?android:colorAccent" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/factory_reset_protection_policy_enabled" android:textAlignment="viewStart" android:paddingStart="8.0dip" android:paddingEnd="8.0dip" style="?android:listSeparatorTextViewStyle" />
+        <Spinner android:id="@id/frp_enabled" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+    </LinearLayout>
+    <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content" android:divider="?android:dividerHorizontal" android:showDividers="beginning" style="?android:buttonBarStyle">
+        <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content" android:showDividers="middle">
+            <Button android:id="@id/clear_frp_button" android:background="?android:selectableItemBackground" android:layout_width="0.0dip" android:layout_height="wrap_content" android:text="@string/clear" android:layout_weight="1.0" style="?android:buttonBarButtonStyle" />
+            <Button android:id="@id/save_frp_button" android:background="?android:selectableItemBackground" android:layout_width="0.0dip" android:layout_height="wrap_content" android:text="@string/save" android:layout_weight="1.0" style="?android:buttonBarButtonStyle" />
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

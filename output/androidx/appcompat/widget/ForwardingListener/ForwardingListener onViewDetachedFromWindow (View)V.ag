@@ -1,0 +1,24 @@
+# Landroidx/appcompat/widget/ForwardingListener;->onViewDetachedFromWindow(Landroid/view/View;)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:android.view.View
+#
+# - return:void
+
+onViewDetachedFromWindow-BB@0x0 : [ onViewDetachedFromWindow-BB@0x14 onViewDetachedFromWindow-BB@0x22 ]
+	0       (00000000) const/4              v0, 0
+	1       (00000002) iput-boolean         v0, v2, Landroidx/appcompat/widget/ForwardingListener;->mForwarding Z
+	2       (00000006) const/4              v0, -1
+	3       (00000008) iput                 v0, v2, Landroidx/appcompat/widget/ForwardingListener;->mActivePointerId I
+	4       (0000000c) iget-object          v0, v2, Landroidx/appcompat/widget/ForwardingListener;->mDisallowIntercept Ljava/lang/Runnable;
+	5       (00000010) if-eqz               v0, +9
+
+onViewDetachedFromWindow-BB@0x14 : [ onViewDetachedFromWindow-BB@0x22 ]
+	6       (00000014) iget-object          v0, v2, Landroidx/appcompat/widget/ForwardingListener;->mSrc Landroid/view/View;
+	7       (00000018) iget-object          v1, v2, Landroidx/appcompat/widget/ForwardingListener;->mDisallowIntercept Ljava/lang/Runnable;
+	8       (0000001c) invoke-virtual       v0, v1, Landroid/view/View;->removeCallbacks(Ljava/lang/Runnable;)Z
+
+onViewDetachedFromWindow-BB@0x22 : 
+	9       (00000022) return-void          
+

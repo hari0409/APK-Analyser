@@ -1,0 +1,23 @@
+# Landroidx/appcompat/widget/TooltipPopup;->isShowing()Z [access_flags=]
+#
+# Parameters:
+# local registers: v0...v1
+#
+# - return:boolean
+
+isShowing-BB@0x0 : [ isShowing-BB@0x10 isShowing-BB@0x14 ]
+	0       (00000000) iget-object          v0, v1, Landroidx/appcompat/widget/TooltipPopup;->mContentView Landroid/view/View;
+	1       (00000004) invoke-virtual       v0, Landroid/view/View;->getParent()Landroid/view/ViewParent;
+	2       (0000000a) move-result-object   v0
+	3       (0000000c) if-eqz               v0, +4
+
+isShowing-BB@0x10 : [ isShowing-BB@0x12 ]
+	4       (00000010) const/4              v0, 1
+
+isShowing-BB@0x12 : 
+	5       (00000012) return               v0
+
+isShowing-BB@0x14 : [ isShowing-BB@0x12 ]
+	6       (00000014) const/4              v0, 0
+	7       (00000016) goto                 -2
+

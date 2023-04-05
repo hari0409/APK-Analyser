@@ -1,0 +1,21 @@
+# Landroidx/appcompat/view/menu/MenuBuilder;->stopDispatchingItemsChanged()V [access_flags=public]
+#
+# Parameters:
+# local registers: v0...v2
+#
+# - return:void
+
+stopDispatchingItemsChanged-BB@0x0 : [ stopDispatchingItemsChanged-BB@0xa stopDispatchingItemsChanged-BB@0x18 ]
+	0       (00000000) const/4              v1, 0
+	1       (00000002) iget-boolean         v0, v2, Landroidx/appcompat/view/menu/MenuBuilder;->mPreventDispatchingItemsChanged Z
+	2       (00000006) if-nez               v0, +9
+
+stopDispatchingItemsChanged-BB@0xa : [ stopDispatchingItemsChanged-BB@0x18 ]
+	3       (0000000a) const/4              v0, 1
+	4       (0000000c) iput-boolean         v0, v2, Landroidx/appcompat/view/menu/MenuBuilder;->mPreventDispatchingItemsChanged Z
+	5       (00000010) iput-boolean         v1, v2, Landroidx/appcompat/view/menu/MenuBuilder;->mItemsChangedWhileDispatchPrevented Z
+	6       (00000014) iput-boolean         v1, v2, Landroidx/appcompat/view/menu/MenuBuilder;->mStructureChangedWhileDispatchPrevented Z
+
+stopDispatchingItemsChanged-BB@0x18 : 
+	7       (00000018) return-void          
+

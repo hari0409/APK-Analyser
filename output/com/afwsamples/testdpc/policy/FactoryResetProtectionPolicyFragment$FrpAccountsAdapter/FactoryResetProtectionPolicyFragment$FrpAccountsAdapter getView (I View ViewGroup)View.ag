@@ -1,0 +1,45 @@
+# Lcom/afwsamples/testdpc/policy/FactoryResetProtectionPolicyFragment$FrpAccountsAdapter;->getView(I Landroid/view/View; Landroid/view/ViewGroup;)Landroid/view/View; [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v5
+# - v6:int
+# - v7:android.view.View
+# - v8:android.view.ViewGroup
+#
+# - return:android.view.View
+
+getView-BB@0x0 : [ getView-BB@0x4 getView-BB@0x28 ]
+	0       (00000000) if-nez               v7, +14
+
+getView-BB@0x4 : [ getView-BB@0x28 ]
+	1       (00000004) iget-object          v2, v5, Lcom/afwsamples/testdpc/policy/FactoryResetProtectionPolicyFragment$FrpAccountsAdapter;->this$0 Lcom/afwsamples/testdpc/policy/FactoryResetProtectionPolicyFragment;
+	2       (00000008) invoke-virtual       v2, Lcom/afwsamples/testdpc/policy/FactoryResetProtectionPolicyFragment;->getActivity()Landroid/app/Activity;
+	3       (0000000e) move-result-object   v2
+	4       (00000010) invoke-virtual       v2, Landroid/app/Activity;->getLayoutInflater()Landroid/view/LayoutInflater;
+	5       (00000016) move-result-object   v2
+	6       (00000018) const                v3, 2131427382 # [1.847637866642219e+38]
+	7       (0000001e) const/4              v4, 0
+	8       (00000020) invoke-virtual       v2, v3, v8, v4, Landroid/view/LayoutInflater;->inflate(I Landroid/view/ViewGroup; Z)Landroid/view/View;
+	9       (00000026) move-result-object   v7
+
+getView-BB@0x28 : 
+	10      (00000028) const                v2, 2131296443 # [1.8210802823312936e+38]
+	11      (0000002e) invoke-virtual       v7, v2, Landroid/view/View;->findViewById(I)Landroid/view/View;
+	12      (00000034) move-result-object   v0
+	13      (00000036) check-cast           v0, Landroid/widget/TextView;
+	14      (0000003a) iget-object          v2, v5, Lcom/afwsamples/testdpc/policy/FactoryResetProtectionPolicyFragment$FrpAccountsAdapter;->this$0 Lcom/afwsamples/testdpc/policy/FactoryResetProtectionPolicyFragment;
+	15      (0000003e) invoke-static        v2, Lcom/afwsamples/testdpc/policy/FactoryResetProtectionPolicyFragment;->access$000(Lcom/afwsamples/testdpc/policy/FactoryResetProtectionPolicyFragment;)Ljava/util/List;
+	16      (00000044) move-result-object   v2
+	17      (00000046) invoke-interface     v2, v6, Ljava/util/List;->get(I)Ljava/lang/Object;
+	18      (0000004c) move-result-object   v2
+	19      (0000004e) check-cast           v2, Ljava/lang/CharSequence;
+	20      (00000052) invoke-virtual       v0, v2, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+	21      (00000058) const                v2, 2131296568 # [1.821105635343298e+38]
+	22      (0000005e) invoke-virtual       v7, v2, Landroid/view/View;->findViewById(I)Landroid/view/View;
+	23      (00000064) move-result-object   v1
+	24      (00000066) check-cast           v1, Landroid/widget/Button;
+	25      (0000006a) new-instance         v2, Lcom/afwsamples/testdpc/policy/FactoryResetProtectionPolicyFragment$FrpAccountsAdapter$$Lambda$0;
+	26      (0000006e) invoke-direct        v2, v5, v6, Lcom/afwsamples/testdpc/policy/FactoryResetProtectionPolicyFragment$FrpAccountsAdapter$$Lambda$0;-><init>(Lcom/afwsamples/testdpc/policy/FactoryResetProtectionPolicyFragment$FrpAccountsAdapter; I)V
+	27      (00000074) invoke-virtual       v1, v2, Landroid/widget/Button;->setOnClickListener(Landroid/view/View$OnClickListener;)V
+	28      (0000007a) return-object        v7
+

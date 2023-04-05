@@ -1,0 +1,18 @@
+# Lcom/afwsamples/testdpc/profilepolicy/addsystemapps/EnableSystemAppsByIntentFragment$3;->onClick(Landroid/content/DialogInterface; I)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:android.content.DialogInterface
+# - v4:int
+#
+# - return:void
+
+onClick-BB@0x0 : 
+	0       (00000000) iget-object          v0, v2, Lcom/afwsamples/testdpc/profilepolicy/addsystemapps/EnableSystemAppsByIntentFragment$3;->this$0 Lcom/afwsamples/testdpc/profilepolicy/addsystemapps/EnableSystemAppsByIntentFragment;
+	1       (00000004) invoke-static        v0, Lcom/afwsamples/testdpc/profilepolicy/addsystemapps/EnableSystemAppsByIntentFragment;->access$400(Lcom/afwsamples/testdpc/profilepolicy/addsystemapps/EnableSystemAppsByIntentFragment;)Landroid/widget/Spinner;
+	2       (0000000a) move-result-object   v0
+	3       (0000000c) const/4              v1, 0
+	4       (0000000e) invoke-virtual       v0, v1, Landroid/widget/Spinner;->setSelection(I)V
+	5       (00000014) invoke-interface     v3, Landroid/content/DialogInterface;->dismiss()V
+	6       (0000001a) return-void          
+

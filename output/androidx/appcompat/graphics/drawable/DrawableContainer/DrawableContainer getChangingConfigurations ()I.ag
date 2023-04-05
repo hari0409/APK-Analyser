@@ -1,0 +1,16 @@
+# Landroidx/appcompat/graphics/drawable/DrawableContainer;->getChangingConfigurations()I [access_flags=public]
+#
+# Parameters:
+# local registers: v0...v2
+#
+# - return:int
+
+getChangingConfigurations-BB@0x0 : 
+	0       (00000000) invoke-super         v2, Landroid/graphics/drawable/Drawable;->getChangingConfigurations()I
+	1       (00000006) move-result          v0
+	2       (00000008) iget-object          v1, v2, Landroidx/appcompat/graphics/drawable/DrawableContainer;->mDrawableContainerState Landroidx/appcompat/graphics/drawable/DrawableContainer$DrawableContainerState;
+	3       (0000000c) invoke-virtual       v1, Landroidx/appcompat/graphics/drawable/DrawableContainer$DrawableContainerState;->getChangingConfigurations()I
+	4       (00000012) move-result          v1
+	5       (00000014) or-int/2addr         v0, v1
+	6       (00000016) return               v0
+

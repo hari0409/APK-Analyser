@@ -1,0 +1,292 @@
+# Landroidx/multidex/MultiDexExtractor;->performExtractions()Ljava/util/List; [access_flags=private]
+#
+# Parameters:
+# local registers: v0...v14
+#
+# - return:java.util.List
+
+performExtractions-BB@0x0 : [ performExtractions-BB@0x52 ]
+	0       (00000000) new-instance         v10, Ljava/lang/StringBuilder;
+	1       (00000004) invoke-direct        v10, Ljava/lang/StringBuilder;-><init>()V
+	2       (0000000a) iget-object          v11, v14, Landroidx/multidex/MultiDexExtractor;->sourceApk Ljava/io/File;
+	3       (0000000e) invoke-virtual       v11, Ljava/io/File;->getName()Ljava/lang/String;
+	4       (00000014) move-result-object   v11
+	5       (00000016) invoke-virtual       v10, v11, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	6       (0000001c) move-result-object   v10
+	7       (0000001e) const-string         v11, '.classes'
+	8       (00000022) invoke-virtual       v10, v11, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	9       (00000028) move-result-object   v10
+	10      (0000002a) invoke-virtual       v10, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+	11      (00000030) move-result-object   v4
+	12      (00000032) invoke-direct        v14, Landroidx/multidex/MultiDexExtractor;->clearDexDir()V
+	13      (00000038) new-instance         v6, Ljava/util/ArrayList;
+	14      (0000003c) invoke-direct        v6, Ljava/util/ArrayList;-><init>()V
+	15      (00000042) new-instance         v0, Ljava/util/zip/ZipFile;
+	16      (00000046) iget-object          v10, v14, Landroidx/multidex/MultiDexExtractor;->sourceApk Ljava/io/File;
+	17      (0000004a) invoke-direct        v0, v10, Ljava/util/zip/ZipFile;-><init>(Ljava/io/File;)V
+	18      (00000050) const/4              v9, 2
+
+performExtractions-BB@0x52 : [ performExtractions-BB@0x8c ]
+	19      (00000052) new-instance         v10, Ljava/lang/StringBuilder;
+	20      (00000056) invoke-direct        v10, Ljava/lang/StringBuilder;-><init>()V
+	21      (0000005c) const-string         v11, 'classes'
+	22      (00000060) invoke-virtual       v10, v11, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	23      (00000066) move-result-object   v10
+	24      (00000068) invoke-virtual       v10, v9, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+	25      (0000006e) move-result-object   v10
+	26      (00000070) const-string         v11, '.dex'
+	27      (00000074) invoke-virtual       v10, v11, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	28      (0000007a) move-result-object   v10
+	29      (0000007c) invoke-virtual       v10, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+	30      (00000082) move-result-object   v10
+	31      (00000084) invoke-virtual       v0, v10, Ljava/util/zip/ZipFile;->getEntry(Ljava/lang/String;)Ljava/util/zip/ZipEntry;
+	32      (0000008a) move-result-object   v1
+	52:119
+	(Ljava/lang/Throwable; -> 20e performExtractions-BB@0x20e)
+
+performExtractions-BB@0x8c : [ performExtractions-BB@0x90 performExtractions-BB@0x300 ]
+	33      (0000008c) if-eqz               v1, +13a
+	52:119
+	(Ljava/lang/Throwable; -> 20e performExtractions-BB@0x20e)
+
+performExtractions-BB@0x90 : [ performExtractions-BB@0x106 ]
+	34      (00000090) new-instance         v10, Ljava/lang/StringBuilder;
+	35      (00000094) invoke-direct        v10, Ljava/lang/StringBuilder;-><init>()V
+	36      (0000009a) invoke-virtual       v10, v4, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	37      (000000a0) move-result-object   v10
+	38      (000000a2) invoke-virtual       v10, v9, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+	39      (000000a8) move-result-object   v10
+	40      (000000aa) const-string         v11, '.zip'
+	41      (000000ae) invoke-virtual       v10, v11, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	42      (000000b4) move-result-object   v10
+	43      (000000b6) invoke-virtual       v10, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+	44      (000000bc) move-result-object   v5
+	45      (000000be) new-instance         v3, Landroidx/multidex/MultiDexExtractor$ExtractedDex;
+	46      (000000c2) iget-object          v10, v14, Landroidx/multidex/MultiDexExtractor;->dexDir Ljava/io/File;
+	47      (000000c6) invoke-direct        v3, v10, v5, Landroidx/multidex/MultiDexExtractor$ExtractedDex;-><init>(Ljava/io/File; Ljava/lang/String;)V
+	48      (000000cc) invoke-interface     v6, v3, Ljava/util/List;->add(Ljava/lang/Object;)Z
+	49      (000000d2) const-string         v10, 'MultiDex'
+	50      (000000d6) new-instance         v11, Ljava/lang/StringBuilder;
+	51      (000000da) invoke-direct        v11, Ljava/lang/StringBuilder;-><init>()V
+	52      (000000e0) const-string         v12, 'Extraction is needed for file '
+	53      (000000e4) invoke-virtual       v11, v12, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	54      (000000ea) move-result-object   v11
+	55      (000000ec) invoke-virtual       v11, v3, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+	56      (000000f2) move-result-object   v11
+	57      (000000f4) invoke-virtual       v11, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+	58      (000000fa) move-result-object   v11
+	59      (000000fc) invoke-static        v10, v11, Landroid/util/Log;->i(Ljava/lang/String; Ljava/lang/String;)I
+	60      (00000102) const/4              v8, 0
+	61      (00000104) const/4              v7, 0
+	52:119
+	(Ljava/lang/Throwable; -> 20e performExtractions-BB@0x20e)
+
+performExtractions-BB@0x106 : [ performExtractions-BB@0x10c performExtractions-BB@0x260 ]
+	62      (00000106) const/4              v10, 3
+	63      (00000108) if-ge                v8, v10, +ac
+	52:119
+	(Ljava/lang/Throwable; -> 20e performExtractions-BB@0x20e)
+
+performExtractions-BB@0x10c : [ performExtractions-BB@0x110 performExtractions-BB@0x260 ]
+	64      (0000010c) if-nez               v7, +aa
+	52:119
+	(Ljava/lang/Throwable; -> 20e performExtractions-BB@0x20e)
+
+performExtractions-BB@0x110 : [ performExtractions-BB@0x11a ]
+	65      (00000110) add-int/lit8         v8, v8, 1
+	66      (00000114) invoke-static        v0, v1, v3, v4, Landroidx/multidex/MultiDexExtractor;->extract(Ljava/util/zip/ZipFile; Ljava/util/zip/ZipEntry; Ljava/io/File; Ljava/lang/String;)V
+	52:119
+	(Ljava/lang/Throwable; -> 20e performExtractions-BB@0x20e)
+
+performExtractions-BB@0x11a : [ performExtractions-BB@0x128 ]
+	67      (0000011a) invoke-static        v3, Landroidx/multidex/MultiDexExtractor;->getZipCrc(Ljava/io/File;)J
+	68      (00000120) move-result-wide     v10
+	69      (00000122) iput-wide            v10, v3, Landroidx/multidex/MultiDexExtractor$ExtractedDex;->crc J
+	70      (00000126) const/4              v7, 1
+	11a:125
+	(Ljava/lang/Throwable; -> 20e performExtractions-BB@0x20e)
+	(Ljava/io/IOException; -> 218 performExtractions-BB@0x218)
+
+performExtractions-BB@0x128 : [ performExtractions-BB@0x146 performExtractions-BB@0x258 ]
+	71      (00000128) const-string         v11, 'MultiDex'
+	72      (0000012c) new-instance         v10, Ljava/lang/StringBuilder;
+	73      (00000130) invoke-direct        v10, Ljava/lang/StringBuilder;-><init>()V
+	74      (00000136) const-string         v12, 'Extraction '
+	75      (0000013a) invoke-virtual       v10, v12, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	76      (00000140) move-result-object   v12
+	77      (00000142) if-eqz               v7, +8b
+	128:209
+	(Ljava/lang/Throwable; -> 20e performExtractions-BB@0x20e)
+
+performExtractions-BB@0x146 : [ performExtractions-BB@0x14a ]
+	78      (00000146) const-string         v10, 'succeeded'
+	128:209
+	(Ljava/lang/Throwable; -> 20e performExtractions-BB@0x20e)
+
+performExtractions-BB@0x14a : [ performExtractions-BB@0x1b4 performExtractions-BB@0x106 ]
+	79      (0000014a) invoke-virtual       v12, v10, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	80      (00000150) move-result-object   v10
+	81      (00000152) const-string         v12, " '"
+	82      (00000156) invoke-virtual       v10, v12, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	83      (0000015c) move-result-object   v10
+	84      (0000015e) invoke-virtual       v3, Landroidx/multidex/MultiDexExtractor$ExtractedDex;->getAbsolutePath()Ljava/lang/String;
+	85      (00000164) move-result-object   v12
+	86      (00000166) invoke-virtual       v10, v12, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	87      (0000016c) move-result-object   v10
+	88      (0000016e) const-string         v12, "': length "
+	89      (00000172) invoke-virtual       v10, v12, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	90      (00000178) move-result-object   v10
+	91      (0000017a) invoke-virtual       v3, Landroidx/multidex/MultiDexExtractor$ExtractedDex;->length()J
+	92      (00000180) move-result-wide     v12
+	93      (00000182) invoke-virtual       v10, v12, v13, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+	94      (00000188) move-result-object   v10
+	95      (0000018a) const-string         v12, ' - crc: '
+	96      (0000018e) invoke-virtual       v10, v12, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	97      (00000194) move-result-object   v10
+	98      (00000196) iget-wide            v12, v3, Landroidx/multidex/MultiDexExtractor$ExtractedDex;->crc J
+	99      (0000019a) invoke-virtual       v10, v12, v13, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+	100     (000001a0) move-result-object   v10
+	101     (000001a2) invoke-virtual       v10, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+	102     (000001a8) move-result-object   v10
+	103     (000001aa) invoke-static        v11, v10, Landroid/util/Log;->i(Ljava/lang/String; Ljava/lang/String;)I
+	104     (000001b0) if-nez               v7, -55
+	128:209
+	(Ljava/lang/Throwable; -> 20e performExtractions-BB@0x20e)
+
+performExtractions-BB@0x1b4 : [ performExtractions-BB@0x1c6 performExtractions-BB@0x106 ]
+	105     (000001b4) invoke-virtual       v3, Landroidx/multidex/MultiDexExtractor$ExtractedDex;->delete()Z
+	106     (000001ba) invoke-virtual       v3, Landroidx/multidex/MultiDexExtractor$ExtractedDex;->exists()Z
+	107     (000001c0) move-result          v10
+	108     (000001c2) if-eqz               v10, -5e
+	128:209
+	(Ljava/lang/Throwable; -> 20e performExtractions-BB@0x20e)
+
+performExtractions-BB@0x1c6 : [ performExtractions-BB@0x106 ]
+	109     (000001c6) const-string         v10, 'MultiDex'
+	110     (000001ca) new-instance         v11, Ljava/lang/StringBuilder;
+	111     (000001ce) invoke-direct        v11, Ljava/lang/StringBuilder;-><init>()V
+	112     (000001d4) const-string         v12, "Failed to delete corrupted secondary dex '"
+	113     (000001d8) invoke-virtual       v11, v12, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	114     (000001de) move-result-object   v11
+	115     (000001e0) invoke-virtual       v3, Landroidx/multidex/MultiDexExtractor$ExtractedDex;->getPath()Ljava/lang/String;
+	116     (000001e6) move-result-object   v12
+	117     (000001e8) invoke-virtual       v11, v12, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	118     (000001ee) move-result-object   v11
+	119     (000001f0) const-string         v12, "'"
+	120     (000001f4) invoke-virtual       v11, v12, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	121     (000001fa) move-result-object   v11
+	122     (000001fc) invoke-virtual       v11, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+	123     (00000202) move-result-object   v11
+	124     (00000204) invoke-static        v10, v11, Landroid/util/Log;->w(Ljava/lang/String; Ljava/lang/String;)I
+	125     (0000020a) goto/16              -82
+
+performExtractions-BB@0x20e : [ performExtractions-BB@0x210 ]
+	126     (0000020e) move-exception       v10
+
+performExtractions-BB@0x210 : [ performExtractions-BB@0x216 ]
+	127     (00000210) invoke-virtual       v0, Ljava/util/zip/ZipFile;->close()V
+	210:215
+	(Ljava/io/IOException; -> 31a performExtractions-BB@0x31a)
+
+performExtractions-BB@0x216 : 
+	128     (00000216) throw                v10
+
+performExtractions-BB@0x218 : [ performExtractions-BB@0x21c ]
+	129     (00000218) move-exception       v2
+	130     (0000021a) const/4              v7, 0
+
+performExtractions-BB@0x21c : [ performExtractions-BB@0x128 ]
+	131     (0000021c) const-string         v10, 'MultiDex'
+	132     (00000220) new-instance         v11, Ljava/lang/StringBuilder;
+	133     (00000224) invoke-direct        v11, Ljava/lang/StringBuilder;-><init>()V
+	134     (0000022a) const-string         v12, 'Failed to read crc from '
+	135     (0000022e) invoke-virtual       v11, v12, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	136     (00000234) move-result-object   v11
+	137     (00000236) invoke-virtual       v3, Landroidx/multidex/MultiDexExtractor$ExtractedDex;->getAbsolutePath()Ljava/lang/String;
+	138     (0000023c) move-result-object   v12
+	139     (0000023e) invoke-virtual       v11, v12, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	140     (00000244) move-result-object   v11
+	141     (00000246) invoke-virtual       v11, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+	142     (0000024c) move-result-object   v11
+	143     (0000024e) invoke-static        v10, v11, v2, Landroid/util/Log;->w(Ljava/lang/String; Ljava/lang/String; Ljava/lang/Throwable;)I
+	144     (00000254) goto/16              -96
+	21c:2f9
+	(Ljava/lang/Throwable; -> 20e performExtractions-BB@0x20e)
+
+performExtractions-BB@0x258 : [ performExtractions-BB@0x14a ]
+	145     (00000258) const-string         v10, 'failed'
+	146     (0000025c) goto/16              -89
+	21c:2f9
+	(Ljava/lang/Throwable; -> 20e performExtractions-BB@0x20e)
+
+performExtractions-BB@0x260 : [ performExtractions-BB@0x264 performExtractions-BB@0x2be ]
+	147     (00000260) if-nez               v7, +2f
+	21c:2f9
+	(Ljava/lang/Throwable; -> 20e performExtractions-BB@0x20e)
+
+performExtractions-BB@0x264 : 
+	148     (00000264) new-instance         v10, Ljava/io/IOException;
+	149     (00000268) new-instance         v11, Ljava/lang/StringBuilder;
+	150     (0000026c) invoke-direct        v11, Ljava/lang/StringBuilder;-><init>()V
+	151     (00000272) const-string         v12, 'Could not create zip file '
+	152     (00000276) invoke-virtual       v11, v12, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	153     (0000027c) move-result-object   v11
+	154     (0000027e) invoke-virtual       v3, Landroidx/multidex/MultiDexExtractor$ExtractedDex;->getAbsolutePath()Ljava/lang/String;
+	155     (00000284) move-result-object   v12
+	156     (00000286) invoke-virtual       v11, v12, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	157     (0000028c) move-result-object   v11
+	158     (0000028e) const-string         v12, ' for secondary dex ('
+	159     (00000292) invoke-virtual       v11, v12, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	160     (00000298) move-result-object   v11
+	161     (0000029a) invoke-virtual       v11, v9, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+	162     (000002a0) move-result-object   v11
+	163     (000002a2) const-string         v12, ')'
+	164     (000002a6) invoke-virtual       v11, v12, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	165     (000002ac) move-result-object   v11
+	166     (000002ae) invoke-virtual       v11, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+	167     (000002b4) move-result-object   v11
+	168     (000002b6) invoke-direct        v10, v11, Ljava/io/IOException;-><init>(Ljava/lang/String;)V
+	169     (000002bc) throw                v10
+	21c:2f9
+	(Ljava/lang/Throwable; -> 20e performExtractions-BB@0x20e)
+
+performExtractions-BB@0x2be : [ performExtractions-BB@0x8c ]
+	170     (000002be) add-int/lit8         v9, v9, 1
+	171     (000002c2) new-instance         v10, Ljava/lang/StringBuilder;
+	172     (000002c6) invoke-direct        v10, Ljava/lang/StringBuilder;-><init>()V
+	173     (000002cc) const-string         v11, 'classes'
+	174     (000002d0) invoke-virtual       v10, v11, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	175     (000002d6) move-result-object   v10
+	176     (000002d8) invoke-virtual       v10, v9, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+	177     (000002de) move-result-object   v10
+	178     (000002e0) const-string         v11, '.dex'
+	179     (000002e4) invoke-virtual       v10, v11, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	180     (000002ea) move-result-object   v10
+	181     (000002ec) invoke-virtual       v10, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+	182     (000002f2) move-result-object   v10
+	183     (000002f4) invoke-virtual       v0, v10, Ljava/util/zip/ZipFile;->getEntry(Ljava/lang/String;)Ljava/util/zip/ZipEntry;
+	184     (000002fa) move-result-object   v1
+	185     (000002fc) goto/16              -138
+
+performExtractions-BB@0x300 : [ performExtractions-BB@0x306 ]
+	186     (00000300) invoke-virtual       v0, Ljava/util/zip/ZipFile;->close()V
+	300:305
+	(Ljava/io/IOException; -> 308 performExtractions-BB@0x308)
+
+performExtractions-BB@0x306 : 
+	187     (00000306) return-object        v6
+
+performExtractions-BB@0x308 : [ performExtractions-BB@0x306 ]
+	188     (00000308) move-exception       v2
+	189     (0000030a) const-string         v10, 'MultiDex'
+	190     (0000030e) const-string         v11, 'Failed to close resource'
+	191     (00000312) invoke-static        v10, v11, v2, Landroid/util/Log;->w(Ljava/lang/String; Ljava/lang/String; Ljava/lang/Throwable;)I
+	192     (00000318) goto                 -9
+
+performExtractions-BB@0x31a : [ performExtractions-BB@0x216 ]
+	193     (0000031a) move-exception       v2
+	194     (0000031c) const-string         v11, 'MultiDex'
+	195     (00000320) const-string         v12, 'Failed to close resource'
+	196     (00000324) invoke-static        v11, v12, v2, Landroid/util/Log;->w(Ljava/lang/String; Ljava/lang/String; Ljava/lang/Throwable;)I
+	197     (0000032a) goto/16              -8a
+

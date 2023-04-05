@@ -1,0 +1,18 @@
+# Landroidx/appcompat/view/ViewPropertyAnimatorCompatSet;->setDuration(J)Landroidx/appcompat/view/ViewPropertyAnimatorCompatSet; [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:long
+#
+# - return:androidx.appcompat.view.ViewPropertyAnimatorCompatSet
+
+setDuration-BB@0x0 : [ setDuration-BB@0x8 setDuration-BB@0xc ]
+	0       (00000000) iget-boolean         v0, v1, Landroidx/appcompat/view/ViewPropertyAnimatorCompatSet;->mIsStarted Z
+	1       (00000004) if-nez               v0, +4
+
+setDuration-BB@0x8 : [ setDuration-BB@0xc ]
+	2       (00000008) iput-wide            v2, v1, Landroidx/appcompat/view/ViewPropertyAnimatorCompatSet;->mDuration J
+
+setDuration-BB@0xc : 
+	3       (0000000c) return-object        v1
+

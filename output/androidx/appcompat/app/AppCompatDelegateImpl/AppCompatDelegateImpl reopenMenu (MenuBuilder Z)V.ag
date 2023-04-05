@@ -1,0 +1,120 @@
+# Landroidx/appcompat/app/AppCompatDelegateImpl;->reopenMenu(Landroidx/appcompat/view/menu/MenuBuilder; Z)V [access_flags=private]
+#
+# Parameters:
+# - local registers: v0...v7
+# - v8:androidx.appcompat.view.menu.MenuBuilder
+# - v9:boolean
+#
+# - return:void
+
+reopenMenu-BB@0x0 : [ reopenMenu-BB@0x10 reopenMenu-BB@0x10c ]
+	0       (00000000) const/16             v6, 108
+	1       (00000004) const/4              v5, 1
+	2       (00000006) const/4              v4, 0
+	3       (00000008) iget-object          v2, v7, Landroidx/appcompat/app/AppCompatDelegateImpl;->mDecorContentParent Landroidx/appcompat/widget/DecorContentParent;
+	4       (0000000c) if-eqz               v2, +80
+
+reopenMenu-BB@0x10 : [ reopenMenu-BB@0x20 reopenMenu-BB@0x10c ]
+	5       (00000010) iget-object          v2, v7, Landroidx/appcompat/app/AppCompatDelegateImpl;->mDecorContentParent Landroidx/appcompat/widget/DecorContentParent;
+	6       (00000014) invoke-interface     v2, Landroidx/appcompat/widget/DecorContentParent;->canShowOverflowMenu()Z
+	7       (0000001a) move-result          v2
+	8       (0000001c) if-eqz               v2, +78
+
+reopenMenu-BB@0x20 : [ reopenMenu-BB@0x38 reopenMenu-BB@0x48 ]
+	9       (00000020) iget-object          v2, v7, Landroidx/appcompat/app/AppCompatDelegateImpl;->mContext Landroid/content/Context;
+	10      (00000024) invoke-static        v2, Landroid/view/ViewConfiguration;->get(Landroid/content/Context;)Landroid/view/ViewConfiguration;
+	11      (0000002a) move-result-object   v2
+	12      (0000002c) invoke-virtual       v2, Landroid/view/ViewConfiguration;->hasPermanentMenuKey()Z
+	13      (00000032) move-result          v2
+	14      (00000034) if-eqz               v2, +a
+
+reopenMenu-BB@0x38 : [ reopenMenu-BB@0x48 reopenMenu-BB@0x10c ]
+	15      (00000038) iget-object          v2, v7, Landroidx/appcompat/app/AppCompatDelegateImpl;->mDecorContentParent Landroidx/appcompat/widget/DecorContentParent;
+	16      (0000003c) invoke-interface     v2, Landroidx/appcompat/widget/DecorContentParent;->isOverflowMenuShowPending()Z
+	17      (00000042) move-result          v2
+	18      (00000044) if-eqz               v2, +64
+
+reopenMenu-BB@0x48 : [ reopenMenu-BB@0x60 reopenMenu-BB@0x64 ]
+	19      (00000048) invoke-virtual       v7, Landroidx/appcompat/app/AppCompatDelegateImpl;->getWindowCallback()Landroid/view/Window$Callback;
+	20      (0000004e) move-result-object   v0
+	21      (00000050) iget-object          v2, v7, Landroidx/appcompat/app/AppCompatDelegateImpl;->mDecorContentParent Landroidx/appcompat/widget/DecorContentParent;
+	22      (00000054) invoke-interface     v2, Landroidx/appcompat/widget/DecorContentParent;->isOverflowMenuShowing()Z
+	23      (0000005a) move-result          v2
+	24      (0000005c) if-eqz               v2, +4
+
+reopenMenu-BB@0x60 : [ reopenMenu-BB@0x64 reopenMenu-BB@0xe6 ]
+	25      (00000060) if-nez               v9, +43
+
+reopenMenu-BB@0x64 : [ reopenMenu-BB@0x68 reopenMenu-BB@0xe4 ]
+	26      (00000064) if-eqz               v0, +40
+
+reopenMenu-BB@0x68 : [ reopenMenu-BB@0x70 reopenMenu-BB@0xe4 ]
+	27      (00000068) iget-boolean         v2, v7, Landroidx/appcompat/app/AppCompatDelegateImpl;->mIsDestroyed Z
+	28      (0000006c) if-nez               v2, +3c
+
+reopenMenu-BB@0x70 : [ reopenMenu-BB@0x78 reopenMenu-BB@0xa4 ]
+	29      (00000070) iget-boolean         v2, v7, Landroidx/appcompat/app/AppCompatDelegateImpl;->mInvalidatePanelMenuPosted Z
+	30      (00000074) if-eqz               v2, +18
+
+reopenMenu-BB@0x78 : [ reopenMenu-BB@0x84 reopenMenu-BB@0xa4 ]
+	31      (00000078) iget                 v2, v7, Landroidx/appcompat/app/AppCompatDelegateImpl;->mInvalidatePanelMenuFeatures I
+	32      (0000007c) and-int/lit8         v2, v2, 1
+	33      (00000080) if-eqz               v2, +12
+
+reopenMenu-BB@0x84 : [ reopenMenu-BB@0xa4 ]
+	34      (00000084) iget-object          v2, v7, Landroidx/appcompat/app/AppCompatDelegateImpl;->mWindow Landroid/view/Window;
+	35      (00000088) invoke-virtual       v2, Landroid/view/Window;->getDecorView()Landroid/view/View;
+	36      (0000008e) move-result-object   v2
+	37      (00000090) iget-object          v3, v7, Landroidx/appcompat/app/AppCompatDelegateImpl;->mInvalidatePanelMenuRunnable Ljava/lang/Runnable;
+	38      (00000094) invoke-virtual       v2, v3, Landroid/view/View;->removeCallbacks(Ljava/lang/Runnable;)Z
+	39      (0000009a) iget-object          v2, v7, Landroidx/appcompat/app/AppCompatDelegateImpl;->mInvalidatePanelMenuRunnable Ljava/lang/Runnable;
+	40      (0000009e) invoke-interface     v2, Ljava/lang/Runnable;->run()V
+
+reopenMenu-BB@0xa4 : [ reopenMenu-BB@0xb4 reopenMenu-BB@0xe4 ]
+	41      (000000a4) invoke-virtual       v7, v4, v5, Landroidx/appcompat/app/AppCompatDelegateImpl;->getPanelState(I Z)Landroidx/appcompat/app/AppCompatDelegateImpl$PanelFeatureState;
+	42      (000000aa) move-result-object   v1
+	43      (000000ac) iget-object          v2, v1, Landroidx/appcompat/app/AppCompatDelegateImpl$PanelFeatureState;->menu Landroidx/appcompat/view/menu/MenuBuilder;
+	44      (000000b0) if-eqz               v2, +1a
+
+reopenMenu-BB@0xb4 : [ reopenMenu-BB@0xbc reopenMenu-BB@0xe4 ]
+	45      (000000b4) iget-boolean         v2, v1, Landroidx/appcompat/app/AppCompatDelegateImpl$PanelFeatureState;->refreshMenuContent Z
+	46      (000000b8) if-nez               v2, +16
+
+reopenMenu-BB@0xbc : [ reopenMenu-BB@0xd0 reopenMenu-BB@0xe4 ]
+	47      (000000bc) iget-object          v2, v1, Landroidx/appcompat/app/AppCompatDelegateImpl$PanelFeatureState;->createdPanelView Landroid/view/View;
+	48      (000000c0) iget-object          v3, v1, Landroidx/appcompat/app/AppCompatDelegateImpl$PanelFeatureState;->menu Landroidx/appcompat/view/menu/MenuBuilder;
+	49      (000000c4) invoke-interface     v0, v4, v2, v3, Landroid/view/Window$Callback;->onPreparePanel(I Landroid/view/View; Landroid/view/Menu;)Z
+	50      (000000ca) move-result          v2
+	51      (000000cc) if-eqz               v2, +c
+
+reopenMenu-BB@0xd0 : [ reopenMenu-BB@0xe4 ]
+	52      (000000d0) iget-object          v2, v1, Landroidx/appcompat/app/AppCompatDelegateImpl$PanelFeatureState;->menu Landroidx/appcompat/view/menu/MenuBuilder;
+	53      (000000d4) invoke-interface     v0, v6, v2, Landroid/view/Window$Callback;->onMenuOpened(I Landroid/view/Menu;)Z
+	54      (000000da) iget-object          v2, v7, Landroidx/appcompat/app/AppCompatDelegateImpl;->mDecorContentParent Landroidx/appcompat/widget/DecorContentParent;
+	55      (000000de) invoke-interface     v2, Landroidx/appcompat/widget/DecorContentParent;->showOverflowMenu()Z
+
+reopenMenu-BB@0xe4 : 
+	56      (000000e4) return-void          
+
+reopenMenu-BB@0xe6 : [ reopenMenu-BB@0xf8 reopenMenu-BB@0xe4 ]
+	57      (000000e6) iget-object          v2, v7, Landroidx/appcompat/app/AppCompatDelegateImpl;->mDecorContentParent Landroidx/appcompat/widget/DecorContentParent;
+	58      (000000ea) invoke-interface     v2, Landroidx/appcompat/widget/DecorContentParent;->hideOverflowMenu()Z
+	59      (000000f0) iget-boolean         v2, v7, Landroidx/appcompat/app/AppCompatDelegateImpl;->mIsDestroyed Z
+	60      (000000f4) if-nez               v2, -8
+
+reopenMenu-BB@0xf8 : [ reopenMenu-BB@0xe4 ]
+	61      (000000f8) invoke-virtual       v7, v4, v5, Landroidx/appcompat/app/AppCompatDelegateImpl;->getPanelState(I Z)Landroidx/appcompat/app/AppCompatDelegateImpl$PanelFeatureState;
+	62      (000000fe) move-result-object   v1
+	63      (00000100) iget-object          v2, v1, Landroidx/appcompat/app/AppCompatDelegateImpl$PanelFeatureState;->menu Landroidx/appcompat/view/menu/MenuBuilder;
+	64      (00000104) invoke-interface     v0, v6, v2, Landroid/view/Window$Callback;->onPanelClosed(I Landroid/view/Menu;)V
+	65      (0000010a) goto                 -13
+
+reopenMenu-BB@0x10c : [ reopenMenu-BB@0xe4 ]
+	66      (0000010c) invoke-virtual       v7, v4, v5, Landroidx/appcompat/app/AppCompatDelegateImpl;->getPanelState(I Z)Landroidx/appcompat/app/AppCompatDelegateImpl$PanelFeatureState;
+	67      (00000112) move-result-object   v1
+	68      (00000114) iput-boolean         v5, v1, Landroidx/appcompat/app/AppCompatDelegateImpl$PanelFeatureState;->refreshDecorView Z
+	69      (00000118) invoke-virtual       v7, v1, v4, Landroidx/appcompat/app/AppCompatDelegateImpl;->closePanel(Landroidx/appcompat/app/AppCompatDelegateImpl$PanelFeatureState; Z)V
+	70      (0000011e) const/4              v2, 0
+	71      (00000120) invoke-direct        v7, v1, v2, Landroidx/appcompat/app/AppCompatDelegateImpl;->openPanel(Landroidx/appcompat/app/AppCompatDelegateImpl$PanelFeatureState; Landroid/view/KeyEvent;)V
+	72      (00000126) goto                 -21
+

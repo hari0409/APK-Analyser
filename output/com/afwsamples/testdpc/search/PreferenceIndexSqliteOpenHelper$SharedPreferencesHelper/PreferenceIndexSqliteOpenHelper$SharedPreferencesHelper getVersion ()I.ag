@@ -1,0 +1,15 @@
+# Lcom/afwsamples/testdpc/search/PreferenceIndexSqliteOpenHelper$SharedPreferencesHelper;->getVersion()I [access_flags=public]
+#
+# Parameters:
+# local registers: v0...v3
+#
+# - return:int
+
+getVersion-BB@0x0 : 
+	0       (00000000) iget-object          v0, v3, Lcom/afwsamples/testdpc/search/PreferenceIndexSqliteOpenHelper$SharedPreferencesHelper;->mSharedPreferences Landroid/content/SharedPreferences;
+	1       (00000004) const-string         v1, 'version'
+	2       (00000008) const/4              v2, 0
+	3       (0000000a) invoke-interface     v0, v1, v2, Landroid/content/SharedPreferences;->getInt(Ljava/lang/String; I)I
+	4       (00000010) move-result          v0
+	5       (00000012) return               v0
+

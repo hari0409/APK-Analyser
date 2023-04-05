@@ -1,0 +1,37 @@
+# Landroidx/appcompat/app/ActionBarDrawerToggle;->toggle()V [access_flags=]
+#
+# Parameters:
+# local registers: v0...v3
+#
+# - return:void
+
+toggle-BB@0x0 : [ toggle-BB@0x22 toggle-BB@0x34 ]
+	0       (00000000) const                v2, 8388611 # [1.1754947712118268e-38]
+	1       (00000006) iget-object          v1, v3, Landroidx/appcompat/app/ActionBarDrawerToggle;->mDrawerLayout Landroidx/drawerlayout/widget/DrawerLayout;
+	2       (0000000a) invoke-virtual       v1, v2, Landroidx/drawerlayout/widget/DrawerLayout;->getDrawerLockMode(I)I
+	3       (00000010) move-result          v0
+	4       (00000012) iget-object          v1, v3, Landroidx/appcompat/app/ActionBarDrawerToggle;->mDrawerLayout Landroidx/drawerlayout/widget/DrawerLayout;
+	5       (00000016) invoke-virtual       v1, v2, Landroidx/drawerlayout/widget/DrawerLayout;->isDrawerVisible(I)Z
+	6       (0000001c) move-result          v1
+	7       (0000001e) if-eqz               v1, +b
+
+toggle-BB@0x22 : [ toggle-BB@0x28 toggle-BB@0x34 ]
+	8       (00000022) const/4              v1, 2
+	9       (00000024) if-eq                v0, v1, +8
+
+toggle-BB@0x28 : [ toggle-BB@0x32 ]
+	10      (00000028) iget-object          v1, v3, Landroidx/appcompat/app/ActionBarDrawerToggle;->mDrawerLayout Landroidx/drawerlayout/widget/DrawerLayout;
+	11      (0000002c) invoke-virtual       v1, v2, Landroidx/drawerlayout/widget/DrawerLayout;->closeDrawer(I)V
+
+toggle-BB@0x32 : 
+	12      (00000032) return-void          
+
+toggle-BB@0x34 : [ toggle-BB@0x3a toggle-BB@0x32 ]
+	13      (00000034) const/4              v1, 1
+	14      (00000036) if-eq                v0, v1, -2
+
+toggle-BB@0x3a : [ toggle-BB@0x32 ]
+	15      (0000003a) iget-object          v1, v3, Landroidx/appcompat/app/ActionBarDrawerToggle;->mDrawerLayout Landroidx/drawerlayout/widget/DrawerLayout;
+	16      (0000003e) invoke-virtual       v1, v2, Landroidx/drawerlayout/widget/DrawerLayout;->openDrawer(I)V
+	17      (00000044) goto                 -9
+

@@ -1,0 +1,115 @@
+# Lcom/afwsamples/testdpc/profilepolicy/ProfilePolicyManagementFragment;->onPreferenceChange(Landroidx/preference/Preference; Ljava/lang/Object;)Z [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v8
+# - v9:androidx.preference.Preference
+# - v10:java.lang.Object
+#
+# - return:boolean
+
+onPreferenceChange-BB@0x0 : [ D:onPreferenceChange-BB@0x1c -755677340:onPreferenceChange-BB@0x60 -461160043:onPreferenceChange-BB@0x24 42729635:onPreferenceChange-BB@0x38 1658562152:onPreferenceChange-BB@0x4c ]
+	0       (00000000) const/4              v4, 0
+	1       (00000002) const/4              v5, 1
+	2       (00000004) invoke-virtual       v9, Landroidx/preference/Preference;->getKey()Ljava/lang/String;
+	3       (0000000a) move-result-object   v3
+	4       (0000000c) const/4              v6, -1
+	5       (0000000e) invoke-virtual       v3, Ljava/lang/String;->hashCode()I
+	6       (00000014) move-result          v7
+	7       (00000016) sparse-switch        v7, +79 (0x108)
+
+onPreferenceChange-BB@0x1c : [ D:onPreferenceChange-BB@0x22 0:onPreferenceChange-BB@0x74 1:onPreferenceChange-BB@0x98 2:onPreferenceChange-BB@0xbc 3:onPreferenceChange-BB@0xe0 ]
+	8       (0000001c) packed-switch        v6, +88 (0x12c)
+
+onPreferenceChange-BB@0x22 : 
+	9       (00000022) return               v4
+
+onPreferenceChange-BB@0x24 : [ onPreferenceChange-BB@0x34 onPreferenceChange-BB@0x1c ]
+	10      (00000024) const-string         v7, 'disable_bluetooth_contact_sharing'
+	11      (00000028) invoke-virtual       v3, v7, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+	12      (0000002e) move-result          v7
+	13      (00000030) if-eqz               v7, -a
+
+onPreferenceChange-BB@0x34 : [ onPreferenceChange-BB@0x1c ]
+	14      (00000034) move                 v6, v4
+	15      (00000036) goto                 -d
+
+onPreferenceChange-BB@0x38 : [ onPreferenceChange-BB@0x48 onPreferenceChange-BB@0x1c ]
+	16      (00000038) const-string         v7, 'disable_cross_profile_caller_id'
+	17      (0000003c) invoke-virtual       v3, v7, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+	18      (00000042) move-result          v7
+	19      (00000044) if-eqz               v7, -14
+
+onPreferenceChange-BB@0x48 : [ onPreferenceChange-BB@0x1c ]
+	20      (00000048) move                 v6, v5
+	21      (0000004a) goto                 -17
+
+onPreferenceChange-BB@0x4c : [ onPreferenceChange-BB@0x5c onPreferenceChange-BB@0x1c ]
+	22      (0000004c) const-string         v7, 'disable_cross_profile_contacts_search'
+	23      (00000050) invoke-virtual       v3, v7, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+	24      (00000056) move-result          v7
+	25      (00000058) if-eqz               v7, -1e
+
+onPreferenceChange-BB@0x5c : [ onPreferenceChange-BB@0x1c ]
+	26      (0000005c) const/4              v6, 2
+	27      (0000005e) goto                 -21
+
+onPreferenceChange-BB@0x60 : [ onPreferenceChange-BB@0x70 onPreferenceChange-BB@0x1c ]
+	28      (00000060) const-string         v7, 'set_profile_organization_name'
+	29      (00000064) invoke-virtual       v3, v7, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+	30      (0000006a) move-result          v7
+	31      (0000006c) if-eqz               v7, -28
+
+onPreferenceChange-BB@0x70 : [ onPreferenceChange-BB@0x1c ]
+	32      (00000070) const/4              v6, 3
+	33      (00000072) goto                 -2b
+
+onPreferenceChange-BB@0x74 : [ onPreferenceChange-BB@0x22 ]
+	34      (00000074) check-cast           v10, Ljava/lang/Boolean;
+	35      (00000078) invoke-virtual       v10, Ljava/lang/Boolean;->booleanValue()Z
+	36      (0000007e) move-result          v0
+	37      (00000080) iget-object          v4, v8, Lcom/afwsamples/testdpc/profilepolicy/ProfilePolicyManagementFragment;->mDevicePolicyManager Landroid/app/admin/DevicePolicyManager;
+	38      (00000084) iget-object          v6, v8, Lcom/afwsamples/testdpc/profilepolicy/ProfilePolicyManagementFragment;->mAdminComponentName Landroid/content/ComponentName;
+	39      (00000088) invoke-virtual       v4, v6, v0, Landroid/app/admin/DevicePolicyManager;->setBluetoothContactSharingDisabled(Landroid/content/ComponentName; Z)V
+	40      (0000008e) invoke-direct        v8, Lcom/afwsamples/testdpc/profilepolicy/ProfilePolicyManagementFragment;->reloadBluetoothContactSharing()V
+	41      (00000094) move                 v4, v5
+	42      (00000096) goto                 -3a
+
+onPreferenceChange-BB@0x98 : [ onPreferenceChange-BB@0x22 ]
+	43      (00000098) check-cast           v10, Ljava/lang/Boolean;
+	44      (0000009c) invoke-virtual       v10, Ljava/lang/Boolean;->booleanValue()Z
+	45      (000000a2) move-result          v1
+	46      (000000a4) iget-object          v4, v8, Lcom/afwsamples/testdpc/profilepolicy/ProfilePolicyManagementFragment;->mDevicePolicyManager Landroid/app/admin/DevicePolicyManager;
+	47      (000000a8) iget-object          v6, v8, Lcom/afwsamples/testdpc/profilepolicy/ProfilePolicyManagementFragment;->mAdminComponentName Landroid/content/ComponentName;
+	48      (000000ac) invoke-virtual       v4, v6, v1, Landroid/app/admin/DevicePolicyManager;->setCrossProfileCallerIdDisabled(Landroid/content/ComponentName; Z)V
+	49      (000000b2) invoke-direct        v8, Lcom/afwsamples/testdpc/profilepolicy/ProfilePolicyManagementFragment;->reloadCrossProfileCallerIdDisableUi()V
+	50      (000000b8) move                 v4, v5
+	51      (000000ba) goto                 -4c
+
+onPreferenceChange-BB@0xbc : [ onPreferenceChange-BB@0x22 ]
+	52      (000000bc) check-cast           v10, Ljava/lang/Boolean;
+	53      (000000c0) invoke-virtual       v10, Ljava/lang/Boolean;->booleanValue()Z
+	54      (000000c6) move-result          v2
+	55      (000000c8) iget-object          v4, v8, Lcom/afwsamples/testdpc/profilepolicy/ProfilePolicyManagementFragment;->mDevicePolicyManager Landroid/app/admin/DevicePolicyManager;
+	56      (000000cc) iget-object          v6, v8, Lcom/afwsamples/testdpc/profilepolicy/ProfilePolicyManagementFragment;->mAdminComponentName Landroid/content/ComponentName;
+	57      (000000d0) invoke-virtual       v4, v6, v2, Landroid/app/admin/DevicePolicyManager;->setCrossProfileContactsSearchDisabled(Landroid/content/ComponentName; Z)V
+	58      (000000d6) invoke-direct        v8, Lcom/afwsamples/testdpc/profilepolicy/ProfilePolicyManagementFragment;->reloadCrossProfileContactsSearchDisableUi()V
+	59      (000000dc) move                 v4, v5
+	60      (000000de) goto                 -5e
+
+onPreferenceChange-BB@0xe0 : [ onPreferenceChange-BB@0x22 ]
+	61      (000000e0) iget-object          v6, v8, Lcom/afwsamples/testdpc/profilepolicy/ProfilePolicyManagementFragment;->mDevicePolicyManager Landroid/app/admin/DevicePolicyManager;
+	62      (000000e4) iget-object          v7, v8, Lcom/afwsamples/testdpc/profilepolicy/ProfilePolicyManagementFragment;->mAdminComponentName Landroid/content/ComponentName;
+	63      (000000e8) move-object          v4, v10
+	64      (000000ea) check-cast           v4, Ljava/lang/String;
+	65      (000000ee) invoke-virtual       v6, v7, v4, Landroid/app/admin/DevicePolicyManager;->setOrganizationName(Landroid/content/ComponentName; Ljava/lang/CharSequence;)V
+	66      (000000f4) iget-object          v4, v8, Lcom/afwsamples/testdpc/profilepolicy/ProfilePolicyManagementFragment;->mSetOrganizationNamePreference Landroidx/preference/Preference;
+	67      (000000f8) check-cast           v10, Ljava/lang/String;
+	68      (000000fc) invoke-virtual       v4, v10, Landroidx/preference/Preference;->setSummary(Ljava/lang/CharSequence;)V
+	69      (00000102) move                 v4, v5
+	70      (00000104) goto                 -71
+
+onPreferenceChange-BB@0x106 : 
+	71      (00000106) nop                  
+	72      (00000108) sparse-switch-payload -2d0ab89c -1b7cbe6b 28c00a3 62dba668
+	73      (0000012c) packed-switch-payload 0 1 2 3
+

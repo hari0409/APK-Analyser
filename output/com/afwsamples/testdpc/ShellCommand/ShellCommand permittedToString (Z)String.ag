@@ -1,0 +1,21 @@
+# Lcom/afwsamples/testdpc/ShellCommand;->permittedToString(Z)Ljava/lang/String; [access_flags=private static]
+#
+# Parameters:
+# - local registers: v0...v0
+# - v1:boolean
+#
+# - return:java.lang.String
+
+permittedToString-BB@0x0 : [ permittedToString-BB@0x4 permittedToString-BB@0xa ]
+	0       (00000000) if-eqz               v1, +5
+
+permittedToString-BB@0x4 : [ permittedToString-BB@0x8 ]
+	1       (00000004) const-string         v0, 'PERMITTED'
+
+permittedToString-BB@0x8 : 
+	2       (00000008) return-object        v0
+
+permittedToString-BB@0xa : [ permittedToString-BB@0x8 ]
+	3       (0000000a) const-string         v0, 'NOT PERMITTED'
+	4       (0000000e) goto                 -3
+

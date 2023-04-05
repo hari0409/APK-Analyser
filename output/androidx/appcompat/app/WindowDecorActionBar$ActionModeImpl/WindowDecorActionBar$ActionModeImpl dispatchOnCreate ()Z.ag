@@ -1,0 +1,28 @@
+# Landroidx/appcompat/app/WindowDecorActionBar$ActionModeImpl;->dispatchOnCreate()Z [access_flags=public]
+#
+# Parameters:
+# local registers: v0...v2
+#
+# - return:boolean
+
+dispatchOnCreate-BB@0x0 : [ dispatchOnCreate-BB@0xa ]
+	0       (00000000) iget-object          v0, v2, Landroidx/appcompat/app/WindowDecorActionBar$ActionModeImpl;->mMenu Landroidx/appcompat/view/menu/MenuBuilder;
+	1       (00000004) invoke-virtual       v0, Landroidx/appcompat/view/menu/MenuBuilder;->stopDispatchingItemsChanged()V
+
+dispatchOnCreate-BB@0xa : 
+	2       (0000000a) iget-object          v0, v2, Landroidx/appcompat/app/WindowDecorActionBar$ActionModeImpl;->mCallback Landroidx/appcompat/view/ActionMode$Callback;
+	3       (0000000e) iget-object          v1, v2, Landroidx/appcompat/app/WindowDecorActionBar$ActionModeImpl;->mMenu Landroidx/appcompat/view/menu/MenuBuilder;
+	4       (00000012) invoke-interface     v0, v2, v1, Landroidx/appcompat/view/ActionMode$Callback;->onCreateActionMode(Landroidx/appcompat/view/ActionMode; Landroid/view/Menu;)Z
+	5       (00000018) move-result          v0
+	6       (0000001a) iget-object          v1, v2, Landroidx/appcompat/app/WindowDecorActionBar$ActionModeImpl;->mMenu Landroidx/appcompat/view/menu/MenuBuilder;
+	7       (0000001e) invoke-virtual       v1, Landroidx/appcompat/view/menu/MenuBuilder;->startDispatchingItemsChanged()V
+	8       (00000024) return               v0
+	a:17
+	(Ljava/lang/Throwable; -> 26 dispatchOnCreate-BB@0x26)
+
+dispatchOnCreate-BB@0x26 : 
+	9       (00000026) move-exception       v0
+	10      (00000028) iget-object          v1, v2, Landroidx/appcompat/app/WindowDecorActionBar$ActionModeImpl;->mMenu Landroidx/appcompat/view/menu/MenuBuilder;
+	11      (0000002c) invoke-virtual       v1, Landroidx/appcompat/view/menu/MenuBuilder;->startDispatchingItemsChanged()V
+	12      (00000032) throw                v0
+

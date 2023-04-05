@@ -1,0 +1,45 @@
+# Lcom/afwsamples/testdpc/common/preference/DpcPreferenceHelper;->joinRequirementList(Ljava/util/List;)Ljava/lang/String; [access_flags=private]
+#
+# Parameters:
+# - local registers: v0...v4
+# - v5:java.util.List
+#
+# - return:java.lang.String
+
+joinRequirementList-BB@0x0 : [ joinRequirementList-BB@0x60 joinRequirementList-BB@0x78 ]
+	0       (00000000) new-instance         v1, Ljava/lang/StringBuilder;
+	1       (00000004) iget-object          v2, v4, Lcom/afwsamples/testdpc/common/preference/DpcPreferenceHelper;->mContext Landroid/content/Context;
+	2       (00000008) const                v3, 2131690132 # [1.9009298978758138e+38]
+	3       (0000000e) invoke-virtual       v2, v3, Landroid/content/Context;->getString(I)Ljava/lang/String;
+	4       (00000014) move-result-object   v2
+	5       (00000016) invoke-direct        v1, v2, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+	6       (0000001c) invoke-interface     v5, Ljava/util/List;->size()I
+	7       (00000022) move-result          v2
+	8       (00000024) add-int/lit8         v2, v2, -1
+	9       (00000028) invoke-interface     v5, v2, Ljava/util/List;->remove(I)Ljava/lang/Object;
+	10      (0000002e) move-result-object   v0
+	11      (00000030) check-cast           v0, Ljava/lang/String;
+	12      (00000034) iget-object          v2, v4, Lcom/afwsamples/testdpc/common/preference/DpcPreferenceHelper;->mContext Landroid/content/Context;
+	13      (00000038) const                v3, 2131690134 # [1.900930303524006e+38]
+	14      (0000003e) invoke-virtual       v2, v3, Landroid/content/Context;->getString(I)Ljava/lang/String;
+	15      (00000044) move-result-object   v2
+	16      (00000046) invoke-static        v2, v5, Landroid/text/TextUtils;->join(Ljava/lang/CharSequence; Ljava/lang/Iterable;)Ljava/lang/String;
+	17      (0000004c) move-result-object   v2
+	18      (0000004e) invoke-virtual       v1, v2, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	19      (00000054) invoke-interface     v5, Ljava/util/List;->isEmpty()Z
+	20      (0000005a) move-result          v2
+	21      (0000005c) if-nez               v2, +e
+
+joinRequirementList-BB@0x60 : [ joinRequirementList-BB@0x78 ]
+	22      (00000060) iget-object          v2, v4, Lcom/afwsamples/testdpc/common/preference/DpcPreferenceHelper;->mContext Landroid/content/Context;
+	23      (00000064) const                v3, 2131690139 # [1.900931317644486e+38]
+	24      (0000006a) invoke-virtual       v2, v3, Landroid/content/Context;->getString(I)Ljava/lang/String;
+	25      (00000070) move-result-object   v2
+	26      (00000072) invoke-virtual       v1, v2, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+joinRequirementList-BB@0x78 : 
+	27      (00000078) invoke-virtual       v1, v0, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	28      (0000007e) invoke-virtual       v1, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+	29      (00000084) move-result-object   v2
+	30      (00000086) return-object        v2
+

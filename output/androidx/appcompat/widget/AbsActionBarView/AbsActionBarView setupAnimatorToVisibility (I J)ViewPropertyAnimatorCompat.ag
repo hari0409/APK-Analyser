@@ -1,0 +1,60 @@
+# Landroidx/appcompat/widget/AbsActionBarView;->setupAnimatorToVisibility(I J)Landroidx/core/view/ViewPropertyAnimatorCompat; [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v7
+# - v8:int
+# - v9:long
+#
+# - return:androidx.core.view.ViewPropertyAnimatorCompat
+
+setupAnimatorToVisibility-BB@0x0 : [ setupAnimatorToVisibility-BB@0xa setupAnimatorToVisibility-BB@0x14 ]
+	0       (00000000) const/4              v4, 0
+	1       (00000002) iget-object          v3, v6, Landroidx/appcompat/widget/AbsActionBarView;->mVisibilityAnim Landroidx/core/view/ViewPropertyAnimatorCompat;
+	2       (00000006) if-eqz               v3, +7
+
+setupAnimatorToVisibility-BB@0xa : [ setupAnimatorToVisibility-BB@0x14 ]
+	3       (0000000a) iget-object          v3, v6, Landroidx/appcompat/widget/AbsActionBarView;->mVisibilityAnim Landroidx/core/view/ViewPropertyAnimatorCompat;
+	4       (0000000e) invoke-virtual       v3, Landroidx/core/view/ViewPropertyAnimatorCompat;->cancel()V
+
+setupAnimatorToVisibility-BB@0x14 : [ setupAnimatorToVisibility-BB@0x18 setupAnimatorToVisibility-BB@0x5c ]
+	5       (00000014) if-nez               v7, +24
+
+setupAnimatorToVisibility-BB@0x18 : [ setupAnimatorToVisibility-BB@0x24 setupAnimatorToVisibility-BB@0x2a ]
+	6       (00000018) invoke-virtual       v6, Landroidx/appcompat/widget/AbsActionBarView;->getVisibility()I
+	7       (0000001e) move-result          v3
+	8       (00000020) if-eqz               v3, +5
+
+setupAnimatorToVisibility-BB@0x24 : [ setupAnimatorToVisibility-BB@0x2a ]
+	9       (00000024) invoke-virtual       v6, v4, Landroidx/appcompat/widget/AbsActionBarView;->setAlpha(F)V
+
+setupAnimatorToVisibility-BB@0x2a : [ setupAnimatorToVisibility-BB@0x5a ]
+	10      (0000002a) invoke-static        v6, Landroidx/core/view/ViewCompat;->animate(Landroid/view/View;)Landroidx/core/view/ViewPropertyAnimatorCompat;
+	11      (00000030) move-result-object   v3
+	12      (00000032) const/high16         v4, 16256 # [1.0]
+	13      (00000036) invoke-virtual       v3, v4, Landroidx/core/view/ViewPropertyAnimatorCompat;->alpha(F)Landroidx/core/view/ViewPropertyAnimatorCompat;
+	14      (0000003c) move-result-object   v0
+	15      (0000003e) invoke-virtual       v0, v8, v9, Landroidx/core/view/ViewPropertyAnimatorCompat;->setDuration(J)Landroidx/core/view/ViewPropertyAnimatorCompat;
+	16      (00000044) iget-object          v3, v6, Landroidx/appcompat/widget/AbsActionBarView;->mVisAnimListener Landroidx/appcompat/widget/AbsActionBarView$VisibilityAnimListener;
+	17      (00000048) invoke-virtual       v3, v0, v7, Landroidx/appcompat/widget/AbsActionBarView$VisibilityAnimListener;->withFinalVisibility(Landroidx/core/view/ViewPropertyAnimatorCompat; I)Landroidx/appcompat/widget/AbsActionBarView$VisibilityAnimListener;
+	18      (0000004e) move-result-object   v3
+	19      (00000050) invoke-virtual       v0, v3, Landroidx/core/view/ViewPropertyAnimatorCompat;->setListener(Landroidx/core/view/ViewPropertyAnimatorListener;)Landroidx/core/view/ViewPropertyAnimatorCompat;
+	20      (00000056) move-object          v1, v0
+	21      (00000058) move-object          v2, v0
+
+setupAnimatorToVisibility-BB@0x5a : 
+	22      (0000005a) return-object        v2
+
+setupAnimatorToVisibility-BB@0x5c : [ setupAnimatorToVisibility-BB@0x5a ]
+	23      (0000005c) invoke-static        v6, Landroidx/core/view/ViewCompat;->animate(Landroid/view/View;)Landroidx/core/view/ViewPropertyAnimatorCompat;
+	24      (00000062) move-result-object   v3
+	25      (00000064) invoke-virtual       v3, v4, Landroidx/core/view/ViewPropertyAnimatorCompat;->alpha(F)Landroidx/core/view/ViewPropertyAnimatorCompat;
+	26      (0000006a) move-result-object   v0
+	27      (0000006c) invoke-virtual       v0, v8, v9, Landroidx/core/view/ViewPropertyAnimatorCompat;->setDuration(J)Landroidx/core/view/ViewPropertyAnimatorCompat;
+	28      (00000072) iget-object          v3, v6, Landroidx/appcompat/widget/AbsActionBarView;->mVisAnimListener Landroidx/appcompat/widget/AbsActionBarView$VisibilityAnimListener;
+	29      (00000076) invoke-virtual       v3, v0, v7, Landroidx/appcompat/widget/AbsActionBarView$VisibilityAnimListener;->withFinalVisibility(Landroidx/core/view/ViewPropertyAnimatorCompat; I)Landroidx/appcompat/widget/AbsActionBarView$VisibilityAnimListener;
+	30      (0000007c) move-result-object   v3
+	31      (0000007e) invoke-virtual       v0, v3, Landroidx/core/view/ViewPropertyAnimatorCompat;->setListener(Landroidx/core/view/ViewPropertyAnimatorListener;)Landroidx/core/view/ViewPropertyAnimatorCompat;
+	32      (00000084) move-object          v1, v0
+	33      (00000086) move-object          v2, v0
+	34      (00000088) goto                 -17
+

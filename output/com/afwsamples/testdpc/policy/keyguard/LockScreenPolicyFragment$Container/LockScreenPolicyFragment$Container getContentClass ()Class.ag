@@ -1,0 +1,11 @@
+# Lcom/afwsamples/testdpc/policy/keyguard/LockScreenPolicyFragment$Container;->getContentClass()Ljava/lang/Class; [access_flags=public]
+#
+# Parameters:
+# local registers: v0...v1
+#
+# - return:java.lang.Class
+
+getContentClass-BB@0x0 : 
+	0       (00000000) const-class          v0, Lcom/afwsamples/testdpc/policy/keyguard/LockScreenPolicyFragment;
+	1       (00000004) return-object        v0
+

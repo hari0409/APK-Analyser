@@ -1,0 +1,22 @@
+# Landroidx/appcompat/view/WindowCallbackWrapper;-><init>(Landroid/view/Window$Callback;)V [access_flags=public constructor]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:android.view.Window$Callback
+#
+# - return:void
+
+<init>-BB@0x0 : [ <init>-BB@0xa <init>-BB@0x1a ]
+	0       (00000000) invoke-direct        v2, Ljava/lang/Object;-><init>()V
+	1       (00000006) if-nez               v3, +a
+
+<init>-BB@0xa : 
+	2       (0000000a) new-instance         v0, Ljava/lang/IllegalArgumentException;
+	3       (0000000e) const-string         v1, 'Window callback may not be null'
+	4       (00000012) invoke-direct        v0, v1, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+	5       (00000018) throw                v0
+
+<init>-BB@0x1a : 
+	6       (0000001a) iput-object          v3, v2, Landroidx/appcompat/view/WindowCallbackWrapper;->mWrapped Landroid/view/Window$Callback;
+	7       (0000001e) return-void          
+

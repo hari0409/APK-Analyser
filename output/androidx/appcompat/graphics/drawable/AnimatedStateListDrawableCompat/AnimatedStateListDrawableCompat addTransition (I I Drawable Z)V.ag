@@ -1,0 +1,25 @@
+# Landroidx/appcompat/graphics/drawable/AnimatedStateListDrawableCompat;->addTransition(I I Landroid/graphics/drawable/Drawable; Z)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:int
+# - v4:int
+# - v5:android.graphics.drawable.Drawable
+# - v6:boolean
+#
+# - return:void
+
+addTransition-BB@0x0 : [ addTransition-BB@0x4 addTransition-BB@0x14 ]
+	0       (00000000) if-nez               v5, +a
+
+addTransition-BB@0x4 : 
+	1       (00000004) new-instance         v0, Ljava/lang/IllegalArgumentException;
+	2       (00000008) const-string         v1, 'Transition drawable must not be null'
+	3       (0000000c) invoke-direct        v0, v1, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+	4       (00000012) throw                v0
+
+addTransition-BB@0x14 : 
+	5       (00000014) iget-object          v0, v2, Landroidx/appcompat/graphics/drawable/AnimatedStateListDrawableCompat;->mState Landroidx/appcompat/graphics/drawable/AnimatedStateListDrawableCompat$AnimatedStateListState;
+	6       (00000018) invoke-virtual       v0, v3, v4, v5, v6, Landroidx/appcompat/graphics/drawable/AnimatedStateListDrawableCompat$AnimatedStateListState;->addTransition(I I Landroid/graphics/drawable/Drawable; Z)I
+	7       (0000001e) return-void          
+

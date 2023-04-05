@@ -1,0 +1,25 @@
+# Landroidx/appcompat/widget/SearchView;->onSearchClicked()V [access_flags=]
+#
+# Parameters:
+# local registers: v0...v2
+#
+# - return:void
+
+onSearchClicked-BB@0x0 : [ onSearchClicked-BB@0x26 onSearchClicked-BB@0x30 ]
+	0       (00000000) const/4              v0, 0
+	1       (00000002) invoke-direct        v2, v0, Landroidx/appcompat/widget/SearchView;->updateViewsVisibility(Z)V
+	2       (00000008) iget-object          v0, v2, Landroidx/appcompat/widget/SearchView;->mSearchSrcTextView Landroidx/appcompat/widget/SearchView$SearchAutoComplete;
+	3       (0000000c) invoke-virtual       v0, Landroidx/appcompat/widget/SearchView$SearchAutoComplete;->requestFocus()Z
+	4       (00000012) iget-object          v0, v2, Landroidx/appcompat/widget/SearchView;->mSearchSrcTextView Landroidx/appcompat/widget/SearchView$SearchAutoComplete;
+	5       (00000016) const/4              v1, 1
+	6       (00000018) invoke-virtual       v0, v1, Landroidx/appcompat/widget/SearchView$SearchAutoComplete;->setImeVisibility(Z)V
+	7       (0000001e) iget-object          v0, v2, Landroidx/appcompat/widget/SearchView;->mOnSearchClickListener Landroid/view/View$OnClickListener;
+	8       (00000022) if-eqz               v0, +7
+
+onSearchClicked-BB@0x26 : [ onSearchClicked-BB@0x30 ]
+	9       (00000026) iget-object          v0, v2, Landroidx/appcompat/widget/SearchView;->mOnSearchClickListener Landroid/view/View$OnClickListener;
+	10      (0000002a) invoke-interface     v0, v2, Landroid/view/View$OnClickListener;->onClick(Landroid/view/View;)V
+
+onSearchClicked-BB@0x30 : 
+	11      (00000030) return-void          
+

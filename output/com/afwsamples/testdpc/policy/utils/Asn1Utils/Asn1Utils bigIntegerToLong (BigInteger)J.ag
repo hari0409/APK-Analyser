@@ -1,0 +1,33 @@
+# Lcom/afwsamples/testdpc/policy/utils/Asn1Utils;->bigIntegerToLong(Ljava/math/BigInteger;)J [access_flags=private static]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:java.math.BigInteger
+#
+# - return:long
+
+bigIntegerToLong-BB@0x0 : [ bigIntegerToLong-BB@0x1e bigIntegerToLong-BB@0x2e ]
+	0       (00000000) const-wide           v0, 9223372036854775807 # [nan]
+	1       (0000000a) invoke-static        v0, v1, Ljava/math/BigInteger;->valueOf(J)Ljava/math/BigInteger;
+	2       (00000010) move-result-object   v0
+	3       (00000012) invoke-virtual       v2, v0, Ljava/math/BigInteger;->compareTo(Ljava/math/BigInteger;)I
+	4       (00000018) move-result          v0
+	5       (0000001a) if-gtz               v0, +a
+
+bigIntegerToLong-BB@0x1e : [ bigIntegerToLong-BB@0x2e bigIntegerToLong-BB@0x3e ]
+	6       (0000001e) sget-object          v0, Ljava/math/BigInteger;->ZERO Ljava/math/BigInteger;
+	7       (00000022) invoke-virtual       v2, v0, Ljava/math/BigInteger;->compareTo(Ljava/math/BigInteger;)I
+	8       (00000028) move-result          v0
+	9       (0000002a) if-gez               v0, +a
+
+bigIntegerToLong-BB@0x2e : 
+	10      (0000002e) new-instance         v0, Ljava/security/cert/CertificateParsingException;
+	11      (00000032) const-string         v1, 'INTEGER out of bounds'
+	12      (00000036) invoke-direct        v0, v1, Ljava/security/cert/CertificateParsingException;-><init>(Ljava/lang/String;)V
+	13      (0000003c) throw                v0
+
+bigIntegerToLong-BB@0x3e : 
+	14      (0000003e) invoke-virtual       v2, Ljava/math/BigInteger;->longValue()J
+	15      (00000044) move-result-wide     v0
+	16      (00000046) return-wide          v0
+

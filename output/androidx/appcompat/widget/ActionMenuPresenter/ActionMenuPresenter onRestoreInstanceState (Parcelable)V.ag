@@ -1,0 +1,35 @@
+# Landroidx/appcompat/widget/ActionMenuPresenter;->onRestoreInstanceState(Landroid/os/Parcelable;)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v5
+# - v6:android.os.Parcelable
+#
+# - return:void
+
+onRestoreInstanceState-BB@0x0 : [ onRestoreInstanceState-BB@0x8 onRestoreInstanceState-BB@0xa ]
+	0       (00000000) instance-of          v3, v6, Landroidx/appcompat/widget/ActionMenuPresenter$SavedState;
+	1       (00000004) if-nez               v3, +3
+
+onRestoreInstanceState-BB@0x8 : 
+	2       (00000008) return-void          
+
+onRestoreInstanceState-BB@0xa : [ onRestoreInstanceState-BB@0x18 onRestoreInstanceState-BB@0x8 ]
+	3       (0000000a) move-object          v1, v6
+	4       (0000000c) check-cast           v1, Landroidx/appcompat/widget/ActionMenuPresenter$SavedState;
+	5       (00000010) iget                 v3, v1, Landroidx/appcompat/widget/ActionMenuPresenter$SavedState;->openSubMenuId I
+	6       (00000014) if-lez               v3, -6
+
+onRestoreInstanceState-BB@0x18 : [ onRestoreInstanceState-BB@0x2c onRestoreInstanceState-BB@0x8 ]
+	7       (00000018) iget-object          v3, v5, Landroidx/appcompat/widget/ActionMenuPresenter;->mMenu Landroidx/appcompat/view/menu/MenuBuilder;
+	8       (0000001c) iget                 v4, v1, Landroidx/appcompat/widget/ActionMenuPresenter$SavedState;->openSubMenuId I
+	9       (00000020) invoke-virtual       v3, v4, Landroidx/appcompat/view/menu/MenuBuilder;->findItem(I)Landroid/view/MenuItem;
+	10      (00000026) move-result-object   v0
+	11      (00000028) if-eqz               v0, -10
+
+onRestoreInstanceState-BB@0x2c : [ onRestoreInstanceState-BB@0x8 ]
+	12      (0000002c) invoke-interface     v0, Landroid/view/MenuItem;->getSubMenu()Landroid/view/SubMenu;
+	13      (00000032) move-result-object   v2
+	14      (00000034) check-cast           v2, Landroidx/appcompat/view/menu/SubMenuBuilder;
+	15      (00000038) invoke-virtual       v5, v2, Landroidx/appcompat/widget/ActionMenuPresenter;->onSubMenuSelected(Landroidx/appcompat/view/menu/SubMenuBuilder;)Z
+	16      (0000003e) goto                 -1b
+

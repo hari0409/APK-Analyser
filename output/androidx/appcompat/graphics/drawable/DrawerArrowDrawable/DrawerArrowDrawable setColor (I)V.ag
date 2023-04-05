@@ -1,0 +1,22 @@
+# Landroidx/appcompat/graphics/drawable/DrawerArrowDrawable;->setColor(I)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:int
+#
+# - return:void
+
+setColor-BB@0x0 : [ setColor-BB@0x10 setColor-BB@0x20 ]
+	0       (00000000) iget-object          v0, v1, Landroidx/appcompat/graphics/drawable/DrawerArrowDrawable;->mPaint Landroid/graphics/Paint;
+	1       (00000004) invoke-virtual       v0, Landroid/graphics/Paint;->getColor()I
+	2       (0000000a) move-result          v0
+	3       (0000000c) if-eq                v2, v0, +a
+
+setColor-BB@0x10 : [ setColor-BB@0x20 ]
+	4       (00000010) iget-object          v0, v1, Landroidx/appcompat/graphics/drawable/DrawerArrowDrawable;->mPaint Landroid/graphics/Paint;
+	5       (00000014) invoke-virtual       v0, v2, Landroid/graphics/Paint;->setColor(I)V
+	6       (0000001a) invoke-virtual       v1, Landroidx/appcompat/graphics/drawable/DrawerArrowDrawable;->invalidateSelf()V
+
+setColor-BB@0x20 : 
+	7       (00000020) return-void          
+

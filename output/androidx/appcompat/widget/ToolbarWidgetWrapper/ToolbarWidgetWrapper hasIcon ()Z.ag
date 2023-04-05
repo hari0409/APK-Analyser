@@ -1,0 +1,21 @@
+# Landroidx/appcompat/widget/ToolbarWidgetWrapper;->hasIcon()Z [access_flags=public]
+#
+# Parameters:
+# local registers: v0...v1
+#
+# - return:boolean
+
+hasIcon-BB@0x0 : [ hasIcon-BB@0x8 hasIcon-BB@0xc ]
+	0       (00000000) iget-object          v0, v1, Landroidx/appcompat/widget/ToolbarWidgetWrapper;->mIcon Landroid/graphics/drawable/Drawable;
+	1       (00000004) if-eqz               v0, +4
+
+hasIcon-BB@0x8 : [ hasIcon-BB@0xa ]
+	2       (00000008) const/4              v0, 1
+
+hasIcon-BB@0xa : 
+	3       (0000000a) return               v0
+
+hasIcon-BB@0xc : [ hasIcon-BB@0xa ]
+	4       (0000000c) const/4              v0, 0
+	5       (0000000e) goto                 -2
+

@@ -1,0 +1,24 @@
+# Landroidx/appcompat/widget/ContentFrameLayout;->setDecorPadding(I I I I)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:int
+# - v3:int
+# - v4:int
+# - v5:int
+#
+# - return:void
+
+setDecorPadding-BB@0x0 : [ setDecorPadding-BB@0x16 setDecorPadding-BB@0x1c ]
+	0       (00000000) iget-object          v0, v1, Landroidx/appcompat/widget/ContentFrameLayout;->mDecorPadding Landroid/graphics/Rect;
+	1       (00000004) invoke-virtual       v0, v2, v3, v4, v5, Landroid/graphics/Rect;->set(I I I I)V
+	2       (0000000a) invoke-static        v1, Landroidx/core/view/ViewCompat;->isLaidOut(Landroid/view/View;)Z
+	3       (00000010) move-result          v0
+	4       (00000012) if-eqz               v0, +5
+
+setDecorPadding-BB@0x16 : [ setDecorPadding-BB@0x1c ]
+	5       (00000016) invoke-virtual       v1, Landroidx/appcompat/widget/ContentFrameLayout;->requestLayout()V
+
+setDecorPadding-BB@0x1c : 
+	6       (0000001c) return-void          
+

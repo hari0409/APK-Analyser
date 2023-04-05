@@ -1,0 +1,43 @@
+# Lcom/afwsamples/testdpc/common/PermissionsHelper;->isPermissionDangerous(Ljava/lang/String; Landroid/content/Context;)Z [access_flags=private static]
+#
+# Parameters:
+# - local registers: v0...v5
+# - v6:java.lang.String
+# - v7:android.content.Context
+#
+# - return:boolean
+
+isPermissionDangerous-BB@0x0 : [ isPermissionDangerous-BB@0x4 ]
+	0       (00000000) const/4              v2, 1
+	1       (00000002) const/4              v3, 0
+
+isPermissionDangerous-BB@0x4 : [ isPermissionDangerous-BB@0x1a isPermissionDangerous-BB@0x3c ]
+	2       (00000004) invoke-virtual       v7, Landroid/content/Context;->getPackageManager()Landroid/content/pm/PackageManager;
+	3       (0000000a) move-result-object   v4
+	4       (0000000c) const/4              v5, 0
+	5       (0000000e) invoke-virtual       v4, v6, v5, Landroid/content/pm/PackageManager;->getPermissionInfo(Ljava/lang/String; I)Landroid/content/pm/PermissionInfo;
+	6       (00000014) move-result-object   v1
+	7       (00000016) if-eqz               v1, +13
+	4:13
+	(Landroid/content/pm/PackageManager$NameNotFoundException; -> 28 isPermissionDangerous-BB@0x28)
+
+isPermissionDangerous-BB@0x1a : [ isPermissionDangerous-BB@0x26 isPermissionDangerous-BB@0x3c ]
+	8       (0000001a) iget                 v4, v1, Landroid/content/pm/PermissionInfo;->protectionLevel I
+	9       (0000001e) and-int/lit8         v4, v4, 15
+	10      (00000022) if-ne                v4, v2, +d
+
+isPermissionDangerous-BB@0x26 : 
+	11      (00000026) return               v2
+
+isPermissionDangerous-BB@0x28 : [ isPermissionDangerous-BB@0x26 ]
+	12      (00000028) move-exception       v0
+	13      (0000002a) sget-object          v2, Lcom/afwsamples/testdpc/common/PermissionsHelper;->TAG Ljava/lang/String;
+	14      (0000002e) const-string         v4, 'Failed to look up permission.'
+	15      (00000032) invoke-static        v2, v4, v0, Landroid/util/Log;->e(Ljava/lang/String; Ljava/lang/String; Ljava/lang/Throwable;)I
+	16      (00000038) move                 v2, v3
+	17      (0000003a) goto                 -a
+
+isPermissionDangerous-BB@0x3c : [ isPermissionDangerous-BB@0x26 ]
+	18      (0000003c) move                 v2, v3
+	19      (0000003e) goto                 -c
+

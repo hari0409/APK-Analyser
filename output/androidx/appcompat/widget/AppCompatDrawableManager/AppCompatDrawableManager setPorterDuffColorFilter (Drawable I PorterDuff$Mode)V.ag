@@ -1,0 +1,31 @@
+# Landroidx/appcompat/widget/AppCompatDrawableManager;->setPorterDuffColorFilter(Landroid/graphics/drawable/Drawable; I Landroid/graphics/PorterDuff$Mode;)V [access_flags=private static]
+#
+# Parameters:
+# - local registers: v0...v0
+# - v1:android.graphics.drawable.Drawable
+# - v2:int
+# - v3:android.graphics.PorterDuff$Mode
+#
+# - return:void
+
+setPorterDuffColorFilter-BB@0x0 : [ setPorterDuffColorFilter-BB@0xc setPorterDuffColorFilter-BB@0x14 ]
+	0       (00000000) invoke-static        v1, Landroidx/appcompat/widget/DrawableUtils;->canSafelyMutateDrawable(Landroid/graphics/drawable/Drawable;)Z
+	1       (00000006) move-result          v0
+	2       (00000008) if-eqz               v0, +6
+
+setPorterDuffColorFilter-BB@0xc : [ setPorterDuffColorFilter-BB@0x14 ]
+	3       (0000000c) invoke-virtual       v1, Landroid/graphics/drawable/Drawable;->mutate()Landroid/graphics/drawable/Drawable;
+	4       (00000012) move-result-object   v1
+
+setPorterDuffColorFilter-BB@0x14 : [ setPorterDuffColorFilter-BB@0x18 setPorterDuffColorFilter-BB@0x1c ]
+	5       (00000014) if-nez               v3, +4
+
+setPorterDuffColorFilter-BB@0x18 : [ setPorterDuffColorFilter-BB@0x1c ]
+	6       (00000018) sget-object          v3, Landroidx/appcompat/widget/AppCompatDrawableManager;->DEFAULT_MODE Landroid/graphics/PorterDuff$Mode;
+
+setPorterDuffColorFilter-BB@0x1c : 
+	7       (0000001c) invoke-static        v2, v3, Landroidx/appcompat/widget/AppCompatDrawableManager;->getPorterDuffColorFilter(I Landroid/graphics/PorterDuff$Mode;)Landroid/graphics/PorterDuffColorFilter;
+	8       (00000022) move-result-object   v0
+	9       (00000024) invoke-virtual       v1, v0, Landroid/graphics/drawable/Drawable;->setColorFilter(Landroid/graphics/ColorFilter;)V
+	10      (0000002a) return-void          
+

@@ -1,0 +1,38 @@
+# Landroidx/appcompat/app/AppCompatDelegateImpl$ListMenuDecorView;->onInterceptTouchEvent(Landroid/view/MotionEvent;)Z [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v5
+# - v6:android.view.MotionEvent
+#
+# - return:boolean
+
+onInterceptTouchEvent-BB@0x0 : [ onInterceptTouchEvent-BB@0xc onInterceptTouchEvent-BB@0x3c ]
+	0       (00000000) invoke-virtual       v6, Landroid/view/MotionEvent;->getAction()I
+	1       (00000006) move-result          v0
+	2       (00000008) if-nez               v0, +1a
+
+onInterceptTouchEvent-BB@0xc : [ onInterceptTouchEvent-BB@0x2c onInterceptTouchEvent-BB@0x3c ]
+	3       (0000000c) invoke-virtual       v6, Landroid/view/MotionEvent;->getX()F
+	4       (00000012) move-result          v3
+	5       (00000014) float-to-int         v1, v3
+	6       (00000016) invoke-virtual       v6, Landroid/view/MotionEvent;->getY()F
+	7       (0000001c) move-result          v3
+	8       (0000001e) float-to-int         v2, v3
+	9       (00000020) invoke-direct        v5, v1, v2, Landroidx/appcompat/app/AppCompatDelegateImpl$ListMenuDecorView;->isOutOfBounds(I I)Z
+	10      (00000026) move-result          v3
+	11      (00000028) if-eqz               v3, +a
+
+onInterceptTouchEvent-BB@0x2c : [ onInterceptTouchEvent-BB@0x3a ]
+	12      (0000002c) iget-object          v3, v5, Landroidx/appcompat/app/AppCompatDelegateImpl$ListMenuDecorView;->this$0 Landroidx/appcompat/app/AppCompatDelegateImpl;
+	13      (00000030) const/4              v4, 0
+	14      (00000032) invoke-virtual       v3, v4, Landroidx/appcompat/app/AppCompatDelegateImpl;->closePanel(I)V
+	15      (00000038) const/4              v3, 1
+
+onInterceptTouchEvent-BB@0x3a : 
+	16      (0000003a) return               v3
+
+onInterceptTouchEvent-BB@0x3c : [ onInterceptTouchEvent-BB@0x3a ]
+	17      (0000003c) invoke-super         v5, v6, Landroidx/appcompat/widget/ContentFrameLayout;->onInterceptTouchEvent(Landroid/view/MotionEvent;)Z
+	18      (00000042) move-result          v3
+	19      (00000044) goto                 -5
+

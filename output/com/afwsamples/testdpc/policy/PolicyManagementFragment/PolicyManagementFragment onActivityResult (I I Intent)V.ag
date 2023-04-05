@@ -1,0 +1,53 @@
+# Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->onActivityResult(I I Landroid/content/Intent;)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:int
+# - v4:int
+# - v5:android.content.Intent
+#
+# - return:void
+
+onActivityResult-BB@0x0 : [ onActivityResult-BB@0xc onActivityResult-BB@0x12 ]
+	0       (00000000) invoke-super         v2, v3, v4, v5, Lcom/afwsamples/testdpc/common/BaseSearchablePolicyPreferenceFragment;->onActivityResult(I I Landroid/content/Intent;)V
+	1       (00000006) const/4              v0, -1
+	2       (00000008) if-ne                v4, v0, +5
+
+onActivityResult-BB@0xc : [ D:onActivityResult-BB@0x12 7689:onActivityResult-BB@0x14 7690:onActivityResult-BB@0x20 7691:onActivityResult-BB@0x28 7692:onActivityResult-BB@0x3e 7693:onActivityResult-BB@0x54 ]
+	3       (0000000c) packed-switch        v3, +28 (0x5c)
+
+onActivityResult-BB@0x12 : 
+	4       (00000012) return-void          
+
+onActivityResult-BB@0x14 : [ onActivityResult-BB@0x12 ]
+	5       (00000014) const-string         v0, ''
+	6       (00000018) invoke-direct        v2, v5, v0, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->importKeyCertificateFromIntent(Landroid/content/Intent; Ljava/lang/String;)V
+	7       (0000001e) goto                 -6
+
+onActivityResult-BB@0x20 : [ onActivityResult-BB@0x12 ]
+	8       (00000020) invoke-direct        v2, v5, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->importCaCertificateFromIntent(Landroid/content/Intent;)V
+	9       (00000026) goto                 -a
+
+onActivityResult-BB@0x28 : [ onActivityResult-BB@0x12 ]
+	10      (00000028) const/4              v0, 1
+	11      (0000002a) iget-object          v1, v2, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->mImageUri Landroid/net/Uri;
+	12      (0000002e) invoke-static        v0, v1, Lcom/afwsamples/testdpc/common/MediaDisplayFragment;->newInstance(I Landroid/net/Uri;)Lcom/afwsamples/testdpc/common/MediaDisplayFragment;
+	13      (00000034) move-result-object   v0
+	14      (00000036) invoke-direct        v2, v0, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->showFragment(Landroid/app/Fragment;)V
+	15      (0000003c) goto                 -15
+
+onActivityResult-BB@0x3e : [ onActivityResult-BB@0x12 ]
+	16      (0000003e) const/4              v0, 2
+	17      (00000040) iget-object          v1, v2, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->mVideoUri Landroid/net/Uri;
+	18      (00000044) invoke-static        v0, v1, Lcom/afwsamples/testdpc/common/MediaDisplayFragment;->newInstance(I Landroid/net/Uri;)Lcom/afwsamples/testdpc/common/MediaDisplayFragment;
+	19      (0000004a) move-result-object   v0
+	20      (0000004c) invoke-direct        v2, v0, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->showFragment(Landroid/app/Fragment;)V
+	21      (00000052) goto                 -20
+
+onActivityResult-BB@0x54 : [ onActivityResult-BB@0x12 ]
+	22      (00000054) invoke-direct        v2, v5, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->installApkPackageFromIntent(Landroid/content/Intent;)V
+	23      (0000005a) goto                 -24
+
+onActivityResult-BB@0x5c : 
+	24      (0000005c) packed-switch-payload 1e09 1e0a 1e0b 1e0c 1e0d
+

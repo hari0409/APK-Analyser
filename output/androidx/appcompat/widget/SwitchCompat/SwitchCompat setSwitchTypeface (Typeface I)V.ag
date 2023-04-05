@@ -1,0 +1,75 @@
+# Landroidx/appcompat/widget/SwitchCompat;->setSwitchTypeface(Landroid/graphics/Typeface; I)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v6
+# - v7:android.graphics.Typeface
+# - v8:int
+#
+# - return:void
+
+setSwitchTypeface-BB@0x0 : [ setSwitchTypeface-BB@0x8 setSwitchTypeface-BB@0x6c ]
+	0       (00000000) const/4              v3, 0
+	1       (00000002) const/4              v2, 0
+	2       (00000004) if-lez               v8, +34
+
+setSwitchTypeface-BB@0x8 : [ setSwitchTypeface-BB@0xc setSwitchTypeface-BB@0x5a ]
+	3       (00000008) if-nez               v7, +29
+
+setSwitchTypeface-BB@0xc : [ setSwitchTypeface-BB@0x14 ]
+	4       (0000000c) invoke-static        v8, Landroid/graphics/Typeface;->defaultFromStyle(I)Landroid/graphics/Typeface;
+	5       (00000012) move-result-object   v7
+
+setSwitchTypeface-BB@0x14 : [ setSwitchTypeface-BB@0x1e setSwitchTypeface-BB@0x64 ]
+	6       (00000014) invoke-virtual       v6, v7, Landroidx/appcompat/widget/SwitchCompat;->setSwitchTypeface(Landroid/graphics/Typeface;)V
+	7       (0000001a) if-eqz               v7, +25
+
+setSwitchTypeface-BB@0x1e : [ setSwitchTypeface-BB@0x26 ]
+	8       (0000001e) invoke-virtual       v7, Landroid/graphics/Typeface;->getStyle()I
+	9       (00000024) move-result          v1
+
+setSwitchTypeface-BB@0x26 : [ setSwitchTypeface-BB@0x3a setSwitchTypeface-BB@0x3c ]
+	10      (00000026) xor-int/lit8         v4, v1, -1
+	11      (0000002a) and-int              v0, v8, v4
+	12      (0000002e) iget-object          v4, v6, Landroidx/appcompat/widget/SwitchCompat;->mTextPaint Landroid/text/TextPaint;
+	13      (00000032) and-int/lit8         v5, v0, 1
+	14      (00000036) if-eqz               v5, +3
+
+setSwitchTypeface-BB@0x3a : [ setSwitchTypeface-BB@0x3c ]
+	15      (0000003a) const/4              v2, 1
+
+setSwitchTypeface-BB@0x3c : [ setSwitchTypeface-BB@0x4e setSwitchTypeface-BB@0x68 ]
+	16      (0000003c) invoke-virtual       v4, v2, Landroid/text/TextPaint;->setFakeBoldText(Z)V
+	17      (00000042) iget-object          v4, v6, Landroidx/appcompat/widget/SwitchCompat;->mTextPaint Landroid/text/TextPaint;
+	18      (00000046) and-int/lit8         v2, v0, 2
+	19      (0000004a) if-eqz               v2, +f
+
+setSwitchTypeface-BB@0x4e : [ setSwitchTypeface-BB@0x52 ]
+	20      (0000004e) const/high16         v2, -16768 # [-0.25]
+
+setSwitchTypeface-BB@0x52 : [ setSwitchTypeface-BB@0x58 ]
+	21      (00000052) invoke-virtual       v4, v2, Landroid/text/TextPaint;->setTextSkewX(F)V
+
+setSwitchTypeface-BB@0x58 : 
+	22      (00000058) return-void          
+
+setSwitchTypeface-BB@0x5a : [ setSwitchTypeface-BB@0x14 ]
+	23      (0000005a) invoke-static        v7, v8, Landroid/graphics/Typeface;->create(Landroid/graphics/Typeface; I)Landroid/graphics/Typeface;
+	24      (00000060) move-result-object   v7
+	25      (00000062) goto                 -27
+
+setSwitchTypeface-BB@0x64 : [ setSwitchTypeface-BB@0x26 ]
+	26      (00000064) move                 v1, v2
+	27      (00000066) goto                 -20
+
+setSwitchTypeface-BB@0x68 : [ setSwitchTypeface-BB@0x52 ]
+	28      (00000068) move                 v2, v3
+	29      (0000006a) goto                 -c
+
+setSwitchTypeface-BB@0x6c : [ setSwitchTypeface-BB@0x58 ]
+	30      (0000006c) iget-object          v4, v6, Landroidx/appcompat/widget/SwitchCompat;->mTextPaint Landroid/text/TextPaint;
+	31      (00000070) invoke-virtual       v4, v2, Landroid/text/TextPaint;->setFakeBoldText(Z)V
+	32      (00000076) iget-object          v2, v6, Landroidx/appcompat/widget/SwitchCompat;->mTextPaint Landroid/text/TextPaint;
+	33      (0000007a) invoke-virtual       v2, v3, Landroid/text/TextPaint;->setTextSkewX(F)V
+	34      (00000080) invoke-virtual       v6, v7, Landroidx/appcompat/widget/SwitchCompat;->setSwitchTypeface(Landroid/graphics/Typeface;)V
+	35      (00000086) goto                 -17
+

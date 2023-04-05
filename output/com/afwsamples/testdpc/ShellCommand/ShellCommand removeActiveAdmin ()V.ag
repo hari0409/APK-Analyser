@@ -1,0 +1,22 @@
+# Lcom/afwsamples/testdpc/ShellCommand;->removeActiveAdmin()V [access_flags=private]
+#
+# Parameters:
+# local registers: v0...v4
+#
+# - return:void
+
+removeActiveAdmin-BB@0x0 : 
+	0       (00000000) const-string         v1, 'TestDPCShellCommand'
+	1       (00000004) const-string         v2, 'removeActiveAdmin()'
+	2       (00000008) invoke-static        v1, v2, Landroid/util/Log;->i(Ljava/lang/String; Ljava/lang/String;)I
+	3       (0000000e) iget-object          v1, v4, Lcom/afwsamples/testdpc/ShellCommand;->mDevicePolicyManagerGateway Lcom/afwsamples/testdpc/DevicePolicyManagerGateway;
+	4       (00000012) invoke-interface     v1, Lcom/afwsamples/testdpc/DevicePolicyManagerGateway;->getAdmin()Landroid/content/ComponentName;
+	5       (00000018) move-result-object   v0
+	6       (0000001a) iget-object          v1, v4, Lcom/afwsamples/testdpc/ShellCommand;->mDevicePolicyManagerGateway Lcom/afwsamples/testdpc/DevicePolicyManagerGateway;
+	7       (0000001e) new-instance         v2, Lcom/afwsamples/testdpc/ShellCommand$$Lambda$92;
+	8       (00000022) invoke-direct        v2, v4, v0, Lcom/afwsamples/testdpc/ShellCommand$$Lambda$92;-><init>(Lcom/afwsamples/testdpc/ShellCommand; Landroid/content/ComponentName;)V
+	9       (00000028) new-instance         v3, Lcom/afwsamples/testdpc/ShellCommand$$Lambda$93;
+	10      (0000002c) invoke-direct        v3, v4, v0, Lcom/afwsamples/testdpc/ShellCommand$$Lambda$93;-><init>(Lcom/afwsamples/testdpc/ShellCommand; Landroid/content/ComponentName;)V
+	11      (00000032) invoke-interface     v1, v2, v3, Lcom/afwsamples/testdpc/DevicePolicyManagerGateway;->removeActiveAdmin(Ljava/util/function/Consumer; Ljava/util/function/Consumer;)V
+	12      (00000038) return-void          
+

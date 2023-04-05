@@ -1,0 +1,32 @@
+# Landroidx/appcompat/widget/SearchView;->setQueryRefinementEnabled(Z)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:boolean
+#
+# - return:void
+
+setQueryRefinementEnabled-BB@0x0 : [ setQueryRefinementEnabled-BB@0x10 setQueryRefinementEnabled-BB@0x24 ]
+	0       (00000000) iput-boolean         v3, v2, Landroidx/appcompat/widget/SearchView;->mQueryRefinement Z
+	1       (00000004) iget-object          v0, v2, Landroidx/appcompat/widget/SearchView;->mSuggestionsAdapter Landroidx/cursoradapter/widget/CursorAdapter;
+	2       (00000008) instance-of          v0, v0, Landroidx/appcompat/widget/SuggestionsAdapter;
+	3       (0000000c) if-eqz               v0, +c
+
+setQueryRefinementEnabled-BB@0x10 : [ setQueryRefinementEnabled-BB@0x1c setQueryRefinementEnabled-BB@0x26 ]
+	4       (00000010) iget-object          v0, v2, Landroidx/appcompat/widget/SearchView;->mSuggestionsAdapter Landroidx/cursoradapter/widget/CursorAdapter;
+	5       (00000014) check-cast           v0, Landroidx/appcompat/widget/SuggestionsAdapter;
+	6       (00000018) if-eqz               v3, +7
+
+setQueryRefinementEnabled-BB@0x1c : [ setQueryRefinementEnabled-BB@0x1e ]
+	7       (0000001c) const/4              v1, 2
+
+setQueryRefinementEnabled-BB@0x1e : [ setQueryRefinementEnabled-BB@0x24 ]
+	8       (0000001e) invoke-virtual       v0, v1, Landroidx/appcompat/widget/SuggestionsAdapter;->setQueryRefinement(I)V
+
+setQueryRefinementEnabled-BB@0x24 : 
+	9       (00000024) return-void          
+
+setQueryRefinementEnabled-BB@0x26 : [ setQueryRefinementEnabled-BB@0x1e ]
+	10      (00000026) const/4              v1, 1
+	11      (00000028) goto                 -5
+

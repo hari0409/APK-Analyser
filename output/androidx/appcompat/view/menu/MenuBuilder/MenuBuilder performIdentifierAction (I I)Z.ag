@@ -1,0 +1,16 @@
+# Landroidx/appcompat/view/menu/MenuBuilder;->performIdentifierAction(I I)Z [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:int
+# - v3:int
+#
+# - return:boolean
+
+performIdentifierAction-BB@0x0 : 
+	0       (00000000) invoke-virtual       v1, v2, Landroidx/appcompat/view/menu/MenuBuilder;->findItem(I)Landroid/view/MenuItem;
+	1       (00000006) move-result-object   v0
+	2       (00000008) invoke-virtual       v1, v0, v3, Landroidx/appcompat/view/menu/MenuBuilder;->performItemAction(Landroid/view/MenuItem; I)Z
+	3       (0000000e) move-result          v0
+	4       (00000010) return               v0
+

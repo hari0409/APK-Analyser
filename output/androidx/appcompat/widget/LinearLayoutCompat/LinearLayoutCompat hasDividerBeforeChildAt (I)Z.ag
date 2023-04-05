@@ -1,0 +1,74 @@
+# Landroidx/appcompat/widget/LinearLayoutCompat;->hasDividerBeforeChildAt(I)Z [access_flags=protected]
+#
+# Parameters:
+# - local registers: v0...v5
+# - v6:int
+#
+# - return:boolean
+
+hasDividerBeforeChildAt-BB@0x0 : [ hasDividerBeforeChildAt-BB@0x8 hasDividerBeforeChildAt-BB@0x1a ]
+	0       (00000000) const/4              v2, 1
+	1       (00000002) const/4              v3, 0
+	2       (00000004) if-nez               v6, +b
+
+hasDividerBeforeChildAt-BB@0x8 : [ hasDividerBeforeChildAt-BB@0x14 hasDividerBeforeChildAt-BB@0x16 ]
+	3       (00000008) iget                 v4, v5, Landroidx/appcompat/widget/LinearLayoutCompat;->mShowDividers I
+	4       (0000000c) and-int/lit8         v4, v4, 1
+	5       (00000010) if-eqz               v4, +3
+
+hasDividerBeforeChildAt-BB@0x14 : 
+	6       (00000014) return               v2
+
+hasDividerBeforeChildAt-BB@0x16 : [ hasDividerBeforeChildAt-BB@0x14 ]
+	7       (00000016) move                 v2, v3
+	8       (00000018) goto                 -2
+
+hasDividerBeforeChildAt-BB@0x1a : [ hasDividerBeforeChildAt-BB@0x26 hasDividerBeforeChildAt-BB@0x36 ]
+	9       (0000001a) invoke-virtual       v5, Landroidx/appcompat/widget/LinearLayoutCompat;->getChildCount()I
+	10      (00000020) move-result          v4
+	11      (00000022) if-ne                v6, v4, +a
+
+hasDividerBeforeChildAt-BB@0x26 : [ hasDividerBeforeChildAt-BB@0x32 hasDividerBeforeChildAt-BB@0x14 ]
+	12      (00000026) iget                 v4, v5, Landroidx/appcompat/widget/LinearLayoutCompat;->mShowDividers I
+	13      (0000002a) and-int/lit8         v4, v4, 4
+	14      (0000002e) if-nez               v4, -d
+
+hasDividerBeforeChildAt-BB@0x32 : [ hasDividerBeforeChildAt-BB@0x14 ]
+	15      (00000032) move                 v2, v3
+	16      (00000034) goto                 -10
+
+hasDividerBeforeChildAt-BB@0x36 : [ hasDividerBeforeChildAt-BB@0x42 hasDividerBeforeChildAt-BB@0x70 ]
+	17      (00000036) iget                 v2, v5, Landroidx/appcompat/widget/LinearLayoutCompat;->mShowDividers I
+	18      (0000003a) and-int/lit8         v2, v2, 2
+	19      (0000003e) if-eqz               v2, +19
+
+hasDividerBeforeChildAt-BB@0x42 : [ hasDividerBeforeChildAt-BB@0x48 ]
+	20      (00000042) const/4              v0, 0
+	21      (00000044) add-int/lit8         v1, v6, -1
+
+hasDividerBeforeChildAt-BB@0x48 : [ hasDividerBeforeChildAt-BB@0x4c hasDividerBeforeChildAt-BB@0x66 ]
+	22      (00000048) if-ltz               v1, +f
+
+hasDividerBeforeChildAt-BB@0x4c : [ hasDividerBeforeChildAt-BB@0x64 hasDividerBeforeChildAt-BB@0x6a ]
+	23      (0000004c) invoke-virtual       v5, v1, Landroidx/appcompat/widget/LinearLayoutCompat;->getChildAt(I)Landroid/view/View;
+	24      (00000052) move-result-object   v2
+	25      (00000054) invoke-virtual       v2, Landroid/view/View;->getVisibility()I
+	26      (0000005a) move-result          v2
+	27      (0000005c) const/16             v3, 8
+	28      (00000060) if-eq                v2, v3, +5
+
+hasDividerBeforeChildAt-BB@0x64 : [ hasDividerBeforeChildAt-BB@0x66 ]
+	29      (00000064) const/4              v0, 1
+
+hasDividerBeforeChildAt-BB@0x66 : [ hasDividerBeforeChildAt-BB@0x14 ]
+	30      (00000066) move                 v2, v0
+	31      (00000068) goto                 -2a
+
+hasDividerBeforeChildAt-BB@0x6a : [ hasDividerBeforeChildAt-BB@0x48 ]
+	32      (0000006a) add-int/lit8         v1, v1, -1
+	33      (0000006e) goto                 -13
+
+hasDividerBeforeChildAt-BB@0x70 : [ hasDividerBeforeChildAt-BB@0x14 ]
+	34      (00000070) move                 v2, v3
+	35      (00000072) goto                 -2f
+

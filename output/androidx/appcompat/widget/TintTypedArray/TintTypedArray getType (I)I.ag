@@ -1,0 +1,38 @@
+# Landroidx/appcompat/widget/TintTypedArray;->getType(I)I [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:int
+#
+# - return:int
+
+getType-BB@0x0 : [ getType-BB@0xc getType-BB@0x1a ]
+	0       (00000000) sget                 v0, Landroid/os/Build$VERSION;->SDK_INT I
+	1       (00000004) const/16             v1, 21
+	2       (00000008) if-lt                v0, v1, +9
+
+getType-BB@0xc : [ getType-BB@0x18 ]
+	3       (0000000c) iget-object          v0, v2, Landroidx/appcompat/widget/TintTypedArray;->mWrapped Landroid/content/res/TypedArray;
+	4       (00000010) invoke-virtual       v0, v3, Landroid/content/res/TypedArray;->getType(I)I
+	5       (00000016) move-result          v0
+
+getType-BB@0x18 : 
+	6       (00000018) return               v0
+
+getType-BB@0x1a : [ getType-BB@0x22 getType-BB@0x30 ]
+	7       (0000001a) iget-object          v0, v2, Landroidx/appcompat/widget/TintTypedArray;->mTypedValue Landroid/util/TypedValue;
+	8       (0000001e) if-nez               v0, +9
+
+getType-BB@0x22 : [ getType-BB@0x30 ]
+	9       (00000022) new-instance         v0, Landroid/util/TypedValue;
+	10      (00000026) invoke-direct        v0, Landroid/util/TypedValue;-><init>()V
+	11      (0000002c) iput-object          v0, v2, Landroidx/appcompat/widget/TintTypedArray;->mTypedValue Landroid/util/TypedValue;
+
+getType-BB@0x30 : [ getType-BB@0x18 ]
+	12      (00000030) iget-object          v0, v2, Landroidx/appcompat/widget/TintTypedArray;->mWrapped Landroid/content/res/TypedArray;
+	13      (00000034) iget-object          v1, v2, Landroidx/appcompat/widget/TintTypedArray;->mTypedValue Landroid/util/TypedValue;
+	14      (00000038) invoke-virtual       v0, v3, v1, Landroid/content/res/TypedArray;->getValue(I Landroid/util/TypedValue;)Z
+	15      (0000003e) iget-object          v0, v2, Landroidx/appcompat/widget/TintTypedArray;->mTypedValue Landroid/util/TypedValue;
+	16      (00000042) iget                 v0, v0, Landroid/util/TypedValue;->type I
+	17      (00000046) goto                 -17
+

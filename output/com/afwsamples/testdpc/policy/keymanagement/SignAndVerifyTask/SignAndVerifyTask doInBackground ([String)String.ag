@@ -1,0 +1,134 @@
+# Lcom/afwsamples/testdpc/policy/keymanagement/SignAndVerifyTask;->doInBackground([Ljava/lang/String;)Ljava/lang/String; [access_flags=protected varargs]
+#
+# Parameters:
+# - local registers: v0...v12
+# - v13:java.lang.String[]
+#
+# - return:java.lang.String
+
+doInBackground-BB@0x0 : [ doInBackground-BB@0x6 ]
+	0       (00000000) const/4              v10, 0
+	1       (00000002) aget-object          v1, v13, v10
+
+doInBackground-BB@0x6 : [ doInBackground-BB@0x2a doInBackground-BB@0xac ]
+	2       (00000006) iget-object          v10, v12, Lcom/afwsamples/testdpc/policy/keymanagement/SignAndVerifyTask;->mContext Landroid/content/Context;
+	3       (0000000a) invoke-static        v10, v1, Landroid/security/KeyChain;->getPrivateKey(Landroid/content/Context; Ljava/lang/String;)Ljava/security/PrivateKey;
+	4       (00000010) move-result-object   v5
+	5       (00000012) invoke-interface     v5, Ljava/security/PrivateKey;->getAlgorithm()Ljava/lang/String;
+	6       (00000018) move-result-object   v10
+	7       (0000001a) const-string         v11, 'RSA'
+	8       (0000001e) invoke-virtual       v10, v11, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+	9       (00000024) move-result          v10
+	10      (00000026) if-eqz               v10, +43
+	6:af
+	(Landroid/security/KeyChainException; -> b2 doInBackground-BB@0xb2)
+	(Ljava/lang/InterruptedException; -> c6 doInBackground-BB@0xc6)
+	(Ljava/security/NoSuchAlgorithmException; -> d8 doInBackground-BB@0xd8)
+	(Ljava/security/SignatureException; -> ea doInBackground-BB@0xea)
+	(Ljava/security/InvalidKeyException; -> fc doInBackground-BB@0xfc)
+
+doInBackground-BB@0x2a : [ doInBackground-BB@0x2e ]
+	11      (0000002a) const-string         v0, 'SHA256withRSA'
+	6:af
+	(Landroid/security/KeyChainException; -> b2 doInBackground-BB@0xb2)
+	(Ljava/lang/InterruptedException; -> c6 doInBackground-BB@0xc6)
+	(Ljava/security/NoSuchAlgorithmException; -> d8 doInBackground-BB@0xd8)
+	(Ljava/security/SignatureException; -> ea doInBackground-BB@0xea)
+	(Ljava/security/InvalidKeyException; -> fc doInBackground-BB@0xfc)
+
+doInBackground-BB@0x2e : [ doInBackground-BB@0x9a doInBackground-BB@0xc2 ]
+	12      (0000002e) new-instance         v10, Ljava/lang/String;
+	13      (00000032) const-string         v11, 'hello'
+	14      (00000036) invoke-direct        v10, v11, Ljava/lang/String;-><init>(Ljava/lang/String;)V
+	15      (0000003c) invoke-virtual       v10, Ljava/lang/String;->getBytes()[B
+	16      (00000042) move-result-object   v3
+	17      (00000044) invoke-static        v0, Ljava/security/Signature;->getInstance(Ljava/lang/String;)Ljava/security/Signature;
+	18      (0000004a) move-result-object   v8
+	19      (0000004c) invoke-virtual       v8, v5, Ljava/security/Signature;->initSign(Ljava/security/PrivateKey;)V
+	20      (00000052) invoke-virtual       v8, v3, Ljava/security/Signature;->update([B)V
+	21      (00000058) invoke-virtual       v8, Ljava/security/Signature;->sign()[B
+	22      (0000005e) move-result-object   v7
+	23      (00000060) iget-object          v10, v12, Lcom/afwsamples/testdpc/policy/keymanagement/SignAndVerifyTask;->mContext Landroid/content/Context;
+	24      (00000064) invoke-static        v10, v1, Landroid/security/KeyChain;->getCertificateChain(Landroid/content/Context; Ljava/lang/String;)[Ljava/security/cert/X509Certificate;
+	25      (0000006a) move-result-object   v10
+	26      (0000006c) const/4              v11, 0
+	27      (0000006e) aget-object          v2, v10, v11
+	28      (00000072) invoke-virtual       v2, Ljava/security/cert/X509Certificate;->getPublicKey()Ljava/security/PublicKey;
+	29      (00000078) move-result-object   v6
+	30      (0000007a) invoke-static        v0, Ljava/security/Signature;->getInstance(Ljava/lang/String;)Ljava/security/Signature;
+	31      (00000080) move-result-object   v9
+	32      (00000082) invoke-virtual       v9, v6, Ljava/security/Signature;->initVerify(Ljava/security/PublicKey;)V
+	33      (00000088) invoke-virtual       v9, v3, Ljava/security/Signature;->update([B)V
+	34      (0000008e) invoke-virtual       v9, v7, Ljava/security/Signature;->verify([B)Z
+	35      (00000094) move-result          v10
+	36      (00000096) if-eqz               v10, +16
+	6:af
+	(Landroid/security/KeyChainException; -> b2 doInBackground-BB@0xb2)
+	(Ljava/lang/InterruptedException; -> c6 doInBackground-BB@0xc6)
+	(Ljava/security/NoSuchAlgorithmException; -> d8 doInBackground-BB@0xd8)
+	(Ljava/security/SignatureException; -> ea doInBackground-BB@0xea)
+	(Ljava/security/InvalidKeyException; -> fc doInBackground-BB@0xfc)
+
+doInBackground-BB@0x9a : [ doInBackground-BB@0xaa ]
+	37      (0000009a) invoke-virtual       v2, Ljava/security/cert/X509Certificate;->getSubjectX500Principal()Ljavax/security/auth/x500/X500Principal;
+	38      (000000a0) move-result-object   v10
+	39      (000000a2) invoke-virtual       v10, Ljavax/security/auth/x500/X500Principal;->getName()Ljava/lang/String;
+	40      (000000a8) move-result-object   v10
+	6:af
+	(Landroid/security/KeyChainException; -> b2 doInBackground-BB@0xb2)
+	(Ljava/lang/InterruptedException; -> c6 doInBackground-BB@0xc6)
+	(Ljava/security/NoSuchAlgorithmException; -> d8 doInBackground-BB@0xd8)
+	(Ljava/security/SignatureException; -> ea doInBackground-BB@0xea)
+	(Ljava/security/InvalidKeyException; -> fc doInBackground-BB@0xfc)
+
+doInBackground-BB@0xaa : 
+	41      (000000aa) return-object        v10
+	6:af
+	(Landroid/security/KeyChainException; -> b2 doInBackground-BB@0xb2)
+	(Ljava/lang/InterruptedException; -> c6 doInBackground-BB@0xc6)
+	(Ljava/security/NoSuchAlgorithmException; -> d8 doInBackground-BB@0xd8)
+	(Ljava/security/SignatureException; -> ea doInBackground-BB@0xea)
+	(Ljava/security/InvalidKeyException; -> fc doInBackground-BB@0xfc)
+
+doInBackground-BB@0xac : [ doInBackground-BB@0x2e ]
+	42      (000000ac) const-string         v0, 'SHA256withECDSA'
+	43      (000000b0) goto                 -41
+
+doInBackground-BB@0xb2 : [ doInBackground-BB@0xc2 ]
+	44      (000000b2) move-exception       v4
+	45      (000000b4) const-string         v10, 'PolicyManagement'
+	46      (000000b8) const-string         v11, 'Error getting key'
+	47      (000000bc) invoke-static        v10, v11, v4, Landroid/util/Log;->e(Ljava/lang/String; Ljava/lang/String; Ljava/lang/Throwable;)I
+
+doInBackground-BB@0xc2 : [ doInBackground-BB@0xaa ]
+	48      (000000c2) const/4              v10, 0
+	49      (000000c4) goto                 -d
+
+doInBackground-BB@0xc6 : [ doInBackground-BB@0xc2 ]
+	50      (000000c6) move-exception       v4
+	51      (000000c8) const-string         v10, 'PolicyManagement'
+	52      (000000cc) const-string         v11, 'Interrupted while getting the key'
+	53      (000000d0) invoke-static        v10, v11, v4, Landroid/util/Log;->e(Ljava/lang/String; Ljava/lang/String; Ljava/lang/Throwable;)I
+	54      (000000d6) goto                 -a
+
+doInBackground-BB@0xd8 : [ doInBackground-BB@0xc2 ]
+	55      (000000d8) move-exception       v4
+	56      (000000da) const-string         v10, 'PolicyManagement'
+	57      (000000de) const-string         v11, 'Algorithm not supported'
+	58      (000000e2) invoke-static        v10, v11, v4, Landroid/util/Log;->e(Ljava/lang/String; Ljava/lang/String; Ljava/lang/Throwable;)I
+	59      (000000e8) goto                 -13
+
+doInBackground-BB@0xea : [ doInBackground-BB@0xc2 ]
+	60      (000000ea) move-exception       v4
+	61      (000000ec) const-string         v10, 'PolicyManagement'
+	62      (000000f0) const-string         v11, 'Failed signing with key'
+	63      (000000f4) invoke-static        v10, v11, v4, Landroid/util/Log;->e(Ljava/lang/String; Ljava/lang/String; Ljava/lang/Throwable;)I
+	64      (000000fa) goto                 -1c
+
+doInBackground-BB@0xfc : [ doInBackground-BB@0xc2 ]
+	65      (000000fc) move-exception       v4
+	66      (000000fe) const-string         v10, 'PolicyManagement'
+	67      (00000102) const-string         v11, 'Provided alias resolves to an invalid key'
+	68      (00000106) invoke-static        v10, v11, v4, Landroid/util/Log;->e(Ljava/lang/String; Ljava/lang/String; Ljava/lang/Throwable;)I
+	69      (0000010c) goto                 -25
+

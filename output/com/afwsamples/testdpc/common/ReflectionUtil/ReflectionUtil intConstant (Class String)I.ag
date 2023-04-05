@@ -1,0 +1,36 @@
+# Lcom/afwsamples/testdpc/common/ReflectionUtil;->intConstant(Ljava/lang/Class; Ljava/lang/String;)I [access_flags=public static]
+#
+# Parameters:
+# - local registers: v0...v3
+# - v4:java.lang.Class
+# - v5:java.lang.String
+#
+# - return:int
+
+intConstant-BB@0x0 : [ intConstant-BB@0x2 ]
+	0       (00000000) const/4              v3, 0
+
+intConstant-BB@0x2 : 
+	1       (00000002) invoke-virtual       v4, v5, Ljava/lang/Class;->getField(Ljava/lang/String;)Ljava/lang/reflect/Field;
+	2       (00000008) move-result-object   v1
+	3       (0000000a) const/4              v2, 0
+	4       (0000000c) invoke-virtual       v1, v2, Ljava/lang/reflect/Field;->getInt(Ljava/lang/Object;)I
+	5       (00000012) move-result          v1
+	6       (00000014) return               v1
+	2:11
+	(Ljava/lang/NoSuchFieldException; -> 16 intConstant-BB@0x16)
+	(Ljava/lang/IllegalAccessException; -> 28 intConstant-BB@0x28)
+
+intConstant-BB@0x16 : [ intConstant-BB@0x18 ]
+	7       (00000016) move-exception       v0
+
+intConstant-BB@0x18 : 
+	8       (00000018) new-instance         v1, Lcom/afwsamples/testdpc/common/ReflectionUtil$ReflectionIsTemporaryException;
+	9       (0000001c) const-string         v2, 'Failed to retrieve constant'
+	10      (00000020) invoke-direct        v1, v2, v0, v3, Lcom/afwsamples/testdpc/common/ReflectionUtil$ReflectionIsTemporaryException;-><init>(Ljava/lang/String; Ljava/lang/Throwable; Lcom/afwsamples/testdpc/common/ReflectionUtil$1;)V
+	11      (00000026) throw                v1
+
+intConstant-BB@0x28 : [ intConstant-BB@0x18 ]
+	12      (00000028) move-exception       v0
+	13      (0000002a) goto                 -9
+

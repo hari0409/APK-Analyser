@@ -1,0 +1,28 @@
+# Lcom/afwsamples/testdpc/policy/utils/AttestationPackageInfo;->equals(Ljava/lang/Object;)Z [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:java.lang.Object
+#
+# - return:boolean
+
+equals-BB@0x0 : [ equals-BB@0x8 equals-BB@0x1c ]
+	0       (00000000) instance-of          v0, v2, Lcom/afwsamples/testdpc/policy/utils/AttestationPackageInfo;
+	1       (00000004) if-eqz               v0, +c
+
+equals-BB@0x8 : [ equals-BB@0x18 equals-BB@0x1c ]
+	2       (00000008) check-cast           v2, Lcom/afwsamples/testdpc/policy/utils/AttestationPackageInfo;
+	3       (0000000c) invoke-virtual       v1, v2, Lcom/afwsamples/testdpc/policy/utils/AttestationPackageInfo;->compareTo(Lcom/afwsamples/testdpc/policy/utils/AttestationPackageInfo;)I
+	4       (00000012) move-result          v0
+	5       (00000014) if-nez               v0, +4
+
+equals-BB@0x18 : [ equals-BB@0x1a ]
+	6       (00000018) const/4              v0, 1
+
+equals-BB@0x1a : 
+	7       (0000001a) return               v0
+
+equals-BB@0x1c : [ equals-BB@0x1a ]
+	8       (0000001c) const/4              v0, 0
+	9       (0000001e) goto                 -2
+

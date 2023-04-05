@@ -1,0 +1,20 @@
+# Landroidx/appcompat/widget/AppCompatImageButton;->setImageBitmap(Landroid/graphics/Bitmap;)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:android.graphics.Bitmap
+#
+# - return:void
+
+setImageBitmap-BB@0x0 : [ setImageBitmap-BB@0xe setImageBitmap-BB@0x18 ]
+	0       (00000000) invoke-super         v1, v2, Landroid/widget/ImageButton;->setImageBitmap(Landroid/graphics/Bitmap;)V
+	1       (00000006) iget-object          v0, v1, Landroidx/appcompat/widget/AppCompatImageButton;->mImageHelper Landroidx/appcompat/widget/AppCompatImageHelper;
+	2       (0000000a) if-eqz               v0, +7
+
+setImageBitmap-BB@0xe : [ setImageBitmap-BB@0x18 ]
+	3       (0000000e) iget-object          v0, v1, Landroidx/appcompat/widget/AppCompatImageButton;->mImageHelper Landroidx/appcompat/widget/AppCompatImageHelper;
+	4       (00000012) invoke-virtual       v0, Landroidx/appcompat/widget/AppCompatImageHelper;->applySupportImageTint()V
+
+setImageBitmap-BB@0x18 : 
+	5       (00000018) return-void          
+

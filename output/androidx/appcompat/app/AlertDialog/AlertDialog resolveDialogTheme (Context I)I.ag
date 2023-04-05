@@ -1,0 +1,28 @@
+# Landroidx/appcompat/app/AlertDialog;->resolveDialogTheme(Landroid/content/Context; I)I [access_flags=static]
+#
+# Parameters:
+# - local registers: v0...v3
+# - v4:android.content.Context
+# - v5:int
+#
+# - return:int
+
+resolveDialogTheme-BB@0x0 : [ resolveDialogTheme-BB@0xe resolveDialogTheme-BB@0x10 ]
+	0       (00000000) const/4              v3, 1
+	1       (00000002) ushr-int/lit8        v1, v5, 24
+	2       (00000006) and-int/lit16        v1, v1, 255
+	3       (0000000a) if-lt                v1, v3, +3
+
+resolveDialogTheme-BB@0xe : 
+	4       (0000000e) return               v5
+
+resolveDialogTheme-BB@0x10 : [ resolveDialogTheme-BB@0xe ]
+	5       (00000010) new-instance         v0, Landroid/util/TypedValue;
+	6       (00000014) invoke-direct        v0, Landroid/util/TypedValue;-><init>()V
+	7       (0000001a) invoke-virtual       v4, Landroid/content/Context;->getTheme()Landroid/content/res/Resources$Theme;
+	8       (00000020) move-result-object   v1
+	9       (00000022) sget                 v2, Landroidx/appcompat/R$attr;->alertDialogTheme I
+	10      (00000026) invoke-virtual       v1, v2, v0, v3, Landroid/content/res/Resources$Theme;->resolveAttribute(I Landroid/util/TypedValue; Z)Z
+	11      (0000002c) iget                 v5, v0, Landroid/util/TypedValue;->resourceId I
+	12      (00000030) goto                 -11
+

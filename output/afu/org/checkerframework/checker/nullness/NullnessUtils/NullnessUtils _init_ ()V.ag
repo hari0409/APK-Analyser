@@ -1,0 +1,14 @@
+# Lafu/org/checkerframework/checker/nullness/NullnessUtils;-><init>()V [access_flags=private constructor]
+#
+# Parameters:
+# local registers: v0...v2
+#
+# - return:void
+
+<init>-BB@0x0 : 
+	0       (00000000) invoke-direct        v2, Ljava/lang/Object;-><init>()V
+	1       (00000006) new-instance         v0, Ljava/lang/AssertionError;
+	2       (0000000a) const-string         v1, "shouldn't be instantiated"
+	3       (0000000e) invoke-direct        v0, v1, Ljava/lang/AssertionError;-><init>(Ljava/lang/Object;)V
+	4       (00000014) throw                v0
+

@@ -1,0 +1,12 @@
+# Lcom/afwsamples/testdpc/common/keyvaluepair/KeyValuePairDialogFragment;->access$600(Lcom/afwsamples/testdpc/common/keyvaluepair/KeyValuePairDialogFragment;)Ljava/util/Set; [access_flags=static synthetic]
+#
+# Parameters:
+# - local registers: v0...v0
+# - v1:com.afwsamples.testdpc.common.keyvaluepair.KeyValuePairDialogFragment
+#
+# - return:java.util.Set
+
+access$600-BB@0x0 : 
+	0       (00000000) iget-object          v0, v1, Lcom/afwsamples/testdpc/common/keyvaluepair/KeyValuePairDialogFragment;->mSupportedTypes Ljava/util/Set;
+	1       (00000004) return-object        v0
+

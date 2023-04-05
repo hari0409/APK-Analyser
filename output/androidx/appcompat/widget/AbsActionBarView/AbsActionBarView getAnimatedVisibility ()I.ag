@@ -1,0 +1,23 @@
+# Landroidx/appcompat/widget/AbsActionBarView;->getAnimatedVisibility()I [access_flags=public]
+#
+# Parameters:
+# local registers: v0...v1
+#
+# - return:int
+
+getAnimatedVisibility-BB@0x0 : [ getAnimatedVisibility-BB@0x8 getAnimatedVisibility-BB@0x12 ]
+	0       (00000000) iget-object          v0, v1, Landroidx/appcompat/widget/AbsActionBarView;->mVisibilityAnim Landroidx/core/view/ViewPropertyAnimatorCompat;
+	1       (00000004) if-eqz               v0, +7
+
+getAnimatedVisibility-BB@0x8 : [ getAnimatedVisibility-BB@0x10 ]
+	2       (00000008) iget-object          v0, v1, Landroidx/appcompat/widget/AbsActionBarView;->mVisAnimListener Landroidx/appcompat/widget/AbsActionBarView$VisibilityAnimListener;
+	3       (0000000c) iget                 v0, v0, Landroidx/appcompat/widget/AbsActionBarView$VisibilityAnimListener;->mFinalVisibility I
+
+getAnimatedVisibility-BB@0x10 : 
+	4       (00000010) return               v0
+
+getAnimatedVisibility-BB@0x12 : [ getAnimatedVisibility-BB@0x10 ]
+	5       (00000012) invoke-virtual       v1, Landroidx/appcompat/widget/AbsActionBarView;->getVisibility()I
+	6       (00000018) move-result          v0
+	7       (0000001a) goto                 -5
+

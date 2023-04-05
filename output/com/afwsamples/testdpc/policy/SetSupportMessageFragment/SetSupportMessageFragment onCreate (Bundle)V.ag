@@ -1,0 +1,51 @@
+# Lcom/afwsamples/testdpc/policy/SetSupportMessageFragment;->onCreate(Landroid/os/Bundle;)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v3
+# - v4:android.os.Bundle
+#
+# - return:void
+
+onCreate-BB@0x0 : [ onCreate-BB@0x12 onCreate-BB@0x22 ]
+	0       (00000000) invoke-super         v3, v4, Landroid/app/Fragment;->onCreate(Landroid/os/Bundle;)V
+	1       (00000006) invoke-virtual       v3, Lcom/afwsamples/testdpc/policy/SetSupportMessageFragment;->getArguments()Landroid/os/Bundle;
+	2       (0000000c) move-result-object   v0
+	3       (0000000e) if-eqz               v0, +a
+
+onCreate-BB@0x12 : [ onCreate-BB@0x22 ]
+	4       (00000012) const-string         v1, 'message_type'
+	5       (00000016) invoke-virtual       v0, v1, Landroid/os/Bundle;->getInt(Ljava/lang/String;)I
+	6       (0000001c) move-result          v1
+	7       (0000001e) iput                 v1, v3, Lcom/afwsamples/testdpc/policy/SetSupportMessageFragment;->mMessageType I
+
+onCreate-BB@0x22 : [ onCreate-BB@0x3a onCreate-BB@0x78 ]
+	8       (00000022) invoke-virtual       v3, Lcom/afwsamples/testdpc/policy/SetSupportMessageFragment;->getActivity()Landroid/app/Activity;
+	9       (00000028) move-result-object   v1
+	10      (0000002a) invoke-virtual       v1, Landroid/app/Activity;->getActionBar()Landroid/app/ActionBar;
+	11      (00000030) move-result-object   v2
+	12      (00000032) iget                 v1, v3, Lcom/afwsamples/testdpc/policy/SetSupportMessageFragment;->mMessageType I
+	13      (00000036) if-nez               v1, +21
+
+onCreate-BB@0x3a : [ onCreate-BB@0x40 ]
+	14      (0000003a) const                v1, 2131690231 # [1.9009499774613214e+38]
+
+onCreate-BB@0x40 : 
+	15      (00000040) invoke-virtual       v2, v1, Landroid/app/ActionBar;->setTitle(I)V
+	16      (00000046) invoke-virtual       v3, Lcom/afwsamples/testdpc/policy/SetSupportMessageFragment;->getActivity()Landroid/app/Activity;
+	17      (0000004c) move-result-object   v1
+	18      (0000004e) const-string         v2, 'device_policy'
+	19      (00000052) invoke-virtual       v1, v2, Landroid/app/Activity;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
+	20      (00000058) move-result-object   v1
+	21      (0000005a) check-cast           v1, Landroid/app/admin/DevicePolicyManager;
+	22      (0000005e) iput-object          v1, v3, Lcom/afwsamples/testdpc/policy/SetSupportMessageFragment;->mDpm Landroid/app/admin/DevicePolicyManager;
+	23      (00000062) invoke-virtual       v3, Lcom/afwsamples/testdpc/policy/SetSupportMessageFragment;->getActivity()Landroid/app/Activity;
+	24      (00000068) move-result-object   v1
+	25      (0000006a) invoke-static        v1, Lcom/afwsamples/testdpc/DeviceAdminReceiver;->getComponentName(Landroid/content/Context;)Landroid/content/ComponentName;
+	26      (00000070) move-result-object   v1
+	27      (00000072) iput-object          v1, v3, Lcom/afwsamples/testdpc/policy/SetSupportMessageFragment;->mAdmin Landroid/content/ComponentName;
+	28      (00000076) return-void          
+
+onCreate-BB@0x78 : [ onCreate-BB@0x40 ]
+	29      (00000078) const                v1, 2131690211 # [1.9009459209794007e+38]
+	30      (0000007e) goto                 -1f
+

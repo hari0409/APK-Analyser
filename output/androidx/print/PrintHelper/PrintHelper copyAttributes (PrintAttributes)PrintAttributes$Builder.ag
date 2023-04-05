@@ -1,0 +1,50 @@
+# Landroidx/print/PrintHelper;->copyAttributes(Landroid/print/PrintAttributes;)Landroid/print/PrintAttributes$Builder; [access_flags=private static]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:android.print.PrintAttributes
+#
+# - return:android.print.PrintAttributes$Builder
+
+copyAttributes-BB@0x0 : [ copyAttributes-BB@0x46 copyAttributes-BB@0x54 ]
+	0       (00000000) new-instance         v1, Landroid/print/PrintAttributes$Builder;
+	1       (00000004) invoke-direct        v1, Landroid/print/PrintAttributes$Builder;-><init>()V
+	2       (0000000a) invoke-virtual       v3, Landroid/print/PrintAttributes;->getMediaSize()Landroid/print/PrintAttributes$MediaSize;
+	3       (00000010) move-result-object   v2
+	4       (00000012) invoke-virtual       v1, v2, Landroid/print/PrintAttributes$Builder;->setMediaSize(Landroid/print/PrintAttributes$MediaSize;)Landroid/print/PrintAttributes$Builder;
+	5       (00000018) move-result-object   v1
+	6       (0000001a) invoke-virtual       v3, Landroid/print/PrintAttributes;->getResolution()Landroid/print/PrintAttributes$Resolution;
+	7       (00000020) move-result-object   v2
+	8       (00000022) invoke-virtual       v1, v2, Landroid/print/PrintAttributes$Builder;->setResolution(Landroid/print/PrintAttributes$Resolution;)Landroid/print/PrintAttributes$Builder;
+	9       (00000028) move-result-object   v1
+	10      (0000002a) invoke-virtual       v3, Landroid/print/PrintAttributes;->getMinMargins()Landroid/print/PrintAttributes$Margins;
+	11      (00000030) move-result-object   v2
+	12      (00000032) invoke-virtual       v1, v2, Landroid/print/PrintAttributes$Builder;->setMinMargins(Landroid/print/PrintAttributes$Margins;)Landroid/print/PrintAttributes$Builder;
+	13      (00000038) move-result-object   v0
+	14      (0000003a) invoke-virtual       v3, Landroid/print/PrintAttributes;->getColorMode()I
+	15      (00000040) move-result          v1
+	16      (00000042) if-eqz               v1, +9
+
+copyAttributes-BB@0x46 : [ copyAttributes-BB@0x54 ]
+	17      (00000046) invoke-virtual       v3, Landroid/print/PrintAttributes;->getColorMode()I
+	18      (0000004c) move-result          v1
+	19      (0000004e) invoke-virtual       v0, v1, Landroid/print/PrintAttributes$Builder;->setColorMode(I)Landroid/print/PrintAttributes$Builder;
+
+copyAttributes-BB@0x54 : [ copyAttributes-BB@0x60 copyAttributes-BB@0x7a ]
+	20      (00000054) sget                 v1, Landroid/os/Build$VERSION;->SDK_INT I
+	21      (00000058) const/16             v2, 23
+	22      (0000005c) if-lt                v1, v2, +f
+
+copyAttributes-BB@0x60 : [ copyAttributes-BB@0x6c copyAttributes-BB@0x7a ]
+	23      (00000060) invoke-virtual       v3, Landroid/print/PrintAttributes;->getDuplexMode()I
+	24      (00000066) move-result          v1
+	25      (00000068) if-eqz               v1, +9
+
+copyAttributes-BB@0x6c : [ copyAttributes-BB@0x7a ]
+	26      (0000006c) invoke-virtual       v3, Landroid/print/PrintAttributes;->getDuplexMode()I
+	27      (00000072) move-result          v1
+	28      (00000074) invoke-virtual       v0, v1, Landroid/print/PrintAttributes$Builder;->setDuplexMode(I)Landroid/print/PrintAttributes$Builder;
+
+copyAttributes-BB@0x7a : 
+	29      (0000007a) return-object        v0
+

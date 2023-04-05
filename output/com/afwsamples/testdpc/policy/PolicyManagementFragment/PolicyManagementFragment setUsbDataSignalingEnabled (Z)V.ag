@@ -1,0 +1,13 @@
+# Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->setUsbDataSignalingEnabled(Z)V [access_flags=private]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:boolean
+#
+# - return:void
+
+setUsbDataSignalingEnabled-BB@0x0 : 
+	0       (00000000) iget-object          v0, v1, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->mDevicePolicyManagerGateway Lcom/afwsamples/testdpc/DevicePolicyManagerGateway;
+	1       (00000004) invoke-interface     v0, v2, Lcom/afwsamples/testdpc/DevicePolicyManagerGateway;->setUsbDataSignalingEnabled(Z)V
+	2       (0000000a) return-void          
+

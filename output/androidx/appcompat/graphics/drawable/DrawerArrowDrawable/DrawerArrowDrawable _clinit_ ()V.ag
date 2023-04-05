@@ -1,0 +1,15 @@
+# Landroidx/appcompat/graphics/drawable/DrawerArrowDrawable;-><clinit>()V [access_flags=static constructor]
+#
+# Parameters:
+# local registers: v0...v1
+#
+# - return:void
+
+<clinit>-BB@0x0 : 
+	0       (00000000) const-wide           v0, 4631530004285489152 # [45.0]
+	1       (0000000a) invoke-static        v0, v1, Ljava/lang/Math;->toRadians(D)D
+	2       (00000010) move-result-wide     v0
+	3       (00000012) double-to-float      v0, v0
+	4       (00000014) sput                 v0, Landroidx/appcompat/graphics/drawable/DrawerArrowDrawable;->ARROW_HEAD_ANGLE F
+	5       (00000018) return-void          
+

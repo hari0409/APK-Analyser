@@ -1,0 +1,34 @@
+# Landroidx/appcompat/view/menu/MenuBuilder;->onItemsChanged(Z)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:boolean
+#
+# - return:void
+
+onItemsChanged-BB@0x0 : [ onItemsChanged-BB@0xa onItemsChanged-BB@0x1e ]
+	0       (00000000) const/4              v1, 1
+	1       (00000002) iget-boolean         v0, v2, Landroidx/appcompat/view/menu/MenuBuilder;->mPreventDispatchingItemsChanged Z
+	2       (00000006) if-nez               v0, +c
+
+onItemsChanged-BB@0xa : [ onItemsChanged-BB@0xe onItemsChanged-BB@0x16 ]
+	3       (0000000a) if-eqz               v3, +6
+
+onItemsChanged-BB@0xe : [ onItemsChanged-BB@0x16 ]
+	4       (0000000e) iput-boolean         v1, v2, Landroidx/appcompat/view/menu/MenuBuilder;->mIsVisibleItemsStale Z
+	5       (00000012) iput-boolean         v1, v2, Landroidx/appcompat/view/menu/MenuBuilder;->mIsActionItemsStale Z
+
+onItemsChanged-BB@0x16 : [ onItemsChanged-BB@0x1c ]
+	6       (00000016) invoke-direct        v2, v3, Landroidx/appcompat/view/menu/MenuBuilder;->dispatchPresenterUpdate(Z)V
+
+onItemsChanged-BB@0x1c : 
+	7       (0000001c) return-void          
+
+onItemsChanged-BB@0x1e : [ onItemsChanged-BB@0x26 onItemsChanged-BB@0x1c ]
+	8       (0000001e) iput-boolean         v1, v2, Landroidx/appcompat/view/menu/MenuBuilder;->mItemsChangedWhileDispatchPrevented Z
+	9       (00000022) if-eqz               v3, -3
+
+onItemsChanged-BB@0x26 : [ onItemsChanged-BB@0x1c ]
+	10      (00000026) iput-boolean         v1, v2, Landroidx/appcompat/view/menu/MenuBuilder;->mStructureChangedWhileDispatchPrevented Z
+	11      (0000002a) goto                 -7
+

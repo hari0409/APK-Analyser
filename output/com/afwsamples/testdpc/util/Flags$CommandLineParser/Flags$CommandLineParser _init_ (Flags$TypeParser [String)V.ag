@@ -1,0 +1,23 @@
+# Lcom/afwsamples/testdpc/util/Flags$CommandLineParser;-><init>(Lcom/afwsamples/testdpc/util/Flags$TypeParser; [Ljava/lang/String;)V [access_flags=private constructor]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:com.afwsamples.testdpc.util.Flags$TypeParser
+# - v3:java.lang.String[]
+#
+# - return:void
+
+<init>-BB@0x0 : 
+	0       (00000000) invoke-direct        v1, Ljava/lang/Object;-><init>()V
+	1       (00000006) new-instance         v0, Ljava/util/HashMap;
+	2       (0000000a) invoke-direct        v0, Ljava/util/HashMap;-><init>()V
+	3       (00000010) iput-object          v0, v1, Lcom/afwsamples/testdpc/util/Flags$CommandLineParser;->parsedParams Ljava/util/Map;
+	4       (00000014) new-instance         v0, Ljava/util/HashSet;
+	5       (00000018) invoke-direct        v0, Ljava/util/HashSet;-><init>()V
+	6       (0000001e) iput-object          v0, v1, Lcom/afwsamples/testdpc/util/Flags$CommandLineParser;->parsedOrdinalParams Ljava/util/Set;
+	7       (00000022) const/4              v0, 1
+	8       (00000024) iput                 v0, v1, Lcom/afwsamples/testdpc/util/Flags$CommandLineParser;->currentIndex I
+	9       (00000028) iput-object          v2, v1, Lcom/afwsamples/testdpc/util/Flags$CommandLineParser;->typeParser Lcom/afwsamples/testdpc/util/Flags$TypeParser;
+	10      (0000002c) iput-object          v3, v1, Lcom/afwsamples/testdpc/util/Flags$CommandLineParser;->args [Ljava/lang/String;
+	11      (00000030) return-void          
+

@@ -1,0 +1,1906 @@
+# Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->onPreferenceClick(Landroidx/preference/Preference;)Z [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v8
+# - v9:androidx.preference.Preference
+#
+# - return:boolean
+
+onPreferenceClick-BB@0x0 : [ D:onPreferenceClick-BB@0x24 -2131053786:onPreferenceClick-BB@0x7e0 -2109562422:onPreferenceClick-BB@0xa20 -2095929195:onPreferenceClick-BB@0x420 -2059905666:onPreferenceClick-BB@0x798 -2046840208:onPreferenceClick-BB@0x9f0 -2038272516:onPreferenceClick-BB@0x540 -2000042206:onPreferenceClick-BB@0x750 -1988152766:onPreferenceClick-BB@0x768 -1948749033:onPreferenceClick-BB@0x888 -1909422965:onPreferenceClick-BB@0x828 -1881973891:onPreferenceClick-BB@0x378 -1772382361:onPreferenceClick-BB@0x918 -1769706809:onPreferenceClick-BB@0x8d0 -1742947451:onPreferenceClick-BB@0x558 -1680482408:onPreferenceClick-BB@0x498 -1628024456:onPreferenceClick-BB@0xa4 -1547247018:onPreferenceClick-BB@0xa08 -1546839264:onPreferenceClick-BB@0x16c -1542782251:onPreferenceClick-BB@0x1e4 -1483556994:onPreferenceClick-BB@0x810 -1460327157:onPreferenceClick-BB@0x7c8 -1452100097:onPreferenceClick-BB@0x570 -1449576943:onPreferenceClick-BB@0x28a -1406988727:onPreferenceClick-BB@0x1cc -1386026310:onPreferenceClick-BB@0x244 -1373376073:onPreferenceClick-BB@0x858 -1371405315:onPreferenceClick-BB@0x6d8 -1340619981:onPreferenceClick-BB@0x9c0 -1279759233:onPreferenceClick-BB@0x390 -1225981463:onPreferenceClick-BB@0x3a8 -1127801685:onPreferenceClick-BB@0x184 -1117537733:onPreferenceClick-BB@0x930 -1090342370:onPreferenceClick-BB@0x300 -972754147:onPreferenceClick-BB@0x8b8 -948954809:onPreferenceClick-BB@0x6c0 -934938715:onPreferenceClick-BB@0x840 -925666568:onPreferenceClick-BB@0xf8 -893941313:onPreferenceClick-BB@0x2c -750206872:onPreferenceClick-BB@0x19c -732465443:onPreferenceClick-BB@0x480 -660766639:onPreferenceClick-BB@0x5e8 -633360750:onPreferenceClick-BB@0x600 -629281960:onPreferenceClick-BB@0x618 -622209307:onPreferenceClick-BB@0x468 -604264626:onPreferenceClick-BB@0x6a8 -525117557:onPreferenceClick-BB@0x68 -501805478:onPreferenceClick-BB@0x588 -478190222:onPreferenceClick-BB@0x214 -427991142:onPreferenceClick-BB@0x3d8 -402824924:onPreferenceClick-BB@0x5b8 -333010914:onPreferenceClick-BB@0x9d8 -323029855:onPreferenceClick-BB@0x678 -293511514:onPreferenceClick-BB@0x25c -143299130:onPreferenceClick-BB@0x330 -126519354:onPreferenceClick-BB@0x990 -46400271:onPreferenceClick-BB@0x7b0 -41074856:onPreferenceClick-BB@0x318 13477722:onPreferenceClick-BB@0x9a8 141981839:onPreferenceClick-BB@0x1fc 160022326:onPreferenceClick-BB@0x738 216185787:onPreferenceClick-BB@0x40 299866191:onPreferenceClick-BB@0x720 336434515:onPreferenceClick-BB@0x348 359364381:onPreferenceClick-BB@0x708 381144743:onPreferenceClick-BB@0x2d2 488534493:onPreferenceClick-BB@0x948 533270688:onPreferenceClick-BB@0x54 576760016:onPreferenceClick-BB@0x10e 606154142:onPreferenceClick-BB@0x124 644439820:onPreferenceClick-BB@0x2e8 674139411:onPreferenceClick-BB@0x528 824722277:onPreferenceClick-BB@0xe2 853122895:onPreferenceClick-BB@0x3c0 886472668:onPreferenceClick-BB@0x7f8 896601030:onPreferenceClick-BB@0x5d0 921562326:onPreferenceClick-BB@0x3f0 968661422:onPreferenceClick-BB@0x438 981136860:onPreferenceClick-BB@0x8a0 1011080081:onPreferenceClick-BB@0x870 1071398032:onPreferenceClick-BB@0x4b0 1133970130:onPreferenceClick-BB@0x510 1273234855:onPreferenceClick-BB@0x648 1325819457:onPreferenceClick-BB@0x978 1341542475:onPreferenceClick-BB@0x360 1394097828:onPreferenceClick-BB@0x1b4 1415560330:onPreferenceClick-BB@0x960 1432855055:onPreferenceClick-BB@0x900 1469748997:onPreferenceClick-BB@0x4e0 1540392050:onPreferenceClick-BB@0x690 1571294370:onPreferenceClick-BB@0xcc 1577768167:onPreferenceClick-BB@0x8e8 1580376239:onPreferenceClick-BB@0x6f0 1630162408:onPreferenceClick-BB@0x2a2 1682507825:onPreferenceClick-BB@0x630 1700757366:onPreferenceClick-BB@0x660 1713839155:onPreferenceClick-BB@0x408 1729852768:onPreferenceClick-BB@0x2ba 1733719907:onPreferenceClick-BB@0x4c8 1780706476:onPreferenceClick-BB@0x154 1782896764:onPreferenceClick-BB@0x90 1909658050:onPreferenceClick-BB@0x7c 1944589340:onPreferenceClick-BB@0xb8 1952997376:onPreferenceClick-BB@0x13c 1964644719:onPreferenceClick-BB@0x780 1976839308:onPreferenceClick-BB@0x4f8 2019995590:onPreferenceClick-BB@0x22c 2118209812:onPreferenceClick-BB@0x5a0 2129415670:onPreferenceClick-BB@0x274 2138545338:onPreferenceClick-BB@0x450 ]
+	0       (00000000) const/16             v5, 26
+	1       (00000004) const/16             v6, 30
+	2       (00000008) const/4              v2, 0
+	3       (0000000a) const/4              v3, 1
+	4       (0000000c) invoke-virtual       v9, Landroidx/preference/Preference;->getKey()Ljava/lang/String;
+	5       (00000012) move-result-object   v0
+	6       (00000014) const/4              v4, -1
+	7       (00000016) invoke-virtual       v0, Ljava/lang/String;->hashCode()I
+	8       (0000001c) move-result          v7
+	9       (0000001e) sparse-switch        v7, +94f (0x12bc)
+
+onPreferenceClick-BB@0x24 : [ D:onPreferenceClick-BB@0x2a 0:onPreferenceClick-BB@0xa38 1:onPreferenceClick-BB@0xa54 2:onPreferenceClick-BB@0xa60 3:onPreferenceClick-BB@0xa76 4:onPreferenceClick-BB@0xa9e 5:onPreferenceClick-BB@0xaaa 6:onPreferenceClick-BB@0xabe 7:onPreferenceClick-BB@0xaca 8:onPreferenceClick-BB@0xade 9:onPreferenceClick-BB@0xaea 10:onPreferenceClick-BB@0xaf6 11:onPreferenceClick-BB@0xb02 12:onPreferenceClick-BB@0xb18 13:onPreferenceClick-BB@0xb2c 14:onPreferenceClick-BB@0xb40 15:onPreferenceClick-BB@0xb84 16:onPreferenceClick-BB@0xbc8 17:onPreferenceClick-BB@0xbd4 18:onPreferenceClick-BB@0xc18 19:onPreferenceClick-BB@0xc24 20:onPreferenceClick-BB@0xc30 21:onPreferenceClick-BB@0xc3c 22:onPreferenceClick-BB@0xc66 23:onPreferenceClick-BB@0xc72 24:onPreferenceClick-BB@0xc7e 25:onPreferenceClick-BB@0xc8a 26:onPreferenceClick-BB@0xc96 27:onPreferenceClick-BB@0xca2 28:onPreferenceClick-BB@0xcae 29:onPreferenceClick-BB@0xcba 30:onPreferenceClick-BB@0xcc6 31:onPreferenceClick-BB@0xcdc 32:onPreferenceClick-BB@0xcf2 33:onPreferenceClick-BB@0xcfe 34:onPreferenceClick-BB@0xd0a 35:onPreferenceClick-BB@0xd16 36:onPreferenceClick-BB@0xd22 37:onPreferenceClick-BB@0xd38 38:onPreferenceClick-BB@0xd44 39:onPreferenceClick-BB@0xd54 40:onPreferenceClick-BB@0xd60 41:onPreferenceClick-BB@0xd6c 42:onPreferenceClick-BB@0xd78 43:onPreferenceClick-BB@0xd84 44:onPreferenceClick-BB@0xd90 45:onPreferenceClick-BB@0xd9c 46:onPreferenceClick-BB@0xda8 47:onPreferenceClick-BB@0xdb4 48:onPreferenceClick-BB@0xdca 49:onPreferenceClick-BB@0xde0 50:onPreferenceClick-BB@0xdec 51:onPreferenceClick-BB@0xe02 52:onPreferenceClick-BB@0xe18 53:onPreferenceClick-BB@0xe24 54:onPreferenceClick-BB@0xe3a 55:onPreferenceClick-BB@0xe46 56:onPreferenceClick-BB@0xe56 57:onPreferenceClick-BB@0xe62 58:onPreferenceClick-BB@0xe72 59:onPreferenceClick-BB@0xe7e 60:onPreferenceClick-BB@0xe8e 61:onPreferenceClick-BB@0xe9a 62:onPreferenceClick-BB@0xebe 63:onPreferenceClick-BB@0xed8 64:onPreferenceClick-BB@0xeee 65:onPreferenceClick-BB@0xf04 66:onPreferenceClick-BB@0xf1a 67:onPreferenceClick-BB@0xf26 68:onPreferenceClick-BB@0xf3c 69:onPreferenceClick-BB@0xf48 70:onPreferenceClick-BB@0xf5e 71:onPreferenceClick-BB@0xf74 72:onPreferenceClick-BB@0xf8a 73:onPreferenceClick-BB@0xfa0 74:onPreferenceClick-BB@0xfac 75:onPreferenceClick-BB@0xfb8 76:onPreferenceClick-BB@0xfc4 77:onPreferenceClick-BB@0xfd0 78:onPreferenceClick-BB@0xfec 79:onPreferenceClick-BB@0x1004 80:onPreferenceClick-BB@0x101c 81:onPreferenceClick-BB@0x1028 82:onPreferenceClick-BB@0x1034 83:onPreferenceClick-BB@0x1048 84:onPreferenceClick-BB@0x105c 85:onPreferenceClick-BB@0x109c 86:onPreferenceClick-BB@0x10a8 87:onPreferenceClick-BB@0x10be 88:onPreferenceClick-BB@0x10d4 89:onPreferenceClick-BB@0x10e0 90:onPreferenceClick-BB@0x10f4 91:onPreferenceClick-BB@0x1108 92:onPreferenceClick-BB@0x1130 93:onPreferenceClick-BB@0x114a 94:onPreferenceClick-BB@0x1170 95:onPreferenceClick-BB@0x1186 96:onPreferenceClick-BB@0x119c 97:onPreferenceClick-BB@0x11b2 98:onPreferenceClick-BB@0x11be 99:onPreferenceClick-BB@0x11ca 100:onPreferenceClick-BB@0x11e0 101:onPreferenceClick-BB@0x1212 102:onPreferenceClick-BB@0x1244 103:onPreferenceClick-BB@0x125a 104:onPreferenceClick-BB@0x1266 105:onPreferenceClick-BB@0x127c 106:onPreferenceClick-BB@0x1288 107:onPreferenceClick-BB@0x1294 108:onPreferenceClick-BB@0x12aa ]
+	10      (00000024) packed-switch        v4, +b02 (0x1628)
+
+onPreferenceClick-BB@0x2a : 
+	11      (0000002a) return               v2
+
+onPreferenceClick-BB@0x2c : [ onPreferenceClick-BB@0x3c onPreferenceClick-BB@0x24 ]
+	12      (0000002c) const-string         v7, 'manage_lock_task'
+	13      (00000030) invoke-virtual       v0, v7, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+	14      (00000036) move-result          v7
+	15      (00000038) if-eqz               v7, -a
+
+onPreferenceClick-BB@0x3c : [ onPreferenceClick-BB@0x24 ]
+	16      (0000003c) move                 v4, v2
+	17      (0000003e) goto                 -d
+
+onPreferenceClick-BB@0x40 : [ onPreferenceClick-BB@0x50 onPreferenceClick-BB@0x24 ]
+	18      (00000040) const-string         v7, 'check_lock_task_permitted'
+	19      (00000044) invoke-virtual       v0, v7, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+	20      (0000004a) move-result          v7
+	21      (0000004c) if-eqz               v7, -14
+
+onPreferenceClick-BB@0x50 : [ onPreferenceClick-BB@0x24 ]
+	22      (00000050) move                 v4, v3
+	23      (00000052) goto                 -17
+
+onPreferenceClick-BB@0x54 : [ onPreferenceClick-BB@0x64 onPreferenceClick-BB@0x24 ]
+	24      (00000054) const-string         v7, 'set_lock_task_features'
+	25      (00000058) invoke-virtual       v0, v7, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+	26      (0000005e) move-result          v7
+	27      (00000060) if-eqz               v7, -1e
+
+onPreferenceClick-BB@0x64 : [ onPreferenceClick-BB@0x24 ]
+	28      (00000064) const/4              v4, 2
+	29      (00000066) goto                 -21
+
+onPreferenceClick-BB@0x68 : [ onPreferenceClick-BB@0x78 onPreferenceClick-BB@0x24 ]
+	30      (00000068) const-string         v7, 'reset_password'
+	31      (0000006c) invoke-virtual       v0, v7, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+	32      (00000072) move-result          v7
+	33      (00000074) if-eqz               v7, -28
+
+onPreferenceClick-BB@0x78 : [ onPreferenceClick-BB@0x24 ]
+	34      (00000078) const/4              v4, 3
+	35      (0000007a) goto                 -2b
+
+onPreferenceClick-BB@0x7c : [ onPreferenceClick-BB@0x8c onPreferenceClick-BB@0x24 ]
+	36      (0000007c) const-string         v7, 'lock_now'
+	37      (00000080) invoke-virtual       v0, v7, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+	38      (00000086) move-result          v7
+	39      (00000088) if-eqz               v7, -32
+
+onPreferenceClick-BB@0x8c : [ onPreferenceClick-BB@0x24 ]
+	40      (0000008c) const/4              v4, 4
+	41      (0000008e) goto                 -35
+
+onPreferenceClick-BB@0x90 : [ onPreferenceClick-BB@0xa0 onPreferenceClick-BB@0x24 ]
+	42      (00000090) const-string         v7, 'start_lock_task'
+	43      (00000094) invoke-virtual       v0, v7, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+	44      (0000009a) move-result          v7
+	45      (0000009c) if-eqz               v7, -3c
+
+onPreferenceClick-BB@0xa0 : [ onPreferenceClick-BB@0x24 ]
+	46      (000000a0) const/4              v4, 5
+	47      (000000a2) goto                 -3f
+
+onPreferenceClick-BB@0xa4 : [ onPreferenceClick-BB@0xb4 onPreferenceClick-BB@0x24 ]
+	48      (000000a4) const-string         v7, 'relaunch_in_lock_task'
+	49      (000000a8) invoke-virtual       v0, v7, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+	50      (000000ae) move-result          v7
+	51      (000000b0) if-eqz               v7, -46
+
+onPreferenceClick-BB@0xb4 : [ onPreferenceClick-BB@0x24 ]
+	52      (000000b4) const/4              v4, 6
+	53      (000000b6) goto                 -49
+
+onPreferenceClick-BB@0xb8 : [ onPreferenceClick-BB@0xc8 onPreferenceClick-BB@0x24 ]
+	54      (000000b8) const-string         v7, 'stop_lock_task'
+	55      (000000bc) invoke-virtual       v0, v7, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+	56      (000000c2) move-result          v7
+	57      (000000c4) if-eqz               v7, -50
+
+onPreferenceClick-BB@0xc8 : [ onPreferenceClick-BB@0x24 ]
+	58      (000000c8) const/4              v4, 7
+	59      (000000ca) goto                 -53
+
+onPreferenceClick-BB@0xcc : [ onPreferenceClick-BB@0xdc onPreferenceClick-BB@0x24 ]
+	60      (000000cc) const-string         v7, 'wipe_data'
+	61      (000000d0) invoke-virtual       v0, v7, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+	62      (000000d6) move-result          v7
+	63      (000000d8) if-eqz               v7, -5a
+
+onPreferenceClick-BB@0xdc : [ onPreferenceClick-BB@0x24 ]
+	64      (000000dc) const/16             v4, 8
+	65      (000000e0) goto                 -5e
+
+onPreferenceClick-BB@0xe2 : [ onPreferenceClick-BB@0xf2 onPreferenceClick-BB@0x24 ]
+	66      (000000e2) const-string         v7, 'remove_device_owner'
+	67      (000000e6) invoke-virtual       v0, v7, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+	68      (000000ec) move-result          v7
+	69      (000000ee) if-eqz               v7, -65
+
+onPreferenceClick-BB@0xf2 : [ onPreferenceClick-BB@0x24 ]
+	70      (000000f2) const/16             v4, 9
+	71      (000000f6) goto                 -69
+
+onPreferenceClick-BB@0xf8 : [ onPreferenceClick-BB@0x108 onPreferenceClick-BB@0x24 ]
+	72      (000000f8) const-string         v7, 'request_bugreport'
+	73      (000000fc) invoke-virtual       v0, v7, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+	74      (00000102) move-result          v7
+	75      (00000104) if-eqz               v7, -70
+
+onPreferenceClick-BB@0x108 : [ onPreferenceClick-BB@0x24 ]
+	76      (00000108) const/16             v4, 10
+	77      (0000010c) goto                 -74
+
+onPreferenceClick-BB@0x10e : [ onPreferenceClick-BB@0x11e onPreferenceClick-BB@0x24 ]
+	78      (0000010e) const-string         v7, 'request_network_logs'
+	79      (00000112) invoke-virtual       v0, v7, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+	80      (00000118) move-result          v7
+	81      (0000011a) if-eqz               v7, -7b
+
+onPreferenceClick-BB@0x11e : [ onPreferenceClick-BB@0x24 ]
+	82      (0000011e) const/16             v4, 11
+	83      (00000122) goto                 -7f
+
+onPreferenceClick-BB@0x124 : [ onPreferenceClick-BB@0x134 onPreferenceClick-BB@0x24 ]
+	84      (00000124) const-string         v7, 'request_security_logs'
+	85      (00000128) invoke-virtual       v0, v7, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+	86      (0000012e) move-result          v7
+	87      (00000130) if-eqz               v7, -86
+
+onPreferenceClick-BB@0x134 : [ onPreferenceClick-BB@0x24 ]
+	88      (00000134) const/16             v4, 12
+	89      (00000138) goto/16              -8a
+
+onPreferenceClick-BB@0x13c : [ onPreferenceClick-BB@0x14c onPreferenceClick-BB@0x24 ]
+	90      (0000013c) const-string         v7, 'request_pre_reboot_security_logs'
+	91      (00000140) invoke-virtual       v0, v7, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+	92      (00000146) move-result          v7
+	93      (00000148) if-eqz               v7, -92
+
+onPreferenceClick-BB@0x14c : [ onPreferenceClick-BB@0x24 ]
+	94      (0000014c) const/16             v4, 13
+	95      (00000150) goto/16              -96
+
+onPreferenceClick-BB@0x154 : [ onPreferenceClick-BB@0x164 onPreferenceClick-BB@0x24 ]
+	96      (00000154) const-string         v7, 'set_accessibility_services'
+	97      (00000158) invoke-virtual       v0, v7, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+	98      (0000015e) move-result          v7
+	99      (00000160) if-eqz               v7, -9e
+
+onPreferenceClick-BB@0x164 : [ onPreferenceClick-BB@0x24 ]
+	100     (00000164) const/16             v4, 14
+	101     (00000168) goto/16              -a2
+
+onPreferenceClick-BB@0x16c : [ onPreferenceClick-BB@0x17c onPreferenceClick-BB@0x24 ]
+	102     (0000016c) const-string         v7, 'set_input_methods'
+	103     (00000170) invoke-virtual       v0, v7, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+	104     (00000176) move-result          v7
+	105     (00000178) if-eqz               v7, -aa
+
+onPreferenceClick-BB@0x17c : [ onPreferenceClick-BB@0x24 ]
+	106     (0000017c) const/16             v4, 15
+	107     (00000180) goto/16              -ae
+
+onPreferenceClick-BB@0x184 : [ onPreferenceClick-BB@0x194 onPreferenceClick-BB@0x24 ]
+	108     (00000184) const-string         v7, 'set_input_methods_on_parent'
+	109     (00000188) invoke-virtual       v0, v7, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+	110     (0000018e) move-result          v7
+	111     (00000190) if-eqz               v7, -b6
+
+onPreferenceClick-BB@0x194 : [ onPreferenceClick-BB@0x24 ]
+	112     (00000194) const/16             v4, 16
+	113     (00000198) goto/16              -ba
+
+onPreferenceClick-BB@0x19c : [ onPreferenceClick-BB@0x1ac onPreferenceClick-BB@0x24 ]
+	114     (0000019c) const-string         v7, 'set_notification_listeners'
+	115     (000001a0) invoke-virtual       v0, v7, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+	116     (000001a6) move-result          v7
+	117     (000001a8) if-eqz               v7, -c2
+
+onPreferenceClick-BB@0x1ac : [ onPreferenceClick-BB@0x24 ]
+	118     (000001ac) const/16             v4, 17
+	119     (000001b0) goto/16              -c6
+
+onPreferenceClick-BB@0x1b4 : [ onPreferenceClick-BB@0x1c4 onPreferenceClick-BB@0x24 ]
+	120     (000001b4) const-string         v7, 'set_notification_listeners_text'
+	121     (000001b8) invoke-virtual       v0, v7, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+	122     (000001be) move-result          v7
+	123     (000001c0) if-eqz               v7, -ce
+
+onPreferenceClick-BB@0x1c4 : [ onPreferenceClick-BB@0x24 ]
+	124     (000001c4) const/16             v4, 18
+	125     (000001c8) goto/16              -d2
+
+onPreferenceClick-BB@0x1cc : [ onPreferenceClick-BB@0x1dc onPreferenceClick-BB@0x24 ]
+	126     (000001cc) const-string         v7, 'set_disable_account_management'
+	127     (000001d0) invoke-virtual       v0, v7, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+	128     (000001d6) move-result          v7
+	129     (000001d8) if-eqz               v7, -da
+
+onPreferenceClick-BB@0x1dc : [ onPreferenceClick-BB@0x24 ]
+	130     (000001dc) const/16             v4, 19
+	131     (000001e0) goto/16              -de
+
+onPreferenceClick-BB@0x1e4 : [ onPreferenceClick-BB@0x1f4 onPreferenceClick-BB@0x24 ]
+	132     (000001e4) const-string         v7, 'get_disable_account_management'
+	133     (000001e8) invoke-virtual       v0, v7, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+	134     (000001ee) move-result          v7
+	135     (000001f0) if-eqz               v7, -e6
+
+onPreferenceClick-BB@0x1f4 : [ onPreferenceClick-BB@0x24 ]
+	136     (000001f4) const/16             v4, 20
+	137     (000001f8) goto/16              -ea
+
+onPreferenceClick-BB@0x1fc : [ onPreferenceClick-BB@0x20c onPreferenceClick-BB@0x24 ]
+	138     (000001fc) const-string         v7, 'add_account'
+	139     (00000200) invoke-virtual       v0, v7, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+	140     (00000206) move-result          v7
+	141     (00000208) if-eqz               v7, -f2
+
+onPreferenceClick-BB@0x20c : [ onPreferenceClick-BB@0x24 ]
+	142     (0000020c) const/16             v4, 21
+	143     (00000210) goto/16              -f6
+
+onPreferenceClick-BB@0x214 : [ onPreferenceClick-BB@0x224 onPreferenceClick-BB@0x24 ]
+	144     (00000214) const-string         v7, 'remove_account'
+	145     (00000218) invoke-virtual       v0, v7, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+	146     (0000021e) move-result          v7
+	147     (00000220) if-eqz               v7, -fe
+
+onPreferenceClick-BB@0x224 : [ onPreferenceClick-BB@0x24 ]
+	148     (00000224) const/16             v4, 22
+	149     (00000228) goto/16              -102
+
+onPreferenceClick-BB@0x22c : [ onPreferenceClick-BB@0x23c onPreferenceClick-BB@0x24 ]
+	150     (0000022c) const-string         v7, 'create_managed_profile'
+	151     (00000230) invoke-virtual       v0, v7, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+	152     (00000236) move-result          v7
+	153     (00000238) if-eqz               v7, -10a
+
+onPreferenceClick-BB@0x23c : [ onPreferenceClick-BB@0x24 ]
+	154     (0000023c) const/16             v4, 23
+	155     (00000240) goto/16              -10e
+
+onPreferenceClick-BB@0x244 : [ onPreferenceClick-BB@0x254 onPreferenceClick-BB@0x24 ]
+	156     (00000244) const-string         v7, 'create_and_manage_user'
+	157     (00000248) invoke-virtual       v0, v7, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+	158     (0000024e) move-result          v7
+	159     (00000250) if-eqz               v7, -116
+
+onPreferenceClick-BB@0x254 : [ onPreferenceClick-BB@0x24 ]
+	160     (00000254) const/16             v4, 24
+	161     (00000258) goto/16              -11a
+
+onPreferenceClick-BB@0x25c : [ onPreferenceClick-BB@0x26c onPreferenceClick-BB@0x24 ]
+	162     (0000025c) const-string         v7, 'remove_user'
+	163     (00000260) invoke-virtual       v0, v7, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+	164     (00000266) move-result          v7
+	165     (00000268) if-eqz               v7, -122
+
+onPreferenceClick-BB@0x26c : [ onPreferenceClick-BB@0x24 ]
+	166     (0000026c) const/16             v4, 25
+	167     (00000270) goto/16              -126
+
+onPreferenceClick-BB@0x274 : [ onPreferenceClick-BB@0x284 onPreferenceClick-BB@0x24 ]
+	168     (00000274) const-string         v7, 'switch_user'
+	169     (00000278) invoke-virtual       v0, v7, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+	170     (0000027e) move-result          v7
+	171     (00000280) if-eqz               v7, -12e
+
+onPreferenceClick-BB@0x284 : [ onPreferenceClick-BB@0x24 ]
+	172     (00000284) move                 v4, v5
+	173     (00000286) goto/16              -131
+
+onPreferenceClick-BB@0x28a : [ onPreferenceClick-BB@0x29a onPreferenceClick-BB@0x24 ]
+	174     (0000028a) const-string         v7, 'start_user_in_background'
+	175     (0000028e) invoke-virtual       v0, v7, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+	176     (00000294) move-result          v7
+	177     (00000296) if-eqz               v7, -139
+
+onPreferenceClick-BB@0x29a : [ onPreferenceClick-BB@0x24 ]
+	178     (0000029a) const/16             v4, 27
+	179     (0000029e) goto/16              -13d
+
+onPreferenceClick-BB@0x2a2 : [ onPreferenceClick-BB@0x2b2 onPreferenceClick-BB@0x24 ]
+	180     (000002a2) const-string         v7, 'stop_user'
+	181     (000002a6) invoke-virtual       v0, v7, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+	182     (000002ac) move-result          v7
+	183     (000002ae) if-eqz               v7, -145
+
+onPreferenceClick-BB@0x2b2 : [ onPreferenceClick-BB@0x24 ]
+	184     (000002b2) const/16             v4, 28
+	185     (000002b6) goto/16              -149
+
+onPreferenceClick-BB@0x2ba : [ onPreferenceClick-BB@0x2ca onPreferenceClick-BB@0x24 ]
+	186     (000002ba) const-string         v7, 'logout_user'
+	187     (000002be) invoke-virtual       v0, v7, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+	188     (000002c4) move-result          v7
+	189     (000002c6) if-eqz               v7, -151
+
+onPreferenceClick-BB@0x2ca : [ onPreferenceClick-BB@0x24 ]
+	190     (000002ca) const/16             v4, 29
+	191     (000002ce) goto/16              -155
+
+onPreferenceClick-BB@0x2d2 : [ onPreferenceClick-BB@0x2e2 onPreferenceClick-BB@0x24 ]
+	192     (000002d2) const-string         v7, 'set_user_session_message'
+	193     (000002d6) invoke-virtual       v0, v7, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+	194     (000002dc) move-result          v7
+	195     (000002de) if-eqz               v7, -15d
+
+onPreferenceClick-BB@0x2e2 : [ onPreferenceClick-BB@0x24 ]
+	196     (000002e2) move                 v4, v6
+	197     (000002e4) goto/16              -160
+
+onPreferenceClick-BB@0x2e8 : [ onPreferenceClick-BB@0x2f8 onPreferenceClick-BB@0x24 ]
+	198     (000002e8) const-string         v7, 'set_affiliation_ids'
+	199     (000002ec) invoke-virtual       v0, v7, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+	200     (000002f2) move-result          v7
+	201     (000002f4) if-eqz               v7, -168
+
+onPreferenceClick-BB@0x2f8 : [ onPreferenceClick-BB@0x24 ]
+	202     (000002f8) const/16             v4, 31
+	203     (000002fc) goto/16              -16c
+
+onPreferenceClick-BB@0x300 : [ onPreferenceClick-BB@0x310 onPreferenceClick-BB@0x24 ]
+	204     (00000300) const-string         v7, 'block_uninstallation_by_pkg'
+	205     (00000304) invoke-virtual       v0, v7, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+	206     (0000030a) move-result          v7
+	207     (0000030c) if-eqz               v7, -174
+
+onPreferenceClick-BB@0x310 : [ onPreferenceClick-BB@0x24 ]
+	208     (00000310) const/16             v4, 32
+	209     (00000314) goto/16              -178
+
+onPreferenceClick-BB@0x318 : [ onPreferenceClick-BB@0x328 onPreferenceClick-BB@0x24 ]
+	210     (00000318) const-string         v7, 'block_uninstallation_list'
+	211     (0000031c) invoke-virtual       v0, v7, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+	212     (00000322) move-result          v7
+	213     (00000324) if-eqz               v7, -180
+
+onPreferenceClick-BB@0x328 : [ onPreferenceClick-BB@0x24 ]
+	214     (00000328) const/16             v4, 33
+	215     (0000032c) goto/16              -184
+
+onPreferenceClick-BB@0x330 : [ onPreferenceClick-BB@0x340 onPreferenceClick-BB@0x24 ]
+	216     (00000330) const-string         v7, 'enable_system_apps'
+	217     (00000334) invoke-virtual       v0, v7, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+	218     (0000033a) move-result          v7
+	219     (0000033c) if-eqz               v7, -18c
+
+onPreferenceClick-BB@0x340 : [ onPreferenceClick-BB@0x24 ]
+	220     (00000340) const/16             v4, 34
+	221     (00000344) goto/16              -190
+
+onPreferenceClick-BB@0x348 : [ onPreferenceClick-BB@0x358 onPreferenceClick-BB@0x24 ]
+	222     (00000348) const-string         v7, 'enable_system_apps_by_package_name'
+	223     (0000034c) invoke-virtual       v0, v7, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+	224     (00000352) move-result          v7
+	225     (00000354) if-eqz               v7, -198
+
+onPreferenceClick-BB@0x358 : [ onPreferenceClick-BB@0x24 ]
+	226     (00000358) const/16             v4, 35
+	227     (0000035c) goto/16              -19c
+
+onPreferenceClick-BB@0x360 : [ onPreferenceClick-BB@0x370 onPreferenceClick-BB@0x24 ]
+	228     (00000360) const-string         v7, 'enable_system_apps_by_intent'
+	229     (00000364) invoke-virtual       v0, v7, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+	230     (0000036a) move-result          v7
+	231     (0000036c) if-eqz               v7, -1a4
+
+onPreferenceClick-BB@0x370 : [ onPreferenceClick-BB@0x24 ]
+	232     (00000370) const/16             v4, 36
+	233     (00000374) goto/16              -1a8
+
+onPreferenceClick-BB@0x378 : [ onPreferenceClick-BB@0x388 onPreferenceClick-BB@0x24 ]
+	234     (00000378) const-string         v7, 'install_existing_packages'
+	235     (0000037c) invoke-virtual       v0, v7, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+	236     (00000382) move-result          v7
+	237     (00000384) if-eqz               v7, -1b0
+
+onPreferenceClick-BB@0x388 : [ onPreferenceClick-BB@0x24 ]
+	238     (00000388) const/16             v4, 37
+	239     (0000038c) goto/16              -1b4
+
+onPreferenceClick-BB@0x390 : [ onPreferenceClick-BB@0x3a0 onPreferenceClick-BB@0x24 ]
+	240     (00000390) const-string         v7, 'install_apk_package'
+	241     (00000394) invoke-virtual       v0, v7, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+	242     (0000039a) move-result          v7
+	243     (0000039c) if-eqz               v7, -1bc
+
+onPreferenceClick-BB@0x3a0 : [ onPreferenceClick-BB@0x24 ]
+	244     (000003a0) const/16             v4, 38
+	245     (000003a4) goto/16              -1c0
+
+onPreferenceClick-BB@0x3a8 : [ onPreferenceClick-BB@0x3b8 onPreferenceClick-BB@0x24 ]
+	246     (000003a8) const-string         v7, 'uninstall_package'
+	247     (000003ac) invoke-virtual       v0, v7, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+	248     (000003b2) move-result          v7
+	249     (000003b4) if-eqz               v7, -1c8
+
+onPreferenceClick-BB@0x3b8 : [ onPreferenceClick-BB@0x24 ]
+	250     (000003b8) const/16             v4, 39
+	251     (000003bc) goto/16              -1cc
+
+onPreferenceClick-BB@0x3c0 : [ onPreferenceClick-BB@0x3d0 onPreferenceClick-BB@0x24 ]
+	252     (000003c0) const-string         v7, 'hide_apps'
+	253     (000003c4) invoke-virtual       v0, v7, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+	254     (000003ca) move-result          v7
+	255     (000003cc) if-eqz               v7, -1d4
+
+onPreferenceClick-BB@0x3d0 : [ onPreferenceClick-BB@0x24 ]
+	256     (000003d0) const/16             v4, 40
+	257     (000003d4) goto/16              -1d8
+
+onPreferenceClick-BB@0x3d8 : [ onPreferenceClick-BB@0x3e8 onPreferenceClick-BB@0x24 ]
+	258     (000003d8) const-string         v7, 'hide_apps_parent'
+	259     (000003dc) invoke-virtual       v0, v7, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+	260     (000003e2) move-result          v7
+	261     (000003e4) if-eqz               v7, -1e0
+
+onPreferenceClick-BB@0x3e8 : [ onPreferenceClick-BB@0x24 ]
+	262     (000003e8) const/16             v4, 41
+	263     (000003ec) goto/16              -1e4
+
+onPreferenceClick-BB@0x3f0 : [ onPreferenceClick-BB@0x400 onPreferenceClick-BB@0x24 ]
+	264     (000003f0) const-string         v7, 'unhide_apps'
+	265     (000003f4) invoke-virtual       v0, v7, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+	266     (000003fa) move-result          v7
+	267     (000003fc) if-eqz               v7, -1ec
+
+onPreferenceClick-BB@0x400 : [ onPreferenceClick-BB@0x24 ]
+	268     (00000400) const/16             v4, 42
+	269     (00000404) goto/16              -1f0
+
+onPreferenceClick-BB@0x408 : [ onPreferenceClick-BB@0x418 onPreferenceClick-BB@0x24 ]
+	270     (00000408) const-string         v7, 'unhide_apps_parent'
+	271     (0000040c) invoke-virtual       v0, v7, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+	272     (00000412) move-result          v7
+	273     (00000414) if-eqz               v7, -1f8
+
+onPreferenceClick-BB@0x418 : [ onPreferenceClick-BB@0x24 ]
+	274     (00000418) const/16             v4, 43
+	275     (0000041c) goto/16              -1fc
+
+onPreferenceClick-BB@0x420 : [ onPreferenceClick-BB@0x430 onPreferenceClick-BB@0x24 ]
+	276     (00000420) const-string         v7, 'suspend_apps'
+	277     (00000424) invoke-virtual       v0, v7, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+	278     (0000042a) move-result          v7
+	279     (0000042c) if-eqz               v7, -204
+
+onPreferenceClick-BB@0x430 : [ onPreferenceClick-BB@0x24 ]
+	280     (00000430) const/16             v4, 44
+	281     (00000434) goto/16              -208
+
+onPreferenceClick-BB@0x438 : [ onPreferenceClick-BB@0x448 onPreferenceClick-BB@0x24 ]
+	282     (00000438) const-string         v7, 'unsuspend_apps'
+	283     (0000043c) invoke-virtual       v0, v7, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+	284     (00000442) move-result          v7
+	285     (00000444) if-eqz               v7, -210
+
+onPreferenceClick-BB@0x448 : [ onPreferenceClick-BB@0x24 ]
+	286     (00000448) const/16             v4, 45
+	287     (0000044c) goto/16              -214
+
+onPreferenceClick-BB@0x450 : [ onPreferenceClick-BB@0x460 onPreferenceClick-BB@0x24 ]
+	288     (00000450) const-string         v7, 'clear_app_data'
+	289     (00000454) invoke-virtual       v0, v7, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+	290     (0000045a) move-result          v7
+	291     (0000045c) if-eqz               v7, -21c
+
+onPreferenceClick-BB@0x460 : [ onPreferenceClick-BB@0x24 ]
+	292     (00000460) const/16             v4, 46
+	293     (00000464) goto/16              -220
+
+onPreferenceClick-BB@0x468 : [ onPreferenceClick-BB@0x478 onPreferenceClick-BB@0x24 ]
+	294     (00000468) const-string         v7, 'keep_uninstalled_packages'
+	295     (0000046c) invoke-virtual       v0, v7, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+	296     (00000472) move-result          v7
+	297     (00000474) if-eqz               v7, -228
+
+onPreferenceClick-BB@0x478 : [ onPreferenceClick-BB@0x24 ]
+	298     (00000478) const/16             v4, 47
+	299     (0000047c) goto/16              -22c
+
+onPreferenceClick-BB@0x480 : [ onPreferenceClick-BB@0x490 onPreferenceClick-BB@0x24 ]
+	300     (00000480) const-string         v7, 'managed_configurations'
+	301     (00000484) invoke-virtual       v0, v7, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+	302     (0000048a) move-result          v7
+	303     (0000048c) if-eqz               v7, -234
+
+onPreferenceClick-BB@0x490 : [ onPreferenceClick-BB@0x24 ]
+	304     (00000490) const/16             v4, 48
+	305     (00000494) goto/16              -238
+
+onPreferenceClick-BB@0x498 : [ onPreferenceClick-BB@0x4a8 onPreferenceClick-BB@0x24 ]
+	306     (00000498) const-string         v7, 'disable_metered_data'
+	307     (0000049c) invoke-virtual       v0, v7, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+	308     (000004a2) move-result          v7
+	309     (000004a4) if-eqz               v7, -240
+
+onPreferenceClick-BB@0x4a8 : [ onPreferenceClick-BB@0x24 ]
+	310     (000004a8) const/16             v4, 49
+	311     (000004ac) goto/16              -244
+
+onPreferenceClick-BB@0x4b0 : [ onPreferenceClick-BB@0x4c0 onPreferenceClick-BB@0x24 ]
+	312     (000004b0) const-string         v7, 'generic_delegation'
+	313     (000004b4) invoke-virtual       v0, v7, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+	314     (000004ba) move-result          v7
+	315     (000004bc) if-eqz               v7, -24c
+
+onPreferenceClick-BB@0x4c0 : [ onPreferenceClick-BB@0x24 ]
+	316     (000004c0) const/16             v4, 50
+	317     (000004c4) goto/16              -250
+
+onPreferenceClick-BB@0x4c8 : [ onPreferenceClick-BB@0x4d8 onPreferenceClick-BB@0x24 ]
+	318     (000004c8) const-string         v7, 'app_restrictions_managing_package'
+	319     (000004cc) invoke-virtual       v0, v7, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+	320     (000004d2) move-result          v7
+	321     (000004d4) if-eqz               v7, -258
+
+onPreferenceClick-BB@0x4d8 : [ onPreferenceClick-BB@0x24 ]
+	322     (000004d8) const/16             v4, 51
+	323     (000004dc) goto/16              -25c
+
+onPreferenceClick-BB@0x4e0 : [ onPreferenceClick-BB@0x4f0 onPreferenceClick-BB@0x24 ]
+	324     (000004e0) const-string         v7, 'set_permission_policy'
+	325     (000004e4) invoke-virtual       v0, v7, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+	326     (000004ea) move-result          v7
+	327     (000004ec) if-eqz               v7, -264
+
+onPreferenceClick-BB@0x4f0 : [ onPreferenceClick-BB@0x24 ]
+	328     (000004f0) const/16             v4, 52
+	329     (000004f4) goto/16              -268
+
+onPreferenceClick-BB@0x4f8 : [ onPreferenceClick-BB@0x508 onPreferenceClick-BB@0x24 ]
+	330     (000004f8) const-string         v7, 'manage_app_permissions'
+	331     (000004fc) invoke-virtual       v0, v7, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+	332     (00000502) move-result          v7
+	333     (00000504) if-eqz               v7, -270
+
+onPreferenceClick-BB@0x508 : [ onPreferenceClick-BB@0x24 ]
+	334     (00000508) const/16             v4, 53
+	335     (0000050c) goto/16              -274
+
+onPreferenceClick-BB@0x510 : [ onPreferenceClick-BB@0x520 onPreferenceClick-BB@0x24 ]
+	336     (00000510) const-string         v7, 'request_manage_credentials'
+	337     (00000514) invoke-virtual       v0, v7, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+	338     (0000051a) move-result          v7
+	339     (0000051c) if-eqz               v7, -27c
+
+onPreferenceClick-BB@0x520 : [ onPreferenceClick-BB@0x24 ]
+	340     (00000520) const/16             v4, 54
+	341     (00000524) goto/16              -280
+
+onPreferenceClick-BB@0x528 : [ onPreferenceClick-BB@0x538 onPreferenceClick-BB@0x24 ]
+	342     (00000528) const-string         v7, 'install_key_certificate'
+	343     (0000052c) invoke-virtual       v0, v7, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+	344     (00000532) move-result          v7
+	345     (00000534) if-eqz               v7, -288
+
+onPreferenceClick-BB@0x538 : [ onPreferenceClick-BB@0x24 ]
+	346     (00000538) const/16             v4, 55
+	347     (0000053c) goto/16              -28c
+
+onPreferenceClick-BB@0x540 : [ onPreferenceClick-BB@0x550 onPreferenceClick-BB@0x24 ]
+	348     (00000540) const-string         v7, 'remove_key_certificate'
+	349     (00000544) invoke-virtual       v0, v7, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+	350     (0000054a) move-result          v7
+	351     (0000054c) if-eqz               v7, -294
+
+onPreferenceClick-BB@0x550 : [ onPreferenceClick-BB@0x24 ]
+	352     (00000550) const/16             v4, 56
+	353     (00000554) goto/16              -298
+
+onPreferenceClick-BB@0x558 : [ onPreferenceClick-BB@0x568 onPreferenceClick-BB@0x24 ]
+	354     (00000558) const-string         v7, 'generate_key_and_certificate'
+	355     (0000055c) invoke-virtual       v0, v7, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+	356     (00000562) move-result          v7
+	357     (00000564) if-eqz               v7, -2a0
+
+onPreferenceClick-BB@0x568 : [ onPreferenceClick-BB@0x24 ]
+	358     (00000568) const/16             v4, 57
+	359     (0000056c) goto/16              -2a4
+
+onPreferenceClick-BB@0x570 : [ onPreferenceClick-BB@0x580 onPreferenceClick-BB@0x24 ]
+	360     (00000570) const-string         v7, 'test_key_usability'
+	361     (00000574) invoke-virtual       v0, v7, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+	362     (0000057a) move-result          v7
+	363     (0000057c) if-eqz               v7, -2ac
+
+onPreferenceClick-BB@0x580 : [ onPreferenceClick-BB@0x24 ]
+	364     (00000580) const/16             v4, 58
+	365     (00000584) goto/16              -2b0
+
+onPreferenceClick-BB@0x588 : [ onPreferenceClick-BB@0x598 onPreferenceClick-BB@0x24 ]
+	366     (00000588) const-string         v7, 'install_ca_certificate'
+	367     (0000058c) invoke-virtual       v0, v7, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+	368     (00000592) move-result          v7
+	369     (00000594) if-eqz               v7, -2b8
+
+onPreferenceClick-BB@0x598 : [ onPreferenceClick-BB@0x24 ]
+	370     (00000598) const/16             v4, 59
+	371     (0000059c) goto/16              -2bc
+
+onPreferenceClick-BB@0x5a0 : [ onPreferenceClick-BB@0x5b0 onPreferenceClick-BB@0x24 ]
+	372     (000005a0) const-string         v7, 'get_ca_certificates'
+	373     (000005a4) invoke-virtual       v0, v7, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+	374     (000005aa) move-result          v7
+	375     (000005ac) if-eqz               v7, -2c4
+
+onPreferenceClick-BB@0x5b0 : [ onPreferenceClick-BB@0x24 ]
+	376     (000005b0) const/16             v4, 60
+	377     (000005b4) goto/16              -2c8
+
+onPreferenceClick-BB@0x5b8 : [ onPreferenceClick-BB@0x5c8 onPreferenceClick-BB@0x24 ]
+	378     (000005b8) const-string         v7, 'remove_all_ca_certificates'
+	379     (000005bc) invoke-virtual       v0, v7, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+	380     (000005c2) move-result          v7
+	381     (000005c4) if-eqz               v7, -2d0
+
+onPreferenceClick-BB@0x5c8 : [ onPreferenceClick-BB@0x24 ]
+	382     (000005c8) const/16             v4, 61
+	383     (000005cc) goto/16              -2d4
+
+onPreferenceClick-BB@0x5d0 : [ onPreferenceClick-BB@0x5e0 onPreferenceClick-BB@0x24 ]
+	384     (000005d0) const-string         v7, 'managed_profile_policies'
+	385     (000005d4) invoke-virtual       v0, v7, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+	386     (000005da) move-result          v7
+	387     (000005dc) if-eqz               v7, -2dc
+
+onPreferenceClick-BB@0x5e0 : [ onPreferenceClick-BB@0x24 ]
+	388     (000005e0) const/16             v4, 62
+	389     (000005e4) goto/16              -2e0
+
+onPreferenceClick-BB@0x5e8 : [ onPreferenceClick-BB@0x5f8 onPreferenceClick-BB@0x24 ]
+	390     (000005e8) const-string         v7, 'lock_screen_policy'
+	391     (000005ec) invoke-virtual       v0, v7, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+	392     (000005f2) move-result          v7
+	393     (000005f4) if-eqz               v7, -2e8
+
+onPreferenceClick-BB@0x5f8 : [ onPreferenceClick-BB@0x24 ]
+	394     (000005f8) const/16             v4, 63
+	395     (000005fc) goto/16              -2ec
+
+onPreferenceClick-BB@0x600 : [ onPreferenceClick-BB@0x610 onPreferenceClick-BB@0x24 ]
+	396     (00000600) const-string         v7, 'password_constraints'
+	397     (00000604) invoke-virtual       v0, v7, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+	398     (0000060a) move-result          v7
+	399     (0000060c) if-eqz               v7, -2f4
+
+onPreferenceClick-BB@0x610 : [ onPreferenceClick-BB@0x24 ]
+	400     (00000610) const/16             v4, 64
+	401     (00000614) goto/16              -2f8
+
+onPreferenceClick-BB@0x618 : [ onPreferenceClick-BB@0x628 onPreferenceClick-BB@0x24 ]
+	402     (00000618) const-string         v7, 'system_update_policy'
+	403     (0000061c) invoke-virtual       v0, v7, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+	404     (00000622) move-result          v7
+	405     (00000624) if-eqz               v7, -300
+
+onPreferenceClick-BB@0x628 : [ onPreferenceClick-BB@0x24 ]
+	406     (00000628) const/16             v4, 65
+	407     (0000062c) goto/16              -304
+
+onPreferenceClick-BB@0x630 : [ onPreferenceClick-BB@0x640 onPreferenceClick-BB@0x24 ]
+	408     (00000630) const-string         v7, 'system_update_pending'
+	409     (00000634) invoke-virtual       v0, v7, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+	410     (0000063a) move-result          v7
+	411     (0000063c) if-eqz               v7, -30c
+
+onPreferenceClick-BB@0x640 : [ onPreferenceClick-BB@0x24 ]
+	412     (00000640) const/16             v4, 66
+	413     (00000644) goto/16              -310
+
+onPreferenceClick-BB@0x648 : [ onPreferenceClick-BB@0x658 onPreferenceClick-BB@0x24 ]
+	414     (00000648) const-string         v7, 'set_always_on_vpn'
+	415     (0000064c) invoke-virtual       v0, v7, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+	416     (00000652) move-result          v7
+	417     (00000654) if-eqz               v7, -318
+
+onPreferenceClick-BB@0x658 : [ onPreferenceClick-BB@0x24 ]
+	418     (00000658) const/16             v4, 67
+	419     (0000065c) goto/16              -31c
+
+onPreferenceClick-BB@0x660 : [ onPreferenceClick-BB@0x670 onPreferenceClick-BB@0x24 ]
+	420     (00000660) const-string         v7, 'set_global_http_proxy'
+	421     (00000664) invoke-virtual       v0, v7, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+	422     (0000066a) move-result          v7
+	423     (0000066c) if-eqz               v7, -324
+
+onPreferenceClick-BB@0x670 : [ onPreferenceClick-BB@0x24 ]
+	424     (00000670) const/16             v4, 68
+	425     (00000674) goto/16              -328
+
+onPreferenceClick-BB@0x678 : [ onPreferenceClick-BB@0x688 onPreferenceClick-BB@0x24 ]
+	426     (00000678) const-string         v7, 'clear_global_http_proxy'
+	427     (0000067c) invoke-virtual       v0, v7, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+	428     (00000682) move-result          v7
+	429     (00000684) if-eqz               v7, -330
+
+onPreferenceClick-BB@0x688 : [ onPreferenceClick-BB@0x24 ]
+	430     (00000688) const/16             v4, 69
+	431     (0000068c) goto/16              -334
+
+onPreferenceClick-BB@0x690 : [ onPreferenceClick-BB@0x6a0 onPreferenceClick-BB@0x24 ]
+	432     (00000690) const-string         v7, 'set_private_dns_mode'
+	433     (00000694) invoke-virtual       v0, v7, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+	434     (0000069a) move-result          v7
+	435     (0000069c) if-eqz               v7, -33c
+
+onPreferenceClick-BB@0x6a0 : [ onPreferenceClick-BB@0x24 ]
+	436     (000006a0) const/16             v4, 70
+	437     (000006a4) goto/16              -340
+
+onPreferenceClick-BB@0x6a8 : [ onPreferenceClick-BB@0x6b8 onPreferenceClick-BB@0x24 ]
+	438     (000006a8) const-string         v7, 'network_stats'
+	439     (000006ac) invoke-virtual       v0, v7, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+	440     (000006b2) move-result          v7
+	441     (000006b4) if-eqz               v7, -348
+
+onPreferenceClick-BB@0x6b8 : [ onPreferenceClick-BB@0x24 ]
+	442     (000006b8) const/16             v4, 71
+	443     (000006bc) goto/16              -34c
+
+onPreferenceClick-BB@0x6c0 : [ onPreferenceClick-BB@0x6d0 onPreferenceClick-BB@0x24 ]
+	444     (000006c0) const-string         v7, 'manage_cert_installer'
+	445     (000006c4) invoke-virtual       v0, v7, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+	446     (000006ca) move-result          v7
+	447     (000006cc) if-eqz               v7, -354
+
+onPreferenceClick-BB@0x6d0 : [ onPreferenceClick-BB@0x24 ]
+	448     (000006d0) const/16             v4, 72
+	449     (000006d4) goto/16              -358
+
+onPreferenceClick-BB@0x6d8 : [ onPreferenceClick-BB@0x6e8 onPreferenceClick-BB@0x24 ]
+	450     (000006d8) const-string         v7, 'disable_status_bar'
+	451     (000006dc) invoke-virtual       v0, v7, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+	452     (000006e2) move-result          v7
+	453     (000006e4) if-eqz               v7, -360
+
+onPreferenceClick-BB@0x6e8 : [ onPreferenceClick-BB@0x24 ]
+	454     (000006e8) const/16             v4, 73
+	455     (000006ec) goto/16              -364
+
+onPreferenceClick-BB@0x6f0 : [ onPreferenceClick-BB@0x700 onPreferenceClick-BB@0x24 ]
+	456     (000006f0) const-string         v7, 'reenable_status_bar'
+	457     (000006f4) invoke-virtual       v0, v7, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+	458     (000006fa) move-result          v7
+	459     (000006fc) if-eqz               v7, -36c
+
+onPreferenceClick-BB@0x700 : [ onPreferenceClick-BB@0x24 ]
+	460     (00000700) const/16             v4, 74
+	461     (00000704) goto/16              -370
+
+onPreferenceClick-BB@0x708 : [ onPreferenceClick-BB@0x718 onPreferenceClick-BB@0x24 ]
+	462     (00000708) const-string         v7, 'disable_keyguard'
+	463     (0000070c) invoke-virtual       v0, v7, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+	464     (00000712) move-result          v7
+	465     (00000714) if-eqz               v7, -378
+
+onPreferenceClick-BB@0x718 : [ onPreferenceClick-BB@0x24 ]
+	466     (00000718) const/16             v4, 75
+	467     (0000071c) goto/16              -37c
+
+onPreferenceClick-BB@0x720 : [ onPreferenceClick-BB@0x730 onPreferenceClick-BB@0x24 ]
+	468     (00000720) const-string         v7, 'reenable_keyguard'
+	469     (00000724) invoke-virtual       v0, v7, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+	470     (0000072a) move-result          v7
+	471     (0000072c) if-eqz               v7, -384
+
+onPreferenceClick-BB@0x730 : [ onPreferenceClick-BB@0x24 ]
+	472     (00000730) const/16             v4, 76
+	473     (00000734) goto/16              -388
+
+onPreferenceClick-BB@0x738 : [ onPreferenceClick-BB@0x748 onPreferenceClick-BB@0x24 ]
+	474     (00000738) const-string         v7, 'start_kiosk_mode'
+	475     (0000073c) invoke-virtual       v0, v7, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+	476     (00000742) move-result          v7
+	477     (00000744) if-eqz               v7, -390
+
+onPreferenceClick-BB@0x748 : [ onPreferenceClick-BB@0x24 ]
+	478     (00000748) const/16             v4, 77
+	479     (0000074c) goto/16              -394
+
+onPreferenceClick-BB@0x750 : [ onPreferenceClick-BB@0x760 onPreferenceClick-BB@0x24 ]
+	480     (00000750) const-string         v7, 'capture_image'
+	481     (00000754) invoke-virtual       v0, v7, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+	482     (0000075a) move-result          v7
+	483     (0000075c) if-eqz               v7, -39c
+
+onPreferenceClick-BB@0x760 : [ onPreferenceClick-BB@0x24 ]
+	484     (00000760) const/16             v4, 78
+	485     (00000764) goto/16              -3a0
+
+onPreferenceClick-BB@0x768 : [ onPreferenceClick-BB@0x778 onPreferenceClick-BB@0x24 ]
+	486     (00000768) const-string         v7, 'capture_video'
+	487     (0000076c) invoke-virtual       v0, v7, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+	488     (00000772) move-result          v7
+	489     (00000774) if-eqz               v7, -3a8
+
+onPreferenceClick-BB@0x778 : [ onPreferenceClick-BB@0x24 ]
+	490     (00000778) const/16             v4, 79
+	491     (0000077c) goto/16              -3ac
+
+onPreferenceClick-BB@0x780 : [ onPreferenceClick-BB@0x790 onPreferenceClick-BB@0x24 ]
+	492     (00000780) const-string         v7, 'create_wifi_configuration'
+	493     (00000784) invoke-virtual       v0, v7, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+	494     (0000078a) move-result          v7
+	495     (0000078c) if-eqz               v7, -3b4
+
+onPreferenceClick-BB@0x790 : [ onPreferenceClick-BB@0x24 ]
+	496     (00000790) const/16             v4, 80
+	497     (00000794) goto/16              -3b8
+
+onPreferenceClick-BB@0x798 : [ onPreferenceClick-BB@0x7a8 onPreferenceClick-BB@0x24 ]
+	498     (00000798) const-string         v7, 'create_eap_tls_wifi_configuration'
+	499     (0000079c) invoke-virtual       v0, v7, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+	500     (000007a2) move-result          v7
+	501     (000007a4) if-eqz               v7, -3c0
+
+onPreferenceClick-BB@0x7a8 : [ onPreferenceClick-BB@0x24 ]
+	502     (000007a8) const/16             v4, 81
+	503     (000007ac) goto/16              -3c4
+
+onPreferenceClick-BB@0x7b0 : [ onPreferenceClick-BB@0x7c0 onPreferenceClick-BB@0x24 ]
+	504     (000007b0) const-string         v7, 'modify_wifi_configuration'
+	505     (000007b4) invoke-virtual       v0, v7, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+	506     (000007ba) move-result          v7
+	507     (000007bc) if-eqz               v7, -3cc
+
+onPreferenceClick-BB@0x7c0 : [ onPreferenceClick-BB@0x24 ]
+	508     (000007c0) const/16             v4, 82
+	509     (000007c4) goto/16              -3d0
+
+onPreferenceClick-BB@0x7c8 : [ onPreferenceClick-BB@0x7d8 onPreferenceClick-BB@0x24 ]
+	510     (000007c8) const-string         v7, 'modify_owned_wifi_configuration'
+	511     (000007cc) invoke-virtual       v0, v7, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+	512     (000007d2) move-result          v7
+	513     (000007d4) if-eqz               v7, -3d8
+
+onPreferenceClick-BB@0x7d8 : [ onPreferenceClick-BB@0x24 ]
+	514     (000007d8) const/16             v4, 83
+	515     (000007dc) goto/16              -3dc
+
+onPreferenceClick-BB@0x7e0 : [ onPreferenceClick-BB@0x7f0 onPreferenceClick-BB@0x24 ]
+	516     (000007e0) const-string         v7, 'remove_not_owned_wifi_configurations'
+	517     (000007e4) invoke-virtual       v0, v7, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+	518     (000007ea) move-result          v7
+	519     (000007ec) if-eqz               v7, -3e4
+
+onPreferenceClick-BB@0x7f0 : [ onPreferenceClick-BB@0x24 ]
+	520     (000007f0) const/16             v4, 84
+	521     (000007f4) goto/16              -3e8
+
+onPreferenceClick-BB@0x7f8 : [ onPreferenceClick-BB@0x808 onPreferenceClick-BB@0x24 ]
+	522     (000007f8) const-string         v7, 'show_wifi_mac_address'
+	523     (000007fc) invoke-virtual       v0, v7, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+	524     (00000802) move-result          v7
+	525     (00000804) if-eqz               v7, -3f0
+
+onPreferenceClick-BB@0x808 : [ onPreferenceClick-BB@0x24 ]
+	526     (00000808) const/16             v4, 85
+	527     (0000080c) goto/16              -3f4
+
+onPreferenceClick-BB@0x810 : [ onPreferenceClick-BB@0x820 onPreferenceClick-BB@0x24 ]
+	528     (00000810) const-string         v7, 'set_user_restrictions'
+	529     (00000814) invoke-virtual       v0, v7, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+	530     (0000081a) move-result          v7
+	531     (0000081c) if-eqz               v7, -3fc
+
+onPreferenceClick-BB@0x820 : [ onPreferenceClick-BB@0x24 ]
+	532     (00000820) const/16             v4, 86
+	533     (00000824) goto/16              -400
+
+onPreferenceClick-BB@0x828 : [ onPreferenceClick-BB@0x838 onPreferenceClick-BB@0x24 ]
+	534     (00000828) const-string         v7, 'set_user_restrictions_parent'
+	535     (0000082c) invoke-virtual       v0, v7, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+	536     (00000832) move-result          v7
+	537     (00000834) if-eqz               v7, -408
+
+onPreferenceClick-BB@0x838 : [ onPreferenceClick-BB@0x24 ]
+	538     (00000838) const/16             v4, 87
+	539     (0000083c) goto/16              -40c
+
+onPreferenceClick-BB@0x840 : [ onPreferenceClick-BB@0x850 onPreferenceClick-BB@0x24 ]
+	540     (00000840) const-string         v7, 'reboot'
+	541     (00000844) invoke-virtual       v0, v7, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+	542     (0000084a) move-result          v7
+	543     (0000084c) if-eqz               v7, -414
+
+onPreferenceClick-BB@0x850 : [ onPreferenceClick-BB@0x24 ]
+	544     (00000850) const/16             v4, 88
+	545     (00000854) goto/16              -418
+
+onPreferenceClick-BB@0x858 : [ onPreferenceClick-BB@0x868 onPreferenceClick-BB@0x24 ]
+	546     (00000858) const-string         v7, 'set_short_support_message'
+	547     (0000085c) invoke-virtual       v0, v7, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+	548     (00000862) move-result          v7
+	549     (00000864) if-eqz               v7, -420
+
+onPreferenceClick-BB@0x868 : [ onPreferenceClick-BB@0x24 ]
+	550     (00000868) const/16             v4, 89
+	551     (0000086c) goto/16              -424
+
+onPreferenceClick-BB@0x870 : [ onPreferenceClick-BB@0x880 onPreferenceClick-BB@0x24 ]
+	552     (00000870) const-string         v7, 'set_long_support_message'
+	553     (00000874) invoke-virtual       v0, v7, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+	554     (0000087a) move-result          v7
+	555     (0000087c) if-eqz               v7, -42c
+
+onPreferenceClick-BB@0x880 : [ onPreferenceClick-BB@0x24 ]
+	556     (00000880) const/16             v4, 90
+	557     (00000884) goto/16              -430
+
+onPreferenceClick-BB@0x888 : [ onPreferenceClick-BB@0x898 onPreferenceClick-BB@0x24 ]
+	558     (00000888) const-string         v7, 'set_new_password'
+	559     (0000088c) invoke-virtual       v0, v7, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+	560     (00000892) move-result          v7
+	561     (00000894) if-eqz               v7, -438
+
+onPreferenceClick-BB@0x898 : [ onPreferenceClick-BB@0x24 ]
+	562     (00000898) const/16             v4, 91
+	563     (0000089c) goto/16              -43c
+
+onPreferenceClick-BB@0x8a0 : [ onPreferenceClick-BB@0x8b0 onPreferenceClick-BB@0x24 ]
+	564     (000008a0) const-string         v7, 'set_profile_parent_new_password'
+	565     (000008a4) invoke-virtual       v0, v7, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+	566     (000008aa) move-result          v7
+	567     (000008ac) if-eqz               v7, -444
+
+onPreferenceClick-BB@0x8b0 : [ onPreferenceClick-BB@0x24 ]
+	568     (000008b0) const/16             v4, 92
+	569     (000008b4) goto/16              -448
+
+onPreferenceClick-BB@0x8b8 : [ onPreferenceClick-BB@0x8c8 onPreferenceClick-BB@0x24 ]
+	570     (000008b8) const-string         v7, 'set_profile_parent_new_password_device_requirement'
+	571     (000008bc) invoke-virtual       v0, v7, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+	572     (000008c2) move-result          v7
+	573     (000008c4) if-eqz               v7, -450
+
+onPreferenceClick-BB@0x8c8 : [ onPreferenceClick-BB@0x24 ]
+	574     (000008c8) const/16             v4, 93
+	575     (000008cc) goto/16              -454
+
+onPreferenceClick-BB@0x8d0 : [ onPreferenceClick-BB@0x8e0 onPreferenceClick-BB@0x24 ]
+	576     (000008d0) const-string         v7, 'bind_device_admin_policies'
+	577     (000008d4) invoke-virtual       v0, v7, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+	578     (000008da) move-result          v7
+	579     (000008dc) if-eqz               v7, -45c
+
+onPreferenceClick-BB@0x8e0 : [ onPreferenceClick-BB@0x24 ]
+	580     (000008e0) const/16             v4, 94
+	581     (000008e4) goto/16              -460
+
+onPreferenceClick-BB@0x8e8 : [ onPreferenceClick-BB@0x8f8 onPreferenceClick-BB@0x24 ]
+	582     (000008e8) const-string         v7, 'cross_profile_apps'
+	583     (000008ec) invoke-virtual       v0, v7, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+	584     (000008f2) move-result          v7
+	585     (000008f4) if-eqz               v7, -468
+
+onPreferenceClick-BB@0x8f8 : [ onPreferenceClick-BB@0x24 ]
+	586     (000008f8) const/16             v4, 95
+	587     (000008fc) goto/16              -46c
+
+onPreferenceClick-BB@0x900 : [ onPreferenceClick-BB@0x910 onPreferenceClick-BB@0x24 ]
+	588     (00000900) const-string         v7, 'cross_profile_apps_allowlist'
+	589     (00000904) invoke-virtual       v0, v7, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+	590     (0000090a) move-result          v7
+	591     (0000090c) if-eqz               v7, -474
+
+onPreferenceClick-BB@0x910 : [ onPreferenceClick-BB@0x24 ]
+	592     (00000910) const/16             v4, 96
+	593     (00000914) goto/16              -478
+
+onPreferenceClick-BB@0x918 : [ onPreferenceClick-BB@0x928 onPreferenceClick-BB@0x24 ]
+	594     (00000918) const-string         v7, 'set_screen_brightness'
+	595     (0000091c) invoke-virtual       v0, v7, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+	596     (00000922) move-result          v7
+	597     (00000924) if-eqz               v7, -480
+
+onPreferenceClick-BB@0x928 : [ onPreferenceClick-BB@0x24 ]
+	598     (00000928) const/16             v4, 97
+	599     (0000092c) goto/16              -484
+
+onPreferenceClick-BB@0x930 : [ onPreferenceClick-BB@0x940 onPreferenceClick-BB@0x24 ]
+	600     (00000930) const-string         v7, 'set_screen_off_timeout'
+	601     (00000934) invoke-virtual       v0, v7, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+	602     (0000093a) move-result          v7
+	603     (0000093c) if-eqz               v7, -48c
+
+onPreferenceClick-BB@0x940 : [ onPreferenceClick-BB@0x24 ]
+	604     (00000940) const/16             v4, 98
+	605     (00000944) goto/16              -490
+
+onPreferenceClick-BB@0x948 : [ onPreferenceClick-BB@0x958 onPreferenceClick-BB@0x24 ]
+	606     (00000948) const-string         v7, 'transfer_ownership_to_component'
+	607     (0000094c) invoke-virtual       v0, v7, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+	608     (00000952) move-result          v7
+	609     (00000954) if-eqz               v7, -498
+
+onPreferenceClick-BB@0x958 : [ onPreferenceClick-BB@0x24 ]
+	610     (00000958) const/16             v4, 99
+	611     (0000095c) goto/16              -49c
+
+onPreferenceClick-BB@0x960 : [ onPreferenceClick-BB@0x970 onPreferenceClick-BB@0x24 ]
+	612     (00000960) const-string         v7, 'set_time'
+	613     (00000964) invoke-virtual       v0, v7, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+	614     (0000096a) move-result          v7
+	615     (0000096c) if-eqz               v7, -4a4
+
+onPreferenceClick-BB@0x970 : [ onPreferenceClick-BB@0x24 ]
+	616     (00000970) const/16             v4, 100
+	617     (00000974) goto/16              -4a8
+
+onPreferenceClick-BB@0x978 : [ onPreferenceClick-BB@0x988 onPreferenceClick-BB@0x24 ]
+	618     (00000978) const-string         v7, 'set_time_zone'
+	619     (0000097c) invoke-virtual       v0, v7, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+	620     (00000982) move-result          v7
+	621     (00000984) if-eqz               v7, -4b0
+
+onPreferenceClick-BB@0x988 : [ onPreferenceClick-BB@0x24 ]
+	622     (00000988) const/16             v4, 101
+	623     (0000098c) goto/16              -4b4
+
+onPreferenceClick-BB@0x990 : [ onPreferenceClick-BB@0x9a0 onPreferenceClick-BB@0x24 ]
+	624     (00000990) const-string         v7, 'manage_override_apn'
+	625     (00000994) invoke-virtual       v0, v7, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+	626     (0000099a) move-result          v7
+	627     (0000099c) if-eqz               v7, -4bc
+
+onPreferenceClick-BB@0x9a0 : [ onPreferenceClick-BB@0x24 ]
+	628     (000009a0) const/16             v4, 102
+	629     (000009a4) goto/16              -4c0
+
+onPreferenceClick-BB@0x9a8 : [ onPreferenceClick-BB@0x9b8 onPreferenceClick-BB@0x24 ]
+	630     (000009a8) const-string         v7, 'managed_system_updates'
+	631     (000009ac) invoke-virtual       v0, v7, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+	632     (000009b2) move-result          v7
+	633     (000009b4) if-eqz               v7, -4c8
+
+onPreferenceClick-BB@0x9b8 : [ onPreferenceClick-BB@0x24 ]
+	634     (000009b8) const/16             v4, 103
+	635     (000009bc) goto/16              -4cc
+
+onPreferenceClick-BB@0x9c0 : [ onPreferenceClick-BB@0x9d0 onPreferenceClick-BB@0x24 ]
+	636     (000009c0) const-string         v7, 'cross_profile_calendar'
+	637     (000009c4) invoke-virtual       v0, v7, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+	638     (000009ca) move-result          v7
+	639     (000009cc) if-eqz               v7, -4d4
+
+onPreferenceClick-BB@0x9d0 : [ onPreferenceClick-BB@0x24 ]
+	640     (000009d0) const/16             v4, 104
+	641     (000009d4) goto/16              -4d8
+
+onPreferenceClick-BB@0x9d8 : [ onPreferenceClick-BB@0x9e8 onPreferenceClick-BB@0x24 ]
+	642     (000009d8) const-string         v7, 'set_profile_name'
+	643     (000009dc) invoke-virtual       v0, v7, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+	644     (000009e2) move-result          v7
+	645     (000009e4) if-eqz               v7, -4e0
+
+onPreferenceClick-BB@0x9e8 : [ onPreferenceClick-BB@0x24 ]
+	646     (000009e8) const/16             v4, 105
+	647     (000009ec) goto/16              -4e4
+
+onPreferenceClick-BB@0x9f0 : [ onPreferenceClick-BB@0xa00 onPreferenceClick-BB@0x24 ]
+	648     (000009f0) const-string         v7, 'factory_reset_org_owned_device'
+	649     (000009f4) invoke-virtual       v0, v7, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+	650     (000009fa) move-result          v7
+	651     (000009fc) if-eqz               v7, -4ec
+
+onPreferenceClick-BB@0xa00 : [ onPreferenceClick-BB@0x24 ]
+	652     (00000a00) const/16             v4, 106
+	653     (00000a04) goto/16              -4f0
+
+onPreferenceClick-BB@0xa08 : [ onPreferenceClick-BB@0xa18 onPreferenceClick-BB@0x24 ]
+	654     (00000a08) const-string         v7, 'set_factory_reset_protection_policy'
+	655     (00000a0c) invoke-virtual       v0, v7, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+	656     (00000a12) move-result          v7
+	657     (00000a14) if-eqz               v7, -4f8
+
+onPreferenceClick-BB@0xa18 : [ onPreferenceClick-BB@0x24 ]
+	658     (00000a18) const/16             v4, 107
+	659     (00000a1c) goto/16              -4fc
+
+onPreferenceClick-BB@0xa20 : [ onPreferenceClick-BB@0xa30 onPreferenceClick-BB@0x24 ]
+	660     (00000a20) const-string         v7, 'set_organization_id'
+	661     (00000a24) invoke-virtual       v0, v7, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+	662     (00000a2a) move-result          v7
+	663     (00000a2c) if-eqz               v7, -504
+
+onPreferenceClick-BB@0xa30 : [ onPreferenceClick-BB@0x24 ]
+	664     (00000a30) const/16             v4, 108
+	665     (00000a34) goto/16              -508
+
+onPreferenceClick-BB@0xa38 : [ onPreferenceClick-BB@0x2a ]
+	666     (00000a38) const                v2, 2131689914 # [1.900885682222878e+38]
+	667     (00000a3e) new-instance         v4, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment$$Lambda$19;
+	668     (00000a42) invoke-direct        v4, v8, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment$$Lambda$19;-><init>(Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;)V
+	669     (00000a48) invoke-direct        v8, v2, v4, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->showManageLockTaskListPrompt(I Lcom/afwsamples/testdpc/policy/PolicyManagementFragment$ManageLockTaskListCallback;)V
+	670     (00000a4e) move                 v2, v3
+	671     (00000a50) goto/16              -513
+
+onPreferenceClick-BB@0xa54 : [ onPreferenceClick-BB@0x2a ]
+	672     (00000a54) invoke-direct        v8, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->showCheckLockTaskPermittedPrompt()V
+	673     (00000a5a) move                 v2, v3
+	674     (00000a5c) goto/16              -519
+
+onPreferenceClick-BB@0xa60 : [ onPreferenceClick-BB@0x2a ]
+	675     (00000a60) new-instance         v2, Lcom/afwsamples/testdpc/policy/locktask/SetLockTaskFeaturesFragment;
+	676     (00000a64) invoke-direct        v2, Lcom/afwsamples/testdpc/policy/locktask/SetLockTaskFeaturesFragment;-><init>()V
+	677     (00000a6a) invoke-direct        v8, v2, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->showFragment(Landroid/app/Fragment;)V
+	678     (00000a70) move                 v2, v3
+	679     (00000a72) goto/16              -524
+
+onPreferenceClick-BB@0xa76 : [ onPreferenceClick-BB@0xa7e onPreferenceClick-BB@0xa94 ]
+	680     (00000a76) sget                 v4, Lcom/afwsamples/testdpc/common/Util;->SDK_INT I
+	681     (00000a7a) if-lt                v4, v5, +d
+
+onPreferenceClick-BB@0xa7e : [ onPreferenceClick-BB@0x2a ]
+	682     (00000a7e) new-instance         v2, Lcom/afwsamples/testdpc/policy/resetpassword/ResetPasswordWithTokenFragment;
+	683     (00000a82) invoke-direct        v2, Lcom/afwsamples/testdpc/policy/resetpassword/ResetPasswordWithTokenFragment;-><init>()V
+	684     (00000a88) invoke-direct        v8, v2, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->showFragment(Landroid/app/Fragment;)V
+	685     (00000a8e) move                 v2, v3
+	686     (00000a90) goto/16              -533
+
+onPreferenceClick-BB@0xa94 : [ onPreferenceClick-BB@0x2a ]
+	687     (00000a94) invoke-direct        v8, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->showResetPasswordPrompt()V
+	688     (00000a9a) goto/16              -538
+
+onPreferenceClick-BB@0xa9e : [ onPreferenceClick-BB@0x2a ]
+	689     (00000a9e) invoke-direct        v8, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->lockNow()V
+	690     (00000aa4) move                 v2, v3
+	691     (00000aa6) goto/16              -53e
+
+onPreferenceClick-BB@0xaaa : [ onPreferenceClick-BB@0x2a ]
+	692     (00000aaa) invoke-virtual       v8, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->getActivity()Landroid/app/Activity;
+	693     (00000ab0) move-result-object   v2
+	694     (00000ab2) invoke-virtual       v2, Landroid/app/Activity;->startLockTask()V
+	695     (00000ab8) move                 v2, v3
+	696     (00000aba) goto/16              -548
+
+onPreferenceClick-BB@0xabe : [ onPreferenceClick-BB@0x2a ]
+	697     (00000abe) invoke-direct        v8, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->relaunchInLockTaskMode()V
+	698     (00000ac4) move                 v2, v3
+	699     (00000ac6) goto/16              -54e
+
+onPreferenceClick-BB@0xaca : [ onPreferenceClick-BB@0xad8 ]
+	700     (00000aca) invoke-virtual       v8, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->getActivity()Landroid/app/Activity;
+	701     (00000ad0) move-result-object   v2
+	702     (00000ad2) invoke-virtual       v2, Landroid/app/Activity;->stopLockTask()V
+	aca:ad7
+	(Ljava/lang/IllegalStateException; -> 12b6 onPreferenceClick-BB@0x12b6)
+
+onPreferenceClick-BB@0xad8 : [ onPreferenceClick-BB@0x2a ]
+	703     (00000ad8) move                 v2, v3
+	704     (00000ada) goto/16              -558
+
+onPreferenceClick-BB@0xade : [ onPreferenceClick-BB@0x2a ]
+	705     (00000ade) invoke-direct        v8, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->showWipeDataPrompt()V
+	706     (00000ae4) move                 v2, v3
+	707     (00000ae6) goto/16              -55e
+
+onPreferenceClick-BB@0xaea : [ onPreferenceClick-BB@0x2a ]
+	708     (00000aea) invoke-direct        v8, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->showRemoveDeviceOwnerPrompt()V
+	709     (00000af0) move                 v2, v3
+	710     (00000af2) goto/16              -564
+
+onPreferenceClick-BB@0xaf6 : [ onPreferenceClick-BB@0x2a ]
+	711     (00000af6) invoke-direct        v8, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->requestBugReport()V
+	712     (00000afc) move                 v2, v3
+	713     (00000afe) goto/16              -56a
+
+onPreferenceClick-BB@0xb02 : [ onPreferenceClick-BB@0x2a ]
+	714     (00000b02) new-instance         v2, Lcom/afwsamples/testdpc/policy/NetworkLogsFragment;
+	715     (00000b06) invoke-direct        v2, Lcom/afwsamples/testdpc/policy/NetworkLogsFragment;-><init>()V
+	716     (00000b0c) invoke-direct        v8, v2, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->showFragment(Landroid/app/Fragment;)V
+	717     (00000b12) move                 v2, v3
+	718     (00000b14) goto/16              -575
+
+onPreferenceClick-BB@0xb18 : [ onPreferenceClick-BB@0x2a ]
+	719     (00000b18) invoke-static        v2, Lcom/afwsamples/testdpc/policy/SecurityLogsFragment;->newInstance(Z)Lcom/afwsamples/testdpc/policy/SecurityLogsFragment;
+	720     (00000b1e) move-result-object   v2
+	721     (00000b20) invoke-direct        v8, v2, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->showFragment(Landroid/app/Fragment;)V
+	722     (00000b26) move                 v2, v3
+	723     (00000b28) goto/16              -57f
+
+onPreferenceClick-BB@0xb2c : [ onPreferenceClick-BB@0x2a ]
+	724     (00000b2c) invoke-static        v3, Lcom/afwsamples/testdpc/policy/SecurityLogsFragment;->newInstance(Z)Lcom/afwsamples/testdpc/policy/SecurityLogsFragment;
+	725     (00000b32) move-result-object   v2
+	726     (00000b34) invoke-direct        v8, v2, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->showFragment(Landroid/app/Fragment;)V
+	727     (00000b3a) move                 v2, v3
+	728     (00000b3c) goto/16              -589
+
+onPreferenceClick-BB@0xb40 : [ onPreferenceClick-BB@0xb48 onPreferenceClick-BB@0xb62 ]
+	729     (00000b40) iget-object          v4, v8, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->mGetAccessibilityServicesTask Lcom/afwsamples/testdpc/policy/PolicyManagementFragment$GetAccessibilityServicesTask;
+	730     (00000b44) if-eqz               v4, +f
+
+onPreferenceClick-BB@0xb48 : [ onPreferenceClick-BB@0xb58 onPreferenceClick-BB@0xb62 ]
+	731     (00000b48) iget-object          v4, v8, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->mGetAccessibilityServicesTask Lcom/afwsamples/testdpc/policy/PolicyManagementFragment$GetAccessibilityServicesTask;
+	732     (00000b4c) invoke-virtual       v4, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment$GetAccessibilityServicesTask;->isCancelled()Z
+	733     (00000b52) move-result          v4
+	734     (00000b54) if-nez               v4, +7
+
+onPreferenceClick-BB@0xb58 : [ onPreferenceClick-BB@0xb62 ]
+	735     (00000b58) iget-object          v4, v8, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->mGetAccessibilityServicesTask Lcom/afwsamples/testdpc/policy/PolicyManagementFragment$GetAccessibilityServicesTask;
+	736     (00000b5c) invoke-virtual       v4, v3, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment$GetAccessibilityServicesTask;->cancel(Z)Z
+
+onPreferenceClick-BB@0xb62 : [ onPreferenceClick-BB@0x2a ]
+	737     (00000b62) new-instance         v4, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment$GetAccessibilityServicesTask;
+	738     (00000b66) invoke-direct        v4, v8, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment$GetAccessibilityServicesTask;-><init>(Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;)V
+	739     (00000b6c) iput-object          v4, v8, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->mGetAccessibilityServicesTask Lcom/afwsamples/testdpc/policy/PolicyManagementFragment$GetAccessibilityServicesTask;
+	740     (00000b70) iget-object          v4, v8, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->mGetAccessibilityServicesTask Lcom/afwsamples/testdpc/policy/PolicyManagementFragment$GetAccessibilityServicesTask;
+	741     (00000b74) new-array            v2, v2, [Ljava/lang/Void;
+	742     (00000b78) invoke-virtual       v4, v2, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment$GetAccessibilityServicesTask;->execute([Ljava/lang/Object;)Landroid/os/AsyncTask;
+	743     (00000b7e) move                 v2, v3
+	744     (00000b80) goto/16              -5ab
+
+onPreferenceClick-BB@0xb84 : [ onPreferenceClick-BB@0xb8c onPreferenceClick-BB@0xba6 ]
+	745     (00000b84) iget-object          v4, v8, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->mGetInputMethodsTask Lcom/afwsamples/testdpc/policy/PolicyManagementFragment$GetInputMethodsTask;
+	746     (00000b88) if-eqz               v4, +f
+
+onPreferenceClick-BB@0xb8c : [ onPreferenceClick-BB@0xb9c onPreferenceClick-BB@0xba6 ]
+	747     (00000b8c) iget-object          v4, v8, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->mGetInputMethodsTask Lcom/afwsamples/testdpc/policy/PolicyManagementFragment$GetInputMethodsTask;
+	748     (00000b90) invoke-virtual       v4, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment$GetInputMethodsTask;->isCancelled()Z
+	749     (00000b96) move-result          v4
+	750     (00000b98) if-nez               v4, +7
+
+onPreferenceClick-BB@0xb9c : [ onPreferenceClick-BB@0xba6 ]
+	751     (00000b9c) iget-object          v4, v8, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->mGetInputMethodsTask Lcom/afwsamples/testdpc/policy/PolicyManagementFragment$GetInputMethodsTask;
+	752     (00000ba0) invoke-virtual       v4, v3, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment$GetInputMethodsTask;->cancel(Z)Z
+
+onPreferenceClick-BB@0xba6 : [ onPreferenceClick-BB@0x2a ]
+	753     (00000ba6) new-instance         v4, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment$GetInputMethodsTask;
+	754     (00000baa) invoke-direct        v4, v8, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment$GetInputMethodsTask;-><init>(Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;)V
+	755     (00000bb0) iput-object          v4, v8, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->mGetInputMethodsTask Lcom/afwsamples/testdpc/policy/PolicyManagementFragment$GetInputMethodsTask;
+	756     (00000bb4) iget-object          v4, v8, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->mGetInputMethodsTask Lcom/afwsamples/testdpc/policy/PolicyManagementFragment$GetInputMethodsTask;
+	757     (00000bb8) new-array            v2, v2, [Ljava/lang/Void;
+	758     (00000bbc) invoke-virtual       v4, v2, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment$GetInputMethodsTask;->execute([Ljava/lang/Object;)Landroid/os/AsyncTask;
+	759     (00000bc2) move                 v2, v3
+	760     (00000bc4) goto/16              -5cd
+
+onPreferenceClick-BB@0xbc8 : [ onPreferenceClick-BB@0x2a ]
+	761     (00000bc8) invoke-direct        v8, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->setPermittedInputMethodsOnParent()V
+	762     (00000bce) move                 v2, v3
+	763     (00000bd0) goto/16              -5d3
+
+onPreferenceClick-BB@0xbd4 : [ onPreferenceClick-BB@0xbdc onPreferenceClick-BB@0xbf6 ]
+	764     (00000bd4) iget-object          v4, v8, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->mGetNotificationListenersTask Lcom/afwsamples/testdpc/policy/PolicyManagementFragment$GetNotificationListenersTask;
+	765     (00000bd8) if-eqz               v4, +f
+
+onPreferenceClick-BB@0xbdc : [ onPreferenceClick-BB@0xbec onPreferenceClick-BB@0xbf6 ]
+	766     (00000bdc) iget-object          v4, v8, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->mGetNotificationListenersTask Lcom/afwsamples/testdpc/policy/PolicyManagementFragment$GetNotificationListenersTask;
+	767     (00000be0) invoke-virtual       v4, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment$GetNotificationListenersTask;->isCancelled()Z
+	768     (00000be6) move-result          v4
+	769     (00000be8) if-nez               v4, +7
+
+onPreferenceClick-BB@0xbec : [ onPreferenceClick-BB@0xbf6 ]
+	770     (00000bec) iget-object          v4, v8, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->mGetNotificationListenersTask Lcom/afwsamples/testdpc/policy/PolicyManagementFragment$GetNotificationListenersTask;
+	771     (00000bf0) invoke-virtual       v4, v3, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment$GetNotificationListenersTask;->cancel(Z)Z
+
+onPreferenceClick-BB@0xbf6 : [ onPreferenceClick-BB@0x2a ]
+	772     (00000bf6) new-instance         v4, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment$GetNotificationListenersTask;
+	773     (00000bfa) invoke-direct        v4, v8, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment$GetNotificationListenersTask;-><init>(Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;)V
+	774     (00000c00) iput-object          v4, v8, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->mGetNotificationListenersTask Lcom/afwsamples/testdpc/policy/PolicyManagementFragment$GetNotificationListenersTask;
+	775     (00000c04) iget-object          v4, v8, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->mGetNotificationListenersTask Lcom/afwsamples/testdpc/policy/PolicyManagementFragment$GetNotificationListenersTask;
+	776     (00000c08) new-array            v2, v2, [Ljava/lang/Void;
+	777     (00000c0c) invoke-virtual       v4, v2, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment$GetNotificationListenersTask;->execute([Ljava/lang/Object;)Landroid/os/AsyncTask;
+	778     (00000c12) move                 v2, v3
+	779     (00000c14) goto/16              -5f5
+
+onPreferenceClick-BB@0xc18 : [ onPreferenceClick-BB@0x2a ]
+	780     (00000c18) invoke-direct        v8, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->setNotificationAllowlistEditBox()V
+	781     (00000c1e) move                 v2, v3
+	782     (00000c20) goto/16              -5fb
+
+onPreferenceClick-BB@0xc24 : [ onPreferenceClick-BB@0x2a ]
+	783     (00000c24) invoke-direct        v8, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->showSetDisableAccountManagementPrompt()V
+	784     (00000c2a) move                 v2, v3
+	785     (00000c2c) goto/16              -601
+
+onPreferenceClick-BB@0xc30 : [ onPreferenceClick-BB@0x2a ]
+	786     (00000c30) invoke-direct        v8, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->showDisableAccountTypeList()V
+	787     (00000c36) move                 v2, v3
+	788     (00000c38) goto/16              -607
+
+onPreferenceClick-BB@0xc3c : [ onPreferenceClick-BB@0x2a ]
+	789     (00000c3c) invoke-virtual       v8, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->getActivity()Landroid/app/Activity;
+	790     (00000c42) move-result-object   v2
+	791     (00000c44) new-instance         v4, Landroid/content/Intent;
+	792     (00000c48) invoke-virtual       v8, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->getActivity()Landroid/app/Activity;
+	793     (00000c4e) move-result-object   v5
+	794     (00000c50) const-class          v6, Lcom/afwsamples/testdpc/AddAccountActivity;
+	795     (00000c54) invoke-direct        v4, v5, v6, Landroid/content/Intent;-><init>(Landroid/content/Context; Ljava/lang/Class;)V
+	796     (00000c5a) invoke-virtual       v2, v4, Landroid/app/Activity;->startActivity(Landroid/content/Intent;)V
+	797     (00000c60) move                 v2, v3
+	798     (00000c62) goto/16              -61c
+
+onPreferenceClick-BB@0xc66 : [ onPreferenceClick-BB@0x2a ]
+	799     (00000c66) invoke-direct        v8, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->chooseAccount()V
+	800     (00000c6c) move                 v2, v3
+	801     (00000c6e) goto/16              -622
+
+onPreferenceClick-BB@0xc72 : [ onPreferenceClick-BB@0x2a ]
+	802     (00000c72) invoke-direct        v8, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->showSetupManagement()V
+	803     (00000c78) move                 v2, v3
+	804     (00000c7a) goto/16              -628
+
+onPreferenceClick-BB@0xc7e : [ onPreferenceClick-BB@0x2a ]
+	805     (00000c7e) invoke-direct        v8, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->showCreateAndManageUserPrompt()V
+	806     (00000c84) move                 v2, v3
+	807     (00000c86) goto/16              -62e
+
+onPreferenceClick-BB@0xc8a : [ onPreferenceClick-BB@0x2a ]
+	808     (00000c8a) invoke-direct        v8, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->showRemoveUserPrompt()V
+	809     (00000c90) move                 v2, v3
+	810     (00000c92) goto/16              -634
+
+onPreferenceClick-BB@0xc96 : [ onPreferenceClick-BB@0x2a ]
+	811     (00000c96) invoke-direct        v8, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->showSwitchUserPrompt()V
+	812     (00000c9c) move                 v2, v3
+	813     (00000c9e) goto/16              -63a
+
+onPreferenceClick-BB@0xca2 : [ onPreferenceClick-BB@0x2a ]
+	814     (00000ca2) invoke-direct        v8, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->showStartUserInBackgroundPrompt()V
+	815     (00000ca8) move                 v2, v3
+	816     (00000caa) goto/16              -640
+
+onPreferenceClick-BB@0xcae : [ onPreferenceClick-BB@0x2a ]
+	817     (00000cae) invoke-direct        v8, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->showStopUserPrompt()V
+	818     (00000cb4) move                 v2, v3
+	819     (00000cb6) goto/16              -646
+
+onPreferenceClick-BB@0xcba : [ onPreferenceClick-BB@0x2a ]
+	820     (00000cba) invoke-direct        v8, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->logoutUser()V
+	821     (00000cc0) move                 v2, v3
+	822     (00000cc2) goto/16              -64c
+
+onPreferenceClick-BB@0xcc6 : [ onPreferenceClick-BB@0x2a ]
+	823     (00000cc6) new-instance         v2, Lcom/afwsamples/testdpc/policy/SetUserSessionMessageFragment;
+	824     (00000cca) invoke-direct        v2, Lcom/afwsamples/testdpc/policy/SetUserSessionMessageFragment;-><init>()V
+	825     (00000cd0) invoke-direct        v8, v2, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->showFragment(Landroid/app/Fragment;)V
+	826     (00000cd6) move                 v2, v3
+	827     (00000cd8) goto/16              -657
+
+onPreferenceClick-BB@0xcdc : [ onPreferenceClick-BB@0x2a ]
+	828     (00000cdc) new-instance         v2, Lcom/afwsamples/testdpc/policy/ManageAffiliationIdsFragment;
+	829     (00000ce0) invoke-direct        v2, Lcom/afwsamples/testdpc/policy/ManageAffiliationIdsFragment;-><init>()V
+	830     (00000ce6) invoke-direct        v8, v2, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->showFragment(Landroid/app/Fragment;)V
+	831     (00000cec) move                 v2, v3
+	832     (00000cee) goto/16              -662
+
+onPreferenceClick-BB@0xcf2 : [ onPreferenceClick-BB@0x2a ]
+	833     (00000cf2) invoke-direct        v8, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->showBlockUninstallationByPackageNamePrompt()V
+	834     (00000cf8) move                 v2, v3
+	835     (00000cfa) goto/16              -668
+
+onPreferenceClick-BB@0xcfe : [ onPreferenceClick-BB@0x2a ]
+	836     (00000cfe) invoke-direct        v8, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->showBlockUninstallationPrompt()V
+	837     (00000d04) move                 v2, v3
+	838     (00000d06) goto/16              -66e
+
+onPreferenceClick-BB@0xd0a : [ onPreferenceClick-BB@0x2a ]
+	839     (00000d0a) invoke-direct        v8, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->showEnableSystemAppsPrompt()V
+	840     (00000d10) move                 v2, v3
+	841     (00000d12) goto/16              -674
+
+onPreferenceClick-BB@0xd16 : [ onPreferenceClick-BB@0x2a ]
+	842     (00000d16) invoke-direct        v8, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->showEnableSystemAppByPackageNamePrompt()V
+	843     (00000d1c) move                 v2, v3
+	844     (00000d1e) goto/16              -67a
+
+onPreferenceClick-BB@0xd22 : [ onPreferenceClick-BB@0x2a ]
+	845     (00000d22) new-instance         v2, Lcom/afwsamples/testdpc/profilepolicy/addsystemapps/EnableSystemAppsByIntentFragment;
+	846     (00000d26) invoke-direct        v2, Lcom/afwsamples/testdpc/profilepolicy/addsystemapps/EnableSystemAppsByIntentFragment;-><init>()V
+	847     (00000d2c) invoke-direct        v8, v2, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->showFragment(Landroid/app/Fragment;)V
+	848     (00000d32) move                 v2, v3
+	849     (00000d34) goto/16              -685
+
+onPreferenceClick-BB@0xd38 : [ onPreferenceClick-BB@0x2a ]
+	850     (00000d38) invoke-direct        v8, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->showInstallExistingPackagePrompt()V
+	851     (00000d3e) move                 v2, v3
+	852     (00000d40) goto/16              -68b
+
+onPreferenceClick-BB@0xd44 : [ onPreferenceClick-BB@0x2a ]
+	853     (00000d44) const/16             v2, 7693
+	854     (00000d48) invoke-static        v8, v2, Lcom/afwsamples/testdpc/common/Util;->showFileViewer(Landroidx/preference/PreferenceFragment; I)V
+	855     (00000d4e) move                 v2, v3
+	856     (00000d50) goto/16              -693
+
+onPreferenceClick-BB@0xd54 : [ onPreferenceClick-BB@0x2a ]
+	857     (00000d54) invoke-direct        v8, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->showUninstallPackagePrompt()V
+	858     (00000d5a) move                 v2, v3
+	859     (00000d5c) goto/16              -699
+
+onPreferenceClick-BB@0xd60 : [ onPreferenceClick-BB@0x2a ]
+	860     (00000d60) invoke-direct        v8, v2, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->showHideAppsPrompt(Z)V
+	861     (00000d66) move                 v2, v3
+	862     (00000d68) goto/16              -69f
+
+onPreferenceClick-BB@0xd6c : [ onPreferenceClick-BB@0x2a ]
+	863     (00000d6c) invoke-direct        v8, v2, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->showHideAppsOnParentPrompt(Z)V
+	864     (00000d72) move                 v2, v3
+	865     (00000d74) goto/16              -6a5
+
+onPreferenceClick-BB@0xd78 : [ onPreferenceClick-BB@0x2a ]
+	866     (00000d78) invoke-direct        v8, v3, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->showHideAppsPrompt(Z)V
+	867     (00000d7e) move                 v2, v3
+	868     (00000d80) goto/16              -6ab
+
+onPreferenceClick-BB@0xd84 : [ onPreferenceClick-BB@0x2a ]
+	869     (00000d84) invoke-direct        v8, v3, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->showHideAppsOnParentPrompt(Z)V
+	870     (00000d8a) move                 v2, v3
+	871     (00000d8c) goto/16              -6b1
+
+onPreferenceClick-BB@0xd90 : [ onPreferenceClick-BB@0x2a ]
+	872     (00000d90) invoke-direct        v8, v2, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->showSuspendAppsPrompt(Z)V
+	873     (00000d96) move                 v2, v3
+	874     (00000d98) goto/16              -6b7
+
+onPreferenceClick-BB@0xd9c : [ onPreferenceClick-BB@0x2a ]
+	875     (00000d9c) invoke-direct        v8, v3, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->showSuspendAppsPrompt(Z)V
+	876     (00000da2) move                 v2, v3
+	877     (00000da4) goto/16              -6bd
+
+onPreferenceClick-BB@0xda8 : [ onPreferenceClick-BB@0x2a ]
+	878     (00000da8) invoke-direct        v8, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->showClearAppDataPrompt()V
+	879     (00000dae) move                 v2, v3
+	880     (00000db0) goto/16              -6c3
+
+onPreferenceClick-BB@0xdb4 : [ onPreferenceClick-BB@0x2a ]
+	881     (00000db4) new-instance         v2, Lcom/afwsamples/testdpc/policy/ManageKeepUninstalledPackagesFragment;
+	882     (00000db8) invoke-direct        v2, Lcom/afwsamples/testdpc/policy/ManageKeepUninstalledPackagesFragment;-><init>()V
+	883     (00000dbe) invoke-direct        v8, v2, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->showFragment(Landroid/app/Fragment;)V
+	884     (00000dc4) move                 v2, v3
+	885     (00000dc6) goto/16              -6ce
+
+onPreferenceClick-BB@0xdca : [ onPreferenceClick-BB@0x2a ]
+	886     (00000dca) new-instance         v2, Lcom/afwsamples/testdpc/profilepolicy/apprestrictions/ManagedConfigurationsFragment;
+	887     (00000dce) invoke-direct        v2, Lcom/afwsamples/testdpc/profilepolicy/apprestrictions/ManagedConfigurationsFragment;-><init>()V
+	888     (00000dd4) invoke-direct        v8, v2, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->showFragment(Landroid/app/Fragment;)V
+	889     (00000dda) move                 v2, v3
+	890     (00000ddc) goto/16              -6d9
+
+onPreferenceClick-BB@0xde0 : [ onPreferenceClick-BB@0x2a ]
+	891     (00000de0) invoke-direct        v8, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->showSetMeteredDataPrompt()V
+	892     (00000de6) move                 v2, v3
+	893     (00000de8) goto/16              -6df
+
+onPreferenceClick-BB@0xdec : [ onPreferenceClick-BB@0x2a ]
+	894     (00000dec) new-instance         v2, Lcom/afwsamples/testdpc/profilepolicy/delegation/DelegationFragment;
+	895     (00000df0) invoke-direct        v2, Lcom/afwsamples/testdpc/profilepolicy/delegation/DelegationFragment;-><init>()V
+	896     (00000df6) invoke-direct        v8, v2, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->showFragment(Landroid/app/Fragment;)V
+	897     (00000dfc) move                 v2, v3
+	898     (00000dfe) goto/16              -6ea
+
+onPreferenceClick-BB@0xe02 : [ onPreferenceClick-BB@0x2a ]
+	899     (00000e02) new-instance         v2, Lcom/afwsamples/testdpc/profilepolicy/apprestrictions/AppRestrictionsManagingPackageFragment;
+	900     (00000e06) invoke-direct        v2, Lcom/afwsamples/testdpc/profilepolicy/apprestrictions/AppRestrictionsManagingPackageFragment;-><init>()V
+	901     (00000e0c) invoke-direct        v8, v2, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->showFragment(Landroid/app/Fragment;)V
+	902     (00000e12) move                 v2, v3
+	903     (00000e14) goto/16              -6f5
+
+onPreferenceClick-BB@0xe18 : [ onPreferenceClick-BB@0x2a ]
+	904     (00000e18) invoke-direct        v8, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->showSetPermissionPolicyDialog()V
+	905     (00000e1e) move                 v2, v3
+	906     (00000e20) goto/16              -6fb
+
+onPreferenceClick-BB@0xe24 : [ onPreferenceClick-BB@0x2a ]
+	907     (00000e24) new-instance         v2, Lcom/afwsamples/testdpc/profilepolicy/permission/ManageAppPermissionsFragment;
+	908     (00000e28) invoke-direct        v2, Lcom/afwsamples/testdpc/profilepolicy/permission/ManageAppPermissionsFragment;-><init>()V
+	909     (00000e2e) invoke-direct        v8, v2, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->showFragment(Landroid/app/Fragment;)V
+	910     (00000e34) move                 v2, v3
+	911     (00000e36) goto/16              -706
+
+onPreferenceClick-BB@0xe3a : [ onPreferenceClick-BB@0x2a ]
+	912     (00000e3a) invoke-direct        v8, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->showConfigurePolicyAndManageCredentialsPrompt()V
+	913     (00000e40) move                 v2, v3
+	914     (00000e42) goto/16              -70c
+
+onPreferenceClick-BB@0xe46 : [ onPreferenceClick-BB@0x2a ]
+	915     (00000e46) const/16             v2, 7689
+	916     (00000e4a) invoke-static        v8, v2, Lcom/afwsamples/testdpc/common/Util;->showFileViewer(Landroidx/preference/PreferenceFragment; I)V
+	917     (00000e50) move                 v2, v3
+	918     (00000e52) goto/16              -714
+
+onPreferenceClick-BB@0xe56 : [ onPreferenceClick-BB@0x2a ]
+	919     (00000e56) invoke-direct        v8, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->choosePrivateKeyForRemoval()V
+	920     (00000e5c) move                 v2, v3
+	921     (00000e5e) goto/16              -71a
+
+onPreferenceClick-BB@0xe62 : [ onPreferenceClick-BB@0x2a ]
+	922     (00000e62) const-string         v2, 'generated-key-testdpc-1'
+	923     (00000e66) invoke-direct        v8, v2, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->showPromptForGeneratedKeyAlias(Ljava/lang/String;)V
+	924     (00000e6c) move                 v2, v3
+	925     (00000e6e) goto/16              -722
+
+onPreferenceClick-BB@0xe72 : [ onPreferenceClick-BB@0x2a ]
+	926     (00000e72) invoke-direct        v8, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->testKeyCanBeUsedForSigning()V
+	927     (00000e78) move                 v2, v3
+	928     (00000e7a) goto/16              -728
+
+onPreferenceClick-BB@0xe7e : [ onPreferenceClick-BB@0x2a ]
+	929     (00000e7e) const/16             v2, 7690
+	930     (00000e82) invoke-static        v8, v2, Lcom/afwsamples/testdpc/common/Util;->showFileViewer(Landroidx/preference/PreferenceFragment; I)V
+	931     (00000e88) move                 v2, v3
+	932     (00000e8a) goto/16              -730
+
+onPreferenceClick-BB@0xe8e : [ onPreferenceClick-BB@0x2a ]
+	933     (00000e8e) invoke-direct        v8, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->showCaCertificateList()V
+	934     (00000e94) move                 v2, v3
+	935     (00000e96) goto/16              -736
+
+onPreferenceClick-BB@0xe9a : [ onPreferenceClick-BB@0x2a ]
+	936     (00000e9a) iget-object          v4, v8, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->mDevicePolicyManager Landroid/app/admin/DevicePolicyManager;
+	937     (00000e9e) iget-object          v5, v8, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->mAdminComponentName Landroid/content/ComponentName;
+	938     (00000ea2) invoke-virtual       v4, v5, Landroid/app/admin/DevicePolicyManager;->uninstallAllUserCaCerts(Landroid/content/ComponentName;)V
+	939     (00000ea8) const                v4, 2131689537 # [1.900809217538672e+38]
+	940     (00000eae) new-array            v2, v2, [Ljava/lang/Object;
+	941     (00000eb2) invoke-direct        v8, v4, v2, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->showToast(I [Ljava/lang/Object;)V
+	942     (00000eb8) move                 v2, v3
+	943     (00000eba) goto/16              -748
+
+onPreferenceClick-BB@0xebe : [ onPreferenceClick-BB@0x2a ]
+	944     (00000ebe) new-instance         v2, Lcom/afwsamples/testdpc/profilepolicy/ProfilePolicyManagementFragment;
+	945     (00000ec2) invoke-direct        v2, Lcom/afwsamples/testdpc/profilepolicy/ProfilePolicyManagementFragment;-><init>()V
+	946     (00000ec8) const-string         v4, 'ProfilePolicyManagementFragment'
+	947     (00000ecc) invoke-direct        v8, v2, v4, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->showFragment(Landroid/app/Fragment; Ljava/lang/String;)V
+	948     (00000ed2) move                 v2, v3
+	949     (00000ed4) goto/16              -755
+
+onPreferenceClick-BB@0xed8 : [ onPreferenceClick-BB@0x2a ]
+	950     (00000ed8) new-instance         v2, Lcom/afwsamples/testdpc/policy/keyguard/LockScreenPolicyFragment$Container;
+	951     (00000edc) invoke-direct        v2, Lcom/afwsamples/testdpc/policy/keyguard/LockScreenPolicyFragment$Container;-><init>()V
+	952     (00000ee2) invoke-direct        v8, v2, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->showFragment(Landroid/app/Fragment;)V
+	953     (00000ee8) move                 v2, v3
+	954     (00000eea) goto/16              -760
+
+onPreferenceClick-BB@0xeee : [ onPreferenceClick-BB@0x2a ]
+	955     (00000eee) new-instance         v2, Lcom/afwsamples/testdpc/policy/keyguard/PasswordConstraintsFragment$Container;
+	956     (00000ef2) invoke-direct        v2, Lcom/afwsamples/testdpc/policy/keyguard/PasswordConstraintsFragment$Container;-><init>()V
+	957     (00000ef8) invoke-direct        v8, v2, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->showFragment(Landroid/app/Fragment;)V
+	958     (00000efe) move                 v2, v3
+	959     (00000f00) goto/16              -76b
+
+onPreferenceClick-BB@0xf04 : [ onPreferenceClick-BB@0x2a ]
+	960     (00000f04) new-instance         v2, Lcom/afwsamples/testdpc/policy/systemupdatepolicy/SystemUpdatePolicyFragment;
+	961     (00000f08) invoke-direct        v2, Lcom/afwsamples/testdpc/policy/systemupdatepolicy/SystemUpdatePolicyFragment;-><init>()V
+	962     (00000f0e) invoke-direct        v8, v2, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->showFragment(Landroid/app/Fragment;)V
+	963     (00000f14) move                 v2, v3
+	964     (00000f16) goto/16              -776
+
+onPreferenceClick-BB@0xf1a : [ onPreferenceClick-BB@0x2a ]
+	965     (00000f1a) invoke-direct        v8, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->showPendingSystemUpdate()V
+	966     (00000f20) move                 v2, v3
+	967     (00000f22) goto/16              -77c
+
+onPreferenceClick-BB@0xf26 : [ onPreferenceClick-BB@0x2a ]
+	968     (00000f26) new-instance         v2, Lcom/afwsamples/testdpc/policy/networking/AlwaysOnVpnFragment;
+	969     (00000f2a) invoke-direct        v2, Lcom/afwsamples/testdpc/policy/networking/AlwaysOnVpnFragment;-><init>()V
+	970     (00000f30) invoke-direct        v8, v2, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->showFragment(Landroid/app/Fragment;)V
+	971     (00000f36) move                 v2, v3
+	972     (00000f38) goto/16              -787
+
+onPreferenceClick-BB@0xf3c : [ onPreferenceClick-BB@0x2a ]
+	973     (00000f3c) invoke-direct        v8, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->showSetGlobalHttpProxyDialog()V
+	974     (00000f42) move                 v2, v3
+	975     (00000f44) goto/16              -78d
+
+onPreferenceClick-BB@0xf48 : [ onPreferenceClick-BB@0x2a ]
+	976     (00000f48) iget-object          v2, v8, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->mDevicePolicyManager Landroid/app/admin/DevicePolicyManager;
+	977     (00000f4c) iget-object          v4, v8, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->mAdminComponentName Landroid/content/ComponentName;
+	978     (00000f50) const/4              v5, 0
+	979     (00000f52) invoke-virtual       v2, v4, v5, Landroid/app/admin/DevicePolicyManager;->setRecommendedGlobalProxy(Landroid/content/ComponentName; Landroid/net/ProxyInfo;)V
+	980     (00000f58) move                 v2, v3
+	981     (00000f5a) goto/16              -798
+
+onPreferenceClick-BB@0xf5e : [ onPreferenceClick-BB@0x2a ]
+	982     (00000f5e) new-instance         v2, Lcom/afwsamples/testdpc/policy/networking/PrivateDnsModeFragment;
+	983     (00000f62) invoke-direct        v2, Lcom/afwsamples/testdpc/policy/networking/PrivateDnsModeFragment;-><init>()V
+	984     (00000f68) invoke-direct        v8, v2, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->showFragment(Landroid/app/Fragment;)V
+	985     (00000f6e) move                 v2, v3
+	986     (00000f70) goto/16              -7a3
+
+onPreferenceClick-BB@0xf74 : [ onPreferenceClick-BB@0x2a ]
+	987     (00000f74) new-instance         v2, Lcom/afwsamples/testdpc/policy/networking/NetworkUsageStatsFragment;
+	988     (00000f78) invoke-direct        v2, Lcom/afwsamples/testdpc/policy/networking/NetworkUsageStatsFragment;-><init>()V
+	989     (00000f7e) invoke-direct        v8, v2, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->showFragment(Landroid/app/Fragment;)V
+	990     (00000f84) move                 v2, v3
+	991     (00000f86) goto/16              -7ae
+
+onPreferenceClick-BB@0xf8a : [ onPreferenceClick-BB@0x2a ]
+	992     (00000f8a) new-instance         v2, Lcom/afwsamples/testdpc/policy/certificate/DelegatedCertInstallerFragment;
+	993     (00000f8e) invoke-direct        v2, Lcom/afwsamples/testdpc/policy/certificate/DelegatedCertInstallerFragment;-><init>()V
+	994     (00000f94) invoke-direct        v8, v2, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->showFragment(Landroid/app/Fragment;)V
+	995     (00000f9a) move                 v2, v3
+	996     (00000f9c) goto/16              -7b9
+
+onPreferenceClick-BB@0xfa0 : [ onPreferenceClick-BB@0x2a ]
+	997     (00000fa0) invoke-direct        v8, v3, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->setStatusBarDisabled(Z)V
+	998     (00000fa6) move                 v2, v3
+	999     (00000fa8) goto/16              -7bf
+
+onPreferenceClick-BB@0xfac : [ onPreferenceClick-BB@0x2a ]
+	1000    (00000fac) invoke-direct        v8, v2, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->setStatusBarDisabled(Z)V
+	1001    (00000fb2) move                 v2, v3
+	1002    (00000fb4) goto/16              -7c5
+
+onPreferenceClick-BB@0xfb8 : [ onPreferenceClick-BB@0x2a ]
+	1003    (00000fb8) invoke-direct        v8, v3, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->setKeyGuardDisabled(Z)V
+	1004    (00000fbe) move                 v2, v3
+	1005    (00000fc0) goto/16              -7cb
+
+onPreferenceClick-BB@0xfc4 : [ onPreferenceClick-BB@0x2a ]
+	1006    (00000fc4) invoke-direct        v8, v2, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->setKeyGuardDisabled(Z)V
+	1007    (00000fca) move                 v2, v3
+	1008    (00000fcc) goto/16              -7d1
+
+onPreferenceClick-BB@0xfd0 : [ onPreferenceClick-BB@0x2a ]
+	1009    (00000fd0) const                v2, 2131689898 # [1.9008824370373413e+38]
+	1010    (00000fd6) new-instance         v4, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment$1;
+	1011    (00000fda) invoke-direct        v4, v8, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment$1;-><init>(Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;)V
+	1012    (00000fe0) invoke-direct        v8, v2, v4, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->showManageLockTaskListPrompt(I Lcom/afwsamples/testdpc/policy/PolicyManagementFragment$ManageLockTaskListCallback;)V
+	1013    (00000fe6) move                 v2, v3
+	1014    (00000fe8) goto/16              -7df
+
+onPreferenceClick-BB@0xfec : [ onPreferenceClick-BB@0x2a ]
+	1015    (00000fec) const-string         v2, 'android.media.action.IMAGE_CAPTURE'
+	1016    (00000ff0) const/16             v4, 7691
+	1017    (00000ff4) iget-object          v5, v8, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->mImageUri Landroid/net/Uri;
+	1018    (00000ff8) invoke-direct        v8, v2, v4, v5, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->dispatchCaptureIntent(Ljava/lang/String; I Landroid/net/Uri;)V
+	1019    (00000ffe) move                 v2, v3
+	1020    (00001000) goto/16              -7eb
+
+onPreferenceClick-BB@0x1004 : [ onPreferenceClick-BB@0x2a ]
+	1021    (00001004) const-string         v2, 'android.media.action.VIDEO_CAPTURE'
+	1022    (00001008) const/16             v4, 7692
+	1023    (0000100c) iget-object          v5, v8, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->mVideoUri Landroid/net/Uri;
+	1024    (00001010) invoke-direct        v8, v2, v4, v5, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->dispatchCaptureIntent(Ljava/lang/String; I Landroid/net/Uri;)V
+	1025    (00001016) move                 v2, v3
+	1026    (00001018) goto/16              -7f7
+
+onPreferenceClick-BB@0x101c : [ onPreferenceClick-BB@0x2a ]
+	1027    (0000101c) invoke-direct        v8, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->showWifiConfigCreationDialog()V
+	1028    (00001022) move                 v2, v3
+	1029    (00001024) goto/16              -7fd
+
+onPreferenceClick-BB@0x1028 : [ onPreferenceClick-BB@0x2a ]
+	1030    (00001028) invoke-direct        v8, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->showEapTlsWifiConfigCreationDialog()V
+	1031    (0000102e) move                 v2, v3
+	1032    (00001030) goto/16              -803
+
+onPreferenceClick-BB@0x1034 : [ onPreferenceClick-BB@0x2a ]
+	1033    (00001034) invoke-static        v2, Lcom/afwsamples/testdpc/policy/wifimanagement/WifiModificationFragment;->createFragment(Z)Lcom/afwsamples/testdpc/policy/wifimanagement/WifiModificationFragment;
+	1034    (0000103a) move-result-object   v2
+	1035    (0000103c) invoke-direct        v8, v2, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->showFragment(Landroid/app/Fragment;)V
+	1036    (00001042) move                 v2, v3
+	1037    (00001044) goto/16              -80d
+
+onPreferenceClick-BB@0x1048 : [ onPreferenceClick-BB@0x2a ]
+	1038    (00001048) invoke-static        v3, Lcom/afwsamples/testdpc/policy/wifimanagement/WifiModificationFragment;->createFragment(Z)Lcom/afwsamples/testdpc/policy/wifimanagement/WifiModificationFragment;
+	1039    (0000104e) move-result-object   v2
+	1040    (00001050) invoke-direct        v8, v2, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->showFragment(Landroid/app/Fragment;)V
+	1041    (00001056) move                 v2, v3
+	1042    (00001058) goto/16              -817
+
+onPreferenceClick-BB@0x105c : [ onPreferenceClick-BB@0x1080 onPreferenceClick-BB@0x1090 ]
+	1043    (0000105c) invoke-virtual       v8, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->getContext()Landroid/content/Context;
+	1044    (00001062) move-result-object   v2
+	1045    (00001064) const-class          v4, Landroid/net/wifi/WifiManager;
+	1046    (00001068) invoke-virtual       v2, v4, Landroid/content/Context;->getSystemService(Ljava/lang/Class;)Ljava/lang/Object;
+	1047    (0000106e) move-result-object   v2
+	1048    (00001070) check-cast           v2, Landroid/net/wifi/WifiManager;
+	1049    (00001074) invoke-virtual       v2, Landroid/net/wifi/WifiManager;->removeNonCallerConfiguredNetworks()Z
+	1050    (0000107a) move-result          v1
+	1051    (0000107c) if-eqz               v1, +a
+
+onPreferenceClick-BB@0x1080 : [ onPreferenceClick-BB@0x108a ]
+	1052    (00001080) const-string         v2, 'One or more networks are removed'
+	1053    (00001084) invoke-direct        v8, v2, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->showToast(Ljava/lang/String;)V
+
+onPreferenceClick-BB@0x108a : [ onPreferenceClick-BB@0x2a ]
+	1054    (0000108a) move                 v2, v3
+	1055    (0000108c) goto/16              -831
+
+onPreferenceClick-BB@0x1090 : [ onPreferenceClick-BB@0x108a ]
+	1056    (00001090) const-string         v2, 'No network is removed'
+	1057    (00001094) invoke-direct        v8, v2, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->showToast(Ljava/lang/String;)V
+	1058    (0000109a) goto                 -8
+
+onPreferenceClick-BB@0x109c : [ onPreferenceClick-BB@0x2a ]
+	1059    (0000109c) invoke-direct        v8, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->showWifiMacAddress()V
+	1060    (000010a2) move                 v2, v3
+	1061    (000010a4) goto/16              -83d
+
+onPreferenceClick-BB@0x10a8 : [ onPreferenceClick-BB@0x2a ]
+	1062    (000010a8) new-instance         v2, Lcom/afwsamples/testdpc/policy/UserRestrictionsDisplayFragment;
+	1063    (000010ac) invoke-direct        v2, Lcom/afwsamples/testdpc/policy/UserRestrictionsDisplayFragment;-><init>()V
+	1064    (000010b2) invoke-direct        v8, v2, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->showFragment(Landroid/app/Fragment;)V
+	1065    (000010b8) move                 v2, v3
+	1066    (000010ba) goto/16              -848
+
+onPreferenceClick-BB@0x10be : [ onPreferenceClick-BB@0x2a ]
+	1067    (000010be) new-instance         v2, Lcom/afwsamples/testdpc/policy/UserRestrictionsParentDisplayFragment;
+	1068    (000010c2) invoke-direct        v2, Lcom/afwsamples/testdpc/policy/UserRestrictionsParentDisplayFragment;-><init>()V
+	1069    (000010c8) invoke-direct        v8, v2, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->showFragment(Landroid/app/Fragment;)V
+	1070    (000010ce) move                 v2, v3
+	1071    (000010d0) goto/16              -853
+
+onPreferenceClick-BB@0x10d4 : [ onPreferenceClick-BB@0x2a ]
+	1072    (000010d4) invoke-direct        v8, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->reboot()V
+	1073    (000010da) move                 v2, v3
+	1074    (000010dc) goto/16              -859
+
+onPreferenceClick-BB@0x10e0 : [ onPreferenceClick-BB@0x2a ]
+	1075    (000010e0) invoke-static        v2, Lcom/afwsamples/testdpc/policy/SetSupportMessageFragment;->newInstance(I)Lcom/afwsamples/testdpc/policy/SetSupportMessageFragment;
+	1076    (000010e6) move-result-object   v2
+	1077    (000010e8) invoke-direct        v8, v2, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->showFragment(Landroid/app/Fragment;)V
+	1078    (000010ee) move                 v2, v3
+	1079    (000010f0) goto/16              -863
+
+onPreferenceClick-BB@0x10f4 : [ onPreferenceClick-BB@0x2a ]
+	1080    (000010f4) invoke-static        v3, Lcom/afwsamples/testdpc/policy/SetSupportMessageFragment;->newInstance(I)Lcom/afwsamples/testdpc/policy/SetSupportMessageFragment;
+	1081    (000010fa) move-result-object   v2
+	1082    (000010fc) invoke-direct        v8, v2, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->showFragment(Landroid/app/Fragment;)V
+	1083    (00001102) move                 v2, v3
+	1084    (00001104) goto/16              -86d
+
+onPreferenceClick-BB@0x1108 : [ onPreferenceClick-BB@0x2a ]
+	1085    (00001108) const-string         v2, 'PolicyManagement'
+	1086    (0000110c) const-string         v4, 'starting android.app.action.SET_NEW_PASSWORD'
+	1087    (00001110) invoke-static        v2, v4, Landroid/util/Log;->d(Ljava/lang/String; Ljava/lang/String;)I
+	1088    (00001116) new-instance         v2, Landroid/content/Intent;
+	1089    (0000111a) const-string         v4, 'android.app.action.SET_NEW_PASSWORD'
+	1090    (0000111e) invoke-direct        v2, v4, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
+	1091    (00001124) invoke-virtual       v8, v2, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->startActivity(Landroid/content/Intent;)V
+	1092    (0000112a) move                 v2, v3
+	1093    (0000112c) goto/16              -881
+
+onPreferenceClick-BB@0x1130 : [ onPreferenceClick-BB@0x2a ]
+	1094    (00001130) new-instance         v2, Landroid/content/Intent;
+	1095    (00001134) const-string         v4, 'android.app.action.SET_NEW_PARENT_PROFILE_PASSWORD'
+	1096    (00001138) invoke-direct        v2, v4, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
+	1097    (0000113e) invoke-virtual       v8, v2, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->startActivity(Landroid/content/Intent;)V
+	1098    (00001144) move                 v2, v3
+	1099    (00001146) goto/16              -88e
+
+onPreferenceClick-BB@0x114a : [ onPreferenceClick-BB@0x2a ]
+	1100    (0000114a) new-instance         v2, Landroid/content/Intent;
+	1101    (0000114e) const-string         v4, 'android.app.action.SET_NEW_PARENT_PROFILE_PASSWORD'
+	1102    (00001152) invoke-direct        v2, v4, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
+	1103    (00001158) const-string         v4, 'android.app.extra.DEVICE_PASSWORD_REQUIREMENT_ONLY'
+	1104    (0000115c) invoke-virtual       v2, v4, v3, Landroid/content/Intent;->putExtra(Ljava/lang/String; Z)Landroid/content/Intent;
+	1105    (00001162) move-result-object   v2
+	1106    (00001164) invoke-virtual       v8, v2, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->startActivity(Landroid/content/Intent;)V
+	1107    (0000116a) move                 v2, v3
+	1108    (0000116c) goto/16              -8a1
+
+onPreferenceClick-BB@0x1170 : [ onPreferenceClick-BB@0x2a ]
+	1109    (00001170) new-instance         v2, Lcom/afwsamples/testdpc/comp/BindDeviceAdminFragment;
+	1110    (00001174) invoke-direct        v2, Lcom/afwsamples/testdpc/comp/BindDeviceAdminFragment;-><init>()V
+	1111    (0000117a) invoke-direct        v8, v2, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->showFragment(Landroid/app/Fragment;)V
+	1112    (00001180) move                 v2, v3
+	1113    (00001182) goto/16              -8ac
+
+onPreferenceClick-BB@0x1186 : [ onPreferenceClick-BB@0x2a ]
+	1114    (00001186) new-instance         v2, Lcom/afwsamples/testdpc/CrossProfileAppsFragment;
+	1115    (0000118a) invoke-direct        v2, Lcom/afwsamples/testdpc/CrossProfileAppsFragment;-><init>()V
+	1116    (00001190) invoke-direct        v8, v2, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->showFragment(Landroid/app/Fragment;)V
+	1117    (00001196) move                 v2, v3
+	1118    (00001198) goto/16              -8b7
+
+onPreferenceClick-BB@0x119c : [ onPreferenceClick-BB@0x2a ]
+	1119    (0000119c) new-instance         v2, Lcom/afwsamples/testdpc/CrossProfileAppsAllowlistFragment;
+	1120    (000011a0) invoke-direct        v2, Lcom/afwsamples/testdpc/CrossProfileAppsAllowlistFragment;-><init>()V
+	1121    (000011a6) invoke-direct        v8, v2, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->showFragment(Landroid/app/Fragment;)V
+	1122    (000011ac) move                 v2, v3
+	1123    (000011ae) goto/16              -8c2
+
+onPreferenceClick-BB@0x11b2 : [ onPreferenceClick-BB@0x2a ]
+	1124    (000011b2) invoke-direct        v8, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->showSetScreenBrightnessDialog()V
+	1125    (000011b8) move                 v2, v3
+	1126    (000011ba) goto/16              -8c8
+
+onPreferenceClick-BB@0x11be : [ onPreferenceClick-BB@0x2a ]
+	1127    (000011be) invoke-direct        v8, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->showSetScreenOffTimeoutDialog()V
+	1128    (000011c4) move                 v2, v3
+	1129    (000011c6) goto/16              -8ce
+
+onPreferenceClick-BB@0x11ca : [ onPreferenceClick-BB@0x2a ]
+	1130    (000011ca) new-instance         v2, Lcom/afwsamples/testdpc/transferownership/PickTransferComponentFragment;
+	1131    (000011ce) invoke-direct        v2, Lcom/afwsamples/testdpc/transferownership/PickTransferComponentFragment;-><init>()V
+	1132    (000011d4) invoke-direct        v8, v2, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->showFragment(Landroid/app/Fragment;)V
+	1133    (000011da) move                 v2, v3
+	1134    (000011dc) goto/16              -8d9
+
+onPreferenceClick-BB@0x11e0 : [ onPreferenceClick-BB@0x11e8 onPreferenceClick-BB@0x11fa ]
+	1135    (000011e0) sget                 v4, Lcom/afwsamples/testdpc/common/Util;->SDK_INT I
+	1136    (000011e4) if-lt                v4, v6, +b
+
+onPreferenceClick-BB@0x11e8 : [ onPreferenceClick-BB@0x11ee ]
+	1137    (000011e8) invoke-direct        v8, v2, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->setAutoTimeEnabled(Z)V
+
+onPreferenceClick-BB@0x11ee : [ onPreferenceClick-BB@0x2a ]
+	1138    (000011ee) invoke-direct        v8, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->showSetTimeDialog()V
+	1139    (000011f4) move                 v2, v3
+	1140    (000011f6) goto/16              -8e6
+
+onPreferenceClick-BB@0x11fa : [ onPreferenceClick-BB@0x11ee ]
+	1141    (000011fa) iget-object          v2, v8, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->mDevicePolicyManager Landroid/app/admin/DevicePolicyManager;
+	1142    (000011fe) iget-object          v4, v8, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->mAdminComponentName Landroid/content/ComponentName;
+	1143    (00001202) const-string         v5, 'auto_time'
+	1144    (00001206) const-string         v6, '0'
+	1145    (0000120a) invoke-virtual       v2, v4, v5, v6, Landroid/app/admin/DevicePolicyManager;->setGlobalSetting(Landroid/content/ComponentName; Ljava/lang/String; Ljava/lang/String;)V
+	1146    (00001210) goto                 -11
+
+onPreferenceClick-BB@0x1212 : [ onPreferenceClick-BB@0x121a onPreferenceClick-BB@0x122c ]
+	1147    (00001212) sget                 v4, Lcom/afwsamples/testdpc/common/Util;->SDK_INT I
+	1148    (00001216) if-lt                v4, v6, +b
+
+onPreferenceClick-BB@0x121a : [ onPreferenceClick-BB@0x1220 ]
+	1149    (0000121a) invoke-direct        v8, v2, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->setAutoTimeZoneEnabled(Z)V
+
+onPreferenceClick-BB@0x1220 : [ onPreferenceClick-BB@0x2a ]
+	1150    (00001220) invoke-direct        v8, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->showSetTimeZoneDialog()V
+	1151    (00001226) move                 v2, v3
+	1152    (00001228) goto/16              -8ff
+
+onPreferenceClick-BB@0x122c : [ onPreferenceClick-BB@0x1220 ]
+	1153    (0000122c) iget-object          v2, v8, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->mDevicePolicyManager Landroid/app/admin/DevicePolicyManager;
+	1154    (00001230) iget-object          v4, v8, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->mAdminComponentName Landroid/content/ComponentName;
+	1155    (00001234) const-string         v5, 'auto_time_zone'
+	1156    (00001238) const-string         v6, '0'
+	1157    (0000123c) invoke-virtual       v2, v4, v5, v6, Landroid/app/admin/DevicePolicyManager;->setGlobalSetting(Landroid/content/ComponentName; Ljava/lang/String; Ljava/lang/String;)V
+	1158    (00001242) goto                 -11
+
+onPreferenceClick-BB@0x1244 : [ onPreferenceClick-BB@0x2a ]
+	1159    (00001244) new-instance         v2, Lcom/afwsamples/testdpc/policy/OverrideApnFragment;
+	1160    (00001248) invoke-direct        v2, Lcom/afwsamples/testdpc/policy/OverrideApnFragment;-><init>()V
+	1161    (0000124e) invoke-direct        v8, v2, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->showFragment(Landroid/app/Fragment;)V
+	1162    (00001254) move                 v2, v3
+	1163    (00001256) goto/16              -916
+
+onPreferenceClick-BB@0x125a : [ onPreferenceClick-BB@0x2a ]
+	1164    (0000125a) invoke-direct        v8, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->promptInstallUpdate()V
+	1165    (00001260) move                 v2, v3
+	1166    (00001262) goto/16              -91c
+
+onPreferenceClick-BB@0x1266 : [ onPreferenceClick-BB@0x2a ]
+	1167    (00001266) new-instance         v2, Lcom/afwsamples/testdpc/policy/CrossProfileCalendarFragment;
+	1168    (0000126a) invoke-direct        v2, Lcom/afwsamples/testdpc/policy/CrossProfileCalendarFragment;-><init>()V
+	1169    (00001270) invoke-direct        v8, v2, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->showFragment(Landroid/app/Fragment;)V
+	1170    (00001276) move                 v2, v3
+	1171    (00001278) goto/16              -927
+
+onPreferenceClick-BB@0x127c : [ onPreferenceClick-BB@0x2a ]
+	1172    (0000127c) invoke-direct        v8, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->showSetProfileNameDialog()V
+	1173    (00001282) move                 v2, v3
+	1174    (00001284) goto/16              -92d
+
+onPreferenceClick-BB@0x1288 : [ onPreferenceClick-BB@0x2a ]
+	1175    (00001288) invoke-direct        v8, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->factoryResetOrgOwnedDevice()V
+	1176    (0000128e) move                 v2, v3
+	1177    (00001290) goto/16              -933
+
+onPreferenceClick-BB@0x1294 : [ onPreferenceClick-BB@0x2a ]
+	1178    (00001294) new-instance         v2, Lcom/afwsamples/testdpc/policy/FactoryResetProtectionPolicyFragment;
+	1179    (00001298) invoke-direct        v2, Lcom/afwsamples/testdpc/policy/FactoryResetProtectionPolicyFragment;-><init>()V
+	1180    (0000129e) invoke-direct        v8, v2, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->showFragment(Landroid/app/Fragment;)V
+	1181    (000012a4) move                 v2, v3
+	1182    (000012a6) goto/16              -93e
+
+onPreferenceClick-BB@0x12aa : [ onPreferenceClick-BB@0x2a ]
+	1183    (000012aa) invoke-direct        v8, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->showSetOrganizationIdDialog()V
+	1184    (000012b0) move                 v2, v3
+	1185    (000012b2) goto/16              -944
+
+onPreferenceClick-BB@0x12b6 : [ onPreferenceClick-BB@0xad8 ]
+	1186    (000012b6) move-exception       v2
+	1187    (000012b8) goto/16              -3f0
+
+onPreferenceClick-BB@0x12bc : 
+	1188    (000012bc) sparse-switch-payload -7f054cda -7dbd5e36 -7ced576b -7ac7aa82 -7a004d90 -797d9204 -773638de -7680cdbe -74278ce9 -71cf7b75 -702ca483 -69a46899 -697b9539 -67e3447b -642a2068 -6109ae88 -5c391daa -5c32e4e0 -5bf4fd2b -586d4882 -570ad2f5 -568d4a01 -5666c9ef -53dcf1b7 -529d1546 -51dc0e49 -51bdfc03 -4fe83ccd -4c479381 -4912fe17 -4338e355 -429c45c5 -40fd4de2 -39fb0ce3 -388fe6b9 -37ba085b -372c8d08 -35487641 -2cb73f98 -2ba88923 -27627faf -25c0516e -258214a8 -2516291b -240458b2 -1f4ca875 -1de8f1a6 -1c809a8e -1982a066 -18029edc -13d957e2 -13410b5f -117ea15a -88a923a -78a883a -2c4030f -272c0a8 cda75a 876788f 989bf36 ce2bbbb 11df984f 140d9553 156b771d 16b7cea7 1d1e71dd 1fc910a0 2260a8d0 24212d9e 26695f0c 282e8d13 31284365 32d99f4f 34d67fdc 35710bc6 36edecd6 39bc99ae 3a7af5dc 3c43db91 3fdc3c90 439702d2 4be405a7 4f066641 4ff6504b 53183ea4 545fbc8a 5567a20f 579a9705 5bd08472 5da80ca2 5e0ad4e7 5e32a0af 612a4de8 64490831 655f7f76 66271c33 671b7560 67567763 6a236cac 6a44d87c 71d311c2 73e8141c 74686000 751a196f 75d42c8c 7866afc6 7e415114 7eec4df6 7f779cba
+	1189    (00001628) packed-switch-payload 0 1 2 3 4 5 6 7 8 9 a b c d e f 10 11 12 13 14 15 16 17 18 19 1a 1b 1c 1d 1e 1f 20 21 22 23 24 25 26 27 28 29 2a 2b 2c 2d 2e 2f 30 31 32 33 34 35 36 37 38 39 3a 3b 3c 3d 3e 3f 40 41 42 43 44 45 46 47 48 49 4a 4b 4c 4d 4e 4f 50 51 52 53 54 55 56 57 58 59 5a 5b 5c 5d 5e 5f 60 61 62 63 64 65 66 67 68 69 6a 6b 6c
+

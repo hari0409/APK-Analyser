@@ -1,0 +1,14 @@
+# Lcom/afwsamples/testdpc/comp/BindDeviceAdminFragment$$Lambda$4;->onServiceConnected(Ljava/lang/Object;)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:java.lang.Object
+#
+# - return:void
+
+onServiceConnected-BB@0x0 : 
+	0       (00000000) iget-object          v0, v1, Lcom/afwsamples/testdpc/comp/BindDeviceAdminFragment$$Lambda$4;->arg$1 Ljava/lang/Object;
+	1       (00000004) check-cast           v2, Lcom/afwsamples/testdpc/comp/IProfileOwnerService;
+	2       (00000008) invoke-static        v0, v2, Lcom/afwsamples/testdpc/comp/BindDeviceAdminFragment;->lambda$onPreferenceChange$215$BindDeviceAdminFragment(Ljava/lang/Object; Lcom/afwsamples/testdpc/comp/IProfileOwnerService;)V
+	3       (0000000e) return-void          
+

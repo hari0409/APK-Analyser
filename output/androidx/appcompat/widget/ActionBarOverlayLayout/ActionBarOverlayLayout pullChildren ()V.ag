@@ -1,0 +1,32 @@
+# Landroidx/appcompat/widget/ActionBarOverlayLayout;->pullChildren()V [access_flags=]
+#
+# Parameters:
+# local registers: v0...v1
+#
+# - return:void
+
+pullChildren-BB@0x0 : [ pullChildren-BB@0x8 pullChildren-BB@0x48 ]
+	0       (00000000) iget-object          v0, v1, Landroidx/appcompat/widget/ActionBarOverlayLayout;->mContent Landroidx/appcompat/widget/ContentFrameLayout;
+	1       (00000004) if-nez               v0, +22
+
+pullChildren-BB@0x8 : [ pullChildren-BB@0x48 ]
+	2       (00000008) sget                 v0, Landroidx/appcompat/R$id;->action_bar_activity_content I
+	3       (0000000c) invoke-virtual       v1, v0, Landroidx/appcompat/widget/ActionBarOverlayLayout;->findViewById(I)Landroid/view/View;
+	4       (00000012) move-result-object   v0
+	5       (00000014) check-cast           v0, Landroidx/appcompat/widget/ContentFrameLayout;
+	6       (00000018) iput-object          v0, v1, Landroidx/appcompat/widget/ActionBarOverlayLayout;->mContent Landroidx/appcompat/widget/ContentFrameLayout;
+	7       (0000001c) sget                 v0, Landroidx/appcompat/R$id;->action_bar_container I
+	8       (00000020) invoke-virtual       v1, v0, Landroidx/appcompat/widget/ActionBarOverlayLayout;->findViewById(I)Landroid/view/View;
+	9       (00000026) move-result-object   v0
+	10      (00000028) check-cast           v0, Landroidx/appcompat/widget/ActionBarContainer;
+	11      (0000002c) iput-object          v0, v1, Landroidx/appcompat/widget/ActionBarOverlayLayout;->mActionBarTop Landroidx/appcompat/widget/ActionBarContainer;
+	12      (00000030) sget                 v0, Landroidx/appcompat/R$id;->action_bar I
+	13      (00000034) invoke-virtual       v1, v0, Landroidx/appcompat/widget/ActionBarOverlayLayout;->findViewById(I)Landroid/view/View;
+	14      (0000003a) move-result-object   v0
+	15      (0000003c) invoke-direct        v1, v0, Landroidx/appcompat/widget/ActionBarOverlayLayout;->getDecorToolbar(Landroid/view/View;)Landroidx/appcompat/widget/DecorToolbar;
+	16      (00000042) move-result-object   v0
+	17      (00000044) iput-object          v0, v1, Landroidx/appcompat/widget/ActionBarOverlayLayout;->mDecorToolbar Landroidx/appcompat/widget/DecorToolbar;
+
+pullChildren-BB@0x48 : 
+	18      (00000048) return-void          
+

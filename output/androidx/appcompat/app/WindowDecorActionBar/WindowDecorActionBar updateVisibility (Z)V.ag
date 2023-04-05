@@ -1,0 +1,38 @@
+# Landroidx/appcompat/app/WindowDecorActionBar;->updateVisibility(Z)V [access_flags=private]
+#
+# Parameters:
+# - local registers: v0...v4
+# - v5:boolean
+#
+# - return:void
+
+updateVisibility-BB@0x0 : [ updateVisibility-BB@0x18 updateVisibility-BB@0x2e ]
+	0       (00000000) iget-boolean         v1, v4, Landroidx/appcompat/app/WindowDecorActionBar;->mHiddenByApp Z
+	1       (00000004) iget-boolean         v2, v4, Landroidx/appcompat/app/WindowDecorActionBar;->mHiddenBySystem Z
+	2       (00000008) iget-boolean         v3, v4, Landroidx/appcompat/app/WindowDecorActionBar;->mShowingForMode Z
+	3       (0000000c) invoke-static        v1, v2, v3, Landroidx/appcompat/app/WindowDecorActionBar;->checkShowingFlags(Z Z Z)Z
+	4       (00000012) move-result          v0
+	5       (00000014) if-eqz               v0, +d
+
+updateVisibility-BB@0x18 : [ updateVisibility-BB@0x20 updateVisibility-BB@0x2c ]
+	6       (00000018) iget-boolean         v1, v4, Landroidx/appcompat/app/WindowDecorActionBar;->mNowShowing Z
+	7       (0000001c) if-nez               v1, +8
+
+updateVisibility-BB@0x20 : [ updateVisibility-BB@0x2c ]
+	8       (00000020) const/4              v1, 1
+	9       (00000022) iput-boolean         v1, v4, Landroidx/appcompat/app/WindowDecorActionBar;->mNowShowing Z
+	10      (00000026) invoke-virtual       v4, v5, Landroidx/appcompat/app/WindowDecorActionBar;->doShow(Z)V
+
+updateVisibility-BB@0x2c : 
+	11      (0000002c) return-void          
+
+updateVisibility-BB@0x2e : [ updateVisibility-BB@0x36 updateVisibility-BB@0x2c ]
+	12      (0000002e) iget-boolean         v1, v4, Landroidx/appcompat/app/WindowDecorActionBar;->mNowShowing Z
+	13      (00000032) if-eqz               v1, -3
+
+updateVisibility-BB@0x36 : [ updateVisibility-BB@0x2c ]
+	14      (00000036) const/4              v1, 0
+	15      (00000038) iput-boolean         v1, v4, Landroidx/appcompat/app/WindowDecorActionBar;->mNowShowing Z
+	16      (0000003c) invoke-virtual       v4, v5, Landroidx/appcompat/app/WindowDecorActionBar;->doHide(Z)V
+	17      (00000042) goto                 -b
+

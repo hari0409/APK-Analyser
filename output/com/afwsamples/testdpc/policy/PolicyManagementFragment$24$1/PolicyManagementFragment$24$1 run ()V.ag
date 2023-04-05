@@ -1,0 +1,30 @@
+# Lcom/afwsamples/testdpc/policy/PolicyManagementFragment$24$1;->run()V [access_flags=public]
+#
+# Parameters:
+# local registers: v0...v3
+#
+# - return:void
+
+run-BB@0x0 : [ run-BB@0xa run-BB@0x24 ]
+	0       (00000000) const/4              v2, 0
+	1       (00000002) iget-boolean         v0, v3, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment$24$1;->val$removed Z
+	2       (00000006) if-eqz               v0, +f
+
+run-BB@0xa : [ run-BB@0x22 ]
+	3       (0000000a) iget-object          v0, v3, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment$24$1;->this$1 Lcom/afwsamples/testdpc/policy/PolicyManagementFragment$24;
+	4       (0000000e) iget-object          v0, v0, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment$24;->this$0 Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;
+	5       (00000012) const                v1, 2131690113 # [1.900926044217989e+38]
+	6       (00000018) new-array            v2, v2, [Ljava/lang/Object;
+	7       (0000001c) invoke-static        v0, v1, v2, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->access$200(Lcom/afwsamples/testdpc/policy/PolicyManagementFragment; I [Ljava/lang/Object;)V
+
+run-BB@0x22 : 
+	8       (00000022) return-void          
+
+run-BB@0x24 : [ run-BB@0x22 ]
+	9       (00000024) iget-object          v0, v3, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment$24$1;->this$1 Lcom/afwsamples/testdpc/policy/PolicyManagementFragment$24;
+	10      (00000028) iget-object          v0, v0, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment$24;->this$0 Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;
+	11      (0000002c) const                v1, 2131690112 # [1.900925841393893e+38]
+	12      (00000032) new-array            v2, v2, [Ljava/lang/Object;
+	13      (00000036) invoke-static        v0, v1, v2, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->access$200(Lcom/afwsamples/testdpc/policy/PolicyManagementFragment; I [Ljava/lang/Object;)V
+	14      (0000003c) goto                 -d
+

@@ -1,0 +1,14 @@
+# Landroidx/appcompat/widget/ActionMenuView$LayoutParams;-><init>(Landroidx/appcompat/widget/ActionMenuView$LayoutParams;)V [access_flags=public constructor]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:androidx.appcompat.widget.ActionMenuView$LayoutParams
+#
+# - return:void
+
+<init>-BB@0x0 : 
+	0       (00000000) invoke-direct        v1, v2, Landroidx/appcompat/widget/LinearLayoutCompat$LayoutParams;-><init>(Landroid/view/ViewGroup$LayoutParams;)V
+	1       (00000006) iget-boolean         v0, v2, Landroidx/appcompat/widget/ActionMenuView$LayoutParams;->isOverflowButton Z
+	2       (0000000a) iput-boolean         v0, v1, Landroidx/appcompat/widget/ActionMenuView$LayoutParams;->isOverflowButton Z
+	3       (0000000e) return-void          
+

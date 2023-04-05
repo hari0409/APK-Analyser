@@ -1,0 +1,12 @@
+# Landroidx/appcompat/view/menu/MenuAdapter;->setForceShowIcon(Z)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v0
+# - v1:boolean
+#
+# - return:void
+
+setForceShowIcon-BB@0x0 : 
+	0       (00000000) iput-boolean         v1, v0, Landroidx/appcompat/view/menu/MenuAdapter;->mForceShowIcon Z
+	1       (00000004) return-void          
+

@@ -1,0 +1,61 @@
+# Lcom/afwsamples/testdpc/policy/GetAvailableComponentsTask;->onPreExecute()V [access_flags=protected]
+#
+# Parameters:
+# local registers: v0...v4
+#
+# - return:void
+
+onPreExecute-BB@0x0 : 
+	0       (00000000) const/4              v3, 0
+	1       (00000002) iget-object          v1, v4, Lcom/afwsamples/testdpc/policy/GetAvailableComponentsTask;->mActivity Landroid/app/Activity;
+	2       (00000006) const                v2, 2131427363 # [1.8476340129843943e+38]
+	3       (0000000c) invoke-static        v1, v2, v3, Landroid/view/View;->inflate(Landroid/content/Context; I Landroid/view/ViewGroup;)Landroid/view/View;
+	4       (00000012) move-result-object   v0
+	5       (00000014) new-instance         v1, Landroid/app/AlertDialog$Builder;
+	6       (00000018) iget-object          v2, v4, Lcom/afwsamples/testdpc/policy/GetAvailableComponentsTask;->mActivity Landroid/app/Activity;
+	7       (0000001c) invoke-direct        v1, v2, Landroid/app/AlertDialog$Builder;-><init>(Landroid/content/Context;)V
+	8       (00000022) iget                 v2, v4, Lcom/afwsamples/testdpc/policy/GetAvailableComponentsTask;->mTitleResId I
+	9       (00000026) invoke-virtual       v1, v2, Landroid/app/AlertDialog$Builder;->setTitle(I)Landroid/app/AlertDialog$Builder;
+	10      (0000002c) move-result-object   v1
+	11      (0000002e) invoke-virtual       v1, v0, Landroid/app/AlertDialog$Builder;->setView(Landroid/view/View;)Landroid/app/AlertDialog$Builder;
+	12      (00000034) move-result-object   v1
+	13      (00000036) const                v2, 17039370 # [2.4244599011678966e-38]
+	14      (0000003c) invoke-virtual       v1, v2, v3, Landroid/app/AlertDialog$Builder;->setPositiveButton(I Landroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
+	15      (00000042) move-result-object   v1
+	16      (00000044) const                v2, 2131689546 # [1.9008110429555364e+38]
+	17      (0000004a) invoke-virtual       v1, v2, v3, Landroid/app/AlertDialog$Builder;->setNeutralButton(I Landroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
+	18      (00000050) move-result-object   v1
+	19      (00000052) const/high16         v2, 260 # [2.424457098570968e-38]
+	20      (00000056) invoke-virtual       v1, v2, v3, Landroid/app/AlertDialog$Builder;->setNegativeButton(I Landroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
+	21      (0000005c) move-result-object   v1
+	22      (0000005e) invoke-virtual       v1, Landroid/app/AlertDialog$Builder;->show()Landroid/app/AlertDialog;
+	23      (00000064) move-result-object   v1
+	24      (00000066) iput-object          v1, v4, Lcom/afwsamples/testdpc/policy/GetAvailableComponentsTask;->mAlertDialog Landroid/app/AlertDialog;
+	25      (0000006a) const                v1, 2131296558 # [1.8211036071023378e+38]
+	26      (00000070) invoke-virtual       v0, v1, Landroid/view/View;->findViewById(I)Landroid/view/View;
+	27      (00000076) move-result-object   v1
+	28      (00000078) iput-object          v1, v4, Lcom/afwsamples/testdpc/policy/GetAvailableComponentsTask;->mProgressView Landroid/view/View;
+	29      (0000007c) const                v1, 16908298 # [2.3877257027047e-38]
+	30      (00000082) invoke-virtual       v0, v1, Landroid/view/View;->findViewById(I)Landroid/view/View;
+	31      (00000088) move-result-object   v1
+	32      (0000008a) check-cast           v1, Landroid/widget/ListView;
+	33      (0000008e) iput-object          v1, v4, Lcom/afwsamples/testdpc/policy/GetAvailableComponentsTask;->mListView Landroid/widget/ListView;
+	34      (00000092) iget-object          v1, v4, Lcom/afwsamples/testdpc/policy/GetAvailableComponentsTask;->mAlertDialog Landroid/app/AlertDialog;
+	35      (00000096) const/4              v2, -1
+	36      (00000098) invoke-virtual       v1, v2, Landroid/app/AlertDialog;->getButton(I)Landroid/widget/Button;
+	37      (0000009e) move-result-object   v1
+	38      (000000a0) iput-object          v1, v4, Lcom/afwsamples/testdpc/policy/GetAvailableComponentsTask;->mPositiveButton Landroid/widget/Button;
+	39      (000000a4) iget-object          v1, v4, Lcom/afwsamples/testdpc/policy/GetAvailableComponentsTask;->mAlertDialog Landroid/app/AlertDialog;
+	40      (000000a8) const/4              v2, -3
+	41      (000000aa) invoke-virtual       v1, v2, Landroid/app/AlertDialog;->getButton(I)Landroid/widget/Button;
+	42      (000000b0) move-result-object   v1
+	43      (000000b2) iput-object          v1, v4, Lcom/afwsamples/testdpc/policy/GetAvailableComponentsTask;->mNeutralButton Landroid/widget/Button;
+	44      (000000b6) iget-object          v1, v4, Lcom/afwsamples/testdpc/policy/GetAvailableComponentsTask;->mAlertDialog Landroid/app/AlertDialog;
+	45      (000000ba) const/4              v2, -2
+	46      (000000bc) invoke-virtual       v1, v2, Landroid/app/AlertDialog;->getButton(I)Landroid/widget/Button;
+	47      (000000c2) move-result-object   v1
+	48      (000000c4) iput-object          v1, v4, Lcom/afwsamples/testdpc/policy/GetAvailableComponentsTask;->mNegativeButton Landroid/widget/Button;
+	49      (000000c8) const/4              v1, 1
+	50      (000000ca) invoke-direct        v4, v1, Lcom/afwsamples/testdpc/policy/GetAvailableComponentsTask;->showProgressBar(Z)V
+	51      (000000d0) return-void          
+

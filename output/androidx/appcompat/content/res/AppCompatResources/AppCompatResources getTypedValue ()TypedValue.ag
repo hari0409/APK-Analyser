@@ -1,0 +1,23 @@
+# Landroidx/appcompat/content/res/AppCompatResources;->getTypedValue()Landroid/util/TypedValue; [access_flags=private static]
+#
+# Parameters:
+# local registers: v0...v1
+#
+# - return:android.util.TypedValue
+
+getTypedValue-BB@0x0 : [ getTypedValue-BB@0x14 getTypedValue-BB@0x28 ]
+	0       (00000000) sget-object          v1, Landroidx/appcompat/content/res/AppCompatResources;->TL_TYPED_VALUE Ljava/lang/ThreadLocal;
+	1       (00000004) invoke-virtual       v1, Ljava/lang/ThreadLocal;->get()Ljava/lang/Object;
+	2       (0000000a) move-result-object   v0
+	3       (0000000c) check-cast           v0, Landroid/util/TypedValue;
+	4       (00000010) if-nez               v0, +c
+
+getTypedValue-BB@0x14 : [ getTypedValue-BB@0x28 ]
+	5       (00000014) new-instance         v0, Landroid/util/TypedValue;
+	6       (00000018) invoke-direct        v0, Landroid/util/TypedValue;-><init>()V
+	7       (0000001e) sget-object          v1, Landroidx/appcompat/content/res/AppCompatResources;->TL_TYPED_VALUE Ljava/lang/ThreadLocal;
+	8       (00000022) invoke-virtual       v1, v0, Ljava/lang/ThreadLocal;->set(Ljava/lang/Object;)V
+
+getTypedValue-BB@0x28 : 
+	9       (00000028) return-object        v0
+

@@ -1,0 +1,84 @@
+# Landroidx/appcompat/widget/TooltipCompatHandler;->show(Z)V [access_flags=]
+#
+# Parameters:
+# - local registers: v0...v8
+# - v9:boolean
+#
+# - return:void
+
+show-BB@0x0 : [ show-BB@0x10 show-BB@0x12 ]
+	0       (00000000) iget-object          v0, v8, Landroidx/appcompat/widget/TooltipCompatHandler;->mAnchor Landroid/view/View;
+	1       (00000004) invoke-static        v0, Landroidx/core/view/ViewCompat;->isAttachedToWindow(Landroid/view/View;)Z
+	2       (0000000a) move-result          v0
+	3       (0000000c) if-nez               v0, +3
+
+show-BB@0x10 : 
+	4       (00000010) return-void          
+
+show-BB@0x12 : [ show-BB@0x22 show-BB@0x2c ]
+	5       (00000012) const/4              v0, 0
+	6       (00000014) invoke-static        v0, Landroidx/appcompat/widget/TooltipCompatHandler;->setPendingHandler(Landroidx/appcompat/widget/TooltipCompatHandler;)V
+	7       (0000001a) sget-object          v0, Landroidx/appcompat/widget/TooltipCompatHandler;->sActiveHandler Landroidx/appcompat/widget/TooltipCompatHandler;
+	8       (0000001e) if-eqz               v0, +7
+
+show-BB@0x22 : [ show-BB@0x2c ]
+	9       (00000022) sget-object          v0, Landroidx/appcompat/widget/TooltipCompatHandler;->sActiveHandler Landroidx/appcompat/widget/TooltipCompatHandler;
+	10      (00000026) invoke-virtual       v0, Landroidx/appcompat/widget/TooltipCompatHandler;->hide()V
+
+show-BB@0x2c : [ show-BB@0x7e show-BB@0xa0 ]
+	11      (0000002c) sput-object          v8, Landroidx/appcompat/widget/TooltipCompatHandler;->sActiveHandler Landroidx/appcompat/widget/TooltipCompatHandler;
+	12      (00000030) iput-boolean         v9, v8, Landroidx/appcompat/widget/TooltipCompatHandler;->mFromTouch Z
+	13      (00000034) new-instance         v0, Landroidx/appcompat/widget/TooltipPopup;
+	14      (00000038) iget-object          v1, v8, Landroidx/appcompat/widget/TooltipCompatHandler;->mAnchor Landroid/view/View;
+	15      (0000003c) invoke-virtual       v1, Landroid/view/View;->getContext()Landroid/content/Context;
+	16      (00000042) move-result-object   v1
+	17      (00000044) invoke-direct        v0, v1, Landroidx/appcompat/widget/TooltipPopup;-><init>(Landroid/content/Context;)V
+	18      (0000004a) iput-object          v0, v8, Landroidx/appcompat/widget/TooltipCompatHandler;->mPopup Landroidx/appcompat/widget/TooltipPopup;
+	19      (0000004e) iget-object          v0, v8, Landroidx/appcompat/widget/TooltipCompatHandler;->mPopup Landroidx/appcompat/widget/TooltipPopup;
+	20      (00000052) iget-object          v1, v8, Landroidx/appcompat/widget/TooltipCompatHandler;->mAnchor Landroid/view/View;
+	21      (00000056) iget                 v2, v8, Landroidx/appcompat/widget/TooltipCompatHandler;->mAnchorX I
+	22      (0000005a) iget                 v3, v8, Landroidx/appcompat/widget/TooltipCompatHandler;->mAnchorY I
+	23      (0000005e) iget-boolean         v4, v8, Landroidx/appcompat/widget/TooltipCompatHandler;->mFromTouch Z
+	24      (00000062) iget-object          v5, v8, Landroidx/appcompat/widget/TooltipCompatHandler;->mTooltipText Ljava/lang/CharSequence;
+	25      (00000066) invoke-virtual/range v0 ... v5, Landroidx/appcompat/widget/TooltipPopup;->show(Landroid/view/View; I I Z Ljava/lang/CharSequence;)V
+	26      (0000006c) iget-object          v0, v8, Landroidx/appcompat/widget/TooltipCompatHandler;->mAnchor Landroid/view/View;
+	27      (00000070) invoke-virtual       v0, v8, Landroid/view/View;->addOnAttachStateChangeListener(Landroid/view/View$OnAttachStateChangeListener;)V
+	28      (00000076) iget-boolean         v0, v8, Landroidx/appcompat/widget/TooltipCompatHandler;->mFromTouch Z
+	29      (0000007a) if-eqz               v0, +13
+
+show-BB@0x7e : [ show-BB@0x82 ]
+	30      (0000007e) const-wide/16        v6, 2500 # [2500.0]
+
+show-BB@0x82 : [ show-BB@0x10 ]
+	31      (00000082) iget-object          v0, v8, Landroidx/appcompat/widget/TooltipCompatHandler;->mAnchor Landroid/view/View;
+	32      (00000086) iget-object          v1, v8, Landroidx/appcompat/widget/TooltipCompatHandler;->mHideRunnable Ljava/lang/Runnable;
+	33      (0000008a) invoke-virtual       v0, v1, Landroid/view/View;->removeCallbacks(Ljava/lang/Runnable;)Z
+	34      (00000090) iget-object          v0, v8, Landroidx/appcompat/widget/TooltipCompatHandler;->mAnchor Landroid/view/View;
+	35      (00000094) iget-object          v1, v8, Landroidx/appcompat/widget/TooltipCompatHandler;->mHideRunnable Ljava/lang/Runnable;
+	36      (00000098) invoke-virtual       v0, v1, v6, v7, Landroid/view/View;->postDelayed(Ljava/lang/Runnable; J)Z
+	37      (0000009e) goto                 -47
+
+show-BB@0xa0 : [ show-BB@0xb6 show-BB@0xca ]
+	38      (000000a0) iget-object          v0, v8, Landroidx/appcompat/widget/TooltipCompatHandler;->mAnchor Landroid/view/View;
+	39      (000000a4) invoke-static        v0, Landroidx/core/view/ViewCompat;->getWindowSystemUiVisibility(Landroid/view/View;)I
+	40      (000000aa) move-result          v0
+	41      (000000ac) and-int/lit8         v0, v0, 1
+	42      (000000b0) const/4              v1, 1
+	43      (000000b2) if-ne                v0, v1, +c
+
+show-BB@0xb6 : [ show-BB@0x82 ]
+	44      (000000b6) const-wide/16        v0, 3000 # [3000.0]
+	45      (000000ba) invoke-static        Landroid/view/ViewConfiguration;->getLongPressTimeout()I
+	46      (000000c0) move-result          v2
+	47      (000000c2) int-to-long          v2, v2
+	48      (000000c4) sub-long             v6, v0, v2
+	49      (000000c8) goto                 -23
+
+show-BB@0xca : [ show-BB@0x82 ]
+	50      (000000ca) const-wide/16        v0, 15000 # [15000.0]
+	51      (000000ce) invoke-static        Landroid/view/ViewConfiguration;->getLongPressTimeout()I
+	52      (000000d4) move-result          v2
+	53      (000000d6) int-to-long          v2, v2
+	54      (000000d8) sub-long             v6, v0, v2
+	55      (000000dc) goto                 -2d
+

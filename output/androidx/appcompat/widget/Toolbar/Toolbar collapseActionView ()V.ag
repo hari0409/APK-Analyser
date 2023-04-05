@@ -1,0 +1,28 @@
+# Landroidx/appcompat/widget/Toolbar;->collapseActionView()V [access_flags=public]
+#
+# Parameters:
+# local registers: v0...v2
+#
+# - return:void
+
+collapseActionView-BB@0x0 : [ collapseActionView-BB@0x8 collapseActionView-BB@0x16 ]
+	0       (00000000) iget-object          v1, v2, Landroidx/appcompat/widget/Toolbar;->mExpandedMenuPresenter Landroidx/appcompat/widget/Toolbar$ExpandedActionViewMenuPresenter;
+	1       (00000004) if-nez               v1, +9
+
+collapseActionView-BB@0x8 : [ collapseActionView-BB@0xa ]
+	2       (00000008) const/4              v0, 0
+
+collapseActionView-BB@0xa : [ collapseActionView-BB@0xe collapseActionView-BB@0x14 ]
+	3       (0000000a) if-eqz               v0, +5
+
+collapseActionView-BB@0xe : [ collapseActionView-BB@0x14 ]
+	4       (0000000e) invoke-virtual       v0, Landroidx/appcompat/view/menu/MenuItemImpl;->collapseActionView()Z
+
+collapseActionView-BB@0x14 : 
+	5       (00000014) return-void          
+
+collapseActionView-BB@0x16 : [ collapseActionView-BB@0xa ]
+	6       (00000016) iget-object          v1, v2, Landroidx/appcompat/widget/Toolbar;->mExpandedMenuPresenter Landroidx/appcompat/widget/Toolbar$ExpandedActionViewMenuPresenter;
+	7       (0000001a) iget-object          v0, v1, Landroidx/appcompat/widget/Toolbar$ExpandedActionViewMenuPresenter;->mCurrentExpandedItem Landroidx/appcompat/view/menu/MenuItemImpl;
+	8       (0000001e) goto                 -a
+

@@ -1,0 +1,73 @@
+# Landroidx/appcompat/widget/ForwardingListener;->onTouchForwarded(Landroid/view/MotionEvent;)Z [access_flags=private]
+#
+# Parameters:
+# - local registers: v0...v10
+# - v11:android.view.MotionEvent
+#
+# - return:boolean
+
+onTouchForwarded-BB@0x0 : [ onTouchForwarded-BB@0x14 onTouchForwarded-BB@0x20 ]
+	0       (00000000) const/4              v7, 1
+	1       (00000002) const/4              v8, 0
+	2       (00000004) iget-object          v6, v10, Landroidx/appcompat/widget/ForwardingListener;->mSrc Landroid/view/View;
+	3       (00000008) invoke-virtual       v10, Landroidx/appcompat/widget/ForwardingListener;->getPopup()Landroidx/appcompat/view/menu/ShowableListMenu;
+	4       (0000000e) move-result-object   v5
+	5       (00000010) if-eqz               v5, +8
+
+onTouchForwarded-BB@0x14 : [ onTouchForwarded-BB@0x20 onTouchForwarded-BB@0x22 ]
+	6       (00000014) invoke-interface     v5, Landroidx/appcompat/view/menu/ShowableListMenu;->isShowing()Z
+	7       (0000001a) move-result          v9
+	8       (0000001c) if-nez               v9, +3
+
+onTouchForwarded-BB@0x20 : 
+	9       (00000020) return               v8
+
+onTouchForwarded-BB@0x22 : [ onTouchForwarded-BB@0x32 onTouchForwarded-BB@0x20 ]
+	10      (00000022) invoke-interface     v5, Landroidx/appcompat/view/menu/ShowableListMenu;->getListView()Landroid/widget/ListView;
+	11      (00000028) move-result-object   v1
+	12      (0000002a) check-cast           v1, Landroidx/appcompat/widget/DropDownListView;
+	13      (0000002e) if-eqz               v1, -7
+
+onTouchForwarded-BB@0x32 : [ onTouchForwarded-BB@0x3e onTouchForwarded-BB@0x20 ]
+	14      (00000032) invoke-virtual       v1, Landroidx/appcompat/widget/DropDownListView;->isShown()Z
+	15      (00000038) move-result          v9
+	16      (0000003a) if-eqz               v9, -d
+
+onTouchForwarded-BB@0x3e : [ onTouchForwarded-BB@0x70 onTouchForwarded-BB@0x84 ]
+	17      (0000003e) invoke-static        v11, Landroid/view/MotionEvent;->obtainNoHistory(Landroid/view/MotionEvent;)Landroid/view/MotionEvent;
+	18      (00000044) move-result-object   v2
+	19      (00000046) invoke-direct        v10, v6, v2, Landroidx/appcompat/widget/ForwardingListener;->toGlobalMotionEvent(Landroid/view/View; Landroid/view/MotionEvent;)Z
+	20      (0000004c) invoke-direct        v10, v1, v2, Landroidx/appcompat/widget/ForwardingListener;->toLocalMotionEvent(Landroid/view/View; Landroid/view/MotionEvent;)Z
+	21      (00000052) iget                 v9, v10, Landroidx/appcompat/widget/ForwardingListener;->mActivePointerId I
+	22      (00000056) invoke-virtual       v1, v2, v9, Landroidx/appcompat/widget/DropDownListView;->onForwardedEvent(Landroid/view/MotionEvent; I)Z
+	23      (0000005c) move-result          v3
+	24      (0000005e) invoke-virtual       v2, Landroid/view/MotionEvent;->recycle()V
+	25      (00000064) invoke-virtual       v11, Landroid/view/MotionEvent;->getActionMasked()I
+	26      (0000006a) move-result          v0
+	27      (0000006c) if-eq                v0, v7, +c
+
+onTouchForwarded-BB@0x70 : [ onTouchForwarded-BB@0x76 onTouchForwarded-BB@0x84 ]
+	28      (00000070) const/4              v9, 3
+	29      (00000072) if-eq                v0, v9, +9
+
+onTouchForwarded-BB@0x76 : [ onTouchForwarded-BB@0x78 ]
+	30      (00000076) move                 v4, v7
+
+onTouchForwarded-BB@0x78 : [ onTouchForwarded-BB@0x7c onTouchForwarded-BB@0x88 ]
+	31      (00000078) if-eqz               v3, +8
+
+onTouchForwarded-BB@0x7c : [ onTouchForwarded-BB@0x80 onTouchForwarded-BB@0x88 ]
+	32      (0000007c) if-eqz               v4, +6
+
+onTouchForwarded-BB@0x80 : [ onTouchForwarded-BB@0x20 ]
+	33      (00000080) move                 v8, v7
+	34      (00000082) goto                 -31
+
+onTouchForwarded-BB@0x84 : [ onTouchForwarded-BB@0x78 ]
+	35      (00000084) move                 v4, v8
+	36      (00000086) goto                 -7
+
+onTouchForwarded-BB@0x88 : [ onTouchForwarded-BB@0x80 ]
+	37      (00000088) move                 v7, v8
+	38      (0000008a) goto                 -5
+

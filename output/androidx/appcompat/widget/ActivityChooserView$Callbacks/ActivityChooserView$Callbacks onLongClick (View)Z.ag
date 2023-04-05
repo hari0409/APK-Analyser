@@ -1,0 +1,37 @@
+# Landroidx/appcompat/widget/ActivityChooserView$Callbacks;->onLongClick(Landroid/view/View;)Z [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v3
+# - v4:android.view.View
+#
+# - return:boolean
+
+onLongClick-BB@0x0 : [ onLongClick-BB@0xe onLongClick-BB@0x3e ]
+	0       (00000000) const/4              v2, 1
+	1       (00000002) iget-object          v0, v3, Landroidx/appcompat/widget/ActivityChooserView$Callbacks;->this$0 Landroidx/appcompat/widget/ActivityChooserView;
+	2       (00000006) iget-object          v0, v0, Landroidx/appcompat/widget/ActivityChooserView;->mDefaultActivityButton Landroid/widget/FrameLayout;
+	3       (0000000a) if-ne                v4, v0, +1a
+
+onLongClick-BB@0xe : [ onLongClick-BB@0x22 onLongClick-BB@0x3c ]
+	4       (0000000e) iget-object          v0, v3, Landroidx/appcompat/widget/ActivityChooserView$Callbacks;->this$0 Landroidx/appcompat/widget/ActivityChooserView;
+	5       (00000012) iget-object          v0, v0, Landroidx/appcompat/widget/ActivityChooserView;->mAdapter Landroidx/appcompat/widget/ActivityChooserView$ActivityChooserViewAdapter;
+	6       (00000016) invoke-virtual       v0, Landroidx/appcompat/widget/ActivityChooserView$ActivityChooserViewAdapter;->getCount()I
+	7       (0000001c) move-result          v0
+	8       (0000001e) if-lez               v0, +f
+
+onLongClick-BB@0x22 : [ onLongClick-BB@0x3c ]
+	9       (00000022) iget-object          v0, v3, Landroidx/appcompat/widget/ActivityChooserView$Callbacks;->this$0 Landroidx/appcompat/widget/ActivityChooserView;
+	10      (00000026) iput-boolean         v2, v0, Landroidx/appcompat/widget/ActivityChooserView;->mIsSelectingDefaultActivity Z
+	11      (0000002a) iget-object          v0, v3, Landroidx/appcompat/widget/ActivityChooserView$Callbacks;->this$0 Landroidx/appcompat/widget/ActivityChooserView;
+	12      (0000002e) iget-object          v1, v3, Landroidx/appcompat/widget/ActivityChooserView$Callbacks;->this$0 Landroidx/appcompat/widget/ActivityChooserView;
+	13      (00000032) iget                 v1, v1, Landroidx/appcompat/widget/ActivityChooserView;->mInitialActivityCount I
+	14      (00000036) invoke-virtual       v0, v1, Landroidx/appcompat/widget/ActivityChooserView;->showPopupUnchecked(I)V
+
+onLongClick-BB@0x3c : 
+	15      (0000003c) return               v2
+
+onLongClick-BB@0x3e : 
+	16      (0000003e) new-instance         v0, Ljava/lang/IllegalArgumentException;
+	17      (00000042) invoke-direct        v0, Ljava/lang/IllegalArgumentException;-><init>()V
+	18      (00000048) throw                v0
+

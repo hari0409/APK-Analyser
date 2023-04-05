@@ -1,0 +1,28 @@
+# Landroidx/appcompat/app/AppCompatDelegateImpl$PanelFeatureState;->onSaveInstanceState()Landroid/os/Parcelable; [access_flags=]
+#
+# Parameters:
+# local registers: v0...v3
+#
+# - return:android.os.Parcelable
+
+onSaveInstanceState-BB@0x0 : [ onSaveInstanceState-BB@0x22 onSaveInstanceState-BB@0x3e ]
+	0       (00000000) new-instance         v0, Landroidx/appcompat/app/AppCompatDelegateImpl$PanelFeatureState$SavedState;
+	1       (00000004) invoke-direct        v0, Landroidx/appcompat/app/AppCompatDelegateImpl$PanelFeatureState$SavedState;-><init>()V
+	2       (0000000a) iget                 v1, v3, Landroidx/appcompat/app/AppCompatDelegateImpl$PanelFeatureState;->featureId I
+	3       (0000000e) iput                 v1, v0, Landroidx/appcompat/app/AppCompatDelegateImpl$PanelFeatureState$SavedState;->featureId I
+	4       (00000012) iget-boolean         v1, v3, Landroidx/appcompat/app/AppCompatDelegateImpl$PanelFeatureState;->isOpen Z
+	5       (00000016) iput-boolean         v1, v0, Landroidx/appcompat/app/AppCompatDelegateImpl$PanelFeatureState$SavedState;->isOpen Z
+	6       (0000001a) iget-object          v1, v3, Landroidx/appcompat/app/AppCompatDelegateImpl$PanelFeatureState;->menu Landroidx/appcompat/view/menu/MenuBuilder;
+	7       (0000001e) if-eqz               v1, +10
+
+onSaveInstanceState-BB@0x22 : [ onSaveInstanceState-BB@0x3e ]
+	8       (00000022) new-instance         v1, Landroid/os/Bundle;
+	9       (00000026) invoke-direct        v1, Landroid/os/Bundle;-><init>()V
+	10      (0000002c) iput-object          v1, v0, Landroidx/appcompat/app/AppCompatDelegateImpl$PanelFeatureState$SavedState;->menuState Landroid/os/Bundle;
+	11      (00000030) iget-object          v1, v3, Landroidx/appcompat/app/AppCompatDelegateImpl$PanelFeatureState;->menu Landroidx/appcompat/view/menu/MenuBuilder;
+	12      (00000034) iget-object          v2, v0, Landroidx/appcompat/app/AppCompatDelegateImpl$PanelFeatureState$SavedState;->menuState Landroid/os/Bundle;
+	13      (00000038) invoke-virtual       v1, v2, Landroidx/appcompat/view/menu/MenuBuilder;->savePresenterStates(Landroid/os/Bundle;)V
+
+onSaveInstanceState-BB@0x3e : 
+	14      (0000003e) return-object        v0
+

@@ -1,0 +1,31 @@
+# Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->maybeUpdateProfileMaxTimeOff()V [access_flags=private]
+#
+# Parameters:
+# local registers: v0...v4
+#
+# - return:void
+
+maybeUpdateProfileMaxTimeOff-BB@0x0 : [ maybeUpdateProfileMaxTimeOff-BB@0x10 maybeUpdateProfileMaxTimeOff-BB@0x48 ]
+	0       (00000000) iget-object          v1, v4, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->mProfileMaxTimeOff Lcom/afwsamples/testdpc/common/preference/DpcEditTextPreference;
+	1       (00000004) invoke-virtual       v1, Lcom/afwsamples/testdpc/common/preference/DpcEditTextPreference;->isEnabled()Z
+	2       (0000000a) move-result          v1
+	3       (0000000c) if-eqz               v1, +1e
+
+maybeUpdateProfileMaxTimeOff-BB@0x10 : [ maybeUpdateProfileMaxTimeOff-BB@0x48 ]
+	4       (00000010) sget-object          v1, Ljava/util/concurrent/TimeUnit;->MILLISECONDS Ljava/util/concurrent/TimeUnit;
+	5       (00000014) iget-object          v2, v4, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->mDevicePolicyManager Landroid/app/admin/DevicePolicyManager;
+	6       (00000018) iget-object          v3, v4, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->mAdminComponentName Landroid/content/ComponentName;
+	7       (0000001c) invoke-virtual       v2, v3, Landroid/app/admin/DevicePolicyManager;->getManagedProfileMaximumTimeOff(Landroid/content/ComponentName;)J
+	8       (00000022) move-result-wide     v2
+	9       (00000024) invoke-virtual       v1, v2, v3, Ljava/util/concurrent/TimeUnit;->toSeconds(J)J
+	10      (0000002a) move-result-wide     v2
+	11      (0000002c) invoke-static        v2, v3, Ljava/lang/Long;->toString(J)Ljava/lang/String;
+	12      (00000032) move-result-object   v0
+	13      (00000034) iget-object          v1, v4, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->mProfileMaxTimeOff Lcom/afwsamples/testdpc/common/preference/DpcEditTextPreference;
+	14      (00000038) invoke-virtual       v1, v0, Lcom/afwsamples/testdpc/common/preference/DpcEditTextPreference;->setText(Ljava/lang/String;)V
+	15      (0000003e) iget-object          v1, v4, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->mProfileMaxTimeOff Lcom/afwsamples/testdpc/common/preference/DpcEditTextPreference;
+	16      (00000042) invoke-virtual       v1, v0, Lcom/afwsamples/testdpc/common/preference/DpcEditTextPreference;->setSummary(Ljava/lang/CharSequence;)V
+
+maybeUpdateProfileMaxTimeOff-BB@0x48 : 
+	17      (00000048) return-void          
+

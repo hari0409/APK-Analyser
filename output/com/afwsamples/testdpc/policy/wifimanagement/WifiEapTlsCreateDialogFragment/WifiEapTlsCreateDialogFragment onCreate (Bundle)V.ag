@@ -1,0 +1,35 @@
+# Lcom/afwsamples/testdpc/policy/wifimanagement/WifiEapTlsCreateDialogFragment;->onCreate(Landroid/os/Bundle;)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:android.os.Bundle
+#
+# - return:void
+
+onCreate-BB@0x0 : [ onCreate-BB@0x46 onCreate-BB@0x54 ]
+	0       (00000000) invoke-super         v2, v3, Landroid/app/DialogFragment;->onCreate(Landroid/os/Bundle;)V
+	1       (00000006) invoke-virtual       v2, Lcom/afwsamples/testdpc/policy/wifimanagement/WifiEapTlsCreateDialogFragment;->getActivity()Landroid/app/Activity;
+	2       (0000000c) move-result-object   v0
+	3       (0000000e) const-class          v1, Landroid/app/admin/DevicePolicyManager;
+	4       (00000012) invoke-virtual       v0, v1, Landroid/app/Activity;->getSystemService(Ljava/lang/Class;)Ljava/lang/Object;
+	5       (00000018) move-result-object   v0
+	6       (0000001a) check-cast           v0, Landroid/app/admin/DevicePolicyManager;
+	7       (0000001e) iput-object          v0, v2, Lcom/afwsamples/testdpc/policy/wifimanagement/WifiEapTlsCreateDialogFragment;->mDpm Landroid/app/admin/DevicePolicyManager;
+	8       (00000022) invoke-virtual       v2, Lcom/afwsamples/testdpc/policy/wifimanagement/WifiEapTlsCreateDialogFragment;->getArguments()Landroid/os/Bundle;
+	9       (00000028) move-result-object   v0
+	10      (0000002a) const-string         v1, 'config'
+	11      (0000002e) invoke-virtual       v0, v1, Landroid/os/Bundle;->getParcelable(Ljava/lang/String;)Landroid/os/Parcelable;
+	12      (00000034) move-result-object   v0
+	13      (00000036) check-cast           v0, Landroid/net/wifi/WifiConfiguration;
+	14      (0000003a) iput-object          v0, v2, Lcom/afwsamples/testdpc/policy/wifimanagement/WifiEapTlsCreateDialogFragment;->mWifiConfiguration Landroid/net/wifi/WifiConfiguration;
+	15      (0000003e) iget-object          v0, v2, Lcom/afwsamples/testdpc/policy/wifimanagement/WifiEapTlsCreateDialogFragment;->mWifiConfiguration Landroid/net/wifi/WifiConfiguration;
+	16      (00000042) if-nez               v0, +9
+
+onCreate-BB@0x46 : [ onCreate-BB@0x54 ]
+	17      (00000046) new-instance         v0, Landroid/net/wifi/WifiConfiguration;
+	18      (0000004a) invoke-direct        v0, Landroid/net/wifi/WifiConfiguration;-><init>()V
+	19      (00000050) iput-object          v0, v2, Lcom/afwsamples/testdpc/policy/wifimanagement/WifiEapTlsCreateDialogFragment;->mWifiConfiguration Landroid/net/wifi/WifiConfiguration;
+
+onCreate-BB@0x54 : 
+	20      (00000054) return-void          
+

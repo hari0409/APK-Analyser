@@ -1,0 +1,22 @@
+# Landroidx/appcompat/app/ActionBar;->setElevation(F)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:float
+#
+# - return:void
+
+setElevation-BB@0x0 : [ setElevation-BB@0xa setElevation-BB@0x1a ]
+	0       (00000000) const/4              v0, 0
+	1       (00000002) cmpl-float           v0, v3, v0
+	2       (00000006) if-eqz               v0, +a
+
+setElevation-BB@0xa : 
+	3       (0000000a) new-instance         v0, Ljava/lang/UnsupportedOperationException;
+	4       (0000000e) const-string         v1, 'Setting a non-zero elevation is not supported in this action bar configuration.'
+	5       (00000012) invoke-direct        v0, v1, Ljava/lang/UnsupportedOperationException;-><init>(Ljava/lang/String;)V
+	6       (00000018) throw                v0
+
+setElevation-BB@0x1a : 
+	7       (0000001a) return-void          
+

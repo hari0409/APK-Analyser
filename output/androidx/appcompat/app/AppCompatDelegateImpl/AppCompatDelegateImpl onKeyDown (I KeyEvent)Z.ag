@@ -1,0 +1,41 @@
+# Landroidx/appcompat/app/AppCompatDelegateImpl;->onKeyDown(I Landroid/view/KeyEvent;)Z [access_flags=]
+#
+# Parameters:
+# - local registers: v0...v3
+# - v4:int
+# - v5:android.view.KeyEvent
+#
+# - return:boolean
+
+onKeyDown-BB@0x0 : [ D:onKeyDown-BB@0xa 4:onKeyDown-BB@0x16 82:onKeyDown-BB@0xe ]
+	0       (00000000) const/4              v0, 1
+	1       (00000002) const/4              v1, 0
+	2       (00000004) sparse-switch        v4, +16 (0x30)
+
+onKeyDown-BB@0xa : [ onKeyDown-BB@0xc ]
+	3       (0000000a) move                 v0, v1
+
+onKeyDown-BB@0xc : 
+	4       (0000000c) return               v0
+
+onKeyDown-BB@0xe : [ onKeyDown-BB@0xc ]
+	5       (0000000e) invoke-direct        v3, v1, v5, Landroidx/appcompat/app/AppCompatDelegateImpl;->onKeyDownPanel(I Landroid/view/KeyEvent;)Z
+	6       (00000014) goto                 -4
+
+onKeyDown-BB@0x16 : [ onKeyDown-BB@0x26 onKeyDown-BB@0x2c ]
+	7       (00000016) invoke-virtual       v5, Landroid/view/KeyEvent;->getFlags()I
+	8       (0000001c) move-result          v2
+	9       (0000001e) and-int/lit16        v2, v2, 128
+	10      (00000022) if-eqz               v2, +5
+
+onKeyDown-BB@0x26 : [ onKeyDown-BB@0xa ]
+	11      (00000026) iput-boolean         v0, v3, Landroidx/appcompat/app/AppCompatDelegateImpl;->mLongPressBackDown Z
+	12      (0000002a) goto                 -10
+
+onKeyDown-BB@0x2c : [ onKeyDown-BB@0x26 ]
+	13      (0000002c) move                 v0, v1
+	14      (0000002e) goto                 -4
+
+onKeyDown-BB@0x30 : 
+	15      (00000030) sparse-switch-payload 4 52
+

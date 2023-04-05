@@ -1,0 +1,38 @@
+# Landroidx/multidex/MultiDex$V14;->install(Ljava/lang/ClassLoader; Ljava/util/List;)V [access_flags=static]
+#
+# Parameters:
+# - local registers: v0...v5
+# - v6:java.lang.ClassLoader
+# - v7:java.util.List
+#
+# - return:void
+
+install-BB@0x0 : [ install-BB@0x26 ]
+	0       (00000000) const-string         v4, 'pathList'
+	1       (00000004) invoke-static        v6, v4, Landroidx/multidex/MultiDex;->access$000(Ljava/lang/Object; Ljava/lang/String;)Ljava/lang/reflect/Field;
+	2       (0000000a) move-result-object   v3
+	3       (0000000c) invoke-virtual       v3, v6, Ljava/lang/reflect/Field;->get(Ljava/lang/Object;)Ljava/lang/Object;
+	4       (00000012) move-result-object   v0
+	5       (00000014) new-instance         v4, Landroidx/multidex/MultiDex$V14;
+	6       (00000018) invoke-direct        v4, Landroidx/multidex/MultiDex$V14;-><init>()V
+	7       (0000001e) invoke-direct        v4, v7, Landroidx/multidex/MultiDex$V14;->makeDexElements(Ljava/util/List;)[Ljava/lang/Object;
+	8       (00000024) move-result-object   v2
+
+install-BB@0x26 : [ install-BB@0x30 ]
+	9       (00000026) const-string         v4, 'dexElements'
+	10      (0000002a) invoke-static        v0, v4, v2, Landroidx/multidex/MultiDex;->access$100(Ljava/lang/Object; Ljava/lang/String; [Ljava/lang/Object;)V
+	26:2f
+	(Ljava/lang/NoSuchFieldException; -> 32 install-BB@0x32)
+
+install-BB@0x30 : 
+	11      (00000030) return-void          
+
+install-BB@0x32 : [ install-BB@0x30 ]
+	12      (00000032) move-exception       v1
+	13      (00000034) const-string         v4, 'MultiDex'
+	14      (00000038) const-string         v5, "Failed find field 'dexElements' attempting 'pathElements'"
+	15      (0000003c) invoke-static        v4, v5, v1, Landroid/util/Log;->w(Ljava/lang/String; Ljava/lang/String; Ljava/lang/Throwable;)I
+	16      (00000042) const-string         v4, 'pathElements'
+	17      (00000046) invoke-static        v0, v4, v2, Landroidx/multidex/MultiDex;->access$100(Ljava/lang/Object; Ljava/lang/String; [Ljava/lang/Object;)V
+	18      (0000004c) goto                 -e
+

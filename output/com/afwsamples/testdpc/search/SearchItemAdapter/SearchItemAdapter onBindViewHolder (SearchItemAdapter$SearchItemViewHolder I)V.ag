@@ -1,0 +1,23 @@
+# Lcom/afwsamples/testdpc/search/SearchItemAdapter;->onBindViewHolder(Lcom/afwsamples/testdpc/search/SearchItemAdapter$SearchItemViewHolder; I)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v3
+# - v4:com.afwsamples.testdpc.search.SearchItemAdapter$SearchItemViewHolder
+# - v5:int
+#
+# - return:void
+
+onBindViewHolder-BB@0x0 : 
+	0       (00000000) iget-object          v1, v3, Lcom/afwsamples/testdpc/search/SearchItemAdapter;->mPreferenceIndexList Ljava/util/List;
+	1       (00000004) invoke-interface     v1, v5, Ljava/util/List;->get(I)Ljava/lang/Object;
+	2       (0000000a) move-result-object   v0
+	3       (0000000c) check-cast           v0, Lcom/afwsamples/testdpc/search/PreferenceIndex;
+	4       (00000010) iget-object          v1, v4, Lcom/afwsamples/testdpc/search/SearchItemAdapter$SearchItemViewHolder;->textView Landroid/widget/TextView;
+	5       (00000014) iget-object          v2, v0, Lcom/afwsamples/testdpc/search/PreferenceIndex;->title Ljava/lang/String;
+	6       (00000018) invoke-virtual       v1, v2, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+	7       (0000001e) iget-object          v1, v4, Lcom/afwsamples/testdpc/search/SearchItemAdapter$SearchItemViewHolder;->textView Landroid/widget/TextView;
+	8       (00000022) new-instance         v2, Lcom/afwsamples/testdpc/search/SearchItemAdapter$1;
+	9       (00000026) invoke-direct        v2, v3, v4, Lcom/afwsamples/testdpc/search/SearchItemAdapter$1;-><init>(Lcom/afwsamples/testdpc/search/SearchItemAdapter; Lcom/afwsamples/testdpc/search/SearchItemAdapter$SearchItemViewHolder;)V
+	10      (0000002c) invoke-virtual       v1, v2, Landroid/widget/TextView;->setOnClickListener(Landroid/view/View$OnClickListener;)V
+	11      (00000032) return-void          
+

@@ -1,0 +1,22 @@
+# Landroidx/appcompat/graphics/drawable/AnimatedStateListDrawableCompat$AnimatedStateListState;->indexOfKeyframe([I)I [access_flags=]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:int[]
+#
+# - return:int
+
+indexOfKeyframe-BB@0x0 : [ indexOfKeyframe-BB@0xc indexOfKeyframe-BB@0xe ]
+	0       (00000000) invoke-super         v2, v3, Landroidx/appcompat/graphics/drawable/StateListDrawable$StateListState;->indexOfStateSet([I)I
+	1       (00000006) move-result          v0
+	2       (00000008) if-ltz               v0, +3
+
+indexOfKeyframe-BB@0xc : 
+	3       (0000000c) return               v0
+
+indexOfKeyframe-BB@0xe : [ indexOfKeyframe-BB@0xc ]
+	4       (0000000e) sget-object          v1, Landroid/util/StateSet;->WILD_CARD [I
+	5       (00000012) invoke-super         v2, v1, Landroidx/appcompat/graphics/drawable/StateListDrawable$StateListState;->indexOfStateSet([I)I
+	6       (00000018) move-result          v0
+	7       (0000001a) goto                 -7
+

@@ -1,0 +1,83 @@
+# Landroidx/appcompat/widget/ActivityChooserView$Callbacks;->onItemClick(Landroid/widget/AdapterView; Landroid/view/View; I J)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v6
+# - v7:android.widget.AdapterView
+# - v8:android.view.View
+# - v9:int
+# - v10:long
+#
+# - return:void
+
+onItemClick-BB@0x0 : [ D:onItemClick-BB@0x1a 0:onItemClick-BB@0x38 1:onItemClick-BB@0x26 ]
+	0       (00000000) invoke-virtual       v6, Landroid/widget/AdapterView;->getAdapter()Landroid/widget/Adapter;
+	1       (00000006) move-result-object   v0
+	2       (00000008) check-cast           v0, Landroidx/appcompat/widget/ActivityChooserView$ActivityChooserViewAdapter;
+	3       (0000000c) invoke-virtual       v0, v8, Landroidx/appcompat/widget/ActivityChooserView$ActivityChooserViewAdapter;->getItemViewType(I)I
+	4       (00000012) move-result          v1
+	5       (00000014) packed-switch        v1, +56 (0xc0)
+
+onItemClick-BB@0x1a : 
+	6       (0000001a) new-instance         v3, Ljava/lang/IllegalArgumentException;
+	7       (0000001e) invoke-direct        v3, Ljava/lang/IllegalArgumentException;-><init>()V
+	8       (00000024) throw                v3
+
+onItemClick-BB@0x26 : [ onItemClick-BB@0x36 ]
+	9       (00000026) iget-object          v3, v5, Landroidx/appcompat/widget/ActivityChooserView$Callbacks;->this$0 Landroidx/appcompat/widget/ActivityChooserView;
+	10      (0000002a) const                v4, 2147483647 # [nan]
+	11      (00000030) invoke-virtual       v3, v4, Landroidx/appcompat/widget/ActivityChooserView;->showPopupUnchecked(I)V
+
+onItemClick-BB@0x36 : 
+	12      (00000036) return-void          
+
+onItemClick-BB@0x38 : [ onItemClick-BB@0x4e onItemClick-BB@0x6a ]
+	13      (00000038) iget-object          v3, v5, Landroidx/appcompat/widget/ActivityChooserView$Callbacks;->this$0 Landroidx/appcompat/widget/ActivityChooserView;
+	14      (0000003c) invoke-virtual       v3, Landroidx/appcompat/widget/ActivityChooserView;->dismissPopup()Z
+	15      (00000042) iget-object          v3, v5, Landroidx/appcompat/widget/ActivityChooserView$Callbacks;->this$0 Landroidx/appcompat/widget/ActivityChooserView;
+	16      (00000046) iget-boolean         v3, v3, Landroidx/appcompat/widget/ActivityChooserView;->mIsSelectingDefaultActivity Z
+	17      (0000004a) if-eqz               v3, +10
+
+onItemClick-BB@0x4e : [ onItemClick-BB@0x52 onItemClick-BB@0x36 ]
+	18      (0000004e) if-lez               v8, -c
+
+onItemClick-BB@0x52 : [ onItemClick-BB@0x36 ]
+	19      (00000052) iget-object          v3, v5, Landroidx/appcompat/widget/ActivityChooserView$Callbacks;->this$0 Landroidx/appcompat/widget/ActivityChooserView;
+	20      (00000056) iget-object          v3, v3, Landroidx/appcompat/widget/ActivityChooserView;->mAdapter Landroidx/appcompat/widget/ActivityChooserView$ActivityChooserViewAdapter;
+	21      (0000005a) invoke-virtual       v3, Landroidx/appcompat/widget/ActivityChooserView$ActivityChooserViewAdapter;->getDataModel()Landroidx/appcompat/widget/ActivityChooserModel;
+	22      (00000060) move-result-object   v3
+	23      (00000062) invoke-virtual       v3, v8, Landroidx/appcompat/widget/ActivityChooserModel;->setDefaultActivity(I)V
+	24      (00000068) goto                 -19
+
+onItemClick-BB@0x6a : [ onItemClick-BB@0x7e onItemClick-BB@0xb8 ]
+	25      (0000006a) iget-object          v3, v5, Landroidx/appcompat/widget/ActivityChooserView$Callbacks;->this$0 Landroidx/appcompat/widget/ActivityChooserView;
+	26      (0000006e) iget-object          v3, v3, Landroidx/appcompat/widget/ActivityChooserView;->mAdapter Landroidx/appcompat/widget/ActivityChooserView$ActivityChooserViewAdapter;
+	27      (00000072) invoke-virtual       v3, Landroidx/appcompat/widget/ActivityChooserView$ActivityChooserViewAdapter;->getShowDefaultActivity()Z
+	28      (00000078) move-result          v3
+	29      (0000007a) if-eqz               v3, +1f
+
+onItemClick-BB@0x7e : [ onItemClick-BB@0x9a onItemClick-BB@0x36 ]
+	30      (0000007e) iget-object          v3, v5, Landroidx/appcompat/widget/ActivityChooserView$Callbacks;->this$0 Landroidx/appcompat/widget/ActivityChooserView;
+	31      (00000082) iget-object          v3, v3, Landroidx/appcompat/widget/ActivityChooserView;->mAdapter Landroidx/appcompat/widget/ActivityChooserView$ActivityChooserViewAdapter;
+	32      (00000086) invoke-virtual       v3, Landroidx/appcompat/widget/ActivityChooserView$ActivityChooserViewAdapter;->getDataModel()Landroidx/appcompat/widget/ActivityChooserModel;
+	33      (0000008c) move-result-object   v3
+	34      (0000008e) invoke-virtual       v3, v8, Landroidx/appcompat/widget/ActivityChooserModel;->chooseActivity(I)Landroid/content/Intent;
+	35      (00000094) move-result-object   v2
+	36      (00000096) if-eqz               v2, -30
+
+onItemClick-BB@0x9a : [ onItemClick-BB@0x36 ]
+	37      (0000009a) const/high16         v3, 8 # [7.346839692639297e-40]
+	38      (0000009e) invoke-virtual       v2, v3, Landroid/content/Intent;->addFlags(I)Landroid/content/Intent;
+	39      (000000a4) iget-object          v3, v5, Landroidx/appcompat/widget/ActivityChooserView$Callbacks;->this$0 Landroidx/appcompat/widget/ActivityChooserView;
+	40      (000000a8) invoke-virtual       v3, Landroidx/appcompat/widget/ActivityChooserView;->getContext()Landroid/content/Context;
+	41      (000000ae) move-result-object   v3
+	42      (000000b0) invoke-virtual       v3, v2, Landroid/content/Context;->startActivity(Landroid/content/Intent;)V
+	43      (000000b6) goto                 -40
+
+onItemClick-BB@0xb8 : [ onItemClick-BB@0x7e ]
+	44      (000000b8) add-int/lit8         v8, v8, 1
+	45      (000000bc) goto                 -1f
+
+onItemClick-BB@0xbe : 
+	46      (000000be) nop                  
+	47      (000000c0) packed-switch-payload 0 1
+

@@ -1,0 +1,157 @@
+# Landroidx/appcompat/widget/ActionBarContextView;->onLayout(Z I I I I)V [access_flags=protected]
+#
+# Parameters:
+# - local registers: v0...v15
+# - v16:boolean
+# - v17:int
+# - v18:int
+# - v19:int
+# - v20:int
+#
+# - return:void
+
+onLayout-BB@0x0 : [ onLayout-BB@0xc onLayout-BB@0x118 ]
+	0       (00000000) invoke-static        v15, Landroidx/appcompat/widget/ViewUtils;->isLayoutRtl(Landroid/view/View;)Z
+	1       (00000006) move-result          v5
+	2       (00000008) if-eqz               v5, +88
+
+onLayout-BB@0xc : [ onLayout-BB@0x1c ]
+	3       (0000000c) sub-int              v0, v19, v17
+	4       (00000010) invoke-virtual       v15, Landroidx/appcompat/widget/ActionBarContextView;->getPaddingRight()I
+	5       (00000016) move-result          v1
+	6       (00000018) sub-int              v2, v0, v1
+
+onLayout-BB@0x1c : [ onLayout-BB@0x46 onLayout-BB@0x9a ]
+	7       (0000001c) invoke-virtual       v15, Landroidx/appcompat/widget/ActionBarContextView;->getPaddingTop()I
+	8       (00000022) move-result          v3
+	9       (00000024) sub-int              v0, v20, v18
+	10      (00000028) invoke-virtual       v15, Landroidx/appcompat/widget/ActionBarContextView;->getPaddingTop()I
+	11      (0000002e) move-result          v1
+	12      (00000030) sub-int/2addr        v0, v1
+	13      (00000032) invoke-virtual       v15, Landroidx/appcompat/widget/ActionBarContextView;->getPaddingBottom()I
+	14      (00000038) move-result          v1
+	15      (0000003a) sub-int              v4, v0, v1
+	16      (0000003e) iget-object          v0, v15, Landroidx/appcompat/widget/ActionBarContextView;->mClose Landroid/view/View;
+	17      (00000042) if-eqz               v0, +2c
+
+onLayout-BB@0x46 : [ onLayout-BB@0x5a onLayout-BB@0x9a ]
+	18      (00000046) iget-object          v0, v15, Landroidx/appcompat/widget/ActionBarContextView;->mClose Landroid/view/View;
+	19      (0000004a) invoke-virtual       v0, Landroid/view/View;->getVisibility()I
+	20      (00000050) move-result          v0
+	21      (00000052) const/16             v1, 8
+	22      (00000056) if-eq                v0, v1, +22
+
+onLayout-BB@0x5a : [ onLayout-BB@0x6e onLayout-BB@0x124 ]
+	23      (0000005a) iget-object          v0, v15, Landroidx/appcompat/widget/ActionBarContextView;->mClose Landroid/view/View;
+	24      (0000005e) invoke-virtual       v0, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
+	25      (00000064) move-result-object   v13
+	26      (00000066) check-cast           v13, Landroid/view/ViewGroup$MarginLayoutParams;
+	27      (0000006a) if-eqz               v5, +5d
+
+onLayout-BB@0x6e : [ onLayout-BB@0x72 ]
+	28      (0000006e) iget                 v14, v13, Landroid/view/ViewGroup$MarginLayoutParams;->rightMargin I
+
+onLayout-BB@0x72 : [ onLayout-BB@0x76 onLayout-BB@0x12a ]
+	29      (00000072) if-eqz               v5, +5c
+
+onLayout-BB@0x76 : [ onLayout-BB@0x7a ]
+	30      (00000076) iget                 v12, v13, Landroid/view/ViewGroup$MarginLayoutParams;->leftMargin I
+
+onLayout-BB@0x7a : [ onLayout-BB@0x9a ]
+	31      (0000007a) invoke-static        v2, v14, v5, Landroidx/appcompat/widget/ActionBarContextView;->next(I I Z)I
+	32      (00000080) move-result          v2
+	33      (00000082) iget-object          v1, v15, Landroidx/appcompat/widget/ActionBarContextView;->mClose Landroid/view/View;
+	34      (00000086) move-object          v0, v15
+	35      (00000088) invoke-virtual/range v0 ... v5, Landroidx/appcompat/widget/ActionBarContextView;->positionChild(Landroid/view/View; I I I Z)I
+	36      (0000008e) move-result          v0
+	37      (00000090) add-int/2addr        v2, v0
+	38      (00000092) invoke-static        v2, v12, v5, Landroidx/appcompat/widget/ActionBarContextView;->next(I I Z)I
+	39      (00000098) move-result          v2
+
+onLayout-BB@0x9a : [ onLayout-BB@0xa2 onLayout-BB@0xce ]
+	40      (0000009a) iget-object          v0, v15, Landroidx/appcompat/widget/ActionBarContextView;->mTitleLayout Landroid/widget/LinearLayout;
+	41      (0000009e) if-eqz               v0, +18
+
+onLayout-BB@0xa2 : [ onLayout-BB@0xaa onLayout-BB@0xce ]
+	42      (000000a2) iget-object          v0, v15, Landroidx/appcompat/widget/ActionBarContextView;->mCustomView Landroid/view/View;
+	43      (000000a6) if-nez               v0, +14
+
+onLayout-BB@0xaa : [ onLayout-BB@0xbe onLayout-BB@0xce ]
+	44      (000000aa) iget-object          v0, v15, Landroidx/appcompat/widget/ActionBarContextView;->mTitleLayout Landroid/widget/LinearLayout;
+	45      (000000ae) invoke-virtual       v0, Landroid/widget/LinearLayout;->getVisibility()I
+	46      (000000b4) move-result          v0
+	47      (000000b6) const/16             v1, 8
+	48      (000000ba) if-eq                v0, v1, +a
+
+onLayout-BB@0xbe : [ onLayout-BB@0xce ]
+	49      (000000be) iget-object          v1, v15, Landroidx/appcompat/widget/ActionBarContextView;->mTitleLayout Landroid/widget/LinearLayout;
+	50      (000000c2) move-object          v0, v15
+	51      (000000c4) invoke-virtual/range v0 ... v5, Landroidx/appcompat/widget/ActionBarContextView;->positionChild(Landroid/view/View; I I I Z)I
+	52      (000000ca) move-result          v0
+	53      (000000cc) add-int/2addr        v2, v0
+
+onLayout-BB@0xce : [ onLayout-BB@0xd6 onLayout-BB@0xe6 ]
+	54      (000000ce) iget-object          v0, v15, Landroidx/appcompat/widget/ActionBarContextView;->mCustomView Landroid/view/View;
+	55      (000000d2) if-eqz               v0, +a
+
+onLayout-BB@0xd6 : [ onLayout-BB@0xe6 ]
+	56      (000000d6) iget-object          v1, v15, Landroidx/appcompat/widget/ActionBarContextView;->mCustomView Landroid/view/View;
+	57      (000000da) move-object          v0, v15
+	58      (000000dc) invoke-virtual/range v0 ... v5, Landroidx/appcompat/widget/ActionBarContextView;->positionChild(Landroid/view/View; I I I Z)I
+	59      (000000e2) move-result          v0
+	60      (000000e4) add-int/2addr        v2, v0
+
+onLayout-BB@0xe6 : [ onLayout-BB@0xea onLayout-BB@0x130 ]
+	61      (000000e6) if-eqz               v5, +25
+
+onLayout-BB@0xea : [ onLayout-BB@0xf2 ]
+	62      (000000ea) invoke-virtual       v15, Landroidx/appcompat/widget/ActionBarContextView;->getPaddingLeft()I
+	63      (000000f0) move-result          v2
+
+onLayout-BB@0xf2 : [ onLayout-BB@0xfa onLayout-BB@0x116 ]
+	64      (000000f2) iget-object          v0, v15, Landroidx/appcompat/widget/ActionBarContextView;->mMenuView Landroidx/appcompat/widget/ActionMenuView;
+	65      (000000f6) if-eqz               v0, +10
+
+onLayout-BB@0xfa : [ onLayout-BB@0x102 onLayout-BB@0x142 ]
+	66      (000000fa) iget-object          v7, v15, Landroidx/appcompat/widget/ActionBarContextView;->mMenuView Landroidx/appcompat/widget/ActionMenuView;
+	67      (000000fe) if-nez               v5, +22
+
+onLayout-BB@0x102 : [ onLayout-BB@0x104 ]
+	68      (00000102) const/4              v11, 1
+
+onLayout-BB@0x104 : [ onLayout-BB@0x116 ]
+	69      (00000104) move-object          v6, v15
+	70      (00000106) move                 v8, v2
+	71      (00000108) move                 v9, v3
+	72      (0000010a) move                 v10, v4
+	73      (0000010c) invoke-virtual/range v6 ... v11, Landroidx/appcompat/widget/ActionBarContextView;->positionChild(Landroid/view/View; I I I Z)I
+	74      (00000112) move-result          v0
+	75      (00000114) add-int/2addr        v2, v0
+
+onLayout-BB@0x116 : 
+	76      (00000116) return-void          
+
+onLayout-BB@0x118 : [ onLayout-BB@0x1c ]
+	77      (00000118) invoke-virtual       v15, Landroidx/appcompat/widget/ActionBarContextView;->getPaddingLeft()I
+	78      (0000011e) move-result          v2
+	79      (00000120) goto/16              -82
+
+onLayout-BB@0x124 : [ onLayout-BB@0x72 ]
+	80      (00000124) iget                 v14, v13, Landroid/view/ViewGroup$MarginLayoutParams;->leftMargin I
+	81      (00000128) goto                 -5b
+
+onLayout-BB@0x12a : [ onLayout-BB@0x7a ]
+	82      (0000012a) iget                 v12, v13, Landroid/view/ViewGroup$MarginLayoutParams;->rightMargin I
+	83      (0000012e) goto                 -5a
+
+onLayout-BB@0x130 : [ onLayout-BB@0xf2 ]
+	84      (00000130) sub-int              v0, v19, v17
+	85      (00000134) invoke-virtual       v15, Landroidx/appcompat/widget/ActionBarContextView;->getPaddingRight()I
+	86      (0000013a) move-result          v1
+	87      (0000013c) sub-int              v2, v0, v1
+	88      (00000140) goto                 -27
+
+onLayout-BB@0x142 : [ onLayout-BB@0x104 ]
+	89      (00000142) const/4              v11, 0
+	90      (00000144) goto                 -20
+

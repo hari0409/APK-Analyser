@@ -1,0 +1,37 @@
+# Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->lambda$showInstallExistingPackagePrompt$150$PolicyManagementFragment(Landroid/widget/EditText; Landroid/content/DialogInterface; I)V [access_flags=final synthetic]
+#
+# Parameters:
+# - local registers: v0...v5
+# - v6:android.widget.EditText
+# - v7:android.content.DialogInterface
+# - v8:int
+#
+# - return:void
+
+lambda$showInstallExistingPackagePrompt$150$PolicyManagementFragment-BB@0x0 : [ lambda$showInstallExistingPackagePrompt$150$PolicyManagementFragment-BB@0x24 lambda$showInstallExistingPackagePrompt$150$PolicyManagementFragment-BB@0x44 ]
+	0       (00000000) invoke-virtual       v6, Landroid/widget/EditText;->getText()Landroid/text/Editable;
+	1       (00000006) move-result-object   v2
+	2       (00000008) invoke-virtual       v2, Ljava/lang/Object;->toString()Ljava/lang/String;
+	3       (0000000e) move-result-object   v0
+	4       (00000010) iget-object          v2, v5, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->mDevicePolicyManager Landroid/app/admin/DevicePolicyManager;
+	5       (00000014) iget-object          v3, v5, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->mAdminComponentName Landroid/content/ComponentName;
+	6       (00000018) invoke-virtual       v2, v3, v0, Landroid/app/admin/DevicePolicyManager;->installExistingPackage(Landroid/content/ComponentName; Ljava/lang/String;)Z
+	7       (0000001e) move-result          v1
+	8       (00000020) if-eqz               v1, +12
+
+lambda$showInstallExistingPackagePrompt$150$PolicyManagementFragment-BB@0x24 : [ lambda$showInstallExistingPackagePrompt$150$PolicyManagementFragment-BB@0x2a ]
+	9       (00000024) const                v2, 2131689860 # [1.900874729721692e+38]
+
+lambda$showInstallExistingPackagePrompt$150$PolicyManagementFragment-BB@0x2a : 
+	10      (0000002a) const/4              v3, 1
+	11      (0000002c) new-array            v3, v3, [Ljava/lang/Object;
+	12      (00000030) const/4              v4, 0
+	13      (00000032) aput-object          v0, v3, v4
+	14      (00000036) invoke-direct        v5, v2, v3, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->showToast(I [Ljava/lang/Object;)V
+	15      (0000003c) invoke-interface     v7, Landroid/content/DialogInterface;->dismiss()V
+	16      (00000042) return-void          
+
+lambda$showInstallExistingPackagePrompt$150$PolicyManagementFragment-BB@0x44 : [ lambda$showInstallExistingPackagePrompt$150$PolicyManagementFragment-BB@0x2a ]
+	17      (00000044) const                v2, 2131690021 # [1.9009073844011537e+38]
+	18      (0000004a) goto                 -10
+

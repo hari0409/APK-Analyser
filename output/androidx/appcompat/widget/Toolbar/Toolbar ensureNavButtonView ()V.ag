@@ -1,0 +1,32 @@
+# Landroidx/appcompat/widget/Toolbar;->ensureNavButtonView()V [access_flags=private]
+#
+# Parameters:
+# local registers: v0...v5
+#
+# - return:void
+
+ensureNavButtonView-BB@0x0 : [ ensureNavButtonView-BB@0x8 ensureNavButtonView-BB@0x4a ]
+	0       (00000000) iget-object          v1, v5, Landroidx/appcompat/widget/Toolbar;->mNavButtonView Landroid/widget/ImageButton;
+	1       (00000004) if-nez               v1, +23
+
+ensureNavButtonView-BB@0x8 : [ ensureNavButtonView-BB@0x4a ]
+	2       (00000008) new-instance         v1, Landroidx/appcompat/widget/AppCompatImageButton;
+	3       (0000000c) invoke-virtual       v5, Landroidx/appcompat/widget/Toolbar;->getContext()Landroid/content/Context;
+	4       (00000012) move-result-object   v2
+	5       (00000014) const/4              v3, 0
+	6       (00000016) sget                 v4, Landroidx/appcompat/R$attr;->toolbarNavigationButtonStyle I
+	7       (0000001a) invoke-direct        v1, v2, v3, v4, Landroidx/appcompat/widget/AppCompatImageButton;-><init>(Landroid/content/Context; Landroid/util/AttributeSet; I)V
+	8       (00000020) iput-object          v1, v5, Landroidx/appcompat/widget/Toolbar;->mNavButtonView Landroid/widget/ImageButton;
+	9       (00000024) invoke-virtual       v5, Landroidx/appcompat/widget/Toolbar;->generateDefaultLayoutParams()Landroidx/appcompat/widget/Toolbar$LayoutParams;
+	10      (0000002a) move-result-object   v0
+	11      (0000002c) const                v1, 8388611 # [1.1754947712118268e-38]
+	12      (00000032) iget                 v2, v5, Landroidx/appcompat/widget/Toolbar;->mButtonGravity I
+	13      (00000036) and-int/lit8         v2, v2, 112
+	14      (0000003a) or-int/2addr         v1, v2
+	15      (0000003c) iput                 v1, v0, Landroidx/appcompat/widget/Toolbar$LayoutParams;->gravity I
+	16      (00000040) iget-object          v1, v5, Landroidx/appcompat/widget/Toolbar;->mNavButtonView Landroid/widget/ImageButton;
+	17      (00000044) invoke-virtual       v1, v0, Landroid/widget/ImageButton;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
+
+ensureNavButtonView-BB@0x4a : 
+	18      (0000004a) return-void          
+

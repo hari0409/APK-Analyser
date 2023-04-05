@@ -1,0 +1,164 @@
+# Lcom/afwsamples/testdpc/policy/NetworkLogsFragment;->fetchEvents()Ljava/util/List; [access_flags=private]
+#
+# Parameters:
+# local registers: v0...v14
+#
+# - return:java.util.List
+
+fetchEvents-BB@0x0 : [ fetchEvents-BB@0xc fetchEvents-BB@0x16 ]
+	0       (00000000) invoke-direct        v14, Lcom/afwsamples/testdpc/policy/NetworkLogsFragment;->findLastBatch()Ljava/io/File;
+	1       (00000006) move-result-object   v5
+	2       (00000008) if-nez               v5, +7
+
+fetchEvents-BB@0xc : [ fetchEvents-BB@0x14 ]
+	3       (0000000c) invoke-static        Ljava/util/Collections;->emptyList()Ljava/util/List;
+	4       (00000012) move-result-object   v3
+
+fetchEvents-BB@0x14 : 
+	5       (00000014) return-object        v3
+
+fetchEvents-BB@0x16 : [ fetchEvents-BB@0x18 ]
+	6       (00000016) const/4              v6, 0
+
+fetchEvents-BB@0x18 : [ fetchEvents-BB@0x70 ]
+	7       (00000018) invoke-virtual       v5, Ljava/io/File;->getName()Ljava/lang/String;
+	8       (0000001e) move-result-object   v8
+	9       (00000020) invoke-direct        v14, v8, Lcom/afwsamples/testdpc/policy/NetworkLogsFragment;->determineBatchToken(Ljava/lang/String;)J
+	10      (00000026) move-result-wide     v0
+	11      (00000028) iget-object          v8, v14, Lcom/afwsamples/testdpc/policy/NetworkLogsFragment;->mAdapter Landroid/widget/ArrayAdapter;
+	12      (0000002c) invoke-virtual       v14, Lcom/afwsamples/testdpc/policy/NetworkLogsFragment;->getContext()Landroid/content/Context;
+	13      (00000032) move-result-object   v9
+	14      (00000034) const                v10, 2131690000 # [1.900903125095137e+38]
+	15      (0000003a) const/4              v11, 1
+	16      (0000003c) new-array            v11, v11, [Ljava/lang/Object;
+	17      (00000040) const/4              v12, 0
+	18      (00000042) invoke-static        v0, v1, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+	19      (00000048) move-result-object   v13
+	20      (0000004a) aput-object          v13, v11, v12
+	21      (0000004e) invoke-virtual       v9, v10, v11, Landroid/content/Context;->getString(I [Ljava/lang/Object;)Ljava/lang/String;
+	22      (00000054) move-result-object   v9
+	23      (00000056) invoke-virtual       v8, v9, Landroid/widget/ArrayAdapter;->add(Ljava/lang/Object;)V
+	24      (0000005c) new-instance         v7, Ljava/io/BufferedReader;
+	25      (00000060) new-instance         v8, Ljava/io/FileReader;
+	26      (00000064) invoke-direct        v8, v5, Ljava/io/FileReader;-><init>(Ljava/io/File;)V
+	27      (0000006a) invoke-direct        v7, v8, Ljava/io/BufferedReader;-><init>(Ljava/io/Reader;)V
+	18:6f
+	(Ljava/lang/Throwable; -> 100 fetchEvents-BB@0x100)
+	(Ljava/lang/NumberFormatException; -> 122 fetchEvents-BB@0x122)
+	(Ljava/io/IOException; -> 10e fetchEvents-BB@0x10e)
+
+fetchEvents-BB@0x70 : [ fetchEvents-BB@0x7a ]
+	28      (00000070) new-instance         v3, Ljava/util/ArrayList;
+	29      (00000074) invoke-direct        v3, Ljava/util/ArrayList;-><init>()V
+	70:bb
+	(Ljava/lang/Throwable; -> 11c fetchEvents-BB@0x11c)
+	(Ljava/lang/NumberFormatException; -> be fetchEvents-BB@0xbe)
+	(Ljava/io/IOException; -> 126 fetchEvents-BB@0x126)
+
+fetchEvents-BB@0x7a : [ fetchEvents-BB@0x86 fetchEvents-BB@0xf0 ]
+	30      (0000007a) invoke-virtual       v7, Ljava/io/BufferedReader;->readLine()Ljava/lang/String;
+	31      (00000080) move-result-object   v4
+	32      (00000082) if-eqz               v4, +37
+	70:bb
+	(Ljava/lang/Throwable; -> 11c fetchEvents-BB@0x11c)
+	(Ljava/lang/NumberFormatException; -> be fetchEvents-BB@0xbe)
+	(Ljava/io/IOException; -> 126 fetchEvents-BB@0x126)
+
+fetchEvents-BB@0x86 : [ fetchEvents-BB@0x7a ]
+	33      (00000086) const-string         v8, 'NetworkLogsFragment'
+	34      (0000008a) new-instance         v9, Ljava/lang/StringBuilder;
+	35      (0000008e) invoke-direct        v9, Ljava/lang/StringBuilder;-><init>()V
+	36      (00000094) const-string         v10, 'found line: '
+	37      (00000098) invoke-virtual       v9, v10, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	38      (0000009e) move-result-object   v9
+	39      (000000a0) invoke-virtual       v9, v4, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	40      (000000a6) move-result-object   v9
+	41      (000000a8) invoke-virtual       v9, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+	42      (000000ae) move-result-object   v9
+	43      (000000b0) invoke-static        v8, v9, Landroid/util/Log;->v(Ljava/lang/String; Ljava/lang/String;)I
+	44      (000000b6) invoke-virtual       v3, v4, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+	45      (000000bc) goto                 -21
+
+fetchEvents-BB@0xbe : [ fetchEvents-BB@0xc2 ]
+	46      (000000be) move-exception       v8
+	47      (000000c0) move-object          v6, v7
+
+fetchEvents-BB@0xc2 : [ fetchEvents-BB@0xc4 ]
+	48      (000000c2) move-object          v2, v8
+
+fetchEvents-BB@0xc4 : [ fetchEvents-BB@0xe0 fetchEvents-BB@0xe6 ]
+	49      (000000c4) iget-object          v8, v14, Lcom/afwsamples/testdpc/policy/NetworkLogsFragment;->mAdapter Landroid/widget/ArrayAdapter;
+	50      (000000c8) const                v9, 2131689999 # [1.900902922271041e+38]
+	51      (000000ce) invoke-virtual       v14, v9, Lcom/afwsamples/testdpc/policy/NetworkLogsFragment;->getString(I)Ljava/lang/String;
+	52      (000000d4) move-result-object   v9
+	53      (000000d6) invoke-virtual       v8, v9, Landroid/widget/ArrayAdapter;->add(Ljava/lang/Object;)V
+	54      (000000dc) if-eqz               v6, +5
+	c4:db
+	(Ljava/lang/Throwable; -> 100 fetchEvents-BB@0x100)
+
+fetchEvents-BB@0xe0 : [ fetchEvents-BB@0xe6 ]
+	55      (000000e0) invoke-virtual       v6, Ljava/io/BufferedReader;->close()V
+	e0:e5
+	(Ljava/io/IOException; -> 114 fetchEvents-BB@0x114)
+
+fetchEvents-BB@0xe6 : [ fetchEvents-BB@0x14 ]
+	56      (000000e6) invoke-static        Ljava/util/Collections;->emptyList()Ljava/util/List;
+	57      (000000ec) move-result-object   v3
+	58      (000000ee) goto                 -6d
+
+fetchEvents-BB@0xf0 : [ fetchEvents-BB@0xf4 fetchEvents-BB@0x14 ]
+	59      (000000f0) if-eqz               v7, -6e
+
+fetchEvents-BB@0xf4 : [ fetchEvents-BB@0x14 ]
+	60      (000000f4) invoke-virtual       v7, Ljava/io/BufferedReader;->close()V
+	61      (000000fa) goto                 -73
+	f4:f9
+	(Ljava/io/IOException; -> fc fetchEvents-BB@0xfc)
+
+fetchEvents-BB@0xfc : [ fetchEvents-BB@0x14 ]
+	62      (000000fc) move-exception       v8
+	63      (000000fe) goto                 -75
+
+fetchEvents-BB@0x100 : [ fetchEvents-BB@0x102 ]
+	64      (00000100) move-exception       v8
+
+fetchEvents-BB@0x102 : [ fetchEvents-BB@0x106 fetchEvents-BB@0x10c ]
+	65      (00000102) if-eqz               v6, +5
+
+fetchEvents-BB@0x106 : [ fetchEvents-BB@0x10c ]
+	66      (00000106) invoke-virtual       v6, Ljava/io/BufferedReader;->close()V
+	106:10b
+	(Ljava/io/IOException; -> 118 fetchEvents-BB@0x118)
+
+fetchEvents-BB@0x10c : 
+	67      (0000010c) throw                v8
+
+fetchEvents-BB@0x10e : [ fetchEvents-BB@0x110 ]
+	68      (0000010e) move-exception       v8
+
+fetchEvents-BB@0x110 : [ fetchEvents-BB@0xc4 ]
+	69      (00000110) move-object          v2, v8
+	70      (00000112) goto                 -27
+
+fetchEvents-BB@0x114 : [ fetchEvents-BB@0xe6 ]
+	71      (00000114) move-exception       v8
+	72      (00000116) goto                 -18
+
+fetchEvents-BB@0x118 : [ fetchEvents-BB@0x10c ]
+	73      (00000118) move-exception       v9
+	74      (0000011a) goto                 -7
+
+fetchEvents-BB@0x11c : [ fetchEvents-BB@0x102 ]
+	75      (0000011c) move-exception       v8
+	76      (0000011e) move-object          v6, v7
+	77      (00000120) goto                 -f
+
+fetchEvents-BB@0x122 : [ fetchEvents-BB@0xc2 ]
+	78      (00000122) move-exception       v8
+	79      (00000124) goto                 -31
+
+fetchEvents-BB@0x126 : [ fetchEvents-BB@0x110 ]
+	80      (00000126) move-exception       v8
+	81      (00000128) move-object          v6, v7
+	82      (0000012a) goto                 -d
+

@@ -1,0 +1,78 @@
+# Lcom/afwsamples/testdpc/policy/keyguard/SetTrustAgentConfigFragment;->showEditDialog(Ljava/lang/String;)V [access_flags=private]
+#
+# Parameters:
+# - local registers: v0...v7
+# - v8:java.lang.String
+#
+# - return:void
+
+showEditDialog-BB@0x0 : [ showEditDialog-BB@0xe showEditDialog-BB@0x24 ]
+	0       (00000000) const/4              v1, 1
+	1       (00000002) iput-object          v8, v7, Lcom/afwsamples/testdpc/policy/keyguard/SetTrustAgentConfigFragment;->mEditingKey Ljava/lang/String;
+	2       (00000006) const/4              v0, 0
+	3       (00000008) const/4              v3, 0
+	4       (0000000a) if-eqz               v8, +d
+
+showEditDialog-BB@0xe : [ showEditDialog-BB@0x22 showEditDialog-BB@0x64 ]
+	5       (0000000e) iget-object          v2, v7, Lcom/afwsamples/testdpc/policy/keyguard/SetTrustAgentConfigFragment;->mBundle Landroid/os/PersistableBundle;
+	6       (00000012) invoke-virtual       v2, v8, Landroid/os/PersistableBundle;->get(Ljava/lang/String;)Ljava/lang/Object;
+	7       (00000018) move-result-object   v3
+	8       (0000001a) instance-of          v2, v3, Ljava/lang/Boolean;
+	9       (0000001e) if-eqz               v2, +23
+
+showEditDialog-BB@0x22 : [ showEditDialog-BB@0x24 ]
+	10      (00000022) const/4              v0, 0
+
+showEditDialog-BB@0x24 : 
+	11      (00000024) sget-object          v4, Lcom/afwsamples/testdpc/policy/keyguard/SetTrustAgentConfigFragment;->SUPPORTED_TYPE [I
+	12      (00000028) iget-object          v2, v7, Lcom/afwsamples/testdpc/policy/keyguard/SetTrustAgentConfigFragment;->mResolveInfo Landroid/content/pm/ResolveInfo;
+	13      (0000002c) iget-object          v5, v7, Lcom/afwsamples/testdpc/policy/keyguard/SetTrustAgentConfigFragment;->mPackageManager Landroid/content/pm/PackageManager;
+	14      (00000030) invoke-virtual       v2, v5, Landroid/content/pm/ResolveInfo;->loadLabel(Landroid/content/pm/PackageManager;)Ljava/lang/CharSequence;
+	15      (00000036) move-result-object   v2
+	16      (00000038) invoke-interface     v2, Ljava/lang/CharSequence;->toString()Ljava/lang/String;
+	17      (0000003e) move-result-object   v5
+	18      (00000040) move-object          v2, v8
+	19      (00000042) invoke-static/range  v0 ... v5, Lcom/afwsamples/testdpc/common/keyvaluepair/KeyValuePairDialogFragment;->newInstance(I Z Ljava/lang/String; Ljava/lang/Object; [I Ljava/lang/String;)Lcom/afwsamples/testdpc/common/keyvaluepair/KeyValuePairDialogFragment;
+	20      (00000048) move-result-object   v6
+	21      (0000004a) invoke-virtual       v6, v7, v1, Lcom/afwsamples/testdpc/common/keyvaluepair/KeyValuePairDialogFragment;->setTargetFragment(Landroid/app/Fragment; I)V
+	22      (00000050) invoke-virtual       v7, Lcom/afwsamples/testdpc/policy/keyguard/SetTrustAgentConfigFragment;->getFragmentManager()Landroid/app/FragmentManager;
+	23      (00000056) move-result-object   v1
+	24      (00000058) const-string         v2, 'dialog'
+	25      (0000005c) invoke-virtual       v6, v1, v2, Lcom/afwsamples/testdpc/common/keyvaluepair/KeyValuePairDialogFragment;->show(Landroid/app/FragmentManager; Ljava/lang/String;)V
+	26      (00000062) return-void          
+
+showEditDialog-BB@0x64 : [ showEditDialog-BB@0x6c showEditDialog-BB@0x70 ]
+	27      (00000064) instance-of          v2, v3, Ljava/lang/Integer;
+	28      (00000068) if-eqz               v2, +4
+
+showEditDialog-BB@0x6c : [ showEditDialog-BB@0x24 ]
+	29      (0000006c) const/4              v0, 1
+	30      (0000006e) goto                 -25
+
+showEditDialog-BB@0x70 : [ showEditDialog-BB@0x78 showEditDialog-BB@0x7c ]
+	31      (00000070) instance-of          v2, v3, Ljava/lang/String;
+	32      (00000074) if-eqz               v2, +4
+
+showEditDialog-BB@0x78 : [ showEditDialog-BB@0x24 ]
+	33      (00000078) const/4              v0, 2
+	34      (0000007a) goto                 -2b
+
+showEditDialog-BB@0x7c : [ showEditDialog-BB@0x84 showEditDialog-BB@0x88 ]
+	35      (0000007c) instance-of          v2, v3, [Ljava/lang/String;
+	36      (00000080) if-eqz               v2, +4
+
+showEditDialog-BB@0x84 : [ showEditDialog-BB@0x24 ]
+	37      (00000084) const/4              v0, 3
+	38      (00000086) goto                 -31
+
+showEditDialog-BB@0x88 : [ showEditDialog-BB@0x90 showEditDialog-BB@0x24 ]
+	39      (00000088) instance-of          v2, v3, Landroid/os/PersistableBundle;
+	40      (0000008c) if-eqz               v2, -34
+
+showEditDialog-BB@0x90 : [ showEditDialog-BB@0x24 ]
+	41      (00000090) const/4              v0, 4
+	42      (00000092) check-cast           v3, Landroid/os/PersistableBundle;
+	43      (00000096) invoke-static        v3, Lcom/afwsamples/testdpc/common/BundleUtil;->persistableBundleToBundle(Landroid/os/PersistableBundle;)Landroid/os/Bundle;
+	44      (0000009c) move-result-object   v3
+	45      (0000009e) goto                 -3d
+

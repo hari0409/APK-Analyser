@@ -1,0 +1,15 @@
+# Lcom/afwsamples/testdpc/common/BaseSearchablePolicyPreferenceFragment;->onCreateAdapter(Landroidx/preference/PreferenceScreen;)Landroidx/recyclerview/widget/RecyclerView$Adapter; [access_flags=protected]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:androidx.preference.PreferenceScreen
+#
+# - return:androidx.recyclerview.widget.RecyclerView$Adapter
+
+onCreateAdapter-BB@0x0 : 
+	0       (00000000) new-instance         v0, Lcom/afwsamples/testdpc/common/BaseSearchablePolicyPreferenceFragment$HighlightablePreferenceGroupAdapter;
+	1       (00000004) invoke-direct        v0, v2, Lcom/afwsamples/testdpc/common/BaseSearchablePolicyPreferenceFragment$HighlightablePreferenceGroupAdapter;-><init>(Landroidx/preference/PreferenceGroup;)V
+	2       (0000000a) iput-object          v0, v1, Lcom/afwsamples/testdpc/common/BaseSearchablePolicyPreferenceFragment;->mAdapter Lcom/afwsamples/testdpc/common/BaseSearchablePolicyPreferenceFragment$HighlightablePreferenceGroupAdapter;
+	3       (0000000e) iget-object          v0, v1, Lcom/afwsamples/testdpc/common/BaseSearchablePolicyPreferenceFragment;->mAdapter Lcom/afwsamples/testdpc/common/BaseSearchablePolicyPreferenceFragment$HighlightablePreferenceGroupAdapter;
+	4       (00000012) return-object        v0
+

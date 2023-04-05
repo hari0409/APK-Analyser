@@ -1,0 +1,39 @@
+# Lcom/afwsamples/testdpc/comp/IProfileOwnerService$Stub$Proxy;->setLauncherIconHidden(Z)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v5
+# - v6:boolean
+#
+# - return:void
+
+setLauncherIconHidden-BB@0x0 : [ setLauncherIconHidden-BB@0xa ]
+	0       (00000000) const/4              v1, 1
+	1       (00000002) invoke-static        Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
+	2       (00000008) move-result-object   v0
+
+setLauncherIconHidden-BB@0xa : [ setLauncherIconHidden-BB@0x18 setLauncherIconHidden-BB@0x36 ]
+	3       (0000000a) const-string         v2, 'com.afwsamples.testdpc.comp.IProfileOwnerService'
+	4       (0000000e) invoke-virtual       v0, v2, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
+	5       (00000014) if-eqz               v6, +11
+	a:2d
+	(Ljava/lang/Throwable; -> 3a setLauncherIconHidden-BB@0x3a)
+
+setLauncherIconHidden-BB@0x18 : 
+	6       (00000018) invoke-virtual       v0, v1, Landroid/os/Parcel;->writeInt(I)V
+	7       (0000001e) iget-object          v1, v5, Lcom/afwsamples/testdpc/comp/IProfileOwnerService$Stub$Proxy;->mRemote Landroid/os/IBinder;
+	8       (00000022) const/4              v2, 1
+	9       (00000024) const/4              v3, 0
+	10      (00000026) const/4              v4, 1
+	11      (00000028) invoke-interface     v1, v2, v0, v3, v4, Landroid/os/IBinder;->transact(I Landroid/os/Parcel; Landroid/os/Parcel; I)Z
+	12      (0000002e) invoke-virtual       v0, Landroid/os/Parcel;->recycle()V
+	13      (00000034) return-void          
+
+setLauncherIconHidden-BB@0x36 : [ setLauncherIconHidden-BB@0x18 ]
+	14      (00000036) const/4              v1, 0
+	15      (00000038) goto                 -10
+
+setLauncherIconHidden-BB@0x3a : 
+	16      (0000003a) move-exception       v1
+	17      (0000003c) invoke-virtual       v0, Landroid/os/Parcel;->recycle()V
+	18      (00000042) throw                v1
+

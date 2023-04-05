@@ -1,0 +1,58 @@
+# Landroidx/appcompat/view/menu/ListMenuItemView;->onFinishInflate()V [access_flags=protected]
+#
+# Parameters:
+# local registers: v0...v3
+#
+# - return:void
+
+onFinishInflate-BB@0x0 : [ onFinishInflate-BB@0x2e onFinishInflate-BB@0x40 ]
+	0       (00000000) invoke-super         v3, Landroid/widget/LinearLayout;->onFinishInflate()V
+	1       (00000006) iget-object          v0, v3, Landroidx/appcompat/view/menu/ListMenuItemView;->mBackground Landroid/graphics/drawable/Drawable;
+	2       (0000000a) invoke-static        v3, v0, Landroidx/core/view/ViewCompat;->setBackground(Landroid/view/View; Landroid/graphics/drawable/Drawable;)V
+	3       (00000010) sget                 v0, Landroidx/appcompat/R$id;->title I
+	4       (00000014) invoke-virtual       v3, v0, Landroidx/appcompat/view/menu/ListMenuItemView;->findViewById(I)Landroid/view/View;
+	5       (0000001a) move-result-object   v0
+	6       (0000001c) check-cast           v0, Landroid/widget/TextView;
+	7       (00000020) iput-object          v0, v3, Landroidx/appcompat/view/menu/ListMenuItemView;->mTitleView Landroid/widget/TextView;
+	8       (00000024) iget                 v0, v3, Landroidx/appcompat/view/menu/ListMenuItemView;->mTextAppearance I
+	9       (00000028) const/4              v1, -1
+	10      (0000002a) if-eq                v0, v1, +b
+
+onFinishInflate-BB@0x2e : [ onFinishInflate-BB@0x40 ]
+	11      (0000002e) iget-object          v0, v3, Landroidx/appcompat/view/menu/ListMenuItemView;->mTitleView Landroid/widget/TextView;
+	12      (00000032) iget-object          v1, v3, Landroidx/appcompat/view/menu/ListMenuItemView;->mTextAppearanceContext Landroid/content/Context;
+	13      (00000036) iget                 v2, v3, Landroidx/appcompat/view/menu/ListMenuItemView;->mTextAppearance I
+	14      (0000003a) invoke-virtual       v0, v1, v2, Landroid/widget/TextView;->setTextAppearance(Landroid/content/Context; I)V
+
+onFinishInflate-BB@0x40 : [ onFinishInflate-BB@0x70 onFinishInflate-BB@0x7e ]
+	15      (00000040) sget                 v0, Landroidx/appcompat/R$id;->shortcut I
+	16      (00000044) invoke-virtual       v3, v0, Landroidx/appcompat/view/menu/ListMenuItemView;->findViewById(I)Landroid/view/View;
+	17      (0000004a) move-result-object   v0
+	18      (0000004c) check-cast           v0, Landroid/widget/TextView;
+	19      (00000050) iput-object          v0, v3, Landroidx/appcompat/view/menu/ListMenuItemView;->mShortcutView Landroid/widget/TextView;
+	20      (00000054) sget                 v0, Landroidx/appcompat/R$id;->submenuarrow I
+	21      (00000058) invoke-virtual       v3, v0, Landroidx/appcompat/view/menu/ListMenuItemView;->findViewById(I)Landroid/view/View;
+	22      (0000005e) move-result-object   v0
+	23      (00000060) check-cast           v0, Landroid/widget/ImageView;
+	24      (00000064) iput-object          v0, v3, Landroidx/appcompat/view/menu/ListMenuItemView;->mSubMenuArrowView Landroid/widget/ImageView;
+	25      (00000068) iget-object          v0, v3, Landroidx/appcompat/view/menu/ListMenuItemView;->mSubMenuArrowView Landroid/widget/ImageView;
+	26      (0000006c) if-eqz               v0, +9
+
+onFinishInflate-BB@0x70 : [ onFinishInflate-BB@0x7e ]
+	27      (00000070) iget-object          v0, v3, Landroidx/appcompat/view/menu/ListMenuItemView;->mSubMenuArrowView Landroid/widget/ImageView;
+	28      (00000074) iget-object          v1, v3, Landroidx/appcompat/view/menu/ListMenuItemView;->mSubMenuArrow Landroid/graphics/drawable/Drawable;
+	29      (00000078) invoke-virtual       v0, v1, Landroid/widget/ImageView;->setImageDrawable(Landroid/graphics/drawable/Drawable;)V
+
+onFinishInflate-BB@0x7e : 
+	30      (0000007e) sget                 v0, Landroidx/appcompat/R$id;->group_divider I
+	31      (00000082) invoke-virtual       v3, v0, Landroidx/appcompat/view/menu/ListMenuItemView;->findViewById(I)Landroid/view/View;
+	32      (00000088) move-result-object   v0
+	33      (0000008a) check-cast           v0, Landroid/widget/ImageView;
+	34      (0000008e) iput-object          v0, v3, Landroidx/appcompat/view/menu/ListMenuItemView;->mGroupDivider Landroid/widget/ImageView;
+	35      (00000092) sget                 v0, Landroidx/appcompat/R$id;->content I
+	36      (00000096) invoke-virtual       v3, v0, Landroidx/appcompat/view/menu/ListMenuItemView;->findViewById(I)Landroid/view/View;
+	37      (0000009c) move-result-object   v0
+	38      (0000009e) check-cast           v0, Landroid/widget/LinearLayout;
+	39      (000000a2) iput-object          v0, v3, Landroidx/appcompat/view/menu/ListMenuItemView;->mContent Landroid/widget/LinearLayout;
+	40      (000000a6) return-void          
+

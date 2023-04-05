@@ -1,0 +1,21 @@
+# Landroidx/appcompat/widget/RtlSpacingHelper;->getEnd()I [access_flags=public]
+#
+# Parameters:
+# local registers: v0...v1
+#
+# - return:int
+
+getEnd-BB@0x0 : [ getEnd-BB@0x8 getEnd-BB@0xe ]
+	0       (00000000) iget-boolean         v0, v1, Landroidx/appcompat/widget/RtlSpacingHelper;->mIsRtl Z
+	1       (00000004) if-eqz               v0, +5
+
+getEnd-BB@0x8 : [ getEnd-BB@0xc ]
+	2       (00000008) iget                 v0, v1, Landroidx/appcompat/widget/RtlSpacingHelper;->mLeft I
+
+getEnd-BB@0xc : 
+	3       (0000000c) return               v0
+
+getEnd-BB@0xe : [ getEnd-BB@0xc ]
+	4       (0000000e) iget                 v0, v1, Landroidx/appcompat/widget/RtlSpacingHelper;->mRight I
+	5       (00000012) goto                 -3
+

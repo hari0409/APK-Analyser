@@ -1,0 +1,18 @@
+# Lcom/afwsamples/testdpc/policy/wifimanagement/WifiEapTlsCreateDialogFragment;->newInstance(Landroid/net/wifi/WifiConfiguration;)Lcom/afwsamples/testdpc/policy/wifimanagement/WifiEapTlsCreateDialogFragment; [access_flags=public static]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:android.net.wifi.WifiConfiguration
+#
+# - return:com.afwsamples.testdpc.policy.wifimanagement.WifiEapTlsCreateDialogFragment
+
+newInstance-BB@0x0 : 
+	0       (00000000) new-instance         v0, Landroid/os/Bundle;
+	1       (00000004) invoke-direct        v0, Landroid/os/Bundle;-><init>()V
+	2       (0000000a) const-string         v2, 'config'
+	3       (0000000e) invoke-virtual       v0, v2, v3, Landroid/os/Bundle;->putParcelable(Ljava/lang/String; Landroid/os/Parcelable;)V
+	4       (00000014) new-instance         v1, Lcom/afwsamples/testdpc/policy/wifimanagement/WifiEapTlsCreateDialogFragment;
+	5       (00000018) invoke-direct        v1, Lcom/afwsamples/testdpc/policy/wifimanagement/WifiEapTlsCreateDialogFragment;-><init>()V
+	6       (0000001e) invoke-virtual       v1, v0, Lcom/afwsamples/testdpc/policy/wifimanagement/WifiEapTlsCreateDialogFragment;->setArguments(Landroid/os/Bundle;)V
+	7       (00000024) return-object        v1
+

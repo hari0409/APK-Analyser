@@ -1,0 +1,26 @@
+# Lcom/afwsamples/testdpc/DevicePolicyManagerGatewayImpl;->isDeviceOwnerApp()Z [access_flags=public]
+#
+# Parameters:
+# local registers: v0...v2
+#
+# - return:boolean
+
+isDeviceOwnerApp-BB@0x0 : [ isDeviceOwnerApp-BB@0x8 isDeviceOwnerApp-BB@0xc ]
+	0       (00000000) iget-object          v0, v2, Lcom/afwsamples/testdpc/DevicePolicyManagerGatewayImpl;->mAdminComponentName Landroid/content/ComponentName;
+	1       (00000004) if-nez               v0, +4
+
+isDeviceOwnerApp-BB@0x8 : [ isDeviceOwnerApp-BB@0xa ]
+	2       (00000008) const/4              v0, 0
+
+isDeviceOwnerApp-BB@0xa : 
+	3       (0000000a) return               v0
+
+isDeviceOwnerApp-BB@0xc : [ isDeviceOwnerApp-BB@0xa ]
+	4       (0000000c) iget-object          v0, v2, Lcom/afwsamples/testdpc/DevicePolicyManagerGatewayImpl;->mDevicePolicyManager Landroid/app/admin/DevicePolicyManager;
+	5       (00000010) iget-object          v1, v2, Lcom/afwsamples/testdpc/DevicePolicyManagerGatewayImpl;->mAdminComponentName Landroid/content/ComponentName;
+	6       (00000014) invoke-virtual       v1, Landroid/content/ComponentName;->getPackageName()Ljava/lang/String;
+	7       (0000001a) move-result-object   v1
+	8       (0000001c) invoke-virtual       v0, v1, Landroid/app/admin/DevicePolicyManager;->isDeviceOwnerApp(Ljava/lang/String;)Z
+	9       (00000022) move-result          v0
+	10      (00000024) goto                 -d
+

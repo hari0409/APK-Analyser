@@ -1,0 +1,51 @@
+# Lcom/afwsamples/testdpc/common/PackageInstallationUtils;->installPackage(Landroid/content/Context; Ljava/io/InputStream; Ljava/lang/String;)Z [access_flags=public static]
+#
+# Parameters:
+# - local registers: v0...v12
+# - v13:android.content.Context
+# - v14:java.io.InputStream
+# - v15:java.lang.String
+#
+# - return:boolean
+
+installPackage-BB@0x0 : [ installPackage-BB@0x4e ]
+	0       (00000000) const/4              v12, 1
+	1       (00000002) invoke-virtual       v13, Landroid/content/Context;->getPackageManager()Landroid/content/pm/PackageManager;
+	2       (00000008) move-result-object   v1
+	3       (0000000a) invoke-virtual       v1, Landroid/content/pm/PackageManager;->getPackageInstaller()Landroid/content/pm/PackageInstaller;
+	4       (00000010) move-result-object   v9
+	5       (00000012) new-instance         v10, Landroid/content/pm/PackageInstaller$SessionParams;
+	6       (00000016) invoke-direct        v10, v12, Landroid/content/pm/PackageInstaller$SessionParams;-><init>(I)V
+	7       (0000001c) invoke-virtual       v10, v15, Landroid/content/pm/PackageInstaller$SessionParams;->setAppPackageName(Ljava/lang/String;)V
+	8       (00000022) invoke-virtual       v9, v10, Landroid/content/pm/PackageInstaller;->createSession(Landroid/content/pm/PackageInstaller$SessionParams;)I
+	9       (00000028) move-result          v11
+	10      (0000002a) invoke-virtual       v9, v11, Landroid/content/pm/PackageInstaller;->openSession(I)Landroid/content/pm/PackageInstaller$Session;
+	11      (00000030) move-result-object   v0
+	12      (00000032) const-string         v1, 'TestDPC'
+	13      (00000036) const-wide/16        v2, 0 # [0.0]
+	14      (0000003a) const-wide/16        v4, -1 # [-1.0]
+	15      (0000003e) invoke-virtual/range v0 ... v5, Landroid/content/pm/PackageInstaller$Session;->openWrite(Ljava/lang/String; J J)Ljava/io/OutputStream;
+	16      (00000044) move-result-object   v8
+	17      (00000046) const/high16         v1, 1 # [9.183549615799121e-41]
+	18      (0000004a) new-array            v6, v1, [B
+
+installPackage-BB@0x4e : [ installPackage-BB@0x5c installPackage-BB@0x66 ]
+	19      (0000004e) invoke-virtual       v14, v6, Ljava/io/InputStream;->read([B)I
+	20      (00000054) move-result          v7
+	21      (00000056) const/4              v1, -1
+	22      (00000058) if-eq                v7, v1, +7
+
+installPackage-BB@0x5c : [ installPackage-BB@0x4e ]
+	23      (0000005c) const/4              v1, 0
+	24      (0000005e) invoke-virtual       v8, v6, v1, v7, Ljava/io/OutputStream;->write([B I I)V
+	25      (00000064) goto                 -b
+
+installPackage-BB@0x66 : 
+	26      (00000066) invoke-virtual       v0, v8, Landroid/content/pm/PackageInstaller$Session;->fsync(Ljava/io/OutputStream;)V
+	27      (0000006c) invoke-virtual       v14, Ljava/io/InputStream;->close()V
+	28      (00000072) invoke-virtual       v8, Ljava/io/OutputStream;->close()V
+	29      (00000078) invoke-static        v13, v11, Lcom/afwsamples/testdpc/common/PackageInstallationUtils;->createInstallIntentSender(Landroid/content/Context; I)Landroid/content/IntentSender;
+	30      (0000007e) move-result-object   v1
+	31      (00000080) invoke-virtual       v0, v1, Landroid/content/pm/PackageInstaller$Session;->commit(Landroid/content/IntentSender;)V
+	32      (00000086) return               v12
+

@@ -1,0 +1,30 @@
+# Lcom/afwsamples/testdpc/comp/BindDeviceAdminFragment;->isManagedProfileOwner()Z [access_flags=private]
+#
+# Parameters:
+# local registers: v0...v2
+#
+# - return:boolean
+
+isManagedProfileOwner-BB@0x0 : [ isManagedProfileOwner-BB@0x8 isManagedProfileOwner-BB@0x28 ]
+	0       (00000000) iget-object          v0, v2, Lcom/afwsamples/testdpc/comp/BindDeviceAdminFragment;->mProfileOwnerUser Landroid/os/UserHandle;
+	1       (00000004) if-eqz               v0, +12
+
+isManagedProfileOwner-BB@0x8 : [ isManagedProfileOwner-BB@0x24 isManagedProfileOwner-BB@0x28 ]
+	2       (00000008) iget-object          v0, v2, Lcom/afwsamples/testdpc/comp/BindDeviceAdminFragment;->mUserManager Landroid/os/UserManager;
+	3       (0000000c) invoke-virtual       v0, Landroid/os/UserManager;->getUserProfiles()Ljava/util/List;
+	4       (00000012) move-result-object   v0
+	5       (00000014) iget-object          v1, v2, Lcom/afwsamples/testdpc/comp/BindDeviceAdminFragment;->mProfileOwnerUser Landroid/os/UserHandle;
+	6       (00000018) invoke-interface     v0, v1, Ljava/util/List;->contains(Ljava/lang/Object;)Z
+	7       (0000001e) move-result          v0
+	8       (00000020) if-eqz               v0, +4
+
+isManagedProfileOwner-BB@0x24 : [ isManagedProfileOwner-BB@0x26 ]
+	9       (00000024) const/4              v0, 1
+
+isManagedProfileOwner-BB@0x26 : 
+	10      (00000026) return               v0
+
+isManagedProfileOwner-BB@0x28 : [ isManagedProfileOwner-BB@0x26 ]
+	11      (00000028) const/4              v0, 0
+	12      (0000002a) goto                 -2
+

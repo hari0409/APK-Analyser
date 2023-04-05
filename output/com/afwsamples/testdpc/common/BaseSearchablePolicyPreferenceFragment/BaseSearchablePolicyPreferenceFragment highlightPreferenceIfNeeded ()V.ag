@@ -1,0 +1,29 @@
+# Lcom/afwsamples/testdpc/common/BaseSearchablePolicyPreferenceFragment;->highlightPreferenceIfNeeded()V [access_flags=private]
+#
+# Parameters:
+# local registers: v0...v1
+#
+# - return:void
+
+highlightPreferenceIfNeeded-BB@0x0 : [ highlightPreferenceIfNeeded-BB@0xc highlightPreferenceIfNeeded-BB@0x2e ]
+	0       (00000000) invoke-virtual       v1, Lcom/afwsamples/testdpc/common/BaseSearchablePolicyPreferenceFragment;->isAdded()Z
+	1       (00000006) move-result          v0
+	2       (00000008) if-eqz               v0, +13
+
+highlightPreferenceIfNeeded-BB@0xc : [ highlightPreferenceIfNeeded-BB@0x14 highlightPreferenceIfNeeded-BB@0x2e ]
+	3       (0000000c) iget-boolean         v0, v1, Lcom/afwsamples/testdpc/common/BaseSearchablePolicyPreferenceFragment;->mPreferenceHighlighted Z
+	4       (00000010) if-nez               v0, +f
+
+highlightPreferenceIfNeeded-BB@0x14 : [ highlightPreferenceIfNeeded-BB@0x24 highlightPreferenceIfNeeded-BB@0x2e ]
+	5       (00000014) iget-object          v0, v1, Lcom/afwsamples/testdpc/common/BaseSearchablePolicyPreferenceFragment;->mPreferenceKey Ljava/lang/String;
+	6       (00000018) invoke-static        v0, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
+	7       (0000001e) move-result          v0
+	8       (00000020) if-nez               v0, +7
+
+highlightPreferenceIfNeeded-BB@0x24 : [ highlightPreferenceIfNeeded-BB@0x2e ]
+	9       (00000024) iget-object          v0, v1, Lcom/afwsamples/testdpc/common/BaseSearchablePolicyPreferenceFragment;->mPreferenceKey Ljava/lang/String;
+	10      (00000028) invoke-direct        v1, v0, Lcom/afwsamples/testdpc/common/BaseSearchablePolicyPreferenceFragment;->highlightPreference(Ljava/lang/String;)V
+
+highlightPreferenceIfNeeded-BB@0x2e : 
+	11      (0000002e) return-void          
+

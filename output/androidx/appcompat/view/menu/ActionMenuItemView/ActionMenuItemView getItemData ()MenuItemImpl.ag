@@ -1,0 +1,11 @@
+# Landroidx/appcompat/view/menu/ActionMenuItemView;->getItemData()Landroidx/appcompat/view/menu/MenuItemImpl; [access_flags=public]
+#
+# Parameters:
+# local registers: v0...v1
+#
+# - return:androidx.appcompat.view.menu.MenuItemImpl
+
+getItemData-BB@0x0 : 
+	0       (00000000) iget-object          v0, v1, Landroidx/appcompat/view/menu/ActionMenuItemView;->mItemData Landroidx/appcompat/view/menu/MenuItemImpl;
+	1       (00000004) return-object        v0
+

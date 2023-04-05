@@ -1,0 +1,53 @@
+# Landroidx/appcompat/app/AppCompatDelegateImpl;->onKeyUp(I Landroid/view/KeyEvent;)Z [access_flags=]
+#
+# Parameters:
+# - local registers: v0...v5
+# - v6:int
+# - v7:android.view.KeyEvent
+#
+# - return:boolean
+
+onKeyUp-BB@0x0 : [ D:onKeyUp-BB@0xa 4:onKeyUp-BB@0x16 82:onKeyUp-BB@0xe ]
+	0       (00000000) const/4              v2, 1
+	1       (00000002) const/4              v3, 0
+	2       (00000004) sparse-switch        v6, +24 (0x4c)
+
+onKeyUp-BB@0xa : [ onKeyUp-BB@0xc ]
+	3       (0000000a) move                 v2, v3
+
+onKeyUp-BB@0xc : 
+	4       (0000000c) return               v2
+
+onKeyUp-BB@0xe : [ onKeyUp-BB@0xc ]
+	5       (0000000e) invoke-direct        v5, v3, v7, Landroidx/appcompat/app/AppCompatDelegateImpl;->onKeyUpPanel(I Landroid/view/KeyEvent;)Z
+	6       (00000014) goto                 -4
+
+onKeyUp-BB@0x16 : [ onKeyUp-BB@0x2a onKeyUp-BB@0x3e ]
+	7       (00000016) iget-boolean         v1, v5, Landroidx/appcompat/app/AppCompatDelegateImpl;->mLongPressBackDown Z
+	8       (0000001a) iput-boolean         v3, v5, Landroidx/appcompat/app/AppCompatDelegateImpl;->mLongPressBackDown Z
+	9       (0000001e) invoke-virtual       v5, v3, v3, Landroidx/appcompat/app/AppCompatDelegateImpl;->getPanelState(I Z)Landroidx/appcompat/app/AppCompatDelegateImpl$PanelFeatureState;
+	10      (00000024) move-result-object   v0
+	11      (00000026) if-eqz               v0, +c
+
+onKeyUp-BB@0x2a : [ onKeyUp-BB@0x32 onKeyUp-BB@0x3e ]
+	12      (0000002a) iget-boolean         v4, v0, Landroidx/appcompat/app/AppCompatDelegateImpl$PanelFeatureState;->isOpen Z
+	13      (0000002e) if-eqz               v4, +8
+
+onKeyUp-BB@0x32 : [ onKeyUp-BB@0x36 onKeyUp-BB@0xc ]
+	14      (00000032) if-nez               v1, -13
+
+onKeyUp-BB@0x36 : [ onKeyUp-BB@0xc ]
+	15      (00000036) invoke-virtual       v5, v0, v2, Landroidx/appcompat/app/AppCompatDelegateImpl;->closePanel(Landroidx/appcompat/app/AppCompatDelegateImpl$PanelFeatureState; Z)V
+	16      (0000003c) goto                 -18
+
+onKeyUp-BB@0x3e : [ onKeyUp-BB@0x4a onKeyUp-BB@0xa ]
+	17      (0000003e) invoke-virtual       v5, Landroidx/appcompat/app/AppCompatDelegateImpl;->onBackPressed()Z
+	18      (00000044) move-result          v4
+	19      (00000046) if-eqz               v4, -1e
+
+onKeyUp-BB@0x4a : [ onKeyUp-BB@0xc ]
+	20      (0000004a) goto                 -1f
+
+onKeyUp-BB@0x4c : 
+	21      (0000004c) sparse-switch-payload 4 52
+

@@ -1,0 +1,33 @@
+# Lcom/afwsamples/testdpc/common/ReflectionUtil;->invoke(Ljava/lang/Class; Ljava/lang/Object; Ljava/lang/String; [Ljava/lang/Object;)Ljava/lang/Object; [access_flags=private static varargs]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:java.lang.Class
+# - v4:java.lang.Object
+# - v5:java.lang.String
+# - v6:java.lang.Object[]
+#
+# - return:java.lang.Object
+
+invoke-BB@0x0 : [ invoke-BB@0x8 ]
+	0       (00000000) array-length         v2, v6
+	1       (00000002) new-array            v1, v2, [Ljava/lang/Class;
+	2       (00000006) const/4              v0, 0
+
+invoke-BB@0x8 : [ invoke-BB@0xe invoke-BB@0x24 ]
+	3       (00000008) array-length         v2, v6
+	4       (0000000a) if-ge                v0, v2, +d
+
+invoke-BB@0xe : [ invoke-BB@0x8 ]
+	5       (0000000e) aget-object          v2, v6, v0
+	6       (00000012) invoke-virtual       v2, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+	7       (00000018) move-result-object   v2
+	8       (0000001a) aput-object          v2, v1, v0
+	9       (0000001e) add-int/lit8         v0, v0, 1
+	10      (00000022) goto                 -d
+
+invoke-BB@0x24 : 
+	11      (00000024) invoke-static        v3, v4, v5, v1, v6, Lcom/afwsamples/testdpc/common/ReflectionUtil;->invoke(Ljava/lang/Class; Ljava/lang/Object; Ljava/lang/String; [Ljava/lang/Class; [Ljava/lang/Object;)Ljava/lang/Object;
+	12      (0000002a) move-result-object   v2
+	13      (0000002c) return-object        v2
+

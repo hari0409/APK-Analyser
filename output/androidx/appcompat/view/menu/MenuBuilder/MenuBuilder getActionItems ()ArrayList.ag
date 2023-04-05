@@ -1,0 +1,12 @@
+# Landroidx/appcompat/view/menu/MenuBuilder;->getActionItems()Ljava/util/ArrayList; [access_flags=public]
+#
+# Parameters:
+# local registers: v0...v1
+#
+# - return:java.util.ArrayList
+
+getActionItems-BB@0x0 : 
+	0       (00000000) invoke-virtual       v1, Landroidx/appcompat/view/menu/MenuBuilder;->flagActionItems()V
+	1       (00000006) iget-object          v0, v1, Landroidx/appcompat/view/menu/MenuBuilder;->mActionItems Ljava/util/ArrayList;
+	2       (0000000a) return-object        v0
+

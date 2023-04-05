@@ -1,0 +1,72 @@
+# Landroidx/appcompat/widget/Toolbar;->measureChildConstrained(Landroid/view/View; I I I I I)V [access_flags=private]
+#
+# Parameters:
+# - local registers: v0...v8
+# - v9:android.view.View
+# - v10:int
+# - v11:int
+# - v12:int
+# - v13:int
+# - v14:int
+#
+# - return:void
+
+measureChildConstrained-BB@0x0 : [ measureChildConstrained-BB@0x74 measureChildConstrained-BB@0x94 ]
+	0       (00000000) const/high16         v7, 16384 # [2.0]
+	1       (00000004) invoke-virtual       v9, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
+	2       (0000000a) move-result-object   v3
+	3       (0000000c) check-cast           v3, Landroid/view/ViewGroup$MarginLayoutParams;
+	4       (00000010) invoke-virtual       v8, Landroidx/appcompat/widget/Toolbar;->getPaddingLeft()I
+	5       (00000016) move-result          v5
+	6       (00000018) invoke-virtual       v8, Landroidx/appcompat/widget/Toolbar;->getPaddingRight()I
+	7       (0000001e) move-result          v6
+	8       (00000020) add-int/2addr        v5, v6
+	9       (00000022) iget                 v6, v3, Landroid/view/ViewGroup$MarginLayoutParams;->leftMargin I
+	10      (00000026) add-int/2addr        v5, v6
+	11      (00000028) iget                 v6, v3, Landroid/view/ViewGroup$MarginLayoutParams;->rightMargin I
+	12      (0000002c) add-int/2addr        v5, v6
+	13      (0000002e) add-int/2addr        v5, v11
+	14      (00000030) iget                 v6, v3, Landroid/view/ViewGroup$MarginLayoutParams;->width I
+	15      (00000034) invoke-static        v10, v5, v6, Landroidx/appcompat/widget/Toolbar;->getChildMeasureSpec(I I I)I
+	16      (0000003a) move-result          v2
+	17      (0000003c) invoke-virtual       v8, Landroidx/appcompat/widget/Toolbar;->getPaddingTop()I
+	18      (00000042) move-result          v5
+	19      (00000044) invoke-virtual       v8, Landroidx/appcompat/widget/Toolbar;->getPaddingBottom()I
+	20      (0000004a) move-result          v6
+	21      (0000004c) add-int/2addr        v5, v6
+	22      (0000004e) iget                 v6, v3, Landroid/view/ViewGroup$MarginLayoutParams;->topMargin I
+	23      (00000052) add-int/2addr        v5, v6
+	24      (00000054) iget                 v6, v3, Landroid/view/ViewGroup$MarginLayoutParams;->bottomMargin I
+	25      (00000058) add-int/2addr        v5, v6
+	26      (0000005a) add-int/2addr        v5, v13
+	27      (0000005c) iget                 v6, v3, Landroid/view/ViewGroup$MarginLayoutParams;->height I
+	28      (00000060) invoke-static        v12, v5, v6, Landroidx/appcompat/widget/Toolbar;->getChildMeasureSpec(I I I)I
+	29      (00000066) move-result          v1
+	30      (00000068) invoke-static        v1, Landroid/view/View$MeasureSpec;->getMode(I)I
+	31      (0000006e) move-result          v0
+	32      (00000070) if-eq                v0, v7, +12
+
+measureChildConstrained-BB@0x74 : [ measureChildConstrained-BB@0x78 measureChildConstrained-BB@0x94 ]
+	33      (00000074) if-ltz               v14, +10
+
+measureChildConstrained-BB@0x78 : [ measureChildConstrained-BB@0x7c measureChildConstrained-BB@0x9c ]
+	34      (00000078) if-eqz               v0, +12
+
+measureChildConstrained-BB@0x7c : [ measureChildConstrained-BB@0x8c ]
+	35      (0000007c) invoke-static        v1, Landroid/view/View$MeasureSpec;->getSize(I)I
+	36      (00000082) move-result          v5
+	37      (00000084) invoke-static        v5, v14, Ljava/lang/Math;->min(I I)I
+	38      (0000008a) move-result          v4
+
+measureChildConstrained-BB@0x8c : [ measureChildConstrained-BB@0x94 ]
+	39      (0000008c) invoke-static        v4, v7, Landroid/view/View$MeasureSpec;->makeMeasureSpec(I I)I
+	40      (00000092) move-result          v1
+
+measureChildConstrained-BB@0x94 : 
+	41      (00000094) invoke-virtual       v9, v2, v1, Landroid/view/View;->measure(I I)V
+	42      (0000009a) return-void          
+
+measureChildConstrained-BB@0x9c : [ measureChildConstrained-BB@0x8c ]
+	43      (0000009c) move                 v4, v14
+	44      (0000009e) goto                 -9
+

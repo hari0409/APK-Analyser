@@ -1,0 +1,24 @@
+# Landroidx/appcompat/view/StandaloneActionMode;->finish()V [access_flags=public]
+#
+# Parameters:
+# local registers: v0...v2
+#
+# - return:void
+
+finish-BB@0x0 : [ finish-BB@0x8 finish-BB@0xa ]
+	0       (00000000) iget-boolean         v0, v2, Landroidx/appcompat/view/StandaloneActionMode;->mFinished Z
+	1       (00000004) if-eqz               v0, +3
+
+finish-BB@0x8 : 
+	2       (00000008) return-void          
+
+finish-BB@0xa : [ finish-BB@0x8 ]
+	3       (0000000a) const/4              v0, 1
+	4       (0000000c) iput-boolean         v0, v2, Landroidx/appcompat/view/StandaloneActionMode;->mFinished Z
+	5       (00000010) iget-object          v0, v2, Landroidx/appcompat/view/StandaloneActionMode;->mContextView Landroidx/appcompat/widget/ActionBarContextView;
+	6       (00000014) const/16             v1, 32
+	7       (00000018) invoke-virtual       v0, v1, Landroidx/appcompat/widget/ActionBarContextView;->sendAccessibilityEvent(I)V
+	8       (0000001e) iget-object          v0, v2, Landroidx/appcompat/view/StandaloneActionMode;->mCallback Landroidx/appcompat/view/ActionMode$Callback;
+	9       (00000022) invoke-interface     v0, v2, Landroidx/appcompat/view/ActionMode$Callback;->onDestroyActionMode(Landroidx/appcompat/view/ActionMode;)V
+	10      (00000028) goto                 -10
+

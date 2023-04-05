@@ -1,0 +1,25 @@
+# Landroidx/appcompat/app/AppCompatDelegateImpl$AutoNightModeManager;->getApplyableNightMode()I [access_flags=]
+#
+# Parameters:
+# local registers: v0...v1
+#
+# - return:int
+
+getApplyableNightMode-BB@0x0 : [ getApplyableNightMode-BB@0x18 getApplyableNightMode-BB@0x1c ]
+	0       (00000000) iget-object          v0, v1, Landroidx/appcompat/app/AppCompatDelegateImpl$AutoNightModeManager;->mTwilightManager Landroidx/appcompat/app/TwilightManager;
+	1       (00000004) invoke-virtual       v0, Landroidx/appcompat/app/TwilightManager;->isNight()Z
+	2       (0000000a) move-result          v0
+	3       (0000000c) iput-boolean         v0, v1, Landroidx/appcompat/app/AppCompatDelegateImpl$AutoNightModeManager;->mIsNight Z
+	4       (00000010) iget-boolean         v0, v1, Landroidx/appcompat/app/AppCompatDelegateImpl$AutoNightModeManager;->mIsNight Z
+	5       (00000014) if-eqz               v0, +4
+
+getApplyableNightMode-BB@0x18 : [ getApplyableNightMode-BB@0x1a ]
+	6       (00000018) const/4              v0, 2
+
+getApplyableNightMode-BB@0x1a : 
+	7       (0000001a) return               v0
+
+getApplyableNightMode-BB@0x1c : [ getApplyableNightMode-BB@0x1a ]
+	8       (0000001c) const/4              v0, 1
+	9       (0000001e) goto                 -2
+

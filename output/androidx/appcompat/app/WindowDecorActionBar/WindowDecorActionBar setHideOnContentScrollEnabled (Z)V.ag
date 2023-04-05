@@ -1,0 +1,29 @@
+# Landroidx/appcompat/app/WindowDecorActionBar;->setHideOnContentScrollEnabled(Z)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:boolean
+#
+# - return:void
+
+setHideOnContentScrollEnabled-BB@0x0 : [ setHideOnContentScrollEnabled-BB@0x4 setHideOnContentScrollEnabled-BB@0x24 ]
+	0       (00000000) if-eqz               v3, +12
+
+setHideOnContentScrollEnabled-BB@0x4 : [ setHideOnContentScrollEnabled-BB@0x14 setHideOnContentScrollEnabled-BB@0x24 ]
+	1       (00000004) iget-object          v0, v2, Landroidx/appcompat/app/WindowDecorActionBar;->mOverlayLayout Landroidx/appcompat/widget/ActionBarOverlayLayout;
+	2       (00000008) invoke-virtual       v0, Landroidx/appcompat/widget/ActionBarOverlayLayout;->isInOverlayMode()Z
+	3       (0000000e) move-result          v0
+	4       (00000010) if-nez               v0, +a
+
+setHideOnContentScrollEnabled-BB@0x14 : 
+	5       (00000014) new-instance         v0, Ljava/lang/IllegalStateException;
+	6       (00000018) const-string         v1, 'Action bar must be in overlay mode (Window.FEATURE_OVERLAY_ACTION_BAR) to enable hide on content scroll'
+	7       (0000001c) invoke-direct        v0, v1, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+	8       (00000022) throw                v0
+
+setHideOnContentScrollEnabled-BB@0x24 : 
+	9       (00000024) iput-boolean         v3, v2, Landroidx/appcompat/app/WindowDecorActionBar;->mHideOnContentScroll Z
+	10      (00000028) iget-object          v0, v2, Landroidx/appcompat/app/WindowDecorActionBar;->mOverlayLayout Landroidx/appcompat/widget/ActionBarOverlayLayout;
+	11      (0000002c) invoke-virtual       v0, v3, Landroidx/appcompat/widget/ActionBarOverlayLayout;->setHideOnContentScrollEnabled(Z)V
+	12      (00000032) return-void          
+

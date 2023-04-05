@@ -1,0 +1,23 @@
+# Landroidx/appcompat/widget/AppCompatSpinner$DropDownAdapter;->isEnabled(I)Z [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:int
+#
+# - return:boolean
+
+isEnabled-BB@0x0 : [ isEnabled-BB@0x8 isEnabled-BB@0x12 ]
+	0       (00000000) iget-object          v0, v2, Landroidx/appcompat/widget/AppCompatSpinner$DropDownAdapter;->mListAdapter Landroid/widget/ListAdapter;
+	1       (00000004) if-eqz               v0, +7
+
+isEnabled-BB@0x8 : [ isEnabled-BB@0x10 ]
+	2       (00000008) invoke-interface     v0, v3, Landroid/widget/ListAdapter;->isEnabled(I)Z
+	3       (0000000e) move-result          v1
+
+isEnabled-BB@0x10 : 
+	4       (00000010) return               v1
+
+isEnabled-BB@0x12 : [ isEnabled-BB@0x10 ]
+	5       (00000012) const/4              v1, 1
+	6       (00000014) goto                 -2
+

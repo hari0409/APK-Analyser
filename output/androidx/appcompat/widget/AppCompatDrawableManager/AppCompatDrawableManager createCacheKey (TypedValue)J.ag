@@ -1,0 +1,18 @@
+# Landroidx/appcompat/widget/AppCompatDrawableManager;->createCacheKey(Landroid/util/TypedValue;)J [access_flags=private static]
+#
+# Parameters:
+# - local registers: v0...v3
+# - v4:android.util.TypedValue
+#
+# - return:long
+
+createCacheKey-BB@0x0 : 
+	0       (00000000) iget                 v0, v4, Landroid/util/TypedValue;->assetCookie I
+	1       (00000004) int-to-long          v0, v0
+	2       (00000006) const/16             v2, 32
+	3       (0000000a) shl-long/2addr       v0, v2
+	4       (0000000c) iget                 v2, v4, Landroid/util/TypedValue;->data I
+	5       (00000010) int-to-long          v2, v2
+	6       (00000012) or-long/2addr        v0, v2
+	7       (00000014) return-wide          v0
+

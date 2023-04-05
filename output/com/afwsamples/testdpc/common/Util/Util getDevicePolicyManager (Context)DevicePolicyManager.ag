@@ -1,0 +1,15 @@
+# Lcom/afwsamples/testdpc/common/Util;->getDevicePolicyManager(Landroid/content/Context;)Landroid/app/admin/DevicePolicyManager; [access_flags=private static]
+#
+# Parameters:
+# - local registers: v0...v0
+# - v1:android.content.Context
+#
+# - return:android.app.admin.DevicePolicyManager
+
+getDevicePolicyManager-BB@0x0 : 
+	0       (00000000) const-string         v0, 'device_policy'
+	1       (00000004) invoke-virtual       v1, v0, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
+	2       (0000000a) move-result-object   v0
+	3       (0000000c) check-cast           v0, Landroid/app/admin/DevicePolicyManager;
+	4       (00000010) return-object        v0
+

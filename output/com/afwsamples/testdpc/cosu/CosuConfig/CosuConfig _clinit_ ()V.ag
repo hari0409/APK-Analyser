@@ -1,0 +1,14 @@
+# Lcom/afwsamples/testdpc/cosu/CosuConfig;-><clinit>()V [access_flags=static constructor]
+#
+# Parameters:
+# local registers: v0...v0
+#
+# - return:void
+
+<clinit>-BB@0x0 : 
+	0       (00000000) const-string         v0, 'line.separator'
+	1       (00000004) invoke-static        v0, Ljava/lang/System;->getProperty(Ljava/lang/String;)Ljava/lang/String;
+	2       (0000000a) move-result-object   v0
+	3       (0000000c) sput-object          v0, Lcom/afwsamples/testdpc/cosu/CosuConfig;->NEW_LINE Ljava/lang/String;
+	4       (00000010) return-void          
+

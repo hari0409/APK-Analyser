@@ -1,0 +1,49 @@
+# Landroidx/appcompat/graphics/drawable/AnimatedStateListDrawableCompat;->updateStateFromTypedArray(Landroid/content/res/TypedArray;)V [access_flags=private]
+#
+# Parameters:
+# - local registers: v0...v3
+# - v4:android.content.res.TypedArray
+#
+# - return:void
+
+updateStateFromTypedArray-BB@0x0 : [ updateStateFromTypedArray-BB@0x10 updateStateFromTypedArray-BB@0x22 ]
+	0       (00000000) iget-object          v0, v3, Landroidx/appcompat/graphics/drawable/AnimatedStateListDrawableCompat;->mState Landroidx/appcompat/graphics/drawable/AnimatedStateListDrawableCompat$AnimatedStateListState;
+	1       (00000004) sget                 v1, Landroid/os/Build$VERSION;->SDK_INT I
+	2       (00000008) const/16             v2, 21
+	3       (0000000c) if-lt                v1, v2, +b
+
+updateStateFromTypedArray-BB@0x10 : [ updateStateFromTypedArray-BB@0x22 ]
+	4       (00000010) iget                 v1, v0, Landroidx/appcompat/graphics/drawable/AnimatedStateListDrawableCompat$AnimatedStateListState;->mChangingConfigurations I
+	5       (00000014) invoke-virtual       v4, Landroid/content/res/TypedArray;->getChangingConfigurations()I
+	6       (0000001a) move-result          v2
+	7       (0000001c) or-int/2addr         v1, v2
+	8       (0000001e) iput                 v1, v0, Landroidx/appcompat/graphics/drawable/AnimatedStateListDrawableCompat$AnimatedStateListState;->mChangingConfigurations I
+
+updateStateFromTypedArray-BB@0x22 : 
+	9       (00000022) sget                 v1, Landroidx/appcompat/R$styleable;->AnimatedStateListDrawableCompat_android_variablePadding I
+	10      (00000026) iget-boolean         v2, v0, Landroidx/appcompat/graphics/drawable/AnimatedStateListDrawableCompat$AnimatedStateListState;->mVariablePadding Z
+	11      (0000002a) invoke-virtual       v4, v1, v2, Landroid/content/res/TypedArray;->getBoolean(I Z)Z
+	12      (00000030) move-result          v1
+	13      (00000032) invoke-virtual       v0, v1, Landroidx/appcompat/graphics/drawable/AnimatedStateListDrawableCompat$AnimatedStateListState;->setVariablePadding(Z)V
+	14      (00000038) sget                 v1, Landroidx/appcompat/R$styleable;->AnimatedStateListDrawableCompat_android_constantSize I
+	15      (0000003c) iget-boolean         v2, v0, Landroidx/appcompat/graphics/drawable/AnimatedStateListDrawableCompat$AnimatedStateListState;->mConstantSize Z
+	16      (00000040) invoke-virtual       v4, v1, v2, Landroid/content/res/TypedArray;->getBoolean(I Z)Z
+	17      (00000046) move-result          v1
+	18      (00000048) invoke-virtual       v0, v1, Landroidx/appcompat/graphics/drawable/AnimatedStateListDrawableCompat$AnimatedStateListState;->setConstantSize(Z)V
+	19      (0000004e) sget                 v1, Landroidx/appcompat/R$styleable;->AnimatedStateListDrawableCompat_android_enterFadeDuration I
+	20      (00000052) iget                 v2, v0, Landroidx/appcompat/graphics/drawable/AnimatedStateListDrawableCompat$AnimatedStateListState;->mEnterFadeDuration I
+	21      (00000056) invoke-virtual       v4, v1, v2, Landroid/content/res/TypedArray;->getInt(I I)I
+	22      (0000005c) move-result          v1
+	23      (0000005e) invoke-virtual       v0, v1, Landroidx/appcompat/graphics/drawable/AnimatedStateListDrawableCompat$AnimatedStateListState;->setEnterFadeDuration(I)V
+	24      (00000064) sget                 v1, Landroidx/appcompat/R$styleable;->AnimatedStateListDrawableCompat_android_exitFadeDuration I
+	25      (00000068) iget                 v2, v0, Landroidx/appcompat/graphics/drawable/AnimatedStateListDrawableCompat$AnimatedStateListState;->mExitFadeDuration I
+	26      (0000006c) invoke-virtual       v4, v1, v2, Landroid/content/res/TypedArray;->getInt(I I)I
+	27      (00000072) move-result          v1
+	28      (00000074) invoke-virtual       v0, v1, Landroidx/appcompat/graphics/drawable/AnimatedStateListDrawableCompat$AnimatedStateListState;->setExitFadeDuration(I)V
+	29      (0000007a) sget                 v1, Landroidx/appcompat/R$styleable;->AnimatedStateListDrawableCompat_android_dither I
+	30      (0000007e) iget-boolean         v2, v0, Landroidx/appcompat/graphics/drawable/AnimatedStateListDrawableCompat$AnimatedStateListState;->mDither Z
+	31      (00000082) invoke-virtual       v4, v1, v2, Landroid/content/res/TypedArray;->getBoolean(I Z)Z
+	32      (00000088) move-result          v1
+	33      (0000008a) invoke-virtual       v3, v1, Landroidx/appcompat/graphics/drawable/AnimatedStateListDrawableCompat;->setDither(Z)V
+	34      (00000090) return-void          
+

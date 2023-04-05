@@ -1,0 +1,11 @@
+# Landroidx/appcompat/view/menu/ActionMenuItem;->getGroupId()I [access_flags=public]
+#
+# Parameters:
+# local registers: v0...v1
+#
+# - return:int
+
+getGroupId-BB@0x0 : 
+	0       (00000000) iget                 v0, v1, Landroidx/appcompat/view/menu/ActionMenuItem;->mGroup I
+	1       (00000004) return               v0
+

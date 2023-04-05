@@ -1,0 +1,70 @@
+# Landroidx/appcompat/widget/SearchView$SearchAutoComplete;->onKeyPreIme(I Landroid/view/KeyEvent;)Z [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v3
+# - v4:int
+# - v5:android.view.KeyEvent
+#
+# - return:boolean
+
+onKeyPreIme-BB@0x0 : [ onKeyPreIme-BB@0x8 onKeyPreIme-BB@0x7e ]
+	0       (00000000) const/4              v1, 1
+	1       (00000002) const/4              v2, 4
+	2       (00000004) if-ne                v4, v2, +3d
+
+onKeyPreIme-BB@0x8 : [ onKeyPreIme-BB@0x14 onKeyPreIme-BB@0x34 ]
+	3       (00000008) invoke-virtual       v5, Landroid/view/KeyEvent;->getAction()I
+	4       (0000000e) move-result          v2
+	5       (00000010) if-nez               v2, +12
+
+onKeyPreIme-BB@0x14 : [ onKeyPreIme-BB@0x20 onKeyPreIme-BB@0x34 ]
+	6       (00000014) invoke-virtual       v5, Landroid/view/KeyEvent;->getRepeatCount()I
+	7       (0000001a) move-result          v2
+	8       (0000001c) if-nez               v2, +c
+
+onKeyPreIme-BB@0x20 : [ onKeyPreIme-BB@0x2c onKeyPreIme-BB@0x32 ]
+	9       (00000020) invoke-virtual       v3, Landroidx/appcompat/widget/SearchView$SearchAutoComplete;->getKeyDispatcherState()Landroid/view/KeyEvent$DispatcherState;
+	10      (00000026) move-result-object   v0
+	11      (00000028) if-eqz               v0, +5
+
+onKeyPreIme-BB@0x2c : [ onKeyPreIme-BB@0x32 ]
+	12      (0000002c) invoke-virtual       v0, v5, v3, Landroid/view/KeyEvent$DispatcherState;->startTracking(Landroid/view/KeyEvent; Ljava/lang/Object;)V
+
+onKeyPreIme-BB@0x32 : 
+	13      (00000032) return               v1
+
+onKeyPreIme-BB@0x34 : [ onKeyPreIme-BB@0x40 onKeyPreIme-BB@0x7e ]
+	14      (00000034) invoke-virtual       v5, Landroid/view/KeyEvent;->getAction()I
+	15      (0000003a) move-result          v2
+	16      (0000003c) if-ne                v2, v1, +21
+
+onKeyPreIme-BB@0x40 : [ onKeyPreIme-BB@0x4c onKeyPreIme-BB@0x52 ]
+	17      (00000040) invoke-virtual       v3, Landroidx/appcompat/widget/SearchView$SearchAutoComplete;->getKeyDispatcherState()Landroid/view/KeyEvent$DispatcherState;
+	18      (00000046) move-result-object   v0
+	19      (00000048) if-eqz               v0, +5
+
+onKeyPreIme-BB@0x4c : [ onKeyPreIme-BB@0x52 ]
+	20      (0000004c) invoke-virtual       v0, v5, Landroid/view/KeyEvent$DispatcherState;->handleUpEvent(Landroid/view/KeyEvent;)V
+
+onKeyPreIme-BB@0x52 : [ onKeyPreIme-BB@0x5e onKeyPreIme-BB@0x7e ]
+	21      (00000052) invoke-virtual       v5, Landroid/view/KeyEvent;->isTracking()Z
+	22      (00000058) move-result          v2
+	23      (0000005a) if-eqz               v2, +12
+
+onKeyPreIme-BB@0x5e : [ onKeyPreIme-BB@0x6a onKeyPreIme-BB@0x7e ]
+	24      (0000005e) invoke-virtual       v5, Landroid/view/KeyEvent;->isCanceled()Z
+	25      (00000064) move-result          v2
+	26      (00000066) if-nez               v2, +c
+
+onKeyPreIme-BB@0x6a : [ onKeyPreIme-BB@0x32 ]
+	27      (0000006a) iget-object          v2, v3, Landroidx/appcompat/widget/SearchView$SearchAutoComplete;->mSearchView Landroidx/appcompat/widget/SearchView;
+	28      (0000006e) invoke-virtual       v2, Landroidx/appcompat/widget/SearchView;->clearFocus()V
+	29      (00000074) const/4              v2, 0
+	30      (00000076) invoke-virtual       v3, v2, Landroidx/appcompat/widget/SearchView$SearchAutoComplete;->setImeVisibility(Z)V
+	31      (0000007c) goto                 -25
+
+onKeyPreIme-BB@0x7e : [ onKeyPreIme-BB@0x32 ]
+	32      (0000007e) invoke-super         v3, v4, v5, Landroidx/appcompat/widget/AppCompatAutoCompleteTextView;->onKeyPreIme(I Landroid/view/KeyEvent;)Z
+	33      (00000084) move-result          v1
+	34      (00000086) goto                 -2a
+

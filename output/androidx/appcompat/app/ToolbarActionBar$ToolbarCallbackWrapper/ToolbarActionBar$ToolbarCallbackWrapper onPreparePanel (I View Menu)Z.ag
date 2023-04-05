@@ -1,0 +1,31 @@
+# Landroidx/appcompat/app/ToolbarActionBar$ToolbarCallbackWrapper;->onPreparePanel(I Landroid/view/View; Landroid/view/Menu;)Z [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v3
+# - v4:int
+# - v5:android.view.View
+# - v6:android.view.Menu
+#
+# - return:boolean
+
+onPreparePanel-BB@0x0 : [ onPreparePanel-BB@0xc onPreparePanel-BB@0x30 ]
+	0       (00000000) invoke-super         v3, v4, v5, v6, Landroidx/appcompat/view/WindowCallbackWrapper;->onPreparePanel(I Landroid/view/View; Landroid/view/Menu;)Z
+	1       (00000006) move-result          v0
+	2       (00000008) if-eqz               v0, +14
+
+onPreparePanel-BB@0xc : [ onPreparePanel-BB@0x18 onPreparePanel-BB@0x30 ]
+	3       (0000000c) iget-object          v1, v3, Landroidx/appcompat/app/ToolbarActionBar$ToolbarCallbackWrapper;->this$0 Landroidx/appcompat/app/ToolbarActionBar;
+	4       (00000010) iget-boolean         v1, v1, Landroidx/appcompat/app/ToolbarActionBar;->mToolbarMenuPrepared Z
+	5       (00000014) if-nez               v1, +e
+
+onPreparePanel-BB@0x18 : [ onPreparePanel-BB@0x30 ]
+	6       (00000018) iget-object          v1, v3, Landroidx/appcompat/app/ToolbarActionBar$ToolbarCallbackWrapper;->this$0 Landroidx/appcompat/app/ToolbarActionBar;
+	7       (0000001c) iget-object          v1, v1, Landroidx/appcompat/app/ToolbarActionBar;->mDecorToolbar Landroidx/appcompat/widget/DecorToolbar;
+	8       (00000020) invoke-interface     v1, Landroidx/appcompat/widget/DecorToolbar;->setMenuPrepared()V
+	9       (00000026) iget-object          v1, v3, Landroidx/appcompat/app/ToolbarActionBar$ToolbarCallbackWrapper;->this$0 Landroidx/appcompat/app/ToolbarActionBar;
+	10      (0000002a) const/4              v2, 1
+	11      (0000002c) iput-boolean         v2, v1, Landroidx/appcompat/app/ToolbarActionBar;->mToolbarMenuPrepared Z
+
+onPreparePanel-BB@0x30 : 
+	12      (00000030) return               v0
+

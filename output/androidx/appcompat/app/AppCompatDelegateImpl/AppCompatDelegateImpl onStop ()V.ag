@@ -1,0 +1,27 @@
+# Landroidx/appcompat/app/AppCompatDelegateImpl;->onStop()V [access_flags=public]
+#
+# Parameters:
+# local registers: v0...v2
+#
+# - return:void
+
+onStop-BB@0x0 : [ onStop-BB@0xc onStop-BB@0x14 ]
+	0       (00000000) invoke-virtual       v2, Landroidx/appcompat/app/AppCompatDelegateImpl;->getSupportActionBar()Landroidx/appcompat/app/ActionBar;
+	1       (00000006) move-result-object   v0
+	2       (00000008) if-eqz               v0, +6
+
+onStop-BB@0xc : [ onStop-BB@0x14 ]
+	3       (0000000c) const/4              v1, 0
+	4       (0000000e) invoke-virtual       v0, v1, Landroidx/appcompat/app/ActionBar;->setShowHideAnimationEnabled(Z)V
+
+onStop-BB@0x14 : [ onStop-BB@0x1c onStop-BB@0x26 ]
+	5       (00000014) iget-object          v1, v2, Landroidx/appcompat/app/AppCompatDelegateImpl;->mAutoNightModeManager Landroidx/appcompat/app/AppCompatDelegateImpl$AutoNightModeManager;
+	6       (00000018) if-eqz               v1, +7
+
+onStop-BB@0x1c : [ onStop-BB@0x26 ]
+	7       (0000001c) iget-object          v1, v2, Landroidx/appcompat/app/AppCompatDelegateImpl;->mAutoNightModeManager Landroidx/appcompat/app/AppCompatDelegateImpl$AutoNightModeManager;
+	8       (00000020) invoke-virtual       v1, Landroidx/appcompat/app/AppCompatDelegateImpl$AutoNightModeManager;->cleanup()V
+
+onStop-BB@0x26 : 
+	9       (00000026) return-void          
+

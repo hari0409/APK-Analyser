@@ -1,0 +1,37 @@
+# Landroidx/appcompat/app/ToolbarActionBar$ActionMenuPresenterCallback;->onCloseMenu(Landroidx/appcompat/view/menu/MenuBuilder; Z)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:androidx.appcompat.view.menu.MenuBuilder
+# - v4:boolean
+#
+# - return:void
+
+onCloseMenu-BB@0x0 : [ onCloseMenu-BB@0x8 onCloseMenu-BB@0xa ]
+	0       (00000000) iget-boolean         v0, v2, Landroidx/appcompat/app/ToolbarActionBar$ActionMenuPresenterCallback;->mClosingActionMenu Z
+	1       (00000004) if-eqz               v0, +3
+
+onCloseMenu-BB@0x8 : 
+	2       (00000008) return-void          
+
+onCloseMenu-BB@0xa : [ onCloseMenu-BB@0x2a onCloseMenu-BB@0x3c ]
+	3       (0000000a) const/4              v0, 1
+	4       (0000000c) iput-boolean         v0, v2, Landroidx/appcompat/app/ToolbarActionBar$ActionMenuPresenterCallback;->mClosingActionMenu Z
+	5       (00000010) iget-object          v0, v2, Landroidx/appcompat/app/ToolbarActionBar$ActionMenuPresenterCallback;->this$0 Landroidx/appcompat/app/ToolbarActionBar;
+	6       (00000014) iget-object          v0, v0, Landroidx/appcompat/app/ToolbarActionBar;->mDecorToolbar Landroidx/appcompat/widget/DecorToolbar;
+	7       (00000018) invoke-interface     v0, Landroidx/appcompat/widget/DecorToolbar;->dismissPopupMenus()V
+	8       (0000001e) iget-object          v0, v2, Landroidx/appcompat/app/ToolbarActionBar$ActionMenuPresenterCallback;->this$0 Landroidx/appcompat/app/ToolbarActionBar;
+	9       (00000022) iget-object          v0, v0, Landroidx/appcompat/app/ToolbarActionBar;->mWindowCallback Landroid/view/Window$Callback;
+	10      (00000026) if-eqz               v0, +b
+
+onCloseMenu-BB@0x2a : [ onCloseMenu-BB@0x3c ]
+	11      (0000002a) iget-object          v0, v2, Landroidx/appcompat/app/ToolbarActionBar$ActionMenuPresenterCallback;->this$0 Landroidx/appcompat/app/ToolbarActionBar;
+	12      (0000002e) iget-object          v0, v0, Landroidx/appcompat/app/ToolbarActionBar;->mWindowCallback Landroid/view/Window$Callback;
+	13      (00000032) const/16             v1, 108
+	14      (00000036) invoke-interface     v0, v1, v3, Landroid/view/Window$Callback;->onPanelClosed(I Landroid/view/Menu;)V
+
+onCloseMenu-BB@0x3c : [ onCloseMenu-BB@0x8 ]
+	15      (0000003c) const/4              v0, 0
+	16      (0000003e) iput-boolean         v0, v2, Landroidx/appcompat/app/ToolbarActionBar$ActionMenuPresenterCallback;->mClosingActionMenu Z
+	17      (00000042) goto                 -1d
+

@@ -1,0 +1,53 @@
+# Lcom/afwsamples/testdpc/common/Util;->installCaCertificate(Ljava/io/InputStream; Landroid/app/admin/DevicePolicyManager; Landroid/content/ComponentName;)Z [access_flags=public static]
+#
+# Parameters:
+# - local registers: v0...v6
+# - v7:java.io.InputStream
+# - v8:android.app.admin.DevicePolicyManager
+# - v9:android.content.ComponentName
+#
+# - return:boolean
+
+installCaCertificate-BB@0x0 : [ installCaCertificate-BB@0x6 installCaCertificate-BB@0x40 ]
+	0       (00000000) const/4              v4, 0
+	1       (00000002) if-eqz               v7, +1f
+
+installCaCertificate-BB@0x6 : [ installCaCertificate-BB@0x1a ]
+	2       (00000006) new-instance         v1, Ljava/io/ByteArrayOutputStream;
+	3       (0000000a) invoke-direct        v1, Ljava/io/ByteArrayOutputStream;-><init>()V
+	4       (00000010) const/16             v5, 4096
+	5       (00000014) new-array            v0, v5, [B
+	6       (00000018) const/4              v3, 0
+	6:2d
+	(Ljava/io/IOException; -> 30 installCaCertificate-BB@0x30)
+
+installCaCertificate-BB@0x1a : [ installCaCertificate-BB@0x26 installCaCertificate-BB@0x42 ]
+	7       (0000001a) invoke-virtual       v7, v0, Ljava/io/InputStream;->read([B)I
+	8       (00000020) move-result          v3
+	9       (00000022) if-lez               v3, +10
+	6:2d
+	(Ljava/io/IOException; -> 30 installCaCertificate-BB@0x30)
+
+installCaCertificate-BB@0x26 : [ installCaCertificate-BB@0x1a ]
+	10      (00000026) const/4              v5, 0
+	11      (00000028) invoke-virtual       v1, v0, v5, v3, Ljava/io/ByteArrayOutputStream;->write([B I I)V
+	12      (0000002e) goto                 -a
+
+installCaCertificate-BB@0x30 : [ installCaCertificate-BB@0x40 ]
+	13      (00000030) move-exception       v2
+	14      (00000032) const-string         v5, 'Util'
+	15      (00000036) const-string         v6, 'installCaCertificate: '
+	16      (0000003a) invoke-static        v5, v6, v2, Landroid/util/Log;->e(Ljava/lang/String; Ljava/lang/String; Ljava/lang/Throwable;)I
+
+installCaCertificate-BB@0x40 : 
+	17      (00000040) return               v4
+
+installCaCertificate-BB@0x42 : [ installCaCertificate-BB@0x40 ]
+	18      (00000042) invoke-virtual       v1, Ljava/io/ByteArrayOutputStream;->toByteArray()[B
+	19      (00000048) move-result-object   v5
+	20      (0000004a) invoke-virtual       v8, v9, v5, Landroid/app/admin/DevicePolicyManager;->installCaCert(Landroid/content/ComponentName; [B)Z
+	21      (00000050) move-result          v4
+	22      (00000052) goto                 -9
+	42:4f
+	(Ljava/io/IOException; -> 30 installCaCertificate-BB@0x30)
+

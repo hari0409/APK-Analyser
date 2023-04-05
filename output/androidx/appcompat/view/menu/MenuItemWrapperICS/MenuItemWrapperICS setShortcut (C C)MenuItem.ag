@@ -1,0 +1,15 @@
+# Landroidx/appcompat/view/menu/MenuItemWrapperICS;->setShortcut(C C)Landroid/view/MenuItem; [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:char
+# - v3:char
+#
+# - return:android.view.MenuItem
+
+setShortcut-BB@0x0 : 
+	0       (00000000) iget-object          v0, v1, Landroidx/appcompat/view/menu/MenuItemWrapperICS;->mWrappedObject Ljava/lang/Object;
+	1       (00000004) check-cast           v0, Landroidx/core/internal/view/SupportMenuItem;
+	2       (00000008) invoke-interface     v0, v2, v3, Landroidx/core/internal/view/SupportMenuItem;->setShortcut(C C)Landroid/view/MenuItem;
+	3       (0000000e) return-object        v1
+

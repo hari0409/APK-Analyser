@@ -1,0 +1,27 @@
+# Lcom/afwsamples/testdpc/feedback/AppStatesService;->createNotificationChannel()V [access_flags=private]
+#
+# Parameters:
+# local registers: v0...v5
+#
+# - return:void
+
+createNotificationChannel-BB@0x0 : [ createNotificationChannel-BB@0xc createNotificationChannel-BB@0x36 ]
+	0       (00000000) sget                 v2, Lcom/afwsamples/testdpc/common/Util;->SDK_INT I
+	1       (00000004) const/16             v3, 26
+	2       (00000008) if-lt                v2, v3, +17
+
+createNotificationChannel-BB@0xc : [ createNotificationChannel-BB@0x36 ]
+	3       (0000000c) new-instance         v0, Landroid/app/NotificationChannel;
+	4       (00000010) const-string         v2, 'KeyedAppStates'
+	5       (00000014) const-string         v3, 'Keyed App States'
+	6       (00000018) const/4              v4, 3
+	7       (0000001a) invoke-direct        v0, v2, v3, v4, Landroid/app/NotificationChannel;-><init>(Ljava/lang/String; Ljava/lang/CharSequence; I)V
+	8       (00000020) const-class          v2, Landroid/app/NotificationManager;
+	9       (00000024) invoke-virtual       v5, v2, Lcom/afwsamples/testdpc/feedback/AppStatesService;->getSystemService(Ljava/lang/Class;)Ljava/lang/Object;
+	10      (0000002a) move-result-object   v1
+	11      (0000002c) check-cast           v1, Landroid/app/NotificationManager;
+	12      (00000030) invoke-virtual       v1, v0, Landroid/app/NotificationManager;->createNotificationChannel(Landroid/app/NotificationChannel;)V
+
+createNotificationChannel-BB@0x36 : 
+	13      (00000036) return-void          
+

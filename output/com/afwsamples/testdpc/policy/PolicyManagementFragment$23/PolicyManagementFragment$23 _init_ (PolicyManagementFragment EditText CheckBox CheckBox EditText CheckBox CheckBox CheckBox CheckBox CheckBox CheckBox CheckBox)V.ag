@@ -1,0 +1,35 @@
+# Lcom/afwsamples/testdpc/policy/PolicyManagementFragment$23;-><init>(Lcom/afwsamples/testdpc/policy/PolicyManagementFragment; Landroid/widget/EditText; Landroid/widget/CheckBox; Landroid/widget/CheckBox; Landroid/widget/EditText; Landroid/widget/CheckBox; Landroid/widget/CheckBox; Landroid/widget/CheckBox; Landroid/widget/CheckBox; Landroid/widget/CheckBox; Landroid/widget/CheckBox; Landroid/widget/CheckBox;)V [access_flags=constructor]
+#
+# Parameters:
+# - local registers: v0...v0
+# - v1:com.afwsamples.testdpc.policy.PolicyManagementFragment
+# - v2:android.widget.EditText
+# - v3:android.widget.CheckBox
+# - v4:android.widget.CheckBox
+# - v5:android.widget.EditText
+# - v6:android.widget.CheckBox
+# - v7:android.widget.CheckBox
+# - v8:android.widget.CheckBox
+# - v9:android.widget.CheckBox
+# - v10:android.widget.CheckBox
+# - v11:android.widget.CheckBox
+# - v12:android.widget.CheckBox
+#
+# - return:void
+
+<init>-BB@0x0 : 
+	0       (00000000) iput-object          v1, v0, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment$23;->this$0 Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;
+	1       (00000004) iput-object          v2, v0, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment$23;->val$input Landroid/widget/EditText;
+	2       (00000008) iput-object          v3, v0, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment$23;->val$userSelectableCheckbox Landroid/widget/CheckBox;
+	3       (0000000c) iput-object          v4, v0, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment$23;->val$includeAttestationChallengeCheckbox Landroid/widget/CheckBox;
+	4       (00000010) iput-object          v5, v0, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment$23;->val$customChallengeInput Landroid/widget/EditText;
+	5       (00000014) iput-object          v6, v0, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment$23;->val$deviceBrandAttestationCheckbox Landroid/widget/CheckBox;
+	6       (00000018) iput-object          v7, v0, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment$23;->val$deviceSerialAttestationCheckbox Landroid/widget/CheckBox;
+	7       (0000001c) iput-object          v8, v0, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment$23;->val$deviceImeiAttestationCheckbox Landroid/widget/CheckBox;
+	8       (00000020) iput-object          v9, v0, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment$23;->val$deviceMeidAttestationCheckbox Landroid/widget/CheckBox;
+	9       (00000024) iput-object          v10, v0, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment$23;->val$useIndividualAttestationCheckbox Landroid/widget/CheckBox;
+	10      (00000028) iput-object          v11, v0, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment$23;->val$useStrongBoxCheckbox Landroid/widget/CheckBox;
+	11      (0000002c) iput-object          v12, v0, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment$23;->val$ecKeyCheckbox Landroid/widget/CheckBox;
+	12      (00000030) invoke-direct        v0, Ljava/lang/Object;-><init>()V
+	13      (00000036) return-void          
+

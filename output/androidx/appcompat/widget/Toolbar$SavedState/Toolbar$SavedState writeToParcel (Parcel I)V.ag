@@ -1,0 +1,27 @@
+# Landroidx/appcompat/widget/Toolbar$SavedState;->writeToParcel(Landroid/os/Parcel; I)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:android.os.Parcel
+# - v3:int
+#
+# - return:void
+
+writeToParcel-BB@0x0 : [ writeToParcel-BB@0x18 writeToParcel-BB@0x22 ]
+	0       (00000000) invoke-super         v1, v2, v3, Landroidx/customview/view/AbsSavedState;->writeToParcel(Landroid/os/Parcel; I)V
+	1       (00000006) iget                 v0, v1, Landroidx/appcompat/widget/Toolbar$SavedState;->expandedMenuItemId I
+	2       (0000000a) invoke-virtual       v2, v0, Landroid/os/Parcel;->writeInt(I)V
+	3       (00000010) iget-boolean         v0, v1, Landroidx/appcompat/widget/Toolbar$SavedState;->isOverflowOpen Z
+	4       (00000014) if-eqz               v0, +7
+
+writeToParcel-BB@0x18 : [ writeToParcel-BB@0x1a ]
+	5       (00000018) const/4              v0, 1
+
+writeToParcel-BB@0x1a : 
+	6       (0000001a) invoke-virtual       v2, v0, Landroid/os/Parcel;->writeInt(I)V
+	7       (00000020) return-void          
+
+writeToParcel-BB@0x22 : [ writeToParcel-BB@0x1a ]
+	8       (00000022) const/4              v0, 0
+	9       (00000024) goto                 -5
+

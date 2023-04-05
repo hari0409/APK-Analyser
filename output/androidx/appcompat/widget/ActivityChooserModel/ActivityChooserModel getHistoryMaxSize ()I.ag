@@ -1,0 +1,23 @@
+# Landroidx/appcompat/widget/ActivityChooserModel;->getHistoryMaxSize()I [access_flags=public]
+#
+# Parameters:
+# local registers: v0...v2
+#
+# - return:int
+
+getHistoryMaxSize-BB@0x0 : [ getHistoryMaxSize-BB@0x6 ]
+	0       (00000000) iget-object          v1, v2, Landroidx/appcompat/widget/ActivityChooserModel;->mInstanceLock Ljava/lang/Object;
+	1       (00000004) monitor-enter        v1
+
+getHistoryMaxSize-BB@0x6 : 
+	2       (00000006) iget                 v0, v2, Landroidx/appcompat/widget/ActivityChooserModel;->mHistoryMaxSize I
+	3       (0000000a) monitor-exit         v1
+	4       (0000000c) return               v0
+	6:11
+	(Ljava/lang/Throwable; -> e getHistoryMaxSize-BB@0xe)
+
+getHistoryMaxSize-BB@0xe : 
+	5       (0000000e) move-exception       v0
+	6       (00000010) monitor-exit         v1
+	7       (00000012) throw                v0
+

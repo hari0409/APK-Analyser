@@ -1,0 +1,19 @@
+# Landroidx/appcompat/widget/AppCompatSpinner$DropDownAdapter;->registerDataSetObserver(Landroid/database/DataSetObserver;)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:android.database.DataSetObserver
+#
+# - return:void
+
+registerDataSetObserver-BB@0x0 : [ registerDataSetObserver-BB@0x8 registerDataSetObserver-BB@0x12 ]
+	0       (00000000) iget-object          v0, v1, Landroidx/appcompat/widget/AppCompatSpinner$DropDownAdapter;->mAdapter Landroid/widget/SpinnerAdapter;
+	1       (00000004) if-eqz               v0, +7
+
+registerDataSetObserver-BB@0x8 : [ registerDataSetObserver-BB@0x12 ]
+	2       (00000008) iget-object          v0, v1, Landroidx/appcompat/widget/AppCompatSpinner$DropDownAdapter;->mAdapter Landroid/widget/SpinnerAdapter;
+	3       (0000000c) invoke-interface     v0, v2, Landroid/widget/SpinnerAdapter;->registerDataSetObserver(Landroid/database/DataSetObserver;)V
+
+registerDataSetObserver-BB@0x12 : 
+	4       (00000012) return-void          
+

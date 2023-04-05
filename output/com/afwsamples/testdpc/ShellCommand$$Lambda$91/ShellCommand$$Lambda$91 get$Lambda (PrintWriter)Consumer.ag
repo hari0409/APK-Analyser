@@ -1,0 +1,13 @@
+# Lcom/afwsamples/testdpc/ShellCommand$$Lambda$91;->get$Lambda(Ljava/io/PrintWriter;)Ljava/util/function/Consumer; [access_flags=static]
+#
+# Parameters:
+# - local registers: v0...v0
+# - v1:java.io.PrintWriter
+#
+# - return:java.util.function.Consumer
+
+get$Lambda-BB@0x0 : 
+	0       (00000000) new-instance         v0, Lcom/afwsamples/testdpc/ShellCommand$$Lambda$91;
+	1       (00000004) invoke-direct        v0, v1, Lcom/afwsamples/testdpc/ShellCommand$$Lambda$91;-><init>(Ljava/io/PrintWriter;)V
+	2       (0000000a) return-object        v0
+

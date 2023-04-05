@@ -1,0 +1,49 @@
+# Landroidx/appcompat/graphics/drawable/StateListDrawable;->updateStateFromTypedArray(Landroid/content/res/TypedArray;)V [access_flags=private]
+#
+# Parameters:
+# - local registers: v0...v3
+# - v4:android.content.res.TypedArray
+#
+# - return:void
+
+updateStateFromTypedArray-BB@0x0 : [ updateStateFromTypedArray-BB@0x10 updateStateFromTypedArray-BB@0x22 ]
+	0       (00000000) iget-object          v0, v3, Landroidx/appcompat/graphics/drawable/StateListDrawable;->mStateListState Landroidx/appcompat/graphics/drawable/StateListDrawable$StateListState;
+	1       (00000004) sget                 v1, Landroid/os/Build$VERSION;->SDK_INT I
+	2       (00000008) const/16             v2, 21
+	3       (0000000c) if-lt                v1, v2, +b
+
+updateStateFromTypedArray-BB@0x10 : [ updateStateFromTypedArray-BB@0x22 ]
+	4       (00000010) iget                 v1, v0, Landroidx/appcompat/graphics/drawable/StateListDrawable$StateListState;->mChangingConfigurations I
+	5       (00000014) invoke-virtual       v4, Landroid/content/res/TypedArray;->getChangingConfigurations()I
+	6       (0000001a) move-result          v2
+	7       (0000001c) or-int/2addr         v1, v2
+	8       (0000001e) iput                 v1, v0, Landroidx/appcompat/graphics/drawable/StateListDrawable$StateListState;->mChangingConfigurations I
+
+updateStateFromTypedArray-BB@0x22 : 
+	9       (00000022) sget                 v1, Landroidx/appcompat/R$styleable;->StateListDrawable_android_variablePadding I
+	10      (00000026) iget-boolean         v2, v0, Landroidx/appcompat/graphics/drawable/StateListDrawable$StateListState;->mVariablePadding Z
+	11      (0000002a) invoke-virtual       v4, v1, v2, Landroid/content/res/TypedArray;->getBoolean(I Z)Z
+	12      (00000030) move-result          v1
+	13      (00000032) iput-boolean         v1, v0, Landroidx/appcompat/graphics/drawable/StateListDrawable$StateListState;->mVariablePadding Z
+	14      (00000036) sget                 v1, Landroidx/appcompat/R$styleable;->StateListDrawable_android_constantSize I
+	15      (0000003a) iget-boolean         v2, v0, Landroidx/appcompat/graphics/drawable/StateListDrawable$StateListState;->mConstantSize Z
+	16      (0000003e) invoke-virtual       v4, v1, v2, Landroid/content/res/TypedArray;->getBoolean(I Z)Z
+	17      (00000044) move-result          v1
+	18      (00000046) iput-boolean         v1, v0, Landroidx/appcompat/graphics/drawable/StateListDrawable$StateListState;->mConstantSize Z
+	19      (0000004a) sget                 v1, Landroidx/appcompat/R$styleable;->StateListDrawable_android_enterFadeDuration I
+	20      (0000004e) iget                 v2, v0, Landroidx/appcompat/graphics/drawable/StateListDrawable$StateListState;->mEnterFadeDuration I
+	21      (00000052) invoke-virtual       v4, v1, v2, Landroid/content/res/TypedArray;->getInt(I I)I
+	22      (00000058) move-result          v1
+	23      (0000005a) iput                 v1, v0, Landroidx/appcompat/graphics/drawable/StateListDrawable$StateListState;->mEnterFadeDuration I
+	24      (0000005e) sget                 v1, Landroidx/appcompat/R$styleable;->StateListDrawable_android_exitFadeDuration I
+	25      (00000062) iget                 v2, v0, Landroidx/appcompat/graphics/drawable/StateListDrawable$StateListState;->mExitFadeDuration I
+	26      (00000066) invoke-virtual       v4, v1, v2, Landroid/content/res/TypedArray;->getInt(I I)I
+	27      (0000006c) move-result          v1
+	28      (0000006e) iput                 v1, v0, Landroidx/appcompat/graphics/drawable/StateListDrawable$StateListState;->mExitFadeDuration I
+	29      (00000072) sget                 v1, Landroidx/appcompat/R$styleable;->StateListDrawable_android_dither I
+	30      (00000076) iget-boolean         v2, v0, Landroidx/appcompat/graphics/drawable/StateListDrawable$StateListState;->mDither Z
+	31      (0000007a) invoke-virtual       v4, v1, v2, Landroid/content/res/TypedArray;->getBoolean(I Z)Z
+	32      (00000080) move-result          v1
+	33      (00000082) iput-boolean         v1, v0, Landroidx/appcompat/graphics/drawable/StateListDrawable$StateListState;->mDither Z
+	34      (00000086) return-void          
+

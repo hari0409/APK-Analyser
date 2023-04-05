@@ -1,0 +1,17 @@
+# Landroidx/appcompat/widget/ActivityChooserModel$HistoricalRecord;-><init>(Landroid/content/ComponentName; J F)V [access_flags=public constructor]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:android.content.ComponentName
+# - v3:long
+# - v4:float
+#
+# - return:void
+
+<init>-BB@0x0 : 
+	0       (00000000) invoke-direct        v0, Ljava/lang/Object;-><init>()V
+	1       (00000006) iput-object          v1, v0, Landroidx/appcompat/widget/ActivityChooserModel$HistoricalRecord;->activity Landroid/content/ComponentName;
+	2       (0000000a) iput-wide            v2, v0, Landroidx/appcompat/widget/ActivityChooserModel$HistoricalRecord;->time J
+	3       (0000000e) iput                 v4, v0, Landroidx/appcompat/widget/ActivityChooserModel$HistoricalRecord;->weight F
+	4       (00000012) return-void          
+

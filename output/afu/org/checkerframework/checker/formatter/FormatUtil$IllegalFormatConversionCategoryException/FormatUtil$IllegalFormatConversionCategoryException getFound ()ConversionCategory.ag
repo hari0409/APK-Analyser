@@ -1,0 +1,11 @@
+# Lafu/org/checkerframework/checker/formatter/FormatUtil$IllegalFormatConversionCategoryException;->getFound()Lafu/org/checkerframework/checker/formatter/qual/ConversionCategory; [access_flags=public]
+#
+# Parameters:
+# local registers: v0...v1
+#
+# - return:afu.org.checkerframework.checker.formatter.qual.ConversionCategory
+
+getFound-BB@0x0 : 
+	0       (00000000) iget-object          v0, v1, Lafu/org/checkerframework/checker/formatter/FormatUtil$IllegalFormatConversionCategoryException;->found Lafu/org/checkerframework/checker/formatter/qual/ConversionCategory;
+	1       (00000004) return-object        v0
+

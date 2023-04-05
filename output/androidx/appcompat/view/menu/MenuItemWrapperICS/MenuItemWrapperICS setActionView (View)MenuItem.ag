@@ -1,0 +1,23 @@
+# Landroidx/appcompat/view/menu/MenuItemWrapperICS;->setActionView(Landroid/view/View;)Landroid/view/MenuItem; [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:android.view.View
+#
+# - return:android.view.MenuItem
+
+setActionView-BB@0x0 : [ setActionView-BB@0x8 setActionView-BB@0x14 ]
+	0       (00000000) instance-of          v1, v3, Landroid/view/CollapsibleActionView;
+	1       (00000004) if-eqz               v1, +8
+
+setActionView-BB@0x8 : [ setActionView-BB@0x14 ]
+	2       (00000008) new-instance         v0, Landroidx/appcompat/view/menu/MenuItemWrapperICS$CollapsibleActionViewWrapper;
+	3       (0000000c) invoke-direct        v0, v3, Landroidx/appcompat/view/menu/MenuItemWrapperICS$CollapsibleActionViewWrapper;-><init>(Landroid/view/View;)V
+	4       (00000012) move-object          v3, v0
+
+setActionView-BB@0x14 : 
+	5       (00000014) iget-object          v1, v2, Landroidx/appcompat/view/menu/MenuItemWrapperICS;->mWrappedObject Ljava/lang/Object;
+	6       (00000018) check-cast           v1, Landroidx/core/internal/view/SupportMenuItem;
+	7       (0000001c) invoke-interface     v1, v3, Landroidx/core/internal/view/SupportMenuItem;->setActionView(Landroid/view/View;)Landroid/view/MenuItem;
+	8       (00000022) return-object        v2
+

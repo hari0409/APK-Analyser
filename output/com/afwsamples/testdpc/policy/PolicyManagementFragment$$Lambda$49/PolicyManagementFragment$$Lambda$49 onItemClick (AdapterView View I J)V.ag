@@ -1,0 +1,20 @@
+# Lcom/afwsamples/testdpc/policy/PolicyManagementFragment$$Lambda$49;->onItemClick(Landroid/widget/AdapterView; Landroid/view/View; I J)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v7
+# - v8:android.widget.AdapterView
+# - v9:android.view.View
+# - v10:int
+# - v11:long
+#
+# - return:void
+
+onItemClick-BB@0x0 : 
+	0       (00000000) iget-object          v0, v6, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment$$Lambda$49;->arg$1 Lcom/afwsamples/testdpc/policy/MeteredDataRestrictionInfoAdapter;
+	1       (00000004) move-object          v1, v7
+	2       (00000006) move-object          v2, v8
+	3       (00000008) move                 v3, v9
+	4       (0000000a) move-wide            v4, v10
+	5       (0000000c) invoke-static/range  v0 ... v5, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->lambda$showSetMeteredDataPrompt$155$PolicyManagementFragment(Lcom/afwsamples/testdpc/policy/MeteredDataRestrictionInfoAdapter; Landroid/widget/AdapterView; Landroid/view/View; I J)V
+	6       (00000012) return-void          
+

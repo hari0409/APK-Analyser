@@ -1,0 +1,61 @@
+# Landroidx/appcompat/app/AppCompatDelegateImpl;->startSupportActionMode(Landroidx/appcompat/view/ActionMode$Callback;)Landroidx/appcompat/view/ActionMode; [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v4
+# - v5:androidx.appcompat.view.ActionMode$Callback
+#
+# - return:androidx.appcompat.view.ActionMode
+
+startSupportActionMode-BB@0x0 : [ startSupportActionMode-BB@0x4 startSupportActionMode-BB@0x14 ]
+	0       (00000000) if-nez               v5, +a
+
+startSupportActionMode-BB@0x4 : 
+	1       (00000004) new-instance         v2, Ljava/lang/IllegalArgumentException;
+	2       (00000008) const-string         v3, 'ActionMode callback can not be null.'
+	3       (0000000c) invoke-direct        v2, v3, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+	4       (00000012) throw                v2
+
+startSupportActionMode-BB@0x14 : [ startSupportActionMode-BB@0x1c startSupportActionMode-BB@0x26 ]
+	5       (00000014) iget-object          v2, v4, Landroidx/appcompat/app/AppCompatDelegateImpl;->mActionMode Landroidx/appcompat/view/ActionMode;
+	6       (00000018) if-eqz               v2, +7
+
+startSupportActionMode-BB@0x1c : [ startSupportActionMode-BB@0x26 ]
+	7       (0000001c) iget-object          v2, v4, Landroidx/appcompat/app/AppCompatDelegateImpl;->mActionMode Landroidx/appcompat/view/ActionMode;
+	8       (00000020) invoke-virtual       v2, Landroidx/appcompat/view/ActionMode;->finish()V
+
+startSupportActionMode-BB@0x26 : [ startSupportActionMode-BB@0x3c startSupportActionMode-BB@0x66 ]
+	9       (00000026) new-instance         v1, Landroidx/appcompat/app/AppCompatDelegateImpl$ActionModeCallbackWrapperV9;
+	10      (0000002a) invoke-direct        v1, v4, v5, Landroidx/appcompat/app/AppCompatDelegateImpl$ActionModeCallbackWrapperV9;-><init>(Landroidx/appcompat/app/AppCompatDelegateImpl; Landroidx/appcompat/view/ActionMode$Callback;)V
+	11      (00000030) invoke-virtual       v4, Landroidx/appcompat/app/AppCompatDelegateImpl;->getSupportActionBar()Landroidx/appcompat/app/ActionBar;
+	12      (00000036) move-result-object   v0
+	13      (00000038) if-eqz               v0, +17
+
+startSupportActionMode-BB@0x3c : [ startSupportActionMode-BB@0x50 startSupportActionMode-BB@0x66 ]
+	14      (0000003c) invoke-virtual       v0, v1, Landroidx/appcompat/app/ActionBar;->startActionMode(Landroidx/appcompat/view/ActionMode$Callback;)Landroidx/appcompat/view/ActionMode;
+	15      (00000042) move-result-object   v2
+	16      (00000044) iput-object          v2, v4, Landroidx/appcompat/app/AppCompatDelegateImpl;->mActionMode Landroidx/appcompat/view/ActionMode;
+	17      (00000048) iget-object          v2, v4, Landroidx/appcompat/app/AppCompatDelegateImpl;->mActionMode Landroidx/appcompat/view/ActionMode;
+	18      (0000004c) if-eqz               v2, +d
+
+startSupportActionMode-BB@0x50 : [ startSupportActionMode-BB@0x58 startSupportActionMode-BB@0x66 ]
+	19      (00000050) iget-object          v2, v4, Landroidx/appcompat/app/AppCompatDelegateImpl;->mAppCompatCallback Landroidx/appcompat/app/AppCompatCallback;
+	20      (00000054) if-eqz               v2, +9
+
+startSupportActionMode-BB@0x58 : [ startSupportActionMode-BB@0x66 ]
+	21      (00000058) iget-object          v2, v4, Landroidx/appcompat/app/AppCompatDelegateImpl;->mAppCompatCallback Landroidx/appcompat/app/AppCompatCallback;
+	22      (0000005c) iget-object          v3, v4, Landroidx/appcompat/app/AppCompatDelegateImpl;->mActionMode Landroidx/appcompat/view/ActionMode;
+	23      (00000060) invoke-interface     v2, v3, Landroidx/appcompat/app/AppCompatCallback;->onSupportActionModeStarted(Landroidx/appcompat/view/ActionMode;)V
+
+startSupportActionMode-BB@0x66 : [ startSupportActionMode-BB@0x6e startSupportActionMode-BB@0x7a ]
+	24      (00000066) iget-object          v2, v4, Landroidx/appcompat/app/AppCompatDelegateImpl;->mActionMode Landroidx/appcompat/view/ActionMode;
+	25      (0000006a) if-nez               v2, +8
+
+startSupportActionMode-BB@0x6e : [ startSupportActionMode-BB@0x7a ]
+	26      (0000006e) invoke-virtual       v4, v1, Landroidx/appcompat/app/AppCompatDelegateImpl;->startSupportActionModeFromWindow(Landroidx/appcompat/view/ActionMode$Callback;)Landroidx/appcompat/view/ActionMode;
+	27      (00000074) move-result-object   v2
+	28      (00000076) iput-object          v2, v4, Landroidx/appcompat/app/AppCompatDelegateImpl;->mActionMode Landroidx/appcompat/view/ActionMode;
+
+startSupportActionMode-BB@0x7a : 
+	29      (0000007a) iget-object          v2, v4, Landroidx/appcompat/app/AppCompatDelegateImpl;->mActionMode Landroidx/appcompat/view/ActionMode;
+	30      (0000007e) return-object        v2
+

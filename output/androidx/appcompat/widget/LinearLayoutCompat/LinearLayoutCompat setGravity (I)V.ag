@@ -1,0 +1,35 @@
+# Landroidx/appcompat/widget/LinearLayoutCompat;->setGravity(I)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:int
+#
+# - return:void
+
+setGravity-BB@0x0 : [ setGravity-BB@0x8 setGravity-BB@0x32 ]
+	0       (00000000) iget                 v0, v1, Landroidx/appcompat/widget/LinearLayoutCompat;->mGravity I
+	1       (00000004) if-eq                v0, v2, +17
+
+setGravity-BB@0x8 : [ setGravity-BB@0x14 setGravity-BB@0x1c ]
+	2       (00000008) const                v0, 8388615 # [1.1754953317312125e-38]
+	3       (0000000e) and-int/2addr        v0, v2
+	4       (00000010) if-nez               v0, +6
+
+setGravity-BB@0x14 : [ setGravity-BB@0x1c ]
+	5       (00000014) const                v0, 8388611 # [1.1754947712118268e-38]
+	6       (0000001a) or-int/2addr         v2, v0
+
+setGravity-BB@0x1c : [ setGravity-BB@0x24 setGravity-BB@0x28 ]
+	7       (0000001c) and-int/lit8         v0, v2, 112
+	8       (00000020) if-nez               v0, +4
+
+setGravity-BB@0x24 : [ setGravity-BB@0x28 ]
+	9       (00000024) or-int/lit8          v2, v2, 48
+
+setGravity-BB@0x28 : [ setGravity-BB@0x32 ]
+	10      (00000028) iput                 v2, v1, Landroidx/appcompat/widget/LinearLayoutCompat;->mGravity I
+	11      (0000002c) invoke-virtual       v1, Landroidx/appcompat/widget/LinearLayoutCompat;->requestLayout()V
+
+setGravity-BB@0x32 : 
+	12      (00000032) return-void          
+

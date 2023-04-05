@@ -1,0 +1,29 @@
+# Landroidx/appcompat/widget/AppCompatDrawableManager;->getTintListFromCache(Landroid/content/Context; I)Landroid/content/res/ColorStateList; [access_flags=private]
+#
+# Parameters:
+# - local registers: v0...v3
+# - v4:android.content.Context
+# - v5:int
+#
+# - return:android.content.res.ColorStateList
+
+getTintListFromCache-BB@0x0 : [ getTintListFromCache-BB@0xa getTintListFromCache-BB@0x2a ]
+	0       (00000000) const/4              v1, 0
+	1       (00000002) iget-object          v2, v3, Landroidx/appcompat/widget/AppCompatDrawableManager;->mTintLists Ljava/util/WeakHashMap;
+	2       (00000006) if-eqz               v2, +12
+
+getTintListFromCache-BB@0xa : [ getTintListFromCache-BB@0x1e getTintListFromCache-BB@0x2a ]
+	3       (0000000a) iget-object          v2, v3, Landroidx/appcompat/widget/AppCompatDrawableManager;->mTintLists Ljava/util/WeakHashMap;
+	4       (0000000e) invoke-virtual       v2, v4, Ljava/util/WeakHashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
+	5       (00000014) move-result-object   v0
+	6       (00000016) check-cast           v0, Landroidx/collection/SparseArrayCompat;
+	7       (0000001a) if-eqz               v0, +8
+
+getTintListFromCache-BB@0x1e : [ getTintListFromCache-BB@0x2a ]
+	8       (0000001e) invoke-virtual       v0, v5, Landroidx/collection/SparseArrayCompat;->get(I)Ljava/lang/Object;
+	9       (00000024) move-result-object   v1
+	10      (00000026) check-cast           v1, Landroid/content/res/ColorStateList;
+
+getTintListFromCache-BB@0x2a : 
+	11      (0000002a) return-object        v1
+

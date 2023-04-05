@@ -1,0 +1,13 @@
+# Lcom/afwsamples/testdpc/util/Flags$ArgsContainer;-><init>(Ljava/util/Map;)V [access_flags=private constructor]
+#
+# Parameters:
+# - local registers: v0...v0
+# - v1:java.util.Map
+#
+# - return:void
+
+<init>-BB@0x0 : 
+	0       (00000000) invoke-direct        v0, Ljava/lang/Object;-><init>()V
+	1       (00000006) iput-object          v1, v0, Lcom/afwsamples/testdpc/util/Flags$ArgsContainer;->args Ljava/util/Map;
+	2       (0000000a) return-void          
+

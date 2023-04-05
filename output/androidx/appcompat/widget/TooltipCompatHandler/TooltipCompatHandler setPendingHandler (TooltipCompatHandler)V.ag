@@ -1,0 +1,28 @@
+# Landroidx/appcompat/widget/TooltipCompatHandler;->setPendingHandler(Landroidx/appcompat/widget/TooltipCompatHandler;)V [access_flags=private static]
+#
+# Parameters:
+# - local registers: v0...v0
+# - v1:androidx.appcompat.widget.TooltipCompatHandler
+#
+# - return:void
+
+setPendingHandler-BB@0x0 : [ setPendingHandler-BB@0x8 setPendingHandler-BB@0x12 ]
+	0       (00000000) sget-object          v0, Landroidx/appcompat/widget/TooltipCompatHandler;->sPendingHandler Landroidx/appcompat/widget/TooltipCompatHandler;
+	1       (00000004) if-eqz               v0, +7
+
+setPendingHandler-BB@0x8 : [ setPendingHandler-BB@0x12 ]
+	2       (00000008) sget-object          v0, Landroidx/appcompat/widget/TooltipCompatHandler;->sPendingHandler Landroidx/appcompat/widget/TooltipCompatHandler;
+	3       (0000000c) invoke-direct        v0, Landroidx/appcompat/widget/TooltipCompatHandler;->cancelPendingShow()V
+
+setPendingHandler-BB@0x12 : [ setPendingHandler-BB@0x1e setPendingHandler-BB@0x28 ]
+	4       (00000012) sput-object          v1, Landroidx/appcompat/widget/TooltipCompatHandler;->sPendingHandler Landroidx/appcompat/widget/TooltipCompatHandler;
+	5       (00000016) sget-object          v0, Landroidx/appcompat/widget/TooltipCompatHandler;->sPendingHandler Landroidx/appcompat/widget/TooltipCompatHandler;
+	6       (0000001a) if-eqz               v0, +7
+
+setPendingHandler-BB@0x1e : [ setPendingHandler-BB@0x28 ]
+	7       (0000001e) sget-object          v0, Landroidx/appcompat/widget/TooltipCompatHandler;->sPendingHandler Landroidx/appcompat/widget/TooltipCompatHandler;
+	8       (00000022) invoke-direct        v0, Landroidx/appcompat/widget/TooltipCompatHandler;->scheduleShow()V
+
+setPendingHandler-BB@0x28 : 
+	9       (00000028) return-void          
+

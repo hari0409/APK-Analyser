@@ -1,0 +1,15 @@
+# Landroidx/appcompat/view/WindowCallbackWrapper;->onProvideKeyboardShortcuts(Ljava/util/List; Landroid/view/Menu; I)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:java.util.List
+# - v3:android.view.Menu
+# - v4:int
+#
+# - return:void
+
+onProvideKeyboardShortcuts-BB@0x0 : 
+	0       (00000000) iget-object          v0, v1, Landroidx/appcompat/view/WindowCallbackWrapper;->mWrapped Landroid/view/Window$Callback;
+	1       (00000004) invoke-interface     v0, v2, v3, v4, Landroid/view/Window$Callback;->onProvideKeyboardShortcuts(Ljava/util/List; Landroid/view/Menu; I)V
+	2       (0000000a) return-void          
+

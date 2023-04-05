@@ -1,0 +1,59 @@
+# Landroidx/appcompat/app/AppCompatDelegateImpl$ActionModeCallbackWrapperV9$1;->onAnimationEnd(Landroid/view/View;)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v3
+# - v4:android.view.View
+#
+# - return:void
+
+onAnimationEnd-BB@0x0 : [ onAnimationEnd-BB@0x28 onAnimationEnd-BB@0x6c ]
+	0       (00000000) const/4              v2, 0
+	1       (00000002) iget-object          v0, v3, Landroidx/appcompat/app/AppCompatDelegateImpl$ActionModeCallbackWrapperV9$1;->this$1 Landroidx/appcompat/app/AppCompatDelegateImpl$ActionModeCallbackWrapperV9;
+	2       (00000006) iget-object          v0, v0, Landroidx/appcompat/app/AppCompatDelegateImpl$ActionModeCallbackWrapperV9;->this$0 Landroidx/appcompat/app/AppCompatDelegateImpl;
+	3       (0000000a) iget-object          v0, v0, Landroidx/appcompat/app/AppCompatDelegateImpl;->mActionModeView Landroidx/appcompat/widget/ActionBarContextView;
+	4       (0000000e) const/16             v1, 8
+	5       (00000012) invoke-virtual       v0, v1, Landroidx/appcompat/widget/ActionBarContextView;->setVisibility(I)V
+	6       (00000018) iget-object          v0, v3, Landroidx/appcompat/app/AppCompatDelegateImpl$ActionModeCallbackWrapperV9$1;->this$1 Landroidx/appcompat/app/AppCompatDelegateImpl$ActionModeCallbackWrapperV9;
+	7       (0000001c) iget-object          v0, v0, Landroidx/appcompat/app/AppCompatDelegateImpl$ActionModeCallbackWrapperV9;->this$0 Landroidx/appcompat/app/AppCompatDelegateImpl;
+	8       (00000020) iget-object          v0, v0, Landroidx/appcompat/app/AppCompatDelegateImpl;->mActionModePopup Landroid/widget/PopupWindow;
+	9       (00000024) if-eqz               v0, +24
+
+onAnimationEnd-BB@0x28 : [ onAnimationEnd-BB@0x3a ]
+	10      (00000028) iget-object          v0, v3, Landroidx/appcompat/app/AppCompatDelegateImpl$ActionModeCallbackWrapperV9$1;->this$1 Landroidx/appcompat/app/AppCompatDelegateImpl$ActionModeCallbackWrapperV9;
+	11      (0000002c) iget-object          v0, v0, Landroidx/appcompat/app/AppCompatDelegateImpl$ActionModeCallbackWrapperV9;->this$0 Landroidx/appcompat/app/AppCompatDelegateImpl;
+	12      (00000030) iget-object          v0, v0, Landroidx/appcompat/app/AppCompatDelegateImpl;->mActionModePopup Landroid/widget/PopupWindow;
+	13      (00000034) invoke-virtual       v0, Landroid/widget/PopupWindow;->dismiss()V
+
+onAnimationEnd-BB@0x3a : 
+	14      (0000003a) iget-object          v0, v3, Landroidx/appcompat/app/AppCompatDelegateImpl$ActionModeCallbackWrapperV9$1;->this$1 Landroidx/appcompat/app/AppCompatDelegateImpl$ActionModeCallbackWrapperV9;
+	15      (0000003e) iget-object          v0, v0, Landroidx/appcompat/app/AppCompatDelegateImpl$ActionModeCallbackWrapperV9;->this$0 Landroidx/appcompat/app/AppCompatDelegateImpl;
+	16      (00000042) iget-object          v0, v0, Landroidx/appcompat/app/AppCompatDelegateImpl;->mActionModeView Landroidx/appcompat/widget/ActionBarContextView;
+	17      (00000046) invoke-virtual       v0, Landroidx/appcompat/widget/ActionBarContextView;->removeAllViews()V
+	18      (0000004c) iget-object          v0, v3, Landroidx/appcompat/app/AppCompatDelegateImpl$ActionModeCallbackWrapperV9$1;->this$1 Landroidx/appcompat/app/AppCompatDelegateImpl$ActionModeCallbackWrapperV9;
+	19      (00000050) iget-object          v0, v0, Landroidx/appcompat/app/AppCompatDelegateImpl$ActionModeCallbackWrapperV9;->this$0 Landroidx/appcompat/app/AppCompatDelegateImpl;
+	20      (00000054) iget-object          v0, v0, Landroidx/appcompat/app/AppCompatDelegateImpl;->mFadeAnim Landroidx/core/view/ViewPropertyAnimatorCompat;
+	21      (00000058) invoke-virtual       v0, v2, Landroidx/core/view/ViewPropertyAnimatorCompat;->setListener(Landroidx/core/view/ViewPropertyAnimatorListener;)Landroidx/core/view/ViewPropertyAnimatorCompat;
+	22      (0000005e) iget-object          v0, v3, Landroidx/appcompat/app/AppCompatDelegateImpl$ActionModeCallbackWrapperV9$1;->this$1 Landroidx/appcompat/app/AppCompatDelegateImpl$ActionModeCallbackWrapperV9;
+	23      (00000062) iget-object          v0, v0, Landroidx/appcompat/app/AppCompatDelegateImpl$ActionModeCallbackWrapperV9;->this$0 Landroidx/appcompat/app/AppCompatDelegateImpl;
+	24      (00000066) iput-object          v2, v0, Landroidx/appcompat/app/AppCompatDelegateImpl;->mFadeAnim Landroidx/core/view/ViewPropertyAnimatorCompat;
+	25      (0000006a) return-void          
+
+onAnimationEnd-BB@0x6c : [ onAnimationEnd-BB@0x88 onAnimationEnd-BB@0x3a ]
+	26      (0000006c) iget-object          v0, v3, Landroidx/appcompat/app/AppCompatDelegateImpl$ActionModeCallbackWrapperV9$1;->this$1 Landroidx/appcompat/app/AppCompatDelegateImpl$ActionModeCallbackWrapperV9;
+	27      (00000070) iget-object          v0, v0, Landroidx/appcompat/app/AppCompatDelegateImpl$ActionModeCallbackWrapperV9;->this$0 Landroidx/appcompat/app/AppCompatDelegateImpl;
+	28      (00000074) iget-object          v0, v0, Landroidx/appcompat/app/AppCompatDelegateImpl;->mActionModeView Landroidx/appcompat/widget/ActionBarContextView;
+	29      (00000078) invoke-virtual       v0, Landroidx/appcompat/widget/ActionBarContextView;->getParent()Landroid/view/ViewParent;
+	30      (0000007e) move-result-object   v0
+	31      (00000080) instance-of          v0, v0, Landroid/view/View;
+	32      (00000084) if-eqz               v0, -25
+
+onAnimationEnd-BB@0x88 : [ onAnimationEnd-BB@0x3a ]
+	33      (00000088) iget-object          v0, v3, Landroidx/appcompat/app/AppCompatDelegateImpl$ActionModeCallbackWrapperV9$1;->this$1 Landroidx/appcompat/app/AppCompatDelegateImpl$ActionModeCallbackWrapperV9;
+	34      (0000008c) iget-object          v0, v0, Landroidx/appcompat/app/AppCompatDelegateImpl$ActionModeCallbackWrapperV9;->this$0 Landroidx/appcompat/app/AppCompatDelegateImpl;
+	35      (00000090) iget-object          v0, v0, Landroidx/appcompat/app/AppCompatDelegateImpl;->mActionModeView Landroidx/appcompat/widget/ActionBarContextView;
+	36      (00000094) invoke-virtual       v0, Landroidx/appcompat/widget/ActionBarContextView;->getParent()Landroid/view/ViewParent;
+	37      (0000009a) move-result-object   v0
+	38      (0000009c) check-cast           v0, Landroid/view/View;
+	39      (000000a0) invoke-static        v0, Landroidx/core/view/ViewCompat;->requestApplyInsets(Landroid/view/View;)V
+	40      (000000a6) goto                 -36
+

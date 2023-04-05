@@ -1,0 +1,27 @@
+# Landroidx/appcompat/widget/AppCompatPopupWindow;->showAsDropDown(Landroid/view/View; I I)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:android.view.View
+# - v3:int
+# - v4:int
+#
+# - return:void
+
+showAsDropDown-BB@0x0 : [ showAsDropDown-BB@0x8 showAsDropDown-BB@0x1a ]
+	0       (00000000) sget-boolean         v0, Landroidx/appcompat/widget/AppCompatPopupWindow;->COMPAT_OVERLAP_ANCHOR Z
+	1       (00000004) if-eqz               v0, +b
+
+showAsDropDown-BB@0x8 : [ showAsDropDown-BB@0x10 showAsDropDown-BB@0x1a ]
+	2       (00000008) iget-boolean         v0, v1, Landroidx/appcompat/widget/AppCompatPopupWindow;->mOverlapAnchor Z
+	3       (0000000c) if-eqz               v0, +7
+
+showAsDropDown-BB@0x10 : [ showAsDropDown-BB@0x1a ]
+	4       (00000010) invoke-virtual       v2, Landroid/view/View;->getHeight()I
+	5       (00000016) move-result          v0
+	6       (00000018) sub-int/2addr        v4, v0
+
+showAsDropDown-BB@0x1a : 
+	7       (0000001a) invoke-super         v1, v2, v3, v4, Landroid/widget/PopupWindow;->showAsDropDown(Landroid/view/View; I I)V
+	8       (00000020) return-void          
+

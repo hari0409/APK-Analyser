@@ -1,0 +1,25 @@
+# Landroidx/appcompat/app/TwilightManager;->isStateValid()Z [access_flags=private]
+#
+# Parameters:
+# local registers: v0...v4
+#
+# - return:boolean
+
+isStateValid-BB@0x0 : [ isStateValid-BB@0x18 isStateValid-BB@0x1c ]
+	0       (00000000) iget-object          v0, v4, Landroidx/appcompat/app/TwilightManager;->mTwilightState Landroidx/appcompat/app/TwilightManager$TwilightState;
+	1       (00000004) iget-wide            v0, v0, Landroidx/appcompat/app/TwilightManager$TwilightState;->nextUpdate J
+	2       (00000008) invoke-static        Ljava/lang/System;->currentTimeMillis()J
+	3       (0000000e) move-result-wide     v2
+	4       (00000010) cmp-long             v0, v0, v2
+	5       (00000014) if-lez               v0, +4
+
+isStateValid-BB@0x18 : [ isStateValid-BB@0x1a ]
+	6       (00000018) const/4              v0, 1
+
+isStateValid-BB@0x1a : 
+	7       (0000001a) return               v0
+
+isStateValid-BB@0x1c : [ isStateValid-BB@0x1a ]
+	8       (0000001c) const/4              v0, 0
+	9       (0000001e) goto                 -2
+

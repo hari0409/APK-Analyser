@@ -1,0 +1,46 @@
+# Landroidx/appcompat/widget/RtlSpacingHelper;->setRelative(I I)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:int
+# - v4:int
+#
+# - return:void
+
+setRelative-BB@0x0 : [ setRelative-BB@0x1a setRelative-BB@0x2c ]
+	0       (00000000) const/high16         v1, -32768 # [-0.0]
+	1       (00000004) iput                 v3, v2, Landroidx/appcompat/widget/RtlSpacingHelper;->mStart I
+	2       (00000008) iput                 v4, v2, Landroidx/appcompat/widget/RtlSpacingHelper;->mEnd I
+	3       (0000000c) const/4              v0, 1
+	4       (0000000e) iput-boolean         v0, v2, Landroidx/appcompat/widget/RtlSpacingHelper;->mIsRelative Z
+	5       (00000012) iget-boolean         v0, v2, Landroidx/appcompat/widget/RtlSpacingHelper;->mIsRtl Z
+	6       (00000016) if-eqz               v0, +b
+
+setRelative-BB@0x1a : [ setRelative-BB@0x1e setRelative-BB@0x22 ]
+	7       (0000001a) if-eq                v4, v1, +4
+
+setRelative-BB@0x1e : [ setRelative-BB@0x22 ]
+	8       (0000001e) iput                 v4, v2, Landroidx/appcompat/widget/RtlSpacingHelper;->mLeft I
+
+setRelative-BB@0x22 : [ setRelative-BB@0x26 setRelative-BB@0x2a ]
+	9       (00000022) if-eq                v3, v1, +4
+
+setRelative-BB@0x26 : [ setRelative-BB@0x2a ]
+	10      (00000026) iput                 v3, v2, Landroidx/appcompat/widget/RtlSpacingHelper;->mRight I
+
+setRelative-BB@0x2a : 
+	11      (0000002a) return-void          
+
+setRelative-BB@0x2c : [ setRelative-BB@0x30 setRelative-BB@0x34 ]
+	12      (0000002c) if-eq                v3, v1, +4
+
+setRelative-BB@0x30 : [ setRelative-BB@0x34 ]
+	13      (00000030) iput                 v3, v2, Landroidx/appcompat/widget/RtlSpacingHelper;->mLeft I
+
+setRelative-BB@0x34 : [ setRelative-BB@0x38 setRelative-BB@0x2a ]
+	14      (00000034) if-eq                v4, v1, -5
+
+setRelative-BB@0x38 : [ setRelative-BB@0x2a ]
+	15      (00000038) iput                 v4, v2, Landroidx/appcompat/widget/RtlSpacingHelper;->mRight I
+	16      (0000003c) goto                 -9
+

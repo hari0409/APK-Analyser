@@ -1,0 +1,80 @@
+# Lcom/afwsamples/testdpc/policy/PolicyManagementFragment$ShowCaCertificateListTask;->getCaCertificateSubjectDnList()[Ljava/lang/String; [access_flags=private]
+#
+# Parameters:
+# local registers: v0...v10
+#
+# - return:java.lang.String[]
+
+getCaCertificateSubjectDnList-BB@0x0 : [ getCaCertificateSubjectDnList-BB@0x2e getCaCertificateSubjectDnList-BB@0xac ]
+	0       (00000000) iget-object          v7, v10, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment$ShowCaCertificateListTask;->this$0 Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;
+	1       (00000004) invoke-static        v7, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->access$400(Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;)Landroid/app/admin/DevicePolicyManager;
+	2       (0000000a) move-result-object   v7
+	3       (0000000c) iget-object          v8, v10, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment$ShowCaCertificateListTask;->this$0 Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;
+	4       (00000010) invoke-static        v8, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->access$700(Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;)Landroid/content/ComponentName;
+	5       (00000016) move-result-object   v8
+	6       (00000018) invoke-virtual       v7, v8, Landroid/app/admin/DevicePolicyManager;->getInstalledCaCerts(Landroid/content/ComponentName;)Ljava/util/List;
+	7       (0000001e) move-result-object   v6
+	8       (00000020) const/4              v0, 0
+	9       (00000022) invoke-interface     v6, Ljava/util/List;->size()I
+	10      (00000028) move-result          v7
+	11      (0000002a) if-lez               v7, +41
+
+getCaCertificateSubjectDnList-BB@0x2e : [ getCaCertificateSubjectDnList-BB@0x44 ]
+	12      (0000002e) invoke-interface     v6, Ljava/util/List;->size()I
+	13      (00000034) move-result          v7
+	14      (00000036) new-array            v0, v7, [Ljava/lang/String;
+	15      (0000003a) const/4              v3, 0
+	16      (0000003c) invoke-interface     v6, Ljava/util/List;->iterator()Ljava/util/Iterator;
+	17      (00000042) move-result-object   v7
+
+getCaCertificateSubjectDnList-BB@0x44 : [ getCaCertificateSubjectDnList-BB@0x50 getCaCertificateSubjectDnList-BB@0xac ]
+	18      (00000044) invoke-interface     v7, Ljava/util/Iterator;->hasNext()Z
+	19      (0000004a) move-result          v8
+	20      (0000004c) if-eqz               v8, +30
+
+getCaCertificateSubjectDnList-BB@0x50 : [ getCaCertificateSubjectDnList-BB@0x5c ]
+	21      (00000050) invoke-interface     v7, Ljava/util/Iterator;->next()Ljava/lang/Object;
+	22      (00000056) move-result-object   v5
+	23      (00000058) check-cast           v5, [B
+
+getCaCertificateSubjectDnList-BB@0x5c : [ getCaCertificateSubjectDnList-BB@0x82 ]
+	24      (0000005c) const-string         v8, 'X.509'
+	25      (00000060) invoke-static        v8, Ljava/security/cert/CertificateFactory;->getInstance(Ljava/lang/String;)Ljava/security/cert/CertificateFactory;
+	26      (00000066) move-result-object   v8
+	27      (00000068) new-instance         v9, Ljava/io/ByteArrayInputStream;
+	28      (0000006c) invoke-direct        v9, v5, Ljava/io/ByteArrayInputStream;-><init>([B)V
+	29      (00000072) invoke-virtual       v8, v9, Ljava/security/cert/CertificateFactory;->generateCertificate(Ljava/io/InputStream;)Ljava/security/cert/Certificate;
+	30      (00000078) move-result-object   v1
+	31      (0000007a) check-cast           v1, Ljava/security/cert/X509Certificate;
+	32      (0000007e) add-int/lit8         v4, v3, 1
+	5c:7d
+	(Ljava/security/cert/CertificateException; -> 9a getCaCertificateSubjectDnList-BB@0x9a)
+
+getCaCertificateSubjectDnList-BB@0x82 : [ getCaCertificateSubjectDnList-BB@0x44 ]
+	33      (00000082) invoke-virtual       v1, Ljava/security/cert/X509Certificate;->getSubjectDN()Ljava/security/Principal;
+	34      (00000088) move-result-object   v8
+	35      (0000008a) invoke-interface     v8, Ljava/security/Principal;->getName()Ljava/lang/String;
+	36      (00000090) move-result-object   v8
+	37      (00000092) aput-object          v8, v0, v3
+	38      (00000096) move                 v3, v4
+	39      (00000098) goto                 -2a
+	82:95
+	(Ljava/security/cert/CertificateException; -> ae getCaCertificateSubjectDnList-BB@0xae)
+
+getCaCertificateSubjectDnList-BB@0x9a : [ getCaCertificateSubjectDnList-BB@0x9c ]
+	40      (0000009a) move-exception       v2
+
+getCaCertificateSubjectDnList-BB@0x9c : [ getCaCertificateSubjectDnList-BB@0x44 ]
+	41      (0000009c) const-string         v8, 'PolicyManagement'
+	42      (000000a0) const-string         v9, 'getCaCertificateSubjectDnList: '
+	43      (000000a4) invoke-static        v8, v9, v2, Landroid/util/Log;->e(Ljava/lang/String; Ljava/lang/String; Ljava/lang/Throwable;)I
+	44      (000000aa) goto                 -33
+
+getCaCertificateSubjectDnList-BB@0xac : 
+	45      (000000ac) return-object        v0
+
+getCaCertificateSubjectDnList-BB@0xae : [ getCaCertificateSubjectDnList-BB@0x9c ]
+	46      (000000ae) move-exception       v2
+	47      (000000b0) move                 v3, v4
+	48      (000000b2) goto                 -b
+

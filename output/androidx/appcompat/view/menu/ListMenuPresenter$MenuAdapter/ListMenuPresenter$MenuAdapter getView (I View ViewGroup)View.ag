@@ -1,0 +1,30 @@
+# Landroidx/appcompat/view/menu/ListMenuPresenter$MenuAdapter;->getView(I Landroid/view/View; Landroid/view/ViewGroup;)Landroid/view/View; [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v4
+# - v5:int
+# - v6:android.view.View
+# - v7:android.view.ViewGroup
+#
+# - return:android.view.View
+
+getView-BB@0x0 : [ getView-BB@0x6 getView-BB@0x1e ]
+	0       (00000000) const/4              v3, 0
+	1       (00000002) if-nez               v6, +e
+
+getView-BB@0x6 : [ getView-BB@0x1e ]
+	2       (00000006) iget-object          v1, v4, Landroidx/appcompat/view/menu/ListMenuPresenter$MenuAdapter;->this$0 Landroidx/appcompat/view/menu/ListMenuPresenter;
+	3       (0000000a) iget-object          v1, v1, Landroidx/appcompat/view/menu/ListMenuPresenter;->mInflater Landroid/view/LayoutInflater;
+	4       (0000000e) iget-object          v2, v4, Landroidx/appcompat/view/menu/ListMenuPresenter$MenuAdapter;->this$0 Landroidx/appcompat/view/menu/ListMenuPresenter;
+	5       (00000012) iget                 v2, v2, Landroidx/appcompat/view/menu/ListMenuPresenter;->mItemLayoutRes I
+	6       (00000016) invoke-virtual       v1, v2, v7, v3, Landroid/view/LayoutInflater;->inflate(I Landroid/view/ViewGroup; Z)Landroid/view/View;
+	7       (0000001c) move-result-object   v6
+
+getView-BB@0x1e : 
+	8       (0000001e) move-object          v0, v6
+	9       (00000020) check-cast           v0, Landroidx/appcompat/view/menu/MenuView$ItemView;
+	10      (00000024) invoke-virtual       v4, v5, Landroidx/appcompat/view/menu/ListMenuPresenter$MenuAdapter;->getItem(I)Landroidx/appcompat/view/menu/MenuItemImpl;
+	11      (0000002a) move-result-object   v1
+	12      (0000002c) invoke-interface     v0, v1, v3, Landroidx/appcompat/view/menu/MenuView$ItemView;->initialize(Landroidx/appcompat/view/menu/MenuItemImpl; I)V
+	13      (00000032) return-object        v6
+

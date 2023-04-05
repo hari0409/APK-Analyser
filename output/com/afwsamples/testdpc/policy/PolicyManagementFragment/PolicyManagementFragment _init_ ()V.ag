@@ -1,0 +1,16 @@
+# Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;-><init>()V [access_flags=public constructor]
+#
+# Parameters:
+# local registers: v0...v1
+#
+# - return:void
+
+<init>-BB@0x0 : 
+	0       (00000000) const/4              v0, 0
+	1       (00000002) invoke-direct        v1, Lcom/afwsamples/testdpc/common/BaseSearchablePolicyPreferenceFragment;-><init>()V
+	2       (00000008) iput-object          v0, v1, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->mGetAccessibilityServicesTask Lcom/afwsamples/testdpc/policy/PolicyManagementFragment$GetAccessibilityServicesTask;
+	3       (0000000c) iput-object          v0, v1, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->mGetInputMethodsTask Lcom/afwsamples/testdpc/policy/PolicyManagementFragment$GetInputMethodsTask;
+	4       (00000010) iput-object          v0, v1, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->mGetNotificationListenersTask Lcom/afwsamples/testdpc/policy/PolicyManagementFragment$GetNotificationListenersTask;
+	5       (00000014) iput-object          v0, v1, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->mShowCaCertificateListTask Lcom/afwsamples/testdpc/policy/PolicyManagementFragment$ShowCaCertificateListTask;
+	6       (00000018) return-void          
+

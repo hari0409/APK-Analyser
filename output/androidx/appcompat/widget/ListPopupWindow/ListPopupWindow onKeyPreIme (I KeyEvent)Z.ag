@@ -1,0 +1,72 @@
+# Landroidx/appcompat/widget/ListPopupWindow;->onKeyPreIme(I Landroid/view/KeyEvent;)Z [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v4
+# - v5:int
+# - v6:android.view.KeyEvent
+#
+# - return:boolean
+
+onKeyPreIme-BB@0x0 : [ onKeyPreIme-BB@0x8 onKeyPreIme-BB@0x82 ]
+	0       (00000000) const/4              v2, 1
+	1       (00000002) const/4              v3, 4
+	2       (00000004) if-ne                v5, v3, +3f
+
+onKeyPreIme-BB@0x8 : [ onKeyPreIme-BB@0x14 onKeyPreIme-BB@0x82 ]
+	3       (00000008) invoke-virtual       v4, Landroidx/appcompat/widget/ListPopupWindow;->isShowing()Z
+	4       (0000000e) move-result          v3
+	5       (00000010) if-eqz               v3, +39
+
+onKeyPreIme-BB@0x14 : [ onKeyPreIme-BB@0x24 onKeyPreIme-BB@0x44 ]
+	6       (00000014) iget-object          v0, v4, Landroidx/appcompat/widget/ListPopupWindow;->mDropDownAnchorView Landroid/view/View;
+	7       (00000018) invoke-virtual       v6, Landroid/view/KeyEvent;->getAction()I
+	8       (0000001e) move-result          v3
+	9       (00000020) if-nez               v3, +12
+
+onKeyPreIme-BB@0x24 : [ onKeyPreIme-BB@0x30 onKeyPreIme-BB@0x44 ]
+	10      (00000024) invoke-virtual       v6, Landroid/view/KeyEvent;->getRepeatCount()I
+	11      (0000002a) move-result          v3
+	12      (0000002c) if-nez               v3, +c
+
+onKeyPreIme-BB@0x30 : [ onKeyPreIme-BB@0x3c onKeyPreIme-BB@0x42 ]
+	13      (00000030) invoke-virtual       v0, Landroid/view/View;->getKeyDispatcherState()Landroid/view/KeyEvent$DispatcherState;
+	14      (00000036) move-result-object   v1
+	15      (00000038) if-eqz               v1, +5
+
+onKeyPreIme-BB@0x3c : [ onKeyPreIme-BB@0x42 ]
+	16      (0000003c) invoke-virtual       v1, v6, v4, Landroid/view/KeyEvent$DispatcherState;->startTracking(Landroid/view/KeyEvent; Ljava/lang/Object;)V
+
+onKeyPreIme-BB@0x42 : 
+	17      (00000042) return               v2
+
+onKeyPreIme-BB@0x44 : [ onKeyPreIme-BB@0x50 onKeyPreIme-BB@0x82 ]
+	18      (00000044) invoke-virtual       v6, Landroid/view/KeyEvent;->getAction()I
+	19      (0000004a) move-result          v3
+	20      (0000004c) if-ne                v3, v2, +1b
+
+onKeyPreIme-BB@0x50 : [ onKeyPreIme-BB@0x5c onKeyPreIme-BB@0x62 ]
+	21      (00000050) invoke-virtual       v0, Landroid/view/View;->getKeyDispatcherState()Landroid/view/KeyEvent$DispatcherState;
+	22      (00000056) move-result-object   v1
+	23      (00000058) if-eqz               v1, +5
+
+onKeyPreIme-BB@0x5c : [ onKeyPreIme-BB@0x62 ]
+	24      (0000005c) invoke-virtual       v1, v6, Landroid/view/KeyEvent$DispatcherState;->handleUpEvent(Landroid/view/KeyEvent;)V
+
+onKeyPreIme-BB@0x62 : [ onKeyPreIme-BB@0x6e onKeyPreIme-BB@0x82 ]
+	25      (00000062) invoke-virtual       v6, Landroid/view/KeyEvent;->isTracking()Z
+	26      (00000068) move-result          v3
+	27      (0000006a) if-eqz               v3, +c
+
+onKeyPreIme-BB@0x6e : [ onKeyPreIme-BB@0x7a onKeyPreIme-BB@0x82 ]
+	28      (0000006e) invoke-virtual       v6, Landroid/view/KeyEvent;->isCanceled()Z
+	29      (00000074) move-result          v3
+	30      (00000076) if-nez               v3, +6
+
+onKeyPreIme-BB@0x7a : [ onKeyPreIme-BB@0x42 ]
+	31      (0000007a) invoke-virtual       v4, Landroidx/appcompat/widget/ListPopupWindow;->dismiss()V
+	32      (00000080) goto                 -1f
+
+onKeyPreIme-BB@0x82 : [ onKeyPreIme-BB@0x42 ]
+	33      (00000082) const/4              v2, 0
+	34      (00000084) goto                 -21
+

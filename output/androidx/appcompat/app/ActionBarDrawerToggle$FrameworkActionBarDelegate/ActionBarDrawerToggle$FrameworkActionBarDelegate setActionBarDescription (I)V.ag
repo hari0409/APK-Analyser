@@ -1,0 +1,33 @@
+# Landroidx/appcompat/app/ActionBarDrawerToggle$FrameworkActionBarDelegate;->setActionBarDescription(I)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v3
+# - v4:int
+#
+# - return:void
+
+setActionBarDescription-BB@0x0 : [ setActionBarDescription-BB@0xc setActionBarDescription-BB@0x24 ]
+	0       (00000000) sget                 v1, Landroid/os/Build$VERSION;->SDK_INT I
+	1       (00000004) const/16             v2, 18
+	2       (00000008) if-lt                v1, v2, +e
+
+setActionBarDescription-BB@0xc : [ setActionBarDescription-BB@0x1c setActionBarDescription-BB@0x22 ]
+	3       (0000000c) iget-object          v1, v3, Landroidx/appcompat/app/ActionBarDrawerToggle$FrameworkActionBarDelegate;->mActivity Landroid/app/Activity;
+	4       (00000010) invoke-virtual       v1, Landroid/app/Activity;->getActionBar()Landroid/app/ActionBar;
+	5       (00000016) move-result-object   v0
+	6       (00000018) if-eqz               v0, +5
+
+setActionBarDescription-BB@0x1c : [ setActionBarDescription-BB@0x22 ]
+	7       (0000001c) invoke-virtual       v0, v4, Landroid/app/ActionBar;->setHomeActionContentDescription(I)V
+
+setActionBarDescription-BB@0x22 : 
+	8       (00000022) return-void          
+
+setActionBarDescription-BB@0x24 : [ setActionBarDescription-BB@0x22 ]
+	9       (00000024) iget-object          v1, v3, Landroidx/appcompat/app/ActionBarDrawerToggle$FrameworkActionBarDelegate;->mSetIndicatorInfo Landroidx/appcompat/app/ActionBarDrawerToggleHoneycomb$SetIndicatorInfo;
+	10      (00000028) iget-object          v2, v3, Landroidx/appcompat/app/ActionBarDrawerToggle$FrameworkActionBarDelegate;->mActivity Landroid/app/Activity;
+	11      (0000002c) invoke-static        v1, v2, v4, Landroidx/appcompat/app/ActionBarDrawerToggleHoneycomb;->setActionBarDescription(Landroidx/appcompat/app/ActionBarDrawerToggleHoneycomb$SetIndicatorInfo; Landroid/app/Activity; I)Landroidx/appcompat/app/ActionBarDrawerToggleHoneycomb$SetIndicatorInfo;
+	12      (00000032) move-result-object   v1
+	13      (00000034) iput-object          v1, v3, Landroidx/appcompat/app/ActionBarDrawerToggle$FrameworkActionBarDelegate;->mSetIndicatorInfo Landroidx/appcompat/app/ActionBarDrawerToggleHoneycomb$SetIndicatorInfo;
+	14      (00000038) goto                 -b
+

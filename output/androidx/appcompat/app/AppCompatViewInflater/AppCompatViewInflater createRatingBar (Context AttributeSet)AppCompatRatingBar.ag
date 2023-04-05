@@ -1,0 +1,14 @@
+# Landroidx/appcompat/app/AppCompatViewInflater;->createRatingBar(Landroid/content/Context; Landroid/util/AttributeSet;)Landroidx/appcompat/widget/AppCompatRatingBar; [access_flags=protected]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:android.content.Context
+# - v3:android.util.AttributeSet
+#
+# - return:androidx.appcompat.widget.AppCompatRatingBar
+
+createRatingBar-BB@0x0 : 
+	0       (00000000) new-instance         v0, Landroidx/appcompat/widget/AppCompatRatingBar;
+	1       (00000004) invoke-direct        v0, v2, v3, Landroidx/appcompat/widget/AppCompatRatingBar;-><init>(Landroid/content/Context; Landroid/util/AttributeSet;)V
+	2       (0000000a) return-object        v0
+

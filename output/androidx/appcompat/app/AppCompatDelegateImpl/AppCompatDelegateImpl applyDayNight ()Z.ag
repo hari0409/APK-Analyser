@@ -1,0 +1,33 @@
+# Landroidx/appcompat/app/AppCompatDelegateImpl;->applyDayNight()Z [access_flags=public]
+#
+# Parameters:
+# local registers: v0...v4
+#
+# - return:boolean
+
+applyDayNight-BB@0x0 : [ applyDayNight-BB@0x18 applyDayNight-BB@0x20 ]
+	0       (00000000) const/4              v0, 0
+	1       (00000002) invoke-direct        v4, Landroidx/appcompat/app/AppCompatDelegateImpl;->getNightMode()I
+	2       (00000008) move-result          v2
+	3       (0000000a) invoke-virtual       v4, v2, Landroidx/appcompat/app/AppCompatDelegateImpl;->mapNightMode(I)I
+	4       (00000010) move-result          v1
+	5       (00000012) const/4              v3, -1
+	6       (00000014) if-eq                v1, v3, +6
+
+applyDayNight-BB@0x18 : [ applyDayNight-BB@0x20 ]
+	7       (00000018) invoke-direct        v4, v1, Landroidx/appcompat/app/AppCompatDelegateImpl;->updateForNightMode(I)Z
+	8       (0000001e) move-result          v0
+
+applyDayNight-BB@0x20 : [ applyDayNight-BB@0x24 applyDayNight-BB@0x34 ]
+	9       (00000020) if-nez               v2, +a
+
+applyDayNight-BB@0x24 : [ applyDayNight-BB@0x34 ]
+	10      (00000024) invoke-direct        v4, Landroidx/appcompat/app/AppCompatDelegateImpl;->ensureAutoNightModeManager()V
+	11      (0000002a) iget-object          v3, v4, Landroidx/appcompat/app/AppCompatDelegateImpl;->mAutoNightModeManager Landroidx/appcompat/app/AppCompatDelegateImpl$AutoNightModeManager;
+	12      (0000002e) invoke-virtual       v3, Landroidx/appcompat/app/AppCompatDelegateImpl$AutoNightModeManager;->setup()V
+
+applyDayNight-BB@0x34 : 
+	13      (00000034) const/4              v3, 1
+	14      (00000036) iput-boolean         v3, v4, Landroidx/appcompat/app/AppCompatDelegateImpl;->mApplyDayNightCalled Z
+	15      (0000003a) return               v0
+

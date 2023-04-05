@@ -1,0 +1,74 @@
+# Landroidx/appcompat/widget/TooltipCompatHandler;->onHover(Landroid/view/View; Landroid/view/MotionEvent;)Z [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v4
+# - v5:android.view.View
+# - v6:android.view.MotionEvent
+#
+# - return:boolean
+
+onHover-BB@0x0 : [ onHover-BB@0xa onHover-BB@0x14 ]
+	0       (00000000) const/4              v3, 0
+	1       (00000002) iget-object          v1, v4, Landroidx/appcompat/widget/TooltipCompatHandler;->mPopup Landroidx/appcompat/widget/TooltipPopup;
+	2       (00000006) if-eqz               v1, +7
+
+onHover-BB@0xa : [ onHover-BB@0x12 onHover-BB@0x14 ]
+	3       (0000000a) iget-boolean         v1, v4, Landroidx/appcompat/widget/TooltipCompatHandler;->mFromTouch Z
+	4       (0000000e) if-eqz               v1, +3
+
+onHover-BB@0x12 : 
+	5       (00000012) return               v3
+
+onHover-BB@0x14 : [ onHover-BB@0x3c onHover-BB@0x48 ]
+	6       (00000014) iget-object          v1, v4, Landroidx/appcompat/widget/TooltipCompatHandler;->mAnchor Landroid/view/View;
+	7       (00000018) invoke-virtual       v1, Landroid/view/View;->getContext()Landroid/content/Context;
+	8       (0000001e) move-result-object   v1
+	9       (00000020) const-string         v2, 'accessibility'
+	10      (00000024) invoke-virtual       v1, v2, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
+	11      (0000002a) move-result-object   v0
+	12      (0000002c) check-cast           v0, Landroid/view/accessibility/AccessibilityManager;
+	13      (00000030) invoke-virtual       v0, Landroid/view/accessibility/AccessibilityManager;->isEnabled()Z
+	14      (00000036) move-result          v1
+	15      (00000038) if-eqz               v1, +8
+
+onHover-BB@0x3c : [ onHover-BB@0x48 onHover-BB@0x12 ]
+	16      (0000003c) invoke-virtual       v0, Landroid/view/accessibility/AccessibilityManager;->isTouchExplorationEnabled()Z
+	17      (00000042) move-result          v1
+	18      (00000044) if-nez               v1, -19
+
+onHover-BB@0x48 : [ D:onHover-BB@0x56 7:onHover-BB@0x58 8:onHover-BB@0x56 9:onHover-BB@0x56 10:onHover-BB@0x84 ]
+	19      (00000048) invoke-virtual       v6, Landroid/view/MotionEvent;->getAction()I
+	20      (0000004e) move-result          v1
+	21      (00000050) packed-switch        v1, +22 (0x94)
+
+onHover-BB@0x56 : [ onHover-BB@0x12 ]
+	22      (00000056) goto                 -22
+
+onHover-BB@0x58 : [ onHover-BB@0x68 onHover-BB@0x12 ]
+	23      (00000058) iget-object          v1, v4, Landroidx/appcompat/widget/TooltipCompatHandler;->mAnchor Landroid/view/View;
+	24      (0000005c) invoke-virtual       v1, Landroid/view/View;->isEnabled()Z
+	25      (00000062) move-result          v1
+	26      (00000064) if-eqz               v1, -29
+
+onHover-BB@0x68 : [ onHover-BB@0x70 onHover-BB@0x12 ]
+	27      (00000068) iget-object          v1, v4, Landroidx/appcompat/widget/TooltipCompatHandler;->mPopup Landroidx/appcompat/widget/TooltipPopup;
+	28      (0000006c) if-nez               v1, -2d
+
+onHover-BB@0x70 : [ onHover-BB@0x7c onHover-BB@0x12 ]
+	29      (00000070) invoke-direct        v4, v6, Landroidx/appcompat/widget/TooltipCompatHandler;->updateAnchorPos(Landroid/view/MotionEvent;)Z
+	30      (00000076) move-result          v1
+	31      (00000078) if-eqz               v1, -33
+
+onHover-BB@0x7c : [ onHover-BB@0x12 ]
+	32      (0000007c) invoke-static        v4, Landroidx/appcompat/widget/TooltipCompatHandler;->setPendingHandler(Landroidx/appcompat/widget/TooltipCompatHandler;)V
+	33      (00000082) goto                 -38
+
+onHover-BB@0x84 : [ onHover-BB@0x12 ]
+	34      (00000084) invoke-direct        v4, Landroidx/appcompat/widget/TooltipCompatHandler;->clearAnchorPos()V
+	35      (0000008a) invoke-virtual       v4, Landroidx/appcompat/widget/TooltipCompatHandler;->hide()V
+	36      (00000090) goto                 -3f
+
+onHover-BB@0x92 : 
+	37      (00000092) nop                  
+	38      (00000094) packed-switch-payload 7 8 9 a
+

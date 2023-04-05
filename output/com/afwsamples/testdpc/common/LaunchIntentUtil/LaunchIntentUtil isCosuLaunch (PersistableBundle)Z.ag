@@ -1,0 +1,27 @@
+# Lcom/afwsamples/testdpc/common/LaunchIntentUtil;->isCosuLaunch(Landroid/os/PersistableBundle;)Z [access_flags=public static]
+#
+# Parameters:
+# - local registers: v0...v0
+# - v1:android.os.PersistableBundle
+#
+# - return:boolean
+
+isCosuLaunch-BB@0x0 : [ isCosuLaunch-BB@0x4 isCosuLaunch-BB@0x18 ]
+	0       (00000000) if-eqz               v1, +c
+
+isCosuLaunch-BB@0x4 : [ isCosuLaunch-BB@0x14 isCosuLaunch-BB@0x18 ]
+	1       (00000004) const-string         v0, 'cosu-demo-config-location'
+	2       (00000008) invoke-virtual       v1, v0, Landroid/os/PersistableBundle;->get(Ljava/lang/String;)Ljava/lang/Object;
+	3       (0000000e) move-result-object   v0
+	4       (00000010) if-eqz               v0, +4
+
+isCosuLaunch-BB@0x14 : [ isCosuLaunch-BB@0x16 ]
+	5       (00000014) const/4              v0, 1
+
+isCosuLaunch-BB@0x16 : 
+	6       (00000016) return               v0
+
+isCosuLaunch-BB@0x18 : [ isCosuLaunch-BB@0x16 ]
+	7       (00000018) const/4              v0, 0
+	8       (0000001a) goto                 -2
+

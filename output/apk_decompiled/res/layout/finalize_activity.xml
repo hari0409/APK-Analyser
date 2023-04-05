@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.android.setupwizardlib.GlifLayout android:icon="@drawable/ic_enterprise_blue" android:id="@id/setup_wizard_layout" android:layout_width="fill_parent" android:layout_height="fill_parent" app:suwFooter="@layout/next_footer" app:suwHeaderText="@string/finish_setup"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent" style="@style/SuwContentFrame">
+        <LinearLayout android:orientation="vertical" android:id="@id/account_migration_success" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" style="@style/SuwItemContainer">
+            <TextView android:gravity="center_horizontal" android:id="@id/managed_account_name_label" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/managed_account_complete_message" style="@style/SuwItemTitle" />
+            <TextView android:gravity="center_horizontal" android:id="@id/managed_account_name" android:paddingBottom="@dimen/content_padding_between_text" android:layout_width="fill_parent" android:layout_height="wrap_content" style="@style/SuwItemTitle" />
+        </LinearLayout>
+        <LinearLayout android:layout_gravity="center" android:orientation="vertical" android:id="@id/account_migration_fail" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" style="@style/SuwItemContainer">
+            <TextView android:gravity="center_horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/account_migration_failed_message" style="@style/SuwItemTitle" />
+            <TextView android:gravity="center_horizontal" android:id="@id/managed_account_name" android:layout_width="fill_parent" android:layout_height="wrap_content" style="@style/SuwItemTitle" />
+            <TextView android:gravity="center_horizontal" android:paddingBottom="@dimen/content_padding_between_text" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/add_account_later_message" style="@style/SuwItemTitle" />
+        </LinearLayout>
+        <RelativeLayout android:gravity="center_horizontal" android:paddingTop="@dimen/content_padding_between_text" android:layout_width="fill_parent" android:layout_height="wrap_content" style="@style/SuwItemContainer">
+            <TextView android:gravity="center_horizontal" android:id="@id/explanation" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginBottom="@dimen/content_padding_bottom" style="@style/SuwItemTitle" />
+            <ImageView android:id="@id/app_icon" android:layout_width="@android:dimen/app_icon_size" android:layout_height="@android:dimen/app_icon_size" android:scaleType="fitXY" android:baselineAlignBottom="true" android:layout_below="@id/explanation" style="@style/SuwItemTitle" />
+            <TextView android:gravity="center_vertical" android:id="@id/app_label" android:layout_width="wrap_content" android:layout_height="@android:dimen/app_icon_size" android:layout_toRightOf="@id/app_icon" android:layout_below="@id/explanation" android:layout_marginStart="8.0dip" style="@style/SuwItemTitle" />
+        </RelativeLayout>
+    </LinearLayout>
+</com.android.setupwizardlib.GlifLayout>

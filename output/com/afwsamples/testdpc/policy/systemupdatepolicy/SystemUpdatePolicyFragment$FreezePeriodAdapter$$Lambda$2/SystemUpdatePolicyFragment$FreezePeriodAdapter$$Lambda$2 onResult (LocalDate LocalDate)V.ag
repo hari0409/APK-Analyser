@@ -1,0 +1,15 @@
+# Lcom/afwsamples/testdpc/policy/systemupdatepolicy/SystemUpdatePolicyFragment$FreezePeriodAdapter$$Lambda$2;->onResult(Ljava/time/LocalDate; Ljava/time/LocalDate;)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:java.time.LocalDate
+# - v4:java.time.LocalDate
+#
+# - return:void
+
+onResult-BB@0x0 : 
+	0       (00000000) iget-object          v0, v2, Lcom/afwsamples/testdpc/policy/systemupdatepolicy/SystemUpdatePolicyFragment$FreezePeriodAdapter$$Lambda$2;->arg$1 Lcom/afwsamples/testdpc/policy/systemupdatepolicy/SystemUpdatePolicyFragment$FreezePeriodAdapter;
+	1       (00000004) iget-object          v1, v2, Lcom/afwsamples/testdpc/policy/systemupdatepolicy/SystemUpdatePolicyFragment$FreezePeriodAdapter$$Lambda$2;->arg$2 Lcom/afwsamples/testdpc/policy/systemupdatepolicy/SystemUpdatePolicyFragment$Period;
+	2       (00000008) invoke-virtual       v0, v1, v3, v4, Lcom/afwsamples/testdpc/policy/systemupdatepolicy/SystemUpdatePolicyFragment$FreezePeriodAdapter;->lambda$null$180$SystemUpdatePolicyFragment$FreezePeriodAdapter(Lcom/afwsamples/testdpc/policy/systemupdatepolicy/SystemUpdatePolicyFragment$Period; Ljava/time/LocalDate; Ljava/time/LocalDate;)V
+	3       (0000000e) return-void          
+

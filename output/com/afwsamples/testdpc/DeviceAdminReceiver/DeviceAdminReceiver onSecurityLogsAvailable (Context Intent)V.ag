@@ -1,0 +1,17 @@
+# Lcom/afwsamples/testdpc/DeviceAdminReceiver;->onSecurityLogsAvailable(Landroid/content/Context; Landroid/content/Intent;)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:android.content.Context
+# - v4:android.content.Intent
+#
+# - return:void
+
+onSecurityLogsAvailable-BB@0x0 : 
+	0       (00000000) const-string         v0, 'DeviceAdminReceiver'
+	1       (00000004) const-string         v1, 'onSecurityLogsAvailable() called'
+	2       (00000008) invoke-static        v0, v1, Landroid/util/Log;->i(Ljava/lang/String; Ljava/lang/String;)I
+	3       (0000000e) const                v0, 2131690002 # [1.900903530743329e+38]
+	4       (00000014) invoke-direct        v2, v3, v0, Lcom/afwsamples/testdpc/DeviceAdminReceiver;->showToast(Landroid/content/Context; I)V
+	5       (0000001a) return-void          
+

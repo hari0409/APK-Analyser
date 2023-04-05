@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen android:title="@string/set_lock_task_features_title"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:testdpc="http://schemas.android.com/apk/res-auto">
+    <com.afwsamples.testdpc.common.preference.DpcSwitchPreference android:persistent="false" android:title="@string/lock_task_feature_system_info" android:key="lock_task_feature_system_info" android:defaultValue="false" testdpc:minSdkVersion="P" />
+    <com.afwsamples.testdpc.common.preference.DpcSwitchPreference android:persistent="false" android:title="@string/lock_task_feature_notifications" android:key="lock_task_feature_notifications" android:defaultValue="false" testdpc:minSdkVersion="P" />
+    <com.afwsamples.testdpc.common.preference.DpcSwitchPreference android:persistent="false" android:title="@string/lock_task_feature_home" android:key="lock_task_feature_home" android:defaultValue="false" testdpc:minSdkVersion="P" />
+    <com.afwsamples.testdpc.common.preference.DpcSwitchPreference android:persistent="false" android:title="@string/lock_task_feature_overview" android:key="lock_task_feature_overview" android:defaultValue="false" testdpc:minSdkVersion="P" />
+    <com.afwsamples.testdpc.common.preference.DpcSwitchPreference android:persistent="false" android:title="@string/lock_task_feature_global_actions" android:key="lock_task_feature_global_actions" android:defaultValue="false" testdpc:minSdkVersion="P" />
+    <com.afwsamples.testdpc.common.preference.DpcSwitchPreference android:persistent="false" android:title="@string/lock_task_feature_keyguard" android:key="lock_task_feature_keyguard" android:defaultValue="false" testdpc:minSdkVersion="P" />
+</PreferenceScreen>

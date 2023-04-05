@@ -1,0 +1,19 @@
+# Landroidx/appcompat/view/ContextThemeWrapper;->setTheme(I)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:int
+#
+# - return:void
+
+setTheme-BB@0x0 : [ setTheme-BB@0x8 setTheme-BB@0x12 ]
+	0       (00000000) iget                 v0, v1, Landroidx/appcompat/view/ContextThemeWrapper;->mThemeResource I
+	1       (00000004) if-eq                v0, v2, +7
+
+setTheme-BB@0x8 : [ setTheme-BB@0x12 ]
+	2       (00000008) iput                 v2, v1, Landroidx/appcompat/view/ContextThemeWrapper;->mThemeResource I
+	3       (0000000c) invoke-direct        v1, Landroidx/appcompat/view/ContextThemeWrapper;->initializeTheme()V
+
+setTheme-BB@0x12 : 
+	4       (00000012) return-void          
+

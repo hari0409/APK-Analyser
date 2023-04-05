@@ -1,0 +1,34 @@
+# Landroidx/appcompat/widget/AppCompatDrawableManager;->onConfigurationChanged(Landroid/content/Context;)V [access_flags=public synchronized]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:android.content.Context
+#
+# - return:void
+
+onConfigurationChanged-BB@0x0 : [ onConfigurationChanged-BB@0x2 ]
+	0       (00000000) monitor-enter        v2
+
+onConfigurationChanged-BB@0x2 : [ onConfigurationChanged-BB@0x16 onConfigurationChanged-BB@0x1c ]
+	1       (00000002) iget-object          v1, v2, Landroidx/appcompat/widget/AppCompatDrawableManager;->mDrawableCaches Ljava/util/WeakHashMap;
+	2       (00000006) invoke-virtual       v1, v3, Ljava/util/WeakHashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
+	3       (0000000c) move-result-object   v0
+	4       (0000000e) check-cast           v0, Landroidx/collection/LongSparseArray;
+	5       (00000012) if-eqz               v0, +5
+	2:1b
+	(Ljava/lang/Throwable; -> 20 onConfigurationChanged-BB@0x20)
+
+onConfigurationChanged-BB@0x16 : [ onConfigurationChanged-BB@0x1c ]
+	6       (00000016) invoke-virtual       v0, Landroidx/collection/LongSparseArray;->clear()V
+	2:1b
+	(Ljava/lang/Throwable; -> 20 onConfigurationChanged-BB@0x20)
+
+onConfigurationChanged-BB@0x1c : 
+	7       (0000001c) monitor-exit         v2
+	8       (0000001e) return-void          
+
+onConfigurationChanged-BB@0x20 : 
+	9       (00000020) move-exception       v1
+	10      (00000022) monitor-exit         v2
+	11      (00000024) throw                v1
+

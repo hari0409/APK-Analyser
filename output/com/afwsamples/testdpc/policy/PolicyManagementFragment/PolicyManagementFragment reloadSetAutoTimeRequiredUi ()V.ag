@@ -1,0 +1,15 @@
+# Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->reloadSetAutoTimeRequiredUi()V [access_flags=private]
+#
+# Parameters:
+# local registers: v0...v2
+#
+# - return:void
+
+reloadSetAutoTimeRequiredUi-BB@0x0 : 
+	0       (00000000) iget-object          v1, v2, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->mDevicePolicyManager Landroid/app/admin/DevicePolicyManager;
+	1       (00000004) invoke-virtual       v1, Landroid/app/admin/DevicePolicyManager;->getAutoTimeRequired()Z
+	2       (0000000a) move-result          v0
+	3       (0000000c) iget-object          v1, v2, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->mSetAutoTimeRequiredPreference Lcom/afwsamples/testdpc/common/preference/DpcSwitchPreference;
+	4       (00000010) invoke-virtual       v1, v0, Lcom/afwsamples/testdpc/common/preference/DpcSwitchPreference;->setChecked(Z)V
+	5       (00000016) return-void          
+

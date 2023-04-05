@@ -1,0 +1,158 @@
+# Lcom/afwsamples/testdpc/profilepolicy/ProfilePolicyManagementFragment;->onPreferenceClick(Landroidx/preference/Preference;)Z [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v7
+# - v8:androidx.preference.Preference
+#
+# - return:boolean
+
+onPreferenceClick-BB@0x0 : [ D:onPreferenceClick-BB@0x1c -2017744812:onPreferenceClick-BB@0x8a -694718370:onPreferenceClick-BB@0x62 389702894:onPreferenceClick-BB@0x4e 918748424:onPreferenceClick-BB@0x26 1197528639:onPreferenceClick-BB@0x3a 1876036225:onPreferenceClick-BB@0x76 ]
+	0       (00000000) const/4              v4, 0
+	1       (00000002) const/4              v3, 1
+	2       (00000004) invoke-virtual       v8, Landroidx/preference/Preference;->getKey()Ljava/lang/String;
+	3       (0000000a) move-result-object   v1
+	4       (0000000c) const/4              v5, -1
+	5       (0000000e) invoke-virtual       v1, Ljava/lang/String;->hashCode()I
+	6       (00000014) move-result          v6
+	7       (00000016) sparse-switch        v6, +a9 (0x168)
+
+onPreferenceClick-BB@0x1c : [ D:onPreferenceClick-BB@0x22 0:onPreferenceClick-BB@0x9e 1:onPreferenceClick-BB@0xa6 2:onPreferenceClick-BB@0xc2 3:onPreferenceClick-BB@0xf0 4:onPreferenceClick-BB@0xf8 5:onPreferenceClick-BB@0x100 ]
+	8       (0000001c) packed-switch        v5, +c0 (0x19c)
+
+onPreferenceClick-BB@0x22 : [ onPreferenceClick-BB@0x24 ]
+	9       (00000022) move                 v3, v4
+
+onPreferenceClick-BB@0x24 : 
+	10      (00000024) return               v3
+
+onPreferenceClick-BB@0x26 : [ onPreferenceClick-BB@0x36 onPreferenceClick-BB@0x1c ]
+	11      (00000026) const-string         v6, 'add_cross_profile_intent_filter'
+	12      (0000002a) invoke-virtual       v1, v6, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+	13      (00000030) move-result          v6
+	14      (00000032) if-eqz               v6, -b
+
+onPreferenceClick-BB@0x36 : [ onPreferenceClick-BB@0x1c ]
+	15      (00000036) move                 v5, v4
+	16      (00000038) goto                 -e
+
+onPreferenceClick-BB@0x3a : [ onPreferenceClick-BB@0x4a onPreferenceClick-BB@0x1c ]
+	17      (0000003a) const-string         v6, 'clear_cross_profile_intent_filters'
+	18      (0000003e) invoke-virtual       v1, v6, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+	19      (00000044) move-result          v6
+	20      (00000046) if-eqz               v6, -15
+
+onPreferenceClick-BB@0x4a : [ onPreferenceClick-BB@0x1c ]
+	21      (0000004a) move                 v5, v3
+	22      (0000004c) goto                 -18
+
+onPreferenceClick-BB@0x4e : [ onPreferenceClick-BB@0x5e onPreferenceClick-BB@0x1c ]
+	23      (0000004e) const-string         v6, 'remove_profile'
+	24      (00000052) invoke-virtual       v1, v6, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+	25      (00000058) move-result          v6
+	26      (0000005a) if-eqz               v6, -1f
+
+onPreferenceClick-BB@0x5e : [ onPreferenceClick-BB@0x1c ]
+	27      (0000005e) const/4              v5, 2
+	28      (00000060) goto                 -22
+
+onPreferenceClick-BB@0x62 : [ onPreferenceClick-BB@0x72 onPreferenceClick-BB@0x1c ]
+	29      (00000062) const-string         v6, 'add_cross_profile_app_widgets'
+	30      (00000066) invoke-virtual       v1, v6, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+	31      (0000006c) move-result          v6
+	32      (0000006e) if-eqz               v6, -29
+
+onPreferenceClick-BB@0x72 : [ onPreferenceClick-BB@0x1c ]
+	33      (00000072) const/4              v5, 3
+	34      (00000074) goto                 -2c
+
+onPreferenceClick-BB@0x76 : [ onPreferenceClick-BB@0x86 onPreferenceClick-BB@0x1c ]
+	35      (00000076) const-string         v6, 'remove_cross_profile_app_widgets'
+	36      (0000007a) invoke-virtual       v1, v6, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+	37      (00000080) move-result          v6
+	38      (00000082) if-eqz               v6, -33
+
+onPreferenceClick-BB@0x86 : [ onPreferenceClick-BB@0x1c ]
+	39      (00000086) const/4              v5, 4
+	40      (00000088) goto                 -36
+
+onPreferenceClick-BB@0x8a : [ onPreferenceClick-BB@0x9a onPreferenceClick-BB@0x1c ]
+	41      (0000008a) const-string         v6, 'set_organization_color'
+	42      (0000008e) invoke-virtual       v1, v6, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+	43      (00000094) move-result          v6
+	44      (00000096) if-eqz               v6, -3d
+
+onPreferenceClick-BB@0x9a : [ onPreferenceClick-BB@0x1c ]
+	45      (0000009a) const/4              v5, 5
+	46      (0000009c) goto                 -40
+
+onPreferenceClick-BB@0x9e : [ onPreferenceClick-BB@0x24 ]
+	47      (0000009e) invoke-direct        v7, Lcom/afwsamples/testdpc/profilepolicy/ProfilePolicyManagementFragment;->showAddCrossProfileIntentFilterFragment()V
+	48      (000000a4) goto                 -40
+
+onPreferenceClick-BB@0xa6 : [ onPreferenceClick-BB@0x24 ]
+	49      (000000a6) iget-object          v4, v7, Lcom/afwsamples/testdpc/profilepolicy/ProfilePolicyManagementFragment;->mDevicePolicyManager Landroid/app/admin/DevicePolicyManager;
+	50      (000000aa) iget-object          v5, v7, Lcom/afwsamples/testdpc/profilepolicy/ProfilePolicyManagementFragment;->mAdminComponentName Landroid/content/ComponentName;
+	51      (000000ae) invoke-virtual       v4, v5, Landroid/app/admin/DevicePolicyManager;->clearCrossProfileIntentFilters(Landroid/content/ComponentName;)V
+	52      (000000b4) const                v4, 2131689659 # [1.9008339620783885e+38]
+	53      (000000ba) invoke-direct        v7, v4, Lcom/afwsamples/testdpc/profilepolicy/ProfilePolicyManagementFragment;->showToast(I)V
+	54      (000000c0) goto                 -4e
+
+onPreferenceClick-BB@0xc2 : [ onPreferenceClick-BB@0xf0 ]
+	55      (000000c2) iget-object          v5, v7, Lcom/afwsamples/testdpc/profilepolicy/ProfilePolicyManagementFragment;->mRemoveManagedProfilePreference Landroidx/preference/Preference;
+	56      (000000c6) invoke-virtual       v5, v4, Landroidx/preference/Preference;->setEnabled(Z)V
+	57      (000000cc) iget-object          v5, v7, Lcom/afwsamples/testdpc/profilepolicy/ProfilePolicyManagementFragment;->mDevicePolicyManager Landroid/app/admin/DevicePolicyManager;
+	58      (000000d0) invoke-virtual       v5, v4, Landroid/app/admin/DevicePolicyManager;->wipeData(I)V
+	59      (000000d6) const                v4, 2131690118 # [1.9009270583384693e+38]
+	60      (000000dc) invoke-direct        v7, v4, Lcom/afwsamples/testdpc/profilepolicy/ProfilePolicyManagementFragment;->showToast(I)V
+	61      (000000e2) invoke-virtual       v7, Lcom/afwsamples/testdpc/profilepolicy/ProfilePolicyManagementFragment;->getActivity()Landroid/app/Activity;
+	62      (000000e8) move-result-object   v4
+	63      (000000ea) invoke-virtual       v4, Landroid/app/Activity;->finish()V
+
+onPreferenceClick-BB@0xf0 : [ onPreferenceClick-BB@0x24 ]
+	64      (000000f0) invoke-direct        v7, Lcom/afwsamples/testdpc/profilepolicy/ProfilePolicyManagementFragment;->showDisabledAppWidgetList()V
+	65      (000000f6) goto                 -69
+
+onPreferenceClick-BB@0xf8 : [ onPreferenceClick-BB@0x24 ]
+	66      (000000f8) invoke-direct        v7, Lcom/afwsamples/testdpc/profilepolicy/ProfilePolicyManagementFragment;->showEnabledAppWidgetList()V
+	67      (000000fe) goto                 -6d
+
+onPreferenceClick-BB@0x100 : [ onPreferenceClick-BB@0x12e onPreferenceClick-BB@0x13e ]
+	68      (00000100) invoke-virtual       v7, Lcom/afwsamples/testdpc/profilepolicy/ProfilePolicyManagementFragment;->getActivity()Landroid/app/Activity;
+	69      (00000106) move-result-object   v3
+	70      (00000108) invoke-virtual       v3, Landroid/app/Activity;->getResources()Landroid/content/res/Resources;
+	71      (0000010e) move-result-object   v3
+	72      (00000110) const                v5, 2131099766 # [1.7811894475951196e+38]
+	73      (00000116) invoke-virtual       v3, v5, Landroid/content/res/Resources;->getColor(I)I
+	74      (0000011c) move-result          v0
+	75      (0000011e) iget-object          v3, v7, Lcom/afwsamples/testdpc/profilepolicy/ProfilePolicyManagementFragment;->mSetOrganizationColorPreference Landroidx/preference/Preference;
+	76      (00000122) invoke-virtual       v3, Landroidx/preference/Preference;->getSummary()Ljava/lang/CharSequence;
+	77      (00000128) move-result-object   v2
+	78      (0000012a) if-eqz               v2, +a
+
+onPreferenceClick-BB@0x12e : [ onPreferenceClick-BB@0x13e ]
+	79      (0000012e) invoke-interface     v2, Ljava/lang/CharSequence;->toString()Ljava/lang/String;
+	80      (00000134) move-result-object   v3
+	81      (00000136) invoke-static        v3, Landroid/graphics/Color;->parseColor(Ljava/lang/String;)I
+	82      (0000013c) move-result          v0
+	12e:13b
+	(Ljava/lang/IllegalArgumentException; -> 164 onPreferenceClick-BB@0x164)
+
+onPreferenceClick-BB@0x13e : [ onPreferenceClick-BB@0x22 ]
+	83      (0000013e) const-string         v3, 'ProfilePolicyManagementFragment'
+	84      (00000142) const-string         v5, 'organizationColor'
+	85      (00000146) invoke-static        v0, v3, v5, Lcom/afwsamples/testdpc/common/ColorPicker;->newInstance(I Ljava/lang/String; Ljava/lang/String;)Lcom/afwsamples/testdpc/common/ColorPicker;
+	86      (0000014c) move-result-object   v3
+	87      (0000014e) invoke-virtual       v7, Lcom/afwsamples/testdpc/profilepolicy/ProfilePolicyManagementFragment;->getFragmentManager()Landroid/app/FragmentManager;
+	88      (00000154) move-result-object   v5
+	89      (00000156) const-string         v6, 'colorPicker'
+	90      (0000015a) invoke-virtual       v3, v5, v6, Lcom/afwsamples/testdpc/common/ColorPicker;->show(Landroid/app/FragmentManager; Ljava/lang/String;)V
+	91      (00000160) goto/16              -9f
+
+onPreferenceClick-BB@0x164 : [ onPreferenceClick-BB@0x13e ]
+	92      (00000164) move-exception       v3
+	93      (00000166) goto                 -14
+
+onPreferenceClick-BB@0x168 : 
+	94      (00000168) sparse-switch-payload -784457ac -29688fa2 173a64ee 36c2fd08 4760d63f 6fd20a81
+	95      (0000019c) packed-switch-payload 0 1 2 3 4 5
+

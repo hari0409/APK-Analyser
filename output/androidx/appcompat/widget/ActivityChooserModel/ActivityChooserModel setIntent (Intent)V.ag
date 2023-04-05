@@ -1,0 +1,43 @@
+# Landroidx/appcompat/widget/ActivityChooserModel;->setIntent(Landroid/content/Intent;)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:android.content.Intent
+#
+# - return:void
+
+setIntent-BB@0x0 : [ setIntent-BB@0x6 ]
+	0       (00000000) iget-object          v1, v2, Landroidx/appcompat/widget/ActivityChooserModel;->mInstanceLock Ljava/lang/Object;
+	1       (00000004) monitor-enter        v1
+
+setIntent-BB@0x6 : [ setIntent-BB@0xe setIntent-BB@0x12 ]
+	2       (00000006) iget-object          v0, v2, Landroidx/appcompat/widget/ActivityChooserModel;->mIntent Landroid/content/Intent;
+	3       (0000000a) if-ne                v0, v3, +4
+	6:29
+	(Ljava/lang/Throwable; -> 26 setIntent-BB@0x26)
+
+setIntent-BB@0xe : [ setIntent-BB@0x10 ]
+	4       (0000000e) monitor-exit         v1
+	6:29
+	(Ljava/lang/Throwable; -> 26 setIntent-BB@0x26)
+
+setIntent-BB@0x10 : 
+	5       (00000010) return-void          
+	6:29
+	(Ljava/lang/Throwable; -> 26 setIntent-BB@0x26)
+
+setIntent-BB@0x12 : [ setIntent-BB@0x10 ]
+	6       (00000012) iput-object          v3, v2, Landroidx/appcompat/widget/ActivityChooserModel;->mIntent Landroid/content/Intent;
+	7       (00000016) const/4              v0, 1
+	8       (00000018) iput-boolean         v0, v2, Landroidx/appcompat/widget/ActivityChooserModel;->mReloadActivities Z
+	9       (0000001c) invoke-direct        v2, Landroidx/appcompat/widget/ActivityChooserModel;->ensureConsistentState()V
+	10      (00000022) monitor-exit         v1
+	11      (00000024) goto                 -a
+	6:29
+	(Ljava/lang/Throwable; -> 26 setIntent-BB@0x26)
+
+setIntent-BB@0x26 : 
+	12      (00000026) move-exception       v0
+	13      (00000028) monitor-exit         v1
+	14      (0000002a) throw                v0
+

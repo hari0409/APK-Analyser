@@ -1,0 +1,25 @@
+# Landroidx/appcompat/graphics/drawable/DrawableContainer;->setTintMode(Landroid/graphics/PorterDuff$Mode;)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:android.graphics.PorterDuff$Mode
+#
+# - return:void
+
+setTintMode-BB@0x0 : [ setTintMode-BB@0x16 setTintMode-BB@0x28 ]
+	0       (00000000) iget-object          v0, v2, Landroidx/appcompat/graphics/drawable/DrawableContainer;->mDrawableContainerState Landroidx/appcompat/graphics/drawable/DrawableContainer$DrawableContainerState;
+	1       (00000004) const/4              v1, 1
+	2       (00000006) iput-boolean         v1, v0, Landroidx/appcompat/graphics/drawable/DrawableContainer$DrawableContainerState;->mHasTintMode Z
+	3       (0000000a) iget-object          v0, v2, Landroidx/appcompat/graphics/drawable/DrawableContainer;->mDrawableContainerState Landroidx/appcompat/graphics/drawable/DrawableContainer$DrawableContainerState;
+	4       (0000000e) iget-object          v0, v0, Landroidx/appcompat/graphics/drawable/DrawableContainer$DrawableContainerState;->mTintMode Landroid/graphics/PorterDuff$Mode;
+	5       (00000012) if-eq                v0, v3, +b
+
+setTintMode-BB@0x16 : [ setTintMode-BB@0x28 ]
+	6       (00000016) iget-object          v0, v2, Landroidx/appcompat/graphics/drawable/DrawableContainer;->mDrawableContainerState Landroidx/appcompat/graphics/drawable/DrawableContainer$DrawableContainerState;
+	7       (0000001a) iput-object          v3, v0, Landroidx/appcompat/graphics/drawable/DrawableContainer$DrawableContainerState;->mTintMode Landroid/graphics/PorterDuff$Mode;
+	8       (0000001e) iget-object          v0, v2, Landroidx/appcompat/graphics/drawable/DrawableContainer;->mCurrDrawable Landroid/graphics/drawable/Drawable;
+	9       (00000022) invoke-static        v0, v3, Landroidx/core/graphics/drawable/DrawableCompat;->setTintMode(Landroid/graphics/drawable/Drawable; Landroid/graphics/PorterDuff$Mode;)V
+
+setTintMode-BB@0x28 : 
+	10      (00000028) return-void          
+

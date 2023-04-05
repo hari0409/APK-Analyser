@@ -1,0 +1,39 @@
+# Lcom/afwsamples/testdpc/search/PolicySearchFragment;->onCreateOptionsMenu(Landroid/view/Menu; Landroid/view/MenuInflater;)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v4
+# - v5:android.view.Menu
+# - v6:android.view.MenuInflater
+#
+# - return:void
+
+onCreateOptionsMenu-BB@0x0 : [ onCreateOptionsMenu-BB@0x12 onCreateOptionsMenu-BB@0x1a ]
+	0       (00000000) const                v2, 2131296294 # [1.821050061540984e+38]
+	1       (00000006) invoke-interface     v5, v2, Landroid/view/Menu;->findItem(I)Landroid/view/MenuItem;
+	2       (0000000c) move-result-object   v1
+	3       (0000000e) if-eqz               v1, +6
+
+onCreateOptionsMenu-BB@0x12 : [ onCreateOptionsMenu-BB@0x1a ]
+	4       (00000012) const/4              v2, 0
+	5       (00000014) invoke-interface     v1, v2, Landroid/view/MenuItem;->setVisible(Z)Landroid/view/MenuItem;
+
+onCreateOptionsMenu-BB@0x1a : 
+	6       (0000001a) const                v2, 2131492865 # [1.8609193969229783e+38]
+	7       (00000020) invoke-virtual       v6, v2, v5, Landroid/view/MenuInflater;->inflate(I Landroid/view/Menu;)V
+	8       (00000026) const                v2, 2131296293 # [1.821049858716888e+38]
+	9       (0000002c) invoke-interface     v5, v2, Landroid/view/Menu;->findItem(I)Landroid/view/MenuItem;
+	10      (00000032) move-result-object   v0
+	11      (00000034) invoke-interface     v0, Landroid/view/MenuItem;->expandActionView()Z
+	12      (0000003a) invoke-interface     v0, Landroid/view/MenuItem;->getActionView()Landroid/view/View;
+	13      (00000040) move-result-object   v2
+	14      (00000042) check-cast           v2, Landroid/widget/SearchView;
+	15      (00000046) iput-object          v2, v4, Lcom/afwsamples/testdpc/search/PolicySearchFragment;->mSearchView Landroid/widget/SearchView;
+	16      (0000004a) iget-object          v2, v4, Lcom/afwsamples/testdpc/search/PolicySearchFragment;->mSearchView Landroid/widget/SearchView;
+	17      (0000004e) new-instance         v3, Lcom/afwsamples/testdpc/search/PolicySearchFragment$1;
+	18      (00000052) invoke-direct        v3, v4, Lcom/afwsamples/testdpc/search/PolicySearchFragment$1;-><init>(Lcom/afwsamples/testdpc/search/PolicySearchFragment;)V
+	19      (00000058) invoke-virtual       v2, v3, Landroid/widget/SearchView;->setOnQueryTextListener(Landroid/widget/SearchView$OnQueryTextListener;)V
+	20      (0000005e) new-instance         v2, Lcom/afwsamples/testdpc/search/PolicySearchFragment$2;
+	21      (00000062) invoke-direct        v2, v4, Lcom/afwsamples/testdpc/search/PolicySearchFragment$2;-><init>(Lcom/afwsamples/testdpc/search/PolicySearchFragment;)V
+	22      (00000068) invoke-interface     v0, v2, Landroid/view/MenuItem;->setOnActionExpandListener(Landroid/view/MenuItem$OnActionExpandListener;)Landroid/view/MenuItem;
+	23      (0000006e) return-void          
+

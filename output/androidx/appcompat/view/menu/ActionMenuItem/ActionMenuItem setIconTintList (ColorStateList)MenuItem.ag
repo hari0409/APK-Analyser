@@ -1,0 +1,15 @@
+# Landroidx/appcompat/view/menu/ActionMenuItem;->setIconTintList(Landroid/content/res/ColorStateList;)Landroid/view/MenuItem; [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:android.content.res.ColorStateList
+#
+# - return:android.view.MenuItem
+
+setIconTintList-BB@0x0 : 
+	0       (00000000) iput-object          v2, v1, Landroidx/appcompat/view/menu/ActionMenuItem;->mIconTintList Landroid/content/res/ColorStateList;
+	1       (00000004) const/4              v0, 1
+	2       (00000006) iput-boolean         v0, v1, Landroidx/appcompat/view/menu/ActionMenuItem;->mHasIconTint Z
+	3       (0000000a) invoke-direct        v1, Landroidx/appcompat/view/menu/ActionMenuItem;->applyIconTint()V
+	4       (00000010) return-object        v1
+

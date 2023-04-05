@@ -1,0 +1,43 @@
+# Landroidx/appcompat/widget/ThemeUtils;->getDisabledThemeAttrColor(Landroid/content/Context; I)I [access_flags=public static]
+#
+# Parameters:
+# - local registers: v0...v5
+# - v6:android.content.Context
+# - v7:int
+#
+# - return:int
+
+getDisabledThemeAttrColor-BB@0x0 : [ getDisabledThemeAttrColor-BB@0xc getDisabledThemeAttrColor-BB@0x2e ]
+	0       (00000000) invoke-static        v6, v7, Landroidx/appcompat/widget/ThemeUtils;->getThemeAttrColorStateList(Landroid/content/Context; I)Landroid/content/res/ColorStateList;
+	1       (00000006) move-result-object   v0
+	2       (00000008) if-eqz               v0, +13
+
+getDisabledThemeAttrColor-BB@0xc : [ getDisabledThemeAttrColor-BB@0x18 getDisabledThemeAttrColor-BB@0x2e ]
+	3       (0000000c) invoke-virtual       v0, Landroid/content/res/ColorStateList;->isStateful()Z
+	4       (00000012) move-result          v3
+	5       (00000014) if-eqz               v3, +d
+
+getDisabledThemeAttrColor-BB@0x18 : [ getDisabledThemeAttrColor-BB@0x2c ]
+	6       (00000018) sget-object          v3, Landroidx/appcompat/widget/ThemeUtils;->DISABLED_STATE_SET [I
+	7       (0000001c) invoke-virtual       v0, Landroid/content/res/ColorStateList;->getDefaultColor()I
+	8       (00000022) move-result          v4
+	9       (00000024) invoke-virtual       v0, v3, v4, Landroid/content/res/ColorStateList;->getColorForState([I I)I
+	10      (0000002a) move-result          v3
+
+getDisabledThemeAttrColor-BB@0x2c : 
+	11      (0000002c) return               v3
+
+getDisabledThemeAttrColor-BB@0x2e : [ getDisabledThemeAttrColor-BB@0x2c ]
+	12      (0000002e) invoke-static        Landroidx/appcompat/widget/ThemeUtils;->getTypedValue()Landroid/util/TypedValue;
+	13      (00000034) move-result-object   v2
+	14      (00000036) invoke-virtual       v6, Landroid/content/Context;->getTheme()Landroid/content/res/Resources$Theme;
+	15      (0000003c) move-result-object   v3
+	16      (0000003e) const                v4, 16842803 # [2.3693700941205094e-38]
+	17      (00000044) const/4              v5, 1
+	18      (00000046) invoke-virtual       v3, v4, v2, v5, Landroid/content/res/Resources$Theme;->resolveAttribute(I Landroid/util/TypedValue; Z)Z
+	19      (0000004c) invoke-virtual       v2, Landroid/util/TypedValue;->getFloat()F
+	20      (00000052) move-result          v1
+	21      (00000054) invoke-static        v6, v7, v1, Landroidx/appcompat/widget/ThemeUtils;->getThemeAttrColor(Landroid/content/Context; I F)I
+	22      (0000005a) move-result          v3
+	23      (0000005c) goto                 -18
+

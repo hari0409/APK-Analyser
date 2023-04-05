@@ -1,0 +1,43 @@
+# Landroidx/appcompat/widget/AppCompatProgressBarHelper;->loadFromAttributes(Landroid/util/AttributeSet; I)V [access_flags=]
+#
+# Parameters:
+# - local registers: v0...v5
+# - v6:android.util.AttributeSet
+# - v7:int
+#
+# - return:void
+
+loadFromAttributes-BB@0x0 : [ loadFromAttributes-BB@0x26 loadFromAttributes-BB@0x38 ]
+	0       (00000000) const/4              v4, 0
+	1       (00000002) iget-object          v2, v5, Landroidx/appcompat/widget/AppCompatProgressBarHelper;->mView Landroid/widget/ProgressBar;
+	2       (00000006) invoke-virtual       v2, Landroid/widget/ProgressBar;->getContext()Landroid/content/Context;
+	3       (0000000c) move-result-object   v2
+	4       (0000000e) sget-object          v3, Landroidx/appcompat/widget/AppCompatProgressBarHelper;->TINT_ATTRS [I
+	5       (00000012) invoke-static        v2, v6, v3, v7, v4, Landroidx/appcompat/widget/TintTypedArray;->obtainStyledAttributes(Landroid/content/Context; Landroid/util/AttributeSet; [I I I)Landroidx/appcompat/widget/TintTypedArray;
+	6       (00000018) move-result-object   v0
+	7       (0000001a) invoke-virtual       v0, v4, Landroidx/appcompat/widget/TintTypedArray;->getDrawableIfKnown(I)Landroid/graphics/drawable/Drawable;
+	8       (00000020) move-result-object   v1
+	9       (00000022) if-eqz               v1, +b
+
+loadFromAttributes-BB@0x26 : [ loadFromAttributes-BB@0x38 ]
+	10      (00000026) iget-object          v2, v5, Landroidx/appcompat/widget/AppCompatProgressBarHelper;->mView Landroid/widget/ProgressBar;
+	11      (0000002a) invoke-direct        v5, v1, Landroidx/appcompat/widget/AppCompatProgressBarHelper;->tileifyIndeterminate(Landroid/graphics/drawable/Drawable;)Landroid/graphics/drawable/Drawable;
+	12      (00000030) move-result-object   v3
+	13      (00000032) invoke-virtual       v2, v3, Landroid/widget/ProgressBar;->setIndeterminateDrawable(Landroid/graphics/drawable/Drawable;)V
+
+loadFromAttributes-BB@0x38 : [ loadFromAttributes-BB@0x46 loadFromAttributes-BB@0x58 ]
+	14      (00000038) const/4              v2, 1
+	15      (0000003a) invoke-virtual       v0, v2, Landroidx/appcompat/widget/TintTypedArray;->getDrawableIfKnown(I)Landroid/graphics/drawable/Drawable;
+	16      (00000040) move-result-object   v1
+	17      (00000042) if-eqz               v1, +b
+
+loadFromAttributes-BB@0x46 : [ loadFromAttributes-BB@0x58 ]
+	18      (00000046) iget-object          v2, v5, Landroidx/appcompat/widget/AppCompatProgressBarHelper;->mView Landroid/widget/ProgressBar;
+	19      (0000004a) invoke-direct        v5, v1, v4, Landroidx/appcompat/widget/AppCompatProgressBarHelper;->tileify(Landroid/graphics/drawable/Drawable; Z)Landroid/graphics/drawable/Drawable;
+	20      (00000050) move-result-object   v3
+	21      (00000052) invoke-virtual       v2, v3, Landroid/widget/ProgressBar;->setProgressDrawable(Landroid/graphics/drawable/Drawable;)V
+
+loadFromAttributes-BB@0x58 : 
+	22      (00000058) invoke-virtual       v0, Landroidx/appcompat/widget/TintTypedArray;->recycle()V
+	23      (0000005e) return-void          
+

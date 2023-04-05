@@ -1,0 +1,25 @@
+# Landroidx/appcompat/widget/SearchView;->launchQuerySearch(I Ljava/lang/String; Ljava/lang/String;)V [access_flags=]
+#
+# Parameters:
+# - local registers: v0...v8
+# - v9:int
+# - v10:java.lang.String
+# - v11:java.lang.String
+#
+# - return:void
+
+launchQuerySearch-BB@0x0 : 
+	0       (00000000) const/4              v2, 0
+	1       (00000002) const-string         v1, 'android.intent.action.SEARCH'
+	2       (00000006) move-object          v0, v8
+	3       (00000008) move-object          v3, v2
+	4       (0000000a) move-object          v4, v11
+	5       (0000000c) move                 v5, v9
+	6       (0000000e) move-object          v6, v10
+	7       (00000010) invoke-direct/range  v0 ... v6, Landroidx/appcompat/widget/SearchView;->createIntent(Ljava/lang/String; Landroid/net/Uri; Ljava/lang/String; Ljava/lang/String; I Ljava/lang/String;)Landroid/content/Intent;
+	8       (00000016) move-result-object   v7
+	9       (00000018) invoke-virtual       v8, Landroidx/appcompat/widget/SearchView;->getContext()Landroid/content/Context;
+	10      (0000001e) move-result-object   v0
+	11      (00000020) invoke-virtual       v0, v7, Landroid/content/Context;->startActivity(Landroid/content/Intent;)V
+	12      (00000026) return-void          
+

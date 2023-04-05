@@ -1,0 +1,22 @@
+# Landroidx/appcompat/widget/AppCompatPopupWindow;->setSupportOverlapAnchor(Z)V [access_flags=private]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:boolean
+#
+# - return:void
+
+setSupportOverlapAnchor-BB@0x0 : [ setSupportOverlapAnchor-BB@0x8 setSupportOverlapAnchor-BB@0xe ]
+	0       (00000000) sget-boolean         v0, Landroidx/appcompat/widget/AppCompatPopupWindow;->COMPAT_OVERLAP_ANCHOR Z
+	1       (00000004) if-eqz               v0, +5
+
+setSupportOverlapAnchor-BB@0x8 : [ setSupportOverlapAnchor-BB@0xc ]
+	2       (00000008) iput-boolean         v2, v1, Landroidx/appcompat/widget/AppCompatPopupWindow;->mOverlapAnchor Z
+
+setSupportOverlapAnchor-BB@0xc : 
+	3       (0000000c) return-void          
+
+setSupportOverlapAnchor-BB@0xe : [ setSupportOverlapAnchor-BB@0xc ]
+	4       (0000000e) invoke-static        v1, v2, Landroidx/core/widget/PopupWindowCompat;->setOverlapAnchor(Landroid/widget/PopupWindow; Z)V
+	5       (00000014) goto                 -4
+

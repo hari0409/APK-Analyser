@@ -1,0 +1,36 @@
+# Lcom/afwsamples/testdpc/profilepolicy/apprestrictions/ManagedConfigurationsFragment;->addBundleArrayToRestrictions(Ljava/util/List; Ljava/lang/String; [Landroid/os/Parcelable;)V [access_flags=private]
+#
+# Parameters:
+# - local registers: v0...v4
+# - v5:java.util.List
+# - v6:java.lang.String
+# - v7:android.os.Parcelable[]
+#
+# - return:void
+
+addBundleArrayToRestrictions-BB@0x0 : [ addBundleArrayToRestrictions-BB@0x8 ]
+	0       (00000000) array-length         v2, v7
+	1       (00000002) new-array            v0, v2, [Landroid/content/RestrictionEntry;
+	2       (00000006) const/4              v1, 0
+
+addBundleArrayToRestrictions-BB@0x8 : [ addBundleArrayToRestrictions-BB@0xe addBundleArrayToRestrictions-BB@0x30 ]
+	3       (00000008) array-length         v3, v0
+	4       (0000000a) if-ge                v1, v3, +13
+
+addBundleArrayToRestrictions-BB@0xe : [ addBundleArrayToRestrictions-BB@0x8 ]
+	5       (0000000e) aget-object          v3, v7, v1
+	6       (00000012) check-cast           v3, Landroid/os/Bundle;
+	7       (00000016) invoke-virtual       v4, v3, Lcom/afwsamples/testdpc/profilepolicy/apprestrictions/ManagedConfigurationsFragment;->convertBundleToRestrictions(Landroid/os/Bundle;)[Landroid/content/RestrictionEntry;
+	8       (0000001c) move-result-object   v3
+	9       (0000001e) invoke-static        v6, v3, Landroid/content/RestrictionEntry;->createBundleEntry(Ljava/lang/String; [Landroid/content/RestrictionEntry;)Landroid/content/RestrictionEntry;
+	10      (00000024) move-result-object   v3
+	11      (00000026) aput-object          v3, v0, v1
+	12      (0000002a) add-int/lit8         v1, v1, 1
+	13      (0000002e) goto                 -13
+
+addBundleArrayToRestrictions-BB@0x30 : 
+	14      (00000030) invoke-static        v6, v0, Landroid/content/RestrictionEntry;->createBundleArrayEntry(Ljava/lang/String; [Landroid/content/RestrictionEntry;)Landroid/content/RestrictionEntry;
+	15      (00000036) move-result-object   v3
+	16      (00000038) invoke-interface     v5, v3, Ljava/util/List;->add(Ljava/lang/Object;)Z
+	17      (0000003e) return-void          
+

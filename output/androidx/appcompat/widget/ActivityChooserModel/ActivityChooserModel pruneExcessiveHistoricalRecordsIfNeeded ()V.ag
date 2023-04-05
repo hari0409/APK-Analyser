@@ -1,0 +1,35 @@
+# Landroidx/appcompat/widget/ActivityChooserModel;->pruneExcessiveHistoricalRecordsIfNeeded()V [access_flags=private]
+#
+# Parameters:
+# local registers: v0...v4
+#
+# - return:void
+
+pruneExcessiveHistoricalRecordsIfNeeded-BB@0x0 : [ pruneExcessiveHistoricalRecordsIfNeeded-BB@0x18 pruneExcessiveHistoricalRecordsIfNeeded-BB@0x1a ]
+	0       (00000000) iget-object          v2, v4, Landroidx/appcompat/widget/ActivityChooserModel;->mHistoricalRecords Ljava/util/List;
+	1       (00000004) invoke-interface     v2, Ljava/util/List;->size()I
+	2       (0000000a) move-result          v2
+	3       (0000000c) iget                 v3, v4, Landroidx/appcompat/widget/ActivityChooserModel;->mHistoryMaxSize I
+	4       (00000010) sub-int              v1, v2, v3
+	5       (00000014) if-gtz               v1, +3
+
+pruneExcessiveHistoricalRecordsIfNeeded-BB@0x18 : 
+	6       (00000018) return-void          
+
+pruneExcessiveHistoricalRecordsIfNeeded-BB@0x1a : [ pruneExcessiveHistoricalRecordsIfNeeded-BB@0x22 ]
+	7       (0000001a) const/4              v2, 1
+	8       (0000001c) iput-boolean         v2, v4, Landroidx/appcompat/widget/ActivityChooserModel;->mHistoricalRecordsChanged Z
+	9       (00000020) const/4              v0, 0
+
+pruneExcessiveHistoricalRecordsIfNeeded-BB@0x22 : [ pruneExcessiveHistoricalRecordsIfNeeded-BB@0x26 pruneExcessiveHistoricalRecordsIfNeeded-BB@0x18 ]
+	10      (00000022) if-ge                v0, v1, -5
+
+pruneExcessiveHistoricalRecordsIfNeeded-BB@0x26 : [ pruneExcessiveHistoricalRecordsIfNeeded-BB@0x22 ]
+	11      (00000026) iget-object          v2, v4, Landroidx/appcompat/widget/ActivityChooserModel;->mHistoricalRecords Ljava/util/List;
+	12      (0000002a) const/4              v3, 0
+	13      (0000002c) invoke-interface     v2, v3, Ljava/util/List;->remove(I)Ljava/lang/Object;
+	14      (00000032) move-result-object   v2
+	15      (00000034) check-cast           v2, Landroidx/appcompat/widget/ActivityChooserModel$HistoricalRecord;
+	16      (00000038) add-int/lit8         v0, v0, 1
+	17      (0000003c) goto                 -d
+

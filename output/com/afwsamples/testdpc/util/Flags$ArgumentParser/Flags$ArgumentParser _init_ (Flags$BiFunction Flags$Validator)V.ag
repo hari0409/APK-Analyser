@@ -1,0 +1,15 @@
+# Lcom/afwsamples/testdpc/util/Flags$ArgumentParser;-><init>(Lcom/afwsamples/testdpc/util/Flags$BiFunction; Lcom/afwsamples/testdpc/util/Flags$Validator;)V [access_flags=private constructor]
+#
+# Parameters:
+# - local registers: v0...v0
+# - v1:com.afwsamples.testdpc.util.Flags$BiFunction
+# - v2:com.afwsamples.testdpc.util.Flags$Validator
+#
+# - return:void
+
+<init>-BB@0x0 : 
+	0       (00000000) invoke-direct        v0, Ljava/lang/Object;-><init>()V
+	1       (00000006) iput-object          v1, v0, Lcom/afwsamples/testdpc/util/Flags$ArgumentParser;->parserFunc Lcom/afwsamples/testdpc/util/Flags$BiFunction;
+	2       (0000000a) iput-object          v2, v0, Lcom/afwsamples/testdpc/util/Flags$ArgumentParser;->validator Lcom/afwsamples/testdpc/util/Flags$Validator;
+	3       (0000000e) return-void          
+

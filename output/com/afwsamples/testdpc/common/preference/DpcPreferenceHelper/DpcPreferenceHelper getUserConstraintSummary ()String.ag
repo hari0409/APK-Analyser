@@ -1,0 +1,54 @@
+# Lcom/afwsamples/testdpc/common/preference/DpcPreferenceHelper;->getUserConstraintSummary()Ljava/lang/String; [access_flags=private]
+#
+# Parameters:
+# local registers: v0...v3
+#
+# - return:java.lang.String
+
+getUserConstraintSummary-BB@0x0 : [ getUserConstraintSummary-BB@0x1c getUserConstraintSummary-BB@0x34 ]
+	0       (00000000) new-instance         v0, Ljava/util/ArrayList;
+	1       (00000004) sget                 v1, Lcom/afwsamples/testdpc/common/preference/DpcPreferenceHelper;->NUM_USER_KINDS I
+	2       (00000008) invoke-direct        v0, v1, Ljava/util/ArrayList;-><init>(I)V
+	3       (0000000e) const/4              v1, 1
+	4       (00000010) invoke-direct        v3, v1, Lcom/afwsamples/testdpc/common/preference/DpcPreferenceHelper;->isEnabledForUser(I)Z
+	5       (00000016) move-result          v1
+	6       (00000018) if-eqz               v1, +e
+
+getUserConstraintSummary-BB@0x1c : [ getUserConstraintSummary-BB@0x34 ]
+	7       (0000001c) iget-object          v1, v3, Lcom/afwsamples/testdpc/common/preference/DpcPreferenceHelper;->mContext Landroid/content/Context;
+	8       (00000020) const                v2, 2131690079 # [1.900919148198724e+38]
+	9       (00000026) invoke-virtual       v1, v2, Landroid/content/Context;->getString(I)Ljava/lang/String;
+	10      (0000002c) move-result-object   v1
+	11      (0000002e) invoke-interface     v0, v1, Ljava/util/List;->add(Ljava/lang/Object;)Z
+
+getUserConstraintSummary-BB@0x34 : [ getUserConstraintSummary-BB@0x42 getUserConstraintSummary-BB@0x5a ]
+	12      (00000034) const/4              v1, 2
+	13      (00000036) invoke-direct        v3, v1, Lcom/afwsamples/testdpc/common/preference/DpcPreferenceHelper;->isEnabledForUser(I)Z
+	14      (0000003c) move-result          v1
+	15      (0000003e) if-eqz               v1, +e
+
+getUserConstraintSummary-BB@0x42 : [ getUserConstraintSummary-BB@0x5a ]
+	16      (00000042) iget-object          v1, v3, Lcom/afwsamples/testdpc/common/preference/DpcPreferenceHelper;->mContext Landroid/content/Context;
+	17      (00000046) const                v2, 2131690170 # [1.900937605191463e+38]
+	18      (0000004c) invoke-virtual       v1, v2, Landroid/content/Context;->getString(I)Ljava/lang/String;
+	19      (00000052) move-result-object   v1
+	20      (00000054) invoke-interface     v0, v1, Ljava/util/List;->add(Ljava/lang/Object;)Z
+
+getUserConstraintSummary-BB@0x5a : [ getUserConstraintSummary-BB@0x68 getUserConstraintSummary-BB@0x80 ]
+	21      (0000005a) const/4              v1, 4
+	22      (0000005c) invoke-direct        v3, v1, Lcom/afwsamples/testdpc/common/preference/DpcPreferenceHelper;->isEnabledForUser(I)Z
+	23      (00000062) move-result          v1
+	24      (00000064) if-eqz               v1, +e
+
+getUserConstraintSummary-BB@0x68 : [ getUserConstraintSummary-BB@0x80 ]
+	25      (00000068) iget-object          v1, v3, Lcom/afwsamples/testdpc/common/preference/DpcPreferenceHelper;->mContext Landroid/content/Context;
+	26      (0000006c) const                v2, 2131689927 # [1.9008883189361263e+38]
+	27      (00000072) invoke-virtual       v1, v2, Landroid/content/Context;->getString(I)Ljava/lang/String;
+	28      (00000078) move-result-object   v1
+	29      (0000007a) invoke-interface     v0, v1, Ljava/util/List;->add(Ljava/lang/Object;)Z
+
+getUserConstraintSummary-BB@0x80 : 
+	30      (00000080) invoke-direct        v3, v0, Lcom/afwsamples/testdpc/common/preference/DpcPreferenceHelper;->joinRequirementList(Ljava/util/List;)Ljava/lang/String;
+	31      (00000086) move-result-object   v1
+	32      (00000088) return-object        v1
+

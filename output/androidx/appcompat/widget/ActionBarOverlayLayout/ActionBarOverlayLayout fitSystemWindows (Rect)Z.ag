@@ -1,0 +1,71 @@
+# Landroidx/appcompat/widget/ActionBarOverlayLayout;->fitSystemWindows(Landroid/graphics/Rect;)Z [access_flags=protected]
+#
+# Parameters:
+# - local registers: v0...v10
+# - v11:android.graphics.Rect
+#
+# - return:boolean
+
+fitSystemWindows-BB@0x0 : [ fitSystemWindows-BB@0x1a fitSystemWindows-BB@0x9c ]
+	0       (00000000) const/4              v5, 0
+	1       (00000002) const/4              v3, 1
+	2       (00000004) invoke-virtual       v10, Landroidx/appcompat/widget/ActionBarOverlayLayout;->pullChildren()V
+	3       (0000000a) invoke-static        v10, Landroidx/core/view/ViewCompat;->getWindowSystemUiVisibility(Landroid/view/View;)I
+	4       (00000010) move-result          v9
+	5       (00000012) and-int/lit16        v0, v9, 256
+	6       (00000016) if-eqz               v0, +43
+
+fitSystemWindows-BB@0x1a : [ fitSystemWindows-BB@0x1c ]
+	7       (0000001a) move                 v8, v3
+
+fitSystemWindows-BB@0x1c : [ fitSystemWindows-BB@0x5c fitSystemWindows-BB@0x6c ]
+	8       (0000001c) move-object          v2, v11
+	9       (0000001e) iget-object          v1, v10, Landroidx/appcompat/widget/ActionBarOverlayLayout;->mActionBarTop Landroidx/appcompat/widget/ActionBarContainer;
+	10      (00000022) move-object          v0, v10
+	11      (00000024) move                 v4, v3
+	12      (00000026) move                 v6, v3
+	13      (00000028) invoke-direct/range  v0 ... v6, Landroidx/appcompat/widget/ActionBarOverlayLayout;->applyInsets(Landroid/view/View; Landroid/graphics/Rect; Z Z Z Z)Z
+	14      (0000002e) move-result          v7
+	15      (00000030) iget-object          v0, v10, Landroidx/appcompat/widget/ActionBarOverlayLayout;->mBaseInnerInsets Landroid/graphics/Rect;
+	16      (00000034) invoke-virtual       v0, v2, Landroid/graphics/Rect;->set(Landroid/graphics/Rect;)V
+	17      (0000003a) iget-object          v0, v10, Landroidx/appcompat/widget/ActionBarOverlayLayout;->mBaseInnerInsets Landroid/graphics/Rect;
+	18      (0000003e) iget-object          v1, v10, Landroidx/appcompat/widget/ActionBarOverlayLayout;->mBaseContentInsets Landroid/graphics/Rect;
+	19      (00000042) invoke-static        v10, v0, v1, Landroidx/appcompat/widget/ViewUtils;->computeFitSystemWindows(Landroid/view/View; Landroid/graphics/Rect; Landroid/graphics/Rect;)V
+	20      (00000048) iget-object          v0, v10, Landroidx/appcompat/widget/ActionBarOverlayLayout;->mLastBaseInnerInsets Landroid/graphics/Rect;
+	21      (0000004c) iget-object          v1, v10, Landroidx/appcompat/widget/ActionBarOverlayLayout;->mBaseInnerInsets Landroid/graphics/Rect;
+	22      (00000050) invoke-virtual       v0, v1, Landroid/graphics/Rect;->equals(Ljava/lang/Object;)Z
+	23      (00000056) move-result          v0
+	24      (00000058) if-nez               v0, +a
+
+fitSystemWindows-BB@0x5c : [ fitSystemWindows-BB@0x6c ]
+	25      (0000005c) const/4              v7, 1
+	26      (0000005e) iget-object          v0, v10, Landroidx/appcompat/widget/ActionBarOverlayLayout;->mLastBaseInnerInsets Landroid/graphics/Rect;
+	27      (00000062) iget-object          v1, v10, Landroidx/appcompat/widget/ActionBarOverlayLayout;->mBaseInnerInsets Landroid/graphics/Rect;
+	28      (00000066) invoke-virtual       v0, v1, Landroid/graphics/Rect;->set(Landroid/graphics/Rect;)V
+
+fitSystemWindows-BB@0x6c : [ fitSystemWindows-BB@0x80 fitSystemWindows-BB@0x90 ]
+	29      (0000006c) iget-object          v0, v10, Landroidx/appcompat/widget/ActionBarOverlayLayout;->mLastBaseContentInsets Landroid/graphics/Rect;
+	30      (00000070) iget-object          v1, v10, Landroidx/appcompat/widget/ActionBarOverlayLayout;->mBaseContentInsets Landroid/graphics/Rect;
+	31      (00000074) invoke-virtual       v0, v1, Landroid/graphics/Rect;->equals(Ljava/lang/Object;)Z
+	32      (0000007a) move-result          v0
+	33      (0000007c) if-nez               v0, +a
+
+fitSystemWindows-BB@0x80 : [ fitSystemWindows-BB@0x90 ]
+	34      (00000080) const/4              v7, 1
+	35      (00000082) iget-object          v0, v10, Landroidx/appcompat/widget/ActionBarOverlayLayout;->mLastBaseContentInsets Landroid/graphics/Rect;
+	36      (00000086) iget-object          v1, v10, Landroidx/appcompat/widget/ActionBarOverlayLayout;->mBaseContentInsets Landroid/graphics/Rect;
+	37      (0000008a) invoke-virtual       v0, v1, Landroid/graphics/Rect;->set(Landroid/graphics/Rect;)V
+
+fitSystemWindows-BB@0x90 : [ fitSystemWindows-BB@0x94 fitSystemWindows-BB@0x9a ]
+	38      (00000090) if-eqz               v7, +5
+
+fitSystemWindows-BB@0x94 : [ fitSystemWindows-BB@0x9a ]
+	39      (00000094) invoke-virtual       v10, Landroidx/appcompat/widget/ActionBarOverlayLayout;->requestLayout()V
+
+fitSystemWindows-BB@0x9a : 
+	40      (0000009a) return               v3
+
+fitSystemWindows-BB@0x9c : [ fitSystemWindows-BB@0x1c ]
+	41      (0000009c) move                 v8, v5
+	42      (0000009e) goto                 -41
+

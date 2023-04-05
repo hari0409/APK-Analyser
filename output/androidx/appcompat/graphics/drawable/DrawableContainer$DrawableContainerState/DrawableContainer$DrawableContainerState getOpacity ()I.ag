@@ -1,0 +1,54 @@
+# Landroidx/appcompat/graphics/drawable/DrawableContainer$DrawableContainerState;->getOpacity()I [access_flags=public final]
+#
+# Parameters:
+# local registers: v0...v5
+#
+# - return:int
+
+getOpacity-BB@0x0 : [ getOpacity-BB@0x8 getOpacity-BB@0xe ]
+	0       (00000000) iget-boolean         v4, v5, Landroidx/appcompat/graphics/drawable/DrawableContainer$DrawableContainerState;->mCheckedOpacity Z
+	1       (00000004) if-eqz               v4, +5
+
+getOpacity-BB@0x8 : [ getOpacity-BB@0xc ]
+	2       (00000008) iget                 v3, v5, Landroidx/appcompat/graphics/drawable/DrawableContainer$DrawableContainerState;->mOpacity I
+
+getOpacity-BB@0xc : 
+	3       (0000000c) return               v3
+
+getOpacity-BB@0xe : [ getOpacity-BB@0x20 getOpacity-BB@0x4e ]
+	4       (0000000e) invoke-direct        v5, Landroidx/appcompat/graphics/drawable/DrawableContainer$DrawableContainerState;->createAllFutures()V
+	5       (00000014) iget                 v0, v5, Landroidx/appcompat/graphics/drawable/DrawableContainer$DrawableContainerState;->mNumChildren I
+	6       (00000018) iget-object          v1, v5, Landroidx/appcompat/graphics/drawable/DrawableContainer$DrawableContainerState;->mDrawables [Landroid/graphics/drawable/Drawable;
+	7       (0000001c) if-lez               v0, +19
+
+getOpacity-BB@0x20 : [ getOpacity-BB@0x2e ]
+	8       (00000020) const/4              v4, 0
+	9       (00000022) aget-object          v4, v1, v4
+	10      (00000026) invoke-virtual       v4, Landroid/graphics/drawable/Drawable;->getOpacity()I
+	11      (0000002c) move-result          v3
+
+getOpacity-BB@0x2e : [ getOpacity-BB@0x30 ]
+	12      (0000002e) const/4              v2, 1
+
+getOpacity-BB@0x30 : [ getOpacity-BB@0x34 getOpacity-BB@0x52 ]
+	13      (00000030) if-ge                v2, v0, +11
+
+getOpacity-BB@0x34 : [ getOpacity-BB@0x30 ]
+	14      (00000034) aget-object          v4, v1, v2
+	15      (00000038) invoke-virtual       v4, Landroid/graphics/drawable/Drawable;->getOpacity()I
+	16      (0000003e) move-result          v4
+	17      (00000040) invoke-static        v3, v4, Landroid/graphics/drawable/Drawable;->resolveOpacity(I I)I
+	18      (00000046) move-result          v3
+	19      (00000048) add-int/lit8         v2, v2, 1
+	20      (0000004c) goto                 -e
+
+getOpacity-BB@0x4e : [ getOpacity-BB@0x2e ]
+	21      (0000004e) const/4              v3, -2
+	22      (00000050) goto                 -11
+
+getOpacity-BB@0x52 : [ getOpacity-BB@0xc ]
+	23      (00000052) iput                 v3, v5, Landroidx/appcompat/graphics/drawable/DrawableContainer$DrawableContainerState;->mOpacity I
+	24      (00000056) const/4              v4, 1
+	25      (00000058) iput-boolean         v4, v5, Landroidx/appcompat/graphics/drawable/DrawableContainer$DrawableContainerState;->mCheckedOpacity Z
+	26      (0000005c) goto                 -28
+

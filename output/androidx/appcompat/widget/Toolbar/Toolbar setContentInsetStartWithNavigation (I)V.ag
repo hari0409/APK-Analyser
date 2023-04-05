@@ -1,0 +1,30 @@
+# Landroidx/appcompat/widget/Toolbar;->setContentInsetStartWithNavigation(I)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:int
+#
+# - return:void
+
+setContentInsetStartWithNavigation-BB@0x0 : [ setContentInsetStartWithNavigation-BB@0x4 setContentInsetStartWithNavigation-BB@0x8 ]
+	0       (00000000) if-gez               v2, +4
+
+setContentInsetStartWithNavigation-BB@0x4 : [ setContentInsetStartWithNavigation-BB@0x8 ]
+	1       (00000004) const/high16         v2, -32768 # [-0.0]
+
+setContentInsetStartWithNavigation-BB@0x8 : [ setContentInsetStartWithNavigation-BB@0x10 setContentInsetStartWithNavigation-BB@0x26 ]
+	2       (00000008) iget                 v0, v1, Landroidx/appcompat/widget/Toolbar;->mContentInsetStartWithNavigation I
+	3       (0000000c) if-eq                v2, v0, +d
+
+setContentInsetStartWithNavigation-BB@0x10 : [ setContentInsetStartWithNavigation-BB@0x20 setContentInsetStartWithNavigation-BB@0x26 ]
+	4       (00000010) iput                 v2, v1, Landroidx/appcompat/widget/Toolbar;->mContentInsetStartWithNavigation I
+	5       (00000014) invoke-virtual       v1, Landroidx/appcompat/widget/Toolbar;->getNavigationIcon()Landroid/graphics/drawable/Drawable;
+	6       (0000001a) move-result-object   v0
+	7       (0000001c) if-eqz               v0, +5
+
+setContentInsetStartWithNavigation-BB@0x20 : [ setContentInsetStartWithNavigation-BB@0x26 ]
+	8       (00000020) invoke-virtual       v1, Landroidx/appcompat/widget/Toolbar;->requestLayout()V
+
+setContentInsetStartWithNavigation-BB@0x26 : 
+	9       (00000026) return-void          
+

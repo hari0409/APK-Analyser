@@ -1,0 +1,44 @@
+# Landroidx/appcompat/view/menu/BaseMenuWrapper;->getMenuItemWrapper(Landroid/view/MenuItem;)Landroid/view/MenuItem; [access_flags=final]
+#
+# Parameters:
+# - local registers: v0...v3
+# - v4:android.view.MenuItem
+#
+# - return:android.view.MenuItem
+
+getMenuItemWrapper-BB@0x0 : [ getMenuItemWrapper-BB@0x8 getMenuItemWrapper-BB@0x50 ]
+	0       (00000000) instance-of          v2, v4, Landroidx/core/internal/view/SupportMenuItem;
+	1       (00000004) if-eqz               v2, +26
+
+getMenuItemWrapper-BB@0x8 : [ getMenuItemWrapper-BB@0x16 getMenuItemWrapper-BB@0x24 ]
+	2       (00000008) move-object          v0, v4
+	3       (0000000a) check-cast           v0, Landroidx/core/internal/view/SupportMenuItem;
+	4       (0000000e) iget-object          v2, v3, Landroidx/appcompat/view/menu/BaseMenuWrapper;->mMenuItems Ljava/util/Map;
+	5       (00000012) if-nez               v2, +9
+
+getMenuItemWrapper-BB@0x16 : [ getMenuItemWrapper-BB@0x24 ]
+	6       (00000016) new-instance         v2, Landroidx/collection/ArrayMap;
+	7       (0000001a) invoke-direct        v2, Landroidx/collection/ArrayMap;-><init>()V
+	8       (00000020) iput-object          v2, v3, Landroidx/appcompat/view/menu/BaseMenuWrapper;->mMenuItems Ljava/util/Map;
+
+getMenuItemWrapper-BB@0x24 : [ getMenuItemWrapper-BB@0x38 getMenuItemWrapper-BB@0x4e ]
+	9       (00000024) iget-object          v2, v3, Landroidx/appcompat/view/menu/BaseMenuWrapper;->mMenuItems Ljava/util/Map;
+	10      (00000028) invoke-interface     v2, v4, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
+	11      (0000002e) move-result-object   v1
+	12      (00000030) check-cast           v1, Landroid/view/MenuItem;
+	13      (00000034) if-nez               v1, +d
+
+getMenuItemWrapper-BB@0x38 : [ getMenuItemWrapper-BB@0x4e ]
+	14      (00000038) iget-object          v2, v3, Landroidx/appcompat/view/menu/BaseMenuWrapper;->mContext Landroid/content/Context;
+	15      (0000003c) invoke-static        v2, v0, Landroidx/appcompat/view/menu/MenuWrapperFactory;->wrapSupportMenuItem(Landroid/content/Context; Landroidx/core/internal/view/SupportMenuItem;)Landroid/view/MenuItem;
+	16      (00000042) move-result-object   v1
+	17      (00000044) iget-object          v2, v3, Landroidx/appcompat/view/menu/BaseMenuWrapper;->mMenuItems Ljava/util/Map;
+	18      (00000048) invoke-interface     v2, v0, v1, Ljava/util/Map;->put(Ljava/lang/Object; Ljava/lang/Object;)Ljava/lang/Object;
+
+getMenuItemWrapper-BB@0x4e : 
+	19      (0000004e) return-object        v1
+
+getMenuItemWrapper-BB@0x50 : [ getMenuItemWrapper-BB@0x4e ]
+	20      (00000050) move-object          v1, v4
+	21      (00000052) goto                 -2
+

@@ -1,0 +1,42 @@
+# Landroidx/appcompat/widget/SwitchCompat;->setChecked(Z)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:boolean
+#
+# - return:void
+
+setChecked-BB@0x0 : [ setChecked-BB@0x1a setChecked-BB@0x2e ]
+	0       (00000000) invoke-super         v1, v2, Landroid/widget/CompoundButton;->setChecked(Z)V
+	1       (00000006) invoke-virtual       v1, Landroidx/appcompat/widget/SwitchCompat;->isChecked()Z
+	2       (0000000c) move-result          v2
+	3       (0000000e) invoke-virtual       v1, Landroidx/appcompat/widget/SwitchCompat;->getWindowToken()Landroid/os/IBinder;
+	4       (00000014) move-result-object   v0
+	5       (00000016) if-eqz               v0, +c
+
+setChecked-BB@0x1a : [ setChecked-BB@0x26 setChecked-BB@0x2e ]
+	6       (0000001a) invoke-static        v1, Landroidx/core/view/ViewCompat;->isLaidOut(Landroid/view/View;)Z
+	7       (00000020) move-result          v0
+	8       (00000022) if-eqz               v0, +6
+
+setChecked-BB@0x26 : [ setChecked-BB@0x2c ]
+	9       (00000026) invoke-direct        v1, v2, Landroidx/appcompat/widget/SwitchCompat;->animateThumbToCheckedState(Z)V
+
+setChecked-BB@0x2c : 
+	10      (0000002c) return-void          
+
+setChecked-BB@0x2e : [ setChecked-BB@0x38 setChecked-BB@0x44 ]
+	11      (0000002e) invoke-direct        v1, Landroidx/appcompat/widget/SwitchCompat;->cancelPositionAnimator()V
+	12      (00000034) if-eqz               v2, +8
+
+setChecked-BB@0x38 : [ setChecked-BB@0x3c ]
+	13      (00000038) const/high16         v0, 16256 # [1.0]
+
+setChecked-BB@0x3c : [ setChecked-BB@0x2c ]
+	14      (0000003c) invoke-virtual       v1, v0, Landroidx/appcompat/widget/SwitchCompat;->setThumbPosition(F)V
+	15      (00000042) goto                 -b
+
+setChecked-BB@0x44 : [ setChecked-BB@0x3c ]
+	16      (00000044) const/4              v0, 0
+	17      (00000046) goto                 -5
+

@@ -1,0 +1,23 @@
+# Landroidx/appcompat/widget/AppCompatPopupWindow;-><clinit>()V [access_flags=static constructor]
+#
+# Parameters:
+# local registers: v0...v1
+#
+# - return:void
+
+<clinit>-BB@0x0 : [ <clinit>-BB@0xc <clinit>-BB@0x14 ]
+	0       (00000000) sget                 v0, Landroid/os/Build$VERSION;->SDK_INT I
+	1       (00000004) const/16             v1, 21
+	2       (00000008) if-ge                v0, v1, +6
+
+<clinit>-BB@0xc : [ <clinit>-BB@0xe ]
+	3       (0000000c) const/4              v0, 1
+
+<clinit>-BB@0xe : 
+	4       (0000000e) sput-boolean         v0, Landroidx/appcompat/widget/AppCompatPopupWindow;->COMPAT_OVERLAP_ANCHOR Z
+	5       (00000012) return-void          
+
+<clinit>-BB@0x14 : [ <clinit>-BB@0xe ]
+	6       (00000014) const/4              v0, 0
+	7       (00000016) goto                 -4
+

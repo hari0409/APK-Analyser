@@ -1,0 +1,31 @@
+# Lcom/afwsamples/testdpc/common/keyvaluepair/KeyValuePairDialogFragment;-><clinit>()V [access_flags=static constructor]
+#
+# Parameters:
+# local registers: v0...v2
+#
+# - return:void
+
+<clinit>-BB@0x0 : 
+	0       (00000000) const/4              v0, 6
+	1       (00000002) new-array            v0, v0, [Ljava/lang/String;
+	2       (00000006) const/4              v1, 0
+	3       (00000008) const-string         v2, 'Boolean'
+	4       (0000000c) aput-object          v2, v0, v1
+	5       (00000010) const/4              v1, 1
+	6       (00000012) const-string         v2, 'Integer'
+	7       (00000016) aput-object          v2, v0, v1
+	8       (0000001a) const/4              v1, 2
+	9       (0000001c) const-string         v2, 'String'
+	10      (00000020) aput-object          v2, v0, v1
+	11      (00000024) const/4              v1, 3
+	12      (00000026) const-string         v2, 'String[]'
+	13      (0000002a) aput-object          v2, v0, v1
+	14      (0000002e) const/4              v1, 4
+	15      (00000030) const-string         v2, 'Bundle'
+	16      (00000034) aput-object          v2, v0, v1
+	17      (00000038) const/4              v1, 5
+	18      (0000003a) const-string         v2, 'Bundle[]'
+	19      (0000003e) aput-object          v2, v0, v1
+	20      (00000042) sput-object          v0, Lcom/afwsamples/testdpc/common/keyvaluepair/KeyValuePairDialogFragment;->TYPE_DISPLAY_STRING_ARRAY [Ljava/lang/String;
+	21      (00000046) return-void          
+

@@ -1,0 +1,27 @@
+# Landroidx/appcompat/widget/ActionMenuPresenter$OverflowMenuButton$1;->getPopup()Landroidx/appcompat/view/menu/ShowableListMenu; [access_flags=public]
+#
+# Parameters:
+# local registers: v0...v1
+#
+# - return:androidx.appcompat.view.menu.ShowableListMenu
+
+getPopup-BB@0x0 : [ getPopup-BB@0x10 getPopup-BB@0x14 ]
+	0       (00000000) iget-object          v0, v1, Landroidx/appcompat/widget/ActionMenuPresenter$OverflowMenuButton$1;->this$1 Landroidx/appcompat/widget/ActionMenuPresenter$OverflowMenuButton;
+	1       (00000004) iget-object          v0, v0, Landroidx/appcompat/widget/ActionMenuPresenter$OverflowMenuButton;->this$0 Landroidx/appcompat/widget/ActionMenuPresenter;
+	2       (00000008) iget-object          v0, v0, Landroidx/appcompat/widget/ActionMenuPresenter;->mOverflowPopup Landroidx/appcompat/widget/ActionMenuPresenter$OverflowPopup;
+	3       (0000000c) if-nez               v0, +4
+
+getPopup-BB@0x10 : [ getPopup-BB@0x12 ]
+	4       (00000010) const/4              v0, 0
+
+getPopup-BB@0x12 : 
+	5       (00000012) return-object        v0
+
+getPopup-BB@0x14 : [ getPopup-BB@0x12 ]
+	6       (00000014) iget-object          v0, v1, Landroidx/appcompat/widget/ActionMenuPresenter$OverflowMenuButton$1;->this$1 Landroidx/appcompat/widget/ActionMenuPresenter$OverflowMenuButton;
+	7       (00000018) iget-object          v0, v0, Landroidx/appcompat/widget/ActionMenuPresenter$OverflowMenuButton;->this$0 Landroidx/appcompat/widget/ActionMenuPresenter;
+	8       (0000001c) iget-object          v0, v0, Landroidx/appcompat/widget/ActionMenuPresenter;->mOverflowPopup Landroidx/appcompat/widget/ActionMenuPresenter$OverflowPopup;
+	9       (00000020) invoke-virtual       v0, Landroidx/appcompat/widget/ActionMenuPresenter$OverflowPopup;->getPopup()Landroidx/appcompat/view/menu/MenuPopup;
+	10      (00000026) move-result-object   v0
+	11      (00000028) goto                 -b
+

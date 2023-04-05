@@ -1,0 +1,13 @@
+# Landroidx/multidex/MultiDexExtractor$1;-><init>(Landroidx/multidex/MultiDexExtractor;)V [access_flags=constructor]
+#
+# Parameters:
+# - local registers: v0...v0
+# - v1:androidx.multidex.MultiDexExtractor
+#
+# - return:void
+
+<init>-BB@0x0 : 
+	0       (00000000) iput-object          v1, v0, Landroidx/multidex/MultiDexExtractor$1;->this$0 Landroidx/multidex/MultiDexExtractor;
+	1       (00000004) invoke-direct        v0, Ljava/lang/Object;-><init>()V
+	2       (0000000a) return-void          
+

@@ -1,0 +1,18 @@
+# Landroidx/appcompat/view/menu/MenuBuilder;->setHeaderIconInt(I)Landroidx/appcompat/view/menu/MenuBuilder; [access_flags=protected]
+#
+# Parameters:
+# - local registers: v0...v6
+# - v7:int
+#
+# - return:androidx.appcompat.view.menu.MenuBuilder
+
+setHeaderIconInt-BB@0x0 : 
+	0       (00000000) const/4              v2, 0
+	1       (00000002) const/4              v1, 0
+	2       (00000004) move-object          v0, v6
+	3       (00000006) move                 v3, v7
+	4       (00000008) move-object          v4, v2
+	5       (0000000a) move-object          v5, v2
+	6       (0000000c) invoke-direct/range  v0 ... v5, Landroidx/appcompat/view/menu/MenuBuilder;->setHeaderInternal(I Ljava/lang/CharSequence; I Landroid/graphics/drawable/Drawable; Landroid/view/View;)V
+	7       (00000012) return-object        v6
+

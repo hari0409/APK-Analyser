@@ -1,0 +1,43 @@
+# Landroidx/appcompat/widget/SwitchCompat;->animateThumbToCheckedState(Z)V [access_flags=private]
+#
+# Parameters:
+# - local registers: v0...v5
+# - v6:boolean
+#
+# - return:void
+
+animateThumbToCheckedState-BB@0x0 : [ animateThumbToCheckedState-BB@0x6 animateThumbToCheckedState-BB@0x54 ]
+	0       (00000000) const/4              v4, 1
+	1       (00000002) if-eqz               v6, +29
+
+animateThumbToCheckedState-BB@0x6 : [ animateThumbToCheckedState-BB@0xa ]
+	2       (00000006) const/high16         v0, 16256 # [1.0]
+
+animateThumbToCheckedState-BB@0xa : [ animateThumbToCheckedState-BB@0x3e animateThumbToCheckedState-BB@0x48 ]
+	3       (0000000a) sget-object          v1, Landroidx/appcompat/widget/SwitchCompat;->THUMB_POS Landroid/util/Property;
+	4       (0000000e) new-array            v2, v4, [F
+	5       (00000012) const/4              v3, 0
+	6       (00000014) aput                 v0, v2, v3
+	7       (00000018) invoke-static        v5, v1, v2, Landroid/animation/ObjectAnimator;->ofFloat(Ljava/lang/Object; Landroid/util/Property; [F)Landroid/animation/ObjectAnimator;
+	8       (0000001e) move-result-object   v1
+	9       (00000020) iput-object          v1, v5, Landroidx/appcompat/widget/SwitchCompat;->mPositionAnimator Landroid/animation/ObjectAnimator;
+	10      (00000024) iget-object          v1, v5, Landroidx/appcompat/widget/SwitchCompat;->mPositionAnimator Landroid/animation/ObjectAnimator;
+	11      (00000028) const-wide/16        v2, 250 # [250.0]
+	12      (0000002c) invoke-virtual       v1, v2, v3, Landroid/animation/ObjectAnimator;->setDuration(J)Landroid/animation/ObjectAnimator;
+	13      (00000032) sget                 v1, Landroid/os/Build$VERSION;->SDK_INT I
+	14      (00000036) const/16             v2, 18
+	15      (0000003a) if-lt                v1, v2, +7
+
+animateThumbToCheckedState-BB@0x3e : [ animateThumbToCheckedState-BB@0x48 ]
+	16      (0000003e) iget-object          v1, v5, Landroidx/appcompat/widget/SwitchCompat;->mPositionAnimator Landroid/animation/ObjectAnimator;
+	17      (00000042) invoke-virtual       v1, v4, Landroid/animation/ObjectAnimator;->setAutoCancel(Z)V
+
+animateThumbToCheckedState-BB@0x48 : 
+	18      (00000048) iget-object          v1, v5, Landroidx/appcompat/widget/SwitchCompat;->mPositionAnimator Landroid/animation/ObjectAnimator;
+	19      (0000004c) invoke-virtual       v1, Landroid/animation/ObjectAnimator;->start()V
+	20      (00000052) return-void          
+
+animateThumbToCheckedState-BB@0x54 : [ animateThumbToCheckedState-BB@0xa ]
+	21      (00000054) const/4              v0, 0
+	22      (00000056) goto                 -26
+

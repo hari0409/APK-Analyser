@@ -1,0 +1,30 @@
+# Landroidx/appcompat/app/WindowDecorActionBar;-><clinit>()V [access_flags=static constructor]
+#
+# Parameters:
+# local registers: v0...v0
+#
+# - return:void
+
+<clinit>-BB@0x0 : [ <clinit>-BB@0x10 <clinit>-BB@0x34 ]
+	0       (00000000) const-class          v0, Landroidx/appcompat/app/WindowDecorActionBar;
+	1       (00000004) invoke-virtual       v0, Ljava/lang/Class;->desiredAssertionStatus()Z
+	2       (0000000a) move-result          v0
+	3       (0000000c) if-nez               v0, +14
+
+<clinit>-BB@0x10 : [ <clinit>-BB@0x12 ]
+	4       (00000010) const/4              v0, 1
+
+<clinit>-BB@0x12 : 
+	5       (00000012) sput-boolean         v0, Landroidx/appcompat/app/WindowDecorActionBar;->$assertionsDisabled Z
+	6       (00000016) new-instance         v0, Landroid/view/animation/AccelerateInterpolator;
+	7       (0000001a) invoke-direct        v0, Landroid/view/animation/AccelerateInterpolator;-><init>()V
+	8       (00000020) sput-object          v0, Landroidx/appcompat/app/WindowDecorActionBar;->sHideInterpolator Landroid/view/animation/Interpolator;
+	9       (00000024) new-instance         v0, Landroid/view/animation/DecelerateInterpolator;
+	10      (00000028) invoke-direct        v0, Landroid/view/animation/DecelerateInterpolator;-><init>()V
+	11      (0000002e) sput-object          v0, Landroidx/appcompat/app/WindowDecorActionBar;->sShowInterpolator Landroid/view/animation/Interpolator;
+	12      (00000032) return-void          
+
+<clinit>-BB@0x34 : [ <clinit>-BB@0x12 ]
+	13      (00000034) const/4              v0, 0
+	14      (00000036) goto                 -12
+

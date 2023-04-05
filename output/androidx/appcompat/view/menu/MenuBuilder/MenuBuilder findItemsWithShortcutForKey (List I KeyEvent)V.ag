@@ -1,0 +1,131 @@
+# Landroidx/appcompat/view/menu/MenuBuilder;->findItemsWithShortcutForKey(Ljava/util/List; I Landroid/view/KeyEvent;)V [access_flags=]
+#
+# Parameters:
+# - local registers: v0...v12
+# - v13:java.util.List
+# - v14:int
+# - v15:android.view.KeyEvent
+#
+# - return:void
+
+findItemsWithShortcutForKey-BB@0x0 : [ findItemsWithShortcutForKey-BB@0x26 findItemsWithShortcutForKey-BB@0x30 ]
+	0       (00000000) invoke-virtual       v12, Landroidx/appcompat/view/menu/MenuBuilder;->isQwertyMode()Z
+	1       (00000006) move-result          v7
+	2       (00000008) invoke-virtual       v15, Landroid/view/KeyEvent;->getModifiers()I
+	3       (0000000e) move-result          v5
+	4       (00000010) new-instance         v6, Landroid/view/KeyCharacterMap$KeyData;
+	5       (00000014) invoke-direct        v6, Landroid/view/KeyCharacterMap$KeyData;-><init>()V
+	6       (0000001a) invoke-virtual       v15, v6, Landroid/view/KeyEvent;->getKeyData(Landroid/view/KeyCharacterMap$KeyData;)Z
+	7       (00000020) move-result          v2
+	8       (00000022) if-nez               v2, +7
+
+findItemsWithShortcutForKey-BB@0x26 : [ findItemsWithShortcutForKey-BB@0x2e findItemsWithShortcutForKey-BB@0x30 ]
+	9       (00000026) const/16             v10, 67
+	10      (0000002a) if-eq                v14, v10, +3
+
+findItemsWithShortcutForKey-BB@0x2e : 
+	11      (0000002e) return-void          
+
+findItemsWithShortcutForKey-BB@0x30 : [ findItemsWithShortcutForKey-BB@0x3e ]
+	12      (00000030) iget-object          v10, v12, Landroidx/appcompat/view/menu/MenuBuilder;->mItems Ljava/util/ArrayList;
+	13      (00000034) invoke-virtual       v10, Ljava/util/ArrayList;->size()I
+	14      (0000003a) move-result          v0
+	15      (0000003c) const/4              v1, 0
+
+findItemsWithShortcutForKey-BB@0x3e : [ findItemsWithShortcutForKey-BB@0x42 findItemsWithShortcutForKey-BB@0x2e ]
+	16      (0000003e) if-ge                v1, v0, -8
+
+findItemsWithShortcutForKey-BB@0x42 : [ findItemsWithShortcutForKey-BB@0x5e findItemsWithShortcutForKey-BB@0x70 ]
+	17      (00000042) iget-object          v10, v12, Landroidx/appcompat/view/menu/MenuBuilder;->mItems Ljava/util/ArrayList;
+	18      (00000046) invoke-virtual       v10, v1, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+	19      (0000004c) move-result-object   v4
+	20      (0000004e) check-cast           v4, Landroidx/appcompat/view/menu/MenuItemImpl;
+	21      (00000052) invoke-virtual       v4, Landroidx/appcompat/view/menu/MenuItemImpl;->hasSubMenu()Z
+	22      (00000058) move-result          v10
+	23      (0000005a) if-eqz               v10, +b
+
+findItemsWithShortcutForKey-BB@0x5e : [ findItemsWithShortcutForKey-BB@0x70 ]
+	24      (0000005e) invoke-virtual       v4, Landroidx/appcompat/view/menu/MenuItemImpl;->getSubMenu()Landroid/view/SubMenu;
+	25      (00000064) move-result-object   v10
+	26      (00000066) check-cast           v10, Landroidx/appcompat/view/menu/MenuBuilder;
+	27      (0000006a) invoke-virtual       v10, v13, v14, v15, Landroidx/appcompat/view/menu/MenuBuilder;->findItemsWithShortcutForKey(Ljava/util/List; I Landroid/view/KeyEvent;)V
+
+findItemsWithShortcutForKey-BB@0x70 : [ findItemsWithShortcutForKey-BB@0x74 findItemsWithShortcutForKey-BB@0xee ]
+	28      (00000070) if-eqz               v7, +3f
+
+findItemsWithShortcutForKey-BB@0x74 : [ findItemsWithShortcutForKey-BB@0x7c ]
+	29      (00000074) invoke-virtual       v4, Landroidx/appcompat/view/menu/MenuItemImpl;->getAlphabeticShortcut()C
+	30      (0000007a) move-result          v8
+
+findItemsWithShortcutForKey-BB@0x7c : [ findItemsWithShortcutForKey-BB@0x80 findItemsWithShortcutForKey-BB@0xf8 ]
+	31      (0000007c) if-eqz               v7, +3e
+
+findItemsWithShortcutForKey-BB@0x80 : [ findItemsWithShortcutForKey-BB@0x88 ]
+	32      (00000080) invoke-virtual       v4, Landroidx/appcompat/view/menu/MenuItemImpl;->getAlphabeticModifiers()I
+	33      (00000086) move-result          v9
+
+findItemsWithShortcutForKey-BB@0x88 : [ findItemsWithShortcutForKey-BB@0x9c findItemsWithShortcutForKey-BB@0x102 ]
+	34      (00000088) const                v10, 69647 # [9.759623414483053e-41]
+	35      (0000008e) and-int/2addr        v10, v5
+	36      (00000090) const                v11, 69647 # [9.759623414483053e-41]
+	37      (00000096) and-int/2addr        v11, v9
+	38      (00000098) if-ne                v10, v11, +35
+
+findItemsWithShortcutForKey-BB@0x9c : [ findItemsWithShortcutForKey-BB@0x9e ]
+	39      (0000009c) const/4              v3, 1
+
+findItemsWithShortcutForKey-BB@0x9e : [ findItemsWithShortcutForKey-BB@0xa2 findItemsWithShortcutForKey-BB@0xe8 ]
+	40      (0000009e) if-eqz               v3, +25
+
+findItemsWithShortcutForKey-BB@0xa2 : [ findItemsWithShortcutForKey-BB@0xa6 findItemsWithShortcutForKey-BB@0xe8 ]
+	41      (000000a2) if-eqz               v8, +23
+
+findItemsWithShortcutForKey-BB@0xa6 : [ findItemsWithShortcutForKey-BB@0xb4 findItemsWithShortcutForKey-BB@0xd6 ]
+	42      (000000a6) iget-object          v10, v6, Landroid/view/KeyCharacterMap$KeyData;->meta [C
+	43      (000000aa) const/4              v11, 0
+	44      (000000ac) aget-char            v10, v10, v11
+	45      (000000b0) if-eq                v8, v10, +13
+
+findItemsWithShortcutForKey-BB@0xb4 : [ findItemsWithShortcutForKey-BB@0xc2 findItemsWithShortcutForKey-BB@0xd6 ]
+	46      (000000b4) iget-object          v10, v6, Landroid/view/KeyCharacterMap$KeyData;->meta [C
+	47      (000000b8) const/4              v11, 2
+	48      (000000ba) aget-char            v10, v10, v11
+	49      (000000be) if-eq                v8, v10, +c
+
+findItemsWithShortcutForKey-BB@0xc2 : [ findItemsWithShortcutForKey-BB@0xc6 findItemsWithShortcutForKey-BB@0xe8 ]
+	50      (000000c2) if-eqz               v7, +13
+
+findItemsWithShortcutForKey-BB@0xc6 : [ findItemsWithShortcutForKey-BB@0xce findItemsWithShortcutForKey-BB@0xe8 ]
+	51      (000000c6) const/16             v10, 8
+	52      (000000ca) if-ne                v8, v10, +f
+
+findItemsWithShortcutForKey-BB@0xce : [ findItemsWithShortcutForKey-BB@0xd6 findItemsWithShortcutForKey-BB@0xe8 ]
+	53      (000000ce) const/16             v10, 67
+	54      (000000d2) if-ne                v14, v10, +b
+
+findItemsWithShortcutForKey-BB@0xd6 : [ findItemsWithShortcutForKey-BB@0xe2 findItemsWithShortcutForKey-BB@0xe8 ]
+	55      (000000d6) invoke-virtual       v4, Landroidx/appcompat/view/menu/MenuItemImpl;->isEnabled()Z
+	56      (000000dc) move-result          v10
+	57      (000000de) if-eqz               v10, +5
+
+findItemsWithShortcutForKey-BB@0xe2 : [ findItemsWithShortcutForKey-BB@0xe8 ]
+	58      (000000e2) invoke-interface     v13, v4, Ljava/util/List;->add(Ljava/lang/Object;)Z
+
+findItemsWithShortcutForKey-BB@0xe8 : [ findItemsWithShortcutForKey-BB@0x3e ]
+	59      (000000e8) add-int/lit8         v1, v1, 1
+	60      (000000ec) goto                 -57
+
+findItemsWithShortcutForKey-BB@0xee : [ findItemsWithShortcutForKey-BB@0x7c ]
+	61      (000000ee) invoke-virtual       v4, Landroidx/appcompat/view/menu/MenuItemImpl;->getNumericShortcut()C
+	62      (000000f4) move-result          v8
+	63      (000000f6) goto                 -3d
+
+findItemsWithShortcutForKey-BB@0xf8 : [ findItemsWithShortcutForKey-BB@0x88 ]
+	64      (000000f8) invoke-virtual       v4, Landroidx/appcompat/view/menu/MenuItemImpl;->getNumericModifiers()I
+	65      (000000fe) move-result          v9
+	66      (00000100) goto                 -3c
+
+findItemsWithShortcutForKey-BB@0x102 : [ findItemsWithShortcutForKey-BB@0x9e ]
+	67      (00000102) const/4              v3, 0
+	68      (00000104) goto                 -33
+

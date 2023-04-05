@@ -1,0 +1,52 @@
+# Landroidx/appcompat/app/AppCompatDelegateImpl$AppCompatWindowCallback;->onPreparePanel(I Landroid/view/View; Landroid/view/Menu;)Z [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v4
+# - v5:int
+# - v6:android.view.View
+# - v7:android.view.Menu
+#
+# - return:boolean
+
+onPreparePanel-BB@0x0 : [ onPreparePanel-BB@0xa onPreparePanel-BB@0x1e ]
+	0       (00000000) const/4              v3, 0
+	1       (00000002) instance-of          v2, v7, Landroidx/appcompat/view/menu/MenuBuilder;
+	2       (00000006) if-eqz               v2, +c
+
+onPreparePanel-BB@0xa : [ onPreparePanel-BB@0x12 ]
+	3       (0000000a) move-object          v2, v7
+	4       (0000000c) check-cast           v2, Landroidx/appcompat/view/menu/MenuBuilder;
+	5       (00000010) move-object          v1, v2
+
+onPreparePanel-BB@0x12 : [ onPreparePanel-BB@0x16 onPreparePanel-BB@0x22 ]
+	6       (00000012) if-nez               v5, +8
+
+onPreparePanel-BB@0x16 : [ onPreparePanel-BB@0x1a onPreparePanel-BB@0x22 ]
+	7       (00000016) if-nez               v1, +6
+
+onPreparePanel-BB@0x1a : [ onPreparePanel-BB@0x1c ]
+	8       (0000001a) move                 v0, v3
+
+onPreparePanel-BB@0x1c : 
+	9       (0000001c) return               v0
+
+onPreparePanel-BB@0x1e : [ onPreparePanel-BB@0x12 ]
+	10      (0000001e) const/4              v1, 0
+	11      (00000020) goto                 -7
+
+onPreparePanel-BB@0x22 : [ onPreparePanel-BB@0x26 onPreparePanel-BB@0x2e ]
+	12      (00000022) if-eqz               v1, +6
+
+onPreparePanel-BB@0x26 : [ onPreparePanel-BB@0x2e ]
+	13      (00000026) const/4              v2, 1
+	14      (00000028) invoke-virtual       v1, v2, Landroidx/appcompat/view/menu/MenuBuilder;->setOverrideVisibleItems(Z)V
+
+onPreparePanel-BB@0x2e : [ onPreparePanel-BB@0x3a onPreparePanel-BB@0x1c ]
+	15      (0000002e) invoke-super         v4, v5, v6, v7, Landroidx/appcompat/view/WindowCallbackWrapper;->onPreparePanel(I Landroid/view/View; Landroid/view/Menu;)Z
+	16      (00000034) move-result          v0
+	17      (00000036) if-eqz               v1, -d
+
+onPreparePanel-BB@0x3a : [ onPreparePanel-BB@0x1c ]
+	18      (0000003a) invoke-virtual       v1, v3, Landroidx/appcompat/view/menu/MenuBuilder;->setOverrideVisibleItems(Z)V
+	19      (00000040) goto                 -12
+

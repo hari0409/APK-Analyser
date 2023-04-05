@@ -1,0 +1,18 @@
+# Lcom/afwsamples/testdpc/profilepolicy/apprestrictions/ManagedConfigurationsFragment;->addBundleEntryToRestrictions(Ljava/util/List; Ljava/lang/String; Landroid/os/Bundle;)V [access_flags=private]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:java.util.List
+# - v3:java.lang.String
+# - v4:android.os.Bundle
+#
+# - return:void
+
+addBundleEntryToRestrictions-BB@0x0 : 
+	0       (00000000) invoke-virtual       v1, v4, Lcom/afwsamples/testdpc/profilepolicy/apprestrictions/ManagedConfigurationsFragment;->convertBundleToRestrictions(Landroid/os/Bundle;)[Landroid/content/RestrictionEntry;
+	1       (00000006) move-result-object   v0
+	2       (00000008) invoke-static        v3, v0, Landroid/content/RestrictionEntry;->createBundleEntry(Ljava/lang/String; [Landroid/content/RestrictionEntry;)Landroid/content/RestrictionEntry;
+	3       (0000000e) move-result-object   v0
+	4       (00000010) invoke-interface     v2, v0, Ljava/util/List;->add(Ljava/lang/Object;)Z
+	5       (00000016) return-void          
+

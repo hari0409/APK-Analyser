@@ -1,0 +1,22 @@
+# Landroidx/appcompat/app/WindowDecorActionBar$TabImpl;->setIcon(Landroid/graphics/drawable/Drawable;)Landroidx/appcompat/app/ActionBar$Tab; [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:android.graphics.drawable.Drawable
+#
+# - return:androidx.appcompat.app.ActionBar$Tab
+
+setIcon-BB@0x0 : [ setIcon-BB@0xc setIcon-BB@0x1e ]
+	0       (00000000) iput-object          v3, v2, Landroidx/appcompat/app/WindowDecorActionBar$TabImpl;->mIcon Landroid/graphics/drawable/Drawable;
+	1       (00000004) iget                 v0, v2, Landroidx/appcompat/app/WindowDecorActionBar$TabImpl;->mPosition I
+	2       (00000008) if-ltz               v0, +b
+
+setIcon-BB@0xc : [ setIcon-BB@0x1e ]
+	3       (0000000c) iget-object          v0, v2, Landroidx/appcompat/app/WindowDecorActionBar$TabImpl;->this$0 Landroidx/appcompat/app/WindowDecorActionBar;
+	4       (00000010) iget-object          v0, v0, Landroidx/appcompat/app/WindowDecorActionBar;->mTabScrollView Landroidx/appcompat/widget/ScrollingTabContainerView;
+	5       (00000014) iget                 v1, v2, Landroidx/appcompat/app/WindowDecorActionBar$TabImpl;->mPosition I
+	6       (00000018) invoke-virtual       v0, v1, Landroidx/appcompat/widget/ScrollingTabContainerView;->updateTab(I)V
+
+setIcon-BB@0x1e : 
+	7       (0000001e) return-object        v2
+

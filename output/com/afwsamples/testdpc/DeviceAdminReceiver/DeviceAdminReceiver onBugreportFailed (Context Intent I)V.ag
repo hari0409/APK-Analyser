@@ -1,0 +1,50 @@
+# Lcom/afwsamples/testdpc/DeviceAdminReceiver;->onBugreportFailed(Landroid/content/Context; Landroid/content/Intent; I)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v6
+# - v7:android.content.Context
+# - v8:android.content.Intent
+# - v9:int
+#
+# - return:void
+
+onBugreportFailed-BB@0x0 : [ D:onBugreportFailed-BB@0x8 1:onBugreportFailed-BB@0x6c ]
+	0       (00000000) const/4              v5, 1
+	1       (00000002) packed-switch        v9, +3d (0x7c)
+
+onBugreportFailed-BB@0x8 : [ onBugreportFailed-BB@0x16 ]
+	2       (00000008) const                v1, 2131689595 # [1.9008209813362422e+38]
+	3       (0000000e) invoke-virtual       v7, v1, Landroid/content/Context;->getString(I)Ljava/lang/String;
+	4       (00000014) move-result-object   v0
+
+onBugreportFailed-BB@0x16 : 
+	5       (00000016) const-string         v1, 'DeviceAdminReceiver'
+	6       (0000001a) new-instance         v2, Ljava/lang/StringBuilder;
+	7       (0000001e) invoke-direct        v2, Ljava/lang/StringBuilder;-><init>()V
+	8       (00000024) const-string         v3, 'Bugreport failed: '
+	9       (00000028) invoke-virtual       v2, v3, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	10      (0000002e) move-result-object   v2
+	11      (00000030) invoke-virtual       v2, v0, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	12      (00000036) move-result-object   v2
+	13      (00000038) invoke-virtual       v2, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+	14      (0000003e) move-result-object   v2
+	15      (00000040) invoke-static        v1, v2, Landroid/util/Log;->i(Ljava/lang/String; Ljava/lang/String;)I
+	16      (00000046) const                v1, 2131689600 # [1.9008219954567224e+38]
+	17      (0000004c) const                v2, 2131689597 # [1.9008213869844343e+38]
+	18      (00000052) new-array            v3, v5, [Ljava/lang/Object;
+	19      (00000056) const/4              v4, 0
+	20      (00000058) aput-object          v0, v3, v4
+	21      (0000005c) invoke-virtual       v7, v2, v3, Landroid/content/Context;->getString(I [Ljava/lang/Object;)Ljava/lang/String;
+	22      (00000062) move-result-object   v2
+	23      (00000064) invoke-static        v7, v1, v2, v5, Lcom/afwsamples/testdpc/common/NotificationUtil;->showNotification(Landroid/content/Context; I Ljava/lang/String; I)V
+	24      (0000006a) return-void          
+
+onBugreportFailed-BB@0x6c : [ onBugreportFailed-BB@0x16 ]
+	25      (0000006c) const                v1, 2131689596 # [1.9008211841603382e+38]
+	26      (00000072) invoke-virtual       v7, v1, Landroid/content/Context;->getString(I)Ljava/lang/String;
+	27      (00000078) move-result-object   v0
+	28      (0000007a) goto                 -32
+
+onBugreportFailed-BB@0x7c : 
+	29      (0000007c) packed-switch-payload 1
+

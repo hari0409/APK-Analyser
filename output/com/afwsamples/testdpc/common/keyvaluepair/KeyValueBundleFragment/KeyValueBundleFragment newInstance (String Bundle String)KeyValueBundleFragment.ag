@@ -1,0 +1,24 @@
+# Lcom/afwsamples/testdpc/common/keyvaluepair/KeyValueBundleFragment;->newInstance(Ljava/lang/String; Landroid/os/Bundle; Ljava/lang/String;)Lcom/afwsamples/testdpc/common/keyvaluepair/KeyValueBundleFragment; [access_flags=public static]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:java.lang.String
+# - v4:android.os.Bundle
+# - v5:java.lang.String
+#
+# - return:com.afwsamples.testdpc.common.keyvaluepair.KeyValueBundleFragment
+
+newInstance-BB@0x0 : 
+	0       (00000000) new-instance         v0, Landroid/os/Bundle;
+	1       (00000004) invoke-direct        v0, Landroid/os/Bundle;-><init>()V
+	2       (0000000a) const-string         v2, 'key'
+	3       (0000000e) invoke-virtual       v0, v2, v3, Landroid/os/Bundle;->putString(Ljava/lang/String; Ljava/lang/String;)V
+	4       (00000014) const-string         v2, 'initial_value'
+	5       (00000018) invoke-virtual       v0, v2, v4, Landroid/os/Bundle;->putBundle(Ljava/lang/String; Landroid/os/Bundle;)V
+	6       (0000001e) const-string         v2, 'app_name'
+	7       (00000022) invoke-virtual       v0, v2, v5, Landroid/os/Bundle;->putString(Ljava/lang/String; Ljava/lang/String;)V
+	8       (00000028) new-instance         v1, Lcom/afwsamples/testdpc/common/keyvaluepair/KeyValueBundleFragment;
+	9       (0000002c) invoke-direct        v1, Lcom/afwsamples/testdpc/common/keyvaluepair/KeyValueBundleFragment;-><init>()V
+	10      (00000032) invoke-virtual       v1, v0, Lcom/afwsamples/testdpc/common/keyvaluepair/KeyValueBundleFragment;->setArguments(Landroid/os/Bundle;)V
+	11      (00000038) return-object        v1
+

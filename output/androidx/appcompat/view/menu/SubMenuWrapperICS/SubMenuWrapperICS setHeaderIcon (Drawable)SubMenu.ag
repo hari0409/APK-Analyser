@@ -1,0 +1,14 @@
+# Landroidx/appcompat/view/menu/SubMenuWrapperICS;->setHeaderIcon(Landroid/graphics/drawable/Drawable;)Landroid/view/SubMenu; [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:android.graphics.drawable.Drawable
+#
+# - return:android.view.SubMenu
+
+setHeaderIcon-BB@0x0 : 
+	0       (00000000) invoke-virtual       v1, Landroidx/appcompat/view/menu/SubMenuWrapperICS;->getWrappedObject()Landroidx/core/internal/view/SupportSubMenu;
+	1       (00000006) move-result-object   v0
+	2       (00000008) invoke-interface     v0, v2, Landroidx/core/internal/view/SupportSubMenu;->setHeaderIcon(Landroid/graphics/drawable/Drawable;)Landroid/view/SubMenu;
+	3       (0000000e) return-object        v1
+

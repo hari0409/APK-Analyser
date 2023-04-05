@@ -1,0 +1,63 @@
+# Lcom/afwsamples/testdpc/common/BaseSearchablePolicyPreferenceFragment;->dump(Ljava/lang/String; Ljava/io/PrintWriter; Ljava/io/FileDescriptor; Z [Ljava/lang/String;)V [access_flags=public final]
+#
+# Parameters:
+# - local registers: v0...v6
+# - v7:java.lang.String
+# - v8:java.io.PrintWriter
+# - v9:java.io.FileDescriptor
+# - v10:boolean
+# - v11:java.lang.String[]
+#
+# - return:void
+
+dump-BB@0x0 : [ dump-BB@0xe dump-BB@0x68 ]
+	0       (00000000) const/4              v5, 2
+	1       (00000002) const/4              v4, 1
+	2       (00000004) const/4              v3, 0
+	3       (00000006) iget-object          v0, v6, Lcom/afwsamples/testdpc/common/BaseSearchablePolicyPreferenceFragment;->mAdapter Lcom/afwsamples/testdpc/common/BaseSearchablePolicyPreferenceFragment$HighlightablePreferenceGroupAdapter;
+	4       (0000000a) if-nez               v0, +2f
+
+dump-BB@0xe : [ dump-BB@0x20 ]
+	5       (0000000e) const-string         v0, '%sno adapter\n'
+	6       (00000012) new-array            v1, v4, [Ljava/lang/Object;
+	7       (00000016) aput-object          v7, v1, v3
+	8       (0000001a) invoke-virtual       v8, v0, v1, Ljava/io/PrintWriter;->printf(Ljava/lang/String; [Ljava/lang/Object;)Ljava/io/PrintWriter;
+
+dump-BB@0x20 : [ dump-BB@0x66 dump-BB@0x94 ]
+	9       (00000020) const-string         v0, '%smPreferenceKey: %s\n'
+	10      (00000024) new-array            v1, v5, [Ljava/lang/Object;
+	11      (00000028) aput-object          v7, v1, v3
+	12      (0000002c) iget-object          v2, v6, Lcom/afwsamples/testdpc/common/BaseSearchablePolicyPreferenceFragment;->mPreferenceKey Ljava/lang/String;
+	13      (00000030) aput-object          v2, v1, v4
+	14      (00000034) invoke-virtual       v8, v0, v1, Ljava/io/PrintWriter;->printf(Ljava/lang/String; [Ljava/lang/Object;)Ljava/io/PrintWriter;
+	15      (0000003a) const-string         v0, '%smPreferenceHighlighted: %b\n'
+	16      (0000003e) new-array            v1, v5, [Ljava/lang/Object;
+	17      (00000042) aput-object          v7, v1, v3
+	18      (00000046) iget-boolean         v2, v6, Lcom/afwsamples/testdpc/common/BaseSearchablePolicyPreferenceFragment;->mPreferenceHighlighted Z
+	19      (0000004a) invoke-static        v2, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+	20      (00000050) move-result-object   v2
+	21      (00000052) aput-object          v2, v1, v4
+	22      (00000056) invoke-virtual       v8, v0, v1, Ljava/io/PrintWriter;->printf(Ljava/lang/String; [Ljava/lang/Object;)Ljava/io/PrintWriter;
+	23      (0000005c) invoke-virtual       v6, v7, v8, v11, Lcom/afwsamples/testdpc/common/BaseSearchablePolicyPreferenceFragment;->dump(Ljava/lang/String; Ljava/io/PrintWriter; [Ljava/lang/String;)V
+	24      (00000062) if-eqz               v10, +19
+
+dump-BB@0x66 : 
+	25      (00000066) return-void          
+
+dump-BB@0x68 : [ dump-BB@0x20 ]
+	26      (00000068) const-string         v0, '%smHighlightPosition: %d\n'
+	27      (0000006c) new-array            v1, v5, [Ljava/lang/Object;
+	28      (00000070) aput-object          v7, v1, v3
+	29      (00000074) iget-object          v2, v6, Lcom/afwsamples/testdpc/common/BaseSearchablePolicyPreferenceFragment;->mAdapter Lcom/afwsamples/testdpc/common/BaseSearchablePolicyPreferenceFragment$HighlightablePreferenceGroupAdapter;
+	30      (00000078) invoke-static        v2, Lcom/afwsamples/testdpc/common/BaseSearchablePolicyPreferenceFragment$HighlightablePreferenceGroupAdapter;->access$000(Lcom/afwsamples/testdpc/common/BaseSearchablePolicyPreferenceFragment$HighlightablePreferenceGroupAdapter;)I
+	31      (0000007e) move-result          v2
+	32      (00000080) invoke-static        v2, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+	33      (00000086) move-result-object   v2
+	34      (00000088) aput-object          v2, v1, v4
+	35      (0000008c) invoke-virtual       v8, v0, v1, Ljava/io/PrintWriter;->printf(Ljava/lang/String; [Ljava/lang/Object;)Ljava/io/PrintWriter;
+	36      (00000092) goto                 -39
+
+dump-BB@0x94 : [ dump-BB@0x66 ]
+	37      (00000094) invoke-super         v6, v7, v9, v8, v11, Landroidx/preference/PreferenceFragment;->dump(Ljava/lang/String; Ljava/io/FileDescriptor; Ljava/io/PrintWriter; [Ljava/lang/String;)V
+	38      (0000009a) goto                 -1a
+

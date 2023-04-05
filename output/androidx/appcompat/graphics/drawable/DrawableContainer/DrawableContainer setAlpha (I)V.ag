@@ -1,0 +1,41 @@
+# Landroidx/appcompat/graphics/drawable/DrawableContainer;->setAlpha(I)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v4
+# - v5:int
+#
+# - return:void
+
+setAlpha-BB@0x0 : [ setAlpha-BB@0x8 setAlpha-BB@0x10 ]
+	0       (00000000) iget-boolean         v0, v4, Landroidx/appcompat/graphics/drawable/DrawableContainer;->mHasAlpha Z
+	1       (00000004) if-eqz               v0, +6
+
+setAlpha-BB@0x8 : [ setAlpha-BB@0x10 setAlpha-BB@0x3c ]
+	2       (00000008) iget                 v0, v4, Landroidx/appcompat/graphics/drawable/DrawableContainer;->mAlpha I
+	3       (0000000c) if-eq                v0, v5, +18
+
+setAlpha-BB@0x10 : [ setAlpha-BB@0x22 setAlpha-BB@0x3c ]
+	4       (00000010) const/4              v0, 1
+	5       (00000012) iput-boolean         v0, v4, Landroidx/appcompat/graphics/drawable/DrawableContainer;->mHasAlpha Z
+	6       (00000016) iput                 v5, v4, Landroidx/appcompat/graphics/drawable/DrawableContainer;->mAlpha I
+	7       (0000001a) iget-object          v0, v4, Landroidx/appcompat/graphics/drawable/DrawableContainer;->mCurrDrawable Landroid/graphics/drawable/Drawable;
+	8       (0000001e) if-eqz               v0, +f
+
+setAlpha-BB@0x22 : [ setAlpha-BB@0x32 setAlpha-BB@0x3e ]
+	9       (00000022) iget-wide            v0, v4, Landroidx/appcompat/graphics/drawable/DrawableContainer;->mEnterAnimationEnd J
+	10      (00000026) const-wide/16        v2, 0 # [0.0]
+	11      (0000002a) cmp-long             v0, v0, v2
+	12      (0000002e) if-nez               v0, +8
+
+setAlpha-BB@0x32 : [ setAlpha-BB@0x3c ]
+	13      (00000032) iget-object          v0, v4, Landroidx/appcompat/graphics/drawable/DrawableContainer;->mCurrDrawable Landroid/graphics/drawable/Drawable;
+	14      (00000036) invoke-virtual       v0, v5, Landroid/graphics/drawable/Drawable;->setAlpha(I)V
+
+setAlpha-BB@0x3c : 
+	15      (0000003c) return-void          
+
+setAlpha-BB@0x3e : [ setAlpha-BB@0x3c ]
+	16      (0000003e) const/4              v0, 0
+	17      (00000040) invoke-virtual       v4, v0, Landroidx/appcompat/graphics/drawable/DrawableContainer;->animate(Z)V
+	18      (00000046) goto                 -5
+

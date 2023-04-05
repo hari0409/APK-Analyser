@@ -1,0 +1,33 @@
+# Landroidx/appcompat/widget/AppCompatTextView;->onTextChanged(Ljava/lang/CharSequence; I I I)V [access_flags=protected]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:java.lang.CharSequence
+# - v3:int
+# - v4:int
+# - v5:int
+#
+# - return:void
+
+onTextChanged-BB@0x0 : [ onTextChanged-BB@0xe onTextChanged-BB@0x30 ]
+	0       (00000000) invoke-super         v1, v2, v3, v4, v5, Landroid/widget/TextView;->onTextChanged(Ljava/lang/CharSequence; I I I)V
+	1       (00000006) iget-object          v0, v1, Landroidx/appcompat/widget/AppCompatTextView;->mTextHelper Landroidx/appcompat/widget/AppCompatTextHelper;
+	2       (0000000a) if-eqz               v0, +13
+
+onTextChanged-BB@0xe : [ onTextChanged-BB@0x16 onTextChanged-BB@0x30 ]
+	3       (0000000e) sget-boolean         v0, Landroidx/appcompat/widget/AppCompatTextView;->PLATFORM_SUPPORTS_AUTOSIZE Z
+	4       (00000012) if-nez               v0, +f
+
+onTextChanged-BB@0x16 : [ onTextChanged-BB@0x26 onTextChanged-BB@0x30 ]
+	5       (00000016) iget-object          v0, v1, Landroidx/appcompat/widget/AppCompatTextView;->mTextHelper Landroidx/appcompat/widget/AppCompatTextHelper;
+	6       (0000001a) invoke-virtual       v0, Landroidx/appcompat/widget/AppCompatTextHelper;->isAutoSizeEnabled()Z
+	7       (00000020) move-result          v0
+	8       (00000022) if-eqz               v0, +7
+
+onTextChanged-BB@0x26 : [ onTextChanged-BB@0x30 ]
+	9       (00000026) iget-object          v0, v1, Landroidx/appcompat/widget/AppCompatTextView;->mTextHelper Landroidx/appcompat/widget/AppCompatTextHelper;
+	10      (0000002a) invoke-virtual       v0, Landroidx/appcompat/widget/AppCompatTextHelper;->autoSizeText()V
+
+onTextChanged-BB@0x30 : 
+	11      (00000030) return-void          
+

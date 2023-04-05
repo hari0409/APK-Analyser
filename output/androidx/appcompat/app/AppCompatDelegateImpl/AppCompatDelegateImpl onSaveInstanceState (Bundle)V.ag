@@ -1,0 +1,21 @@
+# Landroidx/appcompat/app/AppCompatDelegateImpl;->onSaveInstanceState(Landroid/os/Bundle;)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:android.os.Bundle
+#
+# - return:void
+
+onSaveInstanceState-BB@0x0 : [ onSaveInstanceState-BB@0xc onSaveInstanceState-BB@0x1a ]
+	0       (00000000) iget                 v0, v2, Landroidx/appcompat/app/AppCompatDelegateImpl;->mLocalNightMode I
+	1       (00000004) const/16             v1, -100
+	2       (00000008) if-eq                v0, v1, +9
+
+onSaveInstanceState-BB@0xc : [ onSaveInstanceState-BB@0x1a ]
+	3       (0000000c) const-string         v0, 'appcompat:local_night_mode'
+	4       (00000010) iget                 v1, v2, Landroidx/appcompat/app/AppCompatDelegateImpl;->mLocalNightMode I
+	5       (00000014) invoke-virtual       v3, v0, v1, Landroid/os/Bundle;->putInt(Ljava/lang/String; I)V
+
+onSaveInstanceState-BB@0x1a : 
+	6       (0000001a) return-void          
+

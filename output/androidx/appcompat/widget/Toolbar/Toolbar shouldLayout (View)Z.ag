@@ -1,0 +1,32 @@
+# Landroidx/appcompat/widget/Toolbar;->shouldLayout(Landroid/view/View;)Z [access_flags=private]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:android.view.View
+#
+# - return:boolean
+
+shouldLayout-BB@0x0 : [ shouldLayout-BB@0x4 shouldLayout-BB@0x24 ]
+	0       (00000000) if-eqz               v3, +12
+
+shouldLayout-BB@0x4 : [ shouldLayout-BB@0x10 shouldLayout-BB@0x24 ]
+	1       (00000004) invoke-virtual       v3, Landroid/view/View;->getParent()Landroid/view/ViewParent;
+	2       (0000000a) move-result-object   v0
+	3       (0000000c) if-ne                v0, v2, +c
+
+shouldLayout-BB@0x10 : [ shouldLayout-BB@0x20 shouldLayout-BB@0x24 ]
+	4       (00000010) invoke-virtual       v3, Landroid/view/View;->getVisibility()I
+	5       (00000016) move-result          v0
+	6       (00000018) const/16             v1, 8
+	7       (0000001c) if-eq                v0, v1, +4
+
+shouldLayout-BB@0x20 : [ shouldLayout-BB@0x22 ]
+	8       (00000020) const/4              v0, 1
+
+shouldLayout-BB@0x22 : 
+	9       (00000022) return               v0
+
+shouldLayout-BB@0x24 : [ shouldLayout-BB@0x22 ]
+	10      (00000024) const/4              v0, 0
+	11      (00000026) goto                 -2
+

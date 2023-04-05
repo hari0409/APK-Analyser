@@ -1,0 +1,14 @@
+# Landroidx/appcompat/view/menu/ActionMenuItem;->setAlphabeticShortcut(C)Landroid/view/MenuItem; [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:char
+#
+# - return:android.view.MenuItem
+
+setAlphabeticShortcut-BB@0x0 : 
+	0       (00000000) invoke-static        v2, Ljava/lang/Character;->toLowerCase(C)C
+	1       (00000006) move-result          v0
+	2       (00000008) iput-char            v0, v1, Landroidx/appcompat/view/menu/ActionMenuItem;->mShortcutAlphabeticChar C
+	3       (0000000c) return-object        v1
+

@@ -1,0 +1,28 @@
+# Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->validateAffiliatedUserAfterP()I [access_flags=private]
+#
+# Parameters:
+# local registers: v0...v2
+#
+# - return:int
+
+validateAffiliatedUserAfterP-BB@0x0 : [ validateAffiliatedUserAfterP-BB@0xc validateAffiliatedUserAfterP-BB@0x24 ]
+	0       (00000000) sget                 v0, Lcom/afwsamples/testdpc/common/Util;->SDK_INT I
+	1       (00000004) const/16             v1, 28
+	2       (00000008) if-lt                v0, v1, +e
+
+validateAffiliatedUserAfterP-BB@0xc : [ validateAffiliatedUserAfterP-BB@0x1c validateAffiliatedUserAfterP-BB@0x24 ]
+	3       (0000000c) iget-object          v0, v2, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->mDevicePolicyManager Landroid/app/admin/DevicePolicyManager;
+	4       (00000010) invoke-virtual       v0, Landroid/app/admin/DevicePolicyManager;->isAffiliatedUser()Z
+	5       (00000016) move-result          v0
+	6       (00000018) if-nez               v0, +6
+
+validateAffiliatedUserAfterP-BB@0x1c : [ validateAffiliatedUserAfterP-BB@0x22 ]
+	7       (0000001c) const                v0, 2131690128 # [1.9009290865794297e+38]
+
+validateAffiliatedUserAfterP-BB@0x22 : 
+	8       (00000022) return               v0
+
+validateAffiliatedUserAfterP-BB@0x24 : [ validateAffiliatedUserAfterP-BB@0x22 ]
+	9       (00000024) const/4              v0, 0
+	10      (00000026) goto                 -2
+

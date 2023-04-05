@@ -1,0 +1,14 @@
+# Landroidx/appcompat/widget/ToolbarWidgetWrapper;->setMenuCallbacks(Landroidx/appcompat/view/menu/MenuPresenter$Callback; Landroidx/appcompat/view/menu/MenuBuilder$Callback;)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:androidx.appcompat.view.menu.MenuPresenter$Callback
+# - v3:androidx.appcompat.view.menu.MenuBuilder$Callback
+#
+# - return:void
+
+setMenuCallbacks-BB@0x0 : 
+	0       (00000000) iget-object          v0, v1, Landroidx/appcompat/widget/ToolbarWidgetWrapper;->mToolbar Landroidx/appcompat/widget/Toolbar;
+	1       (00000004) invoke-virtual       v0, v2, v3, Landroidx/appcompat/widget/Toolbar;->setMenuCallbacks(Landroidx/appcompat/view/menu/MenuPresenter$Callback; Landroidx/appcompat/view/menu/MenuBuilder$Callback;)V
+	2       (0000000a) return-void          
+

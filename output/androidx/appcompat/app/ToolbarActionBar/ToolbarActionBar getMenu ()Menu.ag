@@ -1,0 +1,27 @@
+# Landroidx/appcompat/app/ToolbarActionBar;->getMenu()Landroid/view/Menu; [access_flags=private]
+#
+# Parameters:
+# local registers: v0...v3
+#
+# - return:android.view.Menu
+
+getMenu-BB@0x0 : [ getMenu-BB@0x8 getMenu-BB@0x2c ]
+	0       (00000000) iget-boolean         v0, v3, Landroidx/appcompat/app/ToolbarActionBar;->mMenuCallbackSet Z
+	1       (00000004) if-nez               v0, +14
+
+getMenu-BB@0x8 : [ getMenu-BB@0x2c ]
+	2       (00000008) iget-object          v0, v3, Landroidx/appcompat/app/ToolbarActionBar;->mDecorToolbar Landroidx/appcompat/widget/DecorToolbar;
+	3       (0000000c) new-instance         v1, Landroidx/appcompat/app/ToolbarActionBar$ActionMenuPresenterCallback;
+	4       (00000010) invoke-direct        v1, v3, Landroidx/appcompat/app/ToolbarActionBar$ActionMenuPresenterCallback;-><init>(Landroidx/appcompat/app/ToolbarActionBar;)V
+	5       (00000016) new-instance         v2, Landroidx/appcompat/app/ToolbarActionBar$MenuBuilderCallback;
+	6       (0000001a) invoke-direct        v2, v3, Landroidx/appcompat/app/ToolbarActionBar$MenuBuilderCallback;-><init>(Landroidx/appcompat/app/ToolbarActionBar;)V
+	7       (00000020) invoke-interface     v0, v1, v2, Landroidx/appcompat/widget/DecorToolbar;->setMenuCallbacks(Landroidx/appcompat/view/menu/MenuPresenter$Callback; Landroidx/appcompat/view/menu/MenuBuilder$Callback;)V
+	8       (00000026) const/4              v0, 1
+	9       (00000028) iput-boolean         v0, v3, Landroidx/appcompat/app/ToolbarActionBar;->mMenuCallbackSet Z
+
+getMenu-BB@0x2c : 
+	10      (0000002c) iget-object          v0, v3, Landroidx/appcompat/app/ToolbarActionBar;->mDecorToolbar Landroidx/appcompat/widget/DecorToolbar;
+	11      (00000030) invoke-interface     v0, Landroidx/appcompat/widget/DecorToolbar;->getMenu()Landroid/view/Menu;
+	12      (00000036) move-result-object   v0
+	13      (00000038) return-object        v0
+

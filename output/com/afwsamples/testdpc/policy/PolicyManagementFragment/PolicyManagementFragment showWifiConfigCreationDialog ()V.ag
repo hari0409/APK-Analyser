@@ -1,0 +1,16 @@
+# Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->showWifiConfigCreationDialog()V [access_flags=private]
+#
+# Parameters:
+# local registers: v0...v3
+#
+# - return:void
+
+showWifiConfigCreationDialog-BB@0x0 : 
+	0       (00000000) invoke-static        Lcom/afwsamples/testdpc/policy/wifimanagement/WifiConfigCreationDialog;->newInstance()Lcom/afwsamples/testdpc/policy/wifimanagement/WifiConfigCreationDialog;
+	1       (00000006) move-result-object   v0
+	2       (00000008) invoke-virtual       v3, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->getFragmentManager()Landroid/app/FragmentManager;
+	3       (0000000e) move-result-object   v1
+	4       (00000010) const-string         v2, 'wifi_config_creation'
+	5       (00000014) invoke-virtual       v0, v1, v2, Lcom/afwsamples/testdpc/policy/wifimanagement/WifiConfigCreationDialog;->show(Landroid/app/FragmentManager; Ljava/lang/String;)V
+	6       (0000001a) return-void          
+

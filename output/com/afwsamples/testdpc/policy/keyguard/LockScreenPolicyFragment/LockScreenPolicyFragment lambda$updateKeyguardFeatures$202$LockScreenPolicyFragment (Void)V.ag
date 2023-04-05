@@ -1,0 +1,13 @@
+# Lcom/afwsamples/testdpc/policy/keyguard/LockScreenPolicyFragment;->lambda$updateKeyguardFeatures$202$LockScreenPolicyFragment(Ljava/lang/Void;)V [access_flags=final synthetic]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:java.lang.Void
+#
+# - return:void
+
+lambda$updateKeyguardFeatures$202$LockScreenPolicyFragment-BB@0x0 : 
+	0       (00000000) const-string         v0, 'setKeyguardDisabledFeatures'
+	1       (00000004) invoke-virtual       v1, v0, Lcom/afwsamples/testdpc/policy/keyguard/LockScreenPolicyFragment;->onSuccessLog(Ljava/lang/String;)V
+	2       (0000000a) return-void          
+

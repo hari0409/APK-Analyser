@@ -1,0 +1,39 @@
+# Landroidx/multidex/MultiDex$V14;->makeDexElements(Ljava/util/List;)[Ljava/lang/Object; [access_flags=private]
+#
+# Parameters:
+# - local registers: v0...v7
+# - v8:java.util.List
+#
+# - return:java.lang.Object[]
+
+makeDexElements-BB@0x0 : [ makeDexElements-BB@0xe ]
+	0       (00000000) invoke-interface     v8, Ljava/util/List;->size()I
+	1       (00000006) move-result          v3
+	2       (00000008) new-array            v0, v3, [Ljava/lang/Object;
+	3       (0000000c) const/4              v2, 0
+
+makeDexElements-BB@0xe : [ makeDexElements-BB@0x14 makeDexElements-BB@0x50 ]
+	4       (0000000e) array-length         v3, v0
+	5       (00000010) if-ge                v2, v3, +20
+
+makeDexElements-BB@0x14 : [ makeDexElements-BB@0xe ]
+	6       (00000014) invoke-interface     v8, v2, Ljava/util/List;->get(I)Ljava/lang/Object;
+	7       (0000001a) move-result-object   v1
+	8       (0000001c) check-cast           v1, Ljava/io/File;
+	9       (00000020) iget-object          v3, v7, Landroidx/multidex/MultiDex$V14;->elementConstructor Landroidx/multidex/MultiDex$V14$ElementConstructor;
+	10      (00000024) invoke-virtual       v1, Ljava/io/File;->getPath()Ljava/lang/String;
+	11      (0000002a) move-result-object   v4
+	12      (0000002c) invoke-static        v1, Landroidx/multidex/MultiDex$V14;->optimizedPathFor(Ljava/io/File;)Ljava/lang/String;
+	13      (00000032) move-result-object   v5
+	14      (00000034) const/4              v6, 0
+	15      (00000036) invoke-static        v4, v5, v6, Ldalvik/system/DexFile;->loadDex(Ljava/lang/String; Ljava/lang/String; I)Ldalvik/system/DexFile;
+	16      (0000003c) move-result-object   v4
+	17      (0000003e) invoke-interface     v3, v1, v4, Landroidx/multidex/MultiDex$V14$ElementConstructor;->newInstance(Ljava/io/File; Ldalvik/system/DexFile;)Ljava/lang/Object;
+	18      (00000044) move-result-object   v3
+	19      (00000046) aput-object          v3, v0, v2
+	20      (0000004a) add-int/lit8         v2, v2, 1
+	21      (0000004e) goto                 -20
+
+makeDexElements-BB@0x50 : 
+	22      (00000050) return-object        v0
+

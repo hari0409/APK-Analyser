@@ -1,0 +1,96 @@
+# Lcom/afwsamples/testdpc/cosu/CosuConfig;->toString()Ljava/lang/String; [access_flags=public]
+#
+# Parameters:
+# local registers: v0...v3
+#
+# - return:java.lang.String
+
+toString-BB@0x0 : 
+	0       (00000000) new-instance         v0, Ljava/lang/StringBuilder;
+	1       (00000004) invoke-direct        v0, Ljava/lang/StringBuilder;-><init>()V
+	2       (0000000a) const-string         v1, 'Mode: '
+	3       (0000000e) invoke-virtual       v0, v1, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	4       (00000014) move-result-object   v1
+	5       (00000016) iget-object          v2, v3, Lcom/afwsamples/testdpc/cosu/CosuConfig;->mMode Ljava/lang/String;
+	6       (0000001a) invoke-virtual       v1, v2, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	7       (00000020) move-result-object   v1
+	8       (00000022) sget-object          v2, Lcom/afwsamples/testdpc/cosu/CosuConfig;->NEW_LINE Ljava/lang/String;
+	9       (00000026) invoke-virtual       v1, v2, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	10      (0000002c) const-string         v1, 'Disable status bar: '
+	11      (00000030) invoke-virtual       v0, v1, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	12      (00000036) move-result-object   v1
+	13      (00000038) iget-boolean         v2, v3, Lcom/afwsamples/testdpc/cosu/CosuConfig;->mDisableStatusBar Z
+	14      (0000003c) invoke-virtual       v1, v2, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+	15      (00000042) move-result-object   v1
+	16      (00000044) sget-object          v2, Lcom/afwsamples/testdpc/cosu/CosuConfig;->NEW_LINE Ljava/lang/String;
+	17      (00000048) invoke-virtual       v1, v2, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	18      (0000004e) const-string         v1, 'Disable keyguard: '
+	19      (00000052) invoke-virtual       v0, v1, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	20      (00000058) move-result-object   v1
+	21      (0000005a) iget-boolean         v2, v3, Lcom/afwsamples/testdpc/cosu/CosuConfig;->mDisableKeyguard Z
+	22      (0000005e) invoke-virtual       v1, v2, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+	23      (00000064) move-result-object   v1
+	24      (00000066) sget-object          v2, Lcom/afwsamples/testdpc/cosu/CosuConfig;->NEW_LINE Ljava/lang/String;
+	25      (0000006a) invoke-virtual       v1, v2, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	26      (00000070) const-string         v1, 'Disable screen capture: '
+	27      (00000074) invoke-virtual       v0, v1, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	28      (0000007a) move-result-object   v1
+	29      (0000007c) iget-boolean         v2, v3, Lcom/afwsamples/testdpc/cosu/CosuConfig;->mDisableScreenCapture Z
+	30      (00000080) invoke-virtual       v1, v2, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+	31      (00000086) move-result-object   v1
+	32      (00000088) sget-object          v2, Lcom/afwsamples/testdpc/cosu/CosuConfig;->NEW_LINE Ljava/lang/String;
+	33      (0000008c) invoke-virtual       v1, v2, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	34      (00000092) const-string         v1, 'Disable camera: '
+	35      (00000096) invoke-virtual       v0, v1, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	36      (0000009c) move-result-object   v1
+	37      (0000009e) iget-boolean         v2, v3, Lcom/afwsamples/testdpc/cosu/CosuConfig;->mDisableCamera Z
+	38      (000000a2) invoke-virtual       v1, v2, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+	39      (000000a8) move-result-object   v1
+	40      (000000aa) sget-object          v2, Lcom/afwsamples/testdpc/cosu/CosuConfig;->NEW_LINE Ljava/lang/String;
+	41      (000000ae) invoke-virtual       v1, v2, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	42      (000000b4) const-string         v1, 'User restrictions:'
+	43      (000000b8) invoke-virtual       v0, v1, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	44      (000000be) move-result-object   v1
+	45      (000000c0) sget-object          v2, Lcom/afwsamples/testdpc/cosu/CosuConfig;->NEW_LINE Ljava/lang/String;
+	46      (000000c4) invoke-virtual       v1, v2, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	47      (000000ca) iget-object          v1, v3, Lcom/afwsamples/testdpc/cosu/CosuConfig;->mUserRestrictions Ljava/util/Set;
+	48      (000000ce) invoke-direct        v3, v0, v1, Lcom/afwsamples/testdpc/cosu/CosuConfig;->dumpSet(Ljava/lang/StringBuilder; Ljava/util/Set;)V
+	49      (000000d4) const-string         v1, 'Global settings:'
+	50      (000000d8) invoke-virtual       v0, v1, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	51      (000000de) move-result-object   v1
+	52      (000000e0) sget-object          v2, Lcom/afwsamples/testdpc/cosu/CosuConfig;->NEW_LINE Ljava/lang/String;
+	53      (000000e4) invoke-virtual       v1, v2, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	54      (000000ea) iget-object          v1, v3, Lcom/afwsamples/testdpc/cosu/CosuConfig;->mGlobalSettings Ljava/util/Set;
+	55      (000000ee) invoke-direct        v3, v0, v1, Lcom/afwsamples/testdpc/cosu/CosuConfig;->dumpSet(Ljava/lang/StringBuilder; Ljava/util/Set;)V
+	56      (000000f4) const-string         v1, 'Hide apps:'
+	57      (000000f8) invoke-virtual       v0, v1, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	58      (000000fe) move-result-object   v1
+	59      (00000100) sget-object          v2, Lcom/afwsamples/testdpc/cosu/CosuConfig;->NEW_LINE Ljava/lang/String;
+	60      (00000104) invoke-virtual       v1, v2, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	61      (0000010a) iget-object          v1, v3, Lcom/afwsamples/testdpc/cosu/CosuConfig;->mHideApps Ljava/util/Set;
+	62      (0000010e) invoke-direct        v3, v0, v1, Lcom/afwsamples/testdpc/cosu/CosuConfig;->dumpSet(Ljava/lang/StringBuilder; Ljava/util/Set;)V
+	63      (00000114) const-string         v1, 'Enable system apps:'
+	64      (00000118) invoke-virtual       v0, v1, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	65      (0000011e) move-result-object   v1
+	66      (00000120) sget-object          v2, Lcom/afwsamples/testdpc/cosu/CosuConfig;->NEW_LINE Ljava/lang/String;
+	67      (00000124) invoke-virtual       v1, v2, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	68      (0000012a) iget-object          v1, v3, Lcom/afwsamples/testdpc/cosu/CosuConfig;->mEnableSystemApps Ljava/util/Set;
+	69      (0000012e) invoke-direct        v3, v0, v1, Lcom/afwsamples/testdpc/cosu/CosuConfig;->dumpSet(Ljava/lang/StringBuilder; Ljava/util/Set;)V
+	70      (00000134) const-string         v1, 'Kiosk apps:'
+	71      (00000138) invoke-virtual       v0, v1, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	72      (0000013e) move-result-object   v1
+	73      (00000140) sget-object          v2, Lcom/afwsamples/testdpc/cosu/CosuConfig;->NEW_LINE Ljava/lang/String;
+	74      (00000144) invoke-virtual       v1, v2, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	75      (0000014a) iget-object          v1, v3, Lcom/afwsamples/testdpc/cosu/CosuConfig;->mKioskApps Ljava/util/Set;
+	76      (0000014e) invoke-direct        v3, v0, v1, Lcom/afwsamples/testdpc/cosu/CosuConfig;->dumpSet(Ljava/lang/StringBuilder; Ljava/util/Set;)V
+	77      (00000154) const-string         v1, 'Download apps:'
+	78      (00000158) invoke-virtual       v0, v1, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	79      (0000015e) move-result-object   v1
+	80      (00000160) sget-object          v2, Lcom/afwsamples/testdpc/cosu/CosuConfig;->NEW_LINE Ljava/lang/String;
+	81      (00000164) invoke-virtual       v1, v2, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	82      (0000016a) iget-object          v1, v3, Lcom/afwsamples/testdpc/cosu/CosuConfig;->mDownloadApps Ljava/util/Set;
+	83      (0000016e) invoke-direct        v3, v0, v1, Lcom/afwsamples/testdpc/cosu/CosuConfig;->dumpSet(Ljava/lang/StringBuilder; Ljava/util/Set;)V
+	84      (00000174) invoke-virtual       v0, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+	85      (0000017a) move-result-object   v1
+	86      (0000017c) return-object        v1
+

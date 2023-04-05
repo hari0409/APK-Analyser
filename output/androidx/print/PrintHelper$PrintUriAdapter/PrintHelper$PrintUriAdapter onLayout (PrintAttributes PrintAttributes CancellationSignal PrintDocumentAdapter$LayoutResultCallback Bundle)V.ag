@@ -1,0 +1,81 @@
+# Landroidx/print/PrintHelper$PrintUriAdapter;->onLayout(Landroid/print/PrintAttributes; Landroid/print/PrintAttributes; Landroid/os/CancellationSignal; Landroid/print/PrintDocumentAdapter$LayoutResultCallback; Landroid/os/Bundle;)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v9
+# - v10:android.print.PrintAttributes
+# - v11:android.print.PrintAttributes
+# - v12:android.os.CancellationSignal
+# - v13:android.print.PrintDocumentAdapter$LayoutResultCallback
+# - v14:android.os.Bundle
+#
+# - return:void
+
+onLayout-BB@0x0 : [ onLayout-BB@0x6 ]
+	0       (00000000) const/4              v8, 0
+	1       (00000002) const/4              v6, 1
+	2       (00000004) monitor-enter        v9
+
+onLayout-BB@0x6 : [ onLayout-BB@0x18 onLayout-BB@0x26 ]
+	3       (00000006) iput-object          v11, v9, Landroidx/print/PrintHelper$PrintUriAdapter;->mAttributes Landroid/print/PrintAttributes;
+	4       (0000000a) monitor-exit         v9
+	5       (0000000c) invoke-virtual       v12, Landroid/os/CancellationSignal;->isCanceled()Z
+	6       (00000012) move-result          v0
+	7       (00000014) if-eqz               v0, +9
+	6:b
+	(Ljava/lang/Throwable; -> 20 onLayout-BB@0x20)
+
+onLayout-BB@0x18 : [ onLayout-BB@0x1e ]
+	8       (00000018) invoke-virtual       v13, Landroid/print/PrintDocumentAdapter$LayoutResultCallback;->onLayoutCancelled()V
+
+onLayout-BB@0x1e : 
+	9       (0000001e) return-void          
+
+onLayout-BB@0x20 : [ onLayout-BB@0x22 ]
+	10      (00000020) move-exception       v0
+
+onLayout-BB@0x22 : 
+	11      (00000022) monitor-exit         v9
+	12      (00000024) throw                v0
+	22:23
+	(Ljava/lang/Throwable; -> 20 onLayout-BB@0x20)
+
+onLayout-BB@0x26 : [ onLayout-BB@0x2e onLayout-BB@0x6c ]
+	13      (00000026) iget-object          v0, v9, Landroidx/print/PrintHelper$PrintUriAdapter;->mBitmap Landroid/graphics/Bitmap;
+	14      (0000002a) if-eqz               v0, +21
+
+onLayout-BB@0x2e : [ onLayout-BB@0x60 onLayout-BB@0x68 ]
+	15      (0000002e) new-instance         v0, Landroid/print/PrintDocumentInfo$Builder;
+	16      (00000032) iget-object          v1, v9, Landroidx/print/PrintHelper$PrintUriAdapter;->mJobName Ljava/lang/String;
+	17      (00000036) invoke-direct        v0, v1, Landroid/print/PrintDocumentInfo$Builder;-><init>(Ljava/lang/String;)V
+	18      (0000003c) invoke-virtual       v0, v6, Landroid/print/PrintDocumentInfo$Builder;->setContentType(I)Landroid/print/PrintDocumentInfo$Builder;
+	19      (00000042) move-result-object   v0
+	20      (00000044) invoke-virtual       v0, v6, Landroid/print/PrintDocumentInfo$Builder;->setPageCount(I)Landroid/print/PrintDocumentInfo$Builder;
+	21      (0000004a) move-result-object   v0
+	22      (0000004c) invoke-virtual       v0, Landroid/print/PrintDocumentInfo$Builder;->build()Landroid/print/PrintDocumentInfo;
+	23      (00000052) move-result-object   v7
+	24      (00000054) invoke-virtual       v11, v10, Landroid/print/PrintAttributes;->equals(Ljava/lang/Object;)Z
+	25      (0000005a) move-result          v0
+	26      (0000005c) if-nez               v0, +6
+
+onLayout-BB@0x60 : [ onLayout-BB@0x1e ]
+	27      (00000060) invoke-virtual       v13, v7, v6, Landroid/print/PrintDocumentAdapter$LayoutResultCallback;->onLayoutFinished(Landroid/print/PrintDocumentInfo; Z)V
+	28      (00000066) goto                 -24
+
+onLayout-BB@0x68 : [ onLayout-BB@0x60 ]
+	29      (00000068) move                 v6, v8
+	30      (0000006a) goto                 -5
+
+onLayout-BB@0x6c : [ onLayout-BB@0x1e ]
+	31      (0000006c) new-instance         v0, Landroidx/print/PrintHelper$PrintUriAdapter$1;
+	32      (00000070) move-object          v1, v9
+	33      (00000072) move-object          v2, v12
+	34      (00000074) move-object          v3, v11
+	35      (00000076) move-object          v4, v10
+	36      (00000078) move-object          v5, v13
+	37      (0000007a) invoke-direct/range  v0 ... v5, Landroidx/print/PrintHelper$PrintUriAdapter$1;-><init>(Landroidx/print/PrintHelper$PrintUriAdapter; Landroid/os/CancellationSignal; Landroid/print/PrintAttributes; Landroid/print/PrintAttributes; Landroid/print/PrintDocumentAdapter$LayoutResultCallback;)V
+	38      (00000080) new-array            v1, v8, [Landroid/net/Uri;
+	39      (00000084) invoke-virtual       v0, v1, Landroidx/print/PrintHelper$PrintUriAdapter$1;->execute([Ljava/lang/Object;)Landroid/os/AsyncTask;
+	40      (0000008a) move-result-object   v0
+	41      (0000008c) iput-object          v0, v9, Landroidx/print/PrintHelper$PrintUriAdapter;->mLoadBitmap Landroid/os/AsyncTask;
+	42      (00000090) goto                 -39
+

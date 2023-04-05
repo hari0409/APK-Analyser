@@ -1,0 +1,35 @@
+# Lcom/afwsamples/testdpc/policy/networking/NetworkUsageStatsFragment;->updateButtonsText()V [access_flags=private]
+#
+# Parameters:
+# local registers: v0...v3
+#
+# - return:void
+
+updateButtonsText-BB@0x0 : [ updateButtonsText-BB@0x12 updateButtonsText-BB@0x28 ]
+	0       (00000000) const/4              v1, 2
+	1       (00000002) invoke-static        v1, Ljava/text/DateFormat;->getDateInstance(I)Ljava/text/DateFormat;
+	2       (00000008) move-result-object   v0
+	3       (0000000a) iget-object          v1, v3, Lcom/afwsamples/testdpc/policy/networking/NetworkUsageStatsFragment;->mStartDateButton Landroid/widget/Button;
+	4       (0000000e) if-eqz               v1, +d
+
+updateButtonsText-BB@0x12 : [ updateButtonsText-BB@0x28 ]
+	5       (00000012) iget-object          v1, v3, Lcom/afwsamples/testdpc/policy/networking/NetworkUsageStatsFragment;->mStartDateButton Landroid/widget/Button;
+	6       (00000016) iget-object          v2, v3, Lcom/afwsamples/testdpc/policy/networking/NetworkUsageStatsFragment;->mStartDate Ljava/util/Date;
+	7       (0000001a) invoke-virtual       v0, v2, Ljava/text/DateFormat;->format(Ljava/util/Date;)Ljava/lang/String;
+	8       (00000020) move-result-object   v2
+	9       (00000022) invoke-virtual       v1, v2, Landroid/widget/Button;->setText(Ljava/lang/CharSequence;)V
+
+updateButtonsText-BB@0x28 : [ updateButtonsText-BB@0x30 updateButtonsText-BB@0x46 ]
+	10      (00000028) iget-object          v1, v3, Lcom/afwsamples/testdpc/policy/networking/NetworkUsageStatsFragment;->mEndDateButton Landroid/widget/Button;
+	11      (0000002c) if-eqz               v1, +d
+
+updateButtonsText-BB@0x30 : [ updateButtonsText-BB@0x46 ]
+	12      (00000030) iget-object          v1, v3, Lcom/afwsamples/testdpc/policy/networking/NetworkUsageStatsFragment;->mEndDateButton Landroid/widget/Button;
+	13      (00000034) iget-object          v2, v3, Lcom/afwsamples/testdpc/policy/networking/NetworkUsageStatsFragment;->mEndDate Ljava/util/Date;
+	14      (00000038) invoke-virtual       v0, v2, Ljava/text/DateFormat;->format(Ljava/util/Date;)Ljava/lang/String;
+	15      (0000003e) move-result-object   v2
+	16      (00000040) invoke-virtual       v1, v2, Landroid/widget/Button;->setText(Ljava/lang/CharSequence;)V
+
+updateButtonsText-BB@0x46 : 
+	17      (00000046) return-void          
+

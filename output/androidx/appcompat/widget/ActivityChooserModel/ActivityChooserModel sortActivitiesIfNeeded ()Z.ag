@@ -1,0 +1,44 @@
+# Landroidx/appcompat/widget/ActivityChooserModel;->sortActivitiesIfNeeded()Z [access_flags=private]
+#
+# Parameters:
+# local registers: v0...v4
+#
+# - return:boolean
+
+sortActivitiesIfNeeded-BB@0x0 : [ sortActivitiesIfNeeded-BB@0x8 sortActivitiesIfNeeded-BB@0x52 ]
+	0       (00000000) iget-object          v0, v4, Landroidx/appcompat/widget/ActivityChooserModel;->mActivitySorter Landroidx/appcompat/widget/ActivityChooserModel$ActivitySorter;
+	1       (00000004) if-eqz               v0, +27
+
+sortActivitiesIfNeeded-BB@0x8 : [ sortActivitiesIfNeeded-BB@0x10 sortActivitiesIfNeeded-BB@0x52 ]
+	2       (00000008) iget-object          v0, v4, Landroidx/appcompat/widget/ActivityChooserModel;->mIntent Landroid/content/Intent;
+	3       (0000000c) if-eqz               v0, +23
+
+sortActivitiesIfNeeded-BB@0x10 : [ sortActivitiesIfNeeded-BB@0x20 sortActivitiesIfNeeded-BB@0x52 ]
+	4       (00000010) iget-object          v0, v4, Landroidx/appcompat/widget/ActivityChooserModel;->mActivities Ljava/util/List;
+	5       (00000014) invoke-interface     v0, Ljava/util/List;->isEmpty()Z
+	6       (0000001a) move-result          v0
+	7       (0000001c) if-nez               v0, +1b
+
+sortActivitiesIfNeeded-BB@0x20 : [ sortActivitiesIfNeeded-BB@0x30 sortActivitiesIfNeeded-BB@0x52 ]
+	8       (00000020) iget-object          v0, v4, Landroidx/appcompat/widget/ActivityChooserModel;->mHistoricalRecords Ljava/util/List;
+	9       (00000024) invoke-interface     v0, Ljava/util/List;->isEmpty()Z
+	10      (0000002a) move-result          v0
+	11      (0000002c) if-nez               v0, +13
+
+sortActivitiesIfNeeded-BB@0x30 : [ sortActivitiesIfNeeded-BB@0x50 ]
+	12      (00000030) iget-object          v0, v4, Landroidx/appcompat/widget/ActivityChooserModel;->mActivitySorter Landroidx/appcompat/widget/ActivityChooserModel$ActivitySorter;
+	13      (00000034) iget-object          v1, v4, Landroidx/appcompat/widget/ActivityChooserModel;->mIntent Landroid/content/Intent;
+	14      (00000038) iget-object          v2, v4, Landroidx/appcompat/widget/ActivityChooserModel;->mActivities Ljava/util/List;
+	15      (0000003c) iget-object          v3, v4, Landroidx/appcompat/widget/ActivityChooserModel;->mHistoricalRecords Ljava/util/List;
+	16      (00000040) invoke-static        v3, Ljava/util/Collections;->unmodifiableList(Ljava/util/List;)Ljava/util/List;
+	17      (00000046) move-result-object   v3
+	18      (00000048) invoke-interface     v0, v1, v2, v3, Landroidx/appcompat/widget/ActivityChooserModel$ActivitySorter;->sort(Landroid/content/Intent; Ljava/util/List; Ljava/util/List;)V
+	19      (0000004e) const/4              v0, 1
+
+sortActivitiesIfNeeded-BB@0x50 : 
+	20      (00000050) return               v0
+
+sortActivitiesIfNeeded-BB@0x52 : [ sortActivitiesIfNeeded-BB@0x50 ]
+	21      (00000052) const/4              v0, 0
+	22      (00000054) goto                 -2
+

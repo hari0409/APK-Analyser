@@ -1,0 +1,24 @@
+# Landroidx/appcompat/widget/ActivityChooserModel;->setOnChooseActivityListener(Landroidx/appcompat/widget/ActivityChooserModel$OnChooseActivityListener;)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:androidx.appcompat.widget.ActivityChooserModel$OnChooseActivityListener
+#
+# - return:void
+
+setOnChooseActivityListener-BB@0x0 : [ setOnChooseActivityListener-BB@0x6 ]
+	0       (00000000) iget-object          v1, v2, Landroidx/appcompat/widget/ActivityChooserModel;->mInstanceLock Ljava/lang/Object;
+	1       (00000004) monitor-enter        v1
+
+setOnChooseActivityListener-BB@0x6 : 
+	2       (00000006) iput-object          v3, v2, Landroidx/appcompat/widget/ActivityChooserModel;->mActivityChoserModelPolicy Landroidx/appcompat/widget/ActivityChooserModel$OnChooseActivityListener;
+	3       (0000000a) monitor-exit         v1
+	4       (0000000c) return-void          
+	6:11
+	(Ljava/lang/Throwable; -> e setOnChooseActivityListener-BB@0xe)
+
+setOnChooseActivityListener-BB@0xe : 
+	5       (0000000e) move-exception       v0
+	6       (00000010) monitor-exit         v1
+	7       (00000012) throw                v0
+

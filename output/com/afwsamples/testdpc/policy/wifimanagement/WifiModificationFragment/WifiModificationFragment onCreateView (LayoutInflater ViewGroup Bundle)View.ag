@@ -1,0 +1,93 @@
+# Lcom/afwsamples/testdpc/policy/wifimanagement/WifiModificationFragment;->onCreateView(Landroid/view/LayoutInflater; Landroid/view/ViewGroup; Landroid/os/Bundle;)Landroid/view/View; [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v8
+# - v9:android.view.LayoutInflater
+# - v10:android.view.ViewGroup
+# - v11:android.os.Bundle
+#
+# - return:android.view.View
+
+onCreateView-BB@0x0 : [ onCreateView-BB@0xbc onCreateView-BB@0x11c ]
+	0       (00000000) const/4              v7, 1
+	1       (00000002) const/4              v6, 0
+	2       (00000004) invoke-super         v8, v9, v10, v11, Landroid/app/Fragment;->onCreateView(Landroid/view/LayoutInflater; Landroid/view/ViewGroup; Landroid/os/Bundle;)Landroid/view/View;
+	3       (0000000a) invoke-virtual       v8, Lcom/afwsamples/testdpc/policy/wifimanagement/WifiModificationFragment;->getArguments()Landroid/os/Bundle;
+	4       (00000010) move-result-object   v4
+	5       (00000012) const-string         v5, 'owned_networks_only'
+	6       (00000016) invoke-virtual       v4, v5, Landroid/os/Bundle;->getBoolean(Ljava/lang/String;)Z
+	7       (0000001c) move-result          v4
+	8       (0000001e) iput-boolean         v4, v8, Lcom/afwsamples/testdpc/policy/wifimanagement/WifiModificationFragment;->mShowOwnedNetworksOnly Z
+	9       (00000022) invoke-virtual       v8, Lcom/afwsamples/testdpc/policy/wifimanagement/WifiModificationFragment;->getActivity()Landroid/app/Activity;
+	10      (00000028) move-result-object   v4
+	11      (0000002a) const-string         v5, 'wifi'
+	12      (0000002e) invoke-virtual       v4, v5, Landroid/app/Activity;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
+	13      (00000034) move-result-object   v4
+	14      (00000036) check-cast           v4, Landroid/net/wifi/WifiManager;
+	15      (0000003a) iput-object          v4, v8, Lcom/afwsamples/testdpc/policy/wifimanagement/WifiModificationFragment;->mWifiManager Landroid/net/wifi/WifiManager;
+	16      (0000003e) const                v4, 2131427516 # [1.847665045071088e+38]
+	17      (00000044) invoke-virtual       v9, v4, v10, v6, Landroid/view/LayoutInflater;->inflate(I Landroid/view/ViewGroup; Z)Landroid/view/View;
+	18      (0000004a) move-result-object   v3
+	19      (0000004c) const                v4, 2131296730 # [1.821138492846856e+38]
+	20      (00000052) invoke-virtual       v3, v4, Landroid/view/View;->findViewById(I)Landroid/view/View;
+	21      (00000058) move-result-object   v4
+	22      (0000005a) check-cast           v4, Landroid/widget/ListView;
+	23      (0000005e) iput-object          v4, v8, Lcom/afwsamples/testdpc/policy/wifimanagement/WifiModificationFragment;->mConfigsList Landroid/widget/ListView;
+	24      (00000062) const                v4, 2131427515 # [1.847664842246992e+38]
+	25      (00000068) iget-object          v5, v8, Lcom/afwsamples/testdpc/policy/wifimanagement/WifiModificationFragment;->mConfigsList Landroid/widget/ListView;
+	26      (0000006c) invoke-virtual       v9, v4, v5, v6, Landroid/view/LayoutInflater;->inflate(I Landroid/view/ViewGroup; Z)Landroid/view/View;
+	27      (00000072) move-result-object   v0
+	28      (00000074) check-cast           v0, Landroid/widget/TextView;
+	29      (00000078) iget-object          v4, v8, Lcom/afwsamples/testdpc/policy/wifimanagement/WifiModificationFragment;->mConfigsList Landroid/widget/ListView;
+	30      (0000007c) invoke-virtual       v4, v0, Landroid/widget/ListView;->addHeaderView(Landroid/view/View;)V
+	31      (00000082) new-instance         v4, Lcom/afwsamples/testdpc/policy/wifimanagement/WifiModificationFragment$ConfigsAdapter;
+	32      (00000086) invoke-direct        v4, v8, Lcom/afwsamples/testdpc/policy/wifimanagement/WifiModificationFragment$ConfigsAdapter;-><init>(Lcom/afwsamples/testdpc/policy/wifimanagement/WifiModificationFragment;)V
+	33      (0000008c) iput-object          v4, v8, Lcom/afwsamples/testdpc/policy/wifimanagement/WifiModificationFragment;->mConfigsAdapter Lcom/afwsamples/testdpc/policy/wifimanagement/WifiModificationFragment$ConfigsAdapter;
+	34      (00000090) iget-object          v4, v8, Lcom/afwsamples/testdpc/policy/wifimanagement/WifiModificationFragment;->mConfigsList Landroid/widget/ListView;
+	35      (00000094) iget-object          v5, v8, Lcom/afwsamples/testdpc/policy/wifimanagement/WifiModificationFragment;->mConfigsAdapter Lcom/afwsamples/testdpc/policy/wifimanagement/WifiModificationFragment$ConfigsAdapter;
+	36      (00000098) invoke-virtual       v4, v5, Landroid/widget/ListView;->setAdapter(Landroid/widget/ListAdapter;)V
+	37      (0000009e) iget-object          v4, v8, Lcom/afwsamples/testdpc/policy/wifimanagement/WifiModificationFragment;->mConfigsList Landroid/widget/ListView;
+	38      (000000a2) invoke-virtual       v4, v7, Landroid/widget/ListView;->setChoiceMode(I)V
+	39      (000000a8) invoke-virtual       v8, Lcom/afwsamples/testdpc/policy/wifimanagement/WifiModificationFragment;->getContext()Landroid/content/Context;
+	40      (000000ae) move-result-object   v4
+	41      (000000b0) invoke-virtual       v8, v4, Lcom/afwsamples/testdpc/policy/wifimanagement/WifiModificationFragment;->shouldRequestLocationPermission(Landroid/content/Context;)Z
+	42      (000000b6) move-result          v4
+	43      (000000b8) if-eqz               v4, +32
+
+onCreateView-BB@0xbc : [ onCreateView-BB@0xce ]
+	44      (000000bc) new-array            v4, v7, [Ljava/lang/String;
+	45      (000000c0) const-string         v5, 'android.permission.ACCESS_FINE_LOCATION'
+	46      (000000c4) aput-object          v5, v4, v6
+	47      (000000c8) invoke-virtual       v8, v4, v6, Lcom/afwsamples/testdpc/policy/wifimanagement/WifiModificationFragment;->requestPermissions([Ljava/lang/String; I)V
+
+onCreateView-BB@0xce : [ onCreateView-BB@0xe4 onCreateView-BB@0xf4 ]
+	48      (000000ce) const                v4, 2131296718 # [1.8211360589577036e+38]
+	49      (000000d4) invoke-virtual       v3, v4, Landroid/view/View;->findViewById(I)Landroid/view/View;
+	50      (000000da) move-result-object   v2
+	51      (000000dc) check-cast           v2, Landroid/widget/Button;
+	52      (000000e0) if-eqz               v2, +a
+
+onCreateView-BB@0xe4 : [ onCreateView-BB@0xf4 ]
+	53      (000000e4) new-instance         v4, Lcom/afwsamples/testdpc/policy/wifimanagement/WifiModificationFragment$1;
+	54      (000000e8) invoke-direct        v4, v8, Lcom/afwsamples/testdpc/policy/wifimanagement/WifiModificationFragment$1;-><init>(Lcom/afwsamples/testdpc/policy/wifimanagement/WifiModificationFragment;)V
+	55      (000000ee) invoke-virtual       v2, v4, Landroid/widget/Button;->setOnClickListener(Landroid/view/View$OnClickListener;)V
+
+onCreateView-BB@0xf4 : [ onCreateView-BB@0x10a onCreateView-BB@0x11a ]
+	56      (000000f4) const                v4, 2131296567 # [1.821105432519202e+38]
+	57      (000000fa) invoke-virtual       v3, v4, Landroid/view/View;->findViewById(I)Landroid/view/View;
+	58      (00000100) move-result-object   v1
+	59      (00000102) check-cast           v1, Landroid/widget/Button;
+	60      (00000106) if-eqz               v1, +a
+
+onCreateView-BB@0x10a : [ onCreateView-BB@0x11a ]
+	61      (0000010a) new-instance         v4, Lcom/afwsamples/testdpc/policy/wifimanagement/WifiModificationFragment$2;
+	62      (0000010e) invoke-direct        v4, v8, Lcom/afwsamples/testdpc/policy/wifimanagement/WifiModificationFragment$2;-><init>(Lcom/afwsamples/testdpc/policy/wifimanagement/WifiModificationFragment;)V
+	63      (00000114) invoke-virtual       v1, v4, Landroid/widget/Button;->setOnClickListener(Landroid/view/View$OnClickListener;)V
+
+onCreateView-BB@0x11a : 
+	64      (0000011a) return-object        v3
+
+onCreateView-BB@0x11c : [ onCreateView-BB@0xce ]
+	65      (0000011c) invoke-direct        v8, Lcom/afwsamples/testdpc/policy/wifimanagement/WifiModificationFragment;->updateConfigsList()V
+	66      (00000122) goto                 -2a
+

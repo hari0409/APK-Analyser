@@ -1,0 +1,35 @@
+# Landroidx/appcompat/widget/SearchView;->setSearchableInfo(Landroid/app/SearchableInfo;)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:android.app.SearchableInfo
+#
+# - return:void
+
+setSearchableInfo-BB@0x0 : [ setSearchableInfo-BB@0xc setSearchableInfo-BB@0x18 ]
+	0       (00000000) iput-object          v3, v2, Landroidx/appcompat/widget/SearchView;->mSearchable Landroid/app/SearchableInfo;
+	1       (00000004) iget-object          v0, v2, Landroidx/appcompat/widget/SearchView;->mSearchable Landroid/app/SearchableInfo;
+	2       (00000008) if-eqz               v0, +8
+
+setSearchableInfo-BB@0xc : [ setSearchableInfo-BB@0x18 ]
+	3       (0000000c) invoke-direct        v2, Landroidx/appcompat/widget/SearchView;->updateSearchAutoComplete()V
+	4       (00000012) invoke-direct        v2, Landroidx/appcompat/widget/SearchView;->updateQueryHint()V
+
+setSearchableInfo-BB@0x18 : [ setSearchableInfo-BB@0x2c setSearchableInfo-BB@0x3a ]
+	5       (00000018) invoke-direct        v2, Landroidx/appcompat/widget/SearchView;->hasVoiceSearch()Z
+	6       (0000001e) move-result          v0
+	7       (00000020) iput-boolean         v0, v2, Landroidx/appcompat/widget/SearchView;->mVoiceButtonEnabled Z
+	8       (00000024) iget-boolean         v0, v2, Landroidx/appcompat/widget/SearchView;->mVoiceButtonEnabled Z
+	9       (00000028) if-eqz               v0, +9
+
+setSearchableInfo-BB@0x2c : [ setSearchableInfo-BB@0x3a ]
+	10      (0000002c) iget-object          v0, v2, Landroidx/appcompat/widget/SearchView;->mSearchSrcTextView Landroidx/appcompat/widget/SearchView$SearchAutoComplete;
+	11      (00000030) const-string         v1, 'nm'
+	12      (00000034) invoke-virtual       v0, v1, Landroidx/appcompat/widget/SearchView$SearchAutoComplete;->setPrivateImeOptions(Ljava/lang/String;)V
+
+setSearchableInfo-BB@0x3a : 
+	13      (0000003a) invoke-virtual       v2, Landroidx/appcompat/widget/SearchView;->isIconified()Z
+	14      (00000040) move-result          v0
+	15      (00000042) invoke-direct        v2, v0, Landroidx/appcompat/widget/SearchView;->updateViewsVisibility(Z)V
+	16      (00000048) return-void          
+

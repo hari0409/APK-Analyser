@@ -1,0 +1,141 @@
+# Landroidx/appcompat/graphics/drawable/AnimatedStateListDrawableCompat;->parseTransition(Landroid/content/Context; Landroid/content/res/Resources; Lorg/xmlpull/v1/XmlPullParser; Landroid/util/AttributeSet; Landroid/content/res/Resources$Theme;)I [access_flags=private]
+#
+# Parameters:
+# - local registers: v0...v10
+# - v11:android.content.Context
+# - v12:android.content.res.Resources
+# - v13:org.xmlpull.v1.XmlPullParser
+# - v14:android.util.AttributeSet
+# - v15:android.content.res.Resources$Theme
+#
+# - return:int
+
+parseTransition-BB@0x0 : [ parseTransition-BB@0x38 parseTransition-BB@0x40 ]
+	0       (00000000) const/4              v9, -1
+	1       (00000002) sget-object          v7, Landroidx/appcompat/R$styleable;->AnimatedStateListDrawableTransition [I
+	2       (00000006) invoke-static        v12, v15, v14, v7, Landroidx/core/content/res/TypedArrayUtils;->obtainAttributes(Landroid/content/res/Resources; Landroid/content/res/Resources$Theme; Landroid/util/AttributeSet; [I)Landroid/content/res/TypedArray;
+	3       (0000000c) move-result-object   v0
+	4       (0000000e) sget                 v7, Landroidx/appcompat/R$styleable;->AnimatedStateListDrawableTransition_android_fromId I
+	5       (00000012) invoke-virtual       v0, v7, v9, Landroid/content/res/TypedArray;->getResourceId(I I)I
+	6       (00000018) move-result          v3
+	7       (0000001a) sget                 v7, Landroidx/appcompat/R$styleable;->AnimatedStateListDrawableTransition_android_toId I
+	8       (0000001e) invoke-virtual       v0, v7, v9, Landroid/content/res/TypedArray;->getResourceId(I I)I
+	9       (00000024) move-result          v5
+	10      (00000026) const/4              v1, 0
+	11      (00000028) sget                 v7, Landroidx/appcompat/R$styleable;->AnimatedStateListDrawableTransition_android_drawable I
+	12      (0000002c) invoke-virtual       v0, v7, v9, Landroid/content/res/TypedArray;->getResourceId(I I)I
+	13      (00000032) move-result          v2
+	14      (00000034) if-lez               v2, +6
+
+parseTransition-BB@0x38 : [ parseTransition-BB@0x40 ]
+	15      (00000038) invoke-static        v11, v2, Landroidx/appcompat/content/res/AppCompatResources;->getDrawable(Landroid/content/Context; I)Landroid/graphics/drawable/Drawable;
+	16      (0000003e) move-result-object   v1
+
+parseTransition-BB@0x40 : [ parseTransition-BB@0x58 parseTransition-BB@0xc6 ]
+	17      (00000040) sget                 v7, Landroidx/appcompat/R$styleable;->AnimatedStateListDrawableTransition_android_reversible I
+	18      (00000044) const/4              v8, 0
+	19      (00000046) invoke-virtual       v0, v7, v8, Landroid/content/res/TypedArray;->getBoolean(I Z)Z
+	20      (0000004c) move-result          v4
+	21      (0000004e) invoke-virtual       v0, Landroid/content/res/TypedArray;->recycle()V
+	22      (00000054) if-nez               v1, +39
+
+parseTransition-BB@0x58 : [ parseTransition-BB@0x66 parseTransition-BB@0x58 ]
+	23      (00000058) invoke-interface     v13, Lorg/xmlpull/v1/XmlPullParser;->next()I
+	24      (0000005e) move-result          v6
+	25      (00000060) const/4              v7, 4
+	26      (00000062) if-eq                v6, v7, -5
+
+parseTransition-BB@0x66 : [ parseTransition-BB@0x6c parseTransition-BB@0xa6 ]
+	27      (00000066) const/4              v7, 2
+	28      (00000068) if-eq                v6, v7, +1f
+
+parseTransition-BB@0x6c : 
+	29      (0000006c) new-instance         v7, Lorg/xmlpull/v1/XmlPullParserException;
+	30      (00000070) new-instance         v8, Ljava/lang/StringBuilder;
+	31      (00000074) invoke-direct        v8, Ljava/lang/StringBuilder;-><init>()V
+	32      (0000007a) invoke-interface     v13, Lorg/xmlpull/v1/XmlPullParser;->getPositionDescription()Ljava/lang/String;
+	33      (00000080) move-result-object   v9
+	34      (00000082) invoke-virtual       v8, v9, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	35      (00000088) move-result-object   v8
+	36      (0000008a) const-string         v9, ": <transition> tag requires a 'drawable' attribute or child tag defining a drawable"
+	37      (0000008e) invoke-virtual       v8, v9, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	38      (00000094) move-result-object   v8
+	39      (00000096) invoke-virtual       v8, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+	40      (0000009c) move-result-object   v8
+	41      (0000009e) invoke-direct        v7, v8, Lorg/xmlpull/v1/XmlPullParserException;-><init>(Ljava/lang/String;)V
+	42      (000000a4) throw                v7
+
+parseTransition-BB@0xa6 : [ parseTransition-BB@0xbe parseTransition-BB@0x104 ]
+	43      (000000a6) invoke-interface     v13, Lorg/xmlpull/v1/XmlPullParser;->getName()Ljava/lang/String;
+	44      (000000ac) move-result-object   v7
+	45      (000000ae) const-string         v8, 'animated-vector'
+	46      (000000b2) invoke-virtual       v7, v8, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+	47      (000000b8) move-result          v7
+	48      (000000ba) if-eqz               v7, +25
+
+parseTransition-BB@0xbe : [ parseTransition-BB@0xc6 ]
+	49      (000000be) invoke-static        v11, v12, v13, v14, v15, Landroidx/vectordrawable/graphics/drawable/AnimatedVectorDrawableCompat;->createFromXmlInner(Landroid/content/Context; Landroid/content/res/Resources; Lorg/xmlpull/v1/XmlPullParser; Landroid/util/AttributeSet; Landroid/content/res/Resources$Theme;)Landroidx/vectordrawable/graphics/drawable/AnimatedVectorDrawableCompat;
+	50      (000000c4) move-result-object   v1
+
+parseTransition-BB@0xc6 : [ parseTransition-BB@0xca parseTransition-BB@0x124 ]
+	51      (000000c6) if-nez               v1, +2f
+
+parseTransition-BB@0xca : 
+	52      (000000ca) new-instance         v7, Lorg/xmlpull/v1/XmlPullParserException;
+	53      (000000ce) new-instance         v8, Ljava/lang/StringBuilder;
+	54      (000000d2) invoke-direct        v8, Ljava/lang/StringBuilder;-><init>()V
+	55      (000000d8) invoke-interface     v13, Lorg/xmlpull/v1/XmlPullParser;->getPositionDescription()Ljava/lang/String;
+	56      (000000de) move-result-object   v9
+	57      (000000e0) invoke-virtual       v8, v9, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	58      (000000e6) move-result-object   v8
+	59      (000000e8) const-string         v9, ": <transition> tag requires a 'drawable' attribute or child tag defining a drawable"
+	60      (000000ec) invoke-virtual       v8, v9, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	61      (000000f2) move-result-object   v8
+	62      (000000f4) invoke-virtual       v8, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+	63      (000000fa) move-result-object   v8
+	64      (000000fc) invoke-direct        v7, v8, Lorg/xmlpull/v1/XmlPullParserException;-><init>(Ljava/lang/String;)V
+	65      (00000102) throw                v7
+
+parseTransition-BB@0x104 : [ parseTransition-BB@0x110 parseTransition-BB@0x11a ]
+	66      (00000104) sget                 v7, Landroid/os/Build$VERSION;->SDK_INT I
+	67      (00000108) const/16             v8, 21
+	68      (0000010c) if-lt                v7, v8, +7
+
+parseTransition-BB@0x110 : [ parseTransition-BB@0xc6 ]
+	69      (00000110) invoke-static        v12, v13, v14, v15, Landroid/graphics/drawable/Drawable;->createFromXmlInner(Landroid/content/res/Resources; Lorg/xmlpull/v1/XmlPullParser; Landroid/util/AttributeSet; Landroid/content/res/Resources$Theme;)Landroid/graphics/drawable/Drawable;
+	70      (00000116) move-result-object   v1
+	71      (00000118) goto                 -29
+
+parseTransition-BB@0x11a : [ parseTransition-BB@0xc6 ]
+	72      (0000011a) invoke-static        v12, v13, v14, Landroid/graphics/drawable/Drawable;->createFromXmlInner(Landroid/content/res/Resources; Lorg/xmlpull/v1/XmlPullParser; Landroid/util/AttributeSet;)Landroid/graphics/drawable/Drawable;
+	73      (00000120) move-result-object   v1
+	74      (00000122) goto                 -2e
+
+parseTransition-BB@0x124 : [ parseTransition-BB@0x128 parseTransition-BB@0x12c ]
+	75      (00000124) if-eq                v3, v9, +4
+
+parseTransition-BB@0x128 : [ parseTransition-BB@0x12c parseTransition-BB@0x166 ]
+	76      (00000128) if-ne                v5, v9, +1f
+
+parseTransition-BB@0x12c : 
+	77      (0000012c) new-instance         v7, Lorg/xmlpull/v1/XmlPullParserException;
+	78      (00000130) new-instance         v8, Ljava/lang/StringBuilder;
+	79      (00000134) invoke-direct        v8, Ljava/lang/StringBuilder;-><init>()V
+	80      (0000013a) invoke-interface     v13, Lorg/xmlpull/v1/XmlPullParser;->getPositionDescription()Ljava/lang/String;
+	81      (00000140) move-result-object   v9
+	82      (00000142) invoke-virtual       v8, v9, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	83      (00000148) move-result-object   v8
+	84      (0000014a) const-string         v9, ": <transition> tag requires 'fromId' & 'toId' attributes"
+	85      (0000014e) invoke-virtual       v8, v9, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	86      (00000154) move-result-object   v8
+	87      (00000156) invoke-virtual       v8, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+	88      (0000015c) move-result-object   v8
+	89      (0000015e) invoke-direct        v7, v8, Lorg/xmlpull/v1/XmlPullParserException;-><init>(Ljava/lang/String;)V
+	90      (00000164) throw                v7
+
+parseTransition-BB@0x166 : 
+	91      (00000166) iget-object          v7, v10, Landroidx/appcompat/graphics/drawable/AnimatedStateListDrawableCompat;->mState Landroidx/appcompat/graphics/drawable/AnimatedStateListDrawableCompat$AnimatedStateListState;
+	92      (0000016a) invoke-virtual       v7, v3, v5, v1, v4, Landroidx/appcompat/graphics/drawable/AnimatedStateListDrawableCompat$AnimatedStateListState;->addTransition(I I Landroid/graphics/drawable/Drawable; Z)I
+	93      (00000170) move-result          v7
+	94      (00000172) return               v7
+

@@ -1,0 +1,20 @@
+# Landroidx/appcompat/widget/SearchView;->onActionViewCollapsed()V [access_flags=public]
+#
+# Parameters:
+# local registers: v0...v3
+#
+# - return:void
+
+onActionViewCollapsed-BB@0x0 : 
+	0       (00000000) const/4              v2, 0
+	1       (00000002) const-string         v0, ''
+	2       (00000006) invoke-virtual       v3, v0, v2, Landroidx/appcompat/widget/SearchView;->setQuery(Ljava/lang/CharSequence; Z)V
+	3       (0000000c) invoke-virtual       v3, Landroidx/appcompat/widget/SearchView;->clearFocus()V
+	4       (00000012) const/4              v0, 1
+	5       (00000014) invoke-direct        v3, v0, Landroidx/appcompat/widget/SearchView;->updateViewsVisibility(Z)V
+	6       (0000001a) iget-object          v0, v3, Landroidx/appcompat/widget/SearchView;->mSearchSrcTextView Landroidx/appcompat/widget/SearchView$SearchAutoComplete;
+	7       (0000001e) iget                 v1, v3, Landroidx/appcompat/widget/SearchView;->mCollapsedImeOptions I
+	8       (00000022) invoke-virtual       v0, v1, Landroidx/appcompat/widget/SearchView$SearchAutoComplete;->setImeOptions(I)V
+	9       (00000028) iput-boolean         v2, v3, Landroidx/appcompat/widget/SearchView;->mExpandedInActionView Z
+	10      (0000002c) return-void          
+

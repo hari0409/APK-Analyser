@@ -1,0 +1,128 @@
+# Lcom/afwsamples/testdpc/profilepolicy/crossprofileintentfilter/AddCrossProfileIntentFilterFragment;->getIntentFilter()Landroid/content/IntentFilter; [access_flags=private]
+#
+# Parameters:
+# local registers: v0...v10
+#
+# - return:android.content.IntentFilter
+
+getIntentFilter-BB@0x0 : [ getIntentFilter-BB@0x12 getIntentFilter-BB@0x46 ]
+	0       (00000000) const/4              v6, 0
+	1       (00000002) iget-object          v7, v10, Lcom/afwsamples/testdpc/profilepolicy/crossprofileintentfilter/AddCrossProfileIntentFilterFragment;->mActions Ljava/util/HashSet;
+	2       (00000006) invoke-virtual       v7, Ljava/util/HashSet;->isEmpty()Z
+	3       (0000000c) move-result          v7
+	4       (0000000e) if-eqz               v7, +1c
+
+getIntentFilter-BB@0x12 : [ getIntentFilter-BB@0x22 getIntentFilter-BB@0x46 ]
+	5       (00000012) iget-object          v7, v10, Lcom/afwsamples/testdpc/profilepolicy/crossprofileintentfilter/AddCrossProfileIntentFilterFragment;->mCategories Ljava/util/HashSet;
+	6       (00000016) invoke-virtual       v7, Ljava/util/HashSet;->isEmpty()Z
+	7       (0000001c) move-result          v7
+	8       (0000001e) if-eqz               v7, +14
+
+getIntentFilter-BB@0x22 : [ getIntentFilter-BB@0x32 getIntentFilter-BB@0x46 ]
+	9       (00000022) iget-object          v7, v10, Lcom/afwsamples/testdpc/profilepolicy/crossprofileintentfilter/AddCrossProfileIntentFilterFragment;->mDataSchemes Ljava/util/HashSet;
+	10      (00000026) invoke-virtual       v7, Ljava/util/HashSet;->isEmpty()Z
+	11      (0000002c) move-result          v7
+	12      (0000002e) if-eqz               v7, +c
+
+getIntentFilter-BB@0x32 : [ getIntentFilter-BB@0x42 getIntentFilter-BB@0x46 ]
+	13      (00000032) iget-object          v7, v10, Lcom/afwsamples/testdpc/profilepolicy/crossprofileintentfilter/AddCrossProfileIntentFilterFragment;->mDataTypes Ljava/util/HashSet;
+	14      (00000036) invoke-virtual       v7, Ljava/util/HashSet;->isEmpty()Z
+	15      (0000003c) move-result          v7
+	16      (0000003e) if-eqz               v7, +4
+
+getIntentFilter-BB@0x42 : [ getIntentFilter-BB@0x44 ]
+	17      (00000042) move-object          v5, v6
+
+getIntentFilter-BB@0x44 : 
+	18      (00000044) return-object        v5
+
+getIntentFilter-BB@0x46 : [ getIntentFilter-BB@0x5c ]
+	19      (00000046) new-instance         v5, Landroid/content/IntentFilter;
+	20      (0000004a) invoke-direct        v5, Landroid/content/IntentFilter;-><init>()V
+	21      (00000050) iget-object          v7, v10, Lcom/afwsamples/testdpc/profilepolicy/crossprofileintentfilter/AddCrossProfileIntentFilterFragment;->mActions Ljava/util/HashSet;
+	22      (00000054) invoke-virtual       v7, Ljava/util/HashSet;->iterator()Ljava/util/Iterator;
+	23      (0000005a) move-result-object   v7
+
+getIntentFilter-BB@0x5c : [ getIntentFilter-BB@0x68 getIntentFilter-BB@0x7c ]
+	24      (0000005c) invoke-interface     v7, Ljava/util/Iterator;->hasNext()Z
+	25      (00000062) move-result          v8
+	26      (00000064) if-eqz               v8, +c
+
+getIntentFilter-BB@0x68 : [ getIntentFilter-BB@0x5c ]
+	27      (00000068) invoke-interface     v7, Ljava/util/Iterator;->next()Ljava/lang/Object;
+	28      (0000006e) move-result-object   v0
+	29      (00000070) check-cast           v0, Ljava/lang/String;
+	30      (00000074) invoke-virtual       v5, v0, Landroid/content/IntentFilter;->addAction(Ljava/lang/String;)V
+	31      (0000007a) goto                 -f
+
+getIntentFilter-BB@0x7c : [ getIntentFilter-BB@0x88 ]
+	32      (0000007c) iget-object          v7, v10, Lcom/afwsamples/testdpc/profilepolicy/crossprofileintentfilter/AddCrossProfileIntentFilterFragment;->mCategories Ljava/util/HashSet;
+	33      (00000080) invoke-virtual       v7, Ljava/util/HashSet;->iterator()Ljava/util/Iterator;
+	34      (00000086) move-result-object   v7
+
+getIntentFilter-BB@0x88 : [ getIntentFilter-BB@0x94 getIntentFilter-BB@0xa8 ]
+	35      (00000088) invoke-interface     v7, Ljava/util/Iterator;->hasNext()Z
+	36      (0000008e) move-result          v8
+	37      (00000090) if-eqz               v8, +c
+
+getIntentFilter-BB@0x94 : [ getIntentFilter-BB@0x88 ]
+	38      (00000094) invoke-interface     v7, Ljava/util/Iterator;->next()Ljava/lang/Object;
+	39      (0000009a) move-result-object   v1
+	40      (0000009c) check-cast           v1, Ljava/lang/String;
+	41      (000000a0) invoke-virtual       v5, v1, Landroid/content/IntentFilter;->addCategory(Ljava/lang/String;)V
+	42      (000000a6) goto                 -f
+
+getIntentFilter-BB@0xa8 : [ getIntentFilter-BB@0xb4 ]
+	43      (000000a8) iget-object          v7, v10, Lcom/afwsamples/testdpc/profilepolicy/crossprofileintentfilter/AddCrossProfileIntentFilterFragment;->mDataSchemes Ljava/util/HashSet;
+	44      (000000ac) invoke-virtual       v7, Ljava/util/HashSet;->iterator()Ljava/util/Iterator;
+	45      (000000b2) move-result-object   v7
+
+getIntentFilter-BB@0xb4 : [ getIntentFilter-BB@0xc0 getIntentFilter-BB@0xd4 ]
+	46      (000000b4) invoke-interface     v7, Ljava/util/Iterator;->hasNext()Z
+	47      (000000ba) move-result          v8
+	48      (000000bc) if-eqz               v8, +c
+
+getIntentFilter-BB@0xc0 : [ getIntentFilter-BB@0xb4 ]
+	49      (000000c0) invoke-interface     v7, Ljava/util/Iterator;->next()Ljava/lang/Object;
+	50      (000000c6) move-result-object   v2
+	51      (000000c8) check-cast           v2, Ljava/lang/String;
+	52      (000000cc) invoke-virtual       v5, v2, Landroid/content/IntentFilter;->addDataScheme(Ljava/lang/String;)V
+	53      (000000d2) goto                 -f
+
+getIntentFilter-BB@0xd4 : [ getIntentFilter-BB@0xe0 ]
+	54      (000000d4) iget-object          v7, v10, Lcom/afwsamples/testdpc/profilepolicy/crossprofileintentfilter/AddCrossProfileIntentFilterFragment;->mDataTypes Ljava/util/HashSet;
+	55      (000000d8) invoke-virtual       v7, Ljava/util/HashSet;->iterator()Ljava/util/Iterator;
+	56      (000000de) move-result-object   v7
+
+getIntentFilter-BB@0xe0 : [ getIntentFilter-BB@0xec getIntentFilter-BB@0x44 ]
+	57      (000000e0) invoke-interface     v7, Ljava/util/Iterator;->hasNext()Z
+	58      (000000e6) move-result          v8
+	59      (000000e8) if-eqz               v8, -52
+
+getIntentFilter-BB@0xec : [ getIntentFilter-BB@0xf8 ]
+	60      (000000ec) invoke-interface     v7, Ljava/util/Iterator;->next()Ljava/lang/Object;
+	61      (000000f2) move-result-object   v3
+	62      (000000f4) check-cast           v3, Ljava/lang/String;
+
+getIntentFilter-BB@0xf8 : [ getIntentFilter-BB@0xe0 ]
+	63      (000000f8) invoke-virtual       v5, v3, Landroid/content/IntentFilter;->addDataType(Ljava/lang/String;)V
+	64      (000000fe) goto                 -f
+	f8:fd
+	(Landroid/content/IntentFilter$MalformedMimeTypeException; -> 100 getIntentFilter-BB@0x100)
+
+getIntentFilter-BB@0x100 : [ getIntentFilter-BB@0x44 ]
+	65      (00000100) move-exception       v4
+	66      (00000102) const-string         v7, 'AddCrossProfileIntentFilterFragment'
+	67      (00000106) new-instance         v8, Ljava/lang/StringBuilder;
+	68      (0000010a) invoke-direct        v8, Ljava/lang/StringBuilder;-><init>()V
+	69      (00000110) const-string         v9, 'Malformed mime type: '
+	70      (00000114) invoke-virtual       v8, v9, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	71      (0000011a) move-result-object   v8
+	72      (0000011c) invoke-virtual       v8, v4, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+	73      (00000122) move-result-object   v8
+	74      (00000124) invoke-virtual       v8, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+	75      (0000012a) move-result-object   v8
+	76      (0000012c) invoke-static        v7, v8, Landroid/util/Log;->e(Ljava/lang/String; Ljava/lang/String;)I
+	77      (00000132) move-object          v5, v6
+	78      (00000134) goto                 -78
+

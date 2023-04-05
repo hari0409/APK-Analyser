@@ -1,0 +1,15 @@
+# Landroidx/appcompat/view/WindowCallbackWrapper;->onMenuItemSelected(I Landroid/view/MenuItem;)Z [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:int
+# - v3:android.view.MenuItem
+#
+# - return:boolean
+
+onMenuItemSelected-BB@0x0 : 
+	0       (00000000) iget-object          v0, v1, Landroidx/appcompat/view/WindowCallbackWrapper;->mWrapped Landroid/view/Window$Callback;
+	1       (00000004) invoke-interface     v0, v2, v3, Landroid/view/Window$Callback;->onMenuItemSelected(I Landroid/view/MenuItem;)Z
+	2       (0000000a) move-result          v0
+	3       (0000000c) return               v0
+

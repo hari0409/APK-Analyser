@@ -1,0 +1,22 @@
+# Landroidx/appcompat/app/WindowDecorActionBar;->completeDeferredDestroyActionMode()V [access_flags=]
+#
+# Parameters:
+# local registers: v0...v3
+#
+# - return:void
+
+completeDeferredDestroyActionMode-BB@0x0 : [ completeDeferredDestroyActionMode-BB@0xa completeDeferredDestroyActionMode-BB@0x20 ]
+	0       (00000000) const/4              v2, 0
+	1       (00000002) iget-object          v0, v3, Landroidx/appcompat/app/WindowDecorActionBar;->mDeferredModeDestroyCallback Landroidx/appcompat/view/ActionMode$Callback;
+	2       (00000006) if-eqz               v0, +d
+
+completeDeferredDestroyActionMode-BB@0xa : [ completeDeferredDestroyActionMode-BB@0x20 ]
+	3       (0000000a) iget-object          v0, v3, Landroidx/appcompat/app/WindowDecorActionBar;->mDeferredModeDestroyCallback Landroidx/appcompat/view/ActionMode$Callback;
+	4       (0000000e) iget-object          v1, v3, Landroidx/appcompat/app/WindowDecorActionBar;->mDeferredDestroyActionMode Landroidx/appcompat/view/ActionMode;
+	5       (00000012) invoke-interface     v0, v1, Landroidx/appcompat/view/ActionMode$Callback;->onDestroyActionMode(Landroidx/appcompat/view/ActionMode;)V
+	6       (00000018) iput-object          v2, v3, Landroidx/appcompat/app/WindowDecorActionBar;->mDeferredDestroyActionMode Landroidx/appcompat/view/ActionMode;
+	7       (0000001c) iput-object          v2, v3, Landroidx/appcompat/app/WindowDecorActionBar;->mDeferredModeDestroyCallback Landroidx/appcompat/view/ActionMode$Callback;
+
+completeDeferredDestroyActionMode-BB@0x20 : 
+	8       (00000020) return-void          
+

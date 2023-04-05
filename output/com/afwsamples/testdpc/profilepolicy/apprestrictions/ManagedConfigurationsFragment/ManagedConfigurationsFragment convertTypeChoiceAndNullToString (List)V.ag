@@ -1,0 +1,39 @@
+# Lcom/afwsamples/testdpc/profilepolicy/apprestrictions/ManagedConfigurationsFragment;->convertTypeChoiceAndNullToString(Ljava/util/List;)V [access_flags=private]
+#
+# Parameters:
+# - local registers: v0...v4
+# - v5:java.util.List
+#
+# - return:void
+
+convertTypeChoiceAndNullToString-BB@0x0 : [ convertTypeChoiceAndNullToString-BB@0x8 ]
+	0       (00000000) invoke-interface     v5, Ljava/util/List;->iterator()Ljava/util/Iterator;
+	1       (00000006) move-result-object   v1
+
+convertTypeChoiceAndNullToString-BB@0x8 : [ convertTypeChoiceAndNullToString-BB@0x14 convertTypeChoiceAndNullToString-BB@0x44 ]
+	2       (00000008) invoke-interface     v1, Ljava/util/Iterator;->hasNext()Z
+	3       (0000000e) move-result          v2
+	4       (00000010) if-eqz               v2, +1a
+
+convertTypeChoiceAndNullToString-BB@0x14 : [ convertTypeChoiceAndNullToString-BB@0x2e convertTypeChoiceAndNullToString-BB@0x3a ]
+	5       (00000014) invoke-interface     v1, Ljava/util/Iterator;->next()Ljava/lang/Object;
+	6       (0000001a) move-result-object   v0
+	7       (0000001c) check-cast           v0, Landroid/content/RestrictionEntry;
+	8       (00000020) invoke-virtual       v0, Landroid/content/RestrictionEntry;->getType()I
+	9       (00000026) move-result          v2
+	10      (00000028) const/4              v3, 2
+	11      (0000002a) if-eq                v2, v3, +8
+
+convertTypeChoiceAndNullToString-BB@0x2e : [ convertTypeChoiceAndNullToString-BB@0x3a convertTypeChoiceAndNullToString-BB@0x8 ]
+	12      (0000002e) invoke-virtual       v0, Landroid/content/RestrictionEntry;->getType()I
+	13      (00000034) move-result          v2
+	14      (00000036) if-nez               v2, -17
+
+convertTypeChoiceAndNullToString-BB@0x3a : [ convertTypeChoiceAndNullToString-BB@0x8 ]
+	15      (0000003a) const/4              v2, 6
+	16      (0000003c) invoke-virtual       v0, v2, Landroid/content/RestrictionEntry;->setType(I)V
+	17      (00000042) goto                 -1d
+
+convertTypeChoiceAndNullToString-BB@0x44 : 
+	18      (00000044) return-void          
+

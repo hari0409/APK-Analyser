@@ -1,0 +1,31 @@
+# Lcom/afwsamples/testdpc/policy/networking/NetworkUsageStatsFragment;->getTodayPlus(I I)Ljava/util/Date; [access_flags=private]
+#
+# Parameters:
+# - local registers: v0...v3
+# - v4:int
+# - v5:int
+#
+# - return:java.util.Date
+
+getTodayPlus-BB@0x0 : [ getTodayPlus-BB@0x36 getTodayPlus-BB@0x3c ]
+	0       (00000000) const/4              v2, 0
+	1       (00000002) invoke-static        Ljava/util/Calendar;->getInstance()Ljava/util/Calendar;
+	2       (00000008) move-result-object   v0
+	3       (0000000a) const/16             v1, 10
+	4       (0000000e) invoke-virtual       v0, v1, v2, Ljava/util/Calendar;->set(I I)V
+	5       (00000014) const/16             v1, 12
+	6       (00000018) invoke-virtual       v0, v1, v2, Ljava/util/Calendar;->set(I I)V
+	7       (0000001e) const/16             v1, 13
+	8       (00000022) invoke-virtual       v0, v1, v2, Ljava/util/Calendar;->set(I I)V
+	9       (00000028) const/16             v1, 14
+	10      (0000002c) invoke-virtual       v0, v1, v2, Ljava/util/Calendar;->set(I I)V
+	11      (00000032) if-lez               v5, +5
+
+getTodayPlus-BB@0x36 : [ getTodayPlus-BB@0x3c ]
+	12      (00000036) invoke-virtual       v0, v4, v5, Ljava/util/Calendar;->add(I I)V
+
+getTodayPlus-BB@0x3c : 
+	13      (0000003c) invoke-virtual       v0, Ljava/util/Calendar;->getTime()Ljava/util/Date;
+	14      (00000042) move-result-object   v1
+	15      (00000044) return-object        v1
+

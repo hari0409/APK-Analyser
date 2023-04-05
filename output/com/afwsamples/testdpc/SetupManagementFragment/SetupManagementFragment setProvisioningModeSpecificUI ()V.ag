@@ -1,0 +1,109 @@
+# Lcom/afwsamples/testdpc/SetupManagementFragment;->setProvisioningModeSpecificUI()V [access_flags=private]
+#
+# Parameters:
+# local registers: v0...v8
+#
+# - return:void
+
+setProvisioningModeSpecificUI-BB@0x0 : [ setProvisioningModeSpecificUI-BB@0x22 setProvisioningModeSpecificUI-BB@0xc2 ]
+	0       (00000000) const/16             v7, 26
+	1       (00000004) const/4              v0, 1
+	2       (00000006) const/16             v5, 8
+	3       (0000000a) const/4              v3, 0
+	4       (0000000c) iget-object          v4, v8, Lcom/afwsamples/testdpc/SetupManagementFragment;->mSetupOptions Landroid/widget/RadioGroup;
+	5       (00000010) invoke-virtual       v4, Landroid/widget/RadioGroup;->getCheckedRadioButtonId()I
+	6       (00000016) move-result          v2
+	7       (00000018) const                v4, 2131296616 # [1.821115370899908e+38]
+	8       (0000001e) if-ne                v2, v4, +52
+
+setProvisioningModeSpecificUI-BB@0x22 : [ setProvisioningModeSpecificUI-BB@0x24 ]
+	9       (00000022) move                 v1, v0
+
+setProvisioningModeSpecificUI-BB@0x24 : [ setProvisioningModeSpecificUI-BB@0x2e setProvisioningModeSpecificUI-BB@0xc6 ]
+	10      (00000024) const                v4, 2131296615 # [1.821115168075812e+38]
+	11      (0000002a) if-ne                v2, v4, +4e
+
+setProvisioningModeSpecificUI-BB@0x2e : [ setProvisioningModeSpecificUI-BB@0x3a setProvisioningModeSpecificUI-BB@0xca ]
+	12      (0000002e) iget-object          v6, v8, Lcom/afwsamples/testdpc/SetupManagementFragment;->mSkipUserConsent Landroid/widget/CheckBox;
+	13      (00000032) sget                 v4, Lcom/afwsamples/testdpc/common/Util;->SDK_INT I
+	14      (00000036) if-lt                v4, v7, +4a
+
+setProvisioningModeSpecificUI-BB@0x3a : [ setProvisioningModeSpecificUI-BB@0x3e setProvisioningModeSpecificUI-BB@0xca ]
+	15      (0000003a) if-eqz               v1, +48
+
+setProvisioningModeSpecificUI-BB@0x3e : [ setProvisioningModeSpecificUI-BB@0x52 setProvisioningModeSpecificUI-BB@0xca ]
+	16      (0000003e) invoke-virtual       v8, Lcom/afwsamples/testdpc/SetupManagementFragment;->getActivity()Landroid/app/Activity;
+	17      (00000044) move-result-object   v4
+	18      (00000046) invoke-static        v4, Lcom/afwsamples/testdpc/common/Util;->isDeviceOwner(Landroid/content/Context;)Z
+	19      (0000004c) move-result          v4
+	20      (0000004e) if-eqz               v4, +3e
+
+setProvisioningModeSpecificUI-BB@0x52 : [ setProvisioningModeSpecificUI-BB@0x54 ]
+	21      (00000052) move                 v4, v3
+
+setProvisioningModeSpecificUI-BB@0x54 : [ setProvisioningModeSpecificUI-BB@0x66 setProvisioningModeSpecificUI-BB@0xce ]
+	22      (00000054) invoke-virtual       v6, v4, Landroid/widget/CheckBox;->setVisibility(I)V
+	23      (0000005a) iget-object          v6, v8, Lcom/afwsamples/testdpc/SetupManagementFragment;->mKeepAccountMigrated Landroid/widget/CheckBox;
+	24      (0000005e) sget                 v4, Lcom/afwsamples/testdpc/common/Util;->SDK_INT I
+	25      (00000062) if-lt                v4, v7, +36
+
+setProvisioningModeSpecificUI-BB@0x66 : [ setProvisioningModeSpecificUI-BB@0x6a setProvisioningModeSpecificUI-BB@0xce ]
+	26      (00000066) if-eqz               v1, +34
+
+setProvisioningModeSpecificUI-BB@0x6a : [ setProvisioningModeSpecificUI-BB@0x6c ]
+	27      (0000006a) move                 v4, v3
+
+setProvisioningModeSpecificUI-BB@0x6c : [ setProvisioningModeSpecificUI-BB@0x7a setProvisioningModeSpecificUI-BB@0x86 ]
+	28      (0000006c) invoke-virtual       v6, v4, Landroid/widget/CheckBox;->setVisibility(I)V
+	29      (00000072) iget-object          v4, v8, Lcom/afwsamples/testdpc/SetupManagementFragment;->mSkipEncryption Landroid/widget/CheckBox;
+	30      (00000076) if-eqz               v1, +8
+
+setProvisioningModeSpecificUI-BB@0x7a : [ setProvisioningModeSpecificUI-BB@0x86 setProvisioningModeSpecificUI-BB@0x96 ]
+	31      (0000007a) sget                 v6, Lcom/afwsamples/testdpc/common/Util;->SDK_INT I
+	32      (0000007e) const/16             v7, 24
+	33      (00000082) if-ge                v6, v7, +a
+
+setProvisioningModeSpecificUI-BB@0x86 : [ setProvisioningModeSpecificUI-BB@0x8a setProvisioningModeSpecificUI-BB@0xd2 ]
+	34      (00000086) if-eqz               v0, +26
+
+setProvisioningModeSpecificUI-BB@0x8a : [ setProvisioningModeSpecificUI-BB@0x96 setProvisioningModeSpecificUI-BB@0xd2 ]
+	35      (0000008a) sget                 v6, Lcom/afwsamples/testdpc/common/Util;->SDK_INT I
+	36      (0000008e) const/16             v7, 23
+	37      (00000092) if-lt                v6, v7, +20
+
+setProvisioningModeSpecificUI-BB@0x96 : [ setProvisioningModeSpecificUI-BB@0xb0 setProvisioningModeSpecificUI-BB@0xc0 ]
+	38      (00000096) invoke-virtual       v4, v3, Landroid/widget/CheckBox;->setVisibility(I)V
+	39      (0000009c) invoke-virtual       v8, Lcom/afwsamples/testdpc/SetupManagementFragment;->getActivity()Landroid/app/Activity;
+	40      (000000a2) move-result-object   v3
+	41      (000000a4) invoke-static        v3, Lcom/afwsamples/testdpc/common/Util;->isDeviceOwner(Landroid/content/Context;)Z
+	42      (000000aa) move-result          v3
+	43      (000000ac) if-eqz               v3, +a
+
+setProvisioningModeSpecificUI-BB@0xb0 : [ setProvisioningModeSpecificUI-BB@0xc0 ]
+	44      (000000b0) iget-object          v3, v8, Lcom/afwsamples/testdpc/SetupManagementFragment;->mSetupManagementMessage Landroid/widget/TextView;
+	45      (000000b4) const                v4, 2131690255 # [1.9009548452396263e+38]
+	46      (000000ba) invoke-virtual       v3, v4, Landroid/widget/TextView;->setText(I)V
+
+setProvisioningModeSpecificUI-BB@0xc0 : 
+	47      (000000c0) return-void          
+
+setProvisioningModeSpecificUI-BB@0xc2 : [ setProvisioningModeSpecificUI-BB@0x24 ]
+	48      (000000c2) move                 v1, v3
+	49      (000000c4) goto                 -50
+
+setProvisioningModeSpecificUI-BB@0xc6 : [ setProvisioningModeSpecificUI-BB@0x2e ]
+	50      (000000c6) move                 v0, v3
+	51      (000000c8) goto                 -4d
+
+setProvisioningModeSpecificUI-BB@0xca : [ setProvisioningModeSpecificUI-BB@0x54 ]
+	52      (000000ca) move                 v4, v5
+	53      (000000cc) goto                 -3c
+
+setProvisioningModeSpecificUI-BB@0xce : [ setProvisioningModeSpecificUI-BB@0x6c ]
+	54      (000000ce) move                 v4, v5
+	55      (000000d0) goto                 -32
+
+setProvisioningModeSpecificUI-BB@0xd2 : [ setProvisioningModeSpecificUI-BB@0x96 ]
+	56      (000000d2) move                 v3, v5
+	57      (000000d4) goto                 -1f
+

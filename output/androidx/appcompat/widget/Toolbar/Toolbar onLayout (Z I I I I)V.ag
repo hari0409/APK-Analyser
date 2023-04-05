@@ -1,0 +1,888 @@
+# Landroidx/appcompat/widget/Toolbar;->onLayout(Z I I I I)V [access_flags=protected]
+#
+# Parameters:
+# - local registers: v0...v52
+# - v53:boolean
+# - v54:int
+# - v55:int
+# - v56:int
+# - v57:int
+#
+# - return:void
+
+onLayout-BB@0x0 : [ onLayout-BB@0x18 onLayout-BB@0x640 ]
+	0       (00000000) invoke-static/range  v52, Landroidx/core/view/ViewCompat;->getLayoutDirection(Landroid/view/View;)I
+	1       (00000006) move-result          v49
+	2       (00000008) const/16             v50, 1
+	3       (0000000c) move/from16          v0, v49
+	4       (00000010) move/from16          v1, v50
+	5       (00000014) if-ne                v0, v1, +316
+
+onLayout-BB@0x18 : [ onLayout-BB@0x1c ]
+	6       (00000018) const/16             v18, 1
+
+onLayout-BB@0x1c : [ onLayout-BB@0x7c onLayout-BB@0x648 ]
+	7       (0000001c) invoke-virtual/range v52, Landroidx/appcompat/widget/Toolbar;->getWidth()I
+	8       (00000022) move-result          v48
+	9       (00000024) invoke-virtual/range v52, Landroidx/appcompat/widget/Toolbar;->getHeight()I
+	10      (0000002a) move-result          v16
+	11      (0000002c) invoke-virtual/range v52, Landroidx/appcompat/widget/Toolbar;->getPaddingLeft()I
+	12      (00000032) move-result          v27
+	13      (00000034) invoke-virtual/range v52, Landroidx/appcompat/widget/Toolbar;->getPaddingRight()I
+	14      (0000003a) move-result          v28
+	15      (0000003c) invoke-virtual/range v52, Landroidx/appcompat/widget/Toolbar;->getPaddingTop()I
+	16      (00000042) move-result          v29
+	17      (00000044) invoke-virtual/range v52, Landroidx/appcompat/widget/Toolbar;->getPaddingBottom()I
+	18      (0000004a) move-result          v26
+	19      (0000004c) move/from16          v22, v27
+	20      (00000050) sub-int              v32, v48, v28
+	21      (00000054) move-object/from16   v0, v52
+	22      (00000058) iget-object          v12, v0, Landroidx/appcompat/widget/Toolbar;->mTempMargins [I
+	23      (0000005c) const/16             v49, 0
+	24      (00000060) const/16             v50, 1
+	25      (00000064) const/16             v51, 0
+	26      (00000068) aput                 v51, v12, v50
+	27      (0000006c) aput                 v51, v12, v49
+	28      (00000070) invoke-static/range  v52, Landroidx/core/view/ViewCompat;->getMinimumHeight(Landroid/view/View;)I
+	29      (00000076) move-result          v25
+	30      (00000078) if-ltz               v25, +2e8
+
+onLayout-BB@0x7c : [ onLayout-BB@0x90 ]
+	31      (0000007c) sub-int              v49, v57, v55
+	32      (00000080) move/from16          v0, v25
+	33      (00000084) move/from16          v1, v49
+	34      (00000088) invoke-static        v0, v1, Ljava/lang/Math;->min(I I)I
+	35      (0000008e) move-result          v5
+
+onLayout-BB@0x90 : [ onLayout-BB@0xb0 onLayout-BB@0xd4 ]
+	36      (00000090) move-object/from16   v0, v52
+	37      (00000094) iget-object          v0, v0, Landroidx/appcompat/widget/Toolbar;->mNavButtonView Landroid/widget/ImageButton;
+	38      (00000098) move-object/from16   v49, v0
+	39      (0000009c) move-object/from16   v0, v52
+	40      (000000a0) move-object/from16   v1, v49
+	41      (000000a4) invoke-direct        v0, v1, Landroidx/appcompat/widget/Toolbar;->shouldLayout(Landroid/view/View;)Z
+	42      (000000aa) move-result          v49
+	43      (000000ac) if-eqz               v49, +14
+
+onLayout-BB@0xb0 : [ onLayout-BB@0xb4 onLayout-BB@0x64e ]
+	44      (000000b0) if-eqz               v18, +2cf
+
+onLayout-BB@0xb4 : [ onLayout-BB@0xd4 ]
+	45      (000000b4) move-object/from16   v0, v52
+	46      (000000b8) iget-object          v0, v0, Landroidx/appcompat/widget/Toolbar;->mNavButtonView Landroid/widget/ImageButton;
+	47      (000000bc) move-object/from16   v49, v0
+	48      (000000c0) move-object/from16   v0, v52
+	49      (000000c4) move-object/from16   v1, v49
+	50      (000000c8) move/from16          v2, v32
+	51      (000000cc) invoke-direct        v0, v1, v2, v12, v5, Landroidx/appcompat/widget/Toolbar;->layoutChildRight(Landroid/view/View; I [I I)I
+	52      (000000d2) move-result          v32
+
+onLayout-BB@0xd4 : [ onLayout-BB@0xf4 onLayout-BB@0x118 ]
+	53      (000000d4) move-object/from16   v0, v52
+	54      (000000d8) iget-object          v0, v0, Landroidx/appcompat/widget/Toolbar;->mCollapseButtonView Landroid/widget/ImageButton;
+	55      (000000dc) move-object/from16   v49, v0
+	56      (000000e0) move-object/from16   v0, v52
+	57      (000000e4) move-object/from16   v1, v49
+	58      (000000e8) invoke-direct        v0, v1, Landroidx/appcompat/widget/Toolbar;->shouldLayout(Landroid/view/View;)Z
+	59      (000000ee) move-result          v49
+	60      (000000f0) if-eqz               v49, +14
+
+onLayout-BB@0xf4 : [ onLayout-BB@0xf8 onLayout-BB@0x672 ]
+	61      (000000f4) if-eqz               v18, +2bf
+
+onLayout-BB@0xf8 : [ onLayout-BB@0x118 ]
+	62      (000000f8) move-object/from16   v0, v52
+	63      (000000fc) iget-object          v0, v0, Landroidx/appcompat/widget/Toolbar;->mCollapseButtonView Landroid/widget/ImageButton;
+	64      (00000100) move-object/from16   v49, v0
+	65      (00000104) move-object/from16   v0, v52
+	66      (00000108) move-object/from16   v1, v49
+	67      (0000010c) move/from16          v2, v32
+	68      (00000110) invoke-direct        v0, v1, v2, v12, v5, Landroidx/appcompat/widget/Toolbar;->layoutChildRight(Landroid/view/View; I [I I)I
+	69      (00000116) move-result          v32
+
+onLayout-BB@0x118 : [ onLayout-BB@0x138 onLayout-BB@0x15c ]
+	70      (00000118) move-object/from16   v0, v52
+	71      (0000011c) iget-object          v0, v0, Landroidx/appcompat/widget/Toolbar;->mMenuView Landroidx/appcompat/widget/ActionMenuView;
+	72      (00000120) move-object/from16   v49, v0
+	73      (00000124) move-object/from16   v0, v52
+	74      (00000128) move-object/from16   v1, v49
+	75      (0000012c) invoke-direct        v0, v1, Landroidx/appcompat/widget/Toolbar;->shouldLayout(Landroid/view/View;)Z
+	76      (00000132) move-result          v49
+	77      (00000134) if-eqz               v49, +14
+
+onLayout-BB@0x138 : [ onLayout-BB@0x13c onLayout-BB@0x696 ]
+	78      (00000138) if-eqz               v18, +2af
+
+onLayout-BB@0x13c : [ onLayout-BB@0x15c ]
+	79      (0000013c) move-object/from16   v0, v52
+	80      (00000140) iget-object          v0, v0, Landroidx/appcompat/widget/Toolbar;->mMenuView Landroidx/appcompat/widget/ActionMenuView;
+	81      (00000144) move-object/from16   v49, v0
+	82      (00000148) move-object/from16   v0, v52
+	83      (0000014c) move-object/from16   v1, v49
+	84      (00000150) move/from16          v2, v22
+	85      (00000154) invoke-direct        v0, v1, v2, v12, v5, Landroidx/appcompat/widget/Toolbar;->layoutChildLeft(Landroid/view/View; I [I I)I
+	86      (0000015a) move-result          v22
+
+onLayout-BB@0x15c : [ onLayout-BB@0x1e8 onLayout-BB@0x20c ]
+	87      (0000015c) invoke-virtual/range v52, Landroidx/appcompat/widget/Toolbar;->getCurrentContentInsetLeft()I
+	88      (00000162) move-result          v13
+	89      (00000164) invoke-virtual/range v52, Landroidx/appcompat/widget/Toolbar;->getCurrentContentInsetRight()I
+	90      (0000016a) move-result          v14
+	91      (0000016c) const/16             v49, 0
+	92      (00000170) const/16             v50, 0
+	93      (00000174) sub-int              v51, v13, v22
+	94      (00000178) invoke-static/range  v50 ... v51, Ljava/lang/Math;->max(I I)I
+	95      (0000017e) move-result          v50
+	96      (00000180) aput                 v50, v12, v49
+	97      (00000184) const/16             v49, 1
+	98      (00000188) const/16             v50, 0
+	99      (0000018c) sub-int              v51, v48, v28
+	100     (00000190) sub-int              v51, v51, v32
+	101     (00000194) sub-int              v51, v14, v51
+	102     (00000198) invoke-static/range  v50 ... v51, Ljava/lang/Math;->max(I I)I
+	103     (0000019e) move-result          v50
+	104     (000001a0) aput                 v50, v12, v49
+	105     (000001a4) move/from16          v0, v22
+	106     (000001a8) invoke-static        v0, v13, Ljava/lang/Math;->max(I I)I
+	107     (000001ae) move-result          v22
+	108     (000001b0) sub-int              v49, v48, v28
+	109     (000001b4) sub-int              v49, v49, v14
+	110     (000001b8) move/from16          v0, v32
+	111     (000001bc) move/from16          v1, v49
+	112     (000001c0) invoke-static        v0, v1, Ljava/lang/Math;->min(I I)I
+	113     (000001c6) move-result          v32
+	114     (000001c8) move-object/from16   v0, v52
+	115     (000001cc) iget-object          v0, v0, Landroidx/appcompat/widget/Toolbar;->mExpandedActionView Landroid/view/View;
+	116     (000001d0) move-object/from16   v49, v0
+	117     (000001d4) move-object/from16   v0, v52
+	118     (000001d8) move-object/from16   v1, v49
+	119     (000001dc) invoke-direct        v0, v1, Landroidx/appcompat/widget/Toolbar;->shouldLayout(Landroid/view/View;)Z
+	120     (000001e2) move-result          v49
+	121     (000001e4) if-eqz               v49, +14
+
+onLayout-BB@0x1e8 : [ onLayout-BB@0x1ec onLayout-BB@0x6ba ]
+	122     (000001e8) if-eqz               v18, +269
+
+onLayout-BB@0x1ec : [ onLayout-BB@0x20c ]
+	123     (000001ec) move-object/from16   v0, v52
+	124     (000001f0) iget-object          v0, v0, Landroidx/appcompat/widget/Toolbar;->mExpandedActionView Landroid/view/View;
+	125     (000001f4) move-object/from16   v49, v0
+	126     (000001f8) move-object/from16   v0, v52
+	127     (000001fc) move-object/from16   v1, v49
+	128     (00000200) move/from16          v2, v32
+	129     (00000204) invoke-direct        v0, v1, v2, v12, v5, Landroidx/appcompat/widget/Toolbar;->layoutChildRight(Landroid/view/View; I [I I)I
+	130     (0000020a) move-result          v32
+
+onLayout-BB@0x20c : [ onLayout-BB@0x22c onLayout-BB@0x250 ]
+	131     (0000020c) move-object/from16   v0, v52
+	132     (00000210) iget-object          v0, v0, Landroidx/appcompat/widget/Toolbar;->mLogoView Landroid/widget/ImageView;
+	133     (00000214) move-object/from16   v49, v0
+	134     (00000218) move-object/from16   v0, v52
+	135     (0000021c) move-object/from16   v1, v49
+	136     (00000220) invoke-direct        v0, v1, Landroidx/appcompat/widget/Toolbar;->shouldLayout(Landroid/view/View;)Z
+	137     (00000226) move-result          v49
+	138     (00000228) if-eqz               v49, +14
+
+onLayout-BB@0x22c : [ onLayout-BB@0x230 onLayout-BB@0x6de ]
+	139     (0000022c) if-eqz               v18, +259
+
+onLayout-BB@0x230 : [ onLayout-BB@0x250 ]
+	140     (00000230) move-object/from16   v0, v52
+	141     (00000234) iget-object          v0, v0, Landroidx/appcompat/widget/Toolbar;->mLogoView Landroid/widget/ImageView;
+	142     (00000238) move-object/from16   v49, v0
+	143     (0000023c) move-object/from16   v0, v52
+	144     (00000240) move-object/from16   v1, v49
+	145     (00000244) move/from16          v2, v32
+	146     (00000248) invoke-direct        v0, v1, v2, v12, v5, Landroidx/appcompat/widget/Toolbar;->layoutChildRight(Landroid/view/View; I [I I)I
+	147     (0000024e) move-result          v32
+
+onLayout-BB@0x250 : [ onLayout-BB@0x290 onLayout-BB@0x2e0 ]
+	148     (00000250) move-object/from16   v0, v52
+	149     (00000254) iget-object          v0, v0, Landroidx/appcompat/widget/Toolbar;->mTitleTextView Landroid/widget/TextView;
+	150     (00000258) move-object/from16   v49, v0
+	151     (0000025c) move-object/from16   v0, v52
+	152     (00000260) move-object/from16   v1, v49
+	153     (00000264) invoke-direct        v0, v1, Landroidx/appcompat/widget/Toolbar;->shouldLayout(Landroid/view/View;)Z
+	154     (0000026a) move-result          v20
+	155     (0000026c) move-object/from16   v0, v52
+	156     (00000270) iget-object          v0, v0, Landroidx/appcompat/widget/Toolbar;->mSubtitleTextView Landroid/widget/TextView;
+	157     (00000274) move-object/from16   v49, v0
+	158     (00000278) move-object/from16   v0, v52
+	159     (0000027c) move-object/from16   v1, v49
+	160     (00000280) invoke-direct        v0, v1, Landroidx/appcompat/widget/Toolbar;->shouldLayout(Landroid/view/View;)Z
+	161     (00000286) move-result          v19
+	162     (00000288) const/16             v42, 0
+	163     (0000028c) if-eqz               v20, +2a
+
+onLayout-BB@0x290 : [ onLayout-BB@0x2e0 ]
+	164     (00000290) move-object/from16   v0, v52
+	165     (00000294) iget-object          v0, v0, Landroidx/appcompat/widget/Toolbar;->mTitleTextView Landroid/widget/TextView;
+	166     (00000298) move-object/from16   v49, v0
+	167     (0000029c) invoke-virtual/range v49, Landroid/widget/TextView;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
+	168     (000002a2) move-result-object   v24
+	169     (000002a4) check-cast           v24, Landroidx/appcompat/widget/Toolbar$LayoutParams;
+	170     (000002a8) move-object/from16   v0, v24
+	171     (000002ac) iget                 v0, v0, Landroidx/appcompat/widget/Toolbar$LayoutParams;->topMargin I
+	172     (000002b0) move/from16          v49, v0
+	173     (000002b4) move-object/from16   v0, v52
+	174     (000002b8) iget-object          v0, v0, Landroidx/appcompat/widget/Toolbar;->mTitleTextView Landroid/widget/TextView;
+	175     (000002bc) move-object/from16   v50, v0
+	176     (000002c0) invoke-virtual/range v50, Landroid/widget/TextView;->getMeasuredHeight()I
+	177     (000002c6) move-result          v50
+	178     (000002c8) add-int              v49, v49, v50
+	179     (000002cc) move-object/from16   v0, v24
+	180     (000002d0) iget                 v0, v0, Landroidx/appcompat/widget/Toolbar$LayoutParams;->bottomMargin I
+	181     (000002d4) move/from16          v50, v0
+	182     (000002d8) add-int              v49, v49, v50
+	183     (000002dc) add-int              v42, v42, v49
+
+onLayout-BB@0x2e0 : [ onLayout-BB@0x2e4 onLayout-BB@0x334 ]
+	184     (000002e0) if-eqz               v19, +2a
+
+onLayout-BB@0x2e4 : [ onLayout-BB@0x334 ]
+	185     (000002e4) move-object/from16   v0, v52
+	186     (000002e8) iget-object          v0, v0, Landroidx/appcompat/widget/Toolbar;->mSubtitleTextView Landroid/widget/TextView;
+	187     (000002ec) move-object/from16   v49, v0
+	188     (000002f0) invoke-virtual/range v49, Landroid/widget/TextView;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
+	189     (000002f6) move-result-object   v24
+	190     (000002f8) check-cast           v24, Landroidx/appcompat/widget/Toolbar$LayoutParams;
+	191     (000002fc) move-object/from16   v0, v24
+	192     (00000300) iget                 v0, v0, Landroidx/appcompat/widget/Toolbar$LayoutParams;->topMargin I
+	193     (00000304) move/from16          v49, v0
+	194     (00000308) move-object/from16   v0, v52
+	195     (0000030c) iget-object          v0, v0, Landroidx/appcompat/widget/Toolbar;->mSubtitleTextView Landroid/widget/TextView;
+	196     (00000310) move-object/from16   v50, v0
+	197     (00000314) invoke-virtual/range v50, Landroid/widget/TextView;->getMeasuredHeight()I
+	198     (0000031a) move-result          v50
+	199     (0000031c) add-int              v49, v49, v50
+	200     (00000320) move-object/from16   v0, v24
+	201     (00000324) iget                 v0, v0, Landroidx/appcompat/widget/Toolbar$LayoutParams;->bottomMargin I
+	202     (00000328) move/from16          v50, v0
+	203     (0000032c) add-int              v49, v49, v50
+	204     (00000330) add-int              v42, v42, v49
+
+onLayout-BB@0x334 : [ onLayout-BB@0x338 onLayout-BB@0x33c ]
+	205     (00000334) if-nez               v20, +4
+
+onLayout-BB@0x338 : [ onLayout-BB@0x33c onLayout-BB@0x5c0 ]
+	206     (00000338) if-eqz               v19, +144
+
+onLayout-BB@0x33c : [ onLayout-BB@0x340 onLayout-BB@0x702 ]
+	207     (0000033c) if-eqz               v20, +1e3
+
+onLayout-BB@0x340 : [ onLayout-BB@0x34c ]
+	208     (00000340) move-object/from16   v0, v52
+	209     (00000344) iget-object          v0, v0, Landroidx/appcompat/widget/Toolbar;->mTitleTextView Landroid/widget/TextView;
+	210     (00000348) move-object/from16   v46, v0
+
+onLayout-BB@0x34c : [ onLayout-BB@0x350 onLayout-BB@0x712 ]
+	211     (0000034c) if-eqz               v19, +1e3
+
+onLayout-BB@0x350 : [ onLayout-BB@0x358 ]
+	212     (00000350) move-object/from16   v0, v52
+	213     (00000354) iget-object          v6, v0, Landroidx/appcompat/widget/Toolbar;->mSubtitleTextView Landroid/widget/TextView;
+
+onLayout-BB@0x358 : [ onLayout-BB@0x374 onLayout-BB@0x38c ]
+	214     (00000358) invoke-virtual/range v46, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
+	215     (0000035e) move-result-object   v47
+	216     (00000360) check-cast           v47, Landroidx/appcompat/widget/Toolbar$LayoutParams;
+	217     (00000364) invoke-virtual       v6, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
+	218     (0000036a) move-result-object   v7
+	219     (0000036c) check-cast           v7, Landroidx/appcompat/widget/Toolbar$LayoutParams;
+	220     (00000370) if-eqz               v20, +e
+
+onLayout-BB@0x374 : [ onLayout-BB@0x38c onLayout-BB@0x3a8 ]
+	221     (00000374) move-object/from16   v0, v52
+	222     (00000378) iget-object          v0, v0, Landroidx/appcompat/widget/Toolbar;->mTitleTextView Landroid/widget/TextView;
+	223     (0000037c) move-object/from16   v49, v0
+	224     (00000380) invoke-virtual/range v49, Landroid/widget/TextView;->getMeasuredWidth()I
+	225     (00000386) move-result          v49
+	226     (00000388) if-gtz               v49, +10
+
+onLayout-BB@0x38c : [ onLayout-BB@0x390 onLayout-BB@0x71e ]
+	227     (0000038c) if-eqz               v19, +1c9
+
+onLayout-BB@0x390 : [ onLayout-BB@0x3a8 onLayout-BB@0x71e ]
+	228     (00000390) move-object/from16   v0, v52
+	229     (00000394) iget-object          v0, v0, Landroidx/appcompat/widget/Toolbar;->mSubtitleTextView Landroid/widget/TextView;
+	230     (00000398) move-object/from16   v49, v0
+	231     (0000039c) invoke-virtual/range v49, Landroid/widget/TextView;->getMeasuredWidth()I
+	232     (000003a2) move-result          v49
+	233     (000003a4) if-lez               v49, +1bd
+
+onLayout-BB@0x3a8 : [ onLayout-BB@0x3ac ]
+	234     (000003a8) const/16             v41, 1
+
+onLayout-BB@0x3ac : [ D:onLayout-BB@0x3c2 48:onLayout-BB@0x726 80:onLayout-BB@0x7ba ]
+	235     (000003ac) move-object/from16   v0, v52
+	236     (000003b0) iget                 v0, v0, Landroidx/appcompat/widget/Toolbar;->mGravity I
+	237     (000003b4) move/from16          v49, v0
+	238     (000003b8) and-int/lit8         v49, v49, 112
+	239     (000003bc) sparse-switch        v49, +3a0 (0xafc)
+
+onLayout-BB@0x3c2 : [ onLayout-BB@0x3fa onLayout-BB@0x752 ]
+	240     (000003c2) sub-int              v49, v16, v29
+	241     (000003c6) sub-int              v34, v49, v26
+	242     (000003ca) sub-int              v49, v34, v42
+	243     (000003ce) div-int/lit8         v35, v49, 2
+	244     (000003d2) move-object/from16   v0, v47
+	245     (000003d6) iget                 v0, v0, Landroidx/appcompat/widget/Toolbar$LayoutParams;->topMargin I
+	246     (000003da) move/from16          v49, v0
+	247     (000003de) move-object/from16   v0, v52
+	248     (000003e2) iget                 v0, v0, Landroidx/appcompat/widget/Toolbar;->mTitleMarginTop I
+	249     (000003e6) move/from16          v50, v0
+	250     (000003ea) add-int              v49, v49, v50
+	251     (000003ee) move/from16          v0, v35
+	252     (000003f2) move/from16          v1, v49
+	253     (000003f6) if-ge                v0, v1, +1ae
+
+onLayout-BB@0x3fa : [ onLayout-BB@0x416 ]
+	254     (000003fa) move-object/from16   v0, v47
+	255     (000003fe) iget                 v0, v0, Landroidx/appcompat/widget/Toolbar$LayoutParams;->topMargin I
+	256     (00000402) move/from16          v49, v0
+	257     (00000406) move-object/from16   v0, v52
+	258     (0000040a) iget                 v0, v0, Landroidx/appcompat/widget/Toolbar;->mTitleMarginTop I
+	259     (0000040e) move/from16          v50, v0
+	260     (00000412) add-int              v35, v49, v50
+
+onLayout-BB@0x416 : [ onLayout-BB@0x41a ]
+	261     (00000416) add-int              v45, v29, v35
+
+onLayout-BB@0x41a : [ onLayout-BB@0x41e onLayout-BB@0x7ea ]
+	262     (0000041a) if-eqz               v18, +1e8
+
+onLayout-BB@0x41e : [ onLayout-BB@0x422 onLayout-BB@0x7e2 ]
+	263     (0000041e) if-eqz               v41, +1e2
+
+onLayout-BB@0x422 : [ onLayout-BB@0x42e ]
+	264     (00000422) move-object/from16   v0, v52
+	265     (00000426) iget                 v0, v0, Landroidx/appcompat/widget/Toolbar;->mTitleMarginStart I
+	266     (0000042a) move/from16          v49, v0
+
+onLayout-BB@0x42e : [ onLayout-BB@0x47c onLayout-BB@0x50a ]
+	267     (0000042e) const/16             v50, 1
+	268     (00000432) aget                 v50, v12, v50
+	269     (00000436) sub-int              v31, v49, v50
+	270     (0000043a) const/16             v49, 0
+	271     (0000043e) move/from16          v0, v49
+	272     (00000442) move/from16          v1, v31
+	273     (00000446) invoke-static        v0, v1, Ljava/lang/Math;->max(I I)I
+	274     (0000044c) move-result          v49
+	275     (0000044e) sub-int              v32, v32, v49
+	276     (00000452) const/16             v49, 1
+	277     (00000456) const/16             v50, 0
+	278     (0000045a) move/from16          v0, v31
+	279     (0000045e) neg-int              v0, v0
+	280     (00000460) move/from16          v51, v0
+	281     (00000464) invoke-static/range  v50 ... v51, Ljava/lang/Math;->max(I I)I
+	282     (0000046a) move-result          v50
+	283     (0000046c) aput                 v50, v12, v49
+	284     (00000470) move/from16          v44, v32
+	285     (00000474) move/from16          v39, v32
+	286     (00000478) if-eqz               v20, +49
+
+onLayout-BB@0x47c : [ onLayout-BB@0x50a ]
+	287     (0000047c) move-object/from16   v0, v52
+	288     (00000480) iget-object          v0, v0, Landroidx/appcompat/widget/Toolbar;->mTitleTextView Landroid/widget/TextView;
+	289     (00000484) move-object/from16   v49, v0
+	290     (00000488) invoke-virtual/range v49, Landroid/widget/TextView;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
+	291     (0000048e) move-result-object   v24
+	292     (00000490) check-cast           v24, Landroidx/appcompat/widget/Toolbar$LayoutParams;
+	293     (00000494) move-object/from16   v0, v52
+	294     (00000498) iget-object          v0, v0, Landroidx/appcompat/widget/Toolbar;->mTitleTextView Landroid/widget/TextView;
+	295     (0000049c) move-object/from16   v49, v0
+	296     (000004a0) invoke-virtual/range v49, Landroid/widget/TextView;->getMeasuredWidth()I
+	297     (000004a6) move-result          v49
+	298     (000004a8) sub-int              v43, v44, v49
+	299     (000004ac) move-object/from16   v0, v52
+	300     (000004b0) iget-object          v0, v0, Landroidx/appcompat/widget/Toolbar;->mTitleTextView Landroid/widget/TextView;
+	301     (000004b4) move-object/from16   v49, v0
+	302     (000004b8) invoke-virtual/range v49, Landroid/widget/TextView;->getMeasuredHeight()I
+	303     (000004be) move-result          v49
+	304     (000004c0) add-int              v40, v45, v49
+	305     (000004c4) move-object/from16   v0, v52
+	306     (000004c8) iget-object          v0, v0, Landroidx/appcompat/widget/Toolbar;->mTitleTextView Landroid/widget/TextView;
+	307     (000004cc) move-object/from16   v49, v0
+	308     (000004d0) move-object/from16   v0, v49
+	309     (000004d4) move/from16          v1, v43
+	310     (000004d8) move/from16          v2, v45
+	311     (000004dc) move/from16          v3, v44
+	312     (000004e0) move/from16          v4, v40
+	313     (000004e4) invoke-virtual       v0, v1, v2, v3, v4, Landroid/widget/TextView;->layout(I I I I)V
+	314     (000004ea) move-object/from16   v0, v52
+	315     (000004ee) iget                 v0, v0, Landroidx/appcompat/widget/Toolbar;->mTitleMarginEnd I
+	316     (000004f2) move/from16          v49, v0
+	317     (000004f6) sub-int              v44, v43, v49
+	318     (000004fa) move-object/from16   v0, v24
+	319     (000004fe) iget                 v0, v0, Landroidx/appcompat/widget/Toolbar$LayoutParams;->bottomMargin I
+	320     (00000502) move/from16          v49, v0
+	321     (00000506) add-int              v45, v40, v49
+
+onLayout-BB@0x50a : [ onLayout-BB@0x50e onLayout-BB@0x5ac ]
+	322     (0000050a) if-eqz               v19, +51
+
+onLayout-BB@0x50e : [ onLayout-BB@0x5ac ]
+	323     (0000050e) move-object/from16   v0, v52
+	324     (00000512) iget-object          v0, v0, Landroidx/appcompat/widget/Toolbar;->mSubtitleTextView Landroid/widget/TextView;
+	325     (00000516) move-object/from16   v49, v0
+	326     (0000051a) invoke-virtual/range v49, Landroid/widget/TextView;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
+	327     (00000520) move-result-object   v24
+	328     (00000522) check-cast           v24, Landroidx/appcompat/widget/Toolbar$LayoutParams;
+	329     (00000526) move-object/from16   v0, v24
+	330     (0000052a) iget                 v0, v0, Landroidx/appcompat/widget/Toolbar$LayoutParams;->topMargin I
+	331     (0000052e) move/from16          v49, v0
+	332     (00000532) add-int              v45, v45, v49
+	333     (00000536) move-object/from16   v0, v52
+	334     (0000053a) iget-object          v0, v0, Landroidx/appcompat/widget/Toolbar;->mSubtitleTextView Landroid/widget/TextView;
+	335     (0000053e) move-object/from16   v49, v0
+	336     (00000542) invoke-virtual/range v49, Landroid/widget/TextView;->getMeasuredWidth()I
+	337     (00000548) move-result          v49
+	338     (0000054a) sub-int              v38, v39, v49
+	339     (0000054e) move-object/from16   v0, v52
+	340     (00000552) iget-object          v0, v0, Landroidx/appcompat/widget/Toolbar;->mSubtitleTextView Landroid/widget/TextView;
+	341     (00000556) move-object/from16   v49, v0
+	342     (0000055a) invoke-virtual/range v49, Landroid/widget/TextView;->getMeasuredHeight()I
+	343     (00000560) move-result          v49
+	344     (00000562) add-int              v37, v45, v49
+	345     (00000566) move-object/from16   v0, v52
+	346     (0000056a) iget-object          v0, v0, Landroidx/appcompat/widget/Toolbar;->mSubtitleTextView Landroid/widget/TextView;
+	347     (0000056e) move-object/from16   v49, v0
+	348     (00000572) move-object/from16   v0, v49
+	349     (00000576) move/from16          v1, v38
+	350     (0000057a) move/from16          v2, v45
+	351     (0000057e) move/from16          v3, v39
+	352     (00000582) move/from16          v4, v37
+	353     (00000586) invoke-virtual       v0, v1, v2, v3, v4, Landroid/widget/TextView;->layout(I I I I)V
+	354     (0000058c) move-object/from16   v0, v52
+	355     (00000590) iget                 v0, v0, Landroidx/appcompat/widget/Toolbar;->mTitleMarginEnd I
+	356     (00000594) move/from16          v49, v0
+	357     (00000598) sub-int              v39, v39, v49
+	358     (0000059c) move-object/from16   v0, v24
+	359     (000005a0) iget                 v0, v0, Landroidx/appcompat/widget/Toolbar$LayoutParams;->bottomMargin I
+	360     (000005a4) move/from16          v49, v0
+	361     (000005a8) add-int              v45, v37, v49
+
+onLayout-BB@0x5ac : [ onLayout-BB@0x5b0 onLayout-BB@0x5c0 ]
+	362     (000005ac) if-eqz               v41, +a
+
+onLayout-BB@0x5b0 : [ onLayout-BB@0x5c0 ]
+	363     (000005b0) move/from16          v0, v44
+	364     (000005b4) move/from16          v1, v39
+	365     (000005b8) invoke-static        v0, v1, Ljava/lang/Math;->min(I I)I
+	366     (000005be) move-result          v32
+
+onLayout-BB@0x5c0 : [ onLayout-BB@0x5fa ]
+	367     (000005c0) move-object/from16   v0, v52
+	368     (000005c4) iget-object          v0, v0, Landroidx/appcompat/widget/Toolbar;->mTempViews Ljava/util/ArrayList;
+	369     (000005c8) move-object/from16   v49, v0
+	370     (000005cc) const/16             v50, 3
+	371     (000005d0) move-object/from16   v0, v52
+	372     (000005d4) move-object/from16   v1, v49
+	373     (000005d8) move/from16          v2, v50
+	374     (000005dc) invoke-direct        v0, v1, v2, Landroidx/appcompat/widget/Toolbar;->addCustomViewsWithGravity(Ljava/util/List; I)V
+	375     (000005e2) move-object/from16   v0, v52
+	376     (000005e6) iget-object          v0, v0, Landroidx/appcompat/widget/Toolbar;->mTempViews Ljava/util/ArrayList;
+	377     (000005ea) move-object/from16   v49, v0
+	378     (000005ee) invoke-virtual/range v49, Ljava/util/ArrayList;->size()I
+	379     (000005f4) move-result          v23
+	380     (000005f6) const/16             v17, 0
+
+onLayout-BB@0x5fa : [ onLayout-BB@0x606 onLayout-BB@0x998 ]
+	381     (000005fa) move/from16          v0, v17
+	382     (000005fe) move/from16          v1, v23
+	383     (00000602) if-ge                v0, v1, +1cb
+
+onLayout-BB@0x606 : [ onLayout-BB@0x5fa ]
+	384     (00000606) move-object/from16   v0, v52
+	385     (0000060a) iget-object          v0, v0, Landroidx/appcompat/widget/Toolbar;->mTempViews Ljava/util/ArrayList;
+	386     (0000060e) move-object/from16   v49, v0
+	387     (00000612) move-object/from16   v0, v49
+	388     (00000616) move/from16          v1, v17
+	389     (0000061a) invoke-virtual       v0, v1, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+	390     (00000620) move-result-object   v49
+	391     (00000622) check-cast           v49, Landroid/view/View;
+	392     (00000626) move-object/from16   v0, v52
+	393     (0000062a) move-object/from16   v1, v49
+	394     (0000062e) move/from16          v2, v22
+	395     (00000632) invoke-direct        v0, v1, v2, v12, v5, Landroidx/appcompat/widget/Toolbar;->layoutChildLeft(Landroid/view/View; I [I I)I
+	396     (00000638) move-result          v22
+	397     (0000063a) add-int/lit8         v17, v17, 1
+	398     (0000063e) goto                 -22
+
+onLayout-BB@0x640 : [ onLayout-BB@0x1c ]
+	399     (00000640) const/16             v18, 0
+	400     (00000644) goto/16              -314
+
+onLayout-BB@0x648 : [ onLayout-BB@0x90 ]
+	401     (00000648) const/4              v5, 0
+	402     (0000064a) goto/16              -2dd
+
+onLayout-BB@0x64e : [ onLayout-BB@0xd4 ]
+	403     (0000064e) move-object/from16   v0, v52
+	404     (00000652) iget-object          v0, v0, Landroidx/appcompat/widget/Toolbar;->mNavButtonView Landroid/widget/ImageButton;
+	405     (00000656) move-object/from16   v49, v0
+	406     (0000065a) move-object/from16   v0, v52
+	407     (0000065e) move-object/from16   v1, v49
+	408     (00000662) move/from16          v2, v22
+	409     (00000666) invoke-direct        v0, v1, v2, v12, v5, Landroidx/appcompat/widget/Toolbar;->layoutChildLeft(Landroid/view/View; I [I I)I
+	410     (0000066c) move-result          v22
+	411     (0000066e) goto/16              -2cd
+
+onLayout-BB@0x672 : [ onLayout-BB@0x118 ]
+	412     (00000672) move-object/from16   v0, v52
+	413     (00000676) iget-object          v0, v0, Landroidx/appcompat/widget/Toolbar;->mCollapseButtonView Landroid/widget/ImageButton;
+	414     (0000067a) move-object/from16   v49, v0
+	415     (0000067e) move-object/from16   v0, v52
+	416     (00000682) move-object/from16   v1, v49
+	417     (00000686) move/from16          v2, v22
+	418     (0000068a) invoke-direct        v0, v1, v2, v12, v5, Landroidx/appcompat/widget/Toolbar;->layoutChildLeft(Landroid/view/View; I [I I)I
+	419     (00000690) move-result          v22
+	420     (00000692) goto/16              -2bd
+
+onLayout-BB@0x696 : [ onLayout-BB@0x15c ]
+	421     (00000696) move-object/from16   v0, v52
+	422     (0000069a) iget-object          v0, v0, Landroidx/appcompat/widget/Toolbar;->mMenuView Landroidx/appcompat/widget/ActionMenuView;
+	423     (0000069e) move-object/from16   v49, v0
+	424     (000006a2) move-object/from16   v0, v52
+	425     (000006a6) move-object/from16   v1, v49
+	426     (000006aa) move/from16          v2, v32
+	427     (000006ae) invoke-direct        v0, v1, v2, v12, v5, Landroidx/appcompat/widget/Toolbar;->layoutChildRight(Landroid/view/View; I [I I)I
+	428     (000006b4) move-result          v32
+	429     (000006b6) goto/16              -2ad
+
+onLayout-BB@0x6ba : [ onLayout-BB@0x20c ]
+	430     (000006ba) move-object/from16   v0, v52
+	431     (000006be) iget-object          v0, v0, Landroidx/appcompat/widget/Toolbar;->mExpandedActionView Landroid/view/View;
+	432     (000006c2) move-object/from16   v49, v0
+	433     (000006c6) move-object/from16   v0, v52
+	434     (000006ca) move-object/from16   v1, v49
+	435     (000006ce) move/from16          v2, v22
+	436     (000006d2) invoke-direct        v0, v1, v2, v12, v5, Landroidx/appcompat/widget/Toolbar;->layoutChildLeft(Landroid/view/View; I [I I)I
+	437     (000006d8) move-result          v22
+	438     (000006da) goto/16              -267
+
+onLayout-BB@0x6de : [ onLayout-BB@0x250 ]
+	439     (000006de) move-object/from16   v0, v52
+	440     (000006e2) iget-object          v0, v0, Landroidx/appcompat/widget/Toolbar;->mLogoView Landroid/widget/ImageView;
+	441     (000006e6) move-object/from16   v49, v0
+	442     (000006ea) move-object/from16   v0, v52
+	443     (000006ee) move-object/from16   v1, v49
+	444     (000006f2) move/from16          v2, v22
+	445     (000006f6) invoke-direct        v0, v1, v2, v12, v5, Landroidx/appcompat/widget/Toolbar;->layoutChildLeft(Landroid/view/View; I [I I)I
+	446     (000006fc) move-result          v22
+	447     (000006fe) goto/16              -257
+
+onLayout-BB@0x702 : [ onLayout-BB@0x34c ]
+	448     (00000702) move-object/from16   v0, v52
+	449     (00000706) iget-object          v0, v0, Landroidx/appcompat/widget/Toolbar;->mSubtitleTextView Landroid/widget/TextView;
+	450     (0000070a) move-object/from16   v46, v0
+	451     (0000070e) goto/16              -1e1
+
+onLayout-BB@0x712 : [ onLayout-BB@0x358 ]
+	452     (00000712) move-object/from16   v0, v52
+	453     (00000716) iget-object          v6, v0, Landroidx/appcompat/widget/Toolbar;->mTitleTextView Landroid/widget/TextView;
+	454     (0000071a) goto/16              -1e1
+
+onLayout-BB@0x71e : [ onLayout-BB@0x3ac ]
+	455     (0000071e) const/16             v41, 0
+	456     (00000722) goto/16              -1bb
+
+onLayout-BB@0x726 : [ onLayout-BB@0x41a ]
+	457     (00000726) invoke-virtual/range v52, Landroidx/appcompat/widget/Toolbar;->getPaddingTop()I
+	458     (0000072c) move-result          v49
+	459     (0000072e) move-object/from16   v0, v47
+	460     (00000732) iget                 v0, v0, Landroidx/appcompat/widget/Toolbar$LayoutParams;->topMargin I
+	461     (00000736) move/from16          v50, v0
+	462     (0000073a) add-int              v49, v49, v50
+	463     (0000073e) move-object/from16   v0, v52
+	464     (00000742) iget                 v0, v0, Landroidx/appcompat/widget/Toolbar;->mTitleMarginTop I
+	465     (00000746) move/from16          v50, v0
+	466     (0000074a) add-int              v45, v49, v50
+	467     (0000074e) goto/16              -19a
+
+onLayout-BB@0x752 : [ onLayout-BB@0x78a onLayout-BB@0x416 ]
+	468     (00000752) sub-int              v49, v16, v26
+	469     (00000756) sub-int              v49, v49, v42
+	470     (0000075a) sub-int              v49, v49, v35
+	471     (0000075e) sub-int              v36, v49, v29
+	472     (00000762) move-object/from16   v0, v47
+	473     (00000766) iget                 v0, v0, Landroidx/appcompat/widget/Toolbar$LayoutParams;->bottomMargin I
+	474     (0000076a) move/from16          v49, v0
+	475     (0000076e) move-object/from16   v0, v52
+	476     (00000772) iget                 v0, v0, Landroidx/appcompat/widget/Toolbar;->mTitleMarginBottom I
+	477     (00000776) move/from16          v50, v0
+	478     (0000077a) add-int              v49, v49, v50
+	479     (0000077e) move/from16          v0, v36
+	480     (00000782) move/from16          v1, v49
+	481     (00000786) if-ge                v0, v1, -1b8
+
+onLayout-BB@0x78a : [ onLayout-BB@0x416 ]
+	482     (0000078a) const/16             v49, 0
+	483     (0000078e) iget                 v0, v7, Landroidx/appcompat/widget/Toolbar$LayoutParams;->bottomMargin I
+	484     (00000792) move/from16          v50, v0
+	485     (00000796) move-object/from16   v0, v52
+	486     (0000079a) iget                 v0, v0, Landroidx/appcompat/widget/Toolbar;->mTitleMarginBottom I
+	487     (0000079e) move/from16          v51, v0
+	488     (000007a2) add-int              v50, v50, v51
+	489     (000007a6) sub-int              v50, v50, v36
+	490     (000007aa) sub-int              v50, v35, v50
+	491     (000007ae) invoke-static/range  v49 ... v50, Ljava/lang/Math;->max(I I)I
+	492     (000007b4) move-result          v35
+	493     (000007b6) goto/16              -1d0
+
+onLayout-BB@0x7ba : [ onLayout-BB@0x41a ]
+	494     (000007ba) sub-int              v49, v16, v26
+	495     (000007be) iget                 v0, v7, Landroidx/appcompat/widget/Toolbar$LayoutParams;->bottomMargin I
+	496     (000007c2) move/from16          v50, v0
+	497     (000007c6) sub-int              v49, v49, v50
+	498     (000007ca) move-object/from16   v0, v52
+	499     (000007ce) iget                 v0, v0, Landroidx/appcompat/widget/Toolbar;->mTitleMarginBottom I
+	500     (000007d2) move/from16          v50, v0
+	501     (000007d6) sub-int              v49, v49, v50
+	502     (000007da) sub-int              v45, v49, v42
+	503     (000007de) goto/16              -1e2
+
+onLayout-BB@0x7e2 : [ onLayout-BB@0x42e ]
+	504     (000007e2) const/16             v49, 0
+	505     (000007e6) goto/16              -1dc
+
+onLayout-BB@0x7ea : [ onLayout-BB@0x7ee onLayout-BB@0x990 ]
+	506     (000007ea) if-eqz               v41, +d3
+
+onLayout-BB@0x7ee : [ onLayout-BB@0x7fa ]
+	507     (000007ee) move-object/from16   v0, v52
+	508     (000007f2) iget                 v0, v0, Landroidx/appcompat/widget/Toolbar;->mTitleMarginStart I
+	509     (000007f6) move/from16          v49, v0
+
+onLayout-BB@0x7fa : [ onLayout-BB@0x848 onLayout-BB@0x8d6 ]
+	510     (000007fa) const/16             v50, 0
+	511     (000007fe) aget                 v50, v12, v50
+	512     (00000802) sub-int              v21, v49, v50
+	513     (00000806) const/16             v49, 0
+	514     (0000080a) move/from16          v0, v49
+	515     (0000080e) move/from16          v1, v21
+	516     (00000812) invoke-static        v0, v1, Ljava/lang/Math;->max(I I)I
+	517     (00000818) move-result          v49
+	518     (0000081a) add-int              v22, v22, v49
+	519     (0000081e) const/16             v49, 0
+	520     (00000822) const/16             v50, 0
+	521     (00000826) move/from16          v0, v21
+	522     (0000082a) neg-int              v0, v0
+	523     (0000082c) move/from16          v51, v0
+	524     (00000830) invoke-static/range  v50 ... v51, Ljava/lang/Math;->max(I I)I
+	525     (00000836) move-result          v50
+	526     (00000838) aput                 v50, v12, v49
+	527     (0000083c) move/from16          v43, v22
+	528     (00000840) move/from16          v38, v22
+	529     (00000844) if-eqz               v20, +49
+
+onLayout-BB@0x848 : [ onLayout-BB@0x8d6 ]
+	530     (00000848) move-object/from16   v0, v52
+	531     (0000084c) iget-object          v0, v0, Landroidx/appcompat/widget/Toolbar;->mTitleTextView Landroid/widget/TextView;
+	532     (00000850) move-object/from16   v49, v0
+	533     (00000854) invoke-virtual/range v49, Landroid/widget/TextView;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
+	534     (0000085a) move-result-object   v24
+	535     (0000085c) check-cast           v24, Landroidx/appcompat/widget/Toolbar$LayoutParams;
+	536     (00000860) move-object/from16   v0, v52
+	537     (00000864) iget-object          v0, v0, Landroidx/appcompat/widget/Toolbar;->mTitleTextView Landroid/widget/TextView;
+	538     (00000868) move-object/from16   v49, v0
+	539     (0000086c) invoke-virtual/range v49, Landroid/widget/TextView;->getMeasuredWidth()I
+	540     (00000872) move-result          v49
+	541     (00000874) add-int              v44, v43, v49
+	542     (00000878) move-object/from16   v0, v52
+	543     (0000087c) iget-object          v0, v0, Landroidx/appcompat/widget/Toolbar;->mTitleTextView Landroid/widget/TextView;
+	544     (00000880) move-object/from16   v49, v0
+	545     (00000884) invoke-virtual/range v49, Landroid/widget/TextView;->getMeasuredHeight()I
+	546     (0000088a) move-result          v49
+	547     (0000088c) add-int              v40, v45, v49
+	548     (00000890) move-object/from16   v0, v52
+	549     (00000894) iget-object          v0, v0, Landroidx/appcompat/widget/Toolbar;->mTitleTextView Landroid/widget/TextView;
+	550     (00000898) move-object/from16   v49, v0
+	551     (0000089c) move-object/from16   v0, v49
+	552     (000008a0) move/from16          v1, v43
+	553     (000008a4) move/from16          v2, v45
+	554     (000008a8) move/from16          v3, v44
+	555     (000008ac) move/from16          v4, v40
+	556     (000008b0) invoke-virtual       v0, v1, v2, v3, v4, Landroid/widget/TextView;->layout(I I I I)V
+	557     (000008b6) move-object/from16   v0, v52
+	558     (000008ba) iget                 v0, v0, Landroidx/appcompat/widget/Toolbar;->mTitleMarginEnd I
+	559     (000008be) move/from16          v49, v0
+	560     (000008c2) add-int              v43, v44, v49
+	561     (000008c6) move-object/from16   v0, v24
+	562     (000008ca) iget                 v0, v0, Landroidx/appcompat/widget/Toolbar$LayoutParams;->bottomMargin I
+	563     (000008ce) move/from16          v49, v0
+	564     (000008d2) add-int              v45, v40, v49
+
+onLayout-BB@0x8d6 : [ onLayout-BB@0x8da onLayout-BB@0x978 ]
+	565     (000008d6) if-eqz               v19, +51
+
+onLayout-BB@0x8da : [ onLayout-BB@0x978 ]
+	566     (000008da) move-object/from16   v0, v52
+	567     (000008de) iget-object          v0, v0, Landroidx/appcompat/widget/Toolbar;->mSubtitleTextView Landroid/widget/TextView;
+	568     (000008e2) move-object/from16   v49, v0
+	569     (000008e6) invoke-virtual/range v49, Landroid/widget/TextView;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
+	570     (000008ec) move-result-object   v24
+	571     (000008ee) check-cast           v24, Landroidx/appcompat/widget/Toolbar$LayoutParams;
+	572     (000008f2) move-object/from16   v0, v24
+	573     (000008f6) iget                 v0, v0, Landroidx/appcompat/widget/Toolbar$LayoutParams;->topMargin I
+	574     (000008fa) move/from16          v49, v0
+	575     (000008fe) add-int              v45, v45, v49
+	576     (00000902) move-object/from16   v0, v52
+	577     (00000906) iget-object          v0, v0, Landroidx/appcompat/widget/Toolbar;->mSubtitleTextView Landroid/widget/TextView;
+	578     (0000090a) move-object/from16   v49, v0
+	579     (0000090e) invoke-virtual/range v49, Landroid/widget/TextView;->getMeasuredWidth()I
+	580     (00000914) move-result          v49
+	581     (00000916) add-int              v39, v38, v49
+	582     (0000091a) move-object/from16   v0, v52
+	583     (0000091e) iget-object          v0, v0, Landroidx/appcompat/widget/Toolbar;->mSubtitleTextView Landroid/widget/TextView;
+	584     (00000922) move-object/from16   v49, v0
+	585     (00000926) invoke-virtual/range v49, Landroid/widget/TextView;->getMeasuredHeight()I
+	586     (0000092c) move-result          v49
+	587     (0000092e) add-int              v37, v45, v49
+	588     (00000932) move-object/from16   v0, v52
+	589     (00000936) iget-object          v0, v0, Landroidx/appcompat/widget/Toolbar;->mSubtitleTextView Landroid/widget/TextView;
+	590     (0000093a) move-object/from16   v49, v0
+	591     (0000093e) move-object/from16   v0, v49
+	592     (00000942) move/from16          v1, v38
+	593     (00000946) move/from16          v2, v45
+	594     (0000094a) move/from16          v3, v39
+	595     (0000094e) move/from16          v4, v37
+	596     (00000952) invoke-virtual       v0, v1, v2, v3, v4, Landroid/widget/TextView;->layout(I I I I)V
+	597     (00000958) move-object/from16   v0, v52
+	598     (0000095c) iget                 v0, v0, Landroidx/appcompat/widget/Toolbar;->mTitleMarginEnd I
+	599     (00000960) move/from16          v49, v0
+	600     (00000964) add-int              v38, v39, v49
+	601     (00000968) move-object/from16   v0, v24
+	602     (0000096c) iget                 v0, v0, Landroidx/appcompat/widget/Toolbar$LayoutParams;->bottomMargin I
+	603     (00000970) move/from16          v49, v0
+	604     (00000974) add-int              v45, v37, v49
+
+onLayout-BB@0x978 : [ onLayout-BB@0x97c onLayout-BB@0x5c0 ]
+	605     (00000978) if-eqz               v41, -1dc
+
+onLayout-BB@0x97c : [ onLayout-BB@0x5c0 ]
+	606     (0000097c) move/from16          v0, v43
+	607     (00000980) move/from16          v1, v38
+	608     (00000984) invoke-static        v0, v1, Ljava/lang/Math;->max(I I)I
+	609     (0000098a) move-result          v22
+	610     (0000098c) goto/16              -1e6
+
+onLayout-BB@0x990 : [ onLayout-BB@0x7fa ]
+	611     (00000990) const/16             v49, 0
+	612     (00000994) goto/16              -cd
+
+onLayout-BB@0x998 : [ onLayout-BB@0x9d2 ]
+	613     (00000998) move-object/from16   v0, v52
+	614     (0000099c) iget-object          v0, v0, Landroidx/appcompat/widget/Toolbar;->mTempViews Ljava/util/ArrayList;
+	615     (000009a0) move-object/from16   v49, v0
+	616     (000009a4) const/16             v50, 5
+	617     (000009a8) move-object/from16   v0, v52
+	618     (000009ac) move-object/from16   v1, v49
+	619     (000009b0) move/from16          v2, v50
+	620     (000009b4) invoke-direct        v0, v1, v2, Landroidx/appcompat/widget/Toolbar;->addCustomViewsWithGravity(Ljava/util/List; I)V
+	621     (000009ba) move-object/from16   v0, v52
+	622     (000009be) iget-object          v0, v0, Landroidx/appcompat/widget/Toolbar;->mTempViews Ljava/util/ArrayList;
+	623     (000009c2) move-object/from16   v49, v0
+	624     (000009c6) invoke-virtual/range v49, Ljava/util/ArrayList;->size()I
+	625     (000009cc) move-result          v33
+	626     (000009ce) const/16             v17, 0
+
+onLayout-BB@0x9d2 : [ onLayout-BB@0x9de onLayout-BB@0xa18 ]
+	627     (000009d2) move/from16          v0, v17
+	628     (000009d6) move/from16          v1, v33
+	629     (000009da) if-ge                v0, v1, +1f
+
+onLayout-BB@0x9de : [ onLayout-BB@0x9d2 ]
+	630     (000009de) move-object/from16   v0, v52
+	631     (000009e2) iget-object          v0, v0, Landroidx/appcompat/widget/Toolbar;->mTempViews Ljava/util/ArrayList;
+	632     (000009e6) move-object/from16   v49, v0
+	633     (000009ea) move-object/from16   v0, v49
+	634     (000009ee) move/from16          v1, v17
+	635     (000009f2) invoke-virtual       v0, v1, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+	636     (000009f8) move-result-object   v49
+	637     (000009fa) check-cast           v49, Landroid/view/View;
+	638     (000009fe) move-object/from16   v0, v52
+	639     (00000a02) move-object/from16   v1, v49
+	640     (00000a06) move/from16          v2, v32
+	641     (00000a0a) invoke-direct        v0, v1, v2, v12, v5, Landroidx/appcompat/widget/Toolbar;->layoutChildRight(Landroid/view/View; I [I I)I
+	642     (00000a10) move-result          v32
+	643     (00000a12) add-int/lit8         v17, v17, 1
+	644     (00000a16) goto                 -22
+
+onLayout-BB@0xa18 : [ onLayout-BB@0xa7a onLayout-BB@0xad4 ]
+	645     (00000a18) move-object/from16   v0, v52
+	646     (00000a1c) iget-object          v0, v0, Landroidx/appcompat/widget/Toolbar;->mTempViews Ljava/util/ArrayList;
+	647     (00000a20) move-object/from16   v49, v0
+	648     (00000a24) const/16             v50, 1
+	649     (00000a28) move-object/from16   v0, v52
+	650     (00000a2c) move-object/from16   v1, v49
+	651     (00000a30) move/from16          v2, v50
+	652     (00000a34) invoke-direct        v0, v1, v2, Landroidx/appcompat/widget/Toolbar;->addCustomViewsWithGravity(Ljava/util/List; I)V
+	653     (00000a3a) move-object/from16   v0, v52
+	654     (00000a3e) iget-object          v0, v0, Landroidx/appcompat/widget/Toolbar;->mTempViews Ljava/util/ArrayList;
+	655     (00000a42) move-object/from16   v49, v0
+	656     (00000a46) move-object/from16   v0, v52
+	657     (00000a4a) move-object/from16   v1, v49
+	658     (00000a4e) invoke-direct        v0, v1, v12, Landroidx/appcompat/widget/Toolbar;->getViewListMeasuredWidth(Ljava/util/List; [I)I
+	659     (00000a54) move-result          v11
+	660     (00000a56) sub-int              v49, v48, v27
+	661     (00000a5a) sub-int              v49, v49, v28
+	662     (00000a5e) div-int/lit8         v49, v49, 2
+	663     (00000a62) add-int              v30, v27, v49
+	664     (00000a66) div-int/lit8         v15, v11, 2
+	665     (00000a6a) sub-int              v8, v30, v15
+	666     (00000a6e) add-int              v9, v8, v11
+	667     (00000a72) move/from16          v0, v22
+	668     (00000a76) if-ge                v8, v0, +2f
+
+onLayout-BB@0xa7a : [ onLayout-BB@0xa7e ]
+	669     (00000a7a) move/from16          v8, v22
+
+onLayout-BB@0xa7e : [ onLayout-BB@0xa96 ]
+	670     (00000a7e) move-object/from16   v0, v52
+	671     (00000a82) iget-object          v0, v0, Landroidx/appcompat/widget/Toolbar;->mTempViews Ljava/util/ArrayList;
+	672     (00000a86) move-object/from16   v49, v0
+	673     (00000a8a) invoke-virtual/range v49, Ljava/util/ArrayList;->size()I
+	674     (00000a90) move-result          v10
+	675     (00000a92) const/16             v17, 0
+
+onLayout-BB@0xa96 : [ onLayout-BB@0xa9e onLayout-BB@0xae6 ]
+	676     (00000a96) move/from16          v0, v17
+	677     (00000a9a) if-ge                v0, v10, +26
+
+onLayout-BB@0xa9e : [ onLayout-BB@0xa96 ]
+	678     (00000a9e) move-object/from16   v0, v52
+	679     (00000aa2) iget-object          v0, v0, Landroidx/appcompat/widget/Toolbar;->mTempViews Ljava/util/ArrayList;
+	680     (00000aa6) move-object/from16   v49, v0
+	681     (00000aaa) move-object/from16   v0, v49
+	682     (00000aae) move/from16          v1, v17
+	683     (00000ab2) invoke-virtual       v0, v1, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+	684     (00000ab8) move-result-object   v49
+	685     (00000aba) check-cast           v49, Landroid/view/View;
+	686     (00000abe) move-object/from16   v0, v52
+	687     (00000ac2) move-object/from16   v1, v49
+	688     (00000ac6) invoke-direct        v0, v1, v8, v12, v5, Landroidx/appcompat/widget/Toolbar;->layoutChildLeft(Landroid/view/View; I [I I)I
+	689     (00000acc) move-result          v8
+	690     (00000ace) add-int/lit8         v17, v17, 1
+	691     (00000ad2) goto                 -1e
+
+onLayout-BB@0xad4 : [ onLayout-BB@0xadc onLayout-BB@0xa7e ]
+	692     (00000ad4) move/from16          v0, v32
+	693     (00000ad8) if-le                v9, v0, -2d
+
+onLayout-BB@0xadc : [ onLayout-BB@0xa7e ]
+	694     (00000adc) sub-int              v49, v9, v32
+	695     (00000ae0) sub-int              v8, v8, v49
+	696     (00000ae4) goto                 -33
+
+onLayout-BB@0xae6 : 
+	697     (00000ae6) move-object/from16   v0, v52
+	698     (00000aea) iget-object          v0, v0, Landroidx/appcompat/widget/Toolbar;->mTempViews Ljava/util/ArrayList;
+	699     (00000aee) move-object/from16   v49, v0
+	700     (00000af2) invoke-virtual/range v49, Ljava/util/ArrayList;->clear()V
+	701     (00000af8) return-void          
+
+onLayout-BB@0xafa : 
+	702     (00000afa) nop                  
+	703     (00000afc) sparse-switch-payload 30 50
+

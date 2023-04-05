@@ -1,0 +1,19 @@
+# Lcom/afwsamples/testdpc/ShellCommand;->requestBugreport()V [access_flags=private]
+#
+# Parameters:
+# local registers: v0...v3
+#
+# - return:void
+
+requestBugreport-BB@0x0 : 
+	0       (00000000) const-string         v0, 'TestDPCShellCommand'
+	1       (00000004) const-string         v1, 'requestBugreport()'
+	2       (00000008) invoke-static        v0, v1, Landroid/util/Log;->i(Ljava/lang/String; Ljava/lang/String;)I
+	3       (0000000e) iget-object          v0, v3, Lcom/afwsamples/testdpc/ShellCommand;->mDevicePolicyManagerGateway Lcom/afwsamples/testdpc/DevicePolicyManagerGateway;
+	4       (00000012) new-instance         v1, Lcom/afwsamples/testdpc/ShellCommand$$Lambda$83;
+	5       (00000016) invoke-direct        v1, v3, Lcom/afwsamples/testdpc/ShellCommand$$Lambda$83;-><init>(Lcom/afwsamples/testdpc/ShellCommand;)V
+	6       (0000001c) new-instance         v2, Lcom/afwsamples/testdpc/ShellCommand$$Lambda$84;
+	7       (00000020) invoke-direct        v2, v3, Lcom/afwsamples/testdpc/ShellCommand$$Lambda$84;-><init>(Lcom/afwsamples/testdpc/ShellCommand;)V
+	8       (00000026) invoke-interface     v0, v1, v2, Lcom/afwsamples/testdpc/DevicePolicyManagerGateway;->requestBugreport(Ljava/util/function/Consumer; Ljava/util/function/Consumer;)V
+	9       (0000002c) return-void          
+

@@ -1,0 +1,39 @@
+# Landroidx/appcompat/app/AppCompatDelegateImpl;->onDestroy()V [access_flags=public]
+#
+# Parameters:
+# local registers: v0...v2
+#
+# - return:void
+
+onDestroy-BB@0x0 : [ onDestroy-BB@0x8 onDestroy-BB@0x1e ]
+	0       (00000000) iget-boolean         v0, v2, Landroidx/appcompat/app/AppCompatDelegateImpl;->mInvalidatePanelMenuPosted Z
+	1       (00000004) if-eqz               v0, +d
+
+onDestroy-BB@0x8 : [ onDestroy-BB@0x1e ]
+	2       (00000008) iget-object          v0, v2, Landroidx/appcompat/app/AppCompatDelegateImpl;->mWindow Landroid/view/Window;
+	3       (0000000c) invoke-virtual       v0, Landroid/view/Window;->getDecorView()Landroid/view/View;
+	4       (00000012) move-result-object   v0
+	5       (00000014) iget-object          v1, v2, Landroidx/appcompat/app/AppCompatDelegateImpl;->mInvalidatePanelMenuRunnable Ljava/lang/Runnable;
+	6       (00000018) invoke-virtual       v0, v1, Landroid/view/View;->removeCallbacks(Ljava/lang/Runnable;)Z
+
+onDestroy-BB@0x1e : [ onDestroy-BB@0x2c onDestroy-BB@0x36 ]
+	7       (0000001e) const/4              v0, 1
+	8       (00000020) iput-boolean         v0, v2, Landroidx/appcompat/app/AppCompatDelegateImpl;->mIsDestroyed Z
+	9       (00000024) iget-object          v0, v2, Landroidx/appcompat/app/AppCompatDelegateImpl;->mActionBar Landroidx/appcompat/app/ActionBar;
+	10      (00000028) if-eqz               v0, +7
+
+onDestroy-BB@0x2c : [ onDestroy-BB@0x36 ]
+	11      (0000002c) iget-object          v0, v2, Landroidx/appcompat/app/AppCompatDelegateImpl;->mActionBar Landroidx/appcompat/app/ActionBar;
+	12      (00000030) invoke-virtual       v0, Landroidx/appcompat/app/ActionBar;->onDestroy()V
+
+onDestroy-BB@0x36 : [ onDestroy-BB@0x3e onDestroy-BB@0x48 ]
+	13      (00000036) iget-object          v0, v2, Landroidx/appcompat/app/AppCompatDelegateImpl;->mAutoNightModeManager Landroidx/appcompat/app/AppCompatDelegateImpl$AutoNightModeManager;
+	14      (0000003a) if-eqz               v0, +7
+
+onDestroy-BB@0x3e : [ onDestroy-BB@0x48 ]
+	15      (0000003e) iget-object          v0, v2, Landroidx/appcompat/app/AppCompatDelegateImpl;->mAutoNightModeManager Landroidx/appcompat/app/AppCompatDelegateImpl$AutoNightModeManager;
+	16      (00000042) invoke-virtual       v0, Landroidx/appcompat/app/AppCompatDelegateImpl$AutoNightModeManager;->cleanup()V
+
+onDestroy-BB@0x48 : 
+	17      (00000048) return-void          
+

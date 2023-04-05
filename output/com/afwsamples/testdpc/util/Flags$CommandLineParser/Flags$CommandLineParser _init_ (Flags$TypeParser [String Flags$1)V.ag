@@ -1,0 +1,14 @@
+# Lcom/afwsamples/testdpc/util/Flags$CommandLineParser;-><init>(Lcom/afwsamples/testdpc/util/Flags$TypeParser; [Ljava/lang/String; Lcom/afwsamples/testdpc/util/Flags$1;)V [access_flags=synthetic constructor]
+#
+# Parameters:
+# - local registers: v0...v0
+# - v1:com.afwsamples.testdpc.util.Flags$TypeParser
+# - v2:java.lang.String[]
+# - v3:com.afwsamples.testdpc.util.Flags$1
+#
+# - return:void
+
+<init>-BB@0x0 : 
+	0       (00000000) invoke-direct        v0, v1, v2, Lcom/afwsamples/testdpc/util/Flags$CommandLineParser;-><init>(Lcom/afwsamples/testdpc/util/Flags$TypeParser; [Ljava/lang/String;)V
+	1       (00000006) return-void          
+

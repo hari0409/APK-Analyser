@@ -1,0 +1,28 @@
+# Landroidx/multidex/MultiDex$V14$ICSElementConstructor;-><init>(Ljava/lang/Class;)V [access_flags=constructor]
+#
+# Parameters:
+# - local registers: v0...v4
+# - v5:java.lang.Class
+#
+# - return:void
+
+<init>-BB@0x0 : 
+	0       (00000000) const/4              v3, 1
+	1       (00000002) invoke-direct        v4, Ljava/lang/Object;-><init>()V
+	2       (00000008) const/4              v0, 3
+	3       (0000000a) new-array            v0, v0, [Ljava/lang/Class;
+	4       (0000000e) const/4              v1, 0
+	5       (00000010) const-class          v2, Ljava/io/File;
+	6       (00000014) aput-object          v2, v0, v1
+	7       (00000018) const-class          v1, Ljava/util/zip/ZipFile;
+	8       (0000001c) aput-object          v1, v0, v3
+	9       (00000020) const/4              v1, 2
+	10      (00000022) const-class          v2, Ldalvik/system/DexFile;
+	11      (00000026) aput-object          v2, v0, v1
+	12      (0000002a) invoke-virtual       v5, v0, Ljava/lang/Class;->getConstructor([Ljava/lang/Class;)Ljava/lang/reflect/Constructor;
+	13      (00000030) move-result-object   v0
+	14      (00000032) iput-object          v0, v4, Landroidx/multidex/MultiDex$V14$ICSElementConstructor;->elementConstructor Ljava/lang/reflect/Constructor;
+	15      (00000036) iget-object          v0, v4, Landroidx/multidex/MultiDex$V14$ICSElementConstructor;->elementConstructor Ljava/lang/reflect/Constructor;
+	16      (0000003a) invoke-virtual       v0, v3, Ljava/lang/reflect/Constructor;->setAccessible(Z)V
+	17      (00000040) return-void          
+

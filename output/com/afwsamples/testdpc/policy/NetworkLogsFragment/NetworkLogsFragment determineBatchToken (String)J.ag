@@ -1,0 +1,56 @@
+# Lcom/afwsamples/testdpc/policy/NetworkLogsFragment;->determineBatchToken(Ljava/lang/String;)J [access_flags=private]
+#
+# Parameters:
+# - local registers: v0...v7
+# - v8:java.lang.String
+#
+# - return:long
+
+determineBatchToken-BB@0x0 : [ determineBatchToken-BB@0x14 determineBatchToken-BB@0x46 ]
+	0       (00000000) const/4              v5, 2
+	1       (00000002) const-string         v4, '_'
+	2       (00000006) invoke-virtual       v8, v4, Ljava/lang/String;->split(Ljava/lang/String;)[Ljava/lang/String;
+	3       (0000000c) move-result-object   v3
+	4       (0000000e) array-length         v4, v3
+	5       (00000010) if-gt                v4, v5, +1b
+
+determineBatchToken-BB@0x14 : 
+	6       (00000014) new-instance         v4, Ljava/lang/NumberFormatException;
+	7       (00000018) new-instance         v5, Ljava/lang/StringBuilder;
+	8       (0000001c) invoke-direct        v5, Ljava/lang/StringBuilder;-><init>()V
+	9       (00000022) const-string         v6, 'Failed parsing the batch from file: '
+	10      (00000026) invoke-virtual       v5, v6, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	11      (0000002c) move-result-object   v5
+	12      (0000002e) invoke-virtual       v5, v8, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	13      (00000034) move-result-object   v5
+	14      (00000036) invoke-virtual       v5, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+	15      (0000003c) move-result-object   v5
+	16      (0000003e) invoke-direct        v4, v5, Ljava/lang/NumberFormatException;-><init>(Ljava/lang/String;)V
+	17      (00000044) throw                v4
+
+determineBatchToken-BB@0x46 : [ determineBatchToken-BB@0x48 ]
+	18      (00000046) const/4              v4, 2
+
+determineBatchToken-BB@0x48 : 
+	19      (00000048) aget-object          v4, v3, v4
+	20      (0000004c) invoke-static        v4, Ljava/lang/Long;->parseLong(Ljava/lang/String;)J
+	21      (00000052) move-result-wide     v0
+	22      (00000054) return-wide          v0
+	48:51
+	(Ljava/util/regex/PatternSyntaxException; -> 56 determineBatchToken-BB@0x56)
+
+determineBatchToken-BB@0x56 : 
+	23      (00000056) move-exception       v2
+	24      (00000058) new-instance         v4, Ljava/lang/NumberFormatException;
+	25      (0000005c) new-instance         v5, Ljava/lang/StringBuilder;
+	26      (00000060) invoke-direct        v5, Ljava/lang/StringBuilder;-><init>()V
+	27      (00000066) const-string         v6, 'Failed parsing the batch from file: '
+	28      (0000006a) invoke-virtual       v5, v6, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	29      (00000070) move-result-object   v5
+	30      (00000072) invoke-virtual       v5, v8, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	31      (00000078) move-result-object   v5
+	32      (0000007a) invoke-virtual       v5, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+	33      (00000080) move-result-object   v5
+	34      (00000082) invoke-direct        v4, v5, Ljava/lang/NumberFormatException;-><init>(Ljava/lang/String;)V
+	35      (00000088) throw                v4
+

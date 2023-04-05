@@ -1,0 +1,37 @@
+# Landroidx/appcompat/view/menu/ListMenuItemView;->adjustListItemSelectionBounds(Landroid/graphics/Rect;)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v4
+# - v5:android.graphics.Rect
+#
+# - return:void
+
+adjustListItemSelectionBounds-BB@0x0 : [ adjustListItemSelectionBounds-BB@0x8 adjustListItemSelectionBounds-BB@0x4a ]
+	0       (00000000) iget-object          v1, v4, Landroidx/appcompat/view/menu/ListMenuItemView;->mGroupDivider Landroid/widget/ImageView;
+	1       (00000004) if-eqz               v1, +23
+
+adjustListItemSelectionBounds-BB@0x8 : [ adjustListItemSelectionBounds-BB@0x18 adjustListItemSelectionBounds-BB@0x4a ]
+	2       (00000008) iget-object          v1, v4, Landroidx/appcompat/view/menu/ListMenuItemView;->mGroupDivider Landroid/widget/ImageView;
+	3       (0000000c) invoke-virtual       v1, Landroid/widget/ImageView;->getVisibility()I
+	4       (00000012) move-result          v1
+	5       (00000014) if-nez               v1, +1b
+
+adjustListItemSelectionBounds-BB@0x18 : [ adjustListItemSelectionBounds-BB@0x4a ]
+	6       (00000018) iget-object          v1, v4, Landroidx/appcompat/view/menu/ListMenuItemView;->mGroupDivider Landroid/widget/ImageView;
+	7       (0000001c) invoke-virtual       v1, Landroid/widget/ImageView;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
+	8       (00000022) move-result-object   v0
+	9       (00000024) check-cast           v0, Landroid/widget/LinearLayout$LayoutParams;
+	10      (00000028) iget                 v1, v5, Landroid/graphics/Rect;->top I
+	11      (0000002c) iget-object          v2, v4, Landroidx/appcompat/view/menu/ListMenuItemView;->mGroupDivider Landroid/widget/ImageView;
+	12      (00000030) invoke-virtual       v2, Landroid/widget/ImageView;->getHeight()I
+	13      (00000036) move-result          v2
+	14      (00000038) iget                 v3, v0, Landroid/widget/LinearLayout$LayoutParams;->topMargin I
+	15      (0000003c) add-int/2addr        v2, v3
+	16      (0000003e) iget                 v3, v0, Landroid/widget/LinearLayout$LayoutParams;->bottomMargin I
+	17      (00000042) add-int/2addr        v2, v3
+	18      (00000044) add-int/2addr        v1, v2
+	19      (00000046) iput                 v1, v5, Landroid/graphics/Rect;->top I
+
+adjustListItemSelectionBounds-BB@0x4a : 
+	20      (0000004a) return-void          
+

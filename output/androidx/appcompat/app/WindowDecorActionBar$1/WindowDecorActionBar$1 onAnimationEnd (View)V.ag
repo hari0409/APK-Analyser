@@ -1,0 +1,53 @@
+# Landroidx/appcompat/app/WindowDecorActionBar$1;->onAnimationEnd(Landroid/view/View;)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:android.view.View
+#
+# - return:void
+
+onAnimationEnd-BB@0x0 : [ onAnimationEnd-BB@0xe onAnimationEnd-BB@0x36 ]
+	0       (00000000) const/4              v1, 0
+	1       (00000002) iget-object          v0, v2, Landroidx/appcompat/app/WindowDecorActionBar$1;->this$0 Landroidx/appcompat/app/WindowDecorActionBar;
+	2       (00000006) iget-boolean         v0, v0, Landroidx/appcompat/app/WindowDecorActionBar;->mContentAnimations Z
+	3       (0000000a) if-eqz               v0, +16
+
+onAnimationEnd-BB@0xe : [ onAnimationEnd-BB@0x1a onAnimationEnd-BB@0x36 ]
+	4       (0000000e) iget-object          v0, v2, Landroidx/appcompat/app/WindowDecorActionBar$1;->this$0 Landroidx/appcompat/app/WindowDecorActionBar;
+	5       (00000012) iget-object          v0, v0, Landroidx/appcompat/app/WindowDecorActionBar;->mContentView Landroid/view/View;
+	6       (00000016) if-eqz               v0, +10
+
+onAnimationEnd-BB@0x1a : [ onAnimationEnd-BB@0x36 ]
+	7       (0000001a) iget-object          v0, v2, Landroidx/appcompat/app/WindowDecorActionBar$1;->this$0 Landroidx/appcompat/app/WindowDecorActionBar;
+	8       (0000001e) iget-object          v0, v0, Landroidx/appcompat/app/WindowDecorActionBar;->mContentView Landroid/view/View;
+	9       (00000022) invoke-virtual       v0, v1, Landroid/view/View;->setTranslationY(F)V
+	10      (00000028) iget-object          v0, v2, Landroidx/appcompat/app/WindowDecorActionBar$1;->this$0 Landroidx/appcompat/app/WindowDecorActionBar;
+	11      (0000002c) iget-object          v0, v0, Landroidx/appcompat/app/WindowDecorActionBar;->mContainerView Landroidx/appcompat/widget/ActionBarContainer;
+	12      (00000030) invoke-virtual       v0, v1, Landroidx/appcompat/widget/ActionBarContainer;->setTranslationY(F)V
+
+onAnimationEnd-BB@0x36 : [ onAnimationEnd-BB@0x78 onAnimationEnd-BB@0x86 ]
+	13      (00000036) iget-object          v0, v2, Landroidx/appcompat/app/WindowDecorActionBar$1;->this$0 Landroidx/appcompat/app/WindowDecorActionBar;
+	14      (0000003a) iget-object          v0, v0, Landroidx/appcompat/app/WindowDecorActionBar;->mContainerView Landroidx/appcompat/widget/ActionBarContainer;
+	15      (0000003e) const/16             v1, 8
+	16      (00000042) invoke-virtual       v0, v1, Landroidx/appcompat/widget/ActionBarContainer;->setVisibility(I)V
+	17      (00000048) iget-object          v0, v2, Landroidx/appcompat/app/WindowDecorActionBar$1;->this$0 Landroidx/appcompat/app/WindowDecorActionBar;
+	18      (0000004c) iget-object          v0, v0, Landroidx/appcompat/app/WindowDecorActionBar;->mContainerView Landroidx/appcompat/widget/ActionBarContainer;
+	19      (00000050) const/4              v1, 0
+	20      (00000052) invoke-virtual       v0, v1, Landroidx/appcompat/widget/ActionBarContainer;->setTransitioning(Z)V
+	21      (00000058) iget-object          v0, v2, Landroidx/appcompat/app/WindowDecorActionBar$1;->this$0 Landroidx/appcompat/app/WindowDecorActionBar;
+	22      (0000005c) const/4              v1, 0
+	23      (0000005e) iput-object          v1, v0, Landroidx/appcompat/app/WindowDecorActionBar;->mCurrentShowAnim Landroidx/appcompat/view/ViewPropertyAnimatorCompatSet;
+	24      (00000062) iget-object          v0, v2, Landroidx/appcompat/app/WindowDecorActionBar$1;->this$0 Landroidx/appcompat/app/WindowDecorActionBar;
+	25      (00000066) invoke-virtual       v0, Landroidx/appcompat/app/WindowDecorActionBar;->completeDeferredDestroyActionMode()V
+	26      (0000006c) iget-object          v0, v2, Landroidx/appcompat/app/WindowDecorActionBar$1;->this$0 Landroidx/appcompat/app/WindowDecorActionBar;
+	27      (00000070) iget-object          v0, v0, Landroidx/appcompat/app/WindowDecorActionBar;->mOverlayLayout Landroidx/appcompat/widget/ActionBarOverlayLayout;
+	28      (00000074) if-eqz               v0, +9
+
+onAnimationEnd-BB@0x78 : [ onAnimationEnd-BB@0x86 ]
+	29      (00000078) iget-object          v0, v2, Landroidx/appcompat/app/WindowDecorActionBar$1;->this$0 Landroidx/appcompat/app/WindowDecorActionBar;
+	30      (0000007c) iget-object          v0, v0, Landroidx/appcompat/app/WindowDecorActionBar;->mOverlayLayout Landroidx/appcompat/widget/ActionBarOverlayLayout;
+	31      (00000080) invoke-static        v0, Landroidx/core/view/ViewCompat;->requestApplyInsets(Landroid/view/View;)V
+
+onAnimationEnd-BB@0x86 : 
+	32      (00000086) return-void          
+

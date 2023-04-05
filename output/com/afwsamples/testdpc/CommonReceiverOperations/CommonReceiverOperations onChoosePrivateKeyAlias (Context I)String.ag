@@ -1,0 +1,51 @@
+# Lcom/afwsamples/testdpc/CommonReceiverOperations;->onChoosePrivateKeyAlias(Landroid/content/Context; I)Ljava/lang/String; [access_flags=public static]
+#
+# Parameters:
+# - local registers: v0...v3
+# - v4:android.content.Context
+# - v5:int
+#
+# - return:java.lang.String
+
+onChoosePrivateKeyAlias-BB@0x0 : [ onChoosePrivateKeyAlias-BB@0xe onChoosePrivateKeyAlias-BB@0x12 ]
+	0       (00000000) const/4              v1, 0
+	1       (00000002) invoke-static        Landroid/os/Process;->myUid()I
+	2       (00000008) move-result          v2
+	3       (0000000a) if-ne                v5, v2, +4
+
+onChoosePrivateKeyAlias-BB@0xe : [ onChoosePrivateKeyAlias-BB@0x10 ]
+	4       (0000000e) move-object          v0, v1
+
+onChoosePrivateKeyAlias-BB@0x10 : 
+	5       (00000010) return-object        v0
+
+onChoosePrivateKeyAlias-BB@0x12 : [ onChoosePrivateKeyAlias-BB@0x32 onChoosePrivateKeyAlias-BB@0x6c ]
+	6       (00000012) invoke-static        v4, Landroid/preference/PreferenceManager;->getDefaultSharedPreferences(Landroid/content/Context;)Landroid/content/SharedPreferences;
+	7       (00000018) move-result-object   v2
+	8       (0000001a) const-string         v3, 'override_key_selection'
+	9       (0000001e) invoke-interface     v2, v3, v1, Landroid/content/SharedPreferences;->getString(Ljava/lang/String; Ljava/lang/String;)Ljava/lang/String;
+	10      (00000024) move-result-object   v0
+	11      (00000026) invoke-static        v0, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
+	12      (0000002c) move-result          v2
+	13      (0000002e) if-nez               v2, +1f
+
+onChoosePrivateKeyAlias-BB@0x32 : [ onChoosePrivateKeyAlias-BB@0x10 ]
+	14      (00000032) new-instance         v1, Ljava/lang/StringBuilder;
+	15      (00000036) invoke-direct        v1, Ljava/lang/StringBuilder;-><init>()V
+	16      (0000003c) const-string         v2, 'Substituting private key alias: "'
+	17      (00000040) invoke-virtual       v1, v2, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	18      (00000046) move-result-object   v1
+	19      (00000048) invoke-virtual       v1, v0, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	20      (0000004e) move-result-object   v1
+	21      (00000050) const-string         v2, '"'
+	22      (00000054) invoke-virtual       v1, v2, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	23      (0000005a) move-result-object   v1
+	24      (0000005c) invoke-virtual       v1, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+	25      (00000062) move-result-object   v1
+	26      (00000064) invoke-static        v4, v1, Lcom/afwsamples/testdpc/CommonReceiverOperations;->showToast(Landroid/content/Context; Ljava/lang/String;)V
+	27      (0000006a) goto                 -2d
+
+onChoosePrivateKeyAlias-BB@0x6c : [ onChoosePrivateKeyAlias-BB@0x10 ]
+	28      (0000006c) move-object          v0, v1
+	29      (0000006e) goto                 -2f
+

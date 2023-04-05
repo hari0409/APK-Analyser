@@ -1,0 +1,35 @@
+# Landroidx/appcompat/view/menu/ActionMenuItem;-><init>(Landroid/content/Context; I I I I Ljava/lang/CharSequence;)V [access_flags=public constructor]
+#
+# Parameters:
+# - local registers: v0...v3
+# - v4:android.content.Context
+# - v5:int
+# - v6:int
+# - v7:int
+# - v8:int
+# - v9:java.lang.CharSequence
+#
+# - return:void
+
+<init>-BB@0x0 : 
+	0       (00000000) const/4              v2, 0
+	1       (00000002) const/16             v1, 4096
+	2       (00000006) const/4              v0, 0
+	3       (00000008) invoke-direct        v3, Ljava/lang/Object;-><init>()V
+	4       (0000000e) iput                 v1, v3, Landroidx/appcompat/view/menu/ActionMenuItem;->mShortcutNumericModifiers I
+	5       (00000012) iput                 v1, v3, Landroidx/appcompat/view/menu/ActionMenuItem;->mShortcutAlphabeticModifiers I
+	6       (00000016) iput                 v0, v3, Landroidx/appcompat/view/menu/ActionMenuItem;->mIconResId I
+	7       (0000001a) iput-object          v2, v3, Landroidx/appcompat/view/menu/ActionMenuItem;->mIconTintList Landroid/content/res/ColorStateList;
+	8       (0000001e) iput-object          v2, v3, Landroidx/appcompat/view/menu/ActionMenuItem;->mIconTintMode Landroid/graphics/PorterDuff$Mode;
+	9       (00000022) iput-boolean         v0, v3, Landroidx/appcompat/view/menu/ActionMenuItem;->mHasIconTint Z
+	10      (00000026) iput-boolean         v0, v3, Landroidx/appcompat/view/menu/ActionMenuItem;->mHasIconTintMode Z
+	11      (0000002a) const/16             v0, 16
+	12      (0000002e) iput                 v0, v3, Landroidx/appcompat/view/menu/ActionMenuItem;->mFlags I
+	13      (00000032) iput-object          v4, v3, Landroidx/appcompat/view/menu/ActionMenuItem;->mContext Landroid/content/Context;
+	14      (00000036) iput                 v6, v3, Landroidx/appcompat/view/menu/ActionMenuItem;->mId I
+	15      (0000003a) iput                 v5, v3, Landroidx/appcompat/view/menu/ActionMenuItem;->mGroup I
+	16      (0000003e) iput                 v7, v3, Landroidx/appcompat/view/menu/ActionMenuItem;->mCategoryOrder I
+	17      (00000042) iput                 v8, v3, Landroidx/appcompat/view/menu/ActionMenuItem;->mOrdering I
+	18      (00000046) iput-object          v9, v3, Landroidx/appcompat/view/menu/ActionMenuItem;->mTitle Ljava/lang/CharSequence;
+	19      (0000004a) return-void          
+

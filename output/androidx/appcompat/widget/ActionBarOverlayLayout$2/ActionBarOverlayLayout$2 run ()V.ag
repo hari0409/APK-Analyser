@@ -1,0 +1,25 @@
+# Landroidx/appcompat/widget/ActionBarOverlayLayout$2;->run()V [access_flags=public]
+#
+# Parameters:
+# local registers: v0...v3
+#
+# - return:void
+
+run-BB@0x0 : 
+	0       (00000000) iget-object          v0, v3, Landroidx/appcompat/widget/ActionBarOverlayLayout$2;->this$0 Landroidx/appcompat/widget/ActionBarOverlayLayout;
+	1       (00000004) invoke-virtual       v0, Landroidx/appcompat/widget/ActionBarOverlayLayout;->haltActionBarHideOffsetAnimations()V
+	2       (0000000a) iget-object          v0, v3, Landroidx/appcompat/widget/ActionBarOverlayLayout$2;->this$0 Landroidx/appcompat/widget/ActionBarOverlayLayout;
+	3       (0000000e) iget-object          v1, v3, Landroidx/appcompat/widget/ActionBarOverlayLayout$2;->this$0 Landroidx/appcompat/widget/ActionBarOverlayLayout;
+	4       (00000012) iget-object          v1, v1, Landroidx/appcompat/widget/ActionBarOverlayLayout;->mActionBarTop Landroidx/appcompat/widget/ActionBarContainer;
+	5       (00000016) invoke-virtual       v1, Landroidx/appcompat/widget/ActionBarContainer;->animate()Landroid/view/ViewPropertyAnimator;
+	6       (0000001c) move-result-object   v1
+	7       (0000001e) const/4              v2, 0
+	8       (00000020) invoke-virtual       v1, v2, Landroid/view/ViewPropertyAnimator;->translationY(F)Landroid/view/ViewPropertyAnimator;
+	9       (00000026) move-result-object   v1
+	10      (00000028) iget-object          v2, v3, Landroidx/appcompat/widget/ActionBarOverlayLayout$2;->this$0 Landroidx/appcompat/widget/ActionBarOverlayLayout;
+	11      (0000002c) iget-object          v2, v2, Landroidx/appcompat/widget/ActionBarOverlayLayout;->mTopAnimatorListener Landroid/animation/AnimatorListenerAdapter;
+	12      (00000030) invoke-virtual       v1, v2, Landroid/view/ViewPropertyAnimator;->setListener(Landroid/animation/Animator$AnimatorListener;)Landroid/view/ViewPropertyAnimator;
+	13      (00000036) move-result-object   v1
+	14      (00000038) iput-object          v1, v0, Landroidx/appcompat/widget/ActionBarOverlayLayout;->mCurrentActionBarTopAnimator Landroid/view/ViewPropertyAnimator;
+	15      (0000003c) return-void          
+

@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextView android:textSize="14.0sp" android:textColor="?android:colorAccent" android:paddingTop="8.0dip" android:paddingBottom="4.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/wifi_configs_header" android:textAlignment="viewStart" android:paddingStart="8.0dip" style="?android:listSeparatorTextViewStyle"
+  xmlns:android="http://schemas.android.com/apk/res/android" />

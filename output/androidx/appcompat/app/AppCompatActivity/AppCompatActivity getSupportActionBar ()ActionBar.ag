@@ -1,0 +1,14 @@
+# Landroidx/appcompat/app/AppCompatActivity;->getSupportActionBar()Landroidx/appcompat/app/ActionBar; [access_flags=public]
+#
+# Parameters:
+# local registers: v0...v1
+#
+# - return:androidx.appcompat.app.ActionBar
+
+getSupportActionBar-BB@0x0 : 
+	0       (00000000) invoke-virtual       v1, Landroidx/appcompat/app/AppCompatActivity;->getDelegate()Landroidx/appcompat/app/AppCompatDelegate;
+	1       (00000006) move-result-object   v0
+	2       (00000008) invoke-virtual       v0, Landroidx/appcompat/app/AppCompatDelegate;->getSupportActionBar()Landroidx/appcompat/app/ActionBar;
+	3       (0000000e) move-result-object   v0
+	4       (00000010) return-object        v0
+

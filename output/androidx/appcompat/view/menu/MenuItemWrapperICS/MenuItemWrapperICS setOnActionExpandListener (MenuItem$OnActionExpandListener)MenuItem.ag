@@ -1,0 +1,25 @@
+# Landroidx/appcompat/view/menu/MenuItemWrapperICS;->setOnActionExpandListener(Landroid/view/MenuItem$OnActionExpandListener;)Landroid/view/MenuItem; [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:android.view.MenuItem$OnActionExpandListener
+#
+# - return:android.view.MenuItem
+
+setOnActionExpandListener-BB@0x0 : [ setOnActionExpandListener-BB@0xc setOnActionExpandListener-BB@0x1e ]
+	0       (00000000) iget-object          v0, v2, Landroidx/appcompat/view/menu/MenuItemWrapperICS;->mWrappedObject Ljava/lang/Object;
+	1       (00000004) check-cast           v0, Landroidx/core/internal/view/SupportMenuItem;
+	2       (00000008) if-eqz               v3, +b
+
+setOnActionExpandListener-BB@0xc : [ setOnActionExpandListener-BB@0x16 ]
+	3       (0000000c) new-instance         v1, Landroidx/appcompat/view/menu/MenuItemWrapperICS$OnActionExpandListenerWrapper;
+	4       (00000010) invoke-direct        v1, v2, v3, Landroidx/appcompat/view/menu/MenuItemWrapperICS$OnActionExpandListenerWrapper;-><init>(Landroidx/appcompat/view/menu/MenuItemWrapperICS; Landroid/view/MenuItem$OnActionExpandListener;)V
+
+setOnActionExpandListener-BB@0x16 : 
+	5       (00000016) invoke-interface     v0, v1, Landroidx/core/internal/view/SupportMenuItem;->setOnActionExpandListener(Landroid/view/MenuItem$OnActionExpandListener;)Landroid/view/MenuItem;
+	6       (0000001c) return-object        v2
+
+setOnActionExpandListener-BB@0x1e : [ setOnActionExpandListener-BB@0x16 ]
+	7       (0000001e) const/4              v1, 0
+	8       (00000020) goto                 -5
+

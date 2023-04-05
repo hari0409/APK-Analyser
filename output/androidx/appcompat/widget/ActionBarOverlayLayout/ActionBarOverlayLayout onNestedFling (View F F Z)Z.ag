@@ -1,0 +1,41 @@
+# Landroidx/appcompat/widget/ActionBarOverlayLayout;->onNestedFling(Landroid/view/View; F F Z)Z [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:android.view.View
+# - v4:float
+# - v5:float
+# - v6:boolean
+#
+# - return:boolean
+
+onNestedFling-BB@0x0 : [ onNestedFling-BB@0xa onNestedFling-BB@0xe ]
+	0       (00000000) const/4              v0, 1
+	1       (00000002) iget-boolean         v1, v2, Landroidx/appcompat/widget/ActionBarOverlayLayout;->mHideOnContentScroll Z
+	2       (00000006) if-eqz               v1, +4
+
+onNestedFling-BB@0xa : [ onNestedFling-BB@0xe onNestedFling-BB@0x12 ]
+	3       (0000000a) if-nez               v6, +4
+
+onNestedFling-BB@0xe : [ onNestedFling-BB@0x10 ]
+	4       (0000000e) const/4              v0, 0
+
+onNestedFling-BB@0x10 : 
+	5       (00000010) return               v0
+
+onNestedFling-BB@0x12 : [ onNestedFling-BB@0x1e onNestedFling-BB@0x2a ]
+	6       (00000012) invoke-direct        v2, v4, v5, Landroidx/appcompat/widget/ActionBarOverlayLayout;->shouldHideActionBarOnFling(F F)Z
+	7       (00000018) move-result          v1
+	8       (0000001a) if-eqz               v1, +8
+
+onNestedFling-BB@0x1e : [ onNestedFling-BB@0x24 ]
+	9       (0000001e) invoke-direct        v2, Landroidx/appcompat/widget/ActionBarOverlayLayout;->addActionBarHideOffset()V
+
+onNestedFling-BB@0x24 : [ onNestedFling-BB@0x10 ]
+	10      (00000024) iput-boolean         v0, v2, Landroidx/appcompat/widget/ActionBarOverlayLayout;->mAnimatingForFling Z
+	11      (00000028) goto                 -c
+
+onNestedFling-BB@0x2a : [ onNestedFling-BB@0x24 ]
+	12      (0000002a) invoke-direct        v2, Landroidx/appcompat/widget/ActionBarOverlayLayout;->removeActionBarHideOffset()V
+	13      (00000030) goto                 -6
+

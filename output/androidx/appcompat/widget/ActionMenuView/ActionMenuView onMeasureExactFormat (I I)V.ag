@@ -1,0 +1,689 @@
+# Landroidx/appcompat/widget/ActionMenuView;->onMeasureExactFormat(I I)V [access_flags=private]
+#
+# Parameters:
+# - local registers: v0...v42
+# - v43:int
+# - v44:int
+#
+# - return:void
+
+onMeasureExactFormat-BB@0x0 : [ onMeasureExactFormat-BB@0x80 onMeasureExactFormat-BB@0x98 ]
+	0       (00000000) invoke-static/range  v44, Landroid/view/View$MeasureSpec;->getMode(I)I
+	1       (00000006) move-result          v17
+	2       (00000008) invoke-static/range  v43, Landroid/view/View$MeasureSpec;->getSize(I)I
+	3       (0000000e) move-result          v37
+	4       (00000010) invoke-static/range  v44, Landroid/view/View$MeasureSpec;->getSize(I)I
+	5       (00000016) move-result          v19
+	6       (00000018) invoke-virtual/range v42, Landroidx/appcompat/widget/ActionMenuView;->getPaddingLeft()I
+	7       (0000001e) move-result          v38
+	8       (00000020) invoke-virtual/range v42, Landroidx/appcompat/widget/ActionMenuView;->getPaddingRight()I
+	9       (00000026) move-result          v39
+	10      (00000028) add-int              v36, v38, v39
+	11      (0000002c) invoke-virtual/range v42, Landroidx/appcompat/widget/ActionMenuView;->getPaddingTop()I
+	12      (00000032) move-result          v38
+	13      (00000034) invoke-virtual/range v42, Landroidx/appcompat/widget/ActionMenuView;->getPaddingBottom()I
+	14      (0000003a) move-result          v39
+	15      (0000003c) add-int              v18, v38, v39
+	16      (00000040) const/16             v38, -2
+	17      (00000044) move/from16          v0, v44
+	18      (00000048) move/from16          v1, v18
+	19      (0000004c) move/from16          v2, v38
+	20      (00000050) invoke-static        v0, v1, v2, Landroidx/appcompat/widget/ActionMenuView;->getChildMeasureSpec(I I I)I
+	21      (00000056) move-result          v22
+	22      (00000058) sub-int              v37, v37, v36
+	23      (0000005c) move-object/from16   v0, v42
+	24      (00000060) iget                 v0, v0, Landroidx/appcompat/widget/ActionMenuView;->mMinCellSize I
+	25      (00000064) move/from16          v38, v0
+	26      (00000068) div-int              v4, v37, v38
+	27      (0000006c) move-object/from16   v0, v42
+	28      (00000070) iget                 v0, v0, Landroidx/appcompat/widget/ActionMenuView;->mMinCellSize I
+	29      (00000074) move/from16          v38, v0
+	30      (00000078) rem-int              v6, v37, v38
+	31      (0000007c) if-nez               v4, +e
+
+onMeasureExactFormat-BB@0x80 : [ onMeasureExactFormat-BB@0x96 ]
+	32      (00000080) const/16             v38, 0
+	33      (00000084) move-object/from16   v0, v42
+	34      (00000088) move/from16          v1, v37
+	35      (0000008c) move/from16          v2, v38
+	36      (00000090) invoke-virtual       v0, v1, v2, Landroidx/appcompat/widget/ActionMenuView;->setMeasuredDimension(I I)V
+
+onMeasureExactFormat-BB@0x96 : 
+	37      (00000096) return-void          
+
+onMeasureExactFormat-BB@0x98 : [ onMeasureExactFormat-BB@0xd0 ]
+	38      (00000098) move-object/from16   v0, v42
+	39      (0000009c) iget                 v0, v0, Landroidx/appcompat/widget/ActionMenuView;->mMinCellSize I
+	40      (000000a0) move/from16          v38, v0
+	41      (000000a4) div-int              v39, v6, v4
+	42      (000000a8) add-int              v5, v38, v39
+	43      (000000ac) move                 v8, v4
+	44      (000000ae) const/16             v25, 0
+	45      (000000b2) const/16             v24, 0
+	46      (000000b6) const/4              v14, 0
+	47      (000000b8) const/16             v34, 0
+	48      (000000bc) const/16             v16, 0
+	49      (000000c0) const-wide/16        v32, 0 # [0.0]
+	50      (000000c4) invoke-virtual/range v42, Landroidx/appcompat/widget/ActionMenuView;->getChildCount()I
+	51      (000000ca) move-result          v12
+	52      (000000cc) const/16             v20, 0
+
+onMeasureExactFormat-BB@0xd0 : [ onMeasureExactFormat-BB@0xd8 onMeasureExactFormat-BB@0x280 ]
+	53      (000000d0) move/from16          v0, v20
+	54      (000000d4) if-ge                v0, v12, +d6
+
+onMeasureExactFormat-BB@0xd8 : [ onMeasureExactFormat-BB@0x100 onMeasureExactFormat-BB@0x106 ]
+	55      (000000d8) move-object/from16   v0, v42
+	56      (000000dc) move/from16          v1, v20
+	57      (000000e0) invoke-virtual       v0, v1, Landroidx/appcompat/widget/ActionMenuView;->getChildAt(I)Landroid/view/View;
+	58      (000000e6) move-result-object   v11
+	59      (000000e8) invoke-virtual       v11, Landroid/view/View;->getVisibility()I
+	60      (000000ee) move-result          v38
+	61      (000000f0) const/16             v39, 8
+	62      (000000f4) move/from16          v0, v38
+	63      (000000f8) move/from16          v1, v39
+	64      (000000fc) if-ne                v0, v1, +5
+
+onMeasureExactFormat-BB@0x100 : [ onMeasureExactFormat-BB@0xd0 ]
+	65      (00000100) add-int/lit8         v20, v20, 1
+	66      (00000104) goto                 -1a
+
+onMeasureExactFormat-BB@0x106 : [ onMeasureExactFormat-BB@0x116 onMeasureExactFormat-BB@0x14c ]
+	67      (00000106) instance-of          v0, v11, Landroidx/appcompat/view/menu/ActionMenuItemView;
+	68      (0000010a) move/from16          v21, v0
+	69      (0000010e) add-int/lit8         v34, v34, 1
+	70      (00000112) if-eqz               v21, +1d
+
+onMeasureExactFormat-BB@0x116 : [ onMeasureExactFormat-BB@0x14c ]
+	71      (00000116) move-object/from16   v0, v42
+	72      (0000011a) iget                 v0, v0, Landroidx/appcompat/widget/ActionMenuView;->mGeneratedItemPadding I
+	73      (0000011e) move/from16          v38, v0
+	74      (00000122) const/16             v39, 0
+	75      (00000126) move-object/from16   v0, v42
+	76      (0000012a) iget                 v0, v0, Landroidx/appcompat/widget/ActionMenuView;->mGeneratedItemPadding I
+	77      (0000012e) move/from16          v40, v0
+	78      (00000132) const/16             v41, 0
+	79      (00000136) move/from16          v0, v38
+	80      (0000013a) move/from16          v1, v39
+	81      (0000013e) move/from16          v2, v40
+	82      (00000142) move/from16          v3, v41
+	83      (00000146) invoke-virtual       v11, v0, v1, v2, v3, Landroid/view/View;->setPadding(I I I I)V
+
+onMeasureExactFormat-BB@0x14c : [ onMeasureExactFormat-BB@0x1bc onMeasureExactFormat-BB@0x276 ]
+	84      (0000014c) invoke-virtual       v11, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
+	85      (00000152) move-result-object   v23
+	86      (00000154) check-cast           v23, Landroidx/appcompat/widget/ActionMenuView$LayoutParams;
+	87      (00000158) const/16             v38, 0
+	88      (0000015c) move/from16          v0, v38
+	89      (00000160) move-object/from16   v1, v23
+	90      (00000164) iput-boolean         v0, v1, Landroidx/appcompat/widget/ActionMenuView$LayoutParams;->expanded Z
+	91      (00000168) const/16             v38, 0
+	92      (0000016c) move/from16          v0, v38
+	93      (00000170) move-object/from16   v1, v23
+	94      (00000174) iput                 v0, v1, Landroidx/appcompat/widget/ActionMenuView$LayoutParams;->extraPixels I
+	95      (00000178) const/16             v38, 0
+	96      (0000017c) move/from16          v0, v38
+	97      (00000180) move-object/from16   v1, v23
+	98      (00000184) iput                 v0, v1, Landroidx/appcompat/widget/ActionMenuView$LayoutParams;->cellsUsed I
+	99      (00000188) const/16             v38, 0
+	100     (0000018c) move/from16          v0, v38
+	101     (00000190) move-object/from16   v1, v23
+	102     (00000194) iput-boolean         v0, v1, Landroidx/appcompat/widget/ActionMenuView$LayoutParams;->expandable Z
+	103     (00000198) const/16             v38, 0
+	104     (0000019c) move/from16          v0, v38
+	105     (000001a0) move-object/from16   v1, v23
+	106     (000001a4) iput                 v0, v1, Landroidx/appcompat/widget/ActionMenuView$LayoutParams;->leftMargin I
+	107     (000001a8) const/16             v38, 0
+	108     (000001ac) move/from16          v0, v38
+	109     (000001b0) move-object/from16   v1, v23
+	110     (000001b4) iput                 v0, v1, Landroidx/appcompat/widget/ActionMenuView$LayoutParams;->rightMargin I
+	111     (000001b8) if-eqz               v21, +5f
+
+onMeasureExactFormat-BB@0x1bc : [ onMeasureExactFormat-BB@0x1d0 onMeasureExactFormat-BB@0x276 ]
+	112     (000001bc) move-object/from16   v38, v11
+	113     (000001c0) check-cast           v38, Landroidx/appcompat/view/menu/ActionMenuItemView;
+	114     (000001c4) invoke-virtual/range v38, Landroidx/appcompat/view/menu/ActionMenuItemView;->hasText()Z
+	115     (000001ca) move-result          v38
+	116     (000001cc) if-eqz               v38, +55
+
+onMeasureExactFormat-BB@0x1d0 : [ onMeasureExactFormat-BB@0x1d4 ]
+	117     (000001d0) const/16             v38, 1
+
+onMeasureExactFormat-BB@0x1d4 : [ onMeasureExactFormat-BB@0x1f0 onMeasureExactFormat-BB@0x27c ]
+	118     (000001d4) move/from16          v0, v38
+	119     (000001d8) move-object/from16   v1, v23
+	120     (000001dc) iput-boolean         v0, v1, Landroidx/appcompat/widget/ActionMenuView$LayoutParams;->preventEdgeOffset Z
+	121     (000001e0) move-object/from16   v0, v23
+	122     (000001e4) iget-boolean         v0, v0, Landroidx/appcompat/widget/ActionMenuView$LayoutParams;->isOverflowButton Z
+	123     (000001e8) move/from16          v38, v0
+	124     (000001ec) if-eqz               v38, +48
+
+onMeasureExactFormat-BB@0x1f0 : [ onMeasureExactFormat-BB@0x1f2 ]
+	125     (000001f0) const/4              v7, 1
+
+onMeasureExactFormat-BB@0x1f2 : [ onMeasureExactFormat-BB@0x21e onMeasureExactFormat-BB@0x222 ]
+	126     (000001f2) move/from16          v0, v22
+	127     (000001f6) move/from16          v1, v18
+	128     (000001fa) invoke-static        v11, v5, v7, v0, v1, Landroidx/appcompat/widget/ActionMenuView;->measureChildForCells(Landroid/view/View; I I I I)I
+	129     (00000200) move-result          v9
+	130     (00000202) move/from16          v0, v24
+	131     (00000206) invoke-static        v0, v9, Ljava/lang/Math;->max(I I)I
+	132     (0000020c) move-result          v24
+	133     (0000020e) move-object/from16   v0, v23
+	134     (00000212) iget-boolean         v0, v0, Landroidx/appcompat/widget/ActionMenuView$LayoutParams;->expandable Z
+	135     (00000216) move/from16          v38, v0
+	136     (0000021a) if-eqz               v38, +4
+
+onMeasureExactFormat-BB@0x21e : [ onMeasureExactFormat-BB@0x222 ]
+	137     (0000021e) add-int/lit8         v14, v14, 1
+
+onMeasureExactFormat-BB@0x222 : [ onMeasureExactFormat-BB@0x232 onMeasureExactFormat-BB@0x236 ]
+	138     (00000222) move-object/from16   v0, v23
+	139     (00000226) iget-boolean         v0, v0, Landroidx/appcompat/widget/ActionMenuView$LayoutParams;->isOverflowButton Z
+	140     (0000022a) move/from16          v38, v0
+	141     (0000022e) if-eqz               v38, +4
+
+onMeasureExactFormat-BB@0x232 : [ onMeasureExactFormat-BB@0x236 ]
+	142     (00000232) const/16             v16, 1
+
+onMeasureExactFormat-BB@0x236 : [ onMeasureExactFormat-BB@0x25c onMeasureExactFormat-BB@0x100 ]
+	143     (00000236) sub-int/2addr        v8, v9
+	144     (00000238) invoke-virtual       v11, Landroid/view/View;->getMeasuredHeight()I
+	145     (0000023e) move-result          v38
+	146     (00000240) move/from16          v0, v25
+	147     (00000244) move/from16          v1, v38
+	148     (00000248) invoke-static        v0, v1, Ljava/lang/Math;->max(I I)I
+	149     (0000024e) move-result          v25
+	150     (00000250) const/16             v38, 1
+	151     (00000254) move/from16          v0, v38
+	152     (00000258) if-ne                v9, v0, -ac
+
+onMeasureExactFormat-BB@0x25c : [ onMeasureExactFormat-BB@0x100 ]
+	153     (0000025c) const/16             v38, 1
+	154     (00000260) shl-int              v38, v38, v20
+	155     (00000264) move/from16          v0, v38
+	156     (00000268) int-to-long          v0, v0
+	157     (0000026a) move-wide/from16     v38, v0
+	158     (0000026e) or-long              v32, v32, v38
+	159     (00000272) goto/16              -b9
+
+onMeasureExactFormat-BB@0x276 : [ onMeasureExactFormat-BB@0x1d4 ]
+	160     (00000276) const/16             v38, 0
+	161     (0000027a) goto                 -53
+
+onMeasureExactFormat-BB@0x27c : [ onMeasureExactFormat-BB@0x1f2 ]
+	162     (0000027c) move                 v7, v8
+	163     (0000027e) goto                 -46
+
+onMeasureExactFormat-BB@0x280 : [ onMeasureExactFormat-BB@0x284 onMeasureExactFormat-BB@0x2ee ]
+	164     (00000280) if-eqz               v16, +37
+
+onMeasureExactFormat-BB@0x284 : [ onMeasureExactFormat-BB@0x294 onMeasureExactFormat-BB@0x2ee ]
+	165     (00000284) const/16             v38, 2
+	166     (00000288) move/from16          v0, v34
+	167     (0000028c) move/from16          v1, v38
+	168     (00000290) if-ne                v0, v1, +2f
+
+onMeasureExactFormat-BB@0x294 : [ onMeasureExactFormat-BB@0x296 ]
+	169     (00000294) const/4              v10, 1
+
+onMeasureExactFormat-BB@0x296 : [ onMeasureExactFormat-BB@0x29a ]
+	170     (00000296) const/16             v30, 0
+
+onMeasureExactFormat-BB@0x29a : [ onMeasureExactFormat-BB@0x29e onMeasureExactFormat-BB@0x35a ]
+	171     (0000029a) if-lez               v14, +60
+
+onMeasureExactFormat-BB@0x29e : [ onMeasureExactFormat-BB@0x2a2 onMeasureExactFormat-BB@0x35a ]
+	172     (0000029e) if-lez               v8, +5e
+
+onMeasureExactFormat-BB@0x2a2 : [ onMeasureExactFormat-BB@0x2b4 ]
+	173     (000002a2) const                v26, 2147483647 # [nan]
+	174     (000002a8) const-wide/16        v28, 0 # [0.0]
+	175     (000002ac) const/16             v27, 0
+	176     (000002b0) const/16             v20, 0
+
+onMeasureExactFormat-BB@0x2b4 : [ onMeasureExactFormat-BB@0x2bc onMeasureExactFormat-BB@0x34e ]
+	177     (000002b4) move/from16          v0, v20
+	178     (000002b8) if-ge                v0, v12, +4b
+
+onMeasureExactFormat-BB@0x2bc : [ onMeasureExactFormat-BB@0x2e8 onMeasureExactFormat-BB@0x2f2 ]
+	179     (000002bc) move-object/from16   v0, v42
+	180     (000002c0) move/from16          v1, v20
+	181     (000002c4) invoke-virtual       v0, v1, Landroidx/appcompat/widget/ActionMenuView;->getChildAt(I)Landroid/view/View;
+	182     (000002ca) move-result-object   v11
+	183     (000002cc) invoke-virtual       v11, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
+	184     (000002d2) move-result-object   v23
+	185     (000002d4) check-cast           v23, Landroidx/appcompat/widget/ActionMenuView$LayoutParams;
+	186     (000002d8) move-object/from16   v0, v23
+	187     (000002dc) iget-boolean         v0, v0, Landroidx/appcompat/widget/ActionMenuView$LayoutParams;->expandable Z
+	188     (000002e0) move/from16          v38, v0
+	189     (000002e4) if-nez               v38, +7
+
+onMeasureExactFormat-BB@0x2e8 : [ onMeasureExactFormat-BB@0x2b4 ]
+	190     (000002e8) add-int/lit8         v20, v20, 1
+	191     (000002ec) goto                 -1c
+
+onMeasureExactFormat-BB@0x2ee : [ onMeasureExactFormat-BB@0x296 ]
+	192     (000002ee) const/4              v10, 0
+	193     (000002f0) goto                 -2d
+
+onMeasureExactFormat-BB@0x2f2 : [ onMeasureExactFormat-BB@0x30a onMeasureExactFormat-BB@0x324 ]
+	194     (000002f2) move-object/from16   v0, v23
+	195     (000002f6) iget                 v0, v0, Landroidx/appcompat/widget/ActionMenuView$LayoutParams;->cellsUsed I
+	196     (000002fa) move/from16          v38, v0
+	197     (000002fe) move/from16          v0, v38
+	198     (00000302) move/from16          v1, v26
+	199     (00000306) if-ge                v0, v1, +f
+
+onMeasureExactFormat-BB@0x30a : [ onMeasureExactFormat-BB@0x2e8 ]
+	200     (0000030a) move-object/from16   v0, v23
+	201     (0000030e) iget                 v0, v0, Landroidx/appcompat/widget/ActionMenuView$LayoutParams;->cellsUsed I
+	202     (00000312) move/from16          v26, v0
+	203     (00000316) const-wide/16        v38, 1 # [1.0]
+	204     (0000031a) shl-long             v28, v38, v20
+	205     (0000031e) const/16             v27, 1
+	206     (00000322) goto                 -1d
+
+onMeasureExactFormat-BB@0x324 : [ onMeasureExactFormat-BB@0x33c onMeasureExactFormat-BB@0x2e8 ]
+	207     (00000324) move-object/from16   v0, v23
+	208     (00000328) iget                 v0, v0, Landroidx/appcompat/widget/ActionMenuView$LayoutParams;->cellsUsed I
+	209     (0000032c) move/from16          v38, v0
+	210     (00000330) move/from16          v0, v38
+	211     (00000334) move/from16          v1, v26
+	212     (00000338) if-ne                v0, v1, -28
+
+onMeasureExactFormat-BB@0x33c : [ onMeasureExactFormat-BB@0x2e8 ]
+	213     (0000033c) const-wide/16        v38, 1 # [1.0]
+	214     (00000340) shl-long             v38, v38, v20
+	215     (00000344) or-long              v28, v28, v38
+	216     (00000348) add-int/lit8         v27, v27, 1
+	217     (0000034c) goto                 -32
+
+onMeasureExactFormat-BB@0x34e : [ onMeasureExactFormat-BB@0x35a onMeasureExactFormat-BB@0x4b6 ]
+	218     (0000034e) or-long              v32, v32, v28
+	219     (00000352) move/from16          v0, v27
+	220     (00000356) if-le                v0, v8, +b0
+
+onMeasureExactFormat-BB@0x35a : [ onMeasureExactFormat-BB@0x35e onMeasureExactFormat-BB@0x5cc ]
+	221     (0000035a) if-nez               v16, +139
+
+onMeasureExactFormat-BB@0x35e : [ onMeasureExactFormat-BB@0x36e onMeasureExactFormat-BB@0x5cc ]
+	222     (0000035e) const/16             v38, 1
+	223     (00000362) move/from16          v0, v34
+	224     (00000366) move/from16          v1, v38
+	225     (0000036a) if-ne                v0, v1, +131
+
+onMeasureExactFormat-BB@0x36e : [ onMeasureExactFormat-BB@0x372 ]
+	226     (0000036e) const/16             v31, 1
+
+onMeasureExactFormat-BB@0x372 : [ onMeasureExactFormat-BB@0x376 onMeasureExactFormat-BB@0x6cc ]
+	227     (00000372) if-lez               v8, +1ad
+
+onMeasureExactFormat-BB@0x376 : [ onMeasureExactFormat-BB@0x382 onMeasureExactFormat-BB@0x6cc ]
+	228     (00000376) const-wide/16        v38, 0 # [0.0]
+	229     (0000037a) cmp-long             v38, v32, v38
+	230     (0000037e) if-eqz               v38, +1a7
+
+onMeasureExactFormat-BB@0x382 : [ onMeasureExactFormat-BB@0x38e onMeasureExactFormat-BB@0x3a2 ]
+	231     (00000382) add-int/lit8         v38, v34, -1
+	232     (00000386) move/from16          v0, v38
+	233     (0000038a) if-lt                v8, v0, +c
+
+onMeasureExactFormat-BB@0x38e : [ onMeasureExactFormat-BB@0x392 onMeasureExactFormat-BB@0x3a2 ]
+	234     (0000038e) if-nez               v31, +a
+
+onMeasureExactFormat-BB@0x392 : [ onMeasureExactFormat-BB@0x3a2 onMeasureExactFormat-BB@0x6cc ]
+	235     (00000392) const/16             v38, 1
+	236     (00000396) move/from16          v0, v24
+	237     (0000039a) move/from16          v1, v38
+	238     (0000039e) if-le                v0, v1, +197
+
+onMeasureExactFormat-BB@0x3a2 : [ onMeasureExactFormat-BB@0x3b4 onMeasureExactFormat-BB@0x45e ]
+	239     (000003a2) invoke-static/range  v32 ... v33, Ljava/lang/Long;->bitCount(J)I
+	240     (000003a8) move-result          v38
+	241     (000003aa) move/from16          v0, v38
+	242     (000003ae) int-to-float         v13, v0
+	243     (000003b0) if-nez               v31, +57
+
+onMeasureExactFormat-BB@0x3b4 : [ onMeasureExactFormat-BB@0x3c8 onMeasureExactFormat-BB@0x400 ]
+	244     (000003b4) const-wide/16        v38, 1 # [1.0]
+	245     (000003b8) and-long             v38, v38, v32
+	246     (000003bc) const-wide/16        v40, 0 # [0.0]
+	247     (000003c0) cmp-long             v38, v38, v40
+	248     (000003c4) if-eqz               v38, +1e
+
+onMeasureExactFormat-BB@0x3c8 : [ onMeasureExactFormat-BB@0x3f8 onMeasureExactFormat-BB@0x400 ]
+	249     (000003c8) const/16             v38, 0
+	250     (000003cc) move-object/from16   v0, v42
+	251     (000003d0) move/from16          v1, v38
+	252     (000003d4) invoke-virtual       v0, v1, Landroidx/appcompat/widget/ActionMenuView;->getChildAt(I)Landroid/view/View;
+	253     (000003da) move-result-object   v38
+	254     (000003dc) invoke-virtual/range v38, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
+	255     (000003e2) move-result-object   v23
+	256     (000003e4) check-cast           v23, Landroidx/appcompat/widget/ActionMenuView$LayoutParams;
+	257     (000003e8) move-object/from16   v0, v23
+	258     (000003ec) iget-boolean         v0, v0, Landroidx/appcompat/widget/ActionMenuView$LayoutParams;->preventEdgeOffset Z
+	259     (000003f0) move/from16          v38, v0
+	260     (000003f4) if-nez               v38, +6
+
+onMeasureExactFormat-BB@0x3f8 : [ onMeasureExactFormat-BB@0x400 ]
+	261     (000003f8) const/high16         v38, 16128 # [0.5]
+	262     (000003fc) sub-float            v13, v13, v38
+
+onMeasureExactFormat-BB@0x400 : [ onMeasureExactFormat-BB@0x426 onMeasureExactFormat-BB@0x45e ]
+	263     (00000400) const/16             v38, 1
+	264     (00000404) add-int/lit8         v39, v12, -1
+	265     (00000408) shl-int              v38, v38, v39
+	266     (0000040c) move/from16          v0, v38
+	267     (00000410) int-to-long          v0, v0
+	268     (00000412) move-wide/from16     v38, v0
+	269     (00000416) and-long             v38, v38, v32
+	270     (0000041a) const-wide/16        v40, 0 # [0.0]
+	271     (0000041e) cmp-long             v38, v38, v40
+	272     (00000422) if-eqz               v38, +1e
+
+onMeasureExactFormat-BB@0x426 : [ onMeasureExactFormat-BB@0x456 onMeasureExactFormat-BB@0x45e ]
+	273     (00000426) add-int/lit8         v38, v12, -1
+	274     (0000042a) move-object/from16   v0, v42
+	275     (0000042e) move/from16          v1, v38
+	276     (00000432) invoke-virtual       v0, v1, Landroidx/appcompat/widget/ActionMenuView;->getChildAt(I)Landroid/view/View;
+	277     (00000438) move-result-object   v38
+	278     (0000043a) invoke-virtual/range v38, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
+	279     (00000440) move-result-object   v23
+	280     (00000442) check-cast           v23, Landroidx/appcompat/widget/ActionMenuView$LayoutParams;
+	281     (00000446) move-object/from16   v0, v23
+	282     (0000044a) iget-boolean         v0, v0, Landroidx/appcompat/widget/ActionMenuView$LayoutParams;->preventEdgeOffset Z
+	283     (0000044e) move/from16          v38, v0
+	284     (00000452) if-nez               v38, +6
+
+onMeasureExactFormat-BB@0x456 : [ onMeasureExactFormat-BB@0x45e ]
+	285     (00000456) const/high16         v38, 16128 # [0.5]
+	286     (0000045a) sub-float            v13, v13, v38
+
+onMeasureExactFormat-BB@0x45e : [ onMeasureExactFormat-BB@0x46a onMeasureExactFormat-BB@0x5d4 ]
+	287     (0000045e) const/16             v38, 0
+	288     (00000462) cmpl-float           v38, v13, v38
+	289     (00000466) if-lez               v38, +b7
+
+onMeasureExactFormat-BB@0x46a : [ onMeasureExactFormat-BB@0x482 ]
+	290     (0000046a) mul-int              v38, v8, v5
+	291     (0000046e) move/from16          v0, v38
+	292     (00000472) int-to-float         v0, v0
+	293     (00000474) move/from16          v38, v0
+	294     (00000478) div-float            v38, v38, v13
+	295     (0000047c) move/from16          v0, v38
+	296     (00000480) float-to-int         v15, v0
+
+onMeasureExactFormat-BB@0x482 : [ onMeasureExactFormat-BB@0x486 ]
+	297     (00000482) const/16             v20, 0
+
+onMeasureExactFormat-BB@0x486 : [ onMeasureExactFormat-BB@0x48e onMeasureExactFormat-BB@0x6ca ]
+	298     (00000486) move/from16          v0, v20
+	299     (0000048a) if-ge                v0, v12, +120
+
+onMeasureExactFormat-BB@0x48e : [ onMeasureExactFormat-BB@0x4b0 onMeasureExactFormat-BB@0x5da ]
+	300     (0000048e) const/16             v38, 1
+	301     (00000492) shl-int              v38, v38, v20
+	302     (00000496) move/from16          v0, v38
+	303     (0000049a) int-to-long          v0, v0
+	304     (0000049c) move-wide/from16     v38, v0
+	305     (000004a0) and-long             v38, v38, v32
+	306     (000004a4) const-wide/16        v40, 0 # [0.0]
+	307     (000004a8) cmp-long             v38, v38, v40
+	308     (000004ac) if-nez               v38, +97
+
+onMeasureExactFormat-BB@0x4b0 : [ onMeasureExactFormat-BB@0x486 ]
+	309     (000004b0) add-int/lit8         v20, v20, 1
+	310     (000004b4) goto                 -17
+
+onMeasureExactFormat-BB@0x4b6 : [ onMeasureExactFormat-BB@0x4be ]
+	311     (000004b6) add-int/lit8         v26, v26, 1
+	312     (000004ba) const/16             v20, 0
+
+onMeasureExactFormat-BB@0x4be : [ onMeasureExactFormat-BB@0x4c6 onMeasureExactFormat-BB@0x5c4 ]
+	313     (000004be) move/from16          v0, v20
+	314     (000004c2) if-ge                v0, v12, +81
+
+onMeasureExactFormat-BB@0x4c6 : [ onMeasureExactFormat-BB@0x504 onMeasureExactFormat-BB@0x538 ]
+	315     (000004c6) move-object/from16   v0, v42
+	316     (000004ca) move/from16          v1, v20
+	317     (000004ce) invoke-virtual       v0, v1, Landroidx/appcompat/widget/ActionMenuView;->getChildAt(I)Landroid/view/View;
+	318     (000004d4) move-result-object   v11
+	319     (000004d6) invoke-virtual       v11, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
+	320     (000004dc) move-result-object   v23
+	321     (000004de) check-cast           v23, Landroidx/appcompat/widget/ActionMenuView$LayoutParams;
+	322     (000004e2) const/16             v38, 1
+	323     (000004e6) shl-int              v38, v38, v20
+	324     (000004ea) move/from16          v0, v38
+	325     (000004ee) int-to-long          v0, v0
+	326     (000004f0) move-wide/from16     v38, v0
+	327     (000004f4) and-long             v38, v38, v28
+	328     (000004f8) const-wide/16        v40, 0 # [0.0]
+	329     (000004fc) cmp-long             v38, v38, v40
+	330     (00000500) if-nez               v38, +1c
+
+onMeasureExactFormat-BB@0x504 : [ onMeasureExactFormat-BB@0x51c onMeasureExactFormat-BB@0x532 ]
+	331     (00000504) move-object/from16   v0, v23
+	332     (00000508) iget                 v0, v0, Landroidx/appcompat/widget/ActionMenuView$LayoutParams;->cellsUsed I
+	333     (0000050c) move/from16          v38, v0
+	334     (00000510) move/from16          v0, v38
+	335     (00000514) move/from16          v1, v26
+	336     (00000518) if-ne                v0, v1, +d
+
+onMeasureExactFormat-BB@0x51c : [ onMeasureExactFormat-BB@0x532 ]
+	337     (0000051c) const/16             v38, 1
+	338     (00000520) shl-int              v38, v38, v20
+	339     (00000524) move/from16          v0, v38
+	340     (00000528) int-to-long          v0, v0
+	341     (0000052a) move-wide/from16     v38, v0
+	342     (0000052e) or-long              v32, v32, v38
+
+onMeasureExactFormat-BB@0x532 : [ onMeasureExactFormat-BB@0x4be ]
+	343     (00000532) add-int/lit8         v20, v20, 1
+	344     (00000536) goto                 -3c
+
+onMeasureExactFormat-BB@0x538 : [ onMeasureExactFormat-BB@0x53c onMeasureExactFormat-BB@0x592 ]
+	345     (00000538) if-eqz               v10, +2d
+
+onMeasureExactFormat-BB@0x53c : [ onMeasureExactFormat-BB@0x54c onMeasureExactFormat-BB@0x592 ]
+	346     (0000053c) move-object/from16   v0, v23
+	347     (00000540) iget-boolean         v0, v0, Landroidx/appcompat/widget/ActionMenuView$LayoutParams;->preventEdgeOffset Z
+	348     (00000544) move/from16          v38, v0
+	349     (00000548) if-eqz               v38, +25
+
+onMeasureExactFormat-BB@0x54c : [ onMeasureExactFormat-BB@0x558 onMeasureExactFormat-BB@0x592 ]
+	350     (0000054c) const/16             v38, 1
+	351     (00000550) move/from16          v0, v38
+	352     (00000554) if-ne                v8, v0, +1f
+
+onMeasureExactFormat-BB@0x558 : [ onMeasureExactFormat-BB@0x592 ]
+	353     (00000558) move-object/from16   v0, v42
+	354     (0000055c) iget                 v0, v0, Landroidx/appcompat/widget/ActionMenuView;->mGeneratedItemPadding I
+	355     (00000560) move/from16          v38, v0
+	356     (00000564) add-int              v38, v38, v5
+	357     (00000568) const/16             v39, 0
+	358     (0000056c) move-object/from16   v0, v42
+	359     (00000570) iget                 v0, v0, Landroidx/appcompat/widget/ActionMenuView;->mGeneratedItemPadding I
+	360     (00000574) move/from16          v40, v0
+	361     (00000578) const/16             v41, 0
+	362     (0000057c) move/from16          v0, v38
+	363     (00000580) move/from16          v1, v39
+	364     (00000584) move/from16          v2, v40
+	365     (00000588) move/from16          v3, v41
+	366     (0000058c) invoke-virtual       v11, v0, v1, v2, v3, Landroid/view/View;->setPadding(I I I I)V
+
+onMeasureExactFormat-BB@0x592 : [ onMeasureExactFormat-BB@0x532 ]
+	367     (00000592) move-object/from16   v0, v23
+	368     (00000596) iget                 v0, v0, Landroidx/appcompat/widget/ActionMenuView$LayoutParams;->cellsUsed I
+	369     (0000059a) move/from16          v38, v0
+	370     (0000059e) add-int/lit8         v38, v38, 1
+	371     (000005a2) move/from16          v0, v38
+	372     (000005a6) move-object/from16   v1, v23
+	373     (000005aa) iput                 v0, v1, Landroidx/appcompat/widget/ActionMenuView$LayoutParams;->cellsUsed I
+	374     (000005ae) const/16             v38, 1
+	375     (000005b2) move/from16          v0, v38
+	376     (000005b6) move-object/from16   v1, v23
+	377     (000005ba) iput-boolean         v0, v1, Landroidx/appcompat/widget/ActionMenuView$LayoutParams;->expanded Z
+	378     (000005be) add-int/lit8         v8, v8, -1
+	379     (000005c2) goto                 -48
+
+onMeasureExactFormat-BB@0x5c4 : [ onMeasureExactFormat-BB@0x29a ]
+	380     (000005c4) const/16             v30, 1
+	381     (000005c8) goto/16              -197
+
+onMeasureExactFormat-BB@0x5cc : [ onMeasureExactFormat-BB@0x372 ]
+	382     (000005cc) const/16             v31, 0
+	383     (000005d0) goto/16              -12f
+
+onMeasureExactFormat-BB@0x5d4 : [ onMeasureExactFormat-BB@0x482 ]
+	384     (000005d4) const/4              v15, 0
+	385     (000005d6) goto/16              -aa
+
+onMeasureExactFormat-BB@0x5da : [ onMeasureExactFormat-BB@0x602 onMeasureExactFormat-BB@0x64c ]
+	386     (000005da) move-object/from16   v0, v42
+	387     (000005de) move/from16          v1, v20
+	388     (000005e2) invoke-virtual       v0, v1, Landroidx/appcompat/widget/ActionMenuView;->getChildAt(I)Landroid/view/View;
+	389     (000005e8) move-result-object   v11
+	390     (000005ea) invoke-virtual       v11, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
+	391     (000005f0) move-result-object   v23
+	392     (000005f2) check-cast           v23, Landroidx/appcompat/widget/ActionMenuView$LayoutParams;
+	393     (000005f6) instance-of          v0, v11, Landroidx/appcompat/view/menu/ActionMenuItemView;
+	394     (000005fa) move/from16          v38, v0
+	395     (000005fe) if-eqz               v38, +27
+
+onMeasureExactFormat-BB@0x602 : [ onMeasureExactFormat-BB@0x61e onMeasureExactFormat-BB@0x644 ]
+	396     (00000602) move-object/from16   v0, v23
+	397     (00000606) iput                 v15, v0, Landroidx/appcompat/widget/ActionMenuView$LayoutParams;->extraPixels I
+	398     (0000060a) const/16             v38, 1
+	399     (0000060e) move/from16          v0, v38
+	400     (00000612) move-object/from16   v1, v23
+	401     (00000616) iput-boolean         v0, v1, Landroidx/appcompat/widget/ActionMenuView$LayoutParams;->expanded Z
+	402     (0000061a) if-nez               v20, +15
+
+onMeasureExactFormat-BB@0x61e : [ onMeasureExactFormat-BB@0x62e onMeasureExactFormat-BB@0x644 ]
+	403     (0000061e) move-object/from16   v0, v23
+	404     (00000622) iget-boolean         v0, v0, Landroidx/appcompat/widget/ActionMenuView$LayoutParams;->preventEdgeOffset Z
+	405     (00000626) move/from16          v38, v0
+	406     (0000062a) if-nez               v38, +d
+
+onMeasureExactFormat-BB@0x62e : [ onMeasureExactFormat-BB@0x644 ]
+	407     (0000062e) neg-int              v0, v15
+	408     (00000630) move/from16          v38, v0
+	409     (00000634) div-int/lit8         v38, v38, 2
+	410     (00000638) move/from16          v0, v38
+	411     (0000063c) move-object/from16   v1, v23
+	412     (00000640) iput                 v0, v1, Landroidx/appcompat/widget/ActionMenuView$LayoutParams;->leftMargin I
+
+onMeasureExactFormat-BB@0x644 : [ onMeasureExactFormat-BB@0x4b0 ]
+	413     (00000644) const/16             v30, 1
+	414     (00000648) goto/16              -cc
+
+onMeasureExactFormat-BB@0x64c : [ onMeasureExactFormat-BB@0x65c onMeasureExactFormat-BB@0x692 ]
+	415     (0000064c) move-object/from16   v0, v23
+	416     (00000650) iget-boolean         v0, v0, Landroidx/appcompat/widget/ActionMenuView$LayoutParams;->isOverflowButton Z
+	417     (00000654) move/from16          v38, v0
+	418     (00000658) if-eqz               v38, +1d
+
+onMeasureExactFormat-BB@0x65c : [ onMeasureExactFormat-BB@0x4b0 ]
+	419     (0000065c) move-object/from16   v0, v23
+	420     (00000660) iput                 v15, v0, Landroidx/appcompat/widget/ActionMenuView$LayoutParams;->extraPixels I
+	421     (00000664) const/16             v38, 1
+	422     (00000668) move/from16          v0, v38
+	423     (0000066c) move-object/from16   v1, v23
+	424     (00000670) iput-boolean         v0, v1, Landroidx/appcompat/widget/ActionMenuView$LayoutParams;->expanded Z
+	425     (00000674) neg-int              v0, v15
+	426     (00000676) move/from16          v38, v0
+	427     (0000067a) div-int/lit8         v38, v38, 2
+	428     (0000067e) move/from16          v0, v38
+	429     (00000682) move-object/from16   v1, v23
+	430     (00000686) iput                 v0, v1, Landroidx/appcompat/widget/ActionMenuView$LayoutParams;->rightMargin I
+	431     (0000068a) const/16             v30, 1
+	432     (0000068e) goto/16              -ef
+
+onMeasureExactFormat-BB@0x692 : [ onMeasureExactFormat-BB@0x696 onMeasureExactFormat-BB@0x6a6 ]
+	433     (00000692) if-eqz               v20, +a
+
+onMeasureExactFormat-BB@0x696 : [ onMeasureExactFormat-BB@0x6a6 ]
+	434     (00000696) div-int/lit8         v38, v15, 2
+	435     (0000069a) move/from16          v0, v38
+	436     (0000069e) move-object/from16   v1, v23
+	437     (000006a2) iput                 v0, v1, Landroidx/appcompat/widget/ActionMenuView$LayoutParams;->leftMargin I
+
+onMeasureExactFormat-BB@0x6a6 : [ onMeasureExactFormat-BB@0x6b6 onMeasureExactFormat-BB@0x4b0 ]
+	438     (000006a6) add-int/lit8         v38, v12, -1
+	439     (000006aa) move/from16          v0, v20
+	440     (000006ae) move/from16          v1, v38
+	441     (000006b2) if-eq                v0, v1, -101
+
+onMeasureExactFormat-BB@0x6b6 : [ onMeasureExactFormat-BB@0x4b0 ]
+	442     (000006b6) div-int/lit8         v38, v15, 2
+	443     (000006ba) move/from16          v0, v38
+	444     (000006be) move-object/from16   v1, v23
+	445     (000006c2) iput                 v0, v1, Landroidx/appcompat/widget/ActionMenuView$LayoutParams;->rightMargin I
+	446     (000006c6) goto/16              -10b
+
+onMeasureExactFormat-BB@0x6ca : [ onMeasureExactFormat-BB@0x6cc ]
+	447     (000006ca) const/4              v8, 0
+
+onMeasureExactFormat-BB@0x6cc : [ onMeasureExactFormat-BB@0x6d0 onMeasureExactFormat-BB@0x752 ]
+	448     (000006cc) if-eqz               v30, +43
+
+onMeasureExactFormat-BB@0x6d0 : [ onMeasureExactFormat-BB@0x6d4 ]
+	449     (000006d0) const/16             v20, 0
+
+onMeasureExactFormat-BB@0x6d4 : [ onMeasureExactFormat-BB@0x6dc onMeasureExactFormat-BB@0x752 ]
+	450     (000006d4) move/from16          v0, v20
+	451     (000006d8) if-ge                v0, v12, +3d
+
+onMeasureExactFormat-BB@0x6dc : [ onMeasureExactFormat-BB@0x708 onMeasureExactFormat-BB@0x70e ]
+	452     (000006dc) move-object/from16   v0, v42
+	453     (000006e0) move/from16          v1, v20
+	454     (000006e4) invoke-virtual       v0, v1, Landroidx/appcompat/widget/ActionMenuView;->getChildAt(I)Landroid/view/View;
+	455     (000006ea) move-result-object   v11
+	456     (000006ec) invoke-virtual       v11, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
+	457     (000006f2) move-result-object   v23
+	458     (000006f4) check-cast           v23, Landroidx/appcompat/widget/ActionMenuView$LayoutParams;
+	459     (000006f8) move-object/from16   v0, v23
+	460     (000006fc) iget-boolean         v0, v0, Landroidx/appcompat/widget/ActionMenuView$LayoutParams;->expanded Z
+	461     (00000700) move/from16          v38, v0
+	462     (00000704) if-nez               v38, +5
+
+onMeasureExactFormat-BB@0x708 : [ onMeasureExactFormat-BB@0x6d4 ]
+	463     (00000708) add-int/lit8         v20, v20, 1
+	464     (0000070c) goto                 -1c
+
+onMeasureExactFormat-BB@0x70e : [ onMeasureExactFormat-BB@0x708 ]
+	465     (0000070e) move-object/from16   v0, v23
+	466     (00000712) iget                 v0, v0, Landroidx/appcompat/widget/ActionMenuView$LayoutParams;->cellsUsed I
+	467     (00000716) move/from16          v38, v0
+	468     (0000071a) mul-int              v38, v38, v5
+	469     (0000071e) move-object/from16   v0, v23
+	470     (00000722) iget                 v0, v0, Landroidx/appcompat/widget/ActionMenuView$LayoutParams;->extraPixels I
+	471     (00000726) move/from16          v39, v0
+	472     (0000072a) add-int              v35, v38, v39
+	473     (0000072e) const/high16         v38, 16384 # [2.0]
+	474     (00000732) move/from16          v0, v35
+	475     (00000736) move/from16          v1, v38
+	476     (0000073a) invoke-static        v0, v1, Landroid/view/View$MeasureSpec;->makeMeasureSpec(I I)I
+	477     (00000740) move-result          v38
+	478     (00000742) move/from16          v0, v38
+	479     (00000746) move/from16          v1, v22
+	480     (0000074a) invoke-virtual       v11, v0, v1, Landroid/view/View;->measure(I I)V
+	481     (00000750) goto                 -24
+
+onMeasureExactFormat-BB@0x752 : [ onMeasureExactFormat-BB@0x762 onMeasureExactFormat-BB@0x766 ]
+	482     (00000752) const/high16         v38, 16384 # [2.0]
+	483     (00000756) move/from16          v0, v17
+	484     (0000075a) move/from16          v1, v38
+	485     (0000075e) if-eq                v0, v1, +4
+
+onMeasureExactFormat-BB@0x762 : [ onMeasureExactFormat-BB@0x766 ]
+	486     (00000762) move/from16          v19, v25
+
+onMeasureExactFormat-BB@0x766 : [ onMeasureExactFormat-BB@0x96 ]
+	487     (00000766) move-object/from16   v0, v42
+	488     (0000076a) move/from16          v1, v37
+	489     (0000076e) move/from16          v2, v19
+	490     (00000772) invoke-virtual       v0, v1, v2, Landroidx/appcompat/widget/ActionMenuView;->setMeasuredDimension(I I)V
+	491     (00000778) goto/16              -371
+

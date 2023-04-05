@@ -1,0 +1,35 @@
+# Landroidx/appcompat/widget/AppCompatPopupWindow;->init(Landroid/content/Context; Landroid/util/AttributeSet; I I)V [access_flags=private]
+#
+# Parameters:
+# - local registers: v0...v3
+# - v4:android.content.Context
+# - v5:android.util.AttributeSet
+# - v6:int
+# - v7:int
+#
+# - return:void
+
+init-BB@0x0 : [ init-BB@0x1c init-BB@0x30 ]
+	0       (00000000) sget-object          v1, Landroidx/appcompat/R$styleable;->PopupWindow [I
+	1       (00000004) invoke-static        v4, v5, v1, v6, v7, Landroidx/appcompat/widget/TintTypedArray;->obtainStyledAttributes(Landroid/content/Context; Landroid/util/AttributeSet; [I I I)Landroidx/appcompat/widget/TintTypedArray;
+	2       (0000000a) move-result-object   v0
+	3       (0000000c) sget                 v1, Landroidx/appcompat/R$styleable;->PopupWindow_overlapAnchor I
+	4       (00000010) invoke-virtual       v0, v1, Landroidx/appcompat/widget/TintTypedArray;->hasValue(I)Z
+	5       (00000016) move-result          v1
+	6       (00000018) if-eqz               v1, +c
+
+init-BB@0x1c : [ init-BB@0x30 ]
+	7       (0000001c) sget                 v1, Landroidx/appcompat/R$styleable;->PopupWindow_overlapAnchor I
+	8       (00000020) const/4              v2, 0
+	9       (00000022) invoke-virtual       v0, v1, v2, Landroidx/appcompat/widget/TintTypedArray;->getBoolean(I Z)Z
+	10      (00000028) move-result          v1
+	11      (0000002a) invoke-direct        v3, v1, Landroidx/appcompat/widget/AppCompatPopupWindow;->setSupportOverlapAnchor(Z)V
+
+init-BB@0x30 : 
+	12      (00000030) sget                 v1, Landroidx/appcompat/R$styleable;->PopupWindow_android_popupBackground I
+	13      (00000034) invoke-virtual       v0, v1, Landroidx/appcompat/widget/TintTypedArray;->getDrawable(I)Landroid/graphics/drawable/Drawable;
+	14      (0000003a) move-result-object   v1
+	15      (0000003c) invoke-virtual       v3, v1, Landroidx/appcompat/widget/AppCompatPopupWindow;->setBackgroundDrawable(Landroid/graphics/drawable/Drawable;)V
+	16      (00000042) invoke-virtual       v0, Landroidx/appcompat/widget/TintTypedArray;->recycle()V
+	17      (00000048) return-void          
+

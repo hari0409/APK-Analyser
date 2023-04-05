@@ -1,0 +1,56 @@
+# Landroidx/appcompat/widget/AppCompatImageHelper;->applySupportImageTint()V [access_flags=]
+#
+# Parameters:
+# local registers: v0...v3
+#
+# - return:void
+
+applySupportImageTint-BB@0x0 : [ applySupportImageTint-BB@0x10 applySupportImageTint-BB@0x16 ]
+	0       (00000000) iget-object          v1, v3, Landroidx/appcompat/widget/AppCompatImageHelper;->mView Landroid/widget/ImageView;
+	1       (00000004) invoke-virtual       v1, Landroid/widget/ImageView;->getDrawable()Landroid/graphics/drawable/Drawable;
+	2       (0000000a) move-result-object   v0
+	3       (0000000c) if-eqz               v0, +5
+
+applySupportImageTint-BB@0x10 : [ applySupportImageTint-BB@0x16 ]
+	4       (00000010) invoke-static        v0, Landroidx/appcompat/widget/DrawableUtils;->fixDrawable(Landroid/graphics/drawable/Drawable;)V
+
+applySupportImageTint-BB@0x16 : [ applySupportImageTint-BB@0x1a applySupportImageTint-BB@0x32 ]
+	5       (00000016) if-eqz               v0, +e
+
+applySupportImageTint-BB@0x1a : [ applySupportImageTint-BB@0x26 applySupportImageTint-BB@0x34 ]
+	6       (0000001a) invoke-direct        v3, Landroidx/appcompat/widget/AppCompatImageHelper;->shouldApplyFrameworkTintUsingColorFilter()Z
+	7       (00000020) move-result          v1
+	8       (00000022) if-eqz               v1, +9
+
+applySupportImageTint-BB@0x26 : [ applySupportImageTint-BB@0x32 applySupportImageTint-BB@0x34 ]
+	9       (00000026) invoke-direct        v3, v0, Landroidx/appcompat/widget/AppCompatImageHelper;->applyFrameworkTintUsingColorFilter(Landroid/graphics/drawable/Drawable;)Z
+	10      (0000002c) move-result          v1
+	11      (0000002e) if-eqz               v1, +3
+
+applySupportImageTint-BB@0x32 : 
+	12      (00000032) return-void          
+
+applySupportImageTint-BB@0x34 : [ applySupportImageTint-BB@0x3c applySupportImageTint-BB@0x54 ]
+	13      (00000034) iget-object          v1, v3, Landroidx/appcompat/widget/AppCompatImageHelper;->mImageTint Landroidx/appcompat/widget/TintInfo;
+	14      (00000038) if-eqz               v1, +e
+
+applySupportImageTint-BB@0x3c : [ applySupportImageTint-BB@0x32 ]
+	15      (0000003c) iget-object          v1, v3, Landroidx/appcompat/widget/AppCompatImageHelper;->mImageTint Landroidx/appcompat/widget/TintInfo;
+	16      (00000040) iget-object          v2, v3, Landroidx/appcompat/widget/AppCompatImageHelper;->mView Landroid/widget/ImageView;
+	17      (00000044) invoke-virtual       v2, Landroid/widget/ImageView;->getDrawableState()[I
+	18      (0000004a) move-result-object   v2
+	19      (0000004c) invoke-static        v0, v1, v2, Landroidx/appcompat/widget/AppCompatDrawableManager;->tintDrawable(Landroid/graphics/drawable/Drawable; Landroidx/appcompat/widget/TintInfo; [I)V
+	20      (00000052) goto                 -10
+
+applySupportImageTint-BB@0x54 : [ applySupportImageTint-BB@0x5c applySupportImageTint-BB@0x32 ]
+	21      (00000054) iget-object          v1, v3, Landroidx/appcompat/widget/AppCompatImageHelper;->mInternalImageTint Landroidx/appcompat/widget/TintInfo;
+	22      (00000058) if-eqz               v1, -13
+
+applySupportImageTint-BB@0x5c : [ applySupportImageTint-BB@0x32 ]
+	23      (0000005c) iget-object          v1, v3, Landroidx/appcompat/widget/AppCompatImageHelper;->mInternalImageTint Landroidx/appcompat/widget/TintInfo;
+	24      (00000060) iget-object          v2, v3, Landroidx/appcompat/widget/AppCompatImageHelper;->mView Landroid/widget/ImageView;
+	25      (00000064) invoke-virtual       v2, Landroid/widget/ImageView;->getDrawableState()[I
+	26      (0000006a) move-result-object   v2
+	27      (0000006c) invoke-static        v0, v1, v2, Landroidx/appcompat/widget/AppCompatDrawableManager;->tintDrawable(Landroid/graphics/drawable/Drawable; Landroidx/appcompat/widget/TintInfo; [I)V
+	28      (00000072) goto                 -20
+

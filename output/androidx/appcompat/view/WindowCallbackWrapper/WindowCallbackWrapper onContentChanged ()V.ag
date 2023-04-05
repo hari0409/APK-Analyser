@@ -1,0 +1,12 @@
+# Landroidx/appcompat/view/WindowCallbackWrapper;->onContentChanged()V [access_flags=public]
+#
+# Parameters:
+# local registers: v0...v1
+#
+# - return:void
+
+onContentChanged-BB@0x0 : 
+	0       (00000000) iget-object          v0, v1, Landroidx/appcompat/view/WindowCallbackWrapper;->mWrapped Landroid/view/Window$Callback;
+	1       (00000004) invoke-interface     v0, Landroid/view/Window$Callback;->onContentChanged()V
+	2       (0000000a) return-void          
+

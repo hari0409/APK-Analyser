@@ -1,0 +1,27 @@
+# Landroidx/appcompat/widget/ActivityChooserView;->showPopup()Z [access_flags=public]
+#
+# Parameters:
+# local registers: v0...v2
+#
+# - return:boolean
+
+showPopup-BB@0x0 : [ showPopup-BB@0xe showPopup-BB@0x16 ]
+	0       (00000000) const/4              v0, 0
+	1       (00000002) invoke-virtual       v2, Landroidx/appcompat/widget/ActivityChooserView;->isShowingPopup()Z
+	2       (00000008) move-result          v1
+	3       (0000000a) if-nez               v1, +6
+
+showPopup-BB@0xe : [ showPopup-BB@0x16 showPopup-BB@0x18 ]
+	4       (0000000e) iget-boolean         v1, v2, Landroidx/appcompat/widget/ActivityChooserView;->mIsAttachedToWindow Z
+	5       (00000012) if-nez               v1, +3
+
+showPopup-BB@0x16 : 
+	6       (00000016) return               v0
+
+showPopup-BB@0x18 : [ showPopup-BB@0x16 ]
+	7       (00000018) iput-boolean         v0, v2, Landroidx/appcompat/widget/ActivityChooserView;->mIsSelectingDefaultActivity Z
+	8       (0000001c) iget                 v0, v2, Landroidx/appcompat/widget/ActivityChooserView;->mInitialActivityCount I
+	9       (00000020) invoke-virtual       v2, v0, Landroidx/appcompat/widget/ActivityChooserView;->showPopupUnchecked(I)V
+	10      (00000026) const/4              v0, 1
+	11      (00000028) goto                 -9
+

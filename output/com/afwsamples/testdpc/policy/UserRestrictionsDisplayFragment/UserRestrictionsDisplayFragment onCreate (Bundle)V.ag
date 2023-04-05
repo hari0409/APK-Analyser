@@ -1,0 +1,23 @@
+# Lcom/afwsamples/testdpc/policy/UserRestrictionsDisplayFragment;->onCreate(Landroid/os/Bundle;)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:android.os.Bundle
+#
+# - return:void
+
+onCreate-BB@0x0 : 
+	0       (00000000) new-instance         v0, Lcom/afwsamples/testdpc/DevicePolicyManagerGatewayImpl;
+	1       (00000004) invoke-virtual       v2, Lcom/afwsamples/testdpc/policy/UserRestrictionsDisplayFragment;->getActivity()Landroid/app/Activity;
+	2       (0000000a) move-result-object   v1
+	3       (0000000c) invoke-direct        v0, v1, Lcom/afwsamples/testdpc/DevicePolicyManagerGatewayImpl;-><init>(Landroid/content/Context;)V
+	4       (00000012) iput-object          v0, v2, Lcom/afwsamples/testdpc/policy/UserRestrictionsDisplayFragment;->mDevicePolicyManagerGateway Lcom/afwsamples/testdpc/DevicePolicyManagerGateway;
+	5       (00000016) invoke-super         v2, v3, Lcom/afwsamples/testdpc/common/BaseSearchablePolicyPreferenceFragment;->onCreate(Landroid/os/Bundle;)V
+	6       (0000001c) invoke-virtual       v2, Lcom/afwsamples/testdpc/policy/UserRestrictionsDisplayFragment;->getActivity()Landroid/app/Activity;
+	7       (00000022) move-result-object   v0
+	8       (00000024) invoke-virtual       v0, Landroid/app/Activity;->getActionBar()Landroid/app/ActionBar;
+	9       (0000002a) move-result-object   v0
+	10      (0000002c) const                v1, 2131690361 # [1.900976344593806e+38]
+	11      (00000032) invoke-virtual       v0, v1, Landroid/app/ActionBar;->setTitle(I)V
+	12      (00000038) return-void          
+

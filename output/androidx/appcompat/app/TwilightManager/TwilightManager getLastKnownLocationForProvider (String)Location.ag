@@ -1,0 +1,34 @@
+# Landroidx/appcompat/app/TwilightManager;->getLastKnownLocationForProvider(Ljava/lang/String;)Landroid/location/Location; [access_flags=private]
+#
+# Parameters:
+# - local registers: v0...v3
+# - v4:java.lang.String
+#
+# - return:android.location.Location
+
+getLastKnownLocationForProvider-BB@0x0 : [ getLastKnownLocationForProvider-BB@0x10 getLastKnownLocationForProvider-BB@0x2e ]
+	0       (00000000) iget-object          v1, v3, Landroidx/appcompat/app/TwilightManager;->mLocationManager Landroid/location/LocationManager;
+	1       (00000004) invoke-virtual       v1, v4, Landroid/location/LocationManager;->isProviderEnabled(Ljava/lang/String;)Z
+	2       (0000000a) move-result          v1
+	3       (0000000c) if-eqz               v1, +11
+	0:19
+	(Ljava/lang/Exception; -> 1e getLastKnownLocationForProvider-BB@0x1e)
+
+getLastKnownLocationForProvider-BB@0x10 : [ getLastKnownLocationForProvider-BB@0x1c ]
+	4       (00000010) iget-object          v1, v3, Landroidx/appcompat/app/TwilightManager;->mLocationManager Landroid/location/LocationManager;
+	5       (00000014) invoke-virtual       v1, v4, Landroid/location/LocationManager;->getLastKnownLocation(Ljava/lang/String;)Landroid/location/Location;
+	6       (0000001a) move-result-object   v1
+
+getLastKnownLocationForProvider-BB@0x1c : 
+	7       (0000001c) return-object        v1
+
+getLastKnownLocationForProvider-BB@0x1e : [ getLastKnownLocationForProvider-BB@0x2e ]
+	8       (0000001e) move-exception       v0
+	9       (00000020) const-string         v1, 'TwilightManager'
+	10      (00000024) const-string         v2, 'Failed to get last known location'
+	11      (00000028) invoke-static        v1, v2, v0, Landroid/util/Log;->d(Ljava/lang/String; Ljava/lang/String; Ljava/lang/Throwable;)I
+
+getLastKnownLocationForProvider-BB@0x2e : [ getLastKnownLocationForProvider-BB@0x1c ]
+	12      (0000002e) const/4              v1, 0
+	13      (00000030) goto                 -a
+

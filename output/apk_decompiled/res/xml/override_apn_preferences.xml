@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen android:title="@string/override_apn_title"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:testdpc="http://schemas.android.com/apk/res-auto">
+    <PreferenceCategory android:title="@string/override_apn_title">
+        <com.afwsamples.testdpc.common.preference.DpcPreference android:title="@string/insert_override_apn" android:key="insert_override_apn" testdpc:admin="deviceOwner" testdpc:minSdkVersion="P" />
+        <com.afwsamples.testdpc.common.preference.DpcPreference android:title="@string/remove_override_apn" android:key="remove_override_apn" testdpc:admin="deviceOwner" testdpc:minSdkVersion="P" />
+        <com.afwsamples.testdpc.common.preference.DpcSwitchPreference android:title="@string/enable_override_apn" android:key="enable_override_apn" testdpc:admin="deviceOwner" testdpc:minSdkVersion="P" />
+    </PreferenceCategory>
+</PreferenceScreen>

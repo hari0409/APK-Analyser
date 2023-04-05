@@ -1,0 +1,12 @@
+# Lcom/afwsamples/testdpc/comp/BindDeviceAdminServiceHelper;->access$100(Lcom/afwsamples/testdpc/comp/BindDeviceAdminServiceHelper;)Landroid/content/Context; [access_flags=static synthetic]
+#
+# Parameters:
+# - local registers: v0...v0
+# - v1:com.afwsamples.testdpc.comp.BindDeviceAdminServiceHelper
+#
+# - return:android.content.Context
+
+access$100-BB@0x0 : 
+	0       (00000000) iget-object          v0, v1, Lcom/afwsamples/testdpc/comp/BindDeviceAdminServiceHelper;->mContext Landroid/content/Context;
+	1       (00000004) return-object        v0
+

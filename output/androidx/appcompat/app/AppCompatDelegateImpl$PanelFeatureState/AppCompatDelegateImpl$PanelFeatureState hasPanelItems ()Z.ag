@@ -1,0 +1,35 @@
+# Landroidx/appcompat/app/AppCompatDelegateImpl$PanelFeatureState;->hasPanelItems()Z [access_flags=public]
+#
+# Parameters:
+# local registers: v0...v3
+#
+# - return:boolean
+
+hasPanelItems-BB@0x0 : [ hasPanelItems-BB@0xc hasPanelItems-BB@0x10 ]
+	0       (00000000) const/4              v0, 1
+	1       (00000002) const/4              v1, 0
+	2       (00000004) iget-object          v2, v3, Landroidx/appcompat/app/AppCompatDelegateImpl$PanelFeatureState;->shownPanelView Landroid/view/View;
+	3       (00000008) if-nez               v2, +4
+
+hasPanelItems-BB@0xc : [ hasPanelItems-BB@0xe ]
+	4       (0000000c) move                 v0, v1
+
+hasPanelItems-BB@0xe : 
+	5       (0000000e) return               v0
+
+hasPanelItems-BB@0x10 : [ hasPanelItems-BB@0x18 hasPanelItems-BB@0xe ]
+	6       (00000010) iget-object          v2, v3, Landroidx/appcompat/app/AppCompatDelegateImpl$PanelFeatureState;->createdPanelView Landroid/view/View;
+	7       (00000014) if-nez               v2, -3
+
+hasPanelItems-BB@0x18 : [ hasPanelItems-BB@0x30 hasPanelItems-BB@0xe ]
+	8       (00000018) iget-object          v2, v3, Landroidx/appcompat/app/AppCompatDelegateImpl$PanelFeatureState;->listMenuPresenter Landroidx/appcompat/view/menu/ListMenuPresenter;
+	9       (0000001c) invoke-virtual       v2, Landroidx/appcompat/view/menu/ListMenuPresenter;->getAdapter()Landroid/widget/ListAdapter;
+	10      (00000022) move-result-object   v2
+	11      (00000024) invoke-interface     v2, Landroid/widget/ListAdapter;->getCount()I
+	12      (0000002a) move-result          v2
+	13      (0000002c) if-gtz               v2, -f
+
+hasPanelItems-BB@0x30 : [ hasPanelItems-BB@0xe ]
+	14      (00000030) move                 v0, v1
+	15      (00000032) goto                 -12
+

@@ -1,0 +1,53 @@
+# Landroidx/appcompat/view/menu/CascadingMenuPopup;->onSubMenuSelected(Landroidx/appcompat/view/menu/SubMenuBuilder;)Z [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v4
+# - v5:androidx.appcompat.view.menu.SubMenuBuilder
+#
+# - return:boolean
+
+onSubMenuSelected-BB@0x0 : [ onSubMenuSelected-BB@0xe ]
+	0       (00000000) const/4              v1, 1
+	1       (00000002) iget-object          v2, v4, Landroidx/appcompat/view/menu/CascadingMenuPopup;->mShowingMenus Ljava/util/List;
+	2       (00000006) invoke-interface     v2, Ljava/util/List;->iterator()Ljava/util/Iterator;
+	3       (0000000c) move-result-object   v2
+
+onSubMenuSelected-BB@0xe : [ onSubMenuSelected-BB@0x1a onSubMenuSelected-BB@0x3e ]
+	4       (0000000e) invoke-interface     v2, Ljava/util/Iterator;->hasNext()Z
+	5       (00000014) move-result          v3
+	6       (00000016) if-eqz               v3, +14
+
+onSubMenuSelected-BB@0x1a : [ onSubMenuSelected-BB@0x2e onSubMenuSelected-BB@0xe ]
+	7       (0000001a) invoke-interface     v2, Ljava/util/Iterator;->next()Ljava/lang/Object;
+	8       (00000020) move-result-object   v0
+	9       (00000022) check-cast           v0, Landroidx/appcompat/view/menu/CascadingMenuPopup$CascadingMenuInfo;
+	10      (00000026) iget-object          v3, v0, Landroidx/appcompat/view/menu/CascadingMenuPopup$CascadingMenuInfo;->menu Landroidx/appcompat/view/menu/MenuBuilder;
+	11      (0000002a) if-ne                v5, v3, -e
+
+onSubMenuSelected-BB@0x2e : [ onSubMenuSelected-BB@0x3c ]
+	12      (0000002e) invoke-virtual       v0, Landroidx/appcompat/view/menu/CascadingMenuPopup$CascadingMenuInfo;->getListView()Landroid/widget/ListView;
+	13      (00000034) move-result-object   v2
+	14      (00000036) invoke-virtual       v2, Landroid/widget/ListView;->requestFocus()Z
+
+onSubMenuSelected-BB@0x3c : 
+	15      (0000003c) return               v1
+
+onSubMenuSelected-BB@0x3e : [ onSubMenuSelected-BB@0x4a onSubMenuSelected-BB@0x64 ]
+	16      (0000003e) invoke-virtual       v5, Landroidx/appcompat/view/menu/SubMenuBuilder;->hasVisibleItems()Z
+	17      (00000044) move-result          v2
+	18      (00000046) if-eqz               v2, +f
+
+onSubMenuSelected-BB@0x4a : [ onSubMenuSelected-BB@0x58 onSubMenuSelected-BB@0x3c ]
+	19      (0000004a) invoke-virtual       v4, v5, Landroidx/appcompat/view/menu/CascadingMenuPopup;->addMenu(Landroidx/appcompat/view/menu/MenuBuilder;)V
+	20      (00000050) iget-object          v2, v4, Landroidx/appcompat/view/menu/CascadingMenuPopup;->mPresenterCallback Landroidx/appcompat/view/menu/MenuPresenter$Callback;
+	21      (00000054) if-eqz               v2, -c
+
+onSubMenuSelected-BB@0x58 : [ onSubMenuSelected-BB@0x3c ]
+	22      (00000058) iget-object          v2, v4, Landroidx/appcompat/view/menu/CascadingMenuPopup;->mPresenterCallback Landroidx/appcompat/view/menu/MenuPresenter$Callback;
+	23      (0000005c) invoke-interface     v2, v5, Landroidx/appcompat/view/menu/MenuPresenter$Callback;->onOpenSubMenu(Landroidx/appcompat/view/menu/MenuBuilder;)Z
+	24      (00000062) goto                 -13
+
+onSubMenuSelected-BB@0x64 : [ onSubMenuSelected-BB@0x3c ]
+	25      (00000064) const/4              v1, 0
+	26      (00000066) goto                 -15
+

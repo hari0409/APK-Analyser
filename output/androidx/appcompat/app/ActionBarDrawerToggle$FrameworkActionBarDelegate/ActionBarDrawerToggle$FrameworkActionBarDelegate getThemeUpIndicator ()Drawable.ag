@@ -1,0 +1,37 @@
+# Landroidx/appcompat/app/ActionBarDrawerToggle$FrameworkActionBarDelegate;->getThemeUpIndicator()Landroid/graphics/drawable/Drawable; [access_flags=public]
+#
+# Parameters:
+# local registers: v0...v7
+#
+# - return:android.graphics.drawable.Drawable
+
+getThemeUpIndicator-BB@0x0 : [ getThemeUpIndicator-BB@0xe getThemeUpIndicator-BB@0x46 ]
+	0       (00000000) const/4              v6, 0
+	1       (00000002) sget                 v2, Landroid/os/Build$VERSION;->SDK_INT I
+	2       (00000006) const/16             v3, 18
+	3       (0000000a) if-lt                v2, v3, +1e
+
+getThemeUpIndicator-BB@0xe : [ getThemeUpIndicator-BB@0x44 ]
+	4       (0000000e) invoke-virtual       v7, Landroidx/appcompat/app/ActionBarDrawerToggle$FrameworkActionBarDelegate;->getActionBarThemedContext()Landroid/content/Context;
+	5       (00000014) move-result-object   v2
+	6       (00000016) const/4              v3, 0
+	7       (00000018) const/4              v4, 1
+	8       (0000001a) new-array            v4, v4, [I
+	9       (0000001e) const                v5, 16843531 # [2.369574123176915e-38]
+	10      (00000024) aput                 v5, v4, v6
+	11      (00000028) const                v5, 16843470 # [2.3695570273356503e-38]
+	12      (0000002e) invoke-virtual       v2, v3, v4, v5, v6, Landroid/content/Context;->obtainStyledAttributes(Landroid/util/AttributeSet; [I I I)Landroid/content/res/TypedArray;
+	13      (00000034) move-result-object   v0
+	14      (00000036) invoke-virtual       v0, v6, Landroid/content/res/TypedArray;->getDrawable(I)Landroid/graphics/drawable/Drawable;
+	15      (0000003c) move-result-object   v1
+	16      (0000003e) invoke-virtual       v0, Landroid/content/res/TypedArray;->recycle()V
+
+getThemeUpIndicator-BB@0x44 : 
+	17      (00000044) return-object        v1
+
+getThemeUpIndicator-BB@0x46 : [ getThemeUpIndicator-BB@0x44 ]
+	18      (00000046) iget-object          v2, v7, Landroidx/appcompat/app/ActionBarDrawerToggle$FrameworkActionBarDelegate;->mActivity Landroid/app/Activity;
+	19      (0000004a) invoke-static        v2, Landroidx/appcompat/app/ActionBarDrawerToggleHoneycomb;->getThemeUpIndicator(Landroid/app/Activity;)Landroid/graphics/drawable/Drawable;
+	20      (00000050) move-result-object   v1
+	21      (00000052) goto                 -7
+

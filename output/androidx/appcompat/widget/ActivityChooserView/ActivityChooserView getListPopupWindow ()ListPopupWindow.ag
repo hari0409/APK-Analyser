@@ -1,0 +1,36 @@
+# Landroidx/appcompat/widget/ActivityChooserView;->getListPopupWindow()Landroidx/appcompat/widget/ListPopupWindow; [access_flags=]
+#
+# Parameters:
+# local registers: v0...v2
+#
+# - return:androidx.appcompat.widget.ListPopupWindow
+
+getListPopupWindow-BB@0x0 : [ getListPopupWindow-BB@0x8 getListPopupWindow-BB@0x5e ]
+	0       (00000000) iget-object          v0, v2, Landroidx/appcompat/widget/ActivityChooserView;->mListPopupWindow Landroidx/appcompat/widget/ListPopupWindow;
+	1       (00000004) if-nez               v0, +2d
+
+getListPopupWindow-BB@0x8 : [ getListPopupWindow-BB@0x5e ]
+	2       (00000008) new-instance         v0, Landroidx/appcompat/widget/ListPopupWindow;
+	3       (0000000c) invoke-virtual       v2, Landroidx/appcompat/widget/ActivityChooserView;->getContext()Landroid/content/Context;
+	4       (00000012) move-result-object   v1
+	5       (00000014) invoke-direct        v0, v1, Landroidx/appcompat/widget/ListPopupWindow;-><init>(Landroid/content/Context;)V
+	6       (0000001a) iput-object          v0, v2, Landroidx/appcompat/widget/ActivityChooserView;->mListPopupWindow Landroidx/appcompat/widget/ListPopupWindow;
+	7       (0000001e) iget-object          v0, v2, Landroidx/appcompat/widget/ActivityChooserView;->mListPopupWindow Landroidx/appcompat/widget/ListPopupWindow;
+	8       (00000022) iget-object          v1, v2, Landroidx/appcompat/widget/ActivityChooserView;->mAdapter Landroidx/appcompat/widget/ActivityChooserView$ActivityChooserViewAdapter;
+	9       (00000026) invoke-virtual       v0, v1, Landroidx/appcompat/widget/ListPopupWindow;->setAdapter(Landroid/widget/ListAdapter;)V
+	10      (0000002c) iget-object          v0, v2, Landroidx/appcompat/widget/ActivityChooserView;->mListPopupWindow Landroidx/appcompat/widget/ListPopupWindow;
+	11      (00000030) invoke-virtual       v0, v2, Landroidx/appcompat/widget/ListPopupWindow;->setAnchorView(Landroid/view/View;)V
+	12      (00000036) iget-object          v0, v2, Landroidx/appcompat/widget/ActivityChooserView;->mListPopupWindow Landroidx/appcompat/widget/ListPopupWindow;
+	13      (0000003a) const/4              v1, 1
+	14      (0000003c) invoke-virtual       v0, v1, Landroidx/appcompat/widget/ListPopupWindow;->setModal(Z)V
+	15      (00000042) iget-object          v0, v2, Landroidx/appcompat/widget/ActivityChooserView;->mListPopupWindow Landroidx/appcompat/widget/ListPopupWindow;
+	16      (00000046) iget-object          v1, v2, Landroidx/appcompat/widget/ActivityChooserView;->mCallbacks Landroidx/appcompat/widget/ActivityChooserView$Callbacks;
+	17      (0000004a) invoke-virtual       v0, v1, Landroidx/appcompat/widget/ListPopupWindow;->setOnItemClickListener(Landroid/widget/AdapterView$OnItemClickListener;)V
+	18      (00000050) iget-object          v0, v2, Landroidx/appcompat/widget/ActivityChooserView;->mListPopupWindow Landroidx/appcompat/widget/ListPopupWindow;
+	19      (00000054) iget-object          v1, v2, Landroidx/appcompat/widget/ActivityChooserView;->mCallbacks Landroidx/appcompat/widget/ActivityChooserView$Callbacks;
+	20      (00000058) invoke-virtual       v0, v1, Landroidx/appcompat/widget/ListPopupWindow;->setOnDismissListener(Landroid/widget/PopupWindow$OnDismissListener;)V
+
+getListPopupWindow-BB@0x5e : 
+	21      (0000005e) iget-object          v0, v2, Landroidx/appcompat/widget/ActivityChooserView;->mListPopupWindow Landroidx/appcompat/widget/ListPopupWindow;
+	22      (00000062) return-object        v0
+

@@ -1,0 +1,39 @@
+# Lcom/afwsamples/testdpc/policy/wifimanagement/WifiConfigUtil;->saveWifiConfiguration(Landroid/content/Context; Landroid/net/wifi/WifiConfiguration;)Z [access_flags=public static]
+#
+# Parameters:
+# - local registers: v0...v4
+# - v5:android.content.Context
+# - v6:android.net.wifi.WifiConfiguration
+#
+# - return:boolean
+
+saveWifiConfiguration-BB@0x0 : [ saveWifiConfiguration-BB@0x1c saveWifiConfiguration-BB@0x2a ]
+	0       (00000000) const/4              v2, 0
+	1       (00000002) const/4              v4, -1
+	2       (00000004) const-string         v3, 'wifi'
+	3       (00000008) invoke-virtual       v5, v3, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
+	4       (0000000e) move-result-object   v1
+	5       (00000010) check-cast           v1, Landroid/net/wifi/WifiManager;
+	6       (00000014) iget                 v3, v6, Landroid/net/wifi/WifiConfiguration;->networkId I
+	7       (00000018) if-ne                v3, v4, +9
+
+saveWifiConfiguration-BB@0x1c : [ saveWifiConfiguration-BB@0x24 ]
+	8       (0000001c) invoke-static        v1, v6, Lcom/afwsamples/testdpc/policy/wifimanagement/WifiConfigUtil;->addWifiNetwork(Landroid/net/wifi/WifiManager; Landroid/net/wifi/WifiConfiguration;)I
+	9       (00000022) move-result          v0
+
+saveWifiConfiguration-BB@0x24 : [ saveWifiConfiguration-BB@0x28 saveWifiConfiguration-BB@0x34 ]
+	10      (00000024) if-ne                v0, v4, +8
+
+saveWifiConfiguration-BB@0x28 : 
+	11      (00000028) return               v2
+
+saveWifiConfiguration-BB@0x2a : [ saveWifiConfiguration-BB@0x24 ]
+	12      (0000002a) invoke-static        v1, v6, Lcom/afwsamples/testdpc/policy/wifimanagement/WifiConfigUtil;->updateWifiNetwork(Landroid/net/wifi/WifiManager; Landroid/net/wifi/WifiConfiguration;)I
+	13      (00000030) move-result          v0
+	14      (00000032) goto                 -7
+
+saveWifiConfiguration-BB@0x34 : [ saveWifiConfiguration-BB@0x28 ]
+	15      (00000034) invoke-virtual       v1, v0, v2, Landroid/net/wifi/WifiManager;->enableNetwork(I Z)Z
+	16      (0000003a) const/4              v2, 1
+	17      (0000003c) goto                 -a
+

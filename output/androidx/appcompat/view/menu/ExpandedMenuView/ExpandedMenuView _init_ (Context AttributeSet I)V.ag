@@ -1,0 +1,41 @@
+# Landroidx/appcompat/view/menu/ExpandedMenuView;-><init>(Landroid/content/Context; Landroid/util/AttributeSet; I)V [access_flags=public constructor]
+#
+# Parameters:
+# - local registers: v0...v4
+# - v5:android.content.Context
+# - v6:android.util.AttributeSet
+# - v7:int
+#
+# - return:void
+
+<init>-BB@0x0 : [ <init>-BB@0x28 <init>-BB@0x36 ]
+	0       (00000000) const/4              v3, 1
+	1       (00000002) const/4              v2, 0
+	2       (00000004) invoke-direct        v4, v5, v6, Landroid/widget/ListView;-><init>(Landroid/content/Context; Landroid/util/AttributeSet;)V
+	3       (0000000a) invoke-virtual       v4, v4, Landroidx/appcompat/view/menu/ExpandedMenuView;->setOnItemClickListener(Landroid/widget/AdapterView$OnItemClickListener;)V
+	4       (00000010) sget-object          v1, Landroidx/appcompat/view/menu/ExpandedMenuView;->TINT_ATTRS [I
+	5       (00000014) invoke-static        v5, v6, v1, v7, v2, Landroidx/appcompat/widget/TintTypedArray;->obtainStyledAttributes(Landroid/content/Context; Landroid/util/AttributeSet; [I I I)Landroidx/appcompat/widget/TintTypedArray;
+	6       (0000001a) move-result-object   v0
+	7       (0000001c) invoke-virtual       v0, v2, Landroidx/appcompat/widget/TintTypedArray;->hasValue(I)Z
+	8       (00000022) move-result          v1
+	9       (00000024) if-eqz               v1, +9
+
+<init>-BB@0x28 : [ <init>-BB@0x36 ]
+	10      (00000028) invoke-virtual       v0, v2, Landroidx/appcompat/widget/TintTypedArray;->getDrawable(I)Landroid/graphics/drawable/Drawable;
+	11      (0000002e) move-result-object   v1
+	12      (00000030) invoke-virtual       v4, v1, Landroidx/appcompat/view/menu/ExpandedMenuView;->setBackgroundDrawable(Landroid/graphics/drawable/Drawable;)V
+
+<init>-BB@0x36 : [ <init>-BB@0x42 <init>-BB@0x50 ]
+	13      (00000036) invoke-virtual       v0, v3, Landroidx/appcompat/widget/TintTypedArray;->hasValue(I)Z
+	14      (0000003c) move-result          v1
+	15      (0000003e) if-eqz               v1, +9
+
+<init>-BB@0x42 : [ <init>-BB@0x50 ]
+	16      (00000042) invoke-virtual       v0, v3, Landroidx/appcompat/widget/TintTypedArray;->getDrawable(I)Landroid/graphics/drawable/Drawable;
+	17      (00000048) move-result-object   v1
+	18      (0000004a) invoke-virtual       v4, v1, Landroidx/appcompat/view/menu/ExpandedMenuView;->setDivider(Landroid/graphics/drawable/Drawable;)V
+
+<init>-BB@0x50 : 
+	19      (00000050) invoke-virtual       v0, Landroidx/appcompat/widget/TintTypedArray;->recycle()V
+	20      (00000056) return-void          
+

@@ -1,0 +1,14 @@
+# Landroidx/appcompat/view/menu/MenuItemWrapperICS;->setShowAsAction(I)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:int
+#
+# - return:void
+
+setShowAsAction-BB@0x0 : 
+	0       (00000000) iget-object          v0, v1, Landroidx/appcompat/view/menu/MenuItemWrapperICS;->mWrappedObject Ljava/lang/Object;
+	1       (00000004) check-cast           v0, Landroidx/core/internal/view/SupportMenuItem;
+	2       (00000008) invoke-interface     v0, v2, Landroidx/core/internal/view/SupportMenuItem;->setShowAsAction(I)V
+	3       (0000000e) return-void          
+

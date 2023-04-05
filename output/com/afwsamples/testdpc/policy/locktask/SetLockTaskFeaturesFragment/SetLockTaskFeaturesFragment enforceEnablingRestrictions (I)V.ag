@@ -1,0 +1,32 @@
+# Lcom/afwsamples/testdpc/policy/locktask/SetLockTaskFeaturesFragment;->enforceEnablingRestrictions(I)V [access_flags=private]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:int
+#
+# - return:void
+
+enforceEnablingRestrictions-BB@0x0 : [ enforceEnablingRestrictions-BB@0x8 enforceEnablingRestrictions-BB@0x38 ]
+	0       (00000000) and-int/lit8         v1, v3, 4
+	1       (00000004) if-eqz               v1, +1a
+
+enforceEnablingRestrictions-BB@0x8 : [ enforceEnablingRestrictions-BB@0xa ]
+	2       (00000008) const/4              v0, 1
+
+enforceEnablingRestrictions-BB@0xa : 
+	3       (0000000a) const-string         v1, 'lock_task_feature_overview'
+	4       (0000000e) invoke-virtual       v2, v1, Lcom/afwsamples/testdpc/policy/locktask/SetLockTaskFeaturesFragment;->findPreference(Ljava/lang/CharSequence;)Landroidx/preference/Preference;
+	5       (00000014) move-result-object   v1
+	6       (00000016) check-cast           v1, Lcom/afwsamples/testdpc/common/preference/DpcSwitchPreference;
+	7       (0000001a) invoke-direct        v2, v1, v0, Lcom/afwsamples/testdpc/policy/locktask/SetLockTaskFeaturesFragment;->setPrefEnabledState(Lcom/afwsamples/testdpc/common/preference/DpcSwitchPreference; Z)V
+	8       (00000020) const-string         v1, 'lock_task_feature_notifications'
+	9       (00000024) invoke-virtual       v2, v1, Lcom/afwsamples/testdpc/policy/locktask/SetLockTaskFeaturesFragment;->findPreference(Ljava/lang/CharSequence;)Landroidx/preference/Preference;
+	10      (0000002a) move-result-object   v1
+	11      (0000002c) check-cast           v1, Lcom/afwsamples/testdpc/common/preference/DpcSwitchPreference;
+	12      (00000030) invoke-direct        v2, v1, v0, Lcom/afwsamples/testdpc/policy/locktask/SetLockTaskFeaturesFragment;->setPrefEnabledState(Lcom/afwsamples/testdpc/common/preference/DpcSwitchPreference; Z)V
+	13      (00000036) return-void          
+
+enforceEnablingRestrictions-BB@0x38 : [ enforceEnablingRestrictions-BB@0xa ]
+	14      (00000038) const/4              v0, 0
+	15      (0000003a) goto                 -18
+

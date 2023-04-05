@@ -1,0 +1,26 @@
+# Lcom/afwsamples/testdpc/profilepolicy/delegation/DelegationFragment;->filterApp(Landroid/content/pm/ApplicationInfo;)Z [access_flags=protected]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:android.content.pm.ApplicationInfo
+#
+# - return:boolean
+
+filterApp-BB@0x0 : [ filterApp-BB@0x8 filterApp-BB@0x12 ]
+	0       (00000000) iget-boolean         v0, v2, Lcom/afwsamples/testdpc/profilepolicy/delegation/DelegationFragment;->mIsDeviceOrProfileOwner Z
+	1       (00000004) if-eqz               v0, +7
+
+filterApp-BB@0x8 : [ filterApp-BB@0x10 ]
+	2       (00000008) invoke-super         v2, v3, Lcom/afwsamples/testdpc/common/ManageAppFragment;->filterApp(Landroid/content/pm/ApplicationInfo;)Z
+	3       (0000000e) move-result          v0
+
+filterApp-BB@0x10 : 
+	4       (00000010) return               v0
+
+filterApp-BB@0x12 : [ filterApp-BB@0x10 ]
+	5       (00000012) iget-object          v0, v3, Landroid/content/pm/ApplicationInfo;->packageName Ljava/lang/String;
+	6       (00000016) iget-object          v1, v2, Lcom/afwsamples/testdpc/profilepolicy/delegation/DelegationFragment;->mPackageName Ljava/lang/String;
+	7       (0000001a) invoke-virtual       v0, v1, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+	8       (00000020) move-result          v0
+	9       (00000022) goto                 -9
+

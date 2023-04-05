@@ -1,0 +1,20 @@
+# Lcom/afwsamples/testdpc/policy/PolicyManagementFragment$13;->onClick(Landroid/content/DialogInterface; I)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v3
+# - v4:android.content.DialogInterface
+# - v5:int
+#
+# - return:void
+
+onClick-BB@0x0 : 
+	0       (00000000) iget-object          v1, v3, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment$13;->val$input Landroid/widget/EditText;
+	1       (00000004) invoke-virtual       v1, Landroid/widget/EditText;->getText()Landroid/text/Editable;
+	2       (0000000a) move-result-object   v1
+	3       (0000000c) invoke-virtual       v1, Ljava/lang/Object;->toString()Ljava/lang/String;
+	4       (00000012) move-result-object   v0
+	5       (00000014) iget-object          v1, v3, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment$13;->this$0 Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;
+	6       (00000018) const/4              v2, 1
+	7       (0000001a) invoke-static        v1, v0, v2, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->access$800(Lcom/afwsamples/testdpc/policy/PolicyManagementFragment; Ljava/lang/String; Z)V
+	8       (00000020) return-void          
+

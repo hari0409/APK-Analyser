@@ -1,0 +1,24 @@
+# Lcom/afwsamples/testdpc/common/LaunchIntentUtil;->getAddedAccount(Landroid/content/Intent;)Landroid/accounts/Account; [access_flags=public static]
+#
+# Parameters:
+# - local registers: v0...v0
+# - v1:android.content.Intent
+#
+# - return:android.accounts.Account
+
+getAddedAccount-BB@0x0 : [ getAddedAccount-BB@0x4 getAddedAccount-BB@0x16 ]
+	0       (00000000) if-eqz               v1, +b
+
+getAddedAccount-BB@0x4 : [ getAddedAccount-BB@0x14 ]
+	1       (00000004) const-string         v0, 'account'
+	2       (00000008) invoke-virtual       v1, v0, Landroid/content/Intent;->getParcelableExtra(Ljava/lang/String;)Landroid/os/Parcelable;
+	3       (0000000e) move-result-object   v0
+	4       (00000010) check-cast           v0, Landroid/accounts/Account;
+
+getAddedAccount-BB@0x14 : 
+	5       (00000014) return-object        v0
+
+getAddedAccount-BB@0x16 : [ getAddedAccount-BB@0x14 ]
+	6       (00000016) const/4              v0, 0
+	7       (00000018) goto                 -2
+

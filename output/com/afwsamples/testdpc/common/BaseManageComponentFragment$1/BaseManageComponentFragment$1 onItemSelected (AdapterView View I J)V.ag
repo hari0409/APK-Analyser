@@ -1,0 +1,20 @@
+# Lcom/afwsamples/testdpc/common/BaseManageComponentFragment$1;->onItemSelected(Landroid/widget/AdapterView; Landroid/view/View; I J)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v3
+# - v4:android.widget.AdapterView
+# - v5:android.view.View
+# - v6:int
+# - v7:long
+#
+# - return:void
+
+onItemSelected-BB@0x0 : 
+	0       (00000000) iget-object          v0, v2, Lcom/afwsamples/testdpc/common/BaseManageComponentFragment$1;->this$0 Lcom/afwsamples/testdpc/common/BaseManageComponentFragment;
+	1       (00000004) iget-object          v1, v2, Lcom/afwsamples/testdpc/common/BaseManageComponentFragment$1;->this$0 Lcom/afwsamples/testdpc/common/BaseManageComponentFragment;
+	2       (00000008) iget-object          v1, v1, Lcom/afwsamples/testdpc/common/BaseManageComponentFragment;->mManagedAppsSpinner Landroid/widget/Spinner;
+	3       (0000000c) invoke-virtual       v1, Landroid/widget/Spinner;->getSelectedItem()Ljava/lang/Object;
+	4       (00000012) move-result-object   v1
+	5       (00000014) invoke-virtual       v0, v1, Lcom/afwsamples/testdpc/common/BaseManageComponentFragment;->onSpinnerItemSelected(Ljava/lang/Object;)V
+	6       (0000001a) return-void          
+

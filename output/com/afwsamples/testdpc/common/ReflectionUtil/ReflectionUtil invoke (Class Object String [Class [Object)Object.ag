@@ -1,0 +1,51 @@
+# Lcom/afwsamples/testdpc/common/ReflectionUtil;->invoke(Ljava/lang/Class; Ljava/lang/Object; Ljava/lang/String; [Ljava/lang/Class; [Ljava/lang/Object;)Ljava/lang/Object; [access_flags=private static varargs]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:java.lang.Class
+# - v4:java.lang.Object
+# - v5:java.lang.String
+# - v6:java.lang.Class[]
+# - v7:java.lang.Object[]
+#
+# - return:java.lang.Object
+
+invoke-BB@0x0 : [ invoke-BB@0x10 ]
+	0       (00000000) invoke-virtual       v3, v5, v6, Ljava/lang/Class;->getMethod(Ljava/lang/String; [Ljava/lang/Class;)Ljava/lang/reflect/Method;
+	1       (00000006) move-result-object   v2
+	2       (00000008) invoke-virtual       v2, v4, v7, Ljava/lang/reflect/Method;->invoke(Ljava/lang/Object; [Ljava/lang/Object;)Ljava/lang/Object;
+	3       (0000000e) move-result-object   v1
+	0:d
+	(Ljava/lang/SecurityException; -> 2a invoke-BB@0x2a)
+	(Ljava/lang/NoSuchMethodException; -> 22 invoke-BB@0x22)
+	(Ljava/lang/IllegalArgumentException; -> 1e invoke-BB@0x1e)
+	(Ljava/lang/IllegalAccessException; -> 12 invoke-BB@0x12)
+	(Ljava/lang/reflect/InvocationTargetException; -> 26 invoke-BB@0x26)
+
+invoke-BB@0x10 : 
+	4       (00000010) return-object        v1
+
+invoke-BB@0x12 : [ invoke-BB@0x14 ]
+	5       (00000012) move-exception       v0
+
+invoke-BB@0x14 : [ invoke-BB@0x10 ]
+	6       (00000014) invoke-static        v0, v3, v5, v7, Lcom/afwsamples/testdpc/common/ReflectionUtil$ReflectionIsTemporaryException;->rethrow(Ljava/lang/Exception; Ljava/lang/Class; Ljava/lang/String; [Ljava/lang/Object;)V
+	7       (0000001a) const/4              v1, 0
+	8       (0000001c) goto                 -6
+
+invoke-BB@0x1e : [ invoke-BB@0x14 ]
+	9       (0000001e) move-exception       v0
+	10      (00000020) goto                 -6
+
+invoke-BB@0x22 : [ invoke-BB@0x14 ]
+	11      (00000022) move-exception       v0
+	12      (00000024) goto                 -8
+
+invoke-BB@0x26 : [ invoke-BB@0x14 ]
+	13      (00000026) move-exception       v0
+	14      (00000028) goto                 -a
+
+invoke-BB@0x2a : [ invoke-BB@0x14 ]
+	15      (0000002a) move-exception       v0
+	16      (0000002c) goto                 -c
+

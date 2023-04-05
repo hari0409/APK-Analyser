@@ -1,0 +1,14 @@
+# Landroidx/appcompat/graphics/drawable/AnimatedStateListDrawableCompat$AnimatedVectorDrawableTransition;-><init>(Landroidx/vectordrawable/graphics/drawable/AnimatedVectorDrawableCompat;)V [access_flags=constructor]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:androidx.vectordrawable.graphics.drawable.AnimatedVectorDrawableCompat
+#
+# - return:void
+
+<init>-BB@0x0 : 
+	0       (00000000) const/4              v0, 0
+	1       (00000002) invoke-direct        v1, v0, Landroidx/appcompat/graphics/drawable/AnimatedStateListDrawableCompat$Transition;-><init>(Landroidx/appcompat/graphics/drawable/AnimatedStateListDrawableCompat$1;)V
+	2       (00000008) iput-object          v2, v1, Landroidx/appcompat/graphics/drawable/AnimatedStateListDrawableCompat$AnimatedVectorDrawableTransition;->mAvd Landroidx/vectordrawable/graphics/drawable/AnimatedVectorDrawableCompat;
+	3       (0000000c) return-void          
+

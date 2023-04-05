@@ -1,0 +1,138 @@
+# Lcom/afwsamples/testdpc/cosu/CosuConfig;->applyPolicies(Landroid/content/ComponentName;)Z [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v10
+# - v11:android.content.ComponentName
+#
+# - return:boolean
+
+applyPolicies-BB@0x0 : [ applyPolicies-BB@0x16 ]
+	0       (00000000) const/4              v5, 1
+	1       (00000002) iget-object          v6, v10, Lcom/afwsamples/testdpc/cosu/CosuConfig;->mContext Landroid/content/Context;
+	2       (00000006) const-string         v7, 'device_policy'
+	3       (0000000a) invoke-virtual       v6, v7, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
+	4       (00000010) move-result-object   v0
+	5       (00000012) check-cast           v0, Landroid/app/admin/DevicePolicyManager;
+
+applyPolicies-BB@0x16 : [ applyPolicies-BB@0x30 ]
+	6       (00000016) invoke-virtual       v10, Lcom/afwsamples/testdpc/cosu/CosuConfig;->getKioskApps()[Ljava/lang/String;
+	7       (0000001c) move-result-object   v6
+	8       (0000001e) invoke-virtual       v0, v11, v6, Landroid/app/admin/DevicePolicyManager;->setLockTaskPackages(Landroid/content/ComponentName; [Ljava/lang/String;)V
+	9       (00000024) iget-object          v6, v10, Lcom/afwsamples/testdpc/cosu/CosuConfig;->mHideApps Ljava/util/Set;
+	10      (00000028) invoke-interface     v6, Ljava/util/Set;->iterator()Ljava/util/Iterator;
+	11      (0000002e) move-result-object   v6
+	16:23
+	(Ljava/lang/SecurityException; -> 50 applyPolicies-BB@0x50)
+
+applyPolicies-BB@0x30 : [ applyPolicies-BB@0x3c applyPolicies-BB@0x64 ]
+	12      (00000030) invoke-interface     v6, Ljava/util/Iterator;->hasNext()Z
+	13      (00000036) move-result          v7
+	14      (00000038) if-eqz               v7, +16
+
+applyPolicies-BB@0x3c : [ applyPolicies-BB@0x30 ]
+	15      (0000003c) invoke-interface     v6, Ljava/util/Iterator;->next()Ljava/lang/Object;
+	16      (00000042) move-result-object   v3
+	17      (00000044) check-cast           v3, Ljava/lang/String;
+	18      (00000048) invoke-virtual       v0, v11, v3, v5, Landroid/app/admin/DevicePolicyManager;->setApplicationHidden(Landroid/content/ComponentName; Ljava/lang/String; Z)Z
+	19      (0000004e) goto                 -f
+
+applyPolicies-BB@0x50 : [ applyPolicies-BB@0x62 ]
+	20      (00000050) move-exception       v1
+	21      (00000052) const-string         v5, 'CosuSetup'
+	22      (00000056) const-string         v6, 'Exception when setting lock task packages'
+	23      (0000005a) invoke-static        v5, v6, v1, Landroid/util/Log;->d(Ljava/lang/String; Ljava/lang/String; Ljava/lang/Throwable;)I
+	24      (00000060) const/4              v5, 0
+
+applyPolicies-BB@0x62 : 
+	25      (00000062) return               v5
+
+applyPolicies-BB@0x64 : [ applyPolicies-BB@0x70 ]
+	26      (00000064) iget-object          v6, v10, Lcom/afwsamples/testdpc/cosu/CosuConfig;->mEnableSystemApps Ljava/util/Set;
+	27      (00000068) invoke-interface     v6, Ljava/util/Set;->iterator()Ljava/util/Iterator;
+	28      (0000006e) move-result-object   v6
+
+applyPolicies-BB@0x70 : [ applyPolicies-BB@0x7c applyPolicies-BB@0xd0 ]
+	29      (00000070) invoke-interface     v6, Ljava/util/Iterator;->hasNext()Z
+	30      (00000076) move-result          v7
+	31      (00000078) if-eqz               v7, +2c
+
+applyPolicies-BB@0x7c : [ applyPolicies-BB@0x88 ]
+	32      (0000007c) invoke-interface     v6, Ljava/util/Iterator;->next()Ljava/lang/Object;
+	33      (00000082) move-result-object   v3
+	34      (00000084) check-cast           v3, Ljava/lang/String;
+
+applyPolicies-BB@0x88 : [ applyPolicies-BB@0x70 ]
+	35      (00000088) invoke-virtual       v0, v11, v3, Landroid/app/admin/DevicePolicyManager;->enableSystemApp(Landroid/content/ComponentName; Ljava/lang/String;)V
+	36      (0000008e) goto                 -f
+	88:8d
+	(Ljava/lang/IllegalArgumentException; -> 90 applyPolicies-BB@0x90)
+
+applyPolicies-BB@0x90 : [ applyPolicies-BB@0x70 ]
+	37      (00000090) move-exception       v1
+	38      (00000092) const-string         v7, 'CosuSetup'
+	39      (00000096) new-instance         v8, Ljava/lang/StringBuilder;
+	40      (0000009a) invoke-direct        v8, Ljava/lang/StringBuilder;-><init>()V
+	41      (000000a0) const-string         v9, 'Failed to enable '
+	42      (000000a4) invoke-virtual       v8, v9, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	43      (000000aa) move-result-object   v8
+	44      (000000ac) invoke-virtual       v8, v3, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	45      (000000b2) move-result-object   v8
+	46      (000000b4) const-string         v9, '. Operation is only allowed for system apps.'
+	47      (000000b8) invoke-virtual       v8, v9, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	48      (000000be) move-result-object   v8
+	49      (000000c0) invoke-virtual       v8, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+	50      (000000c6) move-result-object   v8
+	51      (000000c8) invoke-static        v7, v8, Landroid/util/Log;->w(Ljava/lang/String; Ljava/lang/String;)I
+	52      (000000ce) goto                 -2f
+
+applyPolicies-BB@0xd0 : [ applyPolicies-BB@0xdc ]
+	53      (000000d0) iget-object          v6, v10, Lcom/afwsamples/testdpc/cosu/CosuConfig;->mUserRestrictions Ljava/util/Set;
+	54      (000000d4) invoke-interface     v6, Ljava/util/Set;->iterator()Ljava/util/Iterator;
+	55      (000000da) move-result-object   v6
+
+applyPolicies-BB@0xdc : [ applyPolicies-BB@0xe8 applyPolicies-BB@0xfc ]
+	56      (000000dc) invoke-interface     v6, Ljava/util/Iterator;->hasNext()Z
+	57      (000000e2) move-result          v7
+	58      (000000e4) if-eqz               v7, +c
+
+applyPolicies-BB@0xe8 : [ applyPolicies-BB@0xdc ]
+	59      (000000e8) invoke-interface     v6, Ljava/util/Iterator;->next()Ljava/lang/Object;
+	60      (000000ee) move-result-object   v4
+	61      (000000f0) check-cast           v4, Ljava/lang/String;
+	62      (000000f4) invoke-virtual       v0, v11, v4, Landroid/app/admin/DevicePolicyManager;->addUserRestriction(Landroid/content/ComponentName; Ljava/lang/String;)V
+	63      (000000fa) goto                 -f
+
+applyPolicies-BB@0xfc : [ applyPolicies-BB@0x108 ]
+	64      (000000fc) iget-object          v6, v10, Lcom/afwsamples/testdpc/cosu/CosuConfig;->mGlobalSettings Ljava/util/Set;
+	65      (00000100) invoke-interface     v6, Ljava/util/Set;->iterator()Ljava/util/Iterator;
+	66      (00000106) move-result-object   v6
+
+applyPolicies-BB@0x108 : [ applyPolicies-BB@0x114 applyPolicies-BB@0x130 ]
+	67      (00000108) invoke-interface     v6, Ljava/util/Iterator;->hasNext()Z
+	68      (0000010e) move-result          v7
+	69      (00000110) if-eqz               v7, +10
+
+applyPolicies-BB@0x114 : [ applyPolicies-BB@0x108 ]
+	70      (00000114) invoke-interface     v6, Ljava/util/Iterator;->next()Ljava/lang/Object;
+	71      (0000011a) move-result-object   v2
+	72      (0000011c) check-cast           v2, Lcom/afwsamples/testdpc/cosu/CosuConfig$GlobalSetting;
+	73      (00000120) iget-object          v7, v2, Lcom/afwsamples/testdpc/cosu/CosuConfig$GlobalSetting;->key Ljava/lang/String;
+	74      (00000124) iget-object          v8, v2, Lcom/afwsamples/testdpc/cosu/CosuConfig$GlobalSetting;->value Ljava/lang/String;
+	75      (00000128) invoke-virtual       v0, v11, v7, v8, Landroid/app/admin/DevicePolicyManager;->setGlobalSetting(Landroid/content/ComponentName; Ljava/lang/String; Ljava/lang/String;)V
+	76      (0000012e) goto                 -13
+
+applyPolicies-BB@0x130 : [ applyPolicies-BB@0x13c applyPolicies-BB@0x142 ]
+	77      (00000130) sget                 v6, Lcom/afwsamples/testdpc/common/Util;->SDK_INT I
+	78      (00000134) const/16             v7, 23
+	79      (00000138) if-lt                v6, v7, +5
+
+applyPolicies-BB@0x13c : [ applyPolicies-BB@0x142 ]
+	80      (0000013c) invoke-direct        v10, v0, v11, Lcom/afwsamples/testdpc/cosu/CosuConfig;->disableKeyGuardAndStatusBar(Landroid/app/admin/DevicePolicyManager; Landroid/content/ComponentName;)V
+
+applyPolicies-BB@0x142 : [ applyPolicies-BB@0x62 ]
+	81      (00000142) iget-boolean         v6, v10, Lcom/afwsamples/testdpc/cosu/CosuConfig;->mDisableScreenCapture Z
+	82      (00000146) invoke-virtual       v0, v11, v6, Landroid/app/admin/DevicePolicyManager;->setScreenCaptureDisabled(Landroid/content/ComponentName; Z)V
+	83      (0000014c) iget-boolean         v6, v10, Lcom/afwsamples/testdpc/cosu/CosuConfig;->mDisableCamera Z
+	84      (00000150) invoke-virtual       v0, v11, v6, Landroid/app/admin/DevicePolicyManager;->setCameraDisabled(Landroid/content/ComponentName; Z)V
+	85      (00000156) goto                 -7a
+

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:layout_gravity="center" android:orientation="horizontal" android:layout_width="0.0dip" android:layout_height="wrap_content" android:divider="?android:dividerVertical" android:layout_weight="1.0" android:showDividers="end">
+        <TextView android:layout_gravity="center_vertical" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/provisioning_params_color" android:paddingEnd="@dimen/params_padding_start_end" style="@style/containerText" />
+        <TextView android:layout_gravity="center_vertical" android:id="@id/selected_color_value" android:layout_width="wrap_content" android:layout_height="wrap_content" android:paddingEnd="@dimen/params_padding_start_end" />
+        <ImageView android:layout_gravity="center_vertical" android:id="@id/preview_color" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/ic_circle" />
+        <View android:layout_width="0.0dip" android:layout_height="fill_parent" android:layout_weight="1.0" />
+    </LinearLayout>
+    <Button android:layout_gravity="center_vertical" android:id="@id/color_select_button" android:background="?android:selectableItemBackground" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/provisioning_params_select" style="?android:buttonBarButtonStyle" />
+</LinearLayout>

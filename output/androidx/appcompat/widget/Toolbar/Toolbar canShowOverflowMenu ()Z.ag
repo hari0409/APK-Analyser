@@ -1,0 +1,32 @@
+# Landroidx/appcompat/widget/Toolbar;->canShowOverflowMenu()Z [access_flags=public]
+#
+# Parameters:
+# local registers: v0...v1
+#
+# - return:boolean
+
+canShowOverflowMenu-BB@0x0 : [ canShowOverflowMenu-BB@0xc canShowOverflowMenu-BB@0x28 ]
+	0       (00000000) invoke-virtual       v1, Landroidx/appcompat/widget/Toolbar;->getVisibility()I
+	1       (00000006) move-result          v0
+	2       (00000008) if-nez               v0, +10
+
+canShowOverflowMenu-BB@0xc : [ canShowOverflowMenu-BB@0x14 canShowOverflowMenu-BB@0x28 ]
+	3       (0000000c) iget-object          v0, v1, Landroidx/appcompat/widget/Toolbar;->mMenuView Landroidx/appcompat/widget/ActionMenuView;
+	4       (00000010) if-eqz               v0, +c
+
+canShowOverflowMenu-BB@0x14 : [ canShowOverflowMenu-BB@0x24 canShowOverflowMenu-BB@0x28 ]
+	5       (00000014) iget-object          v0, v1, Landroidx/appcompat/widget/Toolbar;->mMenuView Landroidx/appcompat/widget/ActionMenuView;
+	6       (00000018) invoke-virtual       v0, Landroidx/appcompat/widget/ActionMenuView;->isOverflowReserved()Z
+	7       (0000001e) move-result          v0
+	8       (00000020) if-eqz               v0, +4
+
+canShowOverflowMenu-BB@0x24 : [ canShowOverflowMenu-BB@0x26 ]
+	9       (00000024) const/4              v0, 1
+
+canShowOverflowMenu-BB@0x26 : 
+	10      (00000026) return               v0
+
+canShowOverflowMenu-BB@0x28 : [ canShowOverflowMenu-BB@0x26 ]
+	11      (00000028) const/4              v0, 0
+	12      (0000002a) goto                 -2
+

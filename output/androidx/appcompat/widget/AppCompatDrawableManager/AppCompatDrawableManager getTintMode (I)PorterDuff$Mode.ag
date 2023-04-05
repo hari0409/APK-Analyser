@@ -1,0 +1,19 @@
+# Landroidx/appcompat/widget/AppCompatDrawableManager;->getTintMode(I)Landroid/graphics/PorterDuff$Mode; [access_flags=static]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:int
+#
+# - return:android.graphics.PorterDuff$Mode
+
+getTintMode-BB@0x0 : [ getTintMode-BB@0xa getTintMode-BB@0xe ]
+	0       (00000000) const/4              v0, 0
+	1       (00000002) sget                 v1, Landroidx/appcompat/R$drawable;->abc_switch_thumb_material I
+	2       (00000006) if-ne                v2, v1, +4
+
+getTintMode-BB@0xa : [ getTintMode-BB@0xe ]
+	3       (0000000a) sget-object          v0, Landroid/graphics/PorterDuff$Mode;->MULTIPLY Landroid/graphics/PorterDuff$Mode;
+
+getTintMode-BB@0xe : 
+	4       (0000000e) return-object        v0
+

@@ -1,0 +1,25 @@
+# Landroidx/appcompat/app/AppCompatDialog;->getThemeResId(Landroid/content/Context; I)I [access_flags=private static]
+#
+# Parameters:
+# - local registers: v0...v3
+# - v4:android.content.Context
+# - v5:int
+#
+# - return:int
+
+getThemeResId-BB@0x0 : [ getThemeResId-BB@0x4 getThemeResId-BB@0x26 ]
+	0       (00000000) if-nez               v5, +13
+
+getThemeResId-BB@0x4 : [ getThemeResId-BB@0x26 ]
+	1       (00000004) new-instance         v0, Landroid/util/TypedValue;
+	2       (00000008) invoke-direct        v0, Landroid/util/TypedValue;-><init>()V
+	3       (0000000e) invoke-virtual       v4, Landroid/content/Context;->getTheme()Landroid/content/res/Resources$Theme;
+	4       (00000014) move-result-object   v1
+	5       (00000016) sget                 v2, Landroidx/appcompat/R$attr;->dialogTheme I
+	6       (0000001a) const/4              v3, 1
+	7       (0000001c) invoke-virtual       v1, v2, v0, v3, Landroid/content/res/Resources$Theme;->resolveAttribute(I Landroid/util/TypedValue; Z)Z
+	8       (00000022) iget                 v5, v0, Landroid/util/TypedValue;->resourceId I
+
+getThemeResId-BB@0x26 : 
+	9       (00000026) return               v5
+

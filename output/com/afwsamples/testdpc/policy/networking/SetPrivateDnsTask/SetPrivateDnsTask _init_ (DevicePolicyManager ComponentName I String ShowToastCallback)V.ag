@@ -1,0 +1,21 @@
+# Lcom/afwsamples/testdpc/policy/networking/SetPrivateDnsTask;-><init>(Landroid/app/admin/DevicePolicyManager; Landroid/content/ComponentName; I Ljava/lang/String; Lcom/afwsamples/testdpc/policy/keymanagement/ShowToastCallback;)V [access_flags=public constructor]
+#
+# Parameters:
+# - local registers: v0...v0
+# - v1:android.app.admin.DevicePolicyManager
+# - v2:android.content.ComponentName
+# - v3:int
+# - v4:java.lang.String
+# - v5:com.afwsamples.testdpc.policy.keymanagement.ShowToastCallback
+#
+# - return:void
+
+<init>-BB@0x0 : 
+	0       (00000000) invoke-direct        v0, Landroid/os/AsyncTask;-><init>()V
+	1       (00000006) iput-object          v1, v0, Lcom/afwsamples/testdpc/policy/networking/SetPrivateDnsTask;->mDpm Landroid/app/admin/DevicePolicyManager;
+	2       (0000000a) iput-object          v2, v0, Lcom/afwsamples/testdpc/policy/networking/SetPrivateDnsTask;->mComponent Landroid/content/ComponentName;
+	3       (0000000e) iput-object          v5, v0, Lcom/afwsamples/testdpc/policy/networking/SetPrivateDnsTask;->mCallback Lcom/afwsamples/testdpc/policy/keymanagement/ShowToastCallback;
+	4       (00000012) iput                 v3, v0, Lcom/afwsamples/testdpc/policy/networking/SetPrivateDnsTask;->mMode I
+	5       (00000016) iput-object          v4, v0, Lcom/afwsamples/testdpc/policy/networking/SetPrivateDnsTask;->mResolver Ljava/lang/String;
+	6       (0000001a) return-void          
+

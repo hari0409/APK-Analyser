@@ -1,0 +1,30 @@
+# Lcom/afwsamples/testdpc/policy/keymanagement/SignAndVerifyTask;->onPostExecute(Ljava/lang/String;)V [access_flags=protected]
+#
+# Parameters:
+# - local registers: v0...v4
+# - v5:java.lang.String
+#
+# - return:void
+
+onPostExecute-BB@0x0 : [ onPostExecute-BB@0x6 onPostExecute-BB@0x22 ]
+	0       (00000000) const/4              v3, 0
+	1       (00000002) if-eqz               v5, +10
+
+onPostExecute-BB@0x6 : [ onPostExecute-BB@0x20 ]
+	2       (00000006) iget-object          v0, v4, Lcom/afwsamples/testdpc/policy/keymanagement/SignAndVerifyTask;->mCallback Lcom/afwsamples/testdpc/policy/keymanagement/ShowToastCallback;
+	3       (0000000a) const                v1, 2131689887 # [1.900880205972285e+38]
+	4       (00000010) const/4              v2, 1
+	5       (00000012) new-array            v2, v2, [Ljava/lang/Object;
+	6       (00000016) aput-object          v5, v2, v3
+	7       (0000001a) invoke-interface     v0, v1, v2, Lcom/afwsamples/testdpc/policy/keymanagement/ShowToastCallback;->showToast(I [Ljava/lang/Object;)V
+
+onPostExecute-BB@0x20 : 
+	8       (00000020) return-void          
+
+onPostExecute-BB@0x22 : [ onPostExecute-BB@0x20 ]
+	9       (00000022) iget-object          v0, v4, Lcom/afwsamples/testdpc/policy/keymanagement/SignAndVerifyTask;->mCallback Lcom/afwsamples/testdpc/policy/keymanagement/ShowToastCallback;
+	10      (00000026) const                v1, 2131689886 # [1.900880003148189e+38]
+	11      (0000002c) new-array            v2, v3, [Ljava/lang/Object;
+	12      (00000030) invoke-interface     v0, v1, v2, Lcom/afwsamples/testdpc/policy/keymanagement/ShowToastCallback;->showToast(I [Ljava/lang/Object;)V
+	13      (00000036) goto                 -b
+

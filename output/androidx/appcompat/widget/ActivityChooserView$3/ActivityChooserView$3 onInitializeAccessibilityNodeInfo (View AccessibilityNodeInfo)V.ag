@@ -1,0 +1,17 @@
+# Landroidx/appcompat/widget/ActivityChooserView$3;->onInitializeAccessibilityNodeInfo(Landroid/view/View; Landroid/view/accessibility/AccessibilityNodeInfo;)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:android.view.View
+# - v4:android.view.accessibility.AccessibilityNodeInfo
+#
+# - return:void
+
+onInitializeAccessibilityNodeInfo-BB@0x0 : 
+	0       (00000000) invoke-super         v2, v3, v4, Landroid/view/View$AccessibilityDelegate;->onInitializeAccessibilityNodeInfo(Landroid/view/View; Landroid/view/accessibility/AccessibilityNodeInfo;)V
+	1       (00000006) invoke-static        v4, Landroidx/core/view/accessibility/AccessibilityNodeInfoCompat;->wrap(Landroid/view/accessibility/AccessibilityNodeInfo;)Landroidx/core/view/accessibility/AccessibilityNodeInfoCompat;
+	2       (0000000c) move-result-object   v0
+	3       (0000000e) const/4              v1, 1
+	4       (00000010) invoke-virtual       v0, v1, Landroidx/core/view/accessibility/AccessibilityNodeInfoCompat;->setCanOpenPopup(Z)V
+	5       (00000016) return-void          
+

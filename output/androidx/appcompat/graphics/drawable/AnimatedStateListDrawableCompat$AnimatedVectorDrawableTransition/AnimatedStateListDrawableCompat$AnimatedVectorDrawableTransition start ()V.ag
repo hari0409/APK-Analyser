@@ -1,0 +1,12 @@
+# Landroidx/appcompat/graphics/drawable/AnimatedStateListDrawableCompat$AnimatedVectorDrawableTransition;->start()V [access_flags=public]
+#
+# Parameters:
+# local registers: v0...v1
+#
+# - return:void
+
+start-BB@0x0 : 
+	0       (00000000) iget-object          v0, v1, Landroidx/appcompat/graphics/drawable/AnimatedStateListDrawableCompat$AnimatedVectorDrawableTransition;->mAvd Landroidx/vectordrawable/graphics/drawable/AnimatedVectorDrawableCompat;
+	1       (00000004) invoke-virtual       v0, Landroidx/vectordrawable/graphics/drawable/AnimatedVectorDrawableCompat;->start()V
+	2       (0000000a) return-void          
+

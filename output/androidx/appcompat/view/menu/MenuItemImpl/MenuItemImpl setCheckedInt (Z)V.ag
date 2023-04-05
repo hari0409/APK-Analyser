@@ -1,0 +1,35 @@
+# Landroidx/appcompat/view/menu/MenuItemImpl;->setCheckedInt(Z)V [access_flags=]
+#
+# Parameters:
+# - local registers: v0...v4
+# - v5:boolean
+#
+# - return:void
+
+setCheckedInt-BB@0x0 : [ setCheckedInt-BB@0x12 setCheckedInt-BB@0x2e ]
+	0       (00000000) const/4              v2, 0
+	1       (00000002) iget                 v0, v4, Landroidx/appcompat/view/menu/MenuItemImpl;->mFlags I
+	2       (00000006) iget                 v1, v4, Landroidx/appcompat/view/menu/MenuItemImpl;->mFlags I
+	3       (0000000a) and-int/lit8         v3, v1, -3
+	4       (0000000e) if-eqz               v5, +10
+
+setCheckedInt-BB@0x12 : [ setCheckedInt-BB@0x14 ]
+	5       (00000012) const/4              v1, 2
+
+setCheckedInt-BB@0x14 : [ setCheckedInt-BB@0x22 setCheckedInt-BB@0x2c ]
+	6       (00000014) or-int/2addr         v1, v3
+	7       (00000016) iput                 v1, v4, Landroidx/appcompat/view/menu/MenuItemImpl;->mFlags I
+	8       (0000001a) iget                 v1, v4, Landroidx/appcompat/view/menu/MenuItemImpl;->mFlags I
+	9       (0000001e) if-eq                v0, v1, +7
+
+setCheckedInt-BB@0x22 : [ setCheckedInt-BB@0x2c ]
+	10      (00000022) iget-object          v1, v4, Landroidx/appcompat/view/menu/MenuItemImpl;->mMenu Landroidx/appcompat/view/menu/MenuBuilder;
+	11      (00000026) invoke-virtual       v1, v2, Landroidx/appcompat/view/menu/MenuBuilder;->onItemsChanged(Z)V
+
+setCheckedInt-BB@0x2c : 
+	12      (0000002c) return-void          
+
+setCheckedInt-BB@0x2e : [ setCheckedInt-BB@0x14 ]
+	13      (0000002e) move                 v1, v2
+	14      (00000030) goto                 -e
+

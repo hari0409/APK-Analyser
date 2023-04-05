@@ -1,0 +1,163 @@
+# Lcom/afwsamples/testdpc/policy/SecurityLogsFragment;->getStringEventTagFromId(I)Ljava/lang/String; [access_flags=private]
+#
+# Parameters:
+# - local registers: v0...v3
+# - v4:int
+#
+# - return:java.lang.String
+
+getStringEventTagFromId-BB@0x0 : [ D:getStringEventTagFromId-BB@0x6 210001:getStringEventTagFromId-BB@0x3a 210002:getStringEventTagFromId-BB@0x40 210003:getStringEventTagFromId-BB@0x46 210004:getStringEventTagFromId-BB@0x4c 210005:getStringEventTagFromId-BB@0x52 210006:getStringEventTagFromId-BB@0x58 210007:getStringEventTagFromId-BB@0x5e 210008:getStringEventTagFromId-BB@0x64 210009:getStringEventTagFromId-BB@0x6a 210010:getStringEventTagFromId-BB@0x70 210011:getStringEventTagFromId-BB@0x76 210012:getStringEventTagFromId-BB@0x7c 210013:getStringEventTagFromId-BB@0x82 210014:getStringEventTagFromId-BB@0x88 210015:getStringEventTagFromId-BB@0x8e 210016:getStringEventTagFromId-BB@0x94 210017:getStringEventTagFromId-BB@0x9a 210018:getStringEventTagFromId-BB@0xa0 210019:getStringEventTagFromId-BB@0xa6 210020:getStringEventTagFromId-BB@0xac 210021:getStringEventTagFromId-BB@0xb2 210022:getStringEventTagFromId-BB@0xb8 210023:getStringEventTagFromId-BB@0xbe 210024:getStringEventTagFromId-BB@0xc4 210025:getStringEventTagFromId-BB@0xca 210026:getStringEventTagFromId-BB@0xd0 210027:getStringEventTagFromId-BB@0xd6 210028:getStringEventTagFromId-BB@0xdc 210029:getStringEventTagFromId-BB@0xe2 210030:getStringEventTagFromId-BB@0xe8 210031:getStringEventTagFromId-BB@0xee 210032:getStringEventTagFromId-BB@0xf4 210033:getStringEventTagFromId-BB@0xfa ]
+	0       (00000000) packed-switch        v4, +80 (0x100)
+
+getStringEventTagFromId-BB@0x6 : [ getStringEventTagFromId-BB@0x38 ]
+	1       (00000006) new-instance         v1, Ljava/lang/StringBuilder;
+	2       (0000000a) invoke-direct        v1, Ljava/lang/StringBuilder;-><init>()V
+	3       (00000010) const-string         v2, 'UNKNOWN('
+	4       (00000014) invoke-virtual       v1, v2, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	5       (0000001a) move-result-object   v1
+	6       (0000001c) invoke-virtual       v1, v4, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+	7       (00000022) move-result-object   v1
+	8       (00000024) const-string         v2, ')'
+	9       (00000028) invoke-virtual       v1, v2, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	10      (0000002e) move-result-object   v1
+	11      (00000030) invoke-virtual       v1, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+	12      (00000036) move-result-object   v0
+
+getStringEventTagFromId-BB@0x38 : 
+	13      (00000038) return-object        v0
+
+getStringEventTagFromId-BB@0x3a : [ getStringEventTagFromId-BB@0x38 ]
+	14      (0000003a) const-string         v0, 'ADB_SHELL_INTERACTIVE'
+	15      (0000003e) goto                 -3
+
+getStringEventTagFromId-BB@0x40 : [ getStringEventTagFromId-BB@0x38 ]
+	16      (00000040) const-string         v0, 'ADB_SHELL_CMD'
+	17      (00000044) goto                 -6
+
+getStringEventTagFromId-BB@0x46 : [ getStringEventTagFromId-BB@0x38 ]
+	18      (00000046) const-string         v0, 'SYNC_RECV_FILE'
+	19      (0000004a) goto                 -9
+
+getStringEventTagFromId-BB@0x4c : [ getStringEventTagFromId-BB@0x38 ]
+	20      (0000004c) const-string         v0, 'SYNC_SEND_FILE'
+	21      (00000050) goto                 -c
+
+getStringEventTagFromId-BB@0x52 : [ getStringEventTagFromId-BB@0x38 ]
+	22      (00000052) const-string         v0, 'APP_PROCESS_START'
+	23      (00000056) goto                 -f
+
+getStringEventTagFromId-BB@0x58 : [ getStringEventTagFromId-BB@0x38 ]
+	24      (00000058) const-string         v0, 'KEYGUARD_DISMISSED'
+	25      (0000005c) goto                 -12
+
+getStringEventTagFromId-BB@0x5e : [ getStringEventTagFromId-BB@0x38 ]
+	26      (0000005e) const-string         v0, 'KEYGUARD_DISMISS_AUTH_ATTEMPT'
+	27      (00000062) goto                 -15
+
+getStringEventTagFromId-BB@0x64 : [ getStringEventTagFromId-BB@0x38 ]
+	28      (00000064) const-string         v0, 'KEYGUARD_SECURED'
+	29      (00000068) goto                 -18
+
+getStringEventTagFromId-BB@0x6a : [ getStringEventTagFromId-BB@0x38 ]
+	30      (0000006a) const-string         v0, 'OS_STARTUP'
+	31      (0000006e) goto                 -1b
+
+getStringEventTagFromId-BB@0x70 : [ getStringEventTagFromId-BB@0x38 ]
+	32      (00000070) const-string         v0, 'OS_SHUTDOWN'
+	33      (00000074) goto                 -1e
+
+getStringEventTagFromId-BB@0x76 : [ getStringEventTagFromId-BB@0x38 ]
+	34      (00000076) const-string         v0, 'LOGGING_STARTED'
+	35      (0000007a) goto                 -21
+
+getStringEventTagFromId-BB@0x7c : [ getStringEventTagFromId-BB@0x38 ]
+	36      (0000007c) const-string         v0, 'LOGGING_STOPPED'
+	37      (00000080) goto                 -24
+
+getStringEventTagFromId-BB@0x82 : [ getStringEventTagFromId-BB@0x38 ]
+	38      (00000082) const-string         v0, 'MEDIA_MOUNT'
+	39      (00000086) goto                 -27
+
+getStringEventTagFromId-BB@0x88 : [ getStringEventTagFromId-BB@0x38 ]
+	40      (00000088) const-string         v0, 'MEDIA_UNMOUNT'
+	41      (0000008c) goto                 -2a
+
+getStringEventTagFromId-BB@0x8e : [ getStringEventTagFromId-BB@0x38 ]
+	42      (0000008e) const-string         v0, 'LOG_BUFFER_SIZE_CRITICAL'
+	43      (00000092) goto                 -2d
+
+getStringEventTagFromId-BB@0x94 : [ getStringEventTagFromId-BB@0x38 ]
+	44      (00000094) const-string         v0, 'PASSWORD_EXPIRATION_SET'
+	45      (00000098) goto                 -30
+
+getStringEventTagFromId-BB@0x9a : [ getStringEventTagFromId-BB@0x38 ]
+	46      (0000009a) const-string         v0, 'PASSWORD_COMPLEXITY_SET'
+	47      (0000009e) goto                 -33
+
+getStringEventTagFromId-BB@0xa0 : [ getStringEventTagFromId-BB@0x38 ]
+	48      (000000a0) const-string         v0, 'PASSWORD_HISTORY_LENGTH_SET'
+	49      (000000a4) goto                 -36
+
+getStringEventTagFromId-BB@0xa6 : [ getStringEventTagFromId-BB@0x38 ]
+	50      (000000a6) const-string         v0, 'MAX_SCREEN_LOCK_TIMEOUT_SET'
+	51      (000000aa) goto                 -39
+
+getStringEventTagFromId-BB@0xac : [ getStringEventTagFromId-BB@0x38 ]
+	52      (000000ac) const-string         v0, 'MAX_PASSWORD_ATTEMPTS_SET'
+	53      (000000b0) goto                 -3c
+
+getStringEventTagFromId-BB@0xb2 : [ getStringEventTagFromId-BB@0x38 ]
+	54      (000000b2) const-string         v0, 'KEYGUARD_DISABLED_FEATURES_SET'
+	55      (000000b6) goto                 -3f
+
+getStringEventTagFromId-BB@0xb8 : [ getStringEventTagFromId-BB@0x38 ]
+	56      (000000b8) const-string         v0, 'REMOTE_LOCK'
+	57      (000000bc) goto                 -42
+
+getStringEventTagFromId-BB@0xbe : [ getStringEventTagFromId-BB@0x38 ]
+	58      (000000be) const-string         v0, 'WIPE_FAILURE'
+	59      (000000c2) goto                 -45
+
+getStringEventTagFromId-BB@0xc4 : [ getStringEventTagFromId-BB@0x38 ]
+	60      (000000c4) const-string         v0, 'KEY_GENERATED'
+	61      (000000c8) goto                 -48
+
+getStringEventTagFromId-BB@0xca : [ getStringEventTagFromId-BB@0x38 ]
+	62      (000000ca) const-string         v0, 'KEY_IMPORT'
+	63      (000000ce) goto                 -4b
+
+getStringEventTagFromId-BB@0xd0 : [ getStringEventTagFromId-BB@0x38 ]
+	64      (000000d0) const-string         v0, 'KEY_DESTRUCTION'
+	65      (000000d4) goto                 -4e
+
+getStringEventTagFromId-BB@0xd6 : [ getStringEventTagFromId-BB@0x38 ]
+	66      (000000d6) const-string         v0, 'USER_RESTRICTION_ADDED'
+	67      (000000da) goto                 -51
+
+getStringEventTagFromId-BB@0xdc : [ getStringEventTagFromId-BB@0x38 ]
+	68      (000000dc) const-string         v0, 'USER_RESTRICTION_REMOVED'
+	69      (000000e0) goto                 -54
+
+getStringEventTagFromId-BB@0xe2 : [ getStringEventTagFromId-BB@0x38 ]
+	70      (000000e2) const-string         v0, 'CERT_AUTHORITY_INSTALLED'
+	71      (000000e6) goto                 -57
+
+getStringEventTagFromId-BB@0xe8 : [ getStringEventTagFromId-BB@0x38 ]
+	72      (000000e8) const-string         v0, 'CERT_AUTHORITY_REMOVED'
+	73      (000000ec) goto                 -5a
+
+getStringEventTagFromId-BB@0xee : [ getStringEventTagFromId-BB@0x38 ]
+	74      (000000ee) const-string         v0, 'CRYPTO_SELF_TEST_COMPLETED'
+	75      (000000f2) goto                 -5d
+
+getStringEventTagFromId-BB@0xf4 : [ getStringEventTagFromId-BB@0x38 ]
+	76      (000000f4) const-string         v0, 'KEY_INTEGRITY_VIOLATION'
+	77      (000000f8) goto                 -60
+
+getStringEventTagFromId-BB@0xfa : [ getStringEventTagFromId-BB@0x38 ]
+	78      (000000fa) const-string         v0, 'CERT_VALIDATION_FAILURE'
+	79      (000000fe) goto                 -63
+
+getStringEventTagFromId-BB@0x100 : 
+	80      (00000100) packed-switch-payload 33451 33452 33453 33454 33455 33456 33457 33458 33459 3345a 3345b 3345c 3345d 3345e 3345f 33460 33461 33462 33463 33464 33465 33466 33467 33468 33469 3346a 3346b 3346c 3346d 3346e 3346f 33470 33471
+

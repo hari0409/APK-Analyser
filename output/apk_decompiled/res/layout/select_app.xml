@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <TextView android:id="@id/select_package_label" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/current_selected_package" />
+        <EditText android:id="@id/selected_package_current" android:layout_width="fill_parent" android:layout_height="wrap_content" android:hint="@string/selected_package_none" android:editable="false" />
+    </LinearLayout>
+    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/select_app_instructions" />
+    <ListView android:id="@id/select_app_list" android:scrollbars="vertical" android:layout_width="fill_parent" android:layout_height="0.0dip" android:layout_weight="1.0" />
+    <FrameLayout android:orientation="vertical" android:id="@id/extension" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+    <EditText android:id="@id/selected_package_new" android:layout_width="fill_parent" android:layout_height="wrap_content" android:hint="@string/selected_package_new_label" />
+    <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <Button android:id="@id/selected_package_set" android:layout_width="90.0dip" android:layout_height="50.0dip" android:text="@string/selected_package_set" />
+        <Button android:id="@id/selected_package_clear" android:layout_width="90.0dip" android:layout_height="50.0dip" android:text="@string/selected_package_clear" />
+    </LinearLayout>
+</LinearLayout>

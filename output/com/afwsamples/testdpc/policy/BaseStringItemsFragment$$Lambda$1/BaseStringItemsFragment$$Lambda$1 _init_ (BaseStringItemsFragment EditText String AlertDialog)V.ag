@@ -1,0 +1,19 @@
+# Lcom/afwsamples/testdpc/policy/BaseStringItemsFragment$$Lambda$1;-><init>(Lcom/afwsamples/testdpc/policy/BaseStringItemsFragment; Landroid/widget/EditText; Ljava/lang/String; Landroid/app/AlertDialog;)V [access_flags=constructor]
+#
+# Parameters:
+# - local registers: v0...v0
+# - v1:com.afwsamples.testdpc.policy.BaseStringItemsFragment
+# - v2:android.widget.EditText
+# - v3:java.lang.String
+# - v4:android.app.AlertDialog
+#
+# - return:void
+
+<init>-BB@0x0 : 
+	0       (00000000) invoke-direct        v0, Ljava/lang/Object;-><init>()V
+	1       (00000006) iput-object          v1, v0, Lcom/afwsamples/testdpc/policy/BaseStringItemsFragment$$Lambda$1;->arg$1 Lcom/afwsamples/testdpc/policy/BaseStringItemsFragment;
+	2       (0000000a) iput-object          v2, v0, Lcom/afwsamples/testdpc/policy/BaseStringItemsFragment$$Lambda$1;->arg$2 Landroid/widget/EditText;
+	3       (0000000e) iput-object          v3, v0, Lcom/afwsamples/testdpc/policy/BaseStringItemsFragment$$Lambda$1;->arg$3 Ljava/lang/String;
+	4       (00000012) iput-object          v4, v0, Lcom/afwsamples/testdpc/policy/BaseStringItemsFragment$$Lambda$1;->arg$4 Landroid/app/AlertDialog;
+	5       (00000016) return-void          
+

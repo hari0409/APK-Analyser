@@ -1,0 +1,23 @@
+# Landroidx/appcompat/app/WindowDecorActionBar;->setDisplayShowCustomEnabled(Z)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:boolean
+#
+# - return:void
+
+setDisplayShowCustomEnabled-BB@0x0 : [ setDisplayShowCustomEnabled-BB@0x8 setDisplayShowCustomEnabled-BB@0x12 ]
+	0       (00000000) const/16             v1, 16
+	1       (00000004) if-eqz               v3, +7
+
+setDisplayShowCustomEnabled-BB@0x8 : [ setDisplayShowCustomEnabled-BB@0xa ]
+	2       (00000008) move                 v0, v1
+
+setDisplayShowCustomEnabled-BB@0xa : 
+	3       (0000000a) invoke-virtual       v2, v0, v1, Landroidx/appcompat/app/WindowDecorActionBar;->setDisplayOptions(I I)V
+	4       (00000010) return-void          
+
+setDisplayShowCustomEnabled-BB@0x12 : [ setDisplayShowCustomEnabled-BB@0xa ]
+	5       (00000012) const/4              v0, 0
+	6       (00000014) goto                 -5
+

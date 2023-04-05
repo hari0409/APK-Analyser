@@ -1,0 +1,68 @@
+# Lcom/afwsamples/testdpc/transferownership/PickTransferComponentFragment;->performTransfer(Landroid/content/ComponentName;)Ljava/lang/String; [access_flags=private]
+#
+# Parameters:
+# - local registers: v0...v7
+# - v8:android.content.ComponentName
+#
+# - return:java.lang.String
+
+performTransfer-BB@0x0 : [ performTransfer-BB@0x60 ]
+	0       (00000000) invoke-virtual       v7, Lcom/afwsamples/testdpc/transferownership/PickTransferComponentFragment;->getActivity()Landroid/app/Activity;
+	1       (00000006) move-result-object   v4
+	2       (00000008) invoke-static        v4, Lcom/afwsamples/testdpc/DeviceAdminReceiver;->getComponentName(Landroid/content/Context;)Landroid/content/ComponentName;
+	3       (0000000e) move-result-object   v3
+	4       (00000010) invoke-virtual       v7, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+	5       (00000016) move-result-object   v4
+	6       (00000018) invoke-virtual       v4, Ljava/lang/Class;->getName()Ljava/lang/String;
+	7       (0000001e) move-result-object   v4
+	8       (00000020) new-instance         v5, Ljava/lang/StringBuilder;
+	9       (00000024) invoke-direct        v5, Ljava/lang/StringBuilder;-><init>()V
+	10      (0000002a) const-string         v6, 'Transferring ownership from '
+	11      (0000002e) invoke-virtual       v5, v6, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	12      (00000034) move-result-object   v5
+	13      (00000036) invoke-virtual       v5, v3, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+	14      (0000003c) move-result-object   v5
+	15      (0000003e) const-string         v6, ' to target '
+	16      (00000042) invoke-virtual       v5, v6, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	17      (00000048) move-result-object   v5
+	18      (0000004a) invoke-virtual       v5, v8, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+	19      (00000050) move-result-object   v5
+	20      (00000052) invoke-virtual       v5, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+	21      (00000058) move-result-object   v5
+	22      (0000005a) invoke-static        v4, v5, Landroid/util/Log;->i(Ljava/lang/String; Ljava/lang/String;)I
+
+performTransfer-BB@0x60 : [ performTransfer-BB@0x86 ]
+	23      (00000060) new-instance         v2, Landroid/os/PersistableBundle;
+	24      (00000064) invoke-direct        v2, Landroid/os/PersistableBundle;-><init>()V
+	25      (0000006a) const-string         v4, 'random_key'
+	26      (0000006e) const-string         v5, 'random_value'
+	27      (00000072) invoke-virtual       v2, v4, v5, Landroid/os/PersistableBundle;->putString(Ljava/lang/String; Ljava/lang/String;)V
+	28      (00000078) iget-object          v4, v7, Lcom/afwsamples/testdpc/transferownership/PickTransferComponentFragment;->mDevicePolicyManager Landroid/app/admin/DevicePolicyManager;
+	29      (0000007c) invoke-virtual       v4, v3, v8, v2, Landroid/app/admin/DevicePolicyManager;->transferOwnership(Landroid/content/ComponentName; Landroid/content/ComponentName; Landroid/os/PersistableBundle;)V
+	30      (00000082) const-string         v4, 'Success!'
+	60:85
+	(Ljava/lang/Exception; -> 88 performTransfer-BB@0x88)
+
+performTransfer-BB@0x86 : 
+	31      (00000086) return-object        v4
+
+performTransfer-BB@0x88 : [ performTransfer-BB@0x9a performTransfer-BB@0xb0 ]
+	32      (00000088) move-exception       v1
+	33      (0000008a) invoke-virtual       v1, Ljava/lang/Exception;->getCause()Ljava/lang/Throwable;
+	34      (00000090) move-result-object   v0
+	35      (00000092) instance-of          v4, v0, Ljava/lang/reflect/InvocationTargetException;
+	36      (00000096) if-eqz               v4, +d
+
+performTransfer-BB@0x9a : [ performTransfer-BB@0x86 ]
+	37      (0000009a) check-cast           v0, Ljava/lang/reflect/InvocationTargetException;
+	38      (0000009e) invoke-virtual       v0, Ljava/lang/reflect/InvocationTargetException;->getTargetException()Ljava/lang/Throwable;
+	39      (000000a4) move-result-object   v4
+	40      (000000a6) invoke-direct        v7, v4, Lcom/afwsamples/testdpc/transferownership/PickTransferComponentFragment;->getStackTrace(Ljava/lang/Throwable;)Ljava/lang/String;
+	41      (000000ac) move-result-object   v4
+	42      (000000ae) goto                 -14
+
+performTransfer-BB@0xb0 : [ performTransfer-BB@0x86 ]
+	43      (000000b0) invoke-direct        v7, v0, Lcom/afwsamples/testdpc/transferownership/PickTransferComponentFragment;->getStackTrace(Ljava/lang/Throwable;)Ljava/lang/String;
+	44      (000000b6) move-result-object   v4
+	45      (000000b8) goto                 -19
+

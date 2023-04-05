@@ -1,0 +1,31 @@
+# Landroidx/appcompat/widget/SwitchCompat;->getThumbOffset()I [access_flags=private]
+#
+# Parameters:
+# local registers: v0...v3
+#
+# - return:int
+
+getThumbOffset-BB@0x0 : [ getThumbOffset-BB@0xc getThumbOffset-BB@0x2e ]
+	0       (00000000) invoke-static        v3, Landroidx/appcompat/widget/ViewUtils;->isLayoutRtl(Landroid/view/View;)Z
+	1       (00000006) move-result          v1
+	2       (00000008) if-eqz               v1, +13
+
+getThumbOffset-BB@0xc : [ getThumbOffset-BB@0x18 ]
+	3       (0000000c) const/high16         v1, 16256 # [1.0]
+	4       (00000010) iget                 v2, v3, Landroidx/appcompat/widget/SwitchCompat;->mThumbPosition F
+	5       (00000014) sub-float            v0, v1, v2
+
+getThumbOffset-BB@0x18 : 
+	6       (00000018) invoke-direct        v3, Landroidx/appcompat/widget/SwitchCompat;->getThumbScrollRange()I
+	7       (0000001e) move-result          v1
+	8       (00000020) int-to-float         v1, v1
+	9       (00000022) mul-float/2addr      v1, v0
+	10      (00000024) const/high16         v2, 16128 # [0.5]
+	11      (00000028) add-float/2addr      v1, v2
+	12      (0000002a) float-to-int         v1, v1
+	13      (0000002c) return               v1
+
+getThumbOffset-BB@0x2e : [ getThumbOffset-BB@0x18 ]
+	14      (0000002e) iget                 v0, v3, Landroidx/appcompat/widget/SwitchCompat;->mThumbPosition F
+	15      (00000032) goto                 -d
+

@@ -1,0 +1,13 @@
+# Landroidx/appcompat/app/ActionBarDrawerToggle;->setDrawerArrowDrawable(Landroidx/appcompat/graphics/drawable/DrawerArrowDrawable;)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v0
+# - v1:androidx.appcompat.graphics.drawable.DrawerArrowDrawable
+#
+# - return:void
+
+setDrawerArrowDrawable-BB@0x0 : 
+	0       (00000000) iput-object          v1, v0, Landroidx/appcompat/app/ActionBarDrawerToggle;->mSlider Landroidx/appcompat/graphics/drawable/DrawerArrowDrawable;
+	1       (00000004) invoke-virtual       v0, Landroidx/appcompat/app/ActionBarDrawerToggle;->syncState()V
+	2       (0000000a) return-void          
+

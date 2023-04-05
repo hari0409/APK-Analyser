@@ -1,0 +1,33 @@
+# Lcom/afwsamples/testdpc/policy/utils/AuthorizationList;->originToString(I)Ljava/lang/String; [access_flags=public static]
+#
+# Parameters:
+# - local registers: v0...v0
+# - v1:int
+#
+# - return:java.lang.String
+
+originToString-BB@0x0 : [ D:originToString-BB@0x6 0:originToString-BB@0xc 1:originToString-BB@0x6 2:originToString-BB@0x12 3:originToString-BB@0x18 ]
+	0       (00000000) packed-switch        v1, +10 (0x20)
+
+originToString-BB@0x6 : [ originToString-BB@0xa ]
+	1       (00000006) const-string         v0, 'Unknown'
+
+originToString-BB@0xa : 
+	2       (0000000a) return-object        v0
+
+originToString-BB@0xc : [ originToString-BB@0xa ]
+	3       (0000000c) const-string         v0, 'Generated'
+	4       (00000010) goto                 -3
+
+originToString-BB@0x12 : [ originToString-BB@0xa ]
+	5       (00000012) const-string         v0, 'Imported'
+	6       (00000016) goto                 -6
+
+originToString-BB@0x18 : [ originToString-BB@0xa ]
+	7       (00000018) const-string         v0, 'Unknown (KM0)'
+	8       (0000001c) goto                 -9
+
+originToString-BB@0x1e : 
+	9       (0000001e) nop                  
+	10      (00000020) packed-switch-payload 0 1 2 3
+

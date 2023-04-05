@@ -1,0 +1,15 @@
+# Landroidx/appcompat/widget/SearchView;->setSuggestionsAdapter(Landroidx/cursoradapter/widget/CursorAdapter;)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:androidx.cursoradapter.widget.CursorAdapter
+#
+# - return:void
+
+setSuggestionsAdapter-BB@0x0 : 
+	0       (00000000) iput-object          v3, v2, Landroidx/appcompat/widget/SearchView;->mSuggestionsAdapter Landroidx/cursoradapter/widget/CursorAdapter;
+	1       (00000004) iget-object          v0, v2, Landroidx/appcompat/widget/SearchView;->mSearchSrcTextView Landroidx/appcompat/widget/SearchView$SearchAutoComplete;
+	2       (00000008) iget-object          v1, v2, Landroidx/appcompat/widget/SearchView;->mSuggestionsAdapter Landroidx/cursoradapter/widget/CursorAdapter;
+	3       (0000000c) invoke-virtual       v0, v1, Landroidx/appcompat/widget/SearchView$SearchAutoComplete;->setAdapter(Landroid/widget/ListAdapter;)V
+	4       (00000012) return-void          
+

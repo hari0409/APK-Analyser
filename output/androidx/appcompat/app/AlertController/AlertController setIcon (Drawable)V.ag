@@ -1,0 +1,33 @@
+# Landroidx/appcompat/app/AlertController;->setIcon(Landroid/graphics/drawable/Drawable;)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:android.graphics.drawable.Drawable
+#
+# - return:void
+
+setIcon-BB@0x0 : [ setIcon-BB@0x12 setIcon-BB@0x2a ]
+	0       (00000000) const/4              v1, 0
+	1       (00000002) iput-object          v3, v2, Landroidx/appcompat/app/AlertController;->mIcon Landroid/graphics/drawable/Drawable;
+	2       (00000006) iput                 v1, v2, Landroidx/appcompat/app/AlertController;->mIconId I
+	3       (0000000a) iget-object          v0, v2, Landroidx/appcompat/app/AlertController;->mIconView Landroid/widget/ImageView;
+	4       (0000000e) if-eqz               v0, +e
+
+setIcon-BB@0x12 : [ setIcon-BB@0x16 setIcon-BB@0x2c ]
+	5       (00000012) if-eqz               v3, +d
+
+setIcon-BB@0x16 : [ setIcon-BB@0x2a ]
+	6       (00000016) iget-object          v0, v2, Landroidx/appcompat/app/AlertController;->mIconView Landroid/widget/ImageView;
+	7       (0000001a) invoke-virtual       v0, v1, Landroid/widget/ImageView;->setVisibility(I)V
+	8       (00000020) iget-object          v0, v2, Landroidx/appcompat/app/AlertController;->mIconView Landroid/widget/ImageView;
+	9       (00000024) invoke-virtual       v0, v3, Landroid/widget/ImageView;->setImageDrawable(Landroid/graphics/drawable/Drawable;)V
+
+setIcon-BB@0x2a : 
+	10      (0000002a) return-void          
+
+setIcon-BB@0x2c : [ setIcon-BB@0x2a ]
+	11      (0000002c) iget-object          v0, v2, Landroidx/appcompat/app/AlertController;->mIconView Landroid/widget/ImageView;
+	12      (00000030) const/16             v1, 8
+	13      (00000034) invoke-virtual       v0, v1, Landroid/widget/ImageView;->setVisibility(I)V
+	14      (0000003a) goto                 -8
+

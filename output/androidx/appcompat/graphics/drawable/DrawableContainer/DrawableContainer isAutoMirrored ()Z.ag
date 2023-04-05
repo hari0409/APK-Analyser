@@ -1,0 +1,12 @@
+# Landroidx/appcompat/graphics/drawable/DrawableContainer;->isAutoMirrored()Z [access_flags=public]
+#
+# Parameters:
+# local registers: v0...v1
+#
+# - return:boolean
+
+isAutoMirrored-BB@0x0 : 
+	0       (00000000) iget-object          v0, v1, Landroidx/appcompat/graphics/drawable/DrawableContainer;->mDrawableContainerState Landroidx/appcompat/graphics/drawable/DrawableContainer$DrawableContainerState;
+	1       (00000004) iget-boolean         v0, v0, Landroidx/appcompat/graphics/drawable/DrawableContainer$DrawableContainerState;->mAutoMirrored Z
+	2       (00000008) return               v0
+

@@ -1,0 +1,36 @@
+# Landroidx/appcompat/widget/TintTypedArray;->getDrawableIfKnown(I)Landroid/graphics/drawable/Drawable; [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v4
+# - v5:int
+#
+# - return:android.graphics.drawable.Drawable
+
+getDrawableIfKnown-BB@0x0 : [ getDrawableIfKnown-BB@0x10 getDrawableIfKnown-BB@0x3a ]
+	0       (00000000) iget-object          v1, v4, Landroidx/appcompat/widget/TintTypedArray;->mWrapped Landroid/content/res/TypedArray;
+	1       (00000004) invoke-virtual       v1, v5, Landroid/content/res/TypedArray;->hasValue(I)Z
+	2       (0000000a) move-result          v1
+	3       (0000000c) if-eqz               v1, +17
+
+getDrawableIfKnown-BB@0x10 : [ getDrawableIfKnown-BB@0x22 getDrawableIfKnown-BB@0x3a ]
+	4       (00000010) iget-object          v1, v4, Landroidx/appcompat/widget/TintTypedArray;->mWrapped Landroid/content/res/TypedArray;
+	5       (00000014) const/4              v2, 0
+	6       (00000016) invoke-virtual       v1, v5, v2, Landroid/content/res/TypedArray;->getResourceId(I I)I
+	7       (0000001c) move-result          v0
+	8       (0000001e) if-eqz               v0, +e
+
+getDrawableIfKnown-BB@0x22 : [ getDrawableIfKnown-BB@0x38 ]
+	9       (00000022) invoke-static        Landroidx/appcompat/widget/AppCompatDrawableManager;->get()Landroidx/appcompat/widget/AppCompatDrawableManager;
+	10      (00000028) move-result-object   v1
+	11      (0000002a) iget-object          v2, v4, Landroidx/appcompat/widget/TintTypedArray;->mContext Landroid/content/Context;
+	12      (0000002e) const/4              v3, 1
+	13      (00000030) invoke-virtual       v1, v2, v0, v3, Landroidx/appcompat/widget/AppCompatDrawableManager;->getDrawable(Landroid/content/Context; I Z)Landroid/graphics/drawable/Drawable;
+	14      (00000036) move-result-object   v1
+
+getDrawableIfKnown-BB@0x38 : 
+	15      (00000038) return-object        v1
+
+getDrawableIfKnown-BB@0x3a : [ getDrawableIfKnown-BB@0x38 ]
+	16      (0000003a) const/4              v1, 0
+	17      (0000003c) goto                 -2
+

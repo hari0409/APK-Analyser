@@ -1,0 +1,48 @@
+# Lcom/afwsamples/testdpc/profilepolicy/apprestrictions/ManagedConfigurationsFragment;->onCreate(Landroid/os/Bundle;)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:android.os.Bundle
+#
+# - return:void
+
+onCreate-BB@0x0 : [ onCreate-BB@0x5e onCreate-BB@0x66 ]
+	0       (00000000) invoke-super         v2, v3, Lcom/afwsamples/testdpc/common/ManageAppFragment;->onCreate(Landroid/os/Bundle;)V
+	1       (00000006) const/4              v0, 1
+	2       (00000008) invoke-virtual       v2, v0, Lcom/afwsamples/testdpc/profilepolicy/apprestrictions/ManagedConfigurationsFragment;->setRetainInstance(Z)V
+	3       (0000000e) invoke-virtual       v2, Lcom/afwsamples/testdpc/profilepolicy/apprestrictions/ManagedConfigurationsFragment;->getActivity()Landroid/app/Activity;
+	4       (00000014) move-result-object   v0
+	5       (00000016) const-string         v1, 'device_policy'
+	6       (0000001a) invoke-virtual       v0, v1, Landroid/app/Activity;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
+	7       (00000020) move-result-object   v0
+	8       (00000022) check-cast           v0, Landroid/app/admin/DevicePolicyManager;
+	9       (00000026) iput-object          v0, v2, Lcom/afwsamples/testdpc/profilepolicy/apprestrictions/ManagedConfigurationsFragment;->mDevicePolicyManager Landroid/app/admin/DevicePolicyManager;
+	10      (0000002a) invoke-virtual       v2, Lcom/afwsamples/testdpc/profilepolicy/apprestrictions/ManagedConfigurationsFragment;->getActivity()Landroid/app/Activity;
+	11      (00000030) move-result-object   v0
+	12      (00000032) const-string         v1, 'restrictions'
+	13      (00000036) invoke-virtual       v0, v1, Landroid/app/Activity;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
+	14      (0000003c) move-result-object   v0
+	15      (0000003e) check-cast           v0, Landroid/content/RestrictionsManager;
+	16      (00000042) iput-object          v0, v2, Lcom/afwsamples/testdpc/profilepolicy/apprestrictions/ManagedConfigurationsFragment;->mRestrictionsManager Landroid/content/RestrictionsManager;
+	17      (00000046) invoke-virtual       v2, Lcom/afwsamples/testdpc/profilepolicy/apprestrictions/ManagedConfigurationsFragment;->getActivity()Landroid/app/Activity;
+	18      (0000004c) move-result-object   v0
+	19      (0000004e) const-string         v1, 'delegation-app-restrictions'
+	20      (00000052) invoke-static        v0, v1, Lcom/afwsamples/testdpc/common/Util;->hasDelegation(Landroid/content/Context; Ljava/lang/String;)Z
+	21      (00000058) move-result          v0
+	22      (0000005a) if-eqz               v0, +6
+
+onCreate-BB@0x5e : [ onCreate-BB@0x64 ]
+	23      (0000005e) const/4              v0, 0
+	24      (00000060) iput-object          v0, v2, Lcom/afwsamples/testdpc/profilepolicy/apprestrictions/ManagedConfigurationsFragment;->mAdminComponent Landroid/content/ComponentName;
+
+onCreate-BB@0x64 : 
+	25      (00000064) return-void          
+
+onCreate-BB@0x66 : [ onCreate-BB@0x64 ]
+	26      (00000066) invoke-virtual       v2, Lcom/afwsamples/testdpc/profilepolicy/apprestrictions/ManagedConfigurationsFragment;->getActivity()Landroid/app/Activity;
+	27      (0000006c) move-result-object   v0
+	28      (0000006e) invoke-static        v0, Lcom/afwsamples/testdpc/DeviceAdminReceiver;->getComponentName(Landroid/content/Context;)Landroid/content/ComponentName;
+	29      (00000074) move-result-object   v0
+	30      (00000076) iput-object          v0, v2, Lcom/afwsamples/testdpc/profilepolicy/apprestrictions/ManagedConfigurationsFragment;->mAdminComponent Landroid/content/ComponentName;
+	31      (0000007a) goto                 -b
+

@@ -1,0 +1,21 @@
+# Landroidx/appcompat/view/menu/MenuItemImpl;->appendModifier(Ljava/lang/StringBuilder; I I Ljava/lang/String;)V [access_flags=private static]
+#
+# Parameters:
+# - local registers: v0...v0
+# - v1:java.lang.StringBuilder
+# - v2:int
+# - v3:int
+# - v4:java.lang.String
+#
+# - return:void
+
+appendModifier-BB@0x0 : [ appendModifier-BB@0x8 appendModifier-BB@0xe ]
+	0       (00000000) and-int              v0, v2, v3
+	1       (00000004) if-ne                v0, v3, +5
+
+appendModifier-BB@0x8 : [ appendModifier-BB@0xe ]
+	2       (00000008) invoke-virtual       v1, v4, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+appendModifier-BB@0xe : 
+	3       (0000000e) return-void          
+

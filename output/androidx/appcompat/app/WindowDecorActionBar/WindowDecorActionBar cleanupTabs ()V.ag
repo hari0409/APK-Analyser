@@ -1,0 +1,30 @@
+# Landroidx/appcompat/app/WindowDecorActionBar;->cleanupTabs()V [access_flags=private]
+#
+# Parameters:
+# local registers: v0...v1
+#
+# - return:void
+
+cleanupTabs-BB@0x0 : [ cleanupTabs-BB@0x8 cleanupTabs-BB@0x10 ]
+	0       (00000000) iget-object          v0, v1, Landroidx/appcompat/app/WindowDecorActionBar;->mSelectedTab Landroidx/appcompat/app/WindowDecorActionBar$TabImpl;
+	1       (00000004) if-eqz               v0, +6
+
+cleanupTabs-BB@0x8 : [ cleanupTabs-BB@0x10 ]
+	2       (00000008) const/4              v0, 0
+	3       (0000000a) invoke-virtual       v1, v0, Landroidx/appcompat/app/WindowDecorActionBar;->selectTab(Landroidx/appcompat/app/ActionBar$Tab;)V
+
+cleanupTabs-BB@0x10 : [ cleanupTabs-BB@0x22 cleanupTabs-BB@0x2c ]
+	4       (00000010) iget-object          v0, v1, Landroidx/appcompat/app/WindowDecorActionBar;->mTabs Ljava/util/ArrayList;
+	5       (00000014) invoke-virtual       v0, Ljava/util/ArrayList;->clear()V
+	6       (0000001a) iget-object          v0, v1, Landroidx/appcompat/app/WindowDecorActionBar;->mTabScrollView Landroidx/appcompat/widget/ScrollingTabContainerView;
+	7       (0000001e) if-eqz               v0, +7
+
+cleanupTabs-BB@0x22 : [ cleanupTabs-BB@0x2c ]
+	8       (00000022) iget-object          v0, v1, Landroidx/appcompat/app/WindowDecorActionBar;->mTabScrollView Landroidx/appcompat/widget/ScrollingTabContainerView;
+	9       (00000026) invoke-virtual       v0, Landroidx/appcompat/widget/ScrollingTabContainerView;->removeAllTabs()V
+
+cleanupTabs-BB@0x2c : 
+	10      (0000002c) const/4              v0, -1
+	11      (0000002e) iput                 v0, v1, Landroidx/appcompat/app/WindowDecorActionBar;->mSavedTabPosition I
+	12      (00000032) return-void          
+

@@ -1,0 +1,32 @@
+# Landroidx/appcompat/widget/SearchView;->onItemClicked(I I Ljava/lang/String;)Z [access_flags=]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:int
+# - v4:int
+# - v5:java.lang.String
+#
+# - return:boolean
+
+onItemClicked-BB@0x0 : [ onItemClicked-BB@0xa onItemClicked-BB@0x1a ]
+	0       (00000000) const/4              v0, 0
+	1       (00000002) iget-object          v1, v2, Landroidx/appcompat/widget/SearchView;->mOnSuggestionListener Landroidx/appcompat/widget/SearchView$OnSuggestionListener;
+	2       (00000006) if-eqz               v1, +a
+
+onItemClicked-BB@0xa : [ onItemClicked-BB@0x1a onItemClicked-BB@0x34 ]
+	3       (0000000a) iget-object          v1, v2, Landroidx/appcompat/widget/SearchView;->mOnSuggestionListener Landroidx/appcompat/widget/SearchView$OnSuggestionListener;
+	4       (0000000e) invoke-interface     v1, v3, Landroidx/appcompat/widget/SearchView$OnSuggestionListener;->onSuggestionClick(I)Z
+	5       (00000014) move-result          v1
+	6       (00000016) if-nez               v1, +f
+
+onItemClicked-BB@0x1a : [ onItemClicked-BB@0x34 ]
+	7       (0000001a) const/4              v1, 0
+	8       (0000001c) invoke-direct        v2, v3, v0, v1, Landroidx/appcompat/widget/SearchView;->launchSuggestion(I I Ljava/lang/String;)Z
+	9       (00000022) iget-object          v1, v2, Landroidx/appcompat/widget/SearchView;->mSearchSrcTextView Landroidx/appcompat/widget/SearchView$SearchAutoComplete;
+	10      (00000026) invoke-virtual       v1, v0, Landroidx/appcompat/widget/SearchView$SearchAutoComplete;->setImeVisibility(Z)V
+	11      (0000002c) invoke-direct        v2, Landroidx/appcompat/widget/SearchView;->dismissSuggestions()V
+	12      (00000032) const/4              v0, 1
+
+onItemClicked-BB@0x34 : 
+	13      (00000034) return               v0
+

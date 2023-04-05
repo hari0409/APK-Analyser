@@ -1,0 +1,25 @@
+# Lcom/afwsamples/testdpc/profilepolicy/crossprofilewidgetprovider/ManageCrossProfileWidgetProviderUtil;-><init>(Landroid/content/Context;)V [access_flags=private constructor]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:android.content.Context
+#
+# - return:void
+
+<init>-BB@0x0 : 
+	0       (00000000) invoke-direct        v2, Ljava/lang/Object;-><init>()V
+	1       (00000006) invoke-virtual       v3, Landroid/content/Context;->getApplicationContext()Landroid/content/Context;
+	2       (0000000c) move-result-object   v0
+	3       (0000000e) iput-object          v0, v2, Lcom/afwsamples/testdpc/profilepolicy/crossprofilewidgetprovider/ManageCrossProfileWidgetProviderUtil;->mContext Landroid/content/Context;
+	4       (00000012) iget-object          v0, v2, Lcom/afwsamples/testdpc/profilepolicy/crossprofilewidgetprovider/ManageCrossProfileWidgetProviderUtil;->mContext Landroid/content/Context;
+	5       (00000016) invoke-static        v0, Landroid/appwidget/AppWidgetManager;->getInstance(Landroid/content/Context;)Landroid/appwidget/AppWidgetManager;
+	6       (0000001c) move-result-object   v0
+	7       (0000001e) iput-object          v0, v2, Lcom/afwsamples/testdpc/profilepolicy/crossprofilewidgetprovider/ManageCrossProfileWidgetProviderUtil;->mAppWidgetManager Landroid/appwidget/AppWidgetManager;
+	8       (00000022) iget-object          v0, v2, Lcom/afwsamples/testdpc/profilepolicy/crossprofilewidgetprovider/ManageCrossProfileWidgetProviderUtil;->mContext Landroid/content/Context;
+	9       (00000026) const-string         v1, 'device_policy'
+	10      (0000002a) invoke-virtual       v0, v1, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
+	11      (00000030) move-result-object   v0
+	12      (00000032) check-cast           v0, Landroid/app/admin/DevicePolicyManager;
+	13      (00000036) iput-object          v0, v2, Lcom/afwsamples/testdpc/profilepolicy/crossprofilewidgetprovider/ManageCrossProfileWidgetProviderUtil;->mDevicePolicyManager Landroid/app/admin/DevicePolicyManager;
+	14      (0000003a) return-void          
+

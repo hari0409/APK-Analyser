@@ -1,0 +1,15 @@
+# Landroidx/appcompat/widget/SwitchCompat;->setThumbTintMode(Landroid/graphics/PorterDuff$Mode;)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:android.graphics.PorterDuff$Mode
+#
+# - return:void
+
+setThumbTintMode-BB@0x0 : 
+	0       (00000000) iput-object          v2, v1, Landroidx/appcompat/widget/SwitchCompat;->mThumbTintMode Landroid/graphics/PorterDuff$Mode;
+	1       (00000004) const/4              v0, 1
+	2       (00000006) iput-boolean         v0, v1, Landroidx/appcompat/widget/SwitchCompat;->mHasThumbTintMode Z
+	3       (0000000a) invoke-direct        v1, Landroidx/appcompat/widget/SwitchCompat;->applyThumbTint()V
+	4       (00000010) return-void          
+

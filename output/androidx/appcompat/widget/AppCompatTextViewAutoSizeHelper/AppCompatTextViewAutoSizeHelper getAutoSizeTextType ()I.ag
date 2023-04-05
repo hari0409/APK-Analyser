@@ -1,0 +1,11 @@
+# Landroidx/appcompat/widget/AppCompatTextViewAutoSizeHelper;->getAutoSizeTextType()I [access_flags=]
+#
+# Parameters:
+# local registers: v0...v1
+#
+# - return:int
+
+getAutoSizeTextType-BB@0x0 : 
+	0       (00000000) iget                 v0, v1, Landroidx/appcompat/widget/AppCompatTextViewAutoSizeHelper;->mAutoSizeTextType I
+	1       (00000004) return               v0
+

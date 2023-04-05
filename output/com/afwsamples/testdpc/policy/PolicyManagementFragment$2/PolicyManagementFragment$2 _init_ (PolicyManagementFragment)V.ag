@@ -1,0 +1,13 @@
+# Lcom/afwsamples/testdpc/policy/PolicyManagementFragment$2;-><init>(Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;)V [access_flags=constructor]
+#
+# Parameters:
+# - local registers: v0...v0
+# - v1:com.afwsamples.testdpc.policy.PolicyManagementFragment
+#
+# - return:void
+
+<init>-BB@0x0 : 
+	0       (00000000) iput-object          v1, v0, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment$2;->this$0 Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;
+	1       (00000004) invoke-direct        v0, Landroid/app/admin/DevicePolicyManager$InstallSystemUpdateCallback;-><init>()V
+	2       (0000000a) return-void          
+

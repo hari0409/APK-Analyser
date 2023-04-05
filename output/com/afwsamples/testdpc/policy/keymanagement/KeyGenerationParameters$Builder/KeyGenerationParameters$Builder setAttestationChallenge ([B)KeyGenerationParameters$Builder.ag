@@ -1,0 +1,12 @@
+# Lcom/afwsamples/testdpc/policy/keymanagement/KeyGenerationParameters$Builder;->setAttestationChallenge([B)Lcom/afwsamples/testdpc/policy/keymanagement/KeyGenerationParameters$Builder; [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v0
+# - v1:byte[]
+#
+# - return:com.afwsamples.testdpc.policy.keymanagement.KeyGenerationParameters$Builder
+
+setAttestationChallenge-BB@0x0 : 
+	0       (00000000) iput-object          v1, v0, Lcom/afwsamples/testdpc/policy/keymanagement/KeyGenerationParameters$Builder;->mAttestationChallenge [B
+	1       (00000004) return-object        v0
+

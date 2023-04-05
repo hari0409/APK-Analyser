@@ -1,0 +1,29 @@
+# Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->lambda$setPermittedInputMethodsOnParent$160$PolicyManagementFragment(Lcom/afwsamples/testdpc/DevicePolicyManagerGateway; Landroid/view/View;)V [access_flags=final synthetic]
+#
+# Parameters:
+# - local registers: v0...v3
+# - v4:com.afwsamples.testdpc.DevicePolicyManagerGateway
+# - v5:android.view.View
+#
+# - return:void
+
+lambda$setPermittedInputMethodsOnParent$160$PolicyManagementFragment-BB@0x0 : [ lambda$setPermittedInputMethodsOnParent$160$PolicyManagementFragment-BB@0x16 lambda$setPermittedInputMethodsOnParent$160$PolicyManagementFragment-BB@0x2a ]
+	0       (00000000) new-instance         v1, Ljava/util/ArrayList;
+	1       (00000004) invoke-direct        v1, Ljava/util/ArrayList;-><init>()V
+	2       (0000000a) invoke-interface     v4, v1, Lcom/afwsamples/testdpc/DevicePolicyManagerGateway;->setPermittedInputMethods(Ljava/util/List;)Z
+	3       (00000010) move-result          v0
+	4       (00000012) if-eqz               v0, +c
+
+lambda$setPermittedInputMethodsOnParent$160$PolicyManagementFragment-BB@0x16 : [ lambda$setPermittedInputMethodsOnParent$160$PolicyManagementFragment-BB@0x1c ]
+	5       (00000016) const                v1, 2131690290 # [1.9009619440829876e+38]
+
+lambda$setPermittedInputMethodsOnParent$160$PolicyManagementFragment-BB@0x1c : 
+	6       (0000001c) const/4              v2, 0
+	7       (0000001e) new-array            v2, v2, [Ljava/lang/Object;
+	8       (00000022) invoke-direct        v3, v1, v2, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->showToast(I [Ljava/lang/Object;)V
+	9       (00000028) return-void          
+
+lambda$setPermittedInputMethodsOnParent$160$PolicyManagementFragment-BB@0x2a : [ lambda$setPermittedInputMethodsOnParent$160$PolicyManagementFragment-BB@0x1c ]
+	10      (0000002a) const                v1, 2131689532 # [1.900808203418192e+38]
+	11      (00000030) goto                 -a
+

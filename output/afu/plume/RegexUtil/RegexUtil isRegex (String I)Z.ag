@@ -1,0 +1,31 @@
+# Lafu/plume/RegexUtil;->isRegex(Ljava/lang/String; I)Z [access_flags=public static]
+#
+# Parameters:
+# - local registers: v0...v3
+# - v4:java.lang.String
+# - v5:int
+#
+# - return:boolean
+
+isRegex-BB@0x0 : [ isRegex-BB@0x2 ]
+	0       (00000000) const/4              v2, 0
+
+isRegex-BB@0x2 : [ isRegex-BB@0x16 isRegex-BB@0x18 ]
+	1       (00000002) invoke-static        v4, Ljava/util/regex/Pattern;->compile(Ljava/lang/String;)Ljava/util/regex/Pattern;
+	2       (00000008) move-result-object   v1
+	3       (0000000a) invoke-static        v1, Lafu/plume/RegexUtil;->getGroupCount(Ljava/util/regex/Pattern;)I
+	4       (00000010) move-result          v3
+	5       (00000012) if-lt                v3, v5, +3
+	2:7
+	(Ljava/util/regex/PatternSyntaxException; -> 1a isRegex-BB@0x1a)
+
+isRegex-BB@0x16 : [ isRegex-BB@0x18 ]
+	6       (00000016) const/4              v2, 1
+
+isRegex-BB@0x18 : 
+	7       (00000018) return               v2
+
+isRegex-BB@0x1a : [ isRegex-BB@0x18 ]
+	8       (0000001a) move-exception       v0
+	9       (0000001c) goto                 -2
+

@@ -1,0 +1,26 @@
+# Lcom/afwsamples/testdpc/common/StringArrayTypeInputAdapter$1;->onClick(Landroid/view/View;)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:android.view.View
+#
+# - return:void
+
+onClick-BB@0x0 : [ onClick-BB@0x12 onClick-BB@0x2e ]
+	0       (00000000) iget-object          v1, v2, Lcom/afwsamples/testdpc/common/StringArrayTypeInputAdapter$1;->val$holder Lcom/afwsamples/testdpc/common/StringArrayTypeInputAdapter$ViewHolder;
+	1       (00000004) invoke-virtual       v1, Lcom/afwsamples/testdpc/common/StringArrayTypeInputAdapter$ViewHolder;->getAdapterPosition()I
+	2       (0000000a) move-result          v0
+	3       (0000000c) const/4              v1, -1
+	4       (0000000e) if-eq                v0, v1, +10
+
+onClick-BB@0x12 : [ onClick-BB@0x2e ]
+	5       (00000012) iget-object          v1, v2, Lcom/afwsamples/testdpc/common/StringArrayTypeInputAdapter$1;->this$0 Lcom/afwsamples/testdpc/common/StringArrayTypeInputAdapter;
+	6       (00000016) invoke-static        v1, Lcom/afwsamples/testdpc/common/StringArrayTypeInputAdapter;->access$000(Lcom/afwsamples/testdpc/common/StringArrayTypeInputAdapter;)Ljava/util/List;
+	7       (0000001c) move-result-object   v1
+	8       (0000001e) invoke-interface     v1, v0, Ljava/util/List;->remove(I)Ljava/lang/Object;
+	9       (00000024) iget-object          v1, v2, Lcom/afwsamples/testdpc/common/StringArrayTypeInputAdapter$1;->this$0 Lcom/afwsamples/testdpc/common/StringArrayTypeInputAdapter;
+	10      (00000028) invoke-virtual       v1, v0, Lcom/afwsamples/testdpc/common/StringArrayTypeInputAdapter;->notifyItemRemoved(I)V
+
+onClick-BB@0x2e : 
+	11      (0000002e) return-void          
+

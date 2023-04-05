@@ -1,0 +1,122 @@
+# Landroidx/appcompat/widget/AppCompatDrawableManager;->tintDrawable(Landroid/content/Context; I Z Landroid/graphics/drawable/Drawable;)Landroid/graphics/drawable/Drawable; [access_flags=private]
+#
+# Parameters:
+# - local registers: v0...v9
+# - v10:android.content.Context
+# - v11:int
+# - v12:boolean
+# - v13:android.graphics.drawable.Drawable
+#
+# - return:android.graphics.drawable.Drawable
+
+tintDrawable-BB@0x0 : [ tintDrawable-BB@0x1c tintDrawable-BB@0x52 ]
+	0       (00000000) const                v8, 16908303 # [2.3877271040031645e-38]
+	1       (00000006) const                v7, 16908301 # [2.387726543483779e-38]
+	2       (0000000c) const/high16         v5, 258 # [2.3877229001077715e-38]
+	3       (00000010) invoke-virtual       v9, v10, v11, Landroidx/appcompat/widget/AppCompatDrawableManager;->getTintList(Landroid/content/Context; I)Landroid/content/res/ColorStateList;
+	4       (00000016) move-result-object   v1
+	5       (00000018) if-eqz               v1, +1d
+
+tintDrawable-BB@0x1c : [ tintDrawable-BB@0x28 tintDrawable-BB@0x30 ]
+	6       (0000001c) invoke-static        v13, Landroidx/appcompat/widget/DrawableUtils;->canSafelyMutateDrawable(Landroid/graphics/drawable/Drawable;)Z
+	7       (00000022) move-result          v4
+	8       (00000024) if-eqz               v4, +6
+
+tintDrawable-BB@0x28 : [ tintDrawable-BB@0x30 ]
+	9       (00000028) invoke-virtual       v13, Landroid/graphics/drawable/Drawable;->mutate()Landroid/graphics/drawable/Drawable;
+	10      (0000002e) move-result-object   v13
+
+tintDrawable-BB@0x30 : [ tintDrawable-BB@0x4a tintDrawable-BB@0x50 ]
+	11      (00000030) invoke-static        v13, Landroidx/core/graphics/drawable/DrawableCompat;->wrap(Landroid/graphics/drawable/Drawable;)Landroid/graphics/drawable/Drawable;
+	12      (00000036) move-result-object   v13
+	13      (00000038) invoke-static        v13, v1, Landroidx/core/graphics/drawable/DrawableCompat;->setTintList(Landroid/graphics/drawable/Drawable; Landroid/content/res/ColorStateList;)V
+	14      (0000003e) invoke-static        v11, Landroidx/appcompat/widget/AppCompatDrawableManager;->getTintMode(I)Landroid/graphics/PorterDuff$Mode;
+	15      (00000044) move-result-object   v2
+	16      (00000046) if-eqz               v2, +5
+
+tintDrawable-BB@0x4a : [ tintDrawable-BB@0x50 ]
+	17      (0000004a) invoke-static        v13, v2, Landroidx/core/graphics/drawable/DrawableCompat;->setTintMode(Landroid/graphics/drawable/Drawable; Landroid/graphics/PorterDuff$Mode;)V
+
+tintDrawable-BB@0x50 : 
+	18      (00000050) return-object        v13
+
+tintDrawable-BB@0x52 : [ tintDrawable-BB@0x5a tintDrawable-BB@0xbc ]
+	19      (00000052) sget                 v4, Landroidx/appcompat/R$drawable;->abc_seekbar_track_material I
+	20      (00000056) if-ne                v11, v4, +33
+
+tintDrawable-BB@0x5a : [ tintDrawable-BB@0x50 ]
+	21      (0000005a) move-object          v0, v13
+	22      (0000005c) check-cast           v0, Landroid/graphics/drawable/LayerDrawable;
+	23      (00000060) invoke-virtual       v0, v5, Landroid/graphics/drawable/LayerDrawable;->findDrawableByLayerId(I)Landroid/graphics/drawable/Drawable;
+	24      (00000066) move-result-object   v4
+	25      (00000068) sget                 v5, Landroidx/appcompat/R$attr;->colorControlNormal I
+	26      (0000006c) invoke-static        v10, v5, Landroidx/appcompat/widget/ThemeUtils;->getThemeAttrColor(Landroid/content/Context; I)I
+	27      (00000072) move-result          v5
+	28      (00000074) sget-object          v6, Landroidx/appcompat/widget/AppCompatDrawableManager;->DEFAULT_MODE Landroid/graphics/PorterDuff$Mode;
+	29      (00000078) invoke-static        v4, v5, v6, Landroidx/appcompat/widget/AppCompatDrawableManager;->setPorterDuffColorFilter(Landroid/graphics/drawable/Drawable; I Landroid/graphics/PorterDuff$Mode;)V
+	30      (0000007e) invoke-virtual       v0, v8, Landroid/graphics/drawable/LayerDrawable;->findDrawableByLayerId(I)Landroid/graphics/drawable/Drawable;
+	31      (00000084) move-result-object   v4
+	32      (00000086) sget                 v5, Landroidx/appcompat/R$attr;->colorControlNormal I
+	33      (0000008a) invoke-static        v10, v5, Landroidx/appcompat/widget/ThemeUtils;->getThemeAttrColor(Landroid/content/Context; I)I
+	34      (00000090) move-result          v5
+	35      (00000092) sget-object          v6, Landroidx/appcompat/widget/AppCompatDrawableManager;->DEFAULT_MODE Landroid/graphics/PorterDuff$Mode;
+	36      (00000096) invoke-static        v4, v5, v6, Landroidx/appcompat/widget/AppCompatDrawableManager;->setPorterDuffColorFilter(Landroid/graphics/drawable/Drawable; I Landroid/graphics/PorterDuff$Mode;)V
+	37      (0000009c) invoke-virtual       v0, v7, Landroid/graphics/drawable/LayerDrawable;->findDrawableByLayerId(I)Landroid/graphics/drawable/Drawable;
+	38      (000000a2) move-result-object   v4
+	39      (000000a4) sget                 v5, Landroidx/appcompat/R$attr;->colorControlActivated I
+	40      (000000a8) invoke-static        v10, v5, Landroidx/appcompat/widget/ThemeUtils;->getThemeAttrColor(Landroid/content/Context; I)I
+	41      (000000ae) move-result          v5
+	42      (000000b0) sget-object          v6, Landroidx/appcompat/widget/AppCompatDrawableManager;->DEFAULT_MODE Landroid/graphics/PorterDuff$Mode;
+	43      (000000b4) invoke-static        v4, v5, v6, Landroidx/appcompat/widget/AppCompatDrawableManager;->setPorterDuffColorFilter(Landroid/graphics/drawable/Drawable; I Landroid/graphics/PorterDuff$Mode;)V
+	44      (000000ba) goto                 -35
+
+tintDrawable-BB@0xbc : [ tintDrawable-BB@0xc4 tintDrawable-BB@0xd4 ]
+	45      (000000bc) sget                 v4, Landroidx/appcompat/R$drawable;->abc_ratingbar_material I
+	46      (000000c0) if-eq                v11, v4, +a
+
+tintDrawable-BB@0xc4 : [ tintDrawable-BB@0xcc tintDrawable-BB@0xd4 ]
+	47      (000000c4) sget                 v4, Landroidx/appcompat/R$drawable;->abc_ratingbar_indicator_material I
+	48      (000000c8) if-eq                v11, v4, +6
+
+tintDrawable-BB@0xcc : [ tintDrawable-BB@0xd4 tintDrawable-BB@0x136 ]
+	49      (000000cc) sget                 v4, Landroidx/appcompat/R$drawable;->abc_ratingbar_small_material I
+	50      (000000d0) if-ne                v11, v4, +33
+
+tintDrawable-BB@0xd4 : [ tintDrawable-BB@0x50 ]
+	51      (000000d4) move-object          v0, v13
+	52      (000000d6) check-cast           v0, Landroid/graphics/drawable/LayerDrawable;
+	53      (000000da) invoke-virtual       v0, v5, Landroid/graphics/drawable/LayerDrawable;->findDrawableByLayerId(I)Landroid/graphics/drawable/Drawable;
+	54      (000000e0) move-result-object   v4
+	55      (000000e2) sget                 v5, Landroidx/appcompat/R$attr;->colorControlNormal I
+	56      (000000e6) invoke-static        v10, v5, Landroidx/appcompat/widget/ThemeUtils;->getDisabledThemeAttrColor(Landroid/content/Context; I)I
+	57      (000000ec) move-result          v5
+	58      (000000ee) sget-object          v6, Landroidx/appcompat/widget/AppCompatDrawableManager;->DEFAULT_MODE Landroid/graphics/PorterDuff$Mode;
+	59      (000000f2) invoke-static        v4, v5, v6, Landroidx/appcompat/widget/AppCompatDrawableManager;->setPorterDuffColorFilter(Landroid/graphics/drawable/Drawable; I Landroid/graphics/PorterDuff$Mode;)V
+	60      (000000f8) invoke-virtual       v0, v8, Landroid/graphics/drawable/LayerDrawable;->findDrawableByLayerId(I)Landroid/graphics/drawable/Drawable;
+	61      (000000fe) move-result-object   v4
+	62      (00000100) sget                 v5, Landroidx/appcompat/R$attr;->colorControlActivated I
+	63      (00000104) invoke-static        v10, v5, Landroidx/appcompat/widget/ThemeUtils;->getThemeAttrColor(Landroid/content/Context; I)I
+	64      (0000010a) move-result          v5
+	65      (0000010c) sget-object          v6, Landroidx/appcompat/widget/AppCompatDrawableManager;->DEFAULT_MODE Landroid/graphics/PorterDuff$Mode;
+	66      (00000110) invoke-static        v4, v5, v6, Landroidx/appcompat/widget/AppCompatDrawableManager;->setPorterDuffColorFilter(Landroid/graphics/drawable/Drawable; I Landroid/graphics/PorterDuff$Mode;)V
+	67      (00000116) invoke-virtual       v0, v7, Landroid/graphics/drawable/LayerDrawable;->findDrawableByLayerId(I)Landroid/graphics/drawable/Drawable;
+	68      (0000011c) move-result-object   v4
+	69      (0000011e) sget                 v5, Landroidx/appcompat/R$attr;->colorControlActivated I
+	70      (00000122) invoke-static        v10, v5, Landroidx/appcompat/widget/ThemeUtils;->getThemeAttrColor(Landroid/content/Context; I)I
+	71      (00000128) move-result          v5
+	72      (0000012a) sget-object          v6, Landroidx/appcompat/widget/AppCompatDrawableManager;->DEFAULT_MODE Landroid/graphics/PorterDuff$Mode;
+	73      (0000012e) invoke-static        v4, v5, v6, Landroidx/appcompat/widget/AppCompatDrawableManager;->setPorterDuffColorFilter(Landroid/graphics/drawable/Drawable; I Landroid/graphics/PorterDuff$Mode;)V
+	74      (00000134) goto                 -72
+
+tintDrawable-BB@0x136 : [ tintDrawable-BB@0x142 tintDrawable-BB@0x50 ]
+	75      (00000136) invoke-static        v10, v11, v13, Landroidx/appcompat/widget/AppCompatDrawableManager;->tintDrawableUsingColorFilter(Landroid/content/Context; I Landroid/graphics/drawable/Drawable;)Z
+	76      (0000013c) move-result          v3
+	77      (0000013e) if-nez               v3, -77
+
+tintDrawable-BB@0x142 : [ tintDrawable-BB@0x146 tintDrawable-BB@0x50 ]
+	78      (00000142) if-eqz               v12, -79
+
+tintDrawable-BB@0x146 : [ tintDrawable-BB@0x50 ]
+	79      (00000146) const/4              v13, 0
+	80      (00000148) goto                 -7c
+

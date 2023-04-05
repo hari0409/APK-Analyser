@@ -1,0 +1,31 @@
+# Landroidx/appcompat/widget/ActionMenuPresenter;->getOverflowIcon()Landroid/graphics/drawable/Drawable; [access_flags=public]
+#
+# Parameters:
+# local registers: v0...v1
+#
+# - return:android.graphics.drawable.Drawable
+
+getOverflowIcon-BB@0x0 : [ getOverflowIcon-BB@0x8 getOverflowIcon-BB@0x16 ]
+	0       (00000000) iget-object          v0, v1, Landroidx/appcompat/widget/ActionMenuPresenter;->mOverflowButton Landroidx/appcompat/widget/ActionMenuPresenter$OverflowMenuButton;
+	1       (00000004) if-eqz               v0, +9
+
+getOverflowIcon-BB@0x8 : [ getOverflowIcon-BB@0x14 ]
+	2       (00000008) iget-object          v0, v1, Landroidx/appcompat/widget/ActionMenuPresenter;->mOverflowButton Landroidx/appcompat/widget/ActionMenuPresenter$OverflowMenuButton;
+	3       (0000000c) invoke-virtual       v0, Landroidx/appcompat/widget/ActionMenuPresenter$OverflowMenuButton;->getDrawable()Landroid/graphics/drawable/Drawable;
+	4       (00000012) move-result-object   v0
+
+getOverflowIcon-BB@0x14 : 
+	5       (00000014) return-object        v0
+
+getOverflowIcon-BB@0x16 : [ getOverflowIcon-BB@0x1e getOverflowIcon-BB@0x24 ]
+	6       (00000016) iget-boolean         v0, v1, Landroidx/appcompat/widget/ActionMenuPresenter;->mPendingOverflowIconSet Z
+	7       (0000001a) if-eqz               v0, +5
+
+getOverflowIcon-BB@0x1e : [ getOverflowIcon-BB@0x14 ]
+	8       (0000001e) iget-object          v0, v1, Landroidx/appcompat/widget/ActionMenuPresenter;->mPendingOverflowIcon Landroid/graphics/drawable/Drawable;
+	9       (00000022) goto                 -7
+
+getOverflowIcon-BB@0x24 : [ getOverflowIcon-BB@0x14 ]
+	10      (00000024) const/4              v0, 0
+	11      (00000026) goto                 -9
+

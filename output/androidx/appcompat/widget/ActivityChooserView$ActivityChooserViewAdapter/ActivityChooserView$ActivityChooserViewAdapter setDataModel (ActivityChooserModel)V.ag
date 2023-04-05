@@ -1,0 +1,45 @@
+# Landroidx/appcompat/widget/ActivityChooserView$ActivityChooserViewAdapter;->setDataModel(Landroidx/appcompat/widget/ActivityChooserModel;)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:androidx.appcompat.widget.ActivityChooserModel
+#
+# - return:void
+
+setDataModel-BB@0x0 : [ setDataModel-BB@0x14 setDataModel-BB@0x32 ]
+	0       (00000000) iget-object          v1, v2, Landroidx/appcompat/widget/ActivityChooserView$ActivityChooserViewAdapter;->this$0 Landroidx/appcompat/widget/ActivityChooserView;
+	1       (00000004) iget-object          v1, v1, Landroidx/appcompat/widget/ActivityChooserView;->mAdapter Landroidx/appcompat/widget/ActivityChooserView$ActivityChooserViewAdapter;
+	2       (00000008) invoke-virtual       v1, Landroidx/appcompat/widget/ActivityChooserView$ActivityChooserViewAdapter;->getDataModel()Landroidx/appcompat/widget/ActivityChooserModel;
+	3       (0000000e) move-result-object   v0
+	4       (00000010) if-eqz               v0, +11
+
+setDataModel-BB@0x14 : [ setDataModel-BB@0x24 setDataModel-BB@0x32 ]
+	5       (00000014) iget-object          v1, v2, Landroidx/appcompat/widget/ActivityChooserView$ActivityChooserViewAdapter;->this$0 Landroidx/appcompat/widget/ActivityChooserView;
+	6       (00000018) invoke-virtual       v1, Landroidx/appcompat/widget/ActivityChooserView;->isShown()Z
+	7       (0000001e) move-result          v1
+	8       (00000020) if-eqz               v1, +9
+
+setDataModel-BB@0x24 : [ setDataModel-BB@0x32 ]
+	9       (00000024) iget-object          v1, v2, Landroidx/appcompat/widget/ActivityChooserView$ActivityChooserViewAdapter;->this$0 Landroidx/appcompat/widget/ActivityChooserView;
+	10      (00000028) iget-object          v1, v1, Landroidx/appcompat/widget/ActivityChooserView;->mModelDataSetObserver Landroid/database/DataSetObserver;
+	11      (0000002c) invoke-virtual       v0, v1, Landroidx/appcompat/widget/ActivityChooserModel;->unregisterObserver(Ljava/lang/Object;)V
+
+setDataModel-BB@0x32 : [ setDataModel-BB@0x3a setDataModel-BB@0x58 ]
+	12      (00000032) iput-object          v3, v2, Landroidx/appcompat/widget/ActivityChooserView$ActivityChooserViewAdapter;->mDataModel Landroidx/appcompat/widget/ActivityChooserModel;
+	13      (00000036) if-eqz               v3, +11
+
+setDataModel-BB@0x3a : [ setDataModel-BB@0x4a setDataModel-BB@0x58 ]
+	14      (0000003a) iget-object          v1, v2, Landroidx/appcompat/widget/ActivityChooserView$ActivityChooserViewAdapter;->this$0 Landroidx/appcompat/widget/ActivityChooserView;
+	15      (0000003e) invoke-virtual       v1, Landroidx/appcompat/widget/ActivityChooserView;->isShown()Z
+	16      (00000044) move-result          v1
+	17      (00000046) if-eqz               v1, +9
+
+setDataModel-BB@0x4a : [ setDataModel-BB@0x58 ]
+	18      (0000004a) iget-object          v1, v2, Landroidx/appcompat/widget/ActivityChooserView$ActivityChooserViewAdapter;->this$0 Landroidx/appcompat/widget/ActivityChooserView;
+	19      (0000004e) iget-object          v1, v1, Landroidx/appcompat/widget/ActivityChooserView;->mModelDataSetObserver Landroid/database/DataSetObserver;
+	20      (00000052) invoke-virtual       v3, v1, Landroidx/appcompat/widget/ActivityChooserModel;->registerObserver(Ljava/lang/Object;)V
+
+setDataModel-BB@0x58 : 
+	21      (00000058) invoke-virtual       v2, Landroidx/appcompat/widget/ActivityChooserView$ActivityChooserViewAdapter;->notifyDataSetChanged()V
+	22      (0000005e) return-void          
+

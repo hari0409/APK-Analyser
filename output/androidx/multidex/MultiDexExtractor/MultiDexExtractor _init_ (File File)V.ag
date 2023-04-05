@@ -1,0 +1,143 @@
+# Landroidx/multidex/MultiDexExtractor;-><init>(Ljava/io/File; Ljava/io/File;)V [access_flags=constructor]
+#
+# Parameters:
+# - local registers: v0...v5
+# - v6:java.io.File
+# - v7:java.io.File
+#
+# - return:void
+
+<init>-BB@0x0 : [ <init>-BB@0x9a ]
+	0       (00000000) invoke-direct        v5, Ljava/lang/Object;-><init>()V
+	1       (00000006) const-string         v2, 'MultiDex'
+	2       (0000000a) new-instance         v3, Ljava/lang/StringBuilder;
+	3       (0000000e) invoke-direct        v3, Ljava/lang/StringBuilder;-><init>()V
+	4       (00000014) const-string         v4, 'MultiDexExtractor('
+	5       (00000018) invoke-virtual       v3, v4, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	6       (0000001e) move-result-object   v3
+	7       (00000020) invoke-virtual       v6, Ljava/io/File;->getPath()Ljava/lang/String;
+	8       (00000026) move-result-object   v4
+	9       (00000028) invoke-virtual       v3, v4, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	10      (0000002e) move-result-object   v3
+	11      (00000030) const-string         v4, ', '
+	12      (00000034) invoke-virtual       v3, v4, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	13      (0000003a) move-result-object   v3
+	14      (0000003c) invoke-virtual       v7, Ljava/io/File;->getPath()Ljava/lang/String;
+	15      (00000042) move-result-object   v4
+	16      (00000044) invoke-virtual       v3, v4, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	17      (0000004a) move-result-object   v3
+	18      (0000004c) const-string         v4, ')'
+	19      (00000050) invoke-virtual       v3, v4, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	20      (00000056) move-result-object   v3
+	21      (00000058) invoke-virtual       v3, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+	22      (0000005e) move-result-object   v3
+	23      (00000060) invoke-static        v2, v3, Landroid/util/Log;->i(Ljava/lang/String; Ljava/lang/String;)I
+	24      (00000066) iput-object          v6, v5, Landroidx/multidex/MultiDexExtractor;->sourceApk Ljava/io/File;
+	25      (0000006a) iput-object          v7, v5, Landroidx/multidex/MultiDexExtractor;->dexDir Ljava/io/File;
+	26      (0000006e) invoke-static        v6, Landroidx/multidex/MultiDexExtractor;->getZipCrc(Ljava/io/File;)J
+	27      (00000074) move-result-wide     v2
+	28      (00000076) iput-wide            v2, v5, Landroidx/multidex/MultiDexExtractor;->sourceCrc J
+	29      (0000007a) new-instance         v1, Ljava/io/File;
+	30      (0000007e) const-string         v2, 'MultiDex.lock'
+	31      (00000082) invoke-direct        v1, v7, v2, Ljava/io/File;-><init>(Ljava/io/File; Ljava/lang/String;)V
+	32      (00000088) new-instance         v2, Ljava/io/RandomAccessFile;
+	33      (0000008c) const-string         v3, 'rw'
+	34      (00000090) invoke-direct        v2, v1, v3, Ljava/io/RandomAccessFile;-><init>(Ljava/io/File; Ljava/lang/String;)V
+	35      (00000096) iput-object          v2, v5, Landroidx/multidex/MultiDexExtractor;->lockRaf Ljava/io/RandomAccessFile;
+
+<init>-BB@0x9a : [ <init>-BB@0xaa ]
+	36      (0000009a) iget-object          v2, v5, Landroidx/multidex/MultiDexExtractor;->lockRaf Ljava/io/RandomAccessFile;
+	37      (0000009e) invoke-virtual       v2, Ljava/io/RandomAccessFile;->getChannel()Ljava/nio/channels/FileChannel;
+	38      (000000a4) move-result-object   v2
+	39      (000000a6) iput-object          v2, v5, Landroidx/multidex/MultiDexExtractor;->lockChannel Ljava/nio/channels/FileChannel;
+	9a:a9
+	(Ljava/io/IOException; -> 13c <init>-BB@0x13c)
+	(Ljava/lang/RuntimeException; -> 156 <init>-BB@0x156)
+	(Ljava/lang/Error; -> 15a <init>-BB@0x15a)
+
+<init>-BB@0xaa : [ <init>-BB@0xf2 ]
+	40      (000000aa) const-string         v2, 'MultiDex'
+	41      (000000ae) new-instance         v3, Ljava/lang/StringBuilder;
+	42      (000000b2) invoke-direct        v3, Ljava/lang/StringBuilder;-><init>()V
+	43      (000000b8) const-string         v4, 'Blocking on lock '
+	44      (000000bc) invoke-virtual       v3, v4, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	45      (000000c2) move-result-object   v3
+	46      (000000c4) invoke-virtual       v1, Ljava/io/File;->getPath()Ljava/lang/String;
+	47      (000000ca) move-result-object   v4
+	48      (000000cc) invoke-virtual       v3, v4, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	49      (000000d2) move-result-object   v3
+	50      (000000d4) invoke-virtual       v3, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+	51      (000000da) move-result-object   v3
+	52      (000000dc) invoke-static        v2, v3, Landroid/util/Log;->i(Ljava/lang/String; Ljava/lang/String;)I
+	53      (000000e2) iget-object          v2, v5, Landroidx/multidex/MultiDexExtractor;->lockChannel Ljava/nio/channels/FileChannel;
+	54      (000000e6) invoke-virtual       v2, Ljava/nio/channels/FileChannel;->lock()Ljava/nio/channels/FileLock;
+	55      (000000ec) move-result-object   v2
+	56      (000000ee) iput-object          v2, v5, Landroidx/multidex/MultiDexExtractor;->cacheLock Ljava/nio/channels/FileLock;
+	aa:f1
+	(Ljava/io/IOException; -> 12c <init>-BB@0x12c)
+	(Ljava/lang/RuntimeException; -> 14a <init>-BB@0x14a)
+	(Ljava/lang/Error; -> 150 <init>-BB@0x150)
+
+<init>-BB@0xf2 : 
+	57      (000000f2) const-string         v2, 'MultiDex'
+	58      (000000f6) new-instance         v3, Ljava/lang/StringBuilder;
+	59      (000000fa) invoke-direct        v3, Ljava/lang/StringBuilder;-><init>()V
+	60      (00000100) invoke-virtual       v1, Ljava/io/File;->getPath()Ljava/lang/String;
+	61      (00000106) move-result-object   v4
+	62      (00000108) invoke-virtual       v3, v4, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	63      (0000010e) move-result-object   v3
+	64      (00000110) const-string         v4, ' locked'
+	65      (00000114) invoke-virtual       v3, v4, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	66      (0000011a) move-result-object   v3
+	67      (0000011c) invoke-virtual       v3, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+	68      (00000122) move-result-object   v3
+	69      (00000124) invoke-static        v2, v3, Landroid/util/Log;->i(Ljava/lang/String; Ljava/lang/String;)I
+	70      (0000012a) return-void          
+	f2:13b
+	(Ljava/io/IOException; -> 13c <init>-BB@0x13c)
+	(Ljava/lang/RuntimeException; -> 156 <init>-BB@0x156)
+	(Ljava/lang/Error; -> 15a <init>-BB@0x15a)
+
+<init>-BB@0x12c : [ <init>-BB@0x130 ]
+	71      (0000012c) move-exception       v2
+	72      (0000012e) move-object          v0, v2
+	f2:13b
+	(Ljava/io/IOException; -> 13c <init>-BB@0x13c)
+	(Ljava/lang/RuntimeException; -> 156 <init>-BB@0x156)
+	(Ljava/lang/Error; -> 15a <init>-BB@0x15a)
+
+<init>-BB@0x130 : 
+	73      (00000130) iget-object          v2, v5, Landroidx/multidex/MultiDexExtractor;->lockChannel Ljava/nio/channels/FileChannel;
+	74      (00000134) invoke-static        v2, Landroidx/multidex/MultiDexExtractor;->closeQuietly(Ljava/io/Closeable;)V
+	75      (0000013a) throw                v0
+	f2:13b
+	(Ljava/io/IOException; -> 13c <init>-BB@0x13c)
+	(Ljava/lang/RuntimeException; -> 156 <init>-BB@0x156)
+	(Ljava/lang/Error; -> 15a <init>-BB@0x15a)
+
+<init>-BB@0x13c : [ <init>-BB@0x13e ]
+	76      (0000013c) move-exception       v0
+
+<init>-BB@0x13e : 
+	77      (0000013e) iget-object          v2, v5, Landroidx/multidex/MultiDexExtractor;->lockRaf Ljava/io/RandomAccessFile;
+	78      (00000142) invoke-static        v2, Landroidx/multidex/MultiDexExtractor;->closeQuietly(Ljava/io/Closeable;)V
+	79      (00000148) throw                v0
+
+<init>-BB@0x14a : [ <init>-BB@0x130 ]
+	80      (0000014a) move-exception       v2
+	81      (0000014c) move-object          v0, v2
+	82      (0000014e) goto                 -f
+
+<init>-BB@0x150 : [ <init>-BB@0x130 ]
+	83      (00000150) move-exception       v2
+	84      (00000152) move-object          v0, v2
+	85      (00000154) goto                 -12
+
+<init>-BB@0x156 : [ <init>-BB@0x13e ]
+	86      (00000156) move-exception       v0
+	87      (00000158) goto                 -d
+
+<init>-BB@0x15a : [ <init>-BB@0x13e ]
+	88      (0000015a) move-exception       v0
+	89      (0000015c) goto                 -f
+

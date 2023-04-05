@@ -1,0 +1,26 @@
+# Landroidx/appcompat/view/menu/CascadingMenuPopup;->addMenu(Landroidx/appcompat/view/menu/MenuBuilder;)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:androidx.appcompat.view.menu.MenuBuilder
+#
+# - return:void
+
+addMenu-BB@0x0 : [ addMenu-BB@0x16 addMenu-BB@0x1e ]
+	0       (00000000) iget-object          v0, v1, Landroidx/appcompat/view/menu/CascadingMenuPopup;->mContext Landroid/content/Context;
+	1       (00000004) invoke-virtual       v2, v1, v0, Landroidx/appcompat/view/menu/MenuBuilder;->addMenuPresenter(Landroidx/appcompat/view/menu/MenuPresenter; Landroid/content/Context;)V
+	2       (0000000a) invoke-virtual       v1, Landroidx/appcompat/view/menu/CascadingMenuPopup;->isShowing()Z
+	3       (00000010) move-result          v0
+	4       (00000012) if-eqz               v0, +6
+
+addMenu-BB@0x16 : [ addMenu-BB@0x1c ]
+	5       (00000016) invoke-direct        v1, v2, Landroidx/appcompat/view/menu/CascadingMenuPopup;->showMenu(Landroidx/appcompat/view/menu/MenuBuilder;)V
+
+addMenu-BB@0x1c : 
+	6       (0000001c) return-void          
+
+addMenu-BB@0x1e : [ addMenu-BB@0x1c ]
+	7       (0000001e) iget-object          v0, v1, Landroidx/appcompat/view/menu/CascadingMenuPopup;->mPendingMenus Ljava/util/List;
+	8       (00000022) invoke-interface     v0, v2, Ljava/util/List;->add(Ljava/lang/Object;)Z
+	9       (00000028) goto                 -6
+

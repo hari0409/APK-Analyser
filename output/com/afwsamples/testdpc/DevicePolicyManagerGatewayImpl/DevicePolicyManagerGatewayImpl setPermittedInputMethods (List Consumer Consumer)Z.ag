@@ -1,0 +1,31 @@
+# Lcom/afwsamples/testdpc/DevicePolicyManagerGatewayImpl;->setPermittedInputMethods(Ljava/util/List; Ljava/util/function/Consumer; Ljava/util/function/Consumer;)Z [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v4
+# - v5:java.util.List
+# - v6:java.util.function.Consumer
+# - v7:java.util.function.Consumer
+#
+# - return:boolean
+
+setPermittedInputMethods-BB@0x0 : [ setPermittedInputMethods-BB@0x2 ]
+	0       (00000000) const/4              v1, 0
+
+setPermittedInputMethods-BB@0x2 : [ setPermittedInputMethods-BB@0x1a ]
+	1       (00000002) iget-object          v2, v4, Lcom/afwsamples/testdpc/DevicePolicyManagerGatewayImpl;->mDevicePolicyManager Landroid/app/admin/DevicePolicyManager;
+	2       (00000006) iget-object          v3, v4, Lcom/afwsamples/testdpc/DevicePolicyManagerGatewayImpl;->mAdminComponentName Landroid/content/ComponentName;
+	3       (0000000a) invoke-virtual       v2, v3, v5, Landroid/app/admin/DevicePolicyManager;->setPermittedInputMethods(Landroid/content/ComponentName; Ljava/util/List;)Z
+	4       (00000010) move-result          v1
+	5       (00000012) const/4              v2, 0
+	6       (00000014) invoke-interface     v6, v2, Ljava/util/function/Consumer;->accept(Ljava/lang/Object;)V
+	2:19
+	(Ljava/lang/Exception; -> 1c setPermittedInputMethods-BB@0x1c)
+
+setPermittedInputMethods-BB@0x1a : 
+	7       (0000001a) return               v1
+
+setPermittedInputMethods-BB@0x1c : [ setPermittedInputMethods-BB@0x1a ]
+	8       (0000001c) move-exception       v0
+	9       (0000001e) invoke-interface     v7, v0, Ljava/util/function/Consumer;->accept(Ljava/lang/Object;)V
+	10      (00000024) goto                 -5
+

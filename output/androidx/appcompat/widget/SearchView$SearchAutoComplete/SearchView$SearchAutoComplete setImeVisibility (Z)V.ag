@@ -1,0 +1,46 @@
+# Landroidx/appcompat/widget/SearchView$SearchAutoComplete;->setImeVisibility(Z)V [access_flags=]
+#
+# Parameters:
+# - local registers: v0...v4
+# - v5:boolean
+#
+# - return:void
+
+setImeVisibility-BB@0x0 : [ setImeVisibility-BB@0x1e setImeVisibility-BB@0x3c ]
+	0       (00000000) const/4              v3, 0
+	1       (00000002) invoke-virtual       v4, Landroidx/appcompat/widget/SearchView$SearchAutoComplete;->getContext()Landroid/content/Context;
+	2       (00000008) move-result-object   v1
+	3       (0000000a) const-string         v2, 'input_method'
+	4       (0000000e) invoke-virtual       v1, v2, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
+	5       (00000014) move-result-object   v0
+	6       (00000016) check-cast           v0, Landroid/view/inputmethod/InputMethodManager;
+	7       (0000001a) if-nez               v5, +11
+
+setImeVisibility-BB@0x1e : [ setImeVisibility-BB@0x3a ]
+	8       (0000001e) iput-boolean         v3, v4, Landroidx/appcompat/widget/SearchView$SearchAutoComplete;->mHasPendingShowSoftInputRequest Z
+	9       (00000022) iget-object          v1, v4, Landroidx/appcompat/widget/SearchView$SearchAutoComplete;->mRunShowSoftInputIfNecessary Ljava/lang/Runnable;
+	10      (00000026) invoke-virtual       v4, v1, Landroidx/appcompat/widget/SearchView$SearchAutoComplete;->removeCallbacks(Ljava/lang/Runnable;)Z
+	11      (0000002c) invoke-virtual       v4, Landroidx/appcompat/widget/SearchView$SearchAutoComplete;->getWindowToken()Landroid/os/IBinder;
+	12      (00000032) move-result-object   v1
+	13      (00000034) invoke-virtual       v0, v1, v3, Landroid/view/inputmethod/InputMethodManager;->hideSoftInputFromWindow(Landroid/os/IBinder; I)Z
+
+setImeVisibility-BB@0x3a : 
+	14      (0000003a) return-void          
+
+setImeVisibility-BB@0x3c : [ setImeVisibility-BB@0x48 setImeVisibility-BB@0x5e ]
+	15      (0000003c) invoke-virtual       v0, v4, Landroid/view/inputmethod/InputMethodManager;->isActive(Landroid/view/View;)Z
+	16      (00000042) move-result          v1
+	17      (00000044) if-eqz               v1, +d
+
+setImeVisibility-BB@0x48 : [ setImeVisibility-BB@0x3a ]
+	18      (00000048) iput-boolean         v3, v4, Landroidx/appcompat/widget/SearchView$SearchAutoComplete;->mHasPendingShowSoftInputRequest Z
+	19      (0000004c) iget-object          v1, v4, Landroidx/appcompat/widget/SearchView$SearchAutoComplete;->mRunShowSoftInputIfNecessary Ljava/lang/Runnable;
+	20      (00000050) invoke-virtual       v4, v1, Landroidx/appcompat/widget/SearchView$SearchAutoComplete;->removeCallbacks(Ljava/lang/Runnable;)Z
+	21      (00000056) invoke-virtual       v0, v4, v3, Landroid/view/inputmethod/InputMethodManager;->showSoftInput(Landroid/view/View; I)Z
+	22      (0000005c) goto                 -11
+
+setImeVisibility-BB@0x5e : [ setImeVisibility-BB@0x3a ]
+	23      (0000005e) const/4              v1, 1
+	24      (00000060) iput-boolean         v1, v4, Landroidx/appcompat/widget/SearchView$SearchAutoComplete;->mHasPendingShowSoftInputRequest Z
+	25      (00000064) goto                 -15
+

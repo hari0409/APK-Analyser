@@ -1,0 +1,107 @@
+# Lcom/afwsamples/testdpc/comp/ProfileOwnerService$ProfileOwnerServiceImpl;->installCaCertificate(Landroid/content/res/AssetFileDescriptor;)Z [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v5
+# - v6:android.content.res.AssetFileDescriptor
+#
+# - return:boolean
+
+installCaCertificate-BB@0x0 : [ installCaCertificate-BB@0xa ]
+	0       (00000000) invoke-virtual       v6, Landroid/content/res/AssetFileDescriptor;->createInputStream()Ljava/io/FileInputStream;
+	1       (00000006) move-result-object   v1
+	2       (00000008) const/4              v4, 0
+	0:5
+	(Ljava/io/IOException; -> 3c installCaCertificate-BB@0x3c)
+
+installCaCertificate-BB@0xa : [ installCaCertificate-BB@0x26 installCaCertificate-BB@0x30 ]
+	3       (0000000a) iget-object          v2, v5, Lcom/afwsamples/testdpc/comp/ProfileOwnerService$ProfileOwnerServiceImpl;->mDpm Landroid/app/admin/DevicePolicyManager;
+	4       (0000000e) iget-object          v3, v5, Lcom/afwsamples/testdpc/comp/ProfileOwnerService$ProfileOwnerServiceImpl;->mContext Landroid/content/Context;
+	5       (00000012) invoke-static        v3, Lcom/afwsamples/testdpc/DeviceAdminReceiver;->getComponentName(Landroid/content/Context;)Landroid/content/ComponentName;
+	6       (00000018) move-result-object   v3
+	7       (0000001a) invoke-static        v1, v2, v3, Lcom/afwsamples/testdpc/common/Util;->installCaCertificate(Ljava/io/InputStream; Landroid/app/admin/DevicePolicyManager; Landroid/content/ComponentName;)Z
+	8       (00000020) move-result          v2
+	9       (00000022) if-eqz               v1, +7
+	a:1f
+	(Ljava/lang/Throwable; -> 82 installCaCertificate-BB@0x82)
+	(Ljava/lang/Throwable; -> 58 installCaCertificate-BB@0x58)
+
+installCaCertificate-BB@0x26 : [ installCaCertificate-BB@0x2a installCaCertificate-BB@0x50 ]
+	10      (00000026) if-eqz               v4, +15
+
+installCaCertificate-BB@0x2a : [ installCaCertificate-BB@0x30 ]
+	11      (0000002a) invoke-virtual       v1, Ljava/io/FileInputStream;->close()V
+	2a:2f
+	(Ljava/lang/Throwable; -> 32 installCaCertificate-BB@0x32)
+	(Ljava/io/IOException; -> 3c installCaCertificate-BB@0x3c)
+
+installCaCertificate-BB@0x30 : 
+	12      (00000030) return               v2
+
+installCaCertificate-BB@0x32 : [ installCaCertificate-BB@0x34 ]
+	13      (00000032) move-exception       v3
+
+installCaCertificate-BB@0x34 : [ installCaCertificate-BB@0x30 ]
+	14      (00000034) invoke-virtual       v4, v3, Ljava/lang/Throwable;->addSuppressed(Ljava/lang/Throwable;)V
+	15      (0000003a) goto                 -5
+	34:39
+	(Ljava/io/IOException; -> 3c installCaCertificate-BB@0x3c)
+
+installCaCertificate-BB@0x3c : [ installCaCertificate-BB@0x30 ]
+	16      (0000003c) move-exception       v0
+	17      (0000003e) const-string         v2, 'ProfileOwnerService'
+	18      (00000042) const-string         v3, 'Unable to install a certificate'
+	19      (00000046) invoke-static        v2, v3, v0, Landroid/util/Log;->e(Ljava/lang/String; Ljava/lang/String; Ljava/lang/Throwable;)I
+	20      (0000004c) const/4              v2, 0
+	21      (0000004e) goto                 -f
+
+installCaCertificate-BB@0x50 : [ installCaCertificate-BB@0x30 ]
+	22      (00000050) invoke-virtual       v1, Ljava/io/FileInputStream;->close()V
+	23      (00000056) goto                 -13
+	50:55
+	(Ljava/io/IOException; -> 3c installCaCertificate-BB@0x3c)
+
+installCaCertificate-BB@0x58 : [ installCaCertificate-BB@0x5a ]
+	24      (00000058) move-exception       v2
+
+installCaCertificate-BB@0x5a : 
+	25      (0000005a) throw                v2
+	5a:5b
+	(Ljava/lang/Throwable; -> 5c installCaCertificate-BB@0x5c)
+
+installCaCertificate-BB@0x5c : [ installCaCertificate-BB@0x60 ]
+	26      (0000005c) move-exception       v3
+	27      (0000005e) move-object          v4, v2
+
+installCaCertificate-BB@0x60 : [ installCaCertificate-BB@0x64 installCaCertificate-BB@0x6e ]
+	28      (00000060) if-eqz               v1, +7
+
+installCaCertificate-BB@0x64 : [ installCaCertificate-BB@0x68 installCaCertificate-BB@0x7a ]
+	29      (00000064) if-eqz               v4, +b
+
+installCaCertificate-BB@0x68 : [ installCaCertificate-BB@0x6e ]
+	30      (00000068) invoke-virtual       v1, Ljava/io/FileInputStream;->close()V
+	68:6d
+	(Ljava/lang/Throwable; -> 70 installCaCertificate-BB@0x70)
+	(Ljava/io/IOException; -> 3c installCaCertificate-BB@0x3c)
+
+installCaCertificate-BB@0x6e : 
+	31      (0000006e) throw                v3
+	6e:7f
+	(Ljava/io/IOException; -> 3c installCaCertificate-BB@0x3c)
+
+installCaCertificate-BB@0x70 : [ installCaCertificate-BB@0x6e ]
+	32      (00000070) move-exception       v2
+	33      (00000072) invoke-virtual       v4, v2, Ljava/lang/Throwable;->addSuppressed(Ljava/lang/Throwable;)V
+	34      (00000078) goto                 -5
+	6e:7f
+	(Ljava/io/IOException; -> 3c installCaCertificate-BB@0x3c)
+
+installCaCertificate-BB@0x7a : [ installCaCertificate-BB@0x6e ]
+	35      (0000007a) invoke-virtual       v1, Ljava/io/FileInputStream;->close()V
+	36      (00000080) goto                 -9
+
+installCaCertificate-BB@0x82 : [ installCaCertificate-BB@0x60 ]
+	37      (00000082) move-exception       v2
+	38      (00000084) move-object          v3, v2
+	39      (00000086) goto                 -13
+

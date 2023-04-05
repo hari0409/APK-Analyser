@@ -1,0 +1,78 @@
+# Landroidx/appcompat/widget/LinearLayoutCompat;-><init>(Landroid/content/Context; Landroid/util/AttributeSet; I)V [access_flags=public constructor]
+#
+# Parameters:
+# - local registers: v0...v7
+# - v8:android.content.Context
+# - v9:android.util.AttributeSet
+# - v10:int
+#
+# - return:void
+
+<init>-BB@0x0 : [ <init>-BB@0x3e <init>-BB@0x44 ]
+	0       (00000000) const/4              v4, 1
+	1       (00000002) const/4              v6, -1
+	2       (00000004) const/4              v5, 0
+	3       (00000006) invoke-direct        v7, v8, v9, v10, Landroid/view/ViewGroup;-><init>(Landroid/content/Context; Landroid/util/AttributeSet; I)V
+	4       (0000000c) iput-boolean         v4, v7, Landroidx/appcompat/widget/LinearLayoutCompat;->mBaselineAligned Z
+	5       (00000010) iput                 v6, v7, Landroidx/appcompat/widget/LinearLayoutCompat;->mBaselineAlignedChildIndex I
+	6       (00000014) iput                 v5, v7, Landroidx/appcompat/widget/LinearLayoutCompat;->mBaselineChildTop I
+	7       (00000018) const                v3, 8388659 # [1.1755014974444556e-38]
+	8       (0000001e) iput                 v3, v7, Landroidx/appcompat/widget/LinearLayoutCompat;->mGravity I
+	9       (00000022) sget-object          v3, Landroidx/appcompat/R$styleable;->LinearLayoutCompat [I
+	10      (00000026) invoke-static        v8, v9, v3, v10, v5, Landroidx/appcompat/widget/TintTypedArray;->obtainStyledAttributes(Landroid/content/Context; Landroid/util/AttributeSet; [I I I)Landroidx/appcompat/widget/TintTypedArray;
+	11      (0000002c) move-result-object   v0
+	12      (0000002e) sget                 v3, Landroidx/appcompat/R$styleable;->LinearLayoutCompat_android_orientation I
+	13      (00000032) invoke-virtual       v0, v3, v6, Landroidx/appcompat/widget/TintTypedArray;->getInt(I I)I
+	14      (00000038) move-result          v2
+	15      (0000003a) if-ltz               v2, +5
+
+<init>-BB@0x3e : [ <init>-BB@0x44 ]
+	16      (0000003e) invoke-virtual       v7, v2, Landroidx/appcompat/widget/LinearLayoutCompat;->setOrientation(I)V
+
+<init>-BB@0x44 : [ <init>-BB@0x54 <init>-BB@0x5a ]
+	17      (00000044) sget                 v3, Landroidx/appcompat/R$styleable;->LinearLayoutCompat_android_gravity I
+	18      (00000048) invoke-virtual       v0, v3, v6, Landroidx/appcompat/widget/TintTypedArray;->getInt(I I)I
+	19      (0000004e) move-result          v2
+	20      (00000050) if-ltz               v2, +5
+
+<init>-BB@0x54 : [ <init>-BB@0x5a ]
+	21      (00000054) invoke-virtual       v7, v2, Landroidx/appcompat/widget/LinearLayoutCompat;->setGravity(I)V
+
+<init>-BB@0x5a : [ <init>-BB@0x6a <init>-BB@0x70 ]
+	22      (0000005a) sget                 v3, Landroidx/appcompat/R$styleable;->LinearLayoutCompat_android_baselineAligned I
+	23      (0000005e) invoke-virtual       v0, v3, v4, Landroidx/appcompat/widget/TintTypedArray;->getBoolean(I Z)Z
+	24      (00000064) move-result          v1
+	25      (00000066) if-nez               v1, +5
+
+<init>-BB@0x6a : [ <init>-BB@0x70 ]
+	26      (0000006a) invoke-virtual       v7, v1, Landroidx/appcompat/widget/LinearLayoutCompat;->setBaselineAligned(Z)V
+
+<init>-BB@0x70 : 
+	27      (00000070) sget                 v3, Landroidx/appcompat/R$styleable;->LinearLayoutCompat_android_weightSum I
+	28      (00000074) const/high16         v4, -16512 # [-1.0]
+	29      (00000078) invoke-virtual       v0, v3, v4, Landroidx/appcompat/widget/TintTypedArray;->getFloat(I F)F
+	30      (0000007e) move-result          v3
+	31      (00000080) iput                 v3, v7, Landroidx/appcompat/widget/LinearLayoutCompat;->mWeightSum F
+	32      (00000084) sget                 v3, Landroidx/appcompat/R$styleable;->LinearLayoutCompat_android_baselineAlignedChildIndex I
+	33      (00000088) invoke-virtual       v0, v3, v6, Landroidx/appcompat/widget/TintTypedArray;->getInt(I I)I
+	34      (0000008e) move-result          v3
+	35      (00000090) iput                 v3, v7, Landroidx/appcompat/widget/LinearLayoutCompat;->mBaselineAlignedChildIndex I
+	36      (00000094) sget                 v3, Landroidx/appcompat/R$styleable;->LinearLayoutCompat_measureWithLargestChild I
+	37      (00000098) invoke-virtual       v0, v3, v5, Landroidx/appcompat/widget/TintTypedArray;->getBoolean(I Z)Z
+	38      (0000009e) move-result          v3
+	39      (000000a0) iput-boolean         v3, v7, Landroidx/appcompat/widget/LinearLayoutCompat;->mUseLargestChild Z
+	40      (000000a4) sget                 v3, Landroidx/appcompat/R$styleable;->LinearLayoutCompat_divider I
+	41      (000000a8) invoke-virtual       v0, v3, Landroidx/appcompat/widget/TintTypedArray;->getDrawable(I)Landroid/graphics/drawable/Drawable;
+	42      (000000ae) move-result-object   v3
+	43      (000000b0) invoke-virtual       v7, v3, Landroidx/appcompat/widget/LinearLayoutCompat;->setDividerDrawable(Landroid/graphics/drawable/Drawable;)V
+	44      (000000b6) sget                 v3, Landroidx/appcompat/R$styleable;->LinearLayoutCompat_showDividers I
+	45      (000000ba) invoke-virtual       v0, v3, v5, Landroidx/appcompat/widget/TintTypedArray;->getInt(I I)I
+	46      (000000c0) move-result          v3
+	47      (000000c2) iput                 v3, v7, Landroidx/appcompat/widget/LinearLayoutCompat;->mShowDividers I
+	48      (000000c6) sget                 v3, Landroidx/appcompat/R$styleable;->LinearLayoutCompat_dividerPadding I
+	49      (000000ca) invoke-virtual       v0, v3, v5, Landroidx/appcompat/widget/TintTypedArray;->getDimensionPixelSize(I I)I
+	50      (000000d0) move-result          v3
+	51      (000000d2) iput                 v3, v7, Landroidx/appcompat/widget/LinearLayoutCompat;->mDividerPadding I
+	52      (000000d6) invoke-virtual       v0, Landroidx/appcompat/widget/TintTypedArray;->recycle()V
+	53      (000000dc) return-void          
+

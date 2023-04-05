@@ -1,0 +1,41 @@
+# Lcom/afwsamples/testdpc/SetupManagementFragment;->specifyLogoUri(Landroid/content/Intent;)V [access_flags=private]
+#
+# Parameters:
+# - local registers: v0...v3
+# - v4:android.content.Intent
+#
+# - return:void
+
+specifyLogoUri-BB@0x0 : [ specifyLogoUri-BB@0x8 specifyLogoUri-BB@0xa ]
+	0       (00000000) iget-object          v0, v3, Lcom/afwsamples/testdpc/SetupManagementFragment;->mLogoUri Landroid/net/Uri;
+	1       (00000004) if-nez               v0, +3
+
+specifyLogoUri-BB@0x8 : 
+	2       (00000008) return-void          
+
+specifyLogoUri-BB@0xa : [ specifyLogoUri-BB@0x34 specifyLogoUri-BB@0x8 ]
+	3       (0000000a) const-string         v0, 'android.app.extra.PROVISIONING_LOGO_URI'
+	4       (0000000e) iget-object          v1, v3, Lcom/afwsamples/testdpc/SetupManagementFragment;->mLogoUri Landroid/net/Uri;
+	5       (00000012) invoke-virtual       v4, v0, v1, Landroid/content/Intent;->putExtra(Ljava/lang/String; Landroid/os/Parcelable;)Landroid/content/Intent;
+	6       (00000018) iget-object          v0, v3, Lcom/afwsamples/testdpc/SetupManagementFragment;->mLogoUri Landroid/net/Uri;
+	7       (0000001c) invoke-virtual       v0, Landroid/net/Uri;->getScheme()Ljava/lang/String;
+	8       (00000022) move-result-object   v0
+	9       (00000024) const-string         v1, 'content'
+	10      (00000028) invoke-virtual       v0, v1, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+	11      (0000002e) move-result          v0
+	12      (00000030) if-eqz               v0, -14
+
+specifyLogoUri-BB@0x34 : [ specifyLogoUri-BB@0x8 ]
+	13      (00000034) const/4              v0, 1
+	14      (00000036) invoke-virtual       v4, v0, Landroid/content/Intent;->setFlags(I)Landroid/content/Intent;
+	15      (0000003c) invoke-virtual       v3, Lcom/afwsamples/testdpc/SetupManagementFragment;->getActivity()Landroid/app/Activity;
+	16      (00000042) move-result-object   v0
+	17      (00000044) invoke-virtual       v0, Landroid/app/Activity;->getContentResolver()Landroid/content/ContentResolver;
+	18      (0000004a) move-result-object   v0
+	19      (0000004c) const-string         v1, ''
+	20      (00000050) iget-object          v2, v3, Lcom/afwsamples/testdpc/SetupManagementFragment;->mLogoUri Landroid/net/Uri;
+	21      (00000054) invoke-static        v0, v1, v2, Landroid/content/ClipData;->newUri(Landroid/content/ContentResolver; Ljava/lang/CharSequence; Landroid/net/Uri;)Landroid/content/ClipData;
+	22      (0000005a) move-result-object   v0
+	23      (0000005c) invoke-virtual       v4, v0, Landroid/content/Intent;->setClipData(Landroid/content/ClipData;)V
+	24      (00000062) goto                 -2d
+

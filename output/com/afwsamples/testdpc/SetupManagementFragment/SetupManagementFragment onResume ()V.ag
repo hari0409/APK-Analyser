@@ -1,0 +1,68 @@
+# Lcom/afwsamples/testdpc/SetupManagementFragment;->onResume()V [access_flags=public]
+#
+# Parameters:
+# local registers: v0...v3
+#
+# - return:void
+
+onResume-BB@0x0 : [ onResume-BB@0x14 onResume-BB@0xc4 ]
+	0       (00000000) const/4              v2, 0
+	1       (00000002) invoke-super         v3, Landroid/app/Fragment;->onResume()V
+	2       (00000008) invoke-direct        v3, Lcom/afwsamples/testdpc/SetupManagementFragment;->setProvisioningMethodsVisibility()Z
+	3       (0000000e) move-result          v0
+	4       (00000010) if-eqz               v0, +5a
+
+onResume-BB@0x14 : [ onResume-BB@0x20 onResume-BB@0xc2 ]
+	5       (00000014) sget                 v0, Lcom/afwsamples/testdpc/common/Util;->SDK_INT I
+	6       (00000018) const/16             v1, 24
+	7       (0000001c) if-lt                v0, v1, +53
+
+onResume-BB@0x20 : [ onResume-BB@0x48 onResume-BB@0xbc ]
+	8       (00000020) invoke-virtual       v3, Lcom/afwsamples/testdpc/SetupManagementFragment;->getView()Landroid/view/View;
+	9       (00000026) move-result-object   v0
+	10      (00000028) const                v1, 2131296521 # [1.8210961026107844e+38]
+	11      (0000002e) invoke-virtual       v0, v1, Landroid/view/View;->findViewById(I)Landroid/view/View;
+	12      (00000034) move-result-object   v0
+	13      (00000036) invoke-virtual       v0, v2, Landroid/view/View;->setVisibility(I)V
+	14      (0000003c) invoke-direct        v3, Lcom/afwsamples/testdpc/SetupManagementFragment;->canAnAppHandleGetContent()Z
+	15      (00000042) move-result          v0
+	16      (00000044) if-eqz               v0, +3c
+
+onResume-BB@0x48 : [ onResume-BB@0xbc ]
+	17      (00000048) invoke-virtual       v3, Lcom/afwsamples/testdpc/SetupManagementFragment;->getView()Landroid/view/View;
+	18      (0000004e) move-result-object   v0
+	19      (00000050) const                v1, 2131296363 # [1.8210640564036107e+38]
+	20      (00000056) invoke-virtual       v0, v1, Landroid/view/View;->findViewById(I)Landroid/view/View;
+	21      (0000005c) move-result-object   v0
+	22      (0000005e) invoke-virtual       v0, v2, Landroid/view/View;->setVisibility(I)V
+	23      (00000064) invoke-virtual       v3, Lcom/afwsamples/testdpc/SetupManagementFragment;->getView()Landroid/view/View;
+	24      (0000006a) move-result-object   v0
+	25      (0000006c) const                v1, 2131296493 # [1.8210904235360954e+38]
+	26      (00000072) invoke-virtual       v0, v1, Landroid/view/View;->findViewById(I)Landroid/view/View;
+	27      (00000078) move-result-object   v0
+	28      (0000007a) invoke-virtual       v0, v3, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
+	29      (00000080) invoke-virtual       v3, Lcom/afwsamples/testdpc/SetupManagementFragment;->getView()Landroid/view/View;
+	30      (00000086) move-result-object   v0
+	31      (00000088) const                v1, 2131296605 # [1.8211131398348515e+38]
+	32      (0000008e) invoke-virtual       v0, v1, Landroid/view/View;->findViewById(I)Landroid/view/View;
+	33      (00000094) move-result-object   v0
+	34      (00000096) check-cast           v0, Landroid/widget/TextView;
+	35      (0000009a) iput-object          v0, v3, Lcom/afwsamples/testdpc/SetupManagementFragment;->mLogoValue Landroid/widget/TextView;
+	36      (0000009e) invoke-virtual       v3, Lcom/afwsamples/testdpc/SetupManagementFragment;->getView()Landroid/view/View;
+	37      (000000a4) move-result-object   v0
+	38      (000000a6) const                v1, 2131296542 # [1.8211003619168012e+38]
+	39      (000000ac) invoke-virtual       v0, v1, Landroid/view/View;->findViewById(I)Landroid/view/View;
+	40      (000000b2) move-result-object   v0
+	41      (000000b4) check-cast           v0, Landroid/widget/ImageView;
+	42      (000000b8) iput-object          v0, v3, Lcom/afwsamples/testdpc/SetupManagementFragment;->mLogoPreviewView Landroid/widget/ImageView;
+
+onResume-BB@0xbc : [ onResume-BB@0xc2 ]
+	43      (000000bc) invoke-direct        v3, Lcom/afwsamples/testdpc/SetupManagementFragment;->setProvisioningModeSpecificUI()V
+
+onResume-BB@0xc2 : 
+	44      (000000c2) return-void          
+
+onResume-BB@0xc4 : [ onResume-BB@0xc2 ]
+	45      (000000c4) invoke-direct        v3, Lcom/afwsamples/testdpc/SetupManagementFragment;->showNoProvisioningPossibleUI()V
+	46      (000000ca) goto                 -4
+

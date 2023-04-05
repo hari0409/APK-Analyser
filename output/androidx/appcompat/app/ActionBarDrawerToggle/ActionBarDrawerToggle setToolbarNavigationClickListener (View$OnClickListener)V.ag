@@ -1,0 +1,12 @@
+# Landroidx/appcompat/app/ActionBarDrawerToggle;->setToolbarNavigationClickListener(Landroid/view/View$OnClickListener;)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v0
+# - v1:android.view.View$OnClickListener
+#
+# - return:void
+
+setToolbarNavigationClickListener-BB@0x0 : 
+	0       (00000000) iput-object          v1, v0, Landroidx/appcompat/app/ActionBarDrawerToggle;->mToolbarNavigationClickListener Landroid/view/View$OnClickListener;
+	1       (00000004) return-void          
+

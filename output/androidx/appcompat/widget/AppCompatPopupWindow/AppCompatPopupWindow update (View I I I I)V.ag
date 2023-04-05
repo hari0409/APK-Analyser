@@ -1,0 +1,29 @@
+# Landroidx/appcompat/widget/AppCompatPopupWindow;->update(Landroid/view/View; I I I I)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:android.view.View
+# - v3:int
+# - v4:int
+# - v5:int
+# - v6:int
+#
+# - return:void
+
+update-BB@0x0 : [ update-BB@0x8 update-BB@0x1a ]
+	0       (00000000) sget-boolean         v0, Landroidx/appcompat/widget/AppCompatPopupWindow;->COMPAT_OVERLAP_ANCHOR Z
+	1       (00000004) if-eqz               v0, +b
+
+update-BB@0x8 : [ update-BB@0x10 update-BB@0x1a ]
+	2       (00000008) iget-boolean         v0, v1, Landroidx/appcompat/widget/AppCompatPopupWindow;->mOverlapAnchor Z
+	3       (0000000c) if-eqz               v0, +7
+
+update-BB@0x10 : [ update-BB@0x1a ]
+	4       (00000010) invoke-virtual       v2, Landroid/view/View;->getHeight()I
+	5       (00000016) move-result          v0
+	6       (00000018) sub-int/2addr        v4, v0
+
+update-BB@0x1a : 
+	7       (0000001a) invoke-super/range   v1 ... v6, Landroid/widget/PopupWindow;->update(Landroid/view/View; I I I I)V
+	8       (00000020) return-void          
+

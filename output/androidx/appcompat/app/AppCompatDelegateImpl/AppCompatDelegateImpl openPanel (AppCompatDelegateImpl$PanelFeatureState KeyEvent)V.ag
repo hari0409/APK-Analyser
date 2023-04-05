@@ -1,0 +1,205 @@
+# Landroidx/appcompat/app/AppCompatDelegateImpl;->openPanel(Landroidx/appcompat/app/AppCompatDelegateImpl$PanelFeatureState; Landroid/view/KeyEvent;)V [access_flags=private]
+#
+# Parameters:
+# - local registers: v0...v14
+# - v15:androidx.appcompat.app.AppCompatDelegateImpl$PanelFeatureState
+# - v16:android.view.KeyEvent
+#
+# - return:void
+
+openPanel-BB@0x0 : [ openPanel-BB@0x8 openPanel-BB@0x10 ]
+	0       (00000000) iget-boolean         v2, v15, Landroidx/appcompat/app/AppCompatDelegateImpl$PanelFeatureState;->isOpen Z
+	1       (00000004) if-nez               v2, +6
+
+openPanel-BB@0x8 : [ openPanel-BB@0x10 openPanel-BB@0x12 ]
+	2       (00000008) iget-boolean         v2, v14, Landroidx/appcompat/app/AppCompatDelegateImpl;->mIsDestroyed Z
+	3       (0000000c) if-eqz               v2, +3
+
+openPanel-BB@0x10 : 
+	4       (00000010) return-void          
+
+openPanel-BB@0x12 : [ openPanel-BB@0x1a openPanel-BB@0x42 ]
+	5       (00000012) iget                 v2, v15, Landroidx/appcompat/app/AppCompatDelegateImpl$PanelFeatureState;->featureId I
+	6       (00000016) if-nez               v2, +16
+
+openPanel-BB@0x1a : [ openPanel-BB@0x3c openPanel-BB@0x6c ]
+	7       (0000001a) iget-object          v2, v14, Landroidx/appcompat/app/AppCompatDelegateImpl;->mContext Landroid/content/Context;
+	8       (0000001e) invoke-virtual       v2, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
+	9       (00000024) move-result-object   v2
+	10      (00000026) invoke-virtual       v2, Landroid/content/res/Resources;->getConfiguration()Landroid/content/res/Configuration;
+	11      (0000002c) move-result-object   v10
+	12      (0000002e) iget                 v2, v10, Landroid/content/res/Configuration;->screenLayout I
+	13      (00000032) and-int/lit8         v2, v2, 15
+	14      (00000036) const/4              v3, 4
+	15      (00000038) if-ne                v2, v3, +1a
+
+openPanel-BB@0x3c : [ openPanel-BB@0x3e ]
+	16      (0000003c) const/4              v11, 1
+
+openPanel-BB@0x3e : [ openPanel-BB@0x42 openPanel-BB@0x10 ]
+	17      (0000003e) if-nez               v11, -17
+
+openPanel-BB@0x42 : [ openPanel-BB@0x4e openPanel-BB@0x70 ]
+	18      (00000042) invoke-virtual       v14, Landroidx/appcompat/app/AppCompatDelegateImpl;->getWindowCallback()Landroid/view/Window$Callback;
+	19      (00000048) move-result-object   v9
+	20      (0000004a) if-eqz               v9, +13
+
+openPanel-BB@0x4e : [ openPanel-BB@0x62 openPanel-BB@0x70 ]
+	21      (0000004e) iget                 v2, v15, Landroidx/appcompat/app/AppCompatDelegateImpl$PanelFeatureState;->featureId I
+	22      (00000052) iget-object          v3, v15, Landroidx/appcompat/app/AppCompatDelegateImpl$PanelFeatureState;->menu Landroidx/appcompat/view/menu/MenuBuilder;
+	23      (00000056) invoke-interface     v9, v2, v3, Landroid/view/Window$Callback;->onMenuOpened(I Landroid/view/Menu;)Z
+	24      (0000005c) move-result          v2
+	25      (0000005e) if-nez               v2, +9
+
+openPanel-BB@0x62 : [ openPanel-BB@0x10 ]
+	26      (00000062) const/4              v2, 1
+	27      (00000064) invoke-virtual       v14, v15, v2, Landroidx/appcompat/app/AppCompatDelegateImpl;->closePanel(Landroidx/appcompat/app/AppCompatDelegateImpl$PanelFeatureState; Z)V
+	28      (0000006a) goto                 -2d
+
+openPanel-BB@0x6c : [ openPanel-BB@0x3e ]
+	29      (0000006c) const/4              v11, 0
+	30      (0000006e) goto                 -18
+
+openPanel-BB@0x70 : [ openPanel-BB@0x88 openPanel-BB@0x10 ]
+	31      (00000070) iget-object          v2, v14, Landroidx/appcompat/app/AppCompatDelegateImpl;->mContext Landroid/content/Context;
+	32      (00000074) const-string         v3, 'window'
+	33      (00000078) invoke-virtual       v2, v3, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
+	34      (0000007e) move-result-object   v13
+	35      (00000080) check-cast           v13, Landroid/view/WindowManager;
+	36      (00000084) if-eqz               v13, -3a
+
+openPanel-BB@0x88 : [ openPanel-BB@0x94 openPanel-BB@0x10 ]
+	37      (00000088) invoke-direct/range  v14 ... v16, Landroidx/appcompat/app/AppCompatDelegateImpl;->preparePanel(Landroidx/appcompat/app/AppCompatDelegateImpl$PanelFeatureState; Landroid/view/KeyEvent;)Z
+	38      (0000008e) move-result          v2
+	39      (00000090) if-eqz               v2, -40
+
+openPanel-BB@0x94 : [ openPanel-BB@0x9e openPanel-BB@0xa6 ]
+	40      (00000094) const/4              v1, -2
+	41      (00000096) iget-object          v2, v15, Landroidx/appcompat/app/AppCompatDelegateImpl$PanelFeatureState;->decorView Landroid/view/ViewGroup;
+	42      (0000009a) if-eqz               v2, +6
+
+openPanel-BB@0x9e : [ openPanel-BB@0xa6 openPanel-BB@0x1c0 ]
+	43      (0000009e) iget-boolean         v2, v15, Landroidx/appcompat/app/AppCompatDelegateImpl$PanelFeatureState;->refreshDecorView Z
+	44      (000000a2) if-eqz               v2, +8f
+
+openPanel-BB@0xa6 : [ openPanel-BB@0xae openPanel-BB@0x19c ]
+	45      (000000a6) iget-object          v2, v15, Landroidx/appcompat/app/AppCompatDelegateImpl$PanelFeatureState;->decorView Landroid/view/ViewGroup;
+	46      (000000aa) if-nez               v2, +79
+
+openPanel-BB@0xae : [ openPanel-BB@0xba openPanel-BB@0x10 ]
+	47      (000000ae) invoke-direct        v14, v15, Landroidx/appcompat/app/AppCompatDelegateImpl;->initializePanelDecor(Landroidx/appcompat/app/AppCompatDelegateImpl$PanelFeatureState;)Z
+	48      (000000b4) move-result          v2
+	49      (000000b6) if-eqz               v2, -53
+
+openPanel-BB@0xba : [ openPanel-BB@0xc2 openPanel-BB@0x10 ]
+	50      (000000ba) iget-object          v2, v15, Landroidx/appcompat/app/AppCompatDelegateImpl$PanelFeatureState;->decorView Landroid/view/ViewGroup;
+	51      (000000be) if-eqz               v2, -57
+
+openPanel-BB@0xc2 : [ openPanel-BB@0xce openPanel-BB@0x10 ]
+	52      (000000c2) invoke-direct        v14, v15, Landroidx/appcompat/app/AppCompatDelegateImpl;->initializePanelContent(Landroidx/appcompat/app/AppCompatDelegateImpl$PanelFeatureState;)Z
+	53      (000000c8) move-result          v2
+	54      (000000ca) if-eqz               v2, -5d
+
+openPanel-BB@0xce : [ openPanel-BB@0xda openPanel-BB@0x10 ]
+	55      (000000ce) invoke-virtual       v15, Landroidx/appcompat/app/AppCompatDelegateImpl$PanelFeatureState;->hasPanelItems()Z
+	56      (000000d4) move-result          v2
+	57      (000000d6) if-eqz               v2, -63
+
+openPanel-BB@0xda : [ openPanel-BB@0xea openPanel-BB@0xf8 ]
+	58      (000000da) iget-object          v2, v15, Landroidx/appcompat/app/AppCompatDelegateImpl$PanelFeatureState;->shownPanelView Landroid/view/View;
+	59      (000000de) invoke-virtual       v2, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
+	60      (000000e4) move-result-object   v0
+	61      (000000e6) if-nez               v0, +9
+
+openPanel-BB@0xea : [ openPanel-BB@0xf8 ]
+	62      (000000ea) new-instance         v0, Landroid/view/ViewGroup$LayoutParams;
+	63      (000000ee) const/4              v2, -2
+	64      (000000f0) const/4              v3, -2
+	65      (000000f2) invoke-direct        v0, v2, v3, Landroid/view/ViewGroup$LayoutParams;-><init>(I I)V
+
+openPanel-BB@0xf8 : [ openPanel-BB@0x116 openPanel-BB@0x12c ]
+	66      (000000f8) iget                 v8, v15, Landroidx/appcompat/app/AppCompatDelegateImpl$PanelFeatureState;->background I
+	67      (000000fc) iget-object          v2, v15, Landroidx/appcompat/app/AppCompatDelegateImpl$PanelFeatureState;->decorView Landroid/view/ViewGroup;
+	68      (00000100) invoke-virtual       v2, v8, Landroid/view/ViewGroup;->setBackgroundResource(I)V
+	69      (00000106) iget-object          v2, v15, Landroidx/appcompat/app/AppCompatDelegateImpl$PanelFeatureState;->shownPanelView Landroid/view/View;
+	70      (0000010a) invoke-virtual       v2, Landroid/view/View;->getParent()Landroid/view/ViewParent;
+	71      (00000110) move-result-object   v12
+	72      (00000112) if-eqz               v12, +d
+
+openPanel-BB@0x116 : [ openPanel-BB@0x11e openPanel-BB@0x12c ]
+	73      (00000116) instance-of          v2, v12, Landroid/view/ViewGroup;
+	74      (0000011a) if-eqz               v2, +9
+
+openPanel-BB@0x11e : [ openPanel-BB@0x12c ]
+	75      (0000011e) check-cast           v12, Landroid/view/ViewGroup;
+	76      (00000122) iget-object          v2, v15, Landroidx/appcompat/app/AppCompatDelegateImpl$PanelFeatureState;->shownPanelView Landroid/view/View;
+	77      (00000126) invoke-virtual       v12, v2, Landroid/view/ViewGroup;->removeView(Landroid/view/View;)V
+
+openPanel-BB@0x12c : [ openPanel-BB@0x14a openPanel-BB@0x154 ]
+	78      (0000012c) iget-object          v2, v15, Landroidx/appcompat/app/AppCompatDelegateImpl$PanelFeatureState;->decorView Landroid/view/ViewGroup;
+	79      (00000130) iget-object          v3, v15, Landroidx/appcompat/app/AppCompatDelegateImpl$PanelFeatureState;->shownPanelView Landroid/view/View;
+	80      (00000134) invoke-virtual       v2, v3, v0, Landroid/view/ViewGroup;->addView(Landroid/view/View; Landroid/view/ViewGroup$LayoutParams;)V
+	81      (0000013a) iget-object          v2, v15, Landroidx/appcompat/app/AppCompatDelegateImpl$PanelFeatureState;->shownPanelView Landroid/view/View;
+	82      (0000013e) invoke-virtual       v2, Landroid/view/View;->hasFocus()Z
+	83      (00000144) move-result          v2
+	84      (00000146) if-nez               v2, +7
+
+openPanel-BB@0x14a : [ openPanel-BB@0x154 ]
+	85      (0000014a) iget-object          v2, v15, Landroidx/appcompat/app/AppCompatDelegateImpl$PanelFeatureState;->shownPanelView Landroid/view/View;
+	86      (0000014e) invoke-virtual       v2, Landroid/view/View;->requestFocus()Z
+
+openPanel-BB@0x154 : [ openPanel-BB@0x10 ]
+	87      (00000154) const/4              v2, 0
+	88      (00000156) iput-boolean         v2, v15, Landroidx/appcompat/app/AppCompatDelegateImpl$PanelFeatureState;->isHandled Z
+	89      (0000015a) new-instance         v0, Landroid/view/WindowManager$LayoutParams;
+	90      (0000015e) const/4              v2, -2
+	91      (00000160) iget                 v3, v15, Landroidx/appcompat/app/AppCompatDelegateImpl$PanelFeatureState;->x I
+	92      (00000164) iget                 v4, v15, Landroidx/appcompat/app/AppCompatDelegateImpl$PanelFeatureState;->y I
+	93      (00000168) const/16             v5, 1002
+	94      (0000016c) const/high16         v6, 130 # [1.1938614500538858e-38]
+	95      (00000170) const/4              v7, -3
+	96      (00000172) invoke-direct/range  v0 ... v7, Landroid/view/WindowManager$LayoutParams;-><init>(I I I I I I I)V
+	97      (00000178) iget                 v2, v15, Landroidx/appcompat/app/AppCompatDelegateImpl$PanelFeatureState;->gravity I
+	98      (0000017c) iput                 v2, v0, Landroid/view/WindowManager$LayoutParams;->gravity I
+	99      (00000180) iget                 v2, v15, Landroidx/appcompat/app/AppCompatDelegateImpl$PanelFeatureState;->windowAnimations I
+	100     (00000184) iput                 v2, v0, Landroid/view/WindowManager$LayoutParams;->windowAnimations I
+	101     (00000188) iget-object          v2, v15, Landroidx/appcompat/app/AppCompatDelegateImpl$PanelFeatureState;->decorView Landroid/view/ViewGroup;
+	102     (0000018c) invoke-interface     v13, v2, v0, Landroid/view/WindowManager;->addView(Landroid/view/View; Landroid/view/ViewGroup$LayoutParams;)V
+	103     (00000192) const/4              v2, 1
+	104     (00000194) iput-boolean         v2, v15, Landroidx/appcompat/app/AppCompatDelegateImpl$PanelFeatureState;->isOpen Z
+	105     (00000198) goto/16              -c4
+
+openPanel-BB@0x19c : [ openPanel-BB@0x1a4 openPanel-BB@0xc2 ]
+	106     (0000019c) iget-boolean         v2, v15, Landroidx/appcompat/app/AppCompatDelegateImpl$PanelFeatureState;->refreshDecorView Z
+	107     (000001a0) if-eqz               v2, -6f
+
+openPanel-BB@0x1a4 : [ openPanel-BB@0x1b4 openPanel-BB@0xc2 ]
+	108     (000001a4) iget-object          v2, v15, Landroidx/appcompat/app/AppCompatDelegateImpl$PanelFeatureState;->decorView Landroid/view/ViewGroup;
+	109     (000001a8) invoke-virtual       v2, Landroid/view/ViewGroup;->getChildCount()I
+	110     (000001ae) move-result          v2
+	111     (000001b0) if-lez               v2, -77
+
+openPanel-BB@0x1b4 : [ openPanel-BB@0xc2 ]
+	112     (000001b4) iget-object          v2, v15, Landroidx/appcompat/app/AppCompatDelegateImpl$PanelFeatureState;->decorView Landroid/view/ViewGroup;
+	113     (000001b8) invoke-virtual       v2, Landroid/view/ViewGroup;->removeAllViews()V
+	114     (000001be) goto                 -7e
+
+openPanel-BB@0x1c0 : [ openPanel-BB@0x1c8 openPanel-BB@0x154 ]
+	115     (000001c0) iget-object          v2, v15, Landroidx/appcompat/app/AppCompatDelegateImpl$PanelFeatureState;->createdPanelView Landroid/view/View;
+	116     (000001c4) if-eqz               v2, -38
+
+openPanel-BB@0x1c8 : [ openPanel-BB@0x1d8 openPanel-BB@0x154 ]
+	117     (000001c8) iget-object          v2, v15, Landroidx/appcompat/app/AppCompatDelegateImpl$PanelFeatureState;->createdPanelView Landroid/view/View;
+	118     (000001cc) invoke-virtual       v2, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
+	119     (000001d2) move-result-object   v0
+	120     (000001d4) if-eqz               v0, -40
+
+openPanel-BB@0x1d8 : [ openPanel-BB@0x1e2 openPanel-BB@0x154 ]
+	121     (000001d8) iget                 v2, v0, Landroid/view/ViewGroup$LayoutParams;->width I
+	122     (000001dc) const/4              v3, -1
+	123     (000001de) if-ne                v2, v3, -45
+
+openPanel-BB@0x1e2 : [ openPanel-BB@0x154 ]
+	124     (000001e2) const/4              v1, -1
+	125     (000001e4) goto                 -48
+

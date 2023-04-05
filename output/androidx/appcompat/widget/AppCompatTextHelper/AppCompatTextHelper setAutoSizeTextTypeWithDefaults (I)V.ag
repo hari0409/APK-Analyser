@@ -1,0 +1,13 @@
+# Landroidx/appcompat/widget/AppCompatTextHelper;->setAutoSizeTextTypeWithDefaults(I)V [access_flags=]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:int
+#
+# - return:void
+
+setAutoSizeTextTypeWithDefaults-BB@0x0 : 
+	0       (00000000) iget-object          v0, v1, Landroidx/appcompat/widget/AppCompatTextHelper;->mAutoSizeTextHelper Landroidx/appcompat/widget/AppCompatTextViewAutoSizeHelper;
+	1       (00000004) invoke-virtual       v0, v2, Landroidx/appcompat/widget/AppCompatTextViewAutoSizeHelper;->setAutoSizeTextTypeWithDefaults(I)V
+	2       (0000000a) return-void          
+

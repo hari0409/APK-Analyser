@@ -1,0 +1,32 @@
+# Landroidx/appcompat/graphics/drawable/DrawableContainer;->setConstantState(Landroidx/appcompat/graphics/drawable/DrawableContainer$DrawableContainerState;)V [access_flags=protected]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:androidx.appcompat.graphics.drawable.DrawableContainer$DrawableContainerState
+#
+# - return:void
+
+setConstantState-BB@0x0 : [ setConstantState-BB@0xc setConstantState-BB@0x2e ]
+	0       (00000000) iput-object          v2, v1, Landroidx/appcompat/graphics/drawable/DrawableContainer;->mDrawableContainerState Landroidx/appcompat/graphics/drawable/DrawableContainer$DrawableContainerState;
+	1       (00000004) iget                 v0, v1, Landroidx/appcompat/graphics/drawable/DrawableContainer;->mCurIndex I
+	2       (00000008) if-ltz               v0, +13
+
+setConstantState-BB@0xc : [ setConstantState-BB@0x24 setConstantState-BB@0x2e ]
+	3       (0000000c) iget                 v0, v1, Landroidx/appcompat/graphics/drawable/DrawableContainer;->mCurIndex I
+	4       (00000010) invoke-virtual       v2, v0, Landroidx/appcompat/graphics/drawable/DrawableContainer$DrawableContainerState;->getChild(I)Landroid/graphics/drawable/Drawable;
+	5       (00000016) move-result-object   v0
+	6       (00000018) iput-object          v0, v1, Landroidx/appcompat/graphics/drawable/DrawableContainer;->mCurrDrawable Landroid/graphics/drawable/Drawable;
+	7       (0000001c) iget-object          v0, v1, Landroidx/appcompat/graphics/drawable/DrawableContainer;->mCurrDrawable Landroid/graphics/drawable/Drawable;
+	8       (00000020) if-eqz               v0, +7
+
+setConstantState-BB@0x24 : [ setConstantState-BB@0x2e ]
+	9       (00000024) iget-object          v0, v1, Landroidx/appcompat/graphics/drawable/DrawableContainer;->mCurrDrawable Landroid/graphics/drawable/Drawable;
+	10      (00000028) invoke-direct        v1, v0, Landroidx/appcompat/graphics/drawable/DrawableContainer;->initializeDrawableForDisplay(Landroid/graphics/drawable/Drawable;)V
+
+setConstantState-BB@0x2e : 
+	11      (0000002e) const/4              v0, -1
+	12      (00000030) iput                 v0, v1, Landroidx/appcompat/graphics/drawable/DrawableContainer;->mLastIndex I
+	13      (00000034) const/4              v0, 0
+	14      (00000036) iput-object          v0, v1, Landroidx/appcompat/graphics/drawable/DrawableContainer;->mLastDrawable Landroid/graphics/drawable/Drawable;
+	15      (0000003a) return-void          
+

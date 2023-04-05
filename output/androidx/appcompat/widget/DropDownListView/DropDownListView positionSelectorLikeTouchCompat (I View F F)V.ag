@@ -1,0 +1,27 @@
+# Landroidx/appcompat/widget/DropDownListView;->positionSelectorLikeTouchCompat(I Landroid/view/View; F F)V [access_flags=private]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:int
+# - v4:android.view.View
+# - v5:float
+# - v6:float
+#
+# - return:void
+
+positionSelectorLikeTouchCompat-BB@0x0 : [ positionSelectorLikeTouchCompat-BB@0x12 positionSelectorLikeTouchCompat-BB@0x1e ]
+	0       (00000000) invoke-direct        v2, v3, v4, Landroidx/appcompat/widget/DropDownListView;->positionSelectorLikeFocusCompat(I Landroid/view/View;)V
+	1       (00000006) invoke-virtual       v2, Landroidx/appcompat/widget/DropDownListView;->getSelector()Landroid/graphics/drawable/Drawable;
+	2       (0000000c) move-result-object   v0
+	3       (0000000e) if-eqz               v0, +8
+
+positionSelectorLikeTouchCompat-BB@0x12 : [ positionSelectorLikeTouchCompat-BB@0x18 positionSelectorLikeTouchCompat-BB@0x1e ]
+	4       (00000012) const/4              v1, -1
+	5       (00000014) if-eq                v3, v1, +5
+
+positionSelectorLikeTouchCompat-BB@0x18 : [ positionSelectorLikeTouchCompat-BB@0x1e ]
+	6       (00000018) invoke-static        v0, v5, v6, Landroidx/core/graphics/drawable/DrawableCompat;->setHotspot(Landroid/graphics/drawable/Drawable; F F)V
+
+positionSelectorLikeTouchCompat-BB@0x1e : 
+	7       (0000001e) return-void          
+

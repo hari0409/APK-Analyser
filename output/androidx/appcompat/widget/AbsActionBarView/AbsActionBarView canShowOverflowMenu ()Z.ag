@@ -1,0 +1,27 @@
+# Landroidx/appcompat/widget/AbsActionBarView;->canShowOverflowMenu()Z [access_flags=public]
+#
+# Parameters:
+# local registers: v0...v1
+#
+# - return:boolean
+
+canShowOverflowMenu-BB@0x0 : [ canShowOverflowMenu-BB@0xc canShowOverflowMenu-BB@0x1c ]
+	0       (00000000) invoke-virtual       v1, Landroidx/appcompat/widget/AbsActionBarView;->isOverflowReserved()Z
+	1       (00000006) move-result          v0
+	2       (00000008) if-eqz               v0, +a
+
+canShowOverflowMenu-BB@0xc : [ canShowOverflowMenu-BB@0x18 canShowOverflowMenu-BB@0x1c ]
+	3       (0000000c) invoke-virtual       v1, Landroidx/appcompat/widget/AbsActionBarView;->getVisibility()I
+	4       (00000012) move-result          v0
+	5       (00000014) if-nez               v0, +4
+
+canShowOverflowMenu-BB@0x18 : [ canShowOverflowMenu-BB@0x1a ]
+	6       (00000018) const/4              v0, 1
+
+canShowOverflowMenu-BB@0x1a : 
+	7       (0000001a) return               v0
+
+canShowOverflowMenu-BB@0x1c : [ canShowOverflowMenu-BB@0x1a ]
+	8       (0000001c) const/4              v0, 0
+	9       (0000001e) goto                 -2
+

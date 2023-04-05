@@ -1,0 +1,22 @@
+# Landroidx/appcompat/widget/AppCompatTextViewAutoSizeHelper;->supportsAutoSizeText()Z [access_flags=private]
+#
+# Parameters:
+# local registers: v0...v1
+#
+# - return:boolean
+
+supportsAutoSizeText-BB@0x0 : [ supportsAutoSizeText-BB@0xc supportsAutoSizeText-BB@0x10 ]
+	0       (00000000) iget-object          v0, v1, Landroidx/appcompat/widget/AppCompatTextViewAutoSizeHelper;->mTextView Landroid/widget/TextView;
+	1       (00000004) instance-of          v0, v0, Landroidx/appcompat/widget/AppCompatEditText;
+	2       (00000008) if-nez               v0, +4
+
+supportsAutoSizeText-BB@0xc : [ supportsAutoSizeText-BB@0xe ]
+	3       (0000000c) const/4              v0, 1
+
+supportsAutoSizeText-BB@0xe : 
+	4       (0000000e) return               v0
+
+supportsAutoSizeText-BB@0x10 : [ supportsAutoSizeText-BB@0xe ]
+	5       (00000010) const/4              v0, 0
+	6       (00000012) goto                 -2
+

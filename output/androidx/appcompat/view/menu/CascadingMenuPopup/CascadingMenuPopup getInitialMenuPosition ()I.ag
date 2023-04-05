@@ -1,0 +1,20 @@
+# Landroidx/appcompat/view/menu/CascadingMenuPopup;->getInitialMenuPosition()I [access_flags=private]
+#
+# Parameters:
+# local registers: v0...v3
+#
+# - return:int
+
+getInitialMenuPosition-BB@0x0 : [ getInitialMenuPosition-BB@0x12 getInitialMenuPosition-BB@0x14 ]
+	0       (00000000) const/4              v1, 1
+	1       (00000002) iget-object          v2, v3, Landroidx/appcompat/view/menu/CascadingMenuPopup;->mAnchorView Landroid/view/View;
+	2       (00000006) invoke-static        v2, Landroidx/core/view/ViewCompat;->getLayoutDirection(Landroid/view/View;)I
+	3       (0000000c) move-result          v0
+	4       (0000000e) if-ne                v0, v1, +3
+
+getInitialMenuPosition-BB@0x12 : [ getInitialMenuPosition-BB@0x14 ]
+	5       (00000012) const/4              v1, 0
+
+getInitialMenuPosition-BB@0x14 : 
+	6       (00000014) return               v1
+

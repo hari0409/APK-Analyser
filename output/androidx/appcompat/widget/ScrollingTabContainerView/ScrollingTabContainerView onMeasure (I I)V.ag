@@ -1,0 +1,129 @@
+# Landroidx/appcompat/widget/ScrollingTabContainerView;->onMeasure(I I)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v11
+# - v12:int
+# - v13:int
+#
+# - return:void
+
+onMeasure-BB@0x0 : [ onMeasure-BB@0x14 onMeasure-BB@0xda ]
+	0       (00000000) const/high16         v10, 16384 # [2.0]
+	1       (00000004) const/4              v6, 1
+	2       (00000006) const/4              v7, 0
+	3       (00000008) invoke-static        v12, Landroid/view/View$MeasureSpec;->getMode(I)I
+	4       (0000000e) move-result          v5
+	5       (00000010) if-ne                v5, v10, +65
+
+onMeasure-BB@0x14 : [ onMeasure-BB@0x16 ]
+	6       (00000014) move                 v2, v6
+
+onMeasure-BB@0x16 : [ onMeasure-BB@0x2c onMeasure-BB@0xf0 ]
+	7       (00000016) invoke-virtual       v11, v2, Landroidx/appcompat/widget/ScrollingTabContainerView;->setFillViewport(Z)V
+	8       (0000001c) iget-object          v8, v11, Landroidx/appcompat/widget/ScrollingTabContainerView;->mTabLayout Landroidx/appcompat/widget/LinearLayoutCompat;
+	9       (00000020) invoke-virtual       v8, Landroidx/appcompat/widget/LinearLayoutCompat;->getChildCount()I
+	10      (00000026) move-result          v1
+	11      (00000028) if-le                v1, v6, +64
+
+onMeasure-BB@0x2c : [ onMeasure-BB@0x30 onMeasure-BB@0x38 ]
+	12      (0000002c) if-eq                v5, v10, +6
+
+onMeasure-BB@0x30 : [ onMeasure-BB@0x38 onMeasure-BB@0xf0 ]
+	13      (00000030) const/high16         v8, -32768 # [-0.0]
+	14      (00000034) if-ne                v5, v8, +5e
+
+onMeasure-BB@0x38 : [ onMeasure-BB@0x3e onMeasure-BB@0xde ]
+	15      (00000038) const/4              v8, 2
+	16      (0000003a) if-le                v1, v8, +52
+
+onMeasure-BB@0x3e : [ onMeasure-BB@0x56 ]
+	17      (0000003e) invoke-static        v12, Landroid/view/View$MeasureSpec;->getSize(I)I
+	18      (00000044) move-result          v8
+	19      (00000046) int-to-float         v8, v8
+	20      (00000048) const                v9, 1053609165 # [0.4000000059604645]
+	21      (0000004e) mul-float/2addr      v8, v9
+	22      (00000050) float-to-int         v8, v8
+	23      (00000052) iput                 v8, v11, Landroidx/appcompat/widget/ScrollingTabContainerView;->mMaxTabWidth I
+
+onMeasure-BB@0x56 : [ onMeasure-BB@0x6a ]
+	24      (00000056) iget                 v8, v11, Landroidx/appcompat/widget/ScrollingTabContainerView;->mMaxTabWidth I
+	25      (0000005a) iget                 v9, v11, Landroidx/appcompat/widget/ScrollingTabContainerView;->mStackedTabMaxWidth I
+	26      (0000005e) invoke-static        v8, v9, Ljava/lang/Math;->min(I I)I
+	27      (00000064) move-result          v8
+	28      (00000066) iput                 v8, v11, Landroidx/appcompat/widget/ScrollingTabContainerView;->mMaxTabWidth I
+
+onMeasure-BB@0x6a : [ onMeasure-BB@0x7a onMeasure-BB@0xf8 ]
+	29      (0000006a) iget                 v8, v11, Landroidx/appcompat/widget/ScrollingTabContainerView;->mContentHeight I
+	30      (0000006e) invoke-static        v8, v10, Landroid/view/View$MeasureSpec;->makeMeasureSpec(I I)I
+	31      (00000074) move-result          v13
+	32      (00000076) if-nez               v2, +41
+
+onMeasure-BB@0x7a : [ onMeasure-BB@0x82 onMeasure-BB@0xf8 ]
+	33      (0000007a) iget-boolean         v8, v11, Landroidx/appcompat/widget/ScrollingTabContainerView;->mAllowCollapse Z
+	34      (0000007e) if-eqz               v8, +3d
+
+onMeasure-BB@0x82 : [ onMeasure-BB@0x84 ]
+	35      (00000082) move                 v0, v6
+
+onMeasure-BB@0x84 : [ onMeasure-BB@0x88 onMeasure-BB@0x104 ]
+	36      (00000084) if-eqz               v0, +40
+
+onMeasure-BB@0x88 : [ onMeasure-BB@0xaa onMeasure-BB@0xfc ]
+	37      (00000088) iget-object          v6, v11, Landroidx/appcompat/widget/ScrollingTabContainerView;->mTabLayout Landroidx/appcompat/widget/LinearLayoutCompat;
+	38      (0000008c) invoke-virtual       v6, v7, v13, Landroidx/appcompat/widget/LinearLayoutCompat;->measure(I I)V
+	39      (00000092) iget-object          v6, v11, Landroidx/appcompat/widget/ScrollingTabContainerView;->mTabLayout Landroidx/appcompat/widget/LinearLayoutCompat;
+	40      (00000096) invoke-virtual       v6, Landroidx/appcompat/widget/LinearLayoutCompat;->getMeasuredWidth()I
+	41      (0000009c) move-result          v6
+	42      (0000009e) invoke-static        v12, Landroid/view/View$MeasureSpec;->getSize(I)I
+	43      (000000a4) move-result          v7
+	44      (000000a6) if-le                v6, v7, +2b
+
+onMeasure-BB@0xaa : [ onMeasure-BB@0xb0 ]
+	45      (000000aa) invoke-direct        v11, Landroidx/appcompat/widget/ScrollingTabContainerView;->performCollapse()V
+
+onMeasure-BB@0xb0 : [ onMeasure-BB@0xca onMeasure-BB@0xd8 ]
+	46      (000000b0) invoke-virtual       v11, Landroidx/appcompat/widget/ScrollingTabContainerView;->getMeasuredWidth()I
+	47      (000000b6) move-result          v4
+	48      (000000b8) invoke-super         v11, v12, v13, Landroid/widget/HorizontalScrollView;->onMeasure(I I)V
+	49      (000000be) invoke-virtual       v11, Landroidx/appcompat/widget/ScrollingTabContainerView;->getMeasuredWidth()I
+	50      (000000c4) move-result          v3
+	51      (000000c6) if-eqz               v2, +9
+
+onMeasure-BB@0xca : [ onMeasure-BB@0xce onMeasure-BB@0xd8 ]
+	52      (000000ca) if-eq                v4, v3, +7
+
+onMeasure-BB@0xce : [ onMeasure-BB@0xd8 ]
+	53      (000000ce) iget                 v6, v11, Landroidx/appcompat/widget/ScrollingTabContainerView;->mSelectedTabIndex I
+	54      (000000d2) invoke-virtual       v11, v6, Landroidx/appcompat/widget/ScrollingTabContainerView;->setTabSelected(I)V
+
+onMeasure-BB@0xd8 : 
+	55      (000000d8) return-void          
+
+onMeasure-BB@0xda : [ onMeasure-BB@0x16 ]
+	56      (000000da) move                 v2, v7
+	57      (000000dc) goto                 -63
+
+onMeasure-BB@0xde : [ onMeasure-BB@0x56 ]
+	58      (000000de) invoke-static        v12, Landroid/view/View$MeasureSpec;->getSize(I)I
+	59      (000000e4) move-result          v8
+	60      (000000e6) div-int/lit8         v8, v8, 2
+	61      (000000ea) iput                 v8, v11, Landroidx/appcompat/widget/ScrollingTabContainerView;->mMaxTabWidth I
+	62      (000000ee) goto                 -4c
+
+onMeasure-BB@0xf0 : [ onMeasure-BB@0x6a ]
+	63      (000000f0) const/4              v8, -1
+	64      (000000f2) iput                 v8, v11, Landroidx/appcompat/widget/ScrollingTabContainerView;->mMaxTabWidth I
+	65      (000000f6) goto                 -46
+
+onMeasure-BB@0xf8 : [ onMeasure-BB@0x84 ]
+	66      (000000f8) move                 v0, v7
+	67      (000000fa) goto                 -3b
+
+onMeasure-BB@0xfc : [ onMeasure-BB@0xb0 ]
+	68      (000000fc) invoke-direct        v11, Landroidx/appcompat/widget/ScrollingTabContainerView;->performExpand()Z
+	69      (00000102) goto                 -29
+
+onMeasure-BB@0x104 : [ onMeasure-BB@0xb0 ]
+	70      (00000104) invoke-direct        v11, Landroidx/appcompat/widget/ScrollingTabContainerView;->performExpand()Z
+	71      (0000010a) goto                 -2d
+

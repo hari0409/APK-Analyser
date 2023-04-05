@@ -1,0 +1,13 @@
+# Landroidx/appcompat/widget/ActionBarOverlayLayout;->generateDefaultLayoutParams()Landroidx/appcompat/widget/ActionBarOverlayLayout$LayoutParams; [access_flags=protected]
+#
+# Parameters:
+# local registers: v0...v2
+#
+# - return:androidx.appcompat.widget.ActionBarOverlayLayout$LayoutParams
+
+generateDefaultLayoutParams-BB@0x0 : 
+	0       (00000000) const/4              v1, -1
+	1       (00000002) new-instance         v0, Landroidx/appcompat/widget/ActionBarOverlayLayout$LayoutParams;
+	2       (00000006) invoke-direct        v0, v1, v1, Landroidx/appcompat/widget/ActionBarOverlayLayout$LayoutParams;-><init>(I I)V
+	3       (0000000c) return-object        v0
+

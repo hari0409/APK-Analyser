@@ -1,0 +1,24 @@
+# Landroidx/appcompat/view/menu/MenuDialogHelper;->onOpenSubMenu(Landroidx/appcompat/view/menu/MenuBuilder;)Z [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:androidx.appcompat.view.menu.MenuBuilder
+#
+# - return:boolean
+
+onOpenSubMenu-BB@0x0 : [ onOpenSubMenu-BB@0x8 onOpenSubMenu-BB@0x16 ]
+	0       (00000000) iget-object          v0, v1, Landroidx/appcompat/view/menu/MenuDialogHelper;->mPresenterCallback Landroidx/appcompat/view/menu/MenuPresenter$Callback;
+	1       (00000004) if-eqz               v0, +9
+
+onOpenSubMenu-BB@0x8 : [ onOpenSubMenu-BB@0x14 ]
+	2       (00000008) iget-object          v0, v1, Landroidx/appcompat/view/menu/MenuDialogHelper;->mPresenterCallback Landroidx/appcompat/view/menu/MenuPresenter$Callback;
+	3       (0000000c) invoke-interface     v0, v2, Landroidx/appcompat/view/menu/MenuPresenter$Callback;->onOpenSubMenu(Landroidx/appcompat/view/menu/MenuBuilder;)Z
+	4       (00000012) move-result          v0
+
+onOpenSubMenu-BB@0x14 : 
+	5       (00000014) return               v0
+
+onOpenSubMenu-BB@0x16 : [ onOpenSubMenu-BB@0x14 ]
+	6       (00000016) const/4              v0, 0
+	7       (00000018) goto                 -2
+

@@ -1,0 +1,29 @@
+# Landroidx/appcompat/app/ActionBarDrawerToggle;->onDrawerSlide(Landroid/view/View; F)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:android.view.View
+# - v4:float
+#
+# - return:void
+
+onDrawerSlide-BB@0x0 : [ onDrawerSlide-BB@0xa onDrawerSlide-BB@0x26 ]
+	0       (00000000) const/4              v1, 0
+	1       (00000002) iget-boolean         v0, v2, Landroidx/appcompat/app/ActionBarDrawerToggle;->mDrawerSlideAnimationEnabled Z
+	2       (00000006) if-eqz               v0, +10
+
+onDrawerSlide-BB@0xa : [ onDrawerSlide-BB@0x24 ]
+	3       (0000000a) const/high16         v0, 16256 # [1.0]
+	4       (0000000e) invoke-static        v1, v4, Ljava/lang/Math;->max(F F)F
+	5       (00000014) move-result          v1
+	6       (00000016) invoke-static        v0, v1, Ljava/lang/Math;->min(F F)F
+	7       (0000001c) move-result          v0
+	8       (0000001e) invoke-direct        v2, v0, Landroidx/appcompat/app/ActionBarDrawerToggle;->setPosition(F)V
+
+onDrawerSlide-BB@0x24 : 
+	9       (00000024) return-void          
+
+onDrawerSlide-BB@0x26 : [ onDrawerSlide-BB@0x24 ]
+	10      (00000026) invoke-direct        v2, v1, Landroidx/appcompat/app/ActionBarDrawerToggle;->setPosition(F)V
+	11      (0000002c) goto                 -4
+

@@ -1,0 +1,31 @@
+# Landroidx/appcompat/widget/ScrollingTabContainerView;->performExpand()Z [access_flags=private]
+#
+# Parameters:
+# local registers: v0...v5
+#
+# - return:boolean
+
+performExpand-BB@0x0 : [ performExpand-BB@0xe performExpand-BB@0x10 ]
+	0       (00000000) const/4              v4, 0
+	1       (00000002) invoke-direct        v5, Landroidx/appcompat/widget/ScrollingTabContainerView;->isCollapsed()Z
+	2       (00000008) move-result          v0
+	3       (0000000a) if-nez               v0, +3
+
+performExpand-BB@0xe : 
+	4       (0000000e) return               v4
+
+performExpand-BB@0x10 : [ performExpand-BB@0xe ]
+	5       (00000010) iget-object          v0, v5, Landroidx/appcompat/widget/ScrollingTabContainerView;->mTabSpinner Landroid/widget/Spinner;
+	6       (00000014) invoke-virtual       v5, v0, Landroidx/appcompat/widget/ScrollingTabContainerView;->removeView(Landroid/view/View;)V
+	7       (0000001a) iget-object          v0, v5, Landroidx/appcompat/widget/ScrollingTabContainerView;->mTabLayout Landroidx/appcompat/widget/LinearLayoutCompat;
+	8       (0000001e) new-instance         v1, Landroid/view/ViewGroup$LayoutParams;
+	9       (00000022) const/4              v2, -2
+	10      (00000024) const/4              v3, -1
+	11      (00000026) invoke-direct        v1, v2, v3, Landroid/view/ViewGroup$LayoutParams;-><init>(I I)V
+	12      (0000002c) invoke-virtual       v5, v0, v1, Landroidx/appcompat/widget/ScrollingTabContainerView;->addView(Landroid/view/View; Landroid/view/ViewGroup$LayoutParams;)V
+	13      (00000032) iget-object          v0, v5, Landroidx/appcompat/widget/ScrollingTabContainerView;->mTabSpinner Landroid/widget/Spinner;
+	14      (00000036) invoke-virtual       v0, Landroid/widget/Spinner;->getSelectedItemPosition()I
+	15      (0000003c) move-result          v0
+	16      (0000003e) invoke-virtual       v5, v0, Landroidx/appcompat/widget/ScrollingTabContainerView;->setTabSelected(I)V
+	17      (00000044) goto                 -1b
+

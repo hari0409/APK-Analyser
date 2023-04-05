@@ -1,0 +1,24 @@
+# Landroidx/appcompat/widget/ActionBarOverlayLayout;->setHideOnContentScrollEnabled(Z)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:boolean
+#
+# - return:void
+
+setHideOnContentScrollEnabled-BB@0x0 : [ setHideOnContentScrollEnabled-BB@0x8 setHideOnContentScrollEnabled-BB@0x1e ]
+	0       (00000000) iget-boolean         v0, v1, Landroidx/appcompat/widget/ActionBarOverlayLayout;->mHideOnContentScroll Z
+	1       (00000004) if-eq                v2, v0, +d
+
+setHideOnContentScrollEnabled-BB@0x8 : [ setHideOnContentScrollEnabled-BB@0x10 setHideOnContentScrollEnabled-BB@0x1e ]
+	2       (00000008) iput-boolean         v2, v1, Landroidx/appcompat/widget/ActionBarOverlayLayout;->mHideOnContentScroll Z
+	3       (0000000c) if-nez               v2, +9
+
+setHideOnContentScrollEnabled-BB@0x10 : [ setHideOnContentScrollEnabled-BB@0x1e ]
+	4       (00000010) invoke-virtual       v1, Landroidx/appcompat/widget/ActionBarOverlayLayout;->haltActionBarHideOffsetAnimations()V
+	5       (00000016) const/4              v0, 0
+	6       (00000018) invoke-virtual       v1, v0, Landroidx/appcompat/widget/ActionBarOverlayLayout;->setActionBarHideOffset(I)V
+
+setHideOnContentScrollEnabled-BB@0x1e : 
+	7       (0000001e) return-void          
+

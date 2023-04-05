@@ -1,0 +1,33 @@
+# Landroidx/appcompat/widget/ButtonBarLayout;->setAllowStacking(Z)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:boolean
+#
+# - return:void
+
+setAllowStacking-BB@0x0 : [ setAllowStacking-BB@0x8 setAllowStacking-BB@0x30 ]
+	0       (00000000) iget-boolean         v0, v2, Landroidx/appcompat/widget/ButtonBarLayout;->mAllowStacking Z
+	1       (00000004) if-eq                v0, v3, +16
+
+setAllowStacking-BB@0x8 : [ setAllowStacking-BB@0x14 setAllowStacking-BB@0x2a ]
+	2       (00000008) iput-boolean         v3, v2, Landroidx/appcompat/widget/ButtonBarLayout;->mAllowStacking Z
+	3       (0000000c) iget-boolean         v0, v2, Landroidx/appcompat/widget/ButtonBarLayout;->mAllowStacking Z
+	4       (00000010) if-nez               v0, +d
+
+setAllowStacking-BB@0x14 : [ setAllowStacking-BB@0x22 setAllowStacking-BB@0x2a ]
+	5       (00000014) invoke-virtual       v2, Landroidx/appcompat/widget/ButtonBarLayout;->getOrientation()I
+	6       (0000001a) move-result          v0
+	7       (0000001c) const/4              v1, 1
+	8       (0000001e) if-ne                v0, v1, +6
+
+setAllowStacking-BB@0x22 : [ setAllowStacking-BB@0x2a ]
+	9       (00000022) const/4              v0, 0
+	10      (00000024) invoke-direct        v2, v0, Landroidx/appcompat/widget/ButtonBarLayout;->setStacked(Z)V
+
+setAllowStacking-BB@0x2a : [ setAllowStacking-BB@0x30 ]
+	11      (0000002a) invoke-virtual       v2, Landroidx/appcompat/widget/ButtonBarLayout;->requestLayout()V
+
+setAllowStacking-BB@0x30 : 
+	12      (00000030) return-void          
+

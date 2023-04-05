@@ -1,0 +1,49 @@
+# Landroidx/appcompat/app/WindowDecorActionBar;-><init>(Landroid/view/View;)V [access_flags=public constructor]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:android.view.View
+#
+# - return:void
+
+<init>-BB@0x0 : [ <init>-BB@0x6a <init>-BB@0x82 ]
+	0       (00000000) const/4              v1, 1
+	1       (00000002) invoke-direct        v2, Landroidx/appcompat/app/ActionBar;-><init>()V
+	2       (00000008) new-instance         v0, Ljava/util/ArrayList;
+	3       (0000000c) invoke-direct        v0, Ljava/util/ArrayList;-><init>()V
+	4       (00000012) iput-object          v0, v2, Landroidx/appcompat/app/WindowDecorActionBar;->mTabs Ljava/util/ArrayList;
+	5       (00000016) const/4              v0, -1
+	6       (00000018) iput                 v0, v2, Landroidx/appcompat/app/WindowDecorActionBar;->mSavedTabPosition I
+	7       (0000001c) new-instance         v0, Ljava/util/ArrayList;
+	8       (00000020) invoke-direct        v0, Ljava/util/ArrayList;-><init>()V
+	9       (00000026) iput-object          v0, v2, Landroidx/appcompat/app/WindowDecorActionBar;->mMenuVisibilityListeners Ljava/util/ArrayList;
+	10      (0000002a) const/4              v0, 0
+	11      (0000002c) iput                 v0, v2, Landroidx/appcompat/app/WindowDecorActionBar;->mCurWindowVisibility I
+	12      (00000030) iput-boolean         v1, v2, Landroidx/appcompat/app/WindowDecorActionBar;->mContentAnimations Z
+	13      (00000034) iput-boolean         v1, v2, Landroidx/appcompat/app/WindowDecorActionBar;->mNowShowing Z
+	14      (00000038) new-instance         v0, Landroidx/appcompat/app/WindowDecorActionBar$1;
+	15      (0000003c) invoke-direct        v0, v2, Landroidx/appcompat/app/WindowDecorActionBar$1;-><init>(Landroidx/appcompat/app/WindowDecorActionBar;)V
+	16      (00000042) iput-object          v0, v2, Landroidx/appcompat/app/WindowDecorActionBar;->mHideListener Landroidx/core/view/ViewPropertyAnimatorListener;
+	17      (00000046) new-instance         v0, Landroidx/appcompat/app/WindowDecorActionBar$2;
+	18      (0000004a) invoke-direct        v0, v2, Landroidx/appcompat/app/WindowDecorActionBar$2;-><init>(Landroidx/appcompat/app/WindowDecorActionBar;)V
+	19      (00000050) iput-object          v0, v2, Landroidx/appcompat/app/WindowDecorActionBar;->mShowListener Landroidx/core/view/ViewPropertyAnimatorListener;
+	20      (00000054) new-instance         v0, Landroidx/appcompat/app/WindowDecorActionBar$3;
+	21      (00000058) invoke-direct        v0, v2, Landroidx/appcompat/app/WindowDecorActionBar$3;-><init>(Landroidx/appcompat/app/WindowDecorActionBar;)V
+	22      (0000005e) iput-object          v0, v2, Landroidx/appcompat/app/WindowDecorActionBar;->mUpdateListener Landroidx/core/view/ViewPropertyAnimatorUpdateListener;
+	23      (00000062) sget-boolean         v0, Landroidx/appcompat/app/WindowDecorActionBar;->$assertionsDisabled Z
+	24      (00000066) if-nez               v0, +e
+
+<init>-BB@0x6a : [ <init>-BB@0x76 <init>-BB@0x82 ]
+	25      (0000006a) invoke-virtual       v3, Landroid/view/View;->isInEditMode()Z
+	26      (00000070) move-result          v0
+	27      (00000072) if-nez               v0, +8
+
+<init>-BB@0x76 : 
+	28      (00000076) new-instance         v0, Ljava/lang/AssertionError;
+	29      (0000007a) invoke-direct        v0, Ljava/lang/AssertionError;-><init>()V
+	30      (00000080) throw                v0
+
+<init>-BB@0x82 : 
+	31      (00000082) invoke-direct        v2, v3, Landroidx/appcompat/app/WindowDecorActionBar;->init(Landroid/view/View;)V
+	32      (00000088) return-void          
+

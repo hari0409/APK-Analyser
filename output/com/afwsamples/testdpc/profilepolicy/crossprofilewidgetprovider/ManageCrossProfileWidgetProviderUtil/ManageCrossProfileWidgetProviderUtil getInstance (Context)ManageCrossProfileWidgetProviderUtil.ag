@@ -1,0 +1,35 @@
+# Lcom/afwsamples/testdpc/profilepolicy/crossprofilewidgetprovider/ManageCrossProfileWidgetProviderUtil;->getInstance(Landroid/content/Context;)Lcom/afwsamples/testdpc/profilepolicy/crossprofilewidgetprovider/ManageCrossProfileWidgetProviderUtil; [access_flags=public static synchronized]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:android.content.Context
+#
+# - return:com.afwsamples.testdpc.profilepolicy.crossprofilewidgetprovider.ManageCrossProfileWidgetProviderUtil
+
+getInstance-BB@0x0 : [ getInstance-BB@0x6 ]
+	0       (00000000) const-class          v1, Lcom/afwsamples/testdpc/profilepolicy/crossprofilewidgetprovider/ManageCrossProfileWidgetProviderUtil;
+	1       (00000004) monitor-enter        v1
+
+getInstance-BB@0x6 : [ getInstance-BB@0xe getInstance-BB@0x1c ]
+	2       (00000006) sget-object          v0, Lcom/afwsamples/testdpc/profilepolicy/crossprofilewidgetprovider/ManageCrossProfileWidgetProviderUtil;->sInstance Lcom/afwsamples/testdpc/profilepolicy/crossprofilewidgetprovider/ManageCrossProfileWidgetProviderUtil;
+	3       (0000000a) if-nez               v0, +9
+	6:1f
+	(Ljava/lang/Throwable; -> 24 getInstance-BB@0x24)
+
+getInstance-BB@0xe : [ getInstance-BB@0x1c ]
+	4       (0000000e) new-instance         v0, Lcom/afwsamples/testdpc/profilepolicy/crossprofilewidgetprovider/ManageCrossProfileWidgetProviderUtil;
+	5       (00000012) invoke-direct        v0, v2, Lcom/afwsamples/testdpc/profilepolicy/crossprofilewidgetprovider/ManageCrossProfileWidgetProviderUtil;-><init>(Landroid/content/Context;)V
+	6       (00000018) sput-object          v0, Lcom/afwsamples/testdpc/profilepolicy/crossprofilewidgetprovider/ManageCrossProfileWidgetProviderUtil;->sInstance Lcom/afwsamples/testdpc/profilepolicy/crossprofilewidgetprovider/ManageCrossProfileWidgetProviderUtil;
+	6:1f
+	(Ljava/lang/Throwable; -> 24 getInstance-BB@0x24)
+
+getInstance-BB@0x1c : 
+	7       (0000001c) sget-object          v0, Lcom/afwsamples/testdpc/profilepolicy/crossprofilewidgetprovider/ManageCrossProfileWidgetProviderUtil;->sInstance Lcom/afwsamples/testdpc/profilepolicy/crossprofilewidgetprovider/ManageCrossProfileWidgetProviderUtil;
+	8       (00000020) monitor-exit         v1
+	9       (00000022) return-object        v0
+
+getInstance-BB@0x24 : 
+	10      (00000024) move-exception       v0
+	11      (00000026) monitor-exit         v1
+	12      (00000028) throw                v0
+

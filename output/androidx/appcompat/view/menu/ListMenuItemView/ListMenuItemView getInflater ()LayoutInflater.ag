@@ -1,0 +1,22 @@
+# Landroidx/appcompat/view/menu/ListMenuItemView;->getInflater()Landroid/view/LayoutInflater; [access_flags=private]
+#
+# Parameters:
+# local registers: v0...v1
+#
+# - return:android.view.LayoutInflater
+
+getInflater-BB@0x0 : [ getInflater-BB@0x8 getInflater-BB@0x1c ]
+	0       (00000000) iget-object          v0, v1, Landroidx/appcompat/view/menu/ListMenuItemView;->mInflater Landroid/view/LayoutInflater;
+	1       (00000004) if-nez               v0, +c
+
+getInflater-BB@0x8 : [ getInflater-BB@0x1c ]
+	2       (00000008) invoke-virtual       v1, Landroidx/appcompat/view/menu/ListMenuItemView;->getContext()Landroid/content/Context;
+	3       (0000000e) move-result-object   v0
+	4       (00000010) invoke-static        v0, Landroid/view/LayoutInflater;->from(Landroid/content/Context;)Landroid/view/LayoutInflater;
+	5       (00000016) move-result-object   v0
+	6       (00000018) iput-object          v0, v1, Landroidx/appcompat/view/menu/ListMenuItemView;->mInflater Landroid/view/LayoutInflater;
+
+getInflater-BB@0x1c : 
+	7       (0000001c) iget-object          v0, v1, Landroidx/appcompat/view/menu/ListMenuItemView;->mInflater Landroid/view/LayoutInflater;
+	8       (00000020) return-object        v0
+

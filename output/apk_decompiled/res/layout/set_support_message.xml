@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <EditText android:textColorLink="?android:colorAccent" android:gravity="start|center|top" android:autoLink="email|phone" android:id="@id/message_view" android:background="@null" android:padding="@dimen/message_padding" android:scrollbars="vertical" android:layout_width="fill_parent" android:layout_height="0.0dip" android:hint="Enter the support message" android:layout_weight="1.0" android:windowSoftInputMode="adjustPan" android:fadeScrollbars="false" />
+    <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content" android:divider="?android:dividerHorizontal" android:showDividers="beginning|middle" style="?android:buttonBarStyle">
+        <Button android:id="@id/set_default_message" android:background="?android:selectableItemBackground" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/set_default_message" style="?android:buttonBarButtonStyle" />
+        <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <Button android:id="@id/clear_message" android:background="?android:selectableItemBackground" android:layout_width="0.0dip" android:layout_height="wrap_content" android:text="@string/clear_message" android:layout_weight="1.0" style="?android:buttonBarButtonStyle" />
+            <Button android:id="@id/set_message" android:background="?android:selectableItemBackground" android:layout_width="0.0dip" android:layout_height="wrap_content" android:text="@string/set_message" android:layout_weight="1.0" style="?android:buttonBarButtonStyle" />
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

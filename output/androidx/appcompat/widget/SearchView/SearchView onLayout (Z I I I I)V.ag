@@ -1,0 +1,51 @@
+# Landroidx/appcompat/widget/SearchView;->onLayout(Z I I I I)V [access_flags=protected]
+#
+# Parameters:
+# - local registers: v0...v5
+# - v6:boolean
+# - v7:int
+# - v8:int
+# - v9:int
+# - v10:int
+#
+# - return:void
+
+onLayout-BB@0x0 : [ onLayout-BB@0xa onLayout-BB@0x64 ]
+	0       (00000000) invoke-super/range   v5 ... v10, Landroidx/appcompat/widget/LinearLayoutCompat;->onLayout(Z I I I I)V
+	1       (00000006) if-eqz               v6, +2f
+
+onLayout-BB@0xa : [ onLayout-BB@0x40 onLayout-BB@0x66 ]
+	2       (0000000a) iget-object          v0, v5, Landroidx/appcompat/widget/SearchView;->mSearchSrcTextView Landroidx/appcompat/widget/SearchView$SearchAutoComplete;
+	3       (0000000e) iget-object          v1, v5, Landroidx/appcompat/widget/SearchView;->mSearchSrcTextViewBounds Landroid/graphics/Rect;
+	4       (00000012) invoke-direct        v5, v0, v1, Landroidx/appcompat/widget/SearchView;->getChildBoundsWithinSearchView(Landroid/view/View; Landroid/graphics/Rect;)V
+	5       (00000018) iget-object          v0, v5, Landroidx/appcompat/widget/SearchView;->mSearchSrtTextViewBoundsExpanded Landroid/graphics/Rect;
+	6       (0000001c) iget-object          v1, v5, Landroidx/appcompat/widget/SearchView;->mSearchSrcTextViewBounds Landroid/graphics/Rect;
+	7       (00000020) iget                 v1, v1, Landroid/graphics/Rect;->left I
+	8       (00000024) const/4              v2, 0
+	9       (00000026) iget-object          v3, v5, Landroidx/appcompat/widget/SearchView;->mSearchSrcTextViewBounds Landroid/graphics/Rect;
+	10      (0000002a) iget                 v3, v3, Landroid/graphics/Rect;->right I
+	11      (0000002e) sub-int              v4, v10, v8
+	12      (00000032) invoke-virtual       v0, v1, v2, v3, v4, Landroid/graphics/Rect;->set(I I I I)V
+	13      (00000038) iget-object          v0, v5, Landroidx/appcompat/widget/SearchView;->mTouchDelegate Landroidx/appcompat/widget/SearchView$UpdatableTouchDelegate;
+	14      (0000003c) if-nez               v0, +15
+
+onLayout-BB@0x40 : [ onLayout-BB@0x64 ]
+	15      (00000040) new-instance         v0, Landroidx/appcompat/widget/SearchView$UpdatableTouchDelegate;
+	16      (00000044) iget-object          v1, v5, Landroidx/appcompat/widget/SearchView;->mSearchSrtTextViewBoundsExpanded Landroid/graphics/Rect;
+	17      (00000048) iget-object          v2, v5, Landroidx/appcompat/widget/SearchView;->mSearchSrcTextViewBounds Landroid/graphics/Rect;
+	18      (0000004c) iget-object          v3, v5, Landroidx/appcompat/widget/SearchView;->mSearchSrcTextView Landroidx/appcompat/widget/SearchView$SearchAutoComplete;
+	19      (00000050) invoke-direct        v0, v1, v2, v3, Landroidx/appcompat/widget/SearchView$UpdatableTouchDelegate;-><init>(Landroid/graphics/Rect; Landroid/graphics/Rect; Landroid/view/View;)V
+	20      (00000056) iput-object          v0, v5, Landroidx/appcompat/widget/SearchView;->mTouchDelegate Landroidx/appcompat/widget/SearchView$UpdatableTouchDelegate;
+	21      (0000005a) iget-object          v0, v5, Landroidx/appcompat/widget/SearchView;->mTouchDelegate Landroidx/appcompat/widget/SearchView$UpdatableTouchDelegate;
+	22      (0000005e) invoke-virtual       v5, v0, Landroidx/appcompat/widget/SearchView;->setTouchDelegate(Landroid/view/TouchDelegate;)V
+
+onLayout-BB@0x64 : 
+	23      (00000064) return-void          
+
+onLayout-BB@0x66 : [ onLayout-BB@0x64 ]
+	24      (00000066) iget-object          v0, v5, Landroidx/appcompat/widget/SearchView;->mTouchDelegate Landroidx/appcompat/widget/SearchView$UpdatableTouchDelegate;
+	25      (0000006a) iget-object          v1, v5, Landroidx/appcompat/widget/SearchView;->mSearchSrtTextViewBoundsExpanded Landroid/graphics/Rect;
+	26      (0000006e) iget-object          v2, v5, Landroidx/appcompat/widget/SearchView;->mSearchSrcTextViewBounds Landroid/graphics/Rect;
+	27      (00000072) invoke-virtual       v0, v1, v2, Landroidx/appcompat/widget/SearchView$UpdatableTouchDelegate;->setBounds(Landroid/graphics/Rect; Landroid/graphics/Rect;)V
+	28      (00000078) goto                 -a
+

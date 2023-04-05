@@ -1,0 +1,31 @@
+# Lcom/afwsamples/testdpc/profilepolicy/apprestrictions/AppRestrictionsManagingPackageFragment;->setSelectedPackage(Ljava/lang/String;)V [access_flags=protected]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:java.lang.String
+#
+# - return:void
+
+setSelectedPackage-BB@0x0 : [ setSelectedPackage-BB@0xc setSelectedPackage-BB@0xe ]
+	0       (00000000) invoke-static        v3, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
+	1       (00000006) move-result          v0
+	2       (00000008) if-eqz               v0, +3
+
+setSelectedPackage-BB@0xc : [ setSelectedPackage-BB@0xe ]
+	3       (0000000c) const/4              v3, 0
+
+setSelectedPackage-BB@0xe : [ setSelectedPackage-BB@0x1a setSelectedPackage-BB@0x22 ]
+	4       (0000000e) sget                 v0, Lcom/afwsamples/testdpc/common/Util;->SDK_INT I
+	5       (00000012) const/16             v1, 24
+	6       (00000016) if-lt                v0, v1, +6
+
+setSelectedPackage-BB@0x1a : [ setSelectedPackage-BB@0x20 ]
+	7       (0000001a) invoke-direct        v2, v3, Lcom/afwsamples/testdpc/profilepolicy/apprestrictions/AppRestrictionsManagingPackageFragment;->setApplicationRestrictionsManagingPackage(Ljava/lang/String;)V
+
+setSelectedPackage-BB@0x20 : 
+	8       (00000020) return-void          
+
+setSelectedPackage-BB@0x22 : [ setSelectedPackage-BB@0x20 ]
+	9       (00000022) invoke-direct        v2, v3, Lcom/afwsamples/testdpc/profilepolicy/apprestrictions/AppRestrictionsManagingPackageFragment;->setApplicationRestrictionsManagingPackageWithProxy(Ljava/lang/String;)V
+	10      (00000028) goto                 -4
+

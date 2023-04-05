@@ -1,0 +1,24 @@
+# Landroidx/appcompat/widget/ListPopupWindow;->getSelectedView()Landroid/view/View; [access_flags=public]
+#
+# Parameters:
+# local registers: v0...v1
+#
+# - return:android.view.View
+
+getSelectedView-BB@0x0 : [ getSelectedView-BB@0xc getSelectedView-BB@0x10 ]
+	0       (00000000) invoke-virtual       v1, Landroidx/appcompat/widget/ListPopupWindow;->isShowing()Z
+	1       (00000006) move-result          v0
+	2       (00000008) if-nez               v0, +4
+
+getSelectedView-BB@0xc : [ getSelectedView-BB@0xe ]
+	3       (0000000c) const/4              v0, 0
+
+getSelectedView-BB@0xe : 
+	4       (0000000e) return-object        v0
+
+getSelectedView-BB@0x10 : [ getSelectedView-BB@0xe ]
+	5       (00000010) iget-object          v0, v1, Landroidx/appcompat/widget/ListPopupWindow;->mDropDownList Landroidx/appcompat/widget/DropDownListView;
+	6       (00000014) invoke-virtual       v0, Landroidx/appcompat/widget/DropDownListView;->getSelectedView()Landroid/view/View;
+	7       (0000001a) move-result-object   v0
+	8       (0000001c) goto                 -7
+

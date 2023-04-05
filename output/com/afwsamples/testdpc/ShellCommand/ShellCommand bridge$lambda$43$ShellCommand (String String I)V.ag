@@ -1,0 +1,14 @@
+# Lcom/afwsamples/testdpc/ShellCommand;->bridge$lambda$43$ShellCommand(Ljava/lang/String; Ljava/lang/String; I)V [access_flags=final bridge synthetic]
+#
+# Parameters:
+# - local registers: v0...v0
+# - v1:java.lang.String
+# - v2:java.lang.String
+# - v3:int
+#
+# - return:void
+
+bridge$lambda$43$ShellCommand-BB@0x0 : 
+	0       (00000000) invoke-direct        v0, v1, v2, v3, Lcom/afwsamples/testdpc/ShellCommand;->setPermissionGrantState(Ljava/lang/String; Ljava/lang/String; I)V
+	1       (00000006) return-void          
+

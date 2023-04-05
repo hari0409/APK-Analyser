@@ -1,0 +1,29 @@
+# Lcom/afwsamples/testdpc/policy/networking/PrivateDnsModeFragment;->getPrivateDnsHost()Ljava/lang/String; [access_flags=private]
+#
+# Parameters:
+# local registers: v0...v3
+#
+# - return:java.lang.String
+
+getPrivateDnsHost-BB@0x0 : [ getPrivateDnsHost-BB@0x1c ]
+	0       (00000000) iget-object          v1, v3, Lcom/afwsamples/testdpc/policy/networking/PrivateDnsModeFragment;->mDpm Landroid/app/admin/DevicePolicyManager;
+	1       (00000004) invoke-virtual       v3, Lcom/afwsamples/testdpc/policy/networking/PrivateDnsModeFragment;->getActivity()Landroid/app/Activity;
+	2       (0000000a) move-result-object   v2
+	3       (0000000c) invoke-static        v2, Lcom/afwsamples/testdpc/DeviceAdminReceiver;->getComponentName(Landroid/content/Context;)Landroid/content/ComponentName;
+	4       (00000012) move-result-object   v2
+	5       (00000014) invoke-virtual       v1, v2, Landroid/app/admin/DevicePolicyManager;->getGlobalPrivateDnsHost(Landroid/content/ComponentName;)Ljava/lang/String;
+	6       (0000001a) move-result-object   v1
+	0:19
+	(Ljava/lang/SecurityException; -> 1e getPrivateDnsHost-BB@0x1e)
+
+getPrivateDnsHost-BB@0x1c : 
+	7       (0000001c) return-object        v1
+
+getPrivateDnsHost-BB@0x1e : [ getPrivateDnsHost-BB@0x1c ]
+	8       (0000001e) move-exception       v0
+	9       (00000020) const-string         v1, 'PDNS_FRAG'
+	10      (00000024) const-string         v2, 'Failure getting host'
+	11      (00000028) invoke-static        v1, v2, v0, Landroid/util/Log;->w(Ljava/lang/String; Ljava/lang/String; Ljava/lang/Throwable;)I
+	12      (0000002e) const-string         v1, '<error getting resolver>'
+	13      (00000032) goto                 -b
+

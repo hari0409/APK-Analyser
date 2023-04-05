@@ -1,0 +1,85 @@
+# Landroidx/appcompat/widget/ToolbarWidgetWrapper;->setDisplayOptions(I)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v4
+# - v5:int
+#
+# - return:void
+
+setDisplayOptions-BB@0x0 : [ setDisplayOptions-BB@0x12 setDisplayOptions-BB@0x8e ]
+	0       (00000000) const/4              v3, 0
+	1       (00000002) iget                 v1, v4, Landroidx/appcompat/widget/ToolbarWidgetWrapper;->mDisplayOpts I
+	2       (00000006) xor-int              v0, v1, v5
+	3       (0000000a) iput                 v5, v4, Landroidx/appcompat/widget/ToolbarWidgetWrapper;->mDisplayOpts I
+	4       (0000000e) if-eqz               v0, +40
+
+setDisplayOptions-BB@0x12 : [ setDisplayOptions-BB@0x1a setDisplayOptions-BB@0x2e ]
+	5       (00000012) and-int/lit8         v2, v0, 4
+	6       (00000016) if-eqz               v2, +c
+
+setDisplayOptions-BB@0x1a : [ setDisplayOptions-BB@0x22 setDisplayOptions-BB@0x28 ]
+	7       (0000001a) and-int/lit8         v2, v5, 4
+	8       (0000001e) if-eqz               v2, +5
+
+setDisplayOptions-BB@0x22 : [ setDisplayOptions-BB@0x28 ]
+	9       (00000022) invoke-direct        v4, Landroidx/appcompat/widget/ToolbarWidgetWrapper;->updateHomeAccessibility()V
+
+setDisplayOptions-BB@0x28 : [ setDisplayOptions-BB@0x2e ]
+	10      (00000028) invoke-direct        v4, Landroidx/appcompat/widget/ToolbarWidgetWrapper;->updateNavigationIcon()V
+
+setDisplayOptions-BB@0x2e : [ setDisplayOptions-BB@0x36 setDisplayOptions-BB@0x3c ]
+	11      (0000002e) and-int/lit8         v2, v0, 3
+	12      (00000032) if-eqz               v2, +5
+
+setDisplayOptions-BB@0x36 : [ setDisplayOptions-BB@0x3c ]
+	13      (00000036) invoke-direct        v4, Landroidx/appcompat/widget/ToolbarWidgetWrapper;->updateToolbarLogo()V
+
+setDisplayOptions-BB@0x3c : [ setDisplayOptions-BB@0x44 setDisplayOptions-BB@0x68 ]
+	14      (0000003c) and-int/lit8         v2, v0, 8
+	15      (00000040) if-eqz               v2, +14
+
+setDisplayOptions-BB@0x44 : [ setDisplayOptions-BB@0x4c setDisplayOptions-BB@0x90 ]
+	16      (00000044) and-int/lit8         v2, v5, 8
+	17      (00000048) if-eqz               v2, +24
+
+setDisplayOptions-BB@0x4c : [ setDisplayOptions-BB@0x68 ]
+	18      (0000004c) iget-object          v2, v4, Landroidx/appcompat/widget/ToolbarWidgetWrapper;->mToolbar Landroidx/appcompat/widget/Toolbar;
+	19      (00000050) iget-object          v3, v4, Landroidx/appcompat/widget/ToolbarWidgetWrapper;->mTitle Ljava/lang/CharSequence;
+	20      (00000054) invoke-virtual       v2, v3, Landroidx/appcompat/widget/Toolbar;->setTitle(Ljava/lang/CharSequence;)V
+	21      (0000005a) iget-object          v2, v4, Landroidx/appcompat/widget/ToolbarWidgetWrapper;->mToolbar Landroidx/appcompat/widget/Toolbar;
+	22      (0000005e) iget-object          v3, v4, Landroidx/appcompat/widget/ToolbarWidgetWrapper;->mSubtitle Ljava/lang/CharSequence;
+	23      (00000062) invoke-virtual       v2, v3, Landroidx/appcompat/widget/Toolbar;->setSubtitle(Ljava/lang/CharSequence;)V
+
+setDisplayOptions-BB@0x68 : [ setDisplayOptions-BB@0x70 setDisplayOptions-BB@0x8e ]
+	24      (00000068) and-int/lit8         v2, v0, 16
+	25      (0000006c) if-eqz               v2, +11
+
+setDisplayOptions-BB@0x70 : [ setDisplayOptions-BB@0x78 setDisplayOptions-BB@0x8e ]
+	26      (00000070) iget-object          v2, v4, Landroidx/appcompat/widget/ToolbarWidgetWrapper;->mCustomView Landroid/view/View;
+	27      (00000074) if-eqz               v2, +d
+
+setDisplayOptions-BB@0x78 : [ setDisplayOptions-BB@0x80 setDisplayOptions-BB@0xa6 ]
+	28      (00000078) and-int/lit8         v2, v5, 16
+	29      (0000007c) if-eqz               v2, +15
+
+setDisplayOptions-BB@0x80 : [ setDisplayOptions-BB@0x8e ]
+	30      (00000080) iget-object          v2, v4, Landroidx/appcompat/widget/ToolbarWidgetWrapper;->mToolbar Landroidx/appcompat/widget/Toolbar;
+	31      (00000084) iget-object          v3, v4, Landroidx/appcompat/widget/ToolbarWidgetWrapper;->mCustomView Landroid/view/View;
+	32      (00000088) invoke-virtual       v2, v3, Landroidx/appcompat/widget/Toolbar;->addView(Landroid/view/View;)V
+
+setDisplayOptions-BB@0x8e : 
+	33      (0000008e) return-void          
+
+setDisplayOptions-BB@0x90 : [ setDisplayOptions-BB@0x68 ]
+	34      (00000090) iget-object          v2, v4, Landroidx/appcompat/widget/ToolbarWidgetWrapper;->mToolbar Landroidx/appcompat/widget/Toolbar;
+	35      (00000094) invoke-virtual       v2, v3, Landroidx/appcompat/widget/Toolbar;->setTitle(Ljava/lang/CharSequence;)V
+	36      (0000009a) iget-object          v2, v4, Landroidx/appcompat/widget/ToolbarWidgetWrapper;->mToolbar Landroidx/appcompat/widget/Toolbar;
+	37      (0000009e) invoke-virtual       v2, v3, Landroidx/appcompat/widget/Toolbar;->setSubtitle(Ljava/lang/CharSequence;)V
+	38      (000000a4) goto                 -1e
+
+setDisplayOptions-BB@0xa6 : [ setDisplayOptions-BB@0x8e ]
+	39      (000000a6) iget-object          v2, v4, Landroidx/appcompat/widget/ToolbarWidgetWrapper;->mToolbar Landroidx/appcompat/widget/Toolbar;
+	40      (000000aa) iget-object          v3, v4, Landroidx/appcompat/widget/ToolbarWidgetWrapper;->mCustomView Landroid/view/View;
+	41      (000000ae) invoke-virtual       v2, v3, Landroidx/appcompat/widget/Toolbar;->removeView(Landroid/view/View;)V
+	42      (000000b4) goto                 -13
+

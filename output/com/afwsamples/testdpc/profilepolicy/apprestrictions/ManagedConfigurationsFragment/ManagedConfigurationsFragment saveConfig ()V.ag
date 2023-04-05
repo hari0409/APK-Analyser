@@ -1,0 +1,33 @@
+# Lcom/afwsamples/testdpc/profilepolicy/apprestrictions/ManagedConfigurationsFragment;->saveConfig()V [access_flags=protected]
+#
+# Parameters:
+# local registers: v0...v4
+#
+# - return:void
+
+saveConfig-BB@0x0 : 
+	0       (00000000) iget-object          v1, v4, Lcom/afwsamples/testdpc/profilepolicy/apprestrictions/ManagedConfigurationsFragment;->mManagedAppsSpinner Landroid/widget/Spinner;
+	1       (00000004) invoke-virtual       v1, Landroid/widget/Spinner;->getSelectedItem()Ljava/lang/Object;
+	2       (0000000a) move-result-object   v1
+	3       (0000000c) check-cast           v1, Landroid/content/pm/ApplicationInfo;
+	4       (00000010) iget-object          v0, v1, Landroid/content/pm/ApplicationInfo;->packageName Ljava/lang/String;
+	5       (00000014) iget-object          v1, v4, Lcom/afwsamples/testdpc/profilepolicy/apprestrictions/ManagedConfigurationsFragment;->mDevicePolicyManager Landroid/app/admin/DevicePolicyManager;
+	6       (00000018) iget-object          v2, v4, Lcom/afwsamples/testdpc/profilepolicy/apprestrictions/ManagedConfigurationsFragment;->mAdminComponent Landroid/content/ComponentName;
+	7       (0000001c) iget-object          v3, v4, Lcom/afwsamples/testdpc/profilepolicy/apprestrictions/ManagedConfigurationsFragment;->mRestrictionEntries Ljava/util/List;
+	8       (00000020) invoke-static        v3, Lcom/afwsamples/testdpc/common/RestrictionManagerCompat;->convertRestrictionsToBundle(Ljava/util/List;)Landroid/os/Bundle;
+	9       (00000026) move-result-object   v3
+	10      (00000028) invoke-virtual       v1, v2, v0, v3, Landroid/app/admin/DevicePolicyManager;->setApplicationRestrictions(Landroid/content/ComponentName; Ljava/lang/String; Landroid/os/Bundle;)V
+	11      (0000002e) new-instance         v1, Ljava/util/ArrayList;
+	12      (00000032) iget-object          v2, v4, Lcom/afwsamples/testdpc/profilepolicy/apprestrictions/ManagedConfigurationsFragment;->mRestrictionEntries Ljava/util/List;
+	13      (00000036) invoke-direct        v1, v2, Ljava/util/ArrayList;-><init>(Ljava/util/Collection;)V
+	14      (0000003c) iput-object          v1, v4, Lcom/afwsamples/testdpc/profilepolicy/apprestrictions/ManagedConfigurationsFragment;->mLastRestrictionEntries Ljava/util/List;
+	15      (00000040) const                v1, 2131690193 # [1.900942270145672e+38]
+	16      (00000046) const/4              v2, 1
+	17      (00000048) new-array            v2, v2, [Ljava/lang/Object;
+	18      (0000004c) const/4              v3, 0
+	19      (0000004e) aput-object          v0, v2, v3
+	20      (00000052) invoke-virtual       v4, v1, v2, Lcom/afwsamples/testdpc/profilepolicy/apprestrictions/ManagedConfigurationsFragment;->getString(I [Ljava/lang/Object;)Ljava/lang/String;
+	21      (00000058) move-result-object   v1
+	22      (0000005a) invoke-virtual       v4, v1, Lcom/afwsamples/testdpc/profilepolicy/apprestrictions/ManagedConfigurationsFragment;->showToast(Ljava/lang/String;)V
+	23      (00000060) return-void          
+

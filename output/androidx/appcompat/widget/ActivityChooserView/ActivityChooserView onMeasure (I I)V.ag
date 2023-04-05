@@ -1,0 +1,32 @@
+# Landroidx/appcompat/widget/ActivityChooserView;->onMeasure(I I)V [access_flags=protected]
+#
+# Parameters:
+# - local registers: v0...v3
+# - v4:int
+# - v5:int
+#
+# - return:void
+
+onMeasure-BB@0x0 : [ onMeasure-BB@0x14 onMeasure-BB@0x28 ]
+	0       (00000000) iget-object          v0, v3, Landroidx/appcompat/widget/ActivityChooserView;->mActivityChooserContent Landroid/view/View;
+	1       (00000004) iget-object          v1, v3, Landroidx/appcompat/widget/ActivityChooserView;->mDefaultActivityButton Landroid/widget/FrameLayout;
+	2       (00000008) invoke-virtual       v1, Landroid/widget/FrameLayout;->getVisibility()I
+	3       (0000000e) move-result          v1
+	4       (00000010) if-eqz               v1, +c
+
+onMeasure-BB@0x14 : [ onMeasure-BB@0x28 ]
+	5       (00000014) invoke-static        v5, Landroid/view/View$MeasureSpec;->getSize(I)I
+	6       (0000001a) move-result          v1
+	7       (0000001c) const/high16         v2, 16384 # [2.0]
+	8       (00000020) invoke-static        v1, v2, Landroid/view/View$MeasureSpec;->makeMeasureSpec(I I)I
+	9       (00000026) move-result          v5
+
+onMeasure-BB@0x28 : 
+	10      (00000028) invoke-virtual       v3, v0, v4, v5, Landroidx/appcompat/widget/ActivityChooserView;->measureChild(Landroid/view/View; I I)V
+	11      (0000002e) invoke-virtual       v0, Landroid/view/View;->getMeasuredWidth()I
+	12      (00000034) move-result          v1
+	13      (00000036) invoke-virtual       v0, Landroid/view/View;->getMeasuredHeight()I
+	14      (0000003c) move-result          v2
+	15      (0000003e) invoke-virtual       v3, v1, v2, Landroidx/appcompat/widget/ActivityChooserView;->setMeasuredDimension(I I)V
+	16      (00000044) return-void          
+

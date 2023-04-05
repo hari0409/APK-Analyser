@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="8.0dip" android:layout_marginStart="24.0dip" android:layout_marginEnd="24.0dip">
+        <TextView android:textColor="?android:textColorPrimary" android:paddingTop="8.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/wipe_data_include" />
+        <CheckBox android:id="@id/external_storage_checkbox" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/external_storage" />
+        <CheckBox android:id="@id/reset_protection_checkbox" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/reset_protection_data" />
+    </LinearLayout>
+</ScrollView>

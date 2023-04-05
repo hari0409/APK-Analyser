@@ -1,0 +1,30 @@
+# Landroidx/appcompat/widget/ActivityChooserView;->dismissPopup()Z [access_flags=public]
+#
+# Parameters:
+# local registers: v0...v2
+#
+# - return:boolean
+
+dismissPopup-BB@0x0 : [ dismissPopup-BB@0xc dismissPopup-BB@0x38 ]
+	0       (00000000) invoke-virtual       v2, Landroidx/appcompat/widget/ActivityChooserView;->isShowingPopup()Z
+	1       (00000006) move-result          v1
+	2       (00000008) if-eqz               v1, +18
+
+dismissPopup-BB@0xc : [ dismissPopup-BB@0x2e dismissPopup-BB@0x38 ]
+	3       (0000000c) invoke-virtual       v2, Landroidx/appcompat/widget/ActivityChooserView;->getListPopupWindow()Landroidx/appcompat/widget/ListPopupWindow;
+	4       (00000012) move-result-object   v1
+	5       (00000014) invoke-virtual       v1, Landroidx/appcompat/widget/ListPopupWindow;->dismiss()V
+	6       (0000001a) invoke-virtual       v2, Landroidx/appcompat/widget/ActivityChooserView;->getViewTreeObserver()Landroid/view/ViewTreeObserver;
+	7       (00000020) move-result-object   v0
+	8       (00000022) invoke-virtual       v0, Landroid/view/ViewTreeObserver;->isAlive()Z
+	9       (00000028) move-result          v1
+	10      (0000002a) if-eqz               v1, +7
+
+dismissPopup-BB@0x2e : [ dismissPopup-BB@0x38 ]
+	11      (0000002e) iget-object          v1, v2, Landroidx/appcompat/widget/ActivityChooserView;->mOnGlobalLayoutListener Landroid/view/ViewTreeObserver$OnGlobalLayoutListener;
+	12      (00000032) invoke-virtual       v0, v1, Landroid/view/ViewTreeObserver;->removeGlobalOnLayoutListener(Landroid/view/ViewTreeObserver$OnGlobalLayoutListener;)V
+
+dismissPopup-BB@0x38 : 
+	13      (00000038) const/4              v1, 1
+	14      (0000003a) return               v1
+

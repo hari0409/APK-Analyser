@@ -1,0 +1,31 @@
+# Landroidx/appcompat/app/AppCompatActivity;->closeOptionsMenu()V [access_flags=public]
+#
+# Parameters:
+# local registers: v0...v3
+#
+# - return:void
+
+closeOptionsMenu-BB@0x0 : [ closeOptionsMenu-BB@0x1e closeOptionsMenu-BB@0x34 ]
+	0       (00000000) invoke-virtual       v3, Landroidx/appcompat/app/AppCompatActivity;->getSupportActionBar()Landroidx/appcompat/app/ActionBar;
+	1       (00000006) move-result-object   v0
+	2       (00000008) invoke-virtual       v3, Landroidx/appcompat/app/AppCompatActivity;->getWindow()Landroid/view/Window;
+	3       (0000000e) move-result-object   v1
+	4       (00000010) const/4              v2, 0
+	5       (00000012) invoke-virtual       v1, v2, Landroid/view/Window;->hasFeature(I)Z
+	6       (00000018) move-result          v1
+	7       (0000001a) if-eqz               v1, +d
+
+closeOptionsMenu-BB@0x1e : [ closeOptionsMenu-BB@0x22 closeOptionsMenu-BB@0x2e ]
+	8       (0000001e) if-eqz               v0, +8
+
+closeOptionsMenu-BB@0x22 : [ closeOptionsMenu-BB@0x2e closeOptionsMenu-BB@0x34 ]
+	9       (00000022) invoke-virtual       v0, Landroidx/appcompat/app/ActionBar;->closeOptionsMenu()Z
+	10      (00000028) move-result          v1
+	11      (0000002a) if-nez               v1, +5
+
+closeOptionsMenu-BB@0x2e : [ closeOptionsMenu-BB@0x34 ]
+	12      (0000002e) invoke-super         v3, Landroidx/fragment/app/FragmentActivity;->closeOptionsMenu()V
+
+closeOptionsMenu-BB@0x34 : 
+	13      (00000034) return-void          
+

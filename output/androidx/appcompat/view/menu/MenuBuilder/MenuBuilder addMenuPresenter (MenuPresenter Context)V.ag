@@ -1,0 +1,19 @@
+# Landroidx/appcompat/view/menu/MenuBuilder;->addMenuPresenter(Landroidx/appcompat/view/menu/MenuPresenter; Landroid/content/Context;)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:androidx.appcompat.view.menu.MenuPresenter
+# - v4:android.content.Context
+#
+# - return:void
+
+addMenuPresenter-BB@0x0 : 
+	0       (00000000) iget-object          v0, v2, Landroidx/appcompat/view/menu/MenuBuilder;->mPresenters Ljava/util/concurrent/CopyOnWriteArrayList;
+	1       (00000004) new-instance         v1, Ljava/lang/ref/WeakReference;
+	2       (00000008) invoke-direct        v1, v3, Ljava/lang/ref/WeakReference;-><init>(Ljava/lang/Object;)V
+	3       (0000000e) invoke-virtual       v0, v1, Ljava/util/concurrent/CopyOnWriteArrayList;->add(Ljava/lang/Object;)Z
+	4       (00000014) invoke-interface     v3, v4, v2, Landroidx/appcompat/view/menu/MenuPresenter;->initForMenu(Landroid/content/Context; Landroidx/appcompat/view/menu/MenuBuilder;)V
+	5       (0000001a) const/4              v0, 1
+	6       (0000001c) iput-boolean         v0, v2, Landroidx/appcompat/view/menu/MenuBuilder;->mIsActionItemsStale Z
+	7       (00000020) return-void          
+

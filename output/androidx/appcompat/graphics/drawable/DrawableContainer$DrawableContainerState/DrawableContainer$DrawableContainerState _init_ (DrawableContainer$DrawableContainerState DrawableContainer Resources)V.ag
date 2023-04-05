@@ -1,0 +1,200 @@
+# Landroidx/appcompat/graphics/drawable/DrawableContainer$DrawableContainerState;-><init>(Landroidx/appcompat/graphics/drawable/DrawableContainer$DrawableContainerState; Landroidx/appcompat/graphics/drawable/DrawableContainer; Landroid/content/res/Resources;)V [access_flags=constructor]
+#
+# Parameters:
+# - local registers: v0...v8
+# - v9:androidx.appcompat.graphics.drawable.DrawableContainer$DrawableContainerState
+# - v10:androidx.appcompat.graphics.drawable.DrawableContainer
+# - v11:android.content.res.Resources
+#
+# - return:void
+
+<init>-BB@0x0 : [ <init>-BB@0x2e <init>-BB@0x1ae ]
+	0       (00000000) const/4              v6, 0
+	1       (00000002) const/4              v7, 1
+	2       (00000004) invoke-direct        v8, Landroid/graphics/drawable/Drawable$ConstantState;-><init>()V
+	3       (0000000a) const/16             v5, 160
+	4       (0000000e) iput                 v5, v8, Landroidx/appcompat/graphics/drawable/DrawableContainer$DrawableContainerState;->mDensity I
+	5       (00000012) iput-boolean         v6, v8, Landroidx/appcompat/graphics/drawable/DrawableContainer$DrawableContainerState;->mVariablePadding Z
+	6       (00000016) iput-boolean         v6, v8, Landroidx/appcompat/graphics/drawable/DrawableContainer$DrawableContainerState;->mConstantSize Z
+	7       (0000001a) iput-boolean         v7, v8, Landroidx/appcompat/graphics/drawable/DrawableContainer$DrawableContainerState;->mDither Z
+	8       (0000001e) iput                 v6, v8, Landroidx/appcompat/graphics/drawable/DrawableContainer$DrawableContainerState;->mEnterFadeDuration I
+	9       (00000022) iput                 v6, v8, Landroidx/appcompat/graphics/drawable/DrawableContainer$DrawableContainerState;->mExitFadeDuration I
+	10      (00000026) iput-object          v10, v8, Landroidx/appcompat/graphics/drawable/DrawableContainer$DrawableContainerState;->mOwner Landroidx/appcompat/graphics/drawable/DrawableContainer;
+	11      (0000002a) if-eqz               v11, +c2
+
+<init>-BB@0x2e : [ <init>-BB@0x30 ]
+	12      (0000002e) move-object          v5, v11
+
+<init>-BB@0x30 : [ <init>-BB@0x38 <init>-BB@0x1c0 ]
+	13      (00000030) iput-object          v5, v8, Landroidx/appcompat/graphics/drawable/DrawableContainer$DrawableContainerState;->mSourceRes Landroid/content/res/Resources;
+	14      (00000034) if-eqz               v9, +c6
+
+<init>-BB@0x38 : [ <init>-BB@0x3c ]
+	15      (00000038) iget                 v5, v9, Landroidx/appcompat/graphics/drawable/DrawableContainer$DrawableContainerState;->mDensity I
+
+<init>-BB@0x3c : [ <init>-BB@0x4c <init>-BB@0x1e8 ]
+	16      (0000003c) invoke-static        v11, v5, Landroidx/appcompat/graphics/drawable/DrawableContainer;->resolveDensity(Landroid/content/res/Resources; I)I
+	17      (00000042) move-result          v5
+	18      (00000044) iput                 v5, v8, Landroidx/appcompat/graphics/drawable/DrawableContainer$DrawableContainerState;->mDensity I
+	19      (00000048) if-eqz               v9, +d0
+
+<init>-BB@0x4c : [ <init>-BB@0xe0 <init>-BB@0x12a ]
+	20      (0000004c) iget                 v5, v9, Landroidx/appcompat/graphics/drawable/DrawableContainer$DrawableContainerState;->mChangingConfigurations I
+	21      (00000050) iput                 v5, v8, Landroidx/appcompat/graphics/drawable/DrawableContainer$DrawableContainerState;->mChangingConfigurations I
+	22      (00000054) iget                 v5, v9, Landroidx/appcompat/graphics/drawable/DrawableContainer$DrawableContainerState;->mChildrenChangingConfigurations I
+	23      (00000058) iput                 v5, v8, Landroidx/appcompat/graphics/drawable/DrawableContainer$DrawableContainerState;->mChildrenChangingConfigurations I
+	24      (0000005c) iput-boolean         v7, v8, Landroidx/appcompat/graphics/drawable/DrawableContainer$DrawableContainerState;->mCheckedConstantState Z
+	25      (00000060) iput-boolean         v7, v8, Landroidx/appcompat/graphics/drawable/DrawableContainer$DrawableContainerState;->mCanConstantState Z
+	26      (00000064) iget-boolean         v5, v9, Landroidx/appcompat/graphics/drawable/DrawableContainer$DrawableContainerState;->mVariablePadding Z
+	27      (00000068) iput-boolean         v5, v8, Landroidx/appcompat/graphics/drawable/DrawableContainer$DrawableContainerState;->mVariablePadding Z
+	28      (0000006c) iget-boolean         v5, v9, Landroidx/appcompat/graphics/drawable/DrawableContainer$DrawableContainerState;->mConstantSize Z
+	29      (00000070) iput-boolean         v5, v8, Landroidx/appcompat/graphics/drawable/DrawableContainer$DrawableContainerState;->mConstantSize Z
+	30      (00000074) iget-boolean         v5, v9, Landroidx/appcompat/graphics/drawable/DrawableContainer$DrawableContainerState;->mDither Z
+	31      (00000078) iput-boolean         v5, v8, Landroidx/appcompat/graphics/drawable/DrawableContainer$DrawableContainerState;->mDither Z
+	32      (0000007c) iget-boolean         v5, v9, Landroidx/appcompat/graphics/drawable/DrawableContainer$DrawableContainerState;->mMutated Z
+	33      (00000080) iput-boolean         v5, v8, Landroidx/appcompat/graphics/drawable/DrawableContainer$DrawableContainerState;->mMutated Z
+	34      (00000084) iget                 v5, v9, Landroidx/appcompat/graphics/drawable/DrawableContainer$DrawableContainerState;->mLayoutDirection I
+	35      (00000088) iput                 v5, v8, Landroidx/appcompat/graphics/drawable/DrawableContainer$DrawableContainerState;->mLayoutDirection I
+	36      (0000008c) iget                 v5, v9, Landroidx/appcompat/graphics/drawable/DrawableContainer$DrawableContainerState;->mEnterFadeDuration I
+	37      (00000090) iput                 v5, v8, Landroidx/appcompat/graphics/drawable/DrawableContainer$DrawableContainerState;->mEnterFadeDuration I
+	38      (00000094) iget                 v5, v9, Landroidx/appcompat/graphics/drawable/DrawableContainer$DrawableContainerState;->mExitFadeDuration I
+	39      (00000098) iput                 v5, v8, Landroidx/appcompat/graphics/drawable/DrawableContainer$DrawableContainerState;->mExitFadeDuration I
+	40      (0000009c) iget-boolean         v5, v9, Landroidx/appcompat/graphics/drawable/DrawableContainer$DrawableContainerState;->mAutoMirrored Z
+	41      (000000a0) iput-boolean         v5, v8, Landroidx/appcompat/graphics/drawable/DrawableContainer$DrawableContainerState;->mAutoMirrored Z
+	42      (000000a4) iget-object          v5, v9, Landroidx/appcompat/graphics/drawable/DrawableContainer$DrawableContainerState;->mColorFilter Landroid/graphics/ColorFilter;
+	43      (000000a8) iput-object          v5, v8, Landroidx/appcompat/graphics/drawable/DrawableContainer$DrawableContainerState;->mColorFilter Landroid/graphics/ColorFilter;
+	44      (000000ac) iget-boolean         v5, v9, Landroidx/appcompat/graphics/drawable/DrawableContainer$DrawableContainerState;->mHasColorFilter Z
+	45      (000000b0) iput-boolean         v5, v8, Landroidx/appcompat/graphics/drawable/DrawableContainer$DrawableContainerState;->mHasColorFilter Z
+	46      (000000b4) iget-object          v5, v9, Landroidx/appcompat/graphics/drawable/DrawableContainer$DrawableContainerState;->mTintList Landroid/content/res/ColorStateList;
+	47      (000000b8) iput-object          v5, v8, Landroidx/appcompat/graphics/drawable/DrawableContainer$DrawableContainerState;->mTintList Landroid/content/res/ColorStateList;
+	48      (000000bc) iget-object          v5, v9, Landroidx/appcompat/graphics/drawable/DrawableContainer$DrawableContainerState;->mTintMode Landroid/graphics/PorterDuff$Mode;
+	49      (000000c0) iput-object          v5, v8, Landroidx/appcompat/graphics/drawable/DrawableContainer$DrawableContainerState;->mTintMode Landroid/graphics/PorterDuff$Mode;
+	50      (000000c4) iget-boolean         v5, v9, Landroidx/appcompat/graphics/drawable/DrawableContainer$DrawableContainerState;->mHasTintList Z
+	51      (000000c8) iput-boolean         v5, v8, Landroidx/appcompat/graphics/drawable/DrawableContainer$DrawableContainerState;->mHasTintList Z
+	52      (000000cc) iget-boolean         v5, v9, Landroidx/appcompat/graphics/drawable/DrawableContainer$DrawableContainerState;->mHasTintMode Z
+	53      (000000d0) iput-boolean         v5, v8, Landroidx/appcompat/graphics/drawable/DrawableContainer$DrawableContainerState;->mHasTintMode Z
+	54      (000000d4) iget                 v5, v9, Landroidx/appcompat/graphics/drawable/DrawableContainer$DrawableContainerState;->mDensity I
+	55      (000000d8) iget                 v6, v8, Landroidx/appcompat/graphics/drawable/DrawableContainer$DrawableContainerState;->mDensity I
+	56      (000000dc) if-ne                v5, v6, +27
+
+<init>-BB@0xe0 : [ <init>-BB@0xe8 <init>-BB@0xfe ]
+	57      (000000e0) iget-boolean         v5, v9, Landroidx/appcompat/graphics/drawable/DrawableContainer$DrawableContainerState;->mCheckedPadding Z
+	58      (000000e4) if-eqz               v5, +d
+
+<init>-BB@0xe8 : [ <init>-BB@0xfe ]
+	59      (000000e8) new-instance         v5, Landroid/graphics/Rect;
+	60      (000000ec) iget-object          v6, v9, Landroidx/appcompat/graphics/drawable/DrawableContainer$DrawableContainerState;->mConstantPadding Landroid/graphics/Rect;
+	61      (000000f0) invoke-direct        v5, v6, Landroid/graphics/Rect;-><init>(Landroid/graphics/Rect;)V
+	62      (000000f6) iput-object          v5, v8, Landroidx/appcompat/graphics/drawable/DrawableContainer$DrawableContainerState;->mConstantPadding Landroid/graphics/Rect;
+	63      (000000fa) iput-boolean         v7, v8, Landroidx/appcompat/graphics/drawable/DrawableContainer$DrawableContainerState;->mCheckedPadding Z
+
+<init>-BB@0xfe : [ <init>-BB@0x106 <init>-BB@0x12a ]
+	64      (000000fe) iget-boolean         v5, v9, Landroidx/appcompat/graphics/drawable/DrawableContainer$DrawableContainerState;->mCheckedConstantSize Z
+	65      (00000102) if-eqz               v5, +14
+
+<init>-BB@0x106 : [ <init>-BB@0x12a ]
+	66      (00000106) iget                 v5, v9, Landroidx/appcompat/graphics/drawable/DrawableContainer$DrawableContainerState;->mConstantWidth I
+	67      (0000010a) iput                 v5, v8, Landroidx/appcompat/graphics/drawable/DrawableContainer$DrawableContainerState;->mConstantWidth I
+	68      (0000010e) iget                 v5, v9, Landroidx/appcompat/graphics/drawable/DrawableContainer$DrawableContainerState;->mConstantHeight I
+	69      (00000112) iput                 v5, v8, Landroidx/appcompat/graphics/drawable/DrawableContainer$DrawableContainerState;->mConstantHeight I
+	70      (00000116) iget                 v5, v9, Landroidx/appcompat/graphics/drawable/DrawableContainer$DrawableContainerState;->mConstantMinimumWidth I
+	71      (0000011a) iput                 v5, v8, Landroidx/appcompat/graphics/drawable/DrawableContainer$DrawableContainerState;->mConstantMinimumWidth I
+	72      (0000011e) iget                 v5, v9, Landroidx/appcompat/graphics/drawable/DrawableContainer$DrawableContainerState;->mConstantMinimumHeight I
+	73      (00000122) iput                 v5, v8, Landroidx/appcompat/graphics/drawable/DrawableContainer$DrawableContainerState;->mConstantMinimumHeight I
+	74      (00000126) iput-boolean         v7, v8, Landroidx/appcompat/graphics/drawable/DrawableContainer$DrawableContainerState;->mCheckedConstantSize Z
+
+<init>-BB@0x12a : [ <init>-BB@0x132 <init>-BB@0x13e ]
+	75      (0000012a) iget-boolean         v5, v9, Landroidx/appcompat/graphics/drawable/DrawableContainer$DrawableContainerState;->mCheckedOpacity Z
+	76      (0000012e) if-eqz               v5, +8
+
+<init>-BB@0x132 : [ <init>-BB@0x13e ]
+	77      (00000132) iget                 v5, v9, Landroidx/appcompat/graphics/drawable/DrawableContainer$DrawableContainerState;->mOpacity I
+	78      (00000136) iput                 v5, v8, Landroidx/appcompat/graphics/drawable/DrawableContainer$DrawableContainerState;->mOpacity I
+	79      (0000013a) iput-boolean         v7, v8, Landroidx/appcompat/graphics/drawable/DrawableContainer$DrawableContainerState;->mCheckedOpacity Z
+
+<init>-BB@0x13e : [ <init>-BB@0x146 <init>-BB@0x152 ]
+	80      (0000013e) iget-boolean         v5, v9, Landroidx/appcompat/graphics/drawable/DrawableContainer$DrawableContainerState;->mCheckedStateful Z
+	81      (00000142) if-eqz               v5, +8
+
+<init>-BB@0x146 : [ <init>-BB@0x152 ]
+	82      (00000146) iget-boolean         v5, v9, Landroidx/appcompat/graphics/drawable/DrawableContainer$DrawableContainerState;->mStateful Z
+	83      (0000014a) iput-boolean         v5, v8, Landroidx/appcompat/graphics/drawable/DrawableContainer$DrawableContainerState;->mStateful Z
+	84      (0000014e) iput-boolean         v7, v8, Landroidx/appcompat/graphics/drawable/DrawableContainer$DrawableContainerState;->mCheckedStateful Z
+
+<init>-BB@0x152 : [ <init>-BB@0x170 <init>-BB@0x1c6 ]
+	85      (00000152) iget-object          v4, v9, Landroidx/appcompat/graphics/drawable/DrawableContainer$DrawableContainerState;->mDrawables [Landroid/graphics/drawable/Drawable;
+	86      (00000156) array-length         v5, v4
+	87      (00000158) new-array            v5, v5, [Landroid/graphics/drawable/Drawable;
+	88      (0000015c) iput-object          v5, v8, Landroidx/appcompat/graphics/drawable/DrawableContainer$DrawableContainerState;->mDrawables [Landroid/graphics/drawable/Drawable;
+	89      (00000160) iget                 v5, v9, Landroidx/appcompat/graphics/drawable/DrawableContainer$DrawableContainerState;->mNumChildren I
+	90      (00000164) iput                 v5, v8, Landroidx/appcompat/graphics/drawable/DrawableContainer$DrawableContainerState;->mNumChildren I
+	91      (00000168) iget-object          v3, v9, Landroidx/appcompat/graphics/drawable/DrawableContainer$DrawableContainerState;->mDrawableFutures Landroid/util/SparseArray;
+	92      (0000016c) if-eqz               v3, +2d
+
+<init>-BB@0x170 : [ <init>-BB@0x17c ]
+	93      (00000170) invoke-virtual       v3, Landroid/util/SparseArray;->clone()Landroid/util/SparseArray;
+	94      (00000176) move-result-object   v5
+	95      (00000178) iput-object          v5, v8, Landroidx/appcompat/graphics/drawable/DrawableContainer$DrawableContainerState;->mDrawableFutures Landroid/util/SparseArray;
+
+<init>-BB@0x17c : [ <init>-BB@0x182 ]
+	96      (0000017c) iget                 v0, v8, Landroidx/appcompat/graphics/drawable/DrawableContainer$DrawableContainerState;->mNumChildren I
+	97      (00000180) const/4              v2, 0
+
+<init>-BB@0x182 : [ <init>-BB@0x186 <init>-BB@0x1f8 ]
+	98      (00000182) if-ge                v2, v0, +3b
+
+<init>-BB@0x186 : [ <init>-BB@0x18e <init>-BB@0x1a8 ]
+	99      (00000186) aget-object          v5, v4, v2
+	100     (0000018a) if-eqz               v5, +f
+
+<init>-BB@0x18e : [ <init>-BB@0x19e <init>-BB@0x1da ]
+	101     (0000018e) aget-object          v5, v4, v2
+	102     (00000192) invoke-virtual       v5, Landroid/graphics/drawable/Drawable;->getConstantState()Landroid/graphics/drawable/Drawable$ConstantState;
+	103     (00000198) move-result-object   v1
+	104     (0000019a) if-eqz               v1, +20
+
+<init>-BB@0x19e : [ <init>-BB@0x1a8 ]
+	105     (0000019e) iget-object          v5, v8, Landroidx/appcompat/graphics/drawable/DrawableContainer$DrawableContainerState;->mDrawableFutures Landroid/util/SparseArray;
+	106     (000001a2) invoke-virtual       v5, v2, v1, Landroid/util/SparseArray;->put(I Ljava/lang/Object;)V
+
+<init>-BB@0x1a8 : [ <init>-BB@0x182 ]
+	107     (000001a8) add-int/lit8         v2, v2, 1
+	108     (000001ac) goto                 -15
+
+<init>-BB@0x1ae : [ <init>-BB@0x1b2 <init>-BB@0x1ba ]
+	109     (000001ae) if-eqz               v9, +6
+
+<init>-BB@0x1b2 : [ <init>-BB@0x30 ]
+	110     (000001b2) iget-object          v5, v9, Landroidx/appcompat/graphics/drawable/DrawableContainer$DrawableContainerState;->mSourceRes Landroid/content/res/Resources;
+	111     (000001b6) goto/16              -c3
+
+<init>-BB@0x1ba : [ <init>-BB@0x30 ]
+	112     (000001ba) const/4              v5, 0
+	113     (000001bc) goto/16              -c6
+
+<init>-BB@0x1c0 : [ <init>-BB@0x3c ]
+	114     (000001c0) move                 v5, v6
+	115     (000001c2) goto/16              -c3
+
+<init>-BB@0x1c6 : [ <init>-BB@0x17c ]
+	116     (000001c6) new-instance         v5, Landroid/util/SparseArray;
+	117     (000001ca) iget                 v6, v8, Landroidx/appcompat/graphics/drawable/DrawableContainer$DrawableContainerState;->mNumChildren I
+	118     (000001ce) invoke-direct        v5, v6, Landroid/util/SparseArray;-><init>(I)V
+	119     (000001d4) iput-object          v5, v8, Landroidx/appcompat/graphics/drawable/DrawableContainer$DrawableContainerState;->mDrawableFutures Landroid/util/SparseArray;
+	120     (000001d8) goto                 -2e
+
+<init>-BB@0x1da : [ <init>-BB@0x1a8 ]
+	121     (000001da) iget-object          v5, v8, Landroidx/appcompat/graphics/drawable/DrawableContainer$DrawableContainerState;->mDrawables [Landroid/graphics/drawable/Drawable;
+	122     (000001de) aget-object          v6, v4, v2
+	123     (000001e2) aput-object          v6, v5, v2
+	124     (000001e6) goto                 -1f
+
+<init>-BB@0x1e8 : [ <init>-BB@0x1f8 ]
+	125     (000001e8) const/16             v5, 10
+	126     (000001ec) new-array            v5, v5, [Landroid/graphics/drawable/Drawable;
+	127     (000001f0) iput-object          v5, v8, Landroidx/appcompat/graphics/drawable/DrawableContainer$DrawableContainerState;->mDrawables [Landroid/graphics/drawable/Drawable;
+	128     (000001f4) iput                 v6, v8, Landroidx/appcompat/graphics/drawable/DrawableContainer$DrawableContainerState;->mNumChildren I
+
+<init>-BB@0x1f8 : 
+	129     (000001f8) return-void          
+

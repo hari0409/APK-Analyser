@@ -1,0 +1,16 @@
+# Lcom/afwsamples/testdpc/profilepolicy/delegation/DelegationFragment;->createListAdapter()Landroid/widget/BaseAdapter; [access_flags=protected]
+#
+# Parameters:
+# local registers: v0...v4
+#
+# - return:android.widget.BaseAdapter
+
+createListAdapter-BB@0x0 : 
+	0       (00000000) new-instance         v0, Lcom/afwsamples/testdpc/profilepolicy/delegation/DelegationScopesArrayAdapter;
+	1       (00000004) invoke-virtual       v4, Lcom/afwsamples/testdpc/profilepolicy/delegation/DelegationFragment;->getActivity()Landroid/app/Activity;
+	2       (0000000a) move-result-object   v1
+	3       (0000000c) const/4              v2, 0
+	4       (0000000e) iget-object          v3, v4, Lcom/afwsamples/testdpc/profilepolicy/delegation/DelegationFragment;->mDelegations Ljava/util/List;
+	5       (00000012) invoke-direct        v0, v1, v2, v3, Lcom/afwsamples/testdpc/profilepolicy/delegation/DelegationScopesArrayAdapter;-><init>(Landroid/content/Context; I Ljava/util/List;)V
+	6       (00000018) return-object        v0
+

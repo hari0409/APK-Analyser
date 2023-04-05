@@ -1,0 +1,30 @@
+# Landroidx/appcompat/view/menu/MenuDialogHelper;->onCloseMenu(Landroidx/appcompat/view/menu/MenuBuilder; Z)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:androidx.appcompat.view.menu.MenuBuilder
+# - v3:boolean
+#
+# - return:void
+
+onCloseMenu-BB@0x0 : [ onCloseMenu-BB@0x4 onCloseMenu-BB@0xc ]
+	0       (00000000) if-nez               v3, +6
+
+onCloseMenu-BB@0x4 : [ onCloseMenu-BB@0xc onCloseMenu-BB@0x12 ]
+	1       (00000004) iget-object          v0, v1, Landroidx/appcompat/view/menu/MenuDialogHelper;->mMenu Landroidx/appcompat/view/menu/MenuBuilder;
+	2       (00000008) if-ne                v2, v0, +5
+
+onCloseMenu-BB@0xc : [ onCloseMenu-BB@0x12 ]
+	3       (0000000c) invoke-virtual       v1, Landroidx/appcompat/view/menu/MenuDialogHelper;->dismiss()V
+
+onCloseMenu-BB@0x12 : [ onCloseMenu-BB@0x1a onCloseMenu-BB@0x24 ]
+	4       (00000012) iget-object          v0, v1, Landroidx/appcompat/view/menu/MenuDialogHelper;->mPresenterCallback Landroidx/appcompat/view/menu/MenuPresenter$Callback;
+	5       (00000016) if-eqz               v0, +7
+
+onCloseMenu-BB@0x1a : [ onCloseMenu-BB@0x24 ]
+	6       (0000001a) iget-object          v0, v1, Landroidx/appcompat/view/menu/MenuDialogHelper;->mPresenterCallback Landroidx/appcompat/view/menu/MenuPresenter$Callback;
+	7       (0000001e) invoke-interface     v0, v2, v3, Landroidx/appcompat/view/menu/MenuPresenter$Callback;->onCloseMenu(Landroidx/appcompat/view/menu/MenuBuilder; Z)V
+
+onCloseMenu-BB@0x24 : 
+	8       (00000024) return-void          
+

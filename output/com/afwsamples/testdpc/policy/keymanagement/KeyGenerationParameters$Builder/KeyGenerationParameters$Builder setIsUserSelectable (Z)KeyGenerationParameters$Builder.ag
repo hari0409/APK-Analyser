@@ -1,0 +1,12 @@
+# Lcom/afwsamples/testdpc/policy/keymanagement/KeyGenerationParameters$Builder;->setIsUserSelectable(Z)Lcom/afwsamples/testdpc/policy/keymanagement/KeyGenerationParameters$Builder; [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v0
+# - v1:boolean
+#
+# - return:com.afwsamples.testdpc.policy.keymanagement.KeyGenerationParameters$Builder
+
+setIsUserSelectable-BB@0x0 : 
+	0       (00000000) iput-boolean         v1, v0, Lcom/afwsamples/testdpc/policy/keymanagement/KeyGenerationParameters$Builder;->mIsUserSelectable Z
+	1       (00000004) return-object        v0
+

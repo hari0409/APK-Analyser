@@ -1,0 +1,19 @@
+# Landroidx/appcompat/widget/LinearLayoutCompat;->setShowDividers(I)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:int
+#
+# - return:void
+
+setShowDividers-BB@0x0 : [ setShowDividers-BB@0x8 setShowDividers-BB@0xe ]
+	0       (00000000) iget                 v0, v1, Landroidx/appcompat/widget/LinearLayoutCompat;->mShowDividers I
+	1       (00000004) if-eq                v2, v0, +5
+
+setShowDividers-BB@0x8 : [ setShowDividers-BB@0xe ]
+	2       (00000008) invoke-virtual       v1, Landroidx/appcompat/widget/LinearLayoutCompat;->requestLayout()V
+
+setShowDividers-BB@0xe : 
+	3       (0000000e) iput                 v2, v1, Landroidx/appcompat/widget/LinearLayoutCompat;->mShowDividers I
+	4       (00000012) return-void          
+

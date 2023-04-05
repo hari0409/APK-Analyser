@@ -1,0 +1,11 @@
+# Lcom/afwsamples/testdpc/DevicePolicyManagerGatewayImpl;->getDevicePolicyManager()Landroid/app/admin/DevicePolicyManager; [access_flags=public]
+#
+# Parameters:
+# local registers: v0...v1
+#
+# - return:android.app.admin.DevicePolicyManager
+
+getDevicePolicyManager-BB@0x0 : 
+	0       (00000000) iget-object          v0, v1, Lcom/afwsamples/testdpc/DevicePolicyManagerGatewayImpl;->mDevicePolicyManager Landroid/app/admin/DevicePolicyManager;
+	1       (00000004) return-object        v0
+

@@ -1,0 +1,12 @@
+# Lcom/afwsamples/testdpc/policy/keymanagement/KeyGenerationParameters$Builder;->setIdAttestationFlags(I)Lcom/afwsamples/testdpc/policy/keymanagement/KeyGenerationParameters$Builder; [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v0
+# - v1:int
+#
+# - return:com.afwsamples.testdpc.policy.keymanagement.KeyGenerationParameters$Builder
+
+setIdAttestationFlags-BB@0x0 : 
+	0       (00000000) iput                 v1, v0, Lcom/afwsamples/testdpc/policy/keymanagement/KeyGenerationParameters$Builder;->mIdAttestationFlags I
+	1       (00000004) return-object        v0
+

@@ -1,0 +1,804 @@
+# Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->onCreatePreferences(Landroid/os/Bundle; Ljava/lang/String;)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v6
+# - v7:android.os.Bundle
+# - v8:java.lang.String
+#
+# - return:void
+
+onCreatePreferences-BB@0x0 : [ onCreatePreferences-BB@0x29e onCreatePreferences-BB@0x2de ]
+	0       (00000000) const                v4, 2131886083 # [1.9406734823182653e+38]
+	1       (00000006) invoke-virtual       v6, v4, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->addPreferencesFromResource(I)V
+	2       (0000000c) const-string         v4, 'override_key_selection'
+	3       (00000010) invoke-virtual       v6, v4, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->findPreference(Ljava/lang/CharSequence;)Landroidx/preference/Preference;
+	4       (00000016) move-result-object   v2
+	5       (00000018) check-cast           v2, Landroidx/preference/EditTextPreference;
+	6       (0000001c) invoke-virtual       v2, v6, Landroidx/preference/EditTextPreference;->setOnPreferenceChangeListener(Landroidx/preference/Preference$OnPreferenceChangeListener;)V
+	7       (00000022) invoke-virtual       v2, Landroidx/preference/EditTextPreference;->getText()Ljava/lang/String;
+	8       (00000028) move-result-object   v4
+	9       (0000002a) invoke-virtual       v2, v4, Landroidx/preference/EditTextPreference;->setSummary(Ljava/lang/CharSequence;)V
+	10      (00000030) const-string         v4, 'manage_lock_task'
+	11      (00000034) invoke-virtual       v6, v4, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->findPreference(Ljava/lang/CharSequence;)Landroidx/preference/Preference;
+	12      (0000003a) move-result-object   v4
+	13      (0000003c) check-cast           v4, Lcom/afwsamples/testdpc/common/preference/DpcPreference;
+	14      (00000040) iput-object          v4, v6, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->mManageLockTaskListPreference Lcom/afwsamples/testdpc/common/preference/DpcPreference;
+	15      (00000044) iget-object          v4, v6, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->mManageLockTaskListPreference Lcom/afwsamples/testdpc/common/preference/DpcPreference;
+	16      (00000048) invoke-virtual       v4, v6, Lcom/afwsamples/testdpc/common/preference/DpcPreference;->setOnPreferenceClickListener(Landroidx/preference/Preference$OnPreferenceClickListener;)V
+	17      (0000004e) iget-object          v4, v6, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->mManageLockTaskListPreference Lcom/afwsamples/testdpc/common/preference/DpcPreference;
+	18      (00000052) new-instance         v5, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment$$Lambda$0;
+	19      (00000056) invoke-direct        v5, v6, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment$$Lambda$0;-><init>(Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;)V
+	20      (0000005c) invoke-virtual       v4, v5, Lcom/afwsamples/testdpc/common/preference/DpcPreference;->setCustomConstraint(Lcom/afwsamples/testdpc/common/preference/CustomConstraint;)V
+	21      (00000062) const-string         v4, 'check_lock_task_permitted'
+	22      (00000066) invoke-virtual       v6, v4, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->findPreference(Ljava/lang/CharSequence;)Landroidx/preference/Preference;
+	23      (0000006c) move-result-object   v4
+	24      (0000006e) invoke-virtual       v4, v6, Landroidx/preference/Preference;->setOnPreferenceClickListener(Landroidx/preference/Preference$OnPreferenceClickListener;)V
+	25      (00000074) const-string         v4, 'set_lock_task_features'
+	26      (00000078) invoke-virtual       v6, v4, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->findPreference(Ljava/lang/CharSequence;)Landroidx/preference/Preference;
+	27      (0000007e) move-result-object   v4
+	28      (00000080) check-cast           v4, Lcom/afwsamples/testdpc/common/preference/DpcPreference;
+	29      (00000084) iput-object          v4, v6, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->mSetLockTaskFeaturesPreference Lcom/afwsamples/testdpc/common/preference/DpcPreference;
+	30      (00000088) iget-object          v4, v6, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->mSetLockTaskFeaturesPreference Lcom/afwsamples/testdpc/common/preference/DpcPreference;
+	31      (0000008c) invoke-virtual       v4, v6, Lcom/afwsamples/testdpc/common/preference/DpcPreference;->setOnPreferenceClickListener(Landroidx/preference/Preference$OnPreferenceClickListener;)V
+	32      (00000092) iget-object          v4, v6, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->mSetLockTaskFeaturesPreference Lcom/afwsamples/testdpc/common/preference/DpcPreference;
+	33      (00000096) new-instance         v5, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment$$Lambda$1;
+	34      (0000009a) invoke-direct        v5, v6, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment$$Lambda$1;-><init>(Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;)V
+	35      (000000a0) invoke-virtual       v4, v5, Lcom/afwsamples/testdpc/common/preference/DpcPreference;->setCustomConstraint(Lcom/afwsamples/testdpc/common/preference/CustomConstraint;)V
+	36      (000000a6) const-string         v4, 'start_lock_task'
+	37      (000000aa) invoke-virtual       v6, v4, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->findPreference(Ljava/lang/CharSequence;)Landroidx/preference/Preference;
+	38      (000000b0) move-result-object   v4
+	39      (000000b2) invoke-virtual       v4, v6, Landroidx/preference/Preference;->setOnPreferenceClickListener(Landroidx/preference/Preference$OnPreferenceClickListener;)V
+	40      (000000b8) const-string         v4, 'relaunch_in_lock_task'
+	41      (000000bc) invoke-virtual       v6, v4, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->findPreference(Ljava/lang/CharSequence;)Landroidx/preference/Preference;
+	42      (000000c2) move-result-object   v4
+	43      (000000c4) invoke-virtual       v4, v6, Landroidx/preference/Preference;->setOnPreferenceClickListener(Landroidx/preference/Preference$OnPreferenceClickListener;)V
+	44      (000000ca) const-string         v4, 'stop_lock_task'
+	45      (000000ce) invoke-virtual       v6, v4, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->findPreference(Ljava/lang/CharSequence;)Landroidx/preference/Preference;
+	46      (000000d4) move-result-object   v4
+	47      (000000d6) invoke-virtual       v4, v6, Landroidx/preference/Preference;->setOnPreferenceClickListener(Landroidx/preference/Preference$OnPreferenceClickListener;)V
+	48      (000000dc) const-string         v4, 'create_managed_profile'
+	49      (000000e0) invoke-virtual       v6, v4, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->findPreference(Ljava/lang/CharSequence;)Landroidx/preference/Preference;
+	50      (000000e6) move-result-object   v4
+	51      (000000e8) invoke-virtual       v4, v6, Landroidx/preference/Preference;->setOnPreferenceClickListener(Landroidx/preference/Preference$OnPreferenceClickListener;)V
+	52      (000000ee) const-string         v4, 'create_and_manage_user'
+	53      (000000f2) invoke-virtual       v6, v4, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->findPreference(Ljava/lang/CharSequence;)Landroidx/preference/Preference;
+	54      (000000f8) move-result-object   v4
+	55      (000000fa) invoke-virtual       v4, v6, Landroidx/preference/Preference;->setOnPreferenceClickListener(Landroidx/preference/Preference$OnPreferenceClickListener;)V
+	56      (00000100) const-string         v4, 'remove_user'
+	57      (00000104) invoke-virtual       v6, v4, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->findPreference(Ljava/lang/CharSequence;)Landroidx/preference/Preference;
+	58      (0000010a) move-result-object   v4
+	59      (0000010c) invoke-virtual       v4, v6, Landroidx/preference/Preference;->setOnPreferenceClickListener(Landroidx/preference/Preference$OnPreferenceClickListener;)V
+	60      (00000112) const-string         v4, 'switch_user'
+	61      (00000116) invoke-virtual       v6, v4, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->findPreference(Ljava/lang/CharSequence;)Landroidx/preference/Preference;
+	62      (0000011c) move-result-object   v4
+	63      (0000011e) invoke-virtual       v4, v6, Landroidx/preference/Preference;->setOnPreferenceClickListener(Landroidx/preference/Preference$OnPreferenceClickListener;)V
+	64      (00000124) const-string         v4, 'start_user_in_background'
+	65      (00000128) invoke-virtual       v6, v4, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->findPreference(Ljava/lang/CharSequence;)Landroidx/preference/Preference;
+	66      (0000012e) move-result-object   v4
+	67      (00000130) invoke-virtual       v4, v6, Landroidx/preference/Preference;->setOnPreferenceClickListener(Landroidx/preference/Preference$OnPreferenceClickListener;)V
+	68      (00000136) const-string         v4, 'stop_user'
+	69      (0000013a) invoke-virtual       v6, v4, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->findPreference(Ljava/lang/CharSequence;)Landroidx/preference/Preference;
+	70      (00000140) move-result-object   v4
+	71      (00000142) invoke-virtual       v4, v6, Landroidx/preference/Preference;->setOnPreferenceClickListener(Landroidx/preference/Preference$OnPreferenceClickListener;)V
+	72      (00000148) const-string         v4, 'enable_logout'
+	73      (0000014c) invoke-virtual       v6, v4, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->findPreference(Ljava/lang/CharSequence;)Landroidx/preference/Preference;
+	74      (00000152) move-result-object   v4
+	75      (00000154) check-cast           v4, Lcom/afwsamples/testdpc/common/preference/DpcSwitchPreference;
+	76      (00000158) iput-object          v4, v6, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->mEnableLogoutPreference Lcom/afwsamples/testdpc/common/preference/DpcSwitchPreference;
+	77      (0000015c) iget-object          v4, v6, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->mEnableLogoutPreference Lcom/afwsamples/testdpc/common/preference/DpcSwitchPreference;
+	78      (00000160) invoke-virtual       v4, v6, Lcom/afwsamples/testdpc/common/preference/DpcSwitchPreference;->setOnPreferenceChangeListener(Landroidx/preference/Preference$OnPreferenceChangeListener;)V
+	79      (00000166) const-string         v4, 'set_user_session_message'
+	80      (0000016a) invoke-virtual       v6, v4, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->findPreference(Ljava/lang/CharSequence;)Landroidx/preference/Preference;
+	81      (00000170) move-result-object   v4
+	82      (00000172) invoke-virtual       v4, v6, Landroidx/preference/Preference;->setOnPreferenceClickListener(Landroidx/preference/Preference$OnPreferenceClickListener;)V
+	83      (00000178) const-string         v4, 'logout_user'
+	84      (0000017c) invoke-virtual       v6, v4, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->findPreference(Ljava/lang/CharSequence;)Landroidx/preference/Preference;
+	85      (00000182) move-result-object   v4
+	86      (00000184) check-cast           v4, Lcom/afwsamples/testdpc/common/preference/DpcPreference;
+	87      (00000188) iput-object          v4, v6, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->mLogoutUserPreference Lcom/afwsamples/testdpc/common/preference/DpcPreference;
+	88      (0000018c) iget-object          v4, v6, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->mLogoutUserPreference Lcom/afwsamples/testdpc/common/preference/DpcPreference;
+	89      (00000190) invoke-virtual       v4, v6, Lcom/afwsamples/testdpc/common/preference/DpcPreference;->setOnPreferenceClickListener(Landroidx/preference/Preference$OnPreferenceClickListener;)V
+	90      (00000196) iget-object          v4, v6, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->mLogoutUserPreference Lcom/afwsamples/testdpc/common/preference/DpcPreference;
+	91      (0000019a) new-instance         v5, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment$$Lambda$2;
+	92      (0000019e) invoke-direct        v5, v6, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment$$Lambda$2;-><init>(Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;)V
+	93      (000001a4) invoke-virtual       v4, v5, Lcom/afwsamples/testdpc/common/preference/DpcPreference;->setCustomConstraint(Lcom/afwsamples/testdpc/common/preference/CustomConstraint;)V
+	94      (000001aa) const-string         v4, 'set_affiliation_ids'
+	95      (000001ae) invoke-virtual       v6, v4, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->findPreference(Ljava/lang/CharSequence;)Landroidx/preference/Preference;
+	96      (000001b4) move-result-object   v4
+	97      (000001b6) invoke-virtual       v4, v6, Landroidx/preference/Preference;->setOnPreferenceClickListener(Landroidx/preference/Preference$OnPreferenceClickListener;)V
+	98      (000001bc) const-string         v4, 'affiliated_user'
+	99      (000001c0) invoke-virtual       v6, v4, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->findPreference(Ljava/lang/CharSequence;)Landroidx/preference/Preference;
+	100     (000001c6) move-result-object   v4
+	101     (000001c8) iput-object          v4, v6, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->mAffiliatedUserPreference Landroidx/preference/Preference;
+	102     (000001cc) const-string         v4, 'ephemeral_user'
+	103     (000001d0) invoke-virtual       v6, v4, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->findPreference(Ljava/lang/CharSequence;)Landroidx/preference/Preference;
+	104     (000001d6) move-result-object   v4
+	105     (000001d8) iput-object          v4, v6, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->mEphemeralUserPreference Landroidx/preference/Preference;
+	106     (000001dc) const-string         v4, 'disable_camera'
+	107     (000001e0) invoke-virtual       v6, v4, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->findPreference(Ljava/lang/CharSequence;)Landroidx/preference/Preference;
+	108     (000001e6) move-result-object   v4
+	109     (000001e8) check-cast           v4, Landroidx/preference/SwitchPreference;
+	110     (000001ec) iput-object          v4, v6, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->mDisableCameraSwitchPreference Landroidx/preference/SwitchPreference;
+	111     (000001f0) iget-object          v4, v6, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->mDisableCameraSwitchPreference Landroidx/preference/SwitchPreference;
+	112     (000001f4) invoke-virtual       v4, v6, Landroidx/preference/SwitchPreference;->setOnPreferenceChangeListener(Landroidx/preference/Preference$OnPreferenceChangeListener;)V
+	113     (000001fa) const-string         v4, 'disable_camera_on_parent'
+	114     (000001fe) invoke-virtual       v6, v4, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->findPreference(Ljava/lang/CharSequence;)Landroidx/preference/Preference;
+	115     (00000204) move-result-object   v4
+	116     (00000206) check-cast           v4, Lcom/afwsamples/testdpc/common/preference/DpcSwitchPreference;
+	117     (0000020a) iput-object          v4, v6, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->mDisableCameraOnParentSwitchPreference Lcom/afwsamples/testdpc/common/preference/DpcSwitchPreference;
+	118     (0000020e) iget-object          v4, v6, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->mDisableCameraOnParentSwitchPreference Lcom/afwsamples/testdpc/common/preference/DpcSwitchPreference;
+	119     (00000212) invoke-virtual       v4, v6, Lcom/afwsamples/testdpc/common/preference/DpcSwitchPreference;->setOnPreferenceChangeListener(Landroidx/preference/Preference$OnPreferenceChangeListener;)V
+	120     (00000218) const-string         v4, 'capture_image'
+	121     (0000021c) invoke-virtual       v6, v4, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->findPreference(Ljava/lang/CharSequence;)Landroidx/preference/Preference;
+	122     (00000222) move-result-object   v4
+	123     (00000224) invoke-virtual       v4, v6, Landroidx/preference/Preference;->setOnPreferenceClickListener(Landroidx/preference/Preference$OnPreferenceClickListener;)V
+	124     (0000022a) const-string         v4, 'capture_video'
+	125     (0000022e) invoke-virtual       v6, v4, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->findPreference(Ljava/lang/CharSequence;)Landroidx/preference/Preference;
+	126     (00000234) move-result-object   v4
+	127     (00000236) invoke-virtual       v4, v6, Landroidx/preference/Preference;->setOnPreferenceClickListener(Landroidx/preference/Preference$OnPreferenceClickListener;)V
+	128     (0000023c) const-string         v4, 'disable_screen_capture'
+	129     (00000240) invoke-virtual       v6, v4, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->findPreference(Ljava/lang/CharSequence;)Landroidx/preference/Preference;
+	130     (00000246) move-result-object   v4
+	131     (00000248) check-cast           v4, Landroidx/preference/SwitchPreference;
+	132     (0000024c) iput-object          v4, v6, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->mDisableScreenCaptureSwitchPreference Landroidx/preference/SwitchPreference;
+	133     (00000250) iget-object          v4, v6, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->mDisableScreenCaptureSwitchPreference Landroidx/preference/SwitchPreference;
+	134     (00000254) invoke-virtual       v4, v6, Landroidx/preference/SwitchPreference;->setOnPreferenceChangeListener(Landroidx/preference/Preference$OnPreferenceChangeListener;)V
+	135     (0000025a) const-string         v4, 'disable_screen_capture_on_parent'
+	136     (0000025e) invoke-virtual       v6, v4, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->findPreference(Ljava/lang/CharSequence;)Landroidx/preference/Preference;
+	137     (00000264) move-result-object   v4
+	138     (00000266) check-cast           v4, Lcom/afwsamples/testdpc/common/preference/DpcSwitchPreference;
+	139     (0000026a) iput-object          v4, v6, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->mDisableScreenCaptureOnParentSwitchPreference Lcom/afwsamples/testdpc/common/preference/DpcSwitchPreference;
+	140     (0000026e) iget-object          v4, v6, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->mDisableScreenCaptureOnParentSwitchPreference Lcom/afwsamples/testdpc/common/preference/DpcSwitchPreference;
+	141     (00000272) invoke-virtual       v4, v6, Lcom/afwsamples/testdpc/common/preference/DpcSwitchPreference;->setOnPreferenceChangeListener(Landroidx/preference/Preference$OnPreferenceChangeListener;)V
+	142     (00000278) const-string         v4, 'mute_audio'
+	143     (0000027c) invoke-virtual       v6, v4, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->findPreference(Ljava/lang/CharSequence;)Landroidx/preference/Preference;
+	144     (00000282) move-result-object   v4
+	145     (00000284) check-cast           v4, Landroidx/preference/SwitchPreference;
+	146     (00000288) iput-object          v4, v6, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->mMuteAudioSwitchPreference Landroidx/preference/SwitchPreference;
+	147     (0000028c) iget-object          v4, v6, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->mMuteAudioSwitchPreference Landroidx/preference/SwitchPreference;
+	148     (00000290) invoke-virtual       v4, v6, Landroidx/preference/SwitchPreference;->setOnPreferenceChangeListener(Landroidx/preference/Preference$OnPreferenceChangeListener;)V
+	149     (00000296) iget-boolean         v4, v6, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->mIsProfileOwner Z
+	150     (0000029a) if-eqz               v4, +22
+
+onCreatePreferences-BB@0x29e : [ onCreatePreferences-BB@0x2aa onCreatePreferences-BB@0x2de ]
+	151     (0000029e) sget                 v4, Lcom/afwsamples/testdpc/common/Util;->SDK_INT I
+	152     (000002a2) const/16             v5, 31
+	153     (000002a6) if-lt                v4, v5, +1c
+
+onCreatePreferences-BB@0x2aa : [ onCreatePreferences-BB@0x2de ]
+	154     (000002aa) const-string         v4, 'set_get_preferential_network_service_status'
+	155     (000002ae) invoke-virtual       v6, v4, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->findPreference(Ljava/lang/CharSequence;)Landroidx/preference/Preference;
+	156     (000002b4) move-result-object   v4
+	157     (000002b6) check-cast           v4, Landroidx/preference/SwitchPreference;
+	158     (000002ba) iput-object          v4, v6, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->mPreferentialNetworkServiceSwitchPreference Landroidx/preference/SwitchPreference;
+	159     (000002be) iget-object          v4, v6, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->mPreferentialNetworkServiceSwitchPreference Landroidx/preference/SwitchPreference;
+	160     (000002c2) invoke-virtual       v4, v6, Landroidx/preference/SwitchPreference;->setOnPreferenceChangeListener(Landroidx/preference/Preference$OnPreferenceChangeListener;)V
+	161     (000002c8) iget-object          v4, v6, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->mPreferentialNetworkServiceSwitchPreference Landroidx/preference/SwitchPreference;
+	162     (000002cc) iget-object          v5, v6, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->mDevicePolicyManagerGateway Lcom/afwsamples/testdpc/DevicePolicyManagerGateway;
+	163     (000002d0) invoke-interface     v5, Lcom/afwsamples/testdpc/DevicePolicyManagerGateway;->isPreferentialNetworkServiceEnabled()Z
+	164     (000002d6) move-result          v5
+	165     (000002d8) invoke-virtual       v4, v5, Landroidx/preference/SwitchPreference;->setChecked(Z)V
+
+onCreatePreferences-BB@0x2de : 
+	166     (000002de) const-string         v4, 'lock_screen_policy'
+	167     (000002e2) invoke-virtual       v6, v4, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->findPreference(Ljava/lang/CharSequence;)Landroidx/preference/Preference;
+	168     (000002e8) move-result-object   v4
+	169     (000002ea) invoke-virtual       v4, v6, Landroidx/preference/Preference;->setOnPreferenceClickListener(Landroidx/preference/Preference$OnPreferenceClickListener;)V
+	170     (000002f0) const-string         v4, 'password_constraints'
+	171     (000002f4) invoke-virtual       v6, v4, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->findPreference(Ljava/lang/CharSequence;)Landroidx/preference/Preference;
+	172     (000002fa) move-result-object   v4
+	173     (000002fc) invoke-virtual       v4, v6, Landroidx/preference/Preference;->setOnPreferenceClickListener(Landroidx/preference/Preference$OnPreferenceClickListener;)V
+	174     (00000302) const-string         v4, 'reset_password'
+	175     (00000306) invoke-virtual       v6, v4, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->findPreference(Ljava/lang/CharSequence;)Landroidx/preference/Preference;
+	176     (0000030c) move-result-object   v4
+	177     (0000030e) invoke-virtual       v4, v6, Landroidx/preference/Preference;->setOnPreferenceClickListener(Landroidx/preference/Preference$OnPreferenceClickListener;)V
+	178     (00000314) const-string         v4, 'lock_now'
+	179     (00000318) invoke-virtual       v6, v4, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->findPreference(Ljava/lang/CharSequence;)Landroidx/preference/Preference;
+	180     (0000031e) move-result-object   v4
+	181     (00000320) invoke-virtual       v4, v6, Landroidx/preference/Preference;->setOnPreferenceClickListener(Landroidx/preference/Preference$OnPreferenceClickListener;)V
+	182     (00000326) const-string         v4, 'system_update_policy'
+	183     (0000032a) invoke-virtual       v6, v4, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->findPreference(Ljava/lang/CharSequence;)Landroidx/preference/Preference;
+	184     (00000330) move-result-object   v4
+	185     (00000332) invoke-virtual       v4, v6, Landroidx/preference/Preference;->setOnPreferenceClickListener(Landroidx/preference/Preference$OnPreferenceClickListener;)V
+	186     (00000338) const-string         v4, 'system_update_pending'
+	187     (0000033c) invoke-virtual       v6, v4, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->findPreference(Ljava/lang/CharSequence;)Landroidx/preference/Preference;
+	188     (00000342) move-result-object   v4
+	189     (00000344) invoke-virtual       v4, v6, Landroidx/preference/Preference;->setOnPreferenceClickListener(Landroidx/preference/Preference$OnPreferenceClickListener;)V
+	190     (0000034a) const-string         v4, 'set_always_on_vpn'
+	191     (0000034e) invoke-virtual       v6, v4, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->findPreference(Ljava/lang/CharSequence;)Landroidx/preference/Preference;
+	192     (00000354) move-result-object   v4
+	193     (00000356) invoke-virtual       v4, v6, Landroidx/preference/Preference;->setOnPreferenceClickListener(Landroidx/preference/Preference$OnPreferenceClickListener;)V
+	194     (0000035c) const-string         v4, 'set_global_http_proxy'
+	195     (00000360) invoke-virtual       v6, v4, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->findPreference(Ljava/lang/CharSequence;)Landroidx/preference/Preference;
+	196     (00000366) move-result-object   v4
+	197     (00000368) invoke-virtual       v4, v6, Landroidx/preference/Preference;->setOnPreferenceClickListener(Landroidx/preference/Preference$OnPreferenceClickListener;)V
+	198     (0000036e) const-string         v4, 'clear_global_http_proxy'
+	199     (00000372) invoke-virtual       v6, v4, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->findPreference(Ljava/lang/CharSequence;)Landroidx/preference/Preference;
+	200     (00000378) move-result-object   v4
+	201     (0000037a) invoke-virtual       v4, v6, Landroidx/preference/Preference;->setOnPreferenceClickListener(Landroidx/preference/Preference$OnPreferenceClickListener;)V
+	202     (00000380) const-string         v4, 'set_private_dns_mode'
+	203     (00000384) invoke-virtual       v6, v4, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->findPreference(Ljava/lang/CharSequence;)Landroidx/preference/Preference;
+	204     (0000038a) move-result-object   v4
+	205     (0000038c) invoke-virtual       v4, v6, Landroidx/preference/Preference;->setOnPreferenceClickListener(Landroidx/preference/Preference$OnPreferenceClickListener;)V
+	206     (00000392) const-string         v4, 'network_stats'
+	207     (00000396) invoke-virtual       v6, v4, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->findPreference(Ljava/lang/CharSequence;)Landroidx/preference/Preference;
+	208     (0000039c) move-result-object   v4
+	209     (0000039e) invoke-virtual       v4, v6, Landroidx/preference/Preference;->setOnPreferenceClickListener(Landroidx/preference/Preference$OnPreferenceClickListener;)V
+	210     (000003a4) const-string         v4, 'manage_cert_installer'
+	211     (000003a8) invoke-virtual       v6, v4, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->findPreference(Ljava/lang/CharSequence;)Landroidx/preference/Preference;
+	212     (000003ae) move-result-object   v4
+	213     (000003b0) invoke-virtual       v4, v6, Landroidx/preference/Preference;->setOnPreferenceClickListener(Landroidx/preference/Preference$OnPreferenceClickListener;)V
+	214     (000003b6) const-string         v4, 'disable_status_bar'
+	215     (000003ba) invoke-virtual       v6, v4, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->findPreference(Ljava/lang/CharSequence;)Landroidx/preference/Preference;
+	216     (000003c0) move-result-object   v4
+	217     (000003c2) check-cast           v4, Lcom/afwsamples/testdpc/common/preference/DpcPreference;
+	218     (000003c6) iput-object          v4, v6, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->mDisableStatusBarPreference Lcom/afwsamples/testdpc/common/preference/DpcPreference;
+	219     (000003ca) iget-object          v4, v6, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->mDisableStatusBarPreference Lcom/afwsamples/testdpc/common/preference/DpcPreference;
+	220     (000003ce) invoke-virtual       v4, v6, Lcom/afwsamples/testdpc/common/preference/DpcPreference;->setOnPreferenceClickListener(Landroidx/preference/Preference$OnPreferenceClickListener;)V
+	221     (000003d4) iget-object          v4, v6, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->mDisableStatusBarPreference Lcom/afwsamples/testdpc/common/preference/DpcPreference;
+	222     (000003d8) new-instance         v5, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment$$Lambda$3;
+	223     (000003dc) invoke-direct        v5, v6, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment$$Lambda$3;-><init>(Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;)V
+	224     (000003e2) invoke-virtual       v4, v5, Lcom/afwsamples/testdpc/common/preference/DpcPreference;->setCustomConstraint(Lcom/afwsamples/testdpc/common/preference/CustomConstraint;)V
+	225     (000003e8) iget-object          v4, v6, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->mDisableStatusBarPreference Lcom/afwsamples/testdpc/common/preference/DpcPreference;
+	226     (000003ec) new-instance         v5, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment$$Lambda$4;
+	227     (000003f0) invoke-direct        v5, v6, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment$$Lambda$4;-><init>(Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;)V
+	228     (000003f6) invoke-virtual       v4, v5, Lcom/afwsamples/testdpc/common/preference/DpcPreference;->addCustomConstraint(Lcom/afwsamples/testdpc/common/preference/CustomConstraint;)V
+	229     (000003fc) const-string         v4, 'reenable_status_bar'
+	230     (00000400) invoke-virtual       v6, v4, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->findPreference(Ljava/lang/CharSequence;)Landroidx/preference/Preference;
+	231     (00000406) move-result-object   v4
+	232     (00000408) check-cast           v4, Lcom/afwsamples/testdpc/common/preference/DpcPreference;
+	233     (0000040c) iput-object          v4, v6, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->mReenableStatusBarPreference Lcom/afwsamples/testdpc/common/preference/DpcPreference;
+	234     (00000410) iget-object          v4, v6, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->mReenableStatusBarPreference Lcom/afwsamples/testdpc/common/preference/DpcPreference;
+	235     (00000414) invoke-virtual       v4, v6, Lcom/afwsamples/testdpc/common/preference/DpcPreference;->setOnPreferenceClickListener(Landroidx/preference/Preference$OnPreferenceClickListener;)V
+	236     (0000041a) iget-object          v4, v6, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->mReenableStatusBarPreference Lcom/afwsamples/testdpc/common/preference/DpcPreference;
+	237     (0000041e) new-instance         v5, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment$$Lambda$5;
+	238     (00000422) invoke-direct        v5, v6, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment$$Lambda$5;-><init>(Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;)V
+	239     (00000428) invoke-virtual       v4, v5, Lcom/afwsamples/testdpc/common/preference/DpcPreference;->setCustomConstraint(Lcom/afwsamples/testdpc/common/preference/CustomConstraint;)V
+	240     (0000042e) iget-object          v4, v6, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->mReenableStatusBarPreference Lcom/afwsamples/testdpc/common/preference/DpcPreference;
+	241     (00000432) new-instance         v5, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment$$Lambda$6;
+	242     (00000436) invoke-direct        v5, v6, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment$$Lambda$6;-><init>(Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;)V
+	243     (0000043c) invoke-virtual       v4, v5, Lcom/afwsamples/testdpc/common/preference/DpcPreference;->addCustomConstraint(Lcom/afwsamples/testdpc/common/preference/CustomConstraint;)V
+	244     (00000442) const-string         v4, 'disable_keyguard'
+	245     (00000446) invoke-virtual       v6, v4, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->findPreference(Ljava/lang/CharSequence;)Landroidx/preference/Preference;
+	246     (0000044c) move-result-object   v4
+	247     (0000044e) check-cast           v4, Lcom/afwsamples/testdpc/common/preference/DpcPreference;
+	248     (00000452) iput-object          v4, v6, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->mDisableKeyguardPreference Lcom/afwsamples/testdpc/common/preference/DpcPreference;
+	249     (00000456) iget-object          v4, v6, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->mDisableKeyguardPreference Lcom/afwsamples/testdpc/common/preference/DpcPreference;
+	250     (0000045a) invoke-virtual       v4, v6, Lcom/afwsamples/testdpc/common/preference/DpcPreference;->setOnPreferenceClickListener(Landroidx/preference/Preference$OnPreferenceClickListener;)V
+	251     (00000460) iget-object          v4, v6, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->mDisableKeyguardPreference Lcom/afwsamples/testdpc/common/preference/DpcPreference;
+	252     (00000464) new-instance         v5, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment$$Lambda$7;
+	253     (00000468) invoke-direct        v5, v6, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment$$Lambda$7;-><init>(Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;)V
+	254     (0000046e) invoke-virtual       v4, v5, Lcom/afwsamples/testdpc/common/preference/DpcPreference;->setCustomConstraint(Lcom/afwsamples/testdpc/common/preference/CustomConstraint;)V
+	255     (00000474) iget-object          v4, v6, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->mDisableKeyguardPreference Lcom/afwsamples/testdpc/common/preference/DpcPreference;
+	256     (00000478) new-instance         v5, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment$$Lambda$8;
+	257     (0000047c) invoke-direct        v5, v6, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment$$Lambda$8;-><init>(Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;)V
+	258     (00000482) invoke-virtual       v4, v5, Lcom/afwsamples/testdpc/common/preference/DpcPreference;->addCustomConstraint(Lcom/afwsamples/testdpc/common/preference/CustomConstraint;)V
+	259     (00000488) const-string         v4, 'reenable_keyguard'
+	260     (0000048c) invoke-virtual       v6, v4, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->findPreference(Ljava/lang/CharSequence;)Landroidx/preference/Preference;
+	261     (00000492) move-result-object   v4
+	262     (00000494) check-cast           v4, Lcom/afwsamples/testdpc/common/preference/DpcPreference;
+	263     (00000498) iput-object          v4, v6, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->mReenableKeyguardPreference Lcom/afwsamples/testdpc/common/preference/DpcPreference;
+	264     (0000049c) iget-object          v4, v6, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->mReenableKeyguardPreference Lcom/afwsamples/testdpc/common/preference/DpcPreference;
+	265     (000004a0) invoke-virtual       v4, v6, Lcom/afwsamples/testdpc/common/preference/DpcPreference;->setOnPreferenceClickListener(Landroidx/preference/Preference$OnPreferenceClickListener;)V
+	266     (000004a6) iget-object          v4, v6, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->mReenableKeyguardPreference Lcom/afwsamples/testdpc/common/preference/DpcPreference;
+	267     (000004aa) new-instance         v5, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment$$Lambda$9;
+	268     (000004ae) invoke-direct        v5, v6, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment$$Lambda$9;-><init>(Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;)V
+	269     (000004b4) invoke-virtual       v4, v5, Lcom/afwsamples/testdpc/common/preference/DpcPreference;->setCustomConstraint(Lcom/afwsamples/testdpc/common/preference/CustomConstraint;)V
+	270     (000004ba) iget-object          v4, v6, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->mReenableKeyguardPreference Lcom/afwsamples/testdpc/common/preference/DpcPreference;
+	271     (000004be) new-instance         v5, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment$$Lambda$10;
+	272     (000004c2) invoke-direct        v5, v6, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment$$Lambda$10;-><init>(Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;)V
+	273     (000004c8) invoke-virtual       v4, v5, Lcom/afwsamples/testdpc/common/preference/DpcPreference;->addCustomConstraint(Lcom/afwsamples/testdpc/common/preference/CustomConstraint;)V
+	274     (000004ce) const-string         v4, 'start_kiosk_mode'
+	275     (000004d2) invoke-virtual       v6, v4, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->findPreference(Ljava/lang/CharSequence;)Landroidx/preference/Preference;
+	276     (000004d8) move-result-object   v4
+	277     (000004da) invoke-virtual       v4, v6, Landroidx/preference/Preference;->setOnPreferenceClickListener(Landroidx/preference/Preference$OnPreferenceClickListener;)V
+	278     (000004e0) const-string         v4, 'stay_on_while_plugged_in'
+	279     (000004e4) invoke-virtual       v6, v4, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->findPreference(Ljava/lang/CharSequence;)Landroidx/preference/Preference;
+	280     (000004ea) move-result-object   v4
+	281     (000004ec) check-cast           v4, Landroidx/preference/SwitchPreference;
+	282     (000004f0) iput-object          v4, v6, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->mStayOnWhilePluggedInSwitchPreference Landroidx/preference/SwitchPreference;
+	283     (000004f4) iget-object          v4, v6, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->mStayOnWhilePluggedInSwitchPreference Landroidx/preference/SwitchPreference;
+	284     (000004f8) invoke-virtual       v4, v6, Landroidx/preference/SwitchPreference;->setOnPreferenceChangeListener(Landroidx/preference/Preference$OnPreferenceChangeListener;)V
+	285     (000004fe) const-string         v4, 'wipe_data'
+	286     (00000502) invoke-virtual       v6, v4, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->findPreference(Ljava/lang/CharSequence;)Landroidx/preference/Preference;
+	287     (00000508) move-result-object   v4
+	288     (0000050a) invoke-virtual       v4, v6, Landroidx/preference/Preference;->setOnPreferenceClickListener(Landroidx/preference/Preference$OnPreferenceClickListener;)V
+	289     (00000510) const-string         v4, 'remove_device_owner'
+	290     (00000514) invoke-virtual       v6, v4, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->findPreference(Ljava/lang/CharSequence;)Landroidx/preference/Preference;
+	291     (0000051a) move-result-object   v4
+	292     (0000051c) invoke-virtual       v4, v6, Landroidx/preference/Preference;->setOnPreferenceClickListener(Landroidx/preference/Preference$OnPreferenceClickListener;)V
+	293     (00000522) const-string         v4, 'enable_backup_service'
+	294     (00000526) invoke-virtual       v6, v4, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->findPreference(Ljava/lang/CharSequence;)Landroidx/preference/Preference;
+	295     (0000052c) move-result-object   v4
+	296     (0000052e) check-cast           v4, Lcom/afwsamples/testdpc/common/preference/DpcSwitchPreference;
+	297     (00000532) iput-object          v4, v6, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->mEnableBackupServicePreference Lcom/afwsamples/testdpc/common/preference/DpcSwitchPreference;
+	298     (00000536) iget-object          v4, v6, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->mEnableBackupServicePreference Lcom/afwsamples/testdpc/common/preference/DpcSwitchPreference;
+	299     (0000053a) invoke-virtual       v4, v6, Lcom/afwsamples/testdpc/common/preference/DpcSwitchPreference;->setOnPreferenceChangeListener(Landroidx/preference/Preference$OnPreferenceChangeListener;)V
+	300     (00000540) iget-object          v4, v6, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->mEnableBackupServicePreference Lcom/afwsamples/testdpc/common/preference/DpcSwitchPreference;
+	301     (00000544) new-instance         v5, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment$$Lambda$11;
+	302     (00000548) invoke-direct        v5, v6, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment$$Lambda$11;-><init>(Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;)V
+	303     (0000054e) invoke-virtual       v4, v5, Lcom/afwsamples/testdpc/common/preference/DpcSwitchPreference;->setCustomConstraint(Lcom/afwsamples/testdpc/common/preference/CustomConstraint;)V
+	304     (00000554) const-string         v4, 'common_criteria_mode'
+	305     (00000558) invoke-virtual       v6, v4, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->findPreference(Ljava/lang/CharSequence;)Landroidx/preference/Preference;
+	306     (0000055e) move-result-object   v4
+	307     (00000560) check-cast           v4, Lcom/afwsamples/testdpc/common/preference/DpcSwitchPreference;
+	308     (00000564) iput-object          v4, v6, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->mCommonCriteriaModePreference Lcom/afwsamples/testdpc/common/preference/DpcSwitchPreference;
+	309     (00000568) iget-object          v4, v6, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->mCommonCriteriaModePreference Lcom/afwsamples/testdpc/common/preference/DpcSwitchPreference;
+	310     (0000056c) invoke-virtual       v4, v6, Lcom/afwsamples/testdpc/common/preference/DpcSwitchPreference;->setOnPreferenceChangeListener(Landroidx/preference/Preference$OnPreferenceChangeListener;)V
+	311     (00000572) const-string         v4, 'enable_usb_data_signaling'
+	312     (00000576) invoke-virtual       v6, v4, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->findPreference(Ljava/lang/CharSequence;)Landroidx/preference/Preference;
+	313     (0000057c) move-result-object   v4
+	314     (0000057e) check-cast           v4, Lcom/afwsamples/testdpc/common/preference/DpcSwitchPreference;
+	315     (00000582) iput-object          v4, v6, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->mEnableUsbDataSignalingPreference Lcom/afwsamples/testdpc/common/preference/DpcSwitchPreference;
+	316     (00000586) iget-object          v4, v6, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->mEnableUsbDataSignalingPreference Lcom/afwsamples/testdpc/common/preference/DpcSwitchPreference;
+	317     (0000058a) invoke-virtual       v4, v6, Lcom/afwsamples/testdpc/common/preference/DpcSwitchPreference;->setOnPreferenceChangeListener(Landroidx/preference/Preference$OnPreferenceChangeListener;)V
+	318     (00000590) const-string         v4, 'request_bugreport'
+	319     (00000594) invoke-virtual       v6, v4, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->findPreference(Ljava/lang/CharSequence;)Landroidx/preference/Preference;
+	320     (0000059a) move-result-object   v4
+	321     (0000059c) invoke-virtual       v4, v6, Landroidx/preference/Preference;->setOnPreferenceClickListener(Landroidx/preference/Preference$OnPreferenceClickListener;)V
+	322     (000005a2) const-string         v4, 'enable_security_logging'
+	323     (000005a6) invoke-virtual       v6, v4, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->findPreference(Ljava/lang/CharSequence;)Landroidx/preference/Preference;
+	324     (000005ac) move-result-object   v4
+	325     (000005ae) check-cast           v4, Landroidx/preference/SwitchPreference;
+	326     (000005b2) iput-object          v4, v6, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->mEnableSecurityLoggingPreference Landroidx/preference/SwitchPreference;
+	327     (000005b6) iget-object          v4, v6, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->mEnableSecurityLoggingPreference Landroidx/preference/SwitchPreference;
+	328     (000005ba) invoke-virtual       v4, v6, Landroidx/preference/SwitchPreference;->setOnPreferenceChangeListener(Landroidx/preference/Preference$OnPreferenceChangeListener;)V
+	329     (000005c0) const-string         v4, 'request_security_logs'
+	330     (000005c4) invoke-virtual       v6, v4, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->findPreference(Ljava/lang/CharSequence;)Landroidx/preference/Preference;
+	331     (000005ca) move-result-object   v4
+	332     (000005cc) check-cast           v4, Lcom/afwsamples/testdpc/common/preference/DpcPreference;
+	333     (000005d0) iput-object          v4, v6, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->mRequestSecurityLogsPreference Lcom/afwsamples/testdpc/common/preference/DpcPreference;
+	334     (000005d4) iget-object          v4, v6, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->mRequestSecurityLogsPreference Lcom/afwsamples/testdpc/common/preference/DpcPreference;
+	335     (000005d8) invoke-virtual       v4, v6, Lcom/afwsamples/testdpc/common/preference/DpcPreference;->setOnPreferenceClickListener(Landroidx/preference/Preference$OnPreferenceClickListener;)V
+	336     (000005de) new-instance         v3, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment$$Lambda$12;
+	337     (000005e2) invoke-direct        v3, v6, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment$$Lambda$12;-><init>(Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;)V
+	338     (000005e8) iget-object          v4, v6, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->mRequestSecurityLogsPreference Lcom/afwsamples/testdpc/common/preference/DpcPreference;
+	339     (000005ec) invoke-virtual       v4, v3, Lcom/afwsamples/testdpc/common/preference/DpcPreference;->setCustomConstraint(Lcom/afwsamples/testdpc/common/preference/CustomConstraint;)V
+	340     (000005f2) const-string         v4, 'request_pre_reboot_security_logs'
+	341     (000005f6) invoke-virtual       v6, v4, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->findPreference(Ljava/lang/CharSequence;)Landroidx/preference/Preference;
+	342     (000005fc) move-result-object   v4
+	343     (000005fe) check-cast           v4, Lcom/afwsamples/testdpc/common/preference/DpcPreference;
+	344     (00000602) iput-object          v4, v6, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->mRequestPreRebootSecurityLogsPreference Lcom/afwsamples/testdpc/common/preference/DpcPreference;
+	345     (00000606) iget-object          v4, v6, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->mRequestPreRebootSecurityLogsPreference Lcom/afwsamples/testdpc/common/preference/DpcPreference;
+	346     (0000060a) invoke-virtual       v4, v6, Lcom/afwsamples/testdpc/common/preference/DpcPreference;->setOnPreferenceClickListener(Landroidx/preference/Preference$OnPreferenceClickListener;)V
+	347     (00000610) iget-object          v4, v6, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->mRequestPreRebootSecurityLogsPreference Lcom/afwsamples/testdpc/common/preference/DpcPreference;
+	348     (00000614) invoke-virtual       v4, v3, Lcom/afwsamples/testdpc/common/preference/DpcPreference;->setCustomConstraint(Lcom/afwsamples/testdpc/common/preference/CustomConstraint;)V
+	349     (0000061a) const-string         v4, 'enable_network_logging'
+	350     (0000061e) invoke-virtual       v6, v4, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->findPreference(Ljava/lang/CharSequence;)Landroidx/preference/Preference;
+	351     (00000624) move-result-object   v4
+	352     (00000626) check-cast           v4, Lcom/afwsamples/testdpc/common/preference/DpcSwitchPreference;
+	353     (0000062a) iput-object          v4, v6, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->mEnableNetworkLoggingPreference Lcom/afwsamples/testdpc/common/preference/DpcSwitchPreference;
+	354     (0000062e) iget-object          v4, v6, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->mEnableNetworkLoggingPreference Lcom/afwsamples/testdpc/common/preference/DpcSwitchPreference;
+	355     (00000632) invoke-virtual       v4, v6, Lcom/afwsamples/testdpc/common/preference/DpcSwitchPreference;->setOnPreferenceChangeListener(Landroidx/preference/Preference$OnPreferenceChangeListener;)V
+	356     (00000638) iget-object          v4, v6, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->mEnableNetworkLoggingPreference Lcom/afwsamples/testdpc/common/preference/DpcSwitchPreference;
+	357     (0000063c) new-instance         v5, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment$$Lambda$13;
+	358     (00000640) invoke-direct        v5, v6, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment$$Lambda$13;-><init>(Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;)V
+	359     (00000646) invoke-virtual       v4, v5, Lcom/afwsamples/testdpc/common/preference/DpcSwitchPreference;->addCustomConstraint(Lcom/afwsamples/testdpc/common/preference/CustomConstraint;)V
+	360     (0000064c) const-string         v4, 'request_network_logs'
+	361     (00000650) invoke-virtual       v6, v4, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->findPreference(Ljava/lang/CharSequence;)Landroidx/preference/Preference;
+	362     (00000656) move-result-object   v4
+	363     (00000658) check-cast           v4, Lcom/afwsamples/testdpc/common/preference/DpcPreference;
+	364     (0000065c) iput-object          v4, v6, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->mRequestNetworkLogsPreference Lcom/afwsamples/testdpc/common/preference/DpcPreference;
+	365     (00000660) iget-object          v4, v6, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->mRequestNetworkLogsPreference Lcom/afwsamples/testdpc/common/preference/DpcPreference;
+	366     (00000664) invoke-virtual       v4, v6, Lcom/afwsamples/testdpc/common/preference/DpcPreference;->setOnPreferenceClickListener(Landroidx/preference/Preference$OnPreferenceClickListener;)V
+	367     (0000066a) new-instance         v1, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment$$Lambda$14;
+	368     (0000066e) invoke-direct        v1, v6, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment$$Lambda$14;-><init>(Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;)V
+	369     (00000674) iget-object          v4, v6, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->mRequestNetworkLogsPreference Lcom/afwsamples/testdpc/common/preference/DpcPreference;
+	370     (00000678) invoke-virtual       v4, v1, Lcom/afwsamples/testdpc/common/preference/DpcPreference;->setCustomConstraint(Lcom/afwsamples/testdpc/common/preference/CustomConstraint;)V
+	371     (0000067e) const-string         v4, 'set_accessibility_services'
+	372     (00000682) invoke-virtual       v6, v4, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->findPreference(Ljava/lang/CharSequence;)Landroidx/preference/Preference;
+	373     (00000688) move-result-object   v4
+	374     (0000068a) invoke-virtual       v4, v6, Landroidx/preference/Preference;->setOnPreferenceClickListener(Landroidx/preference/Preference$OnPreferenceClickListener;)V
+	375     (00000690) const-string         v4, 'set_input_methods'
+	376     (00000694) invoke-virtual       v6, v4, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->findPreference(Ljava/lang/CharSequence;)Landroidx/preference/Preference;
+	377     (0000069a) move-result-object   v4
+	378     (0000069c) invoke-virtual       v4, v6, Landroidx/preference/Preference;->setOnPreferenceClickListener(Landroidx/preference/Preference$OnPreferenceClickListener;)V
+	379     (000006a2) const-string         v4, 'set_input_methods_on_parent'
+	380     (000006a6) invoke-virtual       v6, v4, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->findPreference(Ljava/lang/CharSequence;)Landroidx/preference/Preference;
+	381     (000006ac) move-result-object   v4
+	382     (000006ae) invoke-virtual       v4, v6, Landroidx/preference/Preference;->setOnPreferenceClickListener(Landroidx/preference/Preference$OnPreferenceClickListener;)V
+	383     (000006b4) const-string         v4, 'set_notification_listeners'
+	384     (000006b8) invoke-virtual       v6, v4, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->findPreference(Ljava/lang/CharSequence;)Landroidx/preference/Preference;
+	385     (000006be) move-result-object   v4
+	386     (000006c0) invoke-virtual       v4, v6, Landroidx/preference/Preference;->setOnPreferenceClickListener(Landroidx/preference/Preference$OnPreferenceClickListener;)V
+	387     (000006c6) const-string         v4, 'set_notification_listeners_text'
+	388     (000006ca) invoke-virtual       v6, v4, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->findPreference(Ljava/lang/CharSequence;)Landroidx/preference/Preference;
+	389     (000006d0) move-result-object   v4
+	390     (000006d2) invoke-virtual       v4, v6, Landroidx/preference/Preference;->setOnPreferenceClickListener(Landroidx/preference/Preference$OnPreferenceClickListener;)V
+	391     (000006d8) const-string         v4, 'set_disable_account_management'
+	392     (000006dc) invoke-virtual       v6, v4, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->findPreference(Ljava/lang/CharSequence;)Landroidx/preference/Preference;
+	393     (000006e2) move-result-object   v4
+	394     (000006e4) invoke-virtual       v4, v6, Landroidx/preference/Preference;->setOnPreferenceClickListener(Landroidx/preference/Preference$OnPreferenceClickListener;)V
+	395     (000006ea) const-string         v4, 'get_disable_account_management'
+	396     (000006ee) invoke-virtual       v6, v4, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->findPreference(Ljava/lang/CharSequence;)Landroidx/preference/Preference;
+	397     (000006f4) move-result-object   v4
+	398     (000006f6) invoke-virtual       v4, v6, Landroidx/preference/Preference;->setOnPreferenceClickListener(Landroidx/preference/Preference$OnPreferenceClickListener;)V
+	399     (000006fc) const-string         v4, 'add_account'
+	400     (00000700) invoke-virtual       v6, v4, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->findPreference(Ljava/lang/CharSequence;)Landroidx/preference/Preference;
+	401     (00000706) move-result-object   v4
+	402     (00000708) invoke-virtual       v4, v6, Landroidx/preference/Preference;->setOnPreferenceClickListener(Landroidx/preference/Preference$OnPreferenceClickListener;)V
+	403     (0000070e) const-string         v4, 'remove_account'
+	404     (00000712) invoke-virtual       v6, v4, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->findPreference(Ljava/lang/CharSequence;)Landroidx/preference/Preference;
+	405     (00000718) move-result-object   v4
+	406     (0000071a) invoke-virtual       v4, v6, Landroidx/preference/Preference;->setOnPreferenceClickListener(Landroidx/preference/Preference$OnPreferenceClickListener;)V
+	407     (00000720) const-string         v4, 'block_uninstallation_by_pkg'
+	408     (00000724) invoke-virtual       v6, v4, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->findPreference(Ljava/lang/CharSequence;)Landroidx/preference/Preference;
+	409     (0000072a) move-result-object   v4
+	410     (0000072c) invoke-virtual       v4, v6, Landroidx/preference/Preference;->setOnPreferenceClickListener(Landroidx/preference/Preference$OnPreferenceClickListener;)V
+	411     (00000732) const-string         v4, 'block_uninstallation_list'
+	412     (00000736) invoke-virtual       v6, v4, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->findPreference(Ljava/lang/CharSequence;)Landroidx/preference/Preference;
+	413     (0000073c) move-result-object   v4
+	414     (0000073e) invoke-virtual       v4, v6, Landroidx/preference/Preference;->setOnPreferenceClickListener(Landroidx/preference/Preference$OnPreferenceClickListener;)V
+	415     (00000744) const-string         v4, 'app_feedback_notifications'
+	416     (00000748) invoke-virtual       v6, v4, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->findPreference(Ljava/lang/CharSequence;)Landroidx/preference/Preference;
+	417     (0000074e) move-result-object   v4
+	418     (00000750) invoke-virtual       v4, v6, Landroidx/preference/Preference;->setOnPreferenceChangeListener(Landroidx/preference/Preference$OnPreferenceChangeListener;)V
+	419     (00000756) const-string         v4, 'app_feedback_notifications'
+	420     (0000075a) invoke-virtual       v6, v4, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->findPreference(Ljava/lang/CharSequence;)Landroidx/preference/Preference;
+	421     (00000760) move-result-object   v4
+	422     (00000762) check-cast           v4, Lcom/afwsamples/testdpc/common/preference/DpcSwitchPreference;
+	423     (00000766) iput-object          v4, v6, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->mEnableAppFeedbackNotificationsPreference Lcom/afwsamples/testdpc/common/preference/DpcSwitchPreference;
+	424     (0000076a) const-string         v4, 'enable_system_apps'
+	425     (0000076e) invoke-virtual       v6, v4, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->findPreference(Ljava/lang/CharSequence;)Landroidx/preference/Preference;
+	426     (00000774) move-result-object   v4
+	427     (00000776) invoke-virtual       v4, v6, Landroidx/preference/Preference;->setOnPreferenceClickListener(Landroidx/preference/Preference$OnPreferenceClickListener;)V
+	428     (0000077c) const-string         v4, 'enable_system_apps_by_package_name'
+	429     (00000780) invoke-virtual       v6, v4, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->findPreference(Ljava/lang/CharSequence;)Landroidx/preference/Preference;
+	430     (00000786) move-result-object   v4
+	431     (00000788) invoke-virtual       v4, v6, Landroidx/preference/Preference;->setOnPreferenceClickListener(Landroidx/preference/Preference$OnPreferenceClickListener;)V
+	432     (0000078e) const-string         v4, 'enable_system_apps_by_intent'
+	433     (00000792) invoke-virtual       v6, v4, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->findPreference(Ljava/lang/CharSequence;)Landroidx/preference/Preference;
+	434     (00000798) move-result-object   v4
+	435     (0000079a) invoke-virtual       v4, v6, Landroidx/preference/Preference;->setOnPreferenceClickListener(Landroidx/preference/Preference$OnPreferenceClickListener;)V
+	436     (000007a0) const-string         v4, 'install_existing_packages'
+	437     (000007a4) invoke-virtual       v6, v4, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->findPreference(Ljava/lang/CharSequence;)Landroidx/preference/Preference;
+	438     (000007aa) move-result-object   v4
+	439     (000007ac) check-cast           v4, Lcom/afwsamples/testdpc/common/preference/DpcPreference;
+	440     (000007b0) iput-object          v4, v6, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->mInstallExistingPackagePreference Lcom/afwsamples/testdpc/common/preference/DpcPreference;
+	441     (000007b4) iget-object          v4, v6, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->mInstallExistingPackagePreference Lcom/afwsamples/testdpc/common/preference/DpcPreference;
+	442     (000007b8) invoke-virtual       v4, v6, Lcom/afwsamples/testdpc/common/preference/DpcPreference;->setOnPreferenceClickListener(Landroidx/preference/Preference$OnPreferenceClickListener;)V
+	443     (000007be) iget-object          v4, v6, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->mInstallExistingPackagePreference Lcom/afwsamples/testdpc/common/preference/DpcPreference;
+	444     (000007c2) new-instance         v5, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment$$Lambda$15;
+	445     (000007c6) invoke-direct        v5, v6, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment$$Lambda$15;-><init>(Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;)V
+	446     (000007cc) invoke-virtual       v4, v5, Lcom/afwsamples/testdpc/common/preference/DpcPreference;->setCustomConstraint(Lcom/afwsamples/testdpc/common/preference/CustomConstraint;)V
+	447     (000007d2) const-string         v4, 'install_apk_package'
+	448     (000007d6) invoke-virtual       v6, v4, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->findPreference(Ljava/lang/CharSequence;)Landroidx/preference/Preference;
+	449     (000007dc) move-result-object   v4
+	450     (000007de) invoke-virtual       v4, v6, Landroidx/preference/Preference;->setOnPreferenceClickListener(Landroidx/preference/Preference$OnPreferenceClickListener;)V
+	451     (000007e4) const-string         v4, 'uninstall_package'
+	452     (000007e8) invoke-virtual       v6, v4, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->findPreference(Ljava/lang/CharSequence;)Landroidx/preference/Preference;
+	453     (000007ee) move-result-object   v4
+	454     (000007f0) invoke-virtual       v4, v6, Landroidx/preference/Preference;->setOnPreferenceClickListener(Landroidx/preference/Preference$OnPreferenceClickListener;)V
+	455     (000007f6) const-string         v4, 'hide_apps'
+	456     (000007fa) invoke-virtual       v6, v4, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->findPreference(Ljava/lang/CharSequence;)Landroidx/preference/Preference;
+	457     (00000800) move-result-object   v4
+	458     (00000802) invoke-virtual       v4, v6, Landroidx/preference/Preference;->setOnPreferenceClickListener(Landroidx/preference/Preference$OnPreferenceClickListener;)V
+	459     (00000808) const-string         v4, 'hide_apps_parent'
+	460     (0000080c) invoke-virtual       v6, v4, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->findPreference(Ljava/lang/CharSequence;)Landroidx/preference/Preference;
+	461     (00000812) move-result-object   v4
+	462     (00000814) check-cast           v4, Lcom/afwsamples/testdpc/common/preference/DpcPreference;
+	463     (00000818) iput-object          v4, v6, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->mHideAppsParentPreference Lcom/afwsamples/testdpc/common/preference/DpcPreference;
+	464     (0000081c) iget-object          v4, v6, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->mHideAppsParentPreference Lcom/afwsamples/testdpc/common/preference/DpcPreference;
+	465     (00000820) invoke-virtual       v4, v6, Lcom/afwsamples/testdpc/common/preference/DpcPreference;->setOnPreferenceClickListener(Landroidx/preference/Preference$OnPreferenceClickListener;)V
+	466     (00000826) const-string         v4, 'unhide_apps'
+	467     (0000082a) invoke-virtual       v6, v4, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->findPreference(Ljava/lang/CharSequence;)Landroidx/preference/Preference;
+	468     (00000830) move-result-object   v4
+	469     (00000832) invoke-virtual       v4, v6, Landroidx/preference/Preference;->setOnPreferenceClickListener(Landroidx/preference/Preference$OnPreferenceClickListener;)V
+	470     (00000838) const-string         v4, 'unhide_apps_parent'
+	471     (0000083c) invoke-virtual       v6, v4, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->findPreference(Ljava/lang/CharSequence;)Landroidx/preference/Preference;
+	472     (00000842) move-result-object   v4
+	473     (00000844) check-cast           v4, Lcom/afwsamples/testdpc/common/preference/DpcPreference;
+	474     (00000848) iput-object          v4, v6, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->mUnhideAppsParentPreference Lcom/afwsamples/testdpc/common/preference/DpcPreference;
+	475     (0000084c) iget-object          v4, v6, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->mUnhideAppsParentPreference Lcom/afwsamples/testdpc/common/preference/DpcPreference;
+	476     (00000850) invoke-virtual       v4, v6, Lcom/afwsamples/testdpc/common/preference/DpcPreference;->setOnPreferenceClickListener(Landroidx/preference/Preference$OnPreferenceClickListener;)V
+	477     (00000856) const-string         v4, 'suspend_apps'
+	478     (0000085a) invoke-virtual       v6, v4, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->findPreference(Ljava/lang/CharSequence;)Landroidx/preference/Preference;
+	479     (00000860) move-result-object   v4
+	480     (00000862) invoke-virtual       v4, v6, Landroidx/preference/Preference;->setOnPreferenceClickListener(Landroidx/preference/Preference$OnPreferenceClickListener;)V
+	481     (00000868) const-string         v4, 'unsuspend_apps'
+	482     (0000086c) invoke-virtual       v6, v4, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->findPreference(Ljava/lang/CharSequence;)Landroidx/preference/Preference;
+	483     (00000872) move-result-object   v4
+	484     (00000874) invoke-virtual       v4, v6, Landroidx/preference/Preference;->setOnPreferenceClickListener(Landroidx/preference/Preference$OnPreferenceClickListener;)V
+	485     (0000087a) const-string         v4, 'clear_app_data'
+	486     (0000087e) invoke-virtual       v6, v4, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->findPreference(Ljava/lang/CharSequence;)Landroidx/preference/Preference;
+	487     (00000884) move-result-object   v4
+	488     (00000886) invoke-virtual       v4, v6, Landroidx/preference/Preference;->setOnPreferenceClickListener(Landroidx/preference/Preference$OnPreferenceClickListener;)V
+	489     (0000088c) const-string         v4, 'keep_uninstalled_packages'
+	490     (00000890) invoke-virtual       v6, v4, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->findPreference(Ljava/lang/CharSequence;)Landroidx/preference/Preference;
+	491     (00000896) move-result-object   v4
+	492     (00000898) invoke-virtual       v4, v6, Landroidx/preference/Preference;->setOnPreferenceClickListener(Landroidx/preference/Preference$OnPreferenceClickListener;)V
+	493     (0000089e) const-string         v4, 'managed_configurations'
+	494     (000008a2) invoke-virtual       v6, v4, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->findPreference(Ljava/lang/CharSequence;)Landroidx/preference/Preference;
+	495     (000008a8) move-result-object   v4
+	496     (000008aa) invoke-virtual       v4, v6, Landroidx/preference/Preference;->setOnPreferenceClickListener(Landroidx/preference/Preference$OnPreferenceClickListener;)V
+	497     (000008b0) const-string         v4, 'disable_metered_data'
+	498     (000008b4) invoke-virtual       v6, v4, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->findPreference(Ljava/lang/CharSequence;)Landroidx/preference/Preference;
+	499     (000008ba) move-result-object   v4
+	500     (000008bc) invoke-virtual       v4, v6, Landroidx/preference/Preference;->setOnPreferenceClickListener(Landroidx/preference/Preference$OnPreferenceClickListener;)V
+	501     (000008c2) const-string         v4, 'generic_delegation'
+	502     (000008c6) invoke-virtual       v6, v4, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->findPreference(Ljava/lang/CharSequence;)Landroidx/preference/Preference;
+	503     (000008cc) move-result-object   v4
+	504     (000008ce) invoke-virtual       v4, v6, Landroidx/preference/Preference;->setOnPreferenceClickListener(Landroidx/preference/Preference$OnPreferenceClickListener;)V
+	505     (000008d4) const-string         v4, 'app_restrictions_managing_package'
+	506     (000008d8) invoke-virtual       v6, v4, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->findPreference(Ljava/lang/CharSequence;)Landroidx/preference/Preference;
+	507     (000008de) move-result-object   v4
+	508     (000008e0) invoke-virtual       v4, v6, Landroidx/preference/Preference;->setOnPreferenceClickListener(Landroidx/preference/Preference$OnPreferenceClickListener;)V
+	509     (000008e6) const-string         v4, 'request_manage_credentials'
+	510     (000008ea) invoke-virtual       v6, v4, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->findPreference(Ljava/lang/CharSequence;)Landroidx/preference/Preference;
+	511     (000008f0) move-result-object   v4
+	512     (000008f2) invoke-virtual       v4, v6, Landroidx/preference/Preference;->setOnPreferenceClickListener(Landroidx/preference/Preference$OnPreferenceClickListener;)V
+	513     (000008f8) const-string         v4, 'install_key_certificate'
+	514     (000008fc) invoke-virtual       v6, v4, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->findPreference(Ljava/lang/CharSequence;)Landroidx/preference/Preference;
+	515     (00000902) move-result-object   v4
+	516     (00000904) invoke-virtual       v4, v6, Landroidx/preference/Preference;->setOnPreferenceClickListener(Landroidx/preference/Preference$OnPreferenceClickListener;)V
+	517     (0000090a) const-string         v4, 'generate_key_and_certificate'
+	518     (0000090e) invoke-virtual       v6, v4, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->findPreference(Ljava/lang/CharSequence;)Landroidx/preference/Preference;
+	519     (00000914) move-result-object   v4
+	520     (00000916) invoke-virtual       v4, v6, Landroidx/preference/Preference;->setOnPreferenceClickListener(Landroidx/preference/Preference$OnPreferenceClickListener;)V
+	521     (0000091c) const-string         v4, 'remove_key_certificate'
+	522     (00000920) invoke-virtual       v6, v4, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->findPreference(Ljava/lang/CharSequence;)Landroidx/preference/Preference;
+	523     (00000926) move-result-object   v4
+	524     (00000928) invoke-virtual       v4, v6, Landroidx/preference/Preference;->setOnPreferenceClickListener(Landroidx/preference/Preference$OnPreferenceClickListener;)V
+	525     (0000092e) const-string         v4, 'test_key_usability'
+	526     (00000932) invoke-virtual       v6, v4, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->findPreference(Ljava/lang/CharSequence;)Landroidx/preference/Preference;
+	527     (00000938) move-result-object   v4
+	528     (0000093a) invoke-virtual       v4, v6, Landroidx/preference/Preference;->setOnPreferenceClickListener(Landroidx/preference/Preference$OnPreferenceClickListener;)V
+	529     (00000940) const-string         v4, 'install_ca_certificate'
+	530     (00000944) invoke-virtual       v6, v4, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->findPreference(Ljava/lang/CharSequence;)Landroidx/preference/Preference;
+	531     (0000094a) move-result-object   v4
+	532     (0000094c) invoke-virtual       v4, v6, Landroidx/preference/Preference;->setOnPreferenceClickListener(Landroidx/preference/Preference$OnPreferenceClickListener;)V
+	533     (00000952) const-string         v4, 'get_ca_certificates'
+	534     (00000956) invoke-virtual       v6, v4, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->findPreference(Ljava/lang/CharSequence;)Landroidx/preference/Preference;
+	535     (0000095c) move-result-object   v4
+	536     (0000095e) invoke-virtual       v4, v6, Landroidx/preference/Preference;->setOnPreferenceClickListener(Landroidx/preference/Preference$OnPreferenceClickListener;)V
+	537     (00000964) const-string         v4, 'remove_all_ca_certificates'
+	538     (00000968) invoke-virtual       v6, v4, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->findPreference(Ljava/lang/CharSequence;)Landroidx/preference/Preference;
+	539     (0000096e) move-result-object   v4
+	540     (00000970) invoke-virtual       v4, v6, Landroidx/preference/Preference;->setOnPreferenceClickListener(Landroidx/preference/Preference$OnPreferenceClickListener;)V
+	541     (00000976) const-string         v4, 'managed_profile_policies'
+	542     (0000097a) invoke-virtual       v6, v4, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->findPreference(Ljava/lang/CharSequence;)Landroidx/preference/Preference;
+	543     (00000980) move-result-object   v4
+	544     (00000982) invoke-virtual       v4, v6, Landroidx/preference/Preference;->setOnPreferenceClickListener(Landroidx/preference/Preference$OnPreferenceClickListener;)V
+	545     (00000988) const-string         v4, 'set_permission_policy'
+	546     (0000098c) invoke-virtual       v6, v4, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->findPreference(Ljava/lang/CharSequence;)Landroidx/preference/Preference;
+	547     (00000992) move-result-object   v4
+	548     (00000994) invoke-virtual       v4, v6, Landroidx/preference/Preference;->setOnPreferenceClickListener(Landroidx/preference/Preference$OnPreferenceClickListener;)V
+	549     (0000099a) const-string         v4, 'manage_app_permissions'
+	550     (0000099e) invoke-virtual       v6, v4, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->findPreference(Ljava/lang/CharSequence;)Landroidx/preference/Preference;
+	551     (000009a4) move-result-object   v4
+	552     (000009a6) invoke-virtual       v4, v6, Landroidx/preference/Preference;->setOnPreferenceClickListener(Landroidx/preference/Preference$OnPreferenceClickListener;)V
+	553     (000009ac) const-string         v4, 'create_wifi_configuration'
+	554     (000009b0) invoke-virtual       v6, v4, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->findPreference(Ljava/lang/CharSequence;)Landroidx/preference/Preference;
+	555     (000009b6) move-result-object   v4
+	556     (000009b8) invoke-virtual       v4, v6, Landroidx/preference/Preference;->setOnPreferenceClickListener(Landroidx/preference/Preference$OnPreferenceClickListener;)V
+	557     (000009be) const-string         v4, 'create_eap_tls_wifi_configuration'
+	558     (000009c2) invoke-virtual       v6, v4, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->findPreference(Ljava/lang/CharSequence;)Landroidx/preference/Preference;
+	559     (000009c8) move-result-object   v4
+	560     (000009ca) invoke-virtual       v4, v6, Landroidx/preference/Preference;->setOnPreferenceClickListener(Landroidx/preference/Preference$OnPreferenceClickListener;)V
+	561     (000009d0) const-string         v4, 'enable_wifi_config_lockdown'
+	562     (000009d4) invoke-virtual       v6, v4, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->findPreference(Ljava/lang/CharSequence;)Landroidx/preference/Preference;
+	563     (000009da) move-result-object   v4
+	564     (000009dc) check-cast           v4, Lcom/afwsamples/testdpc/common/preference/DpcSwitchPreference;
+	565     (000009e0) iput-object          v4, v6, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->mLockdownAdminConfiguredNetworksPreference Lcom/afwsamples/testdpc/common/preference/DpcSwitchPreference;
+	566     (000009e4) iget-object          v4, v6, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->mLockdownAdminConfiguredNetworksPreference Lcom/afwsamples/testdpc/common/preference/DpcSwitchPreference;
+	567     (000009e8) invoke-virtual       v4, v6, Lcom/afwsamples/testdpc/common/preference/DpcSwitchPreference;->setOnPreferenceChangeListener(Landroidx/preference/Preference$OnPreferenceChangeListener;)V
+	568     (000009ee) const-string         v4, 'modify_wifi_configuration'
+	569     (000009f2) invoke-virtual       v6, v4, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->findPreference(Ljava/lang/CharSequence;)Landroidx/preference/Preference;
+	570     (000009f8) move-result-object   v4
+	571     (000009fa) invoke-virtual       v4, v6, Landroidx/preference/Preference;->setOnPreferenceClickListener(Landroidx/preference/Preference$OnPreferenceClickListener;)V
+	572     (00000a00) const-string         v4, 'modify_owned_wifi_configuration'
+	573     (00000a04) invoke-virtual       v6, v4, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->findPreference(Ljava/lang/CharSequence;)Landroidx/preference/Preference;
+	574     (00000a0a) move-result-object   v4
+	575     (00000a0c) invoke-virtual       v4, v6, Landroidx/preference/Preference;->setOnPreferenceClickListener(Landroidx/preference/Preference$OnPreferenceClickListener;)V
+	576     (00000a12) const-string         v4, 'remove_not_owned_wifi_configurations'
+	577     (00000a16) invoke-virtual       v6, v4, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->findPreference(Ljava/lang/CharSequence;)Landroidx/preference/Preference;
+	578     (00000a1c) move-result-object   v4
+	579     (00000a1e) invoke-virtual       v4, v6, Landroidx/preference/Preference;->setOnPreferenceClickListener(Landroidx/preference/Preference$OnPreferenceClickListener;)V
+	580     (00000a24) const-string         v4, 'transfer_ownership_to_component'
+	581     (00000a28) invoke-virtual       v6, v4, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->findPreference(Ljava/lang/CharSequence;)Landroidx/preference/Preference;
+	582     (00000a2e) move-result-object   v4
+	583     (00000a30) invoke-virtual       v4, v6, Landroidx/preference/Preference;->setOnPreferenceClickListener(Landroidx/preference/Preference$OnPreferenceClickListener;)V
+	584     (00000a36) const-string         v4, 'show_wifi_mac_address'
+	585     (00000a3a) invoke-virtual       v6, v4, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->findPreference(Ljava/lang/CharSequence;)Landroidx/preference/Preference;
+	586     (00000a40) move-result-object   v4
+	587     (00000a42) invoke-virtual       v4, v6, Landroidx/preference/Preference;->setOnPreferenceClickListener(Landroidx/preference/Preference$OnPreferenceClickListener;)V
+	588     (00000a48) const-string         v4, 'install_nonmarket_apps'
+	589     (00000a4c) invoke-virtual       v6, v4, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->findPreference(Ljava/lang/CharSequence;)Landroidx/preference/Preference;
+	590     (00000a52) move-result-object   v4
+	591     (00000a54) check-cast           v4, Lcom/afwsamples/testdpc/common/preference/DpcSwitchPreference;
+	592     (00000a58) iput-object          v4, v6, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->mInstallNonMarketAppsPreference Lcom/afwsamples/testdpc/common/preference/DpcSwitchPreference;
+	593     (00000a5c) iget-object          v4, v6, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->mInstallNonMarketAppsPreference Lcom/afwsamples/testdpc/common/preference/DpcSwitchPreference;
+	594     (00000a60) new-instance         v5, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment$$Lambda$16;
+	595     (00000a64) invoke-direct        v5, v6, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment$$Lambda$16;-><init>(Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;)V
+	596     (00000a6a) invoke-virtual       v4, v5, Lcom/afwsamples/testdpc/common/preference/DpcSwitchPreference;->setCustomConstraint(Lcom/afwsamples/testdpc/common/preference/CustomConstraint;)V
+	597     (00000a70) iget-object          v4, v6, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->mInstallNonMarketAppsPreference Lcom/afwsamples/testdpc/common/preference/DpcSwitchPreference;
+	598     (00000a74) invoke-virtual       v4, v6, Lcom/afwsamples/testdpc/common/preference/DpcSwitchPreference;->setOnPreferenceChangeListener(Landroidx/preference/Preference$OnPreferenceChangeListener;)V
+	599     (00000a7a) const-string         v4, 'set_user_restrictions'
+	600     (00000a7e) invoke-virtual       v6, v4, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->findPreference(Ljava/lang/CharSequence;)Landroidx/preference/Preference;
+	601     (00000a84) move-result-object   v4
+	602     (00000a86) invoke-virtual       v4, v6, Landroidx/preference/Preference;->setOnPreferenceClickListener(Landroidx/preference/Preference$OnPreferenceClickListener;)V
+	603     (00000a8c) const-string         v4, 'set_user_restrictions_parent'
+	604     (00000a90) invoke-virtual       v6, v4, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->findPreference(Ljava/lang/CharSequence;)Landroidx/preference/Preference;
+	605     (00000a96) move-result-object   v4
+	606     (00000a98) check-cast           v4, Lcom/afwsamples/testdpc/common/preference/DpcPreference;
+	607     (00000a9c) iput-object          v4, v6, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->mUserRestrictionsParentPreference Lcom/afwsamples/testdpc/common/preference/DpcPreference;
+	608     (00000aa0) iget-object          v4, v6, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->mUserRestrictionsParentPreference Lcom/afwsamples/testdpc/common/preference/DpcPreference;
+	609     (00000aa4) invoke-virtual       v4, v6, Lcom/afwsamples/testdpc/common/preference/DpcPreference;->setOnPreferenceClickListener(Landroidx/preference/Preference$OnPreferenceClickListener;)V
+	610     (00000aaa) const-string         v4, 'reboot'
+	611     (00000aae) invoke-virtual       v6, v4, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->findPreference(Ljava/lang/CharSequence;)Landroidx/preference/Preference;
+	612     (00000ab4) move-result-object   v4
+	613     (00000ab6) invoke-virtual       v4, v6, Landroidx/preference/Preference;->setOnPreferenceClickListener(Landroidx/preference/Preference$OnPreferenceClickListener;)V
+	614     (00000abc) const-string         v4, 'set_short_support_message'
+	615     (00000ac0) invoke-virtual       v6, v4, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->findPreference(Ljava/lang/CharSequence;)Landroidx/preference/Preference;
+	616     (00000ac6) move-result-object   v4
+	617     (00000ac8) invoke-virtual       v4, v6, Landroidx/preference/Preference;->setOnPreferenceClickListener(Landroidx/preference/Preference$OnPreferenceClickListener;)V
+	618     (00000ace) const-string         v4, 'set_long_support_message'
+	619     (00000ad2) invoke-virtual       v6, v4, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->findPreference(Ljava/lang/CharSequence;)Landroidx/preference/Preference;
+	620     (00000ad8) move-result-object   v4
+	621     (00000ada) invoke-virtual       v4, v6, Landroidx/preference/Preference;->setOnPreferenceClickListener(Landroidx/preference/Preference$OnPreferenceClickListener;)V
+	622     (00000ae0) const-string         v4, 'set_new_password'
+	623     (00000ae4) invoke-virtual       v6, v4, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->findPreference(Ljava/lang/CharSequence;)Landroidx/preference/Preference;
+	624     (00000aea) move-result-object   v4
+	625     (00000aec) invoke-virtual       v4, v6, Landroidx/preference/Preference;->setOnPreferenceClickListener(Landroidx/preference/Preference$OnPreferenceClickListener;)V
+	626     (00000af2) const-string         v4, 'set_profile_parent_new_password'
+	627     (00000af6) invoke-virtual       v6, v4, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->findPreference(Ljava/lang/CharSequence;)Landroidx/preference/Preference;
+	628     (00000afc) move-result-object   v4
+	629     (00000afe) invoke-virtual       v4, v6, Landroidx/preference/Preference;->setOnPreferenceClickListener(Landroidx/preference/Preference$OnPreferenceClickListener;)V
+	630     (00000b04) const-string         v4, 'set_profile_parent_new_password_device_requirement'
+	631     (00000b08) invoke-virtual       v6, v4, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->findPreference(Ljava/lang/CharSequence;)Landroidx/preference/Preference;
+	632     (00000b0e) move-result-object   v4
+	633     (00000b10) invoke-virtual       v4, v6, Landroidx/preference/Preference;->setOnPreferenceClickListener(Landroidx/preference/Preference$OnPreferenceClickListener;)V
+	634     (00000b16) const-string         v4, 'cross_profile_apps'
+	635     (00000b1a) invoke-virtual       v6, v4, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->findPreference(Ljava/lang/CharSequence;)Landroidx/preference/Preference;
+	636     (00000b20) move-result-object   v4
+	637     (00000b22) invoke-virtual       v4, v6, Landroidx/preference/Preference;->setOnPreferenceClickListener(Landroidx/preference/Preference$OnPreferenceClickListener;)V
+	638     (00000b28) const-string         v4, 'cross_profile_apps_allowlist'
+	639     (00000b2c) invoke-virtual       v6, v4, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->findPreference(Ljava/lang/CharSequence;)Landroidx/preference/Preference;
+	640     (00000b32) move-result-object   v4
+	641     (00000b34) invoke-virtual       v4, v6, Landroidx/preference/Preference;->setOnPreferenceClickListener(Landroidx/preference/Preference$OnPreferenceClickListener;)V
+	642     (00000b3a) const-string         v4, 'set_screen_brightness'
+	643     (00000b3e) invoke-virtual       v6, v4, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->findPreference(Ljava/lang/CharSequence;)Landroidx/preference/Preference;
+	644     (00000b44) move-result-object   v4
+	645     (00000b46) invoke-virtual       v4, v6, Landroidx/preference/Preference;->setOnPreferenceClickListener(Landroidx/preference/Preference$OnPreferenceClickListener;)V
+	646     (00000b4c) const-string         v4, 'auto_brightness'
+	647     (00000b50) invoke-virtual       v6, v4, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->findPreference(Ljava/lang/CharSequence;)Landroidx/preference/Preference;
+	648     (00000b56) move-result-object   v4
+	649     (00000b58) check-cast           v4, Lcom/afwsamples/testdpc/common/preference/DpcSwitchPreference;
+	650     (00000b5c) iput-object          v4, v6, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->mAutoBrightnessPreference Lcom/afwsamples/testdpc/common/preference/DpcSwitchPreference;
+	651     (00000b60) iget-object          v4, v6, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->mAutoBrightnessPreference Lcom/afwsamples/testdpc/common/preference/DpcSwitchPreference;
+	652     (00000b64) invoke-virtual       v4, v6, Lcom/afwsamples/testdpc/common/preference/DpcSwitchPreference;->setOnPreferenceChangeListener(Landroidx/preference/Preference$OnPreferenceChangeListener;)V
+	653     (00000b6a) const-string         v4, 'set_screen_off_timeout'
+	654     (00000b6e) invoke-virtual       v6, v4, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->findPreference(Ljava/lang/CharSequence;)Landroidx/preference/Preference;
+	655     (00000b74) move-result-object   v4
+	656     (00000b76) invoke-virtual       v4, v6, Landroidx/preference/Preference;->setOnPreferenceClickListener(Landroidx/preference/Preference$OnPreferenceClickListener;)V
+	657     (00000b7c) const-string         v4, 'set_time'
+	658     (00000b80) invoke-virtual       v6, v4, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->findPreference(Ljava/lang/CharSequence;)Landroidx/preference/Preference;
+	659     (00000b86) move-result-object   v4
+	660     (00000b88) invoke-virtual       v4, v6, Landroidx/preference/Preference;->setOnPreferenceClickListener(Landroidx/preference/Preference$OnPreferenceClickListener;)V
+	661     (00000b8e) const-string         v4, 'set_time_zone'
+	662     (00000b92) invoke-virtual       v6, v4, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->findPreference(Ljava/lang/CharSequence;)Landroidx/preference/Preference;
+	663     (00000b98) move-result-object   v4
+	664     (00000b9a) invoke-virtual       v4, v6, Landroidx/preference/Preference;->setOnPreferenceClickListener(Landroidx/preference/Preference$OnPreferenceClickListener;)V
+	665     (00000ba0) const-string         v4, 'set_profile_name'
+	666     (00000ba4) invoke-virtual       v6, v4, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->findPreference(Ljava/lang/CharSequence;)Landroidx/preference/Preference;
+	667     (00000baa) move-result-object   v4
+	668     (00000bac) invoke-virtual       v4, v6, Landroidx/preference/Preference;->setOnPreferenceClickListener(Landroidx/preference/Preference$OnPreferenceClickListener;)V
+	669     (00000bb2) const-string         v4, 'manage_override_apn'
+	670     (00000bb6) invoke-virtual       v6, v4, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->findPreference(Ljava/lang/CharSequence;)Landroidx/preference/Preference;
+	671     (00000bbc) move-result-object   v4
+	672     (00000bbe) invoke-virtual       v4, v6, Landroidx/preference/Preference;->setOnPreferenceClickListener(Landroidx/preference/Preference$OnPreferenceClickListener;)V
+	673     (00000bc4) const-string         v4, 'managed_system_updates'
+	674     (00000bc8) invoke-virtual       v6, v4, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->findPreference(Ljava/lang/CharSequence;)Landroidx/preference/Preference;
+	675     (00000bce) move-result-object   v4
+	676     (00000bd0) invoke-virtual       v4, v6, Landroidx/preference/Preference;->setOnPreferenceClickListener(Landroidx/preference/Preference$OnPreferenceClickListener;)V
+	677     (00000bd6) const-string         v4, 'cross_profile_calendar'
+	678     (00000bda) invoke-virtual       v6, v4, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->findPreference(Ljava/lang/CharSequence;)Landroidx/preference/Preference;
+	679     (00000be0) move-result-object   v4
+	680     (00000be2) invoke-virtual       v4, v6, Landroidx/preference/Preference;->setOnPreferenceClickListener(Landroidx/preference/Preference$OnPreferenceClickListener;)V
+	681     (00000be8) const-string         v4, 'factory_reset_org_owned_device'
+	682     (00000bec) invoke-virtual       v6, v4, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->findPreference(Ljava/lang/CharSequence;)Landroidx/preference/Preference;
+	683     (00000bf2) move-result-object   v4
+	684     (00000bf4) invoke-virtual       v4, v6, Landroidx/preference/Preference;->setOnPreferenceClickListener(Landroidx/preference/Preference$OnPreferenceClickListener;)V
+	685     (00000bfa) const-string         v4, 'set_factory_reset_protection_policy'
+	686     (00000bfe) invoke-virtual       v6, v4, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->findPreference(Ljava/lang/CharSequence;)Landroidx/preference/Preference;
+	687     (00000c04) move-result-object   v4
+	688     (00000c06) invoke-virtual       v4, v6, Landroidx/preference/Preference;->setOnPreferenceClickListener(Landroidx/preference/Preference$OnPreferenceClickListener;)V
+	689     (00000c0c) const-string         v4, 'set_organization_id'
+	690     (00000c10) invoke-virtual       v6, v4, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->findPreference(Ljava/lang/CharSequence;)Landroidx/preference/Preference;
+	691     (00000c16) move-result-object   v4
+	692     (00000c18) invoke-virtual       v4, v6, Landroidx/preference/Preference;->setOnPreferenceClickListener(Landroidx/preference/Preference$OnPreferenceClickListener;)V
+	693     (00000c1e) const-string         v4, 'bind_device_admin_policies'
+	694     (00000c22) invoke-virtual       v6, v4, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->findPreference(Ljava/lang/CharSequence;)Landroidx/preference/Preference;
+	695     (00000c28) move-result-object   v0
+	696     (00000c2a) check-cast           v0, Lcom/afwsamples/testdpc/common/preference/DpcPreference;
+	697     (00000c2e) new-instance         v4, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment$$Lambda$17;
+	698     (00000c32) invoke-direct        v4, v6, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment$$Lambda$17;-><init>(Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;)V
+	699     (00000c38) invoke-virtual       v0, v4, Lcom/afwsamples/testdpc/common/preference/DpcPreference;->setCustomConstraint(Lcom/afwsamples/testdpc/common/preference/CustomConstraint;)V
+	700     (00000c3e) invoke-virtual       v0, v6, Lcom/afwsamples/testdpc/common/preference/DpcPreference;->setOnPreferenceClickListener(Landroidx/preference/Preference$OnPreferenceClickListener;)V
+	701     (00000c44) const-string         v4, 'set_auto_time_required'
+	702     (00000c48) invoke-virtual       v6, v4, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->findPreference(Ljava/lang/CharSequence;)Landroidx/preference/Preference;
+	703     (00000c4e) move-result-object   v4
+	704     (00000c50) check-cast           v4, Lcom/afwsamples/testdpc/common/preference/DpcSwitchPreference;
+	705     (00000c54) iput-object          v4, v6, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->mSetAutoTimeRequiredPreference Lcom/afwsamples/testdpc/common/preference/DpcSwitchPreference;
+	706     (00000c58) iget-object          v4, v6, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->mSetAutoTimeRequiredPreference Lcom/afwsamples/testdpc/common/preference/DpcSwitchPreference;
+	707     (00000c5c) new-instance         v5, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment$$Lambda$18;
+	708     (00000c60) invoke-direct        v5, v6, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment$$Lambda$18;-><init>(Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;)V
+	709     (00000c66) invoke-virtual       v4, v5, Lcom/afwsamples/testdpc/common/preference/DpcSwitchPreference;->addCustomConstraint(Lcom/afwsamples/testdpc/common/preference/CustomConstraint;)V
+	710     (00000c6c) iget-object          v4, v6, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->mSetAutoTimeRequiredPreference Lcom/afwsamples/testdpc/common/preference/DpcSwitchPreference;
+	711     (00000c70) invoke-virtual       v4, v6, Lcom/afwsamples/testdpc/common/preference/DpcSwitchPreference;->setOnPreferenceChangeListener(Landroidx/preference/Preference$OnPreferenceChangeListener;)V
+	712     (00000c76) const-string         v4, 'set_auto_time'
+	713     (00000c7a) invoke-virtual       v6, v4, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->findPreference(Ljava/lang/CharSequence;)Landroidx/preference/Preference;
+	714     (00000c80) move-result-object   v4
+	715     (00000c82) check-cast           v4, Lcom/afwsamples/testdpc/common/preference/DpcSwitchPreference;
+	716     (00000c86) iput-object          v4, v6, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->mSetAutoTimePreference Lcom/afwsamples/testdpc/common/preference/DpcSwitchPreference;
+	717     (00000c8a) iget-object          v4, v6, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->mSetAutoTimePreference Lcom/afwsamples/testdpc/common/preference/DpcSwitchPreference;
+	718     (00000c8e) invoke-virtual       v4, v6, Lcom/afwsamples/testdpc/common/preference/DpcSwitchPreference;->setOnPreferenceChangeListener(Landroidx/preference/Preference$OnPreferenceChangeListener;)V
+	719     (00000c94) const-string         v4, 'set_auto_time_zone'
+	720     (00000c98) invoke-virtual       v6, v4, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->findPreference(Ljava/lang/CharSequence;)Landroidx/preference/Preference;
+	721     (00000c9e) move-result-object   v4
+	722     (00000ca0) check-cast           v4, Lcom/afwsamples/testdpc/common/preference/DpcSwitchPreference;
+	723     (00000ca4) iput-object          v4, v6, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->mSetAutoTimeZonePreference Lcom/afwsamples/testdpc/common/preference/DpcSwitchPreference;
+	724     (00000ca8) iget-object          v4, v6, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->mSetAutoTimeZonePreference Lcom/afwsamples/testdpc/common/preference/DpcSwitchPreference;
+	725     (00000cac) invoke-virtual       v4, v6, Lcom/afwsamples/testdpc/common/preference/DpcSwitchPreference;->setOnPreferenceChangeListener(Landroidx/preference/Preference$OnPreferenceChangeListener;)V
+	726     (00000cb2) const-string         v4, 'set_device_organization_name'
+	727     (00000cb6) invoke-virtual       v6, v4, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->findPreference(Ljava/lang/CharSequence;)Landroidx/preference/Preference;
+	728     (00000cbc) move-result-object   v4
+	729     (00000cbe) check-cast           v4, Landroidx/preference/EditTextPreference;
+	730     (00000cc2) iput-object          v4, v6, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->mSetDeviceOrganizationNamePreference Landroidx/preference/Preference;
+	731     (00000cc6) iget-object          v4, v6, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->mSetDeviceOrganizationNamePreference Landroidx/preference/Preference;
+	732     (00000cca) invoke-virtual       v4, v6, Landroidx/preference/Preference;->setOnPreferenceChangeListener(Landroidx/preference/Preference$OnPreferenceChangeListener;)V
+	733     (00000cd0) const-string         v4, 'set_location_enabled'
+	734     (00000cd4) invoke-virtual       v6, v4, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->findPreference(Ljava/lang/CharSequence;)Landroidx/preference/Preference;
+	735     (00000cda) move-result-object   v4
+	736     (00000cdc) check-cast           v4, Lcom/afwsamples/testdpc/common/preference/DpcSwitchPreference;
+	737     (00000ce0) iput-object          v4, v6, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->mSetLocationEnabledPreference Lcom/afwsamples/testdpc/common/preference/DpcSwitchPreference;
+	738     (00000ce4) iget-object          v4, v6, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->mSetLocationEnabledPreference Lcom/afwsamples/testdpc/common/preference/DpcSwitchPreference;
+	739     (00000ce8) invoke-virtual       v4, v6, Lcom/afwsamples/testdpc/common/preference/DpcSwitchPreference;->setOnPreferenceChangeListener(Landroidx/preference/Preference$OnPreferenceChangeListener;)V
+	740     (00000cee) const-string         v4, 'set_location_mode'
+	741     (00000cf2) invoke-virtual       v6, v4, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->findPreference(Ljava/lang/CharSequence;)Landroidx/preference/Preference;
+	742     (00000cf8) move-result-object   v4
+	743     (00000cfa) check-cast           v4, Lcom/afwsamples/testdpc/common/preference/DpcSwitchPreference;
+	744     (00000cfe) iput-object          v4, v6, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->mSetLocationModePreference Lcom/afwsamples/testdpc/common/preference/DpcSwitchPreference;
+	745     (00000d02) iget-object          v4, v6, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->mSetLocationModePreference Lcom/afwsamples/testdpc/common/preference/DpcSwitchPreference;
+	746     (00000d06) invoke-virtual       v4, v6, Lcom/afwsamples/testdpc/common/preference/DpcSwitchPreference;->setOnPreferenceChangeListener(Landroidx/preference/Preference$OnPreferenceChangeListener;)V
+	747     (00000d0c) const-string         v4, 'suspend_personal_apps'
+	748     (00000d10) invoke-virtual       v6, v4, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->findPreference(Ljava/lang/CharSequence;)Landroidx/preference/Preference;
+	749     (00000d16) move-result-object   v4
+	750     (00000d18) check-cast           v4, Lcom/afwsamples/testdpc/common/preference/DpcSwitchPreference;
+	751     (00000d1c) iput-object          v4, v6, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->mSuspendPersonalApps Lcom/afwsamples/testdpc/common/preference/DpcSwitchPreference;
+	752     (00000d20) iget-object          v4, v6, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->mSuspendPersonalApps Lcom/afwsamples/testdpc/common/preference/DpcSwitchPreference;
+	753     (00000d24) invoke-virtual       v4, v6, Lcom/afwsamples/testdpc/common/preference/DpcSwitchPreference;->setOnPreferenceChangeListener(Landroidx/preference/Preference$OnPreferenceChangeListener;)V
+	754     (00000d2a) const-string         v4, 'profile_max_time_off'
+	755     (00000d2e) invoke-virtual       v6, v4, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->findPreference(Ljava/lang/CharSequence;)Landroidx/preference/Preference;
+	756     (00000d34) move-result-object   v4
+	757     (00000d36) check-cast           v4, Lcom/afwsamples/testdpc/common/preference/DpcEditTextPreference;
+	758     (00000d3a) iput-object          v4, v6, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->mProfileMaxTimeOff Lcom/afwsamples/testdpc/common/preference/DpcEditTextPreference;
+	759     (00000d3e) iget-object          v4, v6, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->mProfileMaxTimeOff Lcom/afwsamples/testdpc/common/preference/DpcEditTextPreference;
+	760     (00000d42) invoke-virtual       v4, v6, Lcom/afwsamples/testdpc/common/preference/DpcEditTextPreference;->setOnPreferenceChangeListener(Landroidx/preference/Preference$OnPreferenceChangeListener;)V
+	761     (00000d48) invoke-direct        v6, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->maybeUpdateProfileMaxTimeOff()V
+	762     (00000d4e) invoke-direct        v6, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->onCreateSetNewPasswordWithComplexityPreference()V
+	763     (00000d54) invoke-direct        v6, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->onCreateSetRequiredPasswordComplexityPreference()V
+	764     (00000d5a) invoke-direct        v6, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->onCreateSetRequiredPasswordComplexityOnParentPreference()V
+	765     (00000d60) invoke-direct        v6, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->constrainSpecialCasePreferences()V
+	766     (00000d66) invoke-direct        v6, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->maybeDisableLockTaskPreferences()V
+	767     (00000d6c) invoke-direct        v6, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->loadAppFeedbackNotifications()V
+	768     (00000d72) invoke-direct        v6, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->loadAppStatus()V
+	769     (00000d78) invoke-direct        v6, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->loadSecurityPatch()V
+	770     (00000d7e) invoke-direct        v6, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->loadEnrollmentSpecificId()V
+	771     (00000d84) invoke-direct        v6, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->loadIsEphemeralUserUi()V
+	772     (00000d8a) invoke-direct        v6, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->reloadCameraDisableUi()V
+	773     (00000d90) invoke-direct        v6, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->reloadScreenCaptureDisableUi()V
+	774     (00000d96) invoke-direct        v6, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->reloadMuteAudioUi()V
+	775     (00000d9c) invoke-direct        v6, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->reloadEnableBackupServiceUi()V
+	776     (00000da2) invoke-direct        v6, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->reloadCommonCriteriaModeUi()V
+	777     (00000da8) invoke-direct        v6, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->reloadEnableUsbDataSignalingUi()V
+	778     (00000dae) invoke-direct        v6, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->reloadEnableSecurityLoggingUi()V
+	779     (00000db4) invoke-direct        v6, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->reloadEnableNetworkLoggingUi()V
+	780     (00000dba) invoke-direct        v6, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->reloadSetAutoTimeRequiredUi()V
+	781     (00000dc0) invoke-direct        v6, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->reloadSetAutoTimeUi()V
+	782     (00000dc6) invoke-direct        v6, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->reloadSetAutoTimeZoneUi()V
+	783     (00000dcc) invoke-direct        v6, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->reloadEnableLogoutUi()V
+	784     (00000dd2) invoke-direct        v6, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->reloadAutoBrightnessUi()V
+	785     (00000dd8) invoke-direct        v6, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->reloadPersonalAppsSuspendedUi()V
+	786     (00000dde) return-void          
+

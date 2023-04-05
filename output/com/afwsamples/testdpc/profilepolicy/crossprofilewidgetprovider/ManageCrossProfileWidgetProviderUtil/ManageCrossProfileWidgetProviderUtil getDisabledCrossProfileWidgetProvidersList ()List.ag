@@ -1,0 +1,49 @@
+# Lcom/afwsamples/testdpc/profilepolicy/crossprofilewidgetprovider/ManageCrossProfileWidgetProviderUtil;->getDisabledCrossProfileWidgetProvidersList()Ljava/util/List; [access_flags=public]
+#
+# Parameters:
+# local registers: v0...v7
+#
+# - return:java.util.List
+
+getDisabledCrossProfileWidgetProvidersList-BB@0x0 : [ getDisabledCrossProfileWidgetProvidersList-BB@0x40 ]
+	0       (00000000) new-instance         v4, Ljava/util/HashSet;
+	1       (00000004) iget-object          v5, v7, Lcom/afwsamples/testdpc/profilepolicy/crossprofilewidgetprovider/ManageCrossProfileWidgetProviderUtil;->mDevicePolicyManager Landroid/app/admin/DevicePolicyManager;
+	2       (00000008) iget-object          v6, v7, Lcom/afwsamples/testdpc/profilepolicy/crossprofilewidgetprovider/ManageCrossProfileWidgetProviderUtil;->mContext Landroid/content/Context;
+	3       (0000000c) invoke-static        v6, Lcom/afwsamples/testdpc/DeviceAdminReceiver;->getComponentName(Landroid/content/Context;)Landroid/content/ComponentName;
+	4       (00000012) move-result-object   v6
+	5       (00000014) invoke-virtual       v5, v6, Landroid/app/admin/DevicePolicyManager;->getCrossProfileWidgetProviders(Landroid/content/ComponentName;)Ljava/util/List;
+	6       (0000001a) move-result-object   v5
+	7       (0000001c) invoke-direct        v4, v5, Ljava/util/HashSet;-><init>(Ljava/util/Collection;)V
+	8       (00000022) new-instance         v3, Ljava/util/HashSet;
+	9       (00000026) invoke-direct        v3, Ljava/util/HashSet;-><init>()V
+	10      (0000002c) iget-object          v5, v7, Lcom/afwsamples/testdpc/profilepolicy/crossprofilewidgetprovider/ManageCrossProfileWidgetProviderUtil;->mAppWidgetManager Landroid/appwidget/AppWidgetManager;
+	11      (00000030) invoke-virtual       v5, Landroid/appwidget/AppWidgetManager;->getInstalledProviders()Ljava/util/List;
+	12      (00000036) move-result-object   v1
+	13      (00000038) invoke-interface     v1, Ljava/util/List;->iterator()Ljava/util/Iterator;
+	14      (0000003e) move-result-object   v5
+
+getDisabledCrossProfileWidgetProvidersList-BB@0x40 : [ getDisabledCrossProfileWidgetProvidersList-BB@0x4c getDisabledCrossProfileWidgetProvidersList-BB@0x78 ]
+	15      (00000040) invoke-interface     v5, Ljava/util/Iterator;->hasNext()Z
+	16      (00000046) move-result          v6
+	17      (00000048) if-eqz               v6, +18
+
+getDisabledCrossProfileWidgetProvidersList-BB@0x4c : [ getDisabledCrossProfileWidgetProvidersList-BB@0x70 getDisabledCrossProfileWidgetProvidersList-BB@0x40 ]
+	18      (0000004c) invoke-interface     v5, Ljava/util/Iterator;->next()Ljava/lang/Object;
+	19      (00000052) move-result-object   v0
+	20      (00000054) check-cast           v0, Landroid/appwidget/AppWidgetProviderInfo;
+	21      (00000058) iget-object          v6, v0, Landroid/appwidget/AppWidgetProviderInfo;->provider Landroid/content/ComponentName;
+	22      (0000005c) invoke-virtual       v6, Landroid/content/ComponentName;->getPackageName()Ljava/lang/String;
+	23      (00000062) move-result-object   v2
+	24      (00000064) invoke-interface     v4, v2, Ljava/util/Set;->contains(Ljava/lang/Object;)Z
+	25      (0000006a) move-result          v6
+	26      (0000006c) if-nez               v6, -16
+
+getDisabledCrossProfileWidgetProvidersList-BB@0x70 : [ getDisabledCrossProfileWidgetProvidersList-BB@0x40 ]
+	27      (00000070) invoke-interface     v3, v2, Ljava/util/Set;->add(Ljava/lang/Object;)Z
+	28      (00000076) goto                 -1b
+
+getDisabledCrossProfileWidgetProvidersList-BB@0x78 : 
+	29      (00000078) new-instance         v5, Ljava/util/ArrayList;
+	30      (0000007c) invoke-direct        v5, v3, Ljava/util/ArrayList;-><init>(Ljava/util/Collection;)V
+	31      (00000082) return-object        v5
+

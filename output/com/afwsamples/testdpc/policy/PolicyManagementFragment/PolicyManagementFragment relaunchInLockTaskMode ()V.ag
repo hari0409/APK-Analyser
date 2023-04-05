@@ -1,0 +1,57 @@
+# Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->relaunchInLockTaskMode()V [access_flags=private]
+#
+# Parameters:
+# local registers: v0...v6
+#
+# - return:void
+
+relaunchInLockTaskMode-BB@0x0 : [ relaunchInLockTaskMode-BB@0x50 relaunchInLockTaskMode-BB@0x5a ]
+	0       (00000000) invoke-virtual       v6, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->getContext()Landroid/content/Context;
+	1       (00000006) move-result-object   v4
+	2       (00000008) const-class          v5, Landroid/app/ActivityManager;
+	3       (0000000c) invoke-virtual       v4, v5, Landroid/content/Context;->getSystemService(Ljava/lang/Class;)Ljava/lang/Object;
+	4       (00000012) move-result-object   v0
+	5       (00000014) check-cast           v0, Landroid/app/ActivityManager;
+	6       (00000018) new-instance         v2, Landroid/content/Intent;
+	7       (0000001c) invoke-virtual       v6, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->getActivity()Landroid/app/Activity;
+	8       (00000022) move-result-object   v4
+	9       (00000024) invoke-virtual       v6, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->getActivity()Landroid/app/Activity;
+	10      (0000002a) move-result-object   v5
+	11      (0000002c) invoke-virtual       v5, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+	12      (00000032) move-result-object   v5
+	13      (00000034) invoke-direct        v2, v4, v5, Landroid/content/Intent;-><init>(Landroid/content/Context; Ljava/lang/Class;)V
+	14      (0000003a) const/high16         v4, 4096 # [2.524354896707238e-29]
+	15      (0000003e) invoke-virtual       v2, v4, Landroid/content/Intent;->addFlags(I)Landroid/content/Intent;
+	16      (00000044) invoke-virtual       v0, Landroid/app/ActivityManager;->isInLockTaskMode()Z
+	17      (0000004a) move-result          v4
+	18      (0000004c) if-nez               v4, +7
+
+relaunchInLockTaskMode-BB@0x50 : [ relaunchInLockTaskMode-BB@0x5a ]
+	19      (00000050) const/high16         v4, 2048 # [3.851859888774472e-34]
+	20      (00000054) invoke-virtual       v2, v4, Landroid/content/Intent;->addFlags(I)Landroid/content/Intent;
+
+relaunchInLockTaskMode-BB@0x5a : [ relaunchInLockTaskMode-BB@0x6a ]
+	21      (0000005a) invoke-static        Landroid/app/ActivityOptions;->makeBasic()Landroid/app/ActivityOptions;
+	22      (00000060) move-result-object   v3
+	23      (00000062) const/4              v4, 1
+	24      (00000064) invoke-virtual       v3, v4, Landroid/app/ActivityOptions;->setLockTaskEnabled(Z)Landroid/app/ActivityOptions;
+
+relaunchInLockTaskMode-BB@0x6a : [ relaunchInLockTaskMode-BB@0x86 ]
+	25      (0000006a) invoke-virtual       v3, Landroid/app/ActivityOptions;->toBundle()Landroid/os/Bundle;
+	26      (00000070) move-result-object   v4
+	27      (00000072) invoke-virtual       v6, v2, v4, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->startActivity(Landroid/content/Intent; Landroid/os/Bundle;)V
+	28      (00000078) invoke-virtual       v6, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->getActivity()Landroid/app/Activity;
+	29      (0000007e) move-result-object   v4
+	30      (00000080) invoke-virtual       v4, Landroid/app/Activity;->finish()V
+	6a:85
+	(Ljava/lang/SecurityException; -> 88 relaunchInLockTaskMode-BB@0x88)
+
+relaunchInLockTaskMode-BB@0x86 : 
+	31      (00000086) return-void          
+
+relaunchInLockTaskMode-BB@0x88 : [ relaunchInLockTaskMode-BB@0x86 ]
+	32      (00000088) move-exception       v1
+	33      (0000008a) const-string         v4, 'You must first allow-list the TestDPC package for LockTask'
+	34      (0000008e) invoke-direct        v6, v4, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->showToast(Ljava/lang/String;)V
+	35      (00000094) goto                 -7
+

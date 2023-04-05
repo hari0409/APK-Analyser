@@ -1,0 +1,19 @@
+# Landroidx/appcompat/view/menu/MenuItemImpl;->setIcon(I)Landroid/view/MenuItem; [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:int
+#
+# - return:android.view.MenuItem
+
+setIcon-BB@0x0 : 
+	0       (00000000) const/4              v0, 0
+	1       (00000002) iput-object          v0, v2, Landroidx/appcompat/view/menu/MenuItemImpl;->mIconDrawable Landroid/graphics/drawable/Drawable;
+	2       (00000006) iput                 v3, v2, Landroidx/appcompat/view/menu/MenuItemImpl;->mIconResId I
+	3       (0000000a) const/4              v0, 1
+	4       (0000000c) iput-boolean         v0, v2, Landroidx/appcompat/view/menu/MenuItemImpl;->mNeedToApplyIconTint Z
+	5       (00000010) iget-object          v0, v2, Landroidx/appcompat/view/menu/MenuItemImpl;->mMenu Landroidx/appcompat/view/menu/MenuBuilder;
+	6       (00000014) const/4              v1, 0
+	7       (00000016) invoke-virtual       v0, v1, Landroidx/appcompat/view/menu/MenuBuilder;->onItemsChanged(Z)V
+	8       (0000001c) return-object        v2
+

@@ -1,0 +1,30 @@
+# Landroidx/appcompat/widget/AppCompatBackgroundHelper;->onSetBackgroundResource(I)V [access_flags=]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:int
+#
+# - return:void
+
+onSetBackgroundResource-BB@0x0 : [ onSetBackgroundResource-BB@0xc onSetBackgroundResource-BB@0x32 ]
+	0       (00000000) iput                 v3, v2, Landroidx/appcompat/widget/AppCompatBackgroundHelper;->mBackgroundResId I
+	1       (00000004) iget-object          v0, v2, Landroidx/appcompat/widget/AppCompatBackgroundHelper;->mDrawableManager Landroidx/appcompat/widget/AppCompatDrawableManager;
+	2       (00000008) if-eqz               v0, +15
+
+onSetBackgroundResource-BB@0xc : [ onSetBackgroundResource-BB@0x24 ]
+	3       (0000000c) iget-object          v0, v2, Landroidx/appcompat/widget/AppCompatBackgroundHelper;->mDrawableManager Landroidx/appcompat/widget/AppCompatDrawableManager;
+	4       (00000010) iget-object          v1, v2, Landroidx/appcompat/widget/AppCompatBackgroundHelper;->mView Landroid/view/View;
+	5       (00000014) invoke-virtual       v1, Landroid/view/View;->getContext()Landroid/content/Context;
+	6       (0000001a) move-result-object   v1
+	7       (0000001c) invoke-virtual       v0, v1, v3, Landroidx/appcompat/widget/AppCompatDrawableManager;->getTintList(Landroid/content/Context; I)Landroid/content/res/ColorStateList;
+	8       (00000022) move-result-object   v0
+
+onSetBackgroundResource-BB@0x24 : 
+	9       (00000024) invoke-virtual       v2, v0, Landroidx/appcompat/widget/AppCompatBackgroundHelper;->setInternalBackgroundTint(Landroid/content/res/ColorStateList;)V
+	10      (0000002a) invoke-virtual       v2, Landroidx/appcompat/widget/AppCompatBackgroundHelper;->applySupportBackgroundTint()V
+	11      (00000030) return-void          
+
+onSetBackgroundResource-BB@0x32 : [ onSetBackgroundResource-BB@0x24 ]
+	12      (00000032) const/4              v0, 0
+	13      (00000034) goto                 -8
+

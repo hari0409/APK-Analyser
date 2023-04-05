@@ -1,0 +1,47 @@
+# Landroidx/appcompat/widget/ScrollingTabContainerView;->addTab(Landroidx/appcompat/app/ActionBar$Tab; I Z)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v6
+# - v7:androidx.appcompat.app.ActionBar$Tab
+# - v8:int
+# - v9:boolean
+#
+# - return:void
+
+addTab-BB@0x0 : [ addTab-BB@0x2c addTab-BB@0x42 ]
+	0       (00000000) const/4              v5, 0
+	1       (00000002) invoke-virtual       v6, v7, v5, Landroidx/appcompat/widget/ScrollingTabContainerView;->createTabView(Landroidx/appcompat/app/ActionBar$Tab; Z)Landroidx/appcompat/widget/ScrollingTabContainerView$TabView;
+	2       (00000008) move-result-object   v0
+	3       (0000000a) iget-object          v1, v6, Landroidx/appcompat/widget/ScrollingTabContainerView;->mTabLayout Landroidx/appcompat/widget/LinearLayoutCompat;
+	4       (0000000e) new-instance         v2, Landroidx/appcompat/widget/LinearLayoutCompat$LayoutParams;
+	5       (00000012) const/4              v3, -1
+	6       (00000014) const/high16         v4, 16256 # [1.0]
+	7       (00000018) invoke-direct        v2, v5, v3, v4, Landroidx/appcompat/widget/LinearLayoutCompat$LayoutParams;-><init>(I I F)V
+	8       (0000001e) invoke-virtual       v1, v0, v8, v2, Landroidx/appcompat/widget/LinearLayoutCompat;->addView(Landroid/view/View; I Landroid/view/ViewGroup$LayoutParams;)V
+	9       (00000024) iget-object          v1, v6, Landroidx/appcompat/widget/ScrollingTabContainerView;->mTabSpinner Landroid/widget/Spinner;
+	10      (00000028) if-eqz               v1, +d
+
+addTab-BB@0x2c : [ addTab-BB@0x42 ]
+	11      (0000002c) iget-object          v1, v6, Landroidx/appcompat/widget/ScrollingTabContainerView;->mTabSpinner Landroid/widget/Spinner;
+	12      (00000030) invoke-virtual       v1, Landroid/widget/Spinner;->getAdapter()Landroid/widget/SpinnerAdapter;
+	13      (00000036) move-result-object   v1
+	14      (00000038) check-cast           v1, Landroidx/appcompat/widget/ScrollingTabContainerView$TabAdapter;
+	15      (0000003c) invoke-virtual       v1, Landroidx/appcompat/widget/ScrollingTabContainerView$TabAdapter;->notifyDataSetChanged()V
+
+addTab-BB@0x42 : [ addTab-BB@0x46 addTab-BB@0x4e ]
+	16      (00000042) if-eqz               v9, +6
+
+addTab-BB@0x46 : [ addTab-BB@0x4e ]
+	17      (00000046) const/4              v1, 1
+	18      (00000048) invoke-virtual       v0, v1, Landroidx/appcompat/widget/ScrollingTabContainerView$TabView;->setSelected(Z)V
+
+addTab-BB@0x4e : [ addTab-BB@0x56 addTab-BB@0x5c ]
+	19      (0000004e) iget-boolean         v1, v6, Landroidx/appcompat/widget/ScrollingTabContainerView;->mAllowCollapse Z
+	20      (00000052) if-eqz               v1, +5
+
+addTab-BB@0x56 : [ addTab-BB@0x5c ]
+	21      (00000056) invoke-virtual       v6, Landroidx/appcompat/widget/ScrollingTabContainerView;->requestLayout()V
+
+addTab-BB@0x5c : 
+	22      (0000005c) return-void          
+

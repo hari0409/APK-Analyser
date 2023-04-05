@@ -1,0 +1,12 @@
+# Landroidx/appcompat/widget/ActionMenuPresenter;->access$200(Landroidx/appcompat/widget/ActionMenuPresenter;)Landroidx/appcompat/view/menu/MenuView; [access_flags=static synthetic]
+#
+# Parameters:
+# - local registers: v0...v0
+# - v1:androidx.appcompat.widget.ActionMenuPresenter
+#
+# - return:androidx.appcompat.view.menu.MenuView
+
+access$200-BB@0x0 : 
+	0       (00000000) iget-object          v0, v1, Landroidx/appcompat/widget/ActionMenuPresenter;->mMenuView Landroidx/appcompat/view/menu/MenuView;
+	1       (00000004) return-object        v0
+

@@ -1,0 +1,45 @@
+# Lcom/afwsamples/testdpc/policy/networking/PrivateDnsModeFragment;->updateSelectedMode(I)V [access_flags=private]
+#
+# Parameters:
+# - local registers: v0...v3
+# - v4:int
+#
+# - return:void
+
+updateSelectedMode-BB@0x0 : [ D:updateSelectedMode-BB@0xa 2131296545:updateSelectedMode-BB@0x2a 2131296546:updateSelectedMode-BB@0xa 2131296547:updateSelectedMode-BB@0x1a 2131296548:updateSelectedMode-BB@0xa 2131296549:updateSelectedMode-BB@0x3c ]
+	0       (00000000) const/4              v2, 1
+	1       (00000002) const/4              v1, 0
+	2       (00000004) packed-switch        v4, +26 (0x50)
+
+updateSelectedMode-BB@0xa : [ updateSelectedMode-BB@0x18 ]
+	3       (0000000a) iput                 v1, v3, Lcom/afwsamples/testdpc/policy/networking/PrivateDnsModeFragment;->mSelectedMode I
+	4       (0000000e) iget-object          v0, v3, Lcom/afwsamples/testdpc/policy/networking/PrivateDnsModeFragment;->mSetButton Landroid/widget/Button;
+	5       (00000012) invoke-virtual       v0, v1, Landroid/widget/Button;->setEnabled(Z)V
+
+updateSelectedMode-BB@0x18 : 
+	6       (00000018) return-void          
+
+updateSelectedMode-BB@0x1a : [ updateSelectedMode-BB@0x18 ]
+	7       (0000001a) iput                 v2, v3, Lcom/afwsamples/testdpc/policy/networking/PrivateDnsModeFragment;->mSelectedMode I
+	8       (0000001e) iget-object          v0, v3, Lcom/afwsamples/testdpc/policy/networking/PrivateDnsModeFragment;->mSetButton Landroid/widget/Button;
+	9       (00000022) invoke-virtual       v0, v1, Landroid/widget/Button;->setEnabled(Z)V
+	10      (00000028) goto                 -8
+
+updateSelectedMode-BB@0x2a : [ updateSelectedMode-BB@0x18 ]
+	11      (0000002a) const/4              v0, 2
+	12      (0000002c) iput                 v0, v3, Lcom/afwsamples/testdpc/policy/networking/PrivateDnsModeFragment;->mSelectedMode I
+	13      (00000030) iget-object          v0, v3, Lcom/afwsamples/testdpc/policy/networking/PrivateDnsModeFragment;->mSetButton Landroid/widget/Button;
+	14      (00000034) invoke-virtual       v0, v2, Landroid/widget/Button;->setEnabled(Z)V
+	15      (0000003a) goto                 -11
+
+updateSelectedMode-BB@0x3c : [ updateSelectedMode-BB@0x18 ]
+	16      (0000003c) const/4              v0, 3
+	17      (0000003e) iput                 v0, v3, Lcom/afwsamples/testdpc/policy/networking/PrivateDnsModeFragment;->mSelectedMode I
+	18      (00000042) iget-object          v0, v3, Lcom/afwsamples/testdpc/policy/networking/PrivateDnsModeFragment;->mSetButton Landroid/widget/Button;
+	19      (00000046) invoke-virtual       v0, v2, Landroid/widget/Button;->setEnabled(Z)V
+	20      (0000004c) goto                 -1a
+
+updateSelectedMode-BB@0x4e : 
+	21      (0000004e) nop                  
+	22      (00000050) packed-switch-payload 7f090121 7f090122 7f090123 7f090124 7f090125
+

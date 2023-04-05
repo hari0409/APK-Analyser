@@ -1,0 +1,44 @@
+# Landroidx/appcompat/widget/AppCompatSpinner;->setAdapter(Landroid/widget/SpinnerAdapter;)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v4
+# - v5:android.widget.SpinnerAdapter
+#
+# - return:void
+
+setAdapter-BB@0x0 : [ setAdapter-BB@0x8 setAdapter-BB@0xe ]
+	0       (00000000) iget-boolean         v1, v4, Landroidx/appcompat/widget/AppCompatSpinner;->mPopupSet Z
+	1       (00000004) if-nez               v1, +5
+
+setAdapter-BB@0x8 : [ setAdapter-BB@0xc ]
+	2       (00000008) iput-object          v5, v4, Landroidx/appcompat/widget/AppCompatSpinner;->mTempAdapter Landroid/widget/SpinnerAdapter;
+
+setAdapter-BB@0xc : 
+	3       (0000000c) return-void          
+
+setAdapter-BB@0xe : [ setAdapter-BB@0x1c setAdapter-BB@0xc ]
+	4       (0000000e) invoke-super         v4, v5, Landroid/widget/Spinner;->setAdapter(Landroid/widget/SpinnerAdapter;)V
+	5       (00000014) iget-object          v1, v4, Landroidx/appcompat/widget/AppCompatSpinner;->mPopup Landroidx/appcompat/widget/AppCompatSpinner$DropdownPopup;
+	6       (00000018) if-eqz               v1, -6
+
+setAdapter-BB@0x1c : [ setAdapter-BB@0x24 setAdapter-BB@0x4a ]
+	7       (0000001c) iget-object          v1, v4, Landroidx/appcompat/widget/AppCompatSpinner;->mPopupContext Landroid/content/Context;
+	8       (00000020) if-nez               v1, +15
+
+setAdapter-BB@0x24 : [ setAdapter-BB@0x2c ]
+	9       (00000024) invoke-virtual       v4, Landroidx/appcompat/widget/AppCompatSpinner;->getContext()Landroid/content/Context;
+	10      (0000002a) move-result-object   v0
+
+setAdapter-BB@0x2c : [ setAdapter-BB@0xc ]
+	11      (0000002c) iget-object          v1, v4, Landroidx/appcompat/widget/AppCompatSpinner;->mPopup Landroidx/appcompat/widget/AppCompatSpinner$DropdownPopup;
+	12      (00000030) new-instance         v2, Landroidx/appcompat/widget/AppCompatSpinner$DropDownAdapter;
+	13      (00000034) invoke-virtual       v0, Landroid/content/Context;->getTheme()Landroid/content/res/Resources$Theme;
+	14      (0000003a) move-result-object   v3
+	15      (0000003c) invoke-direct        v2, v5, v3, Landroidx/appcompat/widget/AppCompatSpinner$DropDownAdapter;-><init>(Landroid/widget/SpinnerAdapter; Landroid/content/res/Resources$Theme;)V
+	16      (00000042) invoke-virtual       v1, v2, Landroidx/appcompat/widget/AppCompatSpinner$DropdownPopup;->setAdapter(Landroid/widget/ListAdapter;)V
+	17      (00000048) goto                 -1e
+
+setAdapter-BB@0x4a : [ setAdapter-BB@0x2c ]
+	18      (0000004a) iget-object          v0, v4, Landroidx/appcompat/widget/AppCompatSpinner;->mPopupContext Landroid/content/Context;
+	19      (0000004e) goto                 -11
+

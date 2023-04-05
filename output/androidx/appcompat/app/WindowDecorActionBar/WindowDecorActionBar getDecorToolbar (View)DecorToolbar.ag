@@ -1,0 +1,55 @@
+# Landroidx/appcompat/app/WindowDecorActionBar;->getDecorToolbar(Landroid/view/View;)Landroidx/appcompat/widget/DecorToolbar; [access_flags=private]
+#
+# Parameters:
+# - local registers: v0...v3
+# - v4:android.view.View
+#
+# - return:androidx.appcompat.widget.DecorToolbar
+
+getDecorToolbar-BB@0x0 : [ getDecorToolbar-BB@0x8 getDecorToolbar-BB@0xe ]
+	0       (00000000) instance-of          v0, v4, Landroidx/appcompat/widget/DecorToolbar;
+	1       (00000004) if-eqz               v0, +5
+
+getDecorToolbar-BB@0x8 : [ getDecorToolbar-BB@0xc ]
+	2       (00000008) check-cast           v4, Landroidx/appcompat/widget/DecorToolbar;
+
+getDecorToolbar-BB@0xc : 
+	3       (0000000c) return-object        v4
+
+getDecorToolbar-BB@0xe : [ getDecorToolbar-BB@0x16 getDecorToolbar-BB@0x24 ]
+	4       (0000000e) instance-of          v0, v4, Landroidx/appcompat/widget/Toolbar;
+	5       (00000012) if-eqz               v0, +9
+
+getDecorToolbar-BB@0x16 : [ getDecorToolbar-BB@0xc ]
+	6       (00000016) check-cast           v4, Landroidx/appcompat/widget/Toolbar;
+	7       (0000001a) invoke-virtual       v4, Landroidx/appcompat/widget/Toolbar;->getWrapper()Landroidx/appcompat/widget/DecorToolbar;
+	8       (00000020) move-result-object   v4
+	9       (00000022) goto                 -b
+
+getDecorToolbar-BB@0x24 : [ getDecorToolbar-BB@0x42 getDecorToolbar-BB@0x6a ]
+	10      (00000024) new-instance         v1, Ljava/lang/IllegalStateException;
+	11      (00000028) new-instance         v0, Ljava/lang/StringBuilder;
+	12      (0000002c) invoke-direct        v0, Ljava/lang/StringBuilder;-><init>()V
+	13      (00000032) const-string         v2, "Can't make a decor toolbar out of "
+	14      (00000036) invoke-virtual       v0, v2, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	15      (0000003c) move-result-object   v2
+	16      (0000003e) if-eqz               v4, +16
+
+getDecorToolbar-BB@0x42 : [ getDecorToolbar-BB@0x52 ]
+	17      (00000042) invoke-virtual       v4, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+	18      (00000048) move-result-object   v0
+	19      (0000004a) invoke-virtual       v0, Ljava/lang/Class;->getSimpleName()Ljava/lang/String;
+	20      (00000050) move-result-object   v0
+
+getDecorToolbar-BB@0x52 : 
+	21      (00000052) invoke-virtual       v2, v0, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	22      (00000058) move-result-object   v0
+	23      (0000005a) invoke-virtual       v0, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+	24      (00000060) move-result-object   v0
+	25      (00000062) invoke-direct        v1, v0, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+	26      (00000068) throw                v1
+
+getDecorToolbar-BB@0x6a : [ getDecorToolbar-BB@0x52 ]
+	27      (0000006a) const-string         v0, 'null'
+	28      (0000006e) goto                 -e
+

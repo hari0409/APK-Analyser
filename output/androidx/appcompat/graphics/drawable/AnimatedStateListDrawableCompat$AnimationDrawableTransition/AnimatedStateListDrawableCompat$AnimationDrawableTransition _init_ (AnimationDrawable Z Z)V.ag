@@ -1,0 +1,63 @@
+# Landroidx/appcompat/graphics/drawable/AnimatedStateListDrawableCompat$AnimationDrawableTransition;-><init>(Landroid/graphics/drawable/AnimationDrawable; Z Z)V [access_flags=constructor]
+#
+# Parameters:
+# - local registers: v0...v9
+# - v10:android.graphics.drawable.AnimationDrawable
+# - v11:boolean
+# - v12:boolean
+#
+# - return:void
+
+<init>-BB@0x0 : [ <init>-BB@0x18 <init>-BB@0x78 ]
+	0       (00000000) const/4              v8, 1
+	1       (00000002) const/4              v5, 0
+	2       (00000004) const/4              v6, 0
+	3       (00000006) invoke-direct        v9, v6, Landroidx/appcompat/graphics/drawable/AnimatedStateListDrawableCompat$Transition;-><init>(Landroidx/appcompat/graphics/drawable/AnimatedStateListDrawableCompat$1;)V
+	4       (0000000c) invoke-virtual       v10, Landroid/graphics/drawable/AnimationDrawable;->getNumberOfFrames()I
+	5       (00000012) move-result          v1
+	6       (00000014) if-eqz               v11, +32
+
+<init>-BB@0x18 : [ <init>-BB@0x1c ]
+	7       (00000018) add-int/lit8         v2, v1, -1
+
+<init>-BB@0x1c : [ <init>-BB@0x20 <init>-BB@0x7c ]
+	8       (0000001c) if-eqz               v11, +30
+
+<init>-BB@0x20 : [ <init>-BB@0x22 ]
+	9       (00000020) move                 v4, v5
+
+<init>-BB@0x22 : [ <init>-BB@0x52 <init>-BB@0x58 ]
+	10      (00000022) new-instance         v3, Landroidx/appcompat/graphics/drawable/AnimatedStateListDrawableCompat$FrameInterpolator;
+	11      (00000026) invoke-direct        v3, v10, v11, Landroidx/appcompat/graphics/drawable/AnimatedStateListDrawableCompat$FrameInterpolator;-><init>(Landroid/graphics/drawable/AnimationDrawable; Z)V
+	12      (0000002c) const-string         v6, 'currentIndex'
+	13      (00000030) const/4              v7, 2
+	14      (00000032) new-array            v7, v7, [I
+	15      (00000036) aput                 v2, v7, v5
+	16      (0000003a) aput                 v4, v7, v8
+	17      (0000003e) invoke-static        v10, v6, v7, Landroid/animation/ObjectAnimator;->ofInt(Ljava/lang/Object; Ljava/lang/String; [I)Landroid/animation/ObjectAnimator;
+	18      (00000044) move-result-object   v0
+	19      (00000046) sget                 v5, Landroid/os/Build$VERSION;->SDK_INT I
+	20      (0000004a) const/16             v6, 18
+	21      (0000004e) if-lt                v5, v6, +5
+
+<init>-BB@0x52 : [ <init>-BB@0x58 ]
+	22      (00000052) invoke-virtual       v0, v8, Landroid/animation/ObjectAnimator;->setAutoCancel(Z)V
+
+<init>-BB@0x58 : 
+	23      (00000058) invoke-virtual       v3, Landroidx/appcompat/graphics/drawable/AnimatedStateListDrawableCompat$FrameInterpolator;->getTotalDuration()I
+	24      (0000005e) move-result          v5
+	25      (00000060) int-to-long          v6, v5
+	26      (00000062) invoke-virtual       v0, v6, v7, Landroid/animation/ObjectAnimator;->setDuration(J)Landroid/animation/ObjectAnimator;
+	27      (00000068) invoke-virtual       v0, v3, Landroid/animation/ObjectAnimator;->setInterpolator(Landroid/animation/TimeInterpolator;)V
+	28      (0000006e) iput-boolean         v12, v9, Landroidx/appcompat/graphics/drawable/AnimatedStateListDrawableCompat$AnimationDrawableTransition;->mHasReversibleFlag Z
+	29      (00000072) iput-object          v0, v9, Landroidx/appcompat/graphics/drawable/AnimatedStateListDrawableCompat$AnimationDrawableTransition;->mAnim Landroid/animation/ObjectAnimator;
+	30      (00000076) return-void          
+
+<init>-BB@0x78 : [ <init>-BB@0x1c ]
+	31      (00000078) move                 v2, v5
+	32      (0000007a) goto                 -2f
+
+<init>-BB@0x7c : [ <init>-BB@0x22 ]
+	33      (0000007c) add-int/lit8         v4, v1, -1
+	34      (00000080) goto                 -2f
+

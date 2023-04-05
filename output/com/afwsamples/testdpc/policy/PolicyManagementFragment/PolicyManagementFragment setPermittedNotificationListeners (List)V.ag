@@ -1,0 +1,35 @@
+# Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->setPermittedNotificationListeners(Ljava/util/List;)V [access_flags=private]
+#
+# Parameters:
+# - local registers: v0...v4
+# - v5:java.util.List
+#
+# - return:void
+
+setPermittedNotificationListeners-BB@0x0 : [ setPermittedNotificationListeners-BB@0x14 setPermittedNotificationListeners-BB@0x2c ]
+	0       (00000000) iget-object          v2, v4, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->mDevicePolicyManager Landroid/app/admin/DevicePolicyManager;
+	1       (00000004) iget-object          v3, v4, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->mAdminComponentName Landroid/content/ComponentName;
+	2       (00000008) invoke-virtual       v2, v3, v5, Landroid/app/admin/DevicePolicyManager;->setPermittedCrossProfileNotificationListeners(Landroid/content/ComponentName; Ljava/util/List;)Z
+	3       (0000000e) move-result          v0
+	4       (00000010) if-nez               v5, +e
+
+setPermittedNotificationListeners-BB@0x14 : [ setPermittedNotificationListeners-BB@0x1a ]
+	5       (00000014) const                v1, 2131689545 # [1.9008108401314404e+38]
+
+setPermittedNotificationListeners-BB@0x1a : [ setPermittedNotificationListeners-BB@0x1e setPermittedNotificationListeners-BB@0x34 ]
+	6       (0000001a) if-eqz               v0, +d
+
+setPermittedNotificationListeners-BB@0x1e : 
+	7       (0000001e) const/4              v2, 0
+	8       (00000020) new-array            v2, v2, [Ljava/lang/Object;
+	9       (00000024) invoke-direct        v4, v1, v2, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->showToast(I [Ljava/lang/Object;)V
+	10      (0000002a) return-void          
+
+setPermittedNotificationListeners-BB@0x2c : [ setPermittedNotificationListeners-BB@0x1a ]
+	11      (0000002c) const                v1, 2131690218 # [1.900947340748073e+38]
+	12      (00000032) goto                 -c
+
+setPermittedNotificationListeners-BB@0x34 : [ setPermittedNotificationListeners-BB@0x1e ]
+	13      (00000034) const                v1, 2131690217 # [1.900947137923977e+38]
+	14      (0000003a) goto                 -e
+

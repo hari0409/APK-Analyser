@@ -1,0 +1,14 @@
+# Landroidx/appcompat/widget/Toolbar$SavedState$1;->createFromParcel(Landroid/os/Parcel;)Landroidx/appcompat/widget/Toolbar$SavedState; [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:android.os.Parcel
+#
+# - return:androidx.appcompat.widget.Toolbar$SavedState
+
+createFromParcel-BB@0x0 : 
+	0       (00000000) new-instance         v0, Landroidx/appcompat/widget/Toolbar$SavedState;
+	1       (00000004) const/4              v1, 0
+	2       (00000006) invoke-direct        v0, v3, v1, Landroidx/appcompat/widget/Toolbar$SavedState;-><init>(Landroid/os/Parcel; Ljava/lang/ClassLoader;)V
+	3       (0000000c) return-object        v0
+

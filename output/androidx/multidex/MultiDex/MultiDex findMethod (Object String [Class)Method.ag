@@ -1,0 +1,69 @@
+# Landroidx/multidex/MultiDex;->findMethod(Ljava/lang/Object; Ljava/lang/String; [Ljava/lang/Class;)Ljava/lang/reflect/Method; [access_flags=private static varargs]
+#
+# Parameters:
+# - local registers: v0...v4
+# - v5:java.lang.Object
+# - v6:java.lang.String
+# - v7:java.lang.Class[]
+#
+# - return:java.lang.reflect.Method
+
+findMethod-BB@0x0 : [ findMethod-BB@0x8 ]
+	0       (00000000) invoke-virtual       v5, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+	1       (00000006) move-result-object   v0
+
+findMethod-BB@0x8 : [ findMethod-BB@0xc findMethod-BB@0x36 ]
+	2       (00000008) if-eqz               v0, +17
+
+findMethod-BB@0xc : [ findMethod-BB@0x20 findMethod-BB@0x28 ]
+	3       (0000000c) invoke-virtual       v0, v6, v7, Ljava/lang/Class;->getDeclaredMethod(Ljava/lang/String; [Ljava/lang/Class;)Ljava/lang/reflect/Method;
+	4       (00000012) move-result-object   v1
+	5       (00000014) invoke-virtual       v1, Ljava/lang/reflect/Method;->isAccessible()Z
+	6       (0000001a) move-result          v2
+	7       (0000001c) if-nez               v2, +6
+	c:27
+	(Ljava/lang/NoSuchMethodException; -> 2a findMethod-BB@0x2a)
+
+findMethod-BB@0x20 : [ findMethod-BB@0x28 ]
+	8       (00000020) const/4              v2, 1
+	9       (00000022) invoke-virtual       v1, v2, Ljava/lang/reflect/Method;->setAccessible(Z)V
+	c:27
+	(Ljava/lang/NoSuchMethodException; -> 2a findMethod-BB@0x2a)
+
+findMethod-BB@0x28 : 
+	10      (00000028) return-object        v1
+
+findMethod-BB@0x2a : [ findMethod-BB@0x8 ]
+	11      (0000002a) move-exception       v2
+	12      (0000002c) invoke-virtual       v0, Ljava/lang/Class;->getSuperclass()Ljava/lang/Class;
+	13      (00000032) move-result-object   v0
+	14      (00000034) goto                 -16
+
+findMethod-BB@0x36 : 
+	15      (00000036) new-instance         v2, Ljava/lang/NoSuchMethodException;
+	16      (0000003a) new-instance         v3, Ljava/lang/StringBuilder;
+	17      (0000003e) invoke-direct        v3, Ljava/lang/StringBuilder;-><init>()V
+	18      (00000044) const-string         v4, 'Method '
+	19      (00000048) invoke-virtual       v3, v4, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	20      (0000004e) move-result-object   v3
+	21      (00000050) invoke-virtual       v3, v6, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	22      (00000056) move-result-object   v3
+	23      (00000058) const-string         v4, ' with parameters '
+	24      (0000005c) invoke-virtual       v3, v4, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	25      (00000062) move-result-object   v3
+	26      (00000064) invoke-static        v7, Ljava/util/Arrays;->asList([Ljava/lang/Object;)Ljava/util/List;
+	27      (0000006a) move-result-object   v4
+	28      (0000006c) invoke-virtual       v3, v4, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+	29      (00000072) move-result-object   v3
+	30      (00000074) const-string         v4, ' not found in '
+	31      (00000078) invoke-virtual       v3, v4, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	32      (0000007e) move-result-object   v3
+	33      (00000080) invoke-virtual       v5, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+	34      (00000086) move-result-object   v4
+	35      (00000088) invoke-virtual       v3, v4, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+	36      (0000008e) move-result-object   v3
+	37      (00000090) invoke-virtual       v3, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+	38      (00000096) move-result-object   v3
+	39      (00000098) invoke-direct        v2, v3, Ljava/lang/NoSuchMethodException;-><init>(Ljava/lang/String;)V
+	40      (0000009e) throw                v2
+

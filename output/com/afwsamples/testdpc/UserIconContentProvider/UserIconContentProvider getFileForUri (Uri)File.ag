@@ -1,0 +1,33 @@
+# Lcom/afwsamples/testdpc/UserIconContentProvider;->getFileForUri(Landroid/net/Uri;)Ljava/io/File; [access_flags=private]
+#
+# Parameters:
+# - local registers: v0...v5
+# - v6:android.net.Uri
+#
+# - return:java.io.File
+
+getFileForUri-BB@0x0 : 
+	0       (00000000) invoke-virtual       v6, Landroid/net/Uri;->getPath()Ljava/lang/String;
+	1       (00000006) move-result-object   v1
+	2       (00000008) invoke-virtual       v5, Lcom/afwsamples/testdpc/UserIconContentProvider;->getContext()Landroid/content/Context;
+	3       (0000000e) move-result-object   v2
+	4       (00000010) invoke-static        v2, v1, Lcom/afwsamples/testdpc/UserIconContentProvider;->getFile(Landroid/content/Context; Ljava/lang/String;)Ljava/io/File;
+	5       (00000016) move-result-object   v0
+	6       (00000018) sget-object          v2, Lcom/afwsamples/testdpc/UserIconContentProvider;->TAG Ljava/lang/String;
+	7       (0000001c) new-instance         v3, Ljava/lang/StringBuilder;
+	8       (00000020) invoke-direct        v3, Ljava/lang/StringBuilder;-><init>()V
+	9       (00000026) const-string         v4, 'getFileForUri('
+	10      (0000002a) invoke-virtual       v3, v4, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	11      (00000030) move-result-object   v3
+	12      (00000032) invoke-virtual       v3, v6, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+	13      (00000038) move-result-object   v3
+	14      (0000003a) const-string         v4, '): returning '
+	15      (0000003e) invoke-virtual       v3, v4, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	16      (00000044) move-result-object   v3
+	17      (00000046) invoke-virtual       v3, v0, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+	18      (0000004c) move-result-object   v3
+	19      (0000004e) invoke-virtual       v3, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+	20      (00000054) move-result-object   v3
+	21      (00000056) invoke-static        v2, v3, Landroid/util/Log;->v(Ljava/lang/String; Ljava/lang/String;)I
+	22      (0000005c) return-object        v0
+

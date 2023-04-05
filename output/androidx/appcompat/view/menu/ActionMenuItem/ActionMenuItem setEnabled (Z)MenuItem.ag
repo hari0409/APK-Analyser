@@ -1,0 +1,25 @@
+# Landroidx/appcompat/view/menu/ActionMenuItem;->setEnabled(Z)Landroid/view/MenuItem; [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:boolean
+#
+# - return:android.view.MenuItem
+
+setEnabled-BB@0x0 : [ setEnabled-BB@0xc setEnabled-BB@0x18 ]
+	0       (00000000) iget                 v0, v2, Landroidx/appcompat/view/menu/ActionMenuItem;->mFlags I
+	1       (00000004) and-int/lit8         v1, v0, -17
+	2       (00000008) if-eqz               v3, +8
+
+setEnabled-BB@0xc : [ setEnabled-BB@0x10 ]
+	3       (0000000c) const/16             v0, 16
+
+setEnabled-BB@0x10 : 
+	4       (00000010) or-int/2addr         v0, v1
+	5       (00000012) iput                 v0, v2, Landroidx/appcompat/view/menu/ActionMenuItem;->mFlags I
+	6       (00000016) return-object        v2
+
+setEnabled-BB@0x18 : [ setEnabled-BB@0x10 ]
+	7       (00000018) const/4              v0, 0
+	8       (0000001a) goto                 -5
+

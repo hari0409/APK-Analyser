@@ -1,0 +1,28 @@
+# Landroidx/appcompat/widget/LinearLayoutCompat;->onDraw(Landroid/graphics/Canvas;)V [access_flags=protected]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:android.graphics.Canvas
+#
+# - return:void
+
+onDraw-BB@0x0 : [ onDraw-BB@0x8 onDraw-BB@0xa ]
+	0       (00000000) iget-object          v0, v2, Landroidx/appcompat/widget/LinearLayoutCompat;->mDivider Landroid/graphics/drawable/Drawable;
+	1       (00000004) if-nez               v0, +3
+
+onDraw-BB@0x8 : 
+	2       (00000008) return-void          
+
+onDraw-BB@0xa : [ onDraw-BB@0x14 onDraw-BB@0x1c ]
+	3       (0000000a) iget                 v0, v2, Landroidx/appcompat/widget/LinearLayoutCompat;->mOrientation I
+	4       (0000000e) const/4              v1, 1
+	5       (00000010) if-ne                v0, v1, +6
+
+onDraw-BB@0x14 : [ onDraw-BB@0x8 ]
+	6       (00000014) invoke-virtual       v2, v3, Landroidx/appcompat/widget/LinearLayoutCompat;->drawDividersVertical(Landroid/graphics/Canvas;)V
+	7       (0000001a) goto                 -9
+
+onDraw-BB@0x1c : [ onDraw-BB@0x8 ]
+	8       (0000001c) invoke-virtual       v2, v3, Landroidx/appcompat/widget/LinearLayoutCompat;->drawDividersHorizontal(Landroid/graphics/Canvas;)V
+	9       (00000022) goto                 -d
+

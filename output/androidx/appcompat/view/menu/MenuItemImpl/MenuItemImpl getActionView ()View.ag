@@ -1,0 +1,33 @@
+# Landroidx/appcompat/view/menu/MenuItemImpl;->getActionView()Landroid/view/View; [access_flags=public]
+#
+# Parameters:
+# local registers: v0...v1
+#
+# - return:android.view.View
+
+getActionView-BB@0x0 : [ getActionView-BB@0x8 getActionView-BB@0xe ]
+	0       (00000000) iget-object          v0, v1, Landroidx/appcompat/view/menu/MenuItemImpl;->mActionView Landroid/view/View;
+	1       (00000004) if-eqz               v0, +5
+
+getActionView-BB@0x8 : [ getActionView-BB@0xc ]
+	2       (00000008) iget-object          v0, v1, Landroidx/appcompat/view/menu/MenuItemImpl;->mActionView Landroid/view/View;
+
+getActionView-BB@0xc : 
+	3       (0000000c) return-object        v0
+
+getActionView-BB@0xe : [ getActionView-BB@0x16 getActionView-BB@0x2c ]
+	4       (0000000e) iget-object          v0, v1, Landroidx/appcompat/view/menu/MenuItemImpl;->mActionProvider Landroidx/core/view/ActionProvider;
+	5       (00000012) if-eqz               v0, +d
+
+getActionView-BB@0x16 : [ getActionView-BB@0xc ]
+	6       (00000016) iget-object          v0, v1, Landroidx/appcompat/view/menu/MenuItemImpl;->mActionProvider Landroidx/core/view/ActionProvider;
+	7       (0000001a) invoke-virtual       v0, v1, Landroidx/core/view/ActionProvider;->onCreateActionView(Landroid/view/MenuItem;)Landroid/view/View;
+	8       (00000020) move-result-object   v0
+	9       (00000022) iput-object          v0, v1, Landroidx/appcompat/view/menu/MenuItemImpl;->mActionView Landroid/view/View;
+	10      (00000026) iget-object          v0, v1, Landroidx/appcompat/view/menu/MenuItemImpl;->mActionView Landroid/view/View;
+	11      (0000002a) goto                 -f
+
+getActionView-BB@0x2c : [ getActionView-BB@0xc ]
+	12      (0000002c) const/4              v0, 0
+	13      (0000002e) goto                 -11
+

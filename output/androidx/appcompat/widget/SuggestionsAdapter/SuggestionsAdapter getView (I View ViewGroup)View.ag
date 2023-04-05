@@ -1,0 +1,40 @@
+# Landroidx/appcompat/widget/SuggestionsAdapter;->getView(I Landroid/view/View; Landroid/view/ViewGroup;)Landroid/view/View; [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v6
+# - v7:int
+# - v8:android.view.View
+# - v9:android.view.ViewGroup
+#
+# - return:android.view.View
+
+getView-BB@0x0 : [ getView-BB@0x8 ]
+	0       (00000000) invoke-super         v6, v7, v8, v9, Landroidx/cursoradapter/widget/ResourceCursorAdapter;->getView(I Landroid/view/View; Landroid/view/ViewGroup;)Landroid/view/View;
+	1       (00000006) move-result-object   v2
+	0:5
+	(Ljava/lang/RuntimeException; -> a getView-BB@0xa)
+
+getView-BB@0x8 : 
+	2       (00000008) return-object        v2
+
+getView-BB@0xa : [ getView-BB@0x2e getView-BB@0x8 ]
+	3       (0000000a) move-exception       v0
+	4       (0000000c) const-string         v4, 'SuggestionsAdapter'
+	5       (00000010) const-string         v5, 'Search suggestions cursor threw exception.'
+	6       (00000014) invoke-static        v4, v5, v0, Landroid/util/Log;->w(Ljava/lang/String; Ljava/lang/String; Ljava/lang/Throwable;)I
+	7       (0000001a) iget-object          v4, v6, Landroidx/appcompat/widget/SuggestionsAdapter;->mContext Landroid/content/Context;
+	8       (0000001e) iget-object          v5, v6, Landroidx/appcompat/widget/SuggestionsAdapter;->mCursor Landroid/database/Cursor;
+	9       (00000022) invoke-virtual       v6, v4, v5, v9, Landroidx/appcompat/widget/SuggestionsAdapter;->newView(Landroid/content/Context; Landroid/database/Cursor; Landroid/view/ViewGroup;)Landroid/view/View;
+	10      (00000028) move-result-object   v2
+	11      (0000002a) if-eqz               v2, -11
+
+getView-BB@0x2e : [ getView-BB@0x8 ]
+	12      (0000002e) invoke-virtual       v2, Landroid/view/View;->getTag()Ljava/lang/Object;
+	13      (00000034) move-result-object   v3
+	14      (00000036) check-cast           v3, Landroidx/appcompat/widget/SuggestionsAdapter$ChildViewCache;
+	15      (0000003a) iget-object          v1, v3, Landroidx/appcompat/widget/SuggestionsAdapter$ChildViewCache;->mText1 Landroid/widget/TextView;
+	16      (0000003e) invoke-virtual       v0, Ljava/lang/RuntimeException;->toString()Ljava/lang/String;
+	17      (00000044) move-result-object   v4
+	18      (00000046) invoke-virtual       v1, v4, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+	19      (0000004c) goto                 -22
+

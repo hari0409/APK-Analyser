@@ -1,0 +1,31 @@
+# Lcom/afwsamples/testdpc/policy/utils/AuthorizationList;->userAuthTypeToString(I)Ljava/lang/String; [access_flags=public static]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:int
+#
+# - return:java.lang.String
+
+userAuthTypeToString-BB@0x0 : [ userAuthTypeToString-BB@0x10 userAuthTypeToString-BB@0x1a ]
+	0       (00000000) invoke-static        Lcom/google/common/collect/Lists;->newArrayList()Ljava/util/ArrayList;
+	1       (00000006) move-result-object   v0
+	2       (00000008) and-int/lit8         v1, v2, 2
+	3       (0000000c) if-eqz               v1, +7
+
+userAuthTypeToString-BB@0x10 : [ userAuthTypeToString-BB@0x1a ]
+	4       (00000010) const-string         v1, 'Fingerprint'
+	5       (00000014) invoke-interface     v0, v1, Ljava/util/List;->add(Ljava/lang/Object;)Z
+
+userAuthTypeToString-BB@0x1a : [ userAuthTypeToString-BB@0x22 userAuthTypeToString-BB@0x2c ]
+	6       (0000001a) and-int/lit8         v1, v2, 1
+	7       (0000001e) if-eqz               v1, +7
+
+userAuthTypeToString-BB@0x22 : [ userAuthTypeToString-BB@0x2c ]
+	8       (00000022) const-string         v1, 'Password'
+	9       (00000026) invoke-interface     v0, v1, Ljava/util/List;->add(Ljava/lang/Object;)Z
+
+userAuthTypeToString-BB@0x2c : 
+	10      (0000002c) invoke-static        v0, Lcom/afwsamples/testdpc/policy/utils/AuthorizationList;->joinStrings(Ljava/util/Collection;)Ljava/lang/String;
+	11      (00000032) move-result-object   v1
+	12      (00000034) return-object        v1
+

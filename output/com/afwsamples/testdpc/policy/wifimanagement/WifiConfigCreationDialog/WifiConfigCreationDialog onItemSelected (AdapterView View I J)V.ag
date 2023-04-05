@@ -1,0 +1,58 @@
+# Lcom/afwsamples/testdpc/policy/wifimanagement/WifiConfigCreationDialog;->onItemSelected(Landroid/widget/AdapterView; Landroid/view/View; I J)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v3
+# - v4:android.widget.AdapterView
+# - v5:android.view.View
+# - v6:int
+# - v7:long
+#
+# - return:void
+
+onItemSelected-BB@0x0 : [ onItemSelected-BB@0x12 onItemSelected-BB@0x20 ]
+	0       (00000000) invoke-virtual       v3, Landroid/widget/AdapterView;->getId()I
+	1       (00000006) move-result          v0
+	2       (00000008) const                v1, 2131296595 # [1.821111111593891e+38]
+	3       (0000000e) if-ne                v0, v1, +9
+
+onItemSelected-BB@0x12 : [ D:onItemSelected-BB@0x20 0:onItemSelected-BB@0x28 1:onItemSelected-BB@0x50 2:onItemSelected-BB@0x38 ]
+	4       (00000012) iput                 v5, v2, Lcom/afwsamples/testdpc/policy/wifimanagement/WifiConfigCreationDialog;->mSecurityType I
+	5       (00000016) iget                 v0, v2, Lcom/afwsamples/testdpc/policy/wifimanagement/WifiConfigCreationDialog;->mSecurityType I
+	6       (0000001a) packed-switch        v0, +2b (0x70)
+
+onItemSelected-BB@0x20 : 
+	7       (00000020) invoke-direct        v2, Lcom/afwsamples/testdpc/policy/wifimanagement/WifiConfigCreationDialog;->enableSaveButtonIfAppropriate()V
+	8       (00000026) return-void          
+
+onItemSelected-BB@0x28 : [ onItemSelected-BB@0x20 ]
+	9       (00000028) iget-object          v0, v2, Lcom/afwsamples/testdpc/policy/wifimanagement/WifiConfigCreationDialog;->mPasswordView Landroid/view/View;
+	10      (0000002c) const/16             v1, 8
+	11      (00000030) invoke-virtual       v0, v1, Landroid/view/View;->setVisibility(I)V
+	12      (00000036) goto                 -b
+
+onItemSelected-BB@0x38 : [ onItemSelected-BB@0x44 onItemSelected-BB@0x68 ]
+	13      (00000038) iget-object          v1, v2, Lcom/afwsamples/testdpc/policy/wifimanagement/WifiConfigCreationDialog;->mPasswordText Landroid/widget/EditText;
+	14      (0000003c) iget-object          v0, v2, Lcom/afwsamples/testdpc/policy/wifimanagement/WifiConfigCreationDialog;->mOldConfig Landroid/net/wifi/WifiConfiguration;
+	15      (00000040) if-nez               v0, +14
+
+onItemSelected-BB@0x44 : [ onItemSelected-BB@0x4a ]
+	16      (00000044) const                v0, 2131689946 # [1.900892172593951e+38]
+
+onItemSelected-BB@0x4a : [ onItemSelected-BB@0x50 ]
+	17      (0000004a) invoke-virtual       v1, v0, Landroid/widget/EditText;->setHint(I)V
+
+onItemSelected-BB@0x50 : [ onItemSelected-BB@0x20 ]
+	18      (00000050) iget-object          v0, v2, Lcom/afwsamples/testdpc/policy/wifimanagement/WifiConfigCreationDialog;->mPasswordView Landroid/view/View;
+	19      (00000054) const/4              v1, 0
+	20      (00000056) invoke-virtual       v0, v1, Landroid/view/View;->setVisibility(I)V
+	21      (0000005c) iget-object          v0, v2, Lcom/afwsamples/testdpc/policy/wifimanagement/WifiConfigCreationDialog;->mPasswordText Landroid/widget/EditText;
+	22      (00000060) invoke-virtual       v0, Landroid/widget/EditText;->requestFocus()Z
+	23      (00000066) goto                 -23
+
+onItemSelected-BB@0x68 : [ onItemSelected-BB@0x4a ]
+	24      (00000068) const                v0, 2131690394 # [1.9009830377889754e+38]
+	25      (0000006e) goto                 -12
+
+onItemSelected-BB@0x70 : 
+	26      (00000070) packed-switch-payload 0 1 2
+

@@ -1,0 +1,44 @@
+# Landroidx/appcompat/widget/ActivityChooserView$2;->onGlobalLayout()V [access_flags=public]
+#
+# Parameters:
+# local registers: v0...v2
+#
+# - return:void
+
+onGlobalLayout-BB@0x0 : [ onGlobalLayout-BB@0x10 onGlobalLayout-BB@0x32 ]
+	0       (00000000) iget-object          v0, v2, Landroidx/appcompat/widget/ActivityChooserView$2;->this$0 Landroidx/appcompat/widget/ActivityChooserView;
+	1       (00000004) invoke-virtual       v0, Landroidx/appcompat/widget/ActivityChooserView;->isShowingPopup()Z
+	2       (0000000a) move-result          v0
+	3       (0000000c) if-eqz               v0, +13
+
+onGlobalLayout-BB@0x10 : [ onGlobalLayout-BB@0x20 onGlobalLayout-BB@0x34 ]
+	4       (00000010) iget-object          v0, v2, Landroidx/appcompat/widget/ActivityChooserView$2;->this$0 Landroidx/appcompat/widget/ActivityChooserView;
+	5       (00000014) invoke-virtual       v0, Landroidx/appcompat/widget/ActivityChooserView;->isShown()Z
+	6       (0000001a) move-result          v0
+	7       (0000001c) if-nez               v0, +c
+
+onGlobalLayout-BB@0x20 : [ onGlobalLayout-BB@0x32 ]
+	8       (00000020) iget-object          v0, v2, Landroidx/appcompat/widget/ActivityChooserView$2;->this$0 Landroidx/appcompat/widget/ActivityChooserView;
+	9       (00000024) invoke-virtual       v0, Landroidx/appcompat/widget/ActivityChooserView;->getListPopupWindow()Landroidx/appcompat/widget/ListPopupWindow;
+	10      (0000002a) move-result-object   v0
+	11      (0000002c) invoke-virtual       v0, Landroidx/appcompat/widget/ListPopupWindow;->dismiss()V
+
+onGlobalLayout-BB@0x32 : 
+	12      (00000032) return-void          
+
+onGlobalLayout-BB@0x34 : [ onGlobalLayout-BB@0x52 onGlobalLayout-BB@0x32 ]
+	13      (00000034) iget-object          v0, v2, Landroidx/appcompat/widget/ActivityChooserView$2;->this$0 Landroidx/appcompat/widget/ActivityChooserView;
+	14      (00000038) invoke-virtual       v0, Landroidx/appcompat/widget/ActivityChooserView;->getListPopupWindow()Landroidx/appcompat/widget/ListPopupWindow;
+	15      (0000003e) move-result-object   v0
+	16      (00000040) invoke-virtual       v0, Landroidx/appcompat/widget/ListPopupWindow;->show()V
+	17      (00000046) iget-object          v0, v2, Landroidx/appcompat/widget/ActivityChooserView$2;->this$0 Landroidx/appcompat/widget/ActivityChooserView;
+	18      (0000004a) iget-object          v0, v0, Landroidx/appcompat/widget/ActivityChooserView;->mProvider Landroidx/core/view/ActionProvider;
+	19      (0000004e) if-eqz               v0, -e
+
+onGlobalLayout-BB@0x52 : [ onGlobalLayout-BB@0x32 ]
+	20      (00000052) iget-object          v0, v2, Landroidx/appcompat/widget/ActivityChooserView$2;->this$0 Landroidx/appcompat/widget/ActivityChooserView;
+	21      (00000056) iget-object          v0, v0, Landroidx/appcompat/widget/ActivityChooserView;->mProvider Landroidx/core/view/ActionProvider;
+	22      (0000005a) const/4              v1, 1
+	23      (0000005c) invoke-virtual       v0, v1, Landroidx/core/view/ActionProvider;->subUiVisibilityChanged(Z)V
+	24      (00000062) goto                 -18
+

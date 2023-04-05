@@ -1,0 +1,19 @@
+# Landroidx/appcompat/view/ViewPropertyAnimatorCompatSet;-><init>()V [access_flags=public constructor]
+#
+# Parameters:
+# local registers: v0...v2
+#
+# - return:void
+
+<init>-BB@0x0 : 
+	0       (00000000) invoke-direct        v2, Ljava/lang/Object;-><init>()V
+	1       (00000006) const-wide/16        v0, -1 # [-1.0]
+	2       (0000000a) iput-wide            v0, v2, Landroidx/appcompat/view/ViewPropertyAnimatorCompatSet;->mDuration J
+	3       (0000000e) new-instance         v0, Landroidx/appcompat/view/ViewPropertyAnimatorCompatSet$1;
+	4       (00000012) invoke-direct        v0, v2, Landroidx/appcompat/view/ViewPropertyAnimatorCompatSet$1;-><init>(Landroidx/appcompat/view/ViewPropertyAnimatorCompatSet;)V
+	5       (00000018) iput-object          v0, v2, Landroidx/appcompat/view/ViewPropertyAnimatorCompatSet;->mProxyListener Landroidx/core/view/ViewPropertyAnimatorListenerAdapter;
+	6       (0000001c) new-instance         v0, Ljava/util/ArrayList;
+	7       (00000020) invoke-direct        v0, Ljava/util/ArrayList;-><init>()V
+	8       (00000026) iput-object          v0, v2, Landroidx/appcompat/view/ViewPropertyAnimatorCompatSet;->mAnimators Ljava/util/ArrayList;
+	9       (0000002a) return-void          
+

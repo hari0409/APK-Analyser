@@ -1,0 +1,78 @@
+# Landroidx/appcompat/widget/AppCompatTextViewAutoSizeHelper;->invokeAndReturnWithDefault(Ljava/lang/Object; Ljava/lang/String; Ljava/lang/Object;)Ljava/lang/Object; [access_flags=private]
+#
+# Parameters:
+# - local registers: v0...v7
+# - v8:java.lang.Object
+# - v9:java.lang.String
+# - v10:java.lang.Object
+#
+# - return:java.lang.Object
+
+invokeAndReturnWithDefault-BB@0x0 : [ invokeAndReturnWithDefault-BB@0x4 ]
+	0       (00000000) const/4              v3, 0
+	1       (00000002) const/4              v1, 0
+
+invokeAndReturnWithDefault-BB@0x4 : [ invokeAndReturnWithDefault-BB@0x1e invokeAndReturnWithDefault-BB@0x24 ]
+	2       (00000004) invoke-direct        v7, v9, Landroidx/appcompat/widget/AppCompatTextViewAutoSizeHelper;->getTextViewMethod(Ljava/lang/String;)Ljava/lang/reflect/Method;
+	3       (0000000a) move-result-object   v2
+	4       (0000000c) const/4              v4, 0
+	5       (0000000e) new-array            v4, v4, [Ljava/lang/Object;
+	6       (00000012) invoke-virtual       v2, v8, v4, Ljava/lang/reflect/Method;->invoke(Ljava/lang/Object; [Ljava/lang/Object;)Ljava/lang/Object;
+	7       (00000018) move-result-object   v3
+	8       (0000001a) if-nez               v3, +5
+	4:17
+	(Ljava/lang/Throwable; -> 72 invokeAndReturnWithDefault-BB@0x72)
+	(Ljava/lang/Exception; -> 26 invokeAndReturnWithDefault-BB@0x26)
+
+invokeAndReturnWithDefault-BB@0x1e : [ invokeAndReturnWithDefault-BB@0x22 invokeAndReturnWithDefault-BB@0x24 ]
+	9       (0000001e) if-eqz               v1, +3
+
+invokeAndReturnWithDefault-BB@0x22 : [ invokeAndReturnWithDefault-BB@0x24 ]
+	10      (00000022) move-object          v3, v10
+
+invokeAndReturnWithDefault-BB@0x24 : 
+	11      (00000024) return-object        v3
+
+invokeAndReturnWithDefault-BB@0x26 : [ invokeAndReturnWithDefault-BB@0x2a ]
+	12      (00000026) move-exception       v0
+	13      (00000028) const/4              v1, 1
+
+invokeAndReturnWithDefault-BB@0x2a : [ invokeAndReturnWithDefault-BB@0x6a invokeAndReturnWithDefault-BB@0x24 ]
+	14      (0000002a) const-string         v4, 'ACTVAutoSizeHelper'
+	15      (0000002e) new-instance         v5, Ljava/lang/StringBuilder;
+	16      (00000032) invoke-direct        v5, Ljava/lang/StringBuilder;-><init>()V
+	17      (00000038) const-string         v6, 'Failed to invoke TextView#'
+	18      (0000003c) invoke-virtual       v5, v6, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	19      (00000042) move-result-object   v5
+	20      (00000044) invoke-virtual       v5, v9, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	21      (0000004a) move-result-object   v5
+	22      (0000004c) const-string         v6, '() method'
+	23      (00000050) invoke-virtual       v5, v6, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	24      (00000056) move-result-object   v5
+	25      (00000058) invoke-virtual       v5, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+	26      (0000005e) move-result-object   v5
+	27      (00000060) invoke-static        v4, v5, v0, Landroid/util/Log;->w(Ljava/lang/String; Ljava/lang/String; Ljava/lang/Throwable;)I
+	28      (00000066) if-nez               v3, -21
+	2a:65
+	(Ljava/lang/Throwable; -> 72 invokeAndReturnWithDefault-BB@0x72)
+
+invokeAndReturnWithDefault-BB@0x6a : [ invokeAndReturnWithDefault-BB@0x6e invokeAndReturnWithDefault-BB@0x24 ]
+	29      (0000006a) if-eqz               v1, -23
+
+invokeAndReturnWithDefault-BB@0x6e : [ invokeAndReturnWithDefault-BB@0x24 ]
+	30      (0000006e) move-object          v3, v10
+	31      (00000070) goto                 -26
+
+invokeAndReturnWithDefault-BB@0x72 : [ invokeAndReturnWithDefault-BB@0x78 invokeAndReturnWithDefault-BB@0x7e ]
+	32      (00000072) move-exception       v4
+	33      (00000074) if-nez               v3, +5
+
+invokeAndReturnWithDefault-BB@0x78 : [ invokeAndReturnWithDefault-BB@0x7c invokeAndReturnWithDefault-BB@0x7e ]
+	34      (00000078) if-eqz               v1, +3
+
+invokeAndReturnWithDefault-BB@0x7c : [ invokeAndReturnWithDefault-BB@0x7e ]
+	35      (0000007c) move-object          v3, v10
+
+invokeAndReturnWithDefault-BB@0x7e : 
+	36      (0000007e) throw                v4
+

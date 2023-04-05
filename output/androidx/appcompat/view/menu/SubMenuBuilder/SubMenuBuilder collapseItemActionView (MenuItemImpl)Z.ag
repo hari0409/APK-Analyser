@@ -1,0 +1,14 @@
+# Landroidx/appcompat/view/menu/SubMenuBuilder;->collapseItemActionView(Landroidx/appcompat/view/menu/MenuItemImpl;)Z [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:androidx.appcompat.view.menu.MenuItemImpl
+#
+# - return:boolean
+
+collapseItemActionView-BB@0x0 : 
+	0       (00000000) iget-object          v0, v1, Landroidx/appcompat/view/menu/SubMenuBuilder;->mParentMenu Landroidx/appcompat/view/menu/MenuBuilder;
+	1       (00000004) invoke-virtual       v0, v2, Landroidx/appcompat/view/menu/MenuBuilder;->collapseItemActionView(Landroidx/appcompat/view/menu/MenuItemImpl;)Z
+	2       (0000000a) move-result          v0
+	3       (0000000c) return               v0
+

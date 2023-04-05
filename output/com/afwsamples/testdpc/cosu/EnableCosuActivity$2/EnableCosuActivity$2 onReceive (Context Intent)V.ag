@@ -1,0 +1,39 @@
+# Lcom/afwsamples/testdpc/cosu/EnableCosuActivity$2;->onReceive(Landroid/content/Context; Landroid/content/Intent;)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v6
+# - v7:android.content.Context
+# - v8:android.content.Intent
+#
+# - return:void
+
+onReceive-BB@0x0 : [ onReceive-BB@0x18 onReceive-BB@0x1a ]
+	0       (00000000) const-string         v2, 'android.intent.action.DOWNLOAD_COMPLETE'
+	1       (00000004) invoke-virtual       v8, Landroid/content/Intent;->getAction()Ljava/lang/String;
+	2       (0000000a) move-result-object   v3
+	3       (0000000c) invoke-virtual       v2, v3, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+	4       (00000012) move-result          v2
+	5       (00000014) if-nez               v2, +3
+
+onReceive-BB@0x18 : 
+	6       (00000018) return-void          
+
+onReceive-BB@0x1a : [ onReceive-BB@0x18 ]
+	7       (0000001a) const-string         v2, 'extra_download_id'
+	8       (0000001e) const-wide/16        v4, 0 # [0.0]
+	9       (00000022) invoke-virtual       v8, v2, v4, v5, Landroid/content/Intent;->getLongExtra(Ljava/lang/String; J)J
+	10      (00000028) move-result-wide     v0
+	11      (0000002a) iget-object          v2, v6, Lcom/afwsamples/testdpc/cosu/EnableCosuActivity$2;->this$0 Lcom/afwsamples/testdpc/cosu/EnableCosuActivity;
+	12      (0000002e) invoke-static        v2, Lcom/afwsamples/testdpc/cosu/EnableCosuActivity;->access$600(Lcom/afwsamples/testdpc/cosu/EnableCosuActivity;)Landroid/os/Handler;
+	13      (00000034) move-result-object   v2
+	14      (00000036) iget-object          v3, v6, Lcom/afwsamples/testdpc/cosu/EnableCosuActivity$2;->this$0 Lcom/afwsamples/testdpc/cosu/EnableCosuActivity;
+	15      (0000003a) invoke-static        v3, Lcom/afwsamples/testdpc/cosu/EnableCosuActivity;->access$600(Lcom/afwsamples/testdpc/cosu/EnableCosuActivity;)Landroid/os/Handler;
+	16      (00000040) move-result-object   v3
+	17      (00000042) const/4              v4, 1
+	18      (00000044) new-instance         v5, Ljava/lang/Long;
+	19      (00000048) invoke-direct        v5, v0, v1, Ljava/lang/Long;-><init>(J)V
+	20      (0000004e) invoke-virtual       v3, v4, v5, Landroid/os/Handler;->obtainMessage(I Ljava/lang/Object;)Landroid/os/Message;
+	21      (00000054) move-result-object   v3
+	22      (00000056) invoke-virtual       v2, v3, Landroid/os/Handler;->sendMessage(Landroid/os/Message;)Z
+	23      (0000005c) goto                 -22
+

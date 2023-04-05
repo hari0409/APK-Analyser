@@ -1,0 +1,25 @@
+# Lcom/afwsamples/testdpc/search/PolicySearchFragment;->onCreateView(Landroid/view/LayoutInflater; Landroid/view/ViewGroup; Landroid/os/Bundle;)Landroid/view/View; [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v3
+# - v4:android.view.LayoutInflater
+# - v5:android.view.ViewGroup
+# - v6:android.os.Bundle
+#
+# - return:android.view.View
+
+onCreateView-BB@0x0 : 
+	0       (00000000) const                v1, 2131427435 # [1.847648616319309e+38]
+	1       (00000006) const/4              v2, 0
+	2       (00000008) invoke-virtual       v4, v1, v5, v2, Landroid/view/LayoutInflater;->inflate(I Landroid/view/ViewGroup; Z)Landroid/view/View;
+	3       (0000000e) move-result-object   v0
+	4       (00000010) check-cast           v0, Landroidx/recyclerview/widget/RecyclerView;
+	5       (00000014) new-instance         v1, Landroidx/recyclerview/widget/LinearLayoutManager;
+	6       (00000018) invoke-virtual       v3, Lcom/afwsamples/testdpc/search/PolicySearchFragment;->getActivity()Landroid/app/Activity;
+	7       (0000001e) move-result-object   v2
+	8       (00000020) invoke-direct        v1, v2, Landroidx/recyclerview/widget/LinearLayoutManager;-><init>(Landroid/content/Context;)V
+	9       (00000026) invoke-virtual       v0, v1, Landroidx/recyclerview/widget/RecyclerView;->setLayoutManager(Landroidx/recyclerview/widget/RecyclerView$LayoutManager;)V
+	10      (0000002c) iget-object          v1, v3, Lcom/afwsamples/testdpc/search/PolicySearchFragment;->mAdapter Lcom/afwsamples/testdpc/search/SearchItemAdapter;
+	11      (00000030) invoke-virtual       v0, v1, Landroidx/recyclerview/widget/RecyclerView;->setAdapter(Landroidx/recyclerview/widget/RecyclerView$Adapter;)V
+	12      (00000036) return-object        v0
+

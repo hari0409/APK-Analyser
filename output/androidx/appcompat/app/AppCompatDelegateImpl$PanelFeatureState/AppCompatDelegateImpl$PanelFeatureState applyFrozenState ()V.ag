@@ -1,0 +1,25 @@
+# Landroidx/appcompat/app/AppCompatDelegateImpl$PanelFeatureState;->applyFrozenState()V [access_flags=]
+#
+# Parameters:
+# local registers: v0...v2
+#
+# - return:void
+
+applyFrozenState-BB@0x0 : [ applyFrozenState-BB@0x8 applyFrozenState-BB@0x24 ]
+	0       (00000000) iget-object          v0, v2, Landroidx/appcompat/app/AppCompatDelegateImpl$PanelFeatureState;->menu Landroidx/appcompat/view/menu/MenuBuilder;
+	1       (00000004) if-eqz               v0, +10
+
+applyFrozenState-BB@0x8 : [ applyFrozenState-BB@0x10 applyFrozenState-BB@0x24 ]
+	2       (00000008) iget-object          v0, v2, Landroidx/appcompat/app/AppCompatDelegateImpl$PanelFeatureState;->frozenMenuState Landroid/os/Bundle;
+	3       (0000000c) if-eqz               v0, +c
+
+applyFrozenState-BB@0x10 : [ applyFrozenState-BB@0x24 ]
+	4       (00000010) iget-object          v0, v2, Landroidx/appcompat/app/AppCompatDelegateImpl$PanelFeatureState;->menu Landroidx/appcompat/view/menu/MenuBuilder;
+	5       (00000014) iget-object          v1, v2, Landroidx/appcompat/app/AppCompatDelegateImpl$PanelFeatureState;->frozenMenuState Landroid/os/Bundle;
+	6       (00000018) invoke-virtual       v0, v1, Landroidx/appcompat/view/menu/MenuBuilder;->restorePresenterStates(Landroid/os/Bundle;)V
+	7       (0000001e) const/4              v0, 0
+	8       (00000020) iput-object          v0, v2, Landroidx/appcompat/app/AppCompatDelegateImpl$PanelFeatureState;->frozenMenuState Landroid/os/Bundle;
+
+applyFrozenState-BB@0x24 : 
+	9       (00000024) return-void          
+

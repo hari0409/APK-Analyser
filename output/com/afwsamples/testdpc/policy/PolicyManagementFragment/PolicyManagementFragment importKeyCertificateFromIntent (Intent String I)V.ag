@@ -1,0 +1,100 @@
+# Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->importKeyCertificateFromIntent(Landroid/content/Intent; Ljava/lang/String; I)V [access_flags=private]
+#
+# Parameters:
+# - local registers: v0...v6
+# - v7:android.content.Intent
+# - v8:java.lang.String
+# - v9:int
+#
+# - return:void
+
+importKeyCertificateFromIntent-BB@0x0 : [ importKeyCertificateFromIntent-BB@0xc importKeyCertificateFromIntent-BB@0x20 ]
+	0       (00000000) invoke-virtual       v6, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->getActivity()Landroid/app/Activity;
+	1       (00000006) move-result-object   v3
+	2       (00000008) if-eqz               v3, +c
+
+importKeyCertificateFromIntent-BB@0xc : [ importKeyCertificateFromIntent-BB@0x20 importKeyCertificateFromIntent-BB@0x22 ]
+	3       (0000000c) invoke-virtual       v6, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->getActivity()Landroid/app/Activity;
+	4       (00000012) move-result-object   v3
+	5       (00000014) invoke-virtual       v3, Landroid/app/Activity;->isFinishing()Z
+	6       (0000001a) move-result          v3
+	7       (0000001c) if-eqz               v3, +3
+
+importKeyCertificateFromIntent-BB@0x20 : 
+	8       (00000020) return-void          
+
+importKeyCertificateFromIntent-BB@0x22 : [ importKeyCertificateFromIntent-BB@0x28 importKeyCertificateFromIntent-BB@0x20 ]
+	9       (00000022) const/4              v0, 0
+	10      (00000024) if-eqz               v7, -2
+
+importKeyCertificateFromIntent-BB@0x28 : [ importKeyCertificateFromIntent-BB@0x34 importKeyCertificateFromIntent-BB@0x20 ]
+	11      (00000028) invoke-virtual       v7, Landroid/content/Intent;->getData()Landroid/net/Uri;
+	12      (0000002e) move-result-object   v0
+	13      (00000030) if-eqz               v0, -8
+
+importKeyCertificateFromIntent-BB@0x34 : [ importKeyCertificateFromIntent-BB@0x38 importKeyCertificateFromIntent-BB@0x3c ]
+	14      (00000034) if-nez               v8, +4
+
+importKeyCertificateFromIntent-BB@0x38 : [ importKeyCertificateFromIntent-BB@0x3c ]
+	15      (00000038) const-string         v8, ''
+
+importKeyCertificateFromIntent-BB@0x3c : [ importKeyCertificateFromIntent-BB@0x20 ]
+	16      (0000003c) invoke-virtual       v6, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->getActivity()Landroid/app/Activity;
+	17      (00000042) move-result-object   v3
+	18      (00000044) invoke-virtual       v3, Landroid/app/Activity;->getContentResolver()Landroid/content/ContentResolver;
+	19      (0000004a) move-result-object   v3
+	20      (0000004c) invoke-static        v3, v0, v8, Lcom/afwsamples/testdpc/common/CertificateUtil;->parsePKCS12Certificate(Landroid/content/ContentResolver; Landroid/net/Uri; Ljava/lang/String;)Lcom/afwsamples/testdpc/common/CertificateUtil$PKCS12ParseInfo;
+	21      (00000052) move-result-object   v2
+	22      (00000054) iget-object          v3, v2, Lcom/afwsamples/testdpc/common/CertificateUtil$PKCS12ParseInfo;->privateKey Ljava/security/PrivateKey;
+	23      (00000058) iget-object          v4, v2, Lcom/afwsamples/testdpc/common/CertificateUtil$PKCS12ParseInfo;->certificate Ljava/security/cert/X509Certificate;
+	24      (0000005c) iget-object          v5, v2, Lcom/afwsamples/testdpc/common/CertificateUtil$PKCS12ParseInfo;->alias Ljava/lang/String;
+	25      (00000060) invoke-direct        v6, v3, v4, v5, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->showPromptForKeyCertificateAlias(Ljava/security/PrivateKey; Ljava/security/cert/Certificate; Ljava/lang/String;)V
+	26      (00000066) goto                 -23
+	3c:65
+	(Ljava/security/KeyStoreException; -> 68 importKeyCertificateFromIntent-BB@0x68)
+	(Ljava/io/FileNotFoundException; -> 9e importKeyCertificateFromIntent-BB@0x9e)
+	(Ljava/security/cert/CertificateException; -> a6 importKeyCertificateFromIntent-BB@0xa6)
+	(Ljava/security/UnrecoverableKeyException; -> aa importKeyCertificateFromIntent-BB@0xaa)
+	(Ljava/security/NoSuchAlgorithmException; -> a2 importKeyCertificateFromIntent-BB@0xa2)
+	(Ljava/io/IOException; -> 7a importKeyCertificateFromIntent-BB@0x7a)
+	(Ljava/lang/ClassCastException; -> 88 importKeyCertificateFromIntent-BB@0x88)
+
+importKeyCertificateFromIntent-BB@0x68 : [ importKeyCertificateFromIntent-BB@0x6a ]
+	27      (00000068) move-exception       v1
+
+importKeyCertificateFromIntent-BB@0x6a : [ importKeyCertificateFromIntent-BB@0x20 ]
+	28      (0000006a) const-string         v3, 'PolicyManagement'
+	29      (0000006e) const-string         v4, 'Unable to load key'
+	30      (00000072) invoke-static        v3, v4, v1, Landroid/util/Log;->e(Ljava/lang/String; Ljava/lang/String; Ljava/lang/Throwable;)I
+	31      (00000078) goto                 -2c
+
+importKeyCertificateFromIntent-BB@0x7a : [ importKeyCertificateFromIntent-BB@0x20 ]
+	32      (0000007a) move-exception       v1
+	33      (0000007c) add-int/lit8         v9, v9, 1
+	34      (00000080) invoke-direct        v6, v7, v9, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->showPromptForCertificatePassword(Landroid/content/Intent; I)V
+	35      (00000086) goto                 -33
+
+importKeyCertificateFromIntent-BB@0x88 : [ importKeyCertificateFromIntent-BB@0x20 ]
+	36      (00000088) move-exception       v1
+	37      (0000008a) const                v3, 2131689992 # [1.9009015025023687e+38]
+	38      (00000090) const/4              v4, 0
+	39      (00000092) new-array            v4, v4, [Ljava/lang/Object;
+	40      (00000096) invoke-direct        v6, v3, v4, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->showToast(I [Ljava/lang/Object;)V
+	41      (0000009c) goto                 -3e
+
+importKeyCertificateFromIntent-BB@0x9e : [ importKeyCertificateFromIntent-BB@0x6a ]
+	42      (0000009e) move-exception       v1
+	43      (000000a0) goto                 -1b
+
+importKeyCertificateFromIntent-BB@0xa2 : [ importKeyCertificateFromIntent-BB@0x6a ]
+	44      (000000a2) move-exception       v1
+	45      (000000a4) goto                 -1d
+
+importKeyCertificateFromIntent-BB@0xa6 : [ importKeyCertificateFromIntent-BB@0x6a ]
+	46      (000000a6) move-exception       v1
+	47      (000000a8) goto                 -1f
+
+importKeyCertificateFromIntent-BB@0xaa : [ importKeyCertificateFromIntent-BB@0x6a ]
+	48      (000000aa) move-exception       v1
+	49      (000000ac) goto                 -21
+

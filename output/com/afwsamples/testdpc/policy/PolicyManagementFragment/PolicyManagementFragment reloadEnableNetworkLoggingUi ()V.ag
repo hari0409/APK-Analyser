@@ -1,0 +1,24 @@
+# Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->reloadEnableNetworkLoggingUi()V [access_flags=private]
+#
+# Parameters:
+# local registers: v0...v2
+#
+# - return:void
+
+reloadEnableNetworkLoggingUi-BB@0x0 : [ reloadEnableNetworkLoggingUi-BB@0x10 reloadEnableNetworkLoggingUi-BB@0x2c ]
+	0       (00000000) iget-object          v1, v2, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->mEnableNetworkLoggingPreference Lcom/afwsamples/testdpc/common/preference/DpcSwitchPreference;
+	1       (00000004) invoke-virtual       v1, Lcom/afwsamples/testdpc/common/preference/DpcSwitchPreference;->isEnabled()Z
+	2       (0000000a) move-result          v1
+	3       (0000000c) if-eqz               v1, +10
+
+reloadEnableNetworkLoggingUi-BB@0x10 : [ reloadEnableNetworkLoggingUi-BB@0x2c ]
+	4       (00000010) invoke-direct        v2, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->isNetworkLoggingEnabled()Z
+	5       (00000016) move-result          v0
+	6       (00000018) iget-object          v1, v2, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->mEnableNetworkLoggingPreference Lcom/afwsamples/testdpc/common/preference/DpcSwitchPreference;
+	7       (0000001c) invoke-virtual       v1, v0, Lcom/afwsamples/testdpc/common/preference/DpcSwitchPreference;->setChecked(Z)V
+	8       (00000022) iget-object          v1, v2, Lcom/afwsamples/testdpc/policy/PolicyManagementFragment;->mRequestNetworkLogsPreference Lcom/afwsamples/testdpc/common/preference/DpcPreference;
+	9       (00000026) invoke-virtual       v1, Lcom/afwsamples/testdpc/common/preference/DpcPreference;->refreshEnabledState()V
+
+reloadEnableNetworkLoggingUi-BB@0x2c : 
+	10      (0000002c) return-void          
+

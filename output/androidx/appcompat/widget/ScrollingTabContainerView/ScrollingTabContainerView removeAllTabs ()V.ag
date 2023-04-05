@@ -1,0 +1,30 @@
+# Landroidx/appcompat/widget/ScrollingTabContainerView;->removeAllTabs()V [access_flags=public]
+#
+# Parameters:
+# local registers: v0...v1
+#
+# - return:void
+
+removeAllTabs-BB@0x0 : [ removeAllTabs-BB@0x12 removeAllTabs-BB@0x28 ]
+	0       (00000000) iget-object          v0, v1, Landroidx/appcompat/widget/ScrollingTabContainerView;->mTabLayout Landroidx/appcompat/widget/LinearLayoutCompat;
+	1       (00000004) invoke-virtual       v0, Landroidx/appcompat/widget/LinearLayoutCompat;->removeAllViews()V
+	2       (0000000a) iget-object          v0, v1, Landroidx/appcompat/widget/ScrollingTabContainerView;->mTabSpinner Landroid/widget/Spinner;
+	3       (0000000e) if-eqz               v0, +d
+
+removeAllTabs-BB@0x12 : [ removeAllTabs-BB@0x28 ]
+	4       (00000012) iget-object          v0, v1, Landroidx/appcompat/widget/ScrollingTabContainerView;->mTabSpinner Landroid/widget/Spinner;
+	5       (00000016) invoke-virtual       v0, Landroid/widget/Spinner;->getAdapter()Landroid/widget/SpinnerAdapter;
+	6       (0000001c) move-result-object   v0
+	7       (0000001e) check-cast           v0, Landroidx/appcompat/widget/ScrollingTabContainerView$TabAdapter;
+	8       (00000022) invoke-virtual       v0, Landroidx/appcompat/widget/ScrollingTabContainerView$TabAdapter;->notifyDataSetChanged()V
+
+removeAllTabs-BB@0x28 : [ removeAllTabs-BB@0x30 removeAllTabs-BB@0x36 ]
+	9       (00000028) iget-boolean         v0, v1, Landroidx/appcompat/widget/ScrollingTabContainerView;->mAllowCollapse Z
+	10      (0000002c) if-eqz               v0, +5
+
+removeAllTabs-BB@0x30 : [ removeAllTabs-BB@0x36 ]
+	11      (00000030) invoke-virtual       v1, Landroidx/appcompat/widget/ScrollingTabContainerView;->requestLayout()V
+
+removeAllTabs-BB@0x36 : 
+	12      (00000036) return-void          
+

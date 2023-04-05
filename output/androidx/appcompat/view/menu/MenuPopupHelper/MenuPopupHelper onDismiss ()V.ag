@@ -1,0 +1,20 @@
+# Landroidx/appcompat/view/menu/MenuPopupHelper;->onDismiss()V [access_flags=protected]
+#
+# Parameters:
+# local registers: v0...v1
+#
+# - return:void
+
+onDismiss-BB@0x0 : [ onDismiss-BB@0xe onDismiss-BB@0x18 ]
+	0       (00000000) const/4              v0, 0
+	1       (00000002) iput-object          v0, v1, Landroidx/appcompat/view/menu/MenuPopupHelper;->mPopup Landroidx/appcompat/view/menu/MenuPopup;
+	2       (00000006) iget-object          v0, v1, Landroidx/appcompat/view/menu/MenuPopupHelper;->mOnDismissListener Landroid/widget/PopupWindow$OnDismissListener;
+	3       (0000000a) if-eqz               v0, +7
+
+onDismiss-BB@0xe : [ onDismiss-BB@0x18 ]
+	4       (0000000e) iget-object          v0, v1, Landroidx/appcompat/view/menu/MenuPopupHelper;->mOnDismissListener Landroid/widget/PopupWindow$OnDismissListener;
+	5       (00000012) invoke-interface     v0, Landroid/widget/PopupWindow$OnDismissListener;->onDismiss()V
+
+onDismiss-BB@0x18 : 
+	6       (00000018) return-void          
+

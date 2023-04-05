@@ -1,0 +1,65 @@
+# Lcom/afwsamples/testdpc/common/RestrictionManagerCompat;->addBundleArrayRestrictionToBundle(Landroid/os/Bundle; Landroid/content/RestrictionEntry;)V [access_flags=private static]
+#
+# Parameters:
+# - local registers: v0...v5
+# - v6:android.os.Bundle
+# - v7:android.content.RestrictionEntry
+#
+# - return:void
+
+addBundleArrayRestrictionToBundle-BB@0x0 : [ addBundleArrayRestrictionToBundle-BB@0xc addBundleArrayRestrictionToBundle-BB@0x7a ]
+	0       (00000000) sget                 v4, Lcom/afwsamples/testdpc/common/Util;->SDK_INT I
+	1       (00000004) const/16             v5, 23
+	2       (00000008) if-lt                v4, v5, +39
+
+addBundleArrayRestrictionToBundle-BB@0xc : [ addBundleArrayRestrictionToBundle-BB@0x1c ]
+	3       (0000000c) invoke-virtual       v7, Landroid/content/RestrictionEntry;->getRestrictions()[Landroid/content/RestrictionEntry;
+	4       (00000012) move-result-object   v1
+	5       (00000014) array-length         v4, v1
+	6       (00000016) new-array            v0, v4, [Landroid/os/Bundle;
+	7       (0000001a) const/4              v3, 0
+
+addBundleArrayRestrictionToBundle-BB@0x1c : [ addBundleArrayRestrictionToBundle-BB@0x22 addBundleArrayRestrictionToBundle-BB@0x6a ]
+	8       (0000001c) array-length         v4, v1
+	9       (0000001e) if-ge                v3, v4, +26
+
+addBundleArrayRestrictionToBundle-BB@0x22 : [ addBundleArrayRestrictionToBundle-BB@0x32 addBundleArrayRestrictionToBundle-BB@0x54 ]
+	10      (00000022) aget-object          v4, v1, v3
+	11      (00000026) invoke-virtual       v4, Landroid/content/RestrictionEntry;->getRestrictions()[Landroid/content/RestrictionEntry;
+	12      (0000002c) move-result-object   v2
+	13      (0000002e) if-nez               v2, +13
+
+addBundleArrayRestrictionToBundle-BB@0x32 : [ addBundleArrayRestrictionToBundle-BB@0x4e ]
+	14      (00000032) const-string         v4, 'RestrictionManager'
+	15      (00000036) const-string         v5, 'addRestrictionToBundle: Non-bundle entry found in bundle array'
+	16      (0000003a) invoke-static        v4, v5, Landroid/util/Log;->w(Ljava/lang/String; Ljava/lang/String;)I
+	17      (00000040) new-instance         v4, Landroid/os/Bundle;
+	18      (00000044) invoke-direct        v4, Landroid/os/Bundle;-><init>()V
+	19      (0000004a) aput-object          v4, v0, v3
+
+addBundleArrayRestrictionToBundle-BB@0x4e : [ addBundleArrayRestrictionToBundle-BB@0x1c ]
+	20      (0000004e) add-int/lit8         v3, v3, 1
+	21      (00000052) goto                 -1b
+
+addBundleArrayRestrictionToBundle-BB@0x54 : [ addBundleArrayRestrictionToBundle-BB@0x4e ]
+	22      (00000054) invoke-static        v2, Ljava/util/Arrays;->asList([Ljava/lang/Object;)Ljava/util/List;
+	23      (0000005a) move-result-object   v4
+	24      (0000005c) invoke-static        v4, Lcom/afwsamples/testdpc/common/RestrictionManagerCompat;->convertRestrictionsToBundle(Ljava/util/List;)Landroid/os/Bundle;
+	25      (00000062) move-result-object   v4
+	26      (00000064) aput-object          v4, v0, v3
+	27      (00000068) goto                 -d
+
+addBundleArrayRestrictionToBundle-BB@0x6a : [ addBundleArrayRestrictionToBundle-BB@0x78 ]
+	28      (0000006a) invoke-virtual       v7, Landroid/content/RestrictionEntry;->getKey()Ljava/lang/String;
+	29      (00000070) move-result-object   v4
+	30      (00000072) invoke-virtual       v6, v4, v0, Landroid/os/Bundle;->putParcelableArray(Ljava/lang/String; [Landroid/os/Parcelable;)V
+
+addBundleArrayRestrictionToBundle-BB@0x78 : 
+	31      (00000078) return-void          
+
+addBundleArrayRestrictionToBundle-BB@0x7a : [ addBundleArrayRestrictionToBundle-BB@0x78 ]
+	32      (0000007a) const-string         v4, 'RestrictionManager'
+	33      (0000007e) const-string         v5, 'addBundleArrayRestrictionToBundle is called in pre-M'
+	34      (00000082) invoke-static        v4, v5, Landroid/util/Log;->w(Ljava/lang/String; Ljava/lang/String;)I
+	35      (00000088) goto                 -8
+

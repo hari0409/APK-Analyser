@@ -1,0 +1,18 @@
+# Lcom/afwsamples/testdpc/SetupManagementFragment;->onSaveInstanceState(Landroid/os/Bundle;)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:android.os.Bundle
+#
+# - return:void
+
+onSaveInstanceState-BB@0x0 : 
+	0       (00000000) const-string         v0, 'android.app.extra.PROVISIONING_LOGO_URI'
+	1       (00000004) iget-object          v1, v2, Lcom/afwsamples/testdpc/SetupManagementFragment;->mLogoUri Landroid/net/Uri;
+	2       (00000008) invoke-virtual       v3, v0, v1, Landroid/os/Bundle;->putParcelable(Ljava/lang/String; Landroid/os/Parcelable;)V
+	3       (0000000e) const-string         v0, 'android.app.extra.PROVISIONING_MAIN_COLOR'
+	4       (00000012) iget                 v1, v2, Lcom/afwsamples/testdpc/SetupManagementFragment;->mCurrentColor I
+	5       (00000016) invoke-virtual       v3, v0, v1, Landroid/os/Bundle;->putInt(Ljava/lang/String; I)V
+	6       (0000001c) invoke-super         v2, v3, Landroid/app/Fragment;->onSaveInstanceState(Landroid/os/Bundle;)V
+	7       (00000022) return-void          
+

@@ -1,0 +1,61 @@
+# Lcom/afwsamples/testdpc/policy/keyguard/LockScreenPolicyFragment;-><clinit>()V [access_flags=static constructor]
+#
+# Parameters:
+# local registers: v0...v2
+#
+# - return:void
+
+<clinit>-BB@0x0 : 
+	0       (00000000) new-instance         v0, Landroid/util/ArrayMap;
+	1       (00000004) invoke-direct        v0, Landroid/util/ArrayMap;-><init>()V
+	2       (0000000a) sput-object          v0, Lcom/afwsamples/testdpc/policy/keyguard/LockScreenPolicyFragment;->KEYGUARD_FEATURES Ljava/util/Map;
+	3       (0000000e) sget-object          v0, Lcom/afwsamples/testdpc/policy/keyguard/LockScreenPolicyFragment;->KEYGUARD_FEATURES Ljava/util/Map;
+	4       (00000012) const-string         v1, 'keyguard_disable_secure_camera'
+	5       (00000016) const/4              v2, 2
+	6       (00000018) invoke-static        v2, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+	7       (0000001e) move-result-object   v2
+	8       (00000020) invoke-interface     v0, v1, v2, Ljava/util/Map;->put(Ljava/lang/Object; Ljava/lang/Object;)Ljava/lang/Object;
+	9       (00000026) sget-object          v0, Lcom/afwsamples/testdpc/policy/keyguard/LockScreenPolicyFragment;->KEYGUARD_FEATURES Ljava/util/Map;
+	10      (0000002a) const-string         v1, 'keyguard_disable_secure_notifications'
+	11      (0000002e) const/4              v2, 4
+	12      (00000030) invoke-static        v2, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+	13      (00000036) move-result-object   v2
+	14      (00000038) invoke-interface     v0, v1, v2, Ljava/util/Map;->put(Ljava/lang/Object; Ljava/lang/Object;)Ljava/lang/Object;
+	15      (0000003e) sget-object          v0, Lcom/afwsamples/testdpc/policy/keyguard/LockScreenPolicyFragment;->KEYGUARD_FEATURES Ljava/util/Map;
+	16      (00000042) const-string         v1, 'keyguard_disable_unredacted_notifications'
+	17      (00000046) const/16             v2, 8
+	18      (0000004a) invoke-static        v2, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+	19      (00000050) move-result-object   v2
+	20      (00000052) invoke-interface     v0, v1, v2, Ljava/util/Map;->put(Ljava/lang/Object; Ljava/lang/Object;)Ljava/lang/Object;
+	21      (00000058) sget-object          v0, Lcom/afwsamples/testdpc/policy/keyguard/LockScreenPolicyFragment;->KEYGUARD_FEATURES Ljava/util/Map;
+	22      (0000005c) const-string         v1, 'keyguard_disable_trust_agents'
+	23      (00000060) const/16             v2, 16
+	24      (00000064) invoke-static        v2, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+	25      (0000006a) move-result-object   v2
+	26      (0000006c) invoke-interface     v0, v1, v2, Ljava/util/Map;->put(Ljava/lang/Object; Ljava/lang/Object;)Ljava/lang/Object;
+	27      (00000072) sget-object          v0, Lcom/afwsamples/testdpc/policy/keyguard/LockScreenPolicyFragment;->KEYGUARD_FEATURES Ljava/util/Map;
+	28      (00000076) const-string         v1, 'keyguard_disable_face'
+	29      (0000007a) const/16             v2, 128
+	30      (0000007e) invoke-static        v2, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+	31      (00000084) move-result-object   v2
+	32      (00000086) invoke-interface     v0, v1, v2, Ljava/util/Map;->put(Ljava/lang/Object; Ljava/lang/Object;)Ljava/lang/Object;
+	33      (0000008c) sget-object          v0, Lcom/afwsamples/testdpc/policy/keyguard/LockScreenPolicyFragment;->KEYGUARD_FEATURES Ljava/util/Map;
+	34      (00000090) const-string         v1, 'keyguard_disable_fingerprint'
+	35      (00000094) const/16             v2, 32
+	36      (00000098) invoke-static        v2, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+	37      (0000009e) move-result-object   v2
+	38      (000000a0) invoke-interface     v0, v1, v2, Ljava/util/Map;->put(Ljava/lang/Object; Ljava/lang/Object;)Ljava/lang/Object;
+	39      (000000a6) sget-object          v0, Lcom/afwsamples/testdpc/policy/keyguard/LockScreenPolicyFragment;->KEYGUARD_FEATURES Ljava/util/Map;
+	40      (000000aa) const-string         v1, 'keyguard_disable_iris'
+	41      (000000ae) const/16             v2, 256
+	42      (000000b2) invoke-static        v2, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+	43      (000000b8) move-result-object   v2
+	44      (000000ba) invoke-interface     v0, v1, v2, Ljava/util/Map;->put(Ljava/lang/Object; Ljava/lang/Object;)Ljava/lang/Object;
+	45      (000000c0) sget-object          v0, Lcom/afwsamples/testdpc/policy/keyguard/LockScreenPolicyFragment;->KEYGUARD_FEATURES Ljava/util/Map;
+	46      (000000c4) const-string         v1, 'keyguard_disable_remote_input'
+	47      (000000c8) const/16             v2, 64
+	48      (000000cc) invoke-static        v2, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+	49      (000000d2) move-result-object   v2
+	50      (000000d4) invoke-interface     v0, v1, v2, Ljava/util/Map;->put(Ljava/lang/Object; Ljava/lang/Object;)Ljava/lang/Object;
+	51      (000000da) return-void          
+

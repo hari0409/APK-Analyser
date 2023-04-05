@@ -1,0 +1,15 @@
+# Landroidx/appcompat/widget/TintTypedArray;->getLayoutDimension(I Ljava/lang/String;)I [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:int
+# - v3:java.lang.String
+#
+# - return:int
+
+getLayoutDimension-BB@0x0 : 
+	0       (00000000) iget-object          v0, v1, Landroidx/appcompat/widget/TintTypedArray;->mWrapped Landroid/content/res/TypedArray;
+	1       (00000004) invoke-virtual       v0, v2, v3, Landroid/content/res/TypedArray;->getLayoutDimension(I Ljava/lang/String;)I
+	2       (0000000a) move-result          v0
+	3       (0000000c) return               v0
+

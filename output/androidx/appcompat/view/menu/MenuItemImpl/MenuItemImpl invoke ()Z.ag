@@ -1,0 +1,71 @@
+# Landroidx/appcompat/view/menu/MenuItemImpl;->invoke()Z [access_flags=public]
+#
+# Parameters:
+# local registers: v0...v4
+#
+# - return:boolean
+
+invoke-BB@0x0 : [ invoke-BB@0xa invoke-BB@0x1c ]
+	0       (00000000) const/4              v1, 1
+	1       (00000002) iget-object          v2, v4, Landroidx/appcompat/view/menu/MenuItemImpl;->mClickListener Landroid/view/MenuItem$OnMenuItemClickListener;
+	2       (00000006) if-eqz               v2, +b
+
+invoke-BB@0xa : [ invoke-BB@0x1a invoke-BB@0x1c ]
+	3       (0000000a) iget-object          v2, v4, Landroidx/appcompat/view/menu/MenuItemImpl;->mClickListener Landroid/view/MenuItem$OnMenuItemClickListener;
+	4       (0000000e) invoke-interface     v2, v4, Landroid/view/MenuItem$OnMenuItemClickListener;->onMenuItemClick(Landroid/view/MenuItem;)Z
+	5       (00000014) move-result          v2
+	6       (00000016) if-eqz               v2, +3
+
+invoke-BB@0x1a : 
+	7       (0000001a) return               v1
+
+invoke-BB@0x1c : [ invoke-BB@0x30 invoke-BB@0x1a ]
+	8       (0000001c) iget-object          v2, v4, Landroidx/appcompat/view/menu/MenuItemImpl;->mMenu Landroidx/appcompat/view/menu/MenuBuilder;
+	9       (00000020) iget-object          v3, v4, Landroidx/appcompat/view/menu/MenuItemImpl;->mMenu Landroidx/appcompat/view/menu/MenuBuilder;
+	10      (00000024) invoke-virtual       v2, v3, v4, Landroidx/appcompat/view/menu/MenuBuilder;->dispatchMenuItemSelected(Landroidx/appcompat/view/menu/MenuBuilder; Landroid/view/MenuItem;)Z
+	11      (0000002a) move-result          v2
+	12      (0000002c) if-nez               v2, -9
+
+invoke-BB@0x30 : [ invoke-BB@0x38 invoke-BB@0x44 ]
+	13      (00000030) iget-object          v2, v4, Landroidx/appcompat/view/menu/MenuItemImpl;->mItemCallback Ljava/lang/Runnable;
+	14      (00000034) if-eqz               v2, +8
+
+invoke-BB@0x38 : [ invoke-BB@0x1a ]
+	15      (00000038) iget-object          v2, v4, Landroidx/appcompat/view/menu/MenuItemImpl;->mItemCallback Ljava/lang/Runnable;
+	16      (0000003c) invoke-interface     v2, Ljava/lang/Runnable;->run()V
+	17      (00000042) goto                 -14
+
+invoke-BB@0x44 : [ invoke-BB@0x4c invoke-BB@0x74 ]
+	18      (00000044) iget-object          v2, v4, Landroidx/appcompat/view/menu/MenuItemImpl;->mIntent Landroid/content/Intent;
+	19      (00000048) if-eqz               v2, +16
+
+invoke-BB@0x4c : [ invoke-BB@0x1a ]
+	20      (0000004c) iget-object          v2, v4, Landroidx/appcompat/view/menu/MenuItemImpl;->mMenu Landroidx/appcompat/view/menu/MenuBuilder;
+	21      (00000050) invoke-virtual       v2, Landroidx/appcompat/view/menu/MenuBuilder;->getContext()Landroid/content/Context;
+	22      (00000056) move-result-object   v2
+	23      (00000058) iget-object          v3, v4, Landroidx/appcompat/view/menu/MenuItemImpl;->mIntent Landroid/content/Intent;
+	24      (0000005c) invoke-virtual       v2, v3, Landroid/content/Context;->startActivity(Landroid/content/Intent;)V
+	25      (00000062) goto                 -24
+	4c:61
+	(Landroid/content/ActivityNotFoundException; -> 64 invoke-BB@0x64)
+
+invoke-BB@0x64 : [ invoke-BB@0x74 ]
+	26      (00000064) move-exception       v0
+	27      (00000066) const-string         v2, 'MenuItemImpl'
+	28      (0000006a) const-string         v3, "Can't find activity to handle intent; ignoring"
+	29      (0000006e) invoke-static        v2, v3, v0, Landroid/util/Log;->e(Ljava/lang/String; Ljava/lang/String; Ljava/lang/Throwable;)I
+
+invoke-BB@0x74 : [ invoke-BB@0x7c invoke-BB@0x8c ]
+	30      (00000074) iget-object          v2, v4, Landroidx/appcompat/view/menu/MenuItemImpl;->mActionProvider Landroidx/core/view/ActionProvider;
+	31      (00000078) if-eqz               v2, +a
+
+invoke-BB@0x7c : [ invoke-BB@0x8c invoke-BB@0x1a ]
+	32      (0000007c) iget-object          v2, v4, Landroidx/appcompat/view/menu/MenuItemImpl;->mActionProvider Landroidx/core/view/ActionProvider;
+	33      (00000080) invoke-virtual       v2, Landroidx/core/view/ActionProvider;->onPerformDefaultAction()Z
+	34      (00000086) move-result          v2
+	35      (00000088) if-nez               v2, -37
+
+invoke-BB@0x8c : [ invoke-BB@0x1a ]
+	36      (0000008c) const/4              v1, 0
+	37      (0000008e) goto                 -3a
+

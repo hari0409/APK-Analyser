@@ -1,0 +1,16 @@
+# Landroidx/appcompat/view/SupportMenuInflater$InflatedOnMenuItemClickListener;-><clinit>()V [access_flags=static constructor]
+#
+# Parameters:
+# local registers: v0...v2
+#
+# - return:void
+
+<clinit>-BB@0x0 : 
+	0       (00000000) const/4              v0, 1
+	1       (00000002) new-array            v0, v0, [Ljava/lang/Class;
+	2       (00000006) const/4              v1, 0
+	3       (00000008) const-class          v2, Landroid/view/MenuItem;
+	4       (0000000c) aput-object          v2, v0, v1
+	5       (00000010) sput-object          v0, Landroidx/appcompat/view/SupportMenuInflater$InflatedOnMenuItemClickListener;->PARAM_TYPES [Ljava/lang/Class;
+	6       (00000014) return-void          
+

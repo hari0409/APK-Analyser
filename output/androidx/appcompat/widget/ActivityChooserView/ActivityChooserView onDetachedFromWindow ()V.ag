@@ -1,0 +1,42 @@
+# Landroidx/appcompat/widget/ActivityChooserView;->onDetachedFromWindow()V [access_flags=protected]
+#
+# Parameters:
+# local registers: v0...v3
+#
+# - return:void
+
+onDetachedFromWindow-BB@0x0 : [ onDetachedFromWindow-BB@0x16 onDetachedFromWindow-BB@0x20 ]
+	0       (00000000) invoke-super         v3, Landroid/view/ViewGroup;->onDetachedFromWindow()V
+	1       (00000006) iget-object          v2, v3, Landroidx/appcompat/widget/ActivityChooserView;->mAdapter Landroidx/appcompat/widget/ActivityChooserView$ActivityChooserViewAdapter;
+	2       (0000000a) invoke-virtual       v2, Landroidx/appcompat/widget/ActivityChooserView$ActivityChooserViewAdapter;->getDataModel()Landroidx/appcompat/widget/ActivityChooserModel;
+	3       (00000010) move-result-object   v0
+	4       (00000012) if-eqz               v0, +7
+
+onDetachedFromWindow-BB@0x16 : [ onDetachedFromWindow-BB@0x20 ]
+	5       (00000016) iget-object          v2, v3, Landroidx/appcompat/widget/ActivityChooserView;->mModelDataSetObserver Landroid/database/DataSetObserver;
+	6       (0000001a) invoke-virtual       v0, v2, Landroidx/appcompat/widget/ActivityChooserModel;->unregisterObserver(Ljava/lang/Object;)V
+
+onDetachedFromWindow-BB@0x20 : [ onDetachedFromWindow-BB@0x34 onDetachedFromWindow-BB@0x3e ]
+	7       (00000020) invoke-virtual       v3, Landroidx/appcompat/widget/ActivityChooserView;->getViewTreeObserver()Landroid/view/ViewTreeObserver;
+	8       (00000026) move-result-object   v1
+	9       (00000028) invoke-virtual       v1, Landroid/view/ViewTreeObserver;->isAlive()Z
+	10      (0000002e) move-result          v2
+	11      (00000030) if-eqz               v2, +7
+
+onDetachedFromWindow-BB@0x34 : [ onDetachedFromWindow-BB@0x3e ]
+	12      (00000034) iget-object          v2, v3, Landroidx/appcompat/widget/ActivityChooserView;->mOnGlobalLayoutListener Landroid/view/ViewTreeObserver$OnGlobalLayoutListener;
+	13      (00000038) invoke-virtual       v1, v2, Landroid/view/ViewTreeObserver;->removeGlobalOnLayoutListener(Landroid/view/ViewTreeObserver$OnGlobalLayoutListener;)V
+
+onDetachedFromWindow-BB@0x3e : [ onDetachedFromWindow-BB@0x4a onDetachedFromWindow-BB@0x50 ]
+	14      (0000003e) invoke-virtual       v3, Landroidx/appcompat/widget/ActivityChooserView;->isShowingPopup()Z
+	15      (00000044) move-result          v2
+	16      (00000046) if-eqz               v2, +5
+
+onDetachedFromWindow-BB@0x4a : [ onDetachedFromWindow-BB@0x50 ]
+	17      (0000004a) invoke-virtual       v3, Landroidx/appcompat/widget/ActivityChooserView;->dismissPopup()Z
+
+onDetachedFromWindow-BB@0x50 : 
+	18      (00000050) const/4              v2, 0
+	19      (00000052) iput-boolean         v2, v3, Landroidx/appcompat/widget/ActivityChooserView;->mIsAttachedToWindow Z
+	20      (00000056) return-void          
+

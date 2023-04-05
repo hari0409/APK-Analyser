@@ -1,0 +1,18 @@
+# Landroidx/appcompat/view/menu/MenuItemWrapperICS$OnActionExpandListenerWrapper;->onMenuItemActionExpand(Landroid/view/MenuItem;)Z [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:android.view.MenuItem
+#
+# - return:boolean
+
+onMenuItemActionExpand-BB@0x0 : 
+	0       (00000000) iget-object          v0, v2, Landroidx/appcompat/view/menu/MenuItemWrapperICS$OnActionExpandListenerWrapper;->mWrappedObject Ljava/lang/Object;
+	1       (00000004) check-cast           v0, Landroid/view/MenuItem$OnActionExpandListener;
+	2       (00000008) iget-object          v1, v2, Landroidx/appcompat/view/menu/MenuItemWrapperICS$OnActionExpandListenerWrapper;->this$0 Landroidx/appcompat/view/menu/MenuItemWrapperICS;
+	3       (0000000c) invoke-virtual       v1, v3, Landroidx/appcompat/view/menu/MenuItemWrapperICS;->getMenuItemWrapper(Landroid/view/MenuItem;)Landroid/view/MenuItem;
+	4       (00000012) move-result-object   v1
+	5       (00000014) invoke-interface     v0, v1, Landroid/view/MenuItem$OnActionExpandListener;->onMenuItemActionExpand(Landroid/view/MenuItem;)Z
+	6       (0000001a) move-result          v0
+	7       (0000001c) return               v0
+

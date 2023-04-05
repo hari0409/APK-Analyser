@@ -1,0 +1,12 @@
+# Lcom/afwsamples/testdpc/common/keyvaluepair/KeyValuePairDialogFragment;->access$800(Lcom/afwsamples/testdpc/common/keyvaluepair/KeyValuePairDialogFragment;)Lcom/afwsamples/testdpc/common/StringArrayTypeInputAdapter; [access_flags=static synthetic]
+#
+# Parameters:
+# - local registers: v0...v0
+# - v1:com.afwsamples.testdpc.common.keyvaluepair.KeyValuePairDialogFragment
+#
+# - return:com.afwsamples.testdpc.common.StringArrayTypeInputAdapter
+
+access$800-BB@0x0 : 
+	0       (00000000) iget-object          v0, v1, Lcom/afwsamples/testdpc/common/keyvaluepair/KeyValuePairDialogFragment;->mStringArrayAdapter Lcom/afwsamples/testdpc/common/StringArrayTypeInputAdapter;
+	1       (00000004) return-object        v0
+

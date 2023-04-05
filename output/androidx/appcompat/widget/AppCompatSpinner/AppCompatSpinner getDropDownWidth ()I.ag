@@ -1,0 +1,31 @@
+# Landroidx/appcompat/widget/AppCompatSpinner;->getDropDownWidth()I [access_flags=public]
+#
+# Parameters:
+# local registers: v0...v2
+#
+# - return:int
+
+getDropDownWidth-BB@0x0 : [ getDropDownWidth-BB@0x8 getDropDownWidth-BB@0xe ]
+	0       (00000000) iget-object          v0, v2, Landroidx/appcompat/widget/AppCompatSpinner;->mPopup Landroidx/appcompat/widget/AppCompatSpinner$DropdownPopup;
+	1       (00000004) if-eqz               v0, +5
+
+getDropDownWidth-BB@0x8 : [ getDropDownWidth-BB@0xc ]
+	2       (00000008) iget                 v0, v2, Landroidx/appcompat/widget/AppCompatSpinner;->mDropDownWidth I
+
+getDropDownWidth-BB@0xc : 
+	3       (0000000c) return               v0
+
+getDropDownWidth-BB@0xe : [ getDropDownWidth-BB@0x1a getDropDownWidth-BB@0x24 ]
+	4       (0000000e) sget                 v0, Landroid/os/Build$VERSION;->SDK_INT I
+	5       (00000012) const/16             v1, 16
+	6       (00000016) if-lt                v0, v1, +7
+
+getDropDownWidth-BB@0x1a : [ getDropDownWidth-BB@0xc ]
+	7       (0000001a) invoke-super         v2, Landroid/widget/Spinner;->getDropDownWidth()I
+	8       (00000020) move-result          v0
+	9       (00000022) goto                 -b
+
+getDropDownWidth-BB@0x24 : [ getDropDownWidth-BB@0xc ]
+	10      (00000024) const/4              v0, 0
+	11      (00000026) goto                 -d
+

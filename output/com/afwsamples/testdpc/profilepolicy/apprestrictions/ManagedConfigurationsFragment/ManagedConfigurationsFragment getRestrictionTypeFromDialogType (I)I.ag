@@ -1,0 +1,46 @@
+# Lcom/afwsamples/testdpc/profilepolicy/apprestrictions/ManagedConfigurationsFragment;->getRestrictionTypeFromDialogType(I)I [access_flags=private]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:int
+#
+# - return:int
+
+getRestrictionTypeFromDialogType-BB@0x0 : [ D:getRestrictionTypeFromDialogType-BB@0x6 0:getRestrictionTypeFromDialogType-BB@0x16 1:getRestrictionTypeFromDialogType-BB@0x1a 2:getRestrictionTypeFromDialogType-BB@0x1e 3:getRestrictionTypeFromDialogType-BB@0x22 4:getRestrictionTypeFromDialogType-BB@0x26 5:getRestrictionTypeFromDialogType-BB@0x2a ]
+	0       (00000000) packed-switch        v3, +18 (0x30)
+
+getRestrictionTypeFromDialogType-BB@0x6 : 
+	1       (00000006) new-instance         v0, Ljava/lang/AssertionError;
+	2       (0000000a) const-string         v1, 'Unknown type index'
+	3       (0000000e) invoke-direct        v0, v1, Ljava/lang/AssertionError;-><init>(Ljava/lang/Object;)V
+	4       (00000014) throw                v0
+
+getRestrictionTypeFromDialogType-BB@0x16 : [ getRestrictionTypeFromDialogType-BB@0x18 ]
+	5       (00000016) const/4              v0, 1
+
+getRestrictionTypeFromDialogType-BB@0x18 : 
+	6       (00000018) return               v0
+
+getRestrictionTypeFromDialogType-BB@0x1a : [ getRestrictionTypeFromDialogType-BB@0x18 ]
+	7       (0000001a) const/4              v0, 5
+	8       (0000001c) goto                 -2
+
+getRestrictionTypeFromDialogType-BB@0x1e : [ getRestrictionTypeFromDialogType-BB@0x18 ]
+	9       (0000001e) const/4              v0, 6
+	10      (00000020) goto                 -4
+
+getRestrictionTypeFromDialogType-BB@0x22 : [ getRestrictionTypeFromDialogType-BB@0x18 ]
+	11      (00000022) const/4              v0, 4
+	12      (00000024) goto                 -6
+
+getRestrictionTypeFromDialogType-BB@0x26 : [ getRestrictionTypeFromDialogType-BB@0x18 ]
+	13      (00000026) const/4              v0, 7
+	14      (00000028) goto                 -8
+
+getRestrictionTypeFromDialogType-BB@0x2a : [ getRestrictionTypeFromDialogType-BB@0x18 ]
+	15      (0000002a) const/16             v0, 8
+	16      (0000002e) goto                 -b
+
+getRestrictionTypeFromDialogType-BB@0x30 : 
+	17      (00000030) packed-switch-payload 0 1 2 3 4 5
+

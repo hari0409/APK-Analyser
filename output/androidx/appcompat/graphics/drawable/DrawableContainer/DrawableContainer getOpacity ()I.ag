@@ -1,0 +1,29 @@
+# Landroidx/appcompat/graphics/drawable/DrawableContainer;->getOpacity()I [access_flags=public]
+#
+# Parameters:
+# local registers: v0...v1
+#
+# - return:int
+
+getOpacity-BB@0x0 : [ getOpacity-BB@0x8 getOpacity-BB@0x18 ]
+	0       (00000000) iget-object          v0, v1, Landroidx/appcompat/graphics/drawable/DrawableContainer;->mCurrDrawable Landroid/graphics/drawable/Drawable;
+	1       (00000004) if-eqz               v0, +a
+
+getOpacity-BB@0x8 : [ getOpacity-BB@0x18 getOpacity-BB@0x1c ]
+	2       (00000008) iget-object          v0, v1, Landroidx/appcompat/graphics/drawable/DrawableContainer;->mCurrDrawable Landroid/graphics/drawable/Drawable;
+	3       (0000000c) invoke-virtual       v0, Landroid/graphics/drawable/Drawable;->isVisible()Z
+	4       (00000012) move-result          v0
+	5       (00000014) if-nez               v0, +4
+
+getOpacity-BB@0x18 : [ getOpacity-BB@0x1a ]
+	6       (00000018) const/4              v0, -2
+
+getOpacity-BB@0x1a : 
+	7       (0000001a) return               v0
+
+getOpacity-BB@0x1c : [ getOpacity-BB@0x1a ]
+	8       (0000001c) iget-object          v0, v1, Landroidx/appcompat/graphics/drawable/DrawableContainer;->mDrawableContainerState Landroidx/appcompat/graphics/drawable/DrawableContainer$DrawableContainerState;
+	9       (00000020) invoke-virtual       v0, Landroidx/appcompat/graphics/drawable/DrawableContainer$DrawableContainerState;->getOpacity()I
+	10      (00000026) move-result          v0
+	11      (00000028) goto                 -7
+

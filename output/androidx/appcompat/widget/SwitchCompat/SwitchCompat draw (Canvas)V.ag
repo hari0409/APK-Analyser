@@ -1,0 +1,145 @@
+# Landroidx/appcompat/widget/SwitchCompat;->draw(Landroid/graphics/Canvas;)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v17
+# - v18:android.graphics.Canvas
+#
+# - return:void
+
+draw-BB@0x0 : [ draw-BB@0x40 draw-BB@0x182 ]
+	0       (00000000) move-object/from16   v0, v17
+	1       (00000004) iget-object          v2, v0, Landroidx/appcompat/widget/SwitchCompat;->mTempRect Landroid/graphics/Rect;
+	2       (00000008) move-object/from16   v0, v17
+	3       (0000000c) iget                 v4, v0, Landroidx/appcompat/widget/SwitchCompat;->mSwitchLeft I
+	4       (00000010) move-object/from16   v0, v17
+	5       (00000014) iget                 v6, v0, Landroidx/appcompat/widget/SwitchCompat;->mSwitchTop I
+	6       (00000018) move-object/from16   v0, v17
+	7       (0000001c) iget                 v5, v0, Landroidx/appcompat/widget/SwitchCompat;->mSwitchRight I
+	8       (00000020) move-object/from16   v0, v17
+	9       (00000024) iget                 v3, v0, Landroidx/appcompat/widget/SwitchCompat;->mSwitchBottom I
+	10      (00000028) invoke-direct/range  v17, Landroidx/appcompat/widget/SwitchCompat;->getThumbOffset()I
+	11      (0000002e) move-result          v15
+	12      (00000030) add-int              v7, v4, v15
+	13      (00000034) move-object/from16   v0, v17
+	14      (00000038) iget-object          v15, v0, Landroidx/appcompat/widget/SwitchCompat;->mThumbDrawable Landroid/graphics/drawable/Drawable;
+	15      (0000003c) if-eqz               v15, +a3
+
+draw-BB@0x40 : [ draw-BB@0x50 ]
+	16      (00000040) move-object/from16   v0, v17
+	17      (00000044) iget-object          v15, v0, Landroidx/appcompat/widget/SwitchCompat;->mThumbDrawable Landroid/graphics/drawable/Drawable;
+	18      (00000048) invoke-static        v15, Landroidx/appcompat/widget/DrawableUtils;->getOpticalBounds(Landroid/graphics/drawable/Drawable;)Landroid/graphics/Rect;
+	19      (0000004e) move-result-object   v8
+
+draw-BB@0x50 : [ draw-BB@0x5c draw-BB@0x122 ]
+	20      (00000050) move-object/from16   v0, v17
+	21      (00000054) iget-object          v15, v0, Landroidx/appcompat/widget/SwitchCompat;->mTrackDrawable Landroid/graphics/drawable/Drawable;
+	22      (00000058) if-eqz               v15, +65
+
+draw-BB@0x5c : [ draw-BB@0x7c draw-BB@0x114 ]
+	23      (0000005c) move-object/from16   v0, v17
+	24      (00000060) iget-object          v15, v0, Landroidx/appcompat/widget/SwitchCompat;->mTrackDrawable Landroid/graphics/drawable/Drawable;
+	25      (00000064) invoke-virtual       v15, v2, Landroid/graphics/drawable/Drawable;->getPadding(Landroid/graphics/Rect;)Z
+	26      (0000006a) iget                 v15, v2, Landroid/graphics/Rect;->left I
+	27      (0000006e) add-int/2addr        v7, v15
+	28      (00000070) move                 v12, v4
+	29      (00000072) move                 v14, v6
+	30      (00000074) move                 v13, v5
+	31      (00000076) move                 v11, v3
+	32      (00000078) if-eqz               v8, +4e
+
+draw-BB@0x7c : [ draw-BB@0x90 draw-BB@0xa2 ]
+	33      (0000007c) iget                 v15, v8, Landroid/graphics/Rect;->left I
+	34      (00000080) iget                 v0, v2, Landroid/graphics/Rect;->left I
+	35      (00000084) move/from16          v16, v0
+	36      (00000088) move/from16          v0, v16
+	37      (0000008c) if-le                v15, v0, +b
+
+draw-BB@0x90 : [ draw-BB@0xa2 ]
+	38      (00000090) iget                 v15, v8, Landroid/graphics/Rect;->left I
+	39      (00000094) iget                 v0, v2, Landroid/graphics/Rect;->left I
+	40      (00000098) move/from16          v16, v0
+	41      (0000009c) sub-int              v15, v15, v16
+	42      (000000a0) add-int/2addr        v12, v15
+
+draw-BB@0xa2 : [ draw-BB@0xb6 draw-BB@0xc8 ]
+	43      (000000a2) iget                 v15, v8, Landroid/graphics/Rect;->top I
+	44      (000000a6) iget                 v0, v2, Landroid/graphics/Rect;->top I
+	45      (000000aa) move/from16          v16, v0
+	46      (000000ae) move/from16          v0, v16
+	47      (000000b2) if-le                v15, v0, +b
+
+draw-BB@0xb6 : [ draw-BB@0xc8 ]
+	48      (000000b6) iget                 v15, v8, Landroid/graphics/Rect;->top I
+	49      (000000ba) iget                 v0, v2, Landroid/graphics/Rect;->top I
+	50      (000000be) move/from16          v16, v0
+	51      (000000c2) sub-int              v15, v15, v16
+	52      (000000c6) add-int/2addr        v14, v15
+
+draw-BB@0xc8 : [ draw-BB@0xdc draw-BB@0xee ]
+	53      (000000c8) iget                 v15, v8, Landroid/graphics/Rect;->right I
+	54      (000000cc) iget                 v0, v2, Landroid/graphics/Rect;->right I
+	55      (000000d0) move/from16          v16, v0
+	56      (000000d4) move/from16          v0, v16
+	57      (000000d8) if-le                v15, v0, +b
+
+draw-BB@0xdc : [ draw-BB@0xee ]
+	58      (000000dc) iget                 v15, v8, Landroid/graphics/Rect;->right I
+	59      (000000e0) iget                 v0, v2, Landroid/graphics/Rect;->right I
+	60      (000000e4) move/from16          v16, v0
+	61      (000000e8) sub-int              v15, v15, v16
+	62      (000000ec) sub-int/2addr        v13, v15
+
+draw-BB@0xee : [ draw-BB@0x102 draw-BB@0x114 ]
+	63      (000000ee) iget                 v15, v8, Landroid/graphics/Rect;->bottom I
+	64      (000000f2) iget                 v0, v2, Landroid/graphics/Rect;->bottom I
+	65      (000000f6) move/from16          v16, v0
+	66      (000000fa) move/from16          v0, v16
+	67      (000000fe) if-le                v15, v0, +b
+
+draw-BB@0x102 : [ draw-BB@0x114 ]
+	68      (00000102) iget                 v15, v8, Landroid/graphics/Rect;->bottom I
+	69      (00000106) iget                 v0, v2, Landroid/graphics/Rect;->bottom I
+	70      (0000010a) move/from16          v16, v0
+	71      (0000010e) sub-int              v15, v15, v16
+	72      (00000112) sub-int/2addr        v11, v15
+
+draw-BB@0x114 : [ draw-BB@0x122 ]
+	73      (00000114) move-object/from16   v0, v17
+	74      (00000118) iget-object          v15, v0, Landroidx/appcompat/widget/SwitchCompat;->mTrackDrawable Landroid/graphics/drawable/Drawable;
+	75      (0000011c) invoke-virtual       v15, v12, v14, v13, v11, Landroid/graphics/drawable/Drawable;->setBounds(I I I I)V
+
+draw-BB@0x122 : [ draw-BB@0x12e draw-BB@0x17a ]
+	76      (00000122) move-object/from16   v0, v17
+	77      (00000126) iget-object          v15, v0, Landroidx/appcompat/widget/SwitchCompat;->mThumbDrawable Landroid/graphics/drawable/Drawable;
+	78      (0000012a) if-eqz               v15, +28
+
+draw-BB@0x12e : [ draw-BB@0x174 draw-BB@0x17a ]
+	79      (0000012e) move-object/from16   v0, v17
+	80      (00000132) iget-object          v15, v0, Landroidx/appcompat/widget/SwitchCompat;->mThumbDrawable Landroid/graphics/drawable/Drawable;
+	81      (00000136) invoke-virtual       v15, v2, Landroid/graphics/drawable/Drawable;->getPadding(Landroid/graphics/Rect;)Z
+	82      (0000013c) iget                 v15, v2, Landroid/graphics/Rect;->left I
+	83      (00000140) sub-int              v9, v7, v15
+	84      (00000144) move-object/from16   v0, v17
+	85      (00000148) iget                 v15, v0, Landroidx/appcompat/widget/SwitchCompat;->mThumbWidth I
+	86      (0000014c) add-int/2addr        v15, v7
+	87      (0000014e) iget                 v0, v2, Landroid/graphics/Rect;->right I
+	88      (00000152) move/from16          v16, v0
+	89      (00000156) add-int              v10, v15, v16
+	90      (0000015a) move-object/from16   v0, v17
+	91      (0000015e) iget-object          v15, v0, Landroidx/appcompat/widget/SwitchCompat;->mThumbDrawable Landroid/graphics/drawable/Drawable;
+	92      (00000162) invoke-virtual       v15, v9, v6, v10, v3, Landroid/graphics/drawable/Drawable;->setBounds(I I I I)V
+	93      (00000168) invoke-virtual/range v17, Landroidx/appcompat/widget/SwitchCompat;->getBackground()Landroid/graphics/drawable/Drawable;
+	94      (0000016e) move-result-object   v1
+	95      (00000170) if-eqz               v1, +5
+
+draw-BB@0x174 : [ draw-BB@0x17a ]
+	96      (00000174) invoke-static        v1, v9, v6, v10, v3, Landroidx/core/graphics/drawable/DrawableCompat;->setHotspotBounds(Landroid/graphics/drawable/Drawable; I I I I)V
+
+draw-BB@0x17a : 
+	97      (0000017a) invoke-super/range   v17 ... v18, Landroid/widget/CompoundButton;->draw(Landroid/graphics/Canvas;)V
+	98      (00000180) return-void          
+
+draw-BB@0x182 : [ draw-BB@0x50 ]
+	99      (00000182) sget-object          v8, Landroidx/appcompat/widget/DrawableUtils;->INSETS_NONE Landroid/graphics/Rect;
+	100     (00000186) goto/16              -9b
+

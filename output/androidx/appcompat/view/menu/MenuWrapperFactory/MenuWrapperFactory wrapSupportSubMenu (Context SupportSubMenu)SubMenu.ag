@@ -1,0 +1,14 @@
+# Landroidx/appcompat/view/menu/MenuWrapperFactory;->wrapSupportSubMenu(Landroid/content/Context; Landroidx/core/internal/view/SupportSubMenu;)Landroid/view/SubMenu; [access_flags=public static]
+#
+# Parameters:
+# - local registers: v0...v0
+# - v1:android.content.Context
+# - v2:androidx.core.internal.view.SupportSubMenu
+#
+# - return:android.view.SubMenu
+
+wrapSupportSubMenu-BB@0x0 : 
+	0       (00000000) new-instance         v0, Landroidx/appcompat/view/menu/SubMenuWrapperICS;
+	1       (00000004) invoke-direct        v0, v1, v2, Landroidx/appcompat/view/menu/SubMenuWrapperICS;-><init>(Landroid/content/Context; Landroidx/core/internal/view/SupportSubMenu;)V
+	2       (0000000a) return-object        v0
+

@@ -1,0 +1,149 @@
+# Lcom/afwsamples/testdpc/UserIconContentProvider;->query(Landroid/net/Uri; [Ljava/lang/String; Ljava/lang/String; [Ljava/lang/String; Ljava/lang/String;)Landroid/database/Cursor; [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v10
+# - v11:android.net.Uri
+# - v12:java.lang.String[]
+# - v13:java.lang.String
+# - v14:java.lang.String[]
+# - v15:java.lang.String
+#
+# - return:android.database.Cursor
+
+query-BB@0x0 : [ query-BB@0x52 query-BB@0x108 ]
+	0       (00000000) const/4              v6, 0
+	1       (00000002) invoke-direct        v10, v11, Lcom/afwsamples/testdpc/UserIconContentProvider;->getFileForUri(Landroid/net/Uri;)Ljava/io/File;
+	2       (00000008) move-result-object   v2
+	3       (0000000a) sget-object          v7, Lcom/afwsamples/testdpc/UserIconContentProvider;->TAG Ljava/lang/String;
+	4       (0000000e) new-instance         v8, Ljava/lang/StringBuilder;
+	5       (00000012) invoke-direct        v8, Ljava/lang/StringBuilder;-><init>()V
+	6       (00000018) const-string         v9, 'Query: '
+	7       (0000001c) invoke-virtual       v8, v9, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	8       (00000022) move-result-object   v8
+	9       (00000024) invoke-virtual       v8, v11, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+	10      (0000002a) move-result-object   v8
+	11      (0000002c) invoke-virtual       v8, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+	12      (00000032) move-result-object   v8
+	13      (00000034) invoke-static        v7, v8, Landroid/util/Log;->v(Ljava/lang/String; Ljava/lang/String;)I
+	14      (0000003a) const-string         v7, '/'
+	15      (0000003e) invoke-virtual       v2, Ljava/io/File;->getAbsolutePath()Ljava/lang/String;
+	16      (00000044) move-result-object   v8
+	17      (00000046) invoke-virtual       v7, v8, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+	18      (0000004c) move-result          v7
+	19      (0000004e) if-eqz               v7, +5d
+
+query-BB@0x52 : [ query-BB@0x80 ]
+	20      (00000052) new-instance         v1, Landroid/database/MatrixCursor;
+	21      (00000056) sget-object          v6, Lcom/afwsamples/testdpc/UserIconContentProvider;->COLUMNS [Ljava/lang/String;
+	22      (0000005a) iget-object          v7, v10, Lcom/afwsamples/testdpc/UserIconContentProvider;->mFileTracker Ljava/util/Map;
+	23      (0000005e) invoke-interface     v7, Ljava/util/Map;->size()I
+	24      (00000064) move-result          v7
+	25      (00000066) invoke-direct        v1, v6, v7, Landroid/database/MatrixCursor;-><init>([Ljava/lang/String; I)V
+	26      (0000006c) iget-object          v6, v10, Lcom/afwsamples/testdpc/UserIconContentProvider;->mFileTracker Ljava/util/Map;
+	27      (00000070) invoke-interface     v6, Ljava/util/Map;->entrySet()Ljava/util/Set;
+	28      (00000076) move-result-object   v6
+	29      (00000078) invoke-interface     v6, Ljava/util/Set;->iterator()Ljava/util/Iterator;
+	30      (0000007e) move-result-object   v7
+
+query-BB@0x80 : [ query-BB@0x8c query-BB@0x152 ]
+	31      (00000080) invoke-interface     v7, Ljava/util/Iterator;->hasNext()Z
+	32      (00000086) move-result          v6
+	33      (00000088) if-eqz               v6, +65
+
+query-BB@0x8c : [ query-BB@0x80 ]
+	34      (0000008c) invoke-interface     v7, Ljava/util/Iterator;->next()Ljava/lang/Object;
+	35      (00000092) move-result-object   v5
+	36      (00000094) check-cast           v5, Ljava/util/Map$Entry;
+	37      (00000098) sget-object          v6, Lcom/afwsamples/testdpc/UserIconContentProvider;->TAG Ljava/lang/String;
+	38      (0000009c) new-instance         v8, Ljava/lang/StringBuilder;
+	39      (000000a0) invoke-direct        v8, Ljava/lang/StringBuilder;-><init>()V
+	40      (000000a6) const-string         v9, 'Adding path '
+	41      (000000aa) invoke-virtual       v8, v9, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	42      (000000b0) move-result-object   v8
+	43      (000000b2) invoke-virtual       v8, v5, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+	44      (000000b8) move-result-object   v8
+	45      (000000ba) invoke-virtual       v8, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+	46      (000000c0) move-result-object   v8
+	47      (000000c2) invoke-static        v6, v8, Landroid/util/Log;->v(Ljava/lang/String; Ljava/lang/String;)I
+	48      (000000c8) invoke-interface     v5, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
+	49      (000000ce) move-result-object   v6
+	50      (000000d0) check-cast           v6, Landroid/content/ContentValues;
+	51      (000000d4) const-string         v8, 'metadata'
+	52      (000000d8) invoke-virtual       v6, v8, Landroid/content/ContentValues;->getAsString(Ljava/lang/String;)Ljava/lang/String;
+	53      (000000de) move-result-object   v4
+	54      (000000e0) sget-object          v8, Lcom/afwsamples/testdpc/UserIconContentProvider;->COLUMNS [Ljava/lang/String;
+	55      (000000e4) invoke-interface     v5, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
+	56      (000000ea) move-result-object   v6
+	57      (000000ec) check-cast           v6, Landroid/net/Uri;
+	58      (000000f0) invoke-direct        v10, v6, Lcom/afwsamples/testdpc/UserIconContentProvider;->getFileForUri(Landroid/net/Uri;)Ljava/io/File;
+	59      (000000f6) move-result-object   v6
+	60      (000000f8) invoke-direct        v10, v8, v6, v4, Lcom/afwsamples/testdpc/UserIconContentProvider;->getRow([Ljava/lang/String; Ljava/io/File; Ljava/lang/String;)[Ljava/lang/Object;
+	61      (000000fe) move-result-object   v6
+	62      (00000100) invoke-virtual       v1, v6, Landroid/database/MatrixCursor;->addRow([Ljava/lang/Object;)V
+	63      (00000106) goto                 -43
+
+query-BB@0x108 : [ query-BB@0x114 query-BB@0x154 ]
+	64      (00000108) invoke-virtual       v2, Ljava/io/File;->exists()Z
+	65      (0000010e) move-result          v7
+	66      (00000110) if-nez               v7, +22
+
+query-BB@0x114 : [ query-BB@0x152 ]
+	67      (00000114) sget-object          v7, Lcom/afwsamples/testdpc/UserIconContentProvider;->TAG Ljava/lang/String;
+	68      (00000118) new-instance         v8, Ljava/lang/StringBuilder;
+	69      (0000011c) invoke-direct        v8, Ljava/lang/StringBuilder;-><init>()V
+	70      (00000122) const-string         v9, "Query - File from uri: '"
+	71      (00000126) invoke-virtual       v8, v9, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	72      (0000012c) move-result-object   v8
+	73      (0000012e) invoke-virtual       v8, v11, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+	74      (00000134) move-result-object   v8
+	75      (00000136) const-string         v9, "' doesn't exists"
+	76      (0000013a) invoke-virtual       v8, v9, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	77      (00000140) move-result-object   v8
+	78      (00000142) invoke-virtual       v8, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+	79      (00000148) move-result-object   v8
+	80      (0000014a) invoke-static        v7, v8, Landroid/util/Log;->e(Ljava/lang/String; Ljava/lang/String;)I
+	81      (00000150) move-object          v1, v6
+
+query-BB@0x152 : 
+	82      (00000152) return-object        v1
+
+query-BB@0x154 : [ query-BB@0x160 query-BB@0x184 ]
+	83      (00000154) invoke-virtual       v2, Ljava/io/File;->isDirectory()Z
+	84      (0000015a) move-result          v7
+	85      (0000015c) if-nez               v7, +14
+
+query-BB@0x160 : [ query-BB@0x152 ]
+	86      (00000160) new-instance         v1, Landroid/database/MatrixCursor;
+	87      (00000164) sget-object          v7, Lcom/afwsamples/testdpc/UserIconContentProvider;->COLUMNS [Ljava/lang/String;
+	88      (00000168) const/4              v8, 1
+	89      (0000016a) invoke-direct        v1, v7, v8, Landroid/database/MatrixCursor;-><init>([Ljava/lang/String; I)V
+	90      (00000170) sget-object          v7, Lcom/afwsamples/testdpc/UserIconContentProvider;->COLUMNS [Ljava/lang/String;
+	91      (00000174) invoke-direct        v10, v7, v2, v6, Lcom/afwsamples/testdpc/UserIconContentProvider;->getRow([Ljava/lang/String; Ljava/io/File; Ljava/lang/String;)[Ljava/lang/Object;
+	92      (0000017a) move-result-object   v6
+	93      (0000017c) invoke-virtual       v1, v6, Landroid/database/MatrixCursor;->addRow([Ljava/lang/Object;)V
+	94      (00000182) goto                 -18
+
+query-BB@0x184 : [ query-BB@0x1aa ]
+	95      (00000184) invoke-virtual       v2, Ljava/io/File;->listFiles()[Ljava/io/File;
+	96      (0000018a) move-result-object   v3
+	97      (0000018c) invoke-static        v3, Lcom/afwsamples/testdpc/UserIconContentProvider;->sortFilesByAbsolutePath([Ljava/io/File;)V
+	98      (00000192) new-instance         v1, Landroid/database/MatrixCursor;
+	99      (00000196) sget-object          v7, Lcom/afwsamples/testdpc/UserIconContentProvider;->COLUMNS [Ljava/lang/String;
+	100     (0000019a) array-length         v8, v3
+	101     (0000019c) add-int/lit8         v8, v8, 1
+	102     (000001a0) invoke-direct        v1, v7, v8, Landroid/database/MatrixCursor;-><init>([Ljava/lang/String; I)V
+	103     (000001a6) array-length         v8, v3
+	104     (000001a8) const/4              v7, 0
+
+query-BB@0x1aa : [ query-BB@0x1ae query-BB@0x152 ]
+	105     (000001aa) if-ge                v7, v8, -2c
+
+query-BB@0x1ae : [ query-BB@0x1aa ]
+	106     (000001ae) aget-object          v0, v3, v7
+	107     (000001b2) sget-object          v9, Lcom/afwsamples/testdpc/UserIconContentProvider;->COLUMNS [Ljava/lang/String;
+	108     (000001b6) invoke-direct        v10, v9, v0, v6, Lcom/afwsamples/testdpc/UserIconContentProvider;->getRow([Ljava/lang/String; Ljava/io/File; Ljava/lang/String;)[Ljava/lang/Object;
+	109     (000001bc) move-result-object   v9
+	110     (000001be) invoke-virtual       v1, v9, Landroid/database/MatrixCursor;->addRow([Ljava/lang/Object;)V
+	111     (000001c4) add-int/lit8         v7, v7, 1
+	112     (000001c8) goto                 -f
+

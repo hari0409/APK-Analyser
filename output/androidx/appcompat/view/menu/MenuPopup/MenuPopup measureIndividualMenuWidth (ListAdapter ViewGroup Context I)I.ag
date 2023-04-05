@@ -1,0 +1,68 @@
+# Landroidx/appcompat/view/menu/MenuPopup;->measureIndividualMenuWidth(Landroid/widget/ListAdapter; Landroid/view/ViewGroup; Landroid/content/Context; I)I [access_flags=protected static]
+#
+# Parameters:
+# - local registers: v0...v9
+# - v10:android.widget.ListAdapter
+# - v11:android.view.ViewGroup
+# - v12:android.content.Context
+# - v13:int
+#
+# - return:int
+
+measureIndividualMenuWidth-BB@0x0 : [ measureIndividualMenuWidth-BB@0x22 ]
+	0       (00000000) const/4              v9, 0
+	1       (00000002) const/4              v6, 0
+	2       (00000004) const/4              v4, 0
+	3       (00000006) const/4              v3, 0
+	4       (00000008) invoke-static        v9, v9, Landroid/view/View$MeasureSpec;->makeMeasureSpec(I I)I
+	5       (0000000e) move-result          v8
+	6       (00000010) invoke-static        v9, v9, Landroid/view/View$MeasureSpec;->makeMeasureSpec(I I)I
+	7       (00000016) move-result          v1
+	8       (00000018) invoke-interface     v10, Landroid/widget/ListAdapter;->getCount()I
+	9       (0000001e) move-result          v0
+	10      (00000020) const/4              v2, 0
+
+measureIndividualMenuWidth-BB@0x22 : [ measureIndividualMenuWidth-BB@0x26 measureIndividualMenuWidth-BB@0x6c ]
+	11      (00000022) if-ge                v2, v0, +25
+
+measureIndividualMenuWidth-BB@0x26 : [ measureIndividualMenuWidth-BB@0x32 measureIndividualMenuWidth-BB@0x36 ]
+	12      (00000026) invoke-interface     v10, v2, Landroid/widget/ListAdapter;->getItemViewType(I)I
+	13      (0000002c) move-result          v7
+	14      (0000002e) if-eq                v7, v3, +4
+
+measureIndividualMenuWidth-BB@0x32 : [ measureIndividualMenuWidth-BB@0x36 ]
+	15      (00000032) move                 v3, v7
+	16      (00000034) const/4              v4, 0
+
+measureIndividualMenuWidth-BB@0x36 : [ measureIndividualMenuWidth-BB@0x3a measureIndividualMenuWidth-BB@0x44 ]
+	17      (00000036) if-nez               v11, +7
+
+measureIndividualMenuWidth-BB@0x3a : [ measureIndividualMenuWidth-BB@0x44 ]
+	18      (0000003a) new-instance         v11, Landroid/widget/FrameLayout;
+	19      (0000003e) invoke-direct        v11, v12, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;)V
+
+measureIndividualMenuWidth-BB@0x44 : [ measureIndividualMenuWidth-BB@0x5e measureIndividualMenuWidth-BB@0x60 ]
+	20      (00000044) invoke-interface     v10, v2, v4, v11, Landroid/widget/ListAdapter;->getView(I Landroid/view/View; Landroid/view/ViewGroup;)Landroid/view/View;
+	21      (0000004a) move-result-object   v4
+	22      (0000004c) invoke-virtual       v4, v8, v1, Landroid/view/View;->measure(I I)V
+	23      (00000052) invoke-virtual       v4, Landroid/view/View;->getMeasuredWidth()I
+	24      (00000058) move-result          v5
+	25      (0000005a) if-lt                v5, v13, +3
+
+measureIndividualMenuWidth-BB@0x5e : 
+	26      (0000005e) return               v13
+
+measureIndividualMenuWidth-BB@0x60 : [ measureIndividualMenuWidth-BB@0x64 measureIndividualMenuWidth-BB@0x66 ]
+	27      (00000060) if-le                v5, v6, +3
+
+measureIndividualMenuWidth-BB@0x64 : [ measureIndividualMenuWidth-BB@0x66 ]
+	28      (00000064) move                 v6, v5
+
+measureIndividualMenuWidth-BB@0x66 : [ measureIndividualMenuWidth-BB@0x22 ]
+	29      (00000066) add-int/lit8         v2, v2, 1
+	30      (0000006a) goto                 -24
+
+measureIndividualMenuWidth-BB@0x6c : [ measureIndividualMenuWidth-BB@0x5e ]
+	31      (0000006c) move                 v13, v6
+	32      (0000006e) goto                 -8
+

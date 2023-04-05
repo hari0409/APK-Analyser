@@ -1,0 +1,29 @@
+# Landroidx/appcompat/widget/RtlSpacingHelper;->setAbsolute(I I)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:int
+# - v4:int
+#
+# - return:void
+
+setAbsolute-BB@0x0 : [ setAbsolute-BB@0xe setAbsolute-BB@0x16 ]
+	0       (00000000) const/high16         v1, -32768 # [-0.0]
+	1       (00000004) const/4              v0, 0
+	2       (00000006) iput-boolean         v0, v2, Landroidx/appcompat/widget/RtlSpacingHelper;->mIsRelative Z
+	3       (0000000a) if-eq                v3, v1, +6
+
+setAbsolute-BB@0xe : [ setAbsolute-BB@0x16 ]
+	4       (0000000e) iput                 v3, v2, Landroidx/appcompat/widget/RtlSpacingHelper;->mExplicitLeft I
+	5       (00000012) iput                 v3, v2, Landroidx/appcompat/widget/RtlSpacingHelper;->mLeft I
+
+setAbsolute-BB@0x16 : [ setAbsolute-BB@0x1a setAbsolute-BB@0x22 ]
+	6       (00000016) if-eq                v4, v1, +6
+
+setAbsolute-BB@0x1a : [ setAbsolute-BB@0x22 ]
+	7       (0000001a) iput                 v4, v2, Landroidx/appcompat/widget/RtlSpacingHelper;->mExplicitRight I
+	8       (0000001e) iput                 v4, v2, Landroidx/appcompat/widget/RtlSpacingHelper;->mRight I
+
+setAbsolute-BB@0x22 : 
+	9       (00000022) return-void          
+

@@ -1,0 +1,24 @@
+# Landroidx/appcompat/widget/ShareActionProvider$ShareActivityChooserModelPolicy;->onChooseActivity(Landroidx/appcompat/widget/ActivityChooserModel; Landroid/content/Intent;)Z [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:androidx.appcompat.widget.ActivityChooserModel
+# - v4:android.content.Intent
+#
+# - return:boolean
+
+onChooseActivity-BB@0x0 : [ onChooseActivity-BB@0xc onChooseActivity-BB@0x1e ]
+	0       (00000000) iget-object          v0, v2, Landroidx/appcompat/widget/ShareActionProvider$ShareActivityChooserModelPolicy;->this$0 Landroidx/appcompat/widget/ShareActionProvider;
+	1       (00000004) iget-object          v0, v0, Landroidx/appcompat/widget/ShareActionProvider;->mOnShareTargetSelectedListener Landroidx/appcompat/widget/ShareActionProvider$OnShareTargetSelectedListener;
+	2       (00000008) if-eqz               v0, +b
+
+onChooseActivity-BB@0xc : [ onChooseActivity-BB@0x1e ]
+	3       (0000000c) iget-object          v0, v2, Landroidx/appcompat/widget/ShareActionProvider$ShareActivityChooserModelPolicy;->this$0 Landroidx/appcompat/widget/ShareActionProvider;
+	4       (00000010) iget-object          v0, v0, Landroidx/appcompat/widget/ShareActionProvider;->mOnShareTargetSelectedListener Landroidx/appcompat/widget/ShareActionProvider$OnShareTargetSelectedListener;
+	5       (00000014) iget-object          v1, v2, Landroidx/appcompat/widget/ShareActionProvider$ShareActivityChooserModelPolicy;->this$0 Landroidx/appcompat/widget/ShareActionProvider;
+	6       (00000018) invoke-interface     v0, v1, v4, Landroidx/appcompat/widget/ShareActionProvider$OnShareTargetSelectedListener;->onShareTargetSelected(Landroidx/appcompat/widget/ShareActionProvider; Landroid/content/Intent;)Z
+
+onChooseActivity-BB@0x1e : 
+	7       (0000001e) const/4              v0, 0
+	8       (00000020) return               v0
+

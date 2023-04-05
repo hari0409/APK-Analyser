@@ -1,0 +1,28 @@
+# Lcom/afwsamples/testdpc/policy/UserRestrictionsParentDisplayFragment;->constrainPreferences()V [access_flags=private]
+#
+# Parameters:
+# local registers: v0...v6
+#
+# - return:void
+
+constrainPreferences-BB@0x0 : [ constrainPreferences-BB@0x8 ]
+	0       (00000000) sget-object          v3, Lcom/afwsamples/testdpc/policy/UserRestriction;->PROFILE_OWNER_ORG_OWNED_RESTRICTIONS [Ljava/lang/String;
+	1       (00000004) array-length         v4, v3
+	2       (00000006) const/4              v2, 0
+
+constrainPreferences-BB@0x8 : [ constrainPreferences-BB@0xc constrainPreferences-BB@0x2c ]
+	3       (00000008) if-ge                v2, v4, +12
+
+constrainPreferences-BB@0xc : [ constrainPreferences-BB@0x8 ]
+	4       (0000000c) aget-object          v1, v3, v2
+	5       (00000010) invoke-virtual       v6, v1, Lcom/afwsamples/testdpc/policy/UserRestrictionsParentDisplayFragment;->findPreference(Ljava/lang/CharSequence;)Landroidx/preference/Preference;
+	6       (00000016) move-result-object   v0
+	7       (00000018) check-cast           v0, Lcom/afwsamples/testdpc/common/preference/DpcPreferenceBase;
+	8       (0000001c) const/16             v5, 30
+	9       (00000020) invoke-interface     v0, v5, Lcom/afwsamples/testdpc/common/preference/DpcPreferenceBase;->setMinSdkVersion(I)V
+	10      (00000026) add-int/lit8         v2, v2, 1
+	11      (0000002a) goto                 -11
+
+constrainPreferences-BB@0x2c : 
+	12      (0000002c) return-void          
+

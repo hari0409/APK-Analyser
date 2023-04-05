@@ -1,0 +1,21 @@
+# Landroidx/appcompat/view/menu/MenuItemWrapperJB$ActionProviderWrapperJB;->setVisibilityListener(Landroidx/core/view/ActionProvider$VisibilityListener;)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:androidx.core.view.ActionProvider$VisibilityListener
+#
+# - return:void
+
+setVisibilityListener-BB@0x0 : [ setVisibilityListener-BB@0xc setVisibilityListener-BB@0x14 ]
+	0       (00000000) iput-object          v2, v1, Landroidx/appcompat/view/menu/MenuItemWrapperJB$ActionProviderWrapperJB;->mListener Landroidx/core/view/ActionProvider$VisibilityListener;
+	1       (00000004) iget-object          v0, v1, Landroidx/appcompat/view/menu/MenuItemWrapperJB$ActionProviderWrapperJB;->mInner Landroid/view/ActionProvider;
+	2       (00000008) if-eqz               v2, +6
+
+setVisibilityListener-BB@0xc : 
+	3       (0000000c) invoke-virtual       v0, v1, Landroid/view/ActionProvider;->setVisibilityListener(Landroid/view/ActionProvider$VisibilityListener;)V
+	4       (00000012) return-void          
+
+setVisibilityListener-BB@0x14 : [ setVisibilityListener-BB@0xc ]
+	5       (00000014) const/4              v1, 0
+	6       (00000016) goto                 -5
+

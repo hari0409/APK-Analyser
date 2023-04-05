@@ -1,0 +1,83 @@
+# Landroidx/appcompat/widget/AppCompatTextViewAutoSizeHelper;->setupAutoSizeText()Z [access_flags=private]
+#
+# Parameters:
+# local registers: v0...v8
+#
+# - return:boolean
+
+setupAutoSizeText-BB@0x0 : [ setupAutoSizeText-BB@0xe setupAutoSizeText-BB@0x9e ]
+	0       (00000000) const/4              v7, 1
+	1       (00000002) invoke-direct        v8, Landroidx/appcompat/widget/AppCompatTextViewAutoSizeHelper;->supportsAutoSizeText()Z
+	2       (00000008) move-result          v5
+	3       (0000000a) if-eqz               v5, +4a
+
+setupAutoSizeText-BB@0xe : [ setupAutoSizeText-BB@0x16 setupAutoSizeText-BB@0x9e ]
+	4       (0000000e) iget                 v5, v8, Landroidx/appcompat/widget/AppCompatTextViewAutoSizeHelper;->mAutoSizeTextType I
+	5       (00000012) if-ne                v5, v7, +46
+
+setupAutoSizeText-BB@0x16 : [ setupAutoSizeText-BB@0x1e setupAutoSizeText-BB@0x28 ]
+	6       (00000016) iget-boolean         v5, v8, Landroidx/appcompat/widget/AppCompatTextViewAutoSizeHelper;->mHasPresetAutoSizeValues Z
+	7       (0000001a) if-eqz               v5, +7
+
+setupAutoSizeText-BB@0x1e : [ setupAutoSizeText-BB@0x28 setupAutoSizeText-BB@0x94 ]
+	8       (0000001e) iget-object          v5, v8, Landroidx/appcompat/widget/AppCompatTextViewAutoSizeHelper;->mAutoSizeTextSizesInPx [I
+	9       (00000022) array-length         v5, v5
+	10      (00000024) if-nez               v5, +38
+
+setupAutoSizeText-BB@0x28 : [ setupAutoSizeText-BB@0x38 ]
+	11      (00000028) const/4              v1, 1
+	12      (0000002a) iget                 v5, v8, Landroidx/appcompat/widget/AppCompatTextViewAutoSizeHelper;->mAutoSizeMinTextSizeInPx F
+	13      (0000002e) invoke-static        v5, Ljava/lang/Math;->round(F)I
+	14      (00000034) move-result          v5
+	15      (00000036) int-to-float         v2, v5
+
+setupAutoSizeText-BB@0x38 : [ setupAutoSizeText-BB@0x56 setupAutoSizeText-BB@0x62 ]
+	16      (00000038) iget                 v5, v8, Landroidx/appcompat/widget/AppCompatTextViewAutoSizeHelper;->mAutoSizeStepGranularityInPx F
+	17      (0000003c) add-float/2addr      v5, v2
+	18      (0000003e) invoke-static        v5, Ljava/lang/Math;->round(F)I
+	19      (00000044) move-result          v5
+	20      (00000046) iget                 v6, v8, Landroidx/appcompat/widget/AppCompatTextViewAutoSizeHelper;->mAutoSizeMaxTextSizeInPx F
+	21      (0000004a) invoke-static        v6, Ljava/lang/Math;->round(F)I
+	22      (00000050) move-result          v6
+	23      (00000052) if-gt                v5, v6, +8
+
+setupAutoSizeText-BB@0x56 : [ setupAutoSizeText-BB@0x38 ]
+	24      (00000056) add-int/lit8         v1, v1, 1
+	25      (0000005a) iget                 v5, v8, Landroidx/appcompat/widget/AppCompatTextViewAutoSizeHelper;->mAutoSizeStepGranularityInPx F
+	26      (0000005e) add-float/2addr      v2, v5
+	27      (00000060) goto                 -14
+
+setupAutoSizeText-BB@0x62 : [ setupAutoSizeText-BB@0x6c ]
+	28      (00000062) new-array            v0, v1, [I
+	29      (00000066) iget                 v4, v8, Landroidx/appcompat/widget/AppCompatTextViewAutoSizeHelper;->mAutoSizeMinTextSizeInPx F
+	30      (0000006a) const/4              v3, 0
+
+setupAutoSizeText-BB@0x6c : [ setupAutoSizeText-BB@0x70 setupAutoSizeText-BB@0x88 ]
+	31      (0000006c) if-ge                v3, v1, +e
+
+setupAutoSizeText-BB@0x70 : [ setupAutoSizeText-BB@0x6c ]
+	32      (00000070) invoke-static        v4, Ljava/lang/Math;->round(F)I
+	33      (00000076) move-result          v5
+	34      (00000078) aput                 v5, v0, v3
+	35      (0000007c) iget                 v5, v8, Landroidx/appcompat/widget/AppCompatTextViewAutoSizeHelper;->mAutoSizeStepGranularityInPx F
+	36      (00000080) add-float/2addr      v4, v5
+	37      (00000082) add-int/lit8         v3, v3, 1
+	38      (00000086) goto                 -d
+
+setupAutoSizeText-BB@0x88 : [ setupAutoSizeText-BB@0x94 ]
+	39      (00000088) invoke-direct        v8, v0, Landroidx/appcompat/widget/AppCompatTextViewAutoSizeHelper;->cleanupAutoSizePresetSizes([I)[I
+	40      (0000008e) move-result-object   v5
+	41      (00000090) iput-object          v5, v8, Landroidx/appcompat/widget/AppCompatTextViewAutoSizeHelper;->mAutoSizeTextSizesInPx [I
+
+setupAutoSizeText-BB@0x94 : [ setupAutoSizeText-BB@0x98 ]
+	42      (00000094) iput-boolean         v7, v8, Landroidx/appcompat/widget/AppCompatTextViewAutoSizeHelper;->mNeedsAutoSizeText Z
+
+setupAutoSizeText-BB@0x98 : 
+	43      (00000098) iget-boolean         v5, v8, Landroidx/appcompat/widget/AppCompatTextViewAutoSizeHelper;->mNeedsAutoSizeText Z
+	44      (0000009c) return               v5
+
+setupAutoSizeText-BB@0x9e : [ setupAutoSizeText-BB@0x98 ]
+	45      (0000009e) const/4              v5, 0
+	46      (000000a0) iput-boolean         v5, v8, Landroidx/appcompat/widget/AppCompatTextViewAutoSizeHelper;->mNeedsAutoSizeText Z
+	47      (000000a4) goto                 -6
+

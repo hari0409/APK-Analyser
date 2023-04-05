@@ -1,0 +1,35 @@
+# Landroidx/appcompat/graphics/drawable/AnimatedStateListDrawableCompat;->setVisible(Z Z)Z [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:boolean
+# - v4:boolean
+#
+# - return:boolean
+
+setVisible-BB@0x0 : [ setVisible-BB@0x10 setVisible-BB@0x26 ]
+	0       (00000000) invoke-super         v2, v3, v4, Landroidx/appcompat/graphics/drawable/StateListDrawable;->setVisible(Z Z)Z
+	1       (00000006) move-result          v0
+	2       (00000008) iget-object          v1, v2, Landroidx/appcompat/graphics/drawable/AnimatedStateListDrawableCompat;->mTransition Landroidx/appcompat/graphics/drawable/AnimatedStateListDrawableCompat$Transition;
+	3       (0000000c) if-eqz               v1, +d
+
+setVisible-BB@0x10 : [ setVisible-BB@0x14 setVisible-BB@0x18 ]
+	4       (00000010) if-nez               v0, +4
+
+setVisible-BB@0x14 : [ setVisible-BB@0x18 setVisible-BB@0x26 ]
+	5       (00000014) if-eqz               v4, +9
+
+setVisible-BB@0x18 : [ setVisible-BB@0x1c setVisible-BB@0x28 ]
+	6       (00000018) if-eqz               v3, +8
+
+setVisible-BB@0x1c : [ setVisible-BB@0x26 ]
+	7       (0000001c) iget-object          v1, v2, Landroidx/appcompat/graphics/drawable/AnimatedStateListDrawableCompat;->mTransition Landroidx/appcompat/graphics/drawable/AnimatedStateListDrawableCompat$Transition;
+	8       (00000020) invoke-virtual       v1, Landroidx/appcompat/graphics/drawable/AnimatedStateListDrawableCompat$Transition;->start()V
+
+setVisible-BB@0x26 : 
+	9       (00000026) return               v0
+
+setVisible-BB@0x28 : [ setVisible-BB@0x26 ]
+	10      (00000028) invoke-virtual       v2, Landroidx/appcompat/graphics/drawable/AnimatedStateListDrawableCompat;->jumpToCurrentState()V
+	11      (0000002e) goto                 -4
+

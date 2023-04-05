@@ -1,0 +1,20 @@
+# Landroidx/appcompat/graphics/drawable/DrawerArrowDrawable;->setArrowShaftLength(F)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:float
+#
+# - return:void
+
+setArrowShaftLength-BB@0x0 : [ setArrowShaftLength-BB@0xc setArrowShaftLength-BB@0x16 ]
+	0       (00000000) iget                 v0, v1, Landroidx/appcompat/graphics/drawable/DrawerArrowDrawable;->mArrowShaftLength F
+	1       (00000004) cmpl-float           v0, v0, v2
+	2       (00000008) if-eqz               v0, +7
+
+setArrowShaftLength-BB@0xc : [ setArrowShaftLength-BB@0x16 ]
+	3       (0000000c) iput                 v2, v1, Landroidx/appcompat/graphics/drawable/DrawerArrowDrawable;->mArrowShaftLength F
+	4       (00000010) invoke-virtual       v1, Landroidx/appcompat/graphics/drawable/DrawerArrowDrawable;->invalidateSelf()V
+
+setArrowShaftLength-BB@0x16 : 
+	5       (00000016) return-void          
+

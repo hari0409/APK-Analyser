@@ -1,0 +1,32 @@
+# Lcom/afwsamples/testdpc/AddAccountActivity;->addAccount(Ljava/lang/String;)V [access_flags=private]
+#
+# Parameters:
+# - local registers: v0...v8
+# - v9:java.lang.String
+#
+# - return:void
+
+addAccount-BB@0x0 : [ addAccount-BB@0x20 addAccount-BB@0x2a ]
+	0       (00000000) const/4              v2, 0
+	1       (00000002) invoke-static        v8, Landroid/accounts/AccountManager;->get(Landroid/content/Context;)Landroid/accounts/AccountManager;
+	2       (00000008) move-result-object   v0
+	3       (0000000a) new-instance         v4, Landroid/os/Bundle;
+	4       (0000000e) invoke-direct        v4, Landroid/os/Bundle;-><init>()V
+	5       (00000014) invoke-static        v9, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
+	6       (0000001a) move-result          v1
+	7       (0000001c) if-nez               v1, +7
+
+addAccount-BB@0x20 : [ addAccount-BB@0x2a ]
+	8       (00000020) const-string         v1, 'authAccount'
+	9       (00000024) invoke-virtual       v4, v1, v9, Landroid/os/Bundle;->putString(Ljava/lang/String; Ljava/lang/String;)V
+
+addAccount-BB@0x2a : 
+	10      (0000002a) const-string         v1, 'com.google'
+	11      (0000002e) new-instance         v6, Lcom/afwsamples/testdpc/AddAccountActivity$$Lambda$1;
+	12      (00000032) invoke-direct        v6, v8, Lcom/afwsamples/testdpc/AddAccountActivity$$Lambda$1;-><init>(Lcom/afwsamples/testdpc/AddAccountActivity;)V
+	13      (00000038) move-object          v3, v2
+	14      (0000003a) move-object          v5, v8
+	15      (0000003c) move-object          v7, v2
+	16      (0000003e) invoke-virtual/range v0 ... v7, Landroid/accounts/AccountManager;->addAccount(Ljava/lang/String; Ljava/lang/String; [Ljava/lang/String; Landroid/os/Bundle; Landroid/app/Activity; Landroid/accounts/AccountManagerCallback; Landroid/os/Handler;)Landroid/accounts/AccountManagerFuture;
+	17      (00000044) return-void          
+

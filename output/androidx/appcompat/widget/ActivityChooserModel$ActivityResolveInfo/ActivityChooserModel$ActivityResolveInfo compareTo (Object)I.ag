@@ -1,0 +1,14 @@
+# Landroidx/appcompat/widget/ActivityChooserModel$ActivityResolveInfo;->compareTo(Ljava/lang/Object;)I [access_flags=public bridge synthetic]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:java.lang.Object
+#
+# - return:int
+
+compareTo-BB@0x0 : 
+	0       (00000000) check-cast           v2, Landroidx/appcompat/widget/ActivityChooserModel$ActivityResolveInfo;
+	1       (00000004) invoke-virtual       v1, v2, Landroidx/appcompat/widget/ActivityChooserModel$ActivityResolveInfo;->compareTo(Landroidx/appcompat/widget/ActivityChooserModel$ActivityResolveInfo;)I
+	2       (0000000a) move-result          v0
+	3       (0000000c) return               v0
+

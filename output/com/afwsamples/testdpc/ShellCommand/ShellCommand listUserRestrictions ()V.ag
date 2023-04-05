@@ -1,0 +1,18 @@
+# Lcom/afwsamples/testdpc/ShellCommand;->listUserRestrictions()V [access_flags=private]
+#
+# Parameters:
+# local registers: v0...v2
+#
+# - return:void
+
+listUserRestrictions-BB@0x0 : 
+	0       (00000000) const-string         v0, 'TestDPCShellCommand'
+	1       (00000004) const-string         v1, 'listUserRestrictions()'
+	2       (00000008) invoke-static        v0, v1, Landroid/util/Log;->i(Ljava/lang/String; Ljava/lang/String;)I
+	3       (0000000e) const-string         v0, 'user restriction'
+	4       (00000012) iget-object          v1, v2, Lcom/afwsamples/testdpc/ShellCommand;->mDevicePolicyManagerGateway Lcom/afwsamples/testdpc/DevicePolicyManagerGateway;
+	5       (00000016) invoke-interface     v1, Lcom/afwsamples/testdpc/DevicePolicyManagerGateway;->getUserRestrictions()Ljava/util/Set;
+	6       (0000001c) move-result-object   v1
+	7       (0000001e) invoke-direct        v2, v0, v1, Lcom/afwsamples/testdpc/ShellCommand;->printCollection(Ljava/lang/String; Ljava/util/Collection;)V
+	8       (00000024) return-void          
+

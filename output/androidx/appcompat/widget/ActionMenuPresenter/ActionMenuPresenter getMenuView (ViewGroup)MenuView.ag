@@ -1,0 +1,22 @@
+# Landroidx/appcompat/widget/ActionMenuPresenter;->getMenuView(Landroid/view/ViewGroup;)Landroidx/appcompat/view/menu/MenuView; [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v3
+# - v4:android.view.ViewGroup
+#
+# - return:androidx.appcompat.view.menu.MenuView
+
+getMenuView-BB@0x0 : [ getMenuView-BB@0x10 getMenuView-BB@0x1c ]
+	0       (00000000) iget-object          v0, v3, Landroidx/appcompat/widget/ActionMenuPresenter;->mMenuView Landroidx/appcompat/view/menu/MenuView;
+	1       (00000004) invoke-super         v3, v4, Landroidx/appcompat/view/menu/BaseMenuPresenter;->getMenuView(Landroid/view/ViewGroup;)Landroidx/appcompat/view/menu/MenuView;
+	2       (0000000a) move-result-object   v1
+	3       (0000000c) if-eq                v0, v1, +8
+
+getMenuView-BB@0x10 : [ getMenuView-BB@0x1c ]
+	4       (00000010) move-object          v2, v1
+	5       (00000012) check-cast           v2, Landroidx/appcompat/widget/ActionMenuView;
+	6       (00000016) invoke-virtual       v2, v3, Landroidx/appcompat/widget/ActionMenuView;->setPresenter(Landroidx/appcompat/widget/ActionMenuPresenter;)V
+
+getMenuView-BB@0x1c : 
+	7       (0000001c) return-object        v1
+

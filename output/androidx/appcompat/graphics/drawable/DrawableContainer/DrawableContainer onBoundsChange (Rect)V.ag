@@ -1,0 +1,27 @@
+# Landroidx/appcompat/graphics/drawable/DrawableContainer;->onBoundsChange(Landroid/graphics/Rect;)V [access_flags=protected]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:android.graphics.Rect
+#
+# - return:void
+
+onBoundsChange-BB@0x0 : [ onBoundsChange-BB@0x8 onBoundsChange-BB@0x12 ]
+	0       (00000000) iget-object          v0, v1, Landroidx/appcompat/graphics/drawable/DrawableContainer;->mLastDrawable Landroid/graphics/drawable/Drawable;
+	1       (00000004) if-eqz               v0, +7
+
+onBoundsChange-BB@0x8 : [ onBoundsChange-BB@0x12 ]
+	2       (00000008) iget-object          v0, v1, Landroidx/appcompat/graphics/drawable/DrawableContainer;->mLastDrawable Landroid/graphics/drawable/Drawable;
+	3       (0000000c) invoke-virtual       v0, v2, Landroid/graphics/drawable/Drawable;->setBounds(Landroid/graphics/Rect;)V
+
+onBoundsChange-BB@0x12 : [ onBoundsChange-BB@0x1a onBoundsChange-BB@0x24 ]
+	4       (00000012) iget-object          v0, v1, Landroidx/appcompat/graphics/drawable/DrawableContainer;->mCurrDrawable Landroid/graphics/drawable/Drawable;
+	5       (00000016) if-eqz               v0, +7
+
+onBoundsChange-BB@0x1a : [ onBoundsChange-BB@0x24 ]
+	6       (0000001a) iget-object          v0, v1, Landroidx/appcompat/graphics/drawable/DrawableContainer;->mCurrDrawable Landroid/graphics/drawable/Drawable;
+	7       (0000001e) invoke-virtual       v0, v2, Landroid/graphics/drawable/Drawable;->setBounds(Landroid/graphics/Rect;)V
+
+onBoundsChange-BB@0x24 : 
+	8       (00000024) return-void          
+

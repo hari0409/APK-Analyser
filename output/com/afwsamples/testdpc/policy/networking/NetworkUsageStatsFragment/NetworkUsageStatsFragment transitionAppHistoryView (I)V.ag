@@ -1,0 +1,25 @@
+# Lcom/afwsamples/testdpc/policy/networking/NetworkUsageStatsFragment;->transitionAppHistoryView(I)V [access_flags=private]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:int
+#
+# - return:void
+
+transitionAppHistoryView-BB@0x0 : [ transitionAppHistoryView-BB@0x12 transitionAppHistoryView-BB@0x1e ]
+	0       (00000000) iget-object          v0, v2, Lcom/afwsamples/testdpc/policy/networking/NetworkUsageStatsFragment;->mAppHistoryList Landroid/widget/ListView;
+	1       (00000004) invoke-virtual       v0, v3, Landroid/widget/ListView;->setVisibility(I)V
+	2       (0000000a) iget-object          v1, v2, Lcom/afwsamples/testdpc/policy/networking/NetworkUsageStatsFragment;->mDataUsageList Landroid/widget/ListView;
+	3       (0000000e) if-nez               v3, +8
+
+transitionAppHistoryView-BB@0x12 : [ transitionAppHistoryView-BB@0x16 ]
+	4       (00000012) const/16             v0, 8
+
+transitionAppHistoryView-BB@0x16 : 
+	5       (00000016) invoke-virtual       v1, v0, Landroid/widget/ListView;->setVisibility(I)V
+	6       (0000001c) return-void          
+
+transitionAppHistoryView-BB@0x1e : [ transitionAppHistoryView-BB@0x16 ]
+	7       (0000001e) const/4              v0, 0
+	8       (00000020) goto                 -5
+

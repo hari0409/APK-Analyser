@@ -1,0 +1,50 @@
+# Landroidx/appcompat/view/menu/MenuBuilder;->close(Z)V [access_flags=public final]
+#
+# Parameters:
+# - local registers: v0...v4
+# - v5:boolean
+#
+# - return:void
+
+close-BB@0x0 : [ close-BB@0x8 close-BB@0xa ]
+	0       (00000000) iget-boolean         v2, v4, Landroidx/appcompat/view/menu/MenuBuilder;->mIsClosing Z
+	1       (00000004) if-eqz               v2, +3
+
+close-BB@0x8 : 
+	2       (00000008) return-void          
+
+close-BB@0xa : [ close-BB@0x1c ]
+	3       (0000000a) const/4              v2, 1
+	4       (0000000c) iput-boolean         v2, v4, Landroidx/appcompat/view/menu/MenuBuilder;->mIsClosing Z
+	5       (00000010) iget-object          v2, v4, Landroidx/appcompat/view/menu/MenuBuilder;->mPresenters Ljava/util/concurrent/CopyOnWriteArrayList;
+	6       (00000014) invoke-virtual       v2, Ljava/util/concurrent/CopyOnWriteArrayList;->iterator()Ljava/util/Iterator;
+	7       (0000001a) move-result-object   v2
+
+close-BB@0x1c : [ close-BB@0x28 close-BB@0x58 ]
+	8       (0000001c) invoke-interface     v2, Ljava/util/Iterator;->hasNext()Z
+	9       (00000022) move-result          v3
+	10      (00000024) if-eqz               v3, +1a
+
+close-BB@0x28 : [ close-BB@0x44 close-BB@0x50 ]
+	11      (00000028) invoke-interface     v2, Ljava/util/Iterator;->next()Ljava/lang/Object;
+	12      (0000002e) move-result-object   v1
+	13      (00000030) check-cast           v1, Ljava/lang/ref/WeakReference;
+	14      (00000034) invoke-virtual       v1, Ljava/lang/ref/WeakReference;->get()Ljava/lang/Object;
+	15      (0000003a) move-result-object   v0
+	16      (0000003c) check-cast           v0, Landroidx/appcompat/view/menu/MenuPresenter;
+	17      (00000040) if-nez               v0, +8
+
+close-BB@0x44 : [ close-BB@0x1c ]
+	18      (00000044) iget-object          v3, v4, Landroidx/appcompat/view/menu/MenuBuilder;->mPresenters Ljava/util/concurrent/CopyOnWriteArrayList;
+	19      (00000048) invoke-virtual       v3, v1, Ljava/util/concurrent/CopyOnWriteArrayList;->remove(Ljava/lang/Object;)Z
+	20      (0000004e) goto                 -19
+
+close-BB@0x50 : [ close-BB@0x1c ]
+	21      (00000050) invoke-interface     v0, v4, v5, Landroidx/appcompat/view/menu/MenuPresenter;->onCloseMenu(Landroidx/appcompat/view/menu/MenuBuilder; Z)V
+	22      (00000056) goto                 -1d
+
+close-BB@0x58 : [ close-BB@0x8 ]
+	23      (00000058) const/4              v2, 0
+	24      (0000005a) iput-boolean         v2, v4, Landroidx/appcompat/view/menu/MenuBuilder;->mIsClosing Z
+	25      (0000005e) goto                 -2b
+

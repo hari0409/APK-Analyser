@@ -1,0 +1,69 @@
+# Lcom/afwsamples/testdpc/search/PolicySearchFragment;->onItemClick(Lcom/afwsamples/testdpc/search/PreferenceIndex;)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v6
+# - v7:com.afwsamples.testdpc.search.PreferenceIndex
+#
+# - return:void
+
+onItemClick-BB@0x0 : [ onItemClick-BB@0x98 ]
+	0       (00000000) iget-object          v3, v7, Lcom/afwsamples/testdpc/search/PreferenceIndex;->fragmentClass Ljava/lang/String;
+	1       (00000004) invoke-static        v3, Ljava/lang/Class;->forName(Ljava/lang/String;)Ljava/lang/Class;
+	2       (0000000a) move-result-object   v3
+	3       (0000000c) invoke-virtual       v3, Ljava/lang/Class;->newInstance()Ljava/lang/Object;
+	4       (00000012) move-result-object   v2
+	5       (00000014) check-cast           v2, Landroid/app/Fragment;
+	6       (00000018) new-instance         v0, Landroid/os/Bundle;
+	7       (0000001c) invoke-direct        v0, Landroid/os/Bundle;-><init>()V
+	8       (00000022) const-string         v3, 'preference_key'
+	9       (00000026) iget-object          v4, v7, Lcom/afwsamples/testdpc/search/PreferenceIndex;->key Ljava/lang/String;
+	10      (0000002a) invoke-virtual       v0, v3, v4, Landroid/os/Bundle;->putString(Ljava/lang/String; Ljava/lang/String;)V
+	11      (00000030) invoke-virtual       v2, v0, Landroid/app/Fragment;->setArguments(Landroid/os/Bundle;)V
+	12      (00000036) invoke-virtual       v6, Lcom/afwsamples/testdpc/search/PolicySearchFragment;->getFragmentManager()Landroid/app/FragmentManager;
+	13      (0000003c) move-result-object   v3
+	14      (0000003e) invoke-virtual       v3, Landroid/app/FragmentManager;->beginTransaction()Landroid/app/FragmentTransaction;
+	15      (00000044) move-result-object   v3
+	16      (00000046) const                v4, 2131296376 # [1.821066693116859e+38]
+	17      (0000004c) invoke-virtual       v3, v4, v2, Landroid/app/FragmentTransaction;->replace(I Landroid/app/Fragment;)Landroid/app/FragmentTransaction;
+	18      (00000052) move-result-object   v3
+	19      (00000054) new-instance         v4, Ljava/lang/StringBuilder;
+	20      (00000058) invoke-direct        v4, Ljava/lang/StringBuilder;-><init>()V
+	21      (0000005e) const-string         v5, 'search_'
+	22      (00000062) invoke-virtual       v4, v5, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	23      (00000068) move-result-object   v4
+	24      (0000006a) invoke-virtual       v2, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+	25      (00000070) move-result-object   v5
+	26      (00000072) invoke-virtual       v5, Ljava/lang/Class;->getName()Ljava/lang/String;
+	27      (00000078) move-result-object   v5
+	28      (0000007a) invoke-virtual       v4, v5, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	29      (00000080) move-result-object   v4
+	30      (00000082) invoke-virtual       v4, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+	31      (00000088) move-result-object   v4
+	32      (0000008a) invoke-virtual       v3, v4, Landroid/app/FragmentTransaction;->addToBackStack(Ljava/lang/String;)Landroid/app/FragmentTransaction;
+	33      (00000090) move-result-object   v3
+	34      (00000092) invoke-virtual       v3, Landroid/app/FragmentTransaction;->commit()I
+	0:97
+	(Ljava/lang/IllegalAccessException; -> b0 onItemClick-BB@0xb0)
+	(Ljava/lang/ClassNotFoundException; -> 9a onItemClick-BB@0x9a)
+	(Ljava/lang/InstantiationException; -> ac onItemClick-BB@0xac)
+
+onItemClick-BB@0x98 : 
+	35      (00000098) return-void          
+
+onItemClick-BB@0x9a : [ onItemClick-BB@0x9c ]
+	36      (0000009a) move-exception       v1
+
+onItemClick-BB@0x9c : [ onItemClick-BB@0x98 ]
+	37      (0000009c) const-string         v3, 'PolicySearchFragment'
+	38      (000000a0) const-string         v4, 'Fail to create the target fragment: '
+	39      (000000a4) invoke-static        v3, v4, v1, Landroid/util/Log;->e(Ljava/lang/String; Ljava/lang/String; Ljava/lang/Throwable;)I
+	40      (000000aa) goto                 -9
+
+onItemClick-BB@0xac : [ onItemClick-BB@0x9c ]
+	41      (000000ac) move-exception       v1
+	42      (000000ae) goto                 -9
+
+onItemClick-BB@0xb0 : [ onItemClick-BB@0x9c ]
+	43      (000000b0) move-exception       v1
+	44      (000000b2) goto                 -b
+

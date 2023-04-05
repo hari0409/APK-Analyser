@@ -1,0 +1,16 @@
+# Landroidx/appcompat/graphics/drawable/DrawableContainer;-><init>()V [access_flags=constructor]
+#
+# Parameters:
+# local registers: v0...v2
+#
+# - return:void
+
+<init>-BB@0x0 : 
+	0       (00000000) const/4              v1, -1
+	1       (00000002) invoke-direct        v2, Landroid/graphics/drawable/Drawable;-><init>()V
+	2       (00000008) const/16             v0, 255
+	3       (0000000c) iput                 v0, v2, Landroidx/appcompat/graphics/drawable/DrawableContainer;->mAlpha I
+	4       (00000010) iput                 v1, v2, Landroidx/appcompat/graphics/drawable/DrawableContainer;->mCurIndex I
+	5       (00000014) iput                 v1, v2, Landroidx/appcompat/graphics/drawable/DrawableContainer;->mLastIndex I
+	6       (00000018) return-void          
+

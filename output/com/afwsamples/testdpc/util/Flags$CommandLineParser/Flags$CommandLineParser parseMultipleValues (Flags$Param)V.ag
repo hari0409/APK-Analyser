@@ -1,0 +1,42 @@
+# Lcom/afwsamples/testdpc/util/Flags$CommandLineParser;->parseMultipleValues(Lcom/afwsamples/testdpc/util/Flags$Param;)V [access_flags=private]
+#
+# Parameters:
+# - local registers: v0...v3
+# - v4:com.afwsamples.testdpc.util.Flags$Param
+#
+# - return:void
+
+parseMultipleValues-BB@0x0 : [ parseMultipleValues-BB@0xa ]
+	0       (00000000) new-instance         v0, Ljava/util/ArrayList;
+	1       (00000004) invoke-direct        v0, Ljava/util/ArrayList;-><init>()V
+
+parseMultipleValues-BB@0xa : [ parseMultipleValues-BB@0x16 parseMultipleValues-BB@0x46 ]
+	2       (0000000a) invoke-direct        v3, Lcom/afwsamples/testdpc/util/Flags$CommandLineParser;->hasNextValue()Z
+	3       (00000010) move-result          v1
+	4       (00000012) if-eqz               v1, +1a
+
+parseMultipleValues-BB@0x16 : [ parseMultipleValues-BB@0x2a parseMultipleValues-BB@0x46 ]
+	5       (00000016) invoke-direct        v3, Lcom/afwsamples/testdpc/util/Flags$CommandLineParser;->peekNextValue()Ljava/lang/String;
+	6       (0000001c) move-result-object   v1
+	7       (0000001e) invoke-static        v1, Lcom/afwsamples/testdpc/util/Flags$CommandLineParser;->isNamedArg(Ljava/lang/String;)Z
+	8       (00000024) move-result          v1
+	9       (00000026) if-nez               v1, +10
+
+parseMultipleValues-BB@0x2a : [ parseMultipleValues-BB@0xa ]
+	10      (0000002a) iget-object          v1, v3, Lcom/afwsamples/testdpc/util/Flags$CommandLineParser;->typeParser Lcom/afwsamples/testdpc/util/Flags$TypeParser;
+	11      (0000002e) invoke-direct        v3, Lcom/afwsamples/testdpc/util/Flags$CommandLineParser;->getNextValue()Ljava/lang/String;
+	12      (00000034) move-result-object   v2
+	13      (00000036) invoke-static        v1, v4, v2, Lcom/afwsamples/testdpc/util/Flags$TypeParser;->access$1800(Lcom/afwsamples/testdpc/util/Flags$TypeParser; Lcom/afwsamples/testdpc/util/Flags$Param; Ljava/lang/String;)Ljava/lang/Object;
+	14      (0000003c) move-result-object   v1
+	15      (0000003e) invoke-interface     v0, v1, Ljava/util/List;->add(Ljava/lang/Object;)Z
+	16      (00000044) goto                 -1d
+
+parseMultipleValues-BB@0x46 : 
+	17      (00000046) iget-object          v1, v3, Lcom/afwsamples/testdpc/util/Flags$CommandLineParser;->parsedParams Ljava/util/Map;
+	18      (0000004a) invoke-interface     v4, Lcom/afwsamples/testdpc/util/Flags$Param;->dataType()Ljava/lang/Class;
+	19      (00000050) move-result-object   v2
+	20      (00000052) invoke-static        v2, v0, Lcom/afwsamples/testdpc/util/Flags$CommandLineParser;->asArray(Ljava/lang/Class; Ljava/util/List;)Ljava/lang/Object;
+	21      (00000058) move-result-object   v2
+	22      (0000005a) invoke-interface     v1, v4, v2, Ljava/util/Map;->put(Ljava/lang/Object; Ljava/lang/Object;)Ljava/lang/Object;
+	23      (00000060) return-void          
+

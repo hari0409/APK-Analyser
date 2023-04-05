@@ -1,0 +1,63 @@
+# Landroidx/print/PrintHelper;->printBitmap(Ljava/lang/String; Landroid/net/Uri; Landroidx/print/PrintHelper$OnPrintFinishCallback;)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v9
+# - v10:java.lang.String
+# - v11:android.net.Uri
+# - v12:androidx.print.PrintHelper$OnPrintFinishCallback
+#
+# - return:void
+
+printBitmap-BB@0x0 : [ printBitmap-BB@0xc printBitmap-BB@0xe ]
+	0       (00000000) sget                 v1, Landroid/os/Build$VERSION;->SDK_INT I
+	1       (00000004) const/16             v2, 19
+	2       (00000008) if-ge                v1, v2, +3
+
+printBitmap-BB@0xc : 
+	3       (0000000c) return-void          
+
+printBitmap-BB@0xe : [ printBitmap-BB@0x56 printBitmap-BB@0x5e ]
+	4       (0000000e) new-instance         v0, Landroidx/print/PrintHelper$PrintUriAdapter;
+	5       (00000012) iget                 v5, v9, Landroidx/print/PrintHelper;->mScaleMode I
+	6       (00000016) move-object          v1, v9
+	7       (00000018) move-object          v2, v10
+	8       (0000001a) move-object          v3, v11
+	9       (0000001c) move-object          v4, v12
+	10      (0000001e) invoke-direct/range  v0 ... v5, Landroidx/print/PrintHelper$PrintUriAdapter;-><init>(Landroidx/print/PrintHelper; Ljava/lang/String; Landroid/net/Uri; Landroidx/print/PrintHelper$OnPrintFinishCallback; I)V
+	11      (00000024) iget-object          v1, v9, Landroidx/print/PrintHelper;->mContext Landroid/content/Context;
+	12      (00000028) const-string         v2, 'print'
+	13      (0000002c) invoke-virtual       v1, v2, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
+	14      (00000032) move-result-object   v8
+	15      (00000034) check-cast           v8, Landroid/print/PrintManager;
+	16      (00000038) new-instance         v7, Landroid/print/PrintAttributes$Builder;
+	17      (0000003c) invoke-direct        v7, Landroid/print/PrintAttributes$Builder;-><init>()V
+	18      (00000042) iget                 v1, v9, Landroidx/print/PrintHelper;->mColorMode I
+	19      (00000046) invoke-virtual       v7, v1, Landroid/print/PrintAttributes$Builder;->setColorMode(I)Landroid/print/PrintAttributes$Builder;
+	20      (0000004c) iget                 v1, v9, Landroidx/print/PrintHelper;->mOrientation I
+	21      (00000050) const/4              v2, 1
+	22      (00000052) if-eq                v1, v2, +6
+
+printBitmap-BB@0x56 : [ printBitmap-BB@0x5e printBitmap-BB@0x78 ]
+	23      (00000056) iget                 v1, v9, Landroidx/print/PrintHelper;->mOrientation I
+	24      (0000005a) if-nez               v1, +f
+
+printBitmap-BB@0x5e : [ printBitmap-BB@0x68 ]
+	25      (0000005e) sget-object          v1, Landroid/print/PrintAttributes$MediaSize;->UNKNOWN_LANDSCAPE Landroid/print/PrintAttributes$MediaSize;
+	26      (00000062) invoke-virtual       v7, v1, Landroid/print/PrintAttributes$Builder;->setMediaSize(Landroid/print/PrintAttributes$MediaSize;)Landroid/print/PrintAttributes$Builder;
+
+printBitmap-BB@0x68 : [ printBitmap-BB@0xc ]
+	27      (00000068) invoke-virtual       v7, Landroid/print/PrintAttributes$Builder;->build()Landroid/print/PrintAttributes;
+	28      (0000006e) move-result-object   v6
+	29      (00000070) invoke-virtual       v8, v10, v0, v6, Landroid/print/PrintManager;->print(Ljava/lang/String; Landroid/print/PrintDocumentAdapter; Landroid/print/PrintAttributes;)Landroid/print/PrintJob;
+	30      (00000076) goto                 -35
+
+printBitmap-BB@0x78 : [ printBitmap-BB@0x82 printBitmap-BB@0x68 ]
+	31      (00000078) iget                 v1, v9, Landroidx/print/PrintHelper;->mOrientation I
+	32      (0000007c) const/4              v2, 2
+	33      (0000007e) if-ne                v1, v2, -b
+
+printBitmap-BB@0x82 : [ printBitmap-BB@0x68 ]
+	34      (00000082) sget-object          v1, Landroid/print/PrintAttributes$MediaSize;->UNKNOWN_PORTRAIT Landroid/print/PrintAttributes$MediaSize;
+	35      (00000086) invoke-virtual       v7, v1, Landroid/print/PrintAttributes$Builder;->setMediaSize(Landroid/print/PrintAttributes$MediaSize;)Landroid/print/PrintAttributes$Builder;
+	36      (0000008c) goto                 -12
+

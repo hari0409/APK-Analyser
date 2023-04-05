@@ -1,0 +1,52 @@
+# Lcom/afwsamples/testdpc/common/ProvisioningStateUtil;->isProvisioningAllowed(Landroid/content/Context; Ljava/lang/String;)Z [access_flags=public static]
+#
+# Parameters:
+# - local registers: v0...v3
+# - v4:android.content.Context
+# - v5:java.lang.String
+#
+# - return:boolean
+
+isProvisioningAllowed-BB@0x0 : [ isProvisioningAllowed-BB@0xe isProvisioningAllowed-BB@0x28 ]
+	0       (00000000) const/4              v1, 0
+	1       (00000002) sget                 v2, Lcom/afwsamples/testdpc/common/Util;->SDK_INT I
+	2       (00000006) const/16             v3, 24
+	3       (0000000a) if-lt                v2, v3, +f
+
+isProvisioningAllowed-BB@0xe : [ isProvisioningAllowed-BB@0x26 ]
+	4       (0000000e) const-string         v1, 'device_policy'
+	5       (00000012) invoke-virtual       v4, v1, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
+	6       (00000018) move-result-object   v0
+	7       (0000001a) check-cast           v0, Landroid/app/admin/DevicePolicyManager;
+	8       (0000001e) invoke-virtual       v0, v5, Landroid/app/admin/DevicePolicyManager;->isProvisioningAllowed(Ljava/lang/String;)Z
+	9       (00000024) move-result          v1
+
+isProvisioningAllowed-BB@0x26 : 
+	10      (00000026) return               v1
+
+isProvisioningAllowed-BB@0x28 : [ isProvisioningAllowed-BB@0x38 isProvisioningAllowed-BB@0x4e ]
+	11      (00000028) const-string         v2, 'android.app.action.PROVISION_MANAGED_DEVICE'
+	12      (0000002c) invoke-virtual       v2, v5, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+	13      (00000032) move-result          v2
+	14      (00000034) if-eqz               v2, +d
+
+isProvisioningAllowed-BB@0x38 : [ isProvisioningAllowed-BB@0x44 isProvisioningAllowed-BB@0x26 ]
+	15      (00000038) sget                 v2, Lcom/afwsamples/testdpc/common/Util;->SDK_INT I
+	16      (0000003c) const/16             v3, 23
+	17      (00000040) if-ne                v2, v3, -d
+
+isProvisioningAllowed-BB@0x44 : [ isProvisioningAllowed-BB@0x26 ]
+	18      (00000044) invoke-static        v4, Lcom/afwsamples/testdpc/common/ProvisioningStateUtil;->isDeviceUnprovisionedAndNoDeviceOwner(Landroid/content/Context;)Z
+	19      (0000004a) move-result          v1
+	20      (0000004c) goto                 -13
+
+isProvisioningAllowed-BB@0x4e : [ isProvisioningAllowed-BB@0x5e isProvisioningAllowed-BB@0x26 ]
+	21      (0000004e) const-string         v2, 'android.app.action.PROVISION_MANAGED_PROFILE'
+	22      (00000052) invoke-virtual       v2, v5, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+	23      (00000058) move-result          v2
+	24      (0000005a) if-eqz               v2, -1a
+
+isProvisioningAllowed-BB@0x5e : [ isProvisioningAllowed-BB@0x26 ]
+	25      (0000005e) const/4              v1, 1
+	26      (00000060) goto                 -1d
+

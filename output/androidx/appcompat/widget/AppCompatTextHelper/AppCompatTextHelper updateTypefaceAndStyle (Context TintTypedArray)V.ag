@@ -1,0 +1,136 @@
+# Landroidx/appcompat/widget/AppCompatTextHelper;->updateTypefaceAndStyle(Landroid/content/Context; Landroidx/appcompat/widget/TintTypedArray;)V [access_flags=private]
+#
+# Parameters:
+# - local registers: v0...v9
+# - v10:android.content.Context
+# - v11:androidx.appcompat.widget.TintTypedArray
+#
+# - return:void
+
+updateTypefaceAndStyle-BB@0x0 : [ updateTypefaceAndStyle-BB@0x28 updateTypefaceAndStyle-BB@0x38 ]
+	0       (00000000) const/4              v5, 1
+	1       (00000002) const/4              v6, 0
+	2       (00000004) sget                 v7, Landroidx/appcompat/R$styleable;->TextAppearance_android_textStyle I
+	3       (00000008) iget                 v8, v9, Landroidx/appcompat/widget/AppCompatTextHelper;->mStyle I
+	4       (0000000c) invoke-virtual       v11, v7, v8, Landroidx/appcompat/widget/TintTypedArray;->getInt(I I)I
+	5       (00000012) move-result          v7
+	6       (00000014) iput                 v7, v9, Landroidx/appcompat/widget/AppCompatTextHelper;->mStyle I
+	7       (00000018) sget                 v7, Landroidx/appcompat/R$styleable;->TextAppearance_android_fontFamily I
+	8       (0000001c) invoke-virtual       v11, v7, Landroidx/appcompat/widget/TintTypedArray;->hasValue(I)Z
+	9       (00000022) move-result          v7
+	10      (00000024) if-nez               v7, +a
+
+updateTypefaceAndStyle-BB@0x28 : [ updateTypefaceAndStyle-BB@0x38 updateTypefaceAndStyle-BB@0xc2 ]
+	11      (00000028) sget                 v7, Landroidx/appcompat/R$styleable;->TextAppearance_fontFamily I
+	12      (0000002c) invoke-virtual       v11, v7, Landroidx/appcompat/widget/TintTypedArray;->hasValue(I)Z
+	13      (00000032) move-result          v7
+	14      (00000034) if-eqz               v7, +47
+
+updateTypefaceAndStyle-BB@0x38 : [ updateTypefaceAndStyle-BB@0x4e updateTypefaceAndStyle-BB@0xb8 ]
+	15      (00000038) const/4              v7, 0
+	16      (0000003a) iput-object          v7, v9, Landroidx/appcompat/widget/AppCompatTextHelper;->mFontTypeface Landroid/graphics/Typeface;
+	17      (0000003e) sget                 v7, Landroidx/appcompat/R$styleable;->TextAppearance_fontFamily I
+	18      (00000042) invoke-virtual       v11, v7, Landroidx/appcompat/widget/TintTypedArray;->hasValue(I)Z
+	19      (00000048) move-result          v7
+	20      (0000004a) if-eqz               v7, +37
+
+updateTypefaceAndStyle-BB@0x4e : [ updateTypefaceAndStyle-BB@0x52 ]
+	21      (0000004e) sget                 v0, Landroidx/appcompat/R$styleable;->TextAppearance_fontFamily I
+
+updateTypefaceAndStyle-BB@0x52 : [ updateTypefaceAndStyle-BB@0x5e updateTypefaceAndStyle-BB@0x92 ]
+	22      (00000052) invoke-virtual       v10, Landroid/content/Context;->isRestricted()Z
+	23      (00000058) move-result          v7
+	24      (0000005a) if-nez               v7, +1c
+
+updateTypefaceAndStyle-BB@0x5e : [ updateTypefaceAndStyle-BB@0x76 ]
+	25      (0000005e) new-instance         v3, Ljava/lang/ref/WeakReference;
+	26      (00000062) iget-object          v7, v9, Landroidx/appcompat/widget/AppCompatTextHelper;->mView Landroid/widget/TextView;
+	27      (00000066) invoke-direct        v3, v7, Ljava/lang/ref/WeakReference;-><init>(Ljava/lang/Object;)V
+	28      (0000006c) new-instance         v2, Landroidx/appcompat/widget/AppCompatTextHelper$1;
+	29      (00000070) invoke-direct        v2, v9, v3, Landroidx/appcompat/widget/AppCompatTextHelper$1;-><init>(Landroidx/appcompat/widget/AppCompatTextHelper; Ljava/lang/ref/WeakReference;)V
+
+updateTypefaceAndStyle-BB@0x76 : [ updateTypefaceAndStyle-BB@0x8e updateTypefaceAndStyle-BB@0xbe ]
+	30      (00000076) iget                 v7, v9, Landroidx/appcompat/widget/AppCompatTextHelper;->mStyle I
+	31      (0000007a) invoke-virtual       v11, v0, v7, v2, Landroidx/appcompat/widget/TintTypedArray;->getFont(I I Landroidx/core/content/res/ResourcesCompat$FontCallback;)Landroid/graphics/Typeface;
+	32      (00000080) move-result-object   v7
+	33      (00000082) iput-object          v7, v9, Landroidx/appcompat/widget/AppCompatTextHelper;->mFontTypeface Landroid/graphics/Typeface;
+	34      (00000086) iget-object          v7, v9, Landroidx/appcompat/widget/AppCompatTextHelper;->mFontTypeface Landroid/graphics/Typeface;
+	35      (0000008a) if-nez               v7, +1a
+	76:91
+	(Ljava/lang/UnsupportedOperationException; -> 108 updateTypefaceAndStyle-BB@0x108)
+	(Landroid/content/res/Resources$NotFoundException; -> 10c updateTypefaceAndStyle-BB@0x10c)
+
+updateTypefaceAndStyle-BB@0x8e : [ updateTypefaceAndStyle-BB@0x92 ]
+	36      (0000008e) iput-boolean         v5, v9, Landroidx/appcompat/widget/AppCompatTextHelper;->mAsyncFontPending Z
+	76:91
+	(Ljava/lang/UnsupportedOperationException; -> 108 updateTypefaceAndStyle-BB@0x108)
+	(Landroid/content/res/Resources$NotFoundException; -> 10c updateTypefaceAndStyle-BB@0x10c)
+
+updateTypefaceAndStyle-BB@0x92 : [ updateTypefaceAndStyle-BB@0x9a updateTypefaceAndStyle-BB@0xb6 ]
+	37      (00000092) iget-object          v5, v9, Landroidx/appcompat/widget/AppCompatTextHelper;->mFontTypeface Landroid/graphics/Typeface;
+	38      (00000096) if-nez               v5, +10
+
+updateTypefaceAndStyle-BB@0x9a : [ updateTypefaceAndStyle-BB@0xa6 updateTypefaceAndStyle-BB@0xb6 ]
+	39      (0000009a) invoke-virtual       v11, v0, Landroidx/appcompat/widget/TintTypedArray;->getString(I)Ljava/lang/String;
+	40      (000000a0) move-result-object   v1
+	41      (000000a2) if-eqz               v1, +a
+
+updateTypefaceAndStyle-BB@0xa6 : [ updateTypefaceAndStyle-BB@0xb6 ]
+	42      (000000a6) iget                 v5, v9, Landroidx/appcompat/widget/AppCompatTextHelper;->mStyle I
+	43      (000000aa) invoke-static        v1, v5, Landroid/graphics/Typeface;->create(Ljava/lang/String; I)Landroid/graphics/Typeface;
+	44      (000000b0) move-result-object   v5
+	45      (000000b2) iput-object          v5, v9, Landroidx/appcompat/widget/AppCompatTextHelper;->mFontTypeface Landroid/graphics/Typeface;
+
+updateTypefaceAndStyle-BB@0xb6 : 
+	46      (000000b6) return-void          
+
+updateTypefaceAndStyle-BB@0xb8 : [ updateTypefaceAndStyle-BB@0x52 ]
+	47      (000000b8) sget                 v0, Landroidx/appcompat/R$styleable;->TextAppearance_android_fontFamily I
+	48      (000000bc) goto                 -35
+
+updateTypefaceAndStyle-BB@0xbe : [ updateTypefaceAndStyle-BB@0x8e ]
+	49      (000000be) move                 v5, v6
+	50      (000000c0) goto                 -19
+
+updateTypefaceAndStyle-BB@0xc2 : [ updateTypefaceAndStyle-BB@0xd2 updateTypefaceAndStyle-BB@0xb6 ]
+	51      (000000c2) sget                 v7, Landroidx/appcompat/R$styleable;->TextAppearance_android_typeface I
+	52      (000000c6) invoke-virtual       v11, v7, Landroidx/appcompat/widget/TintTypedArray;->hasValue(I)Z
+	53      (000000cc) move-result          v7
+	54      (000000ce) if-eqz               v7, -c
+
+updateTypefaceAndStyle-BB@0xd2 : [ D:updateTypefaceAndStyle-BB@0xe8 1:updateTypefaceAndStyle-BB@0xea 2:updateTypefaceAndStyle-BB@0xf4 3:updateTypefaceAndStyle-BB@0xfe ]
+	55      (000000d2) iput-boolean         v6, v9, Landroidx/appcompat/widget/AppCompatTextHelper;->mAsyncFontPending Z
+	56      (000000d6) sget                 v6, Landroidx/appcompat/R$styleable;->TextAppearance_android_typeface I
+	57      (000000da) invoke-virtual       v11, v6, v5, Landroidx/appcompat/widget/TintTypedArray;->getInt(I I)I
+	58      (000000e0) move-result          v4
+	59      (000000e2) packed-switch        v4, +17 (0x110)
+
+updateTypefaceAndStyle-BB@0xe8 : [ updateTypefaceAndStyle-BB@0xb6 ]
+	60      (000000e8) goto                 -19
+
+updateTypefaceAndStyle-BB@0xea : [ updateTypefaceAndStyle-BB@0xb6 ]
+	61      (000000ea) sget-object          v5, Landroid/graphics/Typeface;->SANS_SERIF Landroid/graphics/Typeface;
+	62      (000000ee) iput-object          v5, v9, Landroidx/appcompat/widget/AppCompatTextHelper;->mFontTypeface Landroid/graphics/Typeface;
+	63      (000000f2) goto                 -1e
+
+updateTypefaceAndStyle-BB@0xf4 : [ updateTypefaceAndStyle-BB@0xb6 ]
+	64      (000000f4) sget-object          v5, Landroid/graphics/Typeface;->SERIF Landroid/graphics/Typeface;
+	65      (000000f8) iput-object          v5, v9, Landroidx/appcompat/widget/AppCompatTextHelper;->mFontTypeface Landroid/graphics/Typeface;
+	66      (000000fc) goto                 -23
+
+updateTypefaceAndStyle-BB@0xfe : [ updateTypefaceAndStyle-BB@0xb6 ]
+	67      (000000fe) sget-object          v5, Landroid/graphics/Typeface;->MONOSPACE Landroid/graphics/Typeface;
+	68      (00000102) iput-object          v5, v9, Landroidx/appcompat/widget/AppCompatTextHelper;->mFontTypeface Landroid/graphics/Typeface;
+	69      (00000106) goto                 -28
+
+updateTypefaceAndStyle-BB@0x108 : [ updateTypefaceAndStyle-BB@0x92 ]
+	70      (00000108) move-exception       v5
+	71      (0000010a) goto                 -3c
+
+updateTypefaceAndStyle-BB@0x10c : [ updateTypefaceAndStyle-BB@0x92 ]
+	72      (0000010c) move-exception       v5
+	73      (0000010e) goto                 -3e
+
+updateTypefaceAndStyle-BB@0x110 : 
+	74      (00000110) packed-switch-payload 1 2 3
+

@@ -1,0 +1,39 @@
+# Lcom/afwsamples/testdpc/ShellCommand;->getAffiliationIds()V [access_flags=private]
+#
+# Parameters:
+# local registers: v0...v6
+#
+# - return:void
+
+getAffiliationIds-BB@0x0 : [ getAffiliationIds-BB@0x18 getAffiliationIds-BB@0x28 ]
+	0       (00000000) iget-object          v1, v6, Lcom/afwsamples/testdpc/ShellCommand;->mDevicePolicyManagerGateway Lcom/afwsamples/testdpc/DevicePolicyManagerGateway;
+	1       (00000004) invoke-interface     v1, Lcom/afwsamples/testdpc/DevicePolicyManagerGateway;->getAffiliationIds()Ljava/util/Set;
+	2       (0000000a) move-result-object   v0
+	3       (0000000c) invoke-interface     v0, Ljava/util/Set;->isEmpty()Z
+	4       (00000012) move-result          v1
+	5       (00000014) if-eqz               v1, +a
+
+getAffiliationIds-BB@0x18 : [ getAffiliationIds-BB@0x26 ]
+	6       (00000018) iget-object          v1, v6, Lcom/afwsamples/testdpc/ShellCommand;->mWriter Ljava/io/PrintWriter;
+	7       (0000001c) const-string         v2, 'no affiliation ids'
+	8       (00000020) invoke-virtual       v1, v2, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
+
+getAffiliationIds-BB@0x26 : 
+	9       (00000026) return-void          
+
+getAffiliationIds-BB@0x28 : [ getAffiliationIds-BB@0x26 ]
+	10      (00000028) iget-object          v1, v6, Lcom/afwsamples/testdpc/ShellCommand;->mWriter Ljava/io/PrintWriter;
+	11      (0000002c) const-string         v2, '%d affiliation ids: %s\n'
+	12      (00000030) const/4              v3, 2
+	13      (00000032) new-array            v3, v3, [Ljava/lang/Object;
+	14      (00000036) const/4              v4, 0
+	15      (00000038) invoke-interface     v0, Ljava/util/Set;->size()I
+	16      (0000003e) move-result          v5
+	17      (00000040) invoke-static        v5, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+	18      (00000046) move-result-object   v5
+	19      (00000048) aput-object          v5, v3, v4
+	20      (0000004c) const/4              v4, 1
+	21      (0000004e) aput-object          v0, v3, v4
+	22      (00000052) invoke-virtual       v1, v2, v3, Ljava/io/PrintWriter;->printf(Ljava/lang/String; [Ljava/lang/Object;)Ljava/io/PrintWriter;
+	23      (00000058) goto                 -19
+

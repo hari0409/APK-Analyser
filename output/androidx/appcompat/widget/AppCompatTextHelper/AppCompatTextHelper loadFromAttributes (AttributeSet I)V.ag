@@ -1,0 +1,559 @@
+# Landroidx/appcompat/widget/AppCompatTextHelper;->loadFromAttributes(Landroid/util/AttributeSet; I)V [access_flags=]
+#
+# Parameters:
+# - local registers: v0...v23
+# - v24:android.util.AttributeSet
+# - v25:int
+#
+# - return:void
+
+loadFromAttributes-BB@0x0 : [ loadFromAttributes-BB@0x68 loadFromAttributes-BB@0x98 ]
+	0       (00000000) move-object/from16   v0, v23
+	1       (00000004) iget-object          v0, v0, Landroidx/appcompat/widget/AppCompatTextHelper;->mView Landroid/widget/TextView;
+	2       (00000008) move-object/from16   v18, v0
+	3       (0000000c) invoke-virtual/range v18, Landroid/widget/TextView;->getContext()Landroid/content/Context;
+	4       (00000012) move-result-object   v9
+	5       (00000014) invoke-static        Landroidx/appcompat/widget/AppCompatDrawableManager;->get()Landroidx/appcompat/widget/AppCompatDrawableManager;
+	6       (0000001a) move-result-object   v10
+	7       (0000001c) sget-object          v18, Landroidx/appcompat/R$styleable;->AppCompatTextHelper [I
+	8       (00000020) const/16             v19, 0
+	9       (00000024) move-object/from16   v0, v24
+	10      (00000028) move-object/from16   v1, v18
+	11      (0000002c) move/from16          v2, v25
+	12      (00000030) move/from16          v3, v19
+	13      (00000034) invoke-static        v9, v0, v1, v2, v3, Landroidx/appcompat/widget/TintTypedArray;->obtainStyledAttributes(Landroid/content/Context; Landroid/util/AttributeSet; [I I I)Landroidx/appcompat/widget/TintTypedArray;
+	14      (0000003a) move-result-object   v4
+	15      (0000003c) sget                 v18, Landroidx/appcompat/R$styleable;->AppCompatTextHelper_android_textAppearance I
+	16      (00000040) const/16             v19, -1
+	17      (00000044) move/from16          v0, v18
+	18      (00000048) move/from16          v1, v19
+	19      (0000004c) invoke-virtual       v4, v0, v1, Landroidx/appcompat/widget/TintTypedArray;->getResourceId(I I)I
+	20      (00000052) move-result          v7
+	21      (00000054) sget                 v18, Landroidx/appcompat/R$styleable;->AppCompatTextHelper_android_drawableLeft I
+	22      (00000058) move/from16          v0, v18
+	23      (0000005c) invoke-virtual       v4, v0, Landroidx/appcompat/widget/TintTypedArray;->hasValue(I)Z
+	24      (00000062) move-result          v18
+	25      (00000064) if-eqz               v18, +1a
+
+loadFromAttributes-BB@0x68 : [ loadFromAttributes-BB@0x98 ]
+	26      (00000068) sget                 v18, Landroidx/appcompat/R$styleable;->AppCompatTextHelper_android_drawableLeft I
+	27      (0000006c) const/16             v19, 0
+	28      (00000070) move/from16          v0, v18
+	29      (00000074) move/from16          v1, v19
+	30      (00000078) invoke-virtual       v4, v0, v1, Landroidx/appcompat/widget/TintTypedArray;->getResourceId(I I)I
+	31      (0000007e) move-result          v18
+	32      (00000080) move/from16          v0, v18
+	33      (00000084) invoke-static        v9, v10, v0, Landroidx/appcompat/widget/AppCompatTextHelper;->createTintInfo(Landroid/content/Context; Landroidx/appcompat/widget/AppCompatDrawableManager; I)Landroidx/appcompat/widget/TintInfo;
+	34      (0000008a) move-result-object   v18
+	35      (0000008c) move-object/from16   v0, v18
+	36      (00000090) move-object/from16   v1, v23
+	37      (00000094) iput-object          v0, v1, Landroidx/appcompat/widget/AppCompatTextHelper;->mDrawableLeftTint Landroidx/appcompat/widget/TintInfo;
+
+loadFromAttributes-BB@0x98 : [ loadFromAttributes-BB@0xac loadFromAttributes-BB@0xdc ]
+	38      (00000098) sget                 v18, Landroidx/appcompat/R$styleable;->AppCompatTextHelper_android_drawableTop I
+	39      (0000009c) move/from16          v0, v18
+	40      (000000a0) invoke-virtual       v4, v0, Landroidx/appcompat/widget/TintTypedArray;->hasValue(I)Z
+	41      (000000a6) move-result          v18
+	42      (000000a8) if-eqz               v18, +1a
+
+loadFromAttributes-BB@0xac : [ loadFromAttributes-BB@0xdc ]
+	43      (000000ac) sget                 v18, Landroidx/appcompat/R$styleable;->AppCompatTextHelper_android_drawableTop I
+	44      (000000b0) const/16             v19, 0
+	45      (000000b4) move/from16          v0, v18
+	46      (000000b8) move/from16          v1, v19
+	47      (000000bc) invoke-virtual       v4, v0, v1, Landroidx/appcompat/widget/TintTypedArray;->getResourceId(I I)I
+	48      (000000c2) move-result          v18
+	49      (000000c4) move/from16          v0, v18
+	50      (000000c8) invoke-static        v9, v10, v0, Landroidx/appcompat/widget/AppCompatTextHelper;->createTintInfo(Landroid/content/Context; Landroidx/appcompat/widget/AppCompatDrawableManager; I)Landroidx/appcompat/widget/TintInfo;
+	51      (000000ce) move-result-object   v18
+	52      (000000d0) move-object/from16   v0, v18
+	53      (000000d4) move-object/from16   v1, v23
+	54      (000000d8) iput-object          v0, v1, Landroidx/appcompat/widget/AppCompatTextHelper;->mDrawableTopTint Landroidx/appcompat/widget/TintInfo;
+
+loadFromAttributes-BB@0xdc : [ loadFromAttributes-BB@0xf0 loadFromAttributes-BB@0x120 ]
+	55      (000000dc) sget                 v18, Landroidx/appcompat/R$styleable;->AppCompatTextHelper_android_drawableRight I
+	56      (000000e0) move/from16          v0, v18
+	57      (000000e4) invoke-virtual       v4, v0, Landroidx/appcompat/widget/TintTypedArray;->hasValue(I)Z
+	58      (000000ea) move-result          v18
+	59      (000000ec) if-eqz               v18, +1a
+
+loadFromAttributes-BB@0xf0 : [ loadFromAttributes-BB@0x120 ]
+	60      (000000f0) sget                 v18, Landroidx/appcompat/R$styleable;->AppCompatTextHelper_android_drawableRight I
+	61      (000000f4) const/16             v19, 0
+	62      (000000f8) move/from16          v0, v18
+	63      (000000fc) move/from16          v1, v19
+	64      (00000100) invoke-virtual       v4, v0, v1, Landroidx/appcompat/widget/TintTypedArray;->getResourceId(I I)I
+	65      (00000106) move-result          v18
+	66      (00000108) move/from16          v0, v18
+	67      (0000010c) invoke-static        v9, v10, v0, Landroidx/appcompat/widget/AppCompatTextHelper;->createTintInfo(Landroid/content/Context; Landroidx/appcompat/widget/AppCompatDrawableManager; I)Landroidx/appcompat/widget/TintInfo;
+	68      (00000112) move-result-object   v18
+	69      (00000114) move-object/from16   v0, v18
+	70      (00000118) move-object/from16   v1, v23
+	71      (0000011c) iput-object          v0, v1, Landroidx/appcompat/widget/AppCompatTextHelper;->mDrawableRightTint Landroidx/appcompat/widget/TintInfo;
+
+loadFromAttributes-BB@0x120 : [ loadFromAttributes-BB@0x134 loadFromAttributes-BB@0x164 ]
+	72      (00000120) sget                 v18, Landroidx/appcompat/R$styleable;->AppCompatTextHelper_android_drawableBottom I
+	73      (00000124) move/from16          v0, v18
+	74      (00000128) invoke-virtual       v4, v0, Landroidx/appcompat/widget/TintTypedArray;->hasValue(I)Z
+	75      (0000012e) move-result          v18
+	76      (00000130) if-eqz               v18, +1a
+
+loadFromAttributes-BB@0x134 : [ loadFromAttributes-BB@0x164 ]
+	77      (00000134) sget                 v18, Landroidx/appcompat/R$styleable;->AppCompatTextHelper_android_drawableBottom I
+	78      (00000138) const/16             v19, 0
+	79      (0000013c) move/from16          v0, v18
+	80      (00000140) move/from16          v1, v19
+	81      (00000144) invoke-virtual       v4, v0, v1, Landroidx/appcompat/widget/TintTypedArray;->getResourceId(I I)I
+	82      (0000014a) move-result          v18
+	83      (0000014c) move/from16          v0, v18
+	84      (00000150) invoke-static        v9, v10, v0, Landroidx/appcompat/widget/AppCompatTextHelper;->createTintInfo(Landroid/content/Context; Landroidx/appcompat/widget/AppCompatDrawableManager; I)Landroidx/appcompat/widget/TintInfo;
+	85      (00000156) move-result-object   v18
+	86      (00000158) move-object/from16   v0, v18
+	87      (0000015c) move-object/from16   v1, v23
+	88      (00000160) iput-object          v0, v1, Landroidx/appcompat/widget/AppCompatTextHelper;->mDrawableBottomTint Landroidx/appcompat/widget/TintInfo;
+
+loadFromAttributes-BB@0x164 : [ loadFromAttributes-BB@0x178 loadFromAttributes-BB@0x200 ]
+	89      (00000164) sget                 v18, Landroid/os/Build$VERSION;->SDK_INT I
+	90      (00000168) const/16             v19, 17
+	91      (0000016c) move/from16          v0, v18
+	92      (00000170) move/from16          v1, v19
+	93      (00000174) if-lt                v0, v1, +46
+
+loadFromAttributes-BB@0x178 : [ loadFromAttributes-BB@0x18c loadFromAttributes-BB@0x1bc ]
+	94      (00000178) sget                 v18, Landroidx/appcompat/R$styleable;->AppCompatTextHelper_android_drawableStart I
+	95      (0000017c) move/from16          v0, v18
+	96      (00000180) invoke-virtual       v4, v0, Landroidx/appcompat/widget/TintTypedArray;->hasValue(I)Z
+	97      (00000186) move-result          v18
+	98      (00000188) if-eqz               v18, +1a
+
+loadFromAttributes-BB@0x18c : [ loadFromAttributes-BB@0x1bc ]
+	99      (0000018c) sget                 v18, Landroidx/appcompat/R$styleable;->AppCompatTextHelper_android_drawableStart I
+	100     (00000190) const/16             v19, 0
+	101     (00000194) move/from16          v0, v18
+	102     (00000198) move/from16          v1, v19
+	103     (0000019c) invoke-virtual       v4, v0, v1, Landroidx/appcompat/widget/TintTypedArray;->getResourceId(I I)I
+	104     (000001a2) move-result          v18
+	105     (000001a4) move/from16          v0, v18
+	106     (000001a8) invoke-static        v9, v10, v0, Landroidx/appcompat/widget/AppCompatTextHelper;->createTintInfo(Landroid/content/Context; Landroidx/appcompat/widget/AppCompatDrawableManager; I)Landroidx/appcompat/widget/TintInfo;
+	107     (000001ae) move-result-object   v18
+	108     (000001b0) move-object/from16   v0, v18
+	109     (000001b4) move-object/from16   v1, v23
+	110     (000001b8) iput-object          v0, v1, Landroidx/appcompat/widget/AppCompatTextHelper;->mDrawableStartTint Landroidx/appcompat/widget/TintInfo;
+
+loadFromAttributes-BB@0x1bc : [ loadFromAttributes-BB@0x1d0 loadFromAttributes-BB@0x200 ]
+	111     (000001bc) sget                 v18, Landroidx/appcompat/R$styleable;->AppCompatTextHelper_android_drawableEnd I
+	112     (000001c0) move/from16          v0, v18
+	113     (000001c4) invoke-virtual       v4, v0, Landroidx/appcompat/widget/TintTypedArray;->hasValue(I)Z
+	114     (000001ca) move-result          v18
+	115     (000001cc) if-eqz               v18, +1a
+
+loadFromAttributes-BB@0x1d0 : [ loadFromAttributes-BB@0x200 ]
+	116     (000001d0) sget                 v18, Landroidx/appcompat/R$styleable;->AppCompatTextHelper_android_drawableEnd I
+	117     (000001d4) const/16             v19, 0
+	118     (000001d8) move/from16          v0, v18
+	119     (000001dc) move/from16          v1, v19
+	120     (000001e0) invoke-virtual       v4, v0, v1, Landroidx/appcompat/widget/TintTypedArray;->getResourceId(I I)I
+	121     (000001e6) move-result          v18
+	122     (000001e8) move/from16          v0, v18
+	123     (000001ec) invoke-static        v9, v10, v0, Landroidx/appcompat/widget/AppCompatTextHelper;->createTintInfo(Landroid/content/Context; Landroidx/appcompat/widget/AppCompatDrawableManager; I)Landroidx/appcompat/widget/TintInfo;
+	124     (000001f2) move-result-object   v18
+	125     (000001f4) move-object/from16   v0, v18
+	126     (000001f8) move-object/from16   v1, v23
+	127     (000001fc) iput-object          v0, v1, Landroidx/appcompat/widget/AppCompatTextHelper;->mDrawableEndTint Landroidx/appcompat/widget/TintInfo;
+
+loadFromAttributes-BB@0x200 : [ loadFromAttributes-BB@0x23c loadFromAttributes-BB@0x30e ]
+	128     (00000200) invoke-virtual       v4, Landroidx/appcompat/widget/TintTypedArray;->recycle()V
+	129     (00000206) move-object/from16   v0, v23
+	130     (0000020a) iget-object          v0, v0, Landroidx/appcompat/widget/AppCompatTextHelper;->mView Landroid/widget/TextView;
+	131     (0000020e) move-object/from16   v18, v0
+	132     (00000212) invoke-virtual/range v18, Landroid/widget/TextView;->getTransformationMethod()Landroid/text/method/TransformationMethod;
+	133     (00000218) move-result-object   v18
+	134     (0000021a) move-object/from16   v0, v18
+	135     (0000021e) instance-of          v12, v0, Landroid/text/method/PasswordTransformationMethod;
+	136     (00000222) const/4              v5, 0
+	137     (00000224) const/4              v6, 0
+	138     (00000226) const/4              v15, 0
+	139     (00000228) const/16             v16, 0
+	140     (0000022c) const/16             v17, 0
+	141     (00000230) const/16             v18, -1
+	142     (00000234) move/from16          v0, v18
+	143     (00000238) if-eq                v7, v0, +6b
+
+loadFromAttributes-BB@0x23c : [ loadFromAttributes-BB@0x250 loadFromAttributes-BB@0x27e ]
+	144     (0000023c) sget-object          v18, Landroidx/appcompat/R$styleable;->TextAppearance [I
+	145     (00000240) move-object/from16   v0, v18
+	146     (00000244) invoke-static        v9, v7, v0, Landroidx/appcompat/widget/TintTypedArray;->obtainStyledAttributes(Landroid/content/Context; I [I)Landroidx/appcompat/widget/TintTypedArray;
+	147     (0000024a) move-result-object   v4
+	148     (0000024c) if-nez               v12, +19
+
+loadFromAttributes-BB@0x250 : [ loadFromAttributes-BB@0x264 loadFromAttributes-BB@0x27e ]
+	149     (00000250) sget                 v18, Landroidx/appcompat/R$styleable;->TextAppearance_textAllCaps I
+	150     (00000254) move/from16          v0, v18
+	151     (00000258) invoke-virtual       v4, v0, Landroidx/appcompat/widget/TintTypedArray;->hasValue(I)Z
+	152     (0000025e) move-result          v18
+	153     (00000260) if-eqz               v18, +f
+
+loadFromAttributes-BB@0x264 : [ loadFromAttributes-BB@0x27e ]
+	154     (00000264) const/4              v6, 1
+	155     (00000266) sget                 v18, Landroidx/appcompat/R$styleable;->TextAppearance_textAllCaps I
+	156     (0000026a) const/16             v19, 0
+	157     (0000026e) move/from16          v0, v18
+	158     (00000272) move/from16          v1, v19
+	159     (00000276) invoke-virtual       v4, v0, v1, Landroidx/appcompat/widget/TintTypedArray;->getBoolean(I Z)Z
+	160     (0000027c) move-result          v5
+
+loadFromAttributes-BB@0x27e : [ loadFromAttributes-BB@0x29c loadFromAttributes-BB@0x308 ]
+	161     (0000027e) move-object/from16   v0, v23
+	162     (00000282) invoke-direct        v0, v9, v4, Landroidx/appcompat/widget/AppCompatTextHelper;->updateTypefaceAndStyle(Landroid/content/Context; Landroidx/appcompat/widget/TintTypedArray;)V
+	163     (00000288) sget                 v18, Landroid/os/Build$VERSION;->SDK_INT I
+	164     (0000028c) const/16             v19, 23
+	165     (00000290) move/from16          v0, v18
+	166     (00000294) move/from16          v1, v19
+	167     (00000298) if-ge                v0, v1, +38
+
+loadFromAttributes-BB@0x29c : [ loadFromAttributes-BB@0x2b0 loadFromAttributes-BB@0x2c0 ]
+	168     (0000029c) sget                 v18, Landroidx/appcompat/R$styleable;->TextAppearance_android_textColor I
+	169     (000002a0) move/from16          v0, v18
+	170     (000002a4) invoke-virtual       v4, v0, Landroidx/appcompat/widget/TintTypedArray;->hasValue(I)Z
+	171     (000002aa) move-result          v18
+	172     (000002ac) if-eqz               v18, +a
+
+loadFromAttributes-BB@0x2b0 : [ loadFromAttributes-BB@0x2c0 ]
+	173     (000002b0) sget                 v18, Landroidx/appcompat/R$styleable;->TextAppearance_android_textColor I
+	174     (000002b4) move/from16          v0, v18
+	175     (000002b8) invoke-virtual       v4, v0, Landroidx/appcompat/widget/TintTypedArray;->getColorStateList(I)Landroid/content/res/ColorStateList;
+	176     (000002be) move-result-object   v15
+
+loadFromAttributes-BB@0x2c0 : [ loadFromAttributes-BB@0x2d4 loadFromAttributes-BB@0x2e4 ]
+	177     (000002c0) sget                 v18, Landroidx/appcompat/R$styleable;->TextAppearance_android_textColorHint I
+	178     (000002c4) move/from16          v0, v18
+	179     (000002c8) invoke-virtual       v4, v0, Landroidx/appcompat/widget/TintTypedArray;->hasValue(I)Z
+	180     (000002ce) move-result          v18
+	181     (000002d0) if-eqz               v18, +a
+
+loadFromAttributes-BB@0x2d4 : [ loadFromAttributes-BB@0x2e4 ]
+	182     (000002d4) sget                 v18, Landroidx/appcompat/R$styleable;->TextAppearance_android_textColorHint I
+	183     (000002d8) move/from16          v0, v18
+	184     (000002dc) invoke-virtual       v4, v0, Landroidx/appcompat/widget/TintTypedArray;->getColorStateList(I)Landroid/content/res/ColorStateList;
+	185     (000002e2) move-result-object   v16
+
+loadFromAttributes-BB@0x2e4 : [ loadFromAttributes-BB@0x2f8 loadFromAttributes-BB@0x308 ]
+	186     (000002e4) sget                 v18, Landroidx/appcompat/R$styleable;->TextAppearance_android_textColorLink I
+	187     (000002e8) move/from16          v0, v18
+	188     (000002ec) invoke-virtual       v4, v0, Landroidx/appcompat/widget/TintTypedArray;->hasValue(I)Z
+	189     (000002f2) move-result          v18
+	190     (000002f4) if-eqz               v18, +a
+
+loadFromAttributes-BB@0x2f8 : [ loadFromAttributes-BB@0x308 ]
+	191     (000002f8) sget                 v18, Landroidx/appcompat/R$styleable;->TextAppearance_android_textColorLink I
+	192     (000002fc) move/from16          v0, v18
+	193     (00000300) invoke-virtual       v4, v0, Landroidx/appcompat/widget/TintTypedArray;->getColorStateList(I)Landroid/content/res/ColorStateList;
+	194     (00000306) move-result-object   v17
+
+loadFromAttributes-BB@0x308 : [ loadFromAttributes-BB@0x30e ]
+	195     (00000308) invoke-virtual       v4, Landroidx/appcompat/widget/TintTypedArray;->recycle()V
+
+loadFromAttributes-BB@0x30e : [ loadFromAttributes-BB@0x332 loadFromAttributes-BB@0x360 ]
+	196     (0000030e) sget-object          v18, Landroidx/appcompat/R$styleable;->TextAppearance [I
+	197     (00000312) const/16             v19, 0
+	198     (00000316) move-object/from16   v0, v24
+	199     (0000031a) move-object/from16   v1, v18
+	200     (0000031e) move/from16          v2, v25
+	201     (00000322) move/from16          v3, v19
+	202     (00000326) invoke-static        v9, v0, v1, v2, v3, Landroidx/appcompat/widget/TintTypedArray;->obtainStyledAttributes(Landroid/content/Context; Landroid/util/AttributeSet; [I I I)Landroidx/appcompat/widget/TintTypedArray;
+	203     (0000032c) move-result-object   v4
+	204     (0000032e) if-nez               v12, +19
+
+loadFromAttributes-BB@0x332 : [ loadFromAttributes-BB@0x346 loadFromAttributes-BB@0x360 ]
+	205     (00000332) sget                 v18, Landroidx/appcompat/R$styleable;->TextAppearance_textAllCaps I
+	206     (00000336) move/from16          v0, v18
+	207     (0000033a) invoke-virtual       v4, v0, Landroidx/appcompat/widget/TintTypedArray;->hasValue(I)Z
+	208     (00000340) move-result          v18
+	209     (00000342) if-eqz               v18, +f
+
+loadFromAttributes-BB@0x346 : [ loadFromAttributes-BB@0x360 ]
+	210     (00000346) const/4              v6, 1
+	211     (00000348) sget                 v18, Landroidx/appcompat/R$styleable;->TextAppearance_textAllCaps I
+	212     (0000034c) const/16             v19, 0
+	213     (00000350) move/from16          v0, v18
+	214     (00000354) move/from16          v1, v19
+	215     (00000358) invoke-virtual       v4, v0, v1, Landroidx/appcompat/widget/TintTypedArray;->getBoolean(I Z)Z
+	216     (0000035e) move-result          v5
+
+loadFromAttributes-BB@0x360 : [ loadFromAttributes-BB@0x374 loadFromAttributes-BB@0x3e0 ]
+	217     (00000360) sget                 v18, Landroid/os/Build$VERSION;->SDK_INT I
+	218     (00000364) const/16             v19, 23
+	219     (00000368) move/from16          v0, v18
+	220     (0000036c) move/from16          v1, v19
+	221     (00000370) if-ge                v0, v1, +38
+
+loadFromAttributes-BB@0x374 : [ loadFromAttributes-BB@0x388 loadFromAttributes-BB@0x398 ]
+	222     (00000374) sget                 v18, Landroidx/appcompat/R$styleable;->TextAppearance_android_textColor I
+	223     (00000378) move/from16          v0, v18
+	224     (0000037c) invoke-virtual       v4, v0, Landroidx/appcompat/widget/TintTypedArray;->hasValue(I)Z
+	225     (00000382) move-result          v18
+	226     (00000384) if-eqz               v18, +a
+
+loadFromAttributes-BB@0x388 : [ loadFromAttributes-BB@0x398 ]
+	227     (00000388) sget                 v18, Landroidx/appcompat/R$styleable;->TextAppearance_android_textColor I
+	228     (0000038c) move/from16          v0, v18
+	229     (00000390) invoke-virtual       v4, v0, Landroidx/appcompat/widget/TintTypedArray;->getColorStateList(I)Landroid/content/res/ColorStateList;
+	230     (00000396) move-result-object   v15
+
+loadFromAttributes-BB@0x398 : [ loadFromAttributes-BB@0x3ac loadFromAttributes-BB@0x3bc ]
+	231     (00000398) sget                 v18, Landroidx/appcompat/R$styleable;->TextAppearance_android_textColorHint I
+	232     (0000039c) move/from16          v0, v18
+	233     (000003a0) invoke-virtual       v4, v0, Landroidx/appcompat/widget/TintTypedArray;->hasValue(I)Z
+	234     (000003a6) move-result          v18
+	235     (000003a8) if-eqz               v18, +a
+
+loadFromAttributes-BB@0x3ac : [ loadFromAttributes-BB@0x3bc ]
+	236     (000003ac) sget                 v18, Landroidx/appcompat/R$styleable;->TextAppearance_android_textColorHint I
+	237     (000003b0) move/from16          v0, v18
+	238     (000003b4) invoke-virtual       v4, v0, Landroidx/appcompat/widget/TintTypedArray;->getColorStateList(I)Landroid/content/res/ColorStateList;
+	239     (000003ba) move-result-object   v16
+
+loadFromAttributes-BB@0x3bc : [ loadFromAttributes-BB@0x3d0 loadFromAttributes-BB@0x3e0 ]
+	240     (000003bc) sget                 v18, Landroidx/appcompat/R$styleable;->TextAppearance_android_textColorLink I
+	241     (000003c0) move/from16          v0, v18
+	242     (000003c4) invoke-virtual       v4, v0, Landroidx/appcompat/widget/TintTypedArray;->hasValue(I)Z
+	243     (000003ca) move-result          v18
+	244     (000003cc) if-eqz               v18, +a
+
+loadFromAttributes-BB@0x3d0 : [ loadFromAttributes-BB@0x3e0 ]
+	245     (000003d0) sget                 v18, Landroidx/appcompat/R$styleable;->TextAppearance_android_textColorLink I
+	246     (000003d4) move/from16          v0, v18
+	247     (000003d8) invoke-virtual       v4, v0, Landroidx/appcompat/widget/TintTypedArray;->getColorStateList(I)Landroid/content/res/ColorStateList;
+	248     (000003de) move-result-object   v17
+
+loadFromAttributes-BB@0x3e0 : [ loadFromAttributes-BB@0x3f4 loadFromAttributes-BB@0x43e ]
+	249     (000003e0) sget                 v18, Landroid/os/Build$VERSION;->SDK_INT I
+	250     (000003e4) const/16             v19, 28
+	251     (000003e8) move/from16          v0, v18
+	252     (000003ec) move/from16          v1, v19
+	253     (000003f0) if-lt                v0, v1, +27
+
+loadFromAttributes-BB@0x3f4 : [ loadFromAttributes-BB@0x408 loadFromAttributes-BB@0x43e ]
+	254     (000003f4) sget                 v18, Landroidx/appcompat/R$styleable;->TextAppearance_android_textSize I
+	255     (000003f8) move/from16          v0, v18
+	256     (000003fc) invoke-virtual       v4, v0, Landroidx/appcompat/widget/TintTypedArray;->hasValue(I)Z
+	257     (00000402) move-result          v18
+	258     (00000404) if-eqz               v18, +1d
+
+loadFromAttributes-BB@0x408 : [ loadFromAttributes-BB@0x424 loadFromAttributes-BB@0x43e ]
+	259     (00000408) sget                 v18, Landroidx/appcompat/R$styleable;->TextAppearance_android_textSize I
+	260     (0000040c) const/16             v19, -1
+	261     (00000410) move/from16          v0, v18
+	262     (00000414) move/from16          v1, v19
+	263     (00000418) invoke-virtual       v4, v0, v1, Landroidx/appcompat/widget/TintTypedArray;->getDimensionPixelSize(I I)I
+	264     (0000041e) move-result          v18
+	265     (00000420) if-nez               v18, +f
+
+loadFromAttributes-BB@0x424 : [ loadFromAttributes-BB@0x43e ]
+	266     (00000424) move-object/from16   v0, v23
+	267     (00000428) iget-object          v0, v0, Landroidx/appcompat/widget/AppCompatTextHelper;->mView Landroid/widget/TextView;
+	268     (0000042c) move-object/from16   v18, v0
+	269     (00000430) const/16             v19, 0
+	270     (00000434) const/16             v20, 0
+	271     (00000438) invoke-virtual/range v18 ... v20, Landroid/widget/TextView;->setTextSize(I F)V
+
+loadFromAttributes-BB@0x43e : [ loadFromAttributes-BB@0x452 loadFromAttributes-BB@0x468 ]
+	272     (0000043e) move-object/from16   v0, v23
+	273     (00000442) invoke-direct        v0, v9, v4, Landroidx/appcompat/widget/AppCompatTextHelper;->updateTypefaceAndStyle(Landroid/content/Context; Landroidx/appcompat/widget/TintTypedArray;)V
+	274     (00000448) invoke-virtual       v4, Landroidx/appcompat/widget/TintTypedArray;->recycle()V
+	275     (0000044e) if-eqz               v15, +d
+
+loadFromAttributes-BB@0x452 : [ loadFromAttributes-BB@0x468 ]
+	276     (00000452) move-object/from16   v0, v23
+	277     (00000456) iget-object          v0, v0, Landroidx/appcompat/widget/AppCompatTextHelper;->mView Landroid/widget/TextView;
+	278     (0000045a) move-object/from16   v18, v0
+	279     (0000045e) move-object/from16   v0, v18
+	280     (00000462) invoke-virtual       v0, v15, Landroid/widget/TextView;->setTextColor(Landroid/content/res/ColorStateList;)V
+
+loadFromAttributes-BB@0x468 : [ loadFromAttributes-BB@0x46c loadFromAttributes-BB@0x486 ]
+	281     (00000468) if-eqz               v16, +f
+
+loadFromAttributes-BB@0x46c : [ loadFromAttributes-BB@0x486 ]
+	282     (0000046c) move-object/from16   v0, v23
+	283     (00000470) iget-object          v0, v0, Landroidx/appcompat/widget/AppCompatTextHelper;->mView Landroid/widget/TextView;
+	284     (00000474) move-object/from16   v18, v0
+	285     (00000478) move-object/from16   v0, v18
+	286     (0000047c) move-object/from16   v1, v16
+	287     (00000480) invoke-virtual       v0, v1, Landroid/widget/TextView;->setHintTextColor(Landroid/content/res/ColorStateList;)V
+
+loadFromAttributes-BB@0x486 : [ loadFromAttributes-BB@0x48a loadFromAttributes-BB@0x4a4 ]
+	288     (00000486) if-eqz               v17, +f
+
+loadFromAttributes-BB@0x48a : [ loadFromAttributes-BB@0x4a4 ]
+	289     (0000048a) move-object/from16   v0, v23
+	290     (0000048e) iget-object          v0, v0, Landroidx/appcompat/widget/AppCompatTextHelper;->mView Landroid/widget/TextView;
+	291     (00000492) move-object/from16   v18, v0
+	292     (00000496) move-object/from16   v0, v18
+	293     (0000049a) move-object/from16   v1, v17
+	294     (0000049e) invoke-virtual       v0, v1, Landroid/widget/TextView;->setLinkTextColor(Landroid/content/res/ColorStateList;)V
+
+loadFromAttributes-BB@0x4a4 : [ loadFromAttributes-BB@0x4a8 loadFromAttributes-BB@0x4b6 ]
+	295     (000004a4) if-nez               v12, +9
+
+loadFromAttributes-BB@0x4a8 : [ loadFromAttributes-BB@0x4ac loadFromAttributes-BB@0x4b6 ]
+	296     (000004a8) if-eqz               v6, +7
+
+loadFromAttributes-BB@0x4ac : [ loadFromAttributes-BB@0x4b6 ]
+	297     (000004ac) move-object/from16   v0, v23
+	298     (000004b0) invoke-virtual       v0, v5, Landroidx/appcompat/widget/AppCompatTextHelper;->setAllCaps(Z)V
+
+loadFromAttributes-BB@0x4b6 : [ loadFromAttributes-BB@0x4c6 loadFromAttributes-BB@0x4f0 ]
+	299     (000004b6) move-object/from16   v0, v23
+	300     (000004ba) iget-object          v0, v0, Landroidx/appcompat/widget/AppCompatTextHelper;->mFontTypeface Landroid/graphics/Typeface;
+	301     (000004be) move-object/from16   v18, v0
+	302     (000004c2) if-eqz               v18, +17
+
+loadFromAttributes-BB@0x4c6 : [ loadFromAttributes-BB@0x4f0 ]
+	303     (000004c6) move-object/from16   v0, v23
+	304     (000004ca) iget-object          v0, v0, Landroidx/appcompat/widget/AppCompatTextHelper;->mView Landroid/widget/TextView;
+	305     (000004ce) move-object/from16   v18, v0
+	306     (000004d2) move-object/from16   v0, v23
+	307     (000004d6) iget-object          v0, v0, Landroidx/appcompat/widget/AppCompatTextHelper;->mFontTypeface Landroid/graphics/Typeface;
+	308     (000004da) move-object/from16   v19, v0
+	309     (000004de) move-object/from16   v0, v23
+	310     (000004e2) iget                 v0, v0, Landroidx/appcompat/widget/AppCompatTextHelper;->mStyle I
+	311     (000004e6) move/from16          v20, v0
+	312     (000004ea) invoke-virtual/range v18 ... v20, Landroid/widget/TextView;->setTypeface(Landroid/graphics/Typeface; I)V
+
+loadFromAttributes-BB@0x4f0 : [ loadFromAttributes-BB@0x516 loadFromAttributes-BB@0x5c8 ]
+	313     (000004f0) move-object/from16   v0, v23
+	314     (000004f4) iget-object          v0, v0, Landroidx/appcompat/widget/AppCompatTextHelper;->mAutoSizeTextHelper Landroidx/appcompat/widget/AppCompatTextViewAutoSizeHelper;
+	315     (000004f8) move-object/from16   v18, v0
+	316     (000004fc) move-object/from16   v0, v18
+	317     (00000500) move-object/from16   v1, v24
+	318     (00000504) move/from16          v2, v25
+	319     (00000508) invoke-virtual       v0, v1, v2, Landroidx/appcompat/widget/AppCompatTextViewAutoSizeHelper;->loadFromAttributes(Landroid/util/AttributeSet; I)V
+	320     (0000050e) sget-boolean         v18, Landroidx/core/widget/AutoSizeableTextView;->PLATFORM_SUPPORTS_AUTOSIZE Z
+	321     (00000512) if-eqz               v18, +5b
+
+loadFromAttributes-BB@0x516 : [ loadFromAttributes-BB@0x52e loadFromAttributes-BB@0x5c8 ]
+	322     (00000516) move-object/from16   v0, v23
+	323     (0000051a) iget-object          v0, v0, Landroidx/appcompat/widget/AppCompatTextHelper;->mAutoSizeTextHelper Landroidx/appcompat/widget/AppCompatTextViewAutoSizeHelper;
+	324     (0000051e) move-object/from16   v18, v0
+	325     (00000522) invoke-virtual/range v18, Landroidx/appcompat/widget/AppCompatTextViewAutoSizeHelper;->getAutoSizeTextType()I
+	326     (00000528) move-result          v18
+	327     (0000052a) if-eqz               v18, +4f
+
+loadFromAttributes-BB@0x52e : [ loadFromAttributes-BB@0x54c loadFromAttributes-BB@0x5c8 ]
+	328     (0000052e) move-object/from16   v0, v23
+	329     (00000532) iget-object          v0, v0, Landroidx/appcompat/widget/AppCompatTextHelper;->mAutoSizeTextHelper Landroidx/appcompat/widget/AppCompatTextViewAutoSizeHelper;
+	330     (00000536) move-object/from16   v18, v0
+	331     (0000053a) invoke-virtual/range v18, Landroidx/appcompat/widget/AppCompatTextViewAutoSizeHelper;->getAutoSizeTextAvailableSizes()[I
+	332     (00000540) move-result-object   v8
+	333     (00000542) array-length         v0, v8
+	334     (00000544) move/from16          v18, v0
+	335     (00000548) if-lez               v18, +40
+
+loadFromAttributes-BB@0x54c : [ loadFromAttributes-BB@0x576 loadFromAttributes-BB@0x692 ]
+	336     (0000054c) move-object/from16   v0, v23
+	337     (00000550) iget-object          v0, v0, Landroidx/appcompat/widget/AppCompatTextHelper;->mView Landroid/widget/TextView;
+	338     (00000554) move-object/from16   v18, v0
+	339     (00000558) invoke-virtual/range v18, Landroid/widget/TextView;->getAutoSizeStepGranularity()I
+	340     (0000055e) move-result          v18
+	341     (00000560) move/from16          v0, v18
+	342     (00000564) int-to-float         v0, v0
+	343     (00000566) move/from16          v18, v0
+	344     (0000056a) const/high16         v19, -16512 # [-1.0]
+	345     (0000056e) cmpl-float           v18, v18, v19
+	346     (00000572) if-eqz               v18, +90
+
+loadFromAttributes-BB@0x576 : [ loadFromAttributes-BB@0x5c8 ]
+	347     (00000576) move-object/from16   v0, v23
+	348     (0000057a) iget-object          v0, v0, Landroidx/appcompat/widget/AppCompatTextHelper;->mView Landroid/widget/TextView;
+	349     (0000057e) move-object/from16   v18, v0
+	350     (00000582) move-object/from16   v0, v23
+	351     (00000586) iget-object          v0, v0, Landroidx/appcompat/widget/AppCompatTextHelper;->mAutoSizeTextHelper Landroidx/appcompat/widget/AppCompatTextViewAutoSizeHelper;
+	352     (0000058a) move-object/from16   v19, v0
+	353     (0000058e) invoke-virtual/range v19, Landroidx/appcompat/widget/AppCompatTextViewAutoSizeHelper;->getAutoSizeMinTextSize()I
+	354     (00000594) move-result          v19
+	355     (00000596) move-object/from16   v0, v23
+	356     (0000059a) iget-object          v0, v0, Landroidx/appcompat/widget/AppCompatTextHelper;->mAutoSizeTextHelper Landroidx/appcompat/widget/AppCompatTextViewAutoSizeHelper;
+	357     (0000059e) move-object/from16   v20, v0
+	358     (000005a2) invoke-virtual/range v20, Landroidx/appcompat/widget/AppCompatTextViewAutoSizeHelper;->getAutoSizeMaxTextSize()I
+	359     (000005a8) move-result          v20
+	360     (000005aa) move-object/from16   v0, v23
+	361     (000005ae) iget-object          v0, v0, Landroidx/appcompat/widget/AppCompatTextHelper;->mAutoSizeTextHelper Landroidx/appcompat/widget/AppCompatTextViewAutoSizeHelper;
+	362     (000005b2) move-object/from16   v21, v0
+	363     (000005b6) invoke-virtual/range v21, Landroidx/appcompat/widget/AppCompatTextViewAutoSizeHelper;->getAutoSizeStepGranularity()I
+	364     (000005bc) move-result          v21
+	365     (000005be) const/16             v22, 0
+	366     (000005c2) invoke-virtual/range v18 ... v22, Landroid/widget/TextView;->setAutoSizeTextTypeUniformWithConfiguration(I I I I)V
+
+loadFromAttributes-BB@0x5c8 : [ loadFromAttributes-BB@0x636 loadFromAttributes-BB@0x64c ]
+	367     (000005c8) sget-object          v18, Landroidx/appcompat/R$styleable;->AppCompatTextView [I
+	368     (000005cc) move-object/from16   v0, v24
+	369     (000005d0) move-object/from16   v1, v18
+	370     (000005d4) invoke-static        v9, v0, v1, Landroidx/appcompat/widget/TintTypedArray;->obtainStyledAttributes(Landroid/content/Context; Landroid/util/AttributeSet; [I)Landroidx/appcompat/widget/TintTypedArray;
+	371     (000005da) move-result-object   v4
+	372     (000005dc) sget                 v18, Landroidx/appcompat/R$styleable;->AppCompatTextView_firstBaselineToTopHeight I
+	373     (000005e0) const/16             v19, -1
+	374     (000005e4) move/from16          v0, v18
+	375     (000005e8) move/from16          v1, v19
+	376     (000005ec) invoke-virtual       v4, v0, v1, Landroidx/appcompat/widget/TintTypedArray;->getDimensionPixelSize(I I)I
+	377     (000005f2) move-result          v11
+	378     (000005f4) sget                 v18, Landroidx/appcompat/R$styleable;->AppCompatTextView_lastBaselineToBottomHeight I
+	379     (000005f8) const/16             v19, -1
+	380     (000005fc) move/from16          v0, v18
+	381     (00000600) move/from16          v1, v19
+	382     (00000604) invoke-virtual       v4, v0, v1, Landroidx/appcompat/widget/TintTypedArray;->getDimensionPixelSize(I I)I
+	383     (0000060a) move-result          v13
+	384     (0000060c) sget                 v18, Landroidx/appcompat/R$styleable;->AppCompatTextView_lineHeight I
+	385     (00000610) const/16             v19, -1
+	386     (00000614) move/from16          v0, v18
+	387     (00000618) move/from16          v1, v19
+	388     (0000061c) invoke-virtual       v4, v0, v1, Landroidx/appcompat/widget/TintTypedArray;->getDimensionPixelSize(I I)I
+	389     (00000622) move-result          v14
+	390     (00000624) invoke-virtual       v4, Landroidx/appcompat/widget/TintTypedArray;->recycle()V
+	391     (0000062a) const/16             v18, -1
+	392     (0000062e) move/from16          v0, v18
+	393     (00000632) if-eq                v11, v0, +d
+
+loadFromAttributes-BB@0x636 : [ loadFromAttributes-BB@0x64c ]
+	394     (00000636) move-object/from16   v0, v23
+	395     (0000063a) iget-object          v0, v0, Landroidx/appcompat/widget/AppCompatTextHelper;->mView Landroid/widget/TextView;
+	396     (0000063e) move-object/from16   v18, v0
+	397     (00000642) move-object/from16   v0, v18
+	398     (00000646) invoke-static        v0, v11, Landroidx/core/widget/TextViewCompat;->setFirstBaselineToTopHeight(Landroid/widget/TextView; I)V
+
+loadFromAttributes-BB@0x64c : [ loadFromAttributes-BB@0x658 loadFromAttributes-BB@0x66e ]
+	399     (0000064c) const/16             v18, -1
+	400     (00000650) move/from16          v0, v18
+	401     (00000654) if-eq                v13, v0, +d
+
+loadFromAttributes-BB@0x658 : [ loadFromAttributes-BB@0x66e ]
+	402     (00000658) move-object/from16   v0, v23
+	403     (0000065c) iget-object          v0, v0, Landroidx/appcompat/widget/AppCompatTextHelper;->mView Landroid/widget/TextView;
+	404     (00000660) move-object/from16   v18, v0
+	405     (00000664) move-object/from16   v0, v18
+	406     (00000668) invoke-static        v0, v13, Landroidx/core/widget/TextViewCompat;->setLastBaselineToBottomHeight(Landroid/widget/TextView; I)V
+
+loadFromAttributes-BB@0x66e : [ loadFromAttributes-BB@0x67a loadFromAttributes-BB@0x690 ]
+	407     (0000066e) const/16             v18, -1
+	408     (00000672) move/from16          v0, v18
+	409     (00000676) if-eq                v14, v0, +d
+
+loadFromAttributes-BB@0x67a : [ loadFromAttributes-BB@0x690 ]
+	410     (0000067a) move-object/from16   v0, v23
+	411     (0000067e) iget-object          v0, v0, Landroidx/appcompat/widget/AppCompatTextHelper;->mView Landroid/widget/TextView;
+	412     (00000682) move-object/from16   v18, v0
+	413     (00000686) move-object/from16   v0, v18
+	414     (0000068a) invoke-static        v0, v14, Landroidx/core/widget/TextViewCompat;->setLineHeight(Landroid/widget/TextView; I)V
+
+loadFromAttributes-BB@0x690 : 
+	415     (00000690) return-void          
+
+loadFromAttributes-BB@0x692 : [ loadFromAttributes-BB@0x5c8 ]
+	416     (00000692) move-object/from16   v0, v23
+	417     (00000696) iget-object          v0, v0, Landroidx/appcompat/widget/AppCompatTextHelper;->mView Landroid/widget/TextView;
+	418     (0000069a) move-object/from16   v18, v0
+	419     (0000069e) const/16             v19, 0
+	420     (000006a2) move-object/from16   v0, v18
+	421     (000006a6) move/from16          v1, v19
+	422     (000006aa) invoke-virtual       v0, v8, v1, Landroid/widget/TextView;->setAutoSizeTextTypeUniformWithPresetSizes([I I)V
+	423     (000006b0) goto                 -74
+

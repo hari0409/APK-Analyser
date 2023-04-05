@@ -1,0 +1,32 @@
+# Landroidx/appcompat/widget/ShareActionProvider;->setActivityChooserPolicyIfNeeded()V [access_flags=private]
+#
+# Parameters:
+# local registers: v0...v3
+#
+# - return:void
+
+setActivityChooserPolicyIfNeeded-BB@0x0 : [ setActivityChooserPolicyIfNeeded-BB@0x8 setActivityChooserPolicyIfNeeded-BB@0xa ]
+	0       (00000000) iget-object          v1, v3, Landroidx/appcompat/widget/ShareActionProvider;->mOnShareTargetSelectedListener Landroidx/appcompat/widget/ShareActionProvider$OnShareTargetSelectedListener;
+	1       (00000004) if-nez               v1, +3
+
+setActivityChooserPolicyIfNeeded-BB@0x8 : 
+	2       (00000008) return-void          
+
+setActivityChooserPolicyIfNeeded-BB@0xa : [ setActivityChooserPolicyIfNeeded-BB@0x12 setActivityChooserPolicyIfNeeded-BB@0x20 ]
+	3       (0000000a) iget-object          v1, v3, Landroidx/appcompat/widget/ShareActionProvider;->mOnChooseActivityListener Landroidx/appcompat/widget/ActivityChooserModel$OnChooseActivityListener;
+	4       (0000000e) if-nez               v1, +9
+
+setActivityChooserPolicyIfNeeded-BB@0x12 : [ setActivityChooserPolicyIfNeeded-BB@0x20 ]
+	5       (00000012) new-instance         v1, Landroidx/appcompat/widget/ShareActionProvider$ShareActivityChooserModelPolicy;
+	6       (00000016) invoke-direct        v1, v3, Landroidx/appcompat/widget/ShareActionProvider$ShareActivityChooserModelPolicy;-><init>(Landroidx/appcompat/widget/ShareActionProvider;)V
+	7       (0000001c) iput-object          v1, v3, Landroidx/appcompat/widget/ShareActionProvider;->mOnChooseActivityListener Landroidx/appcompat/widget/ActivityChooserModel$OnChooseActivityListener;
+
+setActivityChooserPolicyIfNeeded-BB@0x20 : [ setActivityChooserPolicyIfNeeded-BB@0x8 ]
+	8       (00000020) iget-object          v1, v3, Landroidx/appcompat/widget/ShareActionProvider;->mContext Landroid/content/Context;
+	9       (00000024) iget-object          v2, v3, Landroidx/appcompat/widget/ShareActionProvider;->mShareHistoryFileName Ljava/lang/String;
+	10      (00000028) invoke-static        v1, v2, Landroidx/appcompat/widget/ActivityChooserModel;->get(Landroid/content/Context; Ljava/lang/String;)Landroidx/appcompat/widget/ActivityChooserModel;
+	11      (0000002e) move-result-object   v0
+	12      (00000030) iget-object          v1, v3, Landroidx/appcompat/widget/ShareActionProvider;->mOnChooseActivityListener Landroidx/appcompat/widget/ActivityChooserModel$OnChooseActivityListener;
+	13      (00000034) invoke-virtual       v0, v1, Landroidx/appcompat/widget/ActivityChooserModel;->setOnChooseActivityListener(Landroidx/appcompat/widget/ActivityChooserModel$OnChooseActivityListener;)V
+	14      (0000003a) goto                 -19
+

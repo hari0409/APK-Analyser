@@ -1,0 +1,71 @@
+# Landroidx/appcompat/app/ActionBarDrawerToggle;-><init>(Landroid/app/Activity; Landroidx/appcompat/widget/Toolbar; Landroidx/drawerlayout/widget/DrawerLayout; Landroidx/appcompat/graphics/drawable/DrawerArrowDrawable; I I)V [access_flags=constructor]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:android.app.Activity
+# - v4:androidx.appcompat.widget.Toolbar
+# - v5:androidx.drawerlayout.widget.DrawerLayout
+# - v6:androidx.appcompat.graphics.drawable.DrawerArrowDrawable
+# - v7:int
+# - v8:int
+#
+# - return:void
+
+<init>-BB@0x0 : [ <init>-BB@0x1a <init>-BB@0x70 ]
+	0       (00000000) const/4              v0, 1
+	1       (00000002) invoke-direct        v2, Ljava/lang/Object;-><init>()V
+	2       (00000008) iput-boolean         v0, v2, Landroidx/appcompat/app/ActionBarDrawerToggle;->mDrawerSlideAnimationEnabled Z
+	3       (0000000c) iput-boolean         v0, v2, Landroidx/appcompat/app/ActionBarDrawerToggle;->mDrawerIndicatorEnabled Z
+	4       (00000010) const/4              v0, 0
+	5       (00000012) iput-boolean         v0, v2, Landroidx/appcompat/app/ActionBarDrawerToggle;->mWarnedForDisplayHomeAsUp Z
+	6       (00000016) if-eqz               v4, +2d
+
+<init>-BB@0x1a : [ <init>-BB@0x38 ]
+	7       (0000001a) new-instance         v0, Landroidx/appcompat/app/ActionBarDrawerToggle$ToolbarCompatDelegate;
+	8       (0000001e) invoke-direct        v0, v4, Landroidx/appcompat/app/ActionBarDrawerToggle$ToolbarCompatDelegate;-><init>(Landroidx/appcompat/widget/Toolbar;)V
+	9       (00000024) iput-object          v0, v2, Landroidx/appcompat/app/ActionBarDrawerToggle;->mActivityImpl Landroidx/appcompat/app/ActionBarDrawerToggle$Delegate;
+	10      (00000028) new-instance         v0, Landroidx/appcompat/app/ActionBarDrawerToggle$1;
+	11      (0000002c) invoke-direct        v0, v2, Landroidx/appcompat/app/ActionBarDrawerToggle$1;-><init>(Landroidx/appcompat/app/ActionBarDrawerToggle;)V
+	12      (00000032) invoke-virtual       v4, v0, Landroidx/appcompat/widget/Toolbar;->setNavigationOnClickListener(Landroid/view/View$OnClickListener;)V
+
+<init>-BB@0x38 : [ <init>-BB@0x48 <init>-BB@0x9a ]
+	13      (00000038) iput-object          v5, v2, Landroidx/appcompat/app/ActionBarDrawerToggle;->mDrawerLayout Landroidx/drawerlayout/widget/DrawerLayout;
+	14      (0000003c) iput                 v7, v2, Landroidx/appcompat/app/ActionBarDrawerToggle;->mOpenDrawerContentDescRes I
+	15      (00000040) iput                 v8, v2, Landroidx/appcompat/app/ActionBarDrawerToggle;->mCloseDrawerContentDescRes I
+	16      (00000044) if-nez               v6, +2b
+
+<init>-BB@0x48 : [ <init>-BB@0x62 ]
+	17      (00000048) new-instance         v0, Landroidx/appcompat/graphics/drawable/DrawerArrowDrawable;
+	18      (0000004c) iget-object          v1, v2, Landroidx/appcompat/app/ActionBarDrawerToggle;->mActivityImpl Landroidx/appcompat/app/ActionBarDrawerToggle$Delegate;
+	19      (00000050) invoke-interface     v1, Landroidx/appcompat/app/ActionBarDrawerToggle$Delegate;->getActionBarThemedContext()Landroid/content/Context;
+	20      (00000056) move-result-object   v1
+	21      (00000058) invoke-direct        v0, v1, Landroidx/appcompat/graphics/drawable/DrawerArrowDrawable;-><init>(Landroid/content/Context;)V
+	22      (0000005e) iput-object          v0, v2, Landroidx/appcompat/app/ActionBarDrawerToggle;->mSlider Landroidx/appcompat/graphics/drawable/DrawerArrowDrawable;
+
+<init>-BB@0x62 : 
+	23      (00000062) invoke-virtual       v2, Landroidx/appcompat/app/ActionBarDrawerToggle;->getThemeUpIndicator()Landroid/graphics/drawable/Drawable;
+	24      (00000068) move-result-object   v0
+	25      (0000006a) iput-object          v0, v2, Landroidx/appcompat/app/ActionBarDrawerToggle;->mHomeAsUpIndicator Landroid/graphics/drawable/Drawable;
+	26      (0000006e) return-void          
+
+<init>-BB@0x70 : [ <init>-BB@0x78 <init>-BB@0x8a ]
+	27      (00000070) instance-of          v0, v3, Landroidx/appcompat/app/ActionBarDrawerToggle$DelegateProvider;
+	28      (00000074) if-eqz               v0, +b
+
+<init>-BB@0x78 : [ <init>-BB@0x38 ]
+	29      (00000078) check-cast           v3, Landroidx/appcompat/app/ActionBarDrawerToggle$DelegateProvider;
+	30      (0000007c) invoke-interface     v3, Landroidx/appcompat/app/ActionBarDrawerToggle$DelegateProvider;->getDrawerToggleDelegate()Landroidx/appcompat/app/ActionBarDrawerToggle$Delegate;
+	31      (00000082) move-result-object   v0
+	32      (00000084) iput-object          v0, v2, Landroidx/appcompat/app/ActionBarDrawerToggle;->mActivityImpl Landroidx/appcompat/app/ActionBarDrawerToggle$Delegate;
+	33      (00000088) goto                 -28
+
+<init>-BB@0x8a : [ <init>-BB@0x38 ]
+	34      (0000008a) new-instance         v0, Landroidx/appcompat/app/ActionBarDrawerToggle$FrameworkActionBarDelegate;
+	35      (0000008e) invoke-direct        v0, v3, Landroidx/appcompat/app/ActionBarDrawerToggle$FrameworkActionBarDelegate;-><init>(Landroid/app/Activity;)V
+	36      (00000094) iput-object          v0, v2, Landroidx/appcompat/app/ActionBarDrawerToggle;->mActivityImpl Landroidx/appcompat/app/ActionBarDrawerToggle$Delegate;
+	37      (00000098) goto                 -30
+
+<init>-BB@0x9a : [ <init>-BB@0x62 ]
+	38      (0000009a) iput-object          v6, v2, Landroidx/appcompat/app/ActionBarDrawerToggle;->mSlider Landroidx/appcompat/graphics/drawable/DrawerArrowDrawable;
+	39      (0000009e) goto                 -1e
+

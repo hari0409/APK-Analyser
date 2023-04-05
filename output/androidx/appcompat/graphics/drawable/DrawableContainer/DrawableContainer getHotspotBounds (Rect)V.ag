@@ -1,0 +1,23 @@
+# Landroidx/appcompat/graphics/drawable/DrawableContainer;->getHotspotBounds(Landroid/graphics/Rect;)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:android.graphics.Rect
+#
+# - return:void
+
+getHotspotBounds-BB@0x0 : [ getHotspotBounds-BB@0x8 getHotspotBounds-BB@0x14 ]
+	0       (00000000) iget-object          v0, v1, Landroidx/appcompat/graphics/drawable/DrawableContainer;->mHotspotBounds Landroid/graphics/Rect;
+	1       (00000004) if-eqz               v0, +8
+
+getHotspotBounds-BB@0x8 : [ getHotspotBounds-BB@0x12 ]
+	2       (00000008) iget-object          v0, v1, Landroidx/appcompat/graphics/drawable/DrawableContainer;->mHotspotBounds Landroid/graphics/Rect;
+	3       (0000000c) invoke-virtual       v2, v0, Landroid/graphics/Rect;->set(Landroid/graphics/Rect;)V
+
+getHotspotBounds-BB@0x12 : 
+	4       (00000012) return-void          
+
+getHotspotBounds-BB@0x14 : [ getHotspotBounds-BB@0x12 ]
+	5       (00000014) invoke-super         v1, v2, Landroid/graphics/drawable/Drawable;->getHotspotBounds(Landroid/graphics/Rect;)V
+	6       (0000001a) goto                 -4
+

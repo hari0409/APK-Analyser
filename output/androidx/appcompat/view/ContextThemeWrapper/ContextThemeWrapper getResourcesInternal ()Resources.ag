@@ -1,0 +1,38 @@
+# Landroidx/appcompat/view/ContextThemeWrapper;->getResourcesInternal()Landroid/content/res/Resources; [access_flags=private]
+#
+# Parameters:
+# local registers: v0...v3
+#
+# - return:android.content.res.Resources
+
+getResourcesInternal-BB@0x0 : [ getResourcesInternal-BB@0x8 getResourcesInternal-BB@0x1c ]
+	0       (00000000) iget-object          v1, v3, Landroidx/appcompat/view/ContextThemeWrapper;->mResources Landroid/content/res/Resources;
+	1       (00000004) if-nez               v1, +c
+
+getResourcesInternal-BB@0x8 : [ getResourcesInternal-BB@0x10 getResourcesInternal-BB@0x22 ]
+	2       (00000008) iget-object          v1, v3, Landroidx/appcompat/view/ContextThemeWrapper;->mOverrideConfiguration Landroid/content/res/Configuration;
+	3       (0000000c) if-nez               v1, +b
+
+getResourcesInternal-BB@0x10 : [ getResourcesInternal-BB@0x1c ]
+	4       (00000010) invoke-super         v3, Landroid/content/ContextWrapper;->getResources()Landroid/content/res/Resources;
+	5       (00000016) move-result-object   v1
+	6       (00000018) iput-object          v1, v3, Landroidx/appcompat/view/ContextThemeWrapper;->mResources Landroid/content/res/Resources;
+
+getResourcesInternal-BB@0x1c : 
+	7       (0000001c) iget-object          v1, v3, Landroidx/appcompat/view/ContextThemeWrapper;->mResources Landroid/content/res/Resources;
+	8       (00000020) return-object        v1
+
+getResourcesInternal-BB@0x22 : [ getResourcesInternal-BB@0x2e getResourcesInternal-BB@0x1c ]
+	9       (00000022) sget                 v1, Landroid/os/Build$VERSION;->SDK_INT I
+	10      (00000026) const/16             v2, 17
+	11      (0000002a) if-lt                v1, v2, -7
+
+getResourcesInternal-BB@0x2e : [ getResourcesInternal-BB@0x1c ]
+	12      (0000002e) iget-object          v1, v3, Landroidx/appcompat/view/ContextThemeWrapper;->mOverrideConfiguration Landroid/content/res/Configuration;
+	13      (00000032) invoke-virtual       v3, v1, Landroidx/appcompat/view/ContextThemeWrapper;->createConfigurationContext(Landroid/content/res/Configuration;)Landroid/content/Context;
+	14      (00000038) move-result-object   v0
+	15      (0000003a) invoke-virtual       v0, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
+	16      (00000040) move-result-object   v1
+	17      (00000042) iput-object          v1, v3, Landroidx/appcompat/view/ContextThemeWrapper;->mResources Landroid/content/res/Resources;
+	18      (00000046) goto                 -15
+

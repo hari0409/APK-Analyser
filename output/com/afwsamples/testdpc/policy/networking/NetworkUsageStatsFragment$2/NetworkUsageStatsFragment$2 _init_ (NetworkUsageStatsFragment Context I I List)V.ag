@@ -1,0 +1,17 @@
+# Lcom/afwsamples/testdpc/policy/networking/NetworkUsageStatsFragment$2;-><init>(Lcom/afwsamples/testdpc/policy/networking/NetworkUsageStatsFragment; Landroid/content/Context; I I Ljava/util/List;)V [access_flags=constructor]
+#
+# Parameters:
+# - local registers: v0...v0
+# - v1:com.afwsamples.testdpc.policy.networking.NetworkUsageStatsFragment
+# - v2:android.content.Context
+# - v3:int
+# - v4:int
+# - v5:java.util.List
+#
+# - return:void
+
+<init>-BB@0x0 : 
+	0       (00000000) iput-object          v1, v0, Lcom/afwsamples/testdpc/policy/networking/NetworkUsageStatsFragment$2;->this$0 Lcom/afwsamples/testdpc/policy/networking/NetworkUsageStatsFragment;
+	1       (00000004) invoke-direct        v0, v2, v3, v4, v5, Landroid/widget/ArrayAdapter;-><init>(Landroid/content/Context; I I Ljava/util/List;)V
+	2       (0000000a) return-void          
+

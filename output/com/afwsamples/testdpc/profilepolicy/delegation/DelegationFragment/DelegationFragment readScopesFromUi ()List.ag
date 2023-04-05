@@ -1,0 +1,55 @@
+# Lcom/afwsamples/testdpc/profilepolicy/delegation/DelegationFragment;->readScopesFromUi()Ljava/util/List; [access_flags=private]
+#
+# Parameters:
+# local registers: v0...v5
+#
+# - return:java.util.List
+
+readScopesFromUi-BB@0x0 : [ readScopesFromUi-BB@0xc ]
+	0       (00000000) new-instance         v2, Ljava/util/ArrayList;
+	1       (00000004) invoke-direct        v2, Ljava/util/ArrayList;-><init>()V
+	2       (0000000a) const/4              v1, 0
+
+readScopesFromUi-BB@0xc : [ readScopesFromUi-BB@0x1c readScopesFromUi-BB@0x8e ]
+	3       (0000000c) iget-object          v3, v5, Lcom/afwsamples/testdpc/profilepolicy/delegation/DelegationFragment;->mDelegations Ljava/util/List;
+	4       (00000010) invoke-interface     v3, Ljava/util/List;->size()I
+	5       (00000016) move-result          v3
+	6       (00000018) if-ge                v1, v3, +3b
+
+readScopesFromUi-BB@0x1c : [ readScopesFromUi-BB@0x6e readScopesFromUi-BB@0x88 ]
+	7       (0000001c) iget-object          v3, v5, Lcom/afwsamples/testdpc/profilepolicy/delegation/DelegationFragment;->mAppListView Landroid/widget/ListView;
+	8       (00000020) invoke-virtual       v3, v1, Landroid/widget/ListView;->getChildAt(I)Landroid/view/View;
+	9       (00000026) move-result-object   v3
+	10      (00000028) const                v4, 2131296362 # [1.8210638535795146e+38]
+	11      (0000002e) invoke-virtual       v3, v4, Landroid/view/View;->findViewById(I)Landroid/view/View;
+	12      (00000034) move-result-object   v0
+	13      (00000036) check-cast           v0, Landroid/widget/CheckBox;
+	14      (0000003a) iget-object          v3, v5, Lcom/afwsamples/testdpc/profilepolicy/delegation/DelegationFragment;->mDelegations Ljava/util/List;
+	15      (0000003e) invoke-interface     v3, v1, Ljava/util/List;->get(I)Ljava/lang/Object;
+	16      (00000044) move-result-object   v3
+	17      (00000046) check-cast           v3, Lcom/afwsamples/testdpc/profilepolicy/delegation/DelegationFragment$DelegationScope;
+	18      (0000004a) invoke-virtual       v0, Landroid/widget/CheckBox;->isChecked()Z
+	19      (00000050) move-result          v4
+	20      (00000052) iput-boolean         v4, v3, Lcom/afwsamples/testdpc/profilepolicy/delegation/DelegationFragment$DelegationScope;->granted Z
+	21      (00000056) iget-object          v3, v5, Lcom/afwsamples/testdpc/profilepolicy/delegation/DelegationFragment;->mDelegations Ljava/util/List;
+	22      (0000005a) invoke-interface     v3, v1, Ljava/util/List;->get(I)Ljava/lang/Object;
+	23      (00000060) move-result-object   v3
+	24      (00000062) check-cast           v3, Lcom/afwsamples/testdpc/profilepolicy/delegation/DelegationFragment$DelegationScope;
+	25      (00000066) iget-boolean         v3, v3, Lcom/afwsamples/testdpc/profilepolicy/delegation/DelegationFragment$DelegationScope;->granted Z
+	26      (0000006a) if-eqz               v3, +f
+
+readScopesFromUi-BB@0x6e : [ readScopesFromUi-BB@0x88 ]
+	27      (0000006e) iget-object          v3, v5, Lcom/afwsamples/testdpc/profilepolicy/delegation/DelegationFragment;->mDelegations Ljava/util/List;
+	28      (00000072) invoke-interface     v3, v1, Ljava/util/List;->get(I)Ljava/lang/Object;
+	29      (00000078) move-result-object   v3
+	30      (0000007a) check-cast           v3, Lcom/afwsamples/testdpc/profilepolicy/delegation/DelegationFragment$DelegationScope;
+	31      (0000007e) iget-object          v3, v3, Lcom/afwsamples/testdpc/profilepolicy/delegation/DelegationFragment$DelegationScope;->scope Ljava/lang/String;
+	32      (00000082) invoke-interface     v2, v3, Ljava/util/List;->add(Ljava/lang/Object;)Z
+
+readScopesFromUi-BB@0x88 : [ readScopesFromUi-BB@0xc ]
+	33      (00000088) add-int/lit8         v1, v1, 1
+	34      (0000008c) goto                 -40
+
+readScopesFromUi-BB@0x8e : 
+	35      (0000008e) return-object        v2
+

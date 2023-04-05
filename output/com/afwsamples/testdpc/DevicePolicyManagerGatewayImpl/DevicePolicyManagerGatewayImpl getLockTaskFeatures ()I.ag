@@ -1,0 +1,35 @@
+# Lcom/afwsamples/testdpc/DevicePolicyManagerGatewayImpl;->getLockTaskFeatures()I [access_flags=public]
+#
+# Parameters:
+# local registers: v0...v4
+#
+# - return:int
+
+getLockTaskFeatures-BB@0x0 : 
+	0       (00000000) iget-object          v1, v4, Lcom/afwsamples/testdpc/DevicePolicyManagerGatewayImpl;->mDevicePolicyManager Landroid/app/admin/DevicePolicyManager;
+	1       (00000004) iget-object          v2, v4, Lcom/afwsamples/testdpc/DevicePolicyManagerGatewayImpl;->mAdminComponentName Landroid/content/ComponentName;
+	2       (00000008) invoke-virtual       v1, v2, Landroid/app/admin/DevicePolicyManager;->getLockTaskFeatures(Landroid/content/ComponentName;)I
+	3       (0000000e) move-result          v0
+	4       (00000010) sget-object          v1, Lcom/afwsamples/testdpc/DevicePolicyManagerGatewayImpl;->TAG Ljava/lang/String;
+	5       (00000014) new-instance         v2, Ljava/lang/StringBuilder;
+	6       (00000018) invoke-direct        v2, Ljava/lang/StringBuilder;-><init>()V
+	7       (0000001e) const-string         v3, 'getLockTaskFeatures(): '
+	8       (00000022) invoke-virtual       v2, v3, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	9       (00000028) move-result-object   v2
+	10      (0000002a) invoke-static        v0, Lcom/afwsamples/testdpc/common/Util;->lockTaskFeaturesToString(I)Ljava/lang/String;
+	11      (00000030) move-result-object   v3
+	12      (00000032) invoke-virtual       v2, v3, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	13      (00000038) move-result-object   v2
+	14      (0000003a) const-string         v3, ' ('
+	15      (0000003e) invoke-virtual       v2, v3, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	16      (00000044) move-result-object   v2
+	17      (00000046) invoke-virtual       v2, v0, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+	18      (0000004c) move-result-object   v2
+	19      (0000004e) const-string         v3, ')'
+	20      (00000052) invoke-virtual       v2, v3, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	21      (00000058) move-result-object   v2
+	22      (0000005a) invoke-virtual       v2, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+	23      (00000060) move-result-object   v2
+	24      (00000062) invoke-static        v1, v2, Landroid/util/Log;->d(Ljava/lang/String; Ljava/lang/String;)I
+	25      (00000068) return               v0
+

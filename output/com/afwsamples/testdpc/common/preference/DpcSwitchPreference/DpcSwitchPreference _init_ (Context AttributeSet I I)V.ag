@@ -1,0 +1,18 @@
+# Lcom/afwsamples/testdpc/common/preference/DpcSwitchPreference;-><init>(Landroid/content/Context; Landroid/util/AttributeSet; I I)V [access_flags=public constructor]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:android.content.Context
+# - v3:android.util.AttributeSet
+# - v4:int
+# - v5:int
+#
+# - return:void
+
+<init>-BB@0x0 : 
+	0       (00000000) invoke-direct        v1, v2, v3, v4, v5, Landroidx/preference/SwitchPreference;-><init>(Landroid/content/Context; Landroid/util/AttributeSet; I I)V
+	1       (00000006) new-instance         v0, Lcom/afwsamples/testdpc/common/preference/DpcPreferenceHelper;
+	2       (0000000a) invoke-direct        v0, v2, v1, v3, Lcom/afwsamples/testdpc/common/preference/DpcPreferenceHelper;-><init>(Landroid/content/Context; Landroidx/preference/Preference; Landroid/util/AttributeSet;)V
+	3       (00000010) iput-object          v0, v1, Lcom/afwsamples/testdpc/common/preference/DpcSwitchPreference;->mHelper Lcom/afwsamples/testdpc/common/preference/DpcPreferenceHelper;
+	4       (00000014) return-void          
+

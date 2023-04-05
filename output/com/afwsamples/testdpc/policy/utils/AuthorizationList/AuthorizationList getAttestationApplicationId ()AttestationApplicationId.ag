@@ -1,0 +1,11 @@
+# Lcom/afwsamples/testdpc/policy/utils/AuthorizationList;->getAttestationApplicationId()Lcom/afwsamples/testdpc/policy/utils/AttestationApplicationId; [access_flags=public]
+#
+# Parameters:
+# local registers: v0...v1
+#
+# - return:com.afwsamples.testdpc.policy.utils.AttestationApplicationId
+
+getAttestationApplicationId-BB@0x0 : 
+	0       (00000000) iget-object          v0, v1, Lcom/afwsamples/testdpc/policy/utils/AuthorizationList;->attestationApplicationId Lcom/afwsamples/testdpc/policy/utils/AttestationApplicationId;
+	1       (00000004) return-object        v0
+

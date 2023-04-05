@@ -1,0 +1,64 @@
+# Landroidx/appcompat/app/AppCompatDelegateImpl;->setSupportActionBar(Landroidx/appcompat/widget/Toolbar;)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v4
+# - v5:androidx.appcompat.widget.Toolbar
+#
+# - return:void
+
+setSupportActionBar-BB@0x0 : [ setSupportActionBar-BB@0xe setSupportActionBar-BB@0x10 ]
+	0       (00000000) const/4              v3, 0
+	1       (00000002) iget-object          v2, v4, Landroidx/appcompat/app/AppCompatDelegateImpl;->mOriginalWindowCallback Landroid/view/Window$Callback;
+	2       (00000006) instance-of          v2, v2, Landroid/app/Activity;
+	3       (0000000a) if-nez               v2, +3
+
+setSupportActionBar-BB@0xe : 
+	4       (0000000e) return-void          
+
+setSupportActionBar-BB@0x10 : [ setSupportActionBar-BB@0x20 setSupportActionBar-BB@0x30 ]
+	5       (00000010) invoke-virtual       v4, Landroidx/appcompat/app/AppCompatDelegateImpl;->getSupportActionBar()Landroidx/appcompat/app/ActionBar;
+	6       (00000016) move-result-object   v0
+	7       (00000018) instance-of          v2, v0, Landroidx/appcompat/app/WindowDecorActionBar;
+	8       (0000001c) if-eqz               v2, +a
+
+setSupportActionBar-BB@0x20 : 
+	9       (00000020) new-instance         v2, Ljava/lang/IllegalStateException;
+	10      (00000024) const-string         v3, 'This Activity already has an action bar supplied by the window decor. Do not request Window.FEATURE_SUPPORT_ACTION_BAR and set windowActionBar to false in your theme to use a Toolbar instead.'
+	11      (00000028) invoke-direct        v2, v3, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+	12      (0000002e) throw                v2
+
+setSupportActionBar-BB@0x30 : [ setSupportActionBar-BB@0x38 setSupportActionBar-BB@0x3e ]
+	13      (00000030) iput-object          v3, v4, Landroidx/appcompat/app/AppCompatDelegateImpl;->mMenuInflater Landroid/view/MenuInflater;
+	14      (00000034) if-eqz               v0, +5
+
+setSupportActionBar-BB@0x38 : [ setSupportActionBar-BB@0x3e ]
+	15      (00000038) invoke-virtual       v0, Landroidx/appcompat/app/ActionBar;->onDestroy()V
+
+setSupportActionBar-BB@0x3e : [ setSupportActionBar-BB@0x42 setSupportActionBar-BB@0x7e ]
+	16      (0000003e) if-eqz               v5, +20
+
+setSupportActionBar-BB@0x42 : [ setSupportActionBar-BB@0x76 ]
+	17      (00000042) new-instance         v1, Landroidx/appcompat/app/ToolbarActionBar;
+	18      (00000046) iget-object          v2, v4, Landroidx/appcompat/app/AppCompatDelegateImpl;->mOriginalWindowCallback Landroid/view/Window$Callback;
+	19      (0000004a) check-cast           v2, Landroid/app/Activity;
+	20      (0000004e) invoke-virtual       v2, Landroid/app/Activity;->getTitle()Ljava/lang/CharSequence;
+	21      (00000054) move-result-object   v2
+	22      (00000056) iget-object          v3, v4, Landroidx/appcompat/app/AppCompatDelegateImpl;->mAppCompatWindowCallback Landroid/view/Window$Callback;
+	23      (0000005a) invoke-direct        v1, v5, v2, v3, Landroidx/appcompat/app/ToolbarActionBar;-><init>(Landroidx/appcompat/widget/Toolbar; Ljava/lang/CharSequence; Landroid/view/Window$Callback;)V
+	24      (00000060) iput-object          v1, v4, Landroidx/appcompat/app/AppCompatDelegateImpl;->mActionBar Landroidx/appcompat/app/ActionBar;
+	25      (00000064) iget-object          v2, v4, Landroidx/appcompat/app/AppCompatDelegateImpl;->mWindow Landroid/view/Window;
+	26      (00000068) invoke-virtual       v1, Landroidx/appcompat/app/ToolbarActionBar;->getWrappedWindowCallback()Landroid/view/Window$Callback;
+	27      (0000006e) move-result-object   v3
+	28      (00000070) invoke-virtual       v2, v3, Landroid/view/Window;->setCallback(Landroid/view/Window$Callback;)V
+
+setSupportActionBar-BB@0x76 : [ setSupportActionBar-BB@0xe ]
+	29      (00000076) invoke-virtual       v4, Landroidx/appcompat/app/AppCompatDelegateImpl;->invalidateOptionsMenu()V
+	30      (0000007c) goto                 -37
+
+setSupportActionBar-BB@0x7e : [ setSupportActionBar-BB@0x76 ]
+	31      (0000007e) iput-object          v3, v4, Landroidx/appcompat/app/AppCompatDelegateImpl;->mActionBar Landroidx/appcompat/app/ActionBar;
+	32      (00000082) iget-object          v2, v4, Landroidx/appcompat/app/AppCompatDelegateImpl;->mWindow Landroid/view/Window;
+	33      (00000086) iget-object          v3, v4, Landroidx/appcompat/app/AppCompatDelegateImpl;->mAppCompatWindowCallback Landroid/view/Window$Callback;
+	34      (0000008a) invoke-virtual       v2, v3, Landroid/view/Window;->setCallback(Landroid/view/Window$Callback;)V
+	35      (00000090) goto                 -d
+

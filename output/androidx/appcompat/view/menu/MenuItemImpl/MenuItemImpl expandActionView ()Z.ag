@@ -1,0 +1,32 @@
+# Landroidx/appcompat/view/menu/MenuItemImpl;->expandActionView()Z [access_flags=public]
+#
+# Parameters:
+# local registers: v0...v2
+#
+# - return:boolean
+
+expandActionView-BB@0x0 : [ expandActionView-BB@0xe expandActionView-BB@0x10 ]
+	0       (00000000) const/4              v0, 0
+	1       (00000002) invoke-virtual       v2, Landroidx/appcompat/view/menu/MenuItemImpl;->hasCollapsibleActionView()Z
+	2       (00000008) move-result          v1
+	3       (0000000a) if-nez               v1, +3
+
+expandActionView-BB@0xe : 
+	4       (0000000e) return               v0
+
+expandActionView-BB@0x10 : [ expandActionView-BB@0x18 expandActionView-BB@0x28 ]
+	5       (00000010) iget-object          v1, v2, Landroidx/appcompat/view/menu/MenuItemImpl;->mOnActionExpandListener Landroid/view/MenuItem$OnActionExpandListener;
+	6       (00000014) if-eqz               v1, +a
+
+expandActionView-BB@0x18 : [ expandActionView-BB@0x28 expandActionView-BB@0xe ]
+	7       (00000018) iget-object          v1, v2, Landroidx/appcompat/view/menu/MenuItemImpl;->mOnActionExpandListener Landroid/view/MenuItem$OnActionExpandListener;
+	8       (0000001c) invoke-interface     v1, v2, Landroid/view/MenuItem$OnActionExpandListener;->onMenuItemActionExpand(Landroid/view/MenuItem;)Z
+	9       (00000022) move-result          v1
+	10      (00000024) if-eqz               v1, -b
+
+expandActionView-BB@0x28 : [ expandActionView-BB@0xe ]
+	11      (00000028) iget-object          v0, v2, Landroidx/appcompat/view/menu/MenuItemImpl;->mMenu Landroidx/appcompat/view/menu/MenuBuilder;
+	12      (0000002c) invoke-virtual       v0, v2, Landroidx/appcompat/view/menu/MenuBuilder;->expandItemActionView(Landroidx/appcompat/view/menu/MenuItemImpl;)Z
+	13      (00000032) move-result          v0
+	14      (00000034) goto                 -13
+

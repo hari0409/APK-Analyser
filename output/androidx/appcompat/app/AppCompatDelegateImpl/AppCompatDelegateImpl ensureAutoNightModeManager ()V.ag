@@ -1,0 +1,22 @@
+# Landroidx/appcompat/app/AppCompatDelegateImpl;->ensureAutoNightModeManager()V [access_flags=private]
+#
+# Parameters:
+# local registers: v0...v2
+#
+# - return:void
+
+ensureAutoNightModeManager-BB@0x0 : [ ensureAutoNightModeManager-BB@0x8 ensureAutoNightModeManager-BB@0x22 ]
+	0       (00000000) iget-object          v0, v2, Landroidx/appcompat/app/AppCompatDelegateImpl;->mAutoNightModeManager Landroidx/appcompat/app/AppCompatDelegateImpl$AutoNightModeManager;
+	1       (00000004) if-nez               v0, +f
+
+ensureAutoNightModeManager-BB@0x8 : [ ensureAutoNightModeManager-BB@0x22 ]
+	2       (00000008) new-instance         v0, Landroidx/appcompat/app/AppCompatDelegateImpl$AutoNightModeManager;
+	3       (0000000c) iget-object          v1, v2, Landroidx/appcompat/app/AppCompatDelegateImpl;->mContext Landroid/content/Context;
+	4       (00000010) invoke-static        v1, Landroidx/appcompat/app/TwilightManager;->getInstance(Landroid/content/Context;)Landroidx/appcompat/app/TwilightManager;
+	5       (00000016) move-result-object   v1
+	6       (00000018) invoke-direct        v0, v2, v1, Landroidx/appcompat/app/AppCompatDelegateImpl$AutoNightModeManager;-><init>(Landroidx/appcompat/app/AppCompatDelegateImpl; Landroidx/appcompat/app/TwilightManager;)V
+	7       (0000001e) iput-object          v0, v2, Landroidx/appcompat/app/AppCompatDelegateImpl;->mAutoNightModeManager Landroidx/appcompat/app/AppCompatDelegateImpl$AutoNightModeManager;
+
+ensureAutoNightModeManager-BB@0x22 : 
+	8       (00000022) return-void          
+

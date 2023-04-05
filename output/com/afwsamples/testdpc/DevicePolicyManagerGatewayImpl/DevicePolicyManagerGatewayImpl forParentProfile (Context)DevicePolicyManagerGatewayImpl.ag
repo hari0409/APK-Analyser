@@ -1,0 +1,31 @@
+# Lcom/afwsamples/testdpc/DevicePolicyManagerGatewayImpl;->forParentProfile(Landroid/content/Context;)Lcom/afwsamples/testdpc/DevicePolicyManagerGatewayImpl; [access_flags=public static]
+#
+# Parameters:
+# - local registers: v0...v5
+# - v6:android.content.Context
+#
+# - return:com.afwsamples.testdpc.DevicePolicyManagerGatewayImpl
+
+forParentProfile-BB@0x0 : 
+	0       (00000000) invoke-static        v6, Lcom/afwsamples/testdpc/DeviceAdminReceiver;->getComponentName(Landroid/content/Context;)Landroid/content/ComponentName;
+	1       (00000006) move-result-object   v5
+	2       (00000008) const-class          v0, Landroid/app/admin/DevicePolicyManager;
+	3       (0000000c) invoke-virtual       v6, v0, Landroid/content/Context;->getSystemService(Ljava/lang/Class;)Ljava/lang/Object;
+	4       (00000012) move-result-object   v0
+	5       (00000014) check-cast           v0, Landroid/app/admin/DevicePolicyManager;
+	6       (00000018) invoke-virtual       v0, v5, Landroid/app/admin/DevicePolicyManager;->getParentProfileInstance(Landroid/content/ComponentName;)Landroid/app/admin/DevicePolicyManager;
+	7       (0000001e) move-result-object   v1
+	8       (00000020) const-class          v0, Landroid/os/UserManager;
+	9       (00000024) invoke-virtual       v6, v0, Landroid/content/Context;->getSystemService(Ljava/lang/Class;)Ljava/lang/Object;
+	10      (0000002a) move-result-object   v2
+	11      (0000002c) check-cast           v2, Landroid/os/UserManager;
+	12      (00000030) invoke-virtual       v6, Landroid/content/Context;->getPackageManager()Landroid/content/pm/PackageManager;
+	13      (00000036) move-result-object   v3
+	14      (00000038) const-class          v0, Landroid/location/LocationManager;
+	15      (0000003c) invoke-virtual       v6, v0, Landroid/content/Context;->getSystemService(Ljava/lang/Class;)Ljava/lang/Object;
+	16      (00000042) move-result-object   v4
+	17      (00000044) check-cast           v4, Landroid/location/LocationManager;
+	18      (00000048) new-instance         v0, Lcom/afwsamples/testdpc/DevicePolicyManagerGatewayImpl;
+	19      (0000004c) invoke-direct/range  v0 ... v5, Lcom/afwsamples/testdpc/DevicePolicyManagerGatewayImpl;-><init>(Landroid/app/admin/DevicePolicyManager; Landroid/os/UserManager; Landroid/content/pm/PackageManager; Landroid/location/LocationManager; Landroid/content/ComponentName;)V
+	20      (00000052) return-object        v0
+

@@ -1,0 +1,21 @@
+# Lcom/afwsamples/testdpc/policy/blockuninstallation/BlockUninstallationInfoArrayAdapter;->getView(I Landroid/view/View; Landroid/view/ViewGroup;)Landroid/view/View; [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v3
+# - v4:int
+# - v5:android.view.View
+# - v6:android.view.ViewGroup
+#
+# - return:android.view.View
+
+getView-BB@0x0 : 
+	0       (00000000) invoke-super         v3, v4, v5, v6, Lcom/afwsamples/testdpc/common/ToggleComponentsArrayAdapter;->getView(I Landroid/view/View; Landroid/view/ViewGroup;)Landroid/view/View;
+	1       (00000006) move-result-object   v0
+	2       (00000008) const                v1, 2131296424 # [1.821076428673469e+38]
+	3       (0000000e) invoke-virtual       v0, v1, Landroid/view/View;->findViewById(I)Landroid/view/View;
+	4       (00000014) move-result-object   v1
+	5       (00000016) new-instance         v2, Lcom/afwsamples/testdpc/policy/blockuninstallation/BlockUninstallationInfoArrayAdapter$1;
+	6       (0000001a) invoke-direct        v2, v3, v4, Lcom/afwsamples/testdpc/policy/blockuninstallation/BlockUninstallationInfoArrayAdapter$1;-><init>(Lcom/afwsamples/testdpc/policy/blockuninstallation/BlockUninstallationInfoArrayAdapter; I)V
+	7       (00000020) invoke-virtual       v1, v2, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
+	8       (00000026) return-object        v0
+

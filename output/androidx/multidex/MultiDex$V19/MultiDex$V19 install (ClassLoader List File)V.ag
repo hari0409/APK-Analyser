@@ -1,0 +1,94 @@
+# Landroidx/multidex/MultiDex$V19;->install(Ljava/lang/ClassLoader; Ljava/util/List; Ljava/io/File;)V [access_flags=static]
+#
+# Parameters:
+# - local registers: v0...v11
+# - v12:java.lang.ClassLoader
+# - v13:java.util.List
+# - v14:java.io.File
+#
+# - return:void
+
+install-BB@0x0 : [ install-BB@0x48 install-BB@0x104 ]
+	0       (00000000) const/4              v11, 0
+	1       (00000002) const-string         v8, 'pathList'
+	2       (00000006) invoke-static        v12, v8, Landroidx/multidex/MultiDex;->access$000(Ljava/lang/Object; Ljava/lang/String;)Ljava/lang/reflect/Field;
+	3       (0000000c) move-result-object   v5
+	4       (0000000e) invoke-virtual       v5, v12, Ljava/lang/reflect/Field;->get(Ljava/lang/Object;)Ljava/lang/Object;
+	5       (00000014) move-result-object   v2
+	6       (00000016) new-instance         v6, Ljava/util/ArrayList;
+	7       (0000001a) invoke-direct        v6, Ljava/util/ArrayList;-><init>()V
+	8       (00000020) const-string         v8, 'dexElements'
+	9       (00000024) new-instance         v9, Ljava/util/ArrayList;
+	10      (00000028) invoke-direct        v9, v13, Ljava/util/ArrayList;-><init>(Ljava/util/Collection;)V
+	11      (0000002e) invoke-static        v2, v9, v14, v6, Landroidx/multidex/MultiDex$V19;->makeDexElements(Ljava/lang/Object; Ljava/util/ArrayList; Ljava/io/File; Ljava/util/ArrayList;)[Ljava/lang/Object;
+	12      (00000034) move-result-object   v9
+	13      (00000036) invoke-static        v2, v8, v9, Landroidx/multidex/MultiDex;->access$100(Ljava/lang/Object; Ljava/lang/String; [Ljava/lang/Object;)V
+	14      (0000003c) invoke-virtual       v6, Ljava/util/ArrayList;->size()I
+	15      (00000042) move-result          v8
+	16      (00000044) if-lez               v8, +60
+
+install-BB@0x48 : [ install-BB@0x50 ]
+	17      (00000048) invoke-virtual       v6, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
+	18      (0000004e) move-result-object   v8
+
+install-BB@0x50 : [ install-BB@0x5c install-BB@0x78 ]
+	19      (00000050) invoke-interface     v8, Ljava/util/Iterator;->hasNext()Z
+	20      (00000056) move-result          v9
+	21      (00000058) if-eqz               v9, +10
+
+install-BB@0x5c : [ install-BB@0x50 ]
+	22      (0000005c) invoke-interface     v8, Ljava/util/Iterator;->next()Ljava/lang/Object;
+	23      (00000062) move-result-object   v3
+	24      (00000064) check-cast           v3, Ljava/io/IOException;
+	25      (00000068) const-string         v9, 'MultiDex'
+	26      (0000006c) const-string         v10, 'Exception in makeDexElement'
+	27      (00000070) invoke-static        v9, v10, v3, Landroid/util/Log;->w(Ljava/lang/String; Ljava/lang/String; Ljava/lang/Throwable;)I
+	28      (00000076) goto                 -13
+
+install-BB@0x78 : [ install-BB@0x9a install-BB@0xda ]
+	29      (00000078) const-string         v8, 'dexElementsSuppressedExceptions'
+	30      (0000007c) invoke-static        v2, v8, Landroidx/multidex/MultiDex;->access$000(Ljava/lang/Object; Ljava/lang/String;)Ljava/lang/reflect/Field;
+	31      (00000082) move-result-object   v7
+	32      (00000084) invoke-virtual       v7, v2, Ljava/lang/reflect/Field;->get(Ljava/lang/Object;)Ljava/lang/Object;
+	33      (0000008a) move-result-object   v8
+	34      (0000008c) check-cast           v8, [Ljava/io/IOException;
+	35      (00000090) move-object          v1, v8
+	36      (00000092) check-cast           v1, [Ljava/io/IOException;
+	37      (00000096) if-nez               v1, +22
+
+install-BB@0x9a : [ install-BB@0xb2 ]
+	38      (0000009a) invoke-virtual       v6, Ljava/util/ArrayList;->size()I
+	39      (000000a0) move-result          v8
+	40      (000000a2) new-array            v8, v8, [Ljava/io/IOException;
+	41      (000000a6) invoke-virtual       v6, v8, Ljava/util/ArrayList;->toArray([Ljava/lang/Object;)[Ljava/lang/Object;
+	42      (000000ac) move-result-object   v1
+	43      (000000ae) check-cast           v1, [Ljava/io/IOException;
+
+install-BB@0xb2 : 
+	44      (000000b2) invoke-virtual       v7, v2, v1, Ljava/lang/reflect/Field;->set(Ljava/lang/Object; Ljava/lang/Object;)V
+	45      (000000b8) new-instance         v4, Ljava/io/IOException;
+	46      (000000bc) const-string         v8, 'I/O exception during makeDexElement'
+	47      (000000c0) invoke-direct        v4, v8, Ljava/io/IOException;-><init>(Ljava/lang/String;)V
+	48      (000000c6) invoke-virtual       v6, v11, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+	49      (000000cc) move-result-object   v8
+	50      (000000ce) check-cast           v8, Ljava/lang/Throwable;
+	51      (000000d2) invoke-virtual       v4, v8, Ljava/io/IOException;->initCause(Ljava/lang/Throwable;)Ljava/lang/Throwable;
+	52      (000000d8) throw                v4
+
+install-BB@0xda : [ install-BB@0xb2 ]
+	53      (000000da) invoke-virtual       v6, Ljava/util/ArrayList;->size()I
+	54      (000000e0) move-result          v8
+	55      (000000e2) array-length         v9, v1
+	56      (000000e4) add-int/2addr        v8, v9
+	57      (000000e6) new-array            v0, v8, [Ljava/io/IOException;
+	58      (000000ea) invoke-virtual       v6, v0, Ljava/util/ArrayList;->toArray([Ljava/lang/Object;)[Ljava/lang/Object;
+	59      (000000f0) invoke-virtual       v6, Ljava/util/ArrayList;->size()I
+	60      (000000f6) move-result          v8
+	61      (000000f8) array-length         v9, v1
+	62      (000000fa) invoke-static        v1, v11, v0, v8, v9, Ljava/lang/System;->arraycopy(Ljava/lang/Object; I Ljava/lang/Object; I I)V
+	63      (00000100) move-object          v1, v0
+	64      (00000102) goto                 -28
+
+install-BB@0x104 : 
+	65      (00000104) return-void          
+

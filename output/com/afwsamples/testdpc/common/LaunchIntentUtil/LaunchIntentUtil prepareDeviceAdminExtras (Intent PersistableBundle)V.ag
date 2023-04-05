@@ -1,0 +1,35 @@
+# Lcom/afwsamples/testdpc/common/LaunchIntentUtil;->prepareDeviceAdminExtras(Landroid/content/Intent; Landroid/os/PersistableBundle;)V [access_flags=public static]
+#
+# Parameters:
+# - local registers: v0...v3
+# - v4:android.content.Intent
+# - v5:android.os.PersistableBundle
+#
+# - return:void
+
+prepareDeviceAdminExtras-BB@0x0 : [ prepareDeviceAdminExtras-BB@0xc prepareDeviceAdminExtras-BB@0x46 ]
+	0       (00000000) invoke-static        v4, Lcom/afwsamples/testdpc/common/LaunchIntentUtil;->isSynchronousAuthLaunch(Landroid/content/Intent;)Z
+	1       (00000006) move-result          v2
+	2       (00000008) if-eqz               v2, +1f
+
+prepareDeviceAdminExtras-BB@0xc : [ prepareDeviceAdminExtras-BB@0x38 prepareDeviceAdminExtras-BB@0x46 ]
+	3       (0000000c) const-string         v2, 'is_setup_wizard'
+	4       (00000010) const/4              v3, 0
+	5       (00000012) invoke-virtual       v4, v2, v3, Landroid/content/Intent;->getBooleanExtra(Ljava/lang/String; Z)Z
+	6       (00000018) move-result          v1
+	7       (0000001a) const-string         v2, 'is_setup_wizard'
+	8       (0000001e) invoke-static        v1, Ljava/lang/Boolean;->toString(Z)Ljava/lang/String;
+	9       (00000024) move-result-object   v3
+	10      (00000026) invoke-virtual       v5, v2, v3, Landroid/os/PersistableBundle;->putString(Ljava/lang/String; Ljava/lang/String;)V
+	11      (0000002c) invoke-static        v4, Lcom/afwsamples/testdpc/common/LaunchIntentUtil;->getAddedAccount(Landroid/content/Intent;)Landroid/accounts/Account;
+	12      (00000032) move-result-object   v0
+	13      (00000034) if-eqz               v0, +9
+
+prepareDeviceAdminExtras-BB@0x38 : [ prepareDeviceAdminExtras-BB@0x46 ]
+	14      (00000038) const-string         v2, 'account_name'
+	15      (0000003c) iget-object          v3, v0, Landroid/accounts/Account;->name Ljava/lang/String;
+	16      (00000040) invoke-virtual       v5, v2, v3, Landroid/os/PersistableBundle;->putString(Ljava/lang/String; Ljava/lang/String;)V
+
+prepareDeviceAdminExtras-BB@0x46 : 
+	17      (00000046) return-void          
+

@@ -1,0 +1,60 @@
+# Landroidx/appcompat/widget/SuggestionsAdapter;->convertToString(Landroid/database/Cursor;)Ljava/lang/CharSequence; [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v5
+# - v6:android.database.Cursor
+#
+# - return:java.lang.CharSequence
+
+convertToString-BB@0x0 : [ convertToString-BB@0x6 convertToString-BB@0xa ]
+	0       (00000000) const/4              v3, 0
+	1       (00000002) if-nez               v6, +4
+
+convertToString-BB@0x6 : [ convertToString-BB@0x8 ]
+	2       (00000006) move-object          v1, v3
+
+convertToString-BB@0x8 : 
+	3       (00000008) return-object        v1
+
+convertToString-BB@0xa : [ convertToString-BB@0x1a convertToString-BB@0x8 ]
+	4       (0000000a) const-string         v4, 'suggest_intent_query'
+	5       (0000000e) invoke-static        v6, v4, Landroidx/appcompat/widget/SuggestionsAdapter;->getColumnString(Landroid/database/Cursor; Ljava/lang/String;)Ljava/lang/String;
+	6       (00000014) move-result-object   v1
+	7       (00000016) if-nez               v1, -7
+
+convertToString-BB@0x1a : [ convertToString-BB@0x2a convertToString-BB@0x3e ]
+	8       (0000001a) iget-object          v4, v5, Landroidx/appcompat/widget/SuggestionsAdapter;->mSearchable Landroid/app/SearchableInfo;
+	9       (0000001e) invoke-virtual       v4, Landroid/app/SearchableInfo;->shouldRewriteQueryFromData()Z
+	10      (00000024) move-result          v4
+	11      (00000026) if-eqz               v4, +c
+
+convertToString-BB@0x2a : [ convertToString-BB@0x3a convertToString-BB@0x3e ]
+	12      (0000002a) const-string         v4, 'suggest_intent_data'
+	13      (0000002e) invoke-static        v6, v4, Landroidx/appcompat/widget/SuggestionsAdapter;->getColumnString(Landroid/database/Cursor; Ljava/lang/String;)Ljava/lang/String;
+	14      (00000034) move-result-object   v0
+	15      (00000036) if-eqz               v0, +4
+
+convertToString-BB@0x3a : [ convertToString-BB@0x8 ]
+	16      (0000003a) move-object          v1, v0
+	17      (0000003c) goto                 -1a
+
+convertToString-BB@0x3e : [ convertToString-BB@0x4e convertToString-BB@0x62 ]
+	18      (0000003e) iget-object          v4, v5, Landroidx/appcompat/widget/SuggestionsAdapter;->mSearchable Landroid/app/SearchableInfo;
+	19      (00000042) invoke-virtual       v4, Landroid/app/SearchableInfo;->shouldRewriteQueryFromText()Z
+	20      (00000048) move-result          v4
+	21      (0000004a) if-eqz               v4, +c
+
+convertToString-BB@0x4e : [ convertToString-BB@0x5e convertToString-BB@0x62 ]
+	22      (0000004e) const-string         v4, 'suggest_text_1'
+	23      (00000052) invoke-static        v6, v4, Landroidx/appcompat/widget/SuggestionsAdapter;->getColumnString(Landroid/database/Cursor; Ljava/lang/String;)Ljava/lang/String;
+	24      (00000058) move-result-object   v2
+	25      (0000005a) if-eqz               v2, +4
+
+convertToString-BB@0x5e : [ convertToString-BB@0x8 ]
+	26      (0000005e) move-object          v1, v2
+	27      (00000060) goto                 -2c
+
+convertToString-BB@0x62 : [ convertToString-BB@0x8 ]
+	28      (00000062) move-object          v1, v3
+	29      (00000064) goto                 -2e
+

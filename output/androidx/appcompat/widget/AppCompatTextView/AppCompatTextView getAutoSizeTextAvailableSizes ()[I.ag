@@ -1,0 +1,33 @@
+# Landroidx/appcompat/widget/AppCompatTextView;->getAutoSizeTextAvailableSizes()[I [access_flags=public]
+#
+# Parameters:
+# local registers: v0...v1
+#
+# - return:int[]
+
+getAutoSizeTextAvailableSizes-BB@0x0 : [ getAutoSizeTextAvailableSizes-BB@0x8 getAutoSizeTextAvailableSizes-BB@0x12 ]
+	0       (00000000) sget-boolean         v0, Landroidx/appcompat/widget/AppCompatTextView;->PLATFORM_SUPPORTS_AUTOSIZE Z
+	1       (00000004) if-eqz               v0, +7
+
+getAutoSizeTextAvailableSizes-BB@0x8 : [ getAutoSizeTextAvailableSizes-BB@0x10 ]
+	2       (00000008) invoke-super         v1, Landroid/widget/TextView;->getAutoSizeTextAvailableSizes()[I
+	3       (0000000e) move-result-object   v0
+
+getAutoSizeTextAvailableSizes-BB@0x10 : 
+	4       (00000010) return-object        v0
+
+getAutoSizeTextAvailableSizes-BB@0x12 : [ getAutoSizeTextAvailableSizes-BB@0x1a getAutoSizeTextAvailableSizes-BB@0x28 ]
+	5       (00000012) iget-object          v0, v1, Landroidx/appcompat/widget/AppCompatTextView;->mTextHelper Landroidx/appcompat/widget/AppCompatTextHelper;
+	6       (00000016) if-eqz               v0, +9
+
+getAutoSizeTextAvailableSizes-BB@0x1a : [ getAutoSizeTextAvailableSizes-BB@0x10 ]
+	7       (0000001a) iget-object          v0, v1, Landroidx/appcompat/widget/AppCompatTextView;->mTextHelper Landroidx/appcompat/widget/AppCompatTextHelper;
+	8       (0000001e) invoke-virtual       v0, Landroidx/appcompat/widget/AppCompatTextHelper;->getAutoSizeTextAvailableSizes()[I
+	9       (00000024) move-result-object   v0
+	10      (00000026) goto                 -b
+
+getAutoSizeTextAvailableSizes-BB@0x28 : [ getAutoSizeTextAvailableSizes-BB@0x10 ]
+	11      (00000028) const/4              v0, 0
+	12      (0000002a) new-array            v0, v0, [I
+	13      (0000002e) goto                 -f
+

@@ -1,0 +1,23 @@
+# Lcom/afwsamples/testdpc/profilepolicy/crossprofileintentfilter/AddCrossProfileIntentFilterFragment;-><clinit>()V [access_flags=static constructor]
+#
+# Parameters:
+# local registers: v0...v2
+#
+# - return:void
+
+<clinit>-BB@0x0 : 
+	0       (00000000) const/4              v0, 2
+	1       (00000002) new-array            v0, v0, [Ljava/lang/String;
+	2       (00000006) const/4              v1, 0
+	3       (00000008) const-string         v2, 'FLAG_MANAGED_CAN_ACCESS_PARENT'
+	4       (0000000c) aput-object          v2, v0, v1
+	5       (00000010) const/4              v1, 1
+	6       (00000012) const-string         v2, 'FLAG_PARENT_CAN_ACCESS_MANAGED'
+	7       (00000016) aput-object          v2, v0, v1
+	8       (0000001a) sput-object          v0, Lcom/afwsamples/testdpc/profilepolicy/crossprofileintentfilter/AddCrossProfileIntentFilterFragment;->CROSS_PROFILE_INTENT_DIRECTIONS [Ljava/lang/String;
+	9       (0000001e) const-string         v0, 'line.separator'
+	10      (00000022) invoke-static        v0, Ljava/lang/System;->getProperty(Ljava/lang/String;)Ljava/lang/String;
+	11      (00000028) move-result-object   v0
+	12      (0000002a) sput-object          v0, Lcom/afwsamples/testdpc/profilepolicy/crossprofileintentfilter/AddCrossProfileIntentFilterFragment;->NEW_LINE Ljava/lang/String;
+	13      (0000002e) return-void          
+

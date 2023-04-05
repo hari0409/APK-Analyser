@@ -1,0 +1,34 @@
+# Landroidx/appcompat/view/menu/MenuItemImpl;->setVisibleInt(Z)Z [access_flags=]
+#
+# Parameters:
+# - local registers: v0...v4
+# - v5:boolean
+#
+# - return:boolean
+
+setVisibleInt-BB@0x0 : [ setVisibleInt-BB@0x12 setVisibleInt-BB@0x26 ]
+	0       (00000000) const/4              v2, 0
+	1       (00000002) iget                 v0, v4, Landroidx/appcompat/view/menu/MenuItemImpl;->mFlags I
+	2       (00000006) iget                 v1, v4, Landroidx/appcompat/view/menu/MenuItemImpl;->mFlags I
+	3       (0000000a) and-int/lit8         v3, v1, -9
+	4       (0000000e) if-eqz               v5, +c
+
+setVisibleInt-BB@0x12 : [ setVisibleInt-BB@0x14 ]
+	5       (00000012) move                 v1, v2
+
+setVisibleInt-BB@0x14 : [ setVisibleInt-BB@0x22 setVisibleInt-BB@0x24 ]
+	6       (00000014) or-int/2addr         v1, v3
+	7       (00000016) iput                 v1, v4, Landroidx/appcompat/view/menu/MenuItemImpl;->mFlags I
+	8       (0000001a) iget                 v1, v4, Landroidx/appcompat/view/menu/MenuItemImpl;->mFlags I
+	9       (0000001e) if-eq                v0, v1, +3
+
+setVisibleInt-BB@0x22 : [ setVisibleInt-BB@0x24 ]
+	10      (00000022) const/4              v2, 1
+
+setVisibleInt-BB@0x24 : 
+	11      (00000024) return               v2
+
+setVisibleInt-BB@0x26 : [ setVisibleInt-BB@0x14 ]
+	12      (00000026) const/16             v1, 8
+	13      (0000002a) goto                 -b
+

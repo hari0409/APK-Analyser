@@ -1,0 +1,17 @@
+# Landroidx/appcompat/widget/SwitchCompat;->cancelSuperTouch(Landroid/view/MotionEvent;)V [access_flags=private]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:android.view.MotionEvent
+#
+# - return:void
+
+cancelSuperTouch-BB@0x0 : 
+	0       (00000000) invoke-static        v3, Landroid/view/MotionEvent;->obtain(Landroid/view/MotionEvent;)Landroid/view/MotionEvent;
+	1       (00000006) move-result-object   v0
+	2       (00000008) const/4              v1, 3
+	3       (0000000a) invoke-virtual       v0, v1, Landroid/view/MotionEvent;->setAction(I)V
+	4       (00000010) invoke-super         v2, v0, Landroid/widget/CompoundButton;->onTouchEvent(Landroid/view/MotionEvent;)Z
+	5       (00000016) invoke-virtual       v0, Landroid/view/MotionEvent;->recycle()V
+	6       (0000001c) return-void          
+

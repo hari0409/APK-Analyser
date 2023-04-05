@@ -1,0 +1,17 @@
+# Lcom/afwsamples/testdpc/policy/certificate/DelegatedCertInstallerFragment;->setSelectedPackage(Ljava/lang/String;)V [access_flags=protected]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:java.lang.String
+#
+# - return:void
+
+setSelectedPackage-BB@0x0 : 
+	0       (00000000) iget-object          v0, v2, Lcom/afwsamples/testdpc/policy/certificate/DelegatedCertInstallerFragment;->mDpm Landroid/app/admin/DevicePolicyManager;
+	1       (00000004) invoke-virtual       v2, Lcom/afwsamples/testdpc/policy/certificate/DelegatedCertInstallerFragment;->getActivity()Landroid/app/Activity;
+	2       (0000000a) move-result-object   v1
+	3       (0000000c) invoke-static        v1, Lcom/afwsamples/testdpc/DeviceAdminReceiver;->getComponentName(Landroid/content/Context;)Landroid/content/ComponentName;
+	4       (00000012) move-result-object   v1
+	5       (00000014) invoke-virtual       v0, v1, v3, Landroid/app/admin/DevicePolicyManager;->setCertInstallerPackage(Landroid/content/ComponentName; Ljava/lang/String;)V
+	6       (0000001a) return-void          
+

@@ -1,0 +1,13 @@
+# Lcom/afwsamples/testdpc/search/IndexableFragments;->values()Ljava/util/List; [access_flags=public static]
+#
+# Parameters:
+# local registers: v0...v1
+#
+# - return:java.util.List
+
+values-BB@0x0 : 
+	0       (00000000) new-instance         v0, Ljava/util/ArrayList;
+	1       (00000004) sget-object          v1, Lcom/afwsamples/testdpc/search/IndexableFragments;->sIndexableFragments Ljava/util/List;
+	2       (00000008) invoke-direct        v0, v1, Ljava/util/ArrayList;-><init>(Ljava/util/Collection;)V
+	3       (0000000e) return-object        v0
+

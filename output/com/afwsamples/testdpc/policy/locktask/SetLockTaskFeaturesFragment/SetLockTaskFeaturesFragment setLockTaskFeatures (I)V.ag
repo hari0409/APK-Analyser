@@ -1,0 +1,15 @@
+# Lcom/afwsamples/testdpc/policy/locktask/SetLockTaskFeaturesFragment;->setLockTaskFeatures(I)V [access_flags=private]
+#
+# Parameters:
+# - local registers: v0...v3
+# - v4:int
+#
+# - return:void
+
+setLockTaskFeatures-BB@0x0 : 
+	0       (00000000) iget-object          v0, v3, Lcom/afwsamples/testdpc/policy/locktask/SetLockTaskFeaturesFragment;->mDpmGateway Lcom/afwsamples/testdpc/DevicePolicyManagerGateway;
+	1       (00000004) sget-object          v1, Lcom/afwsamples/testdpc/policy/locktask/SetLockTaskFeaturesFragment$$Lambda$0;->$instance Ljava/util/function/Consumer;
+	2       (00000008) sget-object          v2, Lcom/afwsamples/testdpc/policy/locktask/SetLockTaskFeaturesFragment$$Lambda$1;->$instance Ljava/util/function/Consumer;
+	3       (0000000c) invoke-interface     v0, v4, v1, v2, Lcom/afwsamples/testdpc/DevicePolicyManagerGateway;->setLockTaskFeatures(I Ljava/util/function/Consumer; Ljava/util/function/Consumer;)V
+	4       (00000012) return-void          
+
